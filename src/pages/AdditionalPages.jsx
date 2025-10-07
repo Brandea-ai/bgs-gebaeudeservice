@@ -17,10 +17,10 @@ export function UeberUnsPage() {
     <div className="pt-20">
       {/* Hero */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#0A2540] to-[#1a3a5f] text-white">
-        <div className="max-w-5xl mx-auto text-center">
+        <div className=" mx-auto text-center">
           <Badge className="mb-6 bg-white/20 text-white border-white/30">Seit 1997</Badge>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Über BGS Gebäudeservice</h1>
-          <p className="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-xl text-white/90 leading-relaxed">
             Seit über 25 Jahren setzen wir Massstäbe in der Gebäudereinigung und im Facility Management. 
             Von der kleinen Reinigungsfirma zum schweizweiten Premium-Dienstleister.
           </p>
@@ -29,7 +29,7 @@ export function UeberUnsPage() {
 
       {/* Story */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-6xl mx-auto">
+        <div className=" mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
             <div>
               <h2 className="text-4xl font-bold text-[#0A2540] mb-6">Unsere Geschichte</h2>
@@ -160,7 +160,7 @@ export function UeberUnsPage() {
 
       {/* CTA */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#0A2540] to-[#1a3a5f] text-white">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className=" mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">Werden Sie Teil unserer Erfolgsgeschichte</h2>
           <p className="text-xl mb-6 text-white/90">Kontaktieren Sie uns für eine unverbindliche Beratung</p>
           <Link to="/kontakt">
@@ -181,7 +181,7 @@ export function KIIntegrationPage() {
     <div className="pt-20">
       {/* Hero */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#0A2540] via-[#1a3a5f] to-[#0A2540] text-white">
-        <div className="max-w-5xl mx-auto text-center">
+        <div className=" mx-auto text-center">
           <Badge className="mb-6 bg-[#00D4FF]/20 text-[#00D4FF] border-[#00D4FF]/30">
             <Sparkles className="w-4 h-4 mr-2" />
             Künstliche Intelligenz
@@ -189,7 +189,7 @@ export function KIIntegrationPage() {
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
             KI-gestützte <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00D4FF] to-[#00A8CC]">Reinigungslösungen</span>
           </h1>
-          <p className="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-xl text-white/90 leading-relaxed">
             Wir nutzen modernste KI-Technologie für effizientere Prozesse, vorausschauende Wartung 
             und höchste Qualitätsstandards.
           </p>
@@ -198,7 +198,7 @@ export function KIIntegrationPage() {
 
       {/* Features */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-6xl mx-auto">
+        <div className=" mx-auto">
           <h2 className="text-4xl font-bold text-[#0A2540] mb-12 text-center">Unsere KI-Features</h2>
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
@@ -306,7 +306,7 @@ export function KIIntegrationPage() {
           {/* Dashboard Preview */}
           <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 md:p-12">
             <h3 className="text-3xl font-bold text-[#0A2540] mb-6 text-center">Live AI Dashboard</h3>
-            <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-center text-gray-600 mb-8">
               Unsere Kunden erhalten Zugang zu einem Echtzeit-Dashboard mit allen relevanten KPIs und Insights.
             </p>
             <div className="rounded-2xl overflow-hidden shadow-2xl">
@@ -318,7 +318,7 @@ export function KIIntegrationPage() {
 
       {/* CTA */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#00D4FF] to-[#00A8CC] text-white">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className=" mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">Bereit für die Zukunft der Gebäudereinigung?</h2>
           <p className="text-xl mb-6 text-white/90">Erleben Sie die Vorteile von KI-gestützten Reinigungslösungen</p>
           <Link to="/kontakt">
@@ -363,13 +363,13 @@ export function BlogPage() {
     <div className="pt-20">
       {/* Hero */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#0A2540] to-[#1a3a5f] text-white">
-        <div className="max-w-5xl mx-auto text-center">
+        <div className=" mx-auto text-center">
           <Badge className="mb-6 bg-white/20 text-white border-white/30">
             <BookOpen className="w-4 h-4 mr-2" />
             Wissen & Insights
           </Badge>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">BGS Blog</h1>
-          <p className="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-xl text-white/90 leading-relaxed">
             Neuigkeiten, Trends und Expertenwissen aus der Welt der Gebäudereinigung und des Facility Managements.
           </p>
         </div>
@@ -377,7 +377,7 @@ export function BlogPage() {
 
       {/* Articles */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-6xl mx-auto">
+        <div className=" mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {articles.map((article, index) => (
               <motion.div
@@ -433,13 +433,13 @@ export function DownloadsPage() {
     <div className="pt-20">
       {/* Hero */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#0A2540] to-[#1a3a5f] text-white">
-        <div className="max-w-5xl mx-auto text-center">
+        <div className=" mx-auto text-center">
           <Badge className="mb-6 bg-white/20 text-white border-white/30">
             <Download className="w-4 h-4 mr-2" />
             Ressourcen
           </Badge>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Downloads</h1>
-          <p className="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-xl text-white/90 leading-relaxed">
             Broschüren, Preislisten, Zertifikate und weitere nützliche Dokumente zum Download.
           </p>
         </div>
@@ -447,7 +447,7 @@ export function DownloadsPage() {
 
       {/* Downloads */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-4xl mx-auto">
+        <div className=" mx-auto">
           <div className="space-y-4">
             {downloads.map((item, index) => (
               <motion.div
@@ -503,13 +503,13 @@ export function GlossarPage() {
     <div className="pt-20">
       {/* Hero */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#0A2540] to-[#1a3a5f] text-white">
-        <div className="max-w-5xl mx-auto text-center">
+        <div className=" mx-auto text-center">
           <Badge className="mb-6 bg-white/20 text-white border-white/30">
             <BookOpen className="w-4 h-4 mr-2" />
             Fachwissen
           </Badge>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Glossar</h1>
-          <p className="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-xl text-white/90 leading-relaxed">
             Fachbegriffe aus der Gebäudereinigung und dem Facility Management einfach erklärt.
           </p>
         </div>
@@ -517,7 +517,7 @@ export function GlossarPage() {
 
       {/* Glossary */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-4xl mx-auto">
+        <div className=" mx-auto">
           <div className="space-y-6">
             {glossaryTerms.map((item, index) => (
               <motion.div
@@ -550,9 +550,9 @@ export function KontaktPage() {
     <div className="pt-20">
       {/* Hero */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#0A2540] to-[#1a3a5f] text-white">
-        <div className="max-w-5xl mx-auto text-center">
+        <div className=" mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Kontakt</h1>
-          <p className="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-xl text-white/90 leading-relaxed">
             Wir freuen uns auf Ihre Anfrage. Kontaktieren Sie uns für ein unverbindliches Angebot.
           </p>
         </div>
@@ -560,7 +560,7 @@ export function KontaktPage() {
 
       {/* Contact Info */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-6xl mx-auto">
+        <div className=" mx-auto">
           <div className="grid md:grid-cols-2 gap-12 mb-16">
             <div>
               <h2 className="text-3xl font-bold text-[#0A2540] mb-8">Kontaktinformationen</h2>

@@ -14,13 +14,13 @@ export function HallenreinigungPage() {
       
       <div className="pt-20">
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#0A2540] to-[#1a3a5f] text-white">
-          <div className="max-w-5xl mx-auto">
+          <div className=" mx-auto">
             <Badge className="mb-6 bg-white/20 text-white border-white/30">
               <Factory className="w-4 h-4 mr-2" />
               Standard B2B
             </Badge>
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Hallenreinigung</h1>
-            <p className="text-xl text-white/90 leading-relaxed max-w-3xl">
+            <p className="text-xl text-white/90 leading-relaxed ">
               Effiziente Reinigung von Produktions-, Lager- und Logistikhallen. 
               Spezialisiert auf große Flächen mit modernster Reinigungstechnik.
             </p>
@@ -28,7 +28,7 @@ export function HallenreinigungPage() {
         </section>
 
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-          <div className="max-w-6xl mx-auto">
+          <div className=" mx-auto">
             <h2 className="text-4xl font-bold text-[#0A2540] mb-12 text-center">Unsere Leistungen</h2>
             <div className="grid md:grid-cols-3 gap-8 mb-16">
               <Card>
@@ -107,7 +107,7 @@ export function HallenreinigungPage() {
         </section>
 
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#0A2540] to-[#1a3a5f] text-white">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className=" mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Große Flächen, perfekte Sauberkeit</h2>
             <p className="text-xl mb-6 text-white/90">Kontaktieren Sie uns für ein unverbindliches Angebot</p>
             <Link to="/kontakt">
@@ -130,13 +130,13 @@ export function MaschinenreinigungPage() {
       
       <div className="pt-20">
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#0A2540] to-[#1a3a5f] text-white">
-          <div className="max-w-5xl mx-auto">
+          <div className=" mx-auto">
             <Badge className="mb-6 bg-white/20 text-white border-white/30">
               <Wrench className="w-4 h-4 mr-2" />
               Standard B2B
             </Badge>
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Maschinenreinigung</h1>
-            <p className="text-xl text-white/90 leading-relaxed max-w-3xl">
+            <p className="text-xl text-white/90 leading-relaxed ">
               Fachgerechte Reinigung von Produktionsanlagen, CNC-Maschinen und Industrieanlagen. 
               Spezialisiert auf Öl, Fett und hartnäckige Verschmutzungen.
             </p>
@@ -144,7 +144,7 @@ export function MaschinenreinigungPage() {
         </section>
 
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-          <div className="max-w-6xl mx-auto">
+          <div className=" mx-auto">
             <h2 className="text-4xl font-bold text-[#0A2540] mb-12 text-center">Unsere Leistungen</h2>
             <div className="grid md:grid-cols-3 gap-8 mb-16">
               <Card>
@@ -221,7 +221,7 @@ export function MaschinenreinigungPage() {
         </section>
 
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#0A2540] to-[#1a3a5f] text-white">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className=" mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Fachgerechte Maschinenreinigung</h2>
             <p className="text-xl mb-6 text-white/90">Kontaktieren Sie uns für ein unverbindliches Angebot</p>
             <Link to="/kontakt">
@@ -244,14 +244,14 @@ export function SonderreinigungPage() {
   return (
     <div className="pt-20">
       <section className="py-20 px-4 bg-gradient-to-br from-[#0A2540] to-[#1a3a5f] text-white">
-        <div className="max-w-5xl mx-auto">
+        <div className=" mx-auto">
           <Badge className="mb-6 bg-white/20 text-white"><Building2 className="w-4 h-4 mr-2" />Standard B2B</Badge>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Sonderreinigung</h1>
           <p className="text-xl text-white/90">Spezialisierte Reinigungslösungen für aussergewöhnliche Anforderungen.</p>
         </div>
       </section>
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
+        <div className=" mx-auto">
           <h2 className="text-4xl font-bold text-[#0A2540] mb-12 text-center">Unsere Sonderreinigungen</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <Card><CardHeader><CardTitle>Tatortreinigung</CardTitle></CardHeader><CardContent><p>Diskrete und professionelle Reinigung.</p></CardContent></Card>
@@ -269,14 +269,14 @@ export function IndustriereinigungPage() {
   return (
     <div className="pt-20">
       <section className="py-20 px-4 bg-gradient-to-br from-[#0A2540] to-[#1a3a5f] text-white">
-        <div className="max-w-5xl mx-auto">
+        <div className=" mx-auto">
           <Badge className="mb-6 bg-white/20 text-white"><Building2 className="w-4 h-4 mr-2" />Standard B2B</Badge>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Industriereinigung</h1>
           <p className="text-xl text-white/90">Professionelle Reinigung für Produktionsbetriebe und Fabriken.</p>
         </div>
       </section>
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
+        <div className=" mx-auto">
           <h2 className="text-4xl font-bold text-[#0A2540] mb-12">Industriereinigung für alle Branchen</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <Card><CardHeader><CardTitle>Produktionshallen</CardTitle></CardHeader><CardContent><p>Reinigung ohne Betriebsunterbrechung.</p></CardContent></Card>
@@ -293,14 +293,14 @@ export function FassadenreinigungPage() {
   return (
     <div className="pt-20">
       <section className="py-20 px-4 bg-gradient-to-br from-[#0A2540] to-[#1a3a5f] text-white">
-        <div className="max-w-5xl mx-auto">
+        <div className=" mx-auto">
           <Badge className="mb-6 bg-white/20 text-white"><Building2 className="w-4 h-4 mr-2" />Standard B2B</Badge>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Fassadenreinigung</h1>
           <p className="text-xl text-white/90">Professionelle Reinigung von Gebäudefassaden aller Art.</p>
         </div>
       </section>
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
+        <div className=" mx-auto">
           <h2 className="text-4xl font-bold text-[#0A2540] mb-12">Alle Fassadentypen</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <Card><CardHeader><CardTitle>Glasfassaden</CardTitle></CardHeader><CardContent><p>Streifenfreie Reinigung.</p></CardContent></Card>
@@ -318,14 +318,14 @@ export function BauendreinigungPage() {
   return (
     <div className="pt-20">
       <section className="py-20 px-4 bg-gradient-to-br from-[#0A2540] to-[#1a3a5f] text-white">
-        <div className="max-w-5xl mx-auto">
+        <div className=" mx-auto">
           <Badge className="mb-6 bg-white/20 text-white"><Building2 className="w-4 h-4 mr-2" />Standard B2B</Badge>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Bauendreinigung</h1>
           <p className="text-xl text-white/90">Professionelle Endreinigung nach Bau- und Renovierungsarbeiten.</p>
         </div>
       </section>
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
+        <div className=" mx-auto">
           <h2 className="text-4xl font-bold text-[#0A2540] mb-12">Bauendreinigung in 3 Schritten</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <Card><CardHeader><div className="text-4xl font-bold text-[#0A2540] mb-4">1</div><CardTitle>Grobreinigung</CardTitle></CardHeader><CardContent><p>Entfernung von Baustaub.</p></CardContent></Card>

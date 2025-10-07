@@ -8,7 +8,7 @@ export function UeberUnsPage() {
     <div className="pt-20">
       {/* 1. HERO SECTION */}
       <section className="py-20 px-4 bg-gradient-to-br from-[#0A2540] via-[#1a3a5f] to-[#0A2540] text-white">
-        <div className="max-w-6xl mx-auto">
+        <div className=" mx-auto">
           <Badge className="mb-6 bg-[#C5A572]/20 text-[#C5A572]">
             <Building2 className="w-4 h-4 mr-2" />
             ÜBER UNS
@@ -30,7 +30,7 @@ export function UeberUnsPage() {
 
       {/* 2. GESCHICHTE & TIMELINE */}
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
+        <div className=" mx-auto">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-[#0A2540] text-white">Unsere Geschichte</Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-[#0A2540] mb-6">
@@ -64,7 +64,7 @@ export function UeberUnsPage() {
 
       {/* 3. MISSION & VISION */}
       <section className="py-20 px-4 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
+        <div className=" mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
             <Card className="border-4 border-[#0A2540]">
               <CardHeader>
@@ -98,7 +98,7 @@ export function UeberUnsPage() {
 
       {/* 4. WERTE */}
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
+        <div className=" mx-auto">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-[#C5A572] text-white">Unsere Werte</Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-[#0A2540] mb-6">
@@ -126,7 +126,7 @@ export function UeberUnsPage() {
 
       {/* 5. TEAM & FÜHRUNG */}
       <section className="py-20 px-4 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
+        <div className=" mx-auto">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-[#0A2540] text-white">Unser Team</Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-[#0A2540] mb-6">
@@ -156,7 +156,7 @@ export function UeberUnsPage() {
 
       {/* 6. ZAHLEN & FAKTEN */}
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
+        <div className=" mx-auto">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-[#C5A572] text-white">Zahlen & Fakten</Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-[#0A2540] mb-6">
@@ -184,7 +184,7 @@ export function UeberUnsPage() {
 
       {/* 7. ZERTIFIZIERUNGEN */}
       <section className="py-20 px-4 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
+        <div className=" mx-auto">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-[#0A2540] text-white">Zertifizierungen</Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-[#0A2540] mb-6">
@@ -212,7 +212,7 @@ export function UeberUnsPage() {
 
       {/* 8. NACHHALTIGKEIT */}
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
+        <div className=" mx-auto">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-[#10B981] text-white">
               <Globe className="w-4 h-4 mr-2" />
@@ -221,7 +221,7 @@ export function UeberUnsPage() {
             <h2 className="text-4xl md:text-5xl font-bold text-[#0A2540] mb-6">
               Verantwortung für die Zukunft
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600">
               Wir setzen auf umweltfreundliche Reinigungsmittel, energieeffiziente Prozesse 
               und soziale Verantwortung.
             </p>
@@ -269,7 +269,7 @@ export function UeberUnsPage() {
 
       {/* 9. CTA */}
       <section className="py-20 px-4 bg-gradient-to-br from-[#0A2540] to-[#1a3a5f] text-white">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className=" mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Werden Sie Teil unserer Erfolgsgeschichte
           </h2>

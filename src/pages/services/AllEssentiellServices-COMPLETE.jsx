@@ -8,7 +8,7 @@ export function UnterhaltsreinigungPage() {
   return (<div className="pt-20">
     {/* 1. Hero */}
     <section className="py-20 px-4 bg-gradient-to-br from-[#10B981] to-[#059669] text-white">
-      <div className="max-w-6xl mx-auto">
+      <div className=" mx-auto">
         <Badge className="mb-6 bg-white/20 text-white"><Home className="w-4 h-4 mr-2" />ESSENTIELL</Badge>
         <h1 className="text-5xl md:text-7xl font-bold mb-6">Unterhaltsreinigung<br/><span className="text-white/90">Für Büros & Praxen</span></h1>
         <p className="text-xl md:text-2xl text-white/90 mb-8">Regelmässige, zuverlässige Reinigung für Ihren Betrieb.</p>
@@ -18,7 +18,7 @@ export function UnterhaltsreinigungPage() {
     
     {/* 2. Leistungen */}
     <section className="py-20 px-4 bg-white">
-      <div className="max-w-7xl mx-auto">
+      <div className=" mx-auto">
         <h2 className="text-4xl font-bold text-[#0A2540] text-center mb-12">Was wir reinigen</h2>
         <div className="grid md:grid-cols-4 gap-6">
           {["Büroräume", "Besprechungsräume", "Küchen", "Sanitäranlagen", "Eingangsbereiche", "Treppenhäuser", "Korridore", "Pausenräume"].map((item, i) => (
@@ -30,7 +30,7 @@ export function UnterhaltsreinigungPage() {
     
     {/* 3. Ablauf */}
     <section className="py-20 px-4 bg-gray-50">
-      <div className="max-w-6xl mx-auto">
+      <div className=" mx-auto">
         <h2 className="text-4xl font-bold text-[#0A2540] text-center mb-12">Ablauf</h2>
         <div className="grid md:grid-cols-5 gap-6">
           {["Bedarfsanalyse", "Angebot", "Terminplanung", "Regelmässige Reinigung", "Qualitätskontrolle"].map((step, i) => (
@@ -45,7 +45,7 @@ export function UnterhaltsreinigungPage() {
     
     {/* 4. Preise */}
     <section className="py-20 px-4 bg-white">
-      <div className="max-w-7xl mx-auto">
+      <div className=" mx-auto">
         <h2 className="text-4xl font-bold text-[#0A2540] text-center mb-12">Preise</h2>
         <div className="grid md:grid-cols-3 gap-8">
           {[
@@ -72,7 +72,7 @@ export function UnterhaltsreinigungPage() {
     
     {/* 5. Vorteile */}
     <section className="py-20 px-4 bg-gray-50">
-      <div className="max-w-7xl mx-auto">
+      <div className=" mx-auto">
         <h2 className="text-4xl font-bold text-[#0A2540] text-center mb-12">Ihre Vorteile</h2>
         <div className="grid md:grid-cols-3 gap-8">
           {[
@@ -88,7 +88,7 @@ export function UnterhaltsreinigungPage() {
     
     {/* 6. Referenzen */}
     <section className="py-20 px-4 bg-white">
-      <div className="max-w-4xl mx-auto">
+      <div className=" mx-auto">
         <h2 className="text-4xl font-bold text-[#0A2540] text-center mb-12">Was Kunden sagen</h2>
         <div className="grid md:grid-cols-2 gap-8">
           {[
@@ -103,7 +103,7 @@ export function UnterhaltsreinigungPage() {
     
     {/* 7. FAQ */}
     <section className="py-20 px-4 bg-gray-50">
-      <div className="max-w-4xl mx-auto">
+      <div className=" mx-auto">
         <h2 className="text-4xl font-bold text-[#0A2540] text-center mb-12">FAQ</h2>
         <div className="space-y-6">
           {[
@@ -120,7 +120,7 @@ export function UnterhaltsreinigungPage() {
     
     {/* 8. CTA */}
     <section className="py-20 px-4 bg-gradient-to-br from-[#10B981] to-[#059669] text-white">
-      <div className="max-w-4xl mx-auto text-center">
+      <div className=" mx-auto text-center">
         <h2 className="text-4xl font-bold mb-6">Saubere Büros = Produktive Mitarbeiter</h2>
         <Button size="lg" className="bg-white text-[#10B981]"><Phone className="mr-2" />+41 41 320 56 10</Button>
       </div>
@@ -129,10 +129,10 @@ export function UnterhaltsreinigungPage() {
 }
 
 // Continue with other 5 pages... (similar 8-section structure for each)
-export function FensterreinigungPage() { return <div className="pt-20"><section className="py-20 px-4 bg-gradient-to-br from-[#10B981] to-[#059669] text-white"><div className="max-w-6xl mx-auto"><h1 className="text-5xl font-bold mb-6">Fensterreinigung</h1><p className="text-xl mb-8">Streifenfrei sauber</p><Button size="lg" className="bg-white text-[#10B981]">Anfragen</Button></div></section></div> }
-export function GartenservicePage() { return <div className="pt-20"><section className="py-20 px-4 bg-gradient-to-br from-[#10B981] to-[#059669] text-white"><div className="max-w-6xl mx-auto"><h1 className="text-5xl font-bold mb-6">Gartenservice</h1><p className="text-xl mb-8">Grünpflege</p><Button size="lg" className="bg-white text-[#10B981]">Anfragen</Button></div></section></div> }
-export function GrundreinigungPage() { return <div className="pt-20"><section className="py-20 px-4 bg-gradient-to-br from-[#10B981] to-[#059669] text-white"><div className="max-w-6xl mx-auto"><h1 className="text-5xl font-bold mb-6">Grundreinigung</h1><p className="text-xl mb-8">Tiefenreinigung</p><Button size="lg" className="bg-white text-[#10B981]">Anfragen</Button></div></section></div> }
-export function HausmeisterservicePage() { return <div className="pt-20"><section className="py-20 px-4 bg-gradient-to-br from-[#10B981] to-[#059669] text-white"><div className="max-w-6xl mx-auto"><h1 className="text-5xl font-bold mb-6">Hausmeisterservice</h1><p className="text-xl mb-8">Allrounder</p><Button size="lg" className="bg-white text-[#10B981]">Anfragen</Button></div></section></div> }
-export function BüroreinigungPage() { return <div className="pt-20"><section className="py-20 px-4 bg-gradient-to-br from-[#10B981] to-[#059669] text-white"><div className="max-w-6xl mx-auto"><h1 className="text-5xl font-bold mb-6">Büroreinigung</h1><p className="text-xl mb-8">Professionell</p><Button size="lg" className="bg-white text-[#10B981]">Anfragen</Button></div></section></div> }
+export function FensterreinigungPage() { return <div className="pt-20"><section className="py-20 px-4 bg-gradient-to-br from-[#10B981] to-[#059669] text-white"><div className=" mx-auto"><h1 className="text-5xl font-bold mb-6">Fensterreinigung</h1><p className="text-xl mb-8">Streifenfrei sauber</p><Button size="lg" className="bg-white text-[#10B981]">Anfragen</Button></div></section></div> }
+export function GartenservicePage() { return <div className="pt-20"><section className="py-20 px-4 bg-gradient-to-br from-[#10B981] to-[#059669] text-white"><div className=" mx-auto"><h1 className="text-5xl font-bold mb-6">Gartenservice</h1><p className="text-xl mb-8">Grünpflege</p><Button size="lg" className="bg-white text-[#10B981]">Anfragen</Button></div></section></div> }
+export function GrundreinigungPage() { return <div className="pt-20"><section className="py-20 px-4 bg-gradient-to-br from-[#10B981] to-[#059669] text-white"><div className=" mx-auto"><h1 className="text-5xl font-bold mb-6">Grundreinigung</h1><p className="text-xl mb-8">Tiefenreinigung</p><Button size="lg" className="bg-white text-[#10B981]">Anfragen</Button></div></section></div> }
+export function HausmeisterservicePage() { return <div className="pt-20"><section className="py-20 px-4 bg-gradient-to-br from-[#10B981] to-[#059669] text-white"><div className=" mx-auto"><h1 className="text-5xl font-bold mb-6">Hausmeisterservice</h1><p className="text-xl mb-8">Allrounder</p><Button size="lg" className="bg-white text-[#10B981]">Anfragen</Button></div></section></div> }
+export function BüroreinigungPage() { return <div className="pt-20"><section className="py-20 px-4 bg-gradient-to-br from-[#10B981] to-[#059669] text-white"><div className=" mx-auto"><h1 className="text-5xl font-bold mb-6">Büroreinigung</h1><p className="text-xl mb-8">Professionell</p><Button size="lg" className="bg-white text-[#10B981]">Anfragen</Button></div></section></div> }
 
 export default { UnterhaltsreinigungPage, FensterreinigungPage, GartenservicePage, GrundreinigungPage, HausmeisterservicePage, BüroreinigungPage }

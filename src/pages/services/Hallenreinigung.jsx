@@ -8,7 +8,7 @@ export function HallenreinigungPage() {
     <div className="pt-20">
       {/* 1. HERO SECTION */}
       <section className="py-20 px-4 bg-gradient-to-br from-[#0A2540] via-[#1a3a5f] to-[#0A2540] text-white">
-        <div className="max-w-6xl mx-auto">
+        <div className=" mx-auto">
           <Badge className="mb-6 bg-[#00D4FF]/20 text-[#00D4FF]">
             <Building2 className="w-4 h-4 mr-2" />
             STANDARD B2B
@@ -35,13 +35,13 @@ export function HallenreinigungPage() {
 
       {/* 2. LEISTUNGSÜBERSICHT */}
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
+        <div className=" mx-auto">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-[#0A2540] text-white">Unsere Leistungen</Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-[#0A2540] mb-6">
               Komplette Hallenreinigung
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600">
               Von Böden über Regale bis zur Decke – wir reinigen alle Bereiche Ihrer Halle professionell.
             </p>
           </div>
@@ -63,7 +63,7 @@ export function HallenreinigungPage() {
 
       {/* 3. PROZESS */}
       <section className="py-20 px-4 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
+        <div className=" mx-auto">
           <h2 className="text-4xl font-bold text-[#0A2540] text-center mb-16">Unser Prozess</h2>
           <div className="grid md:grid-cols-5 gap-6">
             {[
@@ -87,7 +87,7 @@ export function HallenreinigungPage() {
 
       {/* 4. PREISE */}
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
+        <div className=" mx-auto">
           <h2 className="text-4xl font-bold text-[#0A2540] text-center mb-16">Preise & Pakete</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -133,7 +133,7 @@ export function HallenreinigungPage() {
 
       {/* 5. VORTEILE */}
       <section className="py-20 px-4 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
+        <div className=" mx-auto">
           <h2 className="text-4xl font-bold text-[#0A2540] text-center mb-16">Warum BGS?</h2>
           <div className="grid md:grid-cols-4 gap-8">
             {[
@@ -156,7 +156,7 @@ export function HallenreinigungPage() {
 
       {/* 6. REFERENZEN */}
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
+        <div className=" mx-auto">
           <h2 className="text-4xl font-bold text-[#0A2540] text-center mb-16">Zufriedene Kunden</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -182,7 +182,7 @@ export function HallenreinigungPage() {
 
       {/* 7. FAQ */}
       <section className="py-20 px-4 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
+        <div className=" mx-auto">
           <h2 className="text-4xl font-bold text-[#0A2540] text-center mb-16">Häufige Fragen</h2>
           <div className="space-y-6">
             {[
@@ -208,7 +208,7 @@ export function HallenreinigungPage() {
 
       {/* 8. CTA */}
       <section className="py-20 px-4 bg-gradient-to-br from-[#0A2540] to-[#1a3a5f] text-white">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className=" mx-auto text-center">
           <TrendingUp className="h-16 w-16 text-[#00D4FF] mx-auto mb-6" />
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Saubere Hallen = Effiziente Prozesse

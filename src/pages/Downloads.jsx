@@ -90,17 +90,17 @@ export function DownloadsPage() {
   return (
     <div className="pt-20">
       <section className="py-20 px-4 bg-gradient-to-br from-[#0A2540] to-[#1a3a5f] text-white">
-        <div className="max-w-5xl mx-auto">
+        <div className=" mx-auto">
           <Badge className="mb-6 bg-white/20 text-white">Downloads & Ressourcen</Badge>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Downloads</h1>
-          <p className="text-xl text-white/90 leading-relaxed max-w-3xl">
+          <p className="text-xl text-white/90 leading-relaxed ">
             Broschüren, Preislisten, Checklisten und weitere nützliche Dokumente zum Download.
           </p>
         </div>
       </section>
 
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
+        <div className=" mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {downloads.map((download) => (
               <Card key={download.id} className="hover:shadow-lg transition-shadow">
@@ -128,7 +128,7 @@ export function DownloadsPage() {
       </section>
 
       <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className=" mx-auto text-center">
           <h2 className="text-3xl font-bold text-[#0A2540] mb-4">Benötigen Sie weitere Informationen?</h2>
           <p className="text-gray-600 mb-8">Kontaktieren Sie uns für individuelle Unterlagen und Angebote.</p>
           <Button size="lg" className="bg-[#0A2540] hover:bg-[#1a3a5f]">

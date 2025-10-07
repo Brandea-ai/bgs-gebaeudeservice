@@ -16,7 +16,7 @@ export default function HomePage() {
           <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px'}}></div>
         </div>
         
-        <div className="max-w-7xl mx-auto relative z-10">
+        <div className=" mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -93,7 +93,7 @@ export default function HomePage() {
 
       {/* Service Tiers Overview */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
+        <div className=" mx-auto">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-[#0A2540]/10 text-[#0A2540]">
               Unsere Service-Kategorien
@@ -101,7 +101,7 @@ export default function HomePage() {
             <h2 className="text-4xl md:text-5xl font-bold text-[#0A2540] mb-4">
               Drei Welten, ein Standard: Perfektion
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600">
               Vom Privatjet bis zur Produktionshalle – wir haben die passende Lösung
             </p>
           </div>
@@ -237,7 +237,7 @@ export default function HomePage() {
 
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#0A2540] to-[#1a3a5f] text-white">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className=" mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Bereit für eine saubere Zukunft?
           </h2>

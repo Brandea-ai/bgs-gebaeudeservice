@@ -8,7 +8,7 @@ export function LuxusimmobilienPage() {
   return (
     <div className="pt-20">
       <section className="py-20 px-4 bg-gradient-to-br from-[#C5A572] to-[#d4b583] text-white">
-        <div className="max-w-6xl mx-auto">
+        <div className=" mx-auto">
           <Badge className="mb-6 bg-white/20 text-white"><Building className="w-4 h-4 mr-2" />PREMIUM IMMOBILIEN-SERVICE</Badge>
           <h1 className="text-5xl md:text-7xl font-bold mb-6">Luxusimmobilien-Reinigung<br/><span className="text-white/90">Exzellenz in jedem Detail</span></h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8">Professionelle Pflege für Villen, Penthäuser und exklusive Immobilien.</p>
@@ -17,7 +17,7 @@ export function LuxusimmobilienPage() {
       </section>
 
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
+        <div className=" mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[#0A2540]">Umfassende Immobilien-Pflege</h2>
           </div>
@@ -30,7 +30,7 @@ export function LuxusimmobilienPage() {
       </section>
 
       <section className="py-20 px-4 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
+        <div className=" mx-auto">
           <h2 className="text-4xl font-bold text-[#0A2540] text-center mb-12">Unser Service-Prozess</h2>
           <div className="grid md:grid-cols-5 gap-6">
             {["Objektbesichtigung", "Pflegeplan erstellen", "Team-Zusammenstellung", "Regelmässige Pflege", "Qualitätssicherung"].map((step, i) => (
@@ -44,7 +44,7 @@ export function LuxusimmobilienPage() {
       </section>
 
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
+        <div className=" mx-auto">
           <h2 className="text-4xl font-bold text-[#0A2540] text-center mb-12">Preismodelle</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -70,7 +70,7 @@ export function LuxusimmobilienPage() {
       </section>
 
       <section className="py-20 px-4 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
+        <div className=" mx-auto">
           <h2 className="text-4xl font-bold text-[#0A2540] text-center mb-12">Ihre Vorteile</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -88,7 +88,7 @@ export function LuxusimmobilienPage() {
       </section>
 
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
+        <div className=" mx-auto">
           <h2 className="text-4xl font-bold text-[#0A2540] text-center mb-12">Kundenstimmen</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -109,7 +109,7 @@ export function LuxusimmobilienPage() {
       </section>
 
       <section className="py-20 px-4 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
+        <div className=" mx-auto">
           <h2 className="text-4xl font-bold text-[#0A2540] text-center mb-12">Häufige Fragen</h2>
           <div className="space-y-6">
             {[
@@ -125,7 +125,7 @@ export function LuxusimmobilienPage() {
       </section>
 
       <section className="py-20 px-4 bg-gradient-to-br from-[#C5A572] to-[#d4b583] text-white">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className=" mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6">Ihre Immobilie verdient Perfektion</h2>
           <p className="text-xl mb-8">Lassen Sie uns Ihre Luxusimmobilie in neuem Glanz erstrahlen.</p>
           <div className="flex gap-4 justify-center">
@@ -143,7 +143,7 @@ export function VIPEventServicePage() {
   return (
     <div className="pt-20">
       <section className="py-20 px-4 bg-gradient-to-br from-[#C5A572] to-[#d4b583] text-white">
-        <div className="max-w-6xl mx-auto">
+        <div className=" mx-auto">
           <Badge className="mb-6 bg-white/20 text-white"><PartyPopper className="w-4 h-4 mr-2" />PREMIUM EVENT-SERVICE</Badge>
           <h1 className="text-5xl md:text-7xl font-bold mb-6">VIP-Event-Service<br/><span className="text-white/90">Perfektion für Ihre Veranstaltung</span></h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8">Professioneller Reinigungs- und Service-Support für exklusive Events.</p>
@@ -152,7 +152,7 @@ export function VIPEventServicePage() {
       </section>
 
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
+        <div className=" mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[#0A2540]">Umfassender Event-Support</h2>
           </div>
@@ -165,7 +165,7 @@ export function VIPEventServicePage() {
       </section>
 
       <section className="py-20 px-4 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
+        <div className=" mx-auto">
           <h2 className="text-4xl font-bold text-[#0A2540] text-center mb-12">Event-Ablauf</h2>
           <div className="grid md:grid-cols-5 gap-6">
             {["Vorbesprechung", "Vor-Event-Setup", "Event-Begleitung", "Laufende Betreuung", "Endreinigung"].map((step, i) => (
@@ -179,7 +179,7 @@ export function VIPEventServicePage() {
       </section>
 
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
+        <div className=" mx-auto">
           <h2 className="text-4xl font-bold text-[#0A2540] text-center mb-12">Event-Pakete</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -205,7 +205,7 @@ export function VIPEventServicePage() {
       </section>
 
       <section className="py-20 px-4 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
+        <div className=" mx-auto">
           <h2 className="text-4xl font-bold text-[#0A2540] text-center mb-12">Warum BGS?</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -223,7 +223,7 @@ export function VIPEventServicePage() {
       </section>
 
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
+        <div className=" mx-auto">
           <h2 className="text-4xl font-bold text-[#0A2540] text-center mb-12">Erfolgreiche Events</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -244,7 +244,7 @@ export function VIPEventServicePage() {
       </section>
 
       <section className="py-20 px-4 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
+        <div className=" mx-auto">
           <h2 className="text-4xl font-bold text-[#0A2540] text-center mb-12">FAQ</h2>
           <div className="space-y-6">
             {[
@@ -260,7 +260,7 @@ export function VIPEventServicePage() {
       </section>
 
       <section className="py-20 px-4 bg-gradient-to-br from-[#C5A572] to-[#d4b583] text-white">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className=" mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6">Ihr Event verdient Perfektion</h2>
           <p className="text-xl mb-8">Lassen Sie uns Ihr Event zum unvergesslichen Erlebnis machen.</p>
           <Button size="lg" className="bg-white text-[#C5A572]"><Phone className="mr-2" />+41 41 320 56 10</Button>

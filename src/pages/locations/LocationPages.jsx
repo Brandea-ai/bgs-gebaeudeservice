@@ -9,16 +9,16 @@ export function ZuerichPage() {
   return (
     <div className="pt-20">
       <section className="py-20 px-4 bg-gradient-to-br from-[#0A2540] to-[#1a3a5f] text-white">
-        <div className="max-w-5xl mx-auto">
+        <div className=" mx-auto">
           <Badge className="mb-6 bg-white/20 text-white"><MapPin className="w-4 h-4 mr-2" />Standort Zürich</Badge>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Gebäudereinigung Zürich</h1>
-          <p className="text-xl text-white/90 leading-relaxed max-w-3xl">
+          <p className="text-xl text-white/90 leading-relaxed ">
             Ihr professioneller Partner für Gebäudereinigung und Facility Management im Raum Zürich.
           </p>
         </div>
       </section>
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
+        <div className=" mx-auto">
           <h2 className="text-4xl font-bold text-[#0A2540] mb-12 text-center">Unsere Services in Zürich</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <Card>
@@ -37,7 +37,7 @@ export function ZuerichPage() {
         </div>
       </section>
       <section className="py-16 px-4 bg-gradient-to-r from-[#0A2540] to-[#1a3a5f] text-white">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className=" mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">Kostenlose Beratung in Zürich</h2>
           <Link to="/kontakt"><Button size="lg" className="bg-white text-[#0A2540] hover:bg-gray-100">Jetzt anfragen<ArrowRight className="ml-2 h-5 w-5" /></Button></Link>
         </div>
@@ -51,16 +51,16 @@ export function LuzernPage() {
   return (
     <div className="pt-20">
       <section className="py-20 px-4 bg-gradient-to-br from-[#0A2540] to-[#1a3a5f] text-white">
-        <div className="max-w-5xl mx-auto">
+        <div className=" mx-auto">
           <Badge className="mb-6 bg-white/20 text-white"><MapPin className="w-4 h-4 mr-2" />Hauptsitz Luzern</Badge>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Gebäudereinigung Luzern</h1>
-          <p className="text-xl text-white/90 leading-relaxed max-w-3xl">
+          <p className="text-xl text-white/90 leading-relaxed ">
             Unser Hauptsitz in Emmenbrücke – Ihr verlässlicher Partner für Gebäudereinigung in Luzern und der Zentralschweiz.
           </p>
         </div>
       </section>
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
+        <div className=" mx-auto">
           <div className="bg-gradient-to-br from-[#0A2540]/5 to-[#0A2540]/10 rounded-3xl p-8 md:p-12 mb-16">
             <div className="flex items-start space-x-6">
               <MapPin className="h-12 w-12 text-[#0A2540] flex-shrink-0" />
@@ -92,7 +92,7 @@ export function LuzernPage() {
         </div>
       </section>
       <section className="py-16 px-4 bg-gradient-to-r from-[#0A2540] to-[#1a3a5f] text-white">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className=" mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">Besuchen Sie uns in Emmenbrücke</h2>
           <Link to="/kontakt"><Button size="lg" className="bg-white text-[#0A2540] hover:bg-gray-100">Termin vereinbaren<ArrowRight className="ml-2 h-5 w-5" /></Button></Link>
         </div>
@@ -106,16 +106,16 @@ export function StGallenPage() {
   return (
     <div className="pt-20">
       <section className="py-20 px-4 bg-gradient-to-br from-[#0A2540] to-[#1a3a5f] text-white">
-        <div className="max-w-5xl mx-auto">
+        <div className=" mx-auto">
           <Badge className="mb-6 bg-white/20 text-white"><MapPin className="w-4 h-4 mr-2" />Standort St. Gallen</Badge>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Gebäudereinigung St. Gallen</h1>
-          <p className="text-xl text-white/90 leading-relaxed max-w-3xl">
+          <p className="text-xl text-white/90 leading-relaxed ">
             Ihr zuverlässiger Partner für Gebäudereinigung und Facility Management in St. Gallen und der Ostschweiz.
           </p>
         </div>
       </section>
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
+        <div className=" mx-auto">
           <h2 className="text-4xl font-bold text-[#0A2540] mb-12 text-center">Unsere Services in St. Gallen</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <Card>
@@ -134,7 +134,7 @@ export function StGallenPage() {
         </div>
       </section>
       <section className="py-16 px-4 bg-gradient-to-r from-[#0A2540] to-[#1a3a5f] text-white">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className=" mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">Kostenlose Beratung in St. Gallen</h2>
           <Link to="/kontakt"><Button size="lg" className="bg-white text-[#0A2540] hover:bg-gray-100">Jetzt anfragen<ArrowRight className="ml-2 h-5 w-5" /></Button></Link>
         </div>

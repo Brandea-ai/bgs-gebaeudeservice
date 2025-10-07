@@ -10,14 +10,14 @@ export function UnterhaltsreinigungPage() {
     <>
       <div className="pt-20">
         <section className="py-20 px-4 bg-gradient-to-br from-[#10B981] to-[#059669] text-white">
-          <div className="max-w-5xl mx-auto">
+          <div className=" mx-auto">
             <Badge className="mb-6 bg-white/20 text-white"><Briefcase className="w-4 h-4 mr-2" />Essentiell</Badge>
             <h1 className="text-5xl font-bold mb-6">Unterhaltsreinigung</h1>
             <p className="text-xl text-white/90">Regelmäßige, zuverlässige Reinigung für Büros, Praxen und KMU.</p>
           </div>
         </section>
         <section className="py-20 px-4 bg-white">
-          <div className="max-w-6xl mx-auto">
+          <div className=" mx-auto">
             <div className="grid md:grid-cols-3 gap-8 mb-16">
               <Card><CardHeader><Briefcase className="h-10 w-10 text-[#10B981] mb-4" /><CardTitle>Büroreinigung</CardTitle></CardHeader>
               <CardContent><ul className="space-y-2 text-gray-600">
@@ -48,7 +48,7 @@ export function UnterhaltsreinigungPage() {
           </div>
         </section>
         <section className="py-16 px-4 bg-gradient-to-r from-[#10B981] to-[#059669] text-white">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className=" mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Zuverlässig sauber, jeden Tag</h2>
             <Link to="/kontakt"><Button size="lg" className="bg-white text-[#10B981] hover:bg-gray-100">Angebot anfragen<ArrowRight className="ml-2 h-5 w-5" /></Button></Link>
           </div>
@@ -64,14 +64,14 @@ export function FensterreinigungPage() {
     <>
       <div className="pt-20">
         <section className="py-20 px-4 bg-gradient-to-br from-[#10B981] to-[#059669] text-white">
-          <div className="max-w-5xl mx-auto">
+          <div className=" mx-auto">
             <Badge className="mb-6 bg-white/20 text-white"><Droplets className="w-4 h-4 mr-2" />Essentiell</Badge>
             <h1 className="text-5xl font-bold mb-6">Fensterreinigung</h1>
             <p className="text-xl text-white/90">Streifenfreie Sauberkeit für Fenster, Glasfassaden und Wintergärten.</p>
           </div>
         </section>
         <section className="py-20 px-4 bg-white">
-          <div className="max-w-6xl mx-auto">
+          <div className=" mx-auto">
             <div className="grid md:grid-cols-3 gap-8 mb-16">
               <Card><CardHeader><Droplets className="h-10 w-10 text-[#10B981] mb-4" /><CardTitle>Privathaushalt</CardTitle></CardHeader>
               <CardContent><ul className="space-y-2 text-gray-600">
@@ -102,7 +102,7 @@ export function FensterreinigungPage() {
           </div>
         </section>
         <section className="py-16 px-4 bg-gradient-to-r from-[#10B981] to-[#059669] text-white">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className=" mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Kristallklare Fenster garantiert</h2>
             <Link to="/kontakt"><Button size="lg" className="bg-white text-[#10B981] hover:bg-gray-100">Jetzt anfragen<ArrowRight className="ml-2 h-5 w-5" /></Button></Link>
           </div>
@@ -118,14 +118,14 @@ export function GartenservicePage() {
   return (
     <div className="pt-20">
       <section className="py-20 px-4 bg-gradient-to-br from-[#10B981] to-[#059669] text-white">
-        <div className="max-w-5xl mx-auto">
+        <div className=" mx-auto">
           <Badge className="mb-6 bg-white/20 text-white">Essentiell</Badge>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Gartenservice</h1>
           <p className="text-xl text-white/90">Professionelle Gartenpflege das ganze Jahr über.</p>
         </div>
       </section>
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
+        <div className=" mx-auto">
           <h2 className="text-4xl font-bold text-[#0A2540] mb-12">Unsere Gartenleistungen</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <Card><CardHeader><CardTitle>Rasenpflege</CardTitle></CardHeader><CardContent><p>Mähen, Düngen, Vertikutieren.</p></CardContent></Card>
@@ -143,14 +143,14 @@ export function GrundreinigungPage() {
   return (
     <div className="pt-20">
       <section className="py-20 px-4 bg-gradient-to-br from-[#10B981] to-[#059669] text-white">
-        <div className="max-w-5xl mx-auto">
+        <div className=" mx-auto">
           <Badge className="mb-6 bg-white/20 text-white">Essentiell</Badge>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Grundreinigung</h1>
           <p className="text-xl text-white/90">Intensive Tiefenreinigung für alle Bereiche.</p>
         </div>
       </section>
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
+        <div className=" mx-auto">
           <h2 className="text-4xl font-bold text-[#0A2540] mb-12">Was wir reinigen</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <Card><CardHeader><CardTitle>Böden</CardTitle></CardHeader><CardContent><p>Alle Bodenbeläge intensiv gereinigt.</p></CardContent></Card>
@@ -167,14 +167,14 @@ export function HausmeisterservicePage() {
   return (
     <div className="pt-20">
       <section className="py-20 px-4 bg-gradient-to-br from-[#10B981] to-[#059669] text-white">
-        <div className="max-w-5xl mx-auto">
+        <div className=" mx-auto">
           <Badge className="mb-6 bg-white/20 text-white">Essentiell</Badge>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Hausmeisterservice</h1>
           <p className="text-xl text-white/90">Ihr zuverlässiger Hausmeister für alle Aufgaben.</p>
         </div>
       </section>
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
+        <div className=" mx-auto">
           <h2 className="text-4xl font-bold text-[#0A2540] mb-12">Unsere Hausmeister-Leistungen</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <Card><CardHeader><CardTitle>Kontrolldienst</CardTitle></CardHeader><CardContent><p>Regelmässige Objektkontrollen.</p></CardContent></Card>
@@ -192,14 +192,14 @@ export function BueroreinigungPage() {
   return (
     <div className="pt-20">
       <section className="py-20 px-4 bg-gradient-to-br from-[#10B981] to-[#059669] text-white">
-        <div className="max-w-5xl mx-auto">
+        <div className=" mx-auto">
           <Badge className="mb-6 bg-white/20 text-white">Essentiell</Badge>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Büroreinigung</h1>
           <p className="text-xl text-white/90">Professionelle Reinigung für Ihr Büro – täglich, wöchentlich oder nach Bedarf.</p>
         </div>
       </section>
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
+        <div className=" mx-auto">
           <h2 className="text-4xl font-bold text-[#0A2540] mb-12">Was wir reinigen</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <Card><CardHeader><CardTitle>Arbeitsplätze</CardTitle></CardHeader><CardContent><p>Schreibtische, Stühle, Regale.</p></CardContent></Card>

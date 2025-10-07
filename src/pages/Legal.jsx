@@ -6,13 +6,13 @@ export function ImpressumPage() {
   return (
     <div className="pt-20">
       <section className="py-20 px-4 bg-gradient-to-br from-[#0A2540] to-[#1a3a5f] text-white">
-        <div className="max-w-5xl mx-auto">
+        <div className=" mx-auto">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Impressum</h1>
         </div>
       </section>
 
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-4xl mx-auto">
+        <div className=" mx-auto">
           <Card className="mb-8">
             <CardContent className="p-8">
               <h2 className="text-2xl font-bold text-[#0A2540] mb-6">Angaben gemäss Art. 8 UWG</h2>
@@ -115,13 +115,13 @@ export function DatenschutzPage() {
   return (
     <div className="pt-20">
       <section className="py-20 px-4 bg-gradient-to-br from-[#0A2540] to-[#1a3a5f] text-white">
-        <div className="max-w-5xl mx-auto">
+        <div className=" mx-auto">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Datenschutzerklärung</h1>
         </div>
       </section>
 
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-4xl mx-auto">
+        <div className=" mx-auto">
           <Card className="mb-8">
             <CardContent className="p-8">
               <h2 className="text-2xl font-bold text-[#0A2540] mb-6">Allgemeiner Hinweis und Pflichtinformationen</h2>

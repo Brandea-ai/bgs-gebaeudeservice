@@ -46,13 +46,13 @@ export function ReferenzenPage() {
       
       <div className="pt-20">
         <section className="py-20 px-4 bg-gradient-to-br from-[#0A2540] to-[#1a3a5f] text-white">
-          <div className="max-w-5xl mx-auto text-center">
+          <div className=" mx-auto text-center">
             <Badge className="mb-6 bg-white/20 text-white"><Star className="w-4 h-4 mr-2" />Referenzen</Badge>
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Unsere Kunden</h1>
-            <p className="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-xl text-white/90 leading-relaxed">
               Über 500 zufriedene Kunden aus Industrie, Healthcare, Hospitality und Gewerbe vertrauen auf unsere Dienstleistungen.
             </p>
-            <div className="grid grid-cols-3 gap-8 mt-12 max-w-2xl mx-auto">
+            <div className="grid grid-cols-3 gap-8 mt-12">
               <div><p className="text-4xl font-bold mb-2">500+</p><p className="text-sm text-white/80">Kunden</p></div>
               <div><p className="text-4xl font-bold mb-2">98%</p><p className="text-sm text-white/80">Zufriedenheit</p></div>
               <div><p className="text-4xl font-bold mb-2">25+</p><p className="text-sm text-white/80">Jahre</p></div>
@@ -61,7 +61,7 @@ export function ReferenzenPage() {
         </section>
 
         <section className="py-20 px-4 bg-white">
-          <div className="max-w-6xl mx-auto">
+          <div className=" mx-auto">
             <h2 className="text-4xl font-bold text-[#0A2540] mb-12 text-center">Ausgewählte Referenzen</h2>
             <div className="grid md:grid-cols-2 gap-8 mb-16">
               {references.map((ref, index) => (
@@ -107,7 +107,7 @@ export function ReferenzenPage() {
         </section>
 
         <section className="py-16 px-4 bg-gradient-to-r from-[#0A2540] to-[#1a3a5f] text-white">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className=" mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Werden Sie Teil unserer Erfolgsgeschichte</h2>
             <p className="text-xl mb-6 text-white/90">Kontaktieren Sie uns für eine unverbindliche Beratung</p>
             <Link to="/kontakt"><Button size="lg" className="bg-white text-[#0A2540] hover:bg-gray-100">Jetzt anfragen<ArrowRight className="ml-2 h-5 w-5" /></Button></Link>
@@ -132,10 +132,10 @@ export function KarrierePage() {
       
       <div className="pt-20">
         <section className="py-20 px-4 bg-gradient-to-br from-[#0A2540] to-[#1a3a5f] text-white">
-          <div className="max-w-5xl mx-auto text-center">
+          <div className=" mx-auto text-center">
             <Badge className="mb-6 bg-white/20 text-white"><Briefcase className="w-4 h-4 mr-2" />Karriere</Badge>
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Arbeiten bei BGS</h1>
-            <p className="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-xl text-white/90 leading-relaxed">
               Werde Teil eines erfolgreichen Teams mit über 150 Mitarbeitenden. 
               Wir bieten faire Löhne, Weiterbildung und echte Aufstiegschancen.
             </p>
@@ -143,7 +143,7 @@ export function KarrierePage() {
         </section>
 
         <section className="py-20 px-4 bg-white">
-          <div className="max-w-6xl mx-auto">
+          <div className=" mx-auto">
             <h2 className="text-4xl font-bold text-[#0A2540] mb-12 text-center">Warum BGS?</h2>
             <div className="grid md:grid-cols-3 gap-8 mb-16">
               <Card><CardHeader><Heart className="h-10 w-10 text-[#0A2540] mb-4" /><CardTitle>Faire Konditionen</CardTitle></CardHeader>
@@ -194,7 +194,7 @@ export function KarrierePage() {
 
             <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 md:p-12 text-center">
               <h3 className="text-3xl font-bold text-[#0A2540] mb-4">Initiativbewerbung</h3>
-              <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
+              <p className="text-gray-700 mb-6">
                 Keine passende Stelle gefunden? Sende uns deine Initiativbewerbung – wir freuen uns auf dich!
               </p>
               <Link to="/kontakt"><Button size="lg">Initiativ bewerben<ArrowRight className="ml-2 h-5 w-5" /></Button></Link>
@@ -248,16 +248,16 @@ export function FAQPage() {
       
       <div className="pt-20">
         <section className="py-20 px-4 bg-gradient-to-br from-[#0A2540] to-[#1a3a5f] text-white">
-          <div className="max-w-5xl mx-auto text-center">
+          <div className=" mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Häufige Fragen</h1>
-            <p className="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-xl text-white/90 leading-relaxed">
               Hier finden Sie Antworten auf die häufigsten Fragen rund um unsere Dienstleistungen.
             </p>
           </div>
         </section>
 
         <section className="py-20 px-4 bg-white">
-          <div className="max-w-4xl mx-auto">
+          <div className=" mx-auto">
             {faqs.map((category, catIndex) => (
               <div key={catIndex} className="mb-12">
                 <h2 className="text-3xl font-bold text-[#0A2540] mb-6">{category.category}</h2>
@@ -278,7 +278,7 @@ export function FAQPage() {
 
             <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 md:p-12 text-center mt-12">
               <h3 className="text-3xl font-bold text-[#0A2540] mb-4">Noch Fragen?</h3>
-              <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
+              <p className="text-gray-700 mb-6">
                 Kontaktieren Sie uns – wir helfen Ihnen gerne weiter!
               </p>
               <div className="flex gap-4 justify-center">

@@ -13,7 +13,7 @@ export function YachtReinigungPage() {
     <div className="pt-20">
       {/* 1. HERO */}
       <section className="py-20 px-4 bg-gradient-to-br from-[#C5A572] via-[#d4b583] to-[#C5A572] text-white">
-        <div className="max-w-6xl mx-auto">
+        <div className=" mx-auto">
           <Badge className="mb-6 bg-white/20 text-white"><Ship className="w-4 h-4 mr-2" />PREMIUM YACHT-SERVICE</Badge>
           <h1 className="text-5xl md:text-7xl font-bold mb-6">Yacht-Reinigung<br/><span className="text-white/90">Perfektion auf See</span></h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8">Professionelle Reinigung für Motor- und Segelyachten. Von der Kajüte bis zum Deck.</p>
@@ -26,7 +26,7 @@ export function YachtReinigungPage() {
 
       {/* 2. LEISTUNGEN */}
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
+        <div className=" mx-auto">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-[#C5A572] text-white">Unsere Leistungen</Badge>
             <h2 className="text-4xl font-bold text-[#0A2540] mb-6">Komplette Yacht-Pflege</h2>
@@ -53,7 +53,7 @@ export function YachtReinigungPage() {
 
       {/* 3. PROZESS */}
       <section className="py-20 px-4 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
+        <div className=" mx-auto">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-[#C5A572] text-white">Unser Prozess</Badge>
             <h2 className="text-4xl font-bold text-[#0A2540] mb-6">In 5 Schritten zur sauberen Yacht</h2>
@@ -71,7 +71,7 @@ export function YachtReinigungPage() {
 
       {/* 4. PREISE */}
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
+        <div className=" mx-auto">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-[#C5A572] text-white">Preise</Badge>
             <h2 className="text-4xl font-bold text-[#0A2540] mb-6">Transparente Preisgestaltung</h2>
@@ -103,7 +103,7 @@ export function YachtReinigungPage() {
 
       {/* 5. VORTEILE */}
       <section className="py-20 px-4 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
+        <div className=" mx-auto">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-[#C5A572] text-white">Ihre Vorteile</Badge>
             <h2 className="text-4xl font-bold text-[#0A2540] mb-6">Warum BGS für Ihre Yacht?</h2>
@@ -131,7 +131,7 @@ export function YachtReinigungPage() {
 
       {/* 6. TESTIMONIALS */}
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
+        <div className=" mx-auto">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-[#C5A572] text-white">Kundenstimmen</Badge>
             <h2 className="text-4xl font-bold text-[#0A2540] mb-6">Zufriedene Yacht-Besitzer</h2>
@@ -156,7 +156,7 @@ export function YachtReinigungPage() {
 
       {/* 7. FAQ */}
       <section className="py-20 px-4 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
+        <div className=" mx-auto">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-[#C5A572] text-white">FAQ</Badge>
             <h2 className="text-4xl font-bold text-[#0A2540] mb-6">Häufige Fragen</h2>
@@ -179,7 +179,7 @@ export function YachtReinigungPage() {
 
       {/* 8. CTA */}
       <section className="py-20 px-4 bg-gradient-to-br from-[#C5A572] to-[#d4b583] text-white">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className=" mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6">Ihre Yacht verdient das Beste!</h2>
           <p className="text-xl mb-8">Kontaktieren Sie uns für ein massgeschneidertes Angebot.</p>
           <div className="flex gap-4 justify-center">
@@ -198,7 +198,7 @@ export function PrivateHousekeepingPage() {
     <div className="pt-20">
       {/* 1. HERO */}
       <section className="py-20 px-4 bg-gradient-to-br from-[#C5A572] via-[#d4b583] to-[#C5A572] text-white">
-        <div className="max-w-6xl mx-auto">
+        <div className=" mx-auto">
           <Badge className="mb-6 bg-white/20 text-white"><Home className="w-4 h-4 mr-2" />PREMIUM HOUSEKEEPING</Badge>
           <h1 className="text-5xl md:text-7xl font-bold mb-6">Private Housekeeping<br/><span className="text-white/90">Ihr persönlicher Butler-Service</span></h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8">Diskreter, professioneller Housekeeping-Service für anspruchsvolle Privathaushalte.</p>
@@ -208,7 +208,7 @@ export function PrivateHousekeepingPage() {
 
       {/* 2. LEISTUNGEN */}
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
+        <div className=" mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[#0A2540] mb-6">Umfassender Haushaltsservice</h2>
           </div>
@@ -225,7 +225,7 @@ export function PrivateHousekeepingPage() {
 
       {/* 3-8: Similar structure with 6 more sections */}
       <section className="py-20 px-4 bg-gray-50">
-        <div className="max-w-6xl mx-auto text-center">
+        <div className=" mx-auto text-center">
           <h2 className="text-4xl font-bold text-[#0A2540] mb-6">Flexible Einsatzmodelle</h2>
           <div className="grid md:grid-cols-3 gap-8 mt-12">
             {[
@@ -248,7 +248,7 @@ export function PrivateHousekeepingPage() {
 
       {/* Remaining sections 4-8 with similar quality content */}
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
+        <div className=" mx-auto">
           <h2 className="text-4xl font-bold text-[#0A2540] text-center mb-12">Ihre Vorteile</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -267,7 +267,7 @@ export function PrivateHousekeepingPage() {
 
       {/* CTA */}
       <section className="py-20 px-4 bg-gradient-to-br from-[#C5A572] to-[#d4b583] text-white">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className=" mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6">Mehr Zeit für das Wesentliche</h2>
           <p className="text-xl mb-8">Lassen Sie uns Ihren Haushalt führen – diskret und professionell.</p>
           <Button size="lg" className="bg-white text-[#C5A572]"><Phone className="mr-2" />+41 41 320 56 10</Button>

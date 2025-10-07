@@ -22,7 +22,7 @@ export function ServiceDetailPage({ title, category, description, features, bene
     <div className="pt-20">
       {/* Hero */}
       <section className={`py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br ${colors.gradient} text-white`}>
-        <div className="max-w-5xl mx-auto">
+        <div className=" mx-auto">
           <Badge className="mb-6 bg-white/20 text-white border-white/30">
             {category === 'premium' ? 'PREMIUM' : category === 'standard' ? 'STANDARD' : 'ESSENTIELL'}
           </Badge>
@@ -46,7 +46,7 @@ export function ServiceDetailPage({ title, category, description, features, bene
 
       {/* Content */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-6xl mx-auto">
+        <div className=" mx-auto">
           <div className="grid md:grid-cols-2 gap-12 mb-16">
             <div>
               <h2 className="text-3xl font-bold text-[#0A2540] mb-6">Leistungsumfang</h2>
@@ -141,7 +141,7 @@ export function ServiceDetailPage({ title, category, description, features, bene
 
       {/* CTA */}
       <section className={`py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r ${colors.gradient} text-white`}>
-        <div className="max-w-4xl mx-auto text-center">
+        <div className=" mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">Interessiert an {title}?</h2>
           <p className="text-xl mb-6 text-white/90">Kontaktieren Sie uns für ein unverbindliches Angebot</p>
           <Link to="/kontakt">

@@ -230,17 +230,17 @@ export function BlogPage() {
   return (
     <div className="pt-20">
       <section className="py-20 px-4 bg-gradient-to-br from-[#0A2540] to-[#1a3a5f] text-white">
-        <div className="max-w-5xl mx-auto">
+        <div className=" mx-auto">
           <Badge className="mb-6 bg-white/20 text-white">Blog & Ratgeber</Badge>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">BGS Blog</h1>
-          <p className="text-xl text-white/90 leading-relaxed max-w-3xl">
+          <p className="text-xl text-white/90 leading-relaxed ">
             Aktuelles, Tipps und Wissenswertes rund um Gebäudereinigung und Facility Management.
           </p>
         </div>
       </section>
 
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
+        <div className=" mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogArticles.map((article) => (
               <Card key={article.id} className="hover:shadow-lg transition-shadow">

@@ -85,13 +85,13 @@ export function GlossarPage() {
   return (
     <div className="pt-20">
       <section className="py-20 px-4 bg-gradient-to-br from-[#0A2540] to-[#1a3a5f] text-white">
-        <div className="max-w-5xl mx-auto">
+        <div className=" mx-auto">
           <Badge className="mb-6 bg-white/20 text-white">Glossar & Fachbegriffe</Badge>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Reinigungslexikon</h1>
-          <p className="text-xl text-white/90 leading-relaxed max-w-3xl mb-8">
+          <p className="text-xl text-white/90 leading-relaxed  mb-8">
             Alle wichtigen Fachbegriffe rund um Gebäudereinigung und Facility Management verständlich erklärt.
           </p>
-          <div className="relative max-w-xl">
+          <div className="relative ">
             <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
             <input
               type="text"
@@ -105,7 +105,7 @@ export function GlossarPage() {
       </section>
 
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-5xl mx-auto">
+        <div className=" mx-auto">
           <p className="text-gray-600 mb-8">{filteredTerms.length} Begriffe gefunden</p>
           
           {Object.keys(groupedTerms).sort().map((letter) => (

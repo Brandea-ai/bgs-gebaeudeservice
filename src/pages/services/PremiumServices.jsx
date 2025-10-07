@@ -16,13 +16,13 @@ export function PrivatjetReinigungPage() {
       <div className="pt-20">
         {/* Hero */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#C5A572] to-[#d4b583] text-white">
-          <div className="max-w-5xl mx-auto">
+          <div className=" mx-auto">
             <Badge className="mb-6 bg-white/20 text-white border-white/30">
               <Sparkles className="w-4 h-4 mr-2" />
               Premium Service
             </Badge>
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Privatjet-Reinigung</h1>
-            <p className="text-xl text-white/90 leading-relaxed max-w-3xl">
+            <p className="text-xl text-white/90 leading-relaxed ">
               Diskrete, professionelle Reinigung Ihres Privatjets nach höchsten Luftfahrt-Standards. 
               Von der Kabine bis zum Cockpit – wir sorgen für makellosen Glanz.
             </p>
@@ -43,7 +43,7 @@ export function PrivatjetReinigungPage() {
 
         {/* Features */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-          <div className="max-w-6xl mx-auto">
+          <div className=" mx-auto">
             <h2 className="text-4xl font-bold text-[#0A2540] mb-12 text-center">Unsere Leistungen</h2>
             <div className="grid md:grid-cols-3 gap-8 mb-16">
               <Card>
@@ -150,7 +150,7 @@ export function PrivatjetReinigungPage() {
             {/* FAQ */}
             <div>
               <h3 className="text-3xl font-bold text-[#0A2540] mb-8 text-center">Häufige Fragen</h3>
-              <div className="space-y-4 max-w-3xl mx-auto">
+              <div className="space-y-4">
                 {[
                   {
                     q: 'Wie lange dauert eine Privatjet-Reinigung?',
@@ -185,7 +185,7 @@ export function PrivatjetReinigungPage() {
 
         {/* CTA */}
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#C5A572] to-[#d4b583] text-white">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className=" mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Bereit für makellosen Service?</h2>
             <p className="text-xl mb-6 text-white/90">Kontaktieren Sie uns für ein unverbindliches Angebot</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -214,13 +214,13 @@ export function YachtReinigungPage() {
       
       <div className="pt-20">
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#C5A572] to-[#d4b583] text-white">
-          <div className="max-w-5xl mx-auto">
+          <div className=" mx-auto">
             <Badge className="mb-6 bg-white/20 text-white border-white/30">
               <Anchor className="w-4 h-4 mr-2" />
               Premium Service
             </Badge>
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Yacht-Reinigung</h1>
-            <p className="text-xl text-white/90 leading-relaxed max-w-3xl">
+            <p className="text-xl text-white/90 leading-relaxed ">
               Professionelle Pflege für Ihre Yacht am Zürichsee, Vierwaldstättersee und weiteren Schweizer Gewässern. 
               Von der Teakholz-Pflege bis zur Unterwasserreinigung.
             </p>
@@ -228,7 +228,7 @@ export function YachtReinigungPage() {
         </section>
 
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-          <div className="max-w-6xl mx-auto">
+          <div className=" mx-auto">
             <h2 className="text-4xl font-bold text-[#0A2540] mb-12 text-center">Unsere Yacht-Services</h2>
             <div className="grid md:grid-cols-3 gap-8 mb-16">
               <Card>
@@ -306,7 +306,7 @@ export function YachtReinigungPage() {
         </section>
 
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#C5A572] to-[#d4b583] text-white">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className=" mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Ihre Yacht in besten Händen</h2>
             <p className="text-xl mb-6 text-white/90">Kontaktieren Sie uns für ein unverbindliches Angebot</p>
             <Link to="/kontakt">
@@ -332,13 +332,13 @@ export function PrivateHousekeepingPage() {
       
       <div className="pt-20">
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#C5A572] to-[#d4b583] text-white">
-          <div className="max-w-5xl mx-auto">
+          <div className=" mx-auto">
             <Badge className="mb-6 bg-white/20 text-white border-white/30">
               <HomeIcon className="w-4 h-4 mr-2" />
               Premium Service
             </Badge>
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Private Housekeeping</h1>
-            <p className="text-xl text-white/90 leading-relaxed max-w-3xl">
+            <p className="text-xl text-white/90 leading-relaxed ">
               Diskreter, professioneller Housekeeping-Service für anspruchsvolle Privatresidenzen. 
               Von der täglichen Pflege bis zum Full-Service-Management Ihres Zuhauses.
             </p>
@@ -346,7 +346,7 @@ export function PrivateHousekeepingPage() {
         </section>
 
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-          <div className="max-w-6xl mx-auto">
+          <div className=" mx-auto">
             <h2 className="text-4xl font-bold text-[#0A2540] mb-12 text-center">Unsere Housekeeping-Services</h2>
             <div className="grid md:grid-cols-3 gap-8 mb-16">
               <Card>
@@ -423,7 +423,7 @@ export function PrivateHousekeepingPage() {
         </section>
 
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#C5A572] to-[#d4b583] text-white">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className=" mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Diskretion und Professionalität garantiert</h2>
             <p className="text-xl mb-6 text-white/90">Kontaktieren Sie uns für ein vertrauliches Gespräch</p>
             <Link to="/kontakt">
@@ -446,13 +446,13 @@ export function LuxusimmobilienPage() {
       
       <div className="pt-20">
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#C5A572] to-[#d4b583] text-white">
-          <div className="max-w-5xl mx-auto">
+          <div className=" mx-auto">
             <Badge className="mb-6 bg-white/20 text-white border-white/30">
               <Building2 className="w-4 h-4 mr-2" />
               Premium Service
             </Badge>
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Luxusimmobilien-Service</h1>
-            <p className="text-xl text-white/90 leading-relaxed max-w-3xl">
+            <p className="text-xl text-white/90 leading-relaxed ">
               Massgeschneiderte Reinigung und Pflege für Penthouses, Villen und Chalets. 
               Höchste Standards für aussergewöhnliche Immobilien.
             </p>
@@ -460,7 +460,7 @@ export function LuxusimmobilienPage() {
         </section>
 
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-          <div className="max-w-6xl mx-auto">
+          <div className=" mx-auto">
             <h2 className="text-4xl font-bold text-[#0A2540] mb-12 text-center">Unsere Leistungen</h2>
             <div className="grid md:grid-cols-3 gap-8 mb-16">
               <Card>
@@ -537,7 +537,7 @@ export function LuxusimmobilienPage() {
         </section>
 
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#C5A572] to-[#d4b583] text-white">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className=" mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Perfektion für aussergewöhnliche Immobilien</h2>
             <p className="text-xl mb-6 text-white/90">Lassen Sie uns Ihre Luxusimmobilie in neuem Glanz erstrahlen</p>
             <Link to="/kontakt">
@@ -560,13 +560,13 @@ export function VIPEventServicePage() {
       
       <div className="pt-20">
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#C5A572] to-[#d4b583] text-white">
-          <div className="max-w-5xl mx-auto">
+          <div className=" mx-auto">
             <Badge className="mb-6 bg-white/20 text-white border-white/30">
               <Sparkles className="w-4 h-4 mr-2" />
               Premium Service
             </Badge>
             <h1 className="text-5xl md:text-6xl font-bold mb-6">VIP-Event-Service</h1>
-            <p className="text-xl text-white/90 leading-relaxed max-w-3xl">
+            <p className="text-xl text-white/90 leading-relaxed ">
               Professioneller Full-Service für exklusive Events, Galas und Corporate-Veranstaltungen. 
               Von der Vorbereitung bis zur Nachbereitung – diskret und perfekt organisiert.
             </p>
@@ -574,7 +574,7 @@ export function VIPEventServicePage() {
         </section>
 
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-          <div className="max-w-6xl mx-auto">
+          <div className=" mx-auto">
             <h2 className="text-4xl font-bold text-[#0A2540] mb-12 text-center">Unsere Event-Services</h2>
             <div className="grid md:grid-cols-3 gap-8 mb-16">
               <Card>
@@ -651,7 +651,7 @@ export function VIPEventServicePage() {
         </section>
 
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#C5A572] to-[#d4b583] text-white">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className=" mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Ihr Event in perfekten Händen</h2>
             <p className="text-xl mb-6 text-white/90">Kontaktieren Sie uns für eine individuelle Event-Planung</p>
             <Link to="/kontakt">
