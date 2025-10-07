@@ -28,7 +28,7 @@ export function PrivatjetReinigungPage() {
 
         {/* Content */}
         <div className="relative z-10 w-full px-6 sm:px-12 lg:px-24 py-32">
-          <div className="max-w-7xl mx-auto text-center">
+          <div className="text-center">
             <Badge className="mb-8 bg-gradient-to-r from-amber-500 to-amber-600 text-white border-0 text-base px-8 py-3 rounded-full shadow-2xl shadow-amber-500/50">
               <Sparkles className="w-5 h-5 mr-2 inline-block" />
               PREMIUM LUXUS-SERVICE
@@ -43,7 +43,7 @@ export function PrivatjetReinigungPage() {
               </span>
             </h1>
 
-            <p className="text-2xl sm:text-3xl text-gray-100 max-w-4xl mx-auto mb-16 leading-relaxed font-light drop-shadow-lg">
+            <p className="text-2xl sm:text-3xl text-gray-100 mb-16 leading-relaxed font-light drop-shadow-lg">
               Diskreter, professioneller Reinigungsservice für Privatjets und Business-Jets.
               <span className="block mt-2 font-semibold text-white">Höchste Standards für anspruchsvolle Kunden.</span>
             </p>
@@ -60,7 +60,7 @@ export function PrivatjetReinigungPage() {
             </div>
 
             {/* Trust Badges */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {[
                 { icon: Shield, text: '100% Diskret' },
                 { icon: Award, text: 'Zertifiziert' },
@@ -83,7 +83,7 @@ export function PrivatjetReinigungPage() {
           <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgb(245 158 11 / 0.3) 1px, transparent 0)', backgroundSize: '40px 40px' }}></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto">
+        <div className="relative z-10">
           <div className="text-center mb-20">
             <Badge className="mb-6 bg-gradient-to-r from-amber-100 to-amber-200 text-amber-900 border-0 px-8 py-3 rounded-full text-sm font-semibold uppercase tracking-wider">
               Unsere Leistungen
@@ -92,7 +92,7 @@ export function PrivatjetReinigungPage() {
               Umfassende<br />
               <span className="bg-gradient-to-r from-amber-600 via-yellow-600 to-amber-700 bg-clip-text text-transparent">Jet-Reinigung</span>
             </h2>
-            <p className="text-2xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed">
+            <p className="text-2xl text-gray-600 font-light leading-relaxed">
               Von der Kabine bis zum Cockpit – wir reinigen jeden Bereich Ihres Jets
               mit höchster Präzision und Diskretion.
             </p>
@@ -128,7 +128,7 @@ export function PrivatjetReinigungPage() {
           <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '48px 48px' }}></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto">
+        <div className="relative z-10">
           <div className="text-center mb-20">
             <Badge className="mb-6 bg-white/10 backdrop-blur-sm text-white border-white/20 px-8 py-3 rounded-full">
               Unser Prozess
@@ -137,7 +137,7 @@ export function PrivatjetReinigungPage() {
               So läuft die<br />
               <span className="bg-gradient-to-r from-amber-400 to-yellow-300 bg-clip-text text-transparent">Reinigung ab</span>
             </h2>
-            <p className="text-2xl text-gray-300 max-w-3xl mx-auto font-light">
+            <p className="text-2xl text-gray-300 font-light">
               Professionell, diskret und effizient – in 5 Schritten zum perfekten Ergebnis.
             </p>
           </div>
@@ -170,7 +170,6 @@ export function PrivatjetReinigungPage() {
 
       {/* 4. PREISE/PAKETE - PRICING CARDS */}
       <section className="relative py-32 px-6 sm:px-12 lg:px-24 bg-gradient-to-b from-white via-gray-50 to-white">
-        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <Badge className="mb-6 bg-gradient-to-r from-green-100 to-green-200 text-green-900 border-0 px-8 py-3 rounded-full text-sm font-semibold uppercase tracking-wider">
               Transparente Preise
@@ -179,12 +178,12 @@ export function PrivatjetReinigungPage() {
               Individuelle<br />
               <span className="bg-gradient-to-r from-green-600 via-emerald-600 to-green-700 bg-clip-text text-transparent">Preisgestaltung</span>
             </h2>
-            <p className="text-2xl text-gray-600 max-w-3xl mx-auto font-light">
+            <p className="text-2xl text-gray-600 font-light">
               Massgeschneiderte Angebote basierend auf Jet-Typ und Umfang der Reinigung.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-3 gap-10">
             {[
               {
                 name: "Light Jet",
@@ -278,7 +277,6 @@ export function PrivatjetReinigungPage() {
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
-        </div>
       </section>
 
       {/* 5. VORTEILE - ACCORDION STYLE */}
@@ -287,7 +285,7 @@ export function PrivatjetReinigungPage() {
           <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '48px 48px' }}></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto">
+        <div className="relative z-10">
           <div className="grid lg:grid-cols-2 gap-20 items-start">
             {/* Left - Content */}
             <div>
@@ -387,7 +385,6 @@ export function PrivatjetReinigungPage() {
 
       {/* 6. TESTIMONIALS - CAROUSEL STYLE */}
       <section className="relative py-32 px-6 sm:px-12 lg:px-24 bg-gradient-to-b from-white via-gray-50 to-white">
-        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <Badge className="mb-6 bg-gradient-to-r from-purple-100 to-purple-200 text-purple-900 border-0 px-8 py-3 rounded-full text-sm font-semibold uppercase tracking-wider">
               Kundenstimmen
@@ -457,12 +454,10 @@ export function PrivatjetReinigungPage() {
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-2 transition-transform" />
             </Button>
           </div>
-        </div>
       </section>
 
       {/* 7. FAQ - ACCORDION */}
       <section className="relative py-32 px-6 sm:px-12 lg:px-24 bg-gradient-to-b from-gray-50 via-white to-gray-50">
-        <div className="max-w-4xl mx-auto">
           <div className="text-center mb-20">
             <Badge className="mb-6 bg-gradient-to-r from-blue-100 to-blue-200 text-blue-900 border-0 px-8 py-3 rounded-full text-sm font-semibold uppercase tracking-wider">
               Häufige Fragen
@@ -530,7 +525,6 @@ export function PrivatjetReinigungPage() {
               Kontaktieren Sie uns
             </Button>
           </div>
-        </div>
       </section>
 
       {/* 8. CALL-TO-ACTION - FINAL */}
@@ -538,7 +532,7 @@ export function PrivatjetReinigungPage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.1),transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.05),transparent_50%)]"></div>
 
-        <div className="relative z-10 max-w-5xl mx-auto text-center">
+        <div className="relative z-10 text-center">
           <Plane className="h-24 w-24 text-amber-200 mx-auto mb-8 animate-pulse" />
           <h2 className="text-6xl lg:text-7xl font-black mb-8 tracking-tight leading-tight">
             Bereit für perfekte Sauberkeit?
