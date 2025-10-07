@@ -56,7 +56,6 @@ function HomePage() {
 
         {/* Content - Full Width */}
         <div className="relative z-10 w-full px-6 sm:px-12 lg:px-24 py-32 text-center">
-          <div className="max-w-7xl mx-auto">
             <Badge className="mb-8 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 text-white border-0 text-base px-8 py-3 rounded-full shadow-2xl shadow-blue-500/50 animate-fade-in">
               <Award className="inline-block w-4 h-4 mr-2" />
               Schweizer Qualität seit 1997 • ISO 9001 Zertifiziert
@@ -71,7 +70,7 @@ function HomePage() {
               </span>
             </h1>
 
-            <p className="text-2xl sm:text-3xl lg:text-4xl text-gray-100 max-w-5xl mx-auto mb-16 leading-relaxed font-light drop-shadow-lg">
+            <p className="text-2xl sm:text-3xl lg:text-4xl text-gray-100 mb-16 leading-relaxed font-light drop-shadow-lg">
               Von der Privatjet-Reinigung bis zur Unterhaltsreinigung – <span className="font-semibold text-white">Ihr Partner</span> für professionelle Facility Services in der Schweiz.
             </p>
 
@@ -87,7 +86,7 @@ function HomePage() {
             </div>
 
             {/* Trust Indicators */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {[
                 { icon: Shield, text: 'ISO 9001 Zertifiziert', color: 'text-green-400' },
                 { icon: Clock, text: '24/7 Notfall-Service', color: 'text-blue-400' },
@@ -100,7 +99,6 @@ function HomePage() {
                 </div>
               ))}
             </div>
-          </div>
         </div>
 
         {/* Scroll Indicator */}
@@ -116,7 +114,7 @@ function HomePage() {
           <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgb(0 0 0 / 0.05) 1px, transparent 0)', backgroundSize: '40px 40px' }}></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto">
+        <div className="relative z-10">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-12">
             {[
               { value: '1.2M+', label: 'm² Reinigungsfläche', icon: Building2, gradient: 'from-blue-600 to-blue-800' },
@@ -140,7 +138,7 @@ function HomePage() {
 
       {/* SERVICES SECTION WITH TABS - FULL WIDTH */}
       <section className="relative py-32 px-6 sm:px-12 lg:px-24 bg-gradient-to-b from-white via-gray-50 to-white">
-        <div className="max-w-7xl mx-auto">
+        <div>
           <div className="text-center mb-20">
             <Badge className="mb-6 bg-gradient-to-r from-gray-100 to-gray-200 text-gray-900 border-0 px-8 py-3 rounded-full text-sm font-semibold uppercase tracking-wider">
               Unsere Dienstleistungen
@@ -149,7 +147,7 @@ function HomePage() {
               Für jeden Anspruch<br />
               <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 bg-clip-text text-transparent">die perfekte Lösung</span>
             </h2>
-            <p className="text-2xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed">
+            <p className="text-2xl text-gray-600 font-light leading-relaxed">
               Von Premium-Luxus bis Basis-Reinigung – individuell auf Ihre Bedürfnisse abgestimmt
             </p>
           </div>
@@ -302,7 +300,7 @@ function HomePage() {
           <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '48px 48px' }}></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto">
+        <div className="relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left Side - Content */}
             <div>
@@ -391,7 +389,7 @@ function HomePage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.1),transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.05),transparent_50%)]"></div>
 
-        <div className="relative z-10 max-w-5xl mx-auto text-center">
+        <div className="relative z-10 text-center">
           <Zap className="h-20 w-20 text-yellow-400 mx-auto mb-8 animate-pulse" />
           <h2 className="text-6xl lg:text-7xl font-black mb-8 tracking-tight leading-tight">
             Bereit für perfekte Sauberkeit?
@@ -469,7 +467,7 @@ function Navigation() {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled ? 'bg-white/95 backdrop-blur-xl shadow-lg' : 'bg-white/80 backdrop-blur-lg shadow-md'
     }`}>
-      <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-24">
+      <div className="px-6 sm:px-12 lg:px-24">
         <div className="flex justify-between items-center h-24">
           {/* Logo */}
           <Link to="/" className="text-3xl font-black bg-gradient-to-r from-blue-600 via-blue-700 to-purple-600 bg-clip-text text-transparent hover:from-blue-700 hover:via-blue-800 hover:to-purple-700 transition-all">
@@ -597,7 +595,7 @@ function Navigation() {
 function Footer() {
   return (
     <footer className="bg-gradient-to-br from-slate-900 via-gray-900 to-slate-900 text-white border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-24 py-20">
+      <div className="px-6 sm:px-12 lg:px-24 py-20">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-2 md:col-span-1">
             <h3 className="text-3xl font-black bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-6">
