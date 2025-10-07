@@ -42,7 +42,6 @@ export function UnterhaltsreinigungPage() {
               </ul></CardContent></Card>
             </div>
             <div className="bg-gray-50 rounded-3xl p-8">
-              <h3 className="text-3xl font-bold text-center mb-8">Preise ab CHF 45/Stunde</h3>
               <p className="text-center text-gray-600">Individuelle Pakete auf Anfrage</p>
             </div>
           </div>
@@ -96,7 +95,6 @@ export function FensterreinigungPage() {
               </ul></CardContent></Card>
             </div>
             <div className="bg-gray-50 rounded-3xl p-8">
-              <h3 className="text-3xl font-bold text-center mb-8">Preise ab CHF 4.50/m²</h3>
               <p className="text-center text-gray-600">Mengenrabatt bei großen Flächen</p>
             </div>
           </div>

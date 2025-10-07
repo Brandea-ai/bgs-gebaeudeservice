@@ -168,118 +168,7 @@ export function PrivatjetReinigungPage() {
         </div>
       </section>
 
-      {/* 4. PREISE/PAKETE - PRICING CARDS */}
-      <section className="relative py-32 px-6 sm:px-12 lg:px-24 bg-gradient-to-b from-white via-gray-50 to-white">
-          <div className="text-center mb-20">
-            <Badge className="mb-6 bg-gradient-to-r from-green-100 to-green-200 text-green-900 border-0 px-8 py-3 rounded-full text-sm font-semibold uppercase tracking-wider">
-              Transparente Preise
-            </Badge>
-            <h2 className="text-6xl lg:text-7xl font-black text-gray-900 mb-8 tracking-tight">
-              Individuelle<br />
-              <span className="bg-gradient-to-r from-green-600 via-emerald-600 to-green-700 bg-clip-text text-transparent">Preisgestaltung</span>
-            </h2>
-            <p className="text-2xl text-gray-600 font-light">
-              Massgeschneiderte Angebote basierend auf Jet-Typ und Umfang der Reinigung.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-10">
-            {[
-              {
-                name: "Light Jet",
-                subtitle: "Bis 8 Passagiere",
-                price: "CHF 2'500",
-                features: ["Kabinenreinigung komplett", "Cockpit-Pflege", "Sanitäranlagen", "Galley-Reinigung", "Fensterreinigung", "2-3 Stunden Dauer"],
-                popular: false,
-                color: "blue"
-              },
-              {
-                name: "Mid-Size Jet",
-                subtitle: "Bis 12 Passagiere",
-                price: "CHF 4'500",
-                features: ["Vollreinigung innen", "Lederaufbereitung", "Teppichtiefenreinigung", "Galley-Spezialreinigung", "Cockpit-Detailing", "3-4 Stunden Dauer"],
-                popular: true,
-                color: "amber"
-              },
-              {
-                name: "Heavy Jet",
-                subtitle: "Bis 16+ Passagiere",
-                price: "CHF 7'500",
-                features: ["Premium-Komplettpaket", "Aussenpolitur inkl.", "Spezialbehandlung Leder", "Marmor/Holz-Pflege", "Luxus-Detailing", "5-6 Stunden Dauer"],
-                popular: false,
-                color: "purple"
-              }
-            ].map((pkg, index) => (
-              <div key={index} className={`relative ${pkg.popular ? 'lg:-translate-y-8' : ''}`}>
-                {pkg.popular && (
-                  <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 z-10">
-                    <Badge className="bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-2 text-sm font-bold shadow-xl uppercase">
-                      Am beliebtesten
-                    </Badge>
-                  </div>
-                )}
-                <div className={`relative bg-white rounded-3xl overflow-hidden ${
-                  pkg.popular
-                    ? 'border-4 border-amber-400 shadow-2xl shadow-amber-500/30'
-                    : 'border-2 border-gray-200 shadow-xl'
-                } hover:shadow-2xl transition-all duration-500 h-full`}>
-                  {/* Header */}
-                  <div className={`${
-                    pkg.popular
-                      ? 'bg-gradient-to-br from-amber-500 to-amber-600'
-                      : 'bg-gradient-to-br from-gray-100 to-gray-200'
-                  } p-10 text-center`}>
-                    <h3 className={`text-3xl font-black mb-2 ${pkg.popular ? 'text-white' : 'text-gray-900'}`}>
-                      {pkg.name}
-                    </h3>
-                    <p className={`text-sm ${pkg.popular ? 'text-amber-100' : 'text-gray-600'} mb-6`}>
-                      {pkg.subtitle}
-                    </p>
-                    <div className={`text-6xl font-black mb-2 ${pkg.popular ? 'text-white' : 'text-gray-900'}`}>
-                      {pkg.price}
-                    </div>
-                    <p className={`text-sm ${pkg.popular ? 'text-amber-100' : 'text-gray-600'}`}>
-                      pro Reinigung
-                    </p>
-                  </div>
-
-                  {/* Features */}
-                  <div className="p-10">
-                    <ul className="space-y-4 mb-10">
-                      {pkg.features.map((feature, i) => (
-                        <li key={i} className="flex items-start gap-3">
-                          <CheckCircle2 className={`h-6 w-6 flex-shrink-0 mt-0.5 ${
-                            pkg.popular ? 'text-amber-600' : 'text-green-600'
-                          }`} />
-                          <span className="text-gray-700 leading-relaxed">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <Button className={`w-full ${
-                      pkg.popular
-                        ? 'bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 shadow-xl shadow-amber-500/30'
-                        : 'bg-gray-900 hover:bg-gray-800'
-                    } text-white rounded-full py-7 text-lg font-semibold`}>
-                      Jetzt buchen
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-16 text-center">
-            <p className="text-gray-600 text-lg mb-6">
-              Benötigen Sie eine massgeschneiderte Lösung? Wir erstellen Ihnen gerne ein individuelles Angebot.
-            </p>
-            <Button variant="outline" className="border-2 border-gray-300 hover:border-gray-400 rounded-full px-10 py-6 text-lg">
-              Individuelles Angebot anfragen
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </div>
-      </section>
-
-      {/* 5. VORTEILE - ACCORDION STYLE */}
+      {/* 4. VORTEILE - ACCORDION STYLE */}
       <section className="relative py-32 px-6 sm:px-12 lg:px-24 bg-gradient-to-br from-blue-900 via-slate-900 to-blue-950 text-white overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '48px 48px' }}></div>
@@ -328,9 +217,7 @@ export function PrivatjetReinigungPage() {
                     content: "Sollten Sie nicht vollständig zufrieden sein, bessern wir kostenlos nach – bis alles perfekt ist. Ihr Qualitätsanspruch ist unser Standard."
                   },
                   {
-                    title: "CHF 10 Mio. Versicherungsschutz",
                     icon: Shield,
-                    content: "Vollumfängliche Haftpflichtversicherung bis CHF 10 Millionen. Zusätzliche Spezialversicherung für Luxus-Interieurs und wertvolle Ausstattungen."
                   }
                 ].map((item, i) => (
                   <AccordionItem key={i} value={`item-${i}`} className="border-white/10 bg-white/5 backdrop-blur-sm rounded-2xl px-6 hover:bg-white/10 transition-all">
@@ -383,7 +270,7 @@ export function PrivatjetReinigungPage() {
         </div>
       </section>
 
-      {/* 6. TESTIMONIALS - CAROUSEL STYLE */}
+      {/* 5. TESTIMONIALS - CAROUSEL STYLE */}
       <section className="relative py-32 px-6 sm:px-12 lg:px-24 bg-gradient-to-b from-white via-gray-50 to-white">
           <div className="text-center mb-20">
             <Badge className="mb-6 bg-gradient-to-r from-purple-100 to-purple-200 text-purple-900 border-0 px-8 py-3 rounded-full text-sm font-semibold uppercase tracking-wider">
@@ -456,7 +343,7 @@ export function PrivatjetReinigungPage() {
           </div>
       </section>
 
-      {/* 7. FAQ - ACCORDION */}
+      {/* 6. FAQ - ACCORDION */}
       <section className="relative py-32 px-6 sm:px-12 lg:px-24 bg-gradient-to-b from-gray-50 via-white to-gray-50">
           <div className="text-center mb-20">
             <Badge className="mb-6 bg-gradient-to-r from-blue-100 to-blue-200 text-blue-900 border-0 px-8 py-3 rounded-full text-sm font-semibold uppercase tracking-wider">
@@ -498,7 +385,6 @@ export function PrivatjetReinigungPage() {
               },
               {
                 q: "Was passiert bei Schäden während der Reinigung?",
-                a: "Wir haben eine Vollkasko-Haftpflichtversicherung bis CHF 10 Millionen. Zusätzlich sind wir speziell für Luxus-Interieurs versichert. In über 300 gereinigten Jets hatten wir noch nie einen Schadensfall."
               },
               {
                 q: "Kann ich während der Reinigung am Jet bleiben?",
@@ -527,7 +413,7 @@ export function PrivatjetReinigungPage() {
           </div>
       </section>
 
-      {/* 8. CALL-TO-ACTION - FINAL */}
+      {/* 7. CALL-TO-ACTION - FINAL */}
       <section className="relative py-32 px-6 sm:px-12 lg:px-24 bg-gradient-to-br from-amber-600 via-amber-700 to-yellow-700 text-white overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.1),transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.05),transparent_50%)]"></div>

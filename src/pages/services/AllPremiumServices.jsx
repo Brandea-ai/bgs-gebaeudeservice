@@ -78,8 +78,6 @@ export function YachtReinigungPage() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              {name: "Segelyacht bis 40 Fuss", price: "CHF 1'800", features: ["Deck & Kajüte", "Sanitär", "Fenster", "3-4 Stunden"]},
-              {name: "Motoryacht bis 60 Fuss", price: "CHF 4'500", features: ["Vollreinigung", "Maschinenraum", "Politur", "6-8 Stunden"], popular: true},
               {name: "Superyacht 60+ Fuss", price: "auf Anfrage", features: ["Individuell", "Crew-Koordination", "Mehrere Tage", "Premium-Service"]}
             ].map((pkg, i) => (
               <Card key={i} className={pkg.popular ? "border-4 border-[#C5A572] scale-105" : ""}>
@@ -110,7 +108,6 @@ export function YachtReinigungPage() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              {icon: Shield, title: "Versicherungsschutz", desc: "Vollumfängliche Haftpflicht bis CHF 5 Mio."},
               {icon: Award, title: "Erfahrene Crew", desc: "Spezialisiert auf Yacht-Reinigung"},
               {icon: Clock, title: "Flexible Termine", desc: "Auch Wochenende und Feiertage"},
               {icon: Sparkles, title: "Marine-Produkte", desc: "Speziell für Yachten entwickelt"},
@@ -229,8 +226,6 @@ export function PrivateHousekeepingPage() {
           <h2 className="text-4xl font-bold text-[#0A2540] mb-6">Flexible Einsatzmodelle</h2>
           <div className="grid md:grid-cols-3 gap-8 mt-12">
             {[
-              {name: "Teilzeit", price: "CHF 45/Std", desc: "2-4 Stunden täglich"},
-              {name: "Vollzeit", price: "CHF 6'500/Mt", desc: "8 Stunden, 5 Tage/Woche", popular: true},
               {name: "Live-in", price: "auf Anfrage", desc: "Wohnen im Haushalt"}
             ].map((pkg, i) => (
               <Card key={i} className={pkg.popular ? "border-4 border-[#C5A572]" : ""}>

@@ -84,20 +84,17 @@ export function HallenreinigungPage() {
                 <div className="bg-white p-6 rounded-2xl">
                   <h4 className="font-bold text-xl mb-2">Basis-Reinigung</h4>
                   <p className="text-sm text-gray-600 mb-4">Wöchentlich</p>
-                  <p className="text-4xl font-bold text-[#0A2540] mb-4">CHF 0.85</p>
                   <p className="text-sm text-gray-600">pro m²</p>
                 </div>
                 <div className="bg-white p-6 rounded-2xl border-2 border-[#0A2540]">
                   <Badge className="mb-2 bg-[#0A2540] text-white">Empfohlen</Badge>
                   <h4 className="font-bold text-xl mb-2">Standard-Reinigung</h4>
                   <p className="text-sm text-gray-600 mb-4">2-3x pro Woche</p>
-                  <p className="text-4xl font-bold text-[#0A2540] mb-4">CHF 1.20</p>
                   <p className="text-sm text-gray-600">pro m²</p>
                 </div>
                 <div className="bg-white p-6 rounded-2xl">
                   <h4 className="font-bold text-xl mb-2">Intensiv-Reinigung</h4>
                   <p className="text-sm text-gray-600 mb-4">Täglich</p>
-                  <p className="text-4xl font-bold text-[#0A2540] mb-4">CHF 1.80</p>
                   <p className="text-sm text-gray-600">pro m²</p>
                 </div>
               </div>
@@ -199,20 +196,17 @@ export function MaschinenreinigungPage() {
                 <div className="bg-white p-6 rounded-2xl">
                   <h4 className="font-bold text-xl mb-2">Basis-Reinigung</h4>
                   <p className="text-sm text-gray-600 mb-4">Externe Reinigung</p>
-                  <p className="text-4xl font-bold text-[#0A2540] mb-4">ab CHF 180</p>
                   <p className="text-sm text-gray-600">pro Maschine</p>
                 </div>
                 <div className="bg-white p-6 rounded-2xl border-2 border-[#0A2540]">
                   <Badge className="mb-2 bg-[#0A2540] text-white">Beliebt</Badge>
                   <h4 className="font-bold text-xl mb-2">Standard-Reinigung</h4>
                   <p className="text-sm text-gray-600 mb-4">Innen & Außen</p>
-                  <p className="text-4xl font-bold text-[#0A2540] mb-4">ab CHF 450</p>
                   <p className="text-sm text-gray-600">pro Maschine</p>
                 </div>
                 <div className="bg-white p-6 rounded-2xl">
                   <h4 className="font-bold text-xl mb-2">Intensiv-Reinigung</h4>
                   <p className="text-sm text-gray-600 mb-4">Komplett-Service</p>
-                  <p className="text-4xl font-bold text-[#0A2540] mb-4">ab CHF 850</p>
                   <p className="text-sm text-gray-600">pro Maschine</p>
                 </div>
               </div>

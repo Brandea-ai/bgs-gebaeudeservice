@@ -99,20 +99,17 @@ export function PrivatjetReinigungPage() {
                 <div className="bg-white p-6 rounded-2xl">
                   <h4 className="font-bold text-xl mb-2">Light Jets</h4>
                   <p className="text-sm text-gray-600 mb-4">bis 8 Passagiere</p>
-                  <p className="text-4xl font-bold text-[#C5A572] mb-4">CHF 1'200</p>
                   <p className="text-sm text-gray-600">pro Reinigung</p>
                 </div>
                 <div className="bg-white p-6 rounded-2xl border-2 border-[#C5A572]">
                   <Badge className="mb-2 bg-[#C5A572] text-white">Beliebt</Badge>
                   <h4 className="font-bold text-xl mb-2">Midsize Jets</h4>
                   <p className="text-sm text-gray-600 mb-4">bis 12 Passagiere</p>
-                  <p className="text-4xl font-bold text-[#C5A572] mb-4">CHF 2'400</p>
                   <p className="text-sm text-gray-600">pro Reinigung</p>
                 </div>
                 <div className="bg-white p-6 rounded-2xl">
                   <h4 className="font-bold text-xl mb-2">Large Jets</h4>
                   <p className="text-sm text-gray-600 mb-4">ab 12 Passagiere</p>
-                  <p className="text-4xl font-bold text-[#C5A572] mb-4">ab CHF 3'800</p>
                   <p className="text-sm text-gray-600">pro Reinigung</p>
                 </div>
               </div>
@@ -284,14 +281,12 @@ export function YachtReinigungPage() {
                 <div className="bg-white p-6 rounded-2xl">
                   <h4 className="font-bold text-xl mb-2">Segelboote</h4>
                   <p className="text-sm text-gray-600 mb-4">bis 10m</p>
-                  <p className="text-4xl font-bold text-[#C5A572] mb-4">ab CHF 450</p>
                   <p className="text-sm text-gray-600">pro Reinigung</p>
                 </div>
                 <div className="bg-white p-6 rounded-2xl border-2 border-[#C5A572]">
                   <Badge className="mb-2 bg-[#C5A572] text-white">Beliebt</Badge>
                   <h4 className="font-bold text-xl mb-2">Motoryachten</h4>
                   <p className="text-sm text-gray-600 mb-4">10-15m</p>
-                  <p className="text-4xl font-bold text-[#C5A572] mb-4">ab CHF 1'200</p>
                   <p className="text-sm text-gray-600">pro Reinigung</p>
                 </div>
                 <div className="bg-white p-6 rounded-2xl">
@@ -401,20 +396,17 @@ export function PrivateHousekeepingPage() {
                 <div className="bg-white p-6 rounded-2xl">
                   <h4 className="font-bold text-xl mb-2">Part-Time</h4>
                   <p className="text-sm text-gray-600 mb-4">2-3x pro Woche</p>
-                  <p className="text-4xl font-bold text-[#C5A572] mb-4">CHF 85</p>
                   <p className="text-sm text-gray-600">pro Stunde</p>
                 </div>
                 <div className="bg-white p-6 rounded-2xl border-2 border-[#C5A572]">
                   <Badge className="mb-2 bg-[#C5A572] text-white">Beliebt</Badge>
                   <h4 className="font-bold text-xl mb-2">Full-Time</h4>
                   <p className="text-sm text-gray-600 mb-4">5-6x pro Woche</p>
-                  <p className="text-4xl font-bold text-[#C5A572] mb-4">CHF 6'500</p>
                   <p className="text-sm text-gray-600">pro Monat</p>
                 </div>
                 <div className="bg-white p-6 rounded-2xl">
                   <h4 className="font-bold text-xl mb-2">Live-In</h4>
                   <p className="text-sm text-gray-600 mb-4">7 Tage verfügbar</p>
-                  <p className="text-4xl font-bold text-[#C5A572] mb-4">ab CHF 8'500</p>
                   <p className="text-sm text-gray-600">pro Monat</p>
                 </div>
               </div>
@@ -515,14 +507,12 @@ export function LuxusimmobilienPage() {
                 <div className="bg-white p-6 rounded-2xl">
                   <h4 className="font-bold text-xl mb-2">Penthouse</h4>
                   <p className="text-sm text-gray-600 mb-4">bis 200m²</p>
-                  <p className="text-4xl font-bold text-[#C5A572] mb-4">ab CHF 850</p>
                   <p className="text-sm text-gray-600">pro Reinigung</p>
                 </div>
                 <div className="bg-white p-6 rounded-2xl border-2 border-[#C5A572]">
                   <Badge className="mb-2 bg-[#C5A572] text-white">Beliebt</Badge>
                   <h4 className="font-bold text-xl mb-2">Villa</h4>
                   <p className="text-sm text-gray-600 mb-4">200-500m²</p>
-                  <p className="text-4xl font-bold text-[#C5A572] mb-4">ab CHF 1'800</p>
                   <p className="text-sm text-gray-600">pro Reinigung</p>
                 </div>
                 <div className="bg-white p-6 rounded-2xl">
@@ -629,14 +619,12 @@ export function VIPEventServicePage() {
                 <div className="bg-white p-6 rounded-2xl">
                   <h4 className="font-bold text-xl mb-2">Small Event</h4>
                   <p className="text-sm text-gray-600 mb-4">bis 50 Gäste</p>
-                  <p className="text-4xl font-bold text-[#C5A572] mb-4">ab CHF 1'200</p>
                   <p className="text-sm text-gray-600">pro Event</p>
                 </div>
                 <div className="bg-white p-6 rounded-2xl border-2 border-[#C5A572]">
                   <Badge className="mb-2 bg-[#C5A572] text-white">Beliebt</Badge>
                   <h4 className="font-bold text-xl mb-2">Medium Event</h4>
                   <p className="text-sm text-gray-600 mb-4">50-200 Gäste</p>
-                  <p className="text-4xl font-bold text-[#C5A572] mb-4">ab CHF 3'500</p>
                   <p className="text-sm text-gray-600">pro Event</p>
                 </div>
                 <div className="bg-white p-6 rounded-2xl">

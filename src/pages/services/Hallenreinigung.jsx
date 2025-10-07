@@ -93,18 +93,15 @@ export function HallenreinigungPage() {
             {[
               {
                 name: "Basic", 
-                price: "ab CHF 1'200/Mt", 
                 features: ["Bis 500m²", "1x wöchentlich", "Bodenreinigung", "Sanitäranlagen", "Sozialräume"]
               },
               {
                 name: "Professional", 
-                price: "ab CHF 2'800/Mt", 
                 features: ["Bis 1'500m²", "2x wöchentlich", "Komplettreinigung", "Entstaubung", "Hochregale", "Rampen"], 
                 popular: true
               },
               {
                 name: "Premium", 
-                price: "ab CHF 5'500/Mt", 
                 features: ["Bis 3'000m²", "3x wöchentlich", "Vollservice", "24/7 Notdienst", "Spezialreinigung", "Außenanlagen"]
               }
             ].map((pkg, i) => (

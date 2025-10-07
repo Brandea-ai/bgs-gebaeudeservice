@@ -49,9 +49,6 @@ export function UnterhaltsreinigungPage() {
         <h2 className="text-4xl font-bold text-[#0A2540] text-center mb-12">Preise</h2>
         <div className="grid md:grid-cols-3 gap-8">
           {[
-            {name: "Klein", price: "ab CHF 450/Mt", features: ["Bis 100m²", "1x wöchentlich", "2 Stunden", "1 Person"]},
-            {name: "Mittel", price: "ab CHF 950/Mt", features: ["Bis 300m²", "2x wöchentlich", "4 Stunden", "1-2 Personen"], popular: true},
-            {name: "Gross", price: "ab CHF 1'800/Mt", features: ["Bis 600m²", "3x wöchentlich", "6 Stunden", "2-3 Personen"]}
           ].map((pkg, i) => (
             <Card key={i} className={pkg.popular ? "border-4 border-[#10B981] scale-105" : ""}>
               <CardHeader className="text-center">

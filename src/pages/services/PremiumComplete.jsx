@@ -48,8 +48,6 @@ export function LuxusimmobilienPage() {
           <h2 className="text-4xl font-bold text-[#0A2540] text-center mb-12">Preismodelle</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              {name: "Penthouse", price: "ab CHF 3'500/Mt", features: ["Bis 200m²", "Wöchentlich", "2 Personen", "4-6 Stunden"]},
-              {name: "Villa", price: "ab CHF 8'500/Mt", features: ["Bis 500m²", "2x wöchentlich", "3-4 Personen", "Garten inkl."], popular: true},
               {name: "Anwesen", price: "auf Anfrage", features: ["500m²+", "Individuell", "Vollservice", "Live-in möglich"]}
             ].map((pkg, i) => (
               <Card key={i} className={pkg.popular ? "border-4 border-[#C5A572] scale-105" : ""}>
@@ -114,7 +112,6 @@ export function LuxusimmobilienPage() {
           <div className="space-y-6">
             {[
               {q: "Wie oft sollte gereinigt werden?", a: "Empfohlen: 1-2x wöchentlich je nach Nutzung und Grösse."},
-              {q: "Sind Ihre Mitarbeiter versichert?", a: "Ja, vollumfänglich mit CHF 5 Mio. Haftpflicht."},
               {q: "Können Sie auch Zweitwohnsitze betreuen?", a: "Ja, auch bei Abwesenheit mit regelmässiger Kontrolle."},
               {q: "Welche Zusatzleistungen bieten Sie?", a: "Gartenpflege, Pool-Service, Winterdienst, Hausmeister-Service."}
             ].map((faq, i) => (
@@ -183,8 +180,6 @@ export function VIPEventServicePage() {
           <h2 className="text-4xl font-bold text-[#0A2540] text-center mb-12">Event-Pakete</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              {name: "Privat-Event", price: "ab CHF 1'500", features: ["Bis 50 Gäste", "Vor & Nach", "4 Stunden", "2 Personen"]},
-              {name: "Business-Event", price: "ab CHF 3'500", features: ["Bis 150 Gäste", "Vollbetreuung", "8 Stunden", "4-6 Personen"], popular: true},
               {name: "Gala-Event", price: "auf Anfrage", features: ["150+ Gäste", "Premium-Service", "Ganztägig", "Individuell"]}
             ].map((pkg, i) => (
               <Card key={i} className={pkg.popular ? "border-4 border-[#C5A572] scale-105" : ""}>

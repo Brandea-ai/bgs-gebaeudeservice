@@ -216,7 +216,6 @@ export function YachtPage() {
       { title: 'Terminierung', description: 'Flexible Terminplanung' },
       { title: 'Durchführung', description: 'Professionelle Reinigung' }
     ]}
-    pricing="Ab CHF 500 pro Einsatz - abhängig von Grösse und Umfang"
     image={facilityManagementImg}
   />
 }
@@ -242,7 +241,6 @@ export function HousekeepingPage() {
       { title: 'Diskret', description: 'Höchste Vertraulichkeit garantiert' },
       { title: 'Flexibel', description: 'Vollständig nach Ihren Wünschen' }
     ]}
-    pricing="Ab CHF 8.000 pro Monat - individuelles Paket"
     image={officeCleaningImg}
   />
 }
@@ -274,7 +272,6 @@ export function HallenPage() {
       { title: 'Start', description: 'Schnelle Umsetzung' },
       { title: 'Kontrolle', description: 'Regelmässige Qualitätschecks' }
     ]}
-    pricing="Ab CHF 2.50 pro m² - abhängig von Fläche und Intervall"
     image={industrialCleaningImg}
   />
 }
@@ -299,7 +296,6 @@ export function MaschinenPage() {
       { title: 'Gründlich', description: 'Auch schwer zugängliche Bereiche werden erreicht' },
       { title: 'Schnell', description: 'Minimale Stillstandzeiten Ihrer Produktion' }
     ]}
-    pricing="Ab CHF 150 pro Stunde - Pauschalangebote möglich"
     image={industrialCleaningImg}
   />
 }
@@ -325,7 +321,6 @@ export function UnterhaltPage() {
       { title: 'Flexibel', description: 'Anpassbare Intervalle und Leistungen' },
       { title: 'Günstig', description: 'Faire Preise bei hoher Qualität' }
     ]}
-    pricing="Ab CHF 35 pro Stunde - Paketpreise verfügbar"
     image={officeCleaningImg}
   />
 }
@@ -350,7 +345,6 @@ export function FensterPage() {
       { title: 'Sicher', description: 'Auch in grossen Höhen mit Sicherheitsausrüstung' },
       { title: 'Schnell', description: 'Effiziente Durchführung ohne Störung' }
     ]}
-    pricing="Ab CHF 4 pro m² Fensterfläche"
     image={officeCleaningImg}
   />
 }
