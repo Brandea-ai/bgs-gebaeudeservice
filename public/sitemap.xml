@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://bgs-service.ch/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://bgs-service.ch/services/privatjet</loc><priority>0.9</priority></url>
+  <url><loc>https://bgs-service.ch/services/yacht</loc><priority>0.9</priority></url>
+  <url><loc>https://bgs-service.ch/services/housekeeping</loc><priority>0.9</priority></url>
+  <url><loc>https://bgs-service.ch/services/hallen</loc><priority>0.9</priority></url>
+  <url><loc>https://bgs-service.ch/services/maschinen</loc><priority>0.8</priority></url>
+  <url><loc>https://bgs-service.ch/services/unterhalt</loc><priority>0.8</priority></url>
+  <url><loc>https://bgs-service.ch/services/fenster</loc><priority>0.8</priority></url>
+  <url><loc>https://bgs-service.ch/standorte/zurich</loc><priority>0.9</priority></url>
+  <url><loc>https://bgs-service.ch/standorte/luzern</loc><priority>0.9</priority></url>
+  <url><loc>https://bgs-service.ch/standorte/stgallen</loc><priority>0.9</priority></url>
+  <url><loc>https://bgs-service.ch/referenzen</loc><priority>0.7</priority></url>
+  <url><loc>https://bgs-service.ch/karriere</loc><priority>0.7</priority></url>
+  <url><loc>https://bgs-service.ch/blog</loc><priority>0.7</priority></url>
+  <url><loc>https://bgs-service.ch/ueber-uns</loc><priority>0.8</priority></url>
+</urlset>
