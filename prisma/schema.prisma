@@ -1,0 +1,245 @@
+// Prisma Schema for BGS Gebäudeservice
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// Contact Form Submissions
+model ContactSubmission {
+  id          String   @id @default(cuid())
+  name        String
+  email       String
+  phone       String?
+  company     String?
+  service     String?
+  message     String   @db.Text
+  status      String   @default("pending") // pending, contacted, resolved, spam
+  ipAddress   String?
+  userAgent   String?
+  referrer    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  respondedAt DateTime?
+
+  @@index([email])
+  @@index([status])
+  @@index([createdAt])
+  @@map("contact_submissions")
+}
+
+// Contact API Model (for new API routes)
+model Contact {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  subject   String
+  message   String   @db.Text
+  service   String?
+  ipAddress String
+  userAgent String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([email])
+  @@index([createdAt])
+  @@map("contacts")
+}
+
+// Service Booking Requests
+model BookingRequest {
+  id              String   @id @default(cuid())
+  name            String
+  email           String
+  phone           String
+  company         String?
+  serviceType     String // cleaning, maintenance, gardening, etc.
+  preferredDate   DateTime?
+  alternativeDate DateTime?
+  address         String?
+  postalCode      String?
+  city            String?
+  message         String?  @db.Text
+  urgency         String   @default("normal") // low, normal, high, emergency
+  status          String   @default("pending") // pending, confirmed, completed, cancelled
+  estimatedCost   Float?
+  actualCost      Float?
+  assignedTo      String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  confirmedAt     DateTime?
+  completedAt     DateTime?
+
+  @@index([email])
+  @@index([status])
+  @@index([serviceType])
+  @@index([preferredDate])
+  @@index([createdAt])
+  @@map("booking_requests")
+}
+
+// Newsletter Subscriptions
+model Newsletter {
+  id           String    @id @default(cuid())
+  email        String    @unique
+  name         String?
+  status       String    @default("active") // active, unsubscribed, bounced
+  source       String? // website, referral, manual
+  tags         String[] // interests: cleaning, gardening, maintenance
+  subscribedAt DateTime  @default(now())
+  unsubscribedAt DateTime?
+  lastEmailSent DateTime?
+  emailsSent   Int       @default(0)
+  emailsOpened Int       @default(0)
+  emailsClicked Int      @default(0)
+
+  @@index([email])
+  @@index([status])
+  @@map("newsletter_subscribers")
+}
+
+// Newsletter Subscriber (for new API routes)
+model NewsletterSubscriber {
+  id             String    @id @default(cuid())
+  email          String    @unique
+  status         String    @default("active") // active, unsubscribed, bounced
+  source         String    @default("website") // website, manual, import
+  ipAddress      String?
+  subscribedAt   DateTime  @default(now())
+  unsubscribedAt DateTime?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  @@index([email])
+  @@index([status])
+  @@index([subscribedAt])
+  @@map("newsletter_subscribers_api")
+}
+
+// Service Offerings
+model Service {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  description String   @db.Text
+  category    String // cleaning, maintenance, gardening, special
+  features    String[]
+  benefits    String[]
+  icon        String?
+  image       String?
+  isActive    Boolean  @default(true)
+  displayOrder Int     @default(0)
+  seoTitle    String?
+  seoDescription String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([slug])
+  @@index([category])
+  @@index([isActive])
+  @@map("services")
+}
+
+// Testimonials
+model Testimonial {
+  id          String   @id @default(cuid())
+  name        String
+  company     String?
+  position    String?
+  content     String   @db.Text
+  rating      Int      @default(5) // 1-5 stars
+  service     String? // which service was reviewed
+  isPublished Boolean  @default(false)
+  isFeatured  Boolean  @default(false)
+  avatar      String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  publishedAt DateTime?
+
+  @@index([isPublished])
+  @@index([isFeatured])
+  @@index([rating])
+  @@map("testimonials")
+}
+
+// FAQ Items
+model FAQ {
+  id          String   @id @default(cuid())
+  question    String
+  answer      String   @db.Text
+  category    String // general, services, booking, pricing
+  displayOrder Int     @default(0)
+  isPublished Boolean  @default(true)
+  views       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([category])
+  @@index([isPublished])
+  @@index([displayOrder])
+  @@map("faqs")
+}
+
+// Analytics Events
+model AnalyticsEvent {
+  id         String   @id @default(cuid())
+  event      String   // event name (page_view, button_click, etc.)
+  eventType  String?  // legacy field
+  eventName  String?  // legacy field
+  page       String
+  properties Json?
+  metadata   Json?
+  userId     String?
+  sessionId  String?
+  ipAddress  String
+  userAgent  String
+  referrer   String?
+  timestamp  DateTime @default(now())
+  createdAt  DateTime @default(now())
+
+  @@index([event])
+  @@index([eventType])
+  @@index([eventName])
+  @@index([page])
+  @@index([sessionId])
+  @@index([timestamp])
+  @@index([createdAt])
+  @@map("analytics_events")
+}
+
+// Scroll Depth Tracking
+model ScrollDepth {
+  id        String   @id @default(cuid())
+  page      String
+  depth     Int // 0-100
+  timestamp DateTime @default(now())
+  ipAddress String
+  userAgent String
+  createdAt DateTime @default(now())
+
+  @@index([page])
+  @@index([depth])
+  @@index([timestamp])
+  @@map("scroll_depth")
+}
+
+// System Settings
+model Setting {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     String   @db.Text
+  type      String   @default("string") // string, number, boolean, json
+  category  String? // general, email, seo, features
+  isPublic  Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([key])
+  @@index([category])
+  @@map("settings")
+}

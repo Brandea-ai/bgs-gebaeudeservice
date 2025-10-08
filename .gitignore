@@ -10,12 +10,10 @@ coverage
 dist
 build
 
-# Misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# Environment
+.env
+.env*.local
+.env.production
 
 # Logs
 npm-debug.log*
@@ -31,7 +29,17 @@ pnpm-debug.log*
 *~
 
 # OS
+.DS_Store
 Thumbs.db
+
+# Misc
+*.pem
+
+# Prisma
+prisma/migrations
+
+# TypeScript
+*.tsbuildinfo
 
 # Claude Flow generated files
 .claude/settings.local.json

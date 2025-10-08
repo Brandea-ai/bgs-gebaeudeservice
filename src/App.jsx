@@ -24,7 +24,6 @@ import { ImpressumPage, DatenschutzPage } from './pages/Legal.jsx'
 // HomePage Component - WORLD-CLASS PROFESSIONAL DESIGN
 function HomePage() {
   const [scrolled, setScrolled] = useState(false)
-  const [activeTab, setActiveTab] = useState('premium')
 
   useEffect(() => {
     const handleScroll = () => {
@@ -153,7 +152,7 @@ function HomePage() {
           </div>
 
           {/* TABS for Service Categories */}
-          <Tabs defaultValue="premium" className="w-full" onValueChange={setActiveTab}>
+          <Tabs defaultValue="premium" className="w-full">
             <TabsList className="grid w-full grid-cols-3 mb-16 h-auto p-2 bg-gray-100 rounded-2xl">
               <TabsTrigger value="premium" className="text-lg py-5 rounded-xl data-[state=active]:bg-gradient-to-r data-[state=active]:from-amber-500 data-[state=active]:to-amber-600 data-[state=active]:text-white data-[state=active]:shadow-xl transition-all duration-300">
                 <Sparkles className="mr-2 h-5 w-5" />
