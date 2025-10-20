@@ -153,12 +153,12 @@ export function Navigation() {
             <Link to="/ueber-uns" className="text-gray-700 hover:text-[#0A2540] font-medium transition-colors">
               Über uns
             </Link>
-            <a href="tel:+41413205610">
+            <Link to="/kontakt">
               <Button className="bg-[#0A2540] hover:bg-[#1a3a5f] transition-colors">
                 <Phone className="mr-2 h-4 w-4" />
                 Kontakt
               </Button>
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}

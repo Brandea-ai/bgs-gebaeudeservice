@@ -20,6 +20,8 @@ import BlogPage from './pages/Blog.jsx'
 import DownloadsPage from './pages/Downloads.jsx'
 import GlossarPage from './pages/Glossar.jsx'
 import { ImpressumPage, DatenschutzPage } from './pages/Legal.jsx'
+import KontaktPage from './pages/Kontakt.jsx'
+import { UeberUnsPage } from './pages/UeberUns.jsx'
 
 // HomePage Component - WORLD-CLASS PROFESSIONAL DESIGN
 function HomePage() {
@@ -291,6 +293,9 @@ function HomePage() {
           </Tabs>
         </div>
       </section>
+
+      {/* TESTIMONIALS SECTION */}
+      <Testimonials />
 
       {/* WHY CHOOSE US - ACCORDION SECTION */}
       <section className="relative py-32 px-6 sm:px-12 lg:px-24 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white overflow-hidden">
@@ -729,6 +734,12 @@ function App() {
             {/* Legal */}
             <Route path="/impressum" element={<ImpressumPage />} />
             <Route path="/datenschutz" element={<DatenschutzPage />} />
+
+            {/* Contact */}
+            <Route path="/kontakt" element={<KontaktPage />} />
+
+            {/* About Us */}
+            <Route path="/ueber-uns" element={<UeberUnsPage />} />
           </Routes>
         </main>
         <Footer />

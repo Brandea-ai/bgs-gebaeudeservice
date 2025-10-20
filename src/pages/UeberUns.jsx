@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button.jsx'
 import { Badge } from '@/components/ui/badge.jsx'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 import { Building2, Users, Award, Target, Heart, TrendingUp, Shield, Globe, Phone, CheckCircle2 } from 'lucide-react'
+import Team from '@/components/Team.jsx'
 
 export function UeberUnsPage() {
   return (
@@ -125,34 +126,7 @@ export function UeberUnsPage() {
       </section>
 
       {/* 5. TEAM & FÜHRUNG */}
-      <section className="py-20 px-4 bg-gray-50">
-        <div className=" mx-auto">
-          <div className="text-center mb-16">
-            <Badge className="mb-4 bg-[#0A2540] text-white">Unser Team</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-[#0A2540] mb-6">
-              Die Menschen hinter BGS
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {name: "Nezir Bozhdaraj", role: "Gründer & Geschäftsführer", desc: "25+ Jahre Erfahrung in Facility Management"},
-              {name: "Sarah Müller", role: "Operations Director", desc: "Spezialistin für Prozessoptimierung"},
-              {name: "Thomas Weber", role: "Technical Director", desc: "Experte für KI-Integration & Innovation"}
-            ].map((person, i) => (
-              <Card key={i} className="hover:shadow-xl transition-shadow">
-                <CardContent className="pt-8 text-center">
-                  <div className="w-24 h-24 bg-gradient-to-br from-[#0A2540] to-[#1a3a5f] rounded-full mx-auto mb-6 flex items-center justify-center text-white text-3xl font-bold">
-                    {person.name.split(' ').map(n => n[0]).join('')}
-                  </div>
-                  <h3 className="font-bold text-xl text-[#0A2540] mb-2">{person.name}</h3>
-                  <p className="text-[#C5A572] font-semibold mb-3">{person.role}</p>
-                  <p className="text-gray-600">{person.desc}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Team />
 
       {/* 6. ZAHLEN & FAKTEN */}
       <section className="py-20 px-4 bg-white">
