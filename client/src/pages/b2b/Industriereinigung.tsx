@@ -1,0 +1,4 @@
+import ServiceTemplate from "@/components/ServiceTemplate";
+export default function Industriereinigung() {
+  return <ServiceTemplate title="Industriereinigung" subtitle="B2B Lösungen" description="Spezialisierte Reinigung für Produktionshallen, Lagerhallen und Industrieanlagen. Professionelle Gebäudereinigung mit Industriestandards." image="/b2b-industrial-cleaning.jpg" features={["Hallenreinigung", "Maschinenreinigung", "Hochdruckreinigung", "Entstaubung", "Ölflecken-Entfernung", "Sicherheitsbereich-Reinigung", "Spezialreinigung", "Wartungsreinigung"]} benefits={["Industrieerfahrung", "Sicherheitszertifiziert", "Spezialausrüstung", "Flexible Schichten", "Minimale Betriebsunterbrechung", "Compliance-konform", "Dokumentation", "Notfall-Service"]} process={["Standortbegehung", "Sicherheitskonzept", "Durchführung", "Reporting"]} />;
+}

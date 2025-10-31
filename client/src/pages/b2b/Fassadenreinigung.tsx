@@ -1,0 +1,4 @@
+import ServiceTemplate from "@/components/ServiceTemplate";
+export default function Fassadenreinigung() {
+  return <ServiceTemplate title="Fassadenreinigung" subtitle="B2B Lösungen" description="Professionelle Fassadenreinigung für Geschäftsgebäude in der Schweiz. Spezialisiert auf Glas-, Stein- und Metallfassaden." image="/b2b-fassadenreinigung.jpg" features={["Glasfassaden-Reinigung", "Steinfassaden-Reinigung", "Metallfassaden-Pflege", "Graffiti-Entfernung", "Hochdruckreinigung", "Seilzugangs-Technik", "Hebebühnen-Einsatz", "Fassadenschutz"]} benefits={["Höhenspezialisiert", "Sicherheitszertifiziert", "Modernste Technik", "Umweltschonend", "Versichert", "Schnelle Durchführung", "Werterhaltung", "Langzeitschutz"]} process={["Fassadenanalyse", "Methoden-Auswahl", "Sicherheitsplanung", "Professionelle Reinigung"]} />;
+}
