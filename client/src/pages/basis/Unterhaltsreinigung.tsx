@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'wouter';
 import { CheckCircle, Clock, Shield, Phone, ArrowRight, ChevronDown, Repeat } from 'lucide-react';
 import { useState } from 'react';
 
