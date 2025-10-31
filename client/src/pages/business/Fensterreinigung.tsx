@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "wouter";
-import { CheckCircle, Eye, Droplets, Shield, Sparkles, ArrowRight } from "lucide-react";
+import { CheckCircle, Eye, Droplets, Shield, Sparkles, ArrowRight, Clock, Award } from "lucide-react";
 
 export default function Fensterreinigung() {
   return (
@@ -44,6 +44,35 @@ export default function Fensterreinigung() {
                 alt="Fensterreinigung" 
                 className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
               />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="py-16 bg-white">
+        <div className="container">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-full mb-4">
+                <Shield className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Streifenfrei</h3>
+              <p className="text-slate-600">Professionelle Reinigung ohne Rückstände</p>
+            </div>
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-full mb-4">
+                <Clock className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Schnell & Effizient</h3>
+              <p className="text-slate-600">Minimale Betriebsstörungen</p>
+            </div>
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-full mb-4">
+                <Award className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Sicherheit</h3>
+              <p className="text-slate-600">Zertifizierte Höhenarbeiter</p>
             </div>
           </div>
         </div>
@@ -138,6 +167,30 @@ export default function Fensterreinigung() {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 bg-primary text-white">
+        <div className="container max-w-4xl text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Bereit für streifenfreie Fenster?
+          </h2>
+          <p className="text-xl mb-8 text-red-100">
+            Kontaktieren Sie uns für ein unverbindliches Angebot. Unsere Experten beraten Sie gerne.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:+41413205610">
+              <Button size="lg" variant="secondary" className="text-lg">
+                Jetzt anrufen
+              </Button>
+            </a>
+            <Link href="/kontakt">
+              <Button size="lg" variant="outline" className="text-lg bg-transparent border-white text-white hover:bg-white hover:text-primary">
+                Kostenlose Beratung
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 

@@ -4,7 +4,13 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Link } from "wouter";
-import { CheckCircle, Briefcase, Clock, Shield, ArrowRight } from "lucide-react";
+import { CheckCircle, Briefcase, Clock, Shield, ArrowRight, Award } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export default function FacilityManagement() {
   return (
@@ -40,6 +46,35 @@ export default function FacilityManagement() {
                 alt="Facility Management" 
                 className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
               />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="py-16 bg-white">
+        <div className="container">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-full mb-4">
+                <Shield className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Alles aus einer Hand</h3>
+              <p className="text-slate-600">Umfassende Gebäudedienstleistungen koordiniert</p>
+            </div>
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-full mb-4">
+                <Clock className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">24/7 Verfügbar</h3>
+              <p className="text-slate-600">Notfall-Hotline für dringende Anliegen</p>
+            </div>
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-full mb-4">
+                <Award className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Zertifiziert</h3>
+              <p className="text-slate-600">Qualitätsmanagement nach ISO-Standards</p>
             </div>
           </div>
         </div>
@@ -124,6 +159,85 @@ export default function FacilityManagement() {
               </Card>
             </TabsContent>
           </Tabs>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container max-w-4xl">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            Häufig gestellte Fragen
+          </h2>
+          <Accordion type="single" collapsible className="space-y-4">
+            <AccordionItem value="item-1" className="bg-white rounded-lg px-6">
+              <AccordionTrigger className="text-left font-semibold">
+                Was umfasst Facility Management?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-600">
+                Facility Management umfasst alle Dienstleistungen rund um Ihr Gebäude: Reinigung, Hausmeisterdienste, Winterdienst, technische Wartung, Grünflächenpflege und vieles mehr. Wir koordinieren alle Leistungen zentral.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-2" className="bg-white rounded-lg px-6">
+              <AccordionTrigger className="text-left font-semibold">
+                Welche Vorteile bietet ein FM-Vertrag?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-600">
+                Mit einem Facility Management Vertrag haben Sie einen zentralen Ansprechpartner für alle Gebäudedienstleistungen. Das spart Zeit, Kosten und Koordinationsaufwand. Sie erhalten regelmäßige Berichte und transparente Abrechnungen.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-3" className="bg-white rounded-lg px-6">
+              <AccordionTrigger className="text-left font-semibold">
+                Sind Sie auch im Notfall erreichbar?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-600">
+                Ja, unsere Notfall-Hotline ist 24/7 erreichbar. Bei dringenden Problemen wie Wasserschäden, Heizungsausfällen oder Sicherheitsfragen sind wir innerhalb kürzester Zeit vor Ort.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-4" className="bg-white rounded-lg px-6">
+              <AccordionTrigger className="text-left font-semibold">
+                Können Sie auch einzelne Leistungen übernehmen?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-600">
+                Ja, Sie können sowohl ein Komplettpaket als auch einzelne Dienstleistungen buchen. Wir erstellen ein maßgeschneidertes Angebot nach Ihrem Bedarf.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-5" className="bg-white rounded-lg px-6">
+              <AccordionTrigger className="text-left font-semibold">
+                Wie wird die Qualität sichergestellt?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-600">
+                Wir arbeiten nach ISO-zertifizierten Qualitätsstandards, führen regelmäßige Kontrollen durch und dokumentieren alle Leistungen digital. Sie erhalten transparente Berichte und können jederzeit Feedback geben.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 bg-primary text-white">
+        <div className="container max-w-4xl text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Bereit für professionelles Facility Management?
+          </h2>
+          <p className="text-xl mb-8 text-red-100">
+            Kontaktieren Sie uns für ein unverbindliches Angebot. Wir beraten Sie gerne zu allen FM-Leistungen.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:+41413205610">
+              <Button size="lg" variant="secondary" className="text-lg">
+                Jetzt anrufen
+              </Button>
+            </a>
+            <Link href="/kontakt">
+              <Button size="lg" variant="outline" className="text-lg bg-transparent border-white text-white hover:bg-white hover:text-primary">
+                Kostenlose Beratung
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 
