@@ -1,15 +1,23 @@
+import { useState } from "react";
+import { Link } from "wouter";
 import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Link } from "wouter";
-import { CheckCircle, Settings, ArrowRight } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { CheckCircle, Settings, ArrowRight, Shield, Wrench, Award } from "lucide-react";
 
 export default function Maschinenreinigung() {
   return (
     <div className="min-h-screen bg-white">
       <SwissNavigation />
       
+      {/* Hero Section */}
       <section className="pt-32 pb-20 relative">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-red-50/30 -z-10"/>
         <div className="container">
@@ -22,7 +30,7 @@ export default function Maschinenreinigung() {
                 Professionelle Maschinenreinigung
               </h1>
               <p className="text-2xl text-slate-600 leading-relaxed mb-8">
-                Spezialisierte Reinigung von Produktionsmaschinen und Anlagen in Zürich, Zug und Luzern. Schonend und effektiv.
+                Spezialisierte Reinigung von Produktionsmaschinen und Industrieanlagen in Zürich, Zug und Luzern. Für optimale Leistung und längere Lebensdauer Ihrer Maschinen.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href="/kontakt">
@@ -31,12 +39,17 @@ export default function Maschinenreinigung() {
                     <ArrowRight className="ml-2 w-5 h-5"/>
                   </Button>
                 </Link>
+                <a href="tel:+41413205610">
+                  <Button size="lg" variant="outline" className="text-lg">
+                    +41 41 320 56 10
+                  </Button>
+                </a>
               </div>
             </div>
             <div className="relative">
               <img 
-                src="/b2b-industrial-cleaning.jpg" 
-                alt="Produktionsmaschine" 
+                src="/machine-cleaning.jpg" 
+                alt="Professionelle Maschinenreinigung" 
                 className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
               />
             </div>
@@ -44,29 +57,167 @@ export default function Maschinenreinigung() {
         </div>
       </section>
 
+      {/* Features Section with Image Left */}
+      <section className="py-20 bg-slate-50">
+        <div className="container">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="relative">
+              <img 
+                src="/industrial-machine.jpg" 
+                alt="Industriemaschine Reinigung" 
+                className="rounded-2xl shadow-xl w-full h-[400px] object-cover"
+              />
+            </div>
+            <div>
+              <h2 className="text-4xl font-bold text-slate-900 mb-6">
+                Spezialisiert auf Industrieanlagen
+              </h2>
+              <p className="text-lg text-slate-600 mb-6">
+                Unsere <Link href="/business/industriereinigung" className="text-primary hover:underline">Industriereinigung</Link> umfasst die fachgerechte Reinigung von CNC-Maschinen, Produktionsanlagen und Fertigungsstraßen. Mit speziellen Reinigungsmitteln und Techniken entfernen wir Öl, Fett und Produktionsrückstände.
+              </p>
+              <div className="grid md:grid-cols-2 gap-4">
+                {[
+                  { icon: Shield, text: "Schonende Reinigung" },
+                  { icon: Wrench, text: "Fachgerechte Methoden" },
+                  { icon: Award, text: "Zertifizierte Experten" },
+                  { icon: Settings, text: "Alle Maschinentypen" }
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                      <item.icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <span className="text-slate-700">{item.text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section with Image Right */}
       <section className="py-20 bg-white">
         <div className="container">
-          <Card className="p-8 mb-12">
-            <h3 className="text-3xl font-bold mb-6">Unsere Expertise</h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              <ul className="space-y-2">
-                {["CNC-Maschinen", "Drehbänke & Fräsen", "Spritzgussmaschinen", "Druckmaschinen", "Verpackungsanlagen", "Förderbänder"].map((item, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-primary mt-0.5"/>
-                    <span>{item}</span>
-                  </li>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl font-bold text-slate-900 mb-6">
+                Umfassende Reinigungsleistungen
+              </h2>
+              <p className="text-lg text-slate-600 mb-6">
+                Von der Grundreinigung bis zur Wartungsreinigung - wir bieten alle Leistungen für Ihre Maschinen. Unsere <Link href="/business/hallenreinigung" className="text-primary hover:underline">Hallenreinigung</Link> kann bei Bedarf integriert werden.
+              </p>
+              <div className="space-y-3">
+                {[
+                  "CNC-Maschinen und Drehbänke",
+                  "Produktionsanlagen und Fertigungsstraßen",
+                  "Pressen und Stanzen",
+                  "Förderanlagen und Transportbänder",
+                  "Verpackungsmaschinen",
+                  "Druckmaschinen und Offset-Anlagen",
+                  "Lebensmittelmaschinen (HACCP-konform)",
+                  "Pharma-Anlagen (GMP-konform)"
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"/>
+                    <span className="text-slate-700">{item}</span>
+                  </div>
                 ))}
-              </ul>
-              <ul className="space-y-2">
-                {["Ölentfernung", "Kühlschmierstoff-Reste", "Metallspäne", "Produktionsrückstände", "Lackierereien", "Wartungsreinigung"].map((item, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-primary mt-0.5"/>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+              </div>
             </div>
-          </Card>
+            <div className="relative">
+              <img 
+                src="/production-line-cleaning.jpg" 
+                alt="Produktionslinie Reinigung" 
+                className="rounded-2xl shadow-xl w-full h-[500px] object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Accordion Section - FAQ */}
+      <section className="py-20 bg-slate-50">
+        <div className="container max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">
+              Häufig gestellte Fragen
+            </h2>
+            <p className="text-lg text-slate-600">
+              Alles was Sie über unsere Maschinenreinigung wissen müssen
+            </p>
+          </div>
+          
+          <Accordion type="single" collapsible className="space-y-4">
+            <AccordionItem value="item-1" className="bg-white rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-semibold">
+                Welche Reinigungsmittel verwenden Sie?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-600">
+                Wir verwenden spezialisierte, materialschonende Reinigungsmittel, die auf den jeweiligen Maschinentyp abgestimmt sind. Für Lebensmittelmaschinen setzen wir HACCP-konforme Produkte ein, für Pharma-Anlagen GMP-konforme Reiniger. Alle Mittel sind umweltfreundlich und biologisch abbaubar.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-2" className="bg-white rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-semibold">
+                Können Sie während der Produktionspausen reinigen?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-600">
+                Ja, wir passen uns flexibel Ihren Produktionszeiten an. Ob während Schichtwechseln, nachts oder am Wochenende - wir reinigen dann, wenn es für Ihren Betrieb am besten passt. Unsere <Link href="/business/facility-management" className="text-primary hover:underline">Facility Management</Link> Services koordinieren alle Abläufe.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-3" className="bg-white rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-semibold">
+                Wie oft sollten Maschinen gereinigt werden?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-600">
+                Die Reinigungsfrequenz hängt von der Nutzung und dem Verschmutzungsgrad ab. Lebensmittelmaschinen benötigen oft tägliche Reinigung, während andere Produktionsanlagen mit wöchentlicher oder monatlicher Reinigung auskommen. Wir erstellen einen individuellen Wartungsplan.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-4" className="bg-white rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-semibold">
+                Bieten Sie auch Grundreinigung an?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-600">
+                Ja, wir bieten sowohl Unterhaltsreinigung als auch intensive Grundreinigung an. Bei der Grundreinigung werden hartnäckige Verschmutzungen, Öl- und Fettrückstände vollständig entfernt. Unsere <Link href="/business/baureinigung" className="text-primary hover:underline">Baureinigung</Link> umfasst auch Endreinigung nach Umbauten.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-5" className="bg-white rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-semibold">
+                Sind Ihre Mitarbeiter geschult?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-600">
+                Alle unsere Mitarbeiter sind speziell für Maschinenreinigung geschult und verfügen über Kenntnisse in Arbeitssicherheit und Maschinentechnik. Sie sind mit den spezifischen Anforderungen verschiedener Branchen vertraut und arbeiten nach höchsten Qualitätsstandards.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-primary text-white">
+        <div className="container text-center">
+          <h2 className="text-4xl font-bold mb-6">
+            Bereit für professionelle Maschinenreinigung?
+          </h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">
+            Kontaktieren Sie uns für ein unverbindliches Angebot. Unsere Experten beraten Sie gerne zu allen Reinigungsdienstleistungen in Zürich, Zug und Luzern.
+          </p>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <Link href="/kontakt">
+              <Button size="lg" variant="secondary" className="text-lg">
+                Jetzt Kontakt aufnehmen
+                <ArrowRight className="ml-2 w-5 h-5"/>
+              </Button>
+            </Link>
+            <Link href="/standorte/zug">
+              <Button size="lg" variant="outline" className="text-lg border-white text-white hover:bg-white hover:text-primary">
+                Standorte ansehen
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 

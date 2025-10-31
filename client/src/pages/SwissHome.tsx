@@ -217,7 +217,7 @@ export default function SwissHome() {
                   "Zertifizierte Fachkräfte mit langjähriger Erfahrung",
                   "Umweltfreundliche Reinigungsmittel und -methoden",
                   "Flexible Reinigungszeiten nach Ihren Wünschen",
-                  "Transparente Preisgestaltung ohne versteckte Kosten",
+                  "Höchste Qualitätsstandards und Zuverlässigkeit",
                   "Qualitätskontrolle nach jedem Einsatz",
                   "Versicherter und bondfizierter Service",
                 ].map((item, i) => (

@@ -57,7 +57,7 @@ export default function SwissNavigation() {
         <div className="flex items-center justify-between h-20">
           <Link href="/">
             <div className="flex items-center gap-3 cursor-pointer">
-              <img src="/logo.webp" alt="Swiss Reinigung" className="h-20 w-auto" />
+              <img src="/swiss-logo.webp" alt="Swiss Reinigung" className="h-20 w-auto" />
             </div>
           </Link>
 
