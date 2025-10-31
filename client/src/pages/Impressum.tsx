@@ -17,7 +17,6 @@ export default function Impressum() {
               <div>
                 <div className="font-semibold text-slate-900 mb-2">Firma</div>
                 <div className="text-slate-700">Swiss Reinigungsfirma</div>
-                <div className="text-slate-700">BGS Gebäudeservice</div>
               </div>
               
               <div>

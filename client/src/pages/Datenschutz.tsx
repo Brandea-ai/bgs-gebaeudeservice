@@ -19,7 +19,7 @@ export default function Datenschutz() {
             <h2 className="text-2xl font-bold mb-4">Verantwortliche Stelle</h2>
             <div className="text-slate-700 leading-relaxed">
               <p className="mb-2">Verantwortlich für die Datenverarbeitung auf dieser Website ist:</p>
-              <p className="font-semibold mt-4">Swiss Reinigungsfirma / BGS Gebäudeservice</p>
+              <p className="font-semibold mt-4">Swiss Reinigungsfirma</p>
               <p>Tannhof 10, 6020 Emmenbrücke, Schweiz</p>
               <p>Telefon: +41 41 320 56 10</p>
               <p>E-Mail: info@bgs-service.ch</p>
