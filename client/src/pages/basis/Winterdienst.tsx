@@ -1,3 +1,5 @@
+import SwissNavigation from "@/components/SwissNavigation";
+import SwissFooter from "@/components/SwissFooter";
 import { Link } from 'wouter';
 import { CheckCircle, Clock, Shield, Phone, ArrowRight, ChevronDown, Snowflake } from 'lucide-react';
 import { useState } from 'react';
@@ -44,7 +46,9 @@ export default function Winterdienst() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
+      <SwissNavigation />
+      <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-red-600 to-red-700 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -70,9 +74,15 @@ export default function Winterdienst() {
                 <Phone className="mr-2 h-5 w-5" />
                 +41 41 320 56 10
               </a>
-            </div>
-          </div>
-        </div>
+                  <SwissFooter />
+    </div>
+  </div>
+                <SwissFooter />
+    </div>
+  </div>
+              <SwissFooter />
+    </div>
+  </div>
       </section>
 
       {/* Features */}
@@ -83,13 +93,21 @@ export default function Winterdienst() {
               <div key={index} className="text-center">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 text-red-600 rounded-full mb-4">
                   <feature.icon className="h-8 w-8" />
-                </div>
+                      <SwissFooter />
+    </div>
+  </div>
                 <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
-              </div>
+                    <SwissFooter />
+    </div>
+  </div>
             ))}
-          </div>
-        </div>
+                <SwissFooter />
+    </div>
+  </div>
+              <SwissFooter />
+    </div>
+  </div>
       </section>
 
       {/* Content Section 1 - Text Left, Image Right */}
@@ -115,16 +133,24 @@ export default function Winterdienst() {
                 Mehr über Hausmeisterservice
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
-            </div>
+                  <SwissFooter />
+    </div>
+  </div>
             <div className="relative h-96 rounded-lg overflow-hidden shadow-xl">
               <img
                 src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&q=80"
                 alt="Winterdienst Schneeräumung"
                 className="w-full h-full object-cover"
               />
-            </div>
-          </div>
-        </div>
+                  <SwissFooter />
+    </div>
+  </div>
+                <SwissFooter />
+    </div>
+  </div>
+              <SwissFooter />
+    </div>
+  </div>
       </section>
 
       {/* Services List */}
@@ -137,16 +163,24 @@ export default function Winterdienst() {
             <p className="text-xl text-gray-600">
               Umfassender Service für sichere Wege
             </p>
-          </div>
+                <SwissFooter />
+    </div>
+  </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => (
               <div key={index} className="flex items-start space-x-3 p-4 bg-gray-50 rounded-lg">
                 <CheckCircle className="h-6 w-6 text-red-600 flex-shrink-0 mt-1" />
                 <span className="text-lg">{service}</span>
-              </div>
+                    <SwissFooter />
+    </div>
+  </div>
             ))}
-          </div>
-        </div>
+                <SwissFooter />
+    </div>
+  </div>
+              <SwissFooter />
+    </div>
+  </div>
       </section>
 
       {/* Content Section 2 - Image Left, Text Right */}
@@ -159,7 +193,9 @@ export default function Winterdienst() {
                 alt="Professionelle Schneeräumung"
                 className="w-full h-full object-cover"
               />
-            </div>
+                  <SwissFooter />
+    </div>
+  </div>
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 24/7 Bereitschaft für Ihre Sicherheit
@@ -179,9 +215,15 @@ export default function Winterdienst() {
                 Mehr über Unterhaltsreinigung
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
-            </div>
-          </div>
-        </div>
+                  <SwissFooter />
+    </div>
+  </div>
+                <SwissFooter />
+    </div>
+  </div>
+              <SwissFooter />
+    </div>
+  </div>
       </section>
 
       {/* FAQ Section */}
@@ -194,7 +236,9 @@ export default function Winterdienst() {
             <p className="text-xl text-gray-600">
               Alles, was Sie über unseren Winterdienst wissen müssen
             </p>
-          </div>
+                <SwissFooter />
+    </div>
+  </div>
           <div className="space-y-4">
             {faqs.map((faq, index) => (
               <div key={index} className="border border-gray-200 rounded-lg overflow-hidden">
@@ -212,12 +256,20 @@ export default function Winterdienst() {
                 {openFaq === index && (
                   <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
                     <p className="text-gray-600">{faq.answer}</p>
-                  </div>
+                        <SwissFooter />
+    </div>
+  </div>
                 )}
-              </div>
+                    <SwissFooter />
+    </div>
+  </div>
             ))}
-          </div>
-        </div>
+                <SwissFooter />
+    </div>
+  </div>
+              <SwissFooter />
+    </div>
+  </div>
       </section>
 
       {/* CTA Section */}
@@ -243,9 +295,15 @@ export default function Winterdienst() {
             >
               Weitere Leistungen entdecken
             </Link>
-          </div>
-        </div>
-      </section>
+                <SwissFooter />
     </div>
+  </div>
+              <SwissFooter />
+    </div>
+  </div>
+      </section>
+          <SwissFooter />
+    </div>
+  </div>
   );
 }
