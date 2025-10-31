@@ -33,26 +33,26 @@ export default function SwissHome() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent"></div>
         </div>
 
-        <div className="container relative z-10 py-32">
+        <div className="container relative z-10 py-24 md:py-32">
           <div className="max-w-4xl">
-            <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-6">
-              <span className="text-primary font-semibold">Professionelle Reinigungsfirma in der Schweiz</span>
+            <div className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-primary/10 rounded-full mb-4 sm:mb-6">
+              <span className="text-primary font-semibold text-sm sm:text-base">Professionelle Reinigungsfirma in der Schweiz</span>
             </div>
-            <h1 className="text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
               Erstklassige <span className="text-primary">Gebäudereinigung</span> für Zürich, Zug und Luzern
             </h1>
-            <p className="text-2xl text-white/90 mb-8 leading-relaxed">
-              Swiss Reinigungsfirma bietet erstklassige Gebäudereinigung und umfassende Reinigungsdienstleistungen für Unternehmen und Privatkunden in Zürich, Zug und Luzern. Unsere erfahrenen Fachkräfte sorgen für makellose Sauberkeit mit Schweizer Präzision.
+            <p className="text-lg md:text-xl lg:text-2xl text-white/90 mb-8 leading-relaxed max-w-2xl">
+              Professionelle Reinigungsdienste für Unternehmen und Privatkunden mit Schweizer Präzision.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <Link href="/kontakt">
-                <Button size="lg" className="text-lg px-8 py-6 shadow-2xl hover:shadow-primary/50 transition-all">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <Link href="/kontakt" className="w-full sm:w-auto">
+                <Button size="lg" className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 shadow-2xl hover:shadow-primary/50 transition-all">
                   Kostenlose Beratung
-                  <ArrowRight className="ml-2 w-5 h-5" />
+                  <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
                 </Button>
               </Link>
-              <a href="tel:+41413205610">
-                <Button size="lg" variant="outline" className="text-lg px-8 py-6 bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-slate-900">
+              <a href="tel:+41413205610" className="w-full sm:w-auto">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-slate-900">
                   +41 41 320 56 10
                 </Button>
               </a>
