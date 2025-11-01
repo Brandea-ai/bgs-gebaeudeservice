@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface MegaMenuItem {
@@ -133,29 +133,71 @@ export default function Navigation() {
                     </button>
                   )}
 
-                  {/* Mega Menu */}
+                  {/* Premium Mega Menu */}
                   {item.megaMenu && activeMegaMenu === item.label && (
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[800px] glass floating rounded-2xl p-6 shadow-2xl">
-                      <div className="grid grid-cols-3 gap-4">
-                        {item.megaMenu.map((menuItem) => (
-                          <Link key={menuItem.href} href={menuItem.href}>
-                            <a className="group block rounded-xl overflow-hidden transition-smooth hover:scale-105">
-                              <div className="aspect-video w-full overflow-hidden rounded-lg mb-3">
-                                <img
-                                  src={menuItem.image}
-                                  alt={menuItem.title}
-                                  className="w-full h-full object-cover transition-smooth group-hover:scale-110"
-                                />
-                              </div>
-                              <h3 className="font-semibold text-foreground mb-1 group-hover:text-accent transition-smooth">
-                                {menuItem.title}
-                              </h3>
-                              <p className="text-sm text-muted-foreground line-clamp-2">
-                                {menuItem.description}
-                              </p>
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[900px]">
+                      <div className="glass floating rounded-3xl p-8 shadow-2xl border border-accent/10">
+                        {/* Header */}
+                        <div className="mb-6 pb-6 border-b border-border/50">
+                          <h3 className="text-2xl font-bold text-foreground mb-2">
+                            Unsere <span className="text-accent">Leistungen</span>
+                          </h3>
+                          <p className="text-sm text-muted-foreground">
+                            Strategische Beratung und innovative Lösungen für Ihr Unternehmen
+                          </p>
+                        </div>
+
+                        {/* Grid mit verbessertem Design */}
+                        <div className="grid grid-cols-3 gap-6">
+                          {item.megaMenu.map((menuItem) => (
+                            <Link key={menuItem.href} href={menuItem.href}>
+                              <a className="group block h-full">
+                                <div className="h-full rounded-2xl overflow-hidden bg-white/50 hover:bg-white transition-all duration-300 hover:shadow-xl border border-transparent hover:border-accent/20">
+                                  {/* Image Container */}
+                                  <div className="aspect-[4/3] w-full overflow-hidden relative">
+                                    <img
+                                      src={menuItem.image}
+                                      alt={menuItem.title}
+                                      className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
+                                    />
+                                    {/* Gradient Overlay */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                    
+                                    {/* Arrow Icon on Hover */}
+                                    <div className="absolute bottom-3 right-3 w-8 h-8 bg-accent rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                                      <ArrowRight className="w-4 h-4 text-white" />
+                                    </div>
+                                  </div>
+
+                                  {/* Content */}
+                                  <div className="p-5">
+                                    <h4 className="font-bold text-lg text-foreground mb-2 group-hover:text-accent transition-colors duration-300">
+                                      {menuItem.title}
+                                    </h4>
+                                    <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
+                                      {menuItem.description}
+                                    </p>
+                                  </div>
+                                </div>
+                              </a>
+                            </Link>
+                          ))}
+                        </div>
+
+                        {/* Footer CTA */}
+                        <div className="mt-8 pt-6 border-t border-border/50 flex items-center justify-between">
+                          <p className="text-sm text-muted-foreground">
+                            Interessiert an einer Zusammenarbeit?
+                          </p>
+                          <Link href="/kontakt">
+                            <a>
+                              <Button variant="outline" size="sm" className="group">
+                                Kontakt aufnehmen
+                                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                              </Button>
                             </a>
                           </Link>
-                        ))}
+                        </div>
                       </div>
                     </div>
                   )}
