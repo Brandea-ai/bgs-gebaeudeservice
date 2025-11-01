@@ -9,7 +9,8 @@ export default function Footer() {
     email: "",
     phone: "",
     service: "",
-    message: ""
+    message: "",
+    acceptPrivacy: false
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
@@ -35,7 +36,8 @@ export default function Footer() {
           email: "",
           phone: "",
           service: "",
-          message: ""
+          message: "",
+          acceptPrivacy: false
         });
         setTimeout(() => setSubmitStatus("idle"), 5000);
       } else {
@@ -198,6 +200,32 @@ export default function Footer() {
                   className="w-full px-4 py-2.5 lg:py-3 rounded-md border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all resize-none text-sm sm:text-base"
                   placeholder="Beschreiben Sie Ihr Anliegen..."
                 />
+              </div>
+
+              {/* Datenschutz Checkbox */}
+              <div className="mb-6">
+                <label className="flex items-start gap-3 cursor-pointer group">
+                  <input
+                    type="checkbox"
+                    name="acceptPrivacy"
+                    checked={formData.acceptPrivacy}
+                    onChange={(e) => setFormData({ ...formData, acceptPrivacy: e.target.checked })}
+                    required
+                    className="mt-1 w-4 h-4 rounded border-border text-accent focus:ring-2 focus:ring-accent focus:ring-offset-0 cursor-pointer"
+                  />
+                  <span className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                    Ich habe die{" "}
+                    <a
+                      href="/datenschutz"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-accent hover:underline font-medium"
+                    >
+                      Datenschutzerklärung
+                    </a>{" "}
+                    zur Kenntnis genommen. Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und für Rückfragen dauerhaft gespeichert werden. *
+                  </span>
+                </label>
               </div>
 
               {/* Submit Button */}

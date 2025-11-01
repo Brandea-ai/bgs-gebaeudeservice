@@ -1,5 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { Resend } from 'resend';
+import { getAdminEmailTemplate } from './emails/admin-notification';
+import { getSenderConfirmationTemplate } from './emails/sender-confirmation';
 
 export default async function handler(
   req: VercelRequest,
@@ -37,43 +39,52 @@ export default async function handler(
     console.log('✅ Resend API key found, initializing...');
     const resend = new Resend(resendApiKey);
 
-    // Prepare email content
-    const emailContent = `
-Neue Kontaktanfrage von der BGS-Gebäudeservice Website
+    // Generate HTML email templates
+    const adminEmailHtml = getAdminEmailTemplate({
+      name,
+      email,
+      phone,
+      service,
+      message
+    });
 
-Name: ${name}
-E-Mail: ${email}
-Telefon: ${phone || 'Nicht angegeben'}
-Gewünschte Dienstleistung: ${service || 'Nicht angegeben'}
+    const senderConfirmationHtml = getSenderConfirmationTemplate({
+      name,
+      service
+    });
 
-Nachricht:
-${message}
-
----
-Diese E-Mail wurde automatisch über das Kontaktformular auf bgs-gebaeudeservice.vercel.app gesendet.
-    `.trim();
-
-    console.log('📤 Sending email via Resend...');
-    console.log('From: onboarding@resend.dev');
-    console.log('To: info@brandea.de');
-    console.log('Subject: Neue Kontaktanfrage von ' + name);
-
-    // Send email using Resend
-    const data = await resend.emails.send({
+    console.log('📤 Sending admin notification email...');
+    
+    // Send email to admin
+    const adminEmailResult = await resend.emails.send({
       from: 'onboarding@resend.dev',
       to: 'info@brandea.de',
       subject: `Neue Kontaktanfrage von ${name}`,
-      text: emailContent,
+      html: adminEmailHtml,
       replyTo: email,
     });
 
-    console.log('✅ Email sent successfully!');
-    console.log('Resend response:', JSON.stringify(data, null, 2));
+    console.log('✅ Admin email sent successfully!');
+    console.log('Admin email ID:', adminEmailResult.data?.id);
+
+    console.log('📤 Sending confirmation email to sender...');
+    
+    // Send confirmation email to sender
+    const confirmationEmailResult = await resend.emails.send({
+      from: 'onboarding@resend.dev',
+      to: email,
+      subject: 'Bestätigung Ihrer Kontaktanfrage - BGS Gebäudeservice',
+      html: senderConfirmationHtml,
+    });
+
+    console.log('✅ Confirmation email sent successfully!');
+    console.log('Confirmation email ID:', confirmationEmailResult.data?.id);
 
     return res.status(200).json({ 
       success: true,
-      message: 'E-Mail erfolgreich gesendet',
-      emailId: data.id
+      message: 'E-Mails erfolgreich gesendet',
+      adminEmailId: adminEmailResult.data?.id,
+      confirmationEmailId: confirmationEmailResult.data?.id
     });
 
   } catch (error: any) {
