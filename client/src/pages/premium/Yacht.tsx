@@ -99,7 +99,7 @@ export default function Yacht() {
             
             <TabsContent value="leistungen" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Umfassende Yacht Reinigung</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 whitespace-nowrap">Umfassende Yacht Reinigung</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h4 className="font-bold text-lg mb-3 text-primary">Außenreinigung</h4>
@@ -143,7 +143,7 @@ export default function Yacht() {
             
             <TabsContent value="materialien" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Spezialisierte Material-Behandlung</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 whitespace-nowrap">Spezialisierte Material-Behandlung</h3>
                 <div className="space-y-6">
                   {[
                     {
@@ -174,7 +174,7 @@ export default function Yacht() {
             
             <TabsContent value="wartung" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Regelmäßiger Wartungsservice</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 whitespace-nowrap">Regelmäßiger Wartungsservice</h3>
                 <p className="text-lg text-slate-600 mb-6">
                   Halten Sie Ihre Yacht in perfektem Zustand mit unseren maßgeschneiderten Wartungspaketen:
                 </p>

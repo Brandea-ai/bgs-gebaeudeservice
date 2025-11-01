@@ -105,7 +105,7 @@ export default function Fensterreinigung() {
             
             <TabsContent value="leistungen">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Umfassende Fensterreinigung</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 whitespace-nowrap">Umfassende Fensterreinigung</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <ul className="space-y-2">
                     {["Innen- und Außenreinigung", "Rahmen & Fensterbretter", "Dachfenster & Oberlichter", "Schaufenster", "Wintergärten", "Glasdächer"].map((item, i) => (
@@ -129,7 +129,7 @@ export default function Fensterreinigung() {
             
             <TabsContent value="verfahren">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Moderne Reinigungstechniken</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 whitespace-nowrap">Moderne Reinigungstechniken</h3>
                 <div className="space-y-6">
                   {[
                     { title: "Osmose-Wasser-Technik", desc: "Demineralisiertes Wasser für streifenfreie Ergebnisse ohne Chemie. Umweltfreundlich und effizient." },
@@ -148,7 +148,7 @@ export default function Fensterreinigung() {
             
             <TabsContent value="intervalle">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Empfohlene Reinigungsintervalle</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 whitespace-nowrap">Empfohlene Reinigungsintervalle</h3>
                 <div className="space-y-4">
                   {[
                     { type: "Bürogebäude", interval: "4-6x jährlich", desc: "Für repräsentativen Eindruck" },

@@ -30,7 +30,7 @@ export default function Knowledge() {
                   <BookOpen className="w-4 h-4" />
                   {article.category}
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-3">{article.title}</h3>
+                <h3 className="text-xl font-bold text-foreground mb-3 whitespace-nowrap">{article.title}</h3>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <Clock className="w-4 h-4" />
                   {article.date}

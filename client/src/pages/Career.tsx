@@ -28,7 +28,7 @@ export default function Career() {
             {positions.map((position, index) => (
               <div key={index} className="glass floating rounded-3xl p-8">
                 <Briefcase className="w-8 h-8 text-accent mb-4" />
-                <h3 className="text-xl font-bold text-foreground mb-2">{position.title}</h3>
+                <h3 className="text-xl font-bold text-foreground mb-2 whitespace-nowrap">{position.title}</h3>
                 <p className="text-muted-foreground mb-1">{position.location}</p>
                 <p className="text-sm text-accent mb-6">{position.type}</p>
                 <Link href="/kontakt">

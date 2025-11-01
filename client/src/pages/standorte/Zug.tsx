@@ -113,7 +113,7 @@ export default function Zug() {
                 ].map((service, i) => (
                   <Card key={i} className="p-6 hover:shadow-xl transition-all">
                     <TrendingUp className="w-10 h-10 text-primary mb-4"/>
-                    <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+                    <h3 className="text-xl font-bold mb-3 whitespace-nowrap">{service.title}</h3>
                     <p className="text-slate-600">{service.desc}</p>
                   </Card>
                 ))}
@@ -128,7 +128,7 @@ export default function Zug() {
                   { title: "Private Housekeeping", desc: "Exklusiver Service für Premium-Kunden" }
                 ].map((service, i) => (
                   <Card key={i} className="p-8 hover:shadow-xl transition-all">
-                    <h3 className="text-2xl font-bold mb-3">{service.title}</h3>
+                    <h3 className="text-2xl font-bold mb-3 whitespace-nowrap">{service.title}</h3>
                     <p className="text-slate-600 text-lg">{service.desc}</p>
                   </Card>
                 ))}
@@ -141,7 +141,7 @@ export default function Zug() {
                   "Grünflächenpflege", "Beschaffungsmanagement", "Sonderleistungen"
                 ].map((service, i) => (
                   <Card key={i} className="p-6 hover:shadow-xl transition-all">
-                    <h3 className="text-xl font-bold mb-3">{service}</h3>
+                    <h3 className="text-xl font-bold mb-3 whitespace-nowrap">{service}</h3>
                     <p className="text-slate-600">Umfassende Facility-Lösungen in Zug</p>
                   </Card>
                 ))}

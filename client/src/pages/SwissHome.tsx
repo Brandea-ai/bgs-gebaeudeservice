@@ -48,7 +48,8 @@ export default function SwissHome() {
               <span className="text-primary font-semibold text-sm sm:text-base">Professionelle Reinigungsfirma in der Schweiz</span>
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
-              Erstklassige <span className="text-primary">Gebäudereinigung</span> für Zürich, Zug und Luzern
+              Erstklassige <span className="text-primary">Gebäude&shy;reinigung</span> <span className="hidden sm:inline">für</span><br className="sm:hidden" />
+              <span className="sm:hidden">für </span>Zürich, Zug und Luzern
             </h1>
             <p className="text-lg md:text-xl text-white/95 mb-8 leading-relaxed max-w-2xl">
               Professionelle Reinigungsdienste für Unternehmen und Premium-Kunden mit Schweizer Präzision.
@@ -75,14 +76,14 @@ export default function SwissHome() {
         <div className="container">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: Shield, label: "Zertifiziert", value: "ISO Qualität" },
-              { icon: Clock, label: "Verfügbar", value: "24/7 Service" },
-              { icon: Users, label: "Kunden", value: "500+ Zufrieden" },
+              { icon: Shield, label: "Zertifiziert", value: "ISO" },
+              { icon: Clock, label: "Verfügbar", value: "24/7" },
+              { icon: Users, label: "Zufriedene Kunden", value: "500+" },
               { icon: Award, label: "Erfahrung", value: "15+ Jahre" },
             ].map((item, index) => (
               <Card key={index} className="p-8 text-center hover:shadow-xl transition-all">
                 <item.icon className="w-12 h-12 text-primary mx-auto mb-4" />
-                <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">{item.value}</h3>
+                <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2 whitespace-nowrap whitespace-nowrap">{item.value}</h3>
                 <p className="text-sm text-slate-600">{item.label}</p>
               </Card>
             ))}
@@ -104,7 +105,7 @@ export default function SwissHome() {
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-4">Vorher</h3>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-4 whitespace-nowrap">Vorher</h3>
               <img 
                 src="/vorher-buero-schmutzig.jpg" 
                 alt="Büro vor der Reinigung" 
@@ -113,7 +114,7 @@ export default function SwissHome() {
               <p className="text-slate-600 mt-4">Verschmutztes Büro mit Staub und Unordnung</p>
             </div>
             <div>
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-4">Nachher</h3>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-4 whitespace-nowrap">Nachher</h3>
               <img 
                 src="/nachher-buero-sauber.jpg" 
                 alt="Büro nach der Reinigung" 
@@ -141,7 +142,7 @@ export default function SwissHome() {
             {/* Premium Services */}
             <Card className="p-10 hover:shadow-2xl transition-all group">
               <Sparkles className="w-16 h-16 text-primary mb-6" />
-              <h3 className="text-2xl sm:text-3xl font-bold mb-4 group-hover:text-primary transition-colors">Premium Services</h3>
+              <h3 className="text-2xl sm:text-3xl font-bold mb-4 group-hover:text-primary transition-colors whitespace-nowrap">Premium Services</h3>
               <p className="text-slate-600 mb-6">
                 Exklusive Reinigungsdienstleistungen für höchste Ansprüche. Privatjets, Yachten, Luxusimmobilien und Private Housekeeping.
               </p>
@@ -164,7 +165,7 @@ export default function SwissHome() {
             {/* Business Lösungen */}
             <Card className="p-10 hover:shadow-2xl transition-all group">
               <Users className="w-16 h-16 text-primary mb-6" />
-              <h3 className="text-2xl sm:text-3xl font-bold mb-4 group-hover:text-primary transition-colors">Business Lösungen</h3>
+              <h3 className="text-2xl sm:text-3xl font-bold mb-4 group-hover:text-primary transition-colors whitespace-nowrap">Business Lösungen</h3>
               <p className="text-slate-600 mb-6">
                 Professionelle Gebäudereinigung und Facility Management für Unternehmen in Zürich, Zug und Luzern.
               </p>
@@ -187,7 +188,7 @@ export default function SwissHome() {
             {/* Basisreinigung */}
             <Card className="p-10 hover:shadow-2xl transition-all group">
               <Shield className="w-16 h-16 text-primary mb-6" />
-              <h3 className="text-2xl sm:text-3xl font-bold mb-4 group-hover:text-primary transition-colors">Basisreinigung</h3>
+              <h3 className="text-2xl sm:text-3xl font-bold mb-4 group-hover:text-primary transition-colors whitespace-nowrap">Basisreinigung</h3>
               <p className="text-slate-600 mb-6">
                 Zuverlässige Unterhaltsreinigung und Hausmeisterservice für Wohn- und Geschäftsobjekte.
               </p>

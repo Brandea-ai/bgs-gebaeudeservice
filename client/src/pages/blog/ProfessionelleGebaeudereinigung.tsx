@@ -38,7 +38,7 @@ export default function ProfessionelleGebaeudereinigung() {
               </TabsList>
               <TabsContent value="standards" className="mt-6">
                 <Card className="p-6">
-                  <h3 className="text-2xl font-bold mb-4">Qualitätsstandards</h3>
+                  <h3 className="text-2xl font-bold mb-4 whitespace-nowrap">Qualitätsstandards</h3>
                   <p className="text-slate-700 mb-4">
                     Professionelle Reinigungsfirmen arbeiten nach definierten Qualitätsstandards wie ISO 9001. Diese Standards garantieren gleichbleibende Qualität, dokumentierte Prozesse und kontinuierliche Verbesserung.
                   </p>
@@ -54,7 +54,7 @@ export default function ProfessionelleGebaeudereinigung() {
               </TabsContent>
               <TabsContent value="technologie" className="mt-6">
                 <Card className="p-6">
-                  <h3 className="text-2xl font-bold mb-4">Moderne Technologie</h3>
+                  <h3 className="text-2xl font-bold mb-4 whitespace-nowrap">Moderne Technologie</h3>
                   <p className="text-slate-700 mb-4">
                     Professionelle Gebäudereinigung nutzt modernste Technologie für effiziente und gründliche Ergebnisse. Von Hochleistungssaugern bis zu automatisierten Reinigungsmaschinen.
                   </p>
@@ -70,7 +70,7 @@ export default function ProfessionelleGebaeudereinigung() {
               </TabsContent>
               <TabsContent value="personal" className="mt-6">
                 <Card className="p-6">
-                  <h3 className="text-2xl font-bold mb-4">Geschultes Personal</h3>
+                  <h3 className="text-2xl font-bold mb-4 whitespace-nowrap">Geschultes Personal</h3>
                   <p className="text-slate-700 mb-4">
                     Das Herzstück jeder professionellen Reinigungsfirma ist gut geschultes, motiviertes Personal. Regelmäßige Schulungen und Weiterbildungen sind essentiell.
                   </p>
@@ -112,7 +112,7 @@ export default function ProfessionelleGebaeudereinigung() {
             </Accordion>
 
             <Card className="p-8 bg-gradient-to-br from-primary/10 to-red-50 mb-12">
-              <h3 className="text-2xl font-bold mb-4">Qualitätsmerkmale auf einen Blick</h3>
+              <h3 className="text-2xl font-bold mb-4 whitespace-nowrap">Qualitätsmerkmale auf einen Blick</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 {["Zertifizierte Prozesse", "Geschultes Personal", "Moderne Ausrüstung", "Umweltfreundliche Produkte", "Transparente Kommunikation", "Flexible Einsatzzeiten", "Versicherungsschutz", "Qualitätskontrollen"].map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
@@ -124,7 +124,7 @@ export default function ProfessionelleGebaeudereinigung() {
             </Card>
 
             <div className="mt-16 pt-12 border-t text-center">
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4">Professionelle Reinigung gewünscht?</h3>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 whitespace-nowrap">Professionelle Reinigung gewünscht?</h3>
               <p className="text-xl text-slate-600 mb-8">Kontaktieren Sie uns für eine unverbindliche Beratung.</p>
               <Link href="/kontakt"><Button size="lg" className="text-lg px-8">Jetzt anfragen<ArrowRight className="ml-2 w-5 h-5"/></Button></Link>
             </div>

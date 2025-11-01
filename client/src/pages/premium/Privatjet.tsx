@@ -99,7 +99,7 @@ export default function Privatjet() {
             
             <TabsContent value="leistungen" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Umfassende Privatjet Reinigung</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 whitespace-nowrap">Umfassende Privatjet Reinigung</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h4 className="font-bold text-lg mb-3 text-primary">Innenreinigung</h4>
@@ -143,7 +143,7 @@ export default function Privatjet() {
             
             <TabsContent value="prozess" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Unser bewährter Prozess</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 whitespace-nowrap">Unser bewährter Prozess</h3>
                 <div className="space-y-6">
                   {[
                     {
@@ -183,7 +183,7 @@ export default function Privatjet() {
             
             <TabsContent value="vorteile" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Warum Swiss Reinigungsfirma?</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 whitespace-nowrap">Warum Swiss Reinigungsfirma?</h3>
                 <div className="grid md:grid-cols-2 gap-8">
                   {[
                     {

@@ -110,7 +110,7 @@ export default function Baureinigung() {
             
             <TabsContent value="phasen">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Baureinigung in 3 Phasen</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 whitespace-nowrap">Baureinigung in 3 Phasen</h3>
                 <div className="space-y-6">
                   {[
                     { title: "1. Grobreinigung", desc: "Entfernung grober Verschmutzungen, Bauschutt, Verpackungsmaterial. Erste Reinigung nach Rohbau." },
@@ -128,7 +128,7 @@ export default function Baureinigung() {
             
             <TabsContent value="leistungen">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Unsere Leistungen</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 whitespace-nowrap">Unsere Leistungen</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <ul className="space-y-2">
                     {["Baustaub entfernen", "Fenster reinigen", "Böden grundreinigen", "Sanitäranlagen", "Türen & Zargen", "Heizkörper"].map((item, i) => (
@@ -152,7 +152,7 @@ export default function Baureinigung() {
             
             <TabsContent value="entsorgung">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Fachgerechte Entsorgung</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 whitespace-nowrap">Fachgerechte Entsorgung</h3>
                 <p className="text-slate-600 mb-6">
                   Wir entsorgen Bauabfälle fachgerecht und umweltbewusst:
                 </p>

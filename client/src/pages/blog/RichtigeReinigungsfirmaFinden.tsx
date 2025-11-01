@@ -50,7 +50,7 @@ export default function RichtigeReinigungsfirmaFinden() {
             </p>
 
             <Card className="p-8 bg-red-50 mb-12">
-              <h3 className="text-2xl font-bold mb-4">Die wichtigsten Auswahlkriterien auf einen Blick</h3>
+              <h3 className="text-2xl font-bold mb-4 whitespace-nowrap">Die wichtigsten Auswahlkriterien auf einen Blick</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 {[
                   "Zertifizierungen und Qualifikationen",
@@ -168,19 +168,19 @@ export default function RichtigeReinigungsfirmaFinden() {
 
             <div className="grid md:grid-cols-3 gap-6 mb-12">
               <Card className="p-6">
-                <h3 className="text-xl font-bold mb-3">Zürich</h3>
+                <h3 className="text-xl font-bold mb-3 whitespace-nowrap">Zürich</h3>
                 <p className="text-slate-600">
                   Größte Stadt der Schweiz mit hoher Nachfrage nach professionellen Reinigungsdienstleistungen für Büros, Hotels und Geschäfte.
                 </p>
               </Card>
               <Card className="p-6">
-                <h3 className="text-xl font-bold mb-3">Zug</h3>
+                <h3 className="text-xl font-bold mb-3 whitespace-nowrap">Zug</h3>
                 <p className="text-slate-600">
                   Wirtschaftsstarker Kanton mit vielen internationalen Unternehmen und hohen Qualitätsansprüchen.
                 </p>
               </Card>
               <Card className="p-6">
-                <h3 className="text-xl font-bold mb-3">Luzern</h3>
+                <h3 className="text-xl font-bold mb-3 whitespace-nowrap">Luzern</h3>
                 <p className="text-slate-600">
                   Tourismusstarke Region mit Bedarf an Reinigung für Hotels, Restaurants und öffentliche Einrichtungen.
                 </p>
@@ -231,7 +231,7 @@ export default function RichtigeReinigungsfirmaFinden() {
                     {item.step}
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                    <h3 className="text-xl font-bold mb-2 whitespace-nowrap">{item.title}</h3>
                     <p className="text-slate-600">{item.text}</p>
                   </div>
                 </div>
@@ -239,7 +239,7 @@ export default function RichtigeReinigungsfirmaFinden() {
             </div>
 
             <Card className="p-8 bg-gradient-to-br from-primary/10 to-red-50 mb-12">
-              <h3 className="text-2xl font-bold mb-4">Fazit</h3>
+              <h3 className="text-2xl font-bold mb-4 whitespace-nowrap">Fazit</h3>
               <p className="text-lg leading-relaxed text-slate-700">
                 Die Wahl der richtigen Reinigungsfirma erfordert sorgfältige Überlegung und Recherche. Nehmen Sie sich die Zeit, verschiedene Anbieter zu vergleichen und achten Sie nicht nur auf den Preis, sondern vor allem auf Qualität, Zuverlässigkeit und Service. Eine professionelle Reinigungsfirma ist ein langfristiger Partner, der zum Erfolg Ihres Unternehmens beiträgt.
               </p>
@@ -248,7 +248,7 @@ export default function RichtigeReinigungsfirmaFinden() {
 
           <div className="mt-16 pt-12 border-t">
             <div className="text-center">
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4">Bereit für professionelle Reinigung?</h3>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 whitespace-nowrap">Bereit für professionelle Reinigung?</h3>
               <p className="text-xl text-slate-600 mb-8">
                 Kontaktieren Sie uns für ein unverbindliches Beratungsgespräch.
               </p>

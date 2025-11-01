@@ -99,7 +99,7 @@ export default function Fassadenreinigung() {
             
             <TabsContent value="materialien" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Expertise für alle Fassadenmaterialien</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 whitespace-nowrap">Expertise für alle Fassadenmaterialien</h3>
                 <div className="grid md:grid-cols-2 gap-8">
                   {[
                     {
@@ -138,7 +138,7 @@ export default function Fassadenreinigung() {
             
             <TabsContent value="verfahren" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Moderne Reinigungsverfahren</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 whitespace-nowrap">Moderne Reinigungsverfahren</h3>
                 <div className="space-y-6">
                   {[
                     {
@@ -173,7 +173,7 @@ export default function Fassadenreinigung() {
             
             <TabsContent value="wartung" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Wartungsverträge für dauerhaften Werterhalt</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 whitespace-nowrap">Wartungsverträge für dauerhaften Werterhalt</h3>
                 <p className="text-lg text-slate-600 mb-8">
                   Regelmäßige Fassadenreinigung erhält den Wert Ihrer Immobilie und verhindert teure Sanierungen:
                 </p>

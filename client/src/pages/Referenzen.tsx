@@ -110,7 +110,7 @@ export default function Referenzen() {
                   </div>
                 </div>
                 <div className="p-8">
-                  <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
+                  <h3 className="text-2xl font-bold mb-3 whitespace-nowrap">{project.title}</h3>
                   <p className="text-slate-600 mb-6">{project.description}</p>
                   <div className="space-y-2">
                     <div className="font-semibold text-sm text-slate-900 mb-2">Ergebnisse:</div>

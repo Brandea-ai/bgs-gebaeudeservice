@@ -99,7 +99,7 @@ export default function Bueroreinigung() {
             
             <TabsContent value="leistungen" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Umfassende Büroreinigung</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 whitespace-nowrap">Umfassende Büroreinigung</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h4 className="font-bold text-lg mb-3 text-primary">Tägliche Unterhaltsreinigung</h4>
@@ -143,7 +143,7 @@ export default function Bueroreinigung() {
             
             <TabsContent value="ablauf" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Flexibler Reinigungsablauf</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 whitespace-nowrap">Flexibler Reinigungsablauf</h3>
                 <div className="space-y-6">
                   {[
                     {
@@ -174,7 +174,7 @@ export default function Bueroreinigung() {
             
             <TabsContent value="pakete" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Transparente Preisgestaltung</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 whitespace-nowrap">Transparente Preisgestaltung</h3>
                 <div className="grid md:grid-cols-3 gap-6">
                   <Card className="p-6 bg-slate-50">
                     <h4 className="text-xl font-bold mb-4">Starter</h4>

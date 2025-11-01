@@ -113,7 +113,7 @@ export default function Luzern() {
                 ].map((service, i) => (
                   <Card key={i} className="p-6 hover:shadow-xl transition-all">
                     <Home className="w-10 h-10 text-primary mb-4"/>
-                    <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+                    <h3 className="text-xl font-bold mb-3 whitespace-nowrap">{service.title}</h3>
                     <p className="text-slate-600">{service.desc}</p>
                   </Card>
                 ))}
@@ -126,7 +126,7 @@ export default function Luzern() {
                   "Industriereinigung", "Fensterreinigung", "Facility Management"
                 ].map((service, i) => (
                   <Card key={i} className="p-6 hover:shadow-xl transition-all">
-                    <h3 className="text-xl font-bold mb-3">{service}</h3>
+                    <h3 className="text-xl font-bold mb-3 whitespace-nowrap">{service}</h3>
                     <p className="text-slate-600">Professionelle Lösungen für Luzern</p>
                   </Card>
                 ))}
@@ -141,7 +141,7 @@ export default function Luzern() {
                   { title: "Privatjet-Service", desc: "Exklusive Reinigung für Privatjets" }
                 ].map((service, i) => (
                   <Card key={i} className="p-8 hover:shadow-xl transition-all">
-                    <h3 className="text-2xl font-bold mb-3">{service.title}</h3>
+                    <h3 className="text-2xl font-bold mb-3 whitespace-nowrap">{service.title}</h3>
                     <p className="text-slate-600 text-lg">{service.desc}</p>
                   </Card>
                 ))}

@@ -63,21 +63,21 @@ export default function Fensterreinigung() {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mb-4">
                 <Sparkles className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Streifenfrei</h3>
+              <h3 className="text-xl font-bold mb-2 whitespace-nowrap">Streifenfrei</h3>
               <p className="text-gray-600">Perfekte Ergebnisse garantiert</p>
             </div>
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mb-4">
                 <Clock className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Flexibel</h3>
+              <h3 className="text-xl font-bold mb-2 whitespace-nowrap">Flexibel</h3>
               <p className="text-gray-600">Termine nach Ihren Wünschen</p>
             </div>
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mb-4">
                 <Shield className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Sicher</h3>
+              <h3 className="text-xl font-bold mb-2 whitespace-nowrap">Sicher</h3>
               <p className="text-gray-600">Zertifizierte Höhenarbeiter</p>
             </div>
           </div>

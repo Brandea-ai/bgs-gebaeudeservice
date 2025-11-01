@@ -110,7 +110,7 @@ export default function Aussenanlagen() {
             
             <TabsContent value="reinigung">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Außenbereichsreinigung</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 whitespace-nowrap">Außenbereichsreinigung</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <ul className="space-y-2">
                     {["Eingangsbereiche", "Parkplätze", "Gehwege", "Treppen", "Terrassen", "Innenhöfe"].map((item, i) => (
@@ -134,7 +134,7 @@ export default function Aussenanlagen() {
             
             <TabsContent value="gruenflaechen">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Grünflächenpflege</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 whitespace-nowrap">Grünflächenpflege</h3>
                 <div className="space-y-4">
                   {[
                     { title: "Rasenpflege", desc: "Mähen, Vertikutieren, Düngen – für einen gepflegten Rasen das ganze Jahr über." },
@@ -153,7 +153,7 @@ export default function Aussenanlagen() {
             
             <TabsContent value="winter">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Winterdienst</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 whitespace-nowrap">Winterdienst</h3>
                 <p className="text-slate-600 mb-6">
                   Zuverlässiger Winterdienst für sichere Zugänge und Verkehrswege:
                 </p>

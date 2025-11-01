@@ -99,7 +99,7 @@ export default function Luxusimmobilien() {
             
             <TabsContent value="materialien" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Expertise für edle Materialien</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 whitespace-nowrap">Expertise für edle Materialien</h3>
                 <div className="grid md:grid-cols-2 gap-8">
                   {[
                     {
@@ -138,7 +138,7 @@ export default function Luxusimmobilien() {
             
             <TabsContent value="kunst" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Kunstwerke & Antiquitäten</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 whitespace-nowrap">Kunstwerke & Antiquitäten</h3>
                 <p className="text-lg text-slate-600 mb-8">
                   Ihre Kunstsammlung verdient besondere Aufmerksamkeit. Unser geschultes Personal behandelt wertvolle Objekte mit größter Sorgfalt:
                 </p>
@@ -177,7 +177,7 @@ export default function Luxusimmobilien() {
             
             <TabsContent value="referenzen" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Unsere Referenz-Objekte</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 whitespace-nowrap">Unsere Referenz-Objekte</h3>
                 <div className="space-y-8">
                   {[
                     {
