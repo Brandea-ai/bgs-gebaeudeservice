@@ -41,7 +41,7 @@ export default function Baureinigung() {
               <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
                 Business Lösung
               </div>
-              <h1 className="text-6xl font-bold text-slate-900 mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
                 Professionelle Baureinigung
               </h1>
               <p className="text-2xl text-slate-600 leading-relaxed mb-8">
@@ -103,14 +103,14 @@ export default function Baureinigung() {
         <div className="container">
           <Tabs defaultValue="phasen" className="mb-20">
             <TabsList className="grid w-full grid-cols-3 mb-8">
-              <TabsTrigger value="phasen">Reinigungsphasen</TabsTrigger>
-              <TabsTrigger value="leistungen">Leistungen</TabsTrigger>
-              <TabsTrigger value="entsorgung">Entsorgung</TabsTrigger>
+              <TabsTrigger value="phasen" className="text-xs sm:text-sm md:text-base px-2 sm:px-4">Reinigungsphasen</TabsTrigger>
+              <TabsTrigger value="leistungen" className="text-xs sm:text-sm md:text-base px-2 sm:px-4">Leistungen</TabsTrigger>
+              <TabsTrigger value="entsorgung" className="text-xs sm:text-sm md:text-base px-2 sm:px-4">Entsorgung</TabsTrigger>
             </TabsList>
             
             <TabsContent value="phasen">
               <Card className="p-8">
-                <h3 className="text-3xl font-bold mb-6">Baureinigung in 3 Phasen</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Baureinigung in 3 Phasen</h3>
                 <div className="space-y-6">
                   {[
                     { title: "1. Grobreinigung", desc: "Entfernung grober Verschmutzungen, Bauschutt, Verpackungsmaterial. Erste Reinigung nach Rohbau." },
@@ -128,7 +128,7 @@ export default function Baureinigung() {
             
             <TabsContent value="leistungen">
               <Card className="p-8">
-                <h3 className="text-3xl font-bold mb-6">Unsere Leistungen</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Unsere Leistungen</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <ul className="space-y-2">
                     {["Baustaub entfernen", "Fenster reinigen", "Böden grundreinigen", "Sanitäranlagen", "Türen & Zargen", "Heizkörper"].map((item, i) => (
@@ -152,7 +152,7 @@ export default function Baureinigung() {
             
             <TabsContent value="entsorgung">
               <Card className="p-8">
-                <h3 className="text-3xl font-bold mb-6">Fachgerechte Entsorgung</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Fachgerechte Entsorgung</h3>
                 <p className="text-slate-600 mb-6">
                   Wir entsorgen Bauabfälle fachgerecht und umweltbewusst:
                 </p>
@@ -173,7 +173,7 @@ export default function Baureinigung() {
       {/* FAQ Section */}
       <section className="py-16 bg-gray-50">
         <div className="container max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-12">
             Häufig gestellte Fragen
           </h2>
           <Accordion type="single" collapsible className="space-y-4">
@@ -228,7 +228,7 @@ export default function Baureinigung() {
       {/* CTA Section */}
       <section className="py-16 bg-primary text-white">
         <div className="container max-w-4xl text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
             Bereit für Ihre Baureinigung?
           </h2>
           <p className="text-xl mb-8 text-red-100">

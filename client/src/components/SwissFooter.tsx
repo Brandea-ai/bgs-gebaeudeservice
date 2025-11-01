@@ -16,8 +16,8 @@ export default function SwissFooter() {
           <div>
             <h3 className="font-semibold text-lg mb-4">Premium Services</h3>
             <div className="space-y-2">
-              <Link href="/premium/privatjet"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Privatjet-Reinigung</div></Link>
-              <Link href="/premium/yacht"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Yacht-Reinigung</div></Link>
+              <Link href="/premium/privatjet"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Privatjet Reinigung</div></Link>
+              <Link href="/premium/yacht"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Yacht Reinigung</div></Link>
               <Link href="/premium/housekeeping"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Private Housekeeping</div></Link>
               <Link href="/premium/luxusimmobilien"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Luxusimmobilien</div></Link>
             </div>

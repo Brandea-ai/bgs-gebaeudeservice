@@ -11,7 +11,7 @@ export default function Method() {
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-32">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center space-y-8">
-            <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
               Die <span className="text-accent">Brandea Methode</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">

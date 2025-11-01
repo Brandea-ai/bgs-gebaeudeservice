@@ -36,7 +36,7 @@ export default function Luxusimmobilien() {
               <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
                 Premium Service
               </div>
-              <h1 className="text-6xl font-bold text-slate-900 mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
                 Luxusimmobilien-Reinigung
               </h1>
               <p className="text-2xl text-slate-600 leading-relaxed mb-8">
@@ -92,14 +92,14 @@ export default function Luxusimmobilien() {
 
           <Tabs defaultValue="materialien" className="mb-20">
             <TabsList className="grid w-full grid-cols-3 mb-8">
-              <TabsTrigger value="materialien">Spezial-Materialien</TabsTrigger>
-              <TabsTrigger value="kunst">Kunst & Antiquitäten</TabsTrigger>
-              <TabsTrigger value="referenzen">Referenz-Objekte</TabsTrigger>
+              <TabsTrigger value="materialien" className="text-sm sm:text-base">Materialien</TabsTrigger>
+              <TabsTrigger value="kunst" className="text-sm sm:text-base">Kunst & Antiquitäten</TabsTrigger>
+              <TabsTrigger value="referenzen" className="text-sm sm:text-base">Referenzen</TabsTrigger>
             </TabsList>
             
             <TabsContent value="materialien" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-3xl font-bold mb-6">Expertise für edle Materialien</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Expertise für edle Materialien</h3>
                 <div className="grid md:grid-cols-2 gap-8">
                   {[
                     {
@@ -138,7 +138,7 @@ export default function Luxusimmobilien() {
             
             <TabsContent value="kunst" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-3xl font-bold mb-6">Kunstwerke & Antiquitäten</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Kunstwerke & Antiquitäten</h3>
                 <p className="text-lg text-slate-600 mb-8">
                   Ihre Kunstsammlung verdient besondere Aufmerksamkeit. Unser geschultes Personal behandelt wertvolle Objekte mit größter Sorgfalt:
                 </p>
@@ -177,7 +177,7 @@ export default function Luxusimmobilien() {
             
             <TabsContent value="referenzen" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-3xl font-bold mb-6">Unsere Referenz-Objekte</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Unsere Referenz-Objekte</h3>
                 <div className="space-y-8">
                   {[
                     {
@@ -221,7 +221,7 @@ export default function Luxusimmobilien() {
             </TabsContent>
           </Tabs>
 
-          <h2 className="text-4xl font-bold text-slate-900 mb-8 text-center">Häufig gestellte Fragen</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-8 text-center">Häufig gestellte Fragen</h2>
           <Accordion type="single" collapsible className="max-w-3xl mx-auto">
             <AccordionItem value="item-1">
               <AccordionTrigger className="text-lg font-semibold">
@@ -265,7 +265,7 @@ export default function Luxusimmobilien() {
       <section className="py-20 bg-gradient-to-br from-primary/10 to-red-50">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-slate-900 mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-6">
               Ihre Luxusimmobilie in besten Händen
             </h2>
             <p className="text-xl text-slate-600 mb-8">

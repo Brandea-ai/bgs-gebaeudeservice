@@ -41,7 +41,7 @@ export default function FacilityManagement() {
               <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
                 Business Lösung
               </div>
-              <h1 className="text-6xl font-bold text-slate-900 mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
                 Ganzheitliches Facility Management
               </h1>
               <p className="text-2xl text-slate-600 leading-relaxed mb-8">
@@ -100,14 +100,14 @@ export default function FacilityManagement() {
         <div className="container">
           <Tabs defaultValue="leistungen" className="mb-20">
             <TabsList className="grid w-full grid-cols-3 mb-8">
-              <TabsTrigger value="leistungen">Leistungsspektrum</TabsTrigger>
-              <TabsTrigger value="vorteile">Vorteile</TabsTrigger>
-              <TabsTrigger value="branchen">Branchen</TabsTrigger>
+              <TabsTrigger value="leistungen" className="text-xs sm:text-sm md:text-base px-2 sm:px-4">Leistungsspektrum</TabsTrigger>
+              <TabsTrigger value="vorteile" className="text-xs sm:text-sm md:text-base px-2 sm:px-4">Vorteile</TabsTrigger>
+              <TabsTrigger value="branchen" className="text-xs sm:text-sm md:text-base px-2 sm:px-4">Branchen</TabsTrigger>
             </TabsList>
             
             <TabsContent value="leistungen">
               <Card className="p-8">
-                <h3 className="text-3xl font-bold mb-6">Alles aus einer Hand</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Alles aus einer Hand</h3>
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
                     <h4 className="font-bold text-lg mb-3 text-primary">Reinigungsdienstleistungen</h4>
@@ -137,7 +137,7 @@ export default function FacilityManagement() {
             
             <TabsContent value="vorteile">
               <Card className="p-8">
-                <h3 className="text-3xl font-bold mb-6">Ihre Vorteile</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Ihre Vorteile</h3>
                 <div className="space-y-6">
                   {[
                     { title: "Ein Ansprechpartner", desc: "Für alle Gebäudedienstleistungen haben Sie nur einen Ansprechpartner. Das spart Zeit und Koordinationsaufwand." },
@@ -156,7 +156,7 @@ export default function FacilityManagement() {
             
             <TabsContent value="branchen">
               <Card className="p-8">
-                <h3 className="text-3xl font-bold mb-6">Branchenlösungen</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Branchenlösungen</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   {[
                     { title: "Bürogebäude", desc: "Komplettbetreuung von Büroimmobilien inkl. Empfangsservice" },
@@ -181,7 +181,7 @@ export default function FacilityManagement() {
       {/* FAQ Section */}
       <section className="py-16 bg-gray-50">
         <div className="container max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-12">
             Häufig gestellte Fragen
           </h2>
           <Accordion type="single" collapsible className="space-y-4">
@@ -236,7 +236,7 @@ export default function FacilityManagement() {
       {/* CTA Section */}
       <section className="py-16 bg-primary text-white">
         <div className="container max-w-4xl text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
             Bereit für professionelles Facility Management?
           </h2>
           <p className="text-xl mb-8 text-red-100">

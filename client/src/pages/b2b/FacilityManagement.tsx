@@ -91,7 +91,7 @@ export default function FacilityManagement() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
                 Ihr Partner für ganzheitliches Gebäudemanagement
               </h2>
               <p className="text-lg text-gray-600 mb-6">
@@ -142,7 +142,7 @@ export default function FacilityManagement() {
               />
             </div>
             <div className="order-1 lg:order-2">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
                 Umfassende Facility Services
               </h2>
               <p className="text-lg text-gray-600 mb-6">
@@ -180,7 +180,7 @@ export default function FacilityManagement() {
       <div className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Unsere Facility Management Leistungen</h2>
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Unsere Facility Management Leistungen</h2>
             <p className="text-xl text-gray-600">Ganzheitliche Gebäudebewirtschaftung aus einer Hand</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -211,7 +211,7 @@ export default function FacilityManagement() {
       <div className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Häufig gestellte Fragen</h2>
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Häufig gestellte Fragen</h2>
             <p className="text-xl text-gray-600">Alles über unser Facility Management</p>
           </div>
           <div className="space-y-4">
@@ -238,7 +238,7 @@ export default function FacilityManagement() {
       {/* CTA Section */}
       <div className="py-20 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
             Bereit für professionelles Facility Management?
           </h2>
           <p className="text-xl text-gray-300 mb-8">

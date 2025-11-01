@@ -41,7 +41,7 @@ export default function Zug() {
               <MapPin className="w-6 h-6 text-primary"/>
               <span className="text-lg font-semibold">Standort Zug</span>
             </div>
-            <h1 className="text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               Reinigungsfirma in Zug für höchste Ansprüche
             </h1>
             <p className="text-2xl leading-relaxed opacity-90">
@@ -55,7 +55,7 @@ export default function Zug() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-slate-900 mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-6">
                 Reinigung auf Zug-Niveau
               </h2>
               <p className="text-lg text-slate-700 leading-relaxed mb-8">
@@ -87,7 +87,7 @@ export default function Zug() {
       <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4">
               Unsere Leistungen in Zug
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
@@ -97,9 +97,9 @@ export default function Zug() {
 
           <Tabs defaultValue="business" className="mb-12">
             <TabsList className="grid w-full grid-cols-3 max-w-2xl mx-auto">
-              <TabsTrigger value="business">Business</TabsTrigger>
-              <TabsTrigger value="premium">Premium</TabsTrigger>
-              <TabsTrigger value="facility">Facility</TabsTrigger>
+              <TabsTrigger value="business" className="text-xs sm:text-sm md:text-base px-2 sm:px-4">Business</TabsTrigger>
+              <TabsTrigger value="premium" className="text-xs sm:text-sm md:text-base px-2 sm:px-4">Premium</TabsTrigger>
+              <TabsTrigger value="facility" className="text-xs sm:text-sm md:text-base px-2 sm:px-4">Facility</TabsTrigger>
             </TabsList>
             <TabsContent value="business" className="mt-12">
               <div className="grid md:grid-cols-3 gap-6">
@@ -153,7 +153,7 @@ export default function Zug() {
 
       <section className="py-20 bg-white">
         <div className="container max-w-4xl">
-          <h2 className="text-4xl font-bold text-slate-900 mb-12 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-12 text-center">
             Häufige Fragen zur Reinigung in Zug
           </h2>
           <Accordion type="single" collapsible>
@@ -191,7 +191,7 @@ export default function Zug() {
           <div className="max-w-4xl mx-auto">
             <Card className="p-12">
               <div className="text-center mb-8">
-                <h2 className="text-4xl font-bold text-slate-900 mb-4">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4">
                   Kontakt Zug
                 </h2>
                 <p className="text-xl text-slate-600">

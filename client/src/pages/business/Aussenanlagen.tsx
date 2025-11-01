@@ -41,7 +41,7 @@ export default function Aussenanlagen() {
               <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
                 Business Lösung
               </div>
-              <h1 className="text-6xl font-bold text-slate-900 mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
                 Außenanlagen & Grünflächenpflege
               </h1>
               <p className="text-2xl text-slate-600 leading-relaxed mb-8">
@@ -103,14 +103,14 @@ export default function Aussenanlagen() {
         <div className="container">
           <Tabs defaultValue="reinigung" className="mb-20">
             <TabsList className="grid w-full grid-cols-3 mb-8">
-              <TabsTrigger value="reinigung">Außenreinigung</TabsTrigger>
-              <TabsTrigger value="gruenflaechen">Grünflächenpflege</TabsTrigger>
-              <TabsTrigger value="winter">Winterdienst</TabsTrigger>
+              <TabsTrigger value="reinigung" className="text-xs sm:text-sm md:text-base px-2 sm:px-4">Außenreinigung</TabsTrigger>
+              <TabsTrigger value="gruenflaechen" className="text-xs sm:text-sm md:text-base px-2 sm:px-4">Grünflächenpflege</TabsTrigger>
+              <TabsTrigger value="winter" className="text-xs sm:text-sm md:text-base px-2 sm:px-4">Winterdienst</TabsTrigger>
             </TabsList>
             
             <TabsContent value="reinigung">
               <Card className="p-8">
-                <h3 className="text-3xl font-bold mb-6">Außenbereichsreinigung</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Außenbereichsreinigung</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <ul className="space-y-2">
                     {["Eingangsbereiche", "Parkplätze", "Gehwege", "Treppen", "Terrassen", "Innenhöfe"].map((item, i) => (
@@ -134,7 +134,7 @@ export default function Aussenanlagen() {
             
             <TabsContent value="gruenflaechen">
               <Card className="p-8">
-                <h3 className="text-3xl font-bold mb-6">Grünflächenpflege</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Grünflächenpflege</h3>
                 <div className="space-y-4">
                   {[
                     { title: "Rasenpflege", desc: "Mähen, Vertikutieren, Düngen – für einen gepflegten Rasen das ganze Jahr über." },
@@ -153,7 +153,7 @@ export default function Aussenanlagen() {
             
             <TabsContent value="winter">
               <Card className="p-8">
-                <h3 className="text-3xl font-bold mb-6">Winterdienst</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Winterdienst</h3>
                 <p className="text-slate-600 mb-6">
                   Zuverlässiger Winterdienst für sichere Zugänge und Verkehrswege:
                 </p>
@@ -174,7 +174,7 @@ export default function Aussenanlagen() {
       {/* FAQ Section */}
       <section className="py-16 bg-gray-50">
         <div className="container max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-12">
             Häufig gestellte Fragen
           </h2>
           <Accordion type="single" collapsible className="space-y-4">
@@ -229,7 +229,7 @@ export default function Aussenanlagen() {
       {/* CTA Section */}
       <section className="py-16 bg-primary text-white">
         <div className="container max-w-4xl text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
             Bereit für gepflegte Außenanlagen?
           </h2>
           <p className="text-xl mb-8 text-red-100">

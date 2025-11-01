@@ -8,7 +8,7 @@ export default function Industriereinigung() {
       <section className="relative bg-gradient-to-r from-red-600 to-red-700 text-white py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
               Professionelle Industriereinigung in Zürich, Zug und Luzern
             </h1>
             <p className="text-xl text-red-50 mb-8">
@@ -62,7 +62,7 @@ export default function Industriereinigung() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div>
-              <h2 className="text-3xl font-bold mb-6">Spezialisierte Reinigung für Industrieanlagen</h2>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Spezialisierte Reinigung für Industrieanlagen</h2>
               <p className="text-gray-600 mb-6">
                 Industrielle Produktionsumgebungen stellen besondere Anforderungen an die Reinigung. Swiss Reinigungsfirma verfügt über die Expertise und Ausrüstung für die professionelle Reinigung von Industrieanlagen, Produktionshallen und Fertigungsbetrieben.
               </p>
@@ -89,7 +89,7 @@ export default function Industriereinigung() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center">Unsere Industriereinigungsleistungen</h2>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-12 text-center">Unsere Industriereinigungsleistungen</h2>
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 'Produktionshallen-Reinigung',
@@ -123,7 +123,7 @@ export default function Industriereinigung() {
               />
             </div>
             <div className="order-1 md:order-2">
-              <h2 className="text-3xl font-bold mb-6">Sicherheit und Effizienz in der Industriereinigung</h2>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Sicherheit und Effizienz in der Industriereinigung</h2>
               <p className="text-gray-600 mb-6">
                 In industriellen Umgebungen ist Sicherheit oberste Priorität. Unsere Reinigungskräfte sind in Arbeitssicherheit geschult und verfügen über alle erforderlichen Zertifizierungen für die Arbeit in Produktionsumgebungen.
               </p>
@@ -147,7 +147,7 @@ export default function Industriereinigung() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center">Häufig gestellte Fragen zur Industriereinigung</h2>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-12 text-center">Häufig gestellte Fragen zur Industriereinigung</h2>
             <div className="space-y-4">
               {[
                 {
@@ -187,7 +187,7 @@ export default function Industriereinigung() {
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-red-600 to-red-700 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">Bereit für professionelle Industriereinigung?</h2>
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Bereit für professionelle Industriereinigung?</h2>
           <p className="text-xl text-red-50 mb-8 max-w-2xl mx-auto">
             Kontaktieren Sie uns für ein kostenloses Beratungsgespräch und unverbindliches Angebot. Unsere Industriereinigungsexperten beraten Sie gerne.
           </p>

@@ -9,7 +9,7 @@ export default function Impressum() {
       
       <section className="pt-32 pb-20">
         <div className="container max-w-4xl">
-          <h1 className="text-5xl font-bold text-slate-900 mb-12">Impressum</h1>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-12">Impressum</h1>
           
           <Card className="p-8 mb-8">
             <h2 className="text-2xl font-bold mb-4">Angaben gemäss Art. 8 UWG</h2>

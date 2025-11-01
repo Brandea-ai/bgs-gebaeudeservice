@@ -11,7 +11,7 @@ import { CheckCircle, Anchor, Shield, Sparkles, ArrowRight } from "lucide-react"
 
 export default function Yacht() {
   const serviceData = {
-    name: "Yacht-Reinigung",
+    name: "Yacht Reinigung",
     description: "Spezialisierte Reinigung für Luxus-Yachten mit Marine-Expertise. Von der Hochglanzpolitur bis zur Teakholz-Pflege.",
     url: "/premium/yacht",
     category: "Marine Cleaning"
@@ -20,8 +20,8 @@ export default function Yacht() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Yacht-Reinigung - Professioneller Marine Service"
-        description="Spezialisierte Yacht-Reinigung in der Schweiz. Marine-Expertise, Hochglanzpolitur und Teakholz-Pflege für Luxus-Yachten."
+        title="Yacht Reinigung - Professioneller Marine Service"
+        description="Spezialisierte Yacht Reinigung in der Schweiz. Marine-Expertise, Hochglanzpolitur und Teakholz-Pflege für Luxus-Yachten."
         keywords="Yacht Reinigung, Boot Reinigung Schweiz, Marine Cleaning, Luxus Yacht Service"
         url="/premium/yacht"
         schema={serviceSchema(serviceData)}
@@ -36,8 +36,8 @@ export default function Yacht() {
               <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
                 Premium Service
               </div>
-              <h1 className="text-6xl font-bold text-slate-900 mb-6">
-                Yacht-Reinigung
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
+                Yacht Reinigung
               </h1>
               <p className="text-2xl text-slate-600 leading-relaxed mb-8">
                 Spezialisierte Reinigung für Luxus-Yachten mit Marine-Expertise. Von der Hochglanzpolitur bis zur Teakholz-Pflege – wir sorgen für makellose Sauberkeit auf höchstem Niveau.
@@ -92,14 +92,14 @@ export default function Yacht() {
 
           <Tabs defaultValue="leistungen" className="mb-20">
             <TabsList className="grid w-full grid-cols-3 mb-8">
-              <TabsTrigger value="leistungen">Unsere Leistungen</TabsTrigger>
-              <TabsTrigger value="materialien">Spezial-Materialien</TabsTrigger>
-              <TabsTrigger value="wartung">Wartungsservice</TabsTrigger>
+              <TabsTrigger value="leistungen" className="text-xs sm:text-sm md:text-base px-2 sm:px-4">Unsere Leistungen</TabsTrigger>
+              <TabsTrigger value="materialien" className="text-xs sm:text-sm md:text-base px-2 sm:px-4">Spezial-Materialien</TabsTrigger>
+              <TabsTrigger value="wartung" className="text-xs sm:text-sm md:text-base px-2 sm:px-4">Wartungsservice</TabsTrigger>
             </TabsList>
             
             <TabsContent value="leistungen" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-3xl font-bold mb-6">Umfassende Yacht-Reinigung</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Umfassende Yacht Reinigung</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h4 className="font-bold text-lg mb-3 text-primary">Außenreinigung</h4>
@@ -143,7 +143,7 @@ export default function Yacht() {
             
             <TabsContent value="materialien" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-3xl font-bold mb-6">Spezialisierte Material-Behandlung</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Spezialisierte Material-Behandlung</h3>
                 <div className="space-y-6">
                   {[
                     {
@@ -174,14 +174,14 @@ export default function Yacht() {
             
             <TabsContent value="wartung" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-3xl font-bold mb-6">Regelmäßiger Wartungsservice</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Regelmäßiger Wartungsservice</h3>
                 <p className="text-lg text-slate-600 mb-6">
                   Halten Sie Ihre Yacht in perfektem Zustand mit unseren maßgeschneiderten Wartungspaketen:
                 </p>
                 <div className="grid md:grid-cols-3 gap-6">
                   <Card className="p-6 bg-slate-50">
                     <h4 className="text-xl font-bold mb-4">Basic</h4>
-                    <div className="text-3xl font-bold text-primary mb-2">ab CHF 500</div>
+                    <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-2">ab CHF 500</div>
                     <div className="text-sm text-slate-600 mb-4">pro Monat</div>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start gap-2">
@@ -200,7 +200,7 @@ export default function Yacht() {
                   </Card>
                   <Card className="p-6 bg-primary/5 border-primary">
                     <h4 className="text-xl font-bold mb-4">Premium</h4>
-                    <div className="text-3xl font-bold text-primary mb-2">ab CHF 1.200</div>
+                    <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-2">ab CHF 1.200</div>
                     <div className="text-sm text-slate-600 mb-4">pro Monat</div>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start gap-2">
@@ -223,7 +223,7 @@ export default function Yacht() {
                   </Card>
                   <Card className="p-6 bg-slate-50">
                     <h4 className="text-xl font-bold mb-4">VIP</h4>
-                    <div className="text-3xl font-bold text-primary mb-2">Individuell</div>
+                    <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-2">Individuell</div>
                     <div className="text-sm text-slate-600 mb-4">auf Anfrage</div>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start gap-2">
@@ -249,7 +249,7 @@ export default function Yacht() {
             </TabsContent>
           </Tabs>
 
-          <h2 className="text-4xl font-bold text-slate-900 mb-8 text-center">Häufig gestellte Fragen</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-8 text-center">Häufig gestellte Fragen</h2>
           <Accordion type="single" collapsible className="max-w-3xl mx-auto">
             <AccordionItem value="item-1">
               <AccordionTrigger className="text-lg font-semibold">
@@ -262,7 +262,7 @@ export default function Yacht() {
             
             <AccordionItem value="item-2">
               <AccordionTrigger className="text-lg font-semibold">
-                Wo bieten Sie Yacht-Reinigung an?
+                Wo bieten Sie Yacht Reinigung an?
               </AccordionTrigger>
               <AccordionContent className="text-slate-700 leading-relaxed pt-4">
                 Primär am Vierwaldstättersee, Zürichsee und Zugersee. Auf Anfrage auch an anderen Schweizer Seen und Mittelmeerhäfen während der Saison.
@@ -293,7 +293,7 @@ export default function Yacht() {
       <section className="py-20 bg-gradient-to-br from-primary/10 to-red-50">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-slate-900 mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-6">
               Ihre Yacht verdient das Beste
             </h2>
             <p className="text-xl text-slate-600 mb-8">

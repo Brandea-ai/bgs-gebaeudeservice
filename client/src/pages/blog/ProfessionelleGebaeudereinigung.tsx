@@ -15,7 +15,7 @@ export default function ProfessionelleGebaeudereinigung() {
         <div className="container max-w-4xl">
           <div className="mb-12">
             <div className="text-sm text-primary font-semibold mb-4">EXPERTENWISSEN</div>
-            <h1 className="text-5xl font-bold text-slate-900 mb-6 leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
               Professionelle Gebäudereinigung: Was Sie wissen müssen
             </h1>
             <p className="text-xl text-slate-600 leading-relaxed">
@@ -29,12 +29,12 @@ export default function ProfessionelleGebaeudereinigung() {
               Professionelle Gebäudereinigung ist weit mehr als nur Staubwischen und Böden wischen. Es handelt sich um ein komplexes Fachgebiet, das spezialisiertes Wissen, moderne Technologie und geschultes Personal erfordert. In diesem umfassenden Ratgeber erfahren Sie alles über Standards, Methoden und Qualitätsmerkmale professioneller Gebäudereinigung in der Schweiz.
             </p>
 
-            <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Was macht Gebäudereinigung professionell?</h2>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mt-12 mb-6">Was macht Gebäudereinigung professionell?</h2>
             <Tabs defaultValue="standards" className="mb-12">
               <TabsList className="grid w-full grid-cols-3">
-                <TabsTrigger value="standards">Standards</TabsTrigger>
-                <TabsTrigger value="technologie">Technologie</TabsTrigger>
-                <TabsTrigger value="personal">Personal</TabsTrigger>
+                <TabsTrigger value="standards" className="text-xs sm:text-sm md:text-base px-2 sm:px-4">Standards</TabsTrigger>
+                <TabsTrigger value="technologie" className="text-xs sm:text-sm md:text-base px-2 sm:px-4">Technologie</TabsTrigger>
+                <TabsTrigger value="personal" className="text-xs sm:text-sm md:text-base px-2 sm:px-4">Personal</TabsTrigger>
               </TabsList>
               <TabsContent value="standards" className="mt-6">
                 <Card className="p-6">
@@ -86,7 +86,7 @@ export default function ProfessionelleGebaeudereinigung() {
               </TabsContent>
             </Tabs>
 
-            <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Reinigungsarten im Detail</h2>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mt-12 mb-6">Reinigungsarten im Detail</h2>
             <Accordion type="single" collapsible className="mb-12">
               <AccordionItem value="item-1">
                 <AccordionTrigger className="text-xl font-semibold">Unterhaltsreinigung</AccordionTrigger>
@@ -124,7 +124,7 @@ export default function ProfessionelleGebaeudereinigung() {
             </Card>
 
             <div className="mt-16 pt-12 border-t text-center">
-              <h3 className="text-3xl font-bold mb-4">Professionelle Reinigung gewünscht?</h3>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4">Professionelle Reinigung gewünscht?</h3>
               <p className="text-xl text-slate-600 mb-8">Kontaktieren Sie uns für eine unverbindliche Beratung.</p>
               <Link href="/kontakt"><Button size="lg" className="text-lg px-8">Jetzt anfragen<ArrowRight className="ml-2 w-5 h-5"/></Button></Link>
             </div>

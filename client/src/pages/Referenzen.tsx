@@ -61,7 +61,7 @@ export default function Referenzen() {
       <section className="pt-32 pb-20 bg-gradient-to-br from-white via-red-50/30 to-white">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-6xl font-bold text-slate-900 mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
               Referenzen & Kundenerfolge
             </h1>
             <p className="text-2xl text-slate-600 leading-relaxed">
@@ -76,22 +76,22 @@ export default function Referenzen() {
           <div className="grid md:grid-cols-3 gap-8 mb-20">
             <Card className="p-8 text-center">
               <Building className="w-16 h-16 text-primary mx-auto mb-4"/>
-              <div className="text-5xl font-bold text-slate-900 mb-2">500+</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-2">500+</div>
               <div className="text-lg text-slate-600">Zufriedene Kunden</div>
             </Card>
             <Card className="p-8 text-center">
               <Users className="w-16 h-16 text-primary mx-auto mb-4"/>
-              <div className="text-5xl font-bold text-slate-900 mb-2">15+</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-2">15+</div>
               <div className="text-lg text-slate-600">Jahre Erfahrung</div>
             </Card>
             <Card className="p-8 text-center">
               <Award className="w-16 h-16 text-primary mx-auto mb-4"/>
-              <div className="text-5xl font-bold text-slate-900 mb-2">98%</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-2">98%</div>
               <div className="text-lg text-slate-600">Kundenzufriedenheit</div>
             </Card>
           </div>
 
-          <h2 className="text-4xl font-bold text-slate-900 mb-12 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-12 text-center">
             Ausgewählte Projekte
           </h2>
           <div className="grid lg:grid-cols-3 gap-8 mb-20">
@@ -126,7 +126,7 @@ export default function Referenzen() {
             ))}
           </div>
 
-          <h2 className="text-4xl font-bold text-slate-900 mb-12 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-12 text-center">
             Was unsere Kunden sagen
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -155,7 +155,7 @@ export default function Referenzen() {
       <section className="py-20 bg-gradient-to-br from-primary/10 to-red-50">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-slate-900 mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-6">
               Werden Sie unser nächster Erfolg
             </h2>
             <p className="text-xl text-slate-600 mb-8">

@@ -7,7 +7,7 @@ export default function Kontakt() {
     <div className="min-h-screen bg-white">
       <SwissNavigation />
       <div className="pt-32 pb-20 container">
-        <h1 className="text-5xl font-bold mb-6">Kontakt</h1>
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6">Kontakt</h1>
         <Card className="p-8 max-w-2xl">
           <h2 className="text-2xl font-bold mb-4">Swiss Reinigungsfirma</h2>
           <p className="mb-2">Tannhof 10</p>

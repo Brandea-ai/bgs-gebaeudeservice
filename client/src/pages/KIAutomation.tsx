@@ -19,7 +19,7 @@ export default function KIAutomation() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
-              <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
                 KI-Automatisierung für <span className="text-accent">maximale Effizienz</span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
@@ -38,7 +38,7 @@ export default function KIAutomation() {
       <section className="py-20 bg-secondary/20">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Ihre Vorteile</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">Ihre Vorteile</h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {benefits.map((benefit, index) => (

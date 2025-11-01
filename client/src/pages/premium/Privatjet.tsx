@@ -11,7 +11,7 @@ import { CheckCircle, Star, Shield, Clock, Sparkles, ArrowRight } from "lucide-r
 
 export default function Privatjet() {
   const serviceData = {
-    name: "Privatjet-Reinigung",
+    name: "Privatjet Reinigung",
     description: "Professionelle Reinigung für Privatjets mit höchsten Standards. Diskretion, Präzision und Verfügbarkeit rund um die Uhr.",
     url: "/premium/privatjet",
     category: "Aviation Cleaning"
@@ -20,8 +20,8 @@ export default function Privatjet() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Privatjet-Reinigung - Exklusiver Premium Service"
-        description="Professionelle Privatjet-Reinigung in der Schweiz. Diskretion, höchste Standards und 24/7 Verfügbarkeit für anspruchsvolle Kunden."
+        title="Privatjet Reinigung - Exklusiver Premium Service"
+        description="Professionelle Privatjet Reinigung in der Schweiz. Diskretion, höchste Standards und 24/7 Verfügbarkeit für anspruchsvolle Kunden."
         keywords="Privatjet Reinigung, Flugzeug Reinigung Schweiz, Aviation Cleaning, Private Jet Service"
         url="/premium/privatjet"
         schema={serviceSchema(serviceData)}
@@ -36,10 +36,10 @@ export default function Privatjet() {
               <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
                 Premium Service
               </div>
-              <h1 className="text-6xl font-bold text-slate-900 mb-6">
-                Privatjet-Reinigung
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
+                Privatjet Reinigung
               </h1>
-              <p className="text-2xl text-slate-600 leading-relaxed mb-8">
+              <p className="text-lg sm:text-xl md:text-2xl text-slate-600 leading-relaxed mb-8">
                 Professionelle Reinigung für Privatjets mit höchsten Standards. Diskretion, Präzision und Verfügbarkeit rund um die Uhr für anspruchsvolle Kunden in Zürich, Zug und Luzern.
               </p>
               <div className="flex flex-wrap gap-4">
@@ -92,14 +92,14 @@ export default function Privatjet() {
 
           <Tabs defaultValue="leistungen" className="mb-20">
             <TabsList className="grid w-full grid-cols-3 mb-8">
-              <TabsTrigger value="leistungen">Unsere Leistungen</TabsTrigger>
-              <TabsTrigger value="prozess">Unser Prozess</TabsTrigger>
-              <TabsTrigger value="vorteile">Ihre Vorteile</TabsTrigger>
+              <TabsTrigger value="leistungen" className="text-xs sm:text-sm md:text-base px-2 sm:px-4">Unsere Leistungen</TabsTrigger>
+              <TabsTrigger value="prozess" className="text-xs sm:text-sm md:text-base px-2 sm:px-4">Unser Prozess</TabsTrigger>
+              <TabsTrigger value="vorteile" className="text-xs sm:text-sm md:text-base px-2 sm:px-4">Ihre Vorteile</TabsTrigger>
             </TabsList>
             
             <TabsContent value="leistungen" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-3xl font-bold mb-6">Umfassende Privatjet-Reinigung</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Umfassende Privatjet Reinigung</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h4 className="font-bold text-lg mb-3 text-primary">Innenreinigung</h4>
@@ -143,7 +143,7 @@ export default function Privatjet() {
             
             <TabsContent value="prozess" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-3xl font-bold mb-6">Unser bewährter Prozess</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Unser bewährter Prozess</h3>
                 <div className="space-y-6">
                   {[
                     {
@@ -183,7 +183,7 @@ export default function Privatjet() {
             
             <TabsContent value="vorteile" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-3xl font-bold mb-6">Warum Swiss Reinigungsfirma?</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Warum Swiss Reinigungsfirma?</h3>
                 <div className="grid md:grid-cols-2 gap-8">
                   {[
                     {
@@ -221,7 +221,7 @@ export default function Privatjet() {
             </TabsContent>
           </Tabs>
 
-          <h2 className="text-4xl font-bold text-slate-900 mb-8 text-center">Häufig gestellte Fragen</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-8 text-center">Häufig gestellte Fragen</h2>
           <Accordion type="single" collapsible className="max-w-3xl mx-auto">
             <AccordionItem value="item-1">
               <AccordionTrigger className="text-lg font-semibold">
@@ -252,7 +252,7 @@ export default function Privatjet() {
             
             <AccordionItem value="item-4">
               <AccordionTrigger className="text-lg font-semibold">
-                Was kostet eine Privatjet-Reinigung?
+                Was kostet eine Privatjet Reinigung?
               </AccordionTrigger>
               <AccordionContent className="text-slate-700 leading-relaxed pt-4">
                 Die Preise variieren je nach Jet-Größe und Leistungsumfang. Eine Standard-Innenreinigung für einen Light Jet beginnt bei CHF 800. Für ein individuelles Angebot kontaktieren Sie uns bitte direkt.
@@ -265,7 +265,7 @@ export default function Privatjet() {
       <section className="py-20 bg-gradient-to-br from-primary/10 to-red-50">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-slate-900 mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-6">
               Bereit für erstklassigen Service?
             </h2>
             <p className="text-xl text-slate-600 mb-8">

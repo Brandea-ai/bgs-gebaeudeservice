@@ -75,15 +75,15 @@ export default function SwissHome() {
         <div className="container">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: Shield, label: "Zertifizierte Qualität", value: "ISO Standards" },
-              { icon: Clock, label: "24/7 Verfügbar", value: "Notfall Service" },
-              { icon: Users, label: "500+ Kunden", value: "Zufrieden" },
-              { icon: Award, label: "15+ Jahre Erfahrung", value: "Schweizweit" },
+              { icon: Shield, label: "Zertifiziert", value: "ISO Qualität" },
+              { icon: Clock, label: "Verfügbar", value: "24/7 Service" },
+              { icon: Users, label: "Kunden", value: "500+ Zufrieden" },
+              { icon: Award, label: "Erfahrung", value: "15+ Jahre" },
             ].map((item, index) => (
               <Card key={index} className="p-8 text-center hover:shadow-xl transition-all">
                 <item.icon className="w-12 h-12 text-primary mx-auto mb-4" />
-                <h3 className="text-3xl font-bold text-slate-900 mb-2">{item.value}</h3>
-                <p className="text-slate-600">{item.label}</p>
+                <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">{item.value}</h3>
+                <p className="text-sm text-slate-600">{item.label}</p>
               </Card>
             ))}
           </div>
@@ -104,7 +104,7 @@ export default function SwissHome() {
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="text-3xl font-bold text-slate-900 mb-4">Vorher</h3>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-4">Vorher</h3>
               <img 
                 src="/vorher-buero-schmutzig.jpg" 
                 alt="Büro vor der Reinigung" 
@@ -113,7 +113,7 @@ export default function SwissHome() {
               <p className="text-slate-600 mt-4">Verschmutztes Büro mit Staub und Unordnung</p>
             </div>
             <div>
-              <h3 className="text-3xl font-bold text-primary mb-4">Nachher</h3>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-4">Nachher</h3>
               <img 
                 src="/nachher-buero-sauber.jpg" 
                 alt="Büro nach der Reinigung" 
@@ -146,7 +146,7 @@ export default function SwissHome() {
                 Exklusive Reinigungsdienstleistungen für höchste Ansprüche. Privatjets, Yachten, Luxusimmobilien und Private Housekeeping.
               </p>
               <ul className="space-y-3 mb-8">
-                {["Privatjet-Reinigung", "Yacht-Reinigung", "Private Housekeeping", "Luxusimmobilien-Reinigung"].map((item, i) => (
+                {["Privatjet Reinigung", "Yacht Reinigung", "Private Housekeeping", "Luxusimmobilien-Reinigung"].map((item, i) => (
                   <li key={i} className="flex items-center gap-2 text-slate-700">
                     <Check className="w-5 h-5 text-primary flex-shrink-0" />
                     {item}
@@ -215,7 +215,7 @@ export default function SwissHome() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-8 break-words">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-8">
                 Warum Swiss Reinigungsfirma?
               </h2>
               <p className="text-xl text-slate-600 mb-8">
@@ -329,7 +329,7 @@ export default function SwissHome() {
             ].map((location, i) => (
               <Link key={i} href={location.href}>
                 <Card className="p-10 hover:shadow-2xl transition-all cursor-pointer group">
-                  <h3 className="text-3xl font-bold text-slate-900 mb-4 group-hover:text-primary transition-colors">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-4 group-hover:text-primary transition-colors">
                     {location.city}
                   </h3>
                   <p className="text-slate-600 mb-6">{location.description}</p>

@@ -65,7 +65,7 @@ export default function Home() {
               <div className="inline-block glass floating px-4 py-2 rounded-full text-sm font-medium text-accent">
                 Thinking outside the box
               </div>
-              <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
                 KI-Beratung für{" "}
                 <span className="text-accent">nachhaltiges Wachstum</span>
               </h1>
@@ -103,7 +103,7 @@ export default function Home() {
       <section className="py-20 bg-secondary/20">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
               Warum Brandea?
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -135,7 +135,7 @@ export default function Home() {
       <section className="py-20">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
               Unsere Leistungen
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -233,7 +233,7 @@ export default function Home() {
               />
             </div>
             <div className="space-y-6">
-              <h2 className="text-4xl font-bold text-foreground">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">
                 Die Brandea Methode
               </h2>
               <p className="text-xl text-muted-foreground leading-relaxed">
@@ -267,7 +267,7 @@ export default function Home() {
       <section className="py-20">
         <div className="container max-w-4xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
               Häufig gestellte Fragen
             </h2>
             <p className="text-xl text-muted-foreground">
@@ -282,7 +282,7 @@ export default function Home() {
       <section className="py-20 bg-gradient-to-br from-accent/10 via-background to-background">
         <div className="container">
           <div className="glass floating rounded-3xl p-12 lg:p-16 text-center">
-            <h2 className="text-4xl font-bold text-foreground mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6">
               Bereit für den nächsten Schritt?
             </h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">

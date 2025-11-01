@@ -42,7 +42,7 @@ export default function Maschinenreinigung() {
               <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
                 Business Lösung
               </div>
-              <h1 className="text-6xl font-bold text-slate-900 mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
                 Professionelle Maschinenreinigung
               </h1>
               <p className="text-2xl text-slate-600 leading-relaxed mb-8">
@@ -85,7 +85,7 @@ export default function Maschinenreinigung() {
               />
             </div>
             <div>
-              <h2 className="text-4xl font-bold text-slate-900 mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-6">
                 Spezialisiert auf Industrieanlagen
               </h2>
               <p className="text-lg text-slate-600 mb-6">
@@ -116,7 +116,7 @@ export default function Maschinenreinigung() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-slate-900 mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-6">
                 Umfassende Reinigungsleistungen
               </h2>
               <p className="text-lg text-slate-600 mb-6">
@@ -155,7 +155,7 @@ export default function Maschinenreinigung() {
       <section className="py-20 bg-slate-50">
         <div className="container max-w-4xl">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4">
               Häufig gestellte Fragen
             </h2>
             <p className="text-lg text-slate-600">
@@ -215,7 +215,7 @@ export default function Maschinenreinigung() {
       {/* CTA Section */}
       <section className="py-20 bg-primary text-white">
         <div className="container text-center">
-          <h2 className="text-4xl font-bold mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
             Bereit für professionelle Maschinenreinigung?
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">

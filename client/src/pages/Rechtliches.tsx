@@ -7,7 +7,7 @@ export default function Rechtliches() {
       <Navigation />
       <section className="pt-32 pb-20">
         <div className="container max-w-4xl">
-          <h1 className="text-5xl font-bold text-foreground mb-8">Rechtliche Hinweise</h1>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">Rechtliche Hinweise</h1>
           <div className="glass floating rounded-3xl p-12 space-y-6">
             <div>
               <h2 className="text-2xl font-bold text-foreground mb-4">Urheberrecht</h2>

@@ -7,7 +7,7 @@ export default function Fassadenreinigung() {
       <section className="relative bg-gradient-to-r from-red-600 to-red-700 text-white py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
               Professionelle Fassadenreinigung in Zürich, Zug und Luzern
             </h1>
             <p className="text-xl text-red-50 mb-8">
@@ -59,7 +59,7 @@ export default function Fassadenreinigung() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div>
-              <h2 className="text-3xl font-bold mb-6">Werterhalt durch professionelle Fassadenreinigung</h2>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Werterhalt durch professionelle Fassadenreinigung</h2>
               <p className="text-gray-600 mb-6">
                 Die Fassade ist das Aushängeschild Ihres Gebäudes. Regelmäßige professionelle Reinigung erhält nicht nur die Optik, sondern schützt auch die Bausubstanz vor Witterungseinflüssen und Verschmutzungen.
               </p>
@@ -81,7 +81,7 @@ export default function Fassadenreinigung() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center">Unsere Fassadenreinigungsleistungen</h2>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-12 text-center">Unsere Fassadenreinigungsleistungen</h2>
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 'Glasfassaden-Reinigung',
@@ -110,7 +110,7 @@ export default function Fassadenreinigung() {
               <img src="/facade-cleaning-2.jpg" alt="Fassadenreinigung Zürich" className="w-full h-full object-cover"/>
             </div>
             <div className="order-1 md:order-2">
-              <h2 className="text-3xl font-bold mb-6">Modernste Reinigungstechnologie für Ihre Fassade</h2>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Modernste Reinigungstechnologie für Ihre Fassade</h2>
               <p className="text-gray-600 mb-6">
                 Wir setzen auf modernste Reinigungsverfahren, die materialschonend und gleichzeitig hocheffektiv sind. Von Niedrigdruck-Dampfreinigung bis zu speziellen Reinigungslösungen – wir wählen die optimale Methode für Ihre Fassade.
               </p>
@@ -133,7 +133,7 @@ export default function Fassadenreinigung() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center">Häufig gestellte Fragen zur Fassadenreinigung</h2>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-12 text-center">Häufig gestellte Fragen zur Fassadenreinigung</h2>
             <div className="space-y-4">
               {[
                 {
@@ -172,7 +172,7 @@ export default function Fassadenreinigung() {
 
       <section className="py-16 bg-gradient-to-r from-red-600 to-red-700 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">Bereit für professionelle Fassadenreinigung?</h2>
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Bereit für professionelle Fassadenreinigung?</h2>
           <p className="text-xl text-red-50 mb-8 max-w-2xl mx-auto">
             Kontaktieren Sie uns für eine kostenlose Besichtigung und unverbindliches Angebot. Unsere Fassadenexperten beraten Sie gerne.
           </p>

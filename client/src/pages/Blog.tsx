@@ -48,7 +48,7 @@ export default function Blog() {
       <section className="pt-32 pb-20 bg-gradient-to-br from-white via-red-50/30 to-white">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-5xl font-bold text-slate-900 mb-6">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
               Wissen & Ratgeber
             </h1>
             <p className="text-xl text-slate-600 leading-relaxed">

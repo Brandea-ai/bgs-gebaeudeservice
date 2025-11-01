@@ -14,7 +14,7 @@ export default function UmweltfreundlicheReinigung() {
         <div className="container max-w-4xl">
           <div className="mb-12">
             <div className="text-sm text-primary font-semibold mb-4">NACHHALTIGKEIT</div>
-            <h1 className="text-5xl font-bold text-slate-900 mb-6 leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
               Umweltfreundliche Reinigung: Tipps und Tricks
             </h1>
             <p className="text-xl text-slate-600 leading-relaxed">
@@ -46,7 +46,7 @@ export default function UmweltfreundlicheReinigung() {
               </Card>
             </div>
 
-            <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Umweltfreundliche Reinigungsmethoden</h2>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mt-12 mb-6">Umweltfreundliche Reinigungsmethoden</h2>
             <Accordion type="single" collapsible className="mb-12">
               <AccordionItem value="item-1">
                 <AccordionTrigger className="text-xl font-semibold">Mikrofasertechnologie</AccordionTrigger>
@@ -93,7 +93,7 @@ export default function UmweltfreundlicheReinigung() {
             </Card>
 
             <div className="mt-16 pt-12 border-t text-center">
-              <h3 className="text-3xl font-bold mb-4">Nachhaltige Reinigung gewünscht?</h3>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4">Nachhaltige Reinigung gewünscht?</h3>
               <p className="text-xl text-slate-600 mb-8">Wir beraten Sie gerne zu umweltfreundlichen Reinigungslösungen.</p>
               <Link href="/kontakt"><Button size="lg" className="text-lg px-8">Jetzt beraten lassen<ArrowRight className="ml-2 w-5 h-5"/></Button></Link>
             </div>

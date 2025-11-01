@@ -88,7 +88,7 @@ export default function Fensterreinigung() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
                 Kristallklare Fenster für Ihr Unternehmen
               </h2>
               <p className="text-lg text-gray-600 mb-6">
@@ -138,7 +138,7 @@ export default function Fensterreinigung() {
               />
             </div>
             <div className="order-1 lg:order-2">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
                 Moderne Reinigungstechnologie
               </h2>
               <p className="text-lg text-gray-600 mb-6">
@@ -175,7 +175,7 @@ export default function Fensterreinigung() {
       <div className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Unsere Fensterreinigungsleistungen</h2>
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Unsere Fensterreinigungsleistungen</h2>
             <p className="text-xl text-gray-600">Professionelle Reinigung für jeden Bedarf</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -205,7 +205,7 @@ export default function Fensterreinigung() {
       <div className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Häufig gestellte Fragen</h2>
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Häufig gestellte Fragen</h2>
             <p className="text-xl text-gray-600">Alles über unsere Fensterreinigung</p>
           </div>
           <div className="space-y-4">
@@ -231,7 +231,7 @@ export default function Fensterreinigung() {
 
       <div className="py-20 bg-gradient-to-br from-blue-900 to-blue-800 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
             Bereit für kristallklare Fenster?
           </h2>
           <p className="text-xl text-gray-300 mb-8">

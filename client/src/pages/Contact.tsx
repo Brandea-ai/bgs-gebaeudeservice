@@ -10,7 +10,7 @@ export default function Contact() {
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-32">
         <div className="container max-w-4xl">
           <div className="text-center mb-16">
-            <h1 className="text-5xl lg:text-6xl font-bold text-foreground mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Kontaktieren Sie <span className="text-accent">uns</span>
             </h1>
             <p className="text-xl text-muted-foreground">
@@ -39,7 +39,7 @@ export default function Contact() {
             </div>
           </div>
           <div className="glass floating rounded-3xl p-12">
-            <h2 className="text-3xl font-bold text-foreground mb-8 text-center">Gespräch vereinbaren</h2>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-8 text-center">Gespräch vereinbaren</h2>
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <input type="text" placeholder="Vorname" className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-accent" />

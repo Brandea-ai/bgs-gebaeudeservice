@@ -20,7 +20,7 @@ export default function RichtigeReinigungsfirmaFinden() {
         <div className="container max-w-4xl">
           <div className="mb-12">
             <div className="text-sm text-primary font-semibold mb-4">RATGEBER</div>
-            <h1 className="text-5xl font-bold text-slate-900 mb-6 leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
               Wie finde ich die richtige Reinigungsfirma?
             </h1>
             <p className="text-xl text-slate-600 leading-relaxed">
@@ -44,7 +44,7 @@ export default function RichtigeReinigungsfirmaFinden() {
               Die Wahl der richtigen Reinigungsfirma ist eine wichtige Entscheidung für jedes Unternehmen. Eine professionelle Gebäudereinigung trägt nicht nur zur Hygiene und Sauberkeit bei, sondern beeinflusst auch das Image Ihres Unternehmens und das Wohlbefinden Ihrer Mitarbeiter. In diesem umfassenden Ratgeber erfahren Sie, worauf Sie bei der Auswahl einer Reinigungsfirma in Zürich, Zug oder Luzern achten sollten.
             </p>
 
-            <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Warum ist die richtige Wahl so wichtig?</h2>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mt-12 mb-6">Warum ist die richtige Wahl so wichtig?</h2>
             <p className="text-lg leading-relaxed text-slate-700 mb-8">
               Eine professionelle Reinigungsfirma ist mehr als nur ein Dienstleister – sie ist ein Partner für die Werterhaltung Ihrer Immobilie. Saubere und gepflegte Räumlichkeiten schaffen eine angenehme Arbeitsatmosphäre, reduzieren Krankheitstage und hinterlassen bei Kunden einen positiven ersten Eindruck. Gleichzeitig schützt regelmäßige professionelle Reinigung Ihre Investition in Gebäude und Ausstattung.
             </p>
@@ -70,7 +70,7 @@ export default function RichtigeReinigungsfirmaFinden() {
               </div>
             </Card>
 
-            <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Detaillierte Auswahlkriterien</h2>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mt-12 mb-6">Detaillierte Auswahlkriterien</h2>
             
             <Accordion type="single" collapsible className="mb-12">
               <AccordionItem value="item-1">
@@ -161,7 +161,7 @@ export default function RichtigeReinigungsfirmaFinden() {
               </AccordionItem>
             </Accordion>
 
-            <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Regionale Besonderheiten in der Schweiz</h2>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mt-12 mb-6">Regionale Besonderheiten in der Schweiz</h2>
             <p className="text-lg leading-relaxed text-slate-700 mb-8">
               Bei der Auswahl einer Reinigungsfirma in Zürich, Zug oder Luzern sollten Sie auch regionale Faktoren berücksichtigen. Eine lokale Reinigungsfirma kennt die örtlichen Gegebenheiten, hat kurze Anfahrtswege und kann flexibel auf Ihre Bedürfnisse reagieren. Zudem unterstützen Sie mit der Wahl eines regionalen Anbieters die lokale Wirtschaft.
             </p>
@@ -187,7 +187,7 @@ export default function RichtigeReinigungsfirmaFinden() {
               </Card>
             </div>
 
-            <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Der Auswahlprozess Schritt für Schritt</h2>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mt-12 mb-6">Der Auswahlprozess Schritt für Schritt</h2>
             <div className="space-y-6 mb-12">
               {[
                 {
@@ -248,7 +248,7 @@ export default function RichtigeReinigungsfirmaFinden() {
 
           <div className="mt-16 pt-12 border-t">
             <div className="text-center">
-              <h3 className="text-3xl font-bold mb-4">Bereit für professionelle Reinigung?</h3>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4">Bereit für professionelle Reinigung?</h3>
               <p className="text-xl text-slate-600 mb-8">
                 Kontaktieren Sie uns für ein unverbindliches Beratungsgespräch.
               </p>

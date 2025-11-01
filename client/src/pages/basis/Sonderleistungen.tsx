@@ -36,7 +36,7 @@ export default function Sonderleistungen() {
               <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
                 Basis Service
               </div>
-              <h1 className="text-6xl font-bold text-slate-900 mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
                 Professionelle Sonderleistungen
               </h1>
               <p className="text-2xl text-slate-600 leading-relaxed mb-8">
@@ -90,7 +90,7 @@ export default function Sonderleistungen() {
             </Card>
           </div>
 
-          <h2 className="text-4xl font-bold text-slate-900 mb-8 text-center">Häufig gestellte Fragen</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-8 text-center">Häufig gestellte Fragen</h2>
           <Accordion type="single" collapsible className="max-w-3xl mx-auto">
             <AccordionItem value="item-1">
               <AccordionTrigger className="text-lg font-semibold">
@@ -107,7 +107,7 @@ export default function Sonderleistungen() {
       <section className="py-20 bg-gradient-to-br from-primary/10 to-red-50">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-slate-900 mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-6">
               Benötigen Sie eine Sonderleistung?
             </h2>
             <p className="text-xl text-slate-600 mb-8">

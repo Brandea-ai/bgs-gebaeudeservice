@@ -17,8 +17,8 @@ export default function SwissNavigation() {
   }, []);
 
   const premiumServices = [
-    { title: "Privatjet-Reinigung", href: "/premium/privatjet" },
-    { title: "Yacht-Reinigung", href: "/premium/yacht" },
+    { title: "Privatjet Reinigung", href: "/premium/privatjet" },
+    { title: "Yacht Reinigung", href: "/premium/yacht" },
     { title: "Private Housekeeping", href: "/premium/housekeeping" },
     { title: "Luxusimmobilien", href: "/premium/luxusimmobilien" }
   ];

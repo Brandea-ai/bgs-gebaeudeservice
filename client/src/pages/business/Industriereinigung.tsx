@@ -36,7 +36,7 @@ export default function Industriereinigung() {
               <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
                 Business Lösung
               </div>
-              <h1 className="text-6xl font-bold text-slate-900 mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
                 Professionelle Industriereinigung
               </h1>
               <p className="text-2xl text-slate-600 leading-relaxed mb-8">
@@ -92,14 +92,14 @@ export default function Industriereinigung() {
 
           <Tabs defaultValue="leistungen" className="mb-20">
             <TabsList className="grid w-full grid-cols-3 mb-8">
-              <TabsTrigger value="leistungen">Unsere Leistungen</TabsTrigger>
-              <TabsTrigger value="branchen">Branchen</TabsTrigger>
-              <TabsTrigger value="sicherheit">Sicherheit & Normen</TabsTrigger>
+              <TabsTrigger value="leistungen" className="text-xs sm:text-sm md:text-base px-2 sm:px-4">Unsere Leistungen</TabsTrigger>
+              <TabsTrigger value="branchen" className="text-xs sm:text-sm md:text-base px-2 sm:px-4">Branchen</TabsTrigger>
+              <TabsTrigger value="sicherheit" className="text-xs sm:text-sm md:text-base px-2 sm:px-4">Sicherheit & Normen</TabsTrigger>
             </TabsList>
             
             <TabsContent value="leistungen" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-3xl font-bold mb-6">Umfassende Industriereinigung</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Umfassende Industriereinigung</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h4 className="font-bold text-lg mb-3 text-primary">Produktionshallen</h4>
@@ -143,7 +143,7 @@ export default function Industriereinigung() {
             
             <TabsContent value="branchen" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-3xl font-bold mb-6">Branchenspezifische Expertise</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Branchenspezifische Expertise</h3>
                 <div className="grid md:grid-cols-2 gap-8">
                   {[
                     {
@@ -182,7 +182,7 @@ export default function Industriereinigung() {
             
             <TabsContent value="sicherheit" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-3xl font-bold mb-6">Sicherheit & Zertifizierungen</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Sicherheit & Zertifizierungen</h3>
                 <div className="space-y-6">
                   {[
                     {
@@ -216,7 +216,7 @@ export default function Industriereinigung() {
             </TabsContent>
           </Tabs>
 
-          <h2 className="text-4xl font-bold text-slate-900 mb-8 text-center">Häufig gestellte Fragen</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-8 text-center">Häufig gestellte Fragen</h2>
           <Accordion type="single" collapsible className="max-w-3xl mx-auto">
             <AccordionItem value="item-1">
               <AccordionTrigger className="text-lg font-semibold">
@@ -260,7 +260,7 @@ export default function Industriereinigung() {
       <section className="py-20 bg-gradient-to-br from-primary/10 to-red-50">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-slate-900 mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-6">
               Bereit für professionelle Industriereinigung?
             </h2>
             <p className="text-xl text-slate-600 mb-8">

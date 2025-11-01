@@ -10,7 +10,7 @@ export default function Datenschutz() {
       
       <section className="pt-32 pb-20">
         <div className="container max-w-4xl">
-          <h1 className="text-5xl font-bold text-slate-900 mb-6">Datenschutzerklärung</h1>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">Datenschutzerklärung</h1>
           <p className="text-xl text-slate-600 mb-12">
             Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Diese Datenschutzerklärung informiert Sie über die Verarbeitung Ihrer personenbezogenen Daten auf unserer Website.
           </p>

@@ -7,7 +7,7 @@ export default function StGallen() {
     <div className="min-h-screen bg-white">
       <SwissNavigation />
       <div className="pt-32 pb-20 container">
-        <h1 className="text-5xl font-bold mb-6">Reinigungsfirma StGallen</h1>
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6">Reinigungsfirma StGallen</h1>
         <p className="text-xl text-slate-600 mb-8">Professionelle Gebäudereinigung in StGallen und Umgebung.</p>
         <Link href="/kontakt"><Button size="lg" className="border-2">Jetzt Kontakt aufnehmen</Button></Link>
       </div>
