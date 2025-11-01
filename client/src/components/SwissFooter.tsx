@@ -38,7 +38,7 @@ export default function SwissFooter() {
             <div className="space-y-2 mb-6">
               <Link href="/standorte/zuerich"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer">Zürich</div></Link>
               <Link href="/standorte/zug"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer">Zug</div></Link>
-              <Link href="/standorte/st-gallen"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer">St. Gallen</div></Link>
+              <Link href="/standorte/luzern"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer">Luzern</div></Link>
             </div>
           </div>
         </div>

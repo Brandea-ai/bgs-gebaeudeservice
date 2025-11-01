@@ -1,7 +1,8 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { Route, Switch } from "wouter";
+import { Route, Switch, useLocation } from "wouter";
 import { HelmetProvider } from "react-helmet-async";
+import { useEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import SwissHome from "./pages/SwissHome";
@@ -49,9 +50,21 @@ import ProfessionelleGebaeudereinigung from "./pages/blog/ProfessionelleGebaeude
 import ReinigungskostenSchweiz from "./pages/blog/ReinigungskostenSchweiz";
 import UmweltfreundlicheReinigung from "./pages/blog/UmweltfreundlicheReinigung";
 
+function ScrollToTop() {
+  const [location] = useLocation();
+  
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [location]);
+  
+  return null;
+}
+
 function Router() {
   return (
-    <Switch>
+    <>
+      <ScrollToTop />
+      <Switch>
       <Route path="/" component={SwissHome} />
       
       {/* Premium Services */}
@@ -98,7 +111,8 @@ function Router() {
       
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
-    </Switch>
+      </Switch>
+    </>
   );
 }
 
