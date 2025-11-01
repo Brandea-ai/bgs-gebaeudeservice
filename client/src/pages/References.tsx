@@ -17,7 +17,7 @@ export default function References() {
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-32">
         <div className="container">
           <div className="text-center mb-16">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-6">
               Unsere <span className="text-accent">Kundenerfolge</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -28,7 +28,7 @@ export default function References() {
             {references.map((ref, index) => (
               <div key={index} className="glass floating rounded-3xl p-8">
                 <Star className="w-8 h-8 text-accent mb-4" />
-                <h3 className="text-xl font-bold text-foreground mb-2 whitespace-nowrap">{ref.company}</h3>
+                <h3 className="text-xl font-bold text-foreground mb-2">{ref.company}</h3>
                 <p className="text-accent font-semibold mb-3">{ref.result}</p>
                 <p className="text-sm text-muted-foreground">{ref.industry}</p>
               </div>

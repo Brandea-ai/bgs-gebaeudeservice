@@ -14,7 +14,7 @@ export default function ReinigungskostenSchweiz() {
         <div className="container max-w-4xl">
           <div className="mb-12">
             <div className="text-sm text-primary font-semibold mb-4">PREISÜBERSICHT</div>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+            <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-6 leading-tight">
               Reinigungskosten in der Schweiz: Ein Überblick
             </h1>
             <p className="text-xl text-slate-600 leading-relaxed">
@@ -39,7 +39,7 @@ export default function ReinigungskostenSchweiz() {
                 <Card className="p-6">
                   <div className="flex items-center gap-3 mb-4">
                     <Building className="w-8 h-8 text-primary"/>
-                    <h3 className="text-2xl font-bold whitespace-nowrap">Zürich</h3>
+                    <h3 className="text-2xl font-bold">Zürich</h3>
                   </div>
                   <p className="text-slate-700 mb-6">Als größte Stadt der Schweiz hat Zürich ein hohes Preisniveau. Die Kosten liegen typischerweise 10-15% über dem Schweizer Durchschnitt.</p>
                   <div className="space-y-4">
@@ -62,7 +62,7 @@ export default function ReinigungskostenSchweiz() {
                 <Card className="p-6">
                   <div className="flex items-center gap-3 mb-4">
                     <TrendingUp className="w-8 h-8 text-primary"/>
-                    <h3 className="text-2xl font-bold whitespace-nowrap">Zug</h3>
+                    <h3 className="text-2xl font-bold">Zug</h3>
                   </div>
                   <p className="text-slate-700 mb-6">Zug als Wirtschaftsstandort hat ebenfalls höhere Preise, liegt aber leicht unter Zürich.</p>
                   <div className="space-y-4">
@@ -85,7 +85,7 @@ export default function ReinigungskostenSchweiz() {
                 <Card className="p-6">
                   <div className="flex items-center gap-3 mb-4">
                     <Home className="w-8 h-8 text-primary"/>
-                    <h3 className="text-2xl font-bold whitespace-nowrap">Luzern</h3>
+                    <h3 className="text-2xl font-bold">Luzern</h3>
                   </div>
                   <p className="text-slate-700 mb-6">Luzern bietet ein ausgewogenes Preis-Leistungs-Verhältnis mit moderaten Kosten.</p>
                   <div className="space-y-4">
@@ -107,7 +107,7 @@ export default function ReinigungskostenSchweiz() {
             </Tabs>
 
             <Card className="p-8 bg-gradient-to-br from-primary/10 to-red-50 mb-12">
-              <h3 className="text-2xl font-bold mb-4 whitespace-nowrap">Kostenfaktoren</h3>
+              <h3 className="text-2xl font-bold mb-4">Kostenfaktoren</h3>
               <p className="text-slate-700 mb-4">Die Reinigungskosten werden von mehreren Faktoren beeinflusst:</p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3"><span className="text-primary font-bold">•</span><span><strong>Objektgröße:</strong> Größere Flächen profitieren von Mengenrabatten</span></li>
@@ -119,7 +119,7 @@ export default function ReinigungskostenSchweiz() {
             </Card>
 
             <div className="mt-16 pt-12 border-t text-center">
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 whitespace-nowrap">Individuelles Angebot gewünscht?</h3>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4">Individuelles Angebot gewünscht?</h3>
               <p className="text-xl text-slate-600 mb-8">Kontaktieren Sie uns für eine kostenlose Bedarfsanalyse und ein maßgeschneidertes Angebot.</p>
               <Link href="/kontakt"><Button size="lg" className="text-lg px-8">Jetzt Angebot anfordern<ArrowRight className="ml-2 w-5 h-5"/></Button></Link>
             </div>

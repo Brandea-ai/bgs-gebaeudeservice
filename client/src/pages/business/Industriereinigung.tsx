@@ -36,7 +36,7 @@ export default function Industriereinigung() {
               <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
                 Business Lösung
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
                 Professionelle Industriereinigung
               </h1>
               <p className="text-2xl text-slate-600 leading-relaxed mb-8">
@@ -99,7 +99,7 @@ export default function Industriereinigung() {
             
             <TabsContent value="leistungen" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 whitespace-nowrap">Umfassende Industriereinigung</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Umfassende Industriereinigung</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h4 className="font-bold text-lg mb-3 text-primary">Produktionshallen</h4>
@@ -143,7 +143,7 @@ export default function Industriereinigung() {
             
             <TabsContent value="branchen" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 whitespace-nowrap">Branchenspezifische Expertise</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Branchenspezifische Expertise</h3>
                 <div className="grid md:grid-cols-2 gap-8">
                   {[
                     {
@@ -182,7 +182,7 @@ export default function Industriereinigung() {
             
             <TabsContent value="sicherheit" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 whitespace-nowrap">Sicherheit & Zertifizierungen</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Sicherheit & Zertifizierungen</h3>
                 <div className="space-y-6">
                   {[
                     {

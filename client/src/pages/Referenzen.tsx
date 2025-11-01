@@ -61,7 +61,7 @@ export default function Referenzen() {
       <section className="pt-32 pb-20 bg-gradient-to-br from-white via-red-50/30 to-white">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
               Referenzen & Kundenerfolge
             </h1>
             <p className="text-2xl text-slate-600 leading-relaxed">
@@ -76,17 +76,17 @@ export default function Referenzen() {
           <div className="grid md:grid-cols-3 gap-8 mb-20">
             <Card className="p-8 text-center">
               <Building className="w-16 h-16 text-primary mx-auto mb-4"/>
-              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-2">500+</div>
+              <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-2">500+</div>
               <div className="text-lg text-slate-600">Zufriedene Kunden</div>
             </Card>
             <Card className="p-8 text-center">
               <Users className="w-16 h-16 text-primary mx-auto mb-4"/>
-              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-2">15+</div>
+              <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-2">15+</div>
               <div className="text-lg text-slate-600">Jahre Erfahrung</div>
             </Card>
             <Card className="p-8 text-center">
               <Award className="w-16 h-16 text-primary mx-auto mb-4"/>
-              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-2">98%</div>
+              <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-2">98%</div>
               <div className="text-lg text-slate-600">Kundenzufriedenheit</div>
             </Card>
           </div>
@@ -110,7 +110,7 @@ export default function Referenzen() {
                   </div>
                 </div>
                 <div className="p-8">
-                  <h3 className="text-2xl font-bold mb-3 whitespace-nowrap">{project.title}</h3>
+                  <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
                   <p className="text-slate-600 mb-6">{project.description}</p>
                   <div className="space-y-2">
                     <div className="font-semibold text-sm text-slate-900 mb-2">Ergebnisse:</div>

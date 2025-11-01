@@ -65,21 +65,21 @@ export default function FacilityManagement() {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 text-red-600 rounded-full mb-4">
                 <Building2 className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-bold mb-2 whitespace-nowrap">Ganzheitlich</h3>
+              <h3 className="text-xl font-bold mb-2">Ganzheitlich</h3>
               <p className="text-gray-600">Alle Services aus einer Hand</p>
             </div>
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 text-red-600 rounded-full mb-4">
                 <Clock className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-bold mb-2 whitespace-nowrap">24/7 Verfügbar</h3>
+              <h3 className="text-xl font-bold mb-2">24/7 Verfügbar</h3>
               <p className="text-gray-600">Notfall-Hotline rund um die Uhr</p>
             </div>
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 text-red-600 rounded-full mb-4">
                 <Shield className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-bold mb-2 whitespace-nowrap">Zertifiziert</h3>
+              <h3 className="text-xl font-bold mb-2">Zertifiziert</h3>
               <p className="text-gray-600">ISO-zertifiziertes Management</p>
             </div>
           </div>

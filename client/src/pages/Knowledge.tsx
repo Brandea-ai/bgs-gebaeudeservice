@@ -16,7 +16,7 @@ export default function Knowledge() {
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-32">
         <div className="container">
           <div className="text-center mb-16">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-6">
               Wissen & <span className="text-accent">Insights</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -30,7 +30,7 @@ export default function Knowledge() {
                   <BookOpen className="w-4 h-4" />
                   {article.category}
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-3 whitespace-nowrap">{article.title}</h3>
+                <h3 className="text-xl font-bold text-foreground mb-3">{article.title}</h3>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <Clock className="w-4 h-4" />
                   {article.date}

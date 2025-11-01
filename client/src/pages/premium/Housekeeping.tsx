@@ -36,7 +36,7 @@ export default function Housekeeping() {
               <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
                 Premium Service
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
                 Private Housekeeping
               </h1>
               <p className="text-2xl text-slate-600 leading-relaxed mb-8">
@@ -99,7 +99,7 @@ export default function Housekeeping() {
             
             <TabsContent value="leistungen" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 whitespace-nowrap">Exklusives Private Housekeeping</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Exklusives Private Housekeeping</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h4 className="font-bold text-lg mb-3 text-primary">Tägliche Pflege</h4>
@@ -143,7 +143,7 @@ export default function Housekeeping() {
             
             <TabsContent value="pakete" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 whitespace-nowrap">Maßgeschneiderte Service-Pakete</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Maßgeschneiderte Service-Pakete</h3>
                 <div className="grid md:grid-cols-3 gap-6">
                   <Card className="p-6 bg-slate-50">
                     <h4 className="text-xl font-bold mb-4">Essentials</h4>
@@ -216,7 +216,7 @@ export default function Housekeeping() {
             
             <TabsContent value="team" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 whitespace-nowrap">Unser erfahrenes Team</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Unser erfahrenes Team</h3>
                 <div className="space-y-6">
                   {[
                     {

@@ -17,7 +17,7 @@ export default function Career() {
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-32">
         <div className="container">
           <div className="text-center mb-16">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-6">
               Karriere bei <span className="text-accent">Brandea</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -28,7 +28,7 @@ export default function Career() {
             {positions.map((position, index) => (
               <div key={index} className="glass floating rounded-3xl p-8">
                 <Briefcase className="w-8 h-8 text-accent mb-4" />
-                <h3 className="text-xl font-bold text-foreground mb-2 whitespace-nowrap">{position.title}</h3>
+                <h3 className="text-xl font-bold text-foreground mb-2">{position.title}</h3>
                 <p className="text-muted-foreground mb-1">{position.location}</p>
                 <p className="text-sm text-accent mb-6">{position.type}</p>
                 <Link href="/kontakt">

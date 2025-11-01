@@ -65,7 +65,7 @@ export default function Home() {
               <div className="inline-block glass floating px-4 py-2 rounded-full text-sm font-medium text-accent">
                 Thinking outside the box
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground leading-tight">
                 KI-Beratung für{" "}
                 <span className="text-accent">nachhaltiges Wachstum</span>
               </h1>

@@ -16,7 +16,7 @@ export default function Downloads() {
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-32">
         <div className="container max-w-4xl">
           <div className="text-center mb-16">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-6">
               <span className="text-accent">Downloads</span> & Ressourcen
             </h1>
             <p className="text-xl text-muted-foreground">

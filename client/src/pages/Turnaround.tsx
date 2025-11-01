@@ -12,7 +12,7 @@ export default function Turnaround() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground leading-tight">
                 Turnaround & <span className="text-accent">Restrukturierung</span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">

@@ -41,7 +41,7 @@ export default function Zuerich() {
               <MapPin className="w-6 h-6 text-primary"/>
               <span className="text-lg font-semibold">Standort Zürich</span>
             </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6 leading-tight">
               Professionelle Reinigungsfirma in Zürich
             </h1>
             <p className="text-2xl leading-relaxed opacity-90">
@@ -111,7 +111,7 @@ export default function Zuerich() {
                 ].map((service, i) => (
                   <Card key={i} className="p-6 hover:shadow-xl transition-all">
                     <service.icon className="w-10 h-10 text-primary mb-4"/>
-                    <h3 className="text-xl font-bold mb-3 whitespace-nowrap">{service.title}</h3>
+                    <h3 className="text-xl font-bold mb-3">{service.title}</h3>
                     <p className="text-slate-600 mb-4">{service.desc}</p>
                     <Link href={`/premium/${service.title.toLowerCase().replace(/[- ]/g, '')}`}>
                       <Button variant="outline" size="sm">Mehr erfahren</Button>
@@ -128,7 +128,7 @@ export default function Zuerich() {
                 ].map((service, i) => (
                   <Card key={i} className="p-6 hover:shadow-xl transition-all">
                     <Building2 className="w-10 h-10 text-primary mb-4"/>
-                    <h3 className="text-lg font-bold mb-2 whitespace-nowrap">{service}</h3>
+                    <h3 className="text-lg font-bold mb-2">{service}</h3>
                     <p className="text-sm text-slate-600 mb-4">Professionelle Lösungen für Zürich</p>
                     <Link href={`/business/${service.toLowerCase().replace(/ /g, '')}`}>
                       <Button variant="outline" size="sm">Details</Button>
@@ -144,7 +144,7 @@ export default function Zuerich() {
                   "Beschaffungsmanagement", "Sonderleistungen"
                 ].map((service, i) => (
                   <Card key={i} className="p-6 hover:shadow-xl transition-all">
-                    <h3 className="text-xl font-bold mb-3 whitespace-nowrap">{service}</h3>
+                    <h3 className="text-xl font-bold mb-3">{service}</h3>
                     <p className="text-slate-600 mb-4">Zuverlässige Basisleistungen in Zürich</p>
                     <Link href={`/basis/${service.toLowerCase().replace(/ /g, '')}`}>
                       <Button variant="outline">Mehr Info</Button>

@@ -36,7 +36,7 @@ export default function Hausmeisterservice() {
               <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
                 Basis Service
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
                 Professioneller Hausmeisterservice
               </h1>
               <p className="text-2xl text-slate-600 leading-relaxed mb-8">
@@ -99,7 +99,7 @@ export default function Hausmeisterservice() {
             
             <TabsContent value="leistungen" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 whitespace-nowrap">Umfassender Hausmeisterservice</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Umfassender Hausmeisterservice</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h4 className="font-bold text-lg mb-3 text-primary">Regelmäßige Aufgaben</h4>
@@ -143,7 +143,7 @@ export default function Hausmeisterservice() {
             
             <TabsContent value="ablauf" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 whitespace-nowrap">Professionelle Objektbetreuung</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Professionelle Objektbetreuung</h3>
                 <div className="space-y-6">
                   {[
                     {
@@ -174,7 +174,7 @@ export default function Hausmeisterservice() {
             
             <TabsContent value="pakete" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 whitespace-nowrap">Flexible Service-Pakete</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Flexible Service-Pakete</h3>
                 <div className="grid md:grid-cols-3 gap-6">
                   <Card className="p-6 bg-slate-50">
                     <h4 className="text-xl font-bold mb-4">Basic</h4>

@@ -36,7 +36,7 @@ export default function Sonderleistungen() {
               <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
                 Basis Service
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
                 Professionelle Sonderleistungen
               </h1>
               <p className="text-2xl text-slate-600 leading-relaxed mb-8">
