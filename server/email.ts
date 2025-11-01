@@ -33,13 +33,19 @@ export async function sendContactEmail(data: EmailData): Promise<boolean> {
       service: service || 'Nicht angegeben',
       message: message
     });
+    console.log("👉 To enable email sending, set RESEND_API_KEY environment variable in Vercel");
     return true; // Return success for development
   }
 
+  console.log("🔑 RESEND_API_KEY found, attempting to send email...");
+
   try {
     // Dynamic import of Resend (only if API key is present)
+    console.log("📦 Importing Resend package...");
     const { Resend } = await import('resend');
+    console.log("✅ Resend package imported successfully");
     const resend = new Resend(resendApiKey);
+    console.log("✅ Resend client initialized");
 
     const emailHtml = `
 <!DOCTYPE html>
@@ -116,15 +122,21 @@ Diese Nachricht wurde über das Kontaktformular auf bgs-gebaeudeservice.vercel.a
     });
 
     if (error) {
-      console.error("❌ Error sending email:", error);
+      console.error("❌ Resend API error:", error);
+      console.error("Error details:", JSON.stringify(error, null, 2));
       return false;
     }
 
-    console.log("✅ Email sent successfully:", emailResponse);
+    console.log("✅ Email sent successfully!");
+    console.log("Email ID:", emailResponse?.id);
     return true;
 
   } catch (error) {
-    console.error("❌ Error in email service:", error);
+    console.error("❌ Critical error in email service:", error);
+    if (error instanceof Error) {
+      console.error("Error message:", error.message);
+      console.error("Error stack:", error.stack);
+    }
     return false;
   }
 }

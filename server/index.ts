@@ -29,6 +29,7 @@ async function startServer() {
   // API Routes
   // Contact Form Endpoint
   app.post("/api/contact", async (req, res) => {
+    console.log("📧 Contact form submission received:", { name: req.body.name, email: req.body.email });
     try {
       const { name, email, phone, service, message } = req.body;
 
@@ -123,16 +124,24 @@ Diese Nachricht wurde über das Kontaktformular auf brandea.de gesendet.
       };
 
       // Send email using Resend service
-      const emailSent = await sendContactEmail({
-        name,
-        email,
-        phone,
-        service,
-        message
-      });
+      console.log("📤 Attempting to send email via Resend...");
+      try {
+        const emailSent = await sendContactEmail({
+          name,
+          email,
+          phone,
+          service,
+          message
+        });
 
-      if (!emailSent) {
-        console.warn("⚠️  Email sending failed, but form submission logged");
+        if (emailSent) {
+          console.log("✅ Email sent successfully!");
+        } else {
+          console.warn("⚠️  Email sending failed, but form submission logged");
+        }
+      } catch (emailError) {
+        console.error("❌ Email sending error:", emailError);
+        // Continue anyway - don't fail the form submission
       }
 
       // Return success response
@@ -142,7 +151,11 @@ Diese Nachricht wurde über das Kontaktformular auf brandea.de gesendet.
       });
 
     } catch (error) {
-      console.error("Error processing contact form:", error);
+      console.error("❌ Error processing contact form:", error);
+      console.error("Error details:", {
+        message: error instanceof Error ? error.message : 'Unknown error',
+        stack: error instanceof Error ? error.stack : undefined
+      });
       res.status(500).json({ 
         success: false, 
         message: "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut." 
