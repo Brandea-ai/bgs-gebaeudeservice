@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { scrollToContact } from "../utils/scroll";
 import { Link } from "wouter";
 import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";

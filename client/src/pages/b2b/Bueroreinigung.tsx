@@ -1,4 +1,5 @@
 import { Link } from 'wouter';
+import { scrollToContact } from "../utils/scroll";
 import { Building2, Clock, Shield, CheckCircle2, Phone, Mail } from 'lucide-react';
 
 export default function Bueroreinigung() {

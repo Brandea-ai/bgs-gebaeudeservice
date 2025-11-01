@@ -1,4 +1,5 @@
 import SwissNavigation from "@/components/SwissNavigation";
+import { scrollToContact } from "../utils/scroll";
 import SwissFooter from "@/components/SwissFooter";
 import SEO from "@/components/SEO";
 import { localBusinessSchema } from "@/utils/schema";

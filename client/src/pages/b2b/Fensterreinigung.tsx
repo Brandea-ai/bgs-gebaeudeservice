@@ -1,4 +1,5 @@
 import { Link } from 'wouter';
+import { scrollToContact } from "../utils/scroll";
 import { Sparkles, Clock, Shield, CheckCircle2, Phone, Mail, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 

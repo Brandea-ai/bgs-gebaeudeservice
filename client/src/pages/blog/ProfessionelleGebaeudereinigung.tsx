@@ -1,4 +1,5 @@
 import SwissNavigation from "@/components/SwissNavigation";
+import { scrollToContact } from "../utils/scroll";
 import SwissFooter from "@/components/SwissFooter";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card } from "@/components/ui/card";

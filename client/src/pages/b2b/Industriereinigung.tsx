@@ -1,4 +1,5 @@
 import { Link } from 'wouter';
+import { scrollToContact } from "../utils/scroll";
 import { Factory, Shield, Clock, CheckCircle2, Phone, Mail } from 'lucide-react';
 
 export default function Industriereinigung() {

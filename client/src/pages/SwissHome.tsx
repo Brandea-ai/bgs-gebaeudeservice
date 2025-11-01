@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { scrollToContact } from "../utils/scroll";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";

@@ -1,4 +1,5 @@
 import SwissNavigation from "@/components/SwissNavigation";
+import { scrollToContact } from "../utils/scroll";
 import SwissFooter from "@/components/SwissFooter";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { scrollToContact } from "../utils/scroll";
 import { Link, useLocation } from "wouter";
 import { ChevronDown, Menu, X, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -204,7 +205,7 @@ export default function Navigation() {
                 </div>
               ))}
               
-              <Button className="ml-4">
+              <Button onClick={scrollToContact} className="ml-4">
                 Gespräch vereinbaren
               </Button>
             </div>
