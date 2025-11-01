@@ -1,310 +1,312 @@
 import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
-import { Link } from 'wouter';
-import { CheckCircle, Clock, Shield, Phone, ArrowRight, ChevronDown } from 'lucide-react';
-import { useState } from 'react';
+import SEO from "@/components/SEO";
+import { serviceSchema } from "@/utils/schema";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Link } from "wouter";
+import { CheckCircle, Wrench, Clock, Shield, Phone, ArrowRight } from "lucide-react";
 
 export default function Hausmeisterservice() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-
-  const features = [
-    { icon: Clock, title: '24/7 Erreichbar', description: 'Notfall-Hotline rund um die Uhr' },
-    { icon: Shield, title: 'Zuverlässig', description: 'Professionelle Betreuung' },
-    { icon: CheckCircle, title: 'Komplett-Service', description: 'Alle Leistungen aus einer Hand' },
-  ];
-
-  const services = [
-    'Objektbetreuung und Überwachung',
-    'Kleinreparaturen und Instandhaltung',
-    'Grünpflege und Außenanlagen',
-    'Winterdienst und Schneeräumung',
-    'Müllentsorgung und Recycling',
-    'Schlüsselverwaltung',
-  ];
-
-  const faqs = [
-    {
-      question: 'Welche Leistungen umfasst der Hausmeisterservice?',
-      answer: 'Unser Hausmeisterservice umfasst Objektbetreuung, Kleinreparaturen, Grünpflege, Winterdienst, Müllentsorgung und vieles mehr. Wir bieten maßgeschneiderte Lösungen für Ihre Immobilie.',
-    },
-    {
-      question: 'Sind Sie auch außerhalb der Geschäftszeiten erreichbar?',
-      answer: 'Ja, wir bieten eine 24/7 Notfall-Hotline für dringende Angelegenheiten. Unser Team ist jederzeit für Sie da.',
-    },
-    {
-      question: 'Wie schnell reagieren Sie bei Notfällen?',
-      answer: 'Bei Notfällen reagieren wir innerhalb von 2 Stunden. Unser Bereitschaftsdienst ist rund um die Uhr einsatzbereit.',
-    },
-    {
-      question: 'Können Sie auch Kleinreparaturen durchführen?',
-      answer: 'Ja, unser Team führt alle gängigen Kleinreparaturen durch - von Elektrik über Sanitär bis zu Schreinerarbeiten.',
-    },
-    {
-      question: 'Was kostet der Hausmeisterservice?',
-      answer: 'Die Kosten richten sich nach Objektgröße und Leistungsumfang. Kontaktieren Sie uns für ein individuelles Angebot.',
-    },
-  ];
+  const serviceData = {
+    name: "Professioneller Hausmeisterservice",
+    description: "Zuverlässiger Hausmeisterservice für Ihre Immobilie. Objektbetreuung, Kleinreparaturen und 24/7 Notfall-Service.",
+    url: "/basis/hausmeisterservice",
+    category: "Facility Caretaker Service"
+  };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
+      <SEO
+        title="Hausmeisterservice Zürich, Zug & Luzern - Swiss Reinigungsfirma"
+        description="Professioneller Hausmeisterservice in der Schweiz. Objektbetreuung, Kleinreparaturen und 24/7 Notfall-Service."
+        keywords="Hausmeisterservice, Hausmeister Schweiz, Objektbetreuung, Facility Caretaker"
+        url="/basis/hausmeisterservice"
+        schema={serviceSchema(serviceData)}
+      />
       <SwissNavigation />
-      <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-red-600 to-red-700 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Professioneller Hausmeisterservice
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-red-100">
-              Zuverlässige Betreuung für Ihre Immobilie in Zürich, Zug und Luzern
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/kontakt"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white text-red-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-              >
-                Jetzt Angebot einholen
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-              <a
-                href="tel:+41413205610"
-                className="inline-flex items-center justify-center px-8 py-4 bg-red-800 text-white rounded-lg font-semibold hover:bg-red-900 transition-colors"
-              >
-                <Phone className="mr-2 h-5 w-5" />
-                +41 41 320 56 10
-              </a>
-                  <SwissFooter />
-    </div>
-  </div>
-                <SwissFooter />
-    </div>
-  </div>
-              <SwissFooter />
-    </div>
-  </div>
-      </section>
-
-      {/* Features */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <div key={index} className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 text-red-600 rounded-full mb-4">
-                  <feature.icon className="h-8 w-8" />
-                      <SwissFooter />
-    </div>
-  </div>
-                <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-                    <SwissFooter />
-    </div>
-  </div>
-            ))}
-                <SwissFooter />
-    </div>
-  </div>
-              <SwissFooter />
-    </div>
-  </div>
-      </section>
-
-      {/* Content Section 1 - Text Left, Image Right */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+      
+      <section className="pt-32 pb-20 relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-red-50/30 -z-10"/>
+        <div className="container">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Ihr zuverlässiger Partner für die Immobilienbetreuung
-              </h2>
-              <p className="text-lg text-gray-600 mb-6">
-                Unser professioneller Hausmeisterservice sorgt dafür, dass Ihre Immobilie in bestem Zustand bleibt. 
-                Wir übernehmen alle anfallenden Aufgaben - von der täglichen Objektbetreuung bis zu Notfalleinsätzen.
+              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                Basis Service
+              </div>
+              <h1 className="text-6xl font-bold text-slate-900 mb-6">
+                Professioneller Hausmeisterservice
+              </h1>
+              <p className="text-2xl text-slate-600 leading-relaxed mb-8">
+                Umfassende Objektbetreuung für Wohn- und Geschäftsimmobilien in Zürich, Zug und Luzern. Zuverlässig, kompetent und immer erreichbar.
               </p>
-              <p className="text-lg text-gray-600 mb-6">
-                Mit unserem erfahrenen Team und modernster Ausstattung garantieren wir höchste Qualität und 
-                Zuverlässigkeit. Vertrauen Sie auf über 15 Jahre Erfahrung in der Immobilienbetreuung.
-              </p>
-              <Link
-                to="/unterhaltsreinigung"
-                className="inline-flex items-center text-red-600 font-semibold hover:text-red-700"
-              >
-                Mehr über Unterhaltsreinigung
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-                  <SwissFooter />
-    </div>
-  </div>
-            <div className="relative h-96 rounded-lg overflow-hidden shadow-xl">
-              <img
-                src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&q=80"
-                alt="Hausmeister bei der Arbeit"
-                className="w-full h-full object-cover"
+              <div className="flex flex-wrap gap-4">
+                <Link href="/kontakt">
+                  <Button size="lg" className="text-lg">
+                    Jetzt anfragen
+                    <ArrowRight className="ml-2 w-5 h-5"/>
+                  </Button>
+                </Link>
+                <Button size="lg" variant="outline" className="text-lg">
+                  +41 41 320 56 10
+                </Button>
+              </div>
+            </div>
+            <div className="relative">
+              <img 
+                src="/b2b-office-cleaning.jpg" 
+                alt="Hausmeisterservice" 
+                className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
               />
-                  <SwissFooter />
-    </div>
-  </div>
-                <SwissFooter />
-    </div>
-  </div>
-              <SwissFooter />
-    </div>
-  </div>
+            </div>
+          </div>
+        </div>
       </section>
 
-      {/* Services List */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Unsere Hausmeister-Leistungen
+      <section className="py-20 bg-white">
+        <div className="container">
+          <div className="grid md:grid-cols-4 gap-8 mb-20">
+            <Card className="p-6 text-center">
+              <Phone className="w-12 h-12 text-primary mx-auto mb-4"/>
+              <div className="font-bold text-lg mb-2">24/7 Erreichbar</div>
+              <div className="text-slate-600">Notfall-Hotline rund um die Uhr</div>
+            </Card>
+            <Card className="p-6 text-center">
+              <Wrench className="w-12 h-12 text-primary mx-auto mb-4"/>
+              <div className="font-bold text-lg mb-2">Vielseitig</div>
+              <div className="text-slate-600">Von Reparatur bis Grünpflege</div>
+            </Card>
+            <Card className="p-6 text-center">
+              <Shield className="w-12 h-12 text-primary mx-auto mb-4"/>
+              <div className="font-bold text-lg mb-2">Zuverlässig</div>
+              <div className="text-slate-600">Fester Ansprechpartner</div>
+            </Card>
+            <Card className="p-6 text-center">
+              <Clock className="w-12 h-12 text-primary mx-auto mb-4"/>
+              <div className="font-bold text-lg mb-2">Schnell</div>
+              <div className="text-slate-600">Kurze Reaktionszeiten</div>
+            </Card>
+          </div>
+
+          <Tabs defaultValue="leistungen" className="mb-20">
+            <TabsList className="grid w-full grid-cols-3 mb-8">
+              <TabsTrigger value="leistungen">Unsere Leistungen</TabsTrigger>
+              <TabsTrigger value="ablauf">Betreuungskonzept</TabsTrigger>
+              <TabsTrigger value="pakete">Service-Pakete</TabsTrigger>
+            </TabsList>
+            
+            <TabsContent value="leistungen" className="space-y-6">
+              <Card className="p-8">
+                <h3 className="text-3xl font-bold mb-6">Umfassender Hausmeisterservice</h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 className="font-bold text-lg mb-3 text-primary">Regelmäßige Aufgaben</h4>
+                    <ul className="space-y-2">
+                      {[
+                        "Objektbegehungen & Kontrollen",
+                        "Kleinreparaturen & Instandhaltung",
+                        "Grünflächen- & Außenanlagenpflege",
+                        "Müllentsorgung koordinieren",
+                        "Beleuchtung prüfen & warten",
+                        "Hausordnung überwachen"
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"/>
+                          <span className="text-slate-700">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-lg mb-3 text-primary">Zusatzleistungen</h4>
+                    <ul className="space-y-2">
+                      {[
+                        "Winterdienst & Schneeräumung",
+                        "Schlüsselverwaltung",
+                        "Handwerker-Koordination",
+                        "Notfall-Bereitschaft 24/7",
+                        "Mieterwechsel-Begleitung",
+                        "Technische Wartungen"
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"/>
+                          <span className="text-slate-700">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </Card>
+            </TabsContent>
+            
+            <TabsContent value="ablauf" className="space-y-6">
+              <Card className="p-8">
+                <h3 className="text-3xl font-bold mb-6">Professionelle Objektbetreuung</h3>
+                <div className="space-y-6">
+                  {[
+                    {
+                      title: "Objektanalyse",
+                      desc: "Wir erfassen alle relevanten Daten Ihrer Immobilie und erstellen einen individuellen Betreuungsplan mit regelmäßigen Kontrollgängen und Wartungsintervallen."
+                    },
+                    {
+                      title: "Fester Hausmeister",
+                      desc: "Sie erhalten einen festen Ansprechpartner, der Ihr Objekt kennt und bei allen Fragen und Problemen schnell und kompetent reagiert."
+                    },
+                    {
+                      title: "Digitale Dokumentation",
+                      desc: "Alle Tätigkeiten werden digital erfasst. Sie erhalten regelmäßige Berichte über durchgeführte Arbeiten, Mängel und anstehende Wartungen."
+                    },
+                    {
+                      title: "Notfall-Service",
+                      desc: "Bei Notfällen wie Wasserschäden, Heizungsausfall oder Sturmschäden sind wir 24/7 erreichbar und kümmern uns um die Schadensbegrenzung."
+                    }
+                  ].map((item, i) => (
+                    <div key={i}>
+                      <h4 className="text-xl font-bold mb-2 text-primary">{item.title}</h4>
+                      <p className="text-slate-600 leading-relaxed">{item.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </Card>
+            </TabsContent>
+            
+            <TabsContent value="pakete" className="space-y-6">
+              <Card className="p-8">
+                <h3 className="text-3xl font-bold mb-6">Flexible Service-Pakete</h3>
+                <div className="grid md:grid-cols-3 gap-6">
+                  <Card className="p-6 bg-slate-50">
+                    <h4 className="text-xl font-bold mb-4">Basic</h4>
+                    <div className="text-3xl font-bold text-primary mb-2">ab CHF 400</div>
+                    <div className="text-sm text-slate-600 mb-4">pro Monat</div>
+                    <ul className="space-y-2 text-sm">
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
+                        <span>Wöchentliche Kontrollen</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
+                        <span>Kleinreparaturen inkl.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
+                        <span>Ideal für kleine Objekte</span>
+                      </li>
+                    </ul>
+                  </Card>
+                  <Card className="p-6 bg-primary/5 border-primary">
+                    <h4 className="text-xl font-bold mb-4">Standard</h4>
+                    <div className="text-3xl font-bold text-primary mb-2">ab CHF 800</div>
+                    <div className="text-sm text-slate-600 mb-4">pro Monat</div>
+                    <ul className="space-y-2 text-sm">
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
+                        <span>2-3x wöchentliche Betreuung</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
+                        <span>Grünpflege inkl.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
+                        <span>Notfall-Hotline</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
+                        <span>Ideal für Mehrfamilienhäuser</span>
+                      </li>
+                    </ul>
+                  </Card>
+                  <Card className="p-6 bg-slate-50">
+                    <h4 className="text-xl font-bold mb-4">Premium</h4>
+                    <div className="text-3xl font-bold text-primary mb-2">Individuell</div>
+                    <div className="text-sm text-slate-600 mb-4">auf Anfrage</div>
+                    <ul className="space-y-2 text-sm">
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
+                        <span>Vollumfängliche Betreuung</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
+                        <span>24/7 Präsenz-Service</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
+                        <span>Alle Zusatzleistungen</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
+                        <span>Ideal für große Liegenschaften</span>
+                      </li>
+                    </ul>
+                  </Card>
+                </div>
+              </Card>
+            </TabsContent>
+          </Tabs>
+
+          <h2 className="text-4xl font-bold text-slate-900 mb-8 text-center">Häufig gestellte Fragen</h2>
+          <Accordion type="single" collapsible className="max-w-3xl mx-auto">
+            <AccordionItem value="item-1">
+              <AccordionTrigger className="text-lg font-semibold">
+                Was gehört alles zum Hausmeisterservice?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-700 leading-relaxed pt-4">
+                Unser Service umfasst regelmäßige Objektkontrollen, Kleinreparaturen, Grünpflege, Müllentsorgung, Beleuchtungswartung und vieles mehr. Der genaue Umfang wird individuell festgelegt.
+              </AccordionContent>
+            </AccordionItem>
+            
+            <AccordionItem value="item-2">
+              <AccordionTrigger className="text-lg font-semibold">
+                Wie schnell reagieren Sie bei Notfällen?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-700 leading-relaxed pt-4">
+                Bei Notfällen wie Wasserschäden oder Heizungsausfall sind wir innerhalb von 1-2 Stunden vor Ort. Unsere 24/7-Hotline ist immer erreichbar.
+              </AccordionContent>
+            </AccordionItem>
+            
+            <AccordionItem value="item-3">
+              <AccordionTrigger className="text-lg font-semibold">
+                Können Sie auch größere Reparaturen durchführen?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-700 leading-relaxed pt-4">
+                Kleinreparaturen führen wir selbst durch. Bei größeren Arbeiten koordinieren wir qualifizierte Handwerker aus unserem Netzwerk und überwachen die Ausführung.
+              </AccordionContent>
+            </AccordionItem>
+            
+            <AccordionItem value="item-4">
+              <AccordionTrigger className="text-lg font-semibold">
+                Ist der Winterdienst im Service enthalten?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-700 leading-relaxed pt-4">
+                Der Winterdienst kann als Zusatzleistung gebucht werden. Wir kümmern uns um Schneeräumung, Streudienst und die Verkehrssicherungspflicht.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
+      </section>
+
+      <section className="py-20 bg-gradient-to-br from-primary/10 to-red-50">
+        <div className="container">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-4xl font-bold text-slate-900 mb-6">
+              Bereit für professionelle Objektbetreuung?
             </h2>
-            <p className="text-xl text-gray-600">
-              Umfassender Service für Ihre Immobilie
+            <p className="text-xl text-slate-600 mb-8">
+              Kontaktieren Sie uns für ein kostenloses Beratungsgespräch. Wir erstellen ein maßgeschneidertes Betreuungskonzept.
             </p>
-                <SwissFooter />
-    </div>
-  </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, index) => (
-              <div key={index} className="flex items-start space-x-3 p-4 bg-gray-50 rounded-lg">
-                <CheckCircle className="h-6 w-6 text-red-600 flex-shrink-0 mt-1" />
-                <span className="text-lg">{service}</span>
-                    <SwissFooter />
-    </div>
-  </div>
-            ))}
-                <SwissFooter />
-    </div>
-  </div>
-              <SwissFooter />
-    </div>
-  </div>
-      </section>
-
-      {/* Content Section 2 - Image Left, Text Right */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative h-96 rounded-lg overflow-hidden shadow-xl">
-              <img
-                src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80"
-                alt="Professionelle Objektbetreuung"
-                className="w-full h-full object-cover"
-              />
-                  <SwissFooter />
-    </div>
-  </div>
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                24/7 Notfall-Service für Ihre Sicherheit
-              </h2>
-              <p className="text-lg text-gray-600 mb-6">
-                Notfälle kennen keine Öffnungszeiten. Deshalb sind wir rund um die Uhr für Sie erreichbar. 
-                Ob Wasserschaden, Heizungsausfall oder Sicherheitsproblem - unser Notfall-Team ist innerhalb 
-                kürzester Zeit vor Ort.
-              </p>
-              <p className="text-lg text-gray-600 mb-6">
-                Unsere Hausmeister sind bestens ausgebildet und verfügen über langjährige Erfahrung in der 
-                Bewältigung von Notfallsituationen. Ihre Immobilie ist bei uns in sicheren Händen.
-              </p>
-              <Link
-                to="/winterdienst"
-                className="inline-flex items-center text-red-600 font-semibold hover:text-red-700"
-              >
-                Mehr über Winterdienst
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-                  <SwissFooter />
-    </div>
-  </div>
-                <SwissFooter />
-    </div>
-  </div>
-              <SwissFooter />
-    </div>
-  </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Häufig gestellte Fragen
-            </h2>
-            <p className="text-xl text-gray-600">
-              Alles, was Sie über unseren Hausmeisterservice wissen müssen
-            </p>
-                <SwissFooter />
-    </div>
-  </div>
-          <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <div key={index} className="border border-gray-200 rounded-lg overflow-hidden">
-                <button
-                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                  className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
-                >
-                  <span className="font-semibold text-lg">{faq.question}</span>
-                  <ChevronDown
-                    className={`h-5 w-5 text-red-600 transition-transform ${
-                      openFaq === index ? 'transform rotate-180' : ''
-                    }`}
-                  />
-                </button>
-                {openFaq === index && (
-                  <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
-                    <p className="text-gray-600">{faq.answer}</p>
-                        <SwissFooter />
-    </div>
-  </div>
-                )}
-                    <SwissFooter />
-    </div>
-  </div>
-            ))}
-                <SwissFooter />
-    </div>
-  </div>
-              <SwissFooter />
-    </div>
-  </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-br from-red-600 to-red-700 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Bereit für professionellen Hausmeisterservice?
-          </h2>
-          <p className="text-xl mb-8 text-red-100">
-            Kontaktieren Sie uns für ein unverbindliches Angebot
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/kontakt"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white text-red-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-            >
-              Jetzt Kontakt aufnehmen
-              <ArrowRight className="ml-2 h-5 w-5" />
+            <Link href="/kontakt">
+              <Button size="lg" className="text-lg px-8">
+                Jetzt Kontakt aufnehmen
+                <ArrowRight className="ml-2 w-5 h-5"/>
+              </Button>
             </Link>
-            <Link
-              to="/bueroreinigung"
-              className="inline-flex items-center justify-center px-8 py-4 bg-red-800 text-white rounded-lg font-semibold hover:bg-red-900 transition-colors"
-            >
-              Weitere Leistungen entdecken
-            </Link>
-                <SwissFooter />
-    </div>
-  </div>
-              <SwissFooter />
-    </div>
-  </div>
+          </div>
+        </div>
       </section>
-          <SwissFooter />
+
+      <SwissFooter />
     </div>
-  </div>
   );
 }

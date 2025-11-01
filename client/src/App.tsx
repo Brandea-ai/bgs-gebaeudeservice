@@ -25,12 +25,11 @@ import Maschinenreinigung from "./pages/business/Maschinenreinigung";
 import FacilityManagement from "./pages/business/FacilityManagement";
 
 // Basis Services
-// Temporarily disabled due to structural issues in original files
-// import Unterhaltsreinigung from "./pages/basis/Unterhaltsreinigung";
-// import Hausmeisterservice from "./pages/basis/Hausmeisterservice";
-// import Winterdienst from "./pages/basis/Winterdienst";
-// import Beschaffung from "./pages/basis/Beschaffung";
-// import Sonderleistungen from "./pages/basis/Sonderleistungen";
+import Unterhaltsreinigung from "./pages/basis/Unterhaltsreinigung";
+import Hausmeisterservice from "./pages/basis/Hausmeisterservice";
+import Winterdienst from "./pages/basis/Winterdienst";
+import Beschaffung from "./pages/basis/Beschaffung";
+import Sonderleistungen from "./pages/basis/Sonderleistungen";
 // Standorte
 import Zuerich from "./pages/standorte/Zuerich";
 import Zug from "./pages/standorte/Zug";
@@ -72,12 +71,12 @@ function Router() {
       <Route path="/business/maschinenreinigung" component={Maschinenreinigung} />
       <Route path="/business/facility-management" component={FacilityManagement} />
       
-      {/* Basis Services - Temporarily disabled */}
-      {/* <Route path="/basis/unterhaltsreinigung" component={Unterhaltsreinigung} /> */}
-      {/* <Route path="/basis/hausmeisterservice" component={Hausmeisterservice} /> */}
-      {/* <Route path="/basis/winterdienst" component={Winterdienst} /> */}
-      {/* <Route path="/basis/beschaffung" component={Beschaffung} /> */}
-      {/* <Route path="/basis/sonderleistungen" component={Sonderleistungen} /> */}
+      {/* Basis Services */}
+      <Route path="/basis/unterhaltsreinigung" component={Unterhaltsreinigung} />
+      <Route path="/basis/hausmeisterservice" component={Hausmeisterservice} />
+      <Route path="/basis/winterdienst" component={Winterdienst} />
+      <Route path="/basis/beschaffung" component={Beschaffung} />
+      <Route path="/basis/sonderleistungen" component={Sonderleistungen} />
             {/* Standorte */}
       <Route path="/standorte/zuerich" component={Zuerich} />
       <Route path="/standorte/zug" component={Zug} />

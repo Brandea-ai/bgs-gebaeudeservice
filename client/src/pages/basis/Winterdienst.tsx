@@ -1,309 +1,312 @@
 import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
-import { Link } from 'wouter';
-import { CheckCircle, Clock, Shield, Phone, ArrowRight, ChevronDown, Snowflake } from 'lucide-react';
-import { useState } from 'react';
+import SEO from "@/components/SEO";
+import { serviceSchema } from "@/utils/schema";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Link } from "wouter";
+import { CheckCircle, Snowflake, Clock, Shield, Phone, ArrowRight } from "lucide-react";
 
 export default function Winterdienst() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-
-  const features = [
-    { icon: Snowflake, title: '24/7 Bereit', description: 'Rund um die Uhr im Einsatz' },
-    { icon: Shield, title: 'Verkehrssicher', description: 'Erfüllung der Räumpflicht' },
-    { icon: CheckCircle, title: 'Zuverlässig', description: 'Schnelle Reaktionszeit' },
-  ];
-
-  const services = [
-    'Schneeräumung von Gehwegen und Parkplätzen',
-    'Professioneller Streudienst',
-    'Eisbeseitigung und Glatteisbekämpfung',
-    'Treppen und Zugänge sichern',
-    'Dachschneeräumung',
-    'Dokumentation für Versicherung',
-  ];
-
-  const faqs = [
-    {
-      question: 'Ab wann beginnt der Winterdienst?',
-      answer: 'Unser Winterdienst ist von November bis März aktiv. Bei Schneefall oder Glatteis sind wir rund um die Uhr im Einsatz, um Ihre Verkehrssicherungspflicht zu erfüllen.',
-    },
-    {
-      question: 'Wie schnell reagieren Sie bei Schneefall?',
-      answer: 'Wir beginnen mit der Räumung bereits während des Schneefalls. Bei starkem Schneefall sind wir innerhalb von 1-2 Stunden vor Ort.',
-    },
-    {
-      question: 'Welches Streugut verwenden Sie?',
-      answer: 'Wir verwenden umweltfreundliches Streugut, das effektiv gegen Glätte wirkt und gleichzeitig Boden und Vegetation schont.',
-    },
-    {
-      question: 'Dokumentieren Sie die Winterdienst-Einsätze?',
-      answer: 'Ja, wir dokumentieren alle Einsätze mit Datum, Uhrzeit und durchgeführten Maßnahmen. Diese Dokumentation ist wichtig für Ihre Verkehrssicherungspflicht.',
-    },
-    {
-      question: 'Was kostet der Winterdienst?',
-      answer: 'Die Kosten richten sich nach Objektgröße und Leistungsumfang. Wir bieten Pauschalpreise oder Abrechnung nach Einsatz. Kontaktieren Sie uns für ein individuelles Angebot.',
-    },
-  ];
+  const serviceData = {
+    name: "Professioneller Winterdienst",
+    description: "Zuverlässiger Winterdienst und Schneeräumung. 24/7 Bereitschaft für Verkehrssicherheit im Winter.",
+    url: "/basis/winterdienst",
+    category: "Winter Service"
+  };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
+      <SEO
+        title="Winterdienst Zürich, Zug & Luzern - Swiss Reinigungsfirma"
+        description="Professioneller Winterdienst in der Schweiz. Schneeräumung, Streudienst und 24/7 Bereitschaft für Verkehrssicherheit."
+        keywords="Winterdienst, Schneeräumung Schweiz, Streudienst, Schnee räumen"
+        url="/basis/winterdienst"
+        schema={serviceSchema(serviceData)}
+      />
       <SwissNavigation />
-      <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-red-600 to-red-700 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Professioneller Winterdienst
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-red-100">
-              Zuverlässige Schneeräumung und Streudienst in Zürich, Zug und Luzern
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/kontakt"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white text-red-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-              >
-                Jetzt Angebot einholen
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-              <a
-                href="tel:+41413205610"
-                className="inline-flex items-center justify-center px-8 py-4 bg-red-800 text-white rounded-lg font-semibold hover:bg-red-900 transition-colors"
-              >
-                <Phone className="mr-2 h-5 w-5" />
-                +41 41 320 56 10
-              </a>
-                  <SwissFooter />
-    </div>
-  </div>
-                <SwissFooter />
-    </div>
-  </div>
-              <SwissFooter />
-    </div>
-  </div>
-      </section>
-
-      {/* Features */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <div key={index} className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 text-red-600 rounded-full mb-4">
-                  <feature.icon className="h-8 w-8" />
-                      <SwissFooter />
-    </div>
-  </div>
-                <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-                    <SwissFooter />
-    </div>
-  </div>
-            ))}
-                <SwissFooter />
-    </div>
-  </div>
-              <SwissFooter />
-    </div>
-  </div>
-      </section>
-
-      {/* Content Section 1 - Text Left, Image Right */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+      
+      <section className="pt-32 pb-20 relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-red-50/30 -z-10"/>
+        <div className="container">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Sichere Wege auch im tiefsten Winter
-              </h2>
-              <p className="text-lg text-gray-600 mb-6">
-                Als Immobilieneigentümer tragen Sie die Verkehrssicherungspflicht. Unser professioneller Winterdienst 
-                stellt sicher, dass Gehwege, Parkplätze und Zugänge stets sicher begehbar sind - rund um die Uhr.
+              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                Basis Service
+              </div>
+              <h1 className="text-6xl font-bold text-slate-900 mb-6">
+                Professioneller Winterdienst
+              </h1>
+              <p className="text-2xl text-slate-600 leading-relaxed mb-8">
+                Zuverlässige Schneeräumung und Streudienst für Zürich, Zug und Luzern. 24/7 Bereitschaft für Ihre Verkehrssicherheit im Winter.
               </p>
-              <p className="text-lg text-gray-600 mb-6">
-                Mit modernen Räumfahrzeugen und umweltfreundlichem Streugut sorgen wir für maximale Sicherheit bei 
-                minimalem Umwelteinfluss. Unsere erfahrenen Teams sind bei jedem Wetter im Einsatz.
-              </p>
-              <Link
-                to="/hausmeisterservice"
-                className="inline-flex items-center text-red-600 font-semibold hover:text-red-700"
-              >
-                Mehr über Hausmeisterservice
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-                  <SwissFooter />
-    </div>
-  </div>
-            <div className="relative h-96 rounded-lg overflow-hidden shadow-xl">
-              <img
-                src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&q=80"
-                alt="Winterdienst Schneeräumung"
-                className="w-full h-full object-cover"
+              <div className="flex flex-wrap gap-4">
+                <Link href="/kontakt">
+                  <Button size="lg" className="text-lg">
+                    Jetzt anfragen
+                    <ArrowRight className="ml-2 w-5 h-5"/>
+                  </Button>
+                </Link>
+                <Button size="lg" variant="outline" className="text-lg">
+                  +41 41 320 56 10
+                </Button>
+              </div>
+            </div>
+            <div className="relative">
+              <img 
+                src="/b2b-office-cleaning.jpg" 
+                alt="Winterdienst" 
+                className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
               />
-                  <SwissFooter />
-    </div>
-  </div>
-                <SwissFooter />
-    </div>
-  </div>
-              <SwissFooter />
-    </div>
-  </div>
+            </div>
+          </div>
+        </div>
       </section>
 
-      {/* Services List */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Unsere Winterdienst-Leistungen
+      <section className="py-20 bg-white">
+        <div className="container">
+          <div className="grid md:grid-cols-4 gap-8 mb-20">
+            <Card className="p-6 text-center">
+              <Phone className="w-12 h-12 text-primary mx-auto mb-4"/>
+              <div className="font-bold text-lg mb-2">24/7 Bereitschaft</div>
+              <div className="text-slate-600">Rund um die Uhr einsatzbereit</div>
+            </Card>
+            <Card className="p-6 text-center">
+              <Snowflake className="w-12 h-12 text-primary mx-auto mb-4"/>
+              <div className="font-bold text-lg mb-2">Schnell</div>
+              <div className="text-slate-600">Einsatz bei Schneefall</div>
+            </Card>
+            <Card className="p-6 text-center">
+              <Shield className="w-12 h-12 text-primary mx-auto mb-4"/>
+              <div className="font-bold text-lg mb-2">Verkehrssicher</div>
+              <div className="text-slate-600">Erfüllung der Räumpflicht</div>
+            </Card>
+            <Card className="p-6 text-center">
+              <Clock className="w-12 h-12 text-primary mx-auto mb-4"/>
+              <div className="font-bold text-lg mb-2">Zuverlässig</div>
+              <div className="text-slate-600">Pünktlich vor Geschäftsbeginn</div>
+            </Card>
+          </div>
+
+          <Tabs defaultValue="leistungen" className="mb-20">
+            <TabsList className="grid w-full grid-cols-3 mb-8">
+              <TabsTrigger value="leistungen">Unsere Leistungen</TabsTrigger>
+              <TabsTrigger value="ablauf">Einsatzkonzept</TabsTrigger>
+              <TabsTrigger value="pakete">Winter-Pakete</TabsTrigger>
+            </TabsList>
+            
+            <TabsContent value="leistungen" className="space-y-6">
+              <Card className="p-8">
+                <h3 className="text-3xl font-bold mb-6">Umfassender Winterdienst</h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 className="font-bold text-lg mb-3 text-primary">Schneeräumung</h4>
+                    <ul className="space-y-2">
+                      {[
+                        "Gehwege & Zufahrten räumen",
+                        "Parkplätze freihalten",
+                        "Eingangsbereiche sichern",
+                        "Treppen & Rampen räumen",
+                        "Schnee abtransportieren",
+                        "Dachschnee entfernen"
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"/>
+                          <span className="text-slate-700">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-lg mb-3 text-primary">Streudienst</h4>
+                    <ul className="space-y-2">
+                      {[
+                        "Präventives Streuen",
+                        "Glatteisbekämpfung",
+                        "Umweltfreundliche Streumittel",
+                        "Fußgängerzonen sichern",
+                        "Ladezonen freihalten",
+                        "Notfall-Einsätze 24/7"
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"/>
+                          <span className="text-slate-700">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </Card>
+            </TabsContent>
+            
+            <TabsContent value="ablauf" className="space-y-6">
+              <Card className="p-8">
+                <h3 className="text-3xl font-bold mb-6">Professionelles Einsatzkonzept</h3>
+                <div className="space-y-6">
+                  {[
+                    {
+                      title: "Wetterüberwachung",
+                      desc: "Wir überwachen kontinuierlich die Wettervorhersagen und sind bei Schneefall sofort einsatzbereit. Präventives Streuen erfolgt bereits vor dem ersten Schneefall."
+                    },
+                    {
+                      title: "Automatischer Einsatz",
+                      desc: "Bei Schneefall ab 2cm rücken wir automatisch aus – ohne dass Sie anrufen müssen. Räumung erfolgt in der Regel zwischen 4-7 Uhr morgens."
+                    },
+                    {
+                      title: "Dokumentation",
+                      desc: "Jeder Einsatz wird digital dokumentiert mit Fotos und Zeitstempel. So haben Sie einen Nachweis für die Erfüllung Ihrer Räumpflicht."
+                    },
+                    {
+                      title: "Notfall-Service",
+                      desc: "Bei extremen Wetterbedingungen oder Notfällen sind wir 24/7 erreichbar und rücken innerhalb kürzester Zeit aus."
+                    }
+                  ].map((item, i) => (
+                    <div key={i}>
+                      <h4 className="text-xl font-bold mb-2 text-primary">{item.title}</h4>
+                      <p className="text-slate-600 leading-relaxed">{item.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </Card>
+            </TabsContent>
+            
+            <TabsContent value="pakete" className="space-y-6">
+              <Card className="p-8">
+                <h3 className="text-3xl font-bold mb-6">Transparente Winter-Pakete</h3>
+                <div className="grid md:grid-cols-3 gap-6">
+                  <Card className="p-6 bg-slate-50">
+                    <h4 className="text-xl font-bold mb-4">Basic</h4>
+                    <div className="text-3xl font-bold text-primary mb-2">ab CHF 300</div>
+                    <div className="text-sm text-slate-600 mb-4">pro Monat (Nov-März)</div>
+                    <ul className="space-y-2 text-sm">
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
+                        <span>Schneeräumung bei Bedarf</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
+                        <span>Streudienst inkl.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
+                        <span>Ideal für kleine Flächen</span>
+                      </li>
+                    </ul>
+                  </Card>
+                  <Card className="p-6 bg-primary/5 border-primary">
+                    <h4 className="text-xl font-bold mb-4">Standard</h4>
+                    <div className="text-3xl font-bold text-primary mb-2">ab CHF 600</div>
+                    <div className="text-sm text-slate-600 mb-4">pro Monat (Nov-März)</div>
+                    <ul className="space-y-2 text-sm">
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
+                        <span>Automatischer Einsatz</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
+                        <span>Präventives Streuen</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
+                        <span>Digitale Dokumentation</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
+                        <span>Ideal für Gewerbe</span>
+                      </li>
+                    </ul>
+                  </Card>
+                  <Card className="p-6 bg-slate-50">
+                    <h4 className="text-xl font-bold mb-4">Premium</h4>
+                    <div className="text-3xl font-bold text-primary mb-2">Individuell</div>
+                    <div className="text-sm text-slate-600 mb-4">auf Anfrage</div>
+                    <ul className="space-y-2 text-sm">
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
+                        <span>24/7 Bereitschaft</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
+                        <span>Mehrfach-Räumung pro Tag</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
+                        <span>Schneeabtransport inkl.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
+                        <span>Ideal für große Areale</span>
+                      </li>
+                    </ul>
+                  </Card>
+                </div>
+              </Card>
+            </TabsContent>
+          </Tabs>
+
+          <h2 className="text-4xl font-bold text-slate-900 mb-8 text-center">Häufig gestellte Fragen</h2>
+          <Accordion type="single" collapsible className="max-w-3xl mx-auto">
+            <AccordionItem value="item-1">
+              <AccordionTrigger className="text-lg font-semibold">
+                Ab wann rücken Sie zum Schneeräumen aus?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-700 leading-relaxed pt-4">
+                Wir räumen automatisch ab 2cm Schneehöhe. Der Einsatz erfolgt in der Regel zwischen 4-7 Uhr morgens, damit Ihre Flächen vor Geschäftsbeginn frei sind.
+              </AccordionContent>
+            </AccordionItem>
+            
+            <AccordionItem value="item-2">
+              <AccordionTrigger className="text-lg font-semibold">
+                Was passiert bei starkem Schneefall während des Tages?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-700 leading-relaxed pt-4">
+                Bei anhaltendem Schneefall rücken wir mehrmals täglich aus, um die Verkehrssicherheit zu gewährleisten. Die Häufigkeit wird individuell vereinbart.
+              </AccordionContent>
+            </AccordionItem>
+            
+            <AccordionItem value="item-3">
+              <AccordionTrigger className="text-lg font-semibold">
+                Welche Streumittel verwenden Sie?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-700 leading-relaxed pt-4">
+                Wir verwenden umweltfreundliche Streumittel wie Granulat oder Splitt. Auf Wunsch auch Auftausalz, wo gesetzlich erlaubt. Die Wahl besprechen wir vorab mit Ihnen.
+              </AccordionContent>
+            </AccordionItem>
+            
+            <AccordionItem value="item-4">
+              <AccordionTrigger className="text-lg font-semibold">
+                Wie wird die Räumpflicht dokumentiert?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-700 leading-relaxed pt-4">
+                Jeder Einsatz wird digital mit Fotos, GPS-Daten und Zeitstempel dokumentiert. Sie erhalten einen monatlichen Bericht als Nachweis für die Erfüllung Ihrer Räumpflicht.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
+      </section>
+
+      <section className="py-20 bg-gradient-to-br from-primary/10 to-red-50">
+        <div className="container">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-4xl font-bold text-slate-900 mb-6">
+              Bereit für einen sicheren Winter?
             </h2>
-            <p className="text-xl text-gray-600">
-              Umfassender Service für sichere Wege
+            <p className="text-xl text-slate-600 mb-8">
+              Kontaktieren Sie uns für ein kostenloses Angebot. Wir sorgen für Ihre Verkehrssicherheit im Winter.
             </p>
-                <SwissFooter />
-    </div>
-  </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, index) => (
-              <div key={index} className="flex items-start space-x-3 p-4 bg-gray-50 rounded-lg">
-                <CheckCircle className="h-6 w-6 text-red-600 flex-shrink-0 mt-1" />
-                <span className="text-lg">{service}</span>
-                    <SwissFooter />
-    </div>
-  </div>
-            ))}
-                <SwissFooter />
-    </div>
-  </div>
-              <SwissFooter />
-    </div>
-  </div>
-      </section>
-
-      {/* Content Section 2 - Image Left, Text Right */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative h-96 rounded-lg overflow-hidden shadow-xl">
-              <img
-                src="https://images.unsplash.com/photo-1483664852095-d6cc6870702d?auto=format&fit=crop&q=80"
-                alt="Professionelle Schneeräumung"
-                className="w-full h-full object-cover"
-              />
-                  <SwissFooter />
-    </div>
-  </div>
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                24/7 Bereitschaft für Ihre Sicherheit
-              </h2>
-              <p className="text-lg text-gray-600 mb-6">
-                Schnee und Eis kommen oft über Nacht. Deshalb überwachen wir die Wetterlage kontinuierlich und 
-                beginnen mit der Räumung bereits während des Schneefalls. So sind Ihre Wege morgens garantiert frei.
-              </p>
-              <p className="text-lg text-gray-600 mb-6">
-                Wir dokumentieren jeden Einsatz detailliert - wichtig für Ihre Verkehrssicherungspflicht und 
-                eventuelle Versicherungsfälle. Mit uns sind Sie auf der sicheren Seite.
-              </p>
-              <Link
-                to="/unterhaltsreinigung"
-                className="inline-flex items-center text-red-600 font-semibold hover:text-red-700"
-              >
-                Mehr über Unterhaltsreinigung
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-                  <SwissFooter />
-    </div>
-  </div>
-                <SwissFooter />
-    </div>
-  </div>
-              <SwissFooter />
-    </div>
-  </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Häufig gestellte Fragen
-            </h2>
-            <p className="text-xl text-gray-600">
-              Alles, was Sie über unseren Winterdienst wissen müssen
-            </p>
-                <SwissFooter />
-    </div>
-  </div>
-          <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <div key={index} className="border border-gray-200 rounded-lg overflow-hidden">
-                <button
-                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                  className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
-                >
-                  <span className="font-semibold text-lg">{faq.question}</span>
-                  <ChevronDown
-                    className={`h-5 w-5 text-red-600 transition-transform ${
-                      openFaq === index ? 'transform rotate-180' : ''
-                    }`}
-                  />
-                </button>
-                {openFaq === index && (
-                  <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
-                    <p className="text-gray-600">{faq.answer}</p>
-                        <SwissFooter />
-    </div>
-  </div>
-                )}
-                    <SwissFooter />
-    </div>
-  </div>
-            ))}
-                <SwissFooter />
-    </div>
-  </div>
-              <SwissFooter />
-    </div>
-  </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-br from-red-600 to-red-700 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Bereit für einen zuverlässigen Winterdienst?
-          </h2>
-          <p className="text-xl mb-8 text-red-100">
-            Kontaktieren Sie uns für ein unverbindliches Angebot
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/kontakt"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white text-red-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-            >
-              Jetzt Kontakt aufnehmen
-              <ArrowRight className="ml-2 h-5 w-5" />
+            <Link href="/kontakt">
+              <Button size="lg" className="text-lg px-8">
+                Jetzt Kontakt aufnehmen
+                <ArrowRight className="ml-2 w-5 h-5"/>
+              </Button>
             </Link>
-            <Link
-              to="/sonderleistungen"
-              className="inline-flex items-center justify-center px-8 py-4 bg-red-800 text-white rounded-lg font-semibold hover:bg-red-900 transition-colors"
-            >
-              Weitere Leistungen entdecken
-            </Link>
-                <SwissFooter />
-    </div>
-  </div>
-              <SwissFooter />
-    </div>
-  </div>
+          </div>
+        </div>
       </section>
-          <SwissFooter />
+
+      <SwissFooter />
     </div>
-  </div>
   );
 }
