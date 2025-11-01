@@ -30,10 +30,10 @@ async function startServer() {
   // Contact Form Endpoint
   app.post("/api/contact", async (req, res) => {
     try {
-      const { firstName, lastName, email, phone, message } = req.body;
+      const { name, email, phone, service, message } = req.body;
 
       // Validation
-      if (!firstName || !lastName || !email || !message) {
+      if (!name || !email || !message) {
         return res.status(400).json({ 
           success: false, 
           message: "Bitte füllen Sie alle Pflichtfelder aus." 
@@ -53,13 +53,15 @@ async function startServer() {
       const emailContent = {
         to: "info@brandea.de",
         from: email,
-        subject: `Neue Kontaktanfrage von ${firstName} ${lastName}`,
+        subject: `Neue Kontaktanfrage von ${name}`,
+        service: service || 'Nicht angegeben',
         text: `
 Neue Kontaktanfrage über die Website
 
-Name: ${firstName} ${lastName}
+Name: ${name}
 E-Mail: ${email}
 Telefon: ${phone || 'Nicht angegeben'}
+Gewünschte Leistung: ${service || 'Nicht angegeben'}
 
 Nachricht:
 ${message}
@@ -92,7 +94,7 @@ Diese Nachricht wurde über das Kontaktformular auf brandea.de gesendet.
     <div class="content">
       <div class="field">
         <div class="label">Name:</div>
-        <div class="value">${firstName} ${lastName}</div>
+        <div class="value">${name}</div>
       </div>
       <div class="field">
         <div class="label">E-Mail:</div>
@@ -101,6 +103,10 @@ Diese Nachricht wurde über das Kontaktformular auf brandea.de gesendet.
       <div class="field">
         <div class="label">Telefon:</div>
         <div class="value">${phone || 'Nicht angegeben'}</div>
+      </div>
+      <div class="field">
+        <div class="label">Gewünschte Leistung:</div>
+        <div class="value">${service || 'Nicht angegeben'}</div>
       </div>
       <div class="field">
         <div class="label">Nachricht:</div>
@@ -118,10 +124,10 @@ Diese Nachricht wurde über das Kontaktformular auf brandea.de gesendet.
 
       // Send email using Resend service
       const emailSent = await sendContactEmail({
-        firstName,
-        lastName,
+        name,
         email,
         phone,
+        service,
         message
       });
 

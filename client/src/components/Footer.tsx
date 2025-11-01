@@ -122,7 +122,7 @@ export default function Footer() {
                   />
                 </div>
 
-                {/* Service */}
+                {/* Service - Gruppiert nach Kategorien */}
                 <div>
                   <label htmlFor="service" className="block text-sm font-medium text-foreground mb-2">
                     Gewünschte Leistung
@@ -135,13 +135,50 @@ export default function Footer() {
                     className="w-full px-4 py-2.5 lg:py-3 rounded-md border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all text-sm sm:text-base"
                   >
                     <option value="">Bitte wählen...</option>
-                    <option value="Büroreinigung">Büroreinigung</option>
-                    <option value="Unterhaltsreinigung">Unterhaltsreinigung</option>
-                    <option value="Fensterreinigung">Fensterreinigung</option>
-                    <option value="Industriereinigung">Industriereinigung</option>
-                    <option value="Baureinigung">Baureinigung</option>
-                    <option value="Sonderreinigung">Sonderreinigung</option>
-                    <option value="Andere">Andere</option>
+                    
+                    <optgroup label="🌟 Premium Services">
+                      <option value="Privatjet Reinigung">Privatjet Reinigung</option>
+                      <option value="Yacht Reinigung">Yacht Reinigung</option>
+                      <option value="Private Housekeeping">Private Housekeeping</option>
+                      <option value="Luxusimmobilien">Luxusimmobilien</option>
+                    </optgroup>
+                    
+                    <optgroup label="🏢 B2B Lösungen">
+                      <option value="Büroreinigung">Büroreinigung</option>
+                      <option value="Industriereinigung">Industriereinigung</option>
+                      <option value="Fassadenreinigung">Fassadenreinigung</option>
+                      <option value="Fensterreinigung">Fensterreinigung</option>
+                      <option value="Hallenreinigung">Hallenreinigung</option>
+                      <option value="Maschinenreinigung">Maschinenreinigung</option>
+                      <option value="Baureinigung">Baureinigung</option>
+                      <option value="Außenanlagen">Außenanlagen</option>
+                      <option value="Facility Management">Facility Management</option>
+                    </optgroup>
+                    
+                    <optgroup label="💼 Business Services">
+                      <option value="Business Büroreinigung">Business Büroreinigung</option>
+                      <option value="Business Industriereinigung">Business Industriereinigung</option>
+                      <option value="Business Fassadenreinigung">Business Fassadenreinigung</option>
+                      <option value="Business Fensterreinigung">Business Fensterreinigung</option>
+                      <option value="Business Hallenreinigung">Business Hallenreinigung</option>
+                      <option value="Business Maschinenreinigung">Business Maschinenreinigung</option>
+                      <option value="Business Baureinigung">Business Baureinigung</option>
+                      <option value="Business Außenanlagen">Business Außenanlagen</option>
+                      <option value="Business Facility Management">Business Facility Management</option>
+                    </optgroup>
+                    
+                    <optgroup label="🏠 Basis Services">
+                      <option value="Unterhaltsreinigung">Unterhaltsreinigung</option>
+                      <option value="Hausmeisterservice">Hausmeisterservice</option>
+                      <option value="Winterdienst">Winterdienst</option>
+                      <option value="Beschaffung">Beschaffung</option>
+                      <option value="Sonderleistungen">Sonderleistungen</option>
+                    </optgroup>
+                    
+                    <optgroup label="📋 Sonstiges">
+                      <option value="Beratung">Beratung</option>
+                      <option value="Andere">Andere</option>
+                    </optgroup>
                   </select>
                 </div>
               </div>
@@ -293,59 +330,47 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Kontakt Info */}
+          {/* Standorte */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4 text-base sm:text-lg">Kontakt</h3>
-            <ul className="space-y-3 text-xs sm:text-sm">
+            <h3 className="font-semibold text-foreground mb-4 text-base sm:text-lg">Standorte</h3>
+            <ul className="space-y-2 text-xs sm:text-sm">
               <li>
-                <a
-                  href="mailto:info@brandea.de"
-                  className="flex items-center gap-2 text-muted-foreground hover:text-accent transition-smooth"
-                >
-                  <Mail className="w-4 h-4 flex-shrink-0" />
-                  <span className="break-all">info@brandea.de</span>
-                </a>
+                <Link href="/standorte/zuerich">
+                  <a className="text-muted-foreground hover:text-accent transition-smooth">
+                    Zürich
+                  </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="tel:+4999547006266"
-                  className="flex items-center gap-2 text-muted-foreground hover:text-accent transition-smooth"
-                >
-                  <Phone className="w-4 h-4 flex-shrink-0" />
-                  +49 9954 7006266
-                </a>
+                <Link href="/standorte/zug">
+                  <a className="text-muted-foreground hover:text-accent transition-smooth">
+                    Zug
+                  </a>
+                </Link>
               </li>
-              <li className="flex items-start gap-2 text-muted-foreground">
-                <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5" />
-                <span>
-                  Zürich, Zug, Luzern,<br />St. Gallen
-                </span>
+              <li>
+                <Link href="/standorte/luzern">
+                  <a className="text-muted-foreground hover:text-accent transition-smooth">
+                    Luzern
+                  </a>
+                </Link>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-border">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-xs sm:text-sm text-muted-foreground text-center md:text-left">
-              © {currentYear} BGS Gebäudeservice · Powered by Brandea
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 lg:gap-6 text-xs sm:text-sm">
+        {/* Copyright */}
+        <div className="border-t border-border pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs sm:text-sm text-muted-foreground">
+            <div>
+              © {currentYear} BGS Gebäudeservice. Alle Rechte vorbehalten.
+            </div>
+            <div className="flex gap-6">
               <Link href="/impressum">
-                <a className="text-muted-foreground hover:text-accent transition-smooth">
-                  Impressum
-                </a>
+                <a className="hover:text-accent transition-smooth">Impressum</a>
               </Link>
               <Link href="/datenschutz">
-                <a className="text-muted-foreground hover:text-accent transition-smooth">
-                  Datenschutz
-                </a>
-              </Link>
-              <Link href="/rechtliches">
-                <a className="text-muted-foreground hover:text-accent transition-smooth">
-                  Rechtliches
-                </a>
+                <a className="hover:text-accent transition-smooth">Datenschutz</a>
               </Link>
             </div>
           </div>

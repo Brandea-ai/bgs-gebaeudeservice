@@ -11,15 +11,15 @@
  */
 
 interface EmailData {
-  firstName: string;
-  lastName: string;
+  name: string;
   email: string;
   phone?: string;
+  service?: string;
   message: string;
 }
 
 export async function sendContactEmail(data: EmailData): Promise<boolean> {
-  const { firstName, lastName, email, phone, message } = data;
+  const { name, email, phone, service, message } = data;
 
   // Check if Resend is configured
   const resendApiKey = process.env.RESEND_API_KEY;
@@ -29,7 +29,8 @@ export async function sendContactEmail(data: EmailData): Promise<boolean> {
     console.log("📧 Email preview:", {
       to: "info@brandea.de",
       from: email,
-      subject: `Neue Kontaktanfrage von ${firstName} ${lastName}`,
+      subject: `Neue Kontaktanfrage von ${name}`,
+      service: service || 'Nicht angegeben',
       message: message
     });
     return true; // Return success for development
@@ -60,12 +61,12 @@ export async function sendContactEmail(data: EmailData): Promise<boolean> {
   <div class="container">
     <div class="header">
       <h1 style="margin: 0;">Neue Kontaktanfrage</h1>
-      <p style="margin: 10px 0 0 0; opacity: 0.9;">Brandea Website Kontaktformular</p>
+      <p style="margin: 10px 0 0 0; opacity: 0.9;">BGS Website Kontaktformular</p>
     </div>
     <div class="content">
       <div class="field">
         <div class="label">Name:</div>
-        <div class="value">${firstName} ${lastName}</div>
+        <div class="value">${name}</div>
       </div>
       <div class="field">
         <div class="label">E-Mail:</div>
@@ -76,11 +77,15 @@ export async function sendContactEmail(data: EmailData): Promise<boolean> {
         <div class="value">${phone || 'Nicht angegeben'}</div>
       </div>
       <div class="field">
+        <div class="label">Gewünschte Leistung:</div>
+        <div class="value">${service || 'Nicht angegeben'}</div>
+      </div>
+      <div class="field">
         <div class="label">Nachricht:</div>
         <div class="message-box">${message}</div>
       </div>
       <div class="footer">
-        Diese Nachricht wurde über das Kontaktformular auf brandea.de gesendet.
+        Diese Nachricht wurde über das Kontaktformular auf bgs-gebaeudeservice.vercel.app gesendet.
       </div>
     </div>
   </div>
@@ -89,23 +94,24 @@ export async function sendContactEmail(data: EmailData): Promise<boolean> {
     `;
 
     const { data: emailResponse, error } = await resend.emails.send({
-      from: 'Brandea Website <noreply@brandea.de>',
+      from: 'BGS Kontaktformular <noreply@brandea.de>',
       to: ['info@brandea.de'],
       replyTo: email,
-      subject: `Neue Kontaktanfrage von ${firstName} ${lastName}`,
+      subject: `Neue Kontaktanfrage von ${name}`,
       html: emailHtml,
       text: `
 Neue Kontaktanfrage über die Website
 
-Name: ${firstName} ${lastName}
+Name: ${name}
 E-Mail: ${email}
 Telefon: ${phone || 'Nicht angegeben'}
+Gewünschte Leistung: ${service || 'Nicht angegeben'}
 
 Nachricht:
 ${message}
 
 ---
-Diese Nachricht wurde über das Kontaktformular auf brandea.de gesendet.
+Diese Nachricht wurde über das Kontaktformular auf bgs-gebaeudeservice.vercel.app gesendet.
       `
     });
 

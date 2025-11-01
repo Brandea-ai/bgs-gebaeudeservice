@@ -122,7 +122,7 @@ export default function SwissFooter() {
                   />
                 </div>
 
-                {/* Service */}
+                {/* Service - Gruppiert nach Kategorien */}
                 <div>
                   <label htmlFor="service" className="block text-sm font-medium text-slate-900 dark:text-white mb-2">
                     Gewünschte Leistung
@@ -135,16 +135,50 @@ export default function SwissFooter() {
                     className="w-full px-4 py-2.5 lg:py-3 rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all text-sm sm:text-base"
                   >
                     <option value="">Bitte wählen...</option>
-                    <option value="Büroreinigung">Büroreinigung</option>
-                    <option value="Unterhaltsreinigung">Unterhaltsreinigung</option>
-                    <option value="Fensterreinigung">Fensterreinigung</option>
-                    <option value="Industriereinigung">Industriereinigung</option>
-                    <option value="Baureinigung">Baureinigung</option>
-                    <option value="Privatjet Reinigung">Privatjet Reinigung</option>
-                    <option value="Yacht Reinigung">Yacht Reinigung</option>
-                    <option value="Luxusimmobilien">Luxusimmobilien</option>
-                    <option value="Sonderreinigung">Sonderreinigung</option>
-                    <option value="Andere">Andere</option>
+                    
+                    <optgroup label="🌟 Premium Services">
+                      <option value="Privatjet Reinigung">Privatjet Reinigung</option>
+                      <option value="Yacht Reinigung">Yacht Reinigung</option>
+                      <option value="Private Housekeeping">Private Housekeeping</option>
+                      <option value="Luxusimmobilien">Luxusimmobilien</option>
+                    </optgroup>
+                    
+                    <optgroup label="🏢 B2B Lösungen">
+                      <option value="Büroreinigung">Büroreinigung</option>
+                      <option value="Industriereinigung">Industriereinigung</option>
+                      <option value="Fassadenreinigung">Fassadenreinigung</option>
+                      <option value="Fensterreinigung">Fensterreinigung</option>
+                      <option value="Hallenreinigung">Hallenreinigung</option>
+                      <option value="Maschinenreinigung">Maschinenreinigung</option>
+                      <option value="Baureinigung">Baureinigung</option>
+                      <option value="Außenanlagen">Außenanlagen</option>
+                      <option value="Facility Management">Facility Management</option>
+                    </optgroup>
+                    
+                    <optgroup label="💼 Business Services">
+                      <option value="Business Büroreinigung">Business Büroreinigung</option>
+                      <option value="Business Industriereinigung">Business Industriereinigung</option>
+                      <option value="Business Fassadenreinigung">Business Fassadenreinigung</option>
+                      <option value="Business Fensterreinigung">Business Fensterreinigung</option>
+                      <option value="Business Hallenreinigung">Business Hallenreinigung</option>
+                      <option value="Business Maschinenreinigung">Business Maschinenreinigung</option>
+                      <option value="Business Baureinigung">Business Baureinigung</option>
+                      <option value="Business Außenanlagen">Business Außenanlagen</option>
+                      <option value="Business Facility Management">Business Facility Management</option>
+                    </optgroup>
+                    
+                    <optgroup label="🏠 Basis Services">
+                      <option value="Unterhaltsreinigung">Unterhaltsreinigung</option>
+                      <option value="Hausmeisterservice">Hausmeisterservice</option>
+                      <option value="Winterdienst">Winterdienst</option>
+                      <option value="Beschaffung">Beschaffung</option>
+                      <option value="Sonderleistungen">Sonderleistungen</option>
+                    </optgroup>
+                    
+                    <optgroup label="📋 Sonstiges">
+                      <option value="Beratung">Beratung</option>
+                      <option value="Andere">Andere</option>
+                    </optgroup>
                   </select>
                 </div>
               </div>
