@@ -94,7 +94,7 @@ export default function SwissHome() {
       <section className="py-32 bg-white">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-slate-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6 break-words">
               Sehen Sie den Unterschied
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
@@ -129,7 +129,7 @@ export default function SwissHome() {
       <section className="py-32 bg-gradient-to-br from-slate-50 via-white to-red-50/30">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-slate-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6 break-words">
               Unsere Reinigungsdienstleistungen
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
@@ -215,7 +215,7 @@ export default function SwissHome() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-5xl font-bold text-slate-900 mb-8">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-8 break-words">
                 Warum Swiss Reinigungsfirma?
               </h2>
               <p className="text-xl text-slate-600 mb-8">
@@ -254,7 +254,7 @@ export default function SwissHome() {
       <section className="py-32 bg-slate-50">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-slate-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6 break-words">
               Was unsere Kunden sagen
             </h2>
             <p className="text-xl text-slate-600">
@@ -313,7 +313,7 @@ export default function SwissHome() {
         ></div>
         <div className="container relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-slate-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6 break-words">
               Unsere Standorte in der Schweiz
             </h2>
             <p className="text-xl text-slate-600">
@@ -348,7 +348,7 @@ export default function SwissHome() {
       <section className="py-32 bg-gradient-to-br from-primary/10 via-red-50 to-primary/10">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-5xl font-bold text-slate-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6 break-words">
               Bereit für professionelle Reinigung?
             </h2>
             <p className="text-xl text-slate-600 mb-8">

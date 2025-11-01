@@ -54,10 +54,10 @@ export default function SwissNavigation() {
       scrolled ? "bg-white shadow-lg" : "bg-white/98 backdrop-blur-sm"
     }`}>
       <div className="container">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-20 md:h-24">
           <Link href="/">
             <div className="flex items-center gap-3 cursor-pointer">
-              <img src="/swiss-logo.webp" alt="Swiss Reinigung" className="h-16 md:h-20 w-auto" />
+              <img src="/swiss-logo.webp" alt="Swiss Reinigung" className="h-20 md:h-24 w-auto" />
             </div>
           </Link>
 
