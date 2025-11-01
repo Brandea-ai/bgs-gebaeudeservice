@@ -20,7 +20,7 @@ export default function References() {
             <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-6">
               Unsere <span className="text-accent">Kundenerfolge</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
               Messbare Ergebnisse und nachhaltige Erfolge für unsere Kunden
             </p>
           </div>
@@ -28,9 +28,9 @@ export default function References() {
             {references.map((ref, index) => (
               <div key={index} className="glass floating rounded-3xl p-8">
                 <Star className="w-8 h-8 text-accent mb-4" />
-                <h3 className="text-xl font-bold text-foreground mb-2">{ref.company}</h3>
+                <h3 className="text-sm sm:text-base md:text-lg font-bold text-foreground mb-2">{ref.company}</h3>
                 <p className="text-accent font-semibold mb-3">{ref.result}</p>
-                <p className="text-sm text-muted-foreground">{ref.industry}</p>
+                <p className="text-sm text-muted-foreground text-xs sm:text-sm md:text-base">{ref.industry}</p>
               </div>
             ))}
           </div>

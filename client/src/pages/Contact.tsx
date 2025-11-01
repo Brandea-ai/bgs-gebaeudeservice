@@ -13,7 +13,7 @@ export default function Contact() {
             <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-6">
               Kontaktieren Sie <span className="text-accent">uns</span>
             </h1>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground text-xs sm:text-sm md:text-base">
               Wir freuen uns auf Ihre Nachricht und beraten Sie gerne zu Ihren Herausforderungen.
             </p>
           </div>
@@ -35,11 +35,11 @@ export default function Contact() {
             <div className="glass floating rounded-2xl p-8 text-center">
               <MapPin className="w-8 h-8 text-accent mx-auto mb-4" />
               <h3 className="font-semibold text-foreground mb-2">Standort</h3>
-              <p className="text-muted-foreground">DACH & Benelux</p>
+              <p className="text-muted-foreground text-xs sm:text-sm md:text-base">DACH & Benelux</p>
             </div>
           </div>
           <div className="glass floating rounded-3xl p-12">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-8 text-center">Gespräch vereinbaren</h2>
+            <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-foreground mb-8 text-center">Gespräch vereinbaren</h2>
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <input type="text" placeholder="Vorname" className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-accent" />

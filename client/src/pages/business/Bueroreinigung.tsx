@@ -33,13 +33,13 @@ export default function Bueroreinigung() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
+              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-xs sm:text-sm font-semibold mb-6">
                 Business Lösung
               </div>
               <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
                 Professionelle Büroreinigung
               </h1>
-              <p className="text-2xl text-slate-600 leading-relaxed mb-8">
+              <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
                 Zuverlässige Reinigungslösungen für Büros und Geschäftsräume in Zürich, Zug und Luzern. Flexibel, effizient und auf Ihre Bedürfnisse zugeschnitten.
               </p>
               <div className="flex flex-wrap gap-4">
@@ -71,22 +71,22 @@ export default function Bueroreinigung() {
             <Card className="p-6 text-center">
               <Building className="w-12 h-12 text-primary mx-auto mb-4"/>
               <div className="font-bold text-lg mb-2">Alle Bürogrößen</div>
-              <div className="text-slate-600">Von Startup bis Konzern</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Von Startup bis Konzern</div>
             </Card>
             <Card className="p-6 text-center">
               <Clock className="w-12 h-12 text-primary mx-auto mb-4"/>
               <div className="font-bold text-lg mb-2">Flexible Zeiten</div>
-              <div className="text-slate-600">Auch außerhalb der Geschäftszeiten</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Auch außerhalb der Geschäftszeiten</div>
             </Card>
             <Card className="p-6 text-center">
               <Shield className="w-12 h-12 text-primary mx-auto mb-4"/>
               <div className="font-bold text-lg mb-2">Zuverlässig</div>
-              <div className="text-slate-600">Feste Ansprechpartner</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Feste Ansprechpartner</div>
             </Card>
             <Card className="p-6 text-center">
               <Sparkles className="w-12 h-12 text-primary mx-auto mb-4"/>
               <div className="font-bold text-lg mb-2">Qualität</div>
-              <div className="text-slate-600">ISO 9001 zertifiziert</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">ISO 9001 zertifiziert</div>
             </Card>
           </div>
 
@@ -99,7 +99,7 @@ export default function Bueroreinigung() {
             
             <TabsContent value="leistungen" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Umfassende Büroreinigung</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Umfassende Büroreinigung</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h4 className="font-bold text-lg mb-3 text-primary">Tägliche Unterhaltsreinigung</h4>
@@ -114,7 +114,7 @@ export default function Bueroreinigung() {
                       ].map((item, i) => (
                         <li key={i} className="flex items-start gap-2">
                           <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"/>
-                          <span className="text-slate-700">{item}</span>
+                          <span className="text-slate-700 text-xs sm:text-sm md:text-base">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -132,7 +132,7 @@ export default function Bueroreinigung() {
                       ].map((item, i) => (
                         <li key={i} className="flex items-start gap-2">
                           <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"/>
-                          <span className="text-slate-700">{item}</span>
+                          <span className="text-slate-700 text-xs sm:text-sm md:text-base">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -143,7 +143,7 @@ export default function Bueroreinigung() {
             
             <TabsContent value="ablauf" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Flexibler Reinigungsablauf</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Flexibler Reinigungsablauf</h3>
                 <div className="space-y-6">
                   {[
                     {
@@ -164,7 +164,7 @@ export default function Bueroreinigung() {
                     }
                   ].map((item, i) => (
                     <div key={i}>
-                      <h4 className="text-xl font-bold mb-2 text-primary">{item.title}</h4>
+                      <h4 className="text-sm sm:text-base md:text-lg font-bold mb-2 text-primary">{item.title}</h4>
                       <p className="text-slate-600 leading-relaxed">{item.desc}</p>
                     </div>
                   ))}
@@ -174,11 +174,11 @@ export default function Bueroreinigung() {
             
             <TabsContent value="pakete" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Transparente Preisgestaltung</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Transparente Preisgestaltung</h3>
                 <div className="grid md:grid-cols-3 gap-6">
                   <Card className="p-6 bg-slate-50">
-                    <h4 className="text-xl font-bold mb-4">Starter</h4>
-                    <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-2">ab CHF 35</div>
+                    <h4 className="text-sm sm:text-base md:text-lg font-bold mb-4">Starter</h4>
+                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-primary mb-2">ab CHF 35</div>
                     <div className="text-sm text-slate-600 mb-4">pro Stunde</div>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start gap-2">
@@ -196,8 +196,8 @@ export default function Bueroreinigung() {
                     </ul>
                   </Card>
                   <Card className="p-6 bg-primary/5 border-primary">
-                    <h4 className="text-xl font-bold mb-4">Business</h4>
-                    <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-2">ab CHF 1.200</div>
+                    <h4 className="text-sm sm:text-base md:text-lg font-bold mb-4">Business</h4>
+                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-primary mb-2">ab CHF 1.200</div>
                     <div className="text-sm text-slate-600 mb-4">pro Monat</div>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start gap-2">
@@ -219,8 +219,8 @@ export default function Bueroreinigung() {
                     </ul>
                   </Card>
                   <Card className="p-6 bg-slate-50">
-                    <h4 className="text-xl font-bold mb-4">Enterprise</h4>
-                    <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-2">Individuell</div>
+                    <h4 className="text-sm sm:text-base md:text-lg font-bold mb-4">Enterprise</h4>
+                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-primary mb-2">Individuell</div>
                     <div className="text-sm text-slate-600 mb-4">auf Anfrage</div>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start gap-2">
@@ -246,7 +246,7 @@ export default function Bueroreinigung() {
             </TabsContent>
           </Tabs>
 
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-8 text-center">Häufig gestellte Fragen</h2>
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-8 text-center">Häufig gestellte Fragen</h2>
           <Accordion type="single" collapsible className="max-w-3xl mx-auto">
             <AccordionItem value="item-1">
               <AccordionTrigger className="text-lg font-semibold">
@@ -290,14 +290,14 @@ export default function Bueroreinigung() {
       <section className="py-20 bg-gradient-to-br from-primary/10 to-red-50">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-6">
               Bereit für ein sauberes Büro?
             </h2>
-            <p className="text-xl text-slate-600 mb-8">
+            <p className="text-sm sm:text-base md:text-lg text-slate-600 mb-8">
               Kontaktieren Sie uns für ein kostenloses Angebot. Wir beraten Sie gerne persönlich.
             </p>
             <Link href="/kontakt">
-              <Button size="lg" className="text-lg px-8">
+              <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
                 Jetzt Kontakt aufnehmen
                 <ArrowRight className="ml-2 w-5 h-5"/>
               </Button>

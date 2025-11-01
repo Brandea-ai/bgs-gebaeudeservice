@@ -9,48 +9,48 @@ export default function Impressum() {
       
       <section className="pt-32 pb-20">
         <div className="container max-w-4xl">
-          <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-12">Impressum</h1>
+          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-12">Impressum</h1>
           
           <Card className="p-8 mb-8">
-            <h2 className="text-2xl font-bold mb-4">Angaben gemäss Art. 8 UWG</h2>
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-4">Angaben gemäss Art. 8 UWG</h2>
             <div className="space-y-6 text-lg">
               <div>
                 <div className="font-semibold text-slate-900 mb-2">Firma</div>
-                <div className="text-slate-700">Swiss Reinigungsfirma</div>
+                <div className="text-slate-700 text-xs sm:text-sm md:text-base">Swiss Reinigungsfirma</div>
               </div>
               
               <div>
                 <div className="font-semibold text-slate-900 mb-2">Adresse</div>
-                <div className="text-slate-700">Tannhof 10</div>
-                <div className="text-slate-700">6020 Emmenbrücke</div>
-                <div className="text-slate-700">Luzern, Schweiz</div>
+                <div className="text-slate-700 text-xs sm:text-sm md:text-base">Tannhof 10</div>
+                <div className="text-slate-700 text-xs sm:text-sm md:text-base">6020 Emmenbrücke</div>
+                <div className="text-slate-700 text-xs sm:text-sm md:text-base">Luzern, Schweiz</div>
               </div>
               
               <div>
                 <div className="font-semibold text-slate-900 mb-2">Kontakt</div>
-                <div className="text-slate-700">Telefon: <a href="tel:+41413205610" className="text-primary hover:underline">+41 41 320 56 10</a></div>
-                <div className="text-slate-700">E-Mail: <a href="mailto:info@bgs-service.ch" className="text-primary hover:underline">info@bgs-service.ch</a></div>
+                <div className="text-slate-700 text-xs sm:text-sm md:text-base">Telefon: <a href="tel:+41413205610" className="text-primary hover:underline">+41 41 320 56 10</a></div>
+                <div className="text-slate-700 text-xs sm:text-sm md:text-base">E-Mail: <a href="mailto:info@bgs-service.ch" className="text-primary hover:underline">info@bgs-service.ch</a></div>
               </div>
               
               <div>
                 <div className="font-semibold text-slate-900 mb-2">Handelsregister</div>
-                <div className="text-slate-700">UID: CHE-108.687.458</div>
+                <div className="text-slate-700 text-xs sm:text-sm md:text-base">UID: CHE-108.687.458</div>
               </div>
               
               <div>
                 <div className="font-semibold text-slate-900 mb-2">Geschäftsführung</div>
-                <div className="text-slate-700">Nezir Bozhdaraj</div>
+                <div className="text-slate-700 text-xs sm:text-sm md:text-base">Nezir Bozhdaraj</div>
               </div>
               
               <div>
                 <div className="font-semibold text-slate-900 mb-2">Verantwortlich für den Inhalt</div>
-                <div className="text-slate-700">Nezir Bozhdaraj</div>
+                <div className="text-slate-700 text-xs sm:text-sm md:text-base">Nezir Bozhdaraj</div>
               </div>
             </div>
           </Card>
 
           <Card className="p-8 mb-8">
-            <h2 className="text-2xl font-bold mb-4">Haftungsausschluss</h2>
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-4">Haftungsausschluss</h2>
             <div className="space-y-4 text-slate-700 leading-relaxed">
               <p>
                 Der Autor übernimmt keinerlei Gewähr hinsichtlich der inhaltlichen Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit der Informationen.
@@ -65,7 +65,7 @@ export default function Impressum() {
           </Card>
 
           <Card className="p-8 mb-8">
-            <h2 className="text-2xl font-bold mb-4">Haftung für Links</h2>
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-4">Haftung für Links</h2>
             <div className="space-y-4 text-slate-700 leading-relaxed">
               <p>
                 Verweise und Links auf Webseiten Dritter liegen ausserhalb unseres Verantwortungsbereichs. Es wird jegliche Verantwortung für solche Webseiten abgelehnt. Der Zugriff und die Nutzung solcher Webseiten erfolgen auf eigene Gefahr des Nutzers oder der Nutzerin.
@@ -74,7 +74,7 @@ export default function Impressum() {
           </Card>
 
           <Card className="p-8">
-            <h2 className="text-2xl font-bold mb-4">Urheberrechte</h2>
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-4">Urheberrechte</h2>
             <div className="space-y-4 text-slate-700 leading-relaxed">
               <p>
                 Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf der Website gehören ausschliesslich Swiss Reinigungsfirma oder den speziell genannten Rechtsinhabern. Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung der Urheberrechtsträger im Voraus einzuholen.

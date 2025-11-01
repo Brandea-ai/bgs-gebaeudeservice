@@ -62,25 +62,25 @@ export default function Home() {
         <div className="container relative">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
-              <div className="inline-block glass floating px-4 py-2 rounded-full text-sm font-medium text-accent">
+              <div className="inline-block glass floating px-4 py-2 rounded-full text-xs sm:text-sm font-medium text-accent">
                 Thinking outside the box
               </div>
               <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground leading-tight">
                 KI-Beratung für{" "}
                 <span className="text-accent">nachhaltiges Wachstum</span>
               </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
                 Wir optimieren Ihre Geschäftsprozesse, treiben Innovation voran und begleiten Sie auf dem Weg zum digitalen Unternehmen. Strategische Expertise trifft auf modernste KI-Technologie.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/kontakt">
-                  <Button size="lg" className="text-lg px-8">
+                  <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
                     Kostenloses Erstgespräch
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </Link>
                 <Link href="/methode">
-                  <Button size="lg" variant="outline" className="text-lg px-8">
+                  <Button size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
                     Unsere Methode
                   </Button>
                 </Link>
@@ -103,10 +103,10 @@ export default function Home() {
       <section className="py-20 bg-secondary/20">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-foreground mb-4">
               Warum Brandea?
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
               Profitieren Sie von unserer einzigartigen Kombination aus strategischer Beratung und technologischer Innovation
             </p>
           </div>
@@ -122,7 +122,7 @@ export default function Home() {
                 <h3 className="text-lg font-semibold text-foreground mb-2">
                   {benefit.title}
                 </h3>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground text-xs sm:text-sm md:text-base">
                   {benefit.description}
                 </p>
               </div>
@@ -135,10 +135,10 @@ export default function Home() {
       <section className="py-20">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-foreground mb-4">
               Unsere Leistungen
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
               Maßgeschneiderte Lösungen für Ihre unternehmerischen Herausforderungen
             </p>
           </div>
@@ -154,7 +154,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="p-8">
-                  <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-accent transition-smooth">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-3 group-hover:text-accent transition-smooth">
                     Fractional CXO
                   </h3>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
@@ -179,7 +179,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="p-8">
-                  <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-accent transition-smooth">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-3 group-hover:text-accent transition-smooth">
                     KI-Automatisierung
                   </h3>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
@@ -204,7 +204,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="p-8">
-                  <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-accent transition-smooth">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-3 group-hover:text-accent transition-smooth">
                     Turnaround & Restrukturierung
                   </h3>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
@@ -233,10 +233,10 @@ export default function Home() {
               />
             </div>
             <div className="space-y-6">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">
+              <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-foreground">
                 Die Brandea Methode
               </h2>
-              <p className="text-xl text-muted-foreground leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
                 Unsere einzigartige Methodik kombiniert bewährte Managementprinzipien mit innovativen KI-Lösungen. Wir analysieren, optimieren und transformieren Ihr Unternehmen nachhaltig.
               </p>
               <ul className="space-y-4">
@@ -248,7 +248,7 @@ export default function Home() {
                 ].map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <CheckCircle className="w-6 h-6 text-accent flex-shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground">{item}</span>
+                    <span className="text-muted-foreground text-xs sm:text-sm md:text-base">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -267,10 +267,10 @@ export default function Home() {
       <section className="py-20">
         <div className="container max-w-4xl">
           <div className="text-center mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-foreground mb-4">
               Häufig gestellte Fragen
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground text-xs sm:text-sm md:text-base">
               Alles, was Sie über Brandea wissen müssen
             </p>
           </div>
@@ -282,21 +282,21 @@ export default function Home() {
       <section className="py-20 bg-gradient-to-br from-accent/10 via-background to-background">
         <div className="container">
           <div className="glass floating rounded-3xl p-12 lg:p-16 text-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-foreground mb-6">
               Bereit für den nächsten Schritt?
             </h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
               Vereinbaren Sie jetzt ein kostenloses Erstgespräch und erfahren Sie, wie Brandea Ihr Unternehmen transformieren kann.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/kontakt">
-                <Button size="lg" className="text-lg px-8">
+                <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
                   Jetzt Gespräch vereinbaren
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
               <Link href="/referenzen">
-                <Button size="lg" variant="outline" className="text-lg px-8">
+                <Button size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
                   Kundenerfolge ansehen
                 </Button>
               </Link>

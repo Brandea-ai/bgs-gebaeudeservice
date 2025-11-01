@@ -8,10 +8,10 @@ export default function Industriereinigung() {
       <section className="relative bg-gradient-to-r from-red-600 to-red-700 text-white py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl">
-            <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-6">
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
               Professionelle Industriereinigung in Zürich, Zug und Luzern
             </h1>
-            <p className="text-xl text-red-50 mb-8">
+            <p className="text-sm sm:text-base md:text-lg text-red-50 mb-8">
               Spezialisierte Reinigungslösungen für Industrieanlagen, Produktionshallen und Fertigungsbetriebe. Höchste Sicherheitsstandards und Effizienz mit Schweizer Präzision.
             </p>
             <div className="flex flex-wrap gap-4">
@@ -36,21 +36,21 @@ export default function Industriereinigung() {
               <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Factory className="w-8 h-8 text-red-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Industriestandards</h3>
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">Industriestandards</h3>
               <p className="text-gray-600">Spezialisiert auf Produktionsumgebungen</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Shield className="w-8 h-8 text-red-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Sicherheit</h3>
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">Sicherheit</h3>
               <p className="text-gray-600">Zertifizierte Sicherheitsschulungen</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Clock className="w-8 h-8 text-red-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">24/7 Service</h3>
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">24/7 Service</h3>
               <p className="text-gray-600">Reinigung während Produktionspausen</p>
             </div>
           </div>
@@ -62,7 +62,7 @@ export default function Industriereinigung() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Spezialisierte Reinigung für Industrieanlagen</h2>
+              <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Spezialisierte Reinigung für Industrieanlagen</h2>
               <p className="text-gray-600 mb-6">
                 Industrielle Produktionsumgebungen stellen besondere Anforderungen an die Reinigung. Swiss Reinigungsfirma verfügt über die Expertise und Ausrüstung für die professionelle Reinigung von Industrieanlagen, Produktionshallen und Fertigungsbetrieben.
               </p>
@@ -89,7 +89,7 @@ export default function Industriereinigung() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-12 text-center">Unsere Industriereinigungsleistungen</h2>
+            <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-12 text-center">Unsere Industriereinigungsleistungen</h2>
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 'Produktionshallen-Reinigung',
@@ -123,7 +123,7 @@ export default function Industriereinigung() {
               />
             </div>
             <div className="order-1 md:order-2">
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Sicherheit und Effizienz in der Industriereinigung</h2>
+              <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Sicherheit und Effizienz in der Industriereinigung</h2>
               <p className="text-gray-600 mb-6">
                 In industriellen Umgebungen ist Sicherheit oberste Priorität. Unsere Reinigungskräfte sind in Arbeitssicherheit geschult und verfügen über alle erforderlichen Zertifizierungen für die Arbeit in Produktionsumgebungen.
               </p>
@@ -147,7 +147,7 @@ export default function Industriereinigung() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-12 text-center">Häufig gestellte Fragen zur Industriereinigung</h2>
+            <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-12 text-center">Häufig gestellte Fragen zur Industriereinigung</h2>
             <div className="space-y-4">
               {[
                 {
@@ -187,8 +187,8 @@ export default function Industriereinigung() {
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-red-600 to-red-700 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Bereit für professionelle Industriereinigung?</h2>
-          <p className="text-xl text-red-50 mb-8 max-w-2xl mx-auto">
+          <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Bereit für professionelle Industriereinigung?</h2>
+          <p className="text-sm sm:text-base md:text-lg text-red-50 mb-8 max-w-2xl mx-auto">
             Kontaktieren Sie uns für ein kostenloses Beratungsgespräch und unverbindliches Angebot. Unsere Industriereinigungsexperten beraten Sie gerne.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">

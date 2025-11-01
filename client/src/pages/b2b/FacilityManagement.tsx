@@ -35,10 +35,10 @@ export default function FacilityManagement() {
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600')] bg-cover bg-center opacity-20"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl lg:text-5xl xl:text-6xl font-bold mb-6">
               Professionelles <span className="text-red-500">Facility Management</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg md:text-base sm:text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
               Ganzheitliche Gebäudebewirtschaftung für Unternehmen in Zürich, Zug und Luzern
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -65,21 +65,21 @@ export default function FacilityManagement() {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 text-red-600 rounded-full mb-4">
                 <Building2 className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Ganzheitlich</h3>
+              <h3 className="text-sm sm:text-base md:text-lg font-bold mb-2">Ganzheitlich</h3>
               <p className="text-gray-600">Alle Services aus einer Hand</p>
             </div>
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 text-red-600 rounded-full mb-4">
                 <Clock className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-bold mb-2">24/7 Verfügbar</h3>
+              <h3 className="text-sm sm:text-base md:text-lg font-bold mb-2">24/7 Verfügbar</h3>
               <p className="text-gray-600">Notfall-Hotline rund um die Uhr</p>
             </div>
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 text-red-600 rounded-full mb-4">
                 <Shield className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Zertifiziert</h3>
+              <h3 className="text-sm sm:text-base md:text-lg font-bold mb-2">Zertifiziert</h3>
               <p className="text-gray-600">ISO-zertifiziertes Management</p>
             </div>
           </div>
@@ -181,7 +181,7 @@ export default function FacilityManagement() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Unsere Facility Management Leistungen</h2>
-            <p className="text-xl text-gray-600">Ganzheitliche Gebäudebewirtschaftung aus einer Hand</p>
+            <p className="text-sm sm:text-base md:text-lg text-gray-600">Ganzheitliche Gebäudebewirtschaftung aus einer Hand</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
@@ -212,7 +212,7 @@ export default function FacilityManagement() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Häufig gestellte Fragen</h2>
-            <p className="text-xl text-gray-600">Alles über unser Facility Management</p>
+            <p className="text-sm sm:text-base md:text-lg text-gray-600">Alles über unser Facility Management</p>
           </div>
           <div className="space-y-4">
             {faqs.map((faq, index) => (
@@ -241,7 +241,7 @@ export default function FacilityManagement() {
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
             Bereit für professionelles Facility Management?
           </h2>
-          <p className="text-xl text-gray-300 mb-8">
+          <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-8">
             Kontaktieren Sie uns für ein unverbindliches Angebot. Unsere Facility Management Experten beraten Sie gerne.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -15,7 +15,7 @@ export default function Turnaround() {
               <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground leading-tight">
                 Turnaround & <span className="text-accent">Restrukturierung</span>
               </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
                 Professionelle Begleitung in Krisensituationen. Wir entwickeln nachhaltige Strategien für erfolgreiche Unternehmenswenden.
               </p>
               <Link href="/kontakt">

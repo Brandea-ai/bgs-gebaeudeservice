@@ -33,13 +33,13 @@ export default function Fensterreinigung() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
+              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-xs sm:text-sm font-semibold mb-6">
                 Business Lösung
               </div>
               <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
                 Professionelle Fensterreinigung
               </h1>
-              <p className="text-2xl text-slate-600 leading-relaxed mb-8">
+              <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
                 Streifenfreie Fensterreinigung für Gewerbe und Industrie in Zürich, Zug und Luzern. Von Bürogebäuden bis zu Produktionshallen.
               </p>
               <div className="flex flex-wrap gap-4">
@@ -73,22 +73,22 @@ export default function Fensterreinigung() {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-full mb-4">
                 <Shield className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Streifenfrei</h3>
-              <p className="text-slate-600">Professionelle Reinigung ohne Rückstände</p>
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">Streifenfrei</h3>
+              <p className="text-slate-600 text-xs sm:text-sm md:text-base">Professionelle Reinigung ohne Rückstände</p>
             </div>
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-full mb-4">
                 <Clock className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Schnell & Effizient</h3>
-              <p className="text-slate-600">Minimale Betriebsstörungen</p>
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">Schnell & Effizient</h3>
+              <p className="text-slate-600 text-xs sm:text-sm md:text-base">Minimale Betriebsstörungen</p>
             </div>
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-full mb-4">
                 <Award className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Sicherheit</h3>
-              <p className="text-slate-600">Zertifizierte Höhenarbeiter</p>
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">Sicherheit</h3>
+              <p className="text-slate-600 text-xs sm:text-sm md:text-base">Zertifizierte Höhenarbeiter</p>
             </div>
           </div>
         </div>
@@ -105,7 +105,7 @@ export default function Fensterreinigung() {
             
             <TabsContent value="leistungen">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Umfassende Fensterreinigung</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Umfassende Fensterreinigung</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <ul className="space-y-2">
                     {["Innen- und Außenreinigung", "Rahmen & Fensterbretter", "Dachfenster & Oberlichter", "Schaufenster", "Wintergärten", "Glasdächer"].map((item, i) => (
@@ -129,7 +129,7 @@ export default function Fensterreinigung() {
             
             <TabsContent value="verfahren">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Moderne Reinigungstechniken</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Moderne Reinigungstechniken</h3>
                 <div className="space-y-6">
                   {[
                     { title: "Osmose-Wasser-Technik", desc: "Demineralisiertes Wasser für streifenfreie Ergebnisse ohne Chemie. Umweltfreundlich und effizient." },
@@ -138,8 +138,8 @@ export default function Fensterreinigung() {
                     { title: "Traditionelle Handarbeit", desc: "Für Detailarbeiten und besonders anspruchsvolle Fenster setzen wir auf bewährte Handarbeit." }
                   ].map((item, i) => (
                     <div key={i}>
-                      <h4 className="text-xl font-bold mb-2 text-primary">{item.title}</h4>
-                      <p className="text-slate-600">{item.desc}</p>
+                      <h4 className="text-sm sm:text-base md:text-lg font-bold mb-2 text-primary">{item.title}</h4>
+                      <p className="text-slate-600 text-xs sm:text-sm md:text-base">{item.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -148,7 +148,7 @@ export default function Fensterreinigung() {
             
             <TabsContent value="intervalle">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Empfohlene Reinigungsintervalle</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Empfohlene Reinigungsintervalle</h3>
                 <div className="space-y-4">
                   {[
                     { type: "Bürogebäude", interval: "4-6x jährlich", desc: "Für repräsentativen Eindruck" },
@@ -159,7 +159,7 @@ export default function Fensterreinigung() {
                     <div key={i} className="flex items-center justify-between p-4 bg-slate-50 rounded-lg">
                       <div>
                         <div className="font-bold">{item.type}</div>
-                        <div className="text-sm text-slate-600">{item.desc}</div>
+                        <div className="text-sm text-slate-600 text-xs sm:text-sm md:text-base">{item.desc}</div>
                       </div>
                       <div className="text-primary font-bold">{item.interval}</div>
                     </div>
@@ -192,7 +192,7 @@ export default function Fensterreinigung() {
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
             Bereit für streifenfreie Fenster?
           </h2>
-          <p className="text-xl mb-8 text-red-100">
+          <p className="text-sm sm:text-base md:text-lg mb-8 text-red-100">
             Kontaktieren Sie uns für ein unverbindliches Angebot. Unsere Experten beraten Sie gerne.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

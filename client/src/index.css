@@ -180,6 +180,30 @@
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
   }
+
+  /* Optimized text rendering for mobile */
+  p, li, span, div {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Better line heights for mobile readability */
+  @media (max-width: 640px) {
+    h1 {
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    h2 {
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+    h3, h4, h5, h6 {
+      line-height: 1.4;
+    }
+    p {
+      line-height: 1.6;
+    }
+  }
 }
 
 @layer components {
@@ -200,8 +224,8 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
-    padding-right: 1rem;
+    padding-left: 0.75rem; /* 12px - mobile padding for better text flow */
+    padding-right: 0.75rem;
   }
 
   .flex {

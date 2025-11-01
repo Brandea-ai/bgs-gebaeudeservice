@@ -38,13 +38,13 @@ export default function Aussenanlagen() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
+              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-xs sm:text-sm font-semibold mb-6">
                 Business Lösung
               </div>
               <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
                 Außenanlagen & Grünflächenpflege
               </h1>
-              <p className="text-2xl text-slate-600 leading-relaxed mb-8">
+              <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
                 Professionelle Pflege Ihrer Außenanlagen und Grünflächen in Zürich, Zug und Luzern. Für einen gepflegten ersten Eindruck.
               </p>
               <div className="flex flex-wrap gap-4">
@@ -78,22 +78,22 @@ export default function Aussenanlagen() {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-full mb-4">
                 <Shield className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Ganzjährige Betreuung</h3>
-              <p className="text-slate-600">Professionelle Pflege zu jeder Jahreszeit</p>
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">Ganzjährige Betreuung</h3>
+              <p className="text-slate-600 text-xs sm:text-sm md:text-base">Professionelle Pflege zu jeder Jahreszeit</p>
             </div>
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-full mb-4">
                 <Clock className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Flexible Einsätze</h3>
-              <p className="text-slate-600">Nach Ihrem individuellen Bedarf</p>
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">Flexible Einsätze</h3>
+              <p className="text-slate-600 text-xs sm:text-sm md:text-base">Nach Ihrem individuellen Bedarf</p>
             </div>
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-full mb-4">
                 <Award className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Schweizweit</h3>
-              <p className="text-slate-600">Service in Zürich, Zug und Luzern</p>
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">Schweizweit</h3>
+              <p className="text-slate-600 text-xs sm:text-sm md:text-base">Service in Zürich, Zug und Luzern</p>
             </div>
           </div>
         </div>
@@ -110,7 +110,7 @@ export default function Aussenanlagen() {
             
             <TabsContent value="reinigung">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Außenbereichsreinigung</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Außenbereichsreinigung</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <ul className="space-y-2">
                     {["Eingangsbereiche", "Parkplätze", "Gehwege", "Treppen", "Terrassen", "Innenhöfe"].map((item, i) => (
@@ -134,7 +134,7 @@ export default function Aussenanlagen() {
             
             <TabsContent value="gruenflaechen">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Grünflächenpflege</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Grünflächenpflege</h3>
                 <div className="space-y-4">
                   {[
                     { title: "Rasenpflege", desc: "Mähen, Vertikutieren, Düngen – für einen gepflegten Rasen das ganze Jahr über." },
@@ -143,8 +143,8 @@ export default function Aussenanlagen() {
                     { title: "Baumpflege", desc: "Baumschnitt, Kronenauslichtung und Totholzentfernung durch Fachpersonal." }
                   ].map((item, i) => (
                     <div key={i}>
-                      <h4 className="text-xl font-bold mb-2 text-primary">{item.title}</h4>
-                      <p className="text-slate-600">{item.desc}</p>
+                      <h4 className="text-sm sm:text-base md:text-lg font-bold mb-2 text-primary">{item.title}</h4>
+                      <p className="text-slate-600 text-xs sm:text-sm md:text-base">{item.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -153,7 +153,7 @@ export default function Aussenanlagen() {
             
             <TabsContent value="winter">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Winterdienst</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Winterdienst</h3>
                 <p className="text-slate-600 mb-6">
                   Zuverlässiger Winterdienst für sichere Zugänge und Verkehrswege:
                 </p>
@@ -182,7 +182,7 @@ export default function Aussenanlagen() {
               <AccordionTrigger className="text-left font-semibold">
                 Wie oft sollten Außenanlagen gereinigt werden?
               </AccordionTrigger>
-              <AccordionContent className="text-slate-600">
+              <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
                 Die Häufigkeit hängt von der Nutzung und den örtlichen Gegebenheiten ab. Wir empfehlen für stark frequentierte Bereiche eine wöchentliche Reinigung, für weniger genutzte Flächen eine monatliche Pflege. Wir erstellen gerne einen individuellen Pflegeplan.
               </AccordionContent>
             </AccordionItem>
@@ -191,7 +191,7 @@ export default function Aussenanlagen() {
               <AccordionTrigger className="text-left font-semibold">
                 Welche Leistungen sind im Winterdienst enthalten?
               </AccordionTrigger>
-              <AccordionContent className="text-slate-600">
+              <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
                 Unser Winterdienst umfasst Schneeräumung, Streudienst mit umweltfreundlichen Materialien, Enteisungsarbeiten und die Sicherstellung der Verkehrssicherheit auf allen Außenanlagen. Wir sind 24/7 im Einsatz.
               </AccordionContent>
             </AccordionItem>
@@ -200,7 +200,7 @@ export default function Aussenanlagen() {
               <AccordionTrigger className="text-left font-semibold">
                 Können Sie auch Grünflächen pflegen?
               </AccordionTrigger>
-              <AccordionContent className="text-slate-600">
+              <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
                 Ja, wir bieten professionelle Grünflächenpflege an, einschließlich Rasenmähen, Heckenschnitt, Unkrautentfernung und Laubbeseitigung. Unser Team arbeitet mit modernen Geräten und achtet auf ein gepflegtes Erscheinungsbild.
               </AccordionContent>
             </AccordionItem>
@@ -209,7 +209,7 @@ export default function Aussenanlagen() {
               <AccordionTrigger className="text-left font-semibold">
                 Arbeiten Sie auch an Wochenenden?
               </AccordionTrigger>
-              <AccordionContent className="text-slate-600">
+              <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
                 Ja, wir bieten flexible Einsatzzeiten an, auch an Wochenenden und Feiertagen. Besonders bei Schneefall und Notfällen sind wir rund um die Uhr für Sie da.
               </AccordionContent>
             </AccordionItem>
@@ -218,7 +218,7 @@ export default function Aussenanlagen() {
               <AccordionTrigger className="text-left font-semibold">
                 Wie schnell können Sie bei Bedarf reagieren?
               </AccordionTrigger>
-              <AccordionContent className="text-slate-600">
+              <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
                 Bei Notfällen wie Schneefall oder Verschmutzungen können wir innerhalb weniger Stunden vor Ort sein. Für reguläre Pflegearbeiten vereinbaren wir feste Termine nach Ihrem Bedarf.
               </AccordionContent>
             </AccordionItem>
@@ -232,7 +232,7 @@ export default function Aussenanlagen() {
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
             Bereit für gepflegte Außenanlagen?
           </h2>
-          <p className="text-xl mb-8 text-red-100">
+          <p className="text-sm sm:text-base md:text-lg mb-8 text-red-100">
             Kontaktieren Sie uns für ein unverbindliches Angebot. Unsere Experten beraten Sie gerne.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

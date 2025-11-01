@@ -50,7 +50,7 @@ export default function FractionalCXO() {
               <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground leading-tight">
                 Strategische <span className="text-accent">Führungsexpertise</span>
               </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
                 Profitieren Sie von erfahrenen C-Level-Executives ohne Vollzeitverpflichtung.
               </p>
               <Link href="/kontakt">
@@ -72,7 +72,7 @@ export default function FractionalCXO() {
                   {benefit.icon}
                 </div>
                 <h3 className="text-lg font-semibold text-foreground mb-2">{benefit.title}</h3>
-                <p className="text-muted-foreground">{benefit.description}</p>
+                <p className="text-muted-foreground text-xs sm:text-sm md:text-base">{benefit.description}</p>
               </div>
             ))}
           </div>

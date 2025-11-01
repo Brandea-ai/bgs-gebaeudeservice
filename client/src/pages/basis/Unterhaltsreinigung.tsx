@@ -33,13 +33,13 @@ export default function Unterhaltsreinigung() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
+              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-xs sm:text-sm font-semibold mb-6">
                 Basis Service
               </div>
               <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
                 Professionelle Unterhaltsreinigung
               </h1>
-              <p className="text-2xl text-slate-600 leading-relaxed mb-8">
+              <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
                 Regelmäßige Reinigung für Büros, Geschäfte und Gewerbeflächen in Zürich, Zug und Luzern. Zuverlässig, flexibel und auf Ihre Bedürfnisse zugeschnitten.
               </p>
               <div className="flex flex-wrap gap-4">
@@ -71,22 +71,22 @@ export default function Unterhaltsreinigung() {
             <Card className="p-6 text-center">
               <Calendar className="w-12 h-12 text-primary mx-auto mb-4"/>
               <div className="font-bold text-lg mb-2">Regelmäßig</div>
-              <div className="text-slate-600">Täglich, wöchentlich oder nach Bedarf</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Täglich, wöchentlich oder nach Bedarf</div>
             </Card>
             <Card className="p-6 text-center">
               <Clock className="w-12 h-12 text-primary mx-auto mb-4"/>
               <div className="font-bold text-lg mb-2">Flexible Zeiten</div>
-              <div className="text-slate-600">Angepasst an Ihre Öffnungszeiten</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Angepasst an Ihre Öffnungszeiten</div>
             </Card>
             <Card className="p-6 text-center">
               <Shield className="w-12 h-12 text-primary mx-auto mb-4"/>
               <div className="font-bold text-lg mb-2">Zuverlässig</div>
-              <div className="text-slate-600">Festes Reinigungsteam</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Festes Reinigungsteam</div>
             </Card>
             <Card className="p-6 text-center">
               <Sparkles className="w-12 h-12 text-primary mx-auto mb-4"/>
               <div className="font-bold text-lg mb-2">Qualität</div>
-              <div className="text-slate-600">Geprüfte Standards</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Geprüfte Standards</div>
             </Card>
           </div>
 
@@ -99,7 +99,7 @@ export default function Unterhaltsreinigung() {
             
             <TabsContent value="leistungen" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Umfassende Unterhaltsreinigung</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Umfassende Unterhaltsreinigung</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h4 className="font-bold text-lg mb-3 text-primary">Standardleistungen</h4>
@@ -114,7 +114,7 @@ export default function Unterhaltsreinigung() {
                       ].map((item, i) => (
                         <li key={i} className="flex items-start gap-2">
                           <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"/>
-                          <span className="text-slate-700">{item}</span>
+                          <span className="text-slate-700 text-xs sm:text-sm md:text-base">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -132,7 +132,7 @@ export default function Unterhaltsreinigung() {
                       ].map((item, i) => (
                         <li key={i} className="flex items-start gap-2">
                           <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"/>
-                          <span className="text-slate-700">{item}</span>
+                          <span className="text-slate-700 text-xs sm:text-sm md:text-base">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -143,7 +143,7 @@ export default function Unterhaltsreinigung() {
             
             <TabsContent value="ablauf" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Flexibler Reinigungsrhythmus</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Flexibler Reinigungsrhythmus</h3>
                 <div className="space-y-6">
                   {[
                     {
@@ -164,7 +164,7 @@ export default function Unterhaltsreinigung() {
                     }
                   ].map((item, i) => (
                     <div key={i}>
-                      <h4 className="text-xl font-bold mb-2 text-primary">{item.title}</h4>
+                      <h4 className="text-sm sm:text-base md:text-lg font-bold mb-2 text-primary">{item.title}</h4>
                       <p className="text-slate-600 leading-relaxed">{item.desc}</p>
                     </div>
                   ))}
@@ -174,11 +174,11 @@ export default function Unterhaltsreinigung() {
             
             <TabsContent value="pakete" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Transparente Preisgestaltung</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Transparente Preisgestaltung</h3>
                 <div className="grid md:grid-cols-3 gap-6">
                   <Card className="p-6 bg-slate-50">
-                    <h4 className="text-xl font-bold mb-4">Basic</h4>
-                    <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-2">ab CHF 30</div>
+                    <h4 className="text-sm sm:text-base md:text-lg font-bold mb-4">Basic</h4>
+                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-primary mb-2">ab CHF 30</div>
                     <div className="text-sm text-slate-600 mb-4">pro Stunde</div>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start gap-2">
@@ -196,8 +196,8 @@ export default function Unterhaltsreinigung() {
                     </ul>
                   </Card>
                   <Card className="p-6 bg-primary/5 border-primary">
-                    <h4 className="text-xl font-bold mb-4">Standard</h4>
-                    <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-2">ab CHF 900</div>
+                    <h4 className="text-sm sm:text-base md:text-lg font-bold mb-4">Standard</h4>
+                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-primary mb-2">ab CHF 900</div>
                     <div className="text-sm text-slate-600 mb-4">pro Monat</div>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start gap-2">
@@ -219,8 +219,8 @@ export default function Unterhaltsreinigung() {
                     </ul>
                   </Card>
                   <Card className="p-6 bg-slate-50">
-                    <h4 className="text-xl font-bold mb-4">Premium</h4>
-                    <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-2">Individuell</div>
+                    <h4 className="text-sm sm:text-base md:text-lg font-bold mb-4">Premium</h4>
+                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-primary mb-2">Individuell</div>
                     <div className="text-sm text-slate-600 mb-4">auf Anfrage</div>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start gap-2">
@@ -246,7 +246,7 @@ export default function Unterhaltsreinigung() {
             </TabsContent>
           </Tabs>
 
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-8 text-center">Häufig gestellte Fragen</h2>
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-8 text-center">Häufig gestellte Fragen</h2>
           <Accordion type="single" collapsible className="max-w-3xl mx-auto">
             <AccordionItem value="item-1">
               <AccordionTrigger className="text-lg font-semibold">
@@ -290,14 +290,14 @@ export default function Unterhaltsreinigung() {
       <section className="py-20 bg-gradient-to-br from-primary/10 to-red-50">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-6">
               Bereit für regelmäßige Sauberkeit?
             </h2>
-            <p className="text-xl text-slate-600 mb-8">
+            <p className="text-sm sm:text-base md:text-lg text-slate-600 mb-8">
               Kontaktieren Sie uns für ein kostenloses Angebot. Wir erstellen ein maßgeschneidertes Reinigungskonzept.
             </p>
             <Link href="/kontakt">
-              <Button size="lg" className="text-lg px-8">
+              <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
                 Jetzt Kontakt aufnehmen
                 <ArrowRight className="ml-2 w-5 h-5"/>
               </Button>

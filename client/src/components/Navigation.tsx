@@ -122,12 +122,12 @@ export default function Navigation() {
                 >
                   {item.href ? (
                     <Link href={item.href}>
-                      <a className="px-4 py-2 text-sm font-medium text-foreground hover:text-accent transition-smooth rounded-lg hover:bg-secondary/50">
+                      <a className="px-4 py-2 text-xs sm:text-sm font-medium text-foreground hover:text-accent transition-smooth rounded-lg hover:bg-secondary/50">
                         {item.label}
                       </a>
                     </Link>
                   ) : (
-                    <button className="px-4 py-2 text-sm font-medium text-foreground hover:text-accent transition-smooth rounded-lg hover:bg-secondary/50 flex items-center gap-1">
+                    <button className="px-4 py-2 text-xs sm:text-sm font-medium text-foreground hover:text-accent transition-smooth rounded-lg hover:bg-secondary/50 flex items-center gap-1">
                       {item.label}
                       {item.megaMenu && <ChevronDown className="w-4 h-4" />}
                     </button>

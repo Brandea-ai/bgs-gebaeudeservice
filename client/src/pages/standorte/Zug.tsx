@@ -55,7 +55,7 @@ export default function Zug() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+              <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-6">
                 Reinigung auf Zug-Niveau
               </h2>
               <p className="text-lg text-slate-700 leading-relaxed mb-8">
@@ -72,7 +72,7 @@ export default function Zug() {
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <Check className="w-6 h-6 text-primary mt-0.5 flex-shrink-0"/>
-                    <span className="text-lg text-slate-700">{item}</span>
+                    <span className="text-lg text-slate-700 text-xs sm:text-sm md:text-base">{item}</span>
                   </div>
                 ))}
               </div>
@@ -87,10 +87,10 @@ export default function Zug() {
       <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-4">
               Unsere Leistungen in Zug
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg text-slate-600 max-w-3xl mx-auto">
               Maßgeschneiderte Reinigungslösungen für den Wirtschaftsstandort Zug – von Corporate Offices bis zu Luxusimmobilien.
             </p>
           </div>
@@ -113,8 +113,8 @@ export default function Zug() {
                 ].map((service, i) => (
                   <Card key={i} className="p-6 hover:shadow-xl transition-all">
                     <TrendingUp className="w-10 h-10 text-primary mb-4"/>
-                    <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                    <p className="text-slate-600">{service.desc}</p>
+                    <h3 className="text-sm sm:text-base md:text-lg font-bold mb-3">{service.title}</h3>
+                    <p className="text-slate-600 text-xs sm:text-sm md:text-base">{service.desc}</p>
                   </Card>
                 ))}
               </div>
@@ -128,7 +128,7 @@ export default function Zug() {
                   { title: "Private Housekeeping", desc: "Exklusiver Service für Premium-Kunden" }
                 ].map((service, i) => (
                   <Card key={i} className="p-8 hover:shadow-xl transition-all">
-                    <h3 className="text-2xl font-bold mb-3">{service.title}</h3>
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3">{service.title}</h3>
                     <p className="text-slate-600 text-lg">{service.desc}</p>
                   </Card>
                 ))}
@@ -141,8 +141,8 @@ export default function Zug() {
                   "Grünflächenpflege", "Beschaffungsmanagement", "Sonderleistungen"
                 ].map((service, i) => (
                   <Card key={i} className="p-6 hover:shadow-xl transition-all">
-                    <h3 className="text-xl font-bold mb-3">{service}</h3>
-                    <p className="text-slate-600">Umfassende Facility-Lösungen in Zug</p>
+                    <h3 className="text-sm sm:text-base md:text-lg font-bold mb-3">{service}</h3>
+                    <p className="text-slate-600 text-xs sm:text-sm md:text-base">Umfassende Facility-Lösungen in Zug</p>
                   </Card>
                 ))}
               </div>
@@ -153,12 +153,12 @@ export default function Zug() {
 
       <section className="py-20 bg-white">
         <div className="container max-w-4xl">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-12 text-center">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-12 text-center">
             Häufige Fragen zur Reinigung in Zug
           </h2>
           <Accordion type="single" collapsible>
             <AccordionItem value="item-1">
-              <AccordionTrigger className="text-xl font-semibold">
+              <AccordionTrigger className="text-sm sm:text-base md:text-lg font-semibold">
                 Was unterscheidet Ihre Reinigung in Zug?
               </AccordionTrigger>
               <AccordionContent className="text-lg leading-relaxed text-slate-700 pt-4">
@@ -166,7 +166,7 @@ export default function Zug() {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
-              <AccordionTrigger className="text-xl font-semibold">
+              <AccordionTrigger className="text-sm sm:text-base md:text-lg font-semibold">
                 Bieten Sie Reinigung außerhalb der Geschäftszeiten an?
               </AccordionTrigger>
               <AccordionContent className="text-lg leading-relaxed text-slate-700 pt-4">
@@ -174,7 +174,7 @@ export default function Zug() {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
-              <AccordionTrigger className="text-xl font-semibold">
+              <AccordionTrigger className="text-sm sm:text-base md:text-lg font-semibold">
                 Wie gewährleisten Sie Datenschutz und Sicherheit?
               </AccordionTrigger>
               <AccordionContent className="text-lg leading-relaxed text-slate-700 pt-4">
@@ -191,10 +191,10 @@ export default function Zug() {
           <div className="max-w-4xl mx-auto">
             <Card className="p-12">
               <div className="text-center mb-8">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-4">
                   Kontakt Zug
                 </h2>
-                <p className="text-xl text-slate-600">
+                <p className="text-sm sm:text-base md:text-lg text-slate-600 text-xs sm:text-sm md:text-base">
                   Vereinbaren Sie ein persönliches Beratungsgespräch.
                 </p>
               </div>
@@ -212,12 +212,12 @@ export default function Zug() {
                 <div className="text-center">
                   <Clock className="w-8 h-8 text-primary mx-auto mb-3"/>
                   <div className="font-semibold mb-1">Erreichbarkeit</div>
-                  <div className="text-slate-600">Mo-Fr 7:00-18:00</div>
+                  <div className="text-slate-600 text-xs sm:text-sm md:text-base">Mo-Fr 7:00-18:00</div>
                 </div>
               </div>
               <div className="text-center">
                 <Link href="/kontakt">
-                  <Button size="lg" className="text-lg px-8">
+                  <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
                     Jetzt Kontakt aufnehmen
                     <ArrowRight className="ml-2 w-5 h-5"/>
                   </Button>

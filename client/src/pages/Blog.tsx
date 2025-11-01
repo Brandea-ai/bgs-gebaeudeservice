@@ -48,10 +48,10 @@ export default function Blog() {
       <section className="pt-32 pb-20 bg-gradient-to-br from-white via-red-50/30 to-white">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-6">
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
               Wissen & Ratgeber
             </h1>
-            <p className="text-xl text-slate-600 leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-slate-600 leading-relaxed">
               Expertenwissen rund um professionelle Reinigung, Gebäudeservice und Facility Management in der Schweiz.
             </p>
           </div>
@@ -82,7 +82,7 @@ export default function Blog() {
                       {article.readTime}
                     </div>
                   </div>
-                  <h2 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">
+                  <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 group-hover:text-primary transition-colors">
                     {article.title}
                   </h2>
                   <p className="text-slate-600 mb-6 leading-relaxed">

@@ -33,13 +33,13 @@ export default function Luxusimmobilien() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
+              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-xs sm:text-sm font-semibold mb-6">
                 Premium Service
               </div>
               <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
                 Luxusimmobilien-Reinigung
               </h1>
-              <p className="text-2xl text-slate-600 leading-relaxed mb-8">
+              <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
                 Maßgeschneiderte Reinigung für Luxusimmobilien. Spezialisiert auf Edeloberflächen, Kunstobjekte und exklusive Materialien in Zürich, Zug und Luzern.
               </p>
               <div className="flex flex-wrap gap-4">
@@ -71,22 +71,22 @@ export default function Luxusimmobilien() {
             <Card className="p-6 text-center">
               <Building2 className="w-12 h-12 text-primary mx-auto mb-4"/>
               <div className="font-bold text-lg mb-2">Edeloberflächen</div>
-              <div className="text-slate-600">Spezialisierte Pflege</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Spezialisierte Pflege</div>
             </Card>
             <Card className="p-6 text-center">
               <Shield className="w-12 h-12 text-primary mx-auto mb-4"/>
               <div className="font-bold text-lg mb-2">Kunstobjekte</div>
-              <div className="text-slate-600">Sachkundige Behandlung</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Sachkundige Behandlung</div>
             </Card>
             <Card className="p-6 text-center">
               <Sparkles className="w-12 h-12 text-primary mx-auto mb-4"/>
               <div className="font-bold text-lg mb-2">Maßgeschneidert</div>
-              <div className="text-slate-600">Individuelle Konzepte</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Individuelle Konzepte</div>
             </Card>
             <Card className="p-6 text-center">
               <Award className="w-12 h-12 text-primary mx-auto mb-4"/>
               <div className="font-bold text-lg mb-2">Zertifiziert</div>
-              <div className="text-slate-600">Höchste Standards</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Höchste Standards</div>
             </Card>
           </div>
 
@@ -99,7 +99,7 @@ export default function Luxusimmobilien() {
             
             <TabsContent value="materialien" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Expertise für edle Materialien</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Expertise für edle Materialien</h3>
                 <div className="grid md:grid-cols-2 gap-8">
                   {[
                     {
@@ -128,7 +128,7 @@ export default function Luxusimmobilien() {
                     }
                   ].map((item, i) => (
                     <div key={i}>
-                      <h4 className="text-xl font-bold mb-2 text-primary">{item.title}</h4>
+                      <h4 className="text-sm sm:text-base md:text-lg font-bold mb-2 text-primary">{item.title}</h4>
                       <p className="text-slate-600 leading-relaxed">{item.desc}</p>
                     </div>
                   ))}
@@ -138,7 +138,7 @@ export default function Luxusimmobilien() {
             
             <TabsContent value="kunst" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Kunstwerke & Antiquitäten</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Kunstwerke & Antiquitäten</h3>
                 <p className="text-lg text-slate-600 mb-8">
                   Ihre Kunstsammlung verdient besondere Aufmerksamkeit. Unser geschultes Personal behandelt wertvolle Objekte mit größter Sorgfalt:
                 </p>
@@ -166,7 +166,7 @@ export default function Luxusimmobilien() {
                         <CheckCircle className="w-6 h-6 text-primary"/>
                       </div>
                       <div>
-                        <h4 className="text-xl font-bold mb-2">{item.title}</h4>
+                        <h4 className="text-sm sm:text-base md:text-lg font-bold mb-2">{item.title}</h4>
                         <p className="text-slate-600 leading-relaxed">{item.desc}</p>
                       </div>
                     </div>
@@ -177,7 +177,7 @@ export default function Luxusimmobilien() {
             
             <TabsContent value="referenzen" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Unsere Referenz-Objekte</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Unsere Referenz-Objekte</h3>
                 <div className="space-y-8">
                   {[
                     {
@@ -201,14 +201,14 @@ export default function Luxusimmobilien() {
                   ].map((item, i) => (
                     <Card key={i} className="p-6 bg-slate-50">
                       <div className="flex justify-between items-start mb-4">
-                        <h4 className="text-2xl font-bold">{item.title}</h4>
-                        <span className="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
+                        <h4 className="text-lg sm:text-xl md:text-2xl font-bold">{item.title}</h4>
+                        <span className="bg-primary text-white px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">
                           {item.size}
                         </span>
                       </div>
                       <div className="flex flex-wrap gap-2 mb-4">
                         {item.features.map((feature, j) => (
-                          <span key={j} className="bg-white px-3 py-1 rounded-full text-sm text-slate-700">
+                          <span key={j} className="bg-white px-3 py-1 rounded-full text-sm text-slate-700 text-xs sm:text-sm md:text-base">
                             {feature}
                           </span>
                         ))}
@@ -221,7 +221,7 @@ export default function Luxusimmobilien() {
             </TabsContent>
           </Tabs>
 
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-8 text-center">Häufig gestellte Fragen</h2>
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-8 text-center">Häufig gestellte Fragen</h2>
           <Accordion type="single" collapsible className="max-w-3xl mx-auto">
             <AccordionItem value="item-1">
               <AccordionTrigger className="text-lg font-semibold">
@@ -265,14 +265,14 @@ export default function Luxusimmobilien() {
       <section className="py-20 bg-gradient-to-br from-primary/10 to-red-50">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-6">
               Ihre Luxusimmobilie in besten Händen
             </h2>
-            <p className="text-xl text-slate-600 mb-8">
+            <p className="text-sm sm:text-base md:text-lg text-slate-600 mb-8">
               Kontaktieren Sie uns für eine persönliche Beratung vor Ort. Diskret und unverbindlich.
             </p>
             <Link href="/kontakt">
-              <Button size="lg" className="text-lg px-8">
+              <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
                 Jetzt Kontakt aufnehmen
                 <ArrowRight className="ml-2 w-5 h-5"/>
               </Button>

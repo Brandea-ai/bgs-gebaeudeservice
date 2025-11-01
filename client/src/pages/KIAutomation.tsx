@@ -22,7 +22,7 @@ export default function KIAutomation() {
               <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground leading-tight">
                 KI-Automatisierung für <span className="text-accent">maximale Effizienz</span>
               </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
                 Optimieren Sie Ihre Geschäftsprozesse durch intelligente Automatisierung. Wir implementieren maßgeschneiderte KI-Lösungen, die messbare Ergebnisse liefern.
               </p>
               <Link href="/kontakt">
@@ -38,7 +38,7 @@ export default function KIAutomation() {
       <section className="py-20 bg-secondary/20">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">Ihre Vorteile</h2>
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-foreground mb-4">Ihre Vorteile</h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {benefits.map((benefit, index) => (
@@ -47,7 +47,7 @@ export default function KIAutomation() {
                   {benefit.icon}
                 </div>
                 <h3 className="text-lg font-semibold text-foreground mb-2">{benefit.title}</h3>
-                <p className="text-muted-foreground">{benefit.description}</p>
+                <p className="text-muted-foreground text-xs sm:text-sm md:text-base">{benefit.description}</p>
               </div>
             ))}
           </div>

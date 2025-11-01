@@ -8,14 +8,14 @@ export default function NotFound() {
       <div className="text-center space-y-6 max-w-md">
         <div className="glass floating rounded-3xl p-12">
           <h1 className="text-9xl font-bold text-accent mb-4">404</h1>
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-4">
+          <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-foreground mb-4">
             Seite nicht gefunden
           </h2>
           <p className="text-muted-foreground mb-8">
             Die von Ihnen gesuchte Seite existiert leider nicht oder wurde verschoben.
           </p>
           <Link href="/">
-            <Button size="lg" className="text-lg px-8">
+            <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
               <HomeIcon className="mr-2 w-5 h-5" />
               Zurück zur Startseite
             </Button>

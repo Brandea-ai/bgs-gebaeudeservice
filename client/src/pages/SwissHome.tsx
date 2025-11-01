@@ -47,21 +47,21 @@ export default function SwissHome() {
             <div className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-primary/10 rounded-full mb-4 sm:mb-6">
               <span className="text-primary font-semibold text-sm sm:text-base">Professionelle Reinigungsfirma in der Schweiz</span>
             </div>
-            <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white leading-tight mb-6">
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight mb-6">
               Erstklassige <span className="text-primary">Gebäudereinigung</span> für Zürich, Zug und Luzern
             </h1>
-            <p className="text-lg md:text-xl text-white/95 mb-8 leading-relaxed max-w-2xl">
+            <p className="text-sm sm:text-base md:text-lg text-white/95 mb-8 leading-relaxed max-w-2xl">
               Professionelle Reinigungsdienste für Unternehmen und Premium-Kunden mit Schweizer Präzision.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link href="/kontakt" className="w-full sm:w-auto">
-                <Button size="lg" className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 shadow-2xl hover:shadow-primary/50 transition-all">
+                <Button size="lg" className="w-full sm:w-auto text-xs sm:text-sm md:text-base px-4 sm:px-6 md:px-8 shadow-2xl hover:shadow-primary/50 transition-all">
                   Kostenlose Beratung
                   <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
                 </Button>
               </Link>
               <a href="tel:+41413205610" className="w-full sm:w-auto">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-slate-900">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto text-sm sm:text-base md:text-lg px-5 sm:px-6 md:px-8 py-4 sm:py-6 bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-slate-900">
                   +41 41 320 56 10
                 </Button>
               </a>
@@ -82,8 +82,8 @@ export default function SwissHome() {
             ].map((item, index) => (
               <Card key={index} className="p-8 text-center hover:shadow-xl transition-all">
                 <item.icon className="w-12 h-12 text-primary mx-auto mb-4" />
-                <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2">{item.value}</h3>
-                <p className="text-xs sm:text-sm text-slate-600">{item.label}</p>
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-slate-900 mb-2">{item.value}</h3>
+                <p className="text-xs sm:text-sm md:text-base text-slate-600 text-xs sm:text-sm md:text-base">{item.label}</p>
               </Card>
             ))}
           </div>
@@ -94,17 +94,17 @@ export default function SwissHome() {
       <section className="py-32 bg-white">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-6">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
               Sehen Sie den Unterschied
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg text-slate-600 max-w-3xl mx-auto">
               Unsere professionelle Reinigung verwandelt Ihre Räumlichkeiten. Erleben Sie die Qualität unserer Arbeit.
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-4">Vorher</h3>
+              <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-slate-900 mb-4">Vorher</h3>
               <img 
                 src="/vorher-buero-schmutzig.jpg" 
                 alt="Büro vor der Reinigung" 
@@ -113,7 +113,7 @@ export default function SwissHome() {
               <p className="text-slate-600 mt-4">Verschmutztes Büro mit Staub und Unordnung</p>
             </div>
             <div>
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-4">Nachher</h3>
+              <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-primary mb-4">Nachher</h3>
               <img 
                 src="/nachher-buero-sauber.jpg" 
                 alt="Büro nach der Reinigung" 
@@ -129,10 +129,10 @@ export default function SwissHome() {
       <section className="py-32 bg-gradient-to-br from-slate-50 via-white to-red-50/30">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-6">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
               Unsere Reinigungsdienstleistungen
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg text-slate-600 max-w-3xl mx-auto">
               Von Premium-Services für Luxusimmobilien bis zur professionellen Gebäudereinigung für Unternehmen – wir bieten maßgeschneiderte Reinigungslösungen für jeden Bedarf.
             </p>
           </div>
@@ -147,7 +147,7 @@ export default function SwissHome() {
               </p>
               <ul className="space-y-3 mb-8">
                 {["Privatjet Reinigung", "Yacht Reinigung", "Private Housekeeping", "Luxusimmobilien-Reinigung"].map((item, i) => (
-                  <li key={i} className="flex items-center gap-2 text-slate-700">
+                  <li key={i} className="flex items-center gap-2 text-slate-700 text-xs sm:text-sm md:text-base">
                     <Check className="w-5 h-5 text-primary flex-shrink-0" />
                     {item}
                   </li>
@@ -170,7 +170,7 @@ export default function SwissHome() {
               </p>
               <ul className="space-y-3 mb-8">
                 {["Büroreinigung", "Industriereinigung", "Fassaden- & Fensterreinigung", "Facility Management"].map((item, i) => (
-                  <li key={i} className="flex items-center gap-2 text-slate-700">
+                  <li key={i} className="flex items-center gap-2 text-slate-700 text-xs sm:text-sm md:text-base">
                     <Check className="w-5 h-5 text-primary flex-shrink-0" />
                     {item}
                   </li>
@@ -193,7 +193,7 @@ export default function SwissHome() {
               </p>
               <ul className="space-y-3 mb-8">
                 {["Unterhaltsreinigung", "Hausmeisterservice", "Winterdienst", "Sonderleistungen"].map((item, i) => (
-                  <li key={i} className="flex items-center gap-2 text-slate-700">
+                  <li key={i} className="flex items-center gap-2 text-slate-700 text-xs sm:text-sm md:text-base">
                     <Check className="w-5 h-5 text-primary flex-shrink-0" />
                     {item}
                   </li>
@@ -215,10 +215,10 @@ export default function SwissHome() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-8">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-8">
                 Warum Swiss Reinigungsfirma?
               </h2>
-              <p className="text-xl text-slate-600 mb-8">
+              <p className="text-sm sm:text-base md:text-lg text-slate-600 mb-8">
                 Als führende Reinigungsfirma in der Schweiz verstehen wir Schweizer Qualität und moderne Reinigungstechnologie. Unsere professionellen Fachkräfte sorgen für makellose Sauberkeit mit Schweizer Präzision in Zürich, Zug und Luzern.
               </p>
               <div className="space-y-6">
@@ -234,7 +234,7 @@ export default function SwissHome() {
                     <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
                       <Check className="w-5 h-5 text-primary" />
                     </div>
-                    <p className="text-lg text-slate-700">{item}</p>
+                    <p className="text-lg text-slate-700 text-xs sm:text-sm md:text-base">{item}</p>
                   </div>
                 ))}
               </div>
@@ -254,10 +254,10 @@ export default function SwissHome() {
       <section className="py-32 bg-slate-50">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-6">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
               Was unsere Kunden sagen
             </h2>
-            <p className="text-xl text-slate-600">
+            <p className="text-sm sm:text-base md:text-lg text-slate-600 text-xs sm:text-sm md:text-base">
               Über 500 zufriedene Kunden vertrauen auf unsere Reinigungsdienstleistungen
             </p>
           </div>
@@ -292,7 +292,7 @@ export default function SwissHome() {
                 <p className="text-slate-700 mb-6 text-lg leading-relaxed">"{testimonial.text}"</p>
                 <div>
                   <p className="font-bold text-slate-900">{testimonial.name}</p>
-                  <p className="text-sm text-slate-600">{testimonial.company}</p>
+                  <p className="text-sm text-slate-600 text-xs sm:text-sm md:text-base">{testimonial.company}</p>
                 </div>
               </Card>
             ))}
@@ -313,10 +313,10 @@ export default function SwissHome() {
         ></div>
         <div className="container relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-6">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
               Unsere Standorte in der Schweiz
             </h2>
-            <p className="text-xl text-slate-600">
+            <p className="text-sm sm:text-base md:text-lg text-slate-600 text-xs sm:text-sm md:text-base">
               Professionelle Reinigungsdienstleistungen in den wichtigsten Wirtschaftsregionen der Schweiz
             </p>
           </div>
@@ -329,7 +329,7 @@ export default function SwissHome() {
             ].map((location, i) => (
               <Link key={i} href={location.href}>
                 <Card className="p-10 hover:shadow-2xl transition-all cursor-pointer group">
-                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-4 group-hover:text-primary transition-colors">
+                  <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-slate-900 mb-4 group-hover:text-primary transition-colors">
                     {location.city}
                   </h3>
                   <p className="text-slate-600 mb-6">{location.description}</p>
@@ -348,21 +348,21 @@ export default function SwissHome() {
       <section className="py-32 bg-gradient-to-br from-primary/10 via-red-50 to-primary/10">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-6">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
               Bereit für professionelle Reinigung?
             </h2>
-            <p className="text-xl text-slate-600 mb-8">
+            <p className="text-sm sm:text-base md:text-lg text-slate-600 mb-8">
               Kontaktieren Sie uns für ein unverbindliches Angebot. Unsere Experten beraten Sie gerne zu allen Reinigungsdienstleistungen.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link href="/kontakt">
-                <Button size="lg" className="text-lg px-8 py-6 shadow-xl">
+                <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8 py-6 shadow-xl">
                   Jetzt Kontakt aufnehmen
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
               <a href="tel:+41413205610">
-                <Button size="lg" variant="outline" className="text-lg px-8 py-6">
+                <Button size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8 py-6">
                   +41 41 320 56 10
                 </Button>
               </a>

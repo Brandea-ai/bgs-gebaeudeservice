@@ -36,14 +36,14 @@ export default function About() {
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-32">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center space-y-8">
-            <div className="inline-block glass floating px-4 py-2 rounded-full text-sm font-medium text-accent">
+            <div className="inline-block glass floating px-4 py-2 rounded-full text-xs sm:text-sm font-medium text-accent">
               Über Brandea
             </div>
             <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground leading-tight">
               Wir sind Ihr Partner für{" "}
               <span className="text-accent">digitale Transformation</span>
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
               Brandea GmbH ist Ihr Spezialist für KI-Beratung im DACH- und Benelux-Raum. Wir verbinden strategische Unternehmensberatung mit modernster Technologie und schaffen nachhaltige Wettbewerbsvorteile für mittelständische Unternehmen.
             </p>
           </div>
@@ -62,7 +62,7 @@ export default function About() {
               />
             </div>
             <div className="space-y-6">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">
+              <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-foreground">
                 Unsere Mission
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
@@ -83,10 +83,10 @@ export default function About() {
       <section className="py-20">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-foreground mb-4">
               Unsere Werte
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
               Diese Prinzipien leiten uns in allem, was wir tun
             </p>
           </div>
@@ -99,7 +99,7 @@ export default function About() {
                 <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent mb-4">
                   {value.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">
+                <h3 className="text-sm sm:text-base md:text-lg font-semibold text-foreground mb-3">
                   {value.title}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -116,10 +116,10 @@ export default function About() {
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
+              <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-foreground mb-4">
                 Unser Ansatz
               </h2>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground text-xs sm:text-sm md:text-base">
                 So arbeiten wir mit unseren Kunden zusammen
               </p>
             </div>
@@ -151,11 +151,11 @@ export default function About() {
                   className="glass floating rounded-2xl p-8 transition-smooth hover:shadow-xl"
                 >
                   <div className="flex items-start gap-6">
-                    <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-accent/20">
+                    <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-accent/20">
                       {item.step}
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-foreground mb-3">
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-3">
                         {item.title}
                       </h3>
                       <p className="text-muted-foreground leading-relaxed">
@@ -174,21 +174,21 @@ export default function About() {
       <section className="py-20">
         <div className="container">
           <div className="glass floating rounded-3xl p-12 lg:p-16 text-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-foreground mb-6">
               Lernen Sie uns kennen
             </h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
               Vereinbaren Sie ein kostenloses Erstgespräch und erfahren Sie, wie wir Ihr Unternehmen voranbringen können.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/kontakt">
-                <Button size="lg" className="text-lg px-8">
+                <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
                   Gespräch vereinbaren
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
               <Link href="/methode">
-                <Button size="lg" variant="outline" className="text-lg px-8">
+                <Button size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
                   Unsere Methode
                 </Button>
               </Link>

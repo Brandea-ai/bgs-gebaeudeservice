@@ -19,7 +19,7 @@ export default function Downloads() {
             <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-6">
               <span className="text-accent">Downloads</span> & Ressourcen
             </h1>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground text-xs sm:text-sm md:text-base">
               Nützliche Dokumente und Informationen für Sie
             </p>
           </div>
@@ -30,7 +30,7 @@ export default function Downloads() {
                   <FileText className="w-8 h-8 text-accent" />
                   <div>
                     <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground">{item.type} • {item.size}</p>
+                    <p className="text-sm text-muted-foreground text-xs sm:text-sm md:text-base">{item.type} • {item.size}</p>
                   </div>
                 </div>
                 <Button variant="outline">

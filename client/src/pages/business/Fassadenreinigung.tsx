@@ -33,13 +33,13 @@ export default function Fassadenreinigung() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
+              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-xs sm:text-sm font-semibold mb-6">
                 Business Lösung
               </div>
               <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
                 Professionelle Fassadenreinigung
               </h1>
-              <p className="text-2xl text-slate-600 leading-relaxed mb-8">
+              <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
                 Schonende und effektive Fassadenreinigung für alle Materialien in Zürich, Zug und Luzern. Von Glas über Naturstein bis zu modernen Verbundmaterialien.
               </p>
               <div className="flex flex-wrap gap-4">
@@ -71,22 +71,22 @@ export default function Fassadenreinigung() {
             <Card className="p-6 text-center">
               <Building2 className="w-12 h-12 text-primary mx-auto mb-4"/>
               <div className="font-bold text-lg mb-2">Alle Materialien</div>
-              <div className="text-slate-600">Glas, Stein, Metall, Putz</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Glas, Stein, Metall, Putz</div>
             </Card>
             <Card className="p-6 text-center">
               <Droplets className="w-12 h-12 text-primary mx-auto mb-4"/>
               <div className="font-bold text-lg mb-2">Schonend</div>
-              <div className="text-slate-600">Materialgerechte Verfahren</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Materialgerechte Verfahren</div>
             </Card>
             <Card className="p-6 text-center">
               <Shield className="w-12 h-12 text-primary mx-auto mb-4"/>
               <div className="font-bold text-lg mb-2">Sicher</div>
-              <div className="text-slate-600">Zertifizierte Höhenarbeiter</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Zertifizierte Höhenarbeiter</div>
             </Card>
             <Card className="p-6 text-center">
               <Sparkles className="w-12 h-12 text-primary mx-auto mb-4"/>
               <div className="font-bold text-lg mb-2">Langzeitschutz</div>
-              <div className="text-slate-600">Versiegelung optional</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Versiegelung optional</div>
             </Card>
           </div>
 
@@ -99,7 +99,7 @@ export default function Fassadenreinigung() {
             
             <TabsContent value="materialien" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Expertise für alle Fassadenmaterialien</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Expertise für alle Fassadenmaterialien</h3>
                 <div className="grid md:grid-cols-2 gap-8">
                   {[
                     {
@@ -128,7 +128,7 @@ export default function Fassadenreinigung() {
                     }
                   ].map((item, i) => (
                     <div key={i}>
-                      <h4 className="text-xl font-bold mb-2 text-primary">{item.title}</h4>
+                      <h4 className="text-sm sm:text-base md:text-lg font-bold mb-2 text-primary">{item.title}</h4>
                       <p className="text-slate-600 leading-relaxed">{item.desc}</p>
                     </div>
                   ))}
@@ -138,7 +138,7 @@ export default function Fassadenreinigung() {
             
             <TabsContent value="verfahren" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Moderne Reinigungsverfahren</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Moderne Reinigungsverfahren</h3>
                 <div className="space-y-6">
                   {[
                     {
@@ -163,7 +163,7 @@ export default function Fassadenreinigung() {
                     }
                   ].map((item, i) => (
                     <div key={i}>
-                      <h4 className="text-xl font-bold mb-2 text-primary">{item.title}</h4>
+                      <h4 className="text-sm sm:text-base md:text-lg font-bold mb-2 text-primary">{item.title}</h4>
                       <p className="text-slate-600 leading-relaxed">{item.desc}</p>
                     </div>
                   ))}
@@ -173,14 +173,14 @@ export default function Fassadenreinigung() {
             
             <TabsContent value="wartung" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Wartungsverträge für dauerhaften Werterhalt</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Wartungsverträge für dauerhaften Werterhalt</h3>
                 <p className="text-lg text-slate-600 mb-8">
                   Regelmäßige Fassadenreinigung erhält den Wert Ihrer Immobilie und verhindert teure Sanierungen:
                 </p>
                 <div className="grid md:grid-cols-3 gap-6">
                   <Card className="p-6 bg-slate-50">
-                    <h4 className="text-xl font-bold mb-4">Basic</h4>
-                    <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-2">1x jährlich</div>
+                    <h4 className="text-sm sm:text-base md:text-lg font-bold mb-4">Basic</h4>
+                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-primary mb-2">1x jährlich</div>
                     <div className="text-sm text-slate-600 mb-4">ab CHF 2.500</div>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start gap-2">
@@ -198,8 +198,8 @@ export default function Fassadenreinigung() {
                     </ul>
                   </Card>
                   <Card className="p-6 bg-primary/5 border-primary">
-                    <h4 className="text-xl font-bold mb-4">Professional</h4>
-                    <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-2">2x jährlich</div>
+                    <h4 className="text-sm sm:text-base md:text-lg font-bold mb-4">Professional</h4>
+                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-primary mb-2">2x jährlich</div>
                     <div className="text-sm text-slate-600 mb-4">ab CHF 4.500</div>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start gap-2">
@@ -221,8 +221,8 @@ export default function Fassadenreinigung() {
                     </ul>
                   </Card>
                   <Card className="p-6 bg-slate-50">
-                    <h4 className="text-xl font-bold mb-4">Premium</h4>
-                    <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-2">4x jährlich</div>
+                    <h4 className="text-sm sm:text-base md:text-lg font-bold mb-4">Premium</h4>
+                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-primary mb-2">4x jährlich</div>
                     <div className="text-sm text-slate-600 mb-4">ab CHF 8.000</div>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start gap-2">
@@ -248,7 +248,7 @@ export default function Fassadenreinigung() {
             </TabsContent>
           </Tabs>
 
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-8 text-center">Häufig gestellte Fragen</h2>
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-8 text-center">Häufig gestellte Fragen</h2>
           <Accordion type="single" collapsible className="max-w-3xl mx-auto">
             <AccordionItem value="item-1">
               <AccordionTrigger className="text-lg font-semibold">
@@ -292,14 +292,14 @@ export default function Fassadenreinigung() {
       <section className="py-20 bg-gradient-to-br from-primary/10 to-red-50">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-6">
               Bereit für eine saubere Fassade?
             </h2>
-            <p className="text-xl text-slate-600 mb-8">
+            <p className="text-sm sm:text-base md:text-lg text-slate-600 mb-8">
               Kontaktieren Sie uns für eine kostenlose Besichtigung und ein unverbindliches Angebot.
             </p>
             <Link href="/kontakt">
-              <Button size="lg" className="text-lg px-8">
+              <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
                 Jetzt Kontakt aufnehmen
                 <ArrowRight className="ml-2 w-5 h-5"/>
               </Button>

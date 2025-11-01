@@ -7,11 +7,11 @@ export default function Rechtliches() {
       <Navigation />
       <section className="pt-32 pb-20">
         <div className="container max-w-4xl">
-          <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-foreground mb-8">Rechtliche Hinweise</h1>
+          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-8">Rechtliche Hinweise</h1>
           <div className="glass floating rounded-3xl p-12 space-y-6">
             <div>
-              <h2 className="text-2xl font-bold text-foreground mb-4">Urheberrecht</h2>
-              <p className="text-muted-foreground">
+              <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-4">Urheberrecht</h2>
+              <p className="text-muted-foreground text-xs sm:text-sm md:text-base">
                 Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht.
               </p>
             </div>

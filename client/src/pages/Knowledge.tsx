@@ -19,7 +19,7 @@ export default function Knowledge() {
             <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-6">
               Wissen & <span className="text-accent">Insights</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
               Aktuelle Artikel, Trends und Best Practices aus der Welt der Unternehmensberatung
             </p>
           </div>
@@ -30,8 +30,8 @@ export default function Knowledge() {
                   <BookOpen className="w-4 h-4" />
                   {article.category}
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-3">{article.title}</h3>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <h3 className="text-sm sm:text-base md:text-lg font-bold text-foreground mb-3">{article.title}</h3>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground text-xs sm:text-sm md:text-base">
                   <Clock className="w-4 h-4" />
                   {article.date}
                 </div>

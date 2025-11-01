@@ -33,13 +33,13 @@ export default function Yacht() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
+              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-xs sm:text-sm font-semibold mb-6">
                 Premium Service
               </div>
               <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
                 Yacht Reinigung
               </h1>
-              <p className="text-2xl text-slate-600 leading-relaxed mb-8">
+              <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
                 Spezialisierte Reinigung für Luxus-Yachten mit Marine-Expertise. Von der Hochglanzpolitur bis zur Teakholz-Pflege – wir sorgen für makellose Sauberkeit auf höchstem Niveau.
               </p>
               <div className="flex flex-wrap gap-4">
@@ -71,22 +71,22 @@ export default function Yacht() {
             <Card className="p-6 text-center">
               <Anchor className="w-12 h-12 text-primary mx-auto mb-4"/>
               <div className="font-bold text-lg mb-2">Marine-Expertise</div>
-              <div className="text-slate-600">Spezialisiert auf Yachten</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Spezialisiert auf Yachten</div>
             </Card>
             <Card className="p-6 text-center">
               <Shield className="w-12 h-12 text-primary mx-auto mb-4"/>
               <div className="font-bold text-lg mb-2">Materialschutz</div>
-              <div className="text-slate-600">Schonende Behandlung</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Schonende Behandlung</div>
             </Card>
             <Card className="p-6 text-center">
               <Sparkles className="w-12 h-12 text-primary mx-auto mb-4"/>
               <div className="font-bold text-lg mb-2">Hochglanzpolitur</div>
-              <div className="text-slate-600">Perfekter Glanz</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Perfekter Glanz</div>
             </Card>
             <Card className="p-6 text-center">
               <CheckCircle className="w-12 h-12 text-primary mx-auto mb-4"/>
               <div className="font-bold text-lg mb-2">Komplettservice</div>
-              <div className="text-slate-600">Innen & Außen</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Innen & Außen</div>
             </Card>
           </div>
 
@@ -99,7 +99,7 @@ export default function Yacht() {
             
             <TabsContent value="leistungen" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Umfassende Yacht Reinigung</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Umfassende Yacht Reinigung</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h4 className="font-bold text-lg mb-3 text-primary">Außenreinigung</h4>
@@ -114,7 +114,7 @@ export default function Yacht() {
                       ].map((item, i) => (
                         <li key={i} className="flex items-start gap-2">
                           <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"/>
-                          <span className="text-slate-700">{item}</span>
+                          <span className="text-slate-700 text-xs sm:text-sm md:text-base">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -132,7 +132,7 @@ export default function Yacht() {
                       ].map((item, i) => (
                         <li key={i} className="flex items-start gap-2">
                           <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"/>
-                          <span className="text-slate-700">{item}</span>
+                          <span className="text-slate-700 text-xs sm:text-sm md:text-base">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -143,7 +143,7 @@ export default function Yacht() {
             
             <TabsContent value="materialien" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Spezialisierte Material-Behandlung</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Spezialisierte Material-Behandlung</h3>
                 <div className="space-y-6">
                   {[
                     {
@@ -164,7 +164,7 @@ export default function Yacht() {
                     }
                   ].map((item, i) => (
                     <div key={i}>
-                      <h4 className="text-xl font-bold mb-2 text-primary">{item.title}</h4>
+                      <h4 className="text-sm sm:text-base md:text-lg font-bold mb-2 text-primary">{item.title}</h4>
                       <p className="text-slate-600 leading-relaxed">{item.desc}</p>
                     </div>
                   ))}
@@ -174,14 +174,14 @@ export default function Yacht() {
             
             <TabsContent value="wartung" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Regelmäßiger Wartungsservice</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Regelmäßiger Wartungsservice</h3>
                 <p className="text-lg text-slate-600 mb-6">
                   Halten Sie Ihre Yacht in perfektem Zustand mit unseren maßgeschneiderten Wartungspaketen:
                 </p>
                 <div className="grid md:grid-cols-3 gap-6">
                   <Card className="p-6 bg-slate-50">
-                    <h4 className="text-xl font-bold mb-4">Basic</h4>
-                    <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-2">ab CHF 500</div>
+                    <h4 className="text-sm sm:text-base md:text-lg font-bold mb-4">Basic</h4>
+                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-primary mb-2">ab CHF 500</div>
                     <div className="text-sm text-slate-600 mb-4">pro Monat</div>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start gap-2">
@@ -199,8 +199,8 @@ export default function Yacht() {
                     </ul>
                   </Card>
                   <Card className="p-6 bg-primary/5 border-primary">
-                    <h4 className="text-xl font-bold mb-4">Premium</h4>
-                    <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-2">ab CHF 1.200</div>
+                    <h4 className="text-sm sm:text-base md:text-lg font-bold mb-4">Premium</h4>
+                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-primary mb-2">ab CHF 1.200</div>
                     <div className="text-sm text-slate-600 mb-4">pro Monat</div>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start gap-2">
@@ -222,8 +222,8 @@ export default function Yacht() {
                     </ul>
                   </Card>
                   <Card className="p-6 bg-slate-50">
-                    <h4 className="text-xl font-bold mb-4">VIP</h4>
-                    <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-2">Individuell</div>
+                    <h4 className="text-sm sm:text-base md:text-lg font-bold mb-4">VIP</h4>
+                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-primary mb-2">Individuell</div>
                     <div className="text-sm text-slate-600 mb-4">auf Anfrage</div>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start gap-2">
@@ -249,7 +249,7 @@ export default function Yacht() {
             </TabsContent>
           </Tabs>
 
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-8 text-center">Häufig gestellte Fragen</h2>
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-8 text-center">Häufig gestellte Fragen</h2>
           <Accordion type="single" collapsible className="max-w-3xl mx-auto">
             <AccordionItem value="item-1">
               <AccordionTrigger className="text-lg font-semibold">
@@ -293,14 +293,14 @@ export default function Yacht() {
       <section className="py-20 bg-gradient-to-br from-primary/10 to-red-50">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-6">
               Ihre Yacht verdient das Beste
             </h2>
-            <p className="text-xl text-slate-600 mb-8">
+            <p className="text-sm sm:text-base md:text-lg text-slate-600 mb-8">
               Kontaktieren Sie uns für ein individuelles Angebot. Wir beraten Sie gerne persönlich.
             </p>
             <Link href="/kontakt">
-              <Button size="lg" className="text-lg px-8">
+              <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
                 Jetzt Kontakt aufnehmen
                 <ArrowRight className="ml-2 w-5 h-5"/>
               </Button>

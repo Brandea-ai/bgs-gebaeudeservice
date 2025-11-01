@@ -38,13 +38,13 @@ export default function Baureinigung() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
+              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-xs sm:text-sm font-semibold mb-6">
                 Business Lösung
               </div>
               <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
                 Professionelle Baureinigung
               </h1>
-              <p className="text-2xl text-slate-600 leading-relaxed mb-8">
+              <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
                 Zuverlässige Baureinigung für Neubauten, Umbauten und Renovierungen in Zürich, Zug und Luzern. Von der Grobreinigung bis zur Endreinigung.
               </p>
               <div className="flex flex-wrap gap-4">
@@ -78,22 +78,22 @@ export default function Baureinigung() {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-full mb-4">
                 <Shield className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Zertifizierte Qualität</h3>
-              <p className="text-slate-600">Professionelle Baureinigung nach Schweizer Standards</p>
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">Zertifizierte Qualität</h3>
+              <p className="text-slate-600 text-xs sm:text-sm md:text-base">Professionelle Baureinigung nach Schweizer Standards</p>
             </div>
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-full mb-4">
                 <Clock className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Termingerecht</h3>
-              <p className="text-slate-600">Pünktliche Fertigstellung für Ihre Bauabnahme</p>
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">Termingerecht</h3>
+              <p className="text-slate-600 text-xs sm:text-sm md:text-base">Pünktliche Fertigstellung für Ihre Bauabnahme</p>
             </div>
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-full mb-4">
                 <Award className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">15+ Jahre Erfahrung</h3>
-              <p className="text-slate-600">Expertise in allen Bauphasen</p>
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">15+ Jahre Erfahrung</h3>
+              <p className="text-slate-600 text-xs sm:text-sm md:text-base">Expertise in allen Bauphasen</p>
             </div>
           </div>
         </div>
@@ -110,7 +110,7 @@ export default function Baureinigung() {
             
             <TabsContent value="phasen">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Baureinigung in 3 Phasen</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Baureinigung in 3 Phasen</h3>
                 <div className="space-y-6">
                   {[
                     { title: "1. Grobreinigung", desc: "Entfernung grober Verschmutzungen, Bauschutt, Verpackungsmaterial. Erste Reinigung nach Rohbau." },
@@ -118,8 +118,8 @@ export default function Baureinigung() {
                     { title: "3. Endreinigung", desc: "Finale Reinigung vor Übergabe. Fenster, Böden, Sanitär – alles bezugsfertig." }
                   ].map((item, i) => (
                     <div key={i}>
-                      <h4 className="text-xl font-bold mb-2 text-primary">{item.title}</h4>
-                      <p className="text-slate-600">{item.desc}</p>
+                      <h4 className="text-sm sm:text-base md:text-lg font-bold mb-2 text-primary">{item.title}</h4>
+                      <p className="text-slate-600 text-xs sm:text-sm md:text-base">{item.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -128,7 +128,7 @@ export default function Baureinigung() {
             
             <TabsContent value="leistungen">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Unsere Leistungen</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Unsere Leistungen</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <ul className="space-y-2">
                     {["Baustaub entfernen", "Fenster reinigen", "Böden grundreinigen", "Sanitäranlagen", "Türen & Zargen", "Heizkörper"].map((item, i) => (
@@ -152,7 +152,7 @@ export default function Baureinigung() {
             
             <TabsContent value="entsorgung">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Fachgerechte Entsorgung</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Fachgerechte Entsorgung</h3>
                 <p className="text-slate-600 mb-6">
                   Wir entsorgen Bauabfälle fachgerecht und umweltbewusst:
                 </p>
@@ -181,7 +181,7 @@ export default function Baureinigung() {
               <AccordionTrigger className="text-left font-semibold">
                 Wann sollte die Baureinigung durchgeführt werden?
               </AccordionTrigger>
-              <AccordionContent className="text-slate-600">
+              <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
                 Die Baureinigung erfolgt in mehreren Phasen: Grobreinigung nach dem Rohbau, Zwischenreinigung nach einzelnen Gewerken und die Endreinigung vor der Bauabnahme. Wir empfehlen, uns frühzeitig in die Bauplanung einzubeziehen.
               </AccordionContent>
             </AccordionItem>
@@ -190,7 +190,7 @@ export default function Baureinigung() {
               <AccordionTrigger className="text-left font-semibold">
                 Was ist in der Endreinigung enthalten?
               </AccordionTrigger>
-              <AccordionContent className="text-slate-600">
+              <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
                 Die Endreinigung umfasst die komplette Reinigung aller Räume, Fenster, Böden, Sanitäranlagen, Türen und Zargen. Wir entfernen Baustaub, Zementschleier, Klebstoffreste und Farbspritzer. Das Objekt wird abnahmebereit übergeben.
               </AccordionContent>
             </AccordionItem>
@@ -199,7 +199,7 @@ export default function Baureinigung() {
               <AccordionTrigger className="text-left font-semibold">
                 Wie lange dauert eine Baureinigung?
               </AccordionTrigger>
-              <AccordionContent className="text-slate-600">
+              <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
                 Die Dauer hängt von der Objektgröße und dem Verschmutzungsgrad ab. Eine Wohnung (100m²) dauert ca. 1-2 Tage, größere Objekte entsprechend länger. Wir erstellen einen detaillierten Zeitplan nach Besichtigung.
               </AccordionContent>
             </AccordionItem>
@@ -208,7 +208,7 @@ export default function Baureinigung() {
               <AccordionTrigger className="text-left font-semibold">
                 Entsorgen Sie auch Bauschutt?
               </AccordionTrigger>
-              <AccordionContent className="text-slate-600">
+              <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
                 Ja, wir übernehmen die fachgerechte Entsorgung von Bauschutt, Restmaterialien, Verpackungen und anderen Bauabfällen. Die Entsorgung erfolgt umweltbewusst und nach gesetzlichen Vorgaben.
               </AccordionContent>
             </AccordionItem>
@@ -217,7 +217,7 @@ export default function Baureinigung() {
               <AccordionTrigger className="text-left font-semibold">
                 Arbeiten Sie auch an Wochenenden?
               </AccordionTrigger>
-              <AccordionContent className="text-slate-600">
+              <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
                 Ja, wir bieten flexible Einsatzzeiten an, auch an Wochenenden und Feiertagen, um Ihre Bauzeitpläne einzuhalten. Sprechen Sie uns auf Ihre individuellen Terminwünsche an.
               </AccordionContent>
             </AccordionItem>
@@ -231,7 +231,7 @@ export default function Baureinigung() {
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
             Bereit für Ihre Baureinigung?
           </h2>
-          <p className="text-xl mb-8 text-red-100">
+          <p className="text-sm sm:text-base md:text-lg mb-8 text-red-100">
             Kontaktieren Sie uns für ein unverbindliches Angebot. Unsere Experten beraten Sie gerne zu allen Bauphasen.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

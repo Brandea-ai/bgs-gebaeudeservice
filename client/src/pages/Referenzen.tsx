@@ -64,7 +64,7 @@ export default function Referenzen() {
             <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
               Referenzen & Kundenerfolge
             </h1>
-            <p className="text-2xl text-slate-600 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed">
               Über 500 zufriedene Kunden in Zürich, Zug und Luzern vertrauen auf unsere Expertise. Entdecken Sie, wie wir Unternehmen zu makelloser Sauberkeit verholfen haben.
             </p>
           </div>
@@ -76,22 +76,22 @@ export default function Referenzen() {
           <div className="grid md:grid-cols-3 gap-8 mb-20">
             <Card className="p-8 text-center">
               <Building className="w-16 h-16 text-primary mx-auto mb-4"/>
-              <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-2">500+</div>
-              <div className="text-lg text-slate-600">Zufriedene Kunden</div>
+              <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-2">500+</div>
+              <div className="text-lg text-slate-600 text-xs sm:text-sm md:text-base">Zufriedene Kunden</div>
             </Card>
             <Card className="p-8 text-center">
               <Users className="w-16 h-16 text-primary mx-auto mb-4"/>
-              <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-2">15+</div>
-              <div className="text-lg text-slate-600">Jahre Erfahrung</div>
+              <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-2">15+</div>
+              <div className="text-lg text-slate-600 text-xs sm:text-sm md:text-base">Jahre Erfahrung</div>
             </Card>
             <Card className="p-8 text-center">
               <Award className="w-16 h-16 text-primary mx-auto mb-4"/>
-              <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-2">98%</div>
-              <div className="text-lg text-slate-600">Kundenzufriedenheit</div>
+              <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-2">98%</div>
+              <div className="text-lg text-slate-600 text-xs sm:text-sm md:text-base">Kundenzufriedenheit</div>
             </Card>
           </div>
 
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-12 text-center">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-12 text-center">
             Ausgewählte Projekte
           </h2>
           <div className="grid lg:grid-cols-3 gap-8 mb-20">
@@ -104,20 +104,20 @@ export default function Referenzen() {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="bg-primary text-white px-4 py-1 rounded-full text-sm font-semibold">
+                    <span className="bg-primary text-white px-4 py-1 rounded-full text-xs sm:text-sm font-semibold">
                       {project.category}
                     </span>
                   </div>
                 </div>
                 <div className="p-8">
-                  <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3">{project.title}</h3>
                   <p className="text-slate-600 mb-6">{project.description}</p>
                   <div className="space-y-2">
                     <div className="font-semibold text-sm text-slate-900 mb-2">Ergebnisse:</div>
                     {project.results.map((result, j) => (
                       <div key={j} className="flex items-start gap-2 text-sm">
                         <Star className="w-4 h-4 text-primary mt-0.5 flex-shrink-0"/>
-                        <span className="text-slate-700">{result}</span>
+                        <span className="text-slate-700 text-xs sm:text-sm md:text-base">{result}</span>
                       </div>
                     ))}
                   </div>
@@ -126,7 +126,7 @@ export default function Referenzen() {
             ))}
           </div>
 
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-12 text-center">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-12 text-center">
             Was unsere Kunden sagen
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -143,7 +143,7 @@ export default function Referenzen() {
                 </p>
                 <div>
                   <div className="font-bold text-slate-900">{testimonial.name}</div>
-                  <div className="text-sm text-slate-600">{testimonial.position}</div>
+                  <div className="text-sm text-slate-600 text-xs sm:text-sm md:text-base">{testimonial.position}</div>
                   <div className="text-sm text-primary font-semibold">{testimonial.location}</div>
                 </div>
               </Card>
@@ -155,14 +155,14 @@ export default function Referenzen() {
       <section className="py-20 bg-gradient-to-br from-primary/10 to-red-50">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-6">
               Werden Sie unser nächster Erfolg
             </h2>
-            <p className="text-xl text-slate-600 mb-8">
+            <p className="text-sm sm:text-base md:text-lg text-slate-600 mb-8">
               Lassen Sie uns gemeinsam Ihre Reinigungsziele erreichen. Kontaktieren Sie uns für ein unverbindliches Beratungsgespräch.
             </p>
             <Link href="/kontakt">
-              <Button size="lg" className="text-lg px-8">
+              <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
                 Jetzt Kontakt aufnehmen
                 <ArrowRight className="ml-2 w-5 h-5"/>
               </Button>

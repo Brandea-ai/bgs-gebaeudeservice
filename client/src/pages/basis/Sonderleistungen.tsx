@@ -33,13 +33,13 @@ export default function Sonderleistungen() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
+              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-xs sm:text-sm font-semibold mb-6">
                 Basis Service
               </div>
               <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
                 Professionelle Sonderleistungen
               </h1>
-              <p className="text-2xl text-slate-600 leading-relaxed mb-8">
+              <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
                 Spezielle Reinigungsleistungen für außergewöhnliche Anforderungen in Zürich, Zug und Luzern.
               </p>
               <div className="flex flex-wrap gap-4">
@@ -71,26 +71,26 @@ export default function Sonderleistungen() {
             <Card className="p-6 text-center">
               <Zap className="w-12 h-12 text-primary mx-auto mb-4"/>
               <div className="font-bold text-lg mb-2">Express-Service</div>
-              <div className="text-slate-600">Schnelle Reaktionszeiten</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Schnelle Reaktionszeiten</div>
             </Card>
             <Card className="p-6 text-center">
               <Star className="w-12 h-12 text-primary mx-auto mb-4"/>
               <div className="font-bold text-lg mb-2">Spezialisiert</div>
-              <div className="text-slate-600">Für besondere Anforderungen</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Für besondere Anforderungen</div>
             </Card>
             <Card className="p-6 text-center">
               <Shield className="w-12 h-12 text-primary mx-auto mb-4"/>
               <div className="font-bold text-lg mb-2">Professionell</div>
-              <div className="text-slate-600">Geschulte Spezialisten</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Geschulte Spezialisten</div>
             </Card>
             <Card className="p-6 text-center">
               <Clock className="w-12 h-12 text-primary mx-auto mb-4"/>
               <div className="font-bold text-lg mb-2">24/7 Verfügbar</div>
-              <div className="text-slate-600">Auch an Wochenenden</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Auch an Wochenenden</div>
             </Card>
           </div>
 
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-8 text-center">Häufig gestellte Fragen</h2>
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-8 text-center">Häufig gestellte Fragen</h2>
           <Accordion type="single" collapsible className="max-w-3xl mx-auto">
             <AccordionItem value="item-1">
               <AccordionTrigger className="text-lg font-semibold">
@@ -107,14 +107,14 @@ export default function Sonderleistungen() {
       <section className="py-20 bg-gradient-to-br from-primary/10 to-red-50">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-6">
               Benötigen Sie eine Sonderleistung?
             </h2>
-            <p className="text-xl text-slate-600 mb-8">
+            <p className="text-sm sm:text-base md:text-lg text-slate-600 mb-8">
               Kontaktieren Sie uns für ein kostenloses Angebot.
             </p>
             <Link href="/kontakt">
-              <Button size="lg" className="text-lg px-8">
+              <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
                 Jetzt Kontakt aufnehmen
                 <ArrowRight className="ml-2 w-5 h-5"/>
               </Button>

@@ -39,13 +39,13 @@ export default function Hallenreinigung() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
+              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-xs sm:text-sm font-semibold mb-6">
                 Business Lösung
               </div>
               <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
                 Professionelle Hallenreinigung
               </h1>
-              <p className="text-2xl text-slate-600 leading-relaxed mb-8">
+              <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
                 Effiziente Reinigung großer Hallen und Lagerflächen in Zürich, Zug und Luzern. Mit Industriegeräten für schnelle Ergebnisse und makellose Sauberkeit.
               </p>
               <div className="flex flex-wrap gap-4">
@@ -85,7 +85,7 @@ export default function Hallenreinigung() {
               />
             </div>
             <div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+              <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-6">
                 Spezialisiert auf große Flächen
               </h2>
               <p className="text-lg text-slate-600 mb-6">
@@ -102,7 +102,7 @@ export default function Hallenreinigung() {
                     <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                       <item.icon className="w-5 h-5 text-primary" />
                     </div>
-                    <span className="text-slate-700">{item.text}</span>
+                    <span className="text-slate-700 text-xs sm:text-sm md:text-base">{item.text}</span>
                   </div>
                 ))}
               </div>
@@ -116,7 +116,7 @@ export default function Hallenreinigung() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+              <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-6">
                 Umfassende Reinigungsleistungen
               </h2>
               <p className="text-lg text-slate-600 mb-6">
@@ -135,7 +135,7 @@ export default function Hallenreinigung() {
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"/>
-                    <span className="text-slate-700">{item}</span>
+                    <span className="text-slate-700 text-xs sm:text-sm md:text-base">{item}</span>
                   </div>
                 ))}
               </div>
@@ -155,10 +155,10 @@ export default function Hallenreinigung() {
       <section className="py-20 bg-slate-50">
         <div className="container max-w-4xl">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-4">
               Häufig gestellte Fragen
             </h2>
-            <p className="text-lg text-slate-600">
+            <p className="text-lg text-slate-600 text-xs sm:text-sm md:text-base">
               Alles was Sie über unsere Hallenreinigung wissen müssen
             </p>
           </div>
@@ -168,7 +168,7 @@ export default function Hallenreinigung() {
               <AccordionTrigger className="text-lg font-semibold">
                 Welche Hallengrößen können Sie reinigen?
               </AccordionTrigger>
-              <AccordionContent className="text-slate-600">
+              <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
                 Wir reinigen Hallen jeder Größe - von 500 m² bis zu mehreren 10.000 m². Mit unseren Industriemaschinen sind wir für kleine Lagerhallen ebenso ausgestattet wie für große Logistikzentren. Unsere <Link href="/business/bueroreinigung" className="text-primary hover:underline">Büroreinigung</Link> kann bei Bedarf integriert werden.
               </AccordionContent>
             </AccordionItem>
@@ -177,7 +177,7 @@ export default function Hallenreinigung() {
               <AccordionTrigger className="text-lg font-semibold">
                 Arbeiten Sie auch außerhalb der Betriebszeiten?
               </AccordionTrigger>
-              <AccordionContent className="text-slate-600">
+              <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
                 Ja, wir bieten flexible Reinigungszeiten an. Ob nachts, am Wochenende oder während der Betriebsruhe - wir passen uns Ihren Anforderungen an, damit der Produktionsbetrieb nicht gestört wird.
               </AccordionContent>
             </AccordionItem>
@@ -186,7 +186,7 @@ export default function Hallenreinigung() {
               <AccordionTrigger className="text-lg font-semibold">
                 Welche Reinigungsgeräte verwenden Sie?
               </AccordionTrigger>
-              <AccordionContent className="text-slate-600">
+              <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
                 Wir setzen professionelle Kehrmaschinen, Scheuersaugmaschinen und Hochdruckreiniger ein. Für Hochregale nutzen wir Teleskopleitern und Arbeitsbühnen. Alle Geräte entsprechen den neuesten Sicherheitsstandards.
               </AccordionContent>
             </AccordionItem>
@@ -195,7 +195,7 @@ export default function Hallenreinigung() {
               <AccordionTrigger className="text-lg font-semibold">
                 Bieten Sie auch Außenreinigung an?
               </AccordionTrigger>
-              <AccordionContent className="text-slate-600">
+              <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
                 Ja, unsere <Link href="/business/aussenanlagen" className="text-primary hover:underline">Außenanlagenpflege</Link> umfasst die Reinigung von Parkplätzen, Zufahrten und Außenbereichen. Im Winter bieten wir auch <Link href="/basis/winterdienst" className="text-primary hover:underline">Winterdienst</Link> an.
               </AccordionContent>
             </AccordionItem>
@@ -204,7 +204,7 @@ export default function Hallenreinigung() {
               <AccordionTrigger className="text-lg font-semibold">
                 Wie oft sollte eine Halle gereinigt werden?
               </AccordionTrigger>
-              <AccordionContent className="text-slate-600">
+              <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
                 Die Reinigungsfrequenz hängt von der Nutzung ab. Produktionshallen benötigen oft tägliche Reinigung, während Lagerhallen mit wöchentlicher oder monatlicher Reinigung auskommen. Wir erstellen einen individuellen Reinigungsplan für Ihre Anforderungen.
               </AccordionContent>
             </AccordionItem>
@@ -215,10 +215,10 @@ export default function Hallenreinigung() {
       {/* CTA Section */}
       <section className="py-20 bg-primary text-white">
         <div className="container text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-6">
             Bereit für professionelle Hallenreinigung?
           </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg mb-8 max-w-2xl mx-auto">
             Kontaktieren Sie uns für ein unverbindliches Angebot. Unsere Experten beraten Sie gerne zu allen Reinigungsdienstleistungen in Zürich, Zug und Luzern.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">

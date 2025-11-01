@@ -14,7 +14,7 @@ export default function Method() {
             <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground leading-tight">
               Die <span className="text-accent">Brandea Methode</span>
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
               Unsere einzigartige Methodik kombiniert bewährte Managementprinzipien mit innovativen KI-Lösungen für nachhaltigen Unternehmenserfolg.
             </p>
           </div>
@@ -26,7 +26,7 @@ export default function Method() {
             {["Ganzheitliche Analyse", "Individuelle Strategieentwicklung", "KI-gestützte Implementierung", "Kontinuierliche Optimierung"].map((item, index) => (
               <div key={index} className="glass floating rounded-2xl p-8 flex items-center gap-4">
                 <CheckCircle className="w-8 h-8 text-accent flex-shrink-0" />
-                <h3 className="text-xl font-semibold text-foreground">{item}</h3>
+                <h3 className="text-sm sm:text-base md:text-lg font-semibold text-foreground">{item}</h3>
               </div>
             ))}
           </div>

@@ -33,13 +33,13 @@ export default function Housekeeping() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
+              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-xs sm:text-sm font-semibold mb-6">
                 Premium Service
               </div>
               <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
                 Private Housekeeping
               </h1>
-              <p className="text-2xl text-slate-600 leading-relaxed mb-8">
+              <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
                 Exklusiver Housekeeping-Service für Luxusimmobilien. Diskret, individuell und mit Premium-Produkten – für höchste Ansprüche in Zürich, Zug und Luzern.
               </p>
               <div className="flex flex-wrap gap-4">
@@ -71,22 +71,22 @@ export default function Housekeeping() {
             <Card className="p-6 text-center">
               <Shield className="w-12 h-12 text-primary mx-auto mb-4"/>
               <div className="font-bold text-lg mb-2">Diskret</div>
-              <div className="text-slate-600">Absolute Vertraulichkeit</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Absolute Vertraulichkeit</div>
             </Card>
             <Card className="p-6 text-center">
               <Home className="w-12 h-12 text-primary mx-auto mb-4"/>
               <div className="font-bold text-lg mb-2">Individuell</div>
-              <div className="text-slate-600">Maßgeschneidert</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Maßgeschneidert</div>
             </Card>
             <Card className="p-6 text-center">
               <Sparkles className="w-12 h-12 text-primary mx-auto mb-4"/>
               <div className="font-bold text-lg mb-2">Premium-Produkte</div>
-              <div className="text-slate-600">Nur das Beste</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Nur das Beste</div>
             </Card>
             <Card className="p-6 text-center">
               <Clock className="w-12 h-12 text-primary mx-auto mb-4"/>
               <div className="font-bold text-lg mb-2">Flexibel</div>
-              <div className="text-slate-600">Nach Ihrem Zeitplan</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Nach Ihrem Zeitplan</div>
             </Card>
           </div>
 
@@ -99,7 +99,7 @@ export default function Housekeeping() {
             
             <TabsContent value="leistungen" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Exklusives Private Housekeeping</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Exklusives Private Housekeeping</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h4 className="font-bold text-lg mb-3 text-primary">Tägliche Pflege</h4>
@@ -114,7 +114,7 @@ export default function Housekeeping() {
                       ].map((item, i) => (
                         <li key={i} className="flex items-start gap-2">
                           <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"/>
-                          <span className="text-slate-700">{item}</span>
+                          <span className="text-slate-700 text-xs sm:text-sm md:text-base">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -132,7 +132,7 @@ export default function Housekeeping() {
                       ].map((item, i) => (
                         <li key={i} className="flex items-start gap-2">
                           <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"/>
-                          <span className="text-slate-700">{item}</span>
+                          <span className="text-slate-700 text-xs sm:text-sm md:text-base">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -143,11 +143,11 @@ export default function Housekeeping() {
             
             <TabsContent value="pakete" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Maßgeschneiderte Service-Pakete</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Maßgeschneiderte Service-Pakete</h3>
                 <div className="grid md:grid-cols-3 gap-6">
                   <Card className="p-6 bg-slate-50">
-                    <h4 className="text-xl font-bold mb-4">Essentials</h4>
-                    <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-2">ab CHF 80</div>
+                    <h4 className="text-sm sm:text-base md:text-lg font-bold mb-4">Essentials</h4>
+                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-primary mb-2">ab CHF 80</div>
                     <div className="text-sm text-slate-600 mb-4">pro Stunde</div>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start gap-2">
@@ -165,8 +165,8 @@ export default function Housekeeping() {
                     </ul>
                   </Card>
                   <Card className="p-6 bg-primary/5 border-primary">
-                    <h4 className="text-xl font-bold mb-4">Premium</h4>
-                    <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-2">ab CHF 3.500</div>
+                    <h4 className="text-sm sm:text-base md:text-lg font-bold mb-4">Premium</h4>
+                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-primary mb-2">ab CHF 3.500</div>
                     <div className="text-sm text-slate-600 mb-4">pro Monat</div>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start gap-2">
@@ -188,8 +188,8 @@ export default function Housekeeping() {
                     </ul>
                   </Card>
                   <Card className="p-6 bg-slate-50">
-                    <h4 className="text-xl font-bold mb-4">Concierge</h4>
-                    <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-2">Individuell</div>
+                    <h4 className="text-sm sm:text-base md:text-lg font-bold mb-4">Concierge</h4>
+                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-primary mb-2">Individuell</div>
                     <div className="text-sm text-slate-600 mb-4">auf Anfrage</div>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start gap-2">
@@ -216,7 +216,7 @@ export default function Housekeeping() {
             
             <TabsContent value="team" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Unser erfahrenes Team</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Unser erfahrenes Team</h3>
                 <div className="space-y-6">
                   {[
                     {
@@ -237,7 +237,7 @@ export default function Housekeeping() {
                     }
                   ].map((item, i) => (
                     <div key={i}>
-                      <h4 className="text-xl font-bold mb-2 text-primary">{item.title}</h4>
+                      <h4 className="text-sm sm:text-base md:text-lg font-bold mb-2 text-primary">{item.title}</h4>
                       <p className="text-slate-600 leading-relaxed">{item.desc}</p>
                     </div>
                   ))}
@@ -246,7 +246,7 @@ export default function Housekeeping() {
             </TabsContent>
           </Tabs>
 
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-8 text-center">Häufig gestellte Fragen</h2>
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-8 text-center">Häufig gestellte Fragen</h2>
           <Accordion type="single" collapsible className="max-w-3xl mx-auto">
             <AccordionItem value="item-1">
               <AccordionTrigger className="text-lg font-semibold">
@@ -290,14 +290,14 @@ export default function Housekeeping() {
       <section className="py-20 bg-gradient-to-br from-primary/10 to-red-50">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-6">
               Erleben Sie exklusiven Service
             </h2>
-            <p className="text-xl text-slate-600 mb-8">
+            <p className="text-sm sm:text-base md:text-lg text-slate-600 mb-8">
               Kontaktieren Sie uns für ein persönliches Beratungsgespräch. Diskret und unverbindlich.
             </p>
             <Link href="/kontakt">
-              <Button size="lg" className="text-lg px-8">
+              <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
                 Jetzt Kontakt aufnehmen
                 <ArrowRight className="ml-2 w-5 h-5"/>
               </Button>

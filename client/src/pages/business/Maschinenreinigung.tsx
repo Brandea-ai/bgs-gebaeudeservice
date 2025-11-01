@@ -39,13 +39,13 @@ export default function Maschinenreinigung() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
+              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-xs sm:text-sm font-semibold mb-6">
                 Business Lösung
               </div>
               <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
                 Professionelle Maschinenreinigung
               </h1>
-              <p className="text-2xl text-slate-600 leading-relaxed mb-8">
+              <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
                 Spezialisierte Reinigung von Produktionsmaschinen und Industrieanlagen in Zürich, Zug und Luzern. Für optimale Leistung und längere Lebensdauer Ihrer Maschinen.
               </p>
               <div className="flex flex-wrap gap-4">
@@ -85,7 +85,7 @@ export default function Maschinenreinigung() {
               />
             </div>
             <div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+              <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-6">
                 Spezialisiert auf Industrieanlagen
               </h2>
               <p className="text-lg text-slate-600 mb-6">
@@ -102,7 +102,7 @@ export default function Maschinenreinigung() {
                     <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                       <item.icon className="w-5 h-5 text-primary" />
                     </div>
-                    <span className="text-slate-700">{item.text}</span>
+                    <span className="text-slate-700 text-xs sm:text-sm md:text-base">{item.text}</span>
                   </div>
                 ))}
               </div>
@@ -116,7 +116,7 @@ export default function Maschinenreinigung() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+              <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-6">
                 Umfassende Reinigungsleistungen
               </h2>
               <p className="text-lg text-slate-600 mb-6">
@@ -135,7 +135,7 @@ export default function Maschinenreinigung() {
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"/>
-                    <span className="text-slate-700">{item}</span>
+                    <span className="text-slate-700 text-xs sm:text-sm md:text-base">{item}</span>
                   </div>
                 ))}
               </div>
@@ -155,10 +155,10 @@ export default function Maschinenreinigung() {
       <section className="py-20 bg-slate-50">
         <div className="container max-w-4xl">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-4">
               Häufig gestellte Fragen
             </h2>
-            <p className="text-lg text-slate-600">
+            <p className="text-lg text-slate-600 text-xs sm:text-sm md:text-base">
               Alles was Sie über unsere Maschinenreinigung wissen müssen
             </p>
           </div>
@@ -168,7 +168,7 @@ export default function Maschinenreinigung() {
               <AccordionTrigger className="text-lg font-semibold">
                 Welche Reinigungsmittel verwenden Sie?
               </AccordionTrigger>
-              <AccordionContent className="text-slate-600">
+              <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
                 Wir verwenden spezialisierte, materialschonende Reinigungsmittel, die auf den jeweiligen Maschinentyp abgestimmt sind. Für Lebensmittelmaschinen setzen wir HACCP-konforme Produkte ein, für Pharma-Anlagen GMP-konforme Reiniger. Alle Mittel sind umweltfreundlich und biologisch abbaubar.
               </AccordionContent>
             </AccordionItem>
@@ -177,7 +177,7 @@ export default function Maschinenreinigung() {
               <AccordionTrigger className="text-lg font-semibold">
                 Können Sie während der Produktionspausen reinigen?
               </AccordionTrigger>
-              <AccordionContent className="text-slate-600">
+              <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
                 Ja, wir passen uns flexibel Ihren Produktionszeiten an. Ob während Schichtwechseln, nachts oder am Wochenende - wir reinigen dann, wenn es für Ihren Betrieb am besten passt. Unsere <Link href="/business/facility-management" className="text-primary hover:underline">Facility Management</Link> Services koordinieren alle Abläufe.
               </AccordionContent>
             </AccordionItem>
@@ -186,7 +186,7 @@ export default function Maschinenreinigung() {
               <AccordionTrigger className="text-lg font-semibold">
                 Wie oft sollten Maschinen gereinigt werden?
               </AccordionTrigger>
-              <AccordionContent className="text-slate-600">
+              <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
                 Die Reinigungsfrequenz hängt von der Nutzung und dem Verschmutzungsgrad ab. Lebensmittelmaschinen benötigen oft tägliche Reinigung, während andere Produktionsanlagen mit wöchentlicher oder monatlicher Reinigung auskommen. Wir erstellen einen individuellen Wartungsplan.
               </AccordionContent>
             </AccordionItem>
@@ -195,7 +195,7 @@ export default function Maschinenreinigung() {
               <AccordionTrigger className="text-lg font-semibold">
                 Bieten Sie auch Grundreinigung an?
               </AccordionTrigger>
-              <AccordionContent className="text-slate-600">
+              <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
                 Ja, wir bieten sowohl Unterhaltsreinigung als auch intensive Grundreinigung an. Bei der Grundreinigung werden hartnäckige Verschmutzungen, Öl- und Fettrückstände vollständig entfernt. Unsere <Link href="/business/baureinigung" className="text-primary hover:underline">Baureinigung</Link> umfasst auch Endreinigung nach Umbauten.
               </AccordionContent>
             </AccordionItem>
@@ -204,7 +204,7 @@ export default function Maschinenreinigung() {
               <AccordionTrigger className="text-lg font-semibold">
                 Sind Ihre Mitarbeiter geschult?
               </AccordionTrigger>
-              <AccordionContent className="text-slate-600">
+              <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
                 Alle unsere Mitarbeiter sind speziell für Maschinenreinigung geschult und verfügen über Kenntnisse in Arbeitssicherheit und Maschinentechnik. Sie sind mit den spezifischen Anforderungen verschiedener Branchen vertraut und arbeiten nach höchsten Qualitätsstandards.
               </AccordionContent>
             </AccordionItem>
@@ -215,10 +215,10 @@ export default function Maschinenreinigung() {
       {/* CTA Section */}
       <section className="py-20 bg-primary text-white">
         <div className="container text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-6">
             Bereit für professionelle Maschinenreinigung?
           </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg mb-8 max-w-2xl mx-auto">
             Kontaktieren Sie uns für ein unverbindliches Angebot. Unsere Experten beraten Sie gerne zu allen Reinigungsdienstleistungen in Zürich, Zug und Luzern.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">

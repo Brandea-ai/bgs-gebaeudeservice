@@ -10,13 +10,13 @@ export default function Datenschutz() {
       
       <section className="pt-32 pb-20">
         <div className="container max-w-4xl">
-          <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-6">Datenschutzerklärung</h1>
-          <p className="text-xl text-slate-600 mb-12">
+          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">Datenschutzerklärung</h1>
+          <p className="text-sm sm:text-base md:text-lg text-slate-600 mb-12">
             Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Diese Datenschutzerklärung informiert Sie über die Verarbeitung Ihrer personenbezogenen Daten auf unserer Website.
           </p>
           
           <Card className="p-8 mb-8">
-            <h2 className="text-2xl font-bold mb-4">Verantwortliche Stelle</h2>
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-4">Verantwortliche Stelle</h2>
             <div className="text-slate-700 leading-relaxed">
               <p className="mb-2">Verantwortlich für die Datenverarbeitung auf dieser Website ist:</p>
               <p className="font-semibold mt-4">Swiss Reinigungsfirma</p>
@@ -28,7 +28,7 @@ export default function Datenschutz() {
 
           <Accordion type="single" collapsible className="mb-8">
             <AccordionItem value="item-1">
-              <AccordionTrigger className="text-xl font-semibold">
+              <AccordionTrigger className="text-sm sm:text-base md:text-lg font-semibold">
                 Allgemeine Hinweise
               </AccordionTrigger>
               <AccordionContent className="text-lg leading-relaxed text-slate-700 pt-4">
@@ -42,7 +42,7 @@ export default function Datenschutz() {
             </AccordionItem>
 
             <AccordionItem value="item-2">
-              <AccordionTrigger className="text-xl font-semibold">
+              <AccordionTrigger className="text-sm sm:text-base md:text-lg font-semibold">
                 Datenerfassung auf unserer Website
               </AccordionTrigger>
               <AccordionContent className="text-lg leading-relaxed text-slate-700 pt-4">
@@ -67,7 +67,7 @@ export default function Datenschutz() {
             </AccordionItem>
 
             <AccordionItem value="item-3">
-              <AccordionTrigger className="text-xl font-semibold">
+              <AccordionTrigger className="text-sm sm:text-base md:text-lg font-semibold">
                 Server-Log-Dateien
               </AccordionTrigger>
               <AccordionContent className="text-lg leading-relaxed text-slate-700 pt-4">
@@ -89,7 +89,7 @@ export default function Datenschutz() {
             </AccordionItem>
 
             <AccordionItem value="item-4">
-              <AccordionTrigger className="text-xl font-semibold">
+              <AccordionTrigger className="text-sm sm:text-base md:text-lg font-semibold">
                 Kontaktformular
               </AccordionTrigger>
               <AccordionContent className="text-lg leading-relaxed text-slate-700 pt-4">
@@ -103,7 +103,7 @@ export default function Datenschutz() {
             </AccordionItem>
 
             <AccordionItem value="item-5">
-              <AccordionTrigger className="text-xl font-semibold">
+              <AccordionTrigger className="text-sm sm:text-base md:text-lg font-semibold">
                 Ihre Rechte
               </AccordionTrigger>
               <AccordionContent className="text-lg leading-relaxed text-slate-700 pt-4">
@@ -124,7 +124,7 @@ export default function Datenschutz() {
             </AccordionItem>
 
             <AccordionItem value="item-6">
-              <AccordionTrigger className="text-xl font-semibold">
+              <AccordionTrigger className="text-sm sm:text-base md:text-lg font-semibold">
                 Cookies
               </AccordionTrigger>
               <AccordionContent className="text-lg leading-relaxed text-slate-700 pt-4">
@@ -141,7 +141,7 @@ export default function Datenschutz() {
             </AccordionItem>
 
             <AccordionItem value="item-7">
-              <AccordionTrigger className="text-xl font-semibold">
+              <AccordionTrigger className="text-sm sm:text-base md:text-lg font-semibold">
                 Datensicherheit
               </AccordionTrigger>
               <AccordionContent className="text-lg leading-relaxed text-slate-700 pt-4">
@@ -156,7 +156,7 @@ export default function Datenschutz() {
           </Accordion>
 
           <Card className="p-8 bg-slate-50">
-            <h2 className="text-2xl font-bold mb-4">Kontakt bei Datenschutzfragen</h2>
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-4">Kontakt bei Datenschutzfragen</h2>
             <p className="text-slate-700 leading-relaxed">
               Bei Fragen zur Erhebung, Verarbeitung oder Nutzung Ihrer personenbezogenen Daten, bei Auskünften, Berichtigung, Sperrung oder Löschung von Daten sowie Widerruf erteilter Einwilligungen wenden Sie sich bitte an:
             </p>

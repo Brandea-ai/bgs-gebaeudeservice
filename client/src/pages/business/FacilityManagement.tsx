@@ -38,13 +38,13 @@ export default function FacilityManagement() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
+              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-xs sm:text-sm font-semibold mb-6">
                 Business Lösung
               </div>
               <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
                 Ganzheitliches Facility Management
               </h1>
-              <p className="text-2xl text-slate-600 leading-relaxed mb-8">
+              <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
                 Umfassende Gebäudedienstleistungen aus einer Hand in Zürich, Zug und Luzern. Von Reinigung über Hausmeister bis Winterdienst.
               </p>
               <div className="flex flex-wrap gap-4">
@@ -75,22 +75,22 @@ export default function FacilityManagement() {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-full mb-4">
                 <Shield className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Alles aus einer Hand</h3>
-              <p className="text-slate-600">Umfassende Gebäudedienstleistungen koordiniert</p>
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">Alles aus einer Hand</h3>
+              <p className="text-slate-600 text-xs sm:text-sm md:text-base">Umfassende Gebäudedienstleistungen koordiniert</p>
             </div>
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-full mb-4">
                 <Clock className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">24/7 Verfügbar</h3>
-              <p className="text-slate-600">Notfall-Hotline für dringende Anliegen</p>
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">24/7 Verfügbar</h3>
+              <p className="text-slate-600 text-xs sm:text-sm md:text-base">Notfall-Hotline für dringende Anliegen</p>
             </div>
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-full mb-4">
                 <Award className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Zertifiziert</h3>
-              <p className="text-slate-600">Qualitätsmanagement nach ISO-Standards</p>
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">Zertifiziert</h3>
+              <p className="text-slate-600 text-xs sm:text-sm md:text-base">Qualitätsmanagement nach ISO-Standards</p>
             </div>
           </div>
         </div>
@@ -107,7 +107,7 @@ export default function FacilityManagement() {
             
             <TabsContent value="leistungen">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Alles aus einer Hand</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Alles aus einer Hand</h3>
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
                     <h4 className="font-bold text-lg mb-3 text-primary">Reinigungsdienstleistungen</h4>
@@ -137,7 +137,7 @@ export default function FacilityManagement() {
             
             <TabsContent value="vorteile">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Ihre Vorteile</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Ihre Vorteile</h3>
                 <div className="space-y-6">
                   {[
                     { title: "Ein Ansprechpartner", desc: "Für alle Gebäudedienstleistungen haben Sie nur einen Ansprechpartner. Das spart Zeit und Koordinationsaufwand." },
@@ -146,8 +146,8 @@ export default function FacilityManagement() {
                     { title: "Flexibilität", desc: "Wir passen unsere Leistungen flexibel an Ihre sich ändernden Bedürfnisse an." }
                   ].map((item, i) => (
                     <div key={i}>
-                      <h4 className="text-xl font-bold mb-2 text-primary">{item.title}</h4>
-                      <p className="text-slate-600">{item.desc}</p>
+                      <h4 className="text-sm sm:text-base md:text-lg font-bold mb-2 text-primary">{item.title}</h4>
+                      <p className="text-slate-600 text-xs sm:text-sm md:text-base">{item.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -156,7 +156,7 @@ export default function FacilityManagement() {
             
             <TabsContent value="branchen">
               <Card className="p-8">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Branchenlösungen</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Branchenlösungen</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   {[
                     { title: "Bürogebäude", desc: "Komplettbetreuung von Büroimmobilien inkl. Empfangsservice" },
@@ -168,7 +168,7 @@ export default function FacilityManagement() {
                   ].map((item, i) => (
                     <div key={i} className="p-4 bg-slate-50 rounded-lg">
                       <h4 className="font-bold mb-2">{item.title}</h4>
-                      <p className="text-sm text-slate-600">{item.desc}</p>
+                      <p className="text-sm text-slate-600 text-xs sm:text-sm md:text-base">{item.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -189,7 +189,7 @@ export default function FacilityManagement() {
               <AccordionTrigger className="text-left font-semibold">
                 Was umfasst Facility Management?
               </AccordionTrigger>
-              <AccordionContent className="text-slate-600">
+              <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
                 Facility Management umfasst alle Dienstleistungen rund um Ihr Gebäude: Reinigung, Hausmeisterdienste, Winterdienst, technische Wartung, Grünflächenpflege und vieles mehr. Wir koordinieren alle Leistungen zentral.
               </AccordionContent>
             </AccordionItem>
@@ -198,7 +198,7 @@ export default function FacilityManagement() {
               <AccordionTrigger className="text-left font-semibold">
                 Welche Vorteile bietet ein FM-Vertrag?
               </AccordionTrigger>
-              <AccordionContent className="text-slate-600">
+              <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
                 Mit einem Facility Management Vertrag haben Sie einen zentralen Ansprechpartner für alle Gebäudedienstleistungen. Das spart Zeit, Kosten und Koordinationsaufwand. Sie erhalten regelmäßige Berichte und transparente Abrechnungen.
               </AccordionContent>
             </AccordionItem>
@@ -207,7 +207,7 @@ export default function FacilityManagement() {
               <AccordionTrigger className="text-left font-semibold">
                 Sind Sie auch im Notfall erreichbar?
               </AccordionTrigger>
-              <AccordionContent className="text-slate-600">
+              <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
                 Ja, unsere Notfall-Hotline ist 24/7 erreichbar. Bei dringenden Problemen wie Wasserschäden, Heizungsausfällen oder Sicherheitsfragen sind wir innerhalb kürzester Zeit vor Ort.
               </AccordionContent>
             </AccordionItem>
@@ -216,7 +216,7 @@ export default function FacilityManagement() {
               <AccordionTrigger className="text-left font-semibold">
                 Können Sie auch einzelne Leistungen übernehmen?
               </AccordionTrigger>
-              <AccordionContent className="text-slate-600">
+              <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
                 Ja, Sie können sowohl ein Komplettpaket als auch einzelne Dienstleistungen buchen. Wir erstellen ein maßgeschneidertes Angebot nach Ihrem Bedarf.
               </AccordionContent>
             </AccordionItem>
@@ -225,7 +225,7 @@ export default function FacilityManagement() {
               <AccordionTrigger className="text-left font-semibold">
                 Wie wird die Qualität sichergestellt?
               </AccordionTrigger>
-              <AccordionContent className="text-slate-600">
+              <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
                 Wir arbeiten nach ISO-zertifizierten Qualitätsstandards, führen regelmäßige Kontrollen durch und dokumentieren alle Leistungen digital. Sie erhalten transparente Berichte und können jederzeit Feedback geben.
               </AccordionContent>
             </AccordionItem>
@@ -239,7 +239,7 @@ export default function FacilityManagement() {
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
             Bereit für professionelles Facility Management?
           </h2>
-          <p className="text-xl mb-8 text-red-100">
+          <p className="text-sm sm:text-base md:text-lg mb-8 text-red-100">
             Kontaktieren Sie uns für ein unverbindliches Angebot. Wir beraten Sie gerne zu allen FM-Leistungen.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

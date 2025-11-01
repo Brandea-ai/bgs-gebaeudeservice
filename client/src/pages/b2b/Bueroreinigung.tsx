@@ -8,10 +8,10 @@ export default function Bueroreinigung() {
       <section className="relative bg-gradient-to-r from-red-600 to-red-700 text-white py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl">
-            <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-6">
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
               Professionelle Büroreinigung in Zürich, Zug und Luzern
             </h1>
-            <p className="text-xl text-red-50 mb-8">
+            <p className="text-sm sm:text-base md:text-lg text-red-50 mb-8">
               Erstklassige Reinigungsdienstleistungen für Büros und Geschäftsräume. Unsere erfahrenen Fachkräfte sorgen für ein sauberes, hygienisches und produktives Arbeitsumfeld mit Schweizer Präzision.
             </p>
             <div className="flex flex-wrap gap-4">
@@ -36,21 +36,21 @@ export default function Bueroreinigung() {
               <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Building2 className="w-8 h-8 text-red-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Professionelle Reinigung</h3>
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">Professionelle Reinigung</h3>
               <p className="text-gray-600">Zertifizierte Fachkräfte mit langjähriger Erfahrung</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Clock className="w-8 h-8 text-red-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Flexible Zeiten</h3>
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">Flexible Zeiten</h3>
               <p className="text-gray-600">Reinigung außerhalb der Geschäftszeiten möglich</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Shield className="w-8 h-8 text-red-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Höchste Standards</h3>
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">Höchste Standards</h3>
               <p className="text-gray-600">ISO-zertifizierte Qualitätssicherung</p>
             </div>
           </div>
@@ -62,7 +62,7 @@ export default function Bueroreinigung() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Umfassende Büroreinigung für produktive Arbeitsumgebungen</h2>
+              <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Umfassende Büroreinigung für produktive Arbeitsumgebungen</h2>
               <p className="text-gray-600 mb-6">
                 Ein sauberes Büro ist die Grundlage für produktives Arbeiten und ein professionelles Erscheinungsbild. Swiss Reinigungsfirma bietet maßgeschneiderte Reinigungslösungen für Büros jeder Größe in Zürich, Zug und Luzern.
               </p>
@@ -89,7 +89,7 @@ export default function Bueroreinigung() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-12 text-center">Unsere Büroreinigungsleistungen</h2>
+            <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-12 text-center">Unsere Büroreinigungsleistungen</h2>
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 'Tägliche Unterhaltsreinigung',
@@ -123,7 +123,7 @@ export default function Bueroreinigung() {
               />
             </div>
             <div className="order-1 md:order-2">
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Maßgeschneiderte Reinigungslösungen für Ihr Unternehmen</h2>
+              <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Maßgeschneiderte Reinigungslösungen für Ihr Unternehmen</h2>
               <p className="text-gray-600 mb-6">
                 Jedes Büro hat individuelle Anforderungen. Wir entwickeln gemeinsam mit Ihnen einen maßgeschneiderten Reinigungsplan, der perfekt auf Ihre Bedürfnisse und Ihr Budget abgestimmt ist.
               </p>
@@ -147,7 +147,7 @@ export default function Bueroreinigung() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-12 text-center">Häufig gestellte Fragen zur Büroreinigung</h2>
+            <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-12 text-center">Häufig gestellte Fragen zur Büroreinigung</h2>
             <div className="space-y-4">
               {[
                 {
@@ -187,8 +187,8 @@ export default function Bueroreinigung() {
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-red-600 to-red-700 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Bereit für professionelle Büroreinigung?</h2>
-          <p className="text-xl text-red-50 mb-8 max-w-2xl mx-auto">
+          <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Bereit für professionelle Büroreinigung?</h2>
+          <p className="text-sm sm:text-base md:text-lg text-red-50 mb-8 max-w-2xl mx-auto">
             Kontaktieren Sie uns für ein kostenloses Beratungsgespräch und unverbindliches Angebot. Unsere Experten beraten Sie gerne.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
