@@ -136,14 +136,14 @@ export default function SwissFooter() {
                   >
                     <option value="">Bitte wählen...</option>
                     
-                    <optgroup label="🌟 Premium Services">
+                    <optgroup label="Premium Services">
                       <option value="Privatjet Reinigung">Privatjet Reinigung</option>
                       <option value="Yacht Reinigung">Yacht Reinigung</option>
                       <option value="Private Housekeeping">Private Housekeeping</option>
                       <option value="Luxusimmobilien">Luxusimmobilien</option>
                     </optgroup>
                     
-                    <optgroup label="🏢 B2B Lösungen">
+                    <optgroup label="B2B Lösungen">
                       <option value="Büroreinigung">Büroreinigung</option>
                       <option value="Industriereinigung">Industriereinigung</option>
                       <option value="Fassadenreinigung">Fassadenreinigung</option>
@@ -155,7 +155,7 @@ export default function SwissFooter() {
                       <option value="Facility Management">Facility Management</option>
                     </optgroup>
                     
-                    <optgroup label="💼 Business Services">
+                    <optgroup label="Business Services">
                       <option value="Business Büroreinigung">Business Büroreinigung</option>
                       <option value="Business Industriereinigung">Business Industriereinigung</option>
                       <option value="Business Fassadenreinigung">Business Fassadenreinigung</option>
@@ -167,7 +167,7 @@ export default function SwissFooter() {
                       <option value="Business Facility Management">Business Facility Management</option>
                     </optgroup>
                     
-                    <optgroup label="🏠 Basis Services">
+                    <optgroup label="Basis Services">
                       <option value="Unterhaltsreinigung">Unterhaltsreinigung</option>
                       <option value="Hausmeisterservice">Hausmeisterservice</option>
                       <option value="Winterdienst">Winterdienst</option>
@@ -175,7 +175,7 @@ export default function SwissFooter() {
                       <option value="Sonderleistungen">Sonderleistungen</option>
                     </optgroup>
                     
-                    <optgroup label="📋 Sonstiges">
+                    <optgroup label="Sonstiges">
                       <option value="Beratung">Beratung</option>
                       <option value="Andere">Andere</option>
                     </optgroup>
