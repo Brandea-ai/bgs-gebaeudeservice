@@ -1,5 +1,7 @@
 import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
+import SEO from "@/components/SEO";
+import { localBusinessSchema } from "@/utils/schema";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -8,8 +10,24 @@ import { Link } from "wouter";
 import { MapPin, Phone, Mail, Clock, Check, ArrowRight, Building2, Sparkles } from "lucide-react";
 
 export default function Zuerich() {
+  const locationData = {
+    name: "Swiss Reinigungsfirma Zürich",
+    address: "Bahnhofstrasse 1",
+    postalCode: "8001",
+    city: "Zürich",
+    lat: 47.3769,
+    lng: 8.5417
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Reinigungsfirma Zürich - Professionelle Gebäudereinigung"
+        description="Swiss Reinigungsfirma in Zürich - Ihre erste Wahl für professionelle Gebäudereinigung, Büroreinigung und Facility Management in Zürich."
+        keywords="Reinigungsfirma Zürich, Gebäudereinigung Zürich, Büroreinigung Zürich, Facility Management Zürich"
+        url="/standorte/zuerich"
+        schema={localBusinessSchema(locationData)}
+      />
       <SwissNavigation />
       
       <section className="relative pt-32 pb-20">

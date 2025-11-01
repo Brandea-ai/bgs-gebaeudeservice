@@ -1,5 +1,7 @@
 import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
+import SEO from "@/components/SEO";
+import { serviceSchema } from "@/utils/schema";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -13,8 +15,22 @@ import {
 } from "@/components/ui/accordion";
 
 export default function Aussenanlagen() {
+  const serviceData = {
+    name: "Außenanlage & Grünflächenpflege",
+    description: "Professionelle Pflege von Außenanlagen. Grünflächenpflege, Winterdienst und Außenreinigung.",
+    url: "/business/aussenanlagen",
+    category: "Outdoor Facility Management"
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Außenanlage Zürich, Zug & Luzern - Swiss Reinigungsfirma"
+        description="Professionelle Pflege von Außenanlagen in der Schweiz. Grünflächenpflege, Winterdienst und Außenreinigung."
+        keywords="Außenanlagen Pflege, Grünflächenpflege Schweiz, Außenreinigung, Facility Management Außen"
+        url="/business/aussenanlagen"
+        schema={serviceSchema(serviceData)}
+      />
       <SwissNavigation />
       
       <section className="pt-32 pb-20 relative">

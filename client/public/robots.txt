@@ -1,0 +1,14 @@
+# robots.txt for Swiss Reinigungsfirma
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://bgs-gebaeudeservice.vercel.app/sitemap.xml
+
+# Crawl-delay (optional, in seconds)
+Crawl-delay: 1
+
+# Disallow specific paths (if needed)
+# Disallow: /admin/
+# Disallow: /private/

@@ -1,5 +1,7 @@
 import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
+import SEO from "@/components/SEO";
+import { localBusinessSchema } from "@/utils/schema";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -8,8 +10,24 @@ import { Link } from "wouter";
 import { MapPin, Phone, Mail, Clock, Check, ArrowRight, Home } from "lucide-react";
 
 export default function Luzern() {
+  const locationData = {
+    name: "Swiss Reinigungsfirma Luzern",
+    address: "Pilatusstrasse 12",
+    postalCode: "6003",
+    city: "Luzern",
+    lat: 47.0502,
+    lng: 8.3093
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Reinigungsfirma Luzern - Professionelle Gebäudereinigung"
+        description="Swiss Reinigungsfirma in Luzern - Zuverlässige Reinigungsfirma in der Zentralschweiz. Spezialisiert auf Hotellerie, Gastronomie und Gewerbe."
+        keywords="Reinigungsfirma Luzern, Gebäudereinigung Luzern, Büroreinigung Luzern, Facility Management Luzern"
+        url="/standorte/luzern"
+        schema={localBusinessSchema(locationData)}
+      />
       <SwissNavigation />
       
       <section className="relative pt-32 pb-20">
@@ -81,7 +99,7 @@ export default function Luzern() {
             <TabsList className="grid w-full grid-cols-3 max-w-2xl mx-auto">
               <TabsTrigger value="hotel">Hotel & Gastro</TabsTrigger>
               <TabsTrigger value="business">Business</TabsTrigger>
-              <TabsTrigger value="privat">Privat</TabsTrigger>
+              <TabsTrigger value="premium">Premium</TabsTrigger>
             </TabsList>
             <TabsContent value="hotel" className="mt-12">
               <div className="grid md:grid-cols-3 gap-6">
@@ -114,13 +132,13 @@ export default function Luzern() {
                 ))}
               </div>
             </TabsContent>
-            <TabsContent value="privat" className="mt-12">
+            <TabsContent value="premium" className="mt-12">
               <div className="grid md:grid-cols-2 gap-6">
                 {[
-                  { title: "Private Housekeeping", desc: "Individueller Service für Privathaushalte" },
-                  { title: "Ferienhaus-Reinigung", desc: "Reinigung von Ferienwohnungen am Vierwaldstättersee" },
-                  { title: "Umzugsreinigung", desc: "End- und Einzugsreinigung" },
-                  { title: "Grundreinigung", desc: "Intensive Tiefenreinigung" }
+                  { title: "Private Housekeeping", desc: "Exklusiver Service für Premium-Kunden" },
+                  { title: "Luxusimmobilien", desc: "Premium-Reinigung für Villen am Vierwaldstättersee" },
+                  { title: "Yacht-Reinigung", desc: "Spezialisierte Reinigung für Yachten" },
+                  { title: "Privatjet-Service", desc: "Exklusive Reinigung für Privatjets" }
                 ].map((service, i) => (
                   <Card key={i} className="p-8 hover:shadow-xl transition-all">
                     <h3 className="text-2xl font-bold mb-3">{service.title}</h3>

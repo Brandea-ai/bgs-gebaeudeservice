@@ -5,6 +5,8 @@ import { Card } from "@/components/ui/card";
 import { Check, ArrowRight, Star, Shield, Clock, Users, Sparkles, Award } from "lucide-react";
 import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
+import SEO from "@/components/SEO";
+import { organizationSchema } from "@/utils/schema";
 
 export default function SwissHome() {
   const [scrollY, setScrollY] = useState(0);
@@ -17,6 +19,13 @@ export default function SwissHome() {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Professionelle Gebäudereinigung in Zürich, Zug & Luzern"
+        description="Swiss Reinigungsfirma - Professionelle Reinigungsfirma in der Schweiz für Unternehmen und Premium-Kunden. Gebäudereinigung, Büroreinigung und exklusive Premium Services."
+        keywords="Reinigungsfirma Schweiz, Gebäudereinigung Zürich, Büroreinigung Zug, Facility Management Luzern, Professionelle Reinigung"
+        url="/"
+        schema={organizationSchema}
+      />
       <SwissNavigation />
 
       {/* Hero Section with Parallax */}
@@ -30,7 +39,7 @@ export default function SwissHome() {
             backgroundPosition: "center",
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
         </div>
 
         <div className="container relative z-10 py-24 md:py-32">
@@ -41,8 +50,8 @@ export default function SwissHome() {
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
               Erstklassige <span className="text-primary">Gebäudereinigung</span> für Zürich, Zug und Luzern
             </h1>
-            <p className="text-lg md:text-xl lg:text-2xl text-white/90 mb-8 leading-relaxed max-w-2xl">
-              Professionelle Reinigungsdienste für Unternehmen und Privatkunden mit Schweizer Präzision.
+            <p className="text-lg md:text-xl text-white/95 mb-8 leading-relaxed max-w-2xl">
+              Professionelle Reinigungsdienste für Unternehmen und Premium-Kunden mit Schweizer Präzision.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link href="/kontakt" className="w-full sm:w-auto">

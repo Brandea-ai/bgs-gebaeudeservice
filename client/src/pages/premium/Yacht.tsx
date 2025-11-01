@@ -1,5 +1,7 @@
 import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
+import SEO from "@/components/SEO";
+import { serviceSchema } from "@/utils/schema";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -8,8 +10,22 @@ import { Link } from "wouter";
 import { CheckCircle, Anchor, Shield, Sparkles, ArrowRight } from "lucide-react";
 
 export default function Yacht() {
+  const serviceData = {
+    name: "Yacht-Reinigung",
+    description: "Spezialisierte Reinigung für Luxus-Yachten mit Marine-Expertise. Von der Hochglanzpolitur bis zur Teakholz-Pflege.",
+    url: "/premium/yacht",
+    category: "Marine Cleaning"
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Yacht-Reinigung - Professioneller Marine Service"
+        description="Spezialisierte Yacht-Reinigung in der Schweiz. Marine-Expertise, Hochglanzpolitur und Teakholz-Pflege für Luxus-Yachten."
+        keywords="Yacht Reinigung, Boot Reinigung Schweiz, Marine Cleaning, Luxus Yacht Service"
+        url="/premium/yacht"
+        schema={serviceSchema(serviceData)}
+      />
       <SwissNavigation />
       
       <section className="pt-32 pb-20 relative">

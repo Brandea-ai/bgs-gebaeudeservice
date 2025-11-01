@@ -1,5 +1,7 @@
 import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
+import SEO from "@/components/SEO";
+import { serviceSchema } from "@/utils/schema";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -8,8 +10,22 @@ import { Link } from "wouter";
 import { CheckCircle, Building, Clock, Shield, Sparkles, ArrowRight } from "lucide-react";
 
 export default function Bueroreinigung() {
+  const serviceData = {
+    name: "Professionelle Büroreinigung",
+    description: "Zuverlässige Büroreinigung für Unternehmen in Zürich, Zug und Luzern. Flexibel, effizient und auf Ihre Bedürfnisse zugeschnitten.",
+    url: "/business/bueroreinigung",
+    category: "Commercial Cleaning"
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Büroreinigung Zürich, Zug & Luzern - Swiss Reinigungsfirma"
+        description="Professionelle Büroreinigung für Unternehmen in der Schweiz. Zuverlässig, flexibel und auf höchstem Qualitätsniveau."
+        keywords="Büroreinigung, Büroreinigung Zürich, Gebäudereinigung Büro, Reinigung Geschäftsräume"
+        url="/business/bueroreinigung"
+        schema={serviceSchema(serviceData)}
+      />
       <SwissNavigation />
       
       <section className="pt-32 pb-20 relative">

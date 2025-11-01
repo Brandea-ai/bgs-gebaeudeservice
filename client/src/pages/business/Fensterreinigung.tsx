@@ -1,5 +1,7 @@
 import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
+import SEO from "@/components/SEO";
+import { serviceSchema } from "@/utils/schema";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -8,8 +10,22 @@ import { Link } from "wouter";
 import { CheckCircle, Eye, Droplets, Shield, Sparkles, ArrowRight, Clock, Award } from "lucide-react";
 
 export default function Fensterreinigung() {
+  const serviceData = {
+    name: "Professionelle Fensterreinigung",
+    description: "Streifenfreie Fensterreinigung für Gewerbe und Industrie. Von Bürogebäuden bis zu Produktionshallen.",
+    url: "/business/fensterreinigung",
+    category: "Window Cleaning"
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Fensterreinigung Zürich, Zug & Luzern - Swiss Reinigungsfirma"
+        description="Professionelle Fensterreinigung in der Schweiz. Streifenfrei, sicher und zuverlässig für Gewerbe und Industrie."
+        keywords="Fensterreinigung, Fenster putzen Schweiz, Glasreinigung, Fensterreinigung Gewerbe"
+        url="/business/fensterreinigung"
+        schema={serviceSchema(serviceData)}
+      />
       <SwissNavigation />
       
       <section className="pt-32 pb-20 relative">

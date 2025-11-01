@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link } from "wouter";
 import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
+import SEO from "@/components/SEO";
+import { serviceSchema } from "@/utils/schema";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -13,8 +15,22 @@ import {
 import { CheckCircle, Warehouse, ArrowRight, Shield, Clock, Award } from "lucide-react";
 
 export default function Hallenreinigung() {
+  const serviceData = {
+    name: "Professionelle Hallenreinigung",
+    description: "Spezialisierte Hallenreinigung für Industrie, Logistik und Lager. Effizient und gründlich.",
+    url: "/business/hallenreinigung",
+    category: "Hall Cleaning"
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Hallenreinigung Zürich, Zug & Luzern - Swiss Reinigungsfirma"
+        description="Spezialisierte Hallenreinigung in der Schweiz für Industrie, Logistik und Lager. Effizient und gründlich."
+        keywords="Hallenreinigung, Industriehallen Reinigung, Lager Reinigung Schweiz, Logistikhallen Reinigung"
+        url="/business/hallenreinigung"
+        schema={serviceSchema(serviceData)}
+      />
       <SwissNavigation />
       
       {/* Hero Section */}

@@ -1,5 +1,7 @@
 import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
+import SEO from "@/components/SEO";
+import { serviceSchema } from "@/utils/schema";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -8,8 +10,22 @@ import { Link } from "wouter";
 import { CheckCircle, Building2, Shield, Sparkles, Award, ArrowRight } from "lucide-react";
 
 export default function Luxusimmobilien() {
+  const serviceData = {
+    name: "Luxusimmobilien-Reinigung",
+    description: "Maßgeschneiderte Reinigung für Luxusimmobilien. Spezialisiert auf Edeloberflächen, Kunstobjekte und exklusive Materialien.",
+    url: "/premium/luxusimmobilien",
+    category: "Luxury Property Cleaning"
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Luxusimmobilien-Reinigung - Premium Service"
+        description="Maßgeschneiderte Reinigung für Luxusimmobilien in Zürich, Zug und Luzern. Spezialisiert auf Edeloberflächen und Kunstobjekte."
+        keywords="Luxusimmobilien Reinigung, Villa Reinigung Schweiz, Premium Immobilien Service, Luxus Reinigung"
+        url="/premium/luxusimmobilien"
+        schema={serviceSchema(serviceData)}
+      />
       <SwissNavigation />
       
       <section className="pt-32 pb-20 relative">

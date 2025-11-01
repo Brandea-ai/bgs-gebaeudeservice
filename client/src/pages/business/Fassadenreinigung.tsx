@@ -1,5 +1,7 @@
 import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
+import SEO from "@/components/SEO";
+import { serviceSchema } from "@/utils/schema";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -8,8 +10,22 @@ import { Link } from "wouter";
 import { CheckCircle, Building2, Droplets, Shield, Sparkles, ArrowRight } from "lucide-react";
 
 export default function Fassadenreinigung() {
+  const serviceData = {
+    name: "Professionelle Fassadenreinigung",
+    description: "Schonende und effektive Fassadenreinigung für alle Materialien. Von Glas über Naturstein bis zu modernen Verbundmaterialien.",
+    url: "/business/fassadenreinigung",
+    category: "Facade Cleaning"
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Fassadenreinigung Zürich, Zug & Luzern - Swiss Reinigungsfirma"
+        description="Professionelle Fassadenreinigung in der Schweiz. Schonend und effektiv für alle Materialien - Glas, Naturstein, Verbundmaterialien."
+        keywords="Fassadenreinigung, Gebäudereinigung Außen, Fassade reinigen Schweiz, Hochhaus Fassadenreinigung"
+        url="/business/fassadenreinigung"
+        schema={serviceSchema(serviceData)}
+      />
       <SwissNavigation />
       
       <section className="pt-32 pb-20 relative">

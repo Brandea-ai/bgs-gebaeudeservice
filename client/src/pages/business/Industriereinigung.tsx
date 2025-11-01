@@ -1,5 +1,7 @@
 import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
+import SEO from "@/components/SEO";
+import { serviceSchema } from "@/utils/schema";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -8,8 +10,22 @@ import { Link } from "wouter";
 import { CheckCircle, Factory, Shield, AlertTriangle, Sparkles, ArrowRight } from "lucide-react";
 
 export default function Industriereinigung() {
+  const serviceData = {
+    name: "Professionelle Industriereinigung",
+    description: "Spezialisierte Reinigungslösungen für Produktionshallen, Werkstätten und Industrieanlagen. Sicher, effizient und normgerecht.",
+    url: "/business/industriereinigung",
+    category: "Industrial Cleaning"
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Industriereinigung Zürich, Zug & Luzern - Swiss Reinigungsfirma"
+        description="Professionelle Industriereinigung in der Schweiz. Spezialisiert auf Produktionshallen, Werkstätten und Industrieanlagen."
+        keywords="Industriereinigung, Produktionshallen Reinigung, Werkstatt Reinigung Schweiz, Industrieanlagen Reinigung"
+        url="/business/industriereinigung"
+        schema={serviceSchema(serviceData)}
+      />
       <SwissNavigation />
       
       <section className="pt-32 pb-20 relative">

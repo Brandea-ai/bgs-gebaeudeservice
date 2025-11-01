@@ -1,5 +1,7 @@
 import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
+import SEO from "@/components/SEO";
+import { localBusinessSchema } from "@/utils/schema";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -8,8 +10,24 @@ import { Link } from "wouter";
 import { MapPin, Phone, Mail, Clock, Check, ArrowRight, TrendingUp } from "lucide-react";
 
 export default function Zug() {
+  const locationData = {
+    name: "Swiss Reinigungsfirma Zug",
+    address: "Baarerstrasse 8",
+    postalCode: "6300",
+    city: "Zug",
+    lat: 47.1667,
+    lng: 8.5167
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Reinigungsfirma Zug - Professionelle Gebäudereinigung"
+        description="Swiss Reinigungsfirma in Zug - Professionelle Gebäudereinigung für internationale Unternehmen und anspruchsvolle Kunden im Kanton Zug."
+        keywords="Reinigungsfirma Zug, Gebäudereinigung Zug, Büroreinigung Zug, Facility Management Zug"
+        url="/standorte/zug"
+        schema={localBusinessSchema(locationData)}
+      />
       <SwissNavigation />
       
       <section className="relative pt-32 pb-20">
@@ -107,7 +125,7 @@ export default function Zug() {
                   { title: "Executive Housekeeping", desc: "Diskreter Service für Führungskräfte" },
                   { title: "Luxusimmobilien", desc: "Premium-Reinigung für Villen am Zugersee" },
                   { title: "Yacht-Service", desc: "Spezialisierte Reinigung für Yachten" },
-                  { title: "Private Housekeeping", desc: "Individueller Service für Privatkunden" }
+                  { title: "Private Housekeeping", desc: "Exklusiver Service für Premium-Kunden" }
                 ].map((service, i) => (
                   <Card key={i} className="p-8 hover:shadow-xl transition-all">
                     <h3 className="text-2xl font-bold mb-3">{service.title}</h3>

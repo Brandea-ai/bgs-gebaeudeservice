@@ -1,5 +1,7 @@
 import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
+import SEO from "@/components/SEO";
+import { serviceSchema } from "@/utils/schema";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -8,8 +10,22 @@ import { Link } from "wouter";
 import { CheckCircle, Home, Shield, Clock, Sparkles, ArrowRight } from "lucide-react";
 
 export default function Housekeeping() {
+  const serviceData = {
+    name: "Private Housekeeping",
+    description: "Exklusiver Housekeeping-Service für Luxusimmobilien. Diskret, individuell und mit Premium-Produkten.",
+    url: "/premium/housekeeping",
+    category: "Premium Housekeeping"
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Private Housekeeping - Exklusiver Premium Service"
+        description="Exklusiver Housekeeping-Service für Luxusimmobilien in Zürich, Zug und Luzern. Diskret, individuell und mit Premium-Produkten."
+        keywords="Private Housekeeping, Luxus Housekeeping Schweiz, Premium Haushalt Service, Executive Housekeeping"
+        url="/premium/housekeeping"
+        schema={serviceSchema(serviceData)}
+      />
       <SwissNavigation />
       
       <section className="pt-32 pb-20 relative">

@@ -7,7 +7,7 @@ export default function SwissFooter() {
       <div className="container py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
-            <img src="/swiss-logo.webp" alt="Swiss Reinigung" className="h-16 w-auto mb-6 brightness-0 invert" />
+            <img src="/swiss-logo.webp" alt="Swiss Reinigung" className="h-20 w-auto mb-6 brightness-0 invert" />
             <p className="text-slate-400 text-sm leading-relaxed">
               Ihre professionelle Reinigungsfirma in der Schweiz. Qualität, Zuverlässigkeit und Präzision seit Jahren.
             </p>

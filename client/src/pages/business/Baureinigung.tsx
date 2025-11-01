@@ -1,5 +1,7 @@
 import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
+import SEO from "@/components/SEO";
+import { serviceSchema } from "@/utils/schema";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -13,8 +15,22 @@ import {
 } from "@/components/ui/accordion";
 
 export default function Baureinigung() {
+  const serviceData = {
+    name: "Professionelle Baureinigung",
+    description: "Professionelle Baureinigung für Neubauten und Renovierungen. Bauschlussreinigung, Baustellenreinigung und Entsorgung.",
+    url: "/business/baureinigung",
+    category: "Construction Cleaning"
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Baureinigung Zürich, Zug & Luzern - Swiss Reinigungsfirma"
+        description="Professionelle Baureinigung in der Schweiz. Bauschlussreinigung, Baustellenreinigung und Entsorgung für Neubauten und Renovierungen."
+        keywords="Baureinigung, Bauschlussreinigung, Baustellenreinigung Schweiz, Endreinigung Neubau"
+        url="/business/baureinigung"
+        schema={serviceSchema(serviceData)}
+      />
       <SwissNavigation />
       
       <section className="pt-32 pb-20 relative">

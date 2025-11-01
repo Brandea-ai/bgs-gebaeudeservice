@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link } from "wouter";
 import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
+import SEO from "@/components/SEO";
+import { serviceSchema } from "@/utils/schema";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -13,8 +15,22 @@ import {
 import { CheckCircle, Settings, ArrowRight, Shield, Wrench, Award } from "lucide-react";
 
 export default function Maschinenreinigung() {
+  const serviceData = {
+    name: "Professionelle Maschinenreinigung",
+    description: "Professionelle Maschinenreinigung für Industrie und Produktion. Präzise, sicher und normgerecht.",
+    url: "/business/maschinenreinigung",
+    category: "Machine Cleaning"
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Maschinenreinigung Zürich, Zug & Luzern - Swiss Reinigungsfirma"
+        description="Professionelle Maschinenreinigung in der Schweiz für Industrie und Produktion. Präzise, sicher und normgerecht."
+        keywords="Maschinenreinigung, Industriemaschinen Reinigung, Produktionsanlagen Reinigung Schweiz"
+        url="/business/maschinenreinigung"
+        schema={serviceSchema(serviceData)}
+      />
       <SwissNavigation />
       
       {/* Hero Section */}

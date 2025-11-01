@@ -1,5 +1,7 @@
 import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
+import SEO from "@/components/SEO";
+import { serviceSchema } from "@/utils/schema";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -13,8 +15,22 @@ import {
 } from "@/components/ui/accordion";
 
 export default function FacilityManagement() {
+  const serviceData = {
+    name: "Ganzheitliches Facility Management",
+    description: "Umfassendes Facility Management für Ihre Immobilien. Reinigung, Wartung und Instandhaltung aus einer Hand.",
+    url: "/business/facility-management",
+    category: "Facility Management"
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Facility Management Zürich, Zug & Luzern - Swiss Reinigungsfirma"
+        description="Umfassendes Facility Management in der Schweiz. Reinigung, Wartung und Instandhaltung aus einer Hand."
+        keywords="Facility Management, Gebäudemanagement Schweiz, Facility Services, Immobilienverwaltung"
+        url="/business/facility-management"
+        schema={serviceSchema(serviceData)}
+      />
       <SwissNavigation />
       
       <section className="pt-32 pb-20 relative">
