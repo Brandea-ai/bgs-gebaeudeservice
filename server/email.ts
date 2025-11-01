@@ -94,7 +94,7 @@ export async function sendContactEmail(data: EmailData): Promise<boolean> {
     `;
 
     const { data: emailResponse, error } = await resend.emails.send({
-      from: 'BGS Kontaktformular <noreply@brandea.de>',
+      from: 'BGS Kontaktformular <onboarding@resend.dev>',
       to: ['info@brandea.de'],
       replyTo: email,
       subject: `Neue Kontaktanfrage von ${name}`,
