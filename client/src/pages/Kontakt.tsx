@@ -36,7 +36,7 @@ export default function Kontakt() {
 
       {/* Contact Options Section */}
       <section className=\"py-20 bg-white\">
-        <div className=\"container\"><div class="grid md:grid-cols-3 gap-8 text-center">
+        <div className=\"container\"><div className="grid md:grid-cols-3 gap-8 text-center">
             <Card className=\"p-8\"><Phone className=\"w-16 h-16 text-primary mx-auto mb-6\"/><h3 className=\"font-bold text-xl mb-4\">Telefon</h3><p className=\"text-slate-600 mb-4 text-xs sm:text-sm md:text-base\">Für dringende Anfragen oder eine persönliche Beratung erreichen Sie uns während unserer Geschäftszeiten.</p><a href=\"tel:+41413205610\" className=\"text-primary font-bold text-lg hover:underline\">+41 41 320 56 10</a></Card>
             <Card className=\"p-8\"><Mail className=\"w-16 h-16 text-primary mx-auto mb-6\"/><h3 className=\"font-bold text-xl mb-4\">E-Mail</h3><p className=\"text-slate-600 mb-4 text-xs sm:text-sm md:text-base\">Schreiben Sie uns eine E-Mail mit Ihrem Anliegen. Wir bearbeiten Ihre Anfrage so schnell wie möglich.</p><a href=\"mailto:info@bgs-service.ch\" className=\"text-primary font-bold text-lg hover:underline\">info@bgs-service.ch</a></Card>
             <Card className=\"p-8\"><MapPin className=\"w-16 h-16 text-primary mx-auto mb-6\"/><h3 className=\"font-bold text-xl mb-4\">Adresse</h3><p className=\"text-slate-600 mb-4 text-xs sm:text-sm md:text-base\">Besuchen Sie uns nach Vereinbarung an unserem Hauptsitz in Emmenbrücke.</p><p className=\"text-slate-800 font-semibold text-lg\">Tannhof 10, 6020 Emmenbrücke</p></Card>
@@ -45,7 +45,7 @@ export default function Kontakt() {
 
       {/* Map Section */}
       <section className=\"py-20 bg-slate-50\">
-        <div className=\"container\"><div class="text-center mb-16">
+        <div className=\"container\"><div className="text-center mb-16">
             <h2 className=\"text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4\">Unser Hauptsitz</h2>
             <p className=\"text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto\">Zentral gelegen in Emmenbrücke, sind wir für unsere Kunden in der ganzen Zentralschweiz schnell erreichbar.</p>
           </div>
@@ -55,7 +55,7 @@ export default function Kontakt() {
 
       {/* FAQ Section */}
       <section className=\"py-20 bg-white\">
-        <div className=\"container max-w-4xl\"><div class="text-center mb-16">
+        <div className=\"container max-w-4xl\"><div className="text-center mb-16">
             <h2 className=\"text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4\">Häufig gestellte Fragen (FAQ)</h2>
             <p className=\"text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto\">Hier finden Sie Antworten auf die häufigsten Fragen. Vielleicht ist Ihre Frage ja schon dabei.</p>
           </div>

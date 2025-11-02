@@ -20,7 +20,7 @@ export default function UeberUns() {
 
       {/* Hero Section */}
       <section className=\"pt-32 pb-20 relative bg-gradient-to-br from-slate-50 to-blue-50\">
-        <div className=\"container\"><div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-red-50/30 -z-10"/>
+        <div className=\"container\"><div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-red-50/30 -z-10"/>
           <div className=\"grid lg:grid-cols-2 gap-12 items-center\">
             <div>
               <h1 className=\"text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6\">Unsere Geschichte: Von einer Vision zu Ihrem vertrauenswürdigen Partner</h1>
@@ -34,7 +34,7 @@ export default function UeberUns() {
 
       {/* Unsere Werte Section */}
       <section className=\"py-20 bg-white\">
-        <div className=\"container\"><div class="text-center mb-16">
+        <div className=\"container\"><div className="text-center mb-16">
             <h2 className=\"text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4\">Unsere Werte: Das Fundament unseres Erfolgs</h2>
             <p className=\"text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto\">Qualität, Zuverlässigkeit und Kundennähe sind für uns nicht nur Worte, sondern die Grundpfeiler unserer täglichen Arbeit. Sie sind das Versprechen, das wir jedem einzelnen Kunden geben.</p>
           </div>
@@ -44,7 +44,7 @@ export default function UeberUns() {
 
       {/* Social Proof Section */}
       <section className=\"py-20 bg-slate-50\">
-        <div className=\"container\"><div class="text-center mb-16">
+        <div className=\"container\"><div className="text-center mb-16">
             <h2 className=\"text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4\">Was unsere Kunden sagen</h2>
             <p className=\"text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto\">Die Zufriedenheit unserer Kunden ist der beste Beweis für unsere Qualität. Hier sind einige Stimmen von Unternehmen, die uns vertrauen.</p>
           </div>
@@ -54,7 +54,7 @@ export default function UeberUns() {
 
       {/* Meet the Founder Section */}
       <section className=\"py-20 bg-white\">
-        <div className=\"container\"><div class="grid lg:grid-cols-2 gap-12 items-center\"><div className=\"relative\"><img src=\"/nezir-bozhdaraj.jpg\" alt=\"Nezir Bozhdaraj, Gründer der Swiss Reinigungsfirma\" className=\"rounded-2xl shadow-2xl w-full h-[500px] object-cover\"/></div><div>
+        <div className=\"container\"><div className="grid lg:grid-cols-2 gap-12 items-center\"><div className=\"relative\"><img src=\"/nezir-bozhdaraj.jpg\" alt=\"Nezir Bozhdaraj, Gründer der Swiss Reinigungsfirma\" className=\"rounded-2xl shadow-2xl w-full h-[500px] object-cover\"/></div><div>
               <h2 className=\"text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-6\">Ein Wort vom Gründer</h2>
               <p className=\"text-slate-700 mb-6 font-serif italic text-lg\">\"Als ich die Swiss Reinigungsfirma gründete, hatte ich eine einfache Vision: einen Reinigungsservice anzubieten, der auf Vertrauen, Qualität und persönlichem Engagement basiert. Ich bin stolz darauf, dass wir diese Werte auch heute noch leben und jeden Tag unser Bestes geben, um die Erwartungen unserer Kunden zu übertreffen.\"</p>
               <div className=\"font-bold text-slate-900 text-lg\">Nezir Bozhdaraj</div>
