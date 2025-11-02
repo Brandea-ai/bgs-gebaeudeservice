@@ -57,7 +57,7 @@ export default function Industriereinigung() {
             </div>
             <div className="relative">
               <img 
-                src="/b2b-industrial-cleaning.jpg" 
+                src="/industriereinigung-business-hero.jpg" 
                 alt="Industriehalle" 
                 className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
               />

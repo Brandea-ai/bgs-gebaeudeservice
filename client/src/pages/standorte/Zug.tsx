@@ -79,7 +79,7 @@ export default function Zug() {
               </div>
             </div>
             <div>
-              <img src="/b2b-office-cleaning.jpg" alt="Reinigung Zug" className="w-full h-full object-cover rounded-2xl shadow-2xl"/>
+              <img src="/standort-zug-hero.jpg" alt="Reinigung Zug" className="w-full h-full object-cover rounded-2xl shadow-2xl"/>
             </div>
           </div>
         </div>

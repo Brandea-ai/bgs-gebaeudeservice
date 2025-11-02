@@ -57,7 +57,7 @@ export default function Bueroreinigung() {
             </div>
             <div className="relative">
               <img 
-                src="/b2b-office-cleaning.jpg" 
+                src="/bueroreinigung-business-hero.jpg" 
                 alt="Modernes Büro" 
                 className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
               />

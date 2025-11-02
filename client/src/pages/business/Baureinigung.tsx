@@ -62,7 +62,7 @@ export default function Baureinigung() {
             </div>
             <div className="relative">
               <img 
-                src="/b2b-office-cleaning.jpg" 
+                src="/baureinigung-hero.jpg" 
                 alt="Baustelle" 
                 className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
               />

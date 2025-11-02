@@ -57,7 +57,7 @@ export default function Winterdienst() {
             </div>
             <div className="relative">
               <img 
-                src="/b2b-office-cleaning.jpg" 
+                src="/winterdienst-hero.jpg" 
                 alt="Winterdienst" 
                 className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
               />

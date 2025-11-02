@@ -65,7 +65,7 @@ export default function Hallenreinigung() {
             </div>
             <div className="relative">
               <img 
-                src="/b2b-industrial-cleaning.jpg" 
+                src="/hallenreinigung-hero.jpg" 
                 alt="Professionelle Hallenreinigung" 
                 className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
               />
