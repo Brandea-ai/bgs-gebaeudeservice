@@ -17,8 +17,7 @@ import {
   TiltCard,
   MagneticHover 
 } from "@/components/PremiumParallax";
-import { PinnedBackground, ScrollProgress } from "@/components/ScrollPinning";
-import { getBackgroundForPage } from "@/config/backgrounds";
+
 import { 
   fadeInUp, 
   staggerContainer, 
@@ -43,12 +42,6 @@ export default function SwissHome() {
         keywords="Reinigungsfirma Schweiz, Gebäudereinigung Zürich, Büroreinigung Zug, Facility Management Luzern, Professionelle Reinigung"
         url="/"
         schema={organizationSchema}
-      />
-      <ScrollProgress />
-      <PinnedBackground 
-        image={getBackgroundForPage("home")}
-        overlay={true}
-        parallax={true}
       />
       <SwissNavigation />
 
