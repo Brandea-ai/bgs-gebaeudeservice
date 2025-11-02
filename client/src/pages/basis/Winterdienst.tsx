@@ -179,7 +179,7 @@ export default function Winterdienst() {
                 <div className="grid md:grid-cols-3 gap-6">
                   <Card className="p-6 bg-slate-50">
                     <h4 className="text-sm sm:text-base md:text-lg font-bold mb-4">Basic</h4>
-                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-primary mb-2">ab CHF 300</div>
+                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-primary mb-2">Individuelles Angebot</div>
                     <div className="text-sm text-slate-600 mb-4">pro Monat (Nov-März)</div>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start gap-2">
@@ -198,7 +198,7 @@ export default function Winterdienst() {
                   </Card>
                   <Card className="p-6 bg-primary/5 border-primary">
                     <h4 className="text-sm sm:text-base md:text-lg font-bold mb-4">Standard</h4>
-                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-primary mb-2">ab CHF 600</div>
+                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-primary mb-2">Individuelles Angebot</div>
                     <div className="text-sm text-slate-600 mb-4">pro Monat (Nov-März)</div>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start gap-2">

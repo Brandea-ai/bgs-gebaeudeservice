@@ -182,8 +182,8 @@ export default function Yacht() {
                 <div className="grid md:grid-cols-3 gap-6">
                   <Card className="p-6 bg-slate-50">
                     <h4 className="text-sm sm:text-base md:text-lg font-bold mb-4">Basic</h4>
-                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-primary mb-2">ab CHF 500</div>
-                    <div className="text-sm text-slate-600 mb-4">pro Monat</div>
+                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-primary mb-2">Individuelles Angebot</div>
+                    <div className="text-sm text-slate-600 mb-4">Auf Ihre Bedürfnisse zugeschnitten</div>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
@@ -201,8 +201,8 @@ export default function Yacht() {
                   </Card>
                   <Card className="p-6 bg-primary/5 border-primary">
                     <h4 className="text-sm sm:text-base md:text-lg font-bold mb-4">Premium</h4>
-                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-primary mb-2">ab CHF 1.200</div>
-                    <div className="text-sm text-slate-600 mb-4">pro Monat</div>
+                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-primary mb-2">Individuelles Angebot</div>
+                    <div className="text-sm text-slate-600 mb-4">Auf Ihre Bedürfnisse zugeschnitten</div>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
