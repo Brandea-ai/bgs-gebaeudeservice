@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { scrollToContact } from "../utils/scroll";
 import { Link } from "wouter";
+import { motion } from "framer-motion";
+import { ParallaxImage, RevealOnScroll, TiltCard, MagneticHover } from "@/components/PremiumParallax";
+import { fadeInUp, staggerContainer, scaleIn } from "@/utils/animations";
+
 import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
 import SEO from "@/components/SEO";
@@ -64,10 +68,14 @@ export default function Maschinenreinigung() {
               </div>
             </div>
             <div className="relative">
-              <img 
+              <ParallaxImage 
                 src="/machine-cleaning.jpg" 
-                alt="Professionelle Maschinenreinigung" 
-                className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
+                alt="Professionelle Maschinenreinigung"
+                className="rounded-2xl shadow-2xl w-full h-[500px] object-cover h-[500px]"
+                speed={0.2}
+                scale={true}
+                overlay={true}
+                overlayOpacity={0.15}
               />
             </div>
           </div>
@@ -79,10 +87,14 @@ export default function Maschinenreinigung() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
-              <img 
+              <ParallaxImage 
                 src="/industrial-machine.jpg" 
-                alt="Industriemaschine Reinigung" 
-                className="rounded-2xl shadow-xl w-full h-[400px] object-cover"
+                alt="Industriemaschine Reinigung"
+                className="rounded-2xl shadow-xl w-full h-[400px] object-cover h-[500px]"
+                speed={0.2}
+                scale={true}
+                overlay={true}
+                overlayOpacity={0.15}
               />
             </div>
             <div>
@@ -142,10 +154,14 @@ export default function Maschinenreinigung() {
               </div>
             </div>
             <div className="relative">
-              <img 
+              <ParallaxImage 
                 src="/production-line-cleaning.jpg" 
-                alt="Produktionslinie Reinigung" 
-                className="rounded-2xl shadow-xl w-full h-[500px] object-cover"
+                alt="Produktionslinie Reinigung"
+                className="rounded-2xl shadow-xl w-full h-[500px] object-cover h-[500px]"
+                speed={0.2}
+                scale={true}
+                overlay={true}
+                overlayOpacity={0.15}
               />
             </div>
           </div>
@@ -155,14 +171,14 @@ export default function Maschinenreinigung() {
       {/* Accordion Section - FAQ */}
       <section className="py-20 bg-slate-50">
         <div className="container max-w-4xl">
-          <div className="text-center mb-12">
+          <RevealOnScroll><div className="text-center mb-12">
             <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-4">
               Häufig gestellte Fragen
             </h2>
             <p className="text-lg text-slate-600 text-xs sm:text-sm md:text-base">
               Alles was Sie über unsere Maschinenreinigung wissen müssen
             </p>
-          </div>
+          </div></RevealOnScroll>
           
           <Accordion type="single" collapsible className="space-y-4">
             <AccordionItem value="item-1" className="bg-white rounded-lg px-6">

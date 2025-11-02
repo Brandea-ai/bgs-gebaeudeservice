@@ -1,6 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Award, Globe, Heart, Lightbulb } from "lucide-react";
 import { Link } from "wouter";
+import { motion } from "framer-motion";
+import { ParallaxImage, ParallaxBackground, RevealOnScroll, TiltCard, MagneticHover, ZoomOnScroll } from "@/components/PremiumParallax";
+import { fadeInUp, staggerContainer, scaleIn } from "@/utils/animations";
+
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
@@ -55,10 +59,14 @@ export default function About() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="glass floating rounded-3xl overflow-hidden">
-              <img
-                src="/team-collaboration.jpg"
+              <ParallaxImage 
+                src="/team-collaboration.jpg" 
                 alt="Brandea Team"
-                className="w-full h-auto"
+                className="rounded-2xl h-[400px] lg:h-[500px]"
+                speed={0.2}
+                scale={true}
+                overlay={true}
+                overlayOpacity={0.1}
               />
             </div>
             <div className="space-y-6">
@@ -82,14 +90,14 @@ export default function About() {
       {/* Values Section */}
       <section className="py-20">
         <div className="container">
-          <div className="text-center mb-16">
+          <RevealOnScroll><div className="text-center mb-16">
             <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-foreground mb-4">
               Unsere Werte
             </h2>
             <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
               Diese Prinzipien leiten uns in allem, was wir tun
             </p>
-          </div>
+          </div></RevealOnScroll>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => (
               <div
@@ -115,14 +123,14 @@ export default function About() {
       <section className="py-20 bg-secondary/20">
         <div className="container">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
+            <RevealOnScroll><div className="text-center mb-16">
               <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-foreground mb-4">
                 Unser Ansatz
               </h2>
               <p className="text-sm sm:text-base md:text-lg text-muted-foreground text-xs sm:text-sm md:text-base">
                 So arbeiten wir mit unseren Kunden zusammen
               </p>
-            </div>
+            </div></RevealOnScroll>
             <div className="space-y-6">
               {[
                 {
@@ -182,15 +190,15 @@ export default function About() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/kontakt">
-                <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
+                <MagneticHover><Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
                   Gespräch vereinbaren
                   <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
+                </Button></MagneticHover>
               </Link>
               <Link href="/methode">
-                <Button size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
+                <MagneticHover><Button size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
                   Unsere Methode
-                </Button>
+                </Button></MagneticHover>
               </Link>
             </div>
           </div>

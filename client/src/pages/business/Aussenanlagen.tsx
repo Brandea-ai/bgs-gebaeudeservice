@@ -1,3 +1,7 @@
+import { motion } from "framer-motion";
+import { ParallaxImage, RevealOnScroll, TiltCard, MagneticHover } from "@/components/PremiumParallax";
+import { fadeInUp, staggerContainer, scaleIn } from "@/utils/animations";
+
 import SwissNavigation from "@/components/SwissNavigation";
 import { scrollToContact } from "../utils/scroll";
 import SwissFooter from "@/components/SwissFooter";
@@ -61,10 +65,14 @@ export default function Aussenanlagen() {
               </div>
             </div>
             <div className="relative">
-              <img 
+              <ParallaxImage 
                 src="/b2b-gruenflaechen.jpg" 
-                alt="Grünflächen" 
-                className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
+                alt="Grünflächen"
+                className="rounded-2xl shadow-2xl w-full h-[500px] object-cover h-[500px]"
+                speed={0.2}
+                scale={true}
+                overlay={true}
+                overlayOpacity={0.15}
               />
             </div>
           </div>

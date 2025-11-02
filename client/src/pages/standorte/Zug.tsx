@@ -1,3 +1,7 @@
+import { motion } from "framer-motion";
+import { ParallaxImage, ParallaxBackground, RevealOnScroll, TiltCard, MagneticHover, ZoomOnScroll } from "@/components/PremiumParallax";
+import { fadeInUp, staggerContainer, scaleIn } from "@/utils/animations";
+
 import SwissNavigation from "@/components/SwissNavigation";
 import { scrollToContact } from "../utils/scroll";
 import SwissFooter from "@/components/SwissFooter";
@@ -32,10 +36,11 @@ export default function Zug() {
       <SwissNavigation />
       
       <section className="relative pt-32 pb-20">
-        <div className="absolute inset-0 z-0">
-          <img src="/zug-city.jpg" alt="Zug" className="w-full h-full object-cover"/>
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-slate-900/70"/>
-        </div>
+        <ParallaxBackground 
+          src="/zug-city.jpg"
+          speed={0.4}
+          overlay={true}
+        />
         <div className="container relative z-10">
           <div className="max-w-3xl text-white">
             <div className="flex items-center gap-2 mb-4">
@@ -79,7 +84,15 @@ export default function Zug() {
               </div>
             </div>
             <div>
-              <img src="/standort-zug-hero.jpg" alt="Reinigung Zug" className="w-full h-full object-cover rounded-2xl shadow-2xl"/>
+              <ParallaxImage 
+                src="/standort-zug-hero.jpg" 
+                alt="Reinigung Zug"
+                className="rounded-2xl h-[500px]"
+                speed={0.2}
+                scale={true}
+                overlay={true}
+                overlayOpacity={0.1}
+              />
             </div>
           </div>
         </div>
@@ -87,14 +100,14 @@ export default function Zug() {
 
       <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
         <div className="container">
-          <div className="text-center mb-16">
+          <RevealOnScroll><div className="text-center mb-16">
             <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-4">
               Unsere Leistungen in Zug
             </h2>
             <p className="text-sm sm:text-base md:text-lg text-slate-600 max-w-3xl mx-auto">
               Maßgeschneiderte Reinigungslösungen für den Wirtschaftsstandort Zug – von Corporate Offices bis zu Luxusimmobilien.
             </p>
-          </div>
+          </div></RevealOnScroll>
 
           <Tabs defaultValue="business" className="mb-12">
             <TabsList className="grid w-full grid-cols-3 max-w-2xl mx-auto">
@@ -191,14 +204,14 @@ export default function Zug() {
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <Card className="p-12">
-              <div className="text-center mb-8">
+              <RevealOnScroll><div className="text-center mb-8">
                 <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-4">
                   Kontakt Zug
                 </h2>
                 <p className="text-sm sm:text-base md:text-lg text-slate-600 text-xs sm:text-sm md:text-base">
                   Vereinbaren Sie ein persönliches Beratungsgespräch.
                 </p>
-              </div>
+              </div></RevealOnScroll>
               <div className="grid md:grid-cols-3 gap-8 mb-8">
                 <div className="text-center">
                   <Phone className="w-8 h-8 text-primary mx-auto mb-3"/>
@@ -218,10 +231,10 @@ export default function Zug() {
               </div>
               <div className="text-center">
                 <Link href="/kontakt">
-                  <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
+                  <MagneticHover><Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
                     Jetzt Kontakt aufnehmen
                     <ArrowRight className="ml-2 w-5 h-5"/>
-                  </Button>
+                  </Button></MagneticHover>
                 </Link>
               </div>
             </Card>

@@ -1,3 +1,7 @@
+import { motion } from "framer-motion";
+import { ParallaxImage, ParallaxBackground, RevealOnScroll, TiltCard, MagneticHover, ZoomOnScroll } from "@/components/PremiumParallax";
+import { fadeInUp, staggerContainer, scaleIn } from "@/utils/animations";
+
 import SwissNavigation from "@/components/SwissNavigation";
 import SEO from "@/components/SEO";
 import { scrollToContact } from "../utils/scroll";
@@ -89,17 +93,17 @@ function ReferenzenContent() {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="grid md:grid-cols-3 gap-8 mb-20">
-            <Card className="p-8 text-center">
+            <Card className="p-8 hover-lift text-center hover-tilt hover-tilt">
               <Building className="w-16 h-16 text-primary mx-auto mb-4"/>
               <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-2">500+</div>
               <div className="text-lg text-slate-600 text-xs sm:text-sm md:text-base">Zufriedene Kunden</div>
             </Card>
-            <Card className="p-8 text-center">
+            <Card className="p-8 hover-lift text-center hover-tilt hover-tilt">
               <Users className="w-16 h-16 text-primary mx-auto mb-4"/>
               <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-2">15+</div>
               <div className="text-lg text-slate-600 text-xs sm:text-sm md:text-base">Jahre Erfahrung</div>
             </Card>
-            <Card className="p-8 text-center">
+            <Card className="p-8 hover-lift text-center hover-tilt hover-tilt">
               <Award className="w-16 h-16 text-primary mx-auto mb-4"/>
               <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-2">98%</div>
               <div className="text-lg text-slate-600 text-xs sm:text-sm md:text-base">Kundenzufriedenheit</div>
@@ -177,10 +181,10 @@ function ReferenzenContent() {
               Lassen Sie uns gemeinsam Ihre Reinigungsziele erreichen. Kontaktieren Sie uns für ein unverbindliches Beratungsgespräch.
             </p>
             <Link href="/kontakt">
-              <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
+              <MagneticHover><Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
                 Jetzt Kontakt aufnehmen
                 <ArrowRight className="ml-2 w-5 h-5"/>
-              </Button>
+              </Button></MagneticHover>
             </Link>
           </div>
         </div>

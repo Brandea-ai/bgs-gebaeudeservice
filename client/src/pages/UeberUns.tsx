@@ -1,3 +1,7 @@
+import { motion } from "framer-motion";
+import { ParallaxImage, ParallaxBackground, RevealOnScroll, TiltCard, MagneticHover, ZoomOnScroll } from "@/components/PremiumParallax";
+import { fadeInUp, staggerContainer, scaleIn } from "@/utils/animations";
+
 import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
 import SEO from "@/components/SEO";
@@ -30,16 +34,20 @@ export default function UeberUns() {
                 Seit unserer Gründung durch Nezir Bozhdaraj im Jahr 2005 hat sich die Swiss Reinigungsfirma von einem kleinen, engagierten Team zu einem der führenden Reinigungsunternehmen in der Schweiz entwickelt. Unsere Mission war von Anfang an klar: Wir wollen nicht nur reinigen, wir wollen Werte schaffen und Vertrauen aufbauen.
               </p>
               <Link href="/kontakt">
-                <Button size="lg" className="text-lg">
+                <MagneticHover><Button size="lg" className="text-lg">
                   Werden Sie Teil unserer Geschichte <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
+                </Button></MagneticHover>
               </Link>
             </div>
             <div className="relative">
-              <img 
+              <ParallaxImage 
                 src="/ueber-uns-hero.jpg" 
-                alt="Das Team der Swiss Reinigungsfirma" 
-                className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
+                alt="Das Team der Swiss Reinigungsfirma"
+                className="rounded-2xl shadow-2xl w-full h-[500px] object-cover h-[400px] lg:h-[500px]"
+                speed={0.2}
+                scale={true}
+                overlay={true}
+                overlayOpacity={0.1}
               />
             </div>
           </div>
@@ -49,17 +57,17 @@ export default function UeberUns() {
       {/* Unsere Werte Section */}
       <section className="py-20 bg-white">
         <div className="container">
-          <div className="text-center mb-16">
+          <RevealOnScroll><div className="text-center mb-16">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
               Unsere Werte: Das Fundament unseres Erfolgs
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
               Qualität, Zuverlässigkeit und Kundennähe sind für uns nicht nur Worte, sondern die Grundpfeiler unserer täglichen Arbeit. Sie sind das Versprechen, das wir jedem einzelnen Kunden geben.
             </p>
-          </div>
+          </div></RevealOnScroll>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="p-8 text-center hover:shadow-xl transition-shadow">
+            <Card className="p-8 hover-lift text-center hover:shadow-xl transition-shadow hover-tilt hover-tilt">
               <Award className="w-16 h-16 text-primary mx-auto mb-6" />
               <h3 className="font-bold text-xl mb-4">Qualität</h3>
               <p className="text-slate-600 text-xs sm:text-sm md:text-base">
@@ -67,7 +75,7 @@ export default function UeberUns() {
               </p>
             </Card>
             
-            <Card className="p-8 text-center hover:shadow-xl transition-shadow">
+            <Card className="p-8 hover-lift text-center hover:shadow-xl transition-shadow hover-tilt hover-tilt">
               <Users className="w-16 h-16 text-primary mx-auto mb-6" />
               <h3 className="font-bold text-xl mb-4">Zuverlässigkeit</h3>
               <p className="text-slate-600 text-xs sm:text-sm md:text-base">
@@ -75,7 +83,7 @@ export default function UeberUns() {
               </p>
             </Card>
             
-            <Card className="p-8 text-center hover:shadow-xl transition-shadow">
+            <Card className="p-8 hover-lift text-center hover:shadow-xl transition-shadow hover-tilt hover-tilt">
               <Heart className="w-16 h-16 text-primary mx-auto mb-6" />
               <h3 className="font-bold text-xl mb-4">Kundennähe</h3>
               <p className="text-slate-600 text-xs sm:text-sm md:text-base">
@@ -89,17 +97,17 @@ export default function UeberUns() {
       {/* Social Proof Section */}
       <section className="py-20 bg-slate-50">
         <div className="container">
-          <div className="text-center mb-16">
+          <RevealOnScroll><div className="text-center mb-16">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
               Was unsere Kunden sagen
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
               Die Zufriedenheit unserer Kunden ist der beste Beweis für unsere Qualität. Hier sind einige Stimmen von Unternehmen, die uns vertrauen.
             </p>
-          </div>
+          </div></RevealOnScroll>
           
           <div className="grid lg:grid-cols-3 gap-8">
-            <Card className="p-8 hover:shadow-xl transition-shadow">
+            <Card className="p-8 hover-lift hover:shadow-xl transition-shadow hover-tilt hover-tilt">
               <div className="flex mb-4">
                 {[...Array(5)].map((_, i) => (
                   <CheckCircle2 key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
@@ -114,7 +122,7 @@ export default function UeberUns() {
               </div>
             </Card>
             
-            <Card className="p-8 hover:shadow-xl transition-shadow">
+            <Card className="p-8 hover-lift hover:shadow-xl transition-shadow hover-tilt hover-tilt">
               <div className="flex mb-4">
                 {[...Array(5)].map((_, i) => (
                   <CheckCircle2 key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
@@ -129,7 +137,7 @@ export default function UeberUns() {
               </div>
             </Card>
             
-            <Card className="p-8 hover:shadow-xl transition-shadow">
+            <Card className="p-8 hover-lift hover:shadow-xl transition-shadow hover-tilt hover-tilt">
               <div className="flex mb-4">
                 {[...Array(5)].map((_, i) => (
                   <CheckCircle2 key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
@@ -152,10 +160,14 @@ export default function UeberUns() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
-              <img 
+              <ParallaxImage 
                 src="/nezir-bozhdaraj.jpg" 
-                alt="Nezir Bozhdaraj, Gründer der Swiss Reinigungsfirma" 
-                className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
+                alt="Nezir Bozhdaraj, Gründer der Swiss Reinigungsfirma"
+                className="rounded-2xl shadow-2xl w-full h-[500px] object-cover h-[400px] lg:h-[500px]"
+                speed={0.2}
+                scale={true}
+                overlay={true}
+                overlayOpacity={0.1}
               />
             </div>
             <div>
@@ -182,9 +194,9 @@ export default function UeberUns() {
             Lassen Sie uns gemeinsam für eine saubere und professionelle Umgebung sorgen. Kontaktieren Sie uns noch heute für ein unverbindliches Erstgespräch und ein individuelles Angebot.
           </p>
           <Link href="/kontakt">
-            <Button size="lg" variant="secondary" className="text-lg">
+            <MagneticHover><Button size="lg" variant="secondary" className="text-lg">
               Jetzt Kontakt aufnehmen <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
+            </Button></MagneticHover>
           </Link>
         </div>
       </section>

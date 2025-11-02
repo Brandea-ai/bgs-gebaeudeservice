@@ -1,3 +1,7 @@
+import { motion } from "framer-motion";
+import { ParallaxImage, ParallaxBackground, RevealOnScroll, TiltCard, MagneticHover, ZoomOnScroll } from "@/components/PremiumParallax";
+import { fadeInUp, staggerContainer, scaleIn } from "@/utils/animations";
+
 import SwissNavigation from "@/components/SwissNavigation";
 import SEO from "@/components/SEO";
 import { scrollToContact } from "../utils/scroll";
@@ -48,11 +52,15 @@ function RichtigeReinigungsfirmaFindenContent() {
             </div>
           </div>
 
-          <img 
-            src="/blog-reinigungsfirma-finden.jpg" 
-            alt="Reinigungsfirma finden"
-            className="w-full h-96 object-cover rounded-2xl mb-12"
-          />
+          <ParallaxImage 
+                src="/blog-reinigungsfirma-finden.jpg" 
+                alt="Reinigungsfirma finden"
+                className="w-full h-96 object-cover rounded-2xl mb-12 h-[400px] lg:h-[500px]"
+                speed={0.2}
+                scale={true}
+                overlay={true}
+                overlayOpacity={0.1}
+              />
 
           <div className="prose prose-lg max-w-none">
             <p className="text-lg leading-relaxed text-slate-700 mb-8">
@@ -64,7 +72,7 @@ function RichtigeReinigungsfirmaFindenContent() {
               Eine professionelle Reinigungsfirma ist mehr als nur ein Dienstleister – sie ist ein Partner für die Werterhaltung Ihrer Immobilie. Saubere und gepflegte Räumlichkeiten schaffen eine angenehme Arbeitsatmosphäre, reduzieren Krankheitstage und hinterlassen bei Kunden einen positiven ersten Eindruck. Gleichzeitig schützt regelmäßige professionelle Reinigung Ihre Investition in Gebäude und Ausstattung.
             </p>
 
-            <Card className="p-8 bg-red-50 mb-12">
+            <Card className="p-8 hover-lift bg-red-50 mb-12 hover-tilt hover-tilt">
               <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4">Die wichtigsten Auswahlkriterien auf einen Blick</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 {[
@@ -182,19 +190,19 @@ function RichtigeReinigungsfirmaFindenContent() {
             </p>
 
             <div className="grid md:grid-cols-3 gap-6 mb-12">
-              <Card className="p-6">
+              <Card className="p-6 hover-lift hover-tilt hover-tilt">
                 <h3 className="text-sm sm:text-base md:text-lg font-bold mb-3">Zürich</h3>
                 <p className="text-slate-600 text-xs sm:text-sm md:text-base">
                   Größte Stadt der Schweiz mit hoher Nachfrage nach professionellen Reinigungsdienstleistungen für Büros, Hotels und Geschäfte.
                 </p>
               </Card>
-              <Card className="p-6">
+              <Card className="p-6 hover-lift hover-tilt hover-tilt">
                 <h3 className="text-sm sm:text-base md:text-lg font-bold mb-3">Zug</h3>
                 <p className="text-slate-600 text-xs sm:text-sm md:text-base">
                   Wirtschaftsstarker Kanton mit vielen internationalen Unternehmen und hohen Qualitätsansprüchen.
                 </p>
               </Card>
-              <Card className="p-6">
+              <Card className="p-6 hover-lift hover-tilt hover-tilt">
                 <h3 className="text-sm sm:text-base md:text-lg font-bold mb-3">Luzern</h3>
                 <p className="text-slate-600 text-xs sm:text-sm md:text-base">
                   Tourismusstarke Region mit Bedarf an Reinigung für Hotels, Restaurants und öffentliche Einrichtungen.
@@ -253,7 +261,7 @@ function RichtigeReinigungsfirmaFindenContent() {
               ))}
             </div>
 
-            <Card className="p-8 bg-gradient-to-br from-primary/10 to-red-50 mb-12">
+            <Card className="p-8 hover-lift bg-gradient-to-br from-primary/10 to-red-50 mb-12 hover-tilt hover-tilt">
               <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4">Fazit</h3>
               <p className="text-lg leading-relaxed text-slate-700 text-xs sm:text-sm md:text-base">
                 Die Wahl der richtigen Reinigungsfirma erfordert sorgfältige Überlegung und Recherche. Nehmen Sie sich die Zeit, verschiedene Anbieter zu vergleichen und achten Sie nicht nur auf den Preis, sondern vor allem auf Qualität, Zuverlässigkeit und Service. Eine professionelle Reinigungsfirma ist ein langfristiger Partner, der zum Erfolg Ihres Unternehmens beiträgt.
@@ -268,10 +276,10 @@ function RichtigeReinigungsfirmaFindenContent() {
                 Kontaktieren Sie uns für ein unverbindliches Beratungsgespräch.
               </p>
               <Link href="/kontakt">
-                <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
+                <MagneticHover><Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
                   Jetzt Kontakt aufnehmen
                   <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
+                </Button></MagneticHover>
               </Link>
             </div>
           </div>

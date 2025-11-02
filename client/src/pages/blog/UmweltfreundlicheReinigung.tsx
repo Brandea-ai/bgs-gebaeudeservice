@@ -1,3 +1,7 @@
+import { motion } from "framer-motion";
+import { ParallaxImage, ParallaxBackground, RevealOnScroll, TiltCard, MagneticHover, ZoomOnScroll } from "@/components/PremiumParallax";
+import { fadeInUp, staggerContainer, scaleIn } from "@/utils/animations";
+
 import SwissNavigation from "@/components/SwissNavigation";
 import SEO from "@/components/SEO";
 import SwissFooter from "@/components/SwissFooter";
@@ -35,7 +39,15 @@ function UmweltfreundlicheReinigungContent() {
               Nachhaltige Reinigungsmethoden und ökologische Produkte für eine grünere Zukunft.
             </p>
           </div>
-          <img src="/blog-umwelt.jpg" alt="Umweltfreundliche Reinigung" className="w-full h-96 object-cover rounded-2xl mb-12"/>
+          <ParallaxImage 
+                src="/blog-umwelt.jpg" 
+                alt="Umweltfreundliche Reinigung"
+                className="w-full h-96 object-cover rounded-2xl mb-12 h-[400px] lg:h-[500px]"
+                speed={0.2}
+                scale={true}
+                overlay={true}
+                overlayOpacity={0.1}
+              />
           
           <div className="prose prose-lg max-w-none">
             <p className="text-lg leading-relaxed text-slate-700 mb-8">
@@ -43,17 +55,17 @@ function UmweltfreundlicheReinigungContent() {
             </p>
 
             <div className="grid md:grid-cols-3 gap-6 mb-12">
-              <Card className="p-6 text-center">
+              <Card className="p-6 hover-lift text-center hover-tilt hover-tilt">
                 <Leaf className="w-12 h-12 text-primary mx-auto mb-4"/>
                 <h3 className="text-sm sm:text-base md:text-lg font-bold mb-2">Ökologisch</h3>
                 <p className="text-slate-600 text-xs sm:text-sm md:text-base">Biologisch abbaubare Reinigungsmittel schonen die Umwelt</p>
               </Card>
-              <Card className="p-6 text-center">
+              <Card className="p-6 hover-lift text-center hover-tilt hover-tilt">
                 <Droplets className="w-12 h-12 text-primary mx-auto mb-4"/>
                 <h3 className="text-sm sm:text-base md:text-lg font-bold mb-2">Wassersparend</h3>
                 <p className="text-slate-600 text-xs sm:text-sm md:text-base">Moderne Methoden reduzieren den Wasserverbrauch erheblich</p>
               </Card>
-              <Card className="p-6 text-center">
+              <Card className="p-6 hover-lift text-center hover-tilt hover-tilt">
                 <Recycle className="w-12 h-12 text-primary mx-auto mb-4"/>
                 <h3 className="text-sm sm:text-base md:text-lg font-bold mb-2">Ressourcenschonend</h3>
                 <p className="text-slate-600 text-xs sm:text-sm md:text-base">Wiederverwendbare Materialien und effiziente Prozesse</p>
@@ -85,7 +97,7 @@ function UmweltfreundlicheReinigungContent() {
               </AccordionItem>
             </Accordion>
 
-            <Card className="p-8 bg-gradient-to-br from-primary/10 to-red-50 mb-12">
+            <Card className="p-8 hover-lift bg-gradient-to-br from-primary/10 to-red-50 mb-12 hover-tilt hover-tilt">
               <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4">Vorteile umweltfreundlicher Reinigung</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 {[
@@ -109,7 +121,7 @@ function UmweltfreundlicheReinigungContent() {
             <div className="mt-16 pt-12 border-t text-center">
               <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-4">Nachhaltige Reinigung gewünscht?</h3>
               <p className="text-sm sm:text-base md:text-lg text-slate-600 mb-8">Wir beraten Sie gerne zu umweltfreundlichen Reinigungslösungen.</p>
-              <Link href="/kontakt"><Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">Jetzt beraten lassen<ArrowRight className="ml-2 w-5 h-5"/></Button></Link>
+              <Link href="/kontakt"><MagneticHover><Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">Jetzt beraten lassen<ArrowRight className="ml-2 w-5 h-5"/></Button></MagneticHover></Link>
             </div>
           </div>
         </div>

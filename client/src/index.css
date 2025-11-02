@@ -172,6 +172,127 @@
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
+  .transition-premium {
+    transition: all 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  
+  .transition-elastic {
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  /* Premium Parallax Effects - Desktop Only */
+  @media (min-width: 1024px) {
+    .parallax-container {
+      position: relative;
+      overflow: hidden;
+      will-change: transform;
+    }
+    
+    .parallax-layer {
+      position: absolute;
+      inset: 0;
+      will-change: transform;
+    }
+    
+    .parallax-image {
+      width: 100%;
+      height: 120%;
+      object-fit: cover;
+      will-change: transform;
+    }
+    
+    .parallax-smooth {
+      transform: translateZ(0);
+      backface-visibility: hidden;
+      perspective: 1000px;
+    }
+    
+    .hover-lift {
+      transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1),
+                  box-shadow 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+    
+    .hover-lift:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2);
+    }
+    
+    .hover-tilt {
+      transform-style: preserve-3d;
+      perspective: 1000px;
+      transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+    
+    .hover-tilt:hover {
+      transform: rotateX(5deg) rotateY(5deg) scale(1.05);
+    }
+    
+    .magnetic-hover {
+      transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+    
+    .image-reveal {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .image-reveal::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+    
+    .image-reveal:hover::before {
+      transform: translateX(100%);
+    }
+    
+    .zoom-on-hover {
+      overflow: hidden;
+    }
+    
+    .zoom-on-hover img {
+      transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+    
+    .zoom-on-hover:hover img {
+      transform: scale(1.15);
+    }
+    
+    .glow-effect {
+      position: relative;
+    }
+    
+    .glow-effect::after {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+      border-radius: inherit;
+      opacity: 0;
+      transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+      pointer-events: none;
+    }
+    
+    .glow-effect:hover::after {
+      opacity: 1;
+    }
+  }
+  
+  /* Smooth scrolling optimizations */
+  @media (min-width: 1024px) {
+    * {
+      scroll-behavior: smooth;
+    }
+    
+    img, video {
+      will-change: transform;
+      transform: translateZ(0);
+    }
+  }
+  
   /* Prevent text overflow on mobile */
   h1, h2, h3, h4, h5, h6 {
     word-wrap: break-word;

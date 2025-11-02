@@ -1,4 +1,8 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { ParallaxImage, ParallaxBackground, RevealOnScroll, TiltCard, MagneticHover, ZoomOnScroll } from "@/components/PremiumParallax";
+import { fadeInUp, staggerContainer, scaleIn } from "@/utils/animations";
+
 import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
 import SEO from "@/components/SEO";
@@ -105,7 +109,7 @@ export default function Kontakt() {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <Card className="p-8 text-center hover:shadow-xl transition-shadow">
+            <Card className="p-8 hover-lift text-center hover:shadow-xl transition-shadow hover-tilt hover-tilt">
               <Phone className="w-12 h-12 text-primary mx-auto mb-4" />
               <h3 className="font-bold text-xl mb-2">Telefon</h3>
               <p className="text-slate-600 mb-4">Rufen Sie uns an - wir beraten Sie gerne</p>
@@ -114,7 +118,7 @@ export default function Kontakt() {
               </a>
             </Card>
 
-            <Card className="p-8 text-center hover:shadow-xl transition-shadow">
+            <Card className="p-8 hover-lift text-center hover:shadow-xl transition-shadow hover-tilt hover-tilt">
               <Mail className="w-12 h-12 text-primary mx-auto mb-4" />
               <h3 className="font-bold text-xl mb-2">E-Mail</h3>
               <p className="text-slate-600 mb-4">Schreiben Sie uns eine Nachricht</p>
@@ -123,7 +127,7 @@ export default function Kontakt() {
               </a>
             </Card>
 
-            <Card className="p-8 text-center hover:shadow-xl transition-shadow">
+            <Card className="p-8 hover-lift text-center hover:shadow-xl transition-shadow hover-tilt hover-tilt">
               <MapPin className="w-12 h-12 text-primary mx-auto mb-4" />
               <h3 className="font-bold text-xl mb-2">Adresse</h3>
               <p className="text-slate-600 mb-4">Besuchen Sie uns vor Ort</p>
@@ -160,7 +164,7 @@ export default function Kontakt() {
               Fordern Sie ein unverbindliches Angebot an – wir melden uns innerhalb von 24 Stunden bei Ihnen zurück.
             </p>
             
-            <Card className="p-8">
+            <Card className="p-8 hover-lift hover-tilt hover-tilt">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
@@ -277,28 +281,28 @@ export default function Kontakt() {
           </h2>
           
           <div className="space-y-6">
-            <Card className="p-6">
+            <Card className="p-6 hover-lift hover-tilt hover-tilt">
               <h3 className="font-bold text-lg mb-2">Wie schnell erhalte ich ein Angebot?</h3>
               <p className="text-slate-600">
                 Wir melden uns innerhalb von 24 Stunden bei Ihnen zurück und erstellen ein individuelles, auf Ihre Bedürfnisse zugeschnittenes Angebot.
               </p>
             </Card>
 
-            <Card className="p-6">
+            <Card className="p-6 hover-lift hover-tilt hover-tilt">
               <h3 className="font-bold text-lg mb-2">In welchen Regionen sind Sie tätig?</h3>
               <p className="text-slate-600">
                 Wir sind in der gesamten Zentralschweiz tätig, mit Schwerpunkt auf Luzern, Zug und Zürich. Für andere Regionen kontaktieren Sie uns bitte direkt.
               </p>
             </Card>
 
-            <Card className="p-6">
+            <Card className="p-6 hover-lift hover-tilt hover-tilt">
               <h3 className="font-bold text-lg mb-2">Verwenden Sie umweltfreundliche Reinigungsmittel?</h3>
               <p className="text-slate-600">
                 Ja, wir setzen auf umweltfreundliche und nachhaltige Reinigungsmittel, die sowohl effektiv als auch schonend für Mensch und Umwelt sind.
               </p>
             </Card>
 
-            <Card className="p-6">
+            <Card className="p-6 hover-lift hover-tilt hover-tilt">
               <h3 className="font-bold text-lg mb-2">Bieten Sie auch kurzfristige Einsätze an?</h3>
               <p className="text-slate-600">
                 Ja, wir sind flexibel und können auch kurzfristige Reinigungseinsätze durchführen. Kontaktieren Sie uns für eine schnelle Terminvereinbarung.
