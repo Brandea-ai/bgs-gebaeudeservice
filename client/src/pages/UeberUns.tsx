@@ -14,14 +14,6 @@ export default function UeberUns() {
         description="Lernen Sie die Geschichte und die Werte der Swiss Reinigungsfirma kennen. Erfahren Sie, warum wir Ihr vertrauenswürdiger Partner für professionelle Reinigung sind."
         keywords="Über uns, Reinigungsfirma Schweiz, Team, Werte, Mission, Geschichte"
         url="/ueber-uns"
-      
-        url="/ueber-uns"
-        schema={
-          "@context": "https://schema.org",
-          "@type": "AboutPage",
-          "name": "Über Uns",
-          "description": "Erfahren Sie mehr über Swiss Reinigungsfirma"
-        }
       />
       <SwissNavigation />
 

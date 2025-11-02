@@ -80,12 +80,6 @@ export default function Kontakt() {
         url="/kontakt"
       
         url="/kontakt"
-        schema={
-          "@context": "https://schema.org",
-          "@type": "ContactPage",
-          "name": "Kontakt",
-          "description": "Kontaktieren Sie Swiss Reinigungsfirma"
-        }
       />
       <SwissNavigation />
 
