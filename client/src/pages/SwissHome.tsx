@@ -17,6 +17,8 @@ import {
   TiltCard,
   MagneticHover 
 } from "@/components/PremiumParallax";
+import { PinnedBackground, ScrollProgress } from "@/components/ScrollPinning";
+import { getBackgroundForPage } from "@/config/backgrounds";
 import { 
   fadeInUp, 
   staggerContainer, 
@@ -41,6 +43,12 @@ export default function SwissHome() {
         keywords="Reinigungsfirma Schweiz, Gebäudereinigung Zürich, Büroreinigung Zug, Facility Management Luzern, Professionelle Reinigung"
         url="/"
         schema={organizationSchema}
+      />
+      <ScrollProgress />
+      <PinnedBackground 
+        image={getBackgroundForPage("home")}
+        overlay={true}
+        parallax={true}
       />
       <SwissNavigation />
 
@@ -316,7 +324,6 @@ export default function SwissHome() {
               { name: "Zürich", image: "/zurich-city.jpg", link: "/standorte/zuerich" },
               { name: "Zug", image: "/zug-city.jpg", link: "/standorte/zug" },
               { name: "Luzern", image: "/luzern-city.jpg", link: "/standorte/luzern" },
-              { name: "St. Gallen", image: "/stgallen-city.jpg", link: "/standorte/st-gallen" },
             ].map((location, index) => (
               <motion.div key={index} variants={scaleIn}>
                 <Link href={location.link}>
@@ -409,13 +416,7 @@ export default function SwissHome() {
       </section>
 
       {/* CTA Section with Parallax Background */}
-      <section className="relative py-32 overflow-hidden">
-        <ParallaxBackground 
-          src="/swiss-cta-background.jpg"
-          speed={0.3}
-          overlay={true}
-        />
-        
+      <section className="relative py-32 overflow-hidden bg-gradient-to-br from-red-600 via-red-700 to-red-800">
         <div className="container relative z-10">
           <RevealOnScroll>
             <div className="max-w-3xl mx-auto text-center">
