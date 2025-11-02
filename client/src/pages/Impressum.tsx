@@ -1,4 +1,3 @@
-
 import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
 import SEO from "@/components/SEO";
