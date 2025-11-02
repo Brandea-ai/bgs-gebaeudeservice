@@ -275,12 +275,18 @@ export default function SwissFooter() {
       {/* Footer Content */}
       <footer className="bg-slate-900 text-white">
         <div className="container py-16">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
             <div>
               <img src="/swiss-logo.webp" alt="Swiss Reinigung" className="h-24 w-auto mb-6 brightness-0 invert" />
-              <p className="text-slate-400 text-sm leading-relaxed">
+              <p className="text-slate-400 text-sm leading-relaxed mb-6">
                 Ihre professionelle Reinigungsfirma in der Schweiz. Qualität, Zuverlässigkeit und Präzision seit Jahren.
               </p>
+              <div className="space-y-2">
+                <Link href="/ueber-uns"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Über Uns</div></Link>
+                <Link href="/kontakt"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Kontakt</div></Link>
+                <Link href="/referenzen"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Referenzen</div></Link>
+                <Link href="/blog"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Blog</div></Link>
+              </div>
             </div>
 
             <div>
@@ -294,21 +300,37 @@ export default function SwissFooter() {
             </div>
 
             <div>
-              <h3 className="font-semibold text-lg mb-4">B2B Lösungen</h3>
+              <h3 className="font-semibold text-lg mb-4">Business Services</h3>
               <div className="space-y-2">
-                <Link href="/b2b/bueroreinigung"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Büroreinigung</div></Link>
-                <Link href="/b2b/industriereinigung"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Industriereinigung</div></Link>
-                <Link href="/b2b/fassadenreinigung"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Fassadenreinigung</div></Link>
-                <Link href="/b2b/facility-management"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Facility Management</div></Link>
+                <Link href="/business/bueroreinigung"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Büroreinigung</div></Link>
+                <Link href="/business/industriereinigung"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Industriereinigung</div></Link>
+                <Link href="/business/fassadenreinigung"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Fassadenreinigung</div></Link>
+                <Link href="/business/fensterreinigung"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Fensterreinigung</div></Link>
+                <Link href="/business/hallenreinigung"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Hallenreinigung</div></Link>
+                <Link href="/business/maschinenreinigung"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Maschinenreinigung</div></Link>
+                <Link href="/business/baureinigung"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Baureinigung</div></Link>
+                <Link href="/business/aussenanlagen"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Außenanlagen</div></Link>
+                <Link href="/business/facility-management"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Facility Management</div></Link>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-lg mb-4">Basis Services</h3>
+              <div className="space-y-2">
+                <Link href="/basis/unterhaltsreinigung"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Unterhaltsreinigung</div></Link>
+                <Link href="/basis/hausmeisterservice"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Hausmeisterservice</div></Link>
+                <Link href="/basis/winterdienst"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Winterdienst</div></Link>
+                <Link href="/basis/beschaffung"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Beschaffung</div></Link>
+                <Link href="/basis/sonderleistungen"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Sonderleistungen</div></Link>
               </div>
             </div>
 
             <div>
               <h3 className="font-semibold text-lg mb-4">Standorte</h3>
               <div className="space-y-2 mb-6">
-                <Link href="/standorte/zuerich"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer">Zürich</div></Link>
-                <Link href="/standorte/zug"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer">Zug</div></Link>
-                <Link href="/standorte/luzern"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer">Luzern</div></Link>
+                <Link href="/standorte/zuerich"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Zürich</div></Link>
+                <Link href="/standorte/zug"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Zug</div></Link>
+                <Link href="/standorte/luzern"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Luzern</div></Link>
               </div>
             </div>
           </div>
