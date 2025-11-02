@@ -1,4 +1,5 @@
 import SwissNavigation from "@/components/SwissNavigation";
+import SEO from "@/components/SEO";
 import SwissFooter from "@/components/SwissFooter";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card } from "@/components/ui/card";
@@ -7,6 +8,19 @@ import { Link } from "wouter";
 import { Check, ArrowRight, Leaf, Droplets, Recycle } from "lucide-react";
 
 export default function UmweltfreundlicheReinigung() {
+  return (
+    <>
+      <SEO 
+        title="Umweltfreundliche Reinigung: Nachhaltig & Effektiv | Swiss Reinigungsfirma"
+        description="Nachhaltige Reinigungsmethoden und umweltfreundliche Reinigungsmittel. Wie Sie Sauberkeit und Umweltschutz perfekt kombinieren."
+        keywords="umweltfreundliche Reinigung, nachhaltige Reinigung, ökologische Reinigungsmittel, Green Cleaning"
+      />
+      <UmweltfreundlicheReinigungContent />
+    </>
+  );
+}
+
+function UmweltfreundlicheReinigungContent() {
   return (
     <div className="min-h-screen bg-white">
       <SwissNavigation />

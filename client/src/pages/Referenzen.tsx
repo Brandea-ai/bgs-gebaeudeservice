@@ -1,4 +1,5 @@
 import SwissNavigation from "@/components/SwissNavigation";
+import SEO from "@/components/SEO";
 import { scrollToContact } from "../utils/scroll";
 import SwissFooter from "@/components/SwissFooter";
 import { Card } from "@/components/ui/card";
@@ -7,6 +8,19 @@ import { Link } from "wouter";
 import { Star, Quote, ArrowRight, Building, Users, Award } from "lucide-react";
 
 export default function Referenzen() {
+  return (
+    <>
+      <SEO 
+        title="Referenzen & Erfolgsgeschichten | Swiss Reinigungsfirma"
+        description="Überzeugen Sie sich von unseren erfolgreichen Reinigungsprojekten in Zürich, Zug und Luzern. Von Luxushotels bis Industrieanlagen - Referenzen zufriedener Kunden."
+        keywords="Referenzen Reinigungsfirma, Kundenbewertungen, Erfolgsgeschichten, Reinigung Zürich, Gebäudereinigung Schweiz"
+      />
+      <ReferenzenContent />
+    </>
+  );
+}
+
+function ReferenzenContent() {
   const projects = [
     {
       title: "Luxury Hotel Zürich",

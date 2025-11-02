@@ -1,4 +1,5 @@
 import SwissNavigation from "@/components/SwissNavigation";
+import SEO from "@/components/SEO";
 import { scrollToContact } from "../utils/scroll";
 import SwissFooter from "@/components/SwissFooter";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -9,6 +10,19 @@ import { Link } from "wouter";
 import { Check, ArrowRight, Shield, Award, Users } from "lucide-react";
 
 export default function ProfessionelleGebaeudereinigung() {
+  return (
+    <>
+      <SEO 
+        title="Professionelle Gebäudereinigung: Qualität & Hygiene | Swiss Reinigungsfirma"
+        description="Erfahren Sie, was professionelle Gebäudereinigung ausmacht. Tipps zu Qualitätsstandards, Hygiene-Anforderungen und Auswahl der richtigen Reinigungsfirma."
+        keywords="professionelle Gebäudereinigung, Qualitätsstandards Reinigung, Hygiene Büro, Reinigungsfirma Schweiz"
+      />
+      <ProfessionelleGebaeudereinigungContent />
+    </>
+  );
+}
+
+function ProfessionelleGebaeudereinigungContent() {
   return (
     <div className="min-h-screen bg-white">
       <SwissNavigation />

@@ -1,11 +1,18 @@
 import SwissNavigation from "@/components/SwissNavigation";
+import SEO from "@/components/SEO";
 import { scrollToContact } from "../utils/scroll";
 import SwissFooter from "@/components/SwissFooter";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 export default function StGallen() {
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <SEO 
+        title="Professionelle Reinigungsfirma St. Gallen | Swiss Reinigungsfirma"
+        description="Professionelle Gebäudereinigung in St. Gallen und Umgebung. Büroreinigung, Industriereinigung und Facility Management von erfahrenen Fachkräften."
+        keywords="Reinigungsfirma St. Gallen, Gebäudereinigung St. Gallen, Büroreinigung St. Gallen, Facility Management"
+      />
+      <div className="min-h-screen bg-white">
       <SwissNavigation />
       <div className="pt-32 pb-20 container">
         <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6">Reinigungsfirma StGallen</h1>
@@ -14,5 +21,6 @@ export default function StGallen() {
       </div>
       <SwissFooter />
     </div>
+    </>
   );
 }

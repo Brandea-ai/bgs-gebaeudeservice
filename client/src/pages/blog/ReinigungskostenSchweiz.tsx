@@ -1,4 +1,5 @@
 import SwissNavigation from "@/components/SwissNavigation";
+import SEO from "@/components/SEO";
 import { scrollToContact } from "../utils/scroll";
 import SwissFooter from "@/components/SwissFooter";
 import { Card } from "@/components/ui/card";
@@ -8,6 +9,19 @@ import { Link } from "wouter";
 import { ArrowRight, TrendingUp, Building, Home } from "lucide-react";
 
 export default function ReinigungskostenSchweiz() {
+  return (
+    <>
+      <SEO 
+        title="Reinigungskosten Schweiz 2025: Preise & Spartipps | Swiss Reinigungsfirma"
+        description="Aktuelle Preise für Reinigungsdienstleistungen in der Schweiz. Kostenübersicht, Preisfaktoren und Tipps zum Sparen bei professioneller Gebäudereinigung."
+        keywords="Reinigungskosten Schweiz, Preise Gebäudereinigung, Kosten Büroreinigung, Reinigungsfirma Preise"
+      />
+      <ReinigungskostenSchweizContent />
+    </>
+  );
+}
+
+function ReinigungskostenSchweizContent() {
   return (
     <div className="min-h-screen bg-white">
       <SwissNavigation />

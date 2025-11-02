@@ -1,4 +1,5 @@
 import SwissNavigation from "@/components/SwissNavigation";
+import SEO from "@/components/SEO";
 import { scrollToContact } from "../utils/scroll";
 import SwissFooter from "@/components/SwissFooter";
 import {
@@ -13,6 +14,19 @@ import { Link } from "wouter";
 import { Check, ArrowRight, Star } from "lucide-react";
 
 export default function RichtigeReinigungsfirmaFinden() {
+  return (
+    <>
+      <SEO 
+        title="Die richtige Reinigungsfirma finden: 10 Tipps | Swiss Reinigungsfirma"
+        description="10 wichtige Kriterien für die Auswahl der richtigen Reinigungsfirma. Von Zertifizierungen bis Referenzen - so finden Sie den perfekten Partner."
+        keywords="Reinigungsfirma finden, Reinigungsfirma auswählen, Kriterien Reinigungsfirma, professionelle Reinigung"
+      />
+      <RichtigeReinigungsfirmaFindenContent />
+    </>
+  );
+}
+
+function RichtigeReinigungsfirmaFindenContent() {
   return (
     <div className="min-h-screen bg-white">
       <SwissNavigation />

@@ -78,6 +78,14 @@ export default function Kontakt() {
         description="Kontaktieren Sie die Swiss Reinigungsfirma für ein individuelles Angebot. Wir sind für Sie da - per Telefon, E-Mail oder über unser Kontaktformular."
         keywords="Kontakt, Angebot, Reinigungsfirma Schweiz, Anfrage, Beratung"
         url="/kontakt"
+      
+        url="/kontakt"
+        schema={
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "name": "Kontakt",
+          "description": "Kontaktieren Sie Swiss Reinigungsfirma"
+        }
       />
       <SwissNavigation />
 
