@@ -39,7 +39,20 @@ export default function AIChatbot() {
   const [showSpecialistPrompt, setShowSpecialistPrompt] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
   const [identificationCode, setIdentificationCode] = useState('');
+  const [hasShownAutoPopup, setHasShownAutoPopup] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  // Auto-popup after 10 seconds on page
+  useEffect(() => {
+    if (!hasShownAutoPopup && !isOpen) {
+      const timer = setTimeout(() => {
+        setIsOpen(true);
+        setHasShownAutoPopup(true);
+      }, 10000); // 10 seconds
+
+      return () => clearTimeout(timer);
+    }
+  }, [hasShownAutoPopup, isOpen]);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -53,7 +66,7 @@ export default function AIChatbot() {
     setHasConsent(true);
     setMessages([{
       role: 'assistant',
-      content: 'Herzlich willkommen! Ich bin Ihr KI-Assistent von der Swiss Reinigungsfirma. Wie kann ich Ihnen heute helfen?',
+      content: 'Guten Tag! Ich bin Sarah, Ihre persönliche Beraterin von der Swiss Reinigungsfirma.\n\nIch unterstütze unser Team dabei, für Sie die **perfekte Reinigungslösung** zu finden – zugeschnitten auf Ihre individuellen Anforderungen.\n\nDarf ich fragen: **Welche Art von Räumlichkeiten** möchten Sie reinigen lassen?',
       timestamp: new Date()
     }]);
   };
@@ -285,8 +298,8 @@ Zeitpunkt: ${extractedInfo.timing || 'nicht angegeben'}
         <div className="flex items-center gap-2">
           <Sparkles className="w-5 h-5" />
           <div>
-            <h3 className="font-semibold text-sm">KI-Assistent</h3>
-            <p className="text-xs text-red-100">Powered by Brandea AI</p>
+            <h3 className="font-semibold text-sm">Sarah - Ihre persönliche Beraterin</h3>
+            <p className="text-xs text-red-100">🟢 Online - Antwortet sofort</p>
           </div>
         </div>
         <button
