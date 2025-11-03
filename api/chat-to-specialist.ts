@@ -240,23 +240,24 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       </html>
     `;
 
-    // Send both emails
+    // Send both emails using Resend's test domain (like contact form)
     await Promise.all([
       // Admin email (internal)
       resend.emails.send({
-        from: 'BGS Gebäudeservice <noreply@brandea.de>',
+        from: 'BGS Gebäudeservice <onboarding@resend.dev>',
         to: 'info@brandea.de',
         subject: `Neue Anfrage: ${data.userInfo.service || 'Reinigung'} - ${data.identificationCode}`,
         html: adminEmailHtml,
+        replyTo: data.userInfo.email,  // User can reply to customer directly
       }),
-      
+
       // Customer email (shows external address)
       resend.emails.send({
-        from: 'BGS Gebäudeservice <noreply@brandea.de>',
+        from: 'BGS Gebäudeservice <onboarding@resend.dev>',
         to: data.userInfo.email,
-        replyTo: 'info@bgs-service.ch',
         subject: `Ihre Anfrage bei BGS Gebäudeservice - ${data.identificationCode}`,
         html: customerEmailHtml,
+        replyTo: 'info@brandea.de',  // Customer replies go to brandea
       })
     ]);
 
