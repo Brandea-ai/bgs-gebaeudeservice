@@ -528,11 +528,13 @@ WICHTIG - SOFORT ZUSAMMENFASSUNG ZEIGEN:
 "Vielen Dank! Ich habe folgendes notiert:
 
 - Gewünschte Leistung: [LEISTUNG]
-- Terminwunsch: [ZEITANGABE]
+- Terminwunsch: [KONKRETES DATUM UND UHRZEIT - KEIN "morgen"!]
 ${'{'}Name/Firma/Telefon falls vorhanden${'}'}
 - E-Mail: [EMAIL]
 
 Soll ich diesen Terminvorschlag an unser Team senden? Sie erhalten dann eine Bestätigung per E-Mail mit konkreten Zeitvorschlägen."
+
+⚠️ ERINNERUNG: Siehe Datum oben! Ersetze "morgen" mit dem echten Datum!
 
 NIEMALS:
 - Nach Zusammenfassung weitere Fragen stellen
@@ -625,23 +627,34 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     tomorrow.setDate(now.getDate() + 1);
     const tomorrowDateStr = tomorrow.toLocaleDateString('de-DE', dateOptions);
 
+    console.log('📅 Date Context:', {
+      current: currentDateStr,
+      currentTime: currentTimeStr,
+      tomorrow: tomorrowDateStr
+    });
+
     const dateContext = `
-=== AKTUELLES DATUM & ZEIT ===
+🗓️ AKTUELLES DATUM & ZEIT (SEHR WICHTIG!) 🗓️
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Heute ist: ${currentDateStr}, ${currentTimeStr} Uhr
 Morgen ist: ${tomorrowDateStr}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-WICHTIG:
-- Wenn User "morgen" sagt → Verwende das genaue Datum: ${tomorrowDateStr}
-- Wenn User "heute" sagt → Verwende: ${currentDateStr}
-- Wenn User Uhrzeit nennt (z.B. "18:00"), kombiniere mit dem Datum
-- IMMER konkrete Datumsangaben in der Zusammenfassung zeigen!
+⚠️ KRITISCH - DU MUSST RELATIVE ZEITANGABEN UMWANDELN:
+✅ User sagt "morgen" → Du schreibst: "${tomorrowDateStr}"
+✅ User sagt "heute" → Du schreibst: "${currentDateStr}"
+✅ User sagt "morgen um 18:00" → Du schreibst: "${tomorrowDateStr} um 18:00 Uhr"
 
-Beispiel:
-User: "morgen um 18:00"
-Du: "Terminwunsch: ${tomorrowDateStr} um 18:00 Uhr"
+❌ NIEMALS "morgen" oder "heute" in der Zusammenfassung verwenden!
+❌ IMMER das vollständige Datum ausschreiben!
+
+PFLICHT IN DER ZUSAMMENFASSUNG:
+Wenn Terminwunsch vorhanden → Ersetze ALLE relativen Angaben durch konkrete Daten!
 `;
 
-    const prompt = `${websiteContext}${appointmentAddition}${dateContext}
+    const prompt = `${dateContext}
+
+${websiteContext}${appointmentAddition}
 
 === BISHERIGER GESPRÄCHSVERLAUF ===
 ${conversationHistory}
@@ -671,6 +684,7 @@ SOFORT Zusammenfassung zeigen:
 "Vielen Dank! Ich habe folgendes notiert:
 
 - Gewünschte Leistung: ${detectedService.name}
+${extractedInfo.timing ? `- Terminwunsch: [ERSETZE "morgen"/"heute" mit konkretem Datum! Siehe oben!]` : ''}
 ${extractedInfo.name ? `- Kontaktperson: ${extractedInfo.name}` : ''}
 ${extractedInfo.company ? `- Firma: ${extractedInfo.company}` : ''}
 ${extractedInfo.city ? `- Stadt: ${extractedInfo.city}` : ''}
