@@ -68,11 +68,26 @@ export default function Impressum() {
               </div>
             </Card>
 
+            <Card className="p-8 bg-amber-50 border-l-4 border-amber-500">
+              <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-6 text-amber-900">⚠️ Wichtige Hinweise</h2>
+              <div className="space-y-6 text-amber-800 leading-relaxed text-base">
+                <div>
+                  <p className="font-bold text-lg mb-2">ISO-Zertifizierung:</p>
+                  <p>Die ISO-Zertifizierung befindet sich derzeit in Bearbeitung. Wir arbeiten aktiv an der Erfüllung aller Standards und erwarten die Zertifizierung in naher Zukunft.</p>
+                </div>
+                <div>
+                  <p className="font-bold text-lg mb-2">Verwendung von KI-generierten Bildern:</p>
+                  <p>Einige Bilder auf dieser Website wurden mit Unterstützung von künstlicher Intelligenz (AI) erstellt. Diese dienen ausschließlich zu Illustrations- und Marketingzwecken und repräsentieren die Qualität unserer Dienstleistungen.</p>
+                </div>
+              </div>
+            </Card>
+
             <Card className="p-8">
               <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-6 text-slate-900">Datenschutz</h2>
               <div className="space-y-4 text-slate-700 leading-relaxed text-base">
                 <p>Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.</p>
                 <p>In Zusammenarbeit mit unseren Hosting-Providern bemühen wir uns, die Datenbanken so gut wie möglich vor fremden Zugriffen, Verlusten, Missbrauch oder vor Fälschung zu schützen. Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.</p>
+                <p className="mt-4">Weitere Informationen finden Sie in unserer <a href="/datenschutz" className="text-primary hover:underline font-semibold">Datenschutzerklärung</a>.</p>
               </div>
             </Card>
 

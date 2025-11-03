@@ -5,6 +5,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { useEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import CookieConsent from "./components/CookieConsent";
 import SwissHome from "./pages/SwissHome";
 import NotFound from "./pages/NotFound";
 
@@ -123,6 +124,7 @@ function App() {
         <ThemeProvider defaultTheme="light">
           <TooltipProvider>
             <Toaster />
+            <CookieConsent />
             <Router />
           </TooltipProvider>
         </ThemeProvider>
