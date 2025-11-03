@@ -161,9 +161,10 @@ export default function UeberUns() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
               <ParallaxImage 
-                src="/nezir-bozhdaraj.jpg" 
+                src="/nezir-bozhdaraj.jpg?v=2" 
                 alt="Nezir Bozhdaraj, Gründer der Swiss Reinigungsfirma"
-                className="rounded-2xl shadow-2xl w-full h-[400px] lg:h-[500px] object-cover object-center"
+                className="rounded-2xl shadow-2xl w-full h-[500px] lg:h-[600px] object-cover" 
+                style={{ objectPosition: '50% 20%' }}
                 speed={0.2}
                 scale={false}
                 overlay={false}
