@@ -22,7 +22,7 @@ const SERVICE_MAPPINGS: ServiceMapping[] = [
   { code: 'BÜ', name: 'Büroreinigung', category: 'Business Lösungen', description: 'Professionelle Reinigung von Büros, Arbeitsplätzen und Bürogebäuden.', keywords: ['büro', 'büroreinigung', 'office', 'arbeitsplatz', 'bürogebäude', 'bürofläche', 'bürorienigung', 'buro', 'buero', 'büros', 'office cleaning', 'arbeitsplatzreinigung', 'büroräume', 'autohaus büro', 'praxis', 'kanzlei', 'verwaltung'] },
   { code: 'IR', name: 'Industriereinigung', category: 'Business Lösungen', description: 'Reinigung von Industrieanlagen, Fabriken und Produktionsstätten.', keywords: ['industrie', 'industriereinigung', 'fabrik', 'werk', 'produktion', 'industriehalle', 'produktionshalle', 'fertigungshalle', 'industrieanlage', 'produktionsstätte', 'industriebetrieb', 'industrierienigung', 'fabrikreinigung', 'werksreinigung'] },
   { code: 'FR', name: 'Fassadenreinigung', category: 'Business Lösungen', description: 'Professionelle Reinigung von Gebäudefassaden und Außenwänden.', keywords: ['fassade', 'fassadenreinigung', 'außenreinigung', 'gebäudefassade', 'fassadenrienigung', 'aussenfassade', 'außenfassade', 'fassadenpflege', 'gebäudeaußenreinigung', 'fassadenwäsche'] },
-  { code: 'FE', name: 'Fensterreinigung', category: 'Business Lösungen', description: 'Streifenfreie Reinigung von Fenstern, Glasflächen und Scheiben.', keywords: ['fenster', 'fensterreinigung', 'glasreinigung', 'scheiben', 'fensterputzen', 'fenster putzen', 'glasscheiben', 'fensterscheiben', 'fensterrienigung', 'glas reinigung', 'scheibenreinigung', 'fenster waschen', 'glasflächen'] },
+  { code: 'FE', name: 'Fensterreinigung', category: 'Business Lösungen', description: 'Streifenfreie Reinigung von Fenstern, Glasflächen und Scheiben.', keywords: ['fenster', 'fensterreinigung', 'glasreinigung', 'scheiben', 'fensterputzen', 'fenster putzen', 'glasscheiben', 'fensterscheiben', 'fensterrienigung', 'fenterreonging', 'fensterreinigung', 'glas reinigung', 'scheibenreinigung', 'fenster waschen', 'glasflächen'] },
   { code: 'HR', name: 'Hallenreinigung', category: 'Business Lösungen', description: 'Reinigung von Lager-, Produktions- und Sporthallen.', keywords: ['halle', 'hallenreinigung', 'lagerhalle', 'produktionshalle', 'sporthalle', 'messehalle', 'veranstaltungshalle', 'hallenboden', 'hallenrienigung', 'hallen reinigung', 'großraum'] },
   { code: 'MR', name: 'Maschinenreinigung', category: 'Business Lösungen', description: 'Fachgerechte Reinigung von Produktionsmaschinen und Anlagen.', keywords: ['maschine', 'maschinenreinigung', 'anlagenreinigung', 'produktionsmaschinen', 'maschinen', 'maschinenrienigung', 'anlagen', 'produktionsanlage', 'maschinenpflege', 'anlagenpflege', 'maschinenpark'] },
   { code: 'BR', name: 'Baureinigung', category: 'Business Lösungen', description: 'Professionelle Reinigung von Baustellen, Neubauten und nach Bauarbeiten.', keywords: ['bau', 'baureinigung', 'baustelle', 'baustellenreinigung', 'neubau', 'rohbau', 'endreinigung', 'bauendreinigung', 'bauabschlussreinigung', 'baurienigung', 'baustellenrienigung', 'besutellen', 'baustel', 'baustell', 'neubaureinigung', 'rohbaureinigung', 'bauschlussreinigung', 'baufeinreinigung', 'bauabnahme', 'bauübergabe'] },
@@ -39,13 +39,46 @@ const SERVICE_MAPPINGS: ServiceMapping[] = [
 
 function detectService(text: string): ServiceMapping | null {
   const lowerText = text.toLowerCase();
+
+  // Priority 1: Look for explicit service names (high confidence)
+  const explicitServiceKeywords = [
+    'privatjet', 'yacht', 'housekeeping', 'luxusimmobilien',
+    'büroreinigung', 'industriereinigung', 'fassadenreinigung', 'fensterreinigung',
+    'hallenreinigung', 'maschinenreinigung', 'baureinigung', 'außenanlagen',
+    'facility management', 'unterhaltsreinigung', 'hausmeisterservice',
+    'winterdienst', 'sonderleistungen'
+  ];
+
+  for (const explicitKeyword of explicitServiceKeywords) {
+    if (lowerText.includes(explicitKeyword)) {
+      // Find the service that has this keyword
+      for (const service of SERVICE_MAPPINGS) {
+        if (service.keywords.includes(explicitKeyword)) {
+          return service;
+        }
+      }
+    }
+  }
+
+  // Priority 2: Look for all keywords (but skip generic ones like 'praxis' alone)
   for (const service of SERVICE_MAPPINGS) {
     for (const keyword of service.keywords) {
+      // Skip generic keywords that could mean multiple services
+      const genericKeywords = ['praxis', 'kanzlei', 'verwaltung'];
+      if (genericKeywords.includes(keyword)) {
+        // Only match if there's also a more specific context
+        const hasSpecificContext = lowerText.includes('büro') || lowerText.includes('office');
+        if (!hasSpecificContext) {
+          continue; // Skip this generic keyword
+        }
+      }
+
       if (lowerText.includes(keyword)) {
         return service;
       }
     }
   }
+
   return null;
 }
 
@@ -577,7 +610,38 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const websiteContext = getWebsiteContext(supporterName, supporterGender, supporterRole);
     const appointmentAddition = appointmentMode ? getAppointmentModeAddition() : '';
 
-    const prompt = `${websiteContext}${appointmentAddition}
+    // Add current date/time context
+    const now = new Date();
+    const dateOptions: Intl.DateTimeFormatOptions = {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    };
+    const currentDateStr = now.toLocaleDateString('de-DE', dateOptions);
+    const currentTimeStr = now.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' });
+
+    const tomorrow = new Date(now);
+    tomorrow.setDate(now.getDate() + 1);
+    const tomorrowDateStr = tomorrow.toLocaleDateString('de-DE', dateOptions);
+
+    const dateContext = `
+=== AKTUELLES DATUM & ZEIT ===
+Heute ist: ${currentDateStr}, ${currentTimeStr} Uhr
+Morgen ist: ${tomorrowDateStr}
+
+WICHTIG:
+- Wenn User "morgen" sagt → Verwende das genaue Datum: ${tomorrowDateStr}
+- Wenn User "heute" sagt → Verwende: ${currentDateStr}
+- Wenn User Uhrzeit nennt (z.B. "18:00"), kombiniere mit dem Datum
+- IMMER konkrete Datumsangaben in der Zusammenfassung zeigen!
+
+Beispiel:
+User: "morgen um 18:00"
+Du: "Terminwunsch: ${tomorrowDateStr} um 18:00 Uhr"
+`;
+
+    const prompt = `${websiteContext}${appointmentAddition}${dateContext}
 
 === BISHERIGER GESPRÄCHSVERLAUF ===
 ${conversationHistory}
