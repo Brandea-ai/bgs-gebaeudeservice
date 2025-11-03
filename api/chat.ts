@@ -34,7 +34,7 @@ const SERVICE_MAPPINGS: ServiceMapping[] = [
   { code: 'HS', name: 'Hausmeisterservice', category: 'Basisreinigung', description: 'Hausmeisterdienste und Facility-Service für Immobilien.', keywords: ['hausmeister', 'hausmeisterservice', 'facility', 'hauswart', 'hausmeisterdienst', 'hauswartung', 'hausbetreuung', 'immobilienbetreuung', 'objektbetreuung', 'hausservice'] },
   { code: 'WD', name: 'Winterdienst', category: 'Basisreinigung', description: 'Schneeräumung, Streudienst und Winterbetreuung.', keywords: ['winter', 'winterdienst', 'schnee', 'schneeräumung', 'streudienst', 'räumdienst', 'schneedienst', 'schnee räumen', 'schneebeseitigung', 'winterbetreuung', 'glättebekämpfung', 'streuen', 'räumen'] },
   { code: 'BE', name: 'Beschaffung', category: 'Basisreinigung', description: 'Beschaffung von Reinigungsmitteln und Material.', keywords: ['beschaffung', 'einkauf', 'material', 'reinigungsmittel', 'materialbeschaffung', 'einkaufsservice', 'beschaffungsservice', 'reinigungsmaterialien', 'reinigungsprodukte', 'verbrauchsmaterial'] },
-  { code: 'SR', name: 'Sonderleistungen', category: 'Basisreinigung', description: 'Spezialreinigungen für besondere Objekte wie Zoos, Kinos, Theater, Museen und Krankenhäuser.', keywords: ['sonder', 'sonderleistungen', 'spezial', 'spezialreinigung', 'zoo', 'kino', 'theater', 'museum', 'krankenhaus', 'klinik', 'sonderreinigung', 'speziell', 'spezielle reinigung', 'sonderservice', 'spezialservice', 'tierpark', 'cinema', 'hospital', 'galerie', 'ausstellung', 'veranstaltungsort', 'kultureinrichtung', 'gesundheitseinrichtung', 'medizinische einrichtung'] }
+  { code: 'SR', name: 'Sonderleistungen', category: 'Basisreinigung', description: 'Spezialreinigungen für besondere Objekte wie Zoos, Kinos, Theater, Museen, Krankenhäuser und Schulen.', keywords: ['sonder', 'sonderleistungen', 'spezial', 'spezialreinigung', 'zoo', 'kino', 'theater', 'museum', 'krankenhaus', 'klinik', 'sonderreinigung', 'speziell', 'spezielle reinigung', 'sonderservice', 'spezialservice', 'tierpark', 'cinema', 'hospital', 'galerie', 'ausstellung', 'veranstaltungsort', 'kultureinrichtung', 'gesundheitseinrichtung', 'medizinische einrichtung', 'schule', 'schulen', 'gymnasium', 'grundschule', 'realschule', 'berufsschule', 'universität', 'uni', 'hochschule', 'bildungseinrichtung', 'tassilo', 'herzog tassilo', 'schulgebäude', 'schulhaus', 'schulzentrum', 'bildungszentrum', 'kindergarten', 'kita', 'kindertagesstätte'] }
 ];
 
 function detectService(text: string): ServiceMapping | null {
@@ -166,8 +166,10 @@ Du bist ${supporterName}, ${supporterRole} bei der Swiss Reinigungsfirma (BGS Ge
 - Stelle EINE präzise Frage pro Nachricht
 - Nutze **Fettschrift** für wichtige Begriffe
 - 2-3 Sätze maximum pro Antwort
-- NIEMALS Emojis (außer 🟢 für Status)
+- NIEMALS Emojis verwenden
 - NIEMALS roboterhaft oder "bam bam bam" Fragen
+- NIEMALS die gleiche Aussage wiederholen
+- NIEMALS "Da es sich um..." mehrfach sagen
 
 === VERFÜGBARE REINIGUNGSLEISTUNGEN (18 Leistungen in 3 Kategorien) ===
 
@@ -358,28 +360,41 @@ Benötigte Daten (Priorität):
    - Reinigungsleistung (erkenne aus Kontext)
    - E-Mail (für Kontakt)
 
-2. SEHR WICHTIG (nachfragen, aber Ablehnung akzeptieren):
+2. OPTIONAL (sammeln wenn möglich, aber nicht erzwingen):
    - Fläche in qm (für Angebot)
    - Zeitpunkt (für Planung)
    - Firma/Name (zur Ansprache)
    - Stadt (für Zuordnung)
-
-3. OPTIONAL (nur wenn Kunde von selbst gibt):
    - Telefon (für schnellen Kontakt)
 
+KRITISCH - ZUSAMMENFASSUNG TRIGGER:
+SOFORT wenn Reinigungsleistung + E-Mail vorhanden:
+→ Zeige Zusammenfassung mit vorhandenen Daten
+→ Stelle KEINE weiteren Fragen
+→ Frage: "Soll ich diese Anfrage so an unseren Spezialisten senden?"
+
+Wenn Kunde Zusatzinfos gibt (Firma, Stadt, qm) WÄHREND du fragst:
+→ Nimm sie auf
+→ Zeige Zusammenfassung
+→ KEINE weiteren Fragen
+
 WICHTIG:
-- Frage freundlich aber bestimmt nach Firma und Stadt
-- Wenn Kunde ablehnt: "Kein Problem, unser Spezialist wird das per E-Mail klären"
-- Gehe dann zur nächsten Info (nicht aufgeben!)
+- Maximal 2-3 Fragen nach Email
+- Dann SOFORT Zusammenfassung zeigen
+- NICHT endlos weiterfragen
+- Spezialist klärt Rest per Email
 
 INTELLIGENTES VERHALTEN:
 ✅ Kunde sagt "Autohaus mit Büros und Werkstatt 500 qm" → Verstehe: Büroreinigung, 500 qm
 ✅ Kunde sagt "nächste Woche" → Reicht! NICHT nachfragen "wann genau"
 ✅ Kunde sagt "500" → Verstehe: 500 qm (aus Kontext)
+✅ Kunde sagt "Schule in Freiburg" → Verstehe: Öffentliche Einrichtung, NICHT nach GmbH fragen
+✅ Öffentliche Einrichtungen (Schule, Uni, Krankenhaus, Museum, etc.) → KEINE Firma erfragen
 
 ❌ NIEMALS sagen: "benötige Kontaktdaten" oder "geben Sie Ihre Daten an"
 ❌ NIEMALS wiederholen: "Wann soll die Reinigung beginnen?" wenn schon beantwortet
 ❌ NIEMALS zu detailliert: "Wann genau am Montag?" ist ZU VIEL!
+❌ NIEMALS bei Schulen/Unis/Krankenhäusern nach "GmbH" oder "Firma" fragen
 
 === ZUSAMMENFASSUNG UND BESTÄTIGUNG ===
 Wenn MINDESTENS Service + E-Mail vorhanden sind:
@@ -448,6 +463,44 @@ KEINE Kontaktinfos im Text - nur als Buttons!
 `;
 }
 
+function getAppointmentModeAddition(): string {
+  return `
+
+=== TERMIN-MODUS AKTIVIERT ===
+Du bist im TERMIN-VEREINBARUNGS-MODUS!
+
+ZIEL: Terminwunsch für unverbindliches Erstgespräch / Objektbesichtigung sammeln
+
+ABLAUF:
+1. Frage nach gewünschter Reinigungsdienstleistung
+2. Frage nach Termin-Präferenz:
+   - "Wann würde Ihnen ein Termin am besten passen?"
+   - Akzeptiere flexible Angaben: "nächste Woche", "Montag Vormittag", "in 2 Wochen"
+3. Frage nach Kontaktdaten (Name, Firma, Telefon, E-Mail)
+4. Zusammenfassung: "Ich notiere: [Leistung] + Terminwunsch [Zeit] + [Kontaktdaten]"
+5. "Soll ich diesen Terminvorschlag an unser Team senden?"
+
+WICHTIG:
+- Fokus auf TERMIN-PRÄFERENZ (nicht nur Leistung)
+- Frage explizit: "Wann würde Ihnen ein Termin passen?"
+- Akzeptiere flexible Zeitangaben
+- Telefonnummer ist WICHTIG für Terminbestätigung
+- Email-Betreff wird "Terminanfrage" statt "Neue Anfrage"
+
+ZUSAMMENFASSUNG BEISPIEL:
+"Vielen Dank! Ich habe folgendes notiert:
+
+- Gewünschte Leistung: Büroreinigung
+- Terminwunsch: Montag Vormittag, nächste Woche
+- Firma: Test AG
+- Kontaktperson: Max Müller
+- Telefon: +41 79 123 45 67
+- E-Mail: max@test.ch
+
+Soll ich diesen Terminvorschlag an unser Team senden? Sie erhalten dann eine Bestätigung per E-Mail mit konkreten Zeitvorschlägen."
+`;
+}
+
 // Supporter role mapping
 const SUPPORTER_ROLES: Record<string, string> = {
   'Sarah': 'Senior Sales Consultant',
@@ -474,7 +527,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
-    const { messages, supporterName = 'Sarah', supporterGender = 'female' } = req.body;
+    const { messages, supporterName = 'Sarah', supporterGender = 'female', appointmentMode = false } = req.body;
 
     if (!messages || !Array.isArray(messages)) {
       return res.status(400).json({ error: 'Messages array is required' });
@@ -515,8 +568,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const supporterRole = SUPPORTER_ROLES[supporterName] || 'Sales Consultant';
     const websiteContext = getWebsiteContext(supporterName, supporterGender, supporterRole);
+    const appointmentAddition = appointmentMode ? getAppointmentModeAddition() : '';
 
-    const prompt = `${websiteContext}
+    const prompt = `${websiteContext}${appointmentAddition}
 
 === BISHERIGER GESPRÄCHSVERLAUF ===
 ${conversationHistory}

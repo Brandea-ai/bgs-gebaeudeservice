@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { MessageCircle, X, Send, Loader2, CheckCircle2, Shield, Sparkles, Phone, Mail } from 'lucide-react';
+import { MessageCircle, X, Send, Loader2, CheckCircle2, Shield, Sparkles, Phone, Mail, Circle } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 
 interface Message {
@@ -73,7 +73,11 @@ const getRandomSupporter = (): Supporter => {
   return SUPPORTERS[Math.floor(Math.random() * SUPPORTERS.length)];
 };
 
-export default function AIChatbot() {
+interface AIChatbotProps {
+  appointmentMode?: boolean;
+}
+
+export default function AIChatbot({ appointmentMode = false }: AIChatbotProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [hasConsent, setHasConsent] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -114,9 +118,16 @@ export default function AIChatbot() {
       ? `Guten Tag! Ich bin ${supporter.name}, Ihr persönlicher Berater von der Swiss Reinigungsfirma.`
       : `Guten Tag! Ich bin ${supporter.name}, Ihre persönliche Beraterin von der Swiss Reinigungsfirma.`;
 
+    let content;
+    if (appointmentMode) {
+      content = `${greeting}\n\n**Gerne können wir einen Termin für ein unverbindliches Erstgespräch vereinbaren!**\n\nDamit ich den passenden Zeitpunkt für Sie finde: **Welche Reinigungsdienstleistung** interessiert Sie?`;
+    } else {
+      content = `${greeting}\n\nIch unterstütze unser Team dabei, für Sie die **perfekte Reinigungslösung** zu finden – zugeschnitten auf Ihre individuellen Anforderungen.\n\nDarf ich fragen: **Welche Art von Räumlichkeiten** möchten Sie reinigen lassen?`;
+    }
+
     setMessages([{
       role: 'assistant',
-      content: `${greeting}\n\nIch unterstütze unser Team dabei, für Sie die **perfekte Reinigungslösung** zu finden – zugeschnitten auf Ihre individuellen Anforderungen.\n\nDarf ich fragen: **Welche Art von Räumlichkeiten** möchten Sie reinigen lassen?`,
+      content,
       timestamp: new Date()
     }]);
   };
@@ -161,7 +172,8 @@ export default function AIChatbot() {
           messages: [...messages, userMessage].map(m => ({ role: m.role, content: m.content })),
           userInfo: userInfo,
           supporterName: supporter.name,
-          supporterGender: supporter.gender
+          supporterGender: supporter.gender,
+          appointmentMode: appointmentMode
         }),
       });
 
@@ -355,7 +367,10 @@ Zeitpunkt: ${extractedInfo.timing || 'nicht angegeben'}
           />
           <div>
             <h3 className="font-semibold text-sm">{supporter.name} - {supporter.role}</h3>
-            <p className="text-xs text-red-100">🟢 Online - Antwortet sofort</p>
+            <div className="flex items-center gap-1 text-xs text-red-100">
+              <Circle className="w-2 h-2 fill-green-400 text-green-400" />
+              <span>Online - Antwortet sofort</span>
+            </div>
           </div>
         </div>
         <button
