@@ -62,7 +62,7 @@ export default function IndustryAdvisor() {
         </div>
         <div>
           <h3 className="text-2xl font-bold text-white">KI-Branchen-Berater</h3>
-          <p className="text-gray-300 text-sm">Powered by Gemini AI</p>
+          <p className="text-gray-300 text-sm">Powered by Brandea AI</p>
         </div>
       </div>
 
@@ -175,7 +175,7 @@ export default function IndustryAdvisor() {
       {/* Footer Note */}
       <div className="mt-6 pt-6 border-t border-gray-700">
         <p className="text-gray-400 text-xs text-center">
-          Unsere KI nutzt alle Informationen unserer Website, um Ihnen die bestmögliche Empfehlung zu geben.
+          Unsere KI nutzt alle Informationen unserer Website, um Ihnen die bestmögliche Empfehlung zu geben. Bei Fragen: info@bgs-service.ch
         </p>
       </div>
     </div>

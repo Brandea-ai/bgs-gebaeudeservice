@@ -92,7 +92,7 @@ export default function AIChatbot() {
       console.error('Chat error:', error);
       const errorMessage: Message = {
         role: 'assistant',
-        content: 'Entschuldigung, es gab einen technischen Fehler. Bitte versuchen Sie es erneut oder rufen Sie uns direkt an: +41 41 320 56 10',
+        content: 'Entschuldigung, es gab einen technischen Fehler. Bitte kontaktieren Sie uns: info@bgs-service.ch oder +41 41 320 56 10',
         timestamp: new Date()
       };
       setMessages(prev => [...prev, errorMessage]);
@@ -177,7 +177,7 @@ export default function AIChatbot() {
           </div>
           <div>
             <h3 className="font-semibold">KI-Assistent</h3>
-            <p className="text-xs text-white/80">Powered by Gemini AI</p>
+            <p className="text-xs text-white/80">Powered by Brandea AI</p>
           </div>
         </div>
         <button

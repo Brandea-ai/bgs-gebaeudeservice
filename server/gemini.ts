@@ -94,7 +94,7 @@ export async function analyzeIndustry(data: IndustryAnalysisRequest): Promise<In
     const { GoogleGenerativeAI } = await import('@google/generative-ai');
     
     const genAI = new GoogleGenerativeAI('AIzaSyCcUqAO4FYclRVfrM1Q1vYoAjdAJLJXuOw');
-    const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash-exp' });
+    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 
     const prompt = `${WEBSITE_CONTEXT}
 
@@ -153,7 +153,7 @@ export async function chatWithAI(data: ChatRequest): Promise<ChatResponse> {
     const { GoogleGenerativeAI } = await import('@google/generative-ai');
     
     const genAI = new GoogleGenerativeAI('AIzaSyCcUqAO4FYclRVfrM1Q1vYoAjdAJLJXuOw');
-    const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash-exp' });
+    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 
     // Build conversation history
     const conversationHistory = messages.map(msg => 

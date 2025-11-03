@@ -235,44 +235,6 @@ export default function Kontakt() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20 bg-slate-50">
-        <div className="container max-w-4xl">
-          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-12 text-center">
-            Häufig gestellte Fragen
-          </h2>
-          
-          <div className="space-y-6">
-            <Card className="p-6 hover-lift hover-tilt hover-tilt">
-              <h3 className="font-bold text-lg mb-2">Wie schnell erhalte ich ein Angebot?</h3>
-              <p className="text-slate-600">
-                Wir melden uns innerhalb von 24 Stunden bei Ihnen zurück und erstellen ein individuelles, auf Ihre Bedürfnisse zugeschnittenes Angebot.
-              </p>
-            </Card>
-
-            <Card className="p-6 hover-lift hover-tilt hover-tilt">
-              <h3 className="font-bold text-lg mb-2">In welchen Regionen sind Sie tätig?</h3>
-              <p className="text-slate-600">
-                Wir sind in der gesamten Zentralschweiz tätig, mit Schwerpunkt auf Luzern, Zug und Zürich. Für andere Regionen kontaktieren Sie uns bitte direkt.
-              </p>
-            </Card>
-
-            <Card className="p-6 hover-lift hover-tilt hover-tilt">
-              <h3 className="font-bold text-lg mb-2">Verwenden Sie umweltfreundliche Reinigungsmittel?</h3>
-              <p className="text-slate-600">
-                Ja, wir setzen auf umweltfreundliche und nachhaltige Reinigungsmittel, die sowohl effektiv als auch schonend für Mensch und Umwelt sind.
-              </p>
-            </Card>
-
-            <Card className="p-6 hover-lift hover-tilt hover-tilt">
-              <h3 className="font-bold text-lg mb-2">Bieten Sie auch kurzfristige Einsätze an?</h3>
-              <p className="text-slate-600">
-                Ja, wir sind flexibel und können auch kurzfristige Reinigungseinsätze durchführen. Kontaktieren Sie uns für eine schnelle Terminvereinbarung.
-              </p>
-            </Card>
-          </div>
-        </div>
-      </section>
 
       <SwissFooter />
     </div>
