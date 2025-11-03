@@ -15,32 +15,46 @@ interface ChatToSpecialistData {
   identificationCode: string;
 }
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
   try {
+    console.log('Chat-to-specialist API called');
+
     const data: ChatToSpecialistData = req.body;
 
     // Only email is required, name can be fallback from email
     if (!data.userInfo || !data.userInfo.email) {
+      console.error('Missing user email');
       return res.status(400).json({ error: 'Missing required user information (email)' });
     }
+
+    // Initialize Resend with API key from environment (SAME AS CONTACT FORM)
+    const resendApiKey = process.env.RESEND_API_KEY;
+
+    if (!resendApiKey) {
+      console.error('RESEND_API_KEY not found in environment variables');
+      return res.status(500).json({
+        error: 'Server configuration error: Missing API key'
+      });
+    }
+
+    const resend = new Resend(resendApiKey);
 
     // Use fallback name if not provided
     const finalName = data.userInfo.name || data.userInfo.email.split('@')[0] || 'Kunde';
     const finalCompany = data.userInfo.company || 'Nicht angegeben';
     const finalCity = data.userInfo.city || 'Nicht angegeben';
 
-    console.log('📧 Sending specialist emails:', {
+    console.log('📧 Preparing to send specialist emails:', {
       name: finalName,
       email: data.userInfo.email,
       company: finalCompany,
       city: finalCity,
-      service: data.userInfo.service
+      service: data.userInfo.service,
+      identificationCode: data.identificationCode
     });
 
     // Email 1: To Admin (internal: info@brandea.de)
@@ -240,30 +254,41 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       </html>
     `;
 
-    // Send both emails using Resend's test domain (like contact form)
-    await Promise.all([
-      // Admin email (internal)
-      resend.emails.send({
-        from: 'BGS Gebäudeservice <onboarding@resend.dev>',
-        to: 'info@brandea.de',
-        subject: `Neue Anfrage: ${data.userInfo.service || 'Reinigung'} - ${data.identificationCode}`,
-        html: adminEmailHtml,
-        replyTo: data.userInfo.email,  // User can reply to customer directly
-      }),
+    // Send both emails using Resend's test domain (EXACTLY LIKE CONTACT FORM)
+    console.log('Sending admin notification email...');
 
-      // Customer email (shows external address)
-      resend.emails.send({
-        from: 'BGS Gebäudeservice <onboarding@resend.dev>',
-        to: data.userInfo.email,
-        subject: `Ihre Anfrage bei BGS Gebäudeservice - ${data.identificationCode}`,
-        html: customerEmailHtml,
-        replyTo: 'info@brandea.de',  // Customer replies go to brandea
-      })
-    ]);
+    // Send email to admin
+    const adminEmailResult = await resend.emails.send({
+      from: 'onboarding@resend.dev',
+      to: 'info@brandea.de',
+      subject: `Neue Anfrage: ${data.userInfo.service || 'Reinigung'} - ${data.identificationCode}`,
+      html: adminEmailHtml,
+      replyTo: data.userInfo.email,
+    });
 
-    res.status(200).json({ 
+    console.log('Admin email sent successfully');
+    console.log('Admin email ID:', adminEmailResult.data?.id);
+
+    console.log('Sending confirmation email to customer...');
+
+    // Send confirmation email to customer
+    const confirmationEmailResult = await resend.emails.send({
+      from: 'onboarding@resend.dev',
+      to: data.userInfo.email,
+      subject: `Ihre Anfrage bei BGS Gebäudeservice - ${data.identificationCode}`,
+      html: customerEmailHtml,
+      replyTo: 'info@brandea.de',
+    });
+
+    console.log('Confirmation email sent successfully');
+    console.log('Confirmation email ID:', confirmationEmailResult.data?.id);
+
+    return res.status(200).json({
       success: true,
-      identificationCode: data.identificationCode
+      message: 'E-Mails erfolgreich gesendet',
+      identificationCode: data.identificationCode,
+      adminEmailId: adminEmailResult.data?.id,
+      confirmationEmailId: confirmationEmailResult.data?.id
     });
 
   } catch (error: any) {
