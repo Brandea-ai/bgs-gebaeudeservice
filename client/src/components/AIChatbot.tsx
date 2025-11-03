@@ -102,20 +102,28 @@ export default function AIChatbot() {
         setExtractedInfo(data.extractedInfo);
         
         // Auto-fill userInfo with extracted data
-        setUserInfo(prev => ({
-          ...prev,
-          service: data.detectedService?.name || prev.service,
-          name: data.extractedInfo.name || prev.name,
-          company: data.extractedInfo.company || prev.company,
-          city: data.extractedInfo.city || prev.city,
-          phone: data.extractedInfo.phone || prev.phone,
-          email: data.extractedInfo.email || prev.email,
-        }));
-      }
-
-      // Show specialist prompt if ready (ALL contact info must be present)
-      if (data.readyToSend && userInfo.name && userInfo.email && userInfo.phone && userInfo.company && userInfo.city && userInfo.service) {
-        setShowSpecialistPrompt(true);
+        const updatedUserInfo = {
+          ...userInfo,
+          service: data.detectedService?.name || userInfo.service,
+          name: data.extractedInfo.name || userInfo.name,
+          company: data.extractedInfo.company || userInfo.company,
+          city: data.extractedInfo.city || userInfo.city,
+          phone: data.extractedInfo.phone || userInfo.phone,
+          email: data.extractedInfo.email || userInfo.email,
+        };
+        
+        setUserInfo(updatedUserInfo);
+        
+        // Show specialist prompt if ready (ALL contact info must be present)
+        if (data.readyToSend && 
+            updatedUserInfo.name && 
+            updatedUserInfo.email && 
+            updatedUserInfo.phone && 
+            updatedUserInfo.company && 
+            updatedUserInfo.city && 
+            updatedUserInfo.service) {
+          setShowSpecialistPrompt(true);
+        }
       }
 
     } catch (error) {
@@ -195,7 +203,7 @@ Zeitpunkt: ${extractedInfo.timing || 'nicht angegeben'}
 
       const successMessage: Message = {
         role: 'assistant',
-        content: `Vielen Dank! Ihre Anfrage wurde erfolgreich an unseren Spezialisten weitergeleitet.\n\n**Ihr Identifikationscode**: ${idCode}\n\nBitte bewahren Sie diesen Code auf. Sie können ihn bei Rückfragen angeben.\n\nSie erhalten innerhalb von 12 Stunden (werktags) eine Antwort an ${userInfo.email}.`,
+        content: `Vielen Dank! Ihre Anfrage wurde erfolgreich weitergeleitet.\n\n**Identifikationscode**: ${idCode}\n\nEin Spezialist wird sich innerhalb von 12 Stunden (werktags) bei Ihnen melden.`,
         timestamp: new Date()
       };
 
