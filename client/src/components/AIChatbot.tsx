@@ -127,28 +127,25 @@ export default function AIChatbot() {
         
         setUserInfo(updatedUserInfo);
         
-        // Show specialist prompt if ready (REQUIRED: email, company, city, service - OPTIONAL: name, phone)
+        // Show specialist prompt if ready (MINIMUM: email and service)
         if (data.readyToSend) {
-          const hasRequiredInfo = updatedUserInfo.email &&
-                                  updatedUserInfo.company &&
-                                  updatedUserInfo.city &&
-                                  updatedUserInfo.service;
+          const hasMinimumInfo = updatedUserInfo.email && updatedUserInfo.service;
 
-          console.log('🔍 DEBUG: hasRequiredInfo check:', {
+          console.log('🔍 DEBUG: hasMinimumInfo check:', {
             email: !!updatedUserInfo.email,
-            company: !!updatedUserInfo.company,
-            city: !!updatedUserInfo.city,
             service: !!updatedUserInfo.service,
-            name: !!updatedUserInfo.name,
-            phone: !!updatedUserInfo.phone,
-            hasRequiredInfo
+            company: updatedUserInfo.company,
+            city: updatedUserInfo.city,
+            name: updatedUserInfo.name,
+            phone: updatedUserInfo.phone,
+            hasMinimumInfo
           });
 
-          if (hasRequiredInfo) {
+          if (hasMinimumInfo) {
             console.log('✅ Setting showSpecialistPrompt to TRUE');
             setShowSpecialistPrompt(true);
           } else {
-            console.log('❌ NOT showing specialist prompt - missing required data');
+            console.log('❌ NOT showing specialist prompt - missing minimum data (email or service)');
           }
         }
       }
@@ -178,9 +175,9 @@ export default function AIChatbot() {
       return;
     }
 
-    // Only require email, company, city, and service (name and phone are optional)
-    if (!userInfo.email || !userInfo.company || !userInfo.city || !userInfo.service) {
-      alert('Bitte geben Sie mindestens E-Mail, Firma, Stadt und Dienstleistung an.');
+    // Only require email and service (everything else is optional)
+    if (!userInfo.email || !userInfo.service) {
+      alert('Bitte geben Sie mindestens E-Mail und Dienstleistung an.');
       return;
     }
 

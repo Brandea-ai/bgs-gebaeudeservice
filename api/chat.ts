@@ -190,15 +190,24 @@ WICHTIG: Sei INTELLIGENT und DYNAMISCH - NICHT roboterhaft!
 4. Stelle NUR EINE Frage pro Nachricht
 5. Sei natürlich und menschlich
 
-Benötigte Daten:
-- Reinigungsleistung (erkenne aus Kontext)
-- Fläche in qm (ungefähr reicht!)
-- Zeitpunkt ("nächste Woche" reicht! NICHT "wann genau am Montag?")
-- Firma (PFLICHT)
-- Stadt (PFLICHT)
-- E-Mail (PFLICHT)
-- Name (OPTIONAL - wenn Kunde ablehnt, nicht nachfragen!)
-- Telefon (OPTIONAL - wenn Kunde ablehnt, nicht nachfragen!)
+Benötigte Daten (Priorität):
+1. PFLICHT (minimum):
+   - Reinigungsleistung (erkenne aus Kontext)
+   - E-Mail (für Kontakt)
+
+2. SEHR WICHTIG (nachfragen, aber Ablehnung akzeptieren):
+   - Fläche in qm (für Angebot)
+   - Zeitpunkt (für Planung)
+   - Firma/Name (zur Ansprache)
+   - Stadt (für Zuordnung)
+
+3. OPTIONAL (nur wenn Kunde von selbst gibt):
+   - Telefon (für schnellen Kontakt)
+
+WICHTIG:
+- Frage freundlich aber bestimmt nach Firma und Stadt
+- Wenn Kunde ablehnt: "Kein Problem, unser Spezialist wird das per E-Mail klären"
+- Gehe dann zur nächsten Info (nicht aufgeben!)
 
 INTELLIGENTES VERHALTEN:
 ✅ Kunde sagt "Autohaus mit Büros und Werkstatt 500 qm" → Verstehe: Büroreinigung, 500 qm
@@ -210,21 +219,31 @@ INTELLIGENTES VERHALTEN:
 ❌ NIEMALS zu detailliert: "Wann genau am Montag?" ist ZU VIEL!
 
 === ZUSAMMENFASSUNG UND BESTÄTIGUNG ===
-Wenn alle PFLICHT-Kontaktdaten vorhanden sind (Firma, Stadt, E-Mail):
-1. Zeige eine kurze Zusammenfassung
+Wenn MINDESTENS Service + E-Mail vorhanden sind:
+1. Zeige eine Zusammenfassung (nur vorhandene Daten!)
 2. Frage: "Soll ich diese Anfrage so an unseren Spezialisten senden?"
 3. Warte auf Bestätigung
 
-Beispiel Zusammenfassung:
+Beispiel Zusammenfassung (ALLE Felder):
 "Vielen Dank! Ich habe folgende Informationen notiert:
 
-- Leistung: Maschinenreinigung
-- Fläche: 1000 qm
-- Zeitpunkt: In 2 Monaten
+- Leistung: Büroreinigung
+- Fläche: 600 qm
+- Zeitpunkt: Nächsten Monat
 - Firma: Test AG
 - Stadt: Zürich
 - E-Mail: max@test.ch
-[Name und Telefon nur zeigen wenn vorhanden]
+[Nur Felder zeigen die vorhanden sind!]
+
+Soll ich diese Anfrage so an unseren Spezialisten senden?"
+
+Beispiel Zusammenfassung (MINIMAL - nur Service + Email):
+"Vielen Dank! Ich habe folgende Informationen notiert:
+
+- Leistung: Büroreinigung
+- E-Mail: info@firma.de
+
+Unser Spezialist wird die weiteren Details (Fläche, Zeitpunkt, Standort) per E-Mail mit Ihnen klären.
 
 Soll ich diese Anfrage so an unseren Spezialisten senden?"
 
@@ -290,15 +309,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const extractedInfo = extractInfoFromConversation(messages);
     const detectedService = extractedInfo.service;
 
-    // Check if required info is available (name and phone are OPTIONAL)
+    // Check if MINIMUM required info is available (only Service + Email mandatory)
     const hasAllContactInfo = !!(
       detectedService &&
-      extractedInfo.size &&
-      extractedInfo.timing &&
-      extractedInfo.company &&
-      extractedInfo.city &&
       extractedInfo.email
     );
+
+    // Use email as fallback for name and company if not provided
+    const fallbackName = extractedInfo.name || extractedInfo.email?.split('@')[0] || 'Kunde';
+    const fallbackCompany = extractedInfo.company || 'Nicht angegeben';
+    const fallbackCity = extractedInfo.city || 'Nicht angegeben';
 
     // Build conversation history for Gemini
     const conversationHistory = messages
@@ -326,23 +346,17 @@ ${extractedInfo.email ? `- E-Mail: ${extractedInfo.email}` : ''}
 === DEIN NÄCHSTER SCHRITT ===
 ${!detectedService ? `
 - Erkenne die gewünschte Reinigungsleistung aus dem Kontext
-- Frage nach der Fläche
-` : !extractedInfo.size ? `
-- Frage nach der Fläche (in qm)
-` : !extractedInfo.timing ? `
-- Frage nach dem gewünschten Zeitpunkt
-` : !extractedInfo.company ? `
-- Frage nach dem Firmennamen (PFLICHT)
-` : !extractedInfo.city ? `
-- Frage nach der Stadt (PFLICHT)
 ` : !extractedInfo.email ? `
-- Frage nach der E-Mail-Adresse (PFLICHT)
+- Frage nach der E-Mail-Adresse (PFLICHT für Kontakt!)
 ` : `
-- PFLICHT-Daten vollständig! Zeige eine kurze Zusammenfassung
+- MINIMUM erreicht (Service + Email)!
+- Zeige Zusammenfassung mit vorhandenen Daten
+- Wenn Firma/Stadt/Fläche/Zeitpunkt fehlen: Hinweis dass Spezialist per E-Mail nachfragt
 - Frage: "Soll ich diese Anfrage so an unseren Spezialisten senden?"
-- Name und Telefon nur zeigen wenn vorhanden
 - Setze readyToSend: true
 `}
+
+HINWEIS: Frage trotzdem nach Fläche, Zeitpunkt, Firma, Stadt - aber akzeptiere Ablehnung!
 
 Antworte jetzt als freundlicher KI-Assistent:`;
 
@@ -381,7 +395,13 @@ Antworte jetzt als freundlicher KI-Assistent:`;
         name: detectedService.name,
         category: detectedService.category
       } : null,
-      extractedInfo
+      extractedInfo: {
+        ...extractedInfo,
+        // Send fallback values to frontend
+        name: extractedInfo.name || fallbackName,
+        company: extractedInfo.company || fallbackCompany,
+        city: extractedInfo.city || fallbackCity
+      }
     });
 
   } catch (error: any) {
