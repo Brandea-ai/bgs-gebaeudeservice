@@ -67,11 +67,11 @@ export default function SwissHome() {
             >
               <span className="text-primary font-semibold text-sm sm:text-base">Professionelle Reinigungsfirma in der Schweiz</span>
             </motion.div>
-            <motion.h1 
+            <motion.h1
               className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight mb-6"
               variants={fadeInUp}
             >
-              Erstklassige <span className="text-primary">Gebäudereinigung</span> für Zürich, Zug und Luzern
+              Erstklassige <span className="text-primary">Gebäudereinigung</span> für <span className="whitespace-nowrap">Zürich,</span> <span className="whitespace-nowrap">Zug</span> und <span className="whitespace-nowrap">Luzern</span>
             </motion.h1>
             <motion.p 
               className="text-sm sm:text-base md:text-lg text-white/95 mb-8 leading-relaxed max-w-2xl"
