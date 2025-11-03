@@ -60,12 +60,18 @@ function extractInfoFromConversation(messages: any[]): any {
   
   const sizeMatch = lowerText.match(/(\d+)\s*(qm|m2|m²|quadratmeter|quadrat meter)/i);
   if (sizeMatch) info.size = `${sizeMatch[1]} qm`;
-  
-  const timingKeywords = ['nächste woche', 'nächster woche', 'näcsht woch', 'nächste monat', 'sofort', 'heute', 'morgen', 'bald', 'dringend', 'asap', 'schnell', 'in 2 monaten', '2 monate'];
-  for (const keyword of timingKeywords) {
-    if (lowerText.includes(keyword)) {
-      info.timing = keyword;
-      break;
+
+  // Extract timing - support specific dates AND keywords
+  const dateMatch = fullText.match(/(\d{1,2}\.\d{1,2}\.?(?:\d{2,4})?)\s*(?:um\s*)?(\d{1,2}:\d{2})?(?:\s*uhr)?/i);
+  if (dateMatch) {
+    info.timing = dateMatch[2] ? `${dateMatch[1]} um ${dateMatch[2]} Uhr` : dateMatch[1];
+  } else {
+    const timingKeywords = ['nächste woche', 'nächster woche', 'näcsht woch', 'nächste monat', 'nächsten monat', 'sofort', 'heute', 'morgen', 'übermorgen', 'bald', 'dringend', 'asap', 'schnell', 'in 2 monaten', '2 monate', 'in 2 wochen', '2 wochen', 'montag', 'dienstag', 'mittwoch', 'donnerstag', 'freitag', 'vormittag', 'nachmittag', 'abend'];
+    for (const keyword of timingKeywords) {
+      if (lowerText.includes(keyword)) {
+        info.timing = keyword;
+        break;
+      }
     }
   }
   
@@ -169,7 +175,8 @@ Du bist ${supporterName}, ${supporterRole} bei der Swiss Reinigungsfirma (BGS Ge
 - NIEMALS Emojis verwenden
 - NIEMALS roboterhaft oder "bam bam bam" Fragen
 - NIEMALS die gleiche Aussage wiederholen
-- NIEMALS "Da es sich um..." mehrfach sagen
+- NIEMALS "Da es sich um..." verwenden - du siehst bereits erkannte Leistung oben!
+- NIEMALS "Verstanden! Da es sich um..." sagen - ÜBERSPRINGE diese Phrase komplett!
 
 === VERFÜGBARE REINIGUNGSLEISTUNGEN (18 Leistungen in 3 Kategorien) ===
 
@@ -471,33 +478,33 @@ Du bist im TERMIN-VEREINBARUNGS-MODUS!
 
 ZIEL: Terminwunsch für unverbindliches Erstgespräch / Objektbesichtigung sammeln
 
-ABLAUF:
+ABLAUF (3 Fragen MAXIMUM):
 1. Frage nach gewünschter Reinigungsdienstleistung
 2. Frage nach Termin-Präferenz:
    - "Wann würde Ihnen ein Termin am besten passen?"
-   - Akzeptiere flexible Angaben: "nächste Woche", "Montag Vormittag", "in 2 Wochen"
-3. Frage nach Kontaktdaten (Name, Firma, Telefon, E-Mail)
-4. Zusammenfassung: "Ich notiere: [Leistung] + Terminwunsch [Zeit] + [Kontaktdaten]"
-5. "Soll ich diesen Terminvorschlag an unser Team senden?"
+   - Akzeptiere flexible Angaben: "nächste Woche", "Montag Vormittag", "in 2 Wochen", "14.05 um 12:00"
+3. Frage nach E-Mail-Adresse (Name optional, Telefon optional)
+4. SOFORT Zusammenfassung zeigen → KEINE weiteren Fragen!
 
-WICHTIG:
-- Fokus auf TERMIN-PRÄFERENZ (nicht nur Leistung)
-- Frage explizit: "Wann würde Ihnen ein Termin passen?"
-- Akzeptiere flexible Zeitangaben
-- Telefonnummer ist WICHTIG für Terminbestätigung
-- Email-Betreff wird "Terminanfrage" statt "Neue Anfrage"
+WICHTIG - SOFORT ZUSAMMENFASSUNG ZEIGEN:
+- SOBALD: Leistung + Termin-Präferenz + E-Mail vorhanden sind
+- KEINE weiteren Fragen nach Name/Firma/Stadt/Telefon
+- User kann Telefon ablehnen → OK, akzeptieren!
+- Format der Zusammenfassung:
 
-ZUSAMMENFASSUNG BEISPIEL:
 "Vielen Dank! Ich habe folgendes notiert:
 
-- Gewünschte Leistung: Büroreinigung
-- Terminwunsch: Montag Vormittag, nächste Woche
-- Firma: Test AG
-- Kontaktperson: Max Müller
-- Telefon: +41 79 123 45 67
-- E-Mail: max@test.ch
+- Gewünschte Leistung: [LEISTUNG]
+- Terminwunsch: [ZEITANGABE]
+${'{'}Name/Firma/Telefon falls vorhanden${'}'}
+- E-Mail: [EMAIL]
 
 Soll ich diesen Terminvorschlag an unser Team senden? Sie erhalten dann eine Bestätigung per E-Mail mit konkreten Zeitvorschlägen."
+
+NIEMALS:
+- Nach Zusammenfassung weitere Fragen stellen
+- User nach mehreren Infos gleichzeitig fragen
+- Die Frage "Soll ich senden?" wiederholen wenn User "ja" sagt
 `;
 }
 
@@ -587,18 +594,33 @@ ${extractedInfo.email ? `- E-Mail: ${extractedInfo.email}` : ''}
 
 === DEIN NÄCHSTER SCHRITT ===
 ${!detectedService ? `
-- Erkenne die gewünschte Reinigungsleistung aus dem Kontext
+❌ KEINE Leistung erkannt → Frage nach der gewünschten Reinigungsleistung
 ` : !extractedInfo.email ? `
-- Frage nach der E-Mail-Adresse (PFLICHT für Kontakt!)
+✅ Leistung erkannt: ${detectedService.name}
+❌ KEINE E-Mail → Frage nach E-Mail-Adresse (PFLICHT!)
 ` : `
-- MINIMUM erreicht (Service + Email)!
-- Zeige Zusammenfassung mit vorhandenen Daten
-- Wenn Firma/Stadt/Fläche/Zeitpunkt fehlen: Hinweis dass Spezialist per E-Mail nachfragt
-- Frage: "Soll ich diese Anfrage so an unseren Spezialisten senden?"
-- Setze readyToSend: true
-`}
+✅ Leistung erkannt: ${detectedService.name}
+✅ E-Mail vorhanden: ${extractedInfo.email}
+🎯 MINIMUM ERREICHT!
 
-HINWEIS: Frage trotzdem nach Fläche, Zeitpunkt, Firma, Stadt - aber akzeptiere Ablehnung!
+SOFORT Zusammenfassung zeigen:
+"Vielen Dank! Ich habe folgendes notiert:
+
+- Gewünschte Leistung: ${detectedService.name}
+${extractedInfo.name ? `- Kontaktperson: ${extractedInfo.name}` : ''}
+${extractedInfo.company ? `- Firma: ${extractedInfo.company}` : ''}
+${extractedInfo.city ? `- Stadt: ${extractedInfo.city}` : ''}
+${extractedInfo.phone ? `- Telefon: ${extractedInfo.phone}` : ''}
+- E-Mail: ${extractedInfo.email}
+
+Soll ich diese Anfrage an unseren Spezialisten senden?"
+
+WICHTIG:
+- NIEMALS nach weiteren Infos fragen wenn Email + Service da sind
+- SOFORT Zusammenfassung zeigen
+- NUR diese Frage stellen: "Soll ich diese Anfrage an unseren Spezialisten senden?"
+- KEINE weiteren Fragen mehr!
+`}
 
 Antworte jetzt als freundlicher KI-Assistent:`;
 
