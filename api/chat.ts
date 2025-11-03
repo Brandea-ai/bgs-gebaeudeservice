@@ -84,13 +84,13 @@ function getAllServicesDescription(): string {
   
   return `
 PREMIUM SERVICES (Exklusive Reinigungsdienstleistungen für höchste Ansprüche):
-${premiumServices.map((s, i) => `${i + 1}. ${s.name} (${s.code}): ${s.description}`).join('\n')}
+${premiumServices.map((s, i) => `${i + 1}. ${s.name}: ${s.description}`).join('\n')}
 
 BUSINESS LÖSUNGEN (Professionelle Gebäudereinigung und Facility Management):
-${businessServices.map((s, i) => `${i + 1}. ${s.name} (${s.code}): ${s.description}`).join('\n')}
+${businessServices.map((s, i) => `${i + 1}. ${s.name}: ${s.description}`).join('\n')}
 
 BASISREINIGUNG (Zuverlässige Unterhaltsreinigung und Hausmeisterservice):
-${basicServices.map((s, i) => `${i + 1}. ${s.name} (${s.code}): ${s.description}`).join('\n')}
+${basicServices.map((s, i) => `${i + 1}. ${s.name}: ${s.description}`).join('\n')}
   `.trim();
 }
 

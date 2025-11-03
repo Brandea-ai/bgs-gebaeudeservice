@@ -114,15 +114,18 @@ export default function AIChatbot() {
         
         setUserInfo(updatedUserInfo);
         
-        // Show specialist prompt if ready (ALL contact info must be present)
-        if (data.readyToSend && 
-            updatedUserInfo.name && 
-            updatedUserInfo.email && 
-            updatedUserInfo.phone && 
-            updatedUserInfo.company && 
-            updatedUserInfo.city && 
-            updatedUserInfo.service) {
-          setShowSpecialistPrompt(true);
+        // Show specialist prompt if ready (ALL contact info must be present AND readyToSend is true)
+        if (data.readyToSend) {
+          const hasAllInfo = updatedUserInfo.name && 
+                             updatedUserInfo.email && 
+                             updatedUserInfo.phone && 
+                             updatedUserInfo.company && 
+                             updatedUserInfo.city && 
+                             updatedUserInfo.service;
+          
+          if (hasAllInfo) {
+            setShowSpecialistPrompt(true);
+          }
         }
       }
 
@@ -327,8 +330,8 @@ Zeitpunkt: ${extractedInfo.timing || 'nicht angegeben'}
               </div>
             )}
 
-            {/* Specialist Prompt (Ja/Nein Buttons) */}
-            {showSpecialistPrompt && (
+            {/* Specialist Prompt (Ja/Nein Buttons) - ONLY show if NOT sent yet */}
+            {showSpecialistPrompt && !emailSent && (
               <div className="flex flex-col gap-2 p-4 bg-blue-50 rounded-lg border border-blue-200">
                 <p className="text-sm text-gray-700 font-medium">
                   Soll ich diese Anfrage an einen Spezialisten senden?
@@ -352,26 +355,28 @@ Zeitpunkt: ${extractedInfo.timing || 'nicht angegeben'}
               </div>
             )}
 
-            {/* Contact Links (only after email sent or 15+ messages) */}
-            {(emailSent || messages.length >= 15) && (
+            {/* Contact Links - ONLY after email sent (removed 15+ messages condition) */}
+            {emailSent && (
               <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
                 <p className="text-sm text-gray-700 mb-3 font-medium">
                   Oder kontaktieren Sie uns direkt:
                 </p>
                 <div className="flex gap-2">
-                  <a
-                    href="tel:+41413205610"
-                    className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
-                  >
-                    <Phone className="w-4 h-4" />
-                    Anrufen
-                  </a>
+                  {/* E-Mail FIRST (red) */}
                   <a
                     href="mailto:info@bgs-service.ch"
-                    className="flex-1 bg-orange-600 hover:bg-orange-700 text-white py-2 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
+                    className="flex-1 bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
                   >
                     <Mail className="w-4 h-4" />
                     E-Mail
+                  </a>
+                  {/* Anrufen SECOND (gray) */}
+                  <a
+                    href="tel:+41413205610"
+                    className="flex-1 bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
+                  >
+                    <Phone className="w-4 h-4" />
+                    Anrufen
                   </a>
                 </div>
               </div>
