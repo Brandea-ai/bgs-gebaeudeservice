@@ -1,7 +1,7 @@
 import { Calendar } from 'lucide-react';
 import { Button } from './ui/button';
 import { useChatbot } from '../contexts/ChatbotContext';
-import MagneticHover from './MagneticHover';
+import { MagneticHover } from './PremiumParallax';
 
 interface AppointmentButtonProps {
   size?: 'default' | 'sm' | 'lg' | 'icon';
