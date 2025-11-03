@@ -231,12 +231,12 @@ export default function Zug() {
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/kontakt">
-                  <MagneticHover><Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
+                <MagneticHover>
+                  <Button size="lg" onClick={scrollToContact} className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
                     Jetzt Kontakt aufnehmen
                     <ArrowRight className="ml-2 w-5 h-5"/>
-                  </Button></MagneticHover>
-                </Link>
+                  </Button>
+                </MagneticHover>
                 <AppointmentButton size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8" />
               </div>
             </Card>

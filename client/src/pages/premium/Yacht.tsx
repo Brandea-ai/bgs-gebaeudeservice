@@ -49,13 +49,11 @@ export default function Yacht() {
                 Spezialisierte Reinigung für Luxus-Yachten mit Marine-Expertise. Von der Hochglanzpolitur bis zur Teakholz-Pflege – wir sorgen für makellose Sauberkeit auf höchstem Niveau.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link href="/kontakt">
-                  <Button size="lg" className="text-lg">
-                    Jetzt anfragen
-                    <ArrowRight className="ml-2 w-5 h-5"/>
-                  </Button>
-                </Link>
-                <AppointmentButton size="lg" variant="outline" className="text-lg" />
+                <Button size="lg" onClick={scrollToContact} className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
+                  Jetzt anfragen
+                  <ArrowRight className="ml-2 w-5 h-5"/>
+                </Button>
+                <AppointmentButton size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8" />
               </div>
             </div>
             <div className="relative">
@@ -308,13 +306,11 @@ export default function Yacht() {
               Kontaktieren Sie uns für ein individuelles Angebot. Wir beraten Sie gerne persönlich.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Link href="/kontakt">
-                <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
-                  Jetzt Kontakt aufnehmen
-                  <ArrowRight className="ml-2 w-5 h-5"/>
-                </Button>
-              </Link>
-              <AppointmentButton size="lg" variant="outline" className="text-lg" />
+              <Button size="lg" onClick={scrollToContact} className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
+                Jetzt Kontakt aufnehmen
+                <ArrowRight className="ml-2 w-5 h-5"/>
+              </Button>
+              <AppointmentButton size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8" />
             </div>
           </div>
         </div>

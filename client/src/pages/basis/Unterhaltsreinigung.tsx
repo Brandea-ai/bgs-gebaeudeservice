@@ -49,13 +49,11 @@ export default function Unterhaltsreinigung() {
                 Regelmäßige Reinigung für Büros, Geschäfte und Gewerbeflächen in Zürich, Zug und Luzern. Zuverlässig, flexibel und auf Ihre Bedürfnisse zugeschnitten.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link href="/kontakt">
-                  <Button size="lg" className="text-lg">
-                    Jetzt anfragen
-                    <ArrowRight className="ml-2 w-5 h-5"/>
-                  </Button>
-                </Link>
-                <AppointmentButton size="lg" variant="outline" className="text-lg" />
+                <Button size="lg" onClick={scrollToContact} className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
+                  Jetzt anfragen
+                  <ArrowRight className="ml-2 w-5 h-5"/>
+                </Button>
+                <AppointmentButton size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8" />
               </div>
             </div>
             <div className="relative">
@@ -305,12 +303,10 @@ export default function Unterhaltsreinigung() {
               Kontaktieren Sie uns für ein kostenloses Angebot. Wir erstellen ein maßgeschneidertes Reinigungskonzept.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/kontakt">
-                <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
-                  Jetzt Kontakt aufnehmen
-                  <ArrowRight className="ml-2 w-5 h-5"/>
-                </Button>
-              </Link>
+              <Button size="lg" onClick={scrollToContact} className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
+                Jetzt Kontakt aufnehmen
+                <ArrowRight className="ml-2 w-5 h-5"/>
+              </Button>
               <AppointmentButton size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8" />
             </div>
           </div>
