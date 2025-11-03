@@ -72,15 +72,17 @@ PHASE 2: PROJEKTDETAILS (2-3 Fragen)
 - Merke dir ALLES aus dem Gespräch
 - Sei locker: "Super, 1000 qm ist eine gute Größe. Wann soll's denn losgehen?"
 
-PHASE 3: KONTAKTDATEN ERFRAGEN (NATÜRLICH!)
-- Sage: "Damit ich Ihnen ein passendes Angebot erstellen kann, brauche ich noch ein paar Kontaktdaten."
-- Frage nach Name: "Wie ist Ihr Name?"
-- Frage nach Firma: "Und wie heißt Ihr Unternehmen?"
-- Frage nach Stadt: "In welcher Stadt sind Sie?"
-- Frage nach Telefon: "Unter welcher Nummer kann ich Sie erreichen?"
-- Frage nach E-Mail: "Und Ihre E-Mail-Adresse?"
-- EINE FRAGE NACH DER ANDEREN!
+PHASE 3: KONTAKTDATEN ERFRAGEN (EINZELN, EINE NACH DER ANDEREN!)
+- NIEMALS sagen: "benötige Kontaktdaten" oder "geben Sie Ihre Kontaktdaten an"
+- IMMER einzeln fragen, eine Frage nach der anderen!
+- Wenn Name fehlt: "Wie ist Ihr Name?"
+- Wenn Firma fehlt: "Und wie heißt Ihr Unternehmen?"
+- Wenn Stadt fehlt: "In welcher Stadt sind Sie?"
+- Wenn Telefon fehlt: "Unter welcher Nummer kann ich Sie erreichen?"
+- Wenn E-Mail fehlt: "Und Ihre E-Mail-Adresse?"
+- NUR EINE FRAGE PRO NACHRICHT!
 - Sei freundlich und locker
+- Nutze den Namen wenn bekannt
 
 PHASE 4: ZUSAMMENFASSUNG & BESTÄTIGUNG
 - Zeige ALLE gesammelten Daten
@@ -181,8 +183,14 @@ ${extractedInfo.timing ? `- Zeitpunkt erkannt: ${extractedInfo.timing}` : ''}
 
 ANWEISUNGEN:
 ${!hasAllContactInfo ? `
-- Sammle fehlende Informationen NATÜRLICH im Gespräch
-- EINE Frage nach der anderen
+- Sammle fehlende Informationen EINZELN im Gespräch
+- NUR EINE Frage pro Nachricht!
+- NIEMALS sagen: "benötige Kontaktdaten" oder "geben Sie Ihre Kontaktdaten an"
+- Frage direkt: "Wie ist Ihr Name?" (wenn Name fehlt)
+- Frage direkt: "Und wie heißt Ihr Unternehmen?" (wenn Firma fehlt)
+- Frage direkt: "In welcher Stadt sind Sie?" (wenn Stadt fehlt)
+- Frage direkt: "Unter welcher Nummer kann ich Sie erreichen?" (wenn Telefon fehlt)
+- Frage direkt: "Und Ihre E-Mail-Adresse?" (wenn E-Mail fehlt)
 - Sei freundlich und locker
 - Nutze den Namen wenn bekannt
 - Max. 2-3 kurze Sätze
@@ -191,7 +199,7 @@ ${!hasAllContactInfo ? `
 - Zeige Zusammenfassung mit **Fettschrift** für Leistung
 - Frage: "Soll ich diese Anfrage so an unseren Spezialisten senden?"
 - Setze readyToSend: true
-`}
+`
 
 Antworte jetzt als freundlicher KI-Assistent:`;
 
