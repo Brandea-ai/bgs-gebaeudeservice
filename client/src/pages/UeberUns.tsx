@@ -163,7 +163,7 @@ export default function UeberUns() {
               <ParallaxImage 
                 src="/nezir-bozhdaraj.jpg" 
                 alt="Nezir Bozhdaraj, Gründer der Swiss Reinigungsfirma"
-                className="rounded-2xl shadow-2xl w-full h-[400px] lg:h-[500px] object-cover object-top"
+                className="rounded-2xl shadow-2xl w-full h-[400px] lg:h-[500px] object-cover object-center"
                 speed={0.2}
                 scale={false}
                 overlay={false}
