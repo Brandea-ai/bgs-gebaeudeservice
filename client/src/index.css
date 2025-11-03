@@ -297,9 +297,9 @@
   h1, h2, h3, h4, h5, h6 {
     word-wrap: break-word;
     overflow-wrap: break-word;
-    hyphens: auto;
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
+    hyphens: manual;
+    -webkit-hyphens: manual;
+    -ms-hyphens: manual;
   }
 
   /* Optimized text rendering for mobile */
