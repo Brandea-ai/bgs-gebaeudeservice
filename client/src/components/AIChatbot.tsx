@@ -61,6 +61,16 @@ export default function AIChatbot() {
   const handleSendMessage = async () => {
     if (!input.trim() || loading) return;
 
+    // Check if user is confirming to send to specialist
+    const isConfirmation = input.trim().toLowerCase() === 'ja' && showSpecialistPrompt;
+
+    if (isConfirmation) {
+      // User typed "ja" to confirm sending to specialist
+      setInput('');
+      await handleSpecialistResponse(true);
+      return;
+    }
+
     const userMessage: Message = {
       role: 'user',
       content: input,
@@ -117,30 +127,28 @@ export default function AIChatbot() {
         
         setUserInfo(updatedUserInfo);
         
-        // Show specialist prompt if ready (ALL contact info must be present AND readyToSend is true)
+        // Show specialist prompt if ready (REQUIRED: email, company, city, service - OPTIONAL: name, phone)
         if (data.readyToSend) {
-          const hasAllInfo = updatedUserInfo.name && 
-                             updatedUserInfo.email && 
-                             updatedUserInfo.phone && 
-                             updatedUserInfo.company && 
-                             updatedUserInfo.city && 
-                             updatedUserInfo.service;
-          
-          console.log('🔍 DEBUG: hasAllInfo check:', {
-            name: !!updatedUserInfo.name,
+          const hasRequiredInfo = updatedUserInfo.email &&
+                                  updatedUserInfo.company &&
+                                  updatedUserInfo.city &&
+                                  updatedUserInfo.service;
+
+          console.log('🔍 DEBUG: hasRequiredInfo check:', {
             email: !!updatedUserInfo.email,
-            phone: !!updatedUserInfo.phone,
             company: !!updatedUserInfo.company,
             city: !!updatedUserInfo.city,
             service: !!updatedUserInfo.service,
-            hasAllInfo
+            name: !!updatedUserInfo.name,
+            phone: !!updatedUserInfo.phone,
+            hasRequiredInfo
           });
-          
-          if (hasAllInfo) {
+
+          if (hasRequiredInfo) {
             console.log('✅ Setting showSpecialistPrompt to TRUE');
             setShowSpecialistPrompt(true);
           } else {
-            console.log('❌ NOT showing specialist prompt - missing data');
+            console.log('❌ NOT showing specialist prompt - missing required data');
           }
         }
       }
@@ -170,8 +178,9 @@ export default function AIChatbot() {
       return;
     }
 
-    if (!userInfo.name || !userInfo.email || !userInfo.phone || !userInfo.company || !userInfo.city || !userInfo.service) {
-      alert('Bitte geben Sie alle Kontaktdaten an.');
+    // Only require email, company, city, and service (name and phone are optional)
+    if (!userInfo.email || !userInfo.company || !userInfo.city || !userInfo.service) {
+      alert('Bitte geben Sie mindestens E-Mail, Firma, Stadt und Dienstleistung an.');
       return;
     }
 

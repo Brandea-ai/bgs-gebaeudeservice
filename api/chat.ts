@@ -194,11 +194,11 @@ Benötigte Daten:
 - Reinigungsleistung (erkenne aus Kontext)
 - Fläche in qm (ungefähr reicht!)
 - Zeitpunkt ("nächste Woche" reicht! NICHT "wann genau am Montag?")
-- Name
-- Firma
-- Stadt
-- Telefon
-- E-Mail
+- Firma (PFLICHT)
+- Stadt (PFLICHT)
+- E-Mail (PFLICHT)
+- Name (OPTIONAL - wenn Kunde ablehnt, nicht nachfragen!)
+- Telefon (OPTIONAL - wenn Kunde ablehnt, nicht nachfragen!)
 
 INTELLIGENTES VERHALTEN:
 ✅ Kunde sagt "Autohaus mit Büros und Werkstatt 500 qm" → Verstehe: Büroreinigung, 500 qm
@@ -210,7 +210,7 @@ INTELLIGENTES VERHALTEN:
 ❌ NIEMALS zu detailliert: "Wann genau am Montag?" ist ZU VIEL!
 
 === ZUSAMMENFASSUNG UND BESTÄTIGUNG ===
-Wenn ALLE 6 Kontaktdaten vorhanden sind:
+Wenn alle PFLICHT-Kontaktdaten vorhanden sind (Firma, Stadt, E-Mail):
 1. Zeige eine kurze Zusammenfassung
 2. Frage: "Soll ich diese Anfrage so an unseren Spezialisten senden?"
 3. Warte auf Bestätigung
@@ -221,11 +221,10 @@ Beispiel Zusammenfassung:
 - Leistung: Maschinenreinigung
 - Fläche: 1000 qm
 - Zeitpunkt: In 2 Monaten
-- Name: Max Mustermann
 - Firma: Test AG
 - Stadt: Zürich
-- Telefon: +41 44 123 45 67
 - E-Mail: max@test.ch
+[Name und Telefon nur zeigen wenn vorhanden]
 
 Soll ich diese Anfrage so an unseren Spezialisten senden?"
 
@@ -291,15 +290,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const extractedInfo = extractInfoFromConversation(messages);
     const detectedService = extractedInfo.service;
 
-    // Check if all contact info is available (including service and timing)
+    // Check if required info is available (name and phone are OPTIONAL)
     const hasAllContactInfo = !!(
       detectedService &&
       extractedInfo.size &&
       extractedInfo.timing &&
-      extractedInfo.name &&
       extractedInfo.company &&
       extractedInfo.city &&
-      extractedInfo.phone &&
       extractedInfo.email
     );
 
@@ -334,19 +331,16 @@ ${!detectedService ? `
 - Frage nach der Fläche (in qm)
 ` : !extractedInfo.timing ? `
 - Frage nach dem gewünschten Zeitpunkt
-` : !extractedInfo.name ? `
-- Frage nach dem Namen (nur "Wie ist Ihr Name?")
 ` : !extractedInfo.company ? `
-- Frage nach dem Firmennamen
+- Frage nach dem Firmennamen (PFLICHT)
 ` : !extractedInfo.city ? `
-- Frage nach der Stadt
-` : !extractedInfo.phone ? `
-- Frage nach der Telefonnummer
+- Frage nach der Stadt (PFLICHT)
 ` : !extractedInfo.email ? `
-- Frage nach der E-Mail-Adresse
+- Frage nach der E-Mail-Adresse (PFLICHT)
 ` : `
-- Zeige eine kurze Zusammenfassung aller Informationen
+- PFLICHT-Daten vollständig! Zeige eine kurze Zusammenfassung
 - Frage: "Soll ich diese Anfrage so an unseren Spezialisten senden?"
+- Name und Telefon nur zeigen wenn vorhanden
 - Setze readyToSend: true
 `}
 
