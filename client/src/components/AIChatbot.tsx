@@ -28,6 +28,51 @@ interface ExtractedInfo {
   email?: string;
 }
 
+interface Supporter {
+  name: string;
+  role: string;
+  image: string;
+  gender: 'male' | 'female';
+}
+
+const SUPPORTERS: Supporter[] = [
+  {
+    name: 'Sarah',
+    role: 'Senior Sales Consultant',
+    image: '/Supporter-Sarah.jpeg',
+    gender: 'female'
+  },
+  {
+    name: 'Nina',
+    role: 'Customer Success Manager',
+    image: '/Supporter-Nina.jpeg',
+    gender: 'female'
+  },
+  {
+    name: 'Elias',
+    role: 'Technical Advisor',
+    image: '/Supporter-Elias.png',
+    gender: 'male'
+  },
+  {
+    name: 'Kasandra',
+    role: 'Operations Manager',
+    image: '/Supporter-Kasandra.jpeg',
+    gender: 'female'
+  },
+  {
+    name: 'Micheal',
+    role: 'Facility Expert',
+    image: '/Supporter-Micheal.jpeg',
+    gender: 'male'
+  }
+];
+
+// Select random supporter on mount
+const getRandomSupporter = (): Supporter => {
+  return SUPPORTERS[Math.floor(Math.random() * SUPPORTERS.length)];
+};
+
 export default function AIChatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [hasConsent, setHasConsent] = useState(false);
@@ -40,6 +85,7 @@ export default function AIChatbot() {
   const [emailSent, setEmailSent] = useState(false);
   const [identificationCode, setIdentificationCode] = useState('');
   const [hasShownAutoPopup, setHasShownAutoPopup] = useState(false);
+  const [supporter, setSupporter] = useState<Supporter>(() => getRandomSupporter());
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   // Auto-popup after 10 seconds on page
@@ -64,9 +110,13 @@ export default function AIChatbot() {
 
   const handleConsent = () => {
     setHasConsent(true);
+    const greeting = supporter.gender === 'male'
+      ? `Guten Tag! Ich bin ${supporter.name}, Ihr persönlicher Berater von der Swiss Reinigungsfirma.`
+      : `Guten Tag! Ich bin ${supporter.name}, Ihre persönliche Beraterin von der Swiss Reinigungsfirma.`;
+
     setMessages([{
       role: 'assistant',
-      content: 'Guten Tag! Ich bin Sarah, Ihre persönliche Beraterin von der Swiss Reinigungsfirma.\n\nIch unterstütze unser Team dabei, für Sie die **perfekte Reinigungslösung** zu finden – zugeschnitten auf Ihre individuellen Anforderungen.\n\nDarf ich fragen: **Welche Art von Räumlichkeiten** möchten Sie reinigen lassen?',
+      content: `${greeting}\n\nIch unterstütze unser Team dabei, für Sie die **perfekte Reinigungslösung** zu finden – zugeschnitten auf Ihre individuellen Anforderungen.\n\nDarf ich fragen: **Welche Art von Räumlichkeiten** möchten Sie reinigen lassen?`,
       timestamp: new Date()
     }]);
   };
@@ -109,7 +159,9 @@ export default function AIChatbot() {
         },
         body: JSON.stringify({
           messages: [...messages, userMessage].map(m => ({ role: m.role, content: m.content })),
-          userInfo: userInfo
+          userInfo: userInfo,
+          supporterName: supporter.name,
+          supporterGender: supporter.gender
         }),
       });
 
@@ -295,10 +347,14 @@ Zeitpunkt: ${extractedInfo.timing || 'nicht angegeben'}
     <div className="fixed bottom-6 right-6 w-96 h-[600px] bg-white rounded-lg shadow-2xl flex flex-col z-50 border border-gray-200">
       {/* Header */}
       <div className="bg-gradient-to-r from-red-600 to-red-700 text-white p-4 rounded-t-lg flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <Sparkles className="w-5 h-5" />
+        <div className="flex items-center gap-3">
+          <img
+            src={supporter.image}
+            alt={supporter.name}
+            className="w-12 h-12 rounded-full object-cover border-2 border-white shadow-lg"
+          />
           <div>
-            <h3 className="font-semibold text-sm">Sarah - Ihre persönliche Beraterin</h3>
+            <h3 className="font-semibold text-sm">{supporter.name} - {supporter.role}</h3>
             <p className="text-xs text-red-100">🟢 Online - Antwortet sofort</p>
           </div>
         </div>

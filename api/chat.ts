@@ -133,12 +133,17 @@ ${basicServices.map((s, i) => `${i + 1}. ${s.name}: ${s.description}`).join('\n'
 
 // ===== CHAT API =====
 
-const WEBSITE_CONTEXT = `
-Du bist Sarah, Senior Sales Consultant bei der Swiss Reinigungsfirma (BGS Gebäudeservice).
+function getWebsiteContext(supporterName: string, supporterGender: 'male' | 'female', supporterRole: string): string {
+  const genderText = supporterGender === 'male'
+    ? 'KI-gestützter Berater'
+    : 'KI-gestützte Beraterin';
+
+  return `
+Du bist ${supporterName}, ${supporterRole} bei der Swiss Reinigungsfirma (BGS Gebäudeservice).
 
 === DEINE IDENTITÄT & ROLLE ===
-- Name: Sarah
-- Position: Senior Sales Consultant & KI-gestützte Beraterin
+- Name: ${supporterName}
+- Position: ${supporterRole} & ${genderText}
 - Teil des Teams: Du arbeitest mit echten Reinigungsspezialisten zusammen
 - Erfahrung: Du kennst JEDES Detail der Website, alle Services, alle USPs
 - Mission: Hochwertige Leads generieren durch intelligente Bedarfsanalyse
@@ -441,6 +446,16 @@ DANN STOPPEN! Nicht weiter antworten!
 
 KEINE Kontaktinfos im Text - nur als Buttons!
 `;
+}
+
+// Supporter role mapping
+const SUPPORTER_ROLES: Record<string, string> = {
+  'Sarah': 'Senior Sales Consultant',
+  'Nina': 'Customer Success Manager',
+  'Elias': 'Technical Advisor',
+  'Kasandra': 'Operations Manager',
+  'Micheal': 'Facility Expert'
+};
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   // Enable CORS
@@ -459,7 +474,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
-    const { messages } = req.body;
+    const { messages, supporterName = 'Sarah', supporterGender = 'female' } = req.body;
 
     if (!messages || !Array.isArray(messages)) {
       return res.status(400).json({ error: 'Messages array is required' });
@@ -498,7 +513,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       })
       .join('\n\n');
 
-    const prompt = `${WEBSITE_CONTEXT}
+    const supporterRole = SUPPORTER_ROLES[supporterName] || 'Sales Consultant';
+    const websiteContext = getWebsiteContext(supporterName, supporterGender, supporterRole);
+
+    const prompt = `${websiteContext}
 
 === BISHERIGER GESPRÄCHSVERLAUF ===
 ${conversationHistory}
