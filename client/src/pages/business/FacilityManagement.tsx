@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Link } from "wouter";
 import { CheckCircle, Briefcase, Clock, Shield, ArrowRight, Award } from "lucide-react";
+import AppointmentButton from "@/components/AppointmentButton";
 import {
   Accordion,
   AccordionContent,
@@ -59,6 +60,7 @@ export default function FacilityManagement() {
                     <ArrowRight className="ml-2 w-5 h-5"/>
                   </Button>
                 </Link>
+                <AppointmentButton size="lg" variant="outline" className="text-lg" />
               </div>
             </div>
             <div className="relative">
@@ -252,16 +254,12 @@ export default function FacilityManagement() {
             Kontaktieren Sie uns für ein unverbindliches Angebot. Wir beraten Sie gerne zu allen FM-Leistungen.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+41413205610">
-              <Button size="lg" variant="secondary" className="text-lg">
-                Jetzt anrufen
-              </Button>
-            </a>
             <Link href="/kontakt">
-              <Button size="lg" variant="outline" className="text-lg bg-transparent border-white text-white hover:bg-white hover:text-primary">
+              <Button size="lg" variant="secondary" className="text-lg">
                 Kostenlose Beratung
               </Button>
             </Link>
+            <AppointmentButton size="lg" variant="outline" className="text-lg bg-transparent border-white text-white hover:bg-white hover:text-primary" />
           </div>
         </div>
       </section>

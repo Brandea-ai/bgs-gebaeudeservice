@@ -18,6 +18,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { CheckCircle, Warehouse, ArrowRight, Shield, Clock, Award } from "lucide-react";
+import AppointmentButton from "@/components/AppointmentButton";
 
 export default function Hallenreinigung() {
   const serviceData = {
@@ -60,11 +61,7 @@ export default function Hallenreinigung() {
                     <ArrowRight className="ml-2 w-5 h-5"/>
                   </Button>
                 </Link>
-                <a href="tel:+41413205610">
-                  <Button size="lg" variant="outline" className="text-lg">
-                    +41 41 320 56 10
-                  </Button>
-                </a>
+                <AppointmentButton size="lg" variant="outline" className="text-lg" />
               </div>
             </div>
             <div className="relative">
@@ -245,11 +242,7 @@ export default function Hallenreinigung() {
                 <ArrowRight className="ml-2 w-5 h-5"/>
               </Button>
             </Link>
-            <Link href="/standorte/zuerich">
-              <Button size="lg" variant="outline" className="text-lg border-white text-white hover:bg-white hover:text-primary">
-                Standorte ansehen
-              </Button>
-            </Link>
+            <AppointmentButton size="lg" variant="outline" className="text-lg border-white text-white hover:bg-white hover:text-primary" />
           </div>
         </div>
       </section>

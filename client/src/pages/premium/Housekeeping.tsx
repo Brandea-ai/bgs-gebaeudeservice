@@ -13,6 +13,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "wouter";
 import { CheckCircle, Home, Shield, Clock, Sparkles, ArrowRight } from "lucide-react";
+import AppointmentButton from "@/components/AppointmentButton";
 
 export default function Housekeeping() {
   const serviceData = {
@@ -54,9 +55,7 @@ export default function Housekeeping() {
                     <ArrowRight className="ml-2 w-5 h-5"/>
                   </Button>
                 </Link>
-                <Button size="lg" variant="outline" className="text-lg">
-                  +41 41 320 56 10
-                </Button>
+                <AppointmentButton size="lg" variant="outline" className="text-lg" />
               </div>
             </div>
             <div className="relative">
@@ -305,12 +304,15 @@ export default function Housekeeping() {
             <p className="text-sm sm:text-base md:text-lg text-slate-600 mb-8">
               Kontaktieren Sie uns für ein persönliches Beratungsgespräch. Diskret und unverbindlich.
             </p>
-            <Link href="/kontakt">
-              <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
-                Jetzt Kontakt aufnehmen
-                <ArrowRight className="ml-2 w-5 h-5"/>
-              </Button>
-            </Link>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Link href="/kontakt">
+                <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
+                  Jetzt Kontakt aufnehmen
+                  <ArrowRight className="ml-2 w-5 h-5"/>
+                </Button>
+              </Link>
+              <AppointmentButton size="lg" variant="outline" className="text-lg" />
+            </div>
           </div>
         </div>
       </section>

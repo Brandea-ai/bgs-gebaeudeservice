@@ -12,6 +12,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "wouter";
 import { MapPin, Phone, Mail, Clock, Check, ArrowRight, Building2, Sparkles } from "lucide-react";
+import AppointmentButton from "@/components/AppointmentButton";
 
 export default function Zuerich() {
   const locationData = {
@@ -243,13 +244,14 @@ export default function Zuerich() {
                   <div className="text-slate-600 text-xs sm:text-sm md:text-base">Mo-Fr 7:00-18:00</div>
                 </div>
               </div>
-              <div className="text-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/kontakt">
                   <MagneticHover><Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
                     Jetzt Beratungstermin vereinbaren
                     <ArrowRight className="ml-2 w-5 h-5"/>
                   </Button></MagneticHover>
                 </Link>
+                <AppointmentButton size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8" />
               </div>
             </Card>
           </div>
