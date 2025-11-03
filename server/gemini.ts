@@ -2,7 +2,7 @@
  * Gemini AI Service
  * 
  * Provides AI-powered features using Google's Gemini Flash API
- * API Key: AIzaSyCcUqAO4FYclRVfrM1Q1vYoAjdAJLJXuOw
+ * Uses GEMINI_API_KEY environment variable
  */
 
 interface IndustryAnalysisRequest {
@@ -93,7 +93,11 @@ export async function analyzeIndustry(data: IndustryAnalysisRequest): Promise<In
     // Dynamic import of Google GenAI
     const { GoogleGenerativeAI } = await import('@google/generative-ai');
     
-    const genAI = new GoogleGenerativeAI('AIzaSyCcUqAO4FYclRVfrM1Q1vYoAjdAJLJXuOw');
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (!apiKey) {
+      throw new Error('GEMINI_API_KEY environment variable is not set');
+    }
+    const genAI = new GoogleGenerativeAI(apiKey);
     const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 
     const prompt = `${WEBSITE_CONTEXT}
@@ -152,7 +156,11 @@ export async function chatWithAI(data: ChatRequest): Promise<ChatResponse> {
     // Dynamic import of Google GenAI
     const { GoogleGenerativeAI } = await import('@google/generative-ai');
     
-    const genAI = new GoogleGenerativeAI('AIzaSyCcUqAO4FYclRVfrM1Q1vYoAjdAJLJXuOw');
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (!apiKey) {
+      throw new Error('GEMINI_API_KEY environment variable is not set');
+    }
+    const genAI = new GoogleGenerativeAI(apiKey);
     const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 
     // Build conversation history
