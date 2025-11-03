@@ -291,8 +291,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const extractedInfo = extractInfoFromConversation(messages);
     const detectedService = extractedInfo.service;
 
-    // Check if all contact info is available
+    // Check if all contact info is available (including service and timing)
     const hasAllContactInfo = !!(
+      detectedService &&
+      extractedInfo.size &&
+      extractedInfo.timing &&
       extractedInfo.name &&
       extractedInfo.company &&
       extractedInfo.city &&
@@ -372,12 +375,8 @@ Antworte jetzt als freundlicher KI-Assistent:`;
       aiResponse.toLowerCase().includes('telefon')
     );
 
-    // Bestimme ob bereit zum Senden
-    const readyToSend = hasAllContactInfo && (
-      aiResponse.toLowerCase().includes('soll ich') ||
-      aiResponse.toLowerCase().includes('senden') ||
-      aiResponse.toLowerCase().includes('weiterleiten')
-    );
+    // Bestimme ob bereit zum Senden - wenn ALLE Daten vorhanden sind
+    const readyToSend = hasAllContactInfo;
 
     res.status(200).json({
       response: aiResponse,
