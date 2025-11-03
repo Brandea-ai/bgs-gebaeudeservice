@@ -11,6 +11,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Link } from "wouter";
 import { CheckCircle, Factory, Shield, AlertTriangle, Sparkles, ArrowRight } from "lucide-react";
 import AppointmentButton from "@/components/AppointmentButton";
 
@@ -48,11 +49,13 @@ export default function Industriereinigung() {
                 Spezialisierte Reinigungslösungen für Produktionshallen, Werkstätten und Industrieanlagen in Zürich, Zug und Luzern. Sicher, effizient und normgerecht.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" onClick={scrollToContact} className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
-                  Jetzt anfragen
-                  <ArrowRight className="ml-2 w-5 h-5"/>
-                </Button>
-                <AppointmentButton size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8" />
+                <Link href="/kontakt">
+                  <Button size="lg" className="text-lg">
+                    Jetzt anfragen
+                    <ArrowRight className="ml-2 w-5 h-5"/>
+                  </Button>
+                </Link>
+                <AppointmentButton size="lg" variant="outline" className="text-lg" />
               </div>
             </div>
             <div className="relative">
@@ -272,10 +275,12 @@ export default function Industriereinigung() {
               Kontaktieren Sie uns für eine Besichtigung vor Ort und ein maßgeschneidertes Angebot.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" onClick={scrollToContact} className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
-                Jetzt Kontakt aufnehmen
-                <ArrowRight className="ml-2 w-5 h-5"/>
-              </Button>
+              <Link href="/kontakt">
+                <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
+                  Jetzt Kontakt aufnehmen
+                  <ArrowRight className="ml-2 w-5 h-5"/>
+                </Button>
+              </Link>
               <AppointmentButton size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8" />
             </div>
           </div>

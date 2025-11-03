@@ -11,6 +11,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Link } from "wouter";
 import { CheckCircle, Home, Shield, Clock, Sparkles, ArrowRight } from "lucide-react";
 import AppointmentButton from "@/components/AppointmentButton";
 
@@ -48,11 +49,13 @@ export default function Housekeeping() {
                 Exklusiver Housekeeping-Service für Luxusimmobilien. Diskret, individuell und mit Premium-Produkten – für höchste Ansprüche in Zürich, Zug und Luzern.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" onClick={scrollToContact} className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
-                  Jetzt anfragen
-                  <ArrowRight className="ml-2 w-5 h-5"/>
-                </Button>
-                <AppointmentButton size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8" />
+                <Link href="/kontakt">
+                  <Button size="lg" className="text-lg">
+                    Jetzt anfragen
+                    <ArrowRight className="ml-2 w-5 h-5"/>
+                  </Button>
+                </Link>
+                <AppointmentButton size="lg" variant="outline" className="text-lg" />
               </div>
             </div>
             <div className="relative">
@@ -302,11 +305,13 @@ export default function Housekeeping() {
               Kontaktieren Sie uns für ein persönliches Beratungsgespräch. Diskret und unverbindlich.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg" onClick={scrollToContact} className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
-                Jetzt Kontakt aufnehmen
-                <ArrowRight className="ml-2 w-5 h-5"/>
-              </Button>
-              <AppointmentButton size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8" />
+              <Link href="/kontakt">
+                <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
+                  Jetzt Kontakt aufnehmen
+                  <ArrowRight className="ml-2 w-5 h-5"/>
+                </Button>
+              </Link>
+              <AppointmentButton size="lg" variant="outline" className="text-lg" />
             </div>
           </div>
         </div>

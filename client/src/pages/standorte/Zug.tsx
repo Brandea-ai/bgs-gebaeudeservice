@@ -11,6 +11,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Link } from "wouter";
 import { MapPin, Phone, Mail, Clock, Check, ArrowRight, TrendingUp } from "lucide-react";
 import AppointmentButton from "@/components/AppointmentButton";
 
@@ -230,12 +231,12 @@ export default function Zug() {
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <MagneticHover>
-                  <Button size="lg" onClick={scrollToContact} className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
+                <Link href="/kontakt">
+                  <MagneticHover><Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
                     Jetzt Kontakt aufnehmen
                     <ArrowRight className="ml-2 w-5 h-5"/>
-                  </Button>
-                </MagneticHover>
+                  </Button></MagneticHover>
+                </Link>
                 <AppointmentButton size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8" />
               </div>
             </Card>

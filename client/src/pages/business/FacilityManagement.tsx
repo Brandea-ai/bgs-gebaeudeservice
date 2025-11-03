@@ -10,6 +10,7 @@ import { serviceSchema } from "@/utils/schema";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Link } from "wouter";
 import { CheckCircle, Briefcase, Clock, Shield, ArrowRight, Award } from "lucide-react";
 import AppointmentButton from "@/components/AppointmentButton";
 import {
@@ -53,11 +54,13 @@ export default function FacilityManagement() {
                 Umfassende Gebäudedienstleistungen aus einer Hand in Zürich, Zug und Luzern. Von Reinigung über Hausmeister bis Winterdienst.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" onClick={scrollToContact} className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
-                  Jetzt anfragen
-                  <ArrowRight className="ml-2 w-5 h-5"/>
-                </Button>
-                <AppointmentButton size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8" />
+                <Link href="/kontakt">
+                  <Button size="lg" className="text-lg">
+                    Jetzt anfragen
+                    <ArrowRight className="ml-2 w-5 h-5"/>
+                  </Button>
+                </Link>
+                <AppointmentButton size="lg" variant="outline" className="text-lg" />
               </div>
             </div>
             <div className="relative">
@@ -251,10 +254,12 @@ export default function FacilityManagement() {
             Kontaktieren Sie uns für ein unverbindliches Angebot. Wir beraten Sie gerne zu allen FM-Leistungen.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" onClick={scrollToContact} variant="secondary" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
-              Kostenlose Beratung
-            </Button>
-            <AppointmentButton size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8 bg-transparent border-white text-white hover:bg-white hover:text-primary" />
+            <Link href="/kontakt">
+              <Button size="lg" variant="secondary" className="text-lg">
+                Kostenlose Beratung
+              </Button>
+            </Link>
+            <AppointmentButton size="lg" variant="outline" className="text-lg bg-transparent border-white text-white hover:bg-white hover:text-primary" />
           </div>
         </div>
       </section>
