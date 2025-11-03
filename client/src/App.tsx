@@ -5,6 +5,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { useEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { ChatbotProvider } from "./contexts/ChatbotContext";
 import CookieConsent from "./components/CookieConsent";
 import AIChatbot from "./components/AIChatbot";
 import SwissHome from "./pages/SwissHome";
@@ -123,12 +124,14 @@ function App() {
     <ErrorBoundary>
       <HelmetProvider>
         <ThemeProvider defaultTheme="light">
-          <TooltipProvider>
-            <Toaster />
-            <CookieConsent />
-            <AIChatbot />
-            <Router />
-          </TooltipProvider>
+          <ChatbotProvider>
+            <TooltipProvider>
+              <Toaster />
+              <CookieConsent />
+              <AIChatbot />
+              <Router />
+            </TooltipProvider>
+          </ChatbotProvider>
         </ThemeProvider>
       </HelmetProvider>
     </ErrorBoundary>

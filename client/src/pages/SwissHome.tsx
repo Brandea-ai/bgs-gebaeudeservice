@@ -9,15 +9,16 @@ import SwissFooter from "@/components/SwissFooter";
 import SEO from "@/components/SEO";
 import { organizationSchema } from "@/utils/schema";
 import { motion } from "framer-motion";
-import { 
-  ParallaxImage, 
-  ParallaxBackground, 
-  ZoomOnScroll, 
+import {
+  ParallaxImage,
+  ParallaxBackground,
+  ZoomOnScroll,
   RevealOnScroll,
   TiltCard,
-  MagneticHover 
+  MagneticHover
 } from "@/components/PremiumParallax";
 import IndustryAdvisor from "@/components/IndustryAdvisor";
+import AppointmentButton from "@/components/AppointmentButton";
 
 import { 
   fadeInUp, 
@@ -91,13 +92,12 @@ export default function SwissHome() {
                   </Button>
                 </MagneticHover>
               </Link>
-              <a href="tel:+41413205610" className="w-full sm:w-auto">
-                <MagneticHover>
-                  <Button size="lg" variant="outline" className="w-full sm:w-auto text-sm sm:text-base md:text-lg px-5 sm:px-6 md:px-8 py-4 sm:py-6 bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-slate-900">
-                    +41 41 320 56 10
-                  </Button>
-                </MagneticHover>
-              </a>
+              <AppointmentButton
+                size="lg"
+                variant="outline"
+                className="w-full sm:w-auto text-sm sm:text-base md:text-lg px-5 sm:px-6 md:px-8 py-4 sm:py-6 bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-slate-900"
+                fullWidth
+              />
             </motion.div>
             
             {/* KI Industry Advisor */}
@@ -437,13 +437,11 @@ export default function SwissHome() {
                     </Button>
                   </MagneticHover>
                 </Link>
-                <a href="tel:+41413205610">
-                  <MagneticHover>
-                    <Button size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-8 bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-slate-900">
-                      +41 41 320 56 10
-                    </Button>
-                  </MagneticHover>
-                </a>
+                <AppointmentButton
+                  size="lg"
+                  variant="outline"
+                  className="text-sm sm:text-base md:text-lg px-8 bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-slate-900"
+                />
               </div>
             </div>
           </RevealOnScroll>

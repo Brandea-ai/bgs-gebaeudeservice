@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { MessageCircle, X, Send, Loader2, CheckCircle2, Shield, Sparkles, Phone, Mail, Circle } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
+import { useChatbot } from '../contexts/ChatbotContext';
 
 interface Message {
   role: 'user' | 'assistant';
@@ -73,12 +74,8 @@ const getRandomSupporter = (): Supporter => {
   return SUPPORTERS[Math.floor(Math.random() * SUPPORTERS.length)];
 };
 
-interface AIChatbotProps {
-  appointmentMode?: boolean;
-}
-
-export default function AIChatbot({ appointmentMode = false }: AIChatbotProps) {
-  const [isOpen, setIsOpen] = useState(false);
+export default function AIChatbot() {
+  const { isOpen, appointmentMode, openChat, closeChat } = useChatbot();
   const [hasConsent, setHasConsent] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
@@ -96,13 +93,13 @@ export default function AIChatbot({ appointmentMode = false }: AIChatbotProps) {
   useEffect(() => {
     if (!hasShownAutoPopup && !isOpen) {
       const timer = setTimeout(() => {
-        setIsOpen(true);
+        openChat(false);
         setHasShownAutoPopup(true);
       }, 10000); // 10 seconds
 
       return () => clearTimeout(timer);
     }
-  }, [hasShownAutoPopup, isOpen]);
+  }, [hasShownAutoPopup, isOpen, openChat]);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -346,7 +343,7 @@ Zeitpunkt: ${extractedInfo.timing || 'nicht angegeben'}
   if (!isOpen) {
     return (
       <button
-        onClick={() => setIsOpen(true)}
+        onClick={() => openChat(false)}
         className="fixed bottom-6 right-6 bg-red-600 hover:bg-red-700 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-50"
         aria-label="Chat öffnen"
       >
@@ -374,7 +371,7 @@ Zeitpunkt: ${extractedInfo.timing || 'nicht angegeben'}
           </div>
         </div>
         <button
-          onClick={() => setIsOpen(false)}
+          onClick={closeChat}
           className="hover:bg-red-800 p-1 rounded transition-colors"
         >
           <X className="w-5 h-5" />
