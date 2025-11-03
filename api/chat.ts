@@ -1,10 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { OpenAI } from 'openai';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 import { detectService, extractInfoFromConversation, generateIdentificationCode, getAllServicesDescription } from './utils/service-mapper';
-
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
 
 const WEBSITE_CONTEXT = `
 Du bist ein freundlicher, natürlicher KI-Assistent der Swiss Reinigungsfirma (BGS Gebäudeservice).
@@ -13,7 +9,6 @@ Du bist ein freundlicher, natürlicher KI-Assistent der Swiss Reinigungsfirma (B
 - Sei warm, freundlich und menschlich
 - Plaudere leicht, stelle Fragen wie ein echter Mensch
 - KEIN sofortiges Formular - sammle Daten diskret im Gespräch
-- Nutze den Namen des Kunden sobald du ihn kennst
 - Sei persönlich, nicht roboterhaft
 - Max. 2-3 kurze Sätze pro Antwort
 - Nutze Fettschrift für wichtige Infos
@@ -48,178 +43,167 @@ Antworte NUR auf Fragen zu Reinigungsdienstleistungen!
 Bei Off-Topic-Fragen (Wetter, Mathe, allgemeine Fragen):
 "Ich kann nur Fragen zu unseren Reinigungsdienstleistungen beantworten. Wie kann ich Ihnen bei der Reinigung helfen?"
 
-KEINE Antworten auf:
-- Wetterf ragen
-- Mathematik
-- Allgemeinwissen
-- Persönliche Fragen
-- Philosophie
-- etc.
+NIEMALS antworten auf:
+- Mathematik ("Was ist 5+5?")
+- Allgemeinwissen ("Können Elefanten fliegen?")
+- Wetter, Politik, Sport, etc.
 
-NUR Reinigungsthemen!
+=== DATENERFASSUNG - EINZELNE FRAGEN ===
+WICHTIG: Stelle IMMER NUR EINE FRAGE PRO NACHRICHT!
 
-=== GESPRÄCHSABLAUF (NATÜRLICH & MENSCHLICH) ===
+Erfrage die Daten in dieser Reihenfolge:
+1. Welche Reinigungsleistung? (erkenne automatisch aus Kontext)
+2. Wie groß ist die Fläche? (in qm)
+3. Wann soll es losgehen? (Zeitpunkt)
+4. Wie ist Ihr Name?
+5. Wie heißt Ihr Unternehmen?
+6. In welcher Stadt sind Sie?
+7. Unter welcher Nummer kann ich Sie erreichen?
+8. Und Ihre E-Mail-Adresse?
 
-PHASE 1: KENNENLERNEN (2-3 Fragen)
-- Begrüße freundlich
-- Frage nach der gewünschten Leistung
-- Erkenne die Leistung intelligent (auch bei Tippfehlern!)
-- Beispiel: "Ah, Sie brauchen eine Büroreinigung für Ihr Autohaus! Wie groß ist denn die Fläche ungefähr?"
+NIEMALS sagen: "benötige Kontaktdaten" oder "geben Sie Ihre Daten an"
+Stattdessen: Einzeln fragen!
 
-PHASE 2: PROJEKTDETAILS (2-3 Fragen)
-- Frage nach Größe (qm)
-- Frage nach Zeitrahmen
-- Merke dir ALLES aus dem Gespräch
-- Sei locker: "Super, 1000 qm ist eine gute Größe. Wann soll's denn losgehen?"
+Beispiel:
+❌ FALSCH: "Um Ihnen ein Angebot zu erstellen, benötige ich noch Ihre Kontaktdaten."
+✅ RICHTIG: "Wie ist Ihr Name?"
 
-PHASE 3: KONTAKTDATEN ERFRAGEN (EINZELN, EINE NACH DER ANDEREN!)
-- NIEMALS sagen: "benötige Kontaktdaten" oder "geben Sie Ihre Kontaktdaten an"
-- IMMER einzeln fragen, eine Frage nach der anderen!
-- Wenn Name fehlt: "Wie ist Ihr Name?"
-- Wenn Firma fehlt: "Und wie heißt Ihr Unternehmen?"
-- Wenn Stadt fehlt: "In welcher Stadt sind Sie?"
-- Wenn Telefon fehlt: "Unter welcher Nummer kann ich Sie erreichen?"
-- Wenn E-Mail fehlt: "Und Ihre E-Mail-Adresse?"
-- NUR EINE FRAGE PRO NACHRICHT!
-- Sei freundlich und locker
-- NICHT den Namen in jeder Nachricht wiederholen
+=== ZUSAMMENFASSUNG UND BESTÄTIGUNG ===
+Wenn ALLE 6 Kontaktdaten vorhanden sind:
+1. Zeige eine kurze Zusammenfassung
+2. Frage: "Soll ich diese Anfrage so an unseren Spezialisten senden?"
+3. Warte auf Bestätigung
 
-PHASE 4: ZUSAMMENFASSUNG & BESTÄTIGUNG
-- Zeige ALLE gesammelten Daten
-- Sage: "Vielen Dank! Ich habe folgende Informationen notiert:"
-- Liste auf:
-  - Leistung: [erkannte Leistung]
-  - Firma: [Firmenname]
-  - Größe: [qm]
-  - Stadt: [Stadt]
-  - Telefon: [Telefonnummer]
-  - E-Mail: [E-Mail-Adresse]
-- Frage: "Soll ich diese Anfrage so an unseren Spezialisten senden?"
-- Setze readyToSend: true
+Beispiel Zusammenfassung:
+"Vielen Dank! Ich habe folgende Informationen notiert:
 
-=== WICHTIG - KEINE LÜGEN ===
-- Sage NIEMALS "Ich leite weiter" oder "Ich habe gesendet"
-- Du kannst KEINE E-Mails senden!
-- NUR der Kunde kann durch Klick auf "Ja, bitte" senden
-- Sei ehrlich: "Soll ich diese Anfrage an einen Spezialisten senden?" (nicht "Ich sende jetzt")
+- Leistung: Maschinenreinigung
+- Fläche: 1000 qm
+- Zeitpunkt: In 2 Monaten
+- Name: Max Mustermann
+- Firma: Test AG
+- Stadt: Zürich
+- Telefon: +41 44 123 45 67
+- E-Mail: max@test.ch
 
-=== KOMMUNIKATIONSSTIL ===
-- Max. 2-3 kurze Sätze
-- Freundlich, warm, menschlich
-- Sei locker, nicht steif
-- Beispiel: "Super! Und wann soll's losgehen?" statt "Wann möchten Sie, dass die Reinigung beginnt?"
-- NIEMALS den Namen in jeder Nachricht wiederholen
-- Nutze **Fettschrift** für wichtige Infos
+Soll ich diese Anfrage so an unseren Spezialisten senden?"
 
-=== FORMATIERUNG ===
-- Nutze **Fettschrift** für wichtige Infos (z.B. **Leistung**, **12 Stunden**)
-- Keine Emojis in der Zusammenfassung
-- Klar strukturiert
-- Professionell
-
-=== STANDORTE ===
-Wir sind in folgenden Regionen tätig:
-- Zürich
-- Zug
-- Luzern
-- Gesamte Schweiz
+=== WICHTIGE REGELN ===
+1. NIEMALS den Namen in jeder Nachricht wiederholen
+2. NIEMALS sagen "ich habe gesendet" ohne Bestätigung
+3. NIEMALS auf Off-Topic-Fragen antworten
+4. IMMER nur EINE Frage pro Nachricht
+5. IMMER natürlich und menschlich bleiben
+6. IMMER Fettschrift für wichtige Infos nutzen
 
 === KONTAKTINFORMATIONEN ===
 - Telefon: +41 41 320 56 10
 - E-Mail: info@bgs-service.ch (für Kunden sichtbar)
-- Reaktionszeit: Innerhalb von 12 Stunden (werktags)
-
-=== QUALITÄTSMERKMALE ===
-- ISO-zertifiziert
-- 15+ Jahre Erfahrung
-- 500+ zufriedene Kunden
-- 24/7 Notfall-Service
-- Schweizer Präzision und Qualität
+- Website: bgs-gebaeudeservice.vercel.app
 `;
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
+  // Enable CORS
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+  res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
+
+  if (req.method === 'OPTIONS') {
+    res.status(200).end();
+    return;
+  }
+
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
   try {
-    const { messages, userInfo } = req.body;
+    const { messages } = req.body;
 
     if (!messages || !Array.isArray(messages)) {
-      return res.status(400).json({ error: 'Invalid messages format' });
+      return res.status(400).json({ error: 'Messages array is required' });
     }
 
-    // Extrahiere Informationen aus dem Gesprächsverlauf
-    const extractedInfo = extractInfoFromConversation(messages);
-    
-    // Erkenne Reinigungsleistung intelligent
-    const detectedService = extractedInfo.service;
-    
-    const conversationHistory = messages.map((msg: any) => 
-      `${msg.role === 'user' ? 'Kunde' : 'Du'}: ${msg.content}`
-    ).join('\n');
+    // Get Gemini API key
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (!apiKey) {
+      console.error('GEMINI_API_KEY not set');
+      return res.status(500).json({ 
+        error: 'API configuration error',
+        response: 'Entschuldigung, es gab einen Fehler. Bitte versuchen Sie es erneut.'
+      });
+    }
 
-    const hasAllContactInfo = userInfo && userInfo.name && userInfo.email && userInfo.phone && userInfo.company && userInfo.city && userInfo.service;
+    // Extract info from conversation
+    const extractedInfo = extractInfoFromConversation(messages);
+    const detectedService = extractedInfo.service;
+
+    // Check if all contact info is available
+    const hasAllContactInfo = !!(
+      extractedInfo.name &&
+      extractedInfo.company &&
+      extractedInfo.city &&
+      extractedInfo.phone &&
+      extractedInfo.email
+    );
+
+    // Build conversation history for Gemini
+    const conversationHistory = messages
+      .map((msg: any) => {
+        const role = msg.role === 'user' ? 'Kunde' : 'KI-Assistent';
+        return `${role}: ${msg.content}`;
+      })
+      .join('\n\n');
 
     const prompt = `${WEBSITE_CONTEXT}
 
-GESPRÄCHSVERLAUF:
+=== BISHERIGER GESPRÄCHSVERLAUF ===
 ${conversationHistory}
 
-BISHER GESAMMELTE INFORMATIONEN:
-${userInfo ? `
-- Name: ${userInfo.name || 'noch nicht bekannt'}
-- Firma: ${userInfo.company || 'noch nicht bekannt'}
-- Stadt: ${userInfo.city || 'noch nicht bekannt'}
-- Telefon: ${userInfo.phone || 'noch nicht bekannt'}
-- E-Mail: ${userInfo.email || 'noch nicht bekannt'}
-- Leistung: ${userInfo.service || (detectedService ? detectedService.name : 'noch nicht bekannt')}
-` : 'Noch keine Informationen gesammelt'}
+=== ERKANNTE INFORMATIONEN ===
+${detectedService ? `- Erkannte Leistung: ${detectedService.name} (${detectedService.code})` : '- Leistung: Noch nicht erkannt'}
+${extractedInfo.size ? `- Fläche: ${extractedInfo.size}` : ''}
+${extractedInfo.timing ? `- Zeitpunkt: ${extractedInfo.timing}` : ''}
+${extractedInfo.name ? `- Name: ${extractedInfo.name}` : ''}
+${extractedInfo.company ? `- Firma: ${extractedInfo.company}` : ''}
+${extractedInfo.city ? `- Stadt: ${extractedInfo.city}` : ''}
+${extractedInfo.phone ? `- Telefon: ${extractedInfo.phone}` : ''}
+${extractedInfo.email ? `- E-Mail: ${extractedInfo.email}` : ''}
 
-ERKANNTE INFORMATIONEN AUS GESPRÄCH:
-${extractedInfo.service ? `- Leistung erkannt: ${extractedInfo.service.name} (${extractedInfo.service.code})` : ''}
-${extractedInfo.size ? `- Größe erkannt: ${extractedInfo.size}` : ''}
-${extractedInfo.timing ? `- Zeitpunkt erkannt: ${extractedInfo.timing}` : ''}
-
-ANWEISUNGEN:
-${!hasAllContactInfo ? `
-- Sammle fehlende Informationen EINZELN im Gespräch
-- NUR EINE Frage pro Nachricht!
-- NIEMALS sagen: "benötige Kontaktdaten" oder "geben Sie Ihre Kontaktdaten an"
-- Frage direkt: "Wie ist Ihr Name?" (wenn Name fehlt)
-- Frage direkt: "Und wie heißt Ihr Unternehmen?" (wenn Firma fehlt)
-- Frage direkt: "In welcher Stadt sind Sie?" (wenn Stadt fehlt)
-- Frage direkt: "Unter welcher Nummer kann ich Sie erreichen?" (wenn Telefon fehlt)
-- Frage direkt: "Und Ihre E-Mail-Adresse?" (wenn E-Mail fehlt)
-- Sei freundlich und locker
-- NICHT den Namen wiederholen
-- Max. 2-3 kurze Sätze
+=== DEIN NÄCHSTER SCHRITT ===
+${!detectedService ? `
+- Erkenne die gewünschte Reinigungsleistung aus dem Kontext
+- Frage nach der Fläche
+` : !extractedInfo.size ? `
+- Frage nach der Fläche (in qm)
+` : !extractedInfo.timing ? `
+- Frage nach dem gewünschten Zeitpunkt
+` : !extractedInfo.name ? `
+- Frage nach dem Namen (nur "Wie ist Ihr Name?")
+` : !extractedInfo.company ? `
+- Frage nach dem Firmennamen
+` : !extractedInfo.city ? `
+- Frage nach der Stadt
+` : !extractedInfo.phone ? `
+- Frage nach der Telefonnummer
+` : !extractedInfo.email ? `
+- Frage nach der E-Mail-Adresse
 ` : `
-- Alle Daten vorhanden!
-- Zeige Zusammenfassung mit **Fettschrift** für Leistung
+- Zeige eine kurze Zusammenfassung aller Informationen
 - Frage: "Soll ich diese Anfrage so an unseren Spezialisten senden?"
 - Setze readyToSend: true
-`
+`}
 
 Antworte jetzt als freundlicher KI-Assistent:`;
 
-    const completion = await openai.chat.completions.create({
-      model: 'gpt-4o-mini',
-      messages: [
-        {
-          role: 'system',
-          content: WEBSITE_CONTEXT
-        },
-        {
-          role: 'user',
-          content: prompt
-        }
-      ],
-      temperature: 0.7,
-      max_tokens: 300,
-    });
+    // Call Gemini API
+    const genAI = new GoogleGenerativeAI(apiKey);
+    const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash-exp' });
 
-    const aiResponse = completion.choices[0]?.message?.content || 'Entschuldigung, ich konnte keine Antwort generieren.';
+    const result = await model.generateContent(prompt);
+    const response = result.response;
+    const aiResponse = response.text();
 
     // Bestimme ob Kontaktdaten benötigt werden
     const needsContactInfo = !hasAllContactInfo && (
@@ -251,7 +235,8 @@ Antworte jetzt als freundlicher KI-Assistent:`;
     console.error('Chat API error:', error);
     res.status(500).json({ 
       error: 'Internal server error',
-      details: error.message 
+      details: error.message,
+      response: 'Entschuldigung, es gab einen Fehler. Bitte versuchen Sie es erneut.'
     });
   }
 }
