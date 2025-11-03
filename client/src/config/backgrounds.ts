@@ -38,7 +38,6 @@ export const backgrounds = {
   zuerich: '/backgrounds/glass-building-bg.jpg',
   zug: '/backgrounds/modern-office-bg.jpg',
   luzern: '/backgrounds/building-night-bg.jpg',
-  stgallen: '/backgrounds/premium-hotel-bg.jpg',
   
   // Blog posts
   blogPost: '/backgrounds/office-cleaning-bg.jpg',
