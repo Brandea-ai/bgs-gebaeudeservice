@@ -11,6 +11,8 @@ interface UserInfo {
   name: string;
   email: string;
   phone: string;
+  company: string;
+  city: string;
 }
 
 export default function AIChatbot() {
@@ -19,9 +21,11 @@ export default function AIChatbot() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
-  const [userInfo, setUserInfo] = useState<UserInfo>({ name: '', email: '', phone: '' });
+  const [userInfo, setUserInfo] = useState<UserInfo>({ name: '', email: '', phone: '', company: '', city: '' });
+  const [collectingContactInfo, setCollectingContactInfo] = useState(false);
   const [showSpecialistPrompt, setShowSpecialistPrompt] = useState(false);
   const [questionCount, setQuestionCount] = useState(0);
+  const [emailSent, setEmailSent] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -62,7 +66,7 @@ export default function AIChatbot() {
         },
         body: JSON.stringify({
           messages: [...messages, userMessage].map(m => ({ role: m.role, content: m.content })),
-          userInfo: userInfo.name && userInfo.email ? userInfo : undefined,
+          userInfo: userInfo,
           questionCount: questionCount
         }),
       });
@@ -86,8 +90,13 @@ export default function AIChatbot() {
         setQuestionCount(data.questionCount);
       }
 
-      // Show specialist prompt if ready
-      if (data.readyToSend && userInfo.email) {
+      // Show contact info form if needed
+      if (data.needsContactInfo && !userInfo.email) {
+        setCollectingContactInfo(true);
+      }
+
+      // Show specialist prompt if ready (ALL contact info must be present)
+      if (data.readyToSend && userInfo.name && userInfo.email && userInfo.phone && userInfo.company && userInfo.city) {
         setShowSpecialistPrompt(true);
       }
 
@@ -104,6 +113,24 @@ export default function AIChatbot() {
     }
   };
 
+  const handleContactInfoSubmit = () => {
+    if (!userInfo.name || !userInfo.email || !userInfo.phone || !userInfo.company || !userInfo.city) {
+      alert('Bitte füllen Sie alle Felder aus.');
+      return;
+    }
+
+    setCollectingContactInfo(false);
+    
+    const confirmMessage: Message = {
+      role: 'assistant',
+      content: `Vielen Dank, **${userInfo.name}**! Ich habe Ihre Kontaktdaten notiert.\n\n**Zusammenfassung:**\n- Firma: ${userInfo.company}\n- Stadt: ${userInfo.city}\n- Telefon: ${userInfo.phone}\n- E-Mail: ${userInfo.email}\n\nSoll ich diese Anfrage an einen Spezialisten senden?`,
+      timestamp: new Date()
+    };
+    
+    setMessages(prev => [...prev, confirmMessage]);
+    setShowSpecialistPrompt(true);
+  };
+
   const handleSpecialistDecision = async (sendToSpecialist: boolean) => {
     if (!sendToSpecialist) {
       setShowSpecialistPrompt(false);
@@ -116,8 +143,8 @@ export default function AIChatbot() {
       return;
     }
 
-    if (!userInfo.name || !userInfo.email) {
-      alert('Bitte geben Sie Ihre Kontaktdaten an.');
+    if (!userInfo.name || !userInfo.email || !userInfo.phone || !userInfo.company || !userInfo.city) {
+      alert('Bitte geben Sie alle Kontaktdaten an.');
       return;
     }
 
@@ -152,6 +179,8 @@ export default function AIChatbot() {
       if (!response.ok) {
         throw new Error('Failed to send to specialist');
       }
+
+      setEmailSent(true);
 
       const successMessage: Message = {
         role: 'assistant',
@@ -296,26 +325,80 @@ export default function AIChatbot() {
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Direct Contact Options */}
-          <div className="px-4 py-2 bg-blue-50 border-t border-blue-100">
-            <p className="text-xs text-gray-600 mb-2 text-center">Oder kontaktieren Sie uns direkt:</p>
-            <div className="flex gap-2 justify-center">
-              <a
-                href="tel:+41413205610"
-                className="flex items-center gap-1.5 bg-white hover:bg-gray-50 text-gray-700 px-3 py-2 rounded-lg text-xs font-medium transition-colors border border-gray-200"
-              >
-                <Phone className="w-4 h-4 text-red-600" />
-                <span>Anrufen</span>
-              </a>
-              <a
-                href="mailto:info@brandea.de"
-                className="flex items-center gap-1.5 bg-white hover:bg-gray-50 text-gray-700 px-3 py-2 rounded-lg text-xs font-medium transition-colors border border-gray-200"
-              >
-                <Mail className="w-4 h-4 text-red-600" />
-                <span>E-Mail</span>
-              </a>
+          {/* Contact Info Collection Form */}
+          {collectingContactInfo && (
+            <div className="p-4 bg-blue-50 border-t border-blue-200">
+              <p className="text-sm text-gray-700 mb-3 font-medium">
+                Bitte geben Sie Ihre Kontaktdaten an:
+              </p>
+              <div className="space-y-2">
+                <input
+                  type="text"
+                  placeholder="Ihr Name *"
+                  value={userInfo.name}
+                  onChange={(e) => setUserInfo(prev => ({ ...prev, name: e.target.value }))}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-500"
+                />
+                <input
+                  type="text"
+                  placeholder="Firma *"
+                  value={userInfo.company}
+                  onChange={(e) => setUserInfo(prev => ({ ...prev, company: e.target.value }))}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-500"
+                />
+                <input
+                  type="tel"
+                  placeholder="Telefon *"
+                  value={userInfo.phone}
+                  onChange={(e) => setUserInfo(prev => ({ ...prev, phone: e.target.value }))}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-500"
+                />
+                <input
+                  type="text"
+                  placeholder="Stadt *"
+                  value={userInfo.city}
+                  onChange={(e) => setUserInfo(prev => ({ ...prev, city: e.target.value }))}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-500"
+                />
+                <input
+                  type="email"
+                  placeholder="E-Mail *"
+                  value={userInfo.email}
+                  onChange={(e) => setUserInfo(prev => ({ ...prev, email: e.target.value }))}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-500"
+                />
+                <button
+                  onClick={handleContactInfoSubmit}
+                  className="w-full bg-red-600 hover:bg-red-700 text-white py-2 rounded-lg text-sm font-medium transition-colors"
+                >
+                  Bestätigen
+                </button>
+              </div>
             </div>
-          </div>
+          )}
+
+          {/* Direct Contact Options - Only show after email sent or many messages */}
+          {(emailSent || messages.length > 15) && (
+            <div className="px-4 py-2 bg-blue-50 border-t border-blue-100">
+              <p className="text-xs text-gray-600 mb-2 text-center">Oder kontaktieren Sie uns direkt:</p>
+              <div className="flex gap-2 justify-center">
+                <a
+                  href="tel:+41413205610"
+                  className="flex items-center gap-1.5 bg-white hover:bg-gray-50 text-gray-700 px-3 py-2 rounded-lg text-xs font-medium transition-colors border border-gray-200"
+                >
+                  <Phone className="w-4 h-4 text-red-600" />
+                  <span>Anrufen</span>
+                </a>
+                <a
+                  href="mailto:info@brandea.de"
+                  className="flex items-center gap-1.5 bg-white hover:bg-gray-50 text-gray-700 px-3 py-2 rounded-lg text-xs font-medium transition-colors border border-gray-200"
+                >
+                  <Mail className="w-4 h-4 text-red-600" />
+                  <span>E-Mail</span>
+                </a>
+              </div>
+            </div>
+          )}
 
           {/* Specialist Prompt with Yes/No Buttons */}
           {showSpecialistPrompt && (
