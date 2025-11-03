@@ -345,8 +345,8 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 0.75rem; /* 12px - mobile padding for better text flow */
-    padding-right: 0.75rem;
+    padding-left: 1rem; /* 16px - narrow mobile margins like Apple */
+    padding-right: 1rem;
   }
 
   .flex {
@@ -356,23 +356,57 @@
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-left: 1.5rem; /* 24px - narrow tablet margins */
       padding-right: 1.5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 3rem; /* 48px - desktop padding */
-      padding-right: 3rem;
-      max-width: 1920px; /* Full-width for 4K displays */
+      padding-left: 2.5rem; /* 40px - narrow desktop margins like Apple */
+      padding-right: 2.5rem;
+      max-width: none; /* Full-width, no max-width restriction */
     }
   }
   
   @media (min-width: 1536px) {
     .container {
-      padding-left: 4rem; /* 64px - 4K padding */
-      padding-right: 4rem;
+      padding-left: 3rem; /* 48px - narrow 4K margins */
+      padding-right: 3rem;
     }
+  }
+}
+
+/* Full-width Apple-style layout utilities */
+.full-width {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+.full-width-section {
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .full-width-section {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .full-width-section {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .full-width-section {
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
