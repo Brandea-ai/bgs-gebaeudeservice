@@ -13,6 +13,7 @@ interface UserInfo {
   phone: string;
   company: string;
   city: string;
+  service: string;
 }
 
 export default function AIChatbot() {
@@ -21,7 +22,7 @@ export default function AIChatbot() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
-  const [userInfo, setUserInfo] = useState<UserInfo>({ name: '', email: '', phone: '', company: '', city: '' });
+  const [userInfo, setUserInfo] = useState<UserInfo>({ name: '', email: '', phone: '', company: '', city: '', service: '' });
   const [collectingContactInfo, setCollectingContactInfo] = useState(false);
   const [showSpecialistPrompt, setShowSpecialistPrompt] = useState(false);
   const [questionCount, setQuestionCount] = useState(0);
@@ -96,7 +97,7 @@ export default function AIChatbot() {
       }
 
       // Show specialist prompt if ready (ALL contact info must be present)
-      if (data.readyToSend && userInfo.name && userInfo.email && userInfo.phone && userInfo.company && userInfo.city) {
+      if (data.readyToSend && userInfo.name && userInfo.email && userInfo.phone && userInfo.company && userInfo.city && userInfo.service) {
         setShowSpecialistPrompt(true);
       }
 
@@ -114,7 +115,7 @@ export default function AIChatbot() {
   };
 
   const handleContactInfoSubmit = () => {
-    if (!userInfo.name || !userInfo.email || !userInfo.phone || !userInfo.company || !userInfo.city) {
+    if (!userInfo.name || !userInfo.email || !userInfo.phone || !userInfo.company || !userInfo.city || !userInfo.service) {
       alert('Bitte füllen Sie alle Felder aus.');
       return;
     }
@@ -123,7 +124,7 @@ export default function AIChatbot() {
     
     const confirmMessage: Message = {
       role: 'assistant',
-      content: `Vielen Dank, **${userInfo.name}**! Ich habe Ihre Kontaktdaten notiert.\n\n**Zusammenfassung:**\n- Firma: ${userInfo.company}\n- Stadt: ${userInfo.city}\n- Telefon: ${userInfo.phone}\n- E-Mail: ${userInfo.email}\n\nSoll ich diese Anfrage an einen Spezialisten senden?`,
+      content: `Vielen Dank, **${userInfo.name}**! Ich habe Ihre Kontaktdaten notiert.\n\n**Zusammenfassung:**\n- Leistung: ${userInfo.service}\n- Firma: ${userInfo.company}\n- Stadt: ${userInfo.city}\n- Telefon: ${userInfo.phone}\n- E-Mail: ${userInfo.email}\n\nSoll ich diese Anfrage an einen Spezialisten senden?`,
       timestamp: new Date()
     };
     
@@ -143,7 +144,7 @@ export default function AIChatbot() {
       return;
     }
 
-    if (!userInfo.name || !userInfo.email || !userInfo.phone || !userInfo.company || !userInfo.city) {
+    if (!userInfo.name || !userInfo.email || !userInfo.phone || !userInfo.company || !userInfo.city || !userInfo.service) {
       alert('Bitte geben Sie alle Kontaktdaten an.');
       return;
     }
@@ -332,6 +333,13 @@ export default function AIChatbot() {
                 Bitte geben Sie Ihre Kontaktdaten an:
               </p>
               <div className="space-y-2">
+                <input
+                  type="text"
+                  placeholder="Benötigte Leistung *"
+                  value={userInfo.service}
+                  onChange={(e) => setUserInfo(prev => ({ ...prev, service: e.target.value }))}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-500"
+                />
                 <input
                   type="text"
                   placeholder="Ihr Name *"

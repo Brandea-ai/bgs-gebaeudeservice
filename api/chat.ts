@@ -59,18 +59,22 @@ OFF-TOPIC-SCHUTZ (WICHTIG!):
 - Bleibe strikt beim Thema Reinigung
 
 DATENERFASSUNG - PHASE 1: PROJEKTDETAILS (max. 3-4 Fragen):
-1. Art des Projekts/Service (diskret erfragen)
+1. Welche Leistung? (z.B. "Für welche Reinigungsleistung interessieren Sie sich?")
+   - Unterhaltsreinigung, Büroreinigung, Fassadenreinigung, Fensterreinigung, etc.
 2. Projektgröße (z.B. "Wie groß ist die zu reinigende Fläche ungefähr?")
 3. Zeitrahmen (z.B. "Wann soll es losgehen?")
 4. Besondere Anforderungen (nur wenn relevant)
 
 DATENERFASSUNG - PHASE 2: KONTAKTDATEN (ALLE erforderlich):
 Sage: "Um Ihnen ein Angebot zu erstellen, benötige ich noch Ihre Kontaktdaten:"
-1. Name: "Wie ist Ihr Name?"
-2. Firma: "Wie heißt Ihr Unternehmen?"
-3. Telefon: "Unter welcher Nummer sind Sie erreichbar?"
-4. Stadt: "In welcher Stadt befindet sich Ihr Unternehmen?"
-5. E-Mail: "Ihre E-Mail-Adresse?"
+Dann zeige das Kontaktformular (needsContactInfo = true)
+Das Formular erfasst:
+1. Leistung (bereits aus Phase 1 bekannt, wird vorausgefüllt)
+2. Name
+3. Firma
+4. Telefon
+5. Stadt
+6. E-Mail
 
 WICHTIG - KEINE LÜGEN:
 - Sage NIEMALS "Ich leite weiter" oder "Ich habe gesendet" 
@@ -129,7 +133,7 @@ export default async function handler(
       `${msg.role === 'user' ? 'Kunde' : 'Du'}: ${msg.content}`
     ).join('\n');
 
-    const hasAllContactInfo = userInfo && userInfo.name && userInfo.email && userInfo.phone && userInfo.company && userInfo.city;
+    const hasAllContactInfo = userInfo && userInfo.name && userInfo.email && userInfo.phone && userInfo.company && userInfo.city && userInfo.service;
 
     const prompt = `${WEBSITE_CONTEXT}
 

@@ -6,6 +6,9 @@ interface ChatToSpecialistData {
     name: string;
     email: string;
     phone?: string;
+    company?: string;
+    city?: string;
+    service?: string;
   };
   conversationLong: string;
   conversationShort: string;
@@ -52,10 +55,22 @@ function getAdminEmailTemplate(data: ChatToSpecialistData): string {
                 <tr>
                   <td style="padding: 20px;">
                     <table width="100%" cellpadding="8" cellspacing="0">
+                      ${data.userInfo.service ? `
+                      <tr>
+                        <td style="color: #666666; font-size: 14px; font-weight: 600; width: 130px; vertical-align: top;">Leistung:</td>
+                        <td style="color: #1a1a1a; font-size: 15px; font-weight: 600;">${data.userInfo.service}</td>
+                      </tr>
+                      ` : ''}
                       <tr>
                         <td style="color: #666666; font-size: 14px; font-weight: 600; width: 130px; vertical-align: top;">Name:</td>
                         <td style="color: #1a1a1a; font-size: 15px;">${data.userInfo.name}</td>
                       </tr>
+                      ${data.userInfo.company ? `
+                      <tr>
+                        <td style="color: #666666; font-size: 14px; font-weight: 600; vertical-align: top;">Firma:</td>
+                        <td style="color: #1a1a1a; font-size: 15px;">${data.userInfo.company}</td>
+                      </tr>
+                      ` : ''}
                       <tr>
                         <td style="color: #666666; font-size: 14px; font-weight: 600; vertical-align: top;">E-Mail:</td>
                         <td style="color: #1a1a1a; font-size: 15px;">
@@ -68,6 +83,12 @@ function getAdminEmailTemplate(data: ChatToSpecialistData): string {
                         <td style="color: #1a1a1a; font-size: 15px;">
                           <a href="tel:${data.userInfo.phone}" style="color: #1e3a8a; text-decoration: none;">${data.userInfo.phone}</a>
                         </td>
+                      </tr>
+                      ` : ''}
+                      ${data.userInfo.city ? `
+                      <tr>
+                        <td style="color: #666666; font-size: 14px; font-weight: 600; vertical-align: top;">Stadt:</td>
+                        <td style="color: #1a1a1a; font-size: 15px;">${data.userInfo.city}</td>
                       </tr>
                       ` : ''}
                     </table>
