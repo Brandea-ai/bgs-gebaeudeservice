@@ -25,7 +25,7 @@ export async function sendContactEmail(data: EmailData): Promise<boolean> {
   const resendApiKey = process.env.RESEND_API_KEY;
   
   if (!resendApiKey) {
-    console.log("⚠️  RESEND_API_KEY not configured. Email would be sent to: info@brandea.de");
+    console.log("⚠️  RESEND_API_KEY not configured. Email would be sent to: info@brandea.de (from: info@bgs-service.ch)");
     console.log("📧 Email preview:", {
       to: "info@brandea.de",
       from: email,
@@ -100,7 +100,7 @@ export async function sendContactEmail(data: EmailData): Promise<boolean> {
     `;
 
     const { data: emailResponse, error } = await resend.emails.send({
-      from: 'BGS Kontaktformular <onboarding@resend.dev>',
+      from: 'BGS Kontaktformular <info@bgs-service.ch>',
       to: ['info@brandea.de'],
       replyTo: email,
       subject: `Neue Kontaktanfrage von ${name}`,

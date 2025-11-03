@@ -9,6 +9,7 @@ import SEO from "@/components/SEO";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin, CheckCircle, AlertCircle } from "lucide-react";
+import GoogleMap from "@/components/GoogleMap";
 
 export default function Kontakt() {
   const [formData, setFormData] = useState({
@@ -25,9 +26,10 @@ export default function Kontakt() {
   }>({ type: null, message: "" });
 
   const scrollToForm = () => {
-    const form = document.getElementById('contact-form');
-    if (form) {
-      form.scrollIntoView({ behavior: 'smooth' });
+    // Scroll to footer contact form
+    const footer = document.querySelector('footer');
+    if (footer) {
+      footer.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -141,13 +143,36 @@ export default function Kontakt() {
           {/* Standort-Karte */}
           <div className="mb-16">
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-8 text-center">
-              Unser Standort
+              Unsere Standorte
             </h2>
             <div className="rounded-2xl overflow-hidden shadow-xl">
-              <img 
-                src="/karte-emmenbruecke.jpg" 
-                alt="Standort der Swiss Reinigungsfirma in Emmenbrücke" 
-                className="w-full h-[400px] object-cover"
+              <GoogleMap
+                apiKey="AIzaSyBXSSM_mJ5bXXFgVrwE9oeWp2Wk32afiWI"
+                center={{ lat: 47.0502, lng: 8.3093 }}
+                zoom={10}
+                markers={[
+                  {
+                    position: { lat: 47.0502, lng: 8.3093 },
+                    title: "Hauptsitz Emmenbrücke",
+                    info: "Swiss Reinigungsfirma<br/>Tannhof 10<br/>6020 Emmenbrücke"
+                  },
+                  {
+                    position: { lat: 47.3769, lng: 8.5417 },
+                    title: "Standort Zürich",
+                    info: "Professionelle Gebäudereinigung in Zürich"
+                  },
+                  {
+                    position: { lat: 47.1667, lng: 8.5167 },
+                    title: "Standort Zug",
+                    info: "Professionelle Gebäudereinigung in Zug"
+                  },
+                  {
+                    position: { lat: 47.0502, lng: 8.3093 },
+                    title: "Standort Luzern",
+                    info: "Professionelle Gebäudereinigung in Luzern"
+                  }
+                ]}
+                className="w-full h-[500px]"
               />
             </div>
             <p className="text-center text-slate-600 mt-4">
@@ -155,119 +180,58 @@ export default function Kontakt() {
             </p>
           </div>
 
-          {/* Kontaktformular */}
-          <div id="contact-form" className="max-w-3xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-8 text-center">
-              Jetzt Kontakt aufnehmen
+          {/* Kontaktformular - Im Footer */}
+          <div className="max-w-3xl mx-auto text-center py-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">
+              Bereit für professionelle Reinigung?
             </h2>
-            <p className="text-center text-slate-600 mb-8">
-              Fordern Sie ein unverbindliches Angebot an – wir melden uns innerhalb von 24 Stunden bei Ihnen zurück.
+            <p className="text-lg text-slate-600 mb-8">
+              Nutzen Sie unser Kontaktformular im Footer und fordern Sie ein unverbindliches Angebot an. Wir melden uns innerhalb von 24 Stunden bei Ihnen zurück.
             </p>
-            
-            <Card className="p-8 hover-lift hover-tilt hover-tilt">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
-                    Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                    placeholder="Ihr vollständiger Name"
-                  />
-                </div>
+            <button
+              onClick={scrollToForm}
+              className="bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg hover:shadow-xl"
+            >
+              Zum Kontaktformular
+            </button>
+          </div>
+        </div>
+      </section>
 
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
-                      E-Mail *
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                      placeholder="ihre@email.de"
-                    />
-                  </div>
+      {/* FAQ Section */}
+      <section className="py-20 bg-slate-50">
+        <div className="container max-w-4xl">
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-12 text-center">
+            Häufig gestellte Fragen
+          </h2>
+          
+          <div className="space-y-6">
+            <Card className="p-6 hover-lift hover-tilt hover-tilt">
+              <h3 className="font-bold text-lg mb-2">Wie schnell erhalte ich ein Angebot?</h3>
+              <p className="text-slate-600">
+                Wir melden uns innerhalb von 24 Stunden bei Ihnen zurück und erstellen ein individuelles, auf Ihre Bedürfnisse zugeschnittenes Angebot.
+              </p>
+            </Card>
 
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-slate-700 mb-2">
-                      Telefon
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                      placeholder="+41 41 320 56 10"
-                    />
-                  </div>
-                </div>
+            <Card className="p-6 hover-lift hover-tilt hover-tilt">
+              <h3 className="font-bold text-lg mb-2">In welchen Regionen sind Sie tätig?</h3>
+              <p className="text-slate-600">
+                Wir sind in der gesamten Zentralschweiz tätig, mit Schwerpunkt auf Luzern, Zug und Zürich. Für andere Regionen kontaktieren Sie uns bitte direkt.
+              </p>
+            </Card>
 
-                <div>
-                  <label htmlFor="service" className="block text-sm font-medium text-slate-700 mb-2">
-                    Gewünschte Leistung
-                  </label>
-                  <select
-                    id="service"
-                    value={formData.service}
-                    onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                    className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                  >
-                    <option value="">Bitte wählen...</option>
-                    <option value="Unterhaltsreinigung">Unterhaltsreinigung</option>
-                    <option value="Büroreinigung">Büroreinigung</option>
-                    <option value="Industriereinigung">Industriereinigung</option>
-                    <option value="Baureinigung">Baureinigung</option>
-                    <option value="Sonderreinigung">Sonderreinigung</option>
-                    <option value="Andere">Andere</option>
-                  </select>
-                </div>
+            <Card className="p-6 hover-lift hover-tilt hover-tilt">
+              <h3 className="font-bold text-lg mb-2">Sind Sie versichert?</h3>
+              <p className="text-slate-600">
+                Ja, wir verfügen über eine umfassende Betriebshaftpflichtversicherung. Ihre Immobilie ist bei uns in sicheren Händen.
+              </p>
+            </Card>
 
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">
-                    Ihre Nachricht *
-                  </label>
-                  <textarea
-                    id="message"
-                    required
-                    rows={6}
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                    placeholder="Beschreiben Sie Ihr Anliegen..."
-                  />
-                </div>
-
-                {submitStatus.type && (
-                  <div className={`p-4 rounded-lg flex items-start gap-3 ${
-                    submitStatus.type === "success" ? "bg-green-50 text-green-800" : "bg-red-50 text-red-800"
-                  }`}>
-                    {submitStatus.type === "success" ? (
-                      <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                    ) : (
-                      <AlertCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                    )}
-                    <p>{submitStatus.message}</p>
-                  </div>
-                )}
-
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full text-lg py-6"
-                >
-                  {isSubmitting ? "Wird gesendet..." : "Nachricht senden"}
-                </Button>
-              </form>
+            <Card className="p-6 hover-lift hover-tilt hover-tilt">
+              <h3 className="font-bold text-lg mb-2">Bieten Sie auch Notfallreinigungen an?</h3>
+              <p className="text-slate-600">
+                Selbstverständlich! Wir sind 24/7 für Sie erreichbar und können bei Bedarf auch kurzfristig Reinigungseinsätze durchführen.
+              </p>
             </Card>
           </div>
         </div>
