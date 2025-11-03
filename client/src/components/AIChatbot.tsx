@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { MessageCircle, X, Send, Loader2, CheckCircle2, Shield, Sparkles, Phone, Mail } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
 
 interface Message {
   role: 'user' | 'assistant';
@@ -16,6 +17,17 @@ interface UserInfo {
   service: string;
 }
 
+interface ExtractedInfo {
+  service?: { code: string; name: string };
+  size?: string;
+  timing?: string;
+  name?: string;
+  company?: string;
+  city?: string;
+  phone?: string;
+  email?: string;
+}
+
 export default function AIChatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [hasConsent, setHasConsent] = useState(false);
@@ -23,10 +35,10 @@ export default function AIChatbot() {
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [userInfo, setUserInfo] = useState<UserInfo>({ name: '', email: '', phone: '', company: '', city: '', service: '' });
-  const [collectingContactInfo, setCollectingContactInfo] = useState(false);
+  const [extractedInfo, setExtractedInfo] = useState<ExtractedInfo>({});
   const [showSpecialistPrompt, setShowSpecialistPrompt] = useState(false);
-  const [questionCount, setQuestionCount] = useState(0);
   const [emailSent, setEmailSent] = useState(false);
+  const [identificationCode, setIdentificationCode] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -67,8 +79,7 @@ export default function AIChatbot() {
         },
         body: JSON.stringify({
           messages: [...messages, userMessage].map(m => ({ role: m.role, content: m.content })),
-          userInfo: userInfo,
-          questionCount: questionCount
+          userInfo: userInfo
         }),
       });
 
@@ -80,20 +91,26 @@ export default function AIChatbot() {
 
       const assistantMessage: Message = {
         role: 'assistant',
-        content: data.message,
+        content: data.response,
         timestamp: new Date()
       };
 
       setMessages(prev => [...prev, assistantMessage]);
 
-      // Update question count
-      if (data.questionCount !== undefined) {
-        setQuestionCount(data.questionCount);
-      }
-
-      // Show contact info form if needed
-      if (data.needsContactInfo && !userInfo.email) {
-        setCollectingContactInfo(true);
+      // Update extracted info from conversation
+      if (data.extractedInfo) {
+        setExtractedInfo(data.extractedInfo);
+        
+        // Auto-fill userInfo with extracted data
+        setUserInfo(prev => ({
+          ...prev,
+          service: data.detectedService?.name || prev.service,
+          name: data.extractedInfo.name || prev.name,
+          company: data.extractedInfo.company || prev.company,
+          city: data.extractedInfo.city || prev.city,
+          phone: data.extractedInfo.phone || prev.phone,
+          email: data.extractedInfo.email || prev.email,
+        }));
       }
 
       // Show specialist prompt if ready (ALL contact info must be present)
@@ -105,7 +122,7 @@ export default function AIChatbot() {
       console.error('Chat error:', error);
       const errorMessage: Message = {
         role: 'assistant',
-        content: 'Entschuldigung, technischer Fehler. Bitte kontaktieren Sie uns:\n\n📞 **+41 41 320 56 10**\n📧 **info@brandea.de**',
+        content: 'Entschuldigung, es gab einen Fehler. Bitte versuchen Sie es erneut.',
         timestamp: new Date()
       };
       setMessages(prev => [...prev, errorMessage]);
@@ -114,33 +131,15 @@ export default function AIChatbot() {
     }
   };
 
-  const handleContactInfoSubmit = () => {
-    if (!userInfo.name || !userInfo.email || !userInfo.phone || !userInfo.company || !userInfo.city || !userInfo.service) {
-      alert('Bitte füllen Sie alle Felder aus.');
-      return;
-    }
-
-    setCollectingContactInfo(false);
-    
-    const confirmMessage: Message = {
-      role: 'assistant',
-      content: `Vielen Dank, **${userInfo.name}**! Ich habe Ihre Kontaktdaten notiert.\n\n**Zusammenfassung:**\n- Leistung: ${userInfo.service}\n- Firma: ${userInfo.company}\n- Stadt: ${userInfo.city}\n- Telefon: ${userInfo.phone}\n- E-Mail: ${userInfo.email}\n\nSoll ich diese Anfrage an einen Spezialisten senden?`,
-      timestamp: new Date()
-    };
-    
-    setMessages(prev => [...prev, confirmMessage]);
-    setShowSpecialistPrompt(true);
-  };
-
-  const handleSpecialistDecision = async (sendToSpecialist: boolean) => {
-    if (!sendToSpecialist) {
-      setShowSpecialistPrompt(false);
+  const handleSpecialistResponse = async (accepted: boolean) => {
+    if (!accepted) {
       const declineMessage: Message = {
         role: 'assistant',
-        content: 'Kein Problem! Gibt es noch etwas, bei dem ich Ihnen helfen kann?',
+        content: 'Kein Problem! Wenn Sie später Interesse haben, können Sie mich jederzeit kontaktieren.',
         timestamp: new Date()
       };
       setMessages(prev => [...prev, declineMessage]);
+      setShowSpecialistPrompt(false);
       return;
     }
 
@@ -153,18 +152,28 @@ export default function AIChatbot() {
     setShowSpecialistPrompt(false);
 
     try {
-      // Prepare conversation summary
+      // Generate identification code
+      const serviceCode = extractedInfo.service?.code || 'SR';
+      const now = new Date();
+      const day = String(now.getDate()).padStart(2, '0');
+      const month = String(now.getMonth() + 1).padStart(2, '0');
+      const year = now.getFullYear();
+      const timestamp = now.getTime();
+      const runningNumber = String(timestamp % 1000000).padStart(6, '0');
+      const idCode = `${serviceCode}${day}${month}${year}${runningNumber}`;
+      
+      setIdentificationCode(idCode);
+
       const conversationLong = messages.map(m => 
-        `[${m.timestamp.toLocaleTimeString('de-CH')}] ${m.role === 'user' ? 'Kunde' : 'KI-Assistent'}: ${m.content}`
+        `${m.role === 'user' ? 'Kunde' : 'KI-Assistent'}: ${m.content}`
       ).join('\n\n');
 
-      const conversationShort = messages
-        .filter(m => m.role === 'user')
-        .map(m => m.content)
-        .slice(0, 3)
-        .join(' | ');
+      const conversationShort = `
+Leistung: ${userInfo.service}
+Größe: ${extractedInfo.size || 'nicht angegeben'}
+Zeitpunkt: ${extractedInfo.timing || 'nicht angegeben'}
+      `.trim();
 
-      // Send to specialist via email
       const response = await fetch('/api/chat-to-specialist', {
         method: 'POST',
         headers: {
@@ -173,7 +182,8 @@ export default function AIChatbot() {
         body: JSON.stringify({
           userInfo,
           conversationLong,
-          conversationShort
+          conversationShort,
+          identificationCode: idCode
         }),
       });
 
@@ -185,17 +195,17 @@ export default function AIChatbot() {
 
       const successMessage: Message = {
         role: 'assistant',
-        content: `✅ **Vielen Dank!** Ihre Anfrage wurde erfolgreich an unseren Spezialisten weitergeleitet.\n\nSie erhalten innerhalb von **12 Stunden (werktags)** eine Antwort an **${userInfo.email}**.`,
+        content: `Vielen Dank! Ihre Anfrage wurde erfolgreich an unseren Spezialisten weitergeleitet.\n\n**Ihr Identifikationscode**: ${idCode}\n\nBitte bewahren Sie diesen Code auf. Sie können ihn bei Rückfragen angeben.\n\nSie erhalten innerhalb von 12 Stunden (werktags) eine Antwort an ${userInfo.email}.`,
         timestamp: new Date()
       };
 
       setMessages(prev => [...prev, successMessage]);
 
     } catch (error) {
-      console.error('Send to specialist error:', error);
+      console.error('Specialist request error:', error);
       const errorMessage: Message = {
         role: 'assistant',
-        content: '❌ Fehler beim Senden. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt:\n\n📞 **+41 41 320 56 10**\n📧 **info@brandea.de**',
+        content: 'Entschuldigung, beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt.',
         timestamp: new Date()
       };
       setMessages(prev => [...prev, errorMessage]);
@@ -204,89 +214,75 @@ export default function AIChatbot() {
     }
   };
 
-  // Render message with basic markdown support
-  const renderMessage = (content: string) => {
-    // Replace **text** with bold
-    const parts = content.split(/(\*\*.*?\*\*)/g);
-    return parts.map((part, index) => {
-      if (part.startsWith('**') && part.endsWith('**')) {
-        return <strong key={index}>{part.slice(2, -2)}</strong>;
-      }
-      return <span key={index}>{part}</span>;
-    });
+  const renderMessage = (message: Message) => {
+    return (
+      <div className="prose prose-sm max-w-none">
+        <ReactMarkdown>{message.content}</ReactMarkdown>
+      </div>
+    );
   };
 
   if (!isOpen) {
     return (
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 w-16 h-16 bg-gradient-to-br from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white rounded-full shadow-2xl hover:shadow-red-500/50 transition-all duration-300 flex items-center justify-center z-50 group"
+        className="fixed bottom-6 right-6 bg-red-600 hover:bg-red-700 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-50"
         aria-label="Chat öffnen"
       >
-        <MessageCircle className="w-7 h-7 group-hover:scale-110 transition-transform" />
-        <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white animate-pulse"></div>
+        <MessageCircle className="w-6 h-6" />
       </button>
     );
   }
 
   return (
-    <div className="fixed bottom-6 right-6 w-96 h-[600px] bg-white rounded-2xl shadow-2xl flex flex-col z-50 border border-gray-200">
+    <div className="fixed bottom-6 right-6 w-96 h-[600px] bg-white rounded-lg shadow-2xl flex flex-col z-50 border border-gray-200">
       {/* Header */}
-      <div className="bg-gradient-to-r from-red-600 to-red-700 text-white p-4 rounded-t-2xl flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-            <Sparkles className="w-5 h-5" />
-          </div>
+      <div className="bg-gradient-to-r from-red-600 to-red-700 text-white p-4 rounded-t-lg flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <Sparkles className="w-5 h-5" />
           <div>
-            <h3 className="font-semibold">KI-Assistent</h3>
-            <p className="text-xs text-white/80">Powered by Brandea AI</p>
+            <h3 className="font-semibold text-sm">KI-Assistent</h3>
+            <p className="text-xs text-red-100">Powered by Brandea AI</p>
           </div>
         </div>
         <button
           onClick={() => setIsOpen(false)}
-          className="hover:bg-white/20 p-2 rounded-lg transition-colors"
+          className="hover:bg-red-800 p-1 rounded transition-colors"
         >
           <X className="w-5 h-5" />
         </button>
       </div>
 
-      {/* GDPR Consent */}
+      {/* Consent Screen */}
       {!hasConsent && (
-        <div className="flex-1 p-6 flex flex-col items-center justify-center bg-gray-50">
-          <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4">
-            <Shield className="w-8 h-8 text-red-600" />
-          </div>
-          <h4 className="text-lg font-semibold text-gray-900 mb-2 text-center">
-            Datenschutz & Einwilligung
-          </h4>
-          <p className="text-sm text-gray-600 mb-6 text-center leading-relaxed">
+        <div className="flex-1 flex flex-col items-center justify-center p-6 text-center">
+          <Shield className="w-16 h-16 text-red-600 mb-4" />
+          <h3 className="text-lg font-semibold text-gray-900 mb-2">Datenschutz & Einwilligung</h3>
+          <p className="text-sm text-gray-600 mb-4">
             Bevor wir beginnen, benötigen wir Ihre Zustimmung zur Verarbeitung Ihrer Daten gemäß unserer{' '}
-            <a href="/datenschutz" className="text-red-600 hover:underline" target="_blank">
+            <a href="/datenschutz" className="text-red-600 underline" target="_blank">
               Datenschutzerklärung
             </a>.
           </p>
-          <div className="bg-white border border-gray-200 rounded-lg p-4 mb-6 text-sm text-gray-700">
-            <ul className="space-y-2">
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                <span>Gespräche werden dokumentiert</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                <span>Daten werden sicher gespeichert</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                <span>Keine Weitergabe an Dritte</span>
-              </li>
-            </ul>
-          </div>
+          <ul className="text-left text-sm text-gray-700 mb-6 space-y-2">
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+              <span>Gespräche werden dokumentiert</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+              <span>Daten werden sicher gespeichert</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+              <span>Keine Weitergabe an Dritte</span>
+            </li>
+          </ul>
           <button
             onClick={handleConsent}
-            className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 flex items-center justify-center gap-2"
+            className="w-full bg-red-600 hover:bg-red-700 text-white py-3 px-4 rounded-lg font-medium transition-colors"
           >
-            <Shield className="w-5 h-5" />
-            <span>Zustimmen & Chat starten</span>
+            Zustimmen & Chat starten
           </button>
         </div>
       )}
@@ -294,158 +290,90 @@ export default function AIChatbot() {
       {/* Chat Messages */}
       {hasConsent && (
         <>
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
+          <div className="flex-1 overflow-y-auto p-4 space-y-4">
             {messages.map((message, index) => (
               <div
                 key={index}
                 className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 <div
-                  className={`max-w-[80%] rounded-2xl px-4 py-3 ${
+                  className={`max-w-[80%] rounded-lg p-3 ${
                     message.role === 'user'
-                      ? 'bg-gradient-to-r from-red-600 to-red-700 text-white'
-                      : 'bg-white border border-gray-200 text-gray-900'
+                      ? 'bg-red-600 text-white'
+                      : 'bg-gray-100 text-gray-900'
                   }`}
                 >
-                  <p className="text-sm leading-relaxed whitespace-pre-wrap">
-                    {renderMessage(message.content)}
-                  </p>
-                  <p className={`text-xs mt-1 ${message.role === 'user' ? 'text-white/70' : 'text-gray-500'}`}>
-                    {message.timestamp.toLocaleTimeString('de-CH', { hour: '2-digit', minute: '2-digit' })}
-                  </p>
+                  {renderMessage(message)}
+                  <div className={`text-xs mt-1 ${message.role === 'user' ? 'text-red-100' : 'text-gray-500'}`}>
+                    {message.timestamp.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' })}
+                  </div>
                 </div>
               </div>
             ))}
+
             {loading && (
               <div className="flex justify-start">
-                <div className="bg-white border border-gray-200 rounded-2xl px-4 py-3">
-                  <Loader2 className="w-5 h-5 text-red-600 animate-spin" />
+                <div className="bg-gray-100 rounded-lg p-3">
+                  <Loader2 className="w-5 h-5 animate-spin text-red-600" />
                 </div>
               </div>
             )}
+
+            {/* Specialist Prompt (Ja/Nein Buttons) */}
+            {showSpecialistPrompt && (
+              <div className="flex flex-col gap-2 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                <p className="text-sm text-gray-700 font-medium">
+                  Soll ich diese Anfrage an einen Spezialisten senden?
+                </p>
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => handleSpecialistResponse(true)}
+                    className="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
+                  >
+                    <CheckCircle2 className="w-4 h-4" />
+                    Ja, bitte
+                  </button>
+                  <button
+                    onClick={() => handleSpecialistResponse(false)}
+                    className="flex-1 bg-gray-400 hover:bg-gray-500 text-white py-2 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
+                  >
+                    <X className="w-4 h-4" />
+                    Nein, danke
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {/* Contact Links (only after email sent or 15+ messages) */}
+            {(emailSent || messages.length >= 15) && (
+              <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                <p className="text-sm text-gray-700 mb-3 font-medium">
+                  Oder kontaktieren Sie uns direkt:
+                </p>
+                <div className="flex gap-2">
+                  <a
+                    href="tel:+41413205610"
+                    className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
+                  >
+                    <Phone className="w-4 h-4" />
+                    Anrufen
+                  </a>
+                  <a
+                    href="mailto:info@bgs-service.ch"
+                    className="flex-1 bg-orange-600 hover:bg-orange-700 text-white py-2 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
+                  >
+                    <Mail className="w-4 h-4" />
+                    E-Mail
+                  </a>
+                </div>
+              </div>
+            )}
+
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Contact Info Collection Form */}
-          {collectingContactInfo && (
-            <div className="p-4 bg-blue-50 border-t border-blue-200">
-              <p className="text-sm text-gray-700 mb-3 font-medium">
-                Bitte geben Sie Ihre Kontaktdaten an:
-              </p>
-              <div className="space-y-2">
-                <input
-                  type="text"
-                  placeholder="Benötigte Leistung *"
-                  value={userInfo.service}
-                  onChange={(e) => setUserInfo(prev => ({ ...prev, service: e.target.value }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-500"
-                />
-                <input
-                  type="text"
-                  placeholder="Ihr Name *"
-                  value={userInfo.name}
-                  onChange={(e) => setUserInfo(prev => ({ ...prev, name: e.target.value }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-500"
-                />
-                <input
-                  type="text"
-                  placeholder="Firma *"
-                  value={userInfo.company}
-                  onChange={(e) => setUserInfo(prev => ({ ...prev, company: e.target.value }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-500"
-                />
-                <input
-                  type="tel"
-                  placeholder="Telefon *"
-                  value={userInfo.phone}
-                  onChange={(e) => setUserInfo(prev => ({ ...prev, phone: e.target.value }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-500"
-                />
-                <input
-                  type="text"
-                  placeholder="Stadt *"
-                  value={userInfo.city}
-                  onChange={(e) => setUserInfo(prev => ({ ...prev, city: e.target.value }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-500"
-                />
-                <input
-                  type="email"
-                  placeholder="E-Mail *"
-                  value={userInfo.email}
-                  onChange={(e) => setUserInfo(prev => ({ ...prev, email: e.target.value }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-500"
-                />
-                <button
-                  onClick={handleContactInfoSubmit}
-                  className="w-full bg-red-600 hover:bg-red-700 text-white py-2 rounded-lg text-sm font-medium transition-colors"
-                >
-                  Bestätigen
-                </button>
-              </div>
-            </div>
-          )}
-
-          {/* Direct Contact Options - Only show after email sent or many messages */}
-          {(emailSent || messages.length > 15) && (
-            <div className="px-4 py-2 bg-blue-50 border-t border-blue-100">
-              <p className="text-xs text-gray-600 mb-2 text-center">Oder kontaktieren Sie uns direkt:</p>
-              <div className="flex gap-2 justify-center">
-                <a
-                  href="tel:+41413205610"
-                  className="flex items-center gap-1.5 bg-white hover:bg-gray-50 text-gray-700 px-3 py-2 rounded-lg text-xs font-medium transition-colors border border-gray-200"
-                >
-                  <Phone className="w-4 h-4 text-red-600" />
-                  <span>Anrufen</span>
-                </a>
-                <a
-                  href="mailto:info@brandea.de"
-                  className="flex items-center gap-1.5 bg-white hover:bg-gray-50 text-gray-700 px-3 py-2 rounded-lg text-xs font-medium transition-colors border border-gray-200"
-                >
-                  <Mail className="w-4 h-4 text-red-600" />
-                  <span>E-Mail</span>
-                </a>
-              </div>
-            </div>
-          )}
-
-          {/* Specialist Prompt with Yes/No Buttons */}
-          {showSpecialistPrompt && (
-            <div className="p-4 bg-green-50 border-t border-green-200">
-              <p className="text-sm text-gray-700 mb-3 font-medium text-center">
-                Soll ich diese Anfrage an einen Spezialisten senden?
-              </p>
-              <div className="flex gap-3">
-                <button
-                  onClick={() => handleSpecialistDecision(true)}
-                  disabled={loading}
-                  className="flex-1 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-50"
-                >
-                  {loading ? (
-                    <>
-                      <Loader2 className="w-5 h-5 animate-spin" />
-                      <span>Wird gesendet...</span>
-                    </>
-                  ) : (
-                    <>
-                      <CheckCircle2 className="w-5 h-5" />
-                      <span>Ja, bitte</span>
-                    </>
-                  )}
-                </button>
-                <button
-                  onClick={() => handleSpecialistDecision(false)}
-                  disabled={loading}
-                  className="flex-1 bg-gray-600 hover:bg-gray-700 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-50"
-                >
-                  <X className="w-5 h-5" />
-                  <span>Nein, danke</span>
-                </button>
-              </div>
-            </div>
-          )}
-
-          {/* Input */}
-          <div className="p-4 border-t border-gray-200 bg-white rounded-b-2xl">
+          {/* Input Area */}
+          <div className="p-4 border-t border-gray-200">
             <div className="flex gap-2">
               <input
                 type="text"
@@ -453,13 +381,13 @@ export default function AIChatbot() {
                 onChange={(e) => setInput(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
                 placeholder="Ihre Nachricht..."
-                className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-sm"
+                className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
                 disabled={loading}
               />
               <button
                 onClick={handleSendMessage}
                 disabled={loading || !input.trim()}
-                className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white p-3 rounded-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-red-600 hover:bg-red-700 disabled:bg-gray-300 text-white p-2 rounded-lg transition-colors"
               >
                 <Send className="w-5 h-5" />
               </button>

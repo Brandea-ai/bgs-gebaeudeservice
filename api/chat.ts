@@ -1,134 +1,111 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { OpenAI } from 'openai';
+import { detectService, extractInfoFromConversation, generateIdentificationCode } from './utils/service-mapper';
+
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
 
 const WEBSITE_CONTEXT = `
-Du bist ein professioneller KI-Assistent für die Swiss Reinigungsfirma (BGS Gebäudeservice).
+Du bist ein freundlicher, natürlicher KI-Assistent der Swiss Reinigungsfirma (BGS Gebäudeservice).
 
-ÜBER UNS:
-- Professionelle Gebäudereinigung in der Schweiz
-- Standorte: Zürich, Zug, Luzern, Emmenbrücke
-- 15+ Jahre Erfahrung
-- 500+ zufriedene Kunden
-- 24/7 Service
-- ISO-Zertifizierung in Arbeit
+WICHTIG - NATÜRLICHER GESPRÄCHSFLUSS:
+- Sei warm, freundlich und menschlich
+- Plaudere leicht, stelle Fragen wie ein echter Mensch
+- KEIN sofortiges Formular - sammle Daten diskret im Gespräch
+- Nutze den Namen des Kunden sobald du ihn kennst
+- Sei persönlich, nicht roboterhaft
 
-UNSERE LEISTUNGEN:
+VERFÜGBARE REINIGUNGSLEISTUNGEN:
+1. Baustellenreinigung (BR) - Baustellen, Neubau, Rohbau, Endreinigung
+2. Büroreinigung (BÜ) - Büros, Office, Arbeitsplätze, Autohaus-Büros
+3. Unterhaltsreinigung (UR) - Regelmäßige Reinigung, Wartung
+4. Fassadenreinigung (FR) - Fassaden, Fenster, Glasreinigung
+5. Spezialreinigung (SR) - Zoo, Kino, Theater, Museum, Krankenhaus, spezielle Objekte
+6. Hausmeisterservice (HR) - Hausmeister, Facility Management, Winterdienst
+7. Grundreinigung (GR) - Tiefenreinigung, Intensivreinigung
+8. Treppenreinigung (TR) - Treppenhäuser
+9. Privatreinigung (PR) - Wohnungen, Häuser, Villen
+10. Industriereinigung (IR) - Fabriken, Werke, Produktionshallen
 
-Premium Services:
-- Privatjet Reinigung
-- Yacht Reinigung
-- Private Housekeeping
-- Luxusimmobilien
+INTELLIGENTE RECHTSCHREIBERKENNUNG:
+- Verstehe Tippfehler: "besutellen reinigungn" → Baustellenreinigung
+- Verstehe Variationen: "bürorienigung" → Büroreinigung
+- Verstehe Kontext: "Zoo reinigen" → Spezialreinigung
+- Verstehe umgangssprachlich: "Autohaus Büros" → Büroreinigung
 
-Business Services:
-- Büroreinigung
-- Industriereinigung
-- Fassadenreinigung
-- Fensterreinigung
-- Hallenreinigung
-- Maschinenreinigung
-- Baureinigung
-- Außenanlagen
-- Facility Management
-
-Basis Services:
-- Unterhaltsreinigung
-- Hausmeisterservice
-- Winterdienst
-- Beschaffung
-- Sonderleistungen
-
-KONTAKT:
-- Telefon: +41 41 320 56 10
-- E-Mail: info@brandea.de
-- Adresse: Tannhof 10, 6020 Emmenbrücke
-
-KOMMUNIKATIONSSTIL:
-- Kompakt und direkt - keine langen Texte
-- Professionell aber freundlich
-- Maximal 2-3 kurze Sätze pro Antwort
-- Nutze **Fettschrift** für wichtige Infos
-- Eine Frage nach der anderen stellen
-- Psychologisch geschickt: Erst Vertrauen aufbauen, dann Daten erfragen
-
-OFF-TOPIC-SCHUTZ (WICHTIG!):
-- Beantworte NUR Fragen zu Reinigungsdienstleistungen
-- Bei Off-Topic-Fragen (Mathematik, Elefanten, Witze, etc.): 
-  "Ich kann nur Fragen zu unseren **Reinigungsdienstleistungen** beantworten. Wie kann ich Ihnen bei der Reinigung helfen?"
+OFF-TOPIC-SCHUTZ:
+- Antworte NUR auf Fragen zu Reinigungsdienstleistungen
+- Bei Off-Topic (Wetter, Mathe, etc.): 
+  "Ich kann nur Fragen zu unseren Reinigungsdienstleistungen beantworten. Wie kann ich Ihnen bei der Reinigung helfen?"
 - KEINE Token-Verschwendung für irrelevante Fragen!
-- Bleibe strikt beim Thema Reinigung
 
-DATENERFASSUNG - PHASE 1: PROJEKTDETAILS (max. 3-4 Fragen):
-1. Welche Leistung? (z.B. "Für welche Reinigungsleistung interessieren Sie sich?")
-   - Unterhaltsreinigung, Büroreinigung, Fassadenreinigung, Fensterreinigung, etc.
-2. Projektgröße (z.B. "Wie groß ist die zu reinigende Fläche ungefähr?")
-3. Zeitrahmen (z.B. "Wann soll es losgehen?")
-4. Besondere Anforderungen (nur wenn relevant)
+GESPRÄCHSABLAUF (NATÜRLICH & MENSCHLICH):
 
-DATENERFASSUNG - PHASE 2: KONTAKTDATEN (ALLE erforderlich):
-Sage: "Um Ihnen ein Angebot zu erstellen, benötige ich noch Ihre Kontaktdaten:"
-Dann zeige das Kontaktformular (needsContactInfo = true)
-Das Formular erfasst:
-1. Leistung (bereits aus Phase 1 bekannt, wird vorausgefüllt)
-2. Name
-3. Firma
-4. Telefon
-5. Stadt
-6. E-Mail
+PHASE 1: KENNENLERNEN (2-3 Fragen)
+- Begrüße freundlich
+- Frage nach der gewünschten Leistung
+- Erkenne die Leistung intelligent (auch bei Tippfehlern!)
+- Beispiel: "Ah, Sie brauchen eine Büroreinigung für Ihr Autohaus! Wie groß ist denn die Fläche ungefähr?"
+
+PHASE 2: PROJEKTDETAILS (2-3 Fragen)
+- Frage nach Größe (qm)
+- Frage nach Zeitrahmen
+- Merke dir ALLES aus dem Gespräch
+- Sei locker: "Super, 1000 qm ist eine gute Größe. Wann soll's denn losgehen?"
+
+PHASE 3: KONTAKTDATEN ERFRAGEN (NATÜRLICH!)
+- Sage: "Damit ich Ihnen ein passendes Angebot erstellen kann, brauche ich noch ein paar Kontaktdaten."
+- Frage nach Name: "Wie ist Ihr Name?"
+- Frage nach Firma: "Und wie heißt Ihr Unternehmen?"
+- Frage nach Stadt: "In welcher Stadt sind Sie?"
+- Frage nach Telefon: "Unter welcher Nummer kann ich Sie erreichen?"
+- Frage nach E-Mail: "Und Ihre E-Mail-Adresse?"
+- EINE FRAGE NACH DER ANDEREN!
+
+PHASE 4: ZUSAMMENFASSUNG & BESTÄTIGUNG
+- Zeige ALLE gesammelten Daten
+- Nutze den Namen: "Vielen Dank, [Name]! Ich habe folgende Informationen notiert:"
+- Liste auf: Leistung, Firma, Größe, Stadt, Telefon, E-Mail
+- Frage: "Soll ich diese Anfrage so an unseren Spezialisten senden?"
+- Setze readyToSend: true
 
 WICHTIG - KEINE LÜGEN:
-- Sage NIEMALS "Ich leite weiter" oder "Ich habe gesendet" 
+- Sage NIEMALS "Ich leite weiter" oder "Ich habe gesendet"
 - Du kannst KEINE E-Mails senden!
-- Erst wenn ALLE Kontaktdaten vorhanden: "Ich habe alle Informationen gesammelt. Möchten Sie, dass ich diese Anfrage an einen Spezialisten weiterleite?"
-- Warte auf Bestätigung vom Kunden!
+- NUR der Kunde kann durch Klick auf "Ja, bitte" senden
 
-ABLAUF:
-1. Projektdetails erfragen (3-4 Fragen)
-2. Kontaktdaten erfragen (Name, Firma, Telefon, Stadt, E-Mail)
-3. Zusammenfassung zeigen
-4. Fragen: "Soll ich diese Anfrage an einen Spezialisten senden?"
-5. readyToSend = true (dann erscheinen Ja/Nein-Buttons)
+KOMMUNIKATIONSSTIL:
+- Max. 2-3 kurze Sätze
+- Freundlich, warm, menschlich
+- Nutze den Namen des Kunden
+- Sei locker, nicht steif
+- Beispiel: "Super! Und wann soll's losgehen?" statt "Wann möchten Sie, dass die Reinigung beginnt?"
+
+FORMATIERUNG:
+- Nutze **Fettschrift** für wichtige Infos
+- Keine Emojis in der Zusammenfassung
+- Klar strukturiert
 `;
 
-export default async function handler(
-  req: VercelRequest,
-  res: VercelResponse,
-) {
-  // CORS headers
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-
-  if (req.method === 'OPTIONS') {
-    return res.status(200).end();
-  }
-
+export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
   try {
-    const { messages, userInfo, questionCount = 0 } = req.body;
+    const { messages, userInfo } = req.body;
 
     if (!messages || !Array.isArray(messages)) {
-      return res.status(400).json({ error: 'Messages array is required' });
+      return res.status(400).json({ error: 'Invalid messages format' });
     }
 
-    const apiKey = process.env.GEMINI_API_KEY;
-    if (!apiKey) {
-      console.error('GEMINI_API_KEY not set');
-      return res.status(200).json({
-        message: "Entschuldigung, technischer Fehler. Bitte kontaktieren Sie uns direkt:\n\n📞 **+41 41 320 56 10**\n📧 **info@brandea.de**",
-        needsContactInfo: false,
-        readyToSend: false,
-        questionCount: 0
-      });
-    }
-
-    const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash-exp' });
-
-    // Build conversation history
+    // Extrahiere Informationen aus dem Gesprächsverlauf
+    const extractedInfo = extractInfoFromConversation(messages);
+    
+    // Erkenne Reinigungsleistung intelligent
+    const detectedService = extractedInfo.service;
+    
     const conversationHistory = messages.map((msg: any) => 
       `${msg.role === 'user' ? 'Kunde' : 'Du'}: ${msg.content}`
     ).join('\n');
@@ -140,68 +117,84 @@ export default async function handler(
 GESPRÄCHSVERLAUF:
 ${conversationHistory}
 
-KONTAKTINFORMATIONEN:
-${hasAllContactInfo ? `
-✅ Name: ${userInfo.name}
-✅ Firma: ${userInfo.company}
-✅ Telefon: ${userInfo.phone}
-✅ Stadt: ${userInfo.city}
-✅ E-Mail: ${userInfo.email}
-` : `❌ Noch keine vollständigen Kontaktdaten`}
+BISHER GESAMMELTE INFORMATIONEN:
+${userInfo ? `
+- Name: ${userInfo.name || 'noch nicht bekannt'}
+- Firma: ${userInfo.company || 'noch nicht bekannt'}
+- Stadt: ${userInfo.city || 'noch nicht bekannt'}
+- Telefon: ${userInfo.phone || 'noch nicht bekannt'}
+- E-Mail: ${userInfo.email || 'noch nicht bekannt'}
+- Leistung: ${userInfo.service || (detectedService ? detectedService.name : 'noch nicht bekannt')}
+` : 'Noch keine Informationen gesammelt'}
 
-ANZAHL GESTELLTER FRAGEN: ${questionCount}
+ERKANNTE INFORMATIONEN AUS GESPRÄCH:
+${extractedInfo.service ? `- Leistung erkannt: ${extractedInfo.service.name}` : ''}
+${extractedInfo.size ? `- Größe erkannt: ${extractedInfo.size}` : ''}
+${extractedInfo.timing ? `- Zeitpunkt erkannt: ${extractedInfo.timing}` : ''}
 
-AUFGABE:
-1. Prüfe ob die Frage zum Thema Reinigung gehört - wenn NEIN: Leite zurück zum Thema!
-2. Beantworte die letzte Nachricht KOMPAKT und DIREKT (max. 2-3 kurze Sätze)
-3. Nutze **Fettschrift** für wichtige Infos
-4. Wenn noch keine Projektdetails: Stelle EINE gezielte Frage (max. 4 Projektfragen)
-5. Wenn Projektdetails vorhanden, aber keine Kontaktdaten: Frage nach Kontaktdaten (Name, Firma, Telefon, Stadt, E-Mail)
-6. Wenn ALLE Kontaktdaten vorhanden: Zeige Zusammenfassung und frage "Soll ich diese Anfrage an einen Spezialisten senden?"
+ANWEISUNGEN:
+${!hasAllContactInfo ? `
+- Sammle fehlende Informationen NATÜRLICH im Gespräch
+- EINE Frage nach der anderen
+- Sei freundlich und locker
+- Nutze den Namen wenn bekannt
+` : `
+- Alle Daten vorhanden!
+- Zeige Zusammenfassung
+- Frage: "Soll ich diese Anfrage so an unseren Spezialisten senden?"
+- Setze readyToSend: true
+`}
 
-ANTWORT-FORMAT (JSON):
-{
-  "message": "Deine kompakte Antwort mit **Formatierung**...",
-  "needsContactInfo": true/false,
-  "readyToSend": true/false,
-  "questionCount": ${questionCount + 1}
-}
+Antworte jetzt als freundlicher KI-Assistent:`;
 
-- needsContactInfo: true wenn du jetzt nach Kontaktdaten fragen möchtest
-- readyToSend: true NUR wenn ALLE Kontaktdaten vorhanden und du fragst ob senden
-- questionCount: Erhöhe um 1 wenn du eine neue Frage gestellt hast
-
-WICHTIG: Sage NIEMALS dass du etwas gesendet hast! Du kannst nur Daten sammeln.
-
-Antworte NUR mit dem JSON-Objekt, ohne zusätzlichen Text.`;
-
-    const result = await model.generateContent(prompt);
-    const response = result.response;
-    const text = response.text();
-
-    // Parse JSON response
-    const jsonMatch = text.match(/\{[\s\S]*\}/);
-    if (jsonMatch) {
-      const parsed = JSON.parse(jsonMatch[0]);
-      return res.status(200).json(parsed);
-    }
-
-    // Fallback response
-    return res.status(200).json({
-      message: "Vielen Dank für Ihre Nachricht. Wie kann ich Ihnen weiterhelfen?",
-      needsContactInfo: false,
-      readyToSend: false,
-      questionCount: 0
+    const completion = await openai.chat.completions.create({
+      model: 'gpt-4o-mini',
+      messages: [
+        {
+          role: 'system',
+          content: WEBSITE_CONTEXT
+        },
+        {
+          role: 'user',
+          content: prompt
+        }
+      ],
+      temperature: 0.7,
+      max_tokens: 300,
     });
 
-  } catch (error) {
-    console.error('Gemini Chat API Error:', error);
-    
-    return res.status(200).json({
-      message: "Entschuldigung, technischer Fehler. Bitte versuchen Sie es erneut oder kontaktieren Sie uns:\n\n📞 **+41 41 320 56 10**\n📧 **info@brandea.de**",
-      needsContactInfo: false,
-      readyToSend: false,
-      questionCount: 0
+    const aiResponse = completion.choices[0]?.message?.content || 'Entschuldigung, ich konnte keine Antwort generieren.';
+
+    // Bestimme ob Kontaktdaten benötigt werden
+    const needsContactInfo = !hasAllContactInfo && (
+      aiResponse.toLowerCase().includes('kontaktdaten') ||
+      aiResponse.toLowerCase().includes('e-mail') ||
+      aiResponse.toLowerCase().includes('telefon')
+    );
+
+    // Bestimme ob bereit zum Senden
+    const readyToSend = hasAllContactInfo && (
+      aiResponse.toLowerCase().includes('soll ich') ||
+      aiResponse.toLowerCase().includes('senden') ||
+      aiResponse.toLowerCase().includes('weiterleiten')
+    );
+
+    res.status(200).json({
+      response: aiResponse,
+      needsContactInfo,
+      readyToSend,
+      detectedService: detectedService ? {
+        code: detectedService.code,
+        name: detectedService.name
+      } : null,
+      extractedInfo
+    });
+
+  } catch (error: any) {
+    console.error('Chat API error:', error);
+    res.status(500).json({ 
+      error: 'Internal server error',
+      details: error.message 
     });
   }
 }
