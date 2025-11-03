@@ -51,24 +51,25 @@ function detectService(text: string): ServiceMapping | null {
 
 function extractInfoFromConversation(messages: any[]): any {
   const info: any = {};
-  const customerMessages = messages.filter(m => m.role === 'user').map(m => m.content.toLowerCase());
+  const customerMessages = messages.filter(m => m.role === 'user').map(m => m.content);
   const fullText = customerMessages.join(' ');
+  const lowerText = fullText.toLowerCase();
   
-  const detectedService = detectService(fullText);
+  const detectedService = detectService(lowerText);
   if (detectedService) info.service = detectedService;
   
-  const sizeMatch = fullText.match(/(\d+)\s*(qm|m2|m²|quadratmeter|quadrat meter)/i);
+  const sizeMatch = lowerText.match(/(\d+)\s*(qm|m2|m²|quadratmeter|quadrat meter)/i);
   if (sizeMatch) info.size = `${sizeMatch[1]} qm`;
   
   const timingKeywords = ['nächste woche', 'nächster woche', 'näcsht woch', 'nächste monat', 'sofort', 'heute', 'morgen', 'bald', 'dringend', 'asap', 'schnell', 'in 2 monaten', '2 monate'];
   for (const keyword of timingKeywords) {
-    if (fullText.includes(keyword)) {
+    if (lowerText.includes(keyword)) {
       info.timing = keyword;
       break;
     }
   }
   
-  const emailMatch = fullText.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/);
+  const emailMatch = lowerText.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/);
   if (emailMatch) info.email = emailMatch[1];
   
   const phoneMatch = fullText.match(/(\+?\d{1,4}[\s-]?\d{1,4}[\s-]?\d{1,4}[\s-]?\d{1,4})/);
@@ -77,10 +78,10 @@ function extractInfoFromConversation(messages: any[]): any {
   // Extract name - look for patterns like "mein name ist X" or "ich bin X" or "X, Test GmbH"
   const namePatterns = [
     /(?:mein name ist|ich heiße|ich bin)\s+([a-zäöüß\s]+?)(?:,|\.|$|und|von|firma|gmbh|ag|sa)/i,
-    /([A-ZÄÖÜ][a-zäöüß]+\s+[A-ZÄÖÜ][a-zäöüß]+)(?:,|\s+(?:von|firma|gmbh|ag|sa))/,
+    /([A-ZÄÖÜ][a-zäöüß]+\s+[A-ZÄÖÜ][a-zäöüß]+)(?:,|\s+)/,  // Use original case text
   ];
   for (const pattern of namePatterns) {
-    const match = fullText.match(pattern);
+    const match = fullText.match(pattern);  // Use fullText (original case) for name
     if (match) {
       info.name = match[1].trim();
       break;
@@ -90,11 +91,11 @@ function extractInfoFromConversation(messages: any[]): any {
   // Extract company - look for patterns like "Firma X" or "X GmbH" or "X AG"
   const companyPatterns = [
     /(?:firma|unternehmen|betrieb)\s+(?:heißt|ist)?\s*([a-zäöüß0-9\s]+?)(?:,|\.|$|in|stadt|zürich|bern)/i,
-    /([A-ZÄÖÜ][a-zäöüß0-9\s]*(?:GmbH|AG|SA|Ltd|Inc|Corp))/i,
-    /([A-ZÄÖÜ][a-zäöüß0-9]+)(?:,|\s+(?:in|zürich|bern|basel))/,
+    /([A-ZÄÖÜ][a-zäöüß0-9\s]*(?:GmbH|AG|SA|Ltd|Inc|Corp))/,  // Use original case text
+    /,\s*([A-ZÄÖÜ][a-zäöüß0-9\s]+(?:GmbH|AG|SA)),/,  // Match ", Test GmbH,"
   ];
   for (const pattern of companyPatterns) {
-    const match = fullText.match(pattern);
+    const match = fullText.match(pattern);  // Use fullText (original case) for company
     if (match) {
       info.company = match[1].trim();
       break;
@@ -104,7 +105,7 @@ function extractInfoFromConversation(messages: any[]): any {
   // Extract city - look for Swiss cities
   const swissCities = ['zürich', 'bern', 'basel', 'genf', 'lausanne', 'luzern', 'st. gallen', 'winterthur', 'lugano', 'fribourg', 'thun', 'köniz', 'la chaux-de-fonds', 'schaffhausen', 'chur', 'vernier', 'neuchâtel', 'uster', 'sion', 'emmen', 'zug', 'yverdon', 'kriens', 'rapperswil', 'dübendorf', 'dietikon', 'montreux', 'frauenfeld', 'wetzikon', 'baar', 'wädenswil', 'renens', 'allschwil', 'bulle', 'horgen', 'nyon', 'vevey', 'münchen', 'berlin', 'hamburg', 'köln', 'frankfurt', 'stuttgart', 'düsseldorf', 'dortmund', 'essen', 'leipzig', 'bremen', 'dresden', 'hannover', 'nürnberg', 'duisburg', 'bochum', 'wuppertal', 'bielefeld', 'bonn', 'münster', 'karlsruhe', 'mannheim', 'augsburg', 'wiesbaden', 'gelsenkirchen', 'mönchengladbach', 'braunschweig', 'chemnitz', 'kiel', 'aachen', 'halle', 'magdeburg', 'freiburg', 'krefeld', 'lübeck', 'oberhausen', 'erfurt', 'mainz', 'rostock', 'kassel', 'hagen', 'hamm', 'saarbrücken', 'mülheim', 'potsdam', 'ludwigshafen', 'oldenburg', 'leverkusen', 'osnabrück', 'solingen', 'heidelberg', 'herne', 'neuss', 'darmstadt', 'paderborn', 'regensburg', 'ingolstadt', 'würzburg', 'fürth', 'wolfsburg', 'offenbach', 'ulm', 'heilbronn', 'pforzheim', 'göttingen', 'bottrop', 'trier', 'recklinghausen', 'reutlingen', 'bremerhaven', 'koblenz', 'bergisch gladbach', 'jena', 'remscheid', 'erlangen', 'moers', 'siegen', 'hildesheim', 'salzgitter', 'dingolfing'];
   for (const city of swissCities) {
-    if (fullText.includes(city)) {
+    if (lowerText.includes(city)) {
       info.city = city.charAt(0).toUpperCase() + city.slice(1);
       break;
     }
