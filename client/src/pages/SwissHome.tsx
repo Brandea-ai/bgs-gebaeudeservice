@@ -17,6 +17,7 @@ import {
   TiltCard,
   MagneticHover 
 } from "@/components/PremiumParallax";
+import IndustryAdvisor from "@/components/IndustryAdvisor";
 
 import { 
   fadeInUp, 
@@ -97,6 +98,14 @@ export default function SwissHome() {
                   </Button>
                 </MagneticHover>
               </a>
+            </motion.div>
+            
+            {/* KI Industry Advisor */}
+            <motion.div 
+              className="mt-12 max-w-3xl"
+              variants={fadeInUp}
+            >
+              <IndustryAdvisor />
             </motion.div>
           </motion.div>
         </div>

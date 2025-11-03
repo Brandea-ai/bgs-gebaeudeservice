@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import CookieConsent from "./components/CookieConsent";
+import AIChatbot from "./components/AIChatbot";
 import SwissHome from "./pages/SwissHome";
 import NotFound from "./pages/NotFound";
 
@@ -125,6 +126,7 @@ function App() {
           <TooltipProvider>
             <Toaster />
             <CookieConsent />
+            <AIChatbot />
             <Router />
           </TooltipProvider>
         </ThemeProvider>

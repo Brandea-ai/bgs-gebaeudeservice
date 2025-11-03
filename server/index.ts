@@ -163,6 +163,61 @@ Diese Nachricht wurde über das Kontaktformular auf brandea.de gesendet.
     }
   });
 
+  // Industry Analysis Endpoint (Gemini AI)
+  app.post("/api/industry-analysis", async (req, res) => {
+    console.log("🤖 Industry analysis request:", req.body);
+    try {
+      const { analyzeIndustry } = await import('./gemini.js');
+      const result = await analyzeIndustry(req.body);
+      res.json(result);
+    } catch (error) {
+      console.error("❌ Industry analysis error:", error);
+      res.status(500).json({ error: "Analysis failed" });
+    }
+  });
+
+  // Chat Endpoint (Gemini AI)
+  app.post("/api/chat", async (req, res) => {
+    console.log("💬 Chat request received");
+    try {
+      const { chatWithAI } = await import('./gemini.js');
+      const result = await chatWithAI(req.body);
+      res.json(result);
+    } catch (error) {
+      console.error("❌ Chat error:", error);
+      res.status(500).json({ error: "Chat failed" });
+    }
+  });
+
+  // Chat to Specialist Endpoint
+  app.post("/api/chat-to-specialist", async (req, res) => {
+    console.log("📧 Sending chat to specialist:", req.body.userInfo);
+    try {
+      const { userInfo, conversationLong, conversationShort } = req.body;
+      
+      const { sendContactEmail } = await import('./email.js');
+      
+      const emailData = {
+        name: userInfo.name,
+        email: userInfo.email,
+        phone: userInfo.phone || 'Nicht angegeben',
+        service: 'KI-Chat Anfrage',
+        message: `GESPRÄCHSVERLAUF (Ausführlich):\n\n${conversationLong}\n\n---\n\nZUSAMMENFASSUNG:\n${conversationShort}`
+      };
+      
+      const success = await sendContactEmail(emailData);
+      
+      if (success) {
+        res.json({ success: true });
+      } else {
+        res.status(500).json({ error: "Failed to send email" });
+      }
+    } catch (error) {
+      console.error("❌ Chat to specialist error:", error);
+      res.status(500).json({ error: "Failed to send to specialist" });
+    }
+  });
+
   // Health check endpoint
   app.get("/api/health", (_req, res) => {
     res.json({ status: "ok", timestamp: new Date().toISOString() });
