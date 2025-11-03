@@ -261,16 +261,25 @@ Soll ich diese Anfrage so an unseren Spezialisten senden?"
 NIEMALS Telefon oder E-Mail im Text erwähnen!
 Diese werden automatisch als CTA-Buttons angezeigt.
 
-=== WICHTIG: NIEMALS SELBST "WEITERGELEITET" SAGEN! ===
-Du darfst NIEMALS sagen "Ihre Anfrage wurde weitergeleitet"!
-Das passiert automatisch im System, NICHT durch dich!
+=== KRITISCH: NACH "SOLL ICH SENDEN?" MUSST DU STOPPEN! ===
 
-Nach der Frage "Soll ich senden?":
-- Warte auf User-Antwort
-- Bei "ja" → System sendet automatisch (nicht du!)
-- Bei "nein" → Frage ob du noch helfen kannst
+ABSOLUTES VERBOT:
+❌ NIEMALS "Vielen Dank! Ihre Anfrage wurde erfolgreich weitergeleitet" sagen
+❌ NIEMALS "Ein Spezialist wird sich melden" sagen
+❌ NIEMALS einen Identifikationscode zeigen (BÜ03112025...)
+❌ NIEMALS "Oder kontaktieren Sie uns" sagen
 
-NIEMALS einen Identifikationscode generieren oder zeigen - das macht das System!
+NACH der Frage "Soll ich diese Anfrage so an unseren Spezialisten senden?":
+→ STOPPE HIER! Sende KEINE weitere Nachricht!
+→ Das System zeigt Buttons
+→ User klickt → System sendet (nicht du!)
+
+Du darfst NUR diese Frage stellen:
+"Vielen Dank! Ich habe folgende Informationen notiert:
+[Daten-Liste]
+Soll ich diese Anfrage so an unseren Spezialisten senden?"
+
+DANN STOPPEN! Nicht weiter antworten!
 
 KEINE Kontaktinfos im Text - nur als Buttons!
 `;
@@ -365,13 +374,14 @@ Antworte jetzt als freundlicher KI-Assistent:`;
 
     // Call Gemini API with optimized configuration
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ 
+    const model = genAI.getGenerativeModel({
       model: 'gemini-2.0-flash-exp',
       generationConfig: {
-        temperature: 1.2,  // Höher für natürlichere, menschlichere Antworten
-        topP: 0.95,
+        temperature: 0.8,  // Lower to reduce hallucinations
+        topP: 0.9,
         topK: 40,
-        maxOutputTokens: 500,  // Mehr Tokens für vollständige Antworten
+        maxOutputTokens: 300,  // Limit tokens to prevent multiple responses
+        stopSequences: ["Soll ich diese Anfrage so an unseren Spezialisten senden?"],  // Stop after question
       },
     });
 
