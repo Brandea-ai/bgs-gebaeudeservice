@@ -1,92 +1,228 @@
 // Service Mapping und Identifikationscode-Generator
+// Basierend auf der echten BGS Website-Struktur: 18 Leistungen in 3 Kategorien
 
 export interface ServiceMapping {
   code: string;
   name: string;
+  category: 'Premium Services' | 'Business Lösungen' | 'Basisreinigung';
   keywords: string[];
+  description: string;
 }
 
-// Alle verfügbaren Reinigungsleistungen mit Kürzeln
+// ALLE 18 verfügbaren Reinigungsleistungen mit korrekten Kürzeln
 export const SERVICE_MAPPINGS: ServiceMapping[] = [
+  // ===== PREMIUM SERVICES (4 Leistungen) =====
   {
-    code: 'BR',
-    name: 'Baustellenreinigung',
+    code: 'PJ',
+    name: 'Privatjet Reinigung',
+    category: 'Premium Services',
+    description: 'Exklusive Reinigung von Privatjets und Businessjets mit höchster Sorgfalt und Diskretion.',
     keywords: [
-      'baustelle', 'baustellenreinigung', 'baureinigung', 'neubau', 
-      'rohbau', 'endreinigung', 'bauendreinigung', 'bauabschlussreinigung',
-      'baustellenrienigung', 'besutellen', 'baustel', 'baustell'
+      'privatjet', 'jet', 'flugzeug', 'private jet', 'businessjet',
+      'business jet', 'aircraft', 'luftfahrzeug', 'privat jet',
+      'privatflugzeug', 'jet reinigung', 'flugzeugreinigung'
     ]
   },
+  {
+    code: 'YR',
+    name: 'Yacht Reinigung',
+    category: 'Premium Services',
+    description: 'Professionelle Reinigung von Yachten, Booten und Schiffen für höchste Ansprüche.',
+    keywords: [
+      'yacht', 'boot', 'schiff', 'segelboot', 'motorboot',
+      'segelyacht', 'motoryacht', 'yacht reinigung', 'boot reinigung',
+      'schiffsreinigung', 'bootspflege', 'yachtpflege'
+    ]
+  },
+  {
+    code: 'PH',
+    name: 'Private Housekeeping',
+    category: 'Premium Services',
+    description: 'Diskreter Housekeeping-Service für Privathaushalte mit Butler-Qualität.',
+    keywords: [
+      'housekeeping', 'haushalt', 'privat haushalt', 'butler',
+      'private housekeeping', 'haushälterin', 'haushaltshilfe',
+      'privathaushalt', 'haushaltsservice', 'hauspersonal'
+    ]
+  },
+  {
+    code: 'LI',
+    name: 'Luxusimmobilien-Reinigung',
+    category: 'Premium Services',
+    description: 'Exklusive Reinigung von Luxusimmobilien, Villen und Penthäusern.',
+    keywords: [
+      'luxusimmobilien', 'villa', 'luxus', 'penthouse', 'luxuswohnung',
+      'luxusimmobilie', 'luxusvilla', 'herrschaftshaus', 'anwesen',
+      'luxusobjekt', 'premium immobilie', 'luxus immobilie'
+    ]
+  },
+
+  // ===== BUSINESS LÖSUNGEN (9 Leistungen) =====
   {
     code: 'BÜ',
     name: 'Büroreinigung',
+    category: 'Business Lösungen',
+    description: 'Professionelle Reinigung von Büros, Arbeitsplätzen und Bürogebäuden.',
     keywords: [
       'büro', 'büroreinigung', 'office', 'arbeitsplatz', 'bürogebäude',
-      'bürorienigung', 'buro', 'buero', 'büros', 'bürofläche'
-    ]
-  },
-  {
-    code: 'UR',
-    name: 'Unterhaltsreinigung',
-    keywords: [
-      'unterhalt', 'unterhaltsreinigung', 'regelmäßig', 'laufend',
-      'wartung', 'pflege', 'unterhaltsrienigung', 'unterhaltung'
-    ]
-  },
-  {
-    code: 'FR',
-    name: 'Fassadenreinigung',
-    keywords: [
-      'fassade', 'fassadenreinigung', 'fenster', 'fensterreinigung',
-      'glasreinigung', 'außenreinigung', 'fassadenrienigung'
-    ]
-  },
-  {
-    code: 'SR',
-    name: 'Spezialreinigung',
-    keywords: [
-      'spezial', 'spezialreinigung', 'zoo', 'kino', 'theater',
-      'museum', 'krankenhaus', 'klinik', 'labor', 'reinraum',
-      'industriereinigung', 'sonderreinigung', 'spezielle'
-    ]
-  },
-  {
-    code: 'HR',
-    name: 'Hausmeisterservice',
-    keywords: [
-      'hausmeister', 'hausmeisterservice', 'facility', 'management',
-      'winterdienst', 'schneeräumung', 'gartenpflege'
-    ]
-  },
-  {
-    code: 'GR',
-    name: 'Grundreinigung',
-    keywords: [
-      'grundreinigung', 'tiefenreinigung', 'intensivreinigung',
-      'grundrienigung', 'tiefen', 'intensiv'
-    ]
-  },
-  {
-    code: 'TR',
-    name: 'Treppenreinigung',
-    keywords: [
-      'treppe', 'treppenhaus', 'treppenreinigung', 'treppenrienigung'
-    ]
-  },
-  {
-    code: 'PR',
-    name: 'Privatreinigung',
-    keywords: [
-      'privat', 'privatreinigung', 'wohnung', 'haus', 'villa',
-      'privathaushalt', 'privatrienigung'
+      'bürofläche', 'bürorienigung', 'buro', 'buero', 'büros',
+      'office cleaning', 'arbeitsplatzreinigung', 'büroräume',
+      'autohaus büro', 'praxis', 'kanzlei', 'verwaltung'
     ]
   },
   {
     code: 'IR',
     name: 'Industriereinigung',
+    category: 'Business Lösungen',
+    description: 'Reinigung von Industrieanlagen, Fabriken und Produktionsstätten.',
     keywords: [
       'industrie', 'industriereinigung', 'fabrik', 'werk', 'produktion',
-      'halle', 'lager', 'industrierienigung'
+      'industriehalle', 'produktionshalle', 'fertigungshalle',
+      'industrieanlage', 'produktionsstätte', 'industriebetrieb',
+      'industrierienigung', 'fabrikreinigung', 'werksreinigung'
+    ]
+  },
+  {
+    code: 'FR',
+    name: 'Fassadenreinigung',
+    category: 'Business Lösungen',
+    description: 'Professionelle Reinigung von Gebäudefassaden und Außenwänden.',
+    keywords: [
+      'fassade', 'fassadenreinigung', 'außenreinigung', 'gebäudefassade',
+      'fassadenrienigung', 'aussenfassade', 'außenfassade', 'fassadenpflege',
+      'gebäudeaußenreinigung', 'fassadenwäsche'
+    ]
+  },
+  {
+    code: 'FE',
+    name: 'Fensterreinigung',
+    category: 'Business Lösungen',
+    description: 'Streifenfreie Reinigung von Fenstern, Glasflächen und Scheiben.',
+    keywords: [
+      'fenster', 'fensterreinigung', 'glasreinigung', 'scheiben',
+      'fensterputzen', 'fenster putzen', 'glasscheiben', 'fensterscheiben',
+      'fensterrienigung', 'glas reinigung', 'scheibenreinigung',
+      'fenster waschen', 'glasflächen'
+    ]
+  },
+  {
+    code: 'HR',
+    name: 'Hallenreinigung',
+    category: 'Business Lösungen',
+    description: 'Reinigung von Lager-, Produktions- und Sporthallen.',
+    keywords: [
+      'halle', 'hallenreinigung', 'lagerhalle', 'produktionshalle',
+      'sporthalle', 'messehalle', 'veranstaltungshalle', 'hallenboden',
+      'hallenrienigung', 'hallen reinigung', 'großraum'
+    ]
+  },
+  {
+    code: 'MR',
+    name: 'Maschinenreinigung',
+    category: 'Business Lösungen',
+    description: 'Fachgerechte Reinigung von Produktionsmaschinen und Anlagen.',
+    keywords: [
+      'maschine', 'maschinenreinigung', 'anlagenreinigung', 'produktionsmaschinen',
+      'maschinen', 'maschinenrienigung', 'anlagen', 'produktionsanlage',
+      'maschinenpflege', 'anlagenpflege', 'maschinenpark'
+    ]
+  },
+  {
+    code: 'BR',
+    name: 'Baureinigung',
+    category: 'Business Lösungen',
+    description: 'Professionelle Reinigung von Baustellen, Neubauten und nach Bauarbeiten.',
+    keywords: [
+      'bau', 'baureinigung', 'baustelle', 'baustellenreinigung', 'neubau',
+      'rohbau', 'endreinigung', 'bauendreinigung', 'bauabschlussreinigung',
+      'baurienigung', 'baustellenrienigung', 'besutellen', 'baustel',
+      'baustell', 'neubaureinigung', 'rohbaureinigung', 'bauschlussreinigung',
+      'baufeinreinigung', 'bauabnahme', 'bauübergabe'
+    ]
+  },
+  {
+    code: 'AA',
+    name: 'Außenanlagen',
+    category: 'Business Lösungen',
+    description: 'Reinigung und Pflege von Außenanlagen, Höfen und Parkplätzen.',
+    keywords: [
+      'außenanlagen', 'außenbereich', 'hof', 'parkplatz', 'gehweg',
+      'aussena nlagen', 'aussenbereich', 'außenanlage', 'hofbereich',
+      'parkplatzreinigung', 'gehwegreinigung', 'außengelände',
+      'außenflächen', 'freiflächen'
+    ]
+  },
+  {
+    code: 'FM',
+    name: 'Facility Management',
+    category: 'Business Lösungen',
+    description: 'Umfassendes Gebäudemanagement und Objektbetreuung.',
+    keywords: [
+      'facility', 'facility management', 'gebäudemanagement', 'objektbetreuung',
+      'facilitymanagement', 'gebäudeverwaltung', 'objektmanagement',
+      'facility service', 'gebäudeservice', 'objektservice',
+      'fm', 'gebäudetechnik'
+    ]
+  },
+
+  // ===== BASISREINIGUNG (5 Leistungen) =====
+  {
+    code: 'UR',
+    name: 'Unterhaltsreinigung',
+    category: 'Basisreinigung',
+    description: 'Regelmäßige Unterhaltsreinigung für Wohn- und Geschäftsobjekte.',
+    keywords: [
+      'unterhalt', 'unterhaltsreinigung', 'regelmäßig', 'laufend',
+      'wartung', 'pflege', 'unterhaltsrienigung', 'unterhaltung',
+      'regelmäßige reinigung', 'laufende reinigung', 'kontinuierliche reinigung',
+      'dauerreinigung', 'unterhaltsservice'
+    ]
+  },
+  {
+    code: 'HS',
+    name: 'Hausmeisterservice',
+    category: 'Basisreinigung',
+    description: 'Hausmeisterdienste und Facility-Service für Immobilien.',
+    keywords: [
+      'hausmeister', 'hausmeisterservice', 'facility', 'hauswart',
+      'hausmeisterdienst', 'hauswartung', 'hausbetreuung',
+      'immobilienbetreuung', 'objektbetreuung', 'hausservice'
+    ]
+  },
+  {
+    code: 'WD',
+    name: 'Winterdienst',
+    category: 'Basisreinigung',
+    description: 'Schneeräumung, Streudienst und Winterbetreuung.',
+    keywords: [
+      'winter', 'winterdienst', 'schnee', 'schneeräumung', 'streudienst',
+      'räumdienst', 'schneedienst', 'schnee räumen', 'schneebeseitigung',
+      'winterbetreuung', 'glättebekämpfung', 'streuen', 'räumen'
+    ]
+  },
+  {
+    code: 'BE',
+    name: 'Beschaffung',
+    category: 'Basisreinigung',
+    description: 'Beschaffung von Reinigungsmitteln und Material.',
+    keywords: [
+      'beschaffung', 'einkauf', 'material', 'reinigungsmittel',
+      'materialbeschaffung', 'einkaufsservice', 'beschaffungsservice',
+      'reinigungsmaterialien', 'reinigungsprodukte', 'verbrauchsmaterial'
+    ]
+  },
+  {
+    code: 'SR',
+    name: 'Sonderleistungen',
+    category: 'Basisreinigung',
+    description: 'Spezialreinigungen für besondere Objekte wie Zoos, Kinos, Theater, Museen und Krankenhäuser.',
+    keywords: [
+      'sonder', 'sonderleistungen', 'spezial', 'spezialreinigung',
+      'zoo', 'kino', 'theater', 'museum', 'krankenhaus', 'klinik',
+      'sonderreinigung', 'speziell', 'spezielle reinigung', 'sonderservice',
+      'spezialservice', 'tierpark', 'cinema', 'hospital', 'galerie',
+      'ausstellung', 'veranstaltungsort', 'kultureinrichtung',
+      'gesundheitseinrichtung', 'medizinische einrichtung'
     ]
   }
 ];
@@ -162,7 +298,7 @@ export function extractInfoFromConversation(messages: any[]): {
   }
   
   // Erkenne Größe (qm, m2, quadratmeter)
-  const sizeMatch = fullText.match(/(\d+)\s*(qm|m2|m²|quadratmeter)/i);
+  const sizeMatch = fullText.match(/(\d+)\s*(qm|m2|m²|quadratmeter|quadrat meter)/i);
   if (sizeMatch) {
     info.size = `${sizeMatch[1]} qm`;
   }
@@ -170,7 +306,7 @@ export function extractInfoFromConversation(messages: any[]): {
   // Erkenne Zeitangaben
   const timingKeywords = [
     'nächste woche', 'nächster woche', 'näcsht woch', 'nächste monat',
-    'sofort', 'heute', 'morgen', 'bald', 'dringend', 'asap'
+    'sofort', 'heute', 'morgen', 'bald', 'dringend', 'asap', 'schnell'
   ];
   for (const keyword of timingKeywords) {
     if (fullText.includes(keyword)) {
@@ -192,4 +328,25 @@ export function extractInfoFromConversation(messages: any[]): {
   }
   
   return info;
+}
+
+/**
+ * Gibt eine vollständige Beschreibung aller verfügbaren Leistungen zurück
+ * Für den KI-Prompt (vollständige Informationen, keine Kürzungen!)
+ */
+export function getAllServicesDescription(): string {
+  const premiumServices = SERVICE_MAPPINGS.filter(s => s.category === 'Premium Services');
+  const businessServices = SERVICE_MAPPINGS.filter(s => s.category === 'Business Lösungen');
+  const basicServices = SERVICE_MAPPINGS.filter(s => s.category === 'Basisreinigung');
+  
+  return `
+PREMIUM SERVICES (Exklusive Reinigungsdienstleistungen für höchste Ansprüche):
+${premiumServices.map((s, i) => `${i + 1}. ${s.name} (${s.code}): ${s.description}`).join('\n')}
+
+BUSINESS LÖSUNGEN (Professionelle Gebäudereinigung und Facility Management):
+${businessServices.map((s, i) => `${i + 1}. ${s.name} (${s.code}): ${s.description}`).join('\n')}
+
+BASISREINIGUNG (Zuverlässige Unterhaltsreinigung und Hausmeisterservice):
+${basicServices.map((s, i) => `${i + 1}. ${s.name} (${s.code}): ${s.description}`).join('\n')}
+  `.trim();
 }
