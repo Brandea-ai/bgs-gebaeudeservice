@@ -25,9 +25,23 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
     const data: ChatToSpecialistData = req.body;
 
-    if (!data.userInfo || !data.userInfo.name || !data.userInfo.email) {
-      return res.status(400).json({ error: 'Missing required user information' });
+    // Only email is required, name can be fallback from email
+    if (!data.userInfo || !data.userInfo.email) {
+      return res.status(400).json({ error: 'Missing required user information (email)' });
     }
+
+    // Use fallback name if not provided
+    const finalName = data.userInfo.name || data.userInfo.email.split('@')[0] || 'Kunde';
+    const finalCompany = data.userInfo.company || 'Nicht angegeben';
+    const finalCity = data.userInfo.city || 'Nicht angegeben';
+
+    console.log('📧 Sending specialist emails:', {
+      name: finalName,
+      email: data.userInfo.email,
+      company: finalCompany,
+      city: finalCity,
+      service: data.userInfo.service
+    });
 
     // Email 1: To Admin (internal: info@brandea.de)
     const adminEmailHtml = `
@@ -77,14 +91,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
                               ` : ''}
                               <tr>
                                 <td style="color: #666666; font-size: 14px; font-weight: 600; width: 130px; vertical-align: top;">Name:</td>
-                                <td style="color: #1a1a1a; font-size: 15px;">${data.userInfo.name}</td>
+                                <td style="color: #1a1a1a; font-size: 15px;">${finalName}</td>
                               </tr>
-                              ${data.userInfo.company ? `
                               <tr>
                                 <td style="color: #666666; font-size: 14px; font-weight: 600; vertical-align: top;">Firma:</td>
-                                <td style="color: #1a1a1a; font-size: 15px;">${data.userInfo.company}</td>
+                                <td style="color: #1a1a1a; font-size: 15px;">${finalCompany}</td>
                               </tr>
-                              ` : ''}
                               <tr>
                                 <td style="color: #666666; font-size: 14px; font-weight: 600; vertical-align: top;">E-Mail:</td>
                                 <td style="color: #1a1a1a; font-size: 15px;">
@@ -99,12 +111,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
                                 </td>
                               </tr>
                               ` : ''}
-                              ${data.userInfo.city ? `
                               <tr>
                                 <td style="color: #666666; font-size: 14px; font-weight: 600; vertical-align: top;">Stadt:</td>
-                                <td style="color: #1a1a1a; font-size: 15px;">${data.userInfo.city}</td>
+                                <td style="color: #1a1a1a; font-size: 15px;">${finalCity}</td>
                               </tr>
-                              ` : ''}
                             </table>
                           </td>
                         </tr>
@@ -176,7 +186,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
                   <tr>
                     <td style="padding: 30px;">
                       <p style="margin: 0 0 20px 0; color: #1a1a1a; font-size: 16px; line-height: 1.6;">
-                        Sehr geehrte/r ${data.userInfo.name},
+                        Sehr geehrte/r ${finalName},
                       </p>
                       
                       <p style="margin: 0 0 20px 0; color: #4b5563; font-size: 15px; line-height: 1.6;">
