@@ -11,7 +11,6 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Link } from "wouter";
 import { CheckCircle, Package, Clock, Shield, Leaf, ArrowRight } from "lucide-react";
 import AppointmentButton from "@/components/AppointmentButton";
 

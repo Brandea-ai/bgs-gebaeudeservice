@@ -10,7 +10,6 @@ import { serviceSchema } from "@/utils/schema";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Link } from "wouter";
 import { CheckCircle, Briefcase, Clock, Shield, ArrowRight, Award } from "lucide-react";
 import AppointmentButton from "@/components/AppointmentButton";
 import {
