@@ -40,15 +40,29 @@ Basis Services:
 
 KONTAKT:
 - Telefon: +41 41 320 56 10
-- E-Mail: info@bgs-service.ch
+- E-Mail: info@brandea.de
 - Adresse: Tannhof 10, 6020 Emmenbrücke
 
-DEIN TON:
-- Professionell und seriös
-- Kompetent und hilfsbereit
-- Schnell und präzise
-- Du gehörst zum Team
-- Antworte auf Deutsch
+KOMMUNIKATIONSSTIL:
+- Kompakt und direkt - keine langen Texte
+- Professionell aber freundlich
+- Maximal 2-3 kurze Sätze pro Antwort
+- Nutze Formatierung für bessere Lesbarkeit
+- Eine Frage nach der anderen stellen
+- Psychologisch geschickt: Erst Vertrauen aufbauen, dann Daten erfragen
+
+DATENERFASSUNG (max. 3-5 Fragen):
+1. Art des Projekts/Service (diskret erfragen)
+2. Projektgröße (z.B. "Wie groß ist die zu reinigende Fläche ungefähr?")
+3. Zeitrahmen (z.B. "Wann soll es losgehen?")
+4. Besondere Anforderungen (nur wenn relevant)
+5. NICHT nach Details wie Fensteranzahl fragen - nur Grunddaten
+
+WICHTIG:
+- Stelle immer nur EINE Frage pro Nachricht
+- Warte auf die Antwort, bevor du weitermachst
+- Nach 3-5 Fragen hast du genug Infos für ein Angebot
+- Weise darauf hin, dass ein Spezialist sich innerhalb 12 Stunden (werktags) meldet
 `;
 
 export default async function handler(
@@ -69,7 +83,7 @@ export default async function handler(
   }
 
   try {
-    const { messages, userInfo } = req.body;
+    const { messages, userInfo, questionCount = 0 } = req.body;
 
     if (!messages || !Array.isArray(messages)) {
       return res.status(400).json({ error: 'Messages array is required' });
@@ -79,9 +93,10 @@ export default async function handler(
     if (!apiKey) {
       console.error('GEMINI_API_KEY not set');
       return res.status(200).json({
-        message: "Entschuldigung, es gab einen technischen Fehler. Bitte kontaktieren Sie uns direkt unter +41 41 320 56 10.",
+        message: "Entschuldigung, technischer Fehler. Bitte kontaktieren Sie uns direkt:\n\n📞 **+41 41 320 56 10**\n📧 **info@brandea.de**",
         needsContactInfo: false,
-        readyToSend: false
+        readyToSend: false,
+        questionCount: 0
       });
     }
 
@@ -94,6 +109,7 @@ export default async function handler(
     ).join('\n');
 
     const hasContactInfo = userInfo && userInfo.name && userInfo.email;
+    const maxQuestionsReached = questionCount >= 5;
 
     const prompt = `${WEBSITE_CONTEXT}
 
@@ -103,20 +119,26 @@ ${conversationHistory}
 KONTAKTINFORMATIONEN:
 ${hasContactInfo ? `Name: ${userInfo.name}, E-Mail: ${userInfo.email}, Telefon: ${userInfo.phone || 'Nicht angegeben'}` : 'Noch keine Kontaktdaten'}
 
+ANZAHL GESTELLTER FRAGEN: ${questionCount}
+
 AUFGABE:
-1. Beantworte die letzte Nachricht des Kunden professionell und hilfreich
-2. Wenn du noch keine Kontaktdaten hast und das Gespräch fortgeschritten ist, frage höflich danach
-3. Wenn du Kontaktdaten hast und das Gespräch abgeschlossen werden kann, biete an, die Anfrage an einen Spezialisten zu senden
+1. Beantworte die letzte Nachricht des Kunden KOMPAKT und DIREKT (max. 2-3 kurze Sätze)
+2. Nutze **Fettschrift** für wichtige Infos und Formatierung für bessere Lesbarkeit
+3. Wenn der Kunde nur Beratung möchte: Stelle EINE gezielte Frage zur Datenerfassung (max. 5 Fragen insgesamt)
+4. Nach 3-5 Fragen: Weise darauf hin, dass ein Spezialist sich innerhalb 12 Stunden (werktags) meldet
+5. Wenn genug Infos vorhanden: Biete an, die Anfrage an einen Spezialisten zu senden
 
 ANTWORT-FORMAT (JSON):
 {
-  "message": "Deine Antwort hier...",
+  "message": "Deine kompakte Antwort mit **Formatierung**...",
   "needsContactInfo": true/false,
-  "readyToSend": true/false
+  "readyToSend": true/false,
+  "questionCount": ${questionCount + 1}
 }
 
-- needsContactInfo: true wenn du nach Kontaktdaten fragen möchtest
-- readyToSend: true wenn das Gespräch dokumentiert ist und an einen Spezialisten gesendet werden kann
+- needsContactInfo: true wenn du nach Kontaktdaten fragen möchtest (erst nach 2-3 Fachfragen)
+- readyToSend: true wenn genug Infos gesammelt wurden (nach 3-5 Fragen)
+- questionCount: Erhöhe um 1 wenn du eine neue Frage gestellt hast
 
 Antworte NUR mit dem JSON-Objekt, ohne zusätzlichen Text.`;
 
@@ -135,16 +157,18 @@ Antworte NUR mit dem JSON-Objekt, ohne zusätzlichen Text.`;
     return res.status(200).json({
       message: "Vielen Dank für Ihre Nachricht. Wie kann ich Ihnen weiterhelfen?",
       needsContactInfo: false,
-      readyToSend: false
+      readyToSend: false,
+      questionCount: 0
     });
 
   } catch (error) {
     console.error('Gemini Chat API Error:', error);
     
     return res.status(200).json({
-      message: "Entschuldigung, es gab einen technischen Fehler. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt unter +41 41 320 56 10.",
+      message: "Entschuldigung, technischer Fehler. Bitte versuchen Sie es erneut oder kontaktieren Sie uns:\n\n📞 **+41 41 320 56 10**\n📧 **info@brandea.de**",
       needsContactInfo: false,
-      readyToSend: false
+      readyToSend: false,
+      questionCount: 0
     });
   }
 }

@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { MessageCircle, X, Send, Loader2, CheckCircle2, Shield, Sparkles } from 'lucide-react';
+import { MessageCircle, X, Send, Loader2, CheckCircle2, Shield, Sparkles, Phone, Mail } from 'lucide-react';
 
 interface Message {
   role: 'user' | 'assistant';
@@ -20,8 +20,8 @@ export default function AIChatbot() {
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [userInfo, setUserInfo] = useState<UserInfo>({ name: '', email: '', phone: '' });
-  const [collectingInfo, setCollectingInfo] = useState(false);
-  const [canSendToSpecialist, setCanSendToSpecialist] = useState(false);
+  const [showSpecialistPrompt, setShowSpecialistPrompt] = useState(false);
+  const [questionCount, setQuestionCount] = useState(0);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -62,7 +62,8 @@ export default function AIChatbot() {
         },
         body: JSON.stringify({
           messages: [...messages, userMessage].map(m => ({ role: m.role, content: m.content })),
-          userInfo: userInfo.name && userInfo.email ? userInfo : undefined
+          userInfo: userInfo.name && userInfo.email ? userInfo : undefined,
+          questionCount: questionCount
         }),
       });
 
@@ -80,19 +81,21 @@ export default function AIChatbot() {
 
       setMessages(prev => [...prev, assistantMessage]);
 
-      if (data.needsContactInfo && !userInfo.email) {
-        setCollectingInfo(true);
+      // Update question count
+      if (data.questionCount !== undefined) {
+        setQuestionCount(data.questionCount);
       }
 
+      // Show specialist prompt if ready
       if (data.readyToSend && userInfo.email) {
-        setCanSendToSpecialist(true);
+        setShowSpecialistPrompt(true);
       }
 
     } catch (error) {
       console.error('Chat error:', error);
       const errorMessage: Message = {
         role: 'assistant',
-        content: 'Entschuldigung, es gab einen technischen Fehler. Bitte kontaktieren Sie uns: info@bgs-service.ch oder +41 41 320 56 10',
+        content: 'Entschuldigung, technischer Fehler. Bitte kontaktieren Sie uns:\n\n📞 **+41 41 320 56 10**\n📧 **info@brandea.de**',
         timestamp: new Date()
       };
       setMessages(prev => [...prev, errorMessage]);
@@ -101,13 +104,25 @@ export default function AIChatbot() {
     }
   };
 
-  const handleSendToSpecialist = async () => {
+  const handleSpecialistDecision = async (sendToSpecialist: boolean) => {
+    if (!sendToSpecialist) {
+      setShowSpecialistPrompt(false);
+      const declineMessage: Message = {
+        role: 'assistant',
+        content: 'Kein Problem! Gibt es noch etwas, bei dem ich Ihnen helfen kann?',
+        timestamp: new Date()
+      };
+      setMessages(prev => [...prev, declineMessage]);
+      return;
+    }
+
     if (!userInfo.name || !userInfo.email) {
       alert('Bitte geben Sie Ihre Kontaktdaten an.');
       return;
     }
 
     setLoading(true);
+    setShowSpecialistPrompt(false);
 
     try {
       // Prepare conversation summary
@@ -118,6 +133,7 @@ export default function AIChatbot() {
       const conversationShort = messages
         .filter(m => m.role === 'user')
         .map(m => m.content)
+        .slice(0, 3)
         .join(' | ');
 
       // Send to specialist via email
@@ -139,19 +155,35 @@ export default function AIChatbot() {
 
       const successMessage: Message = {
         role: 'assistant',
-        content: `✅ Vielen Dank! Ihre Anfrage wurde erfolgreich an unseren Spezialisten weitergeleitet. Sie erhalten innerhalb von 24 Stunden eine Antwort an ${userInfo.email}.`,
+        content: `✅ **Vielen Dank!** Ihre Anfrage wurde erfolgreich an unseren Spezialisten weitergeleitet.\n\nSie erhalten innerhalb von **12 Stunden (werktags)** eine Antwort an **${userInfo.email}**.`,
         timestamp: new Date()
       };
 
       setMessages(prev => [...prev, successMessage]);
-      setCanSendToSpecialist(false);
 
     } catch (error) {
       console.error('Send to specialist error:', error);
-      alert('Fehler beim Senden. Bitte versuchen Sie es erneut.');
+      const errorMessage: Message = {
+        role: 'assistant',
+        content: '❌ Fehler beim Senden. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt:\n\n📞 **+41 41 320 56 10**\n📧 **info@brandea.de**',
+        timestamp: new Date()
+      };
+      setMessages(prev => [...prev, errorMessage]);
     } finally {
       setLoading(false);
     }
+  };
+
+  // Render message with basic markdown support
+  const renderMessage = (content: string) => {
+    // Replace **text** with bold
+    const parts = content.split(/(\*\*.*?\*\*)/g);
+    return parts.map((part, index) => {
+      if (part.startsWith('**') && part.endsWith('**')) {
+        return <strong key={index}>{part.slice(2, -2)}</strong>;
+      }
+      return <span key={index}>{part}</span>;
+    });
   };
 
   if (!isOpen) {
@@ -245,7 +277,9 @@ export default function AIChatbot() {
                       : 'bg-white border border-gray-200 text-gray-900'
                   }`}
                 >
-                  <p className="text-sm leading-relaxed whitespace-pre-wrap">{message.content}</p>
+                  <p className="text-sm leading-relaxed whitespace-pre-wrap">
+                    {renderMessage(message.content)}
+                  </p>
                   <p className={`text-xs mt-1 ${message.role === 'user' ? 'text-white/70' : 'text-gray-500'}`}>
                     {message.timestamp.toLocaleTimeString('de-CH', { hour: '2-digit', minute: '2-digit' })}
                   </p>
@@ -262,73 +296,60 @@ export default function AIChatbot() {
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Contact Info Collection */}
-          {collectingInfo && !userInfo.email && (
-            <div className="p-4 bg-yellow-50 border-t border-yellow-200">
-              <p className="text-sm text-gray-700 mb-3 font-medium">
-                Bitte geben Sie Ihre Kontaktdaten an:
+          {/* Direct Contact Options */}
+          <div className="px-4 py-2 bg-blue-50 border-t border-blue-100">
+            <p className="text-xs text-gray-600 mb-2 text-center">Oder kontaktieren Sie uns direkt:</p>
+            <div className="flex gap-2 justify-center">
+              <a
+                href="tel:+41413205610"
+                className="flex items-center gap-1.5 bg-white hover:bg-gray-50 text-gray-700 px-3 py-2 rounded-lg text-xs font-medium transition-colors border border-gray-200"
+              >
+                <Phone className="w-4 h-4 text-red-600" />
+                <span>Anrufen</span>
+              </a>
+              <a
+                href="mailto:info@brandea.de"
+                className="flex items-center gap-1.5 bg-white hover:bg-gray-50 text-gray-700 px-3 py-2 rounded-lg text-xs font-medium transition-colors border border-gray-200"
+              >
+                <Mail className="w-4 h-4 text-red-600" />
+                <span>E-Mail</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Specialist Prompt with Yes/No Buttons */}
+          {showSpecialistPrompt && (
+            <div className="p-4 bg-green-50 border-t border-green-200">
+              <p className="text-sm text-gray-700 mb-3 font-medium text-center">
+                Soll ich diese Anfrage an einen Spezialisten senden?
               </p>
-              <div className="space-y-2">
-                <input
-                  type="text"
-                  placeholder="Name"
-                  value={userInfo.name}
-                  onChange={(e) => setUserInfo(prev => ({ ...prev, name: e.target.value }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-500"
-                />
-                <input
-                  type="email"
-                  placeholder="E-Mail"
-                  value={userInfo.email}
-                  onChange={(e) => setUserInfo(prev => ({ ...prev, email: e.target.value }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-500"
-                />
-                <input
-                  type="tel"
-                  placeholder="Telefon (optional)"
-                  value={userInfo.phone}
-                  onChange={(e) => setUserInfo(prev => ({ ...prev, phone: e.target.value }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-500"
-                />
+              <div className="flex gap-3">
                 <button
-                  onClick={() => {
-                    if (userInfo.name && userInfo.email) {
-                      setCollectingInfo(false);
-                      setMessages(prev => [...prev, {
-                        role: 'assistant',
-                        content: `Vielen Dank, ${userInfo.name}! Ich habe Ihre Kontaktdaten notiert. Wie kann ich Ihnen weiterhelfen?`,
-                        timestamp: new Date()
-                      }]);
-                    }
-                  }}
-                  className="w-full bg-red-600 hover:bg-red-700 text-white py-2 rounded-lg text-sm font-medium transition-colors"
+                  onClick={() => handleSpecialistDecision(true)}
+                  disabled={loading}
+                  className="flex-1 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-50"
                 >
-                  Bestätigen
+                  {loading ? (
+                    <>
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                      <span>Wird gesendet...</span>
+                    </>
+                  ) : (
+                    <>
+                      <CheckCircle2 className="w-5 h-5" />
+                      <span>Ja, bitte</span>
+                    </>
+                  )}
+                </button>
+                <button
+                  onClick={() => handleSpecialistDecision(false)}
+                  disabled={loading}
+                  className="flex-1 bg-gray-600 hover:bg-gray-700 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-50"
+                >
+                  <X className="w-5 h-5" />
+                  <span>Nein, danke</span>
                 </button>
               </div>
-            </div>
-          )}
-
-          {/* Send to Specialist Button */}
-          {canSendToSpecialist && (
-            <div className="p-4 bg-green-50 border-t border-green-200">
-              <button
-                onClick={handleSendToSpecialist}
-                disabled={loading}
-                className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-50"
-              >
-                {loading ? (
-                  <>
-                    <Loader2 className="w-5 h-5 animate-spin" />
-                    <span>Wird gesendet...</span>
-                  </>
-                ) : (
-                  <>
-                    <Send className="w-5 h-5" />
-                    <span>An Spezialisten senden</span>
-                  </>
-                )}
-              </button>
             </div>
           )}
 
