@@ -307,7 +307,7 @@ export default function SwissHome() {
           </RevealOnScroll>
 
           <motion.div 
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
@@ -326,7 +326,7 @@ export default function SwissHome() {
                         <ParallaxImage
                           src={location.image}
                           alt={`Reinigung in ${location.name}`}
-                          className="h-[300px] rounded-2xl"
+                          className="h-[350px] md:h-[400px] lg:h-[450px] rounded-2xl w-full"
                           speed={0.15}
                           scale={false}
                         />
