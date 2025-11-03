@@ -104,13 +104,16 @@ export default function AIChatbot() {
         // Auto-fill userInfo with extracted data
         const updatedUserInfo = {
           ...userInfo,
-          service: data.detectedService?.name || userInfo.service,
+          service: data.detectedService?.name || data.extractedInfo.service?.name || userInfo.service,
           name: data.extractedInfo.name || userInfo.name,
           company: data.extractedInfo.company || userInfo.company,
           city: data.extractedInfo.city || userInfo.city,
           phone: data.extractedInfo.phone || userInfo.phone,
           email: data.extractedInfo.email || userInfo.email,
         };
+        
+        console.log('🔍 DEBUG: Updated userInfo:', updatedUserInfo);
+        console.log('🔍 DEBUG: readyToSend:', data.readyToSend);
         
         setUserInfo(updatedUserInfo);
         
@@ -123,8 +126,21 @@ export default function AIChatbot() {
                              updatedUserInfo.city && 
                              updatedUserInfo.service;
           
+          console.log('🔍 DEBUG: hasAllInfo check:', {
+            name: !!updatedUserInfo.name,
+            email: !!updatedUserInfo.email,
+            phone: !!updatedUserInfo.phone,
+            company: !!updatedUserInfo.company,
+            city: !!updatedUserInfo.city,
+            service: !!updatedUserInfo.service,
+            hasAllInfo
+          });
+          
           if (hasAllInfo) {
+            console.log('✅ Setting showSpecialistPrompt to TRUE');
             setShowSpecialistPrompt(true);
+          } else {
+            console.log('❌ NOT showing specialist prompt - missing data');
           }
         }
       }
