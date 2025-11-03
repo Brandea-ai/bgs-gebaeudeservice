@@ -64,8 +64,15 @@ export default function AIChatbot() {
     // Check if user is confirming to send to specialist
     const isConfirmation = input.trim().toLowerCase() === 'ja' && showSpecialistPrompt;
 
+    console.log('🔍 DEBUG handleSendMessage:', {
+      input: input.trim(),
+      showSpecialistPrompt,
+      isConfirmation
+    });
+
     if (isConfirmation) {
       // User typed "ja" to confirm sending to specialist
+      console.log('✅ User confirmed with "ja" - calling handleSpecialistResponse');
       setInput('');
       await handleSpecialistResponse(true);
       return;
@@ -164,6 +171,8 @@ export default function AIChatbot() {
   };
 
   const handleSpecialistResponse = async (accepted: boolean) => {
+    console.log('🎯 handleSpecialistResponse called:', { accepted, userInfo, extractedInfo });
+
     if (!accepted) {
       const declineMessage: Message = {
         role: 'assistant',
@@ -177,10 +186,12 @@ export default function AIChatbot() {
 
     // Only require email and service (everything else is optional)
     if (!userInfo.email || !userInfo.service) {
+      console.log('❌ Missing required info:', { email: userInfo.email, service: userInfo.service });
       alert('Bitte geben Sie mindestens E-Mail und Dienstleistung an.');
       return;
     }
 
+    console.log('📧 Sending to specialist via API...');
     setLoading(true);
     setShowSpecialistPrompt(false);
 
