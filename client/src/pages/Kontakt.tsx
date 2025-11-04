@@ -145,7 +145,7 @@ export default function Kontakt() {
             </h2>
             <div className="rounded-2xl overflow-hidden shadow-xl">
               <GoogleMap
-                apiKey="AIzaSyBXSSM_mJ5bXXFgVrwE9oeWp2Wk32afiWI"
+                apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY || ""}
                 center={{ lat: 47.0502, lng: 8.3093 }}
                 zoom={10}
                 markers={[

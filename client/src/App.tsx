@@ -55,11 +55,31 @@ import UmweltfreundlicheReinigung from "./pages/blog/UmweltfreundlicheReinigung"
 
 function ScrollToTop() {
   const [location] = useLocation();
-  
+
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' });
+    // Prüfe, ob ein Hash (Anchor) in der URL ist
+    const hash = window.location.hash;
+
+    if (hash) {
+      // Warte kurz, bis die Seite gerendert ist
+      setTimeout(() => {
+        const id = hash.substring(1); // Entferne das #
+        const element = document.getElementById(id);
+
+        if (element) {
+          // Scrolle zum Element mit Smooth Scroll
+          element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }, 100); // 100ms Verzögerung
+    } else {
+      // Kein Hash vorhanden -> normale Scroll-to-Top
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }
   }, [location]);
-  
+
   return null;
 }
 

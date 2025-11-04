@@ -19,15 +19,17 @@ import {
 } from "@/components/PremiumParallax";
 import IndustryAdvisor from "@/components/IndustryAdvisor";
 import AppointmentButton from "@/components/AppointmentButton";
+import { useScrollToAnchor } from "@/hooks/useScrollToAnchor";
 
-import { 
-  fadeInUp, 
-  staggerContainer, 
+import {
+  fadeInUp,
+  staggerContainer,
   cardHover,
-  scaleIn 
+  scaleIn
 } from "@/utils/animations";
 
 export default function SwissHome() {
+  useScrollToAnchor();
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
