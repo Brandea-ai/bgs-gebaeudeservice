@@ -99,7 +99,7 @@ export default function Hallenreinigung() {
                 Spezialisiert auf große Flächen
               </h2>
               <p className="text-lg text-slate-600 mb-6">
-                Unsere <Link href="/business/industriereinigung" className="text-primary hover:underline">Industriereinigung</a> umfasst die professionelle Reinigung von Produktionshallen, Lagerflächen und Logistikzentren. Mit modernsten Kehrmaschinen und Scheuersaugmaschinen reinigen wir effizient große Flächen.
+                Unsere <Link href="/business/industriereinigung" className="text-primary hover:underline">Industriereinigung</Link> umfasst die professionelle Reinigung von Produktionshallen, Lagerflächen und Logistikzentren. Mit modernsten Kehrmaschinen und Scheuersaugmaschinen reinigen wir effizient große Flächen.
               </p>
               <div className="grid md:grid-cols-2 gap-4">
                 {[
@@ -130,7 +130,7 @@ export default function Hallenreinigung() {
                 Umfassende Reinigungsleistungen
               </h2>
               <p className="text-lg text-slate-600 mb-6">
-                Von der Bodenreinigung bis zur Hochregalpflege - wir bieten alle Leistungen für Ihre Halle. Unsere <Link href="/business/facility-management" className="text-primary hover:underline">Facility Management</a> Services sorgen für dauerhaft saubere Arbeitsbereiche.
+                Von der Bodenreinigung bis zur Hochregalpflege - wir bieten alle Leistungen für Ihre Halle. Unsere <Link href="/business/facility-management" className="text-primary hover:underline">Facility Management</Link> Services sorgen für dauerhaft saubere Arbeitsbereiche.
               </p>
               <div className="space-y-3">
                 {[
@@ -183,7 +183,7 @@ export default function Hallenreinigung() {
                 Welche Hallengrößen können Sie reinigen?
               </AccordionTrigger>
               <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
-                Wir reinigen Hallen jeder Größe - von 500 m² bis zu mehreren 10.000 m². Mit unseren Industriemaschinen sind wir für kleine Lagerhallen ebenso ausgestattet wie für große Logistikzentren. Unsere <Link href="/business/bueroreinigung" className="text-primary hover:underline">Büroreinigung</a> kann bei Bedarf integriert werden.
+                Wir reinigen Hallen jeder Größe - von 500 m² bis zu mehreren 10.000 m². Mit unseren Industriemaschinen sind wir für kleine Lagerhallen ebenso ausgestattet wie für große Logistikzentren. Unsere <Link href="/business/bueroreinigung" className="text-primary hover:underline">Büroreinigung</Link> kann bei Bedarf integriert werden.
               </AccordionContent>
             </AccordionItem>
 
@@ -210,7 +210,7 @@ export default function Hallenreinigung() {
                 Bieten Sie auch Außenreinigung an?
               </AccordionTrigger>
               <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
-                Ja, unsere <Link href="/business/aussenanlagen" className="text-primary hover:underline">Außenanlagenpflege</a> umfasst die Reinigung von Parkplätzen, Zufahrten und Außenbereichen. Im Winter bieten wir auch <Link href="/basis/winterdienst" className="text-primary hover:underline">Winterdienst</a> an.
+                Ja, unsere <Link href="/business/aussenanlagen" className="text-primary hover:underline">Außenanlagenpflege</Link> umfasst die Reinigung von Parkplätzen, Zufahrten und Außenbereichen. Im Winter bieten wir auch <Link href="/basis/winterdienst" className="text-primary hover:underline">Winterdienst</Link> an.
               </AccordionContent>
             </AccordionItem>
 
