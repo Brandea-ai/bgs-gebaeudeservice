@@ -86,7 +86,7 @@ export default function SwissHome() {
               className="flex flex-col sm:flex-row gap-3 sm:gap-4"
               variants={fadeInUp}
             >
-              <Link href="#kontakt-formular" className="w-full sm:w-auto">
+              <a href="#kontakt-formular" className="w-full sm:w-auto">
                 <MagneticHover>
                   <Button
                     size="lg"
@@ -96,7 +96,7 @@ export default function SwissHome() {
                     <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
                   </Button>
                 </MagneticHover>
-              </Link>
+              </a>
               <AppointmentButton
                 size="lg"
                 variant="outline"

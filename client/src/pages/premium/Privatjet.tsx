@@ -49,7 +49,7 @@ export default function Privatjet() {
                 Professionelle Reinigung für Privatjets mit höchsten Standards. Diskretion, Präzision und Verfügbarkeit rund um die Uhr für anspruchsvolle Kunden in Zürich, Zug und Luzern.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link href="#kontakt-formular">
+                <a href="#kontakt-formular">
                   <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
                     Jetzt anfragen
                     <ArrowRight className="ml-2 w-5 h-5"/>
@@ -280,7 +280,7 @@ export default function Privatjet() {
               Kontaktieren Sie uns für ein unverbindliches Angebot. Wir beraten Sie gerne persönlich.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Link href="#kontakt-formular">
+              <a href="#kontakt-formular">
                 <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
                   Jetzt Kontakt aufnehmen
                   <ArrowRight className="ml-2 w-5 h-5"/>

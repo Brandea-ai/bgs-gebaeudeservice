@@ -49,7 +49,7 @@ export default function Winterdienst() {
                 Zuverlässige Schneeräumung und Streudienst für Zürich, Zug und Luzern. 24/7 Bereitschaft für Ihre Verkehrssicherheit im Winter.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link href="#kontakt-formular">
+                <a href="#kontakt-formular">
                   <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
                     Jetzt anfragen
                     <ArrowRight className="ml-2 w-5 h-5"/>
@@ -305,7 +305,7 @@ export default function Winterdienst() {
               Kontaktieren Sie uns für ein kostenloses Angebot. Wir sorgen für Ihre Verkehrssicherheit im Winter.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="#kontakt-formular">
+              <a href="#kontakt-formular">
                 <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
                   Jetzt Kontakt aufnehmen
                   <ArrowRight className="ml-2 w-5 h-5"/>
