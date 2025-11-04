@@ -129,7 +129,7 @@ export default function Zuerich() {
                     <p className="text-slate-600 mb-4">{service.desc}</p>
                     <Link href={`/premium/${service.title.toLowerCase().replace(/[- ]/g, '')}`}>
                       <Button variant="outline" size="sm">Mehr erfahren</Button>
-                    </a>
+                    </Link>
                   </Card>
                 ))}
               </div>
@@ -146,7 +146,7 @@ export default function Zuerich() {
                     <p className="text-sm text-slate-600 mb-4">Professionelle Lösungen für Zürich</p>
                     <Link href={`/business/${service.toLowerCase().replace(/ /g, '')}`}>
                       <Button variant="outline" size="sm">Details</Button>
-                    </a>
+                    </Link>
                   </Card>
                 ))}
               </div>
@@ -162,7 +162,7 @@ export default function Zuerich() {
                     <p className="text-slate-600 mb-4">Zuverlässige Basisleistungen in Zürich</p>
                     <Link href={`/basis/${service.toLowerCase().replace(/ /g, '')}`}>
                       <Button variant="outline">Mehr Info</Button>
-                    </a>
+                    </Link>
                   </Card>
                 ))}
               </div>
