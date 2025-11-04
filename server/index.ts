@@ -193,20 +193,66 @@ Diese Nachricht wurde über das Kontaktformular auf brandea.de gesendet.
   app.post("/api/chat-to-specialist", async (req, res) => {
     console.log("📧 Sending chat to specialist:", req.body.userInfo);
     try {
-      const { userInfo, conversationLong, conversationShort } = req.body;
-      
+      const { userInfo, conversationLong, conversationShort, identificationCode, extractedInfo } = req.body;
+
       const { sendContactEmail } = await import('./email.js');
-      
+
+      // Build comprehensive qualification summary for sales team
+      const qualificationSummary = `
+═══════════════════════════════════════════════
+📋 SALES QUALIFICATION SUMMARY
+═══════════════════════════════════════════════
+
+🎯 IDENTIFIKATIONSCODE: ${identificationCode}
+
+👤 KONTAKTDATEN:
+   Name: ${userInfo.name || 'Nicht angegeben'}
+   E-Mail: ${userInfo.email}
+   Telefon: ${userInfo.phone || 'Nicht angegeben'}
+   Stadt: ${userInfo.city || 'Nicht angegeben'}
+
+🏢 UNTERNEHMENSDATEN:
+   Branche/Typ: ${extractedInfo?.industry || 'Nicht angegeben'}
+   Firma: ${userInfo.company || 'Nicht angegeben'}
+   Mitarbeiter: ${extractedInfo?.employees || 'Nicht angegeben'}
+   Größe: ${extractedInfo?.size || 'Nicht angegeben'}
+
+🧹 REINIGUNGSBEDARF:
+   Service: ${userInfo.service || 'Nicht angegeben'}
+   Bereiche: ${extractedInfo?.areas || 'Nicht angegeben'}
+   Frequenz: ${extractedInfo?.frequency || 'Nicht angegeben'}
+   Zeitpunkt: ${extractedInfo?.timing || 'Nicht angegeben'}
+   Besonderheiten: ${extractedInfo?.special_requirements || 'Keine angegeben'}
+
+═══════════════════════════════════════════════
+💬 VOLLSTÄNDIGER GESPRÄCHSVERLAUF
+═══════════════════════════════════════════════
+
+${conversationLong}
+
+═══════════════════════════════════════════════
+📝 HANDLUNGSEMPFEHLUNG FÜR CLOSER
+═══════════════════════════════════════════════
+
+1. Kontaktiere den Kunden innerhalb von 12h (werktags)
+2. Referenziere den Identifikationscode: ${identificationCode}
+3. Gehe auf die spezifischen Anforderungen der Branche ein
+4. Bereite Angebot vor basierend auf: ${extractedInfo?.frequency || 'Frequenz'}, ${extractedInfo?.areas || 'Bereiche'}
+5. Beachte besondere Anforderungen falls angegeben
+
+═══════════════════════════════════════════════
+      `.trim();
+
       const emailData = {
-        name: userInfo.name,
+        name: userInfo.name || 'Lead aus KI-Chat',
         email: userInfo.email,
         phone: userInfo.phone || 'Nicht angegeben',
-        service: 'KI-Chat Anfrage',
-        message: `GESPRÄCHSVERLAUF (Ausführlich):\n\n${conversationLong}\n\n---\n\nZUSAMMENFASSUNG:\n${conversationShort}`
+        service: `${userInfo.service || 'Reinigungsdienstleistung'} (${extractedInfo?.industry || 'Unbekannte Branche'})`,
+        message: qualificationSummary
       };
-      
+
       const success = await sendContactEmail(emailData);
-      
+
       if (success) {
         res.json({ success: true });
       } else {

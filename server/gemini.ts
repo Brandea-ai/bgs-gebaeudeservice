@@ -1,11 +1,12 @@
 /**
- * Gemini AI Service - PROFESSIONAL CHATBOT SYSTEM
+ * Gemini AI Service - CONSULTATIVE SALES CHATBOT
  *
- * Provides AI-powered chatbot with:
- * - Intelligent service detection
- * - Automatic information extraction
- * - Natural conversation flow
- * - Professional tone
+ * Professional sales-qualified lead generation chatbot with:
+ * - Discovery phase (understand business/industry)
+ * - Needs assessment (detailed requirements)
+ * - Solution pitch (tailored recommendations)
+ * - Contact collection (name, email, phone, city)
+ * - Comprehensive handoff to sales team
  */
 
 interface ChatMessage {
@@ -37,6 +38,11 @@ interface ExtractedInfo {
   phone?: string;
   size?: string;
   timing?: string;
+  industry?: string;
+  employees?: string;
+  areas?: string;
+  frequency?: string;
+  special_requirements?: string;
 }
 
 interface ChatResponse {
@@ -76,7 +82,7 @@ const SERVICE_DATABASE = {
     bueroreinigung: {
       code: 'BR',
       name: 'Büroreinigung',
-      keywords: ['büro', 'office', 'arbeitsplatz', 'geschäft', 'bürogebäude', 'coworking']
+      keywords: ['büro', 'office', 'arbeitsplatz', 'geschäft', 'bürogebäude', 'coworking', 'arbeiten', 'schreibtisch']
     },
     industriereinigung: {
       code: 'IR',
@@ -148,6 +154,50 @@ const SERVICE_DATABASE = {
   }
 };
 
+// Industry-specific recommendations
+const INDUSTRY_RECOMMENDATIONS = {
+  tech: {
+    keywords: ['tech', 'software', 'it', 'startup', 'digital', 'entwicklung', 'technologie'],
+    recommendations: ['Büroreinigung', 'Unterhaltsreinigung', 'Fensterreinigung'],
+    pitch: 'Für Tech-Unternehmen empfehlen wir flexible Reinigungszeiten außerhalb der Arbeitszeit und moderne, umweltfreundliche Methoden.'
+  },
+  medical: {
+    keywords: ['arzt', 'praxis', 'klinik', 'zahnarzt', 'medizin', 'gesundheit', 'krankenhaus'],
+    recommendations: ['Praxisreinigung', 'Unterhaltsreinigung', 'Hygienische Spezialreinigung'],
+    pitch: 'Für medizinische Einrichtungen setzen wir auf höchste Hygienestandards und HACCP-konforme Reinigungsmittel.'
+  },
+  legal: {
+    keywords: ['anwalt', 'kanzlei', 'rechtsanwalt', 'notar', 'gericht', 'recht'],
+    recommendations: ['Büroreinigung', 'Fensterreinigung', 'Unterhaltsreinigung'],
+    pitch: 'Für Kanzleien bieten wir diskrete Reinigung mit höchster Vertraulichkeit – auch außerhalb der Öffnungszeiten.'
+  },
+  finance: {
+    keywords: ['bank', 'versicherung', 'finanz', 'beratung', 'treuhänder', 'buchhaltung'],
+    recommendations: ['Büroreinigung', 'Facility Management', 'Unterhaltsreinigung'],
+    pitch: 'Für Finanzdienstleister garantieren wir höchste Diskretion und Compliance mit Sicherheitsstandards.'
+  },
+  retail: {
+    keywords: ['laden', 'geschäft', 'shop', 'einzelhandel', 'boutique', 'store'],
+    recommendations: ['Ladenreinigung', 'Fensterreinigung', 'Unterhaltsreinigung'],
+    pitch: 'Für Einzelhandel bieten wir tägliche Reinigung vor Ladeneröffnung für perfekte Kundenerlebnisse.'
+  },
+  hospitality: {
+    keywords: ['hotel', 'restaurant', 'café', 'bar', 'gastronomie', 'gastro'],
+    recommendations: ['Hotelreinigung', 'Restaurant-Reinigung', 'Unterhaltsreinigung'],
+    pitch: 'Für Gastronomiebetriebe setzen wir auf HACCP-konforme Küchenhygiene und schnelle Reinigungszyklen.'
+  },
+  education: {
+    keywords: ['schule', 'universität', 'bildung', 'kindergarten', 'kita', 'hochschule'],
+    recommendations: ['Unterhaltsreinigung', 'Fensterreinigung', 'Facility Management'],
+    pitch: 'Für Bildungseinrichtungen bieten wir kindersichere, umweltfreundliche Reinigungsmittel und flexible Zeiten.'
+  },
+  industrial: {
+    keywords: ['industrie', 'fabrik', 'produktion', 'fertigung', 'werk', 'manufacturing'],
+    recommendations: ['Industriereinigung', 'Hallenreinigung', 'Maschinenreinigung'],
+    pitch: 'Für Industriebetriebe bieten wir spezialisierte Reinigung von Maschinen und Produktionshallen mit Industriegeräten.'
+  }
+};
+
 // Website context
 const WEBSITE_CONTEXT = `
 ÜBER DIE SWISS REINIGUNGSFIRMA:
@@ -185,6 +235,23 @@ function detectServiceFromText(text: string): { code: string; name: string } | n
 }
 
 /**
+ * Detect industry from conversation
+ */
+function detectIndustry(text: string): string | null {
+  const lowerText = text.toLowerCase();
+
+  for (const [industry, data] of Object.entries(INDUSTRY_RECOMMENDATIONS)) {
+    for (const keyword of data.keywords) {
+      if (lowerText.includes(keyword.toLowerCase())) {
+        return industry;
+      }
+    }
+  }
+
+  return null;
+}
+
+/**
  * Extract information from conversation
  */
 function extractInfoFromConversation(messages: ChatMessage[]): ExtractedInfo {
@@ -214,6 +281,12 @@ function extractInfoFromConversation(messages: ChatMessage[]): ExtractedInfo {
     extracted.size = `${sizeMatch[1]} m²`;
   }
 
+  // Extract employees
+  const employeeMatch = userMessages.match(/(\d+)\s?(mitarbeiter|personen|leute|employees)/i);
+  if (employeeMatch) {
+    extracted.employees = `${employeeMatch[1]} Mitarbeiter`;
+  }
+
   // Extract timing keywords
   const timingKeywords = ['sofort', 'dringend', 'nächste woche', 'ab', 'morgen', 'heute', 'bald', 'monat', 'jahr'];
   for (const keyword of timingKeywords) {
@@ -223,10 +296,33 @@ function extractInfoFromConversation(messages: ChatMessage[]): ExtractedInfo {
     }
   }
 
+  // Extract frequency
+  const frequencyPatterns = [
+    { pattern: /täglich/i, value: 'Täglich' },
+    { pattern: /(\d+)\s?x?\s?(pro|in der)?\s?woche/i, value: (match: RegExpMatchArray) => `${match[1]}x pro Woche` },
+    { pattern: /wöchentlich/i, value: 'Wöchentlich' },
+    { pattern: /monatlich/i, value: 'Monatlich' },
+    { pattern: /zweimal|2\s?mal/i, value: '2x pro Woche' }
+  ];
+
+  for (const { pattern, value } of frequencyPatterns) {
+    const match = userMessages.match(pattern);
+    if (match) {
+      extracted.frequency = typeof value === 'function' ? value(match) : value;
+      break;
+    }
+  }
+
   // Extract service
   const service = detectServiceFromText(userMessages);
   if (service) {
     extracted.service = service;
+  }
+
+  // Extract industry
+  const industry = detectIndustry(userMessages);
+  if (industry) {
+    extracted.industry = industry;
   }
 
   // Extract city (Swiss cities)
@@ -238,17 +334,38 @@ function extractInfoFromConversation(messages: ChatMessage[]): ExtractedInfo {
     }
   }
 
+  // Extract areas/rooms
+  const areaKeywords = ['büro', 'toilette', 'wc', 'küche', 'empfang', 'konferenzraum', 'meeting', 'lager', 'cafeteria', 'flur', 'treppenhaus'];
+  const foundAreas: string[] = [];
+  for (const area of areaKeywords) {
+    if (userMessages.toLowerCase().includes(area)) {
+      foundAreas.push(area);
+    }
+  }
+  if (foundAreas.length > 0) {
+    extracted.areas = foundAreas.join(', ');
+  }
+
   return extracted;
 }
 
 /**
- * Determine missing required fields
+ * Determine missing required fields for SALES QUALIFICATION
  */
 function getMissingFields(extracted: ExtractedInfo): string[] {
   const missing: string[] = [];
 
-  if (!extracted.email) missing.push('E-Mail');
+  // Core qualification fields
   if (!extracted.service) missing.push('Dienstleistung');
+  if (!extracted.industry) missing.push('Branche/Unternehmenstyp');
+
+  // Discovery fields
+  if (!extracted.employees && !extracted.size) missing.push('Unternehmensgröße');
+  if (!extracted.frequency) missing.push('Reinigungsfrequenz');
+  if (!extracted.areas) missing.push('Zu reinigende Bereiche');
+
+  // Contact fields
+  if (!extracted.email) missing.push('E-Mail');
   if (!extracted.name) missing.push('Name');
   if (!extracted.city) missing.push('Stadt/Standort');
 
@@ -256,12 +373,35 @@ function getMissingFields(extracted: ExtractedInfo): string[] {
 }
 
 /**
- * Determine conversation phase
+ * Determine conversation phase (5-phase model)
  */
 function determinePhase(extracted: ExtractedInfo): number {
-  if (!extracted.service) return 1; // Phase 1: Identify service
-  if (!extracted.email || !extracted.name || !extracted.city) return 2; // Phase 2: Collect details
-  return 3; // Phase 3: Ready to send
+  // Phase 1: Discovery (industry/company type)
+  if (!extracted.industry && !extracted.service) return 1;
+
+  // Phase 2: Needs Assessment (areas, frequency, size)
+  if (!extracted.areas || !extracted.frequency) return 2;
+
+  // Phase 3: Solution Pitch (recommendation given)
+  if (!extracted.email || !extracted.name) return 3;
+
+  // Phase 4: Contact Collection (email, name, city)
+  if (!extracted.email || !extracted.name || !extracted.city) return 4;
+
+  // Phase 5: Ready to handoff
+  return 5;
+}
+
+/**
+ * Get industry-specific recommendations
+ */
+function getIndustryRecommendations(industry: string | undefined): string {
+  if (!industry) return '';
+
+  const industryData = INDUSTRY_RECOMMENDATIONS[industry as keyof typeof INDUSTRY_RECOMMENDATIONS];
+  if (!industryData) return '';
+
+  return `\n\n**EMPFEHLUNG FÜR DIESE BRANCHE:**\n${industryData.pitch}\n\nPassende Services: ${industryData.recommendations.join(', ')}`;
 }
 
 /**
@@ -293,7 +433,12 @@ export async function chatWithAI(data: ChatRequest): Promise<ChatResponse> {
       email: extracted.email || userInfo?.email,
       phone: extracted.phone || userInfo?.phone,
       size: extracted.size,
-      timing: extracted.timing
+      timing: extracted.timing,
+      industry: extracted.industry,
+      employees: extracted.employees,
+      areas: extracted.areas,
+      frequency: extracted.frequency,
+      special_requirements: extracted.special_requirements
     };
 
     // Determine missing fields
@@ -305,50 +450,118 @@ export async function chatWithAI(data: ChatRequest): Promise<ChatResponse> {
       `${msg.role === 'user' ? 'Kunde' : supporterName}: ${msg.content}`
     ).join('\n');
 
-    // Determine if ready to send (MINIMUM: email + service)
-    const readyToSend = !!(mergedInfo.email && mergedInfo.service);
+    // Determine if ready to send (MINIMUM: email + service + some qualification data)
+    const readyToSend = !!(
+      mergedInfo.email &&
+      mergedInfo.service &&
+      mergedInfo.name &&
+      (mergedInfo.industry || mergedInfo.areas || mergedInfo.frequency)
+    );
 
-    // Build professional system prompt
+    // Get industry recommendations
+    const industryReco = getIndustryRecommendations(mergedInfo.industry);
+
+    // Build professional consultative sales prompt
     const prompt = `${WEBSITE_CONTEXT}
 
-DU BIST: ${supporterName}, ${supporterGender === 'male' ? 'ein professioneller Berater' : 'eine professionelle Beraterin'} der Swiss Reinigungsfirma.
+DU BIST: ${supporterName}, ${supporterGender === 'male' ? 'ein professioneller Sales Consultant' : 'eine professionelle Sales Consultant'} der Swiss Reinigungsfirma.
 
-WICHTIGE REGELN:
-1. Sei natürlich und menschlich
-2. NIEMALS dieselbe Frage zweimal stellen
-3. Wenn Info bereits erwähnt wurde, nutze sie und bestätige sie!
-4. Frage nur nach EINER fehlenden Info pro Nachricht
-5. Sei präzise und professionell
-6. Keine langen Texte - max 2-3 kurze Sätze
+**DEINE ROLLE:**
+Du bist KEIN einfacher Chatbot. Du bist ein **erfahrener Vertriebsberater**, der:
+- Aktiv qualifizierende Fragen stellt
+- Den Bedarf des Kunden analysiert
+- Maßgeschneiderte Lösungen empfiehlt
+- Wert aufbaut und Vertrauen schafft
+- Umfassende Informationen für das Sales-Team sammelt
 
-GESPRÄCHS-PHASEN:
-Phase 1: Service identifizieren (Was möchten Sie reinigen lassen?)
-Phase 2: Details erfassen (Name, E-Mail, Stadt für Angebot)
-Phase 3: Abschluss (Alle Infos vorhanden, bereit zum Senden)
+**5-PHASEN SALES PROZESS:**
 
-AKTUELLE PHASE: ${phase}
+Phase 1: DISCOVERY (Unternehmen/Branche verstehen)
+- Was für ein Unternehmen? (Tech, Anwalt, Restaurant, etc.)
+- Wie viele Mitarbeiter?
+- Welche Branche?
 
-BEREITS BEKANNTE INFORMATIONEN:
+Phase 2: NEEDS ASSESSMENT (Bedarf ermitteln)
+- Welche Bereiche brauchen Reinigung? (Büro, Toiletten, Küche, etc.)
+- Wie groß ist die Fläche? (m² oder Raumanzahl)
+- Wie oft soll gereinigt werden? (täglich, 2x/Woche, etc.)
+- Besondere Anforderungen?
+
+Phase 3: SOLUTION PITCH (Empfehlungen geben)
+- Basierend auf Branche: "Für Ihr [BRANCHE]-Unternehmen empfehle ich..."
+- Zeige Wert: "Viele unserer Kunden aus Ihrer Branche nutzen auch..."
+- Cross-Selling: "Zusätzlich könnte für Sie interessant sein..."
+
+Phase 4: CONTACT COLLECTION (Kontaktdaten erfassen)
+- Name
+- E-Mail
+- Telefon
+- Stadt
+
+Phase 5: HANDOFF (Übergabe ans Sales-Team)
+- Zusammenfassung aller Infos
+- Bereit zur Weiterleitung an Spezialisten
+
+**AKTUELLE PHASE: ${phase}/5**
+
+**BEREITS BEKANNTE INFORMATIONEN:**
 ${JSON.stringify(mergedInfo, null, 2)}
 
-FEHLENDE PFLICHTFELDER: ${missingFields.join(', ') || 'Keine - alle Infos vorhanden!'}
+**FEHLENDE QUALIFIKATIONS-INFORMATIONEN:**
+${missingFields.join(', ') || 'Alle wichtigen Infos vorhanden!'}
 
-GESPRÄCHSVERLAUF:
+**GESPRÄCHSVERLAUF:**
 ${conversationHistory}
 
+${industryReco}
+
 ${readyToSend ? `
-**WICHTIG**: Alle notwendigen Informationen sind vorhanden!
-- Bestätige die Informationen kurz
-- Sage, dass du die Anfrage an einen Spezialisten weiterleiten kannst
-- Warte auf Bestätigung des Kunden
+**PHASE 5: BEREIT FÜR HANDOFF!**
+Du hast genug Informationen gesammelt. Jetzt:
+1. Fasse alle Infos kurz zusammen
+2. Bestätige die Dienstleistung und Details
+3. Sage dem Kunden, dass du die Anfrage an einen Spezialisten weiterleiten kannst
+4. Warte auf Bestätigung
+` : phase === 1 ? `
+**PHASE 1: DISCOVERY**
+Der Kunde möchte eine Reinigungsdienstleistung. Du weißt noch NICHT:
+- Was für ein Unternehmen/Branche?
+- Wie groß ist das Unternehmen?
+
+FRAGE JETZT: "Um Ihnen die beste Lösung zu empfehlen: Was für ein Unternehmen haben Sie? (z.B. Büro, Restaurant, Praxis, etc.)"
+` : phase === 2 ? `
+**PHASE 2: NEEDS ASSESSMENT**
+Du kennst die Branche. Jetzt ermittle den konkreten Bedarf:
+- Welche Bereiche/Räume?
+- Wie groß?
+- Wie oft?
+
+FRAGE JETZT nach dem nächsten fehlenden Detail: ${missingFields[0] || 'Bereiche'}
+` : phase === 3 ? `
+**PHASE 3: SOLUTION PITCH**
+Du kennst den Bedarf. Jetzt mache eine Empfehlung:
+- "Für Ihr Unternehmen empfehle ich..."
+- Erkläre warum diese Lösung passt
+- Dann frage nach Kontaktdaten für ein Angebot
+
+MACHE JETZT einen kurzen Pitch und frage nach E-Mail
 ` : `
-**AUFGABE**:
-- Beantworte die letzte Nachricht des Kunden
-- Frage nach EINER fehlenden Info: ${missingFields[0] || 'Keine'}
-- Sei freundlich und natürlich
+**PHASE 4: CONTACT COLLECTION**
+Fast fertig! Sammle noch: ${missingFields.join(', ')}
+
+FRAGE JETZT nach: ${missingFields[0]}
 `}
 
-ANTWORTE ALS ${supporterName} (maximal 2-3 Sätze):`;
+**WICHTIGE REGELN:**
+1. Sei natürlich, aber professionell
+2. NIEMALS dieselbe Frage zweimal stellen
+3. Stelle NUR 1 Frage pro Nachricht
+4. Bestätige erhaltene Infos kurz
+5. Mache konkrete Empfehlungen basierend auf Branche
+6. Baue Vertrauen und Wert auf
+7. Maximal 2-3 Sätze pro Antwort
+
+ANTWORTE ALS ${supporterName}:`;
 
     const result = await model.generateContent(prompt);
     const response = result.response;
@@ -370,7 +583,7 @@ ANTWORTE ALS ${supporterName} (maximal 2-3 Sätze):`;
       response: "Entschuldigung, es gab einen technischen Fehler. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt unter +41 41 320 56 10.",
       extractedInfo: {},
       readyToSend: false,
-      missingFields: ['E-Mail', 'Dienstleistung', 'Name', 'Stadt'],
+      missingFields: ['E-Mail', 'Dienstleistung', 'Name', 'Stadt', 'Branche'],
       conversationPhase: 1
     };
   }

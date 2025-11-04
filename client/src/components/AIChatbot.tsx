@@ -312,7 +312,8 @@ Zeitpunkt: ${extractedInfo.timing || 'nicht angegeben'}
           userInfo,
           conversationLong,
           conversationShort,
-          identificationCode: idCode
+          identificationCode: idCode,
+          extractedInfo: extractedInfo
         }),
       });
 
