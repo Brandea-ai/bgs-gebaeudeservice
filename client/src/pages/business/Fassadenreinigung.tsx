@@ -54,7 +54,7 @@ export default function Fassadenreinigung() {
                     Jetzt anfragen
                     <ArrowRight className="ml-2 w-5 h-5"/>
                   </Button>
-                </Link>
+                </a>
                 <AppointmentButton size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8" />
               </div>
             </div>
@@ -312,7 +312,7 @@ export default function Fassadenreinigung() {
                   Jetzt Kontakt aufnehmen
                   <ArrowRight className="ml-2 w-5 h-5"/>
                 </Button>
-              </Link>
+              </a>
               <AppointmentButton size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8" />
             </div>
           </div>

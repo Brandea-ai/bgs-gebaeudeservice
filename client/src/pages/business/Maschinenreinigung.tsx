@@ -60,7 +60,7 @@ export default function Maschinenreinigung() {
                     Jetzt anfragen
                     <ArrowRight className="ml-2 w-5 h-5"/>
                   </Button>
-                </Link>
+                </a>
                 <AppointmentButton size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8" />
               </div>
             </div>
@@ -99,7 +99,7 @@ export default function Maschinenreinigung() {
                 Spezialisiert auf Industrieanlagen
               </h2>
               <p className="text-lg text-slate-600 mb-6">
-                Unsere <Link href="/business/industriereinigung" className="text-primary hover:underline">Industriereinigung</Link> umfasst die fachgerechte Reinigung von CNC-Maschinen, Produktionsanlagen und Fertigungsstraßen. Mit speziellen Reinigungsmitteln und Techniken entfernen wir Öl, Fett und Produktionsrückstände.
+                Unsere <Link href="/business/industriereinigung" className="text-primary hover:underline">Industriereinigung</a> umfasst die fachgerechte Reinigung von CNC-Maschinen, Produktionsanlagen und Fertigungsstraßen. Mit speziellen Reinigungsmitteln und Techniken entfernen wir Öl, Fett und Produktionsrückstände.
               </p>
               <div className="grid md:grid-cols-2 gap-4">
                 {[
@@ -130,7 +130,7 @@ export default function Maschinenreinigung() {
                 Umfassende Reinigungsleistungen
               </h2>
               <p className="text-lg text-slate-600 mb-6">
-                Von der Grundreinigung bis zur Wartungsreinigung - wir bieten alle Leistungen für Ihre Maschinen. Unsere <Link href="/business/hallenreinigung" className="text-primary hover:underline">Hallenreinigung</Link> kann bei Bedarf integriert werden.
+                Von der Grundreinigung bis zur Wartungsreinigung - wir bieten alle Leistungen für Ihre Maschinen. Unsere <Link href="/business/hallenreinigung" className="text-primary hover:underline">Hallenreinigung</a> kann bei Bedarf integriert werden.
               </p>
               <div className="space-y-3">
                 {[
@@ -192,7 +192,7 @@ export default function Maschinenreinigung() {
                 Können Sie während der Produktionspausen reinigen?
               </AccordionTrigger>
               <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
-                Ja, wir passen uns flexibel Ihren Produktionszeiten an. Ob während Schichtwechseln, nachts oder am Wochenende - wir reinigen dann, wenn es für Ihren Betrieb am besten passt. Unsere <Link href="/business/facility-management" className="text-primary hover:underline">Facility Management</Link> Services koordinieren alle Abläufe.
+                Ja, wir passen uns flexibel Ihren Produktionszeiten an. Ob während Schichtwechseln, nachts oder am Wochenende - wir reinigen dann, wenn es für Ihren Betrieb am besten passt. Unsere <Link href="/business/facility-management" className="text-primary hover:underline">Facility Management</a> Services koordinieren alle Abläufe.
               </AccordionContent>
             </AccordionItem>
 
@@ -210,7 +210,7 @@ export default function Maschinenreinigung() {
                 Bieten Sie auch Grundreinigung an?
               </AccordionTrigger>
               <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
-                Ja, wir bieten sowohl Unterhaltsreinigung als auch intensive Grundreinigung an. Bei der Grundreinigung werden hartnäckige Verschmutzungen, Öl- und Fettrückstände vollständig entfernt. Unsere <Link href="/business/baureinigung" className="text-primary hover:underline">Baureinigung</Link> umfasst auch Endreinigung nach Umbauten.
+                Ja, wir bieten sowohl Unterhaltsreinigung als auch intensive Grundreinigung an. Bei der Grundreinigung werden hartnäckige Verschmutzungen, Öl- und Fettrückstände vollständig entfernt. Unsere <Link href="/business/baureinigung" className="text-primary hover:underline">Baureinigung</a> umfasst auch Endreinigung nach Umbauten.
               </AccordionContent>
             </AccordionItem>
 
@@ -241,7 +241,7 @@ export default function Maschinenreinigung() {
                 Jetzt Kontakt aufnehmen
                 <ArrowRight className="ml-2 w-5 h-5"/>
               </Button>
-            </Link>
+            </a>
             <AppointmentButton size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8 border-white text-white hover:bg-white hover:text-primary" />
           </div>
         </div>

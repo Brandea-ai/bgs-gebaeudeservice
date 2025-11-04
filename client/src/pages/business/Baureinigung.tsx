@@ -59,7 +59,7 @@ export default function Baureinigung() {
                     Jetzt anfragen
                     <ArrowRight className="ml-2 w-5 h-5"/>
                   </Button>
-                </Link>
+                </a>
                 <AppointmentButton size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8" />
               </div>
             </div>
@@ -247,7 +247,7 @@ export default function Baureinigung() {
               <Button size="lg" variant="secondary" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
                 Kostenlose Beratung
               </Button>
-            </Link>
+            </a>
             <AppointmentButton size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8 bg-transparent border-white text-white hover:bg-white hover:text-primary" />
           </div>
         </div>
