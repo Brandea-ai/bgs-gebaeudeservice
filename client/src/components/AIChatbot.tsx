@@ -180,6 +180,15 @@ export default function AIChatbot() {
 
       const data = await response.json();
 
+      console.log('📥 Backend Response:', {
+        response: data.response,
+        extractedInfo: data.extractedInfo,
+        detectedService: data.detectedService,
+        readyToSend: data.readyToSend,
+        missingFields: data.missingFields,
+        conversationPhase: data.conversationPhase
+      });
+
       const assistantMessage: Message = {
         role: 'assistant',
         content: data.response,
@@ -191,7 +200,7 @@ export default function AIChatbot() {
       // Update extracted info from conversation
       if (data.extractedInfo) {
         setExtractedInfo(data.extractedInfo);
-        
+
         // Auto-fill userInfo with extracted data
         const updatedUserInfo = {
           ...userInfo,
@@ -202,32 +211,34 @@ export default function AIChatbot() {
           phone: data.extractedInfo.phone || userInfo.phone,
           email: data.extractedInfo.email || userInfo.email,
         };
-        
-        console.log('🔍 DEBUG: Updated userInfo:', updatedUserInfo);
-        console.log('🔍 DEBUG: readyToSend:', data.readyToSend);
-        
-        setUserInfo(updatedUserInfo);
-        
-        // Show specialist prompt if ready (MINIMUM: email and service)
-        if (data.readyToSend) {
-          const hasMinimumInfo = updatedUserInfo.email && updatedUserInfo.service;
 
-          console.log('🔍 DEBUG: hasMinimumInfo check:', {
+        console.log('🔍 Updated userInfo:', updatedUserInfo);
+        console.log('🔍 readyToSend:', data.readyToSend);
+        console.log('🔍 Missing fields:', data.missingFields);
+
+        setUserInfo(updatedUserInfo);
+
+        // Show specialist prompt if ready (email + service required)
+        if (data.readyToSend && !emailSent) {
+          const hasRequiredInfo = updatedUserInfo.email && updatedUserInfo.service;
+
+          console.log('✅ READY TO SEND! Checking requirements:', {
             email: !!updatedUserInfo.email,
             service: !!updatedUserInfo.service,
-            company: updatedUserInfo.company,
-            city: updatedUserInfo.city,
             name: updatedUserInfo.name,
-            phone: updatedUserInfo.phone,
-            hasMinimumInfo
+            city: updatedUserInfo.city,
+            hasRequiredInfo,
+            emailSent
           });
 
-          if (hasMinimumInfo) {
-            console.log('✅ Setting showSpecialistPrompt to TRUE');
+          if (hasRequiredInfo) {
+            console.log('✅ Showing Specialist Prompt (Ja/Nein Buttons)');
             setShowSpecialistPrompt(true);
           } else {
-            console.log('❌ NOT showing specialist prompt - missing minimum data (email or service)');
+            console.log('❌ NOT showing specialist prompt - missing email or service');
           }
+        } else {
+          console.log('⏳ Not ready yet. Missing:', data.missingFields);
         }
       }
 
