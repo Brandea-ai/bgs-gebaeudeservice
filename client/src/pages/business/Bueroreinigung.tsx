@@ -49,12 +49,10 @@ export default function Bueroreinigung() {
                 Zuverlässige Reinigungslösungen für Büros und Geschäftsräume in Zürich, Zug und Luzern. Flexibel, effizient und auf Ihre Bedürfnisse zugeschnitten.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link href="/kontakt">
-                  <Button size="lg" className="text-lg">
-                    Jetzt anfragen
-                    <ArrowRight className="ml-2 w-5 h-5"/>
-                  </Button>
-                </Link>
+                <Button size="lg" onClick={scrollToContact} className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
+                  Jetzt anfragen
+                  <ArrowRight className="ml-2 w-5 h-5"/>
+                </Button>
                 <AppointmentButton size="lg" variant="outline" className="text-lg" />
               </div>
             </div>
@@ -305,12 +303,10 @@ export default function Bueroreinigung() {
               Kontaktieren Sie uns für ein kostenloses Angebot. Wir beraten Sie gerne persönlich.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/kontakt">
-                <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
-                  Jetzt Kontakt aufnehmen
-                  <ArrowRight className="ml-2 w-5 h-5"/>
-                </Button>
-              </Link>
+              <Button size="lg" onClick={scrollToContact} className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
+                Jetzt Kontakt aufnehmen
+                <ArrowRight className="ml-2 w-5 h-5"/>
+              </Button>
               <AppointmentButton size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8" />
             </div>
           </div>

@@ -49,12 +49,10 @@ export default function Fassadenreinigung() {
                 Schonende und effektive Fassadenreinigung für alle Materialien in Zürich, Zug und Luzern. Von Glas über Naturstein bis zu modernen Verbundmaterialien.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link href="/kontakt">
-                  <Button size="lg" className="text-lg">
-                    Jetzt anfragen
-                    <ArrowRight className="ml-2 w-5 h-5"/>
-                  </Button>
-                </Link>
+                <Button size="lg" onClick={scrollToContact} className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
+                  Jetzt anfragen
+                  <ArrowRight className="ml-2 w-5 h-5"/>
+                </Button>
                 <AppointmentButton size="lg" variant="outline" className="text-lg" />
               </div>
             </div>
@@ -307,12 +305,10 @@ export default function Fassadenreinigung() {
               Kontaktieren Sie uns für eine kostenlose Besichtigung und ein unverbindliches Angebot.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/kontakt">
-                <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
-                  Jetzt Kontakt aufnehmen
-                  <ArrowRight className="ml-2 w-5 h-5"/>
-                </Button>
-              </Link>
+              <Button size="lg" onClick={scrollToContact} className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
+                Jetzt Kontakt aufnehmen
+                <ArrowRight className="ml-2 w-5 h-5"/>
+              </Button>
               <AppointmentButton size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8" />
             </div>
           </div>
