@@ -532,23 +532,32 @@ function getMissingFields(extracted: ExtractedInfo): string[] {
 }
 
 /**
- * Determine conversation phase (5-phase model)
+ * Determine conversation phase (5-phase model) - STRIKTE LOGIK
  */
 function determinePhase(extracted: ExtractedInfo): number {
-  // Phase 1: Discovery (industry/company type)
-  if (!extracted.industry && !extracted.service) return 1;
+  // Phase 1: Discovery - industry/service FEHLT
+  if (!extracted.industry && !extracted.service) {
+    return 1;
+  }
 
-  // Phase 2: Needs Assessment (areas, frequency, size)
-  if (!extracted.size && !extracted.frequency && !extracted.areas) return 2;
+  // Phase 2: Needs Assessment - IRGENDWAS von (areas, size, frequency) FEHLT
+  // Verwende OR statt AND - wenn IRGENDWAS fehlt, bleibe in Phase 2!
+  if (!extracted.areas || !extracted.size && !extracted.employees || !extracted.frequency) {
+    return 2;
+  }
 
-  // Phase 3: Solution Pitch (recommendation given)
-  if (extracted.service && extracted.industry && !extracted.email && !extracted.phone) return 3;
+  // Phase 3: Solution Pitch - Bedarf komplett, aber noch KEINE Kontaktdaten
+  if (!extracted.email && !extracted.phone) {
+    return 3;
+  }
 
-  // Phase 4: Contact Collection (email/phone, name, city, timeline)
-  if (!extracted.email && !extracted.phone) return 4;
-  if (!extracted.name || !extracted.city || !extracted.timing) return 4;
+  // Phase 4: Contact Collection - Email/Phone vorhanden, aber NOCH NICHT alles
+  // Checke ob NAME, CITY, TIMING, CALLBACK_PREFERENCE fehlen
+  if (!extracted.name || !extracted.city || !extracted.timing || !extracted.callback_preference) {
+    return 4;
+  }
 
-  // Phase 5: Ready to handoff
+  // Phase 5: Ready to handoff - ALLES vorhanden
   return 5;
 }
 
@@ -617,18 +626,35 @@ export async function chatWithAI(data: ChatRequest): Promise<ChatResponse> {
       `${msg.role === 'user' ? 'Kunde' : supporterName}: ${msg.content}`
     ).join('\n\n');
 
-    // Determine if ready to send (all 9 Pflicht-Datenpunkte vorhanden)
+    // Determine if ready to send - ALLE 9 Pflicht-Datenpunkte MÜSSEN vorhanden sein!
     const readyToSend = !!(
       mergedInfo.name &&
-      mergedInfo.company &&
+      (mergedInfo.company || mergedInfo.industry === 'private') && // Bei Privat ist company optional
       mergedInfo.industry &&
       mergedInfo.service &&
       (mergedInfo.size || mergedInfo.employees) &&
       mergedInfo.frequency &&
+      mergedInfo.areas && // WICHTIG: Bereiche sind Pflicht!
       mergedInfo.city &&
       mergedInfo.timing &&
+      mergedInfo.callback_preference && // WICHTIG: Rückruf-Präferenz ist Pflicht!
       (mergedInfo.email || mergedInfo.phone)
     );
+
+    console.log('🔍 readyToSend Check:', {
+      name: !!mergedInfo.name,
+      company: !!(mergedInfo.company || mergedInfo.industry === 'private'),
+      industry: !!mergedInfo.industry,
+      service: !!mergedInfo.service,
+      size: !!(mergedInfo.size || mergedInfo.employees),
+      frequency: !!mergedInfo.frequency,
+      areas: !!mergedInfo.areas,
+      city: !!mergedInfo.city,
+      timing: !!mergedInfo.timing,
+      callback_preference: !!mergedInfo.callback_preference,
+      contact: !!(mergedInfo.email || mergedInfo.phone),
+      RESULT: readyToSend
+    });
 
     // Get industry pitch
     const industryPitch = getIndustryPitch(mergedInfo.industry);
