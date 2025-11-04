@@ -49,13 +49,13 @@ export default function Sonderleistungen() {
                 Spezielle Reinigungsleistungen für außergewöhnliche Anforderungen in Zürich, Zug und Luzern.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link href="/kontakt">
-                  <Button size="lg" className="text-lg">
+                <Link href="#kontakt-formular">
+                  <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
                     Jetzt anfragen
                     <ArrowRight className="ml-2 w-5 h-5"/>
                   </Button>
                 </Link>
-                <AppointmentButton size="lg" variant="outline" className="text-lg" />
+                <AppointmentButton size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8" />
               </div>
             </div>
             <div className="relative">
@@ -122,7 +122,7 @@ export default function Sonderleistungen() {
               Kontaktieren Sie uns für ein kostenloses Angebot.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/kontakt">
+              <Link href="#kontakt-formular">
                 <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
                   Jetzt Kontakt aufnehmen
                   <ArrowRight className="ml-2 w-5 h-5"/>

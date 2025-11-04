@@ -55,13 +55,13 @@ export default function Hallenreinigung() {
                 Effiziente Reinigung großer Hallen und Lagerflächen in Zürich, Zug und Luzern. Mit Industriegeräten für schnelle Ergebnisse und makellose Sauberkeit.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link href="/kontakt">
-                  <Button size="lg" className="text-lg">
+                <Link href="#kontakt-formular">
+                  <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
                     Jetzt anfragen
                     <ArrowRight className="ml-2 w-5 h-5"/>
                   </Button>
                 </Link>
-                <AppointmentButton size="lg" variant="outline" className="text-lg" />
+                <AppointmentButton size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8" />
               </div>
             </div>
             <div className="relative">
@@ -236,13 +236,13 @@ export default function Hallenreinigung() {
             Kontaktieren Sie uns für ein unverbindliches Angebot. Unsere Experten beraten Sie gerne zu allen Reinigungsdienstleistungen in Zürich, Zug und Luzern.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link href="/kontakt">
-              <Button size="lg" variant="secondary" className="text-lg">
+            <Link href="#kontakt-formular">
+              <Button size="lg" variant="secondary" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
                 Jetzt Kontakt aufnehmen
                 <ArrowRight className="ml-2 w-5 h-5"/>
               </Button>
             </Link>
-            <AppointmentButton size="lg" variant="outline" className="text-lg border-white text-white hover:bg-white hover:text-primary" />
+            <AppointmentButton size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8 border-white text-white hover:bg-white hover:text-primary" />
           </div>
         </div>
       </section>

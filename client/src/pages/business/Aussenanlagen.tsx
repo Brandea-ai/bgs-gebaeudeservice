@@ -54,13 +54,13 @@ export default function Aussenanlagen() {
                 Professionelle Pflege Ihrer Außenanlagen und Grünflächen in Zürich, Zug und Luzern. Für einen gepflegten ersten Eindruck.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link href="/kontakt">
-                  <Button size="lg" className="text-lg">
+                <Link href="#kontakt-formular">
+                  <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
                     Jetzt anfragen
                     <ArrowRight className="ml-2 w-5 h-5"/>
                   </Button>
                 </Link>
-                <AppointmentButton size="lg" variant="outline" className="text-lg" />
+                <AppointmentButton size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8" />
               </div>
             </div>
             <div className="relative">
@@ -244,12 +244,12 @@ export default function Aussenanlagen() {
             Kontaktieren Sie uns für ein unverbindliches Angebot. Unsere Experten beraten Sie gerne.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/kontakt">
-              <Button size="lg" variant="secondary" className="text-lg">
+            <Link href="#kontakt-formular">
+              <Button size="lg" variant="secondary" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
                 Kostenlose Beratung
               </Button>
             </Link>
-            <AppointmentButton size="lg" variant="outline" className="text-lg bg-transparent border-white text-white hover:bg-white hover:text-primary" />
+            <AppointmentButton size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8 bg-transparent border-white text-white hover:bg-white hover:text-primary" />
           </div>
         </div>
       </section>

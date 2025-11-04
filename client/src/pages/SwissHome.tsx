@@ -84,16 +84,17 @@ export default function SwissHome() {
               className="flex flex-col sm:flex-row gap-3 sm:gap-4"
               variants={fadeInUp}
             >
-              <MagneticHover>
-                <Button
-                  size="lg"
-                  onClick={scrollToContact}
-                  className="w-full sm:w-auto text-sm sm:text-base md:text-lg px-6 sm:px-8 shadow-2xl hover:shadow-primary/50 transition-all"
-                >
-                  Kostenlose Beratung
-                  <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
-                </Button>
-              </MagneticHover>
+              <Link href="#kontakt-formular" className="w-full sm:w-auto">
+                <MagneticHover>
+                  <Button
+                    size="lg"
+                    className="w-full sm:w-auto text-sm sm:text-base md:text-lg px-6 sm:px-8 shadow-2xl hover:shadow-primary/50 transition-all"
+                  >
+                    Kostenlose Beratung
+                    <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
+                  </Button>
+                </MagneticHover>
+              </Link>
               <AppointmentButton
                 size="lg"
                 variant="outline"

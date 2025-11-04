@@ -245,8 +245,9 @@ export default function Zuerich() {
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/kontakt">
-                  <MagneticHover><Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
+                <Link href="#kontakt-formular">
+                  <MagneticHover>
+                  <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
                     Jetzt Beratungstermin vereinbaren
                     <ArrowRight className="ml-2 w-5 h-5"/>
                   </Button></MagneticHover>
