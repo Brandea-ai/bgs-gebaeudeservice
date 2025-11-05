@@ -1,0 +1,21 @@
+{
+  "name": "BGS Gebäudeservice",
+  "short_name": "BGS",
+  "description": "Professionelle Gebäudereinigung für Premium, Business und Basis-Services in der Schweiz",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "icons": [
+    {
+      "src": "/swiss-logo.webp",
+      "sizes": "192x192",
+      "type": "image/webp"
+    },
+    {
+      "src": "/swiss-logo.webp",
+      "sizes": "512x512",
+      "type": "image/webp"
+    }
+  ]
+}
