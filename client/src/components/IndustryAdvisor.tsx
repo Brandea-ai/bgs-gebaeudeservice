@@ -1,3 +1,5 @@
+'use client'
+
 import { useState } from 'react';
 import { Sparkles, ArrowRight, Loader2, Building2 } from 'lucide-react';
 

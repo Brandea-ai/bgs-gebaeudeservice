@@ -1,6 +1,8 @@
+'use client'
+
 import { useState, useEffect } from "react";
 import { X, Cookie, Shield, Settings } from "lucide-react";
-import { Link } from "wouter";
+import Link from "next/link";
 
 export default function CookieConsent() {
   const [showBanner, setShowBanner] = useState(false);

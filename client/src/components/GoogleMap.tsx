@@ -1,4 +1,14 @@
+'use client'
+
 import { useEffect, useRef } from 'react';
+
+// Google Maps Type Declaration
+declare global {
+  interface Window {
+    initMap: () => void;
+  }
+  const google: any;
+}
 
 interface GoogleMapProps {
   apiKey: string;
@@ -20,7 +30,7 @@ export default function GoogleMap({
   className = "w-full h-96"
 }: GoogleMapProps) {
   const mapRef = useRef<HTMLDivElement>(null);
-  const mapInstanceRef = useRef<google.maps.Map | null>(null);
+  const mapInstanceRef = useRef<any>(null);
 
   useEffect(() => {
     // Load Google Maps script

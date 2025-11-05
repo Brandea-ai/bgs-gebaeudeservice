@@ -1,6 +1,9 @@
+'use client'
+
 import { useState, useEffect } from "react";
 import { scrollToContact } from "../utils/scroll";
-import { Link, useLocation } from "wouter";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ChevronDown, Menu, X, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -56,7 +59,7 @@ export default function Navigation() {
   const [isVisible, setIsVisible] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null);
-  const [location] = useLocation();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -83,7 +86,7 @@ export default function Navigation() {
   useEffect(() => {
     setIsMobileMenuOpen(false);
     setActiveMegaMenu(null);
-  }, [location]);
+  }, [pathname]);
 
   return (
     <>

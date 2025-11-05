@@ -2,11 +2,11 @@ import { Variants } from 'framer-motion';
 
 // Premium easing curves
 export const easings = {
-  smooth: [0.22, 1, 0.36, 1],
-  spring: [0.34, 1.56, 0.64, 1],
-  elastic: [0.68, -0.55, 0.265, 1.55],
-  premium: [0.645, 0.045, 0.355, 1],
-  bounce: [0.175, 0.885, 0.32, 1.275],
+  smooth: [0.22, 1, 0.36, 1] as const,
+  spring: [0.34, 1.56, 0.64, 1] as const,
+  elastic: [0.68, -0.55, 0.265, 1.55] as const,
+  premium: [0.645, 0.045, 0.355, 1] as const,
+  bounce: [0.175, 0.885, 0.32, 1.275] as const,
 };
 
 // Fade in animations

@@ -1,3 +1,5 @@
+'use client'
+
 import { useState, useEffect, useRef } from 'react';
 import { MessageCircle, X, Send, Loader2, CheckCircle2, Shield, Sparkles, Phone, Mail, Circle } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';

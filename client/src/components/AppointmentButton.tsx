@@ -1,3 +1,5 @@
+'use client'
+
 import { Calendar } from 'lucide-react';
 import { Button } from './ui/button';
 import { useChatbot } from '../contexts/ChatbotContext';

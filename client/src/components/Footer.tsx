@@ -1,4 +1,6 @@
-import { Link } from "wouter";
+'use client'
+
+import Link from "next/link";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useState } from "react";
 

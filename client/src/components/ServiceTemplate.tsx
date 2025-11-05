@@ -1,5 +1,7 @@
+'use client'
+
 import { ReactNode } from "react";
-import { Link } from "wouter";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Check, ArrowRight } from "lucide-react";

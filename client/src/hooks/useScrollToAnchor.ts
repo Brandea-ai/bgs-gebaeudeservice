@@ -1,5 +1,7 @@
+'use client'
+
 import { useEffect } from 'react';
-import { useLocation } from 'wouter';
+import { usePathname } from 'next/navigation';
 
 /**
  * Custom Hook für Anchor-Scroll nach Navigation
@@ -14,7 +16,7 @@ import { useLocation } from 'wouter';
  * }
  */
 export function useScrollToAnchor() {
-  const [location] = useLocation();
+  const pathname = usePathname();
 
   useEffect(() => {
     // Warte kurz, bis die Seite vollständig gerendert ist
@@ -36,5 +38,5 @@ export function useScrollToAnchor() {
     }, 100); // 100ms Verzögerung für besseres Rendering
 
     return () => clearTimeout(timer);
-  }, [location]); // Trigger bei jeder Location-Änderung
+  }, [pathname]); // Trigger bei jeder Pathname-Änderung
 }
