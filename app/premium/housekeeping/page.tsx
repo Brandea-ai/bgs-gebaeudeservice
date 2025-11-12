@@ -74,6 +74,18 @@ export default function Housekeeping() {
         </div>
       </section>
 
+      {/* H2 with Location Keywords */}
+      <section className="py-12 bg-white">
+        <div className="container">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-4 text-center">
+            Exklusives Private Housekeeping in Zürich, Zug und Luzern
+          </h2>
+          <p className="text-base sm:text-lg text-slate-600 text-center max-w-3xl mx-auto">
+            Unser erfahrenes Housekeeping-Team bietet maßgeschneiderte Services für anspruchsvolle Privathaushalte. Diskret, professionell und mit Premium-Produkten für höchste Zufriedenheit.
+          </p>
+        </div>
+      </section>
+
       <section className="py-20 bg-white">
         <div className="container">
           <div className="grid md:grid-cols-4 gap-8 mb-20">
@@ -255,6 +267,37 @@ export default function Housekeeping() {
             </TabsContent>
           </Tabs>
 
+          {/* Internal Links Section */}
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-8 text-center">
+            Entdecken Sie unsere weiteren Services
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6 mb-20">
+            <Link href="/premium/luxusimmobilien">
+              <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer h-full">
+                <h3 className="font-bold text-lg mb-2 text-primary">Luxusimmobilien Reinigung</h3>
+                <p className="text-slate-600 text-sm">Maßgeschneiderte Reinigung für Luxusimmobilien mit Expertise für Edeloberflächen.</p>
+              </Card>
+            </Link>
+            <Link href="/basis/unterhaltsreinigung">
+              <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer h-full">
+                <h3 className="font-bold text-lg mb-2 text-primary">Unterhaltsreinigung</h3>
+                <p className="text-slate-600 text-sm">Regelmäßige professionelle Reinigung für Büros und Gewerbeflächen.</p>
+              </Card>
+            </Link>
+            <Link href="/basis/beschaffung">
+              <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer h-full">
+                <h3 className="font-bold text-lg mb-2 text-primary">Beschaffungsmanagement</h3>
+                <p className="text-slate-600 text-sm">Automatische Beschaffung von Reinigungsmitteln und Verbrauchsmaterialien.</p>
+              </Card>
+            </Link>
+            <Link href="/premium/privatjet">
+              <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer h-full">
+                <h3 className="font-bold text-lg mb-2 text-primary">Privatjet Reinigung</h3>
+                <p className="text-slate-600 text-sm">Professionelle Reinigung für Privatjets mit höchsten Standards.</p>
+              </Card>
+            </Link>
+          </div>
+
           <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-8 text-center">Häufig gestellte Fragen</h2>
           <Accordion type="single" collapsible className="max-w-3xl mx-auto">
             <AccordionItem value="item-1">
@@ -290,6 +333,24 @@ export default function Housekeeping() {
               </AccordionTrigger>
               <AccordionContent className="text-slate-700 leading-relaxed pt-4">
                 Wir verwenden ausschließlich Premium-Produkte (z.B. Miele, Kärcher Professional, ökologische Spezialreiniger). Gerne auch Ihre bevorzugten Marken.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-5">
+              <AccordionTrigger className="text-lg font-semibold">
+                Übernehmen Sie auch Zusatzaufgaben wie Einkäufe oder Besorgungen?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-700 leading-relaxed pt-4">
+                Ja, unser Concierge-Paket umfasst auch Einkaufsservice, Besorgungen, Empfang von Lieferungen und weitere Dienstleistungen. Wir passen uns flexibel Ihren Bedürfnissen an und können auch kurzfristige Wünsche erfüllen.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-6">
+              <AccordionTrigger className="text-lg font-semibold">
+                Was kostet ein privater Housekeeping-Service?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-700 leading-relaxed pt-4">
+                Die Kosten variieren je nach Umfang und Häufigkeit der Leistungen. Ein Basis-Service beginnt bei CHF 45 pro Stunde, Premium-Pakete mit täglichem Service werden individuell kalkuliert. Kontaktieren Sie uns für ein maßgeschneidertes Angebot.
               </AccordionContent>
             </AccordionItem>
           </Accordion>

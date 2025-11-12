@@ -74,6 +74,18 @@ export default function Luxusimmobilien() {
         </div>
       </section>
 
+      {/* H2 with Location Keywords */}
+      <section className="py-12 bg-white">
+        <div className="container">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-4 text-center">
+            Luxusimmobilien-Reinigung in Zürich, Zug und Luzern – Expertise für edle Materialien
+          </h2>
+          <p className="text-base sm:text-lg text-slate-600 text-center max-w-3xl mx-auto">
+            Unsere spezialisierten Teams bieten maßgeschneiderte Reinigungslösungen für anspruchsvolle Immobilien mit wertvollen Kunstwerken, Antiquitäten und exklusiven Materialien.
+          </p>
+        </div>
+      </section>
+
       <section className="py-20 bg-white">
         <div className="container">
           <div className="grid md:grid-cols-4 gap-8 mb-20">
@@ -230,6 +242,43 @@ export default function Luxusimmobilien() {
             </TabsContent>
           </Tabs>
 
+          {/* Internal Links Section */}
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-8 text-center">
+            Entdecken Sie unsere weiteren Services
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6 mb-20">
+            <Link href="/premium/privatjet">
+              <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer h-full">
+                <h3 className="font-bold text-lg mb-2 text-primary">Privatjet Reinigung</h3>
+                <p className="text-slate-600 text-sm">Professionelle Reinigung für Privatjets mit höchsten Standards.</p>
+              </Card>
+            </Link>
+            <Link href="/premium/yacht">
+              <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer h-full">
+                <h3 className="font-bold text-lg mb-2 text-primary">Yacht Reinigung</h3>
+                <p className="text-slate-600 text-sm">Spezialisierte Reinigung für Luxus-Yachten mit Marine-Expertise.</p>
+              </Card>
+            </Link>
+            <Link href="/premium/housekeeping">
+              <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer h-full">
+                <h3 className="font-bold text-lg mb-2 text-primary">Private Housekeeping</h3>
+                <p className="text-slate-600 text-sm">Exklusiver Housekeeping-Service für höchste Ansprüche.</p>
+              </Card>
+            </Link>
+            <Link href="/basis/hausmeisterservice">
+              <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer h-full">
+                <h3 className="font-bold text-lg mb-2 text-primary">Hausmeisterservice</h3>
+                <p className="text-slate-600 text-sm">Zuverlässige Objektbetreuung mit 24/7 Notfall-Service.</p>
+              </Card>
+            </Link>
+            <Link href="/business/fensterreinigung">
+              <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer h-full">
+                <h3 className="font-bold text-lg mb-2 text-primary">Fensterreinigung</h3>
+                <p className="text-slate-600 text-sm">Streifenfreie Fensterreinigung für alle Materialien.</p>
+              </Card>
+            </Link>
+          </div>
+
           <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-8 text-center">Häufig gestellte Fragen</h2>
           <Accordion type="single" collapsible className="max-w-3xl mx-auto">
             <AccordionItem value="item-1">
@@ -265,6 +314,24 @@ export default function Luxusimmobilien() {
               </AccordionTrigger>
               <AccordionContent className="text-slate-700 leading-relaxed pt-4">
                 Ja, bei Notfällen wie Wasserschäden oder vor wichtigen Events sind wir auch kurzfristig für Sie da. 24/7 Erreichbarkeit für Premium-Kunden.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-5">
+              <AccordionTrigger className="text-lg font-semibold">
+                Wie gewährleisten Sie die Sicherheit wertvoller Gegenstände?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-700 leading-relaxed pt-4">
+                Alle Mitarbeiter durchlaufen ein mehrstufiges Auswahlverfahren inklusive Referenzprüfung und Führungszeugnis. Wir arbeiten nach musealen Standards und dokumentieren jeden Einsatz. Zusätzlich besteht eine Versicherung mit CHF 10 Millionen Deckung.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-6">
+              <AccordionTrigger className="text-lg font-semibold">
+                Arbeiten Sie auch mit Restauratoren und Kunstexperten zusammen?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-700 leading-relaxed pt-4">
+                Ja, für besonders wertvolle oder empfindliche Kunstwerke arbeiten wir mit Restauratoren und Kunstexperten zusammen. Bei Bedarf holen wir Fachgutachten ein, um die optimale Reinigungs- und Pflegemethode zu bestimmen.
               </AccordionContent>
             </AccordionItem>
           </Accordion>

@@ -74,6 +74,18 @@ export default function Fensterreinigung() {
         </div>
       </section>
 
+      {/* H2 with Location Keywords */}
+      <section className="py-12 bg-white">
+        <div className="container">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-4 text-center">
+            Professionelle Fensterreinigung in Zürich, Zug und Luzern
+          </h2>
+          <p className="text-base sm:text-lg text-slate-600 text-center max-w-3xl mx-auto">
+            Unsere erfahrenen Fachkräfte sorgen für streifenfreien Durchblick in Büros, Geschäften und Gewerbeobjekten. Von Schaufenstern bis Hochhausfassaden – wir reinigen alle Glasflächen professionell.
+          </p>
+        </div>
+      </section>
+
       {/* Features */}
       <section className="py-16 bg-white">
         <div className="container">
@@ -178,6 +190,38 @@ export default function Fensterreinigung() {
             </TabsContent>
           </Tabs>
 
+          {/* Internal Links Section */}
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-8 text-center">
+            Entdecken Sie unsere weiteren Services
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6 mb-20">
+            <Link href="/business/fassadenreinigung">
+              <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer h-full">
+                <h3 className="font-bold text-lg mb-2 text-primary">Fassadenreinigung</h3>
+                <p className="text-slate-600 text-sm">Professionelle Reinigung von Fassaden und Außenwänden für gepflegten Eindruck.</p>
+              </Card>
+            </Link>
+            <Link href="/business/bueroreinigung">
+              <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer h-full">
+                <h3 className="font-bold text-lg mb-2 text-primary">Büroreinigung</h3>
+                <p className="text-slate-600 text-sm">Regelmäßige professionelle Reinigung für Büros und Geschäftsräume.</p>
+              </Card>
+            </Link>
+            <Link href="/basis/unterhaltsreinigung">
+              <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer h-full">
+                <h3 className="font-bold text-lg mb-2 text-primary">Unterhaltsreinigung</h3>
+                <p className="text-slate-600 text-sm">Zuverlässige regelmäßige Reinigung für saubere Arbeitsumgebung.</p>
+              </Card>
+            </Link>
+            <Link href="/business/facility-management">
+              <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer h-full">
+                <h3 className="font-bold text-lg mb-2 text-primary">Facility Management</h3>
+                <p className="text-slate-600 text-sm">Umfassende Gebäudedienstleistungen aus einer Hand.</p>
+              </Card>
+            </Link>
+          </div>
+
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-8 text-center">Häufig gestellte Fragen</h2>
           <Accordion type="single" collapsible className="max-w-3xl mx-auto">
             <AccordionItem value="item-1">
               <AccordionTrigger>Reinigen Sie auch bei schlechtem Wetter?</AccordionTrigger>
@@ -189,6 +233,34 @@ export default function Fensterreinigung() {
               <AccordionTrigger>Wie lange dauert eine Fensterreinigung?</AccordionTrigger>
               <AccordionContent>
                 Das hängt von der Anzahl und Größe der Fenster ab. Ein durchschnittliches Bürogebäude (50 Fenster) dauert 2-3 Stunden.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-3">
+              <AccordionTrigger>Was kostet die professionelle Fensterreinigung?</AccordionTrigger>
+              <AccordionContent>
+                Die Preise variieren je nach Anzahl, Größe und Zugänglichkeit der Fenster. Standardfenster ab CHF 3-5 pro Fenster (innen & außen), Schaufenster ab CHF 25 pro m². Gerne erstellen wir ein individuelles Angebot.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-4">
+              <AccordionTrigger>Reinigen Sie auch Schaufenster regelmäßig?</AccordionTrigger>
+              <AccordionContent>
+                Ja, für Geschäfte bieten wir wöchentliche oder mehrmals wöchentliche Schaufensterreinigung an. Besonders wichtig für Einzelhandel, Restaurants und Showrooms, um stets einen perfekten ersten Eindruck zu hinterlassen.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-5">
+              <AccordionTrigger>Können Sie auch Hochhausfenster reinigen?</AccordionTrigger>
+              <AccordionContent>
+                Ja, wir sind auf Höhenarbeiten spezialisiert. Mit zertifizierten Industriekletterern, Hebebühnen und Teleskopstangen-Systemen reinigen wir Fenster bis 50m Höhe. Alle Mitarbeiter verfügen über FISAT-Zertifizierungen.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-6">
+              <AccordionTrigger>Wie oft sollten Fenster gereinigt werden?</AccordionTrigger>
+              <AccordionContent>
+                Das hängt von der Lage und Nutzung ab. Schaufenster wöchentlich, Bürogebäude 4-6x jährlich, Produktionshallen 2-4x jährlich. Wir beraten Sie gerne zur optimalen Reinigungsfrequenz für Ihr Objekt.
               </AccordionContent>
             </AccordionItem>
           </Accordion>

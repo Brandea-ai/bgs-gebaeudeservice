@@ -80,6 +80,15 @@ export default function Maschinenreinigung() {
         </div>
       </section>
 
+      {/* Location H2 */}
+      <section className="py-16 bg-white">
+        <div className="container">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-4 text-center">
+            Professionelle Maschinenreinigung in Zürich, Zug und Luzern
+          </h2>
+        </div>
+      </section>
+
       {/* Features Section with Image Left */}
       <section className="py-20 bg-slate-50">
         <div className="container">

@@ -79,6 +79,15 @@ export default function Baureinigung() {
         </div>
       </section>
 
+      {/* Location H2 */}
+      <section className="py-16 bg-white">
+        <div className="container">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-4 text-center">
+            Baureinigung in Zürich, Zug und Luzern
+          </h2>
+        </div>
+      </section>
+
       {/* Features */}
       <section className="py-16 bg-white">
         <div className="container">
@@ -176,6 +185,57 @@ export default function Baureinigung() {
               </Card>
             </TabsContent>
           </Tabs>
+        </div>
+      </section>
+
+      {/* Internal Links Section */}
+      <section className="py-20 bg-white">
+        <div className="container">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-8 text-center">
+            Entdecken Sie unsere weiteren Services
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            <Link href="/business/industriereinigung">
+              <Card className="p-6 hover:shadow-lg transition-shadow h-full">
+                <h3 className="font-bold text-lg mb-2 text-primary hover:text-red-600 transition-colors">
+                  Industriereinigung →
+                </h3>
+                <p className="text-sm text-slate-600">
+                  Spezialisierte Reinigung für Produktionshallen und Industrieanlagen
+                </p>
+              </Card>
+            </Link>
+            <Link href="/business/fassadenreinigung">
+              <Card className="p-6 hover:shadow-lg transition-shadow h-full">
+                <h3 className="font-bold text-lg mb-2 text-primary hover:text-red-600 transition-colors">
+                  Fassadenreinigung →
+                </h3>
+                <p className="text-sm text-slate-600">
+                  Schonende Reinigung für Glas, Naturstein und moderne Verbundmaterialien
+                </p>
+              </Card>
+            </Link>
+            <Link href="/sonderleistungen">
+              <Card className="p-6 hover:shadow-lg transition-shadow h-full">
+                <h3 className="font-bold text-lg mb-2 text-primary hover:text-red-600 transition-colors">
+                  Sonderleistungen →
+                </h3>
+                <p className="text-sm text-slate-600">
+                  Spezialreinigungen für besondere Anforderungen und Materialien
+                </p>
+              </Card>
+            </Link>
+            <Link href="/business/facility-management">
+              <Card className="p-6 hover:shadow-lg transition-shadow h-full">
+                <h3 className="font-bold text-lg mb-2 text-primary hover:text-red-600 transition-colors">
+                  Facility Management →
+                </h3>
+                <p className="text-sm text-slate-600">
+                  Ganzheitliche Betreuung Ihrer Immobilie aus einer Hand
+                </p>
+              </Card>
+            </Link>
+          </div>
         </div>
       </section>
 

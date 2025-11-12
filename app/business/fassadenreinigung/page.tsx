@@ -74,6 +74,15 @@ export default function Fassadenreinigung() {
         </div>
       </section>
 
+      {/* Location H2 */}
+      <section className="py-16 bg-white">
+        <div className="container">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-4 text-center">
+            Fassadenreinigung in Zürich, Zug und Luzern
+          </h2>
+        </div>
+      </section>
+
       <section className="py-20 bg-white">
         <div className="container">
           <div className="grid md:grid-cols-4 gap-8 mb-20">
@@ -256,6 +265,53 @@ export default function Fassadenreinigung() {
               </Card>
             </TabsContent>
           </Tabs>
+
+          {/* Internal Links Section */}
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-8 text-center">
+            Entdecken Sie unsere weiteren Services
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6 mb-20">
+            <Link href="/business/fensterreinigung">
+              <Card className="p-6 hover:shadow-lg transition-shadow h-full">
+                <h3 className="font-bold text-lg mb-2 text-primary hover:text-red-600 transition-colors">
+                  Fensterreinigung →
+                </h3>
+                <p className="text-sm text-slate-600">
+                  Streifenfreie Glasreinigung für Bürogebäude und Geschäftsflächen
+                </p>
+              </Card>
+            </Link>
+            <Link href="/business/baureinigung">
+              <Card className="p-6 hover:shadow-lg transition-shadow h-full">
+                <h3 className="font-bold text-lg mb-2 text-primary hover:text-red-600 transition-colors">
+                  Baureinigung →
+                </h3>
+                <p className="text-sm text-slate-600">
+                  Professionelle Endreinigung für Neubauten und Renovierungen
+                </p>
+              </Card>
+            </Link>
+            <Link href="/basis/winterdienst">
+              <Card className="p-6 hover:shadow-lg transition-shadow h-full">
+                <h3 className="font-bold text-lg mb-2 text-primary hover:text-red-600 transition-colors">
+                  Winterdienst →
+                </h3>
+                <p className="text-sm text-slate-600">
+                  Zuverlässige Schneeräumung und Streudienst mit 24/7 Bereitschaft
+                </p>
+              </Card>
+            </Link>
+            <Link href="/business/facility-management">
+              <Card className="p-6 hover:shadow-lg transition-shadow h-full">
+                <h3 className="font-bold text-lg mb-2 text-primary hover:text-red-600 transition-colors">
+                  Facility Management →
+                </h3>
+                <p className="text-sm text-slate-600">
+                  Ganzheitliche Betreuung Ihrer Immobilie aus einer Hand
+                </p>
+              </Card>
+            </Link>
+          </div>
 
           <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-8 text-center">Häufig gestellte Fragen</h2>
           <Accordion type="single" collapsible className="max-w-3xl mx-auto">

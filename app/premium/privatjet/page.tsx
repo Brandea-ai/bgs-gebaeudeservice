@@ -74,6 +74,18 @@ export default function Privatjet() {
         </div>
       </section>
 
+      {/* H2 with Location Keywords */}
+      <section className="py-12 bg-white">
+        <div className="container">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-4 text-center">
+            Professionelle Privatjet Reinigung in Zürich, Zug und Luzern
+          </h2>
+          <p className="text-base sm:text-lg text-slate-600 text-center max-w-3xl mx-auto">
+            Unsere erfahrenen Spezialisten bieten erstklassige Reinigungsdienste für Privatjets an allen großen Schweizer Flughäfen. Mit über 15 Jahren Erfahrung garantieren wir makellose Sauberkeit und absolute Diskretion.
+          </p>
+        </div>
+      </section>
+
       <section className="py-20 bg-white">
         <div className="container">
           <div className="grid md:grid-cols-4 gap-8 mb-20">
@@ -230,6 +242,37 @@ export default function Privatjet() {
             </TabsContent>
           </Tabs>
 
+          {/* Internal Links Section */}
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-8 text-center">
+            Entdecken Sie unsere weiteren Services
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6 mb-20">
+            <Link href="/premium/yacht">
+              <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer h-full">
+                <h3 className="font-bold text-lg mb-2 text-primary">Yacht Reinigung</h3>
+                <p className="text-slate-600 text-sm">Spezialisierte Reinigung für Luxus-Yachten mit Marine-Expertise und Hochglanzpolitur.</p>
+              </Card>
+            </Link>
+            <Link href="/premium/luxusimmobilien">
+              <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer h-full">
+                <h3 className="font-bold text-lg mb-2 text-primary">Luxusimmobilien Reinigung</h3>
+                <p className="text-slate-600 text-sm">Maßgeschneiderte Reinigung für Luxusimmobilien mit Expertise für Edeloberflächen.</p>
+              </Card>
+            </Link>
+            <Link href="/premium/housekeeping">
+              <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer h-full">
+                <h3 className="font-bold text-lg mb-2 text-primary">Private Housekeeping</h3>
+                <p className="text-slate-600 text-sm">Exklusiver Housekeeping-Service für höchste Ansprüche mit Premium-Produkten.</p>
+              </Card>
+            </Link>
+            <Link href="/business/facility-management">
+              <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer h-full">
+                <h3 className="font-bold text-lg mb-2 text-primary">Facility Management</h3>
+                <p className="text-slate-600 text-sm">Umfassende Gebäudedienstleistungen aus einer Hand für Ihre Immobilien.</p>
+              </Card>
+            </Link>
+          </div>
+
           <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-8 text-center">Häufig gestellte Fragen</h2>
           <Accordion type="single" collapsible className="max-w-3xl mx-auto">
             <AccordionItem value="item-1">
@@ -265,6 +308,24 @@ export default function Privatjet() {
               </AccordionTrigger>
               <AccordionContent className="text-slate-700 leading-relaxed pt-4">
                 Die Preise variieren je nach Jet-Größe und Leistungsumfang. Eine Standard-Innenreinigung für einen Light Jet beginnt bei CHF 800. Für ein individuelles Angebot kontaktieren Sie uns bitte direkt.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-5">
+              <AccordionTrigger className="text-lg font-semibold">
+                Wie gewährleisten Sie absolute Diskretion?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-700 leading-relaxed pt-4">
+                Alle unsere Mitarbeiter unterzeichnen strenge Vertraulichkeitsvereinbarungen (NDAs). Wir behandeln Informationen über Flugpläne, Passagiere und Ausstattung mit höchster Diskretion. Referenzen geben wir nur mit ausdrücklicher Genehmigung.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-6">
+              <AccordionTrigger className="text-lg font-semibold">
+                Wie oft sollte ein Privatjet gereinigt werden?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-700 leading-relaxed pt-4">
+                Das hängt von der Nutzungsfrequenz ab. Bei regelmäßigem Einsatz empfehlen wir eine Innenreinigung nach jedem Flug oder mindestens wöchentlich. Eine Außenreinigung sollte monatlich oder nach längeren Standzeiten erfolgen.
               </AccordionContent>
             </AccordionItem>
           </Accordion>

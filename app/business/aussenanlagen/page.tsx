@@ -79,6 +79,15 @@ export default function Aussenanlagen() {
         </div>
       </section>
 
+      {/* Location H2 */}
+      <section className="py-16 bg-white">
+        <div className="container">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-4 text-center">
+            Außenanlagenpflege in Zürich, Zug und Luzern
+          </h2>
+        </div>
+      </section>
+
       {/* Features */}
       <section className="py-16 bg-white">
         <div className="container">
@@ -177,6 +186,57 @@ export default function Aussenanlagen() {
               </Card>
             </TabsContent>
           </Tabs>
+        </div>
+      </section>
+
+      {/* Internal Links Section */}
+      <section className="py-20 bg-white">
+        <div className="container">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-8 text-center">
+            Entdecken Sie unsere weiteren Services
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            <Link href="/basis/winterdienst">
+              <Card className="p-6 hover:shadow-lg transition-shadow h-full">
+                <h3 className="font-bold text-lg mb-2 text-primary hover:text-red-600 transition-colors">
+                  Winterdienst →
+                </h3>
+                <p className="text-sm text-slate-600">
+                  Zuverlässige Schneeräumung und Streudienst mit 24/7 Bereitschaft
+                </p>
+              </Card>
+            </Link>
+            <Link href="/basis/hausmeisterservice">
+              <Card className="p-6 hover:shadow-lg transition-shadow h-full">
+                <h3 className="font-bold text-lg mb-2 text-primary hover:text-red-600 transition-colors">
+                  Hausmeisterservice →
+                </h3>
+                <p className="text-sm text-slate-600">
+                  Umfassende Objektbetreuung mit 24/7 Notfall-Service
+                </p>
+              </Card>
+            </Link>
+            <Link href="/business/facility-management">
+              <Card className="p-6 hover:shadow-lg transition-shadow h-full">
+                <h3 className="font-bold text-lg mb-2 text-primary hover:text-red-600 transition-colors">
+                  Facility Management →
+                </h3>
+                <p className="text-sm text-slate-600">
+                  Ganzheitliche Betreuung Ihrer Immobilie aus einer Hand
+                </p>
+              </Card>
+            </Link>
+            <Link href="/yacht">
+              <Card className="p-6 hover:shadow-lg transition-shadow h-full">
+                <h3 className="font-bold text-lg mb-2 text-primary hover:text-red-600 transition-colors">
+                  Yachtreinigung →
+                </h3>
+                <p className="text-sm text-slate-600">
+                  Premium Reinigung und Pflege für Luxusyachten
+                </p>
+              </Card>
+            </Link>
+          </div>
         </div>
       </section>
 
