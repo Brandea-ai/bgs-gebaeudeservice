@@ -79,6 +79,18 @@ export default function FacilityManagement() {
         </div>
       </section>
 
+      {/* H2 with Location Keywords */}
+      <section className="py-16 bg-gradient-to-br from-slate-50 to-white">
+        <div className="container">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-6 text-center">
+            Facility Management in Zürich, Zug und Luzern: Alles aus einer Hand
+          </h2>
+          <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-4xl mx-auto text-center">
+            Als führender Facility Management Anbieter in der Schweiz bieten wir Ihnen umfassende Gebäudedienstleistungen für Zürich, Zug und Luzern. Von der professionellen Reinigung über Hausmeisterservice bis zum Winterdienst – wir koordinieren alle Leistungen zentral und sorgen für reibungslose Abläufe in Ihrer Immobilie.
+          </p>
+        </div>
+      </section>
+
       {/* Features */}
       <section className="py-16 bg-white">
         <div className="container">
@@ -187,6 +199,164 @@ export default function FacilityManagement() {
               </Card>
             </TabsContent>
           </Tabs>
+
+          {/* Internal Links Section */}
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-8 text-center">
+            Unsere Facility Management Leistungen im Detail
+          </h2>
+          <p className="text-center text-slate-600 mb-12 max-w-3xl mx-auto">
+            Als Ihr Facility Management Partner bieten wir alle Gebäudedienstleistungen aus einer Hand. Entdecken Sie unser vollständiges Leistungsspektrum:
+          </p>
+
+          <div className="mb-12">
+            <h3 className="text-base sm:text-lg md:text-xl font-bold text-slate-900 mb-6">Premium Services</h3>
+            <div className="grid md:grid-cols-4 gap-4 mb-8">
+              <Link href="/premium/privatjet">
+                <Card className="p-4 hover:shadow-lg transition-shadow h-full">
+                  <h4 className="font-bold text-sm mb-2 text-primary hover:text-red-600 transition-colors">
+                    Privatjet Reinigung →
+                  </h4>
+                  <p className="text-xs text-slate-600">Exklusive Reinigung für Privatjets</p>
+                </Card>
+              </Link>
+              <Link href="/premium/yacht">
+                <Card className="p-4 hover:shadow-lg transition-shadow h-full">
+                  <h4 className="font-bold text-sm mb-2 text-primary hover:text-red-600 transition-colors">
+                    Yacht Reinigung →
+                  </h4>
+                  <p className="text-xs text-slate-600">Professionelle Bootsreinigung</p>
+                </Card>
+              </Link>
+              <Link href="/premium/housekeeping">
+                <Card className="p-4 hover:shadow-lg transition-shadow h-full">
+                  <h4 className="font-bold text-sm mb-2 text-primary hover:text-red-600 transition-colors">
+                    Private Housekeeping →
+                  </h4>
+                  <p className="text-xs text-slate-600">Exklusiver Haushaltservice</p>
+                </Card>
+              </Link>
+              <Link href="/premium/luxusimmobilien">
+                <Card className="p-4 hover:shadow-lg transition-shadow h-full">
+                  <h4 className="font-bold text-sm mb-2 text-primary hover:text-red-600 transition-colors">
+                    Luxusimmobilien →
+                  </h4>
+                  <p className="text-xs text-slate-600">Reinigung für edle Immobilien</p>
+                </Card>
+              </Link>
+            </div>
+
+            <h3 className="text-base sm:text-lg md:text-xl font-bold text-slate-900 mb-6">Business Lösungen</h3>
+            <div className="grid md:grid-cols-4 gap-4 mb-8">
+              <Link href="/business/bueroreinigung">
+                <Card className="p-4 hover:shadow-lg transition-shadow h-full">
+                  <h4 className="font-bold text-sm mb-2 text-primary hover:text-red-600 transition-colors">
+                    Büroreinigung →
+                  </h4>
+                  <p className="text-xs text-slate-600">Reinigung für Bürogebäude</p>
+                </Card>
+              </Link>
+              <Link href="/business/industriereinigung">
+                <Card className="p-4 hover:shadow-lg transition-shadow h-full">
+                  <h4 className="font-bold text-sm mb-2 text-primary hover:text-red-600 transition-colors">
+                    Industriereinigung →
+                  </h4>
+                  <p className="text-xs text-slate-600">Spezialisierte Industriereinigung</p>
+                </Card>
+              </Link>
+              <Link href="/business/baureinigung">
+                <Card className="p-4 hover:shadow-lg transition-shadow h-full">
+                  <h4 className="font-bold text-sm mb-2 text-primary hover:text-red-600 transition-colors">
+                    Baureinigung →
+                  </h4>
+                  <p className="text-xs text-slate-600">Professionelle Baureinigung</p>
+                </Card>
+              </Link>
+              <Link href="/business/fassadenreinigung">
+                <Card className="p-4 hover:shadow-lg transition-shadow h-full">
+                  <h4 className="font-bold text-sm mb-2 text-primary hover:text-red-600 transition-colors">
+                    Fassadenreinigung →
+                  </h4>
+                  <p className="text-xs text-slate-600">Fassaden- und Hochhausreinigung</p>
+                </Card>
+              </Link>
+              <Link href="/business/fensterreinigung">
+                <Card className="p-4 hover:shadow-lg transition-shadow h-full">
+                  <h4 className="font-bold text-sm mb-2 text-primary hover:text-red-600 transition-colors">
+                    Fensterreinigung →
+                  </h4>
+                  <p className="text-xs text-slate-600">Streifenfreie Fensterreinigung</p>
+                </Card>
+              </Link>
+              <Link href="/business/aussenanlagen">
+                <Card className="p-4 hover:shadow-lg transition-shadow h-full">
+                  <h4 className="font-bold text-sm mb-2 text-primary hover:text-red-600 transition-colors">
+                    Außenanlagen →
+                  </h4>
+                  <p className="text-xs text-slate-600">Pflege von Außenanlagen</p>
+                </Card>
+              </Link>
+              <Link href="/business/hallenreinigung">
+                <Card className="p-4 hover:shadow-lg transition-shadow h-full">
+                  <h4 className="font-bold text-sm mb-2 text-primary hover:text-red-600 transition-colors">
+                    Hallenreinigung →
+                  </h4>
+                  <p className="text-xs text-slate-600">Reinigung großer Hallen</p>
+                </Card>
+              </Link>
+              <Link href="/business/maschinenreinigung">
+                <Card className="p-4 hover:shadow-lg transition-shadow h-full">
+                  <h4 className="font-bold text-sm mb-2 text-primary hover:text-red-600 transition-colors">
+                    Maschinenreinigung →
+                  </h4>
+                  <p className="text-xs text-slate-600">Industrielle Maschinenreinigung</p>
+                </Card>
+              </Link>
+            </div>
+
+            <h3 className="text-base sm:text-lg md:text-xl font-bold text-slate-900 mb-6">Basisleistungen</h3>
+            <div className="grid md:grid-cols-4 gap-4">
+              <Link href="/basis/unterhaltsreinigung">
+                <Card className="p-4 hover:shadow-lg transition-shadow h-full">
+                  <h4 className="font-bold text-sm mb-2 text-primary hover:text-red-600 transition-colors">
+                    Unterhaltsreinigung →
+                  </h4>
+                  <p className="text-xs text-slate-600">Regelmäßige Unterhaltsreinigung</p>
+                </Card>
+              </Link>
+              <Link href="/basis/hausmeisterservice">
+                <Card className="p-4 hover:shadow-lg transition-shadow h-full">
+                  <h4 className="font-bold text-sm mb-2 text-primary hover:text-red-600 transition-colors">
+                    Hausmeisterservice →
+                  </h4>
+                  <p className="text-xs text-slate-600">Professioneller Hausmeisterdienst</p>
+                </Card>
+              </Link>
+              <Link href="/basis/winterdienst">
+                <Card className="p-4 hover:shadow-lg transition-shadow h-full">
+                  <h4 className="font-bold text-sm mb-2 text-primary hover:text-red-600 transition-colors">
+                    Winterdienst →
+                  </h4>
+                  <p className="text-xs text-slate-600">24/7 Schneeräumung und Salzstreuung</p>
+                </Card>
+              </Link>
+              <Link href="/basis/beschaffung">
+                <Card className="p-4 hover:shadow-lg transition-shadow h-full">
+                  <h4 className="font-bold text-sm mb-2 text-primary hover:text-red-600 transition-colors">
+                    Beschaffungsmanagement →
+                  </h4>
+                  <p className="text-xs text-slate-600">Automatische Materialbeschaffung</p>
+                </Card>
+              </Link>
+              <Link href="/basis/sonderleistungen">
+                <Card className="p-4 hover:shadow-lg transition-shadow h-full">
+                  <h4 className="font-bold text-sm mb-2 text-primary hover:text-red-600 transition-colors">
+                    Sonderleistungen →
+                  </h4>
+                  <p className="text-xs text-slate-600">24/7 Notfallreinigung und Spezialservices</p>
+                </Card>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
