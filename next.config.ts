@@ -1,5 +1,8 @@
 import type { NextConfig } from 'next'
 
+// Bis zum Launch nicht indexierbar, siehe app/layout.tsx (Entscheidung E12).
+const isIndexable = process.env.SITE_INDEXABLE === 'true'
+
 const nextConfig: NextConfig = {
   reactStrictMode: true,
 
@@ -64,6 +67,14 @@ const nextConfig: NextConfig = {
             key: 'Referrer-Policy',
             value: 'origin-when-cross-origin'
           },
+          ...(isIndexable
+            ? []
+            : [
+                {
+                  key: 'X-Robots-Tag',
+                  value: 'noindex, nofollow'
+                },
+              ]),
         ],
       },
     ]

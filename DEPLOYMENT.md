@@ -65,14 +65,14 @@ useEffect(() => {
 
 1. **Finde hardcoded Key:**
 ```bash
-grep -rn "AIzaSyBXSSM_mJ5bXXFgVrwE9oeWp2Wk32afiWI" client/src/
+grep -rn "<GOOGLE_API_KEY>" client/src/
 ```
 
 2. **Ersetze in `client/src/pages/Kontakt.tsx`:**
 
 **VORHER:**
 ```tsx
-apiKey="AIzaSyBXSSM_mJ5bXXFgVrwE9oeWp2Wk32afiWI"
+apiKey="<GOOGLE_API_KEY>"
 ```
 
 **NACHHER:**

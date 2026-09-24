@@ -11,6 +11,8 @@ import ErrorBoundary from '@/components/ErrorBoundary'
 
 const inter = Inter({ subsets: ['latin'] })
 
+const isIndexable = process.env.SITE_INDEXABLE === 'true'
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://bgs-gebaeudeservice.vercel.app'),
   title: {
@@ -60,20 +62,25 @@ export const metadata: Metadata = {
     description: 'Professionelle Gebäudereinigung in der Schweiz',
     images: ['/og-image.jpg'],
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  verification: {
-    google: 'your-google-verification-code', // Später hinzufügen
-  },
+  // Bis zum Launch nicht indexierbar. Freischalten nur in der Vercel-Produktion
+  // mit SITE_INDEXABLE=true (Entscheidung E12, Webseite-Analyse/11).
+  robots: isIndexable
+    ? {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          'max-video-preview': -1,
+          'max-image-preview': 'large',
+          'max-snippet': -1,
+        },
+      }
+    : {
+        index: false,
+        follow: false,
+        googleBot: { index: false, follow: false },
+      },
 }
 
 export default function RootLayout({
@@ -82,7 +89,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="de" suppressHydrationWarning>
+    <html lang="de-CH" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
