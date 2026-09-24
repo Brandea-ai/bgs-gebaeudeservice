@@ -25,6 +25,25 @@ Der Agent soll bestätigte Angaben aus dem Ziel-Repository und der richtigen Web
 | B13 | Ist das Angebot rein B2B oder auch für Verbraucher? Welche rechtlichen Besonderheiten bestehen? | Offen | Fachprüfung benötigt |
 | B14 | Wer entscheidet über Positionierung, Markenrichtung, Rechtliches und spätere Launch-Freigabe? | Offen | Verantwortlichkeiten |
 
+## 2a. Gebündelte Rückfragen nach Phase 2 (Stand 24.09.2026)
+
+Nach dem Ping-Pong-Verfahren (Abschnitt 4) gebündelt, mit der Entscheidung, die jeweils davon abhängt. Die Analyse läuft ohne diese Antworten weiter, die betroffenen Punkte bleiben so lange als offen oder HYPOTHESE markiert. **Sofort** bedeutet: öffentlich sichtbares Risiko, unabhängig vom Umbau.
+
+| Nr. | Frage an | Frage | Hängt davon ab | Dringlichkeit |
+|---|---|---|---|---|
+| R1 | Brandea | Enthalten `DEPLOYMENT.md` und `EMAIL_SETUP.md` echte, gültige API-Schlüssel? Das Repository ist öffentlich. Bitte selbst prüfen, der Inhalt wurde hier bewusst nicht eingesehen. | GLOBAL-035 | **Sofort** |
+| R2 | Kunde | **Markenname:** Soll die neue Seite als „BGS Gebäudeservice“ auftreten? Woher kommt „Swiss Reinigungsfirma“/„SWISS REINIGUNG“, und gehört `swiss-reinigung.ch` dem Kunden? | B09, GLOBAL-020, -014, -032 | Hoch |
+| R3 | Kunde | **Leistungen (B03).** Vorschlag aus der Eigenangabe des Kunden, bitte bestätigen oder korrigieren. Die fünf Leistungen könnten sein: 1) regelmässige Unterhaltsreinigung, 2) Spezial- und Sonderreinigungen, 3) Hauswartung/Hausmeisterservice inkl. infrastruktureller Pflege, 4) Winterdienst, 5) Aussen- und Grünflächenpflege bzw. Facility-Services. Werden Privatjet, Yacht, Luxusimmobilien, Housekeeping, Industrie-, Maschinen-, Hallen-, Fassaden-, Fenster-, Bau-Reinigung und Beschaffung tatsächlich angeboten? | B03, alle Leistungsseiten, GLOBAL-021, -030, -033 | Hoch |
+| R4 | Kunde | **Region (B04):** Nur Kantone Luzern und Zug oder auch Zürich bzw. „schweizweit“? Gibt es Niederlassungen oder nur einen Sitz (Emmenbrücke)? | B04, Standortseiten, GLOBAL-021 | Hoch |
+| R5 | Kunde | **Kontaktdaten (B10):** Richtige Telefonnummer, E-Mail und Adresse? An wen sollen Anfragen gehen, den Kunden oder die Agentur? Welche Antwortzeit ist realistisch? Gibt es 24/7-Bereitschaft? | GLOBAL-003, -020, -028 | Hoch |
+| R6 | Kunde | **Belege (B07):** Stimmen die Kundenstimmen und Referenzen? Gibt es Freigaben, echte Team- und Objektfotos, Zertifikate (ISO?), Gründungsjahr, Kundenzahl? | GLOBAL-021, -022, -023 | Hoch (öffentlich sichtbar) |
+| R7 | Kunde/Brandea | **Rechtliches (B13):** Rechtsträger und Rechtsform (GmbH?), UID, reines B2B oder auch Privatkunden, Zielmärkte (nur Schweiz?). Wer erstellt bzw. prüft Impressum und Datenschutz fachlich? | GLOBAL-027, -020 | Hoch |
+| R8 | Brandea/Kunde | **KI-Funktionen und Karte (B05):** Soll der KI-Chat (Terminbuchung) und der „KI-Branchen-Berater“ bleiben? Wird eine interaktive Karte gebraucht? | GLOBAL-002, -019, -027, -034 | Mittel |
+| R9 | Brandea | **Domain und Launch (B08):** Soll die neue Seite unter `bgs-service.ch` die bisherige Wix-Seite ersetzen? Bis wann? Soll die Vorab-Adresse bis dahin aus dem Index genommen werden? | GLOBAL-018, Migrationsbestand in 02 | Mittel |
+| R10 | Kunde | **Ziele (B05, B06):** Was ist eine gute Anfrage (Objektart, Größe, Region), was eine unpassende? Warum wählen Kunden heute BGS statt eines Wettbewerbers? | GLOBAL-030, Intent-Matrix | Mittel |
+| R11 | Brandea | **Daten (B11):** Gibt es Search Console, Analytics oder ein Google-Unternehmensprofil für BGS? Lesezugang möglich? | GLOBAL-029, N-Abschnitt | Niedrig |
+| R12 | Kunde/Brandea | **Verantwortung (B14):** Wer entscheidet über Positionierung, Marke, Rechtliches und die spätere Launch-Freigabe? | G14 | Niedrig |
+
 ## 3. Optionaler JSON-Antwortblock
 
 Dieser Block ist nur ein austauschbares Briefingformat, kein Programmcode. Leere Werte bleiben unbekannt. Keine Passwörter, Tokens, personenbezogenen Kundendaten oder vertraulichen Nachweise hineinkopieren.

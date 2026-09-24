@@ -63,7 +63,7 @@ Verwende kein pauschales „100 % fertig“, solange zwingende Prüfungen offen 
 
 - [x] **Phase 0: Scope klären.** *(erledigt 24.09.2026, siehe FORTSCHRITT.md)* Ziel, Referenz, Produktionsdomain, fünf Leistungen, Regionen und Prüfberechtigungen festhalten.
 - [x] **Phase 1: Bestand sichern.** *(erledigt 24.09.2026, siehe FORTSCHRITT.md)* URL-Inventar, bestehende SEO-/Lead-Baseline und aktuelle Architektur dokumentieren. Funktionierende Inhalte und URLs ausdrücklich markieren.
-- [ ] **Phase 2: Strategie und globale Prüfung.** Positionierung, Suchintentionen, Markenbild, Navigation, technische Grundlagen und Lead-Prozess analysieren.
+- [x] **Phase 2: Strategie und globale Prüfung.** *(erledigt 24.09.2026, 35 globale Befunde, siehe 01-GLOBALE-ANALYSE.md)* Positionierung, Suchintentionen, Markenbild, Navigation, technische Grundlagen und Lead-Prozess analysieren.
 - [ ] **Phase 3: Seitenprüfung.** Homepage, Leistungsübersicht, die fünf Leistungen einzeln, Über uns, Einzugsgebiete, Kontakt, Rechtliches und zusätzliche vorhandene URLs bearbeiten.
 - [ ] **Phase 4: Querprüfung.** Kannibalisierung, widersprüchliche Aussagen, Metadaten, interne Links, Designkonsistenz, Seitentemplates und gemeinsame Backend-Abhängigkeiten prüfen.
 - [ ] **Phase 5: Risiko und Priorisierung.** Launch-Blocker von Wachstumsmaßnahmen unterscheiden; Aufwand, Verantwortung und Abnahmekriterien ergänzen.

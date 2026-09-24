@@ -1,6 +1,6 @@
 # Globale Website-Analyse
 
-**Status: Bestandsaufnahme (Phase 1) erfasst, globale Prüfung (Phase 2) folgt.** Die Punkte A–N sind Prüfaufträge. Befunde werden erst nach Prüfung mit ID und Nachweis eingetragen. Quellen-IDs beziehen sich auf `09-QUELLEN.md`, Nachweis-IDs (N…) auf `08-PRUEFNACHWEISE.md`.
+**Status: Phase 2 durchgeführt am 24.09.2026.** Bestandsaufnahme (Phase 1), 169 Prüfpunkte A–N bearbeitet (145 mit Status abgehakt, 24 begründet offen), 35 globale Befunde. Die Punkte A–N sind Prüfaufträge. Befunde werden erst nach Prüfung mit ID und Nachweis eingetragen. Quellen-IDs beziehen sich auf `09-QUELLEN.md`, Nachweis-IDs (N…) auf `08-PRUEFNACHWEISE.md`.
 
 ## Bestandsaufnahme der aktuellen Architektur (Phase 1, Stand 24.09.2026)
 
@@ -28,18 +28,37 @@ Dokumentiert, nicht bewertet. Die Bewertung folgt in den Abschnitten A–N.
 
 **Eigener Prüfstandard:** Nicht mit Farben beginnen, sondern mit dem Kaufgrund.
 
-- [ ] Branche, fünf Leistungen, bediente Regionen und Ausschlüsse aus bestätigten Angaben erfassen.
-- [ ] Primäres wirtschaftliches Ziel festlegen: qualifizierte Anfragen, gebuchte Erstgespräche oder eine andere reale Zielhandlung.
-- [ ] Für jede Leistung die tatsächlichen Entscheider, Mitentscheider, Auslöser und Einwände erfassen. Berufsrollen und Kaufsituationen sind wichtiger als erfundene Persona-Vornamen.
-- [ ] Persona-Aussagen nach Herkunft trennen: Kundeninterview, Vertriebsbeobachtung, CRM-Auswertung oder noch unbestätigte Hypothese.
-- [ ] Überprüfen, ob Texte den Kundenbedarf beschreiben oder überwiegend Selbstlob des Unternehmens enthalten.
-- [ ] Differenzierungsbehauptungen in ein Nachweisregister aufnehmen: behaupteter Vorteil, Beleg, zulässige Formulierung und zuständige Person.
-- [ ] Leistungsumfang, Grenzen, Mitwirkungspflichten und realistischer Einstieg sind verständlich.
-- [ ] Untersuchen, ob die fünf Leistungen inhaltlich unterscheidbar sind und sinnvolle Auswahlhilfe bieten.
-- [ ] Für das gesamte Angebot eine prägnante Positionierung formulieren lassen: für wen, welches Problem, welches Ergebnis, welche belastbare Besonderheit.
-- [ ] Unbequeme Frage beantworten: **Warum sollte ein passender Kunde dieses Unternehmen wählen, wenn alle Wettbewerber ebenfalls „professionell, zuverlässig und individuell“ versprechen?**
+- [x] Branche, fünf Leistungen, bediente Regionen und Ausschlüsse aus bestätigten Angaben erfassen. → *HYPOTHESE/offen: Bestätigte Angaben fehlen. Der Widerspruch zwischen neuer Seite (18 Leistungen, ZH/ZG/LU, „Schweizweit“) und Kunden-Eigenangabe (2 Bereiche, LU/ZG) ist dokumentiert → B03, B04, GLOBAL-021, GLOBAL-030*
+- [ ] Primäres wirtschaftliches Ziel festlegen: qualifizierte Anfragen, gebuchte Erstgespräche oder eine andere reale Zielhandlung. → *NICHT PRÜFBAR: Geschäftsentscheidung → B05*
+- [ ] Für jede Leistung die tatsächlichen Entscheider, Mitentscheider, Auslöser und Einwände erfassen. Berufsrollen und Kaufsituationen sind wichtiger als erfundene Persona-Vornamen. → *NICHT PRÜFBAR: Kundenangaben fehlen → B04*
+- [x] Persona-Aussagen nach Herkunft trennen: Kundeninterview, Vertriebsbeobachtung, CRM-Auswertung oder noch unbestätigte Hypothese. → *NICHT ANWENDBAR im Bestand (die Seite enthält keine Persona-Aussagen). Zielgruppen in dieser Analyse sind als HYPOTHESE markiert (GLOBAL-030)*
+- [x] Überprüfen, ob Texte den Kundenbedarf beschreiben oder überwiegend Selbstlob des Unternehmens enthalten. → *BEFUND: überwiegend Selbstlob und austauschbare Formeln → GLOBAL-030*
+- [x] Differenzierungsbehauptungen in ein Nachweisregister aufnehmen: behaupteter Vorteil, Beleg, zulässige Formulierung und zuständige Person. → *BEFUND: Register siehe unten („Nachweisregister Unternehmensbehauptungen“), für keine Behauptung liegt ein Beleg vor → GLOBAL-021, GLOBAL-022*
+- [ ] Leistungsumfang, Grenzen, Mitwirkungspflichten und realistischer Einstieg sind verständlich. → *Offen, je Leistungsseite in Phase 3*
+- [ ] Untersuchen, ob die fünf Leistungen inhaltlich unterscheidbar sind und sinnvolle Auswahlhilfe bieten. → *Offen, Phase 4 (Kannibalisierung) nach Klärung B03*
+- [ ] Für das gesamte Angebot eine prägnante Positionierung formulieren lassen: für wen, welches Problem, welches Ergebnis, welche belastbare Besonderheit. → *Offen, braucht B04–B06 → GLOBAL-030*
+- [x] Unbequeme Frage beantworten: **Warum sollte ein passender Kunde dieses Unternehmen wählen, wenn alle Wettbewerber ebenfalls „professionell, zuverlässig und individuell“ versprechen?** → *BEFUND: Derzeit nicht beantwortbar, die Seite enthält keine belegte Besonderheit. Die Antwort muss vom Kunden kommen → B06, GLOBAL-030*
 
 **Ergebnis:** Eine belegte Positionierung oder eine klare Liste fehlender Unternehmensinformationen. Noch unbekannte Fakten nicht mit Werbesprache ersetzen.
+
+
+### Nachweisregister Unternehmensbehauptungen (Stand 24.09.2026)
+
+Keine der Behauptungen ist bisher belegt. Die Spalte „Zulässige Formulierung“ ist ein Vorschlag bis zum Beleg und kein fertiger Text.
+
+| Behauptung | Fundstelle | Beleg | Zulässige Formulierung (Vorschlag) | Zuständig |
+|---|---|---|---|---|
+| „ISO 9001 zertifiziert“, „Zertifizierte Qualität“, „Zertifiziertes Qualitätsmanagementsystem“ | Büroreinigung, Startseite, Baureinigung, Industriereinigung | **Widerlegt:** laut Impressum „in Bearbeitung“ | Streichen. Erst nach Zertifikat nennen, mit Norm, Stelle und Gültigkeit | Geschäftsführung Kunde |
+| „500+ Kunden“ | Startseite | fehlt | Streichen oder belegte Zahl mit Stichtag | Geschäftsführung Kunde |
+| „15+ Jahre Erfahrung“, Gründung 2005 | Startseite, Baureinigung, Über uns | fehlt (Rechtsform und Gründung der GmbH unbekannt) | Nur mit belegtem Gründungsjahr, z. B. Handelsregister | Geschäftsführung Kunde |
+| „einer der führenden Reinigungsunternehmen in der Schweiz“, „führende Reinigungsfirma in Zug“ | Über uns, Zug | fehlt | Streichen | Redaktion |
+| „Schweizweit“, Standort Zürich, „alle großen Schweizer Flughäfen“ | Startseite, Zürich-Seite, Karte, Privatjet | Widerspruch zur Eigenangabe (LU/ZG) | Nur tatsächlich bediente Regionen (B04) | Geschäftsführung Kunde |
+| „24/7“, Vor Ort in 1–2 bzw. 2–4 Stunden | Startseite, Hausmeister, Winterdienst, Sonderleistungen, Privatjet | fehlt | Nur mit nachweisbarer Bereitschaftsregelung, sonst reale Erreichbarkeitszeiten | Geschäftsführung Kunde |
+| „Festpreis-Garantie“ | Fassadenreinigung | fehlt | Nur mit Bedingungen, sonst streichen | Geschäftsführung Kunde |
+| Kundenstimmen (Startseite, Über uns, Referenzen) | siehe GLOBAL-022 | fehlt | Nur mit Freigabe der Person/Organisation | Kunde/Redaktion |
+| Referenzprojekte, Vorher/Nachher, Teambild | Referenzen, Startseite, Über uns | Impressum: KI-Bilder | Nur echte, freigegebene Fotos | Kunde/Design |
+| Rückmeldung „innerhalb von 24 Stunden“ bzw. „12 Stunden (werktags)“ | Formular, Kontakt, Chat | fehlt | Eine bestätigte Zeit (B10) | Geschäftsführung Kunde |
+| „Erstklassig“, „Schweizer Präzision“, „höchste Standards“ | Startseite, diverse | nicht belegbar | Durch konkrete, prüfbare Aussagen ersetzen (Ablauf, Zuständigkeit, Kontrolle) | Redaktion |
 
 ## B. Unternehmensidentität und Vertrauen
 
@@ -47,16 +66,16 @@ Google beschreibt hilfreiche, eigenständige Inhalte und nachvollziehbare Expert
 
 Unser Prüfkatalog:
 
-- [ ] Firmenname, Rechtsform, Anschrift, Telefonnummer, E-Mail und verantwortliche Personen sind konsistent.
-- [ ] Unternehmensgeschichte, Teamgröße, Erfahrung, Zertifikate, Mitgliedschaften und Leistungsfähigkeit sind belegbar.
-- [ ] Kundenlogos und Referenzen haben nachvollziehbare Nutzungsfreigaben. Kein Logo bedeutet automatisch eine aktuelle Kundenbeziehung.
-- [ ] Testimonials stammen von echten Personen/Organisationen, stimmen mit dem Original überein und verschweigen keine relevante Gegenleistung.
-- [ ] Fallbeispiele nennen nachvollziehbar Ausgangslage, Vorgehen, Ergebnis, Zeitraum, eigenen Beitrag und Grenzen. Anonymisierung ist transparent, nicht vorgetäuscht.
-- [ ] Ansprechpartner und Verantwortlichkeiten sind erkennbar; keine erfundenen KI-Mitarbeiter als reale Teammitglieder.
-- [ ] Aussagen wie „führend“, „Nr. 1“, „garantiert“, „zertifiziert“ oder „100 %“ auf Nachweis und rechtliche Belastbarkeit prüfen.
-- [ ] Erreichbarkeit und Rückmeldeversprechen passen zur tatsächlichen Organisation.
-- [ ] Professionelle Domain-E-Mail, Logo, Favicon und Social-Vorschauen wirken konsistent.
-- [ ] Platzhalter, Demo-Texte, defekte Links, unpassende Übersetzungen und Template-Reste vollständig erfassen.
+- [x] Firmenname, Rechtsform, Anschrift, Telefonnummer, E-Mail und verantwortliche Personen sind konsistent. → *BEFUND → GLOBAL-020*
+- [x] Unternehmensgeschichte, Teamgröße, Erfahrung, Zertifikate, Mitgliedschaften und Leistungsfähigkeit sind belegbar. → *BEFUND: unbelegt, ISO-Angabe durch das eigene Impressum widerlegt → GLOBAL-021*
+- [x] Kundenlogos und Referenzen haben nachvollziehbare Nutzungsfreigaben. Kein Logo bedeutet automatisch eine aktuelle Kundenbeziehung. → *BEFUND: keine Freigaben erkennbar, Referenzbilder vermutlich KI → GLOBAL-022, GLOBAL-023. Referenzen-Seite im Detail: Phase 3*
+- [x] Testimonials stammen von echten Personen/Organisationen, stimmen mit dem Original überein und verschweigen keine relevante Gegenleistung. → *HYPOTHESE (vermutlich erfunden) → GLOBAL-022*
+- [ ] Fallbeispiele nennen nachvollziehbar Ausgangslage, Vorgehen, Ergebnis, Zeitraum, eigenen Beitrag und Grenzen. Anonymisierung ist transparent, nicht vorgetäuscht. → *Offen, Referenzen-Seite in Phase 3*
+- [x] Ansprechpartner und Verantwortlichkeiten sind erkennbar; keine erfundenen KI-Mitarbeiter als reale Teammitglieder. → *BEFUND: KI-Teambild als eigenes Team ausgegeben → GLOBAL-023. Eine verantwortliche Person ist nur in Impressum und Über uns genannt*
+- [x] Aussagen wie „führend“, „Nr. 1“, „garantiert“, „zertifiziert“ oder „100 %“ auf Nachweis und rechtliche Belastbarkeit prüfen. → *BEFUND → GLOBAL-021*
+- [x] Erreichbarkeit und Rückmeldeversprechen passen zur tatsächlichen Organisation. → *BEFUND: 24 h gegenüber 12 h, 24/7 und Vor-Ort-Zeiten unbelegt → GLOBAL-021, GLOBAL-028. Operativ offen → B10*
+- [x] Professionelle Domain-E-Mail, Logo, Favicon und Social-Vorschauen wirken konsistent. → *BEFUND → GLOBAL-014, GLOBAL-020*
+- [x] Platzhalter, Demo-Texte, defekte Links, unpassende Übersetzungen und Template-Reste vollständig erfassen. → *BEFUND: Verifizierungs-Platzhalter, defekte Links, Vorlagenreste → GLOBAL-015, GLOBAL-016, GLOBAL-008. Kein sichtbarer Blindtext (BESTANDEN)*
 
 **Abnahmekriterium:** Jede wesentliche Vertrauensbehauptung ist belegt oder wird zur Entfernung/Abschwächung vorgeschlagen. Keine erfundenen Belege als „Design-Platzhalter“ zur Veröffentlichung vorsehen.
 
@@ -64,54 +83,92 @@ Unser Prüfkatalog:
 
 **Das sind Projekt- und Designkriterien, keine Google-Vorschriften.**
 
-- [ ] Bestandsaufnahme von Logo, Farbpalette, Typografie, Bildstil, Icon-Stil, Radius, Schatten und Bewegung erstellen.
-- [ ] Prüfen, ob die visuelle Sprache zur Branche und Entscheidungssituation passt; „hochwertig“ muss nicht dunkel, goldfarben oder animationslastig bedeuten.
-- [ ] Zwei bis drei nachvollziehbare Markenrichtungen nur beschreiben: gewünschte Wirkung, Eignung, Risiken und Unterschiede. Noch nichts umsetzen.
-- [ ] Zentrale Design-Tokens für Markenfarben, Oberflächen, Text, Statusfarben, Schriften, Abstände, Breiten und Interaktionszustände prüfen.
-- [ ] Gemeinsame Buttons, Formularfelder, Navigation, Footer und CTA-Bereiche dürfen nicht je Seite voneinander abweichend neu gestaltet sein.
-- [ ] Full-Width-Hintergründe von Textbreiten unterscheiden. Große Flächen mit relevanten Bildern, Vergleichsansichten, Fallbeispielen oder sinnvollen Mehrspaltenrastern nutzen.
-- [ ] Fließtext nicht über einen kompletten Ultrawide-Monitor ziehen. Etwa 45–80 Zeichen je Zeile können als zu testende Gestaltungsheuristik dienen, nicht als feste Norm.
-- [ ] Inhaltsdichte prüfen: keine identischen XXL-Karten mit einem Satz Inhalt, keine leeren Abschnitte und keine künstliche Streckung.
-- [ ] Informationshierarchie ist auch ohne Farben und Animation erkennbar.
-- [ ] Auf schmalen Displays bleibt eine sinnvolle Lesereihenfolge erhalten; keine Desktop-Komposition, die mobil logisch zerfällt.
-- [ ] Funktionale Icons sparsam verwenden; keine Emoji-Optik und keine austauschbaren Icon-Wände.
-- [ ] Animation unterstützt Orientierung und Feedback, blockiert aber weder Scrollen noch Lesen. Reduzierte Bewegung respektieren.
-- [ ] Bildausschnitte, Zeilenumbrüche und Section-Übergänge bei 360, 390, 768, 1280, 1440, 1920 und 2560 CSS-Pixeln prüfen. Das ist die vorgeschlagene Testmatrix, keine gesetzliche Liste.
-- [ ] Kein horizontaler Seiten-Overflow; notwendige breite Datentabellen haben eine verständliche eigene Bedienung.
-- [ ] Inspiration aus FIMI konkret benennen, aber eigenständige Markenführung und passende Inhalte verlangen.
+- [x] Bestandsaufnahme von Logo, Farbpalette, Typografie, Bildstil, Icon-Stil, Radius, Schatten und Bewegung erstellen. → *Erfasst, siehe „Design-Bestandsaufnahme“ unten*
+- [x] Prüfen, ob die visuelle Sprache zur Branche und Entscheidungssituation passt; „hochwertig“ muss nicht dunkel, goldfarben oder animationslastig bedeuten. → *HYPOTHESE: ordentlich, aber austauschbar, KI-Bildwelt → GLOBAL-032, GLOBAL-023*
+- [x] Zwei bis drei nachvollziehbare Markenrichtungen nur beschreiben: gewünschte Wirkung, Eignung, Risiken und Unterschiede. Noch nichts umsetzen. → *Beschrieben, siehe „Markenrichtungen“ unten. Nichts umgesetzt*
+- [x] Zentrale Design-Tokens für Markenfarben, Oberflächen, Text, Statusfarben, Schriften, Abstände, Breiten und Interaktionszustände prüfen. → *BEFUND: shadcn-Tokens vorhanden, das Markenrot ist mit weißer Schrift nicht barrierefrei, keine dokumentierten Rollen → GLOBAL-026, GLOBAL-032*
+- [x] Gemeinsame Buttons, Formularfelder, Navigation, Footer und CTA-Bereiche dürfen nicht je Seite voneinander abweichend neu gestaltet sein. → *BESTANDEN für Komponenten (gemeinsame Navigation, Footer, Buttons). BEFUND für CTA-Beschriftungen → GLOBAL-034*
+- [x] Full-Width-Hintergründe von Textbreiten unterscheiden. Große Flächen mit relevanten Bildern, Vergleichsansichten, Fallbeispielen oder sinnvollen Mehrspaltenrastern nutzen. → *BESTANDEN: Hintergrund volle Breite, Inhalt zentriert (Breiten-Matrix N020)*
+- [x] Fließtext nicht über einen kompletten Ultrawide-Monitor ziehen. Etwa 45–80 Zeichen je Zeile können als zu testende Gestaltungsheuristik dienen, nicht als feste Norm. → *BESTANDEN (kein Ziehen über Ultrawide). HYPOTHESE: Zeilenlänge etwa 100 Zeichen ab 1280 px → GLOBAL-032*
+- [x] Inhaltsdichte prüfen: keine identischen XXL-Karten mit einem Satz Inhalt, keine leeren Abschnitte und keine künstliche Streckung. → *HYPOTHESE: wiederkehrende Karten-Raster mit Kurztexten. Seitenweise in Phase 3*
+- [x] Informationshierarchie ist auch ohne Farben und Animation erkennbar. → *BEFUND: Ohne JavaScript bzw. Animation ist der Hero der Startseite unsichtbar → GLOBAL-012*
+- [x] Auf schmalen Displays bleibt eine sinnvolle Lesereihenfolge erhalten; keine Desktop-Komposition, die mobil logisch zerfällt. → *BEFUND für die erste Ansicht der Startseite (kein Text sichtbar) → GLOBAL-012. Übrige Reihenfolge laut Stichprobe logisch, Detail in Phase 3*
+- [x] Funktionale Icons sparsam verwenden; keine Emoji-Optik und keine austauschbaren Icon-Wände. → *BEFUND: generische Icon-Raster → GLOBAL-032*
+- [x] Animation unterstützt Orientierung und Feedback, blockiert aber weder Scrollen noch Lesen. Reduzierte Bewegung respektieren. → *BEFUND: Einblendungen verbergen Inhalte, „Bewegung reduzieren“ wird nicht berücksichtigt → GLOBAL-012*
+- [x] Bildausschnitte, Zeilenumbrüche und Section-Übergänge bei 360, 390, 768, 1280, 1440, 1920 und 2560 CSS-Pixeln prüfen. Das ist die vorgeschlagene Testmatrix, keine gesetzliche Liste. → *Geprüft (N020, Bildschirmfotos der Matrix für 4 Seiten, Overflow-Messung für alle 32) → GLOBAL-032*
+- [x] Kein horizontaler Seiten-Overflow; notwendige breite Datentabellen haben eine verständliche eigene Bedienung. → *BESTANDEN bis auf `/referenzen` bei 768 px → GLOBAL-032*
+- [x] Inspiration aus FIMI konkret benennen, aber eigenständige Markenführung und passende Inhalte verlangen. → *Siehe „FIMI-Inspiration (Prinzipien)“ unten, nur lesend (E02, E06)*
 
 **Abnahme:** Desktop-Breite wirkt bewusst genutzt, mobile Bedienbarkeit bleibt intakt, globale Muster sind konsistent. Das Design darf nicht nur auf einer einzigen Screenshot-Größe funktionieren.
+
+
+### Design-Bestandsaufnahme (Stand 24.09.2026)
+
+| Element | Ist-Zustand | Nachweis |
+|---|---|---|
+| Logo | Wappen-Symbol mit Schriftzug „SWISS REINIGUNG“ (`public/swiss-logo.webp`), nicht „BGS“ | N026 |
+| Farben | shadcn-Tokens in `app/globals.css`, Primärfarbe Rot `hsl(0 84% 60%)` (≈ `#ef4444`), Neutraltöne Slate. Manifest noch Blau | N008, N031 |
+| Typografie | Inter über `next/font`, fette Überschriften, Fließtext in Slate-Grau | Code |
+| Bildstil | Überwiegend KI-Motive (1536×1024), Personen in wechselnder Arbeitskleidung, Schweizer Kulisse | N029 |
+| Icons | Lucide-Outline-Icons in Rot, wiederkehrende Raster (Gebäude, Uhr, Schild, Funkeln) | Bildschirmfotos |
+| Radius/Schatten | Abgerundete Karten mit deutlichem Schatten | Bildschirmfotos |
+| Bewegung | Framer Motion (Einblenden, Parallax, Tilt, „Magnetic Hover“), Inhalte starten teils unsichtbar, keine Rücksicht auf „Bewegung reduzieren“ | N022, GLOBAL-012 |
+
+### Markenrichtungen (nur beschrieben, keine Umsetzung)
+
+Voraussetzung ist die Markenentscheidung des Kunden (B09). Alle drei Richtungen gehen von „BGS Gebäudeservice“ als Absender aus.
+
+1. **Regional und verlässlich (Hauswart + Reinigung aus einer Hand).** Wirkung: nahbar, bodenständig, zuständig für Liegenschaften in LU/ZG. Eignung: passt zur Eigenangabe („Hauswart- und Reinigungsfirma“) und zu Verwaltungen und Eigentümern. Risiko: wirkt klein, wenn echte Fotos und Belege fehlen. Unterschied: echte Team- und Objektfotos, klare Zuständigkeiten, Ansprechpartner mit Gesicht.
+2. **Sachlich-professionell für Gewerbe und Verwaltung.** Wirkung: strukturiert, prozessklar, dokumentationsstark. Eignung: B2B-Kunden mit Leistungsverzeichnissen und Qualitätskontrolle. Risiko: austauschbar, wenn Prozesse nur behauptet werden. Unterschied: Ablaufgrafiken, Checklisten, Reinigungsplan-Beispiele, nüchterne Farbwelt mit einem Akzent.
+3. **Schweizer Präzision, reduziert.** Wirkung: hochwertig durch Klarheit statt Luxus-Sprache. Eignung: Beibehalt des Markenrots, allerdings abgedunkelt und barrierefrei, viel Weißraum, starke Typografie-Hierarchie. Risiko: Premium-Versprechen ohne Premium-Substanz wirkt unglaubwürdig (GLOBAL-021). Unterschied: wenige, große echte Bilder, kaum Animation, keine Icon-Wände.
+
+### FIMI-Inspiration (Prinzipien, nur lesend, E02/E06)
+
+Gelesen wurden `FIMI-STANDARDS.md`, `MASTERPLAN-WEBSITE-REDESIGN.md` und `STADT-LANDINGPAGES-REGELWERK.md` im lokalen Klon (`1143a9f`). Übernommen werden nur Prinzipien, keine Texte, Logos, Farben, Referenzen oder Assets.
+
+| Prinzip bei FIMI | Übertragung auf BGS | Bezug |
+|---|---|---|
+| Farbrollen als dokumentierte Tokens (Akzent vs. Fläche, Hover-Varianten, klare Regeln) | Eigene BGS-Tokens mit Rollen und barrierefreien Kombinationen dokumentieren | GLOBAL-026, -032 |
+| Texte aus Kundensicht, Format „Problem → Lösung“, Tonalität „direkt, konkret, keine Floskeln“ | Leistungsseiten von Selbstlob auf Kundenprobleme umstellen | GLOBAL-030 |
+| Register erlaubter Formulierungen für Firmenfakten (z. B. „arbeitet nach Standards“ statt „zertifiziert“) | Nachweisregister oben als verbindliche Formulierungsliste führen | GLOBAL-021 |
+| Einheitliche CTA-Texte und feste CTA-Positionen | Eine primäre und eine sekundäre Zielhandlung festlegen | GLOBAL-034 |
+| Layout-Muster: breiter Container mit großzügigem Innenabstand, Sticky-Seitenleiste mit Überschrift und CTA neben Karten, abwechselnde Bild-/Textblöcke | Desktop-Fläche sinnvoll nutzen statt Karten-Rastern | Abschnitt C, GLOBAL-032 |
+| Seitenordner mit zusammensetzender `page.tsx`, seitenspezifischen Sektionskomponenten und gemeinsamen Bausteinen (Section-Header, CTA-Section, FAQ-Section, verwandte Leistungen) | Zielstruktur für den Umbau, entspricht Abschnitt 8 der Vorgabe | GLOBAL-009 |
+| Stadtseiten nur mit überwiegend eigenem Inhalt (lokale Bezüge, echte Referenzen, echte Fotos), „Stadtname austauschen“ ausdrücklich verboten | Standortseiten nur für real bediente Regionen mit eigenem Nutzen | GLOBAL-021, S33 |
+| Zentrale Metadaten-Datei für alle Seiten | Ein Metadaten-Register je Seite als Grundlage für GLOBAL-010 | GLOBAL-010 |
+
+**Nicht übernehmen (widerspricht dem goldenen Stand):** garantierte Reaktionszeiten und „100 %“-Versprechen ohne Beleg, `LocalBusiness`-Markup je Stadt ohne echte Niederlassung, starre Zeichenzahlen für Titel und Beschreibungen als Regel, FAQ-Texte primär „SEO-optimiert“ statt aus echten Einwänden, pauschal fette Fließtexte (die Lesbarkeit ist im Test zu prüfen).
 
 ## D. Content-Qualität und natürliche Sprache
 
 **Eigene redaktionelle Prüfung, orientiert an den Qualitätsfragen in [S02]:**
 
-- [ ] Jede Seite beantwortet eine konkrete Frage beziehungsweise unterstützt eine konkrete Entscheidung.
-- [ ] Textaussagen lassen sich auf das tatsächliche Unternehmen beziehen. Der Austauschtest wird durchgeführt: Könnte unverändert ein beliebiger Firmenname eingesetzt werden?
-- [ ] Konkrete Abläufe, Zuständigkeiten, Leistungsgrenzen und Beispiele ersetzen Füllwörter.
-- [ ] Fachbegriffe sind korrekt und werden bei Bedarf erklärt; Fachlichkeit nicht mit unnötiger Komplexität verwechseln.
-- [ ] Satzrhythmus, Überschriften und Wortwahl klingen natürlich, nicht wie ein seriell befülltes Template.
-- [ ] Kundennutzen und reale Belege stehen zusammen. Zahlen ohne Zeitraum, Bezugsgröße oder Quelle werden markiert.
-- [ ] FAQs stammen aus echten Einwänden oder plausibel begründeten Recherchefragen, nicht aus dem Wunsch nach mehr Keywords.
-- [ ] Einstieg, Zwischenüberschriften und CTA sind auf Suchintention und Entscheidungsreife abgestimmt.
-- [ ] Keine Keyword-Dichte, Mindestwortzahl oder vermeintlicher „KI-Erkennungswert“ als Abnahmeziel.
-- [ ] Keine Scheinaktualität durch automatisch geänderte Jahreszahlen; inhaltliche Pflege und echte Überarbeitung unterscheiden.
-- [ ] Redaktionsverantwortung und spätere Aktualisierungsanlässe sind zugeordnet.
+- [ ] Jede Seite beantwortet eine konkrete Frage beziehungsweise unterstützt eine konkrete Entscheidung. → *Offen, Phase 3*
+- [x] Textaussagen lassen sich auf das tatsächliche Unternehmen beziehen. Der Austauschtest wird durchgeführt: Könnte unverändert ein beliebiger Firmenname eingesetzt werden? → *BEFUND: Austauschtest nicht bestanden → GLOBAL-030*
+- [ ] Konkrete Abläufe, Zuständigkeiten, Leistungsgrenzen und Beispiele ersetzen Füllwörter. → *Offen, Phase 3*
+- [ ] Fachbegriffe sind korrekt und werden bei Bedarf erklärt; Fachlichkeit nicht mit unnötiger Komplexität verwechseln. → *Offen, Phase 3*
+- [x] Satzrhythmus, Überschriften und Wortwahl klingen natürlich, nicht wie ein seriell befülltes Template. → *BEFUND: seriell befüllte Vorlage, z. B. H1-Muster „Professionelle …“ auf 12 Seiten (N007) → GLOBAL-030*
+- [x] Kundennutzen und reale Belege stehen zusammen. Zahlen ohne Zeitraum, Bezugsgröße oder Quelle werden markiert. → *BEFUND: Zahlen ohne Beleg markiert → GLOBAL-021, GLOBAL-031*
+- [ ] FAQs stammen aus echten Einwänden oder plausibel begründeten Recherchefragen, nicht aus dem Wunsch nach mehr Keywords. → *Offen, Phase 3 (FAQ-Inhalte liegen in Akkordeons, GLOBAL-011)*
+- [ ] Einstieg, Zwischenüberschriften und CTA sind auf Suchintention und Entscheidungsreife abgestimmt. → *Offen, Phase 3/4*
+- [x] Keine Keyword-Dichte, Mindestwortzahl oder vermeintlicher „KI-Erkennungswert“ als Abnahmeziel. → *Eingehalten: Diese Analyse nutzt keine solchen Abnahmeziele*
+- [x] Keine Scheinaktualität durch automatisch geänderte Jahreszahlen; inhaltliche Pflege und echte Überarbeitung unterscheiden. → *BEFUND: automatisches Footer-Jahr (GLOBAL-013), Blog-Daten vor Projektbeginn (GLOBAL-031)*
+- [ ] Redaktionsverantwortung und spätere Aktualisierungsanlässe sind zugeordnet. → *NICHT PRÜFBAR → B14*
 
 **Erforderlicher Befundstil:** Problematische Passage kurz zitieren, Problem erklären, eine konkrete Ersatzfassung vorschlagen und fehlende Fakten benennen. Nicht nur „Texte hochwertiger machen“ schreiben.
 
 ## E. Suchintention, Seitenarchitektur und interne Verlinkung
 
-- [ ] Alle vorhandenen Routen, Navigationen, Footerverweise, XML-Sitemap-Einträge und dynamischen Seiten gegeneinander abgleichen.
-- [ ] Jede kommerzielle Kernseite hat einen klaren Themen-/Intent-Schwerpunkt.
-- [ ] Startseite und Leistungsübersicht übernehmen Orientierung; einzelne Leistungsseiten beantworten jeweils spezifische Entscheidungsfragen.
-- [ ] Einzugsgebiet und konkreter Unternehmensstandort werden nicht verwechselt.
-- [ ] Für jede relevante Seite mindestens einen sinnvollen internen Entdeckungspfad dokumentieren. „Nur in Sitemap vorhanden“ gesondert markieren.
-- [ ] Kontextlinks unterstützen den nächsten sinnvollen Schritt und haben verständliche Linktexte.
-- [ ] Navigationspfade und Breadcrumbs stimmen mit der tatsächlichen Informationsarchitektur überein.
-- [ ] Verwaiste URLs, defekte Links, Weiterleitungsketten und falsche Zielvarianten erfassen.
-- [ ] Rechtliche Seiten bleiben erreichbar, werden aber nicht als kommerzielle Keyword-Zielseiten missbraucht.
-- [ ] Vorhandene mehrsprachige Inhalte nur bei realem Bedarf mit korrekter Sprach-/Regionszuordnung und gegenseitigen Verweisen prüfen.
+- [x] Alle vorhandenen Routen, Navigationen, Footerverweise, XML-Sitemap-Einträge und dynamischen Seiten gegeneinander abgleichen. → *BESTANDEN: 32 Routen = 32 Sitemap-Einträge = Navigation/Footer (02-URL-INVENTAR)*
+- [ ] Jede kommerzielle Kernseite hat einen klaren Themen-/Intent-Schwerpunkt. → *Offen, Intent-Matrix Phase 4*
+- [x] Startseite und Leistungsübersicht übernehmen Orientierung; einzelne Leistungsseiten beantworten jeweils spezifische Entscheidungsfragen. → *BEFUND: Die Leistungsübersicht fehlt → GLOBAL-033*
+- [x] Einzugsgebiet und konkreter Unternehmensstandort werden nicht verwechselt. → *BEFUND: „Standorte“ und Karten-Marker suggerieren Niederlassungen in Zürich und Zug, die Kunden-Eigenangabe nennt ein Arbeitsgebiet LU/ZG → GLOBAL-021. Detail Phase 3*
+- [x] Für jede relevante Seite mindestens einen sinnvollen internen Entdeckungspfad dokumentieren. „Nur in Sitemap vorhanden“ gesondert markieren. → *BESTANDEN: alle Seiten verlinkt. Blogartikel nur über `/blog` → GLOBAL-017*
+- [x] Kontextlinks unterstützen den nächsten sinnvollen Schritt und haben verständliche Linktexte. → *BEFUND: defekte Links (GLOBAL-016), unspezifische Linktexte (GLOBAL-034), fehlende Kontextlinks (GLOBAL-017)*
+- [x] Navigationspfade und Breadcrumbs stimmen mit der tatsächlichen Informationsarchitektur überein. → *BEFUND: keine Breadcrumbs, Kategorie-Pfade 404 → GLOBAL-033*
+- [x] Verwaiste URLs, defekte Links, Weiterleitungsketten und falsche Zielvarianten erfassen. → *BEFUND: 7 defekte Links (GLOBAL-016). Keine verwaisten URLs und keine Ketten (BESTANDEN)*
+- [x] Rechtliche Seiten bleiben erreichbar, werden aber nicht als kommerzielle Keyword-Zielseiten missbraucht. → *BESTANDEN: im Footer jeder Seite, nicht als Keyword-Seiten genutzt*
+- [x] Vorhandene mehrsprachige Inhalte nur bei realem Bedarf mit korrekter Sprach-/Regionszuordnung und gegenseitigen Verweisen prüfen. → *NICHT ANWENDBAR: nur Deutsch*
 
 Google kann Links verlässlich verarbeiten, wenn sie als echte Links mit Ziel-URL vorliegen; reine Klicklogik ist nicht gleichwertig. Technische und semantische Linkprüfung getrennt durchführen. [S04]
 
@@ -121,125 +178,149 @@ Google kann Links verlässlich verarbeiten, wenn sie als echte Links mit Ziel-UR
 
 Crawlbar, renderbar, indexierbar, tatsächlich indexiert und gut gerankt sind unterschiedliche Zustände. Technische Eignung garantiert keine Indexierung. [S01][S03]
 
-- [ ] Produktionsdomain, Protokoll und bevorzugte Hostvariante eindeutig dokumentieren.
-- [ ] Öffentliche Inhaltsseiten liefern den vorgesehenen HTTP-Status. Nicht vorhandene Seiten zeigen keine erfolgreiche leere Inhaltsseite.
-- [ ] Robots-Regeln, Meta-Robots und HTTP-Header zusammen prüfen. Widersprüchliche Regeln dokumentieren.
-- [ ] Kein versehentliches `noindex` auf den freigegebenen Marketingseiten.
-- [ ] Benötigte JavaScript-, CSS- und Bildressourcen sind für das Rendering erreichbar.
-- [ ] Wichtigste Inhalte und Navigation im ausgelieferten HTML und im gerenderten Zustand vergleichen. Nicht pauschal behaupten, Google könne JavaScript nicht lesen.
-- [ ] Texte dürfen nicht erst nach Scroll-, Klick- oder Formularaktionen nachgeladen werden, wenn sie zur indexierbaren Kerninformation gehören sollen.
-- [ ] Hydration-Fehler, Client-Ausnahmen und fehlgeschlagene Datenabrufe auf jeder Kernroute erfassen.
-- [ ] Consent-Banner, Bot-Schutz, WAF, Login oder Vercel-Schutz blockieren nicht versehentlich die öffentliche Produktion.
-- [ ] `canonical`, interne Verlinkung, Sitemap und Weiterleitungen zeigen konsistent auf die gewünschte URL. [S05]
-- [ ] Sitemap enthält die beabsichtigten kanonischen, indexierbaren Inhalts-URLs, keine Fehlerseiten oder Preview-URLs. Änderungsdaten sind wahrheitsgemäß. [S06]
-- [ ] Trackingparameter und URL-Varianten auf ungewollte Duplikate prüfen.
-- [ ] Preview-, Staging-, Admin-, interne Such- und sensible Seiten erhalten eine begründete eigene Zugriff-/Indexierungsstrategie. Nicht „alles muss Google-crawlbar sein“ wörtlich auf interne Bereiche anwenden.
-- [ ] Search-Console-URL-Prüfung und Indexierungsberichte auswerten, sofern lesender Zugang vorhanden ist. Ohne Zugang keinen Indexierungsstatus behaupten.
-- [ ] Crawl-Befunde an Versionsstand und Zeitpunkt binden; aus einer einmal erfolgreichen Anfrage keine dauerhafte Verfügbarkeit ableiten.
+- [x] Produktionsdomain, Protokoll und bevorzugte Hostvariante eindeutig dokumentieren. → *BESTANDEN (N002, N004). Die Launch-Domain ist offen → GLOBAL-018*
+- [x] Öffentliche Inhaltsseiten liefern den vorgesehenen HTTP-Status. Nicht vorhandene Seiten zeigen keine erfolgreiche leere Inhaltsseite. → *BESTANDEN (N007, N008)*
+- [x] Robots-Regeln, Meta-Robots und HTTP-Header zusammen prüfen. Widersprüchliche Regeln dokumentieren. → *BEFUND: Widerspruch auf der 404-Seite → GLOBAL-015. Sonst konsistent*
+- [x] Kein versehentliches `noindex` auf den freigegebenen Marketingseiten. → *BESTANDEN. Strategie für die Vorab-Adresse offen → GLOBAL-018*
+- [x] Benötigte JavaScript-, CSS- und Bildressourcen sind für das Rendering erreichbar. → *BESTANDEN: keine fehlenden Ressourcen außer Karten-Kacheln (GLOBAL-019). Einmaliger 502 als Proxy-Artefakt gewertet (N020)*
+- [x] Wichtigste Inhalte und Navigation im ausgelieferten HTML und im gerenderten Zustand vergleichen. Nicht pauschal behaupten, Google könne JavaScript nicht lesen. → *BEFUND → GLOBAL-011, GLOBAL-012*
+- [x] Texte dürfen nicht erst nach Scroll-, Klick- oder Formularaktionen nachgeladen werden, wenn sie zur indexierbaren Kerninformation gehören sollen. → *BEFUND → GLOBAL-011*
+- [x] Hydration-Fehler, Client-Ausnahmen und fehlgeschlagene Datenabrufe auf jeder Kernroute erfassen. → *BEFUND → GLOBAL-013 (Hydration), GLOBAL-019 (Karte), GLOBAL-002 (Chat)*
+- [x] Consent-Banner, Bot-Schutz, WAF, Login oder Vercel-Schutz blockieren nicht versehentlich die öffentliche Produktion. → *BESTANDEN: Produktion öffentlich, der Banner blockiert nicht*
+- [x] `canonical`, interne Verlinkung, Sitemap und Weiterleitungen zeigen konsistent auf die gewünschte URL. [S05] → *BEFUND: kein Canonical → GLOBAL-010*
+- [x] Sitemap enthält die beabsichtigten kanonischen, indexierbaren Inhalts-URLs, keine Fehlerseiten oder Preview-URLs. Änderungsdaten sind wahrheitsgemäß. [S06] → *BESTANDEN für Umfang. BEFUND für `lastmod` → GLOBAL-015*
+- [x] Trackingparameter und URL-Varianten auf ungewollte Duplikate prüfen. → *BEFUND: Parameter-Varianten ohne Canonical → GLOBAL-010*
+- [x] Preview-, Staging-, Admin-, interne Such- und sensible Seiten erhalten eine begründete eigene Zugriff-/Indexierungsstrategie. Nicht „alles muss Google-crawlbar sein“ wörtlich auf interne Bereiche anwenden. → *BESTANDEN für Vorschauen (geschützt). BEFUND für die Vorab-Produktion → GLOBAL-018*
+- [x] Search-Console-URL-Prüfung und Indexierungsberichte auswerten, sofern lesender Zugang vorhanden ist. Ohne Zugang keinen Indexierungsstatus behaupten. → *NICHT PRÜFBAR: kein Zugang (B11)*
+- [x] Crawl-Befunde an Versionsstand und Zeitpunkt binden; aus einer einmal erfolgreichen Anfrage keine dauerhafte Verfügbarkeit ableiten. → *BESTANDEN: alle Nachweise mit Datum, Commit und Bedingungen (08)*
 
 **Wichtig:** `robots.txt` ist weder Zugriffsschutz noch zuverlässige Entfernung aus dem Index. Ein `noindex` muss von einem Crawler gelesen werden können. [S01]
 
 ## G. Metadaten, Vorschauen und strukturierte Daten
 
-- [ ] Pro Seite Ist-Titel, Ist-Beschreibung, sichtbare Hauptüberschrift, Canonical und Vorschauangaben erfassen.
-- [ ] Doppelte oder widersprüchliche Titel mit tatsächlichem Seitenzweck abgleichen.
-- [ ] Genau eine klar erkennbare Hauptüberschrift als Projektkonvention; keine angebliche Google-Strafe allein aus der Anzahl von H1 ableiten.
-- [ ] Konkrete neue Titel und Beschreibungen nur aus bestätigten Informationen entwickeln; keine übertriebenen Superlative.
-- [ ] Metadaten nicht gleichzeitig an mehreren Stellen widersprüchlich pflegen; Framework-Vererbung und gerenderte Ausgabe kontrollieren. [S26]
-- [ ] Open-Graph-Vorschauen, Logo, Favicon und Social-Sharing testen. Das sind Darstellungs-/Vertrauensprüfungen, keine Rankinggarantie.
-- [ ] Unternehmensentität mit stabiler Identität modellieren; Name, Logo und Kontaktdaten konsistent halten. [S14]
-- [ ] `Service` für tatsächliche Leistungen, gegebenenfalls `BreadcrumbList` für sichtbare Hierarchie und sachlich passender Unternehmenstyp; Eigenschaften nur nach zutreffenden Fakten empfehlen. [S10][S11][S12]
-- [ ] `LocalBusiness` nicht allein wegen eines Einzugsgebiets und ohne passende reale Unternehmenssituation erzwingen.
-- [ ] Kein pauschales `FAQPage`-Pflichtschema; aktuelle Einstellung der Google-FAQ-Rich-Results berücksichtigen. [S13]
-- [ ] Keine erfundenen Bewertungen oder Sternedarstellungen. Regeln zu selbstbezogenen Unternehmensbewertungen und incentivierten Rezensionen prüfen. [S15]
-- [ ] Schema-Vokabularvalidierung und Google-Rich-Result-Test trennen. „Kein unterstütztes Rich Result erkannt“ bedeutet bei `Service` nicht automatisch „Markup kaputt“.
+- [x] Pro Seite Ist-Titel, Ist-Beschreibung, sichtbare Hauptüberschrift, Canonical und Vorschauangaben erfassen. → *Erfasst (02-URL-INVENTAR, N007)*
+- [x] Doppelte oder widersprüchliche Titel mit tatsächlichem Seitenzweck abgleichen. → *BEFUND → GLOBAL-010*
+- [x] Genau eine klar erkennbare Hauptüberschrift als Projektkonvention; keine angebliche Google-Strafe allein aus der Anzahl von H1 ableiten. → *BESTANDEN: 32 von 32 mit genau einer H1*
+- [ ] Konkrete neue Titel und Beschreibungen nur aus bestätigten Informationen entwickeln; keine übertriebenen Superlative. → *Offen, Phase 3, abhängig von B03/B09*
+- [x] Metadaten nicht gleichzeitig an mehreren Stellen widersprüchlich pflegen; Framework-Vererbung und gerenderte Ausgabe kontrollieren. [S26] → *BEFUND: wirkungslose SEO-Komponente neben den Layout-Metadaten → GLOBAL-009*
+- [x] Open-Graph-Vorschauen, Logo, Favicon und Social-Sharing testen. Das sind Darstellungs-/Vertrauensprüfungen, keine Rankinggarantie. → *BEFUND → GLOBAL-014, GLOBAL-010*
+- [x] Unternehmensentität mit stabiler Identität modellieren; Name, Logo und Kontaktdaten konsistent halten. [S14] → *BEFUND: kein Organisations-Markup, Identität widersprüchlich → GLOBAL-020, GLOBAL-010*
+- [x] `Service` für tatsächliche Leistungen, gegebenenfalls `BreadcrumbList` für sichtbare Hierarchie und sachlich passender Unternehmenstyp; Eigenschaften nur nach zutreffenden Fakten empfehlen. [S10][S11][S12] → *BEFUND: keinerlei strukturierte Daten → GLOBAL-010*
+- [x] `LocalBusiness` nicht allein wegen eines Einzugsgebiets und ohne passende reale Unternehmenssituation erzwingen. → *BESTANDEN (keins vorhanden). Hinweis: das FIMI-Muster „LocalBusiness je Stadt“ nicht übernehmen*
+- [x] Kein pauschales `FAQPage`-Pflichtschema; aktuelle Einstellung der Google-FAQ-Rich-Results berücksichtigen. [S13] → *BESTANDEN (keins vorhanden) und nicht empfohlen [S13]*
+- [x] Keine erfundenen Bewertungen oder Sternedarstellungen. Regeln zu selbstbezogenen Unternehmensbewertungen und incentivierten Rezensionen prüfen. [S15] → *BESTANDEN für Sterne-Markup (keins). Testimonials → GLOBAL-022*
+- [x] Schema-Vokabularvalidierung und Google-Rich-Result-Test trennen. „Kein unterstütztes Rich Result erkannt“ bedeutet bei `Service` nicht automatisch „Markup kaputt“. → *NICHT ANWENDBAR: kein Markup vorhanden*
 
 **Abnahme:** Je Schema-Typ sind Zweck, Datenherkunft, Sichtbarkeit, passende Properties und realistische Google-Unterstützung dokumentiert. Keine JSON-LD-Codeblöcke liefern.
 
 ## H. Bilder, KI-Medien, Schriften und Asset-Qualität
 
-- [ ] Medieninventar nach URL, Dateipfad, Verwendungszweck, Quelle, Nutzungsrechten und tatsächlicher Auslieferungsgröße führen.
-- [ ] KI-Bilder auf künstliche Gesichter, fehlerhafte Hände, erfundene Beschriftungen, unplausible Arbeitsabläufe und falsche Branchenrealität prüfen.
-- [ ] Keine KI-Szene als Foto des echten Teams, eines realen Kundenobjekts oder einer echten Referenz ausgeben.
-- [ ] Für vertrauensentscheidende Stellen echte, freigegebene Unternehmensbilder bevorzugen; kreative Illustrationen als solche behandeln.
-- [ ] Für jedes wichtige Bild Motiv, Platzierung, Mobil-Crop und Aussage definieren. Bilder müssen Inhalt ergänzen, nicht nur große Flächen füllen.
-- [ ] Responsive Auslieferung und `sizes` gegen die tatsächliche Layoutbreite prüfen; kein winziges Bild auf großem Display und keine riesige Datei auf Mobilgeräten. [S27]
-- [ ] Fotoformate anhand Browserunterstützung, Qualität und Transfergröße auswählen; SVG für geeignete Vektorgrafiken gesondert behandeln. [S16]
-- [ ] Kein universelles „jedes Bild maximal 100 KB“. Pro Einsatzklasse begründete Budgets festlegen und mit LCP, Qualität und realen Nutzungsgrößen validieren.
-- [ ] Ladepriorität des LCP-Bildes und Lazy Loading weiter unten differenzieren. Nicht alle Bilder vorladen. [S19]
-- [ ] Abmessungen beziehungsweise Seitenverhältnisse reservieren und Layoutverschiebungen messen. [S21]
-- [ ] Alt-Texte je Kontext formulieren: Information, Bedienfunktion oder Dekoration. Nicht automatisch Keywords in jedes Bild einfügen. [S17]
-- [ ] Fonts auf Lizenz, benötigte Schnitte, Dateigröße, Fallback-Verhalten und externe Datenübertragung prüfen.
-- [ ] Überschriften und zentrale Aussagen sind echter Text, nicht nur eingebrannte Schrift im Bild.
+- [x] Medieninventar nach URL, Dateipfad, Verwendungszweck, Quelle, Nutzungsrechten und tatsächlicher Auslieferungsgröße führen. → *Erfasst (N029). Quelle und Nutzungsrechte NICHT PRÜFBAR → B07*
+- [x] KI-Bilder auf künstliche Gesichter, fehlerhafte Hände, erfundene Beschriftungen, unplausible Arbeitsabläufe und falsche Branchenrealität prüfen. → *BEFUND (Stichprobe) → GLOBAL-023*
+- [x] Keine KI-Szene als Foto des echten Teams, eines realen Kundenobjekts oder einer echten Referenz ausgeben. → *BEFUND → GLOBAL-023*
+- [x] Für vertrauensentscheidende Stellen echte, freigegebene Unternehmensbilder bevorzugen; kreative Illustrationen als solche behandeln. → *BEFUND → GLOBAL-023*
+- [ ] Für jedes wichtige Bild Motiv, Platzierung, Mobil-Crop und Aussage definieren. Bilder müssen Inhalt ergänzen, nicht nur große Flächen füllen. → *Offen, Phase 3*
+- [x] Responsive Auslieferung und `sizes` gegen die tatsächliche Layoutbreite prüfen; kein winziges Bild auf großem Display und keine riesige Datei auf Mobilgeräten. [S27] → *BEFUND → GLOBAL-024*
+- [x] Fotoformate anhand Browserunterstützung, Qualität und Transfergröße auswählen; SVG für geeignete Vektorgrafiken gesondert behandeln. [S16] → *BEFUND: JPG statt AVIF/WebP → GLOBAL-024*
+- [x] Kein universelles „jedes Bild maximal 100 KB“. Pro Einsatzklasse begründete Budgets festlegen und mit LCP, Qualität und realen Nutzungsgrößen validieren. → *Budgets vorgeschlagen, siehe „Leistungsbudgets (Vorschlag)“ in I*
+- [x] Ladepriorität des LCP-Bildes und Lazy Loading weiter unten differenzieren. Nicht alle Bilder vorladen. [S19] → *BEFUND → GLOBAL-024*
+- [x] Abmessungen beziehungsweise Seitenverhältnisse reservieren und Layoutverschiebungen messen. [S21] → *BESTANDEN: CLS ≈ 0 (N020, N030)*
+- [x] Alt-Texte je Kontext formulieren: Information, Bedienfunktion oder Dekoration. Nicht automatisch Keywords in jedes Bild einfügen. [S17] → *BEFUND → GLOBAL-024, GLOBAL-023*
+- [x] Fonts auf Lizenz, benötigte Schnitte, Dateigröße, Fallback-Verhalten und externe Datenübertragung prüfen. → *BESTANDEN: Inter per `next/font` selbst gehostet (Open Font License), keine externe Übertragung. Ausnahme: Google Fonts über die Karte auf `/kontakt` → GLOBAL-019*
+- [x] Überschriften und zentrale Aussagen sind echter Text, nicht nur eingebrannte Schrift im Bild. → *BESTANDEN (Stichprobe)*
 
 ## I. Performance und Core Web Vitals
 
 **Dokumentierte Zielwerte für reale Nutzer:** LCP höchstens 2,5 Sekunden, INP höchstens 200 Millisekunden, CLS höchstens 0,1; jeweils am 75. Perzentil, sinnvoll nach Mobil/Desktop getrennt. [S18]
 
-- [ ] Feldmessungen und Labormessungen klar unterscheiden; fehlende Felddaten nicht als bestanden markieren.
-- [ ] Mess-URL, Geräteprofil, Netzwerklimitierung, Cache-Zustand, Toolversion, Datum und mehrere Durchläufe dokumentieren.
-- [ ] Nicht nur die Homepage messen: jede Route auf offensichtliche Probleme prüfen und aufwendigere Messungen mindestens pro Seitentyp und auffälliger Einzelroute durchführen; Stichproben klar benennen.
-- [ ] Größtes sichtbares Element und seine Ladeabhängigkeiten identifizieren. [S19]
-- [ ] Schwere Client-Komponenten, lange Tasks, Animation, Widgets und Drittanbieterskripte auf Interaktionsprobleme prüfen. [S20]
-- [ ] Schriften, Bilder, eingebettete Inhalte und Banner auf Layoutsprünge prüfen. [S21]
-- [ ] Serverlatenz, Datenabrufe, Cache-Verhalten, Weiterleitungen und Fehlerquoten passend zur Architektur untersuchen.
-- [ ] Unnötige Drittanbieter, doppelte Trackingbibliotheken und nie verwendete Pakete als begründete Einsparpotenziale dokumentieren.
-- [ ] Leistungsbudgets für Bilder, JavaScript, Fonts und Drittanbieter individuell vorschlagen; ausdrücklich als Projektbudgets kennzeichnen.
-- [ ] Kein Ziel „Lighthouse 100 = Top 10“. Gute Scores sind Diagnosehilfen und ersetzen keine tatsächliche Nutzerqualität. [S35][S37]
+- [x] Feldmessungen und Labormessungen klar unterscheiden; fehlende Felddaten nicht als bestanden markieren. → *Eingehalten: nur Labordaten, keine Felddaten (N030)*
+- [x] Mess-URL, Geräteprofil, Netzwerklimitierung, Cache-Zustand, Toolversion, Datum und mehrere Durchläufe dokumentieren. → *Dokumentiert (N020, N030)*
+- [x] Nicht nur die Homepage messen: jede Route auf offensichtliche Probleme prüfen und aufwendigere Messungen mindestens pro Seitentyp und auffälliger Einzelroute durchführen; Stichproben klar benennen. → *Eingehalten: alle 32 Routen im Browser (N020), 5 Seitentypen mit Lighthouse (N030)*
+- [x] Größtes sichtbares Element und seine Ladeabhängigkeiten identifizieren. [S19] → *BEFUND: LCP = verzögerter Cookie-Banner bzw. Hero-Bild → GLOBAL-025*
+- [x] Schwere Client-Komponenten, lange Tasks, Animation, Widgets und Drittanbieterskripte auf Interaktionsprobleme prüfen. [S20] → *BEFUND → GLOBAL-009, GLOBAL-025 (TBT mobil bis 252 ms)*
+- [x] Schriften, Bilder, eingebettete Inhalte und Banner auf Layoutsprünge prüfen. [S21] → *BESTANDEN: CLS ≈ 0*
+- [x] Serverlatenz, Datenabrufe, Cache-Verhalten, Weiterleitungen und Fehlerquoten passend zur Architektur untersuchen. → *BESTANDEN für statische Seiten (Cache HIT). API-Fehler → GLOBAL-002*
+- [x] Unnötige Drittanbieter, doppelte Trackingbibliotheken und nie verwendete Pakete als begründete Einsparpotenziale dokumentieren. → *BEFUND → GLOBAL-008, GLOBAL-019*
+- [x] Leistungsbudgets für Bilder, JavaScript, Fonts und Drittanbieter individuell vorschlagen; ausdrücklich als Projektbudgets kennzeichnen. → *Vorschlag siehe „Leistungsbudgets (Vorschlag)“ unten*
+- [x] Kein Ziel „Lighthouse 100 = Top 10“. Gute Scores sind Diagnosehilfen und ersetzen keine tatsächliche Nutzerqualität. [S35][S37] → *Eingehalten. Beleg: Lighthouse-SEO 100 trotz GLOBAL-010 (N030)*
+
+
+### Leistungsbudgets (Vorschlag, Projektbudgets, keine Google-Vorgabe)
+
+| Kategorie | Budget je Seite (mobil) | Begründung |
+|---|---|---|
+| LCP (Labor, Standard-Mobilprofil) | ≤ 2,5 s | Orientierung an der guten CWV-Schwelle [S18] |
+| TBT (Labor) | ≤ 200 ms | Annäherung an INP ≤ 200 ms im Labor |
+| CLS | ≤ 0,1 (heute ≈ 0, halten) | [S18] |
+| Hero-/LCP-Bild | ≤ 150 KB bei 390 px Breite (AVIF/WebP) | Heute bis 344 KB JPG für alle Breiten |
+| Inhaltsbilder gesamt in der ersten Ansicht | ≤ 250 KB | Rest verzögert laden |
+| JavaScript (First Load) | ≤ 130 kB je Seite (heute 170–181 kB auf Leistungsseiten) | Server-Komponenten, weniger Client-Code |
+| Drittanbieter vor Einwilligung | 0 Anfragen | GLOBAL-019 |
+
+Die Budgets sind Vorschläge und müssen vom Projektverantwortlichen bestätigt werden (G12). Gemessen wird immer mit dokumentierten Bedingungen, mindestens 3 Läufe je Seitentyp.
 
 ## J. Next.js-/TypeScript-Architektur und Wartbarkeit
 
-- [ ] Tatsächlichen App-/Pages-Router, Next.js-/React-/Node-Version, Paketmanager und Lockfile erfassen.
-- [ ] Versionsabhängige Aussagen gegen die passende offizielle Dokumentation und aktuelle Sicherheitsmeldungen prüfen; nicht automatisch die neueste Major-Version verlangen.
-- [ ] Seitenstruktur mit eigenem Ordner und zusammensetzender TSX-Datei prüfen. Inhaltliche Sektionen sind eigenständige Komponenten; nicht jeder rein dekorative Wrapper braucht eine Datei. [S24]
-- [ ] Seitenspezifische CSS-Dateien kapseln nur lokale Besonderheiten. Globale Farben, Typografie und gemeinsame UI bleiben zentral. [S25]
-- [ ] Doppelte Header, Footer, CTA-Varianten und kopierte Designwerte erfassen.
-- [ ] Server-/Client-Grenzen, Datenzugriffe und interaktive Ausnahmen nachvollziehen; nicht grundlos jede Seite vollständig clientseitig ausliefern.
-- [ ] Metadata-, Bild-, Font-, Fehler- und Lade-Konventionen im Kontext der installierten Version prüfen. [S23][S26][S27]
-- [ ] Daten-/Content-Modell auf eindeutige Quellen und Pflegefähigkeit prüfen; keine gleiche Telefonnummer in zehn Dateien manuell pflegen.
-- [ ] Caching- und Revalidierungsregeln aus dem tatsächlich verwendeten Next.js-Modell ableiten. Kein pauschaler Cache-Schalter für alle Inhalte.
-- [ ] Produktionsbuild, Typecheck, Linting und Tests nur in sicherer isolierter Umgebung prüfen oder Ergebnisse vorhandener CI-Läufe lesend auswerten.
-- [ ] Tests und Fehlermeldungen dürfen nicht durch pauschale Ignorier-Einstellungen grün erscheinen.
-- [ ] Empfehlung „komplett neu bauen“ gegen gezielte Überarbeitung abwägen. Bestehende gute Inhalte, URLs, Abläufe und Assets ausdrücklich bewahren.
+- [x] Tatsächlichen App-/Pages-Router, Next.js-/React-/Node-Version, Paketmanager und Lockfile erfassen. → *Erfasst (Bestandsaufnahme), BEFUND → GLOBAL-007*
+- [x] Versionsabhängige Aussagen gegen die passende offizielle Dokumentation und aktuelle Sicherheitsmeldungen prüfen; nicht automatisch die neueste Major-Version verlangen. → *BEFUND → GLOBAL-001*
+- [x] Seitenstruktur mit eigenem Ordner und zusammensetzender TSX-Datei prüfen. Inhaltliche Sektionen sind eigenständige Komponenten; nicht jeder rein dekorative Wrapper braucht eine Datei. [S24] → *BEFUND: je Seite eine große Client-`page.tsx` ohne Sektionskomponenten → GLOBAL-009*
+- [x] Seitenspezifische CSS-Dateien kapseln nur lokale Besonderheiten. Globale Farben, Typografie und gemeinsame UI bleiben zentral. [S25] → *NICHT ANWENDBAR im Bestand (nur Tailwind-Klassen). Zielstruktur → GLOBAL-009*
+- [x] Doppelte Header, Footer, CTA-Varianten und kopierte Designwerte erfassen. → *BEFUND: doppelte Komponenten (Footer/SwissFooter, Navigation/SwissNavigation), viele CTA-Varianten → GLOBAL-008, GLOBAL-034*
+- [x] Server-/Client-Grenzen, Datenzugriffe und interaktive Ausnahmen nachvollziehen; nicht grundlos jede Seite vollständig clientseitig ausliefern. → *BEFUND → GLOBAL-009*
+- [x] Metadata-, Bild-, Font-, Fehler- und Lade-Konventionen im Kontext der installierten Version prüfen. [S23][S26][S27] → *BEFUND: Metadata (GLOBAL-009/010), Bild (GLOBAL-024). BESTANDEN: Font, Fehlerseite (mit Robots-Hinweis GLOBAL-015)*
+- [x] Daten-/Content-Modell auf eindeutige Quellen und Pflegefähigkeit prüfen; keine gleiche Telefonnummer in zehn Dateien manuell pflegen. → *BEFUND: Kontaktdaten mehrfach im Code verteilt → GLOBAL-020*
+- [x] Caching- und Revalidierungsregeln aus dem tatsächlich verwendeten Next.js-Modell ableiten. Kein pauschaler Cache-Schalter für alle Inhalte. → *BESTANDEN: statisch vorgerendert, keine Revalidierung nötig*
+- [x] Produktionsbuild, Typecheck, Linting und Tests nur in sicherer isolierter Umgebung prüfen oder Ergebnisse vorhandener CI-Läufe lesend auswerten. → *Geprüft in isolierter Kopie (N005) → GLOBAL-007*
+- [x] Tests und Fehlermeldungen dürfen nicht durch pauschale Ignorier-Einstellungen grün erscheinen. → *BESTANDEN: keine Ignorier-Schalter. Aber Lint ohne Konfiguration prüft nichts → GLOBAL-007*
+- [x] Empfehlung „komplett neu bauen“ gegen gezielte Überarbeitung abwägen. Bestehende gute Inhalte, URLs, Abläufe und Assets ausdrücklich bewahren. → *Abwägung folgt in Phase 5 (Tendenz: Seitenebene neu aufbauen, Slugs und funktionierende Bausteine erhalten)*
 
 ## K. Backend, Kontaktweg, Sicherheit und Betrieb
 
 Ein grünes Frontend beweist kein funktionierendes Backend. Prüfe nur tatsächlich vorhandene Funktionen: API-Routen, Server Actions, Formularanbieter, CRM, CMS, Datenbank, Authentifizierung oder Webhooks. Nicht vorhandene Systeme nicht als „fehlen“ bewerten. Grundlage für technische Sicherheitsfragen: [S28][S29].
 
-- [ ] Datenfluss vom Formular über Server/Provider bis zum tatsächlichen Empfänger oder CRM beschreiben.
-- [ ] Servervalidierung, Pflichtfelder, Eingabegrenzen und verständliche Fehlerzustände prüfen.
-- [ ] Spam-Schutz und Rate Limits dürfen echte Nutzer nicht unnötig aussperren; Sicherheits-/Bedienungsabwägung dokumentieren.
-- [ ] Wiederholtes Absenden, Netzwerkabbruch, Providerfehler und Timeout dürfen keine still verlorenen oder unkontrolliert duplizierten Anfragen erzeugen.
-- [ ] Erfolgsmeldung, Bestätigung, interne Benachrichtigung und tatsächliche Zustellung getrennt verifizieren.
-- [ ] SPF, DKIM und DMARC beziehungsweise Provider-Domainverifikation als Zustellbarkeitsprüfungen aufnehmen; „Mail akzeptiert“ ist noch kein Posteingangsnachweis.
-- [ ] API-Schlüssel und privilegierte Tokens bleiben serverseitig; keine Geheimnisse im Browser-Bundle oder öffentlichen Repository.
-- [ ] Autorisierung an jedem schützenswerten serverseitigen Zugriff prüfen. Ein versteckter Button ist kein Zugriffsschutz.
-- [ ] Bei vorhandenem Login: Rollen, Sitzungen, Abmeldung, Passwort-/Reset-Prozess und geschützte API-Endpunkte prüfen.
-- [ ] Bei vorhandenem Upload: Dateitypen, Größen, Zugriff, Aufbewahrung und Missbrauchsrisiken prüfen.
-- [ ] Bei vorhandenen Webhooks: Signaturprüfung, Wiederholungsschutz und sichere Verarbeitung prüfen.
-- [ ] HTTP-Sicherheitsheader, HTTPS, Content-Security-Policy und externe Einbindungen auf Eignung prüfen; keine vermeintlich sichere Standardliste blind einsetzen.
-- [ ] Datenbank-/Mandantentrennung, Rechte und Backups nur dort prüfen, wo ein solches Backend existiert.
-- [ ] Logs helfen bei Fehlerdiagnose, veröffentlichen aber keine Geheimnisse oder unnötigen personenbezogenen Angaben.
-- [ ] Staging und Produktion sind getrennt; Test-Anfragen landen nicht beim echten Vertrieb.
-- [ ] Monitoring, verantwortliche Person, Alarmweg, Fehlerbehebung und Wiederherstellung sind dokumentiert.
-- [ ] Vercel-Runtime, Regionen, Limits, Abrechnung und Umgebungsvariablen anhand des tatsächlichen Projekts prüfen. Keine Tarifannahmen treffen.
+- [x] Datenfluss vom Formular über Server/Provider bis zum tatsächlichen Empfänger oder CRM beschreiben. → *Beschrieben, siehe „Datenfluss“ unten*
+- [x] Servervalidierung, Pflichtfelder, Eingabegrenzen und verständliche Fehlerzustände prüfen. → *BEFUND → GLOBAL-004 (Grenzen fehlen). BESTANDEN: Pflichtfelder und E-Mail-Prüfung (N032)*
+- [x] Spam-Schutz und Rate Limits dürfen echte Nutzer nicht unnötig aussperren; Sicherheits-/Bedienungsabwägung dokumentieren. → *BEFUND: nicht vorhanden → GLOBAL-004*
+- [x] Wiederholtes Absenden, Netzwerkabbruch, Providerfehler und Timeout dürfen keine still verlorenen oder unkontrolliert duplizierten Anfragen erzeugen. → *BEFUND: stiller Verlust bei Anbieterfehler (N032) → GLOBAL-003. BESTANDEN: Doppelklick-Schutz*
+- [x] Erfolgsmeldung, Bestätigung, interne Benachrichtigung und tatsächliche Zustellung getrennt verifizieren. → *BEFUND → GLOBAL-003*
+- [x] SPF, DKIM und DMARC beziehungsweise Provider-Domainverifikation als Zustellbarkeitsprüfungen aufnehmen; „Mail akzeptiert“ ist noch kein Posteingangsnachweis. → *BEFUND → GLOBAL-003 (N013)*
+- [x] API-Schlüssel und privilegierte Tokens bleiben serverseitig; keine Geheimnisse im Browser-Bundle oder öffentlichen Repository. → *BESTANDEN im Code (nur serverseitig genutzt). BEFUND-Verdacht in Dokumenten → GLOBAL-035*
+- [x] Autorisierung an jedem schützenswerten serverseitigen Zugriff prüfen. Ein versteckter Button ist kein Zugriffsschutz. → *NICHT ANWENDBAR: keine geschützten Bereiche*
+- [x] Bei vorhandenem Login: Rollen, Sitzungen, Abmeldung, Passwort-/Reset-Prozess und geschützte API-Endpunkte prüfen. → *NICHT ANWENDBAR*
+- [x] Bei vorhandenem Upload: Dateitypen, Größen, Zugriff, Aufbewahrung und Missbrauchsrisiken prüfen. → *NICHT ANWENDBAR*
+- [x] Bei vorhandenen Webhooks: Signaturprüfung, Wiederholungsschutz und sichere Verarbeitung prüfen. → *NICHT ANWENDBAR*
+- [x] HTTP-Sicherheitsheader, HTTPS, Content-Security-Policy und externe Einbindungen auf Eignung prüfen; keine vermeintlich sichere Standardliste blind einsetzen. → *BEFUND → GLOBAL-006*
+- [x] Datenbank-/Mandantentrennung, Rechte und Backups nur dort prüfen, wo ein solches Backend existiert. → *NICHT ANWENDBAR: keine Datenbank*
+- [x] Logs helfen bei Fehlerdiagnose, veröffentlichen aber keine Geheimnisse oder unnötigen personenbezogenen Angaben. → *BESTANDEN im Produktionspfad. BEFUND im schlüssellosen Zweig (personenbezogene Daten im Log, N032) → GLOBAL-004*
+- [x] Staging und Produktion sind getrennt; Test-Anfragen landen nicht beim echten Vertrieb. → *BEFUND: identische Schlüssel → GLOBAL-005*
+- [x] Monitoring, verantwortliche Person, Alarmweg, Fehlerbehebung und Wiederherstellung sind dokumentiert. → *BEFUND → GLOBAL-029*
+- [x] Vercel-Runtime, Regionen, Limits, Abrechnung und Umgebungsvariablen anhand des tatsächlichen Projekts prüfen. Keine Tarifannahmen treffen. → *Erfasst: Region iad1 (USA), Variablen → GLOBAL-005. Tarif und Limits NICHT PRÜFBAR (keine Tarifannahmen)*
+
+
+### Datenfluss (Ist, Stand 24.09.2026)
+
+1. **Kontaktformular** (Footer jeder Seite): Browser → `POST /api/contact` (Vercel-Funktion, Region iad1/USA) → Prüfung Pflichtfelder und E-Mail-Format → Resend-API (Absender `info@bgs-service.ch`, DNS nicht eingerichtet) → Empfänger `info@brandea.de` (Agentur), Antwortadresse = anfragende Person. Keine Speicherung, kein CRM, keine Bestätigung an Anfragende. Die Antwort an den Browser ist immer „Erfolg“ (GLOBAL-003).
+2. **KI-Chat** (jede Seite, auch „Termin vereinbaren“): Browser → `POST /api/chat` → Google Gemini (`gemini-2.5-flash`) mit dem gesamten Gesprächsverlauf, der personenbezogene Angaben enthalten kann. Derzeit wegen ungültigem Schlüssel defekt (GLOBAL-002). Bei „An Spezialisten senden“: `POST /api/chat-to-specialist` → Resend → `info@brandea.de` mit Zusammenfassung und vollständigem Verlauf.
+3. **KI-Branchen-Berater** (Startseite): Browser → `POST /api/industry-analysis` → Google Gemini.
+4. **Karte** (`/kontakt`): Browser → Google Maps JavaScript und Google Fonts direkt beim Laden, ohne Einwilligung (GLOBAL-019).
+5. **Einwilligungsauswahl**: nur `localStorage` im Browser, ohne Wirkung.
 
 ## L. Conversion und psychologische Plausibilität
 
 **Die folgenden Punkte sind Hypothesen für Gestaltung und Tests, keine garantierten psychologischen Wirkungen.**
 
-- [ ] Die erste sichtbare Ansicht vermittelt Angebot, Zielgruppe, belegbaren Nutzen und einen verständlichen nächsten Schritt.
-- [ ] CTA-Beschriftung sagt, was geschieht, statt nur „Mehr“ oder „Absenden“.
-- [ ] Für frühe Recherche und konkrete Kaufabsicht gibt es passende nächste Schritte; nicht jeder Besucher wird sofort zur großen Anfrage gedrängt.
-- [ ] Relevante Belege stehen in der Nähe riskanter Entscheidungen, nicht ausschließlich im Footer.
-- [ ] Prozess, Aufwand, benötigte Informationen und mögliche Kosten beziehungsweise Angebotslogik werden soweit zutreffend erklärt.
-- [ ] Formular verlangt nur Informationen, die für den nächsten Schritt wirklich gebraucht werden; spätere Qualifizierung und Spam-Risiko mitdenken.
-- [ ] Vertrauensaufbau beruht auf echten Ansprechpartnern, Referenzen und Transparenz, nicht auf erfundenen Siegeln.
-- [ ] Kein künstlicher Countdown, keine erfundene Knappheit und keine manipulative Zustimmungsgestaltung.
-- [ ] Kontaktalternativen passen zur Zielgruppe und tatsächlichen Erreichbarkeit; nicht zehn konkurrierende Kanäle ohne Betreuung anbieten.
-- [ ] Mobile Anruf-, E-Mail-, Formular- und gegebenenfalls Terminwege sind verständlich bedienbar.
-- [ ] Testaufgaben mit tatsächlichen Zielpersonen planen: Angebot erklären, passende Leistung finden, Vertrauen begründen, Anfrage stellen. Eine kleine qualitative Runde findet Probleme, beweist aber keine Marktquote.
-- [ ] A/B-Tests erst mit vorab definiertem Ziel, ausreichendem erwartbarem Datenumfang und Guardrails planen. Keine Sieger aus wenigen Klicks ausrufen.
+- [x] Die erste sichtbare Ansicht vermittelt Angebot, Zielgruppe, belegbaren Nutzen und einen verständlichen nächsten Schritt. → *BEFUND: Mobil ohne Text (GLOBAL-012), belegbarer Nutzen fehlt (GLOBAL-030)*
+- [x] CTA-Beschriftung sagt, was geschieht, statt nur „Mehr“ oder „Absenden“. → *BEFUND → GLOBAL-034*
+- [ ] Für frühe Recherche und konkrete Kaufabsicht gibt es passende nächste Schritte; nicht jeder Besucher wird sofort zur großen Anfrage gedrängt. → *Offen, Phase 3/4*
+- [x] Relevante Belege stehen in der Nähe riskanter Entscheidungen, nicht ausschließlich im Footer. → *BEFUND: vorhandene „Belege“ unbelegt → GLOBAL-021, GLOBAL-022*
+- [ ] Prozess, Aufwand, benötigte Informationen und mögliche Kosten beziehungsweise Angebotslogik werden soweit zutreffend erklärt. → *Offen, Phase 3 (vereinzelte Preisangaben, Blog)*
+- [x] Formular verlangt nur Informationen, die für den nächsten Schritt wirklich gebraucht werden; spätere Qualifizierung und Spam-Risiko mitdenken. → *BESTANDEN (Pflicht nur Name, E-Mail, Nachricht). Hinweise → GLOBAL-028, GLOBAL-027*
+- [x] Vertrauensaufbau beruht auf echten Ansprechpartnern, Referenzen und Transparenz, nicht auf erfundenen Siegeln. → *BEFUND → GLOBAL-021, GLOBAL-022, GLOBAL-023*
+- [x] Kein künstlicher Countdown, keine erfundene Knappheit und keine manipulative Zustimmungsgestaltung. → *BESTANDEN: kein Countdown, keine Knappheit, „Nur notwendige“ gleichwertig erreichbar*
+- [x] Kontaktalternativen passen zur Zielgruppe und tatsächlichen Erreichbarkeit; nicht zehn konkurrierende Kanäle ohne Betreuung anbieten. → *BEFUND: viele Kanäle, davon mehrere defekt → GLOBAL-002, GLOBAL-019, GLOBAL-020, GLOBAL-034*
+- [x] Mobile Anruf-, E-Mail-, Formular- und gegebenenfalls Terminwege sind verständlich bedienbar. → *Teilweise: `tel:`-Links vorhanden (BESTANDEN). Der Menü-Button ist unbenannt → GLOBAL-026. Mobile Formularbedienung folgt in Phase 3*
+- [ ] Testaufgaben mit tatsächlichen Zielpersonen planen: Angebot erklären, passende Leistung finden, Vertrauen begründen, Anfrage stellen. Eine kleine qualitative Runde findet Probleme, beweist aber keine Marktquote. → *Offen, Plan in Phase 7*
+- [x] A/B-Tests erst mit vorab definiertem Ziel, ausreichendem erwartbarem Datenumfang und Guardrails planen. Keine Sieger aus wenigen Klicks ausrufen. → *NICHT ANWENDBAR derzeit (keine Messung) → GLOBAL-029*
 
 **Messkonzept:** Primär qualifizierte Anfragen beziehungsweise qualifizierte Anfragen pro auswertbarer Sitzung. Sekundär erfolgreich abgeschickte Formulare, Termine und Kontaktinteraktionen. Ein Buttonklick ist noch kein Lead, ein Lead noch kein Umsatz.
 
@@ -247,31 +328,31 @@ Ein grünes Frontend beweist kein funktionierendes Backend. Prüfe nur tatsächl
 
 Dieser Abschnitt beschreibt Prüfaufträge, keine individuelle Rechtsfreigabe. Rechtsform, Branche, tatsächliche Trackingtechnik, Verbraucherbezug und Datenflüsse sind zuerst festzustellen. Fachliche rechtliche Prüfung bleibt ein gesonderter Abnahmeschritt.
 
-- [ ] Impressum gegen die konkrete Anbieteridentität und erforderlichen Angaben prüfen. [S38]
-- [ ] Datenschutzhinweise mit den tatsächlich eingebundenen Diensten, Empfängern, Zwecken und Formularwegen abgleichen.
-- [ ] Speicherungen/Zugriffe auf Endgeräte einschließlich Cookies und ähnlicher Technik auf Einwilligungsbedarf und gesetzliche Ausnahmen prüfen. [S39]
-- [ ] Ablehnen, zustimmen und später widerrufen technisch testen. Kein pauschales „Banner vorhanden = rechtskonform“.
-- [ ] Tracking, Karten, Video, Chat und externe Schriftabrufe in den jeweiligen Zustimmungszuständen untersuchen.
-- [ ] Auftragsverarbeitung, Datenübermittlungen, Löschfristen, Betroffenenanfragen und Verantwortlichkeiten als organisatorische Nachweise abfragen; nicht aus dem Frontend ableiten.
-- [ ] Keine pauschale Pflicht-Einwilligung für jede Kontaktanfrage voraussetzen; konkrete Rechtsgrundlage und Datenverarbeitung fachlich klären.
-- [ ] BFSG-Anwendungsbereich und Ausnahmen für das konkrete Angebot prüfen. Nicht pauschal behaupten, jede B2B-Unternehmenswebsite falle darunter. [S40][S41]
-- [ ] WCAG 2.2 AA als technischen Projektmaßstab anwenden: semantische Struktur, Tastaturbedienbarkeit, sichtbarer Fokus, Kontrast, Formulare, verständliche Fehler und sinnvolle Statusmeldungen. [S22]
-- [ ] Navigation und Dialoge auf Fokusführung, Schließen und Rückkehr zum Auslöser prüfen.
-- [ ] Vergrößerung, Umbruch und mobile Bedienung testen; reine automatische Scannergebnisse sind keine vollständige Barrierefreiheitsprüfung.
-- [ ] Haupt-Conversion-Strecke zusätzlich manuell per Tastatur und mit geeigneter Screenreader-Stichprobe überprüfen.
+- [x] Impressum gegen die konkrete Anbieteridentität und erforderlichen Angaben prüfen. [S38] → *BEFUND → GLOBAL-020, GLOBAL-027*
+- [x] Datenschutzhinweise mit den tatsächlich eingebundenen Diensten, Empfängern, Zwecken und Formularwegen abgleichen. → *BEFUND → GLOBAL-027*
+- [x] Speicherungen/Zugriffe auf Endgeräte einschließlich Cookies und ähnlicher Technik auf Einwilligungsbedarf und gesetzliche Ausnahmen prüfen. [S39] → *BEFUND: Consent in `localStorage`, Karte ohne Einwilligung → GLOBAL-019. Rechtsbewertung fachlich*
+- [x] Ablehnen, zustimmen und später widerrufen technisch testen. Kein pauschales „Banner vorhanden = rechtskonform“. → *BEFUND: Auswahl ohne Wirkung, kein dauerhafter Widerruf-Link gefunden → GLOBAL-019*
+- [x] Tracking, Karten, Video, Chat und externe Schriftabrufe in den jeweiligen Zustimmungszuständen untersuchen. → *BEFUND: Karte und Fonts ohne Einwilligung, Chat-Inhalte gehen an Google Gemini → GLOBAL-019, GLOBAL-027*
+- [ ] Auftragsverarbeitung, Datenübermittlungen, Löschfristen, Betroffenenanfragen und Verantwortlichkeiten als organisatorische Nachweise abfragen; nicht aus dem Frontend ableiten. → *NICHT PRÜFBAR: organisatorische Nachweise beim Kunden → B13*
+- [x] Keine pauschale Pflicht-Einwilligung für jede Kontaktanfrage voraussetzen; konkrete Rechtsgrundlage und Datenverarbeitung fachlich klären. → *BEFUND: Pflicht-Checkbox „dauerhaft gespeichert“ → GLOBAL-027*
+- [x] BFSG-Anwendungsbereich und Ausnahmen für das konkrete Angebot prüfen. Nicht pauschal behaupten, jede B2B-Unternehmenswebsite falle darunter. [S40][S41] → *NICHT PRÜFBAR in dieser Analyse: Schweizer Anbieter, Anwendbarkeit fachlich zu klären (B13). WCAG trotzdem als Projektmaßstab angewandt*
+- [x] WCAG 2.2 AA als technischen Projektmaßstab anwenden: semantische Struktur, Tastaturbedienbarkeit, sichtbarer Fokus, Kontrast, Formulare, verständliche Fehler und sinnvolle Statusmeldungen. [S22] → *BEFUND → GLOBAL-026*
+- [x] Navigation und Dialoge auf Fokusführung, Schließen und Rückkehr zum Auslöser prüfen. → *BEFUND: Mega-Menü, Menü-Button, Banner → GLOBAL-026. Chat-Dialog nicht geprüft (Chat defekt)*
+- [ ] Vergrößerung, Umbruch und mobile Bedienung testen; reine automatische Scannergebnisse sind keine vollständige Barrierefreiheitsprüfung. → *Teilweise: Breiten-Matrix geprüft, Zoom 200 % offen → Phase 3*
+- [ ] Haupt-Conversion-Strecke zusätzlich manuell per Tastatur und mit geeigneter Screenreader-Stichprobe überprüfen. → *Offen: Tastatur teilweise geprüft, Screenreader-Stichprobe fehlt → Phase 3/6*
 
 ## N. Analytics, lokale Sichtbarkeit und Weiterentwicklung
 
-- [ ] Baseline für organische Nachfrage, relevante Landingpages und qualifizierte Anfragen dokumentieren, sofern Daten vorliegen.
-- [ ] Geschäftliche Zielbegriffe, Region, Sprache, Gerät und Brand-/Non-Brand-Trennung vor Rankingauswertung festlegen.
-- [ ] Ereignisse auf echte Ergebnisse beziehen: Anfrage erfolgreich angenommen, Termin tatsächlich gebucht, Lead qualifiziert. Doppelte Events und interne Tests herausfiltern.
-- [ ] Keine personenbezogenen Formulardaten in Analytics-Eventnamen, URLs oder frei zugängliche Logs schreiben.
-- [ ] Quelle/Medium, Landingpage und gegebenenfalls CRM-Qualifizierung datenschutzgerecht verknüpfen; Messlücken offenlegen.
-- [ ] Google-Unternehmensprofil, passende Kategorien, tatsächliche Einzugsgebiete und konsistente Firmenangaben prüfen, sofern das Unternehmen dafür geeignet ist. [S32]
-- [ ] Reale Bewertungen, hochwertige Fachbeiträge und legitime Branchen-/Partnererwähnungen als außerhalb des Codes liegende Wachstumsaufgaben erfassen. Keine Linkpakete oder erfundenen Erwähnungen. [S33]
-- [ ] Vorhandene Backlinks und erfolgreiche Landingpages vor dem Relaunch sichern; keine relevante URL aus kosmetischen Gründen verwerfen. [S07]
-- [ ] Für Google-KI-Funktionen auf eigenständige hilfreiche Inhalte und normale technische Zugänglichkeit setzen. Kein besonderes „KI-Schema“ oder `llms.txt` als Pflichtaufgabe behaupten. [S34]
-- [ ] Neue Funktionen nur bei konkretem Nutzen priorisieren: echte Fallstudie, transparente Leistungsabgrenzung, verständlicher Ablauf, geeignete Anfragehilfe oder hilfreiche Entscheidungsvorlage.
+- [x] Baseline für organische Nachfrage, relevante Landingpages und qualifizierte Anfragen dokumentieren, sofern Daten vorliegen. → *NICHT PRÜFBAR: keine Daten, laut Runtime-Logs praktisch kein Verkehr (N012)*
+- [ ] Geschäftliche Zielbegriffe, Region, Sprache, Gerät und Brand-/Non-Brand-Trennung vor Rankingauswertung festlegen. → *Offen, Phase 4, abhängig von B04*
+- [x] Ereignisse auf echte Ergebnisse beziehen: Anfrage erfolgreich angenommen, Termin tatsächlich gebucht, Lead qualifiziert. Doppelte Events und interne Tests herausfiltern. → *BEFUND: keine Messung → GLOBAL-029*
+- [x] Keine personenbezogenen Formulardaten in Analytics-Eventnamen, URLs oder frei zugängliche Logs schreiben. → *NICHT ANWENDBAR (keine Analytics). Logs → GLOBAL-004*
+- [x] Quelle/Medium, Landingpage und gegebenenfalls CRM-Qualifizierung datenschutzgerecht verknüpfen; Messlücken offenlegen. → *BEFUND: nicht vorhanden → GLOBAL-029*
+- [ ] Google-Unternehmensprofil, passende Kategorien, tatsächliche Einzugsgebiete und konsistente Firmenangaben prüfen, sofern das Unternehmen dafür geeignet ist. [S32] → *NICHT GEPRÜFT: Rückfrage an den Kunden (B11)*
+- [ ] Reale Bewertungen, hochwertige Fachbeiträge und legitime Branchen-/Partnererwähnungen als außerhalb des Codes liegende Wachstumsaufgaben erfassen. Keine Linkpakete oder erfundenen Erwähnungen. [S33] → *Offen, Roadmap in Phase 7*
+- [x] Vorhandene Backlinks und erfolgreiche Landingpages vor dem Relaunch sichern; keine relevante URL aus kosmetischen Gründen verwerfen. [S07] → *Teilweise: Migrationsbestand der Kunden-Website erfasst (02). Backlinks NICHT PRÜFBAR*
+- [x] Für Google-KI-Funktionen auf eigenständige hilfreiche Inhalte und normale technische Zugänglichkeit setzen. Kein besonderes „KI-Schema“ oder `llms.txt` als Pflichtaufgabe behaupten. [S34] → *Eingehalten: kein `llms.txt` oder KI-Schema empfohlen*
+- [x] Neue Funktionen nur bei konkretem Nutzen priorisieren: echte Fallstudie, transparente Leistungsabgrenzung, verständlicher Ablauf, geeignete Anfragehilfe oder hilfreiche Entscheidungsvorlage. → *BEFUND: KI-Chat und KI-Berater ohne belegten Nutzen und derzeit defekt → GLOBAL-002, B05*
 
 ## Befundregister (global)
 
@@ -295,7 +376,7 @@ Format nach `00-START-HIER.md`, Abschnitt 6. Gemeinsame Befunde stehen nur hier,
 
 ### GLOBAL-002 · KI-Chat fällt in Produktion aus, der Fehler bleibt unsichtbar
 
-- **Betroffen:** alle Seiten (Chat-Button „Chat öffnen“ aus `app/layout.tsx`), `/api/chat`, vermutlich auch `/api/industry-analysis` (Startseite, „KI-Branchen-Berater“), `server/gemini.ts:591-596, 860-866`
+- **Betroffen:** alle Seiten (Chat-Button „Chat öffnen“ aus `app/layout.tsx`), **die Buttons „Termin vereinbaren“ auf 22 Seiten** (sie öffnen den Chat im Terminmodus, `client/src/components/AppointmentButton.tsx:21-24`), `/api/chat`, vermutlich auch `/api/industry-analysis` (Startseite, „KI-Branchen-Berater“), `server/gemini.ts:591-596, 860-866`
 - **Prüfdatum/Umgebung:** Vercel-Runtime-Logs und Fehlergruppen 17.–24.09.2026 (nur lesend)
 - **Ist-Zustand:** Die Gemini-API lehnt den hinterlegten Schlüssel ab („API key not valid“, 24.09.2026 10:13:16 UTC). Der Server fängt den Fehler ab und antwortet trotzdem mit **HTTP 200** und einem Entschuldigungstext, der die Telefonnummer `+41 41 320 56 10` enthält (N017). Diese Nummer ist nicht belegt (GLOBAL-020).
 - **Beleg:** N012, N017
@@ -447,7 +528,7 @@ Format nach `00-START-HIER.md`, Abschnitt 6. Gemeinsame Befunde stehen nur hier,
 
 - **Betroffen:** vor allem `/` (43 Elemente mit `opacity:0`, darunter die H1), weitere Seiten mit Einblendungen
 - **Prüfdatum/Umgebung:** 24.09.2026, ausgeliefertes HTML, Bildschirmfotos Desktop/Mobil
-- **Ist-Zustand:** Überschrift, Einleitung und Buttons des Heros stehen im HTML mit `opacity:0`. Auf dem Mobil-Bildschirmfoto direkt nach dem Laden sind weder H1 noch Button zu sehen, nur das Hero-Bild. Auf Desktop sind die Buttons zum Aufnahmezeitpunkt halbtransparent.
+- **Ist-Zustand:** Überschrift, Einleitung und Buttons des Heros stehen im HTML mit `opacity:0`. Auf dem Mobil-Bildschirmfoto direkt nach dem Laden sind weder H1 noch Button zu sehen, nur das Hero-Bild. Auf Desktop sind die Buttons zum Aufnahmezeitpunkt halbtransparent. Die Einstellung „Bewegung reduzieren“ wird im Code nirgends berücksichtigt (0 Fundstellen für `prefers-reduced-motion`/`useReducedMotion`).
 - **Beleg:** N022, N026
 - **Auswirkung:** Die erste Ansicht vermittelt auf Mobilgeräten kein Angebot und keinen nächsten Schritt, solange die Animation nicht gelaufen ist. Ohne oder bei langsamem JavaScript bleibt der Inhalt unsichtbar. Das LCP-Element verzögert sich.
 - **Priorität:** P1 · **Launch-Blocker:** nein
@@ -518,21 +599,6 @@ Format nach `00-START-HIER.md`, Abschnitt 6. Gemeinsame Befunde stehen nur hier,
 - **Evidenz/Sicherheit:** HTTP-/Renderbefund
 - **Quelle:** S04
 
-### GLOBAL-018 · Indexierungsstrategie der neuen Seite vor dem Launch ungeklärt
-
-- **Betroffen:** alle 32 URLs unter `*.vercel.app`
-- **Prüfdatum/Umgebung:** 24.09.2026, HTTP (robots, Sitemap, Meta-Robots)
-- **Ist-Zustand:** Die neue Seite ist unter der vorläufigen Adresse `bgs-gebaeudeservice.vercel.app` vollständig zur Indexierung freigegeben (`index, follow`, Sitemap), während der Kunde unter `bgs-service.ch` eine andere Website betreibt (E07, N014). Ob Seiten bereits im Google-Index sind, ist ohne Search Console NICHT PRÜFBAR.
-- **Beleg:** N002, N007, N008, N014
-- **Auswirkung:** Eine noch nicht freigegebene Seite mit unbelegten Angaben (GLOBAL-020/021) kann unter einer Zweitadresse sichtbar werden und mit der Kunden-Domain konkurrieren. Beim späteren Umzug entstehen Doppelstrukturen.
-- **Priorität:** P1 · **Launch-Blocker:** ja (G04/G10, Entscheidung nötig)
-- **Konkrete Vorgabe:** Festlegen, unter welcher Domain die neue Seite startet (B08). Bis zum Launch die Vorab-Adresse von der Indexierung ausnehmen, z. B. mit Zugriffsschutz oder `noindex` (Header), und die Sitemap dort nicht bewerben. Zum Launch die eigene Domain verbinden, Canonicals und Sitemap auf sie ausrichten und die `vercel.app`-Adresse per permanenter Weiterleitung auf die Domain führen.
-- **Abnahmekriterium:** Vor dem Launch liefert die Vorab-Adresse `noindex` bzw. ist geschützt. Nach dem Launch leiten alle `vercel.app`-URLs mit 308/301 auf die gleichnamige URL der eigenen Domain, Canonicals und Sitemap nennen ausschließlich die eigene Domain.
-- **Aufwand/Verantwortlich:** Entwicklung/SEO, klein. Entscheidung: Kunde/Brandea
-- **Abhängigkeiten:** B08, E07
-- **Evidenz/Sicherheit:** HTTP-Befund, Auswirkung auf den Index = HYPOTHESE (NICHT PRÜFBAR ohne Search Console)
-- **Quelle:** S01, S05, S07, S30
-
 ### GLOBAL-017 · Blogartikel nur über die Blog-Übersicht erreichbar
 
 - **Betroffen:** `/blog/*` (U29–U32), Leistungs- und Standortseiten
@@ -547,6 +613,21 @@ Format nach `00-START-HIER.md`, Abschnitt 6. Gemeinsame Befunde stehen nur hier,
 - **Abhängigkeiten:** GLOBAL-031, Intent-Matrix (Phase 4)
 - **Evidenz/Sicherheit:** HTTP-Befund. Nutzen = HYPOTHESE
 - **Quelle:** S04
+
+### GLOBAL-018 · Indexierungsstrategie der neuen Seite vor dem Launch ungeklärt
+
+- **Betroffen:** alle 32 URLs unter `*.vercel.app`
+- **Prüfdatum/Umgebung:** 24.09.2026, HTTP (robots, Sitemap, Meta-Robots)
+- **Ist-Zustand:** Die neue Seite ist unter der vorläufigen Adresse `bgs-gebaeudeservice.vercel.app` vollständig zur Indexierung freigegeben (`index, follow`, Sitemap), während der Kunde unter `bgs-service.ch` eine andere Website betreibt (E07, N014). Ob Seiten bereits im Google-Index sind, ist ohne Search Console NICHT PRÜFBAR.
+- **Beleg:** N002, N007, N008, N014
+- **Auswirkung:** Eine noch nicht freigegebene Seite mit unbelegten Angaben (GLOBAL-020/021) kann unter einer Zweitadresse sichtbar werden und mit der Kunden-Domain konkurrieren. Beim späteren Umzug entstehen Doppelstrukturen.
+- **Priorität:** P1 · **Launch-Blocker:** ja (G04/G10, Entscheidung nötig)
+- **Konkrete Vorgabe:** Festlegen, unter welcher Domain die neue Seite startet (B08). Bis zum Launch die Vorab-Adresse von der Indexierung ausnehmen, z. B. mit Zugriffsschutz oder `noindex` (Header), und die Sitemap dort nicht bewerben. Zum Launch die eigene Domain verbinden, Canonicals und Sitemap auf sie ausrichten und die `vercel.app`-Adresse per permanenter Weiterleitung auf die Domain führen.
+- **Abnahmekriterium:** Vor dem Launch liefert die Vorab-Adresse `noindex` bzw. ist geschützt. Nach dem Launch leiten alle `vercel.app`-URLs mit 308/301 auf die gleichnamige URL der eigenen Domain, Canonicals und Sitemap nennen ausschließlich die eigene Domain.
+- **Aufwand/Verantwortlich:** Entwicklung/SEO, klein. Entscheidung: Kunde/Brandea
+- **Abhängigkeiten:** B08, E07
+- **Evidenz/Sicherheit:** HTTP-Befund, Auswirkung auf den Index = HYPOTHESE (NICHT PRÜFBAR ohne Search Console)
+- **Quelle:** S01, S05, S07, S30
 
 ### GLOBAL-019 · Google Maps lädt ohne Einwilligung, der Cookie-Banner steuert nichts und beschreibt nicht die Realität
 
@@ -758,21 +839,68 @@ Format nach `00-START-HIER.md`, Abschnitt 6. Gemeinsame Befunde stehen nur hier,
 - **Evidenz/Sicherheit:** Renderbefund plus gestalterische Einschätzung (Projektkriterium, keine Google-Vorschrift)
 - **Quelle:** S25
 
+### GLOBAL-033 · Keine Übersichtsseiten für Leistungen und Standorte, keine Breadcrumbs
+
+- **Betroffen:** Informationsarchitektur. `/leistungen`, `/standorte`, `/premium`, `/business` und `/basis` liefern 404
+- **Prüfdatum/Umgebung:** 24.09.2026, HTTP, Code-Suche
+- **Ist-Zustand:** Die im Auftrag erwartete Seite „Alle Leistungen“ (P02) und eine Übersicht der Einzugsgebiete (P09) fehlen. Die Leistungsübersicht existiert nur als Mega-Menü (per Tastatur nicht zu öffnen, GLOBAL-026), als Startseitenabschnitt und im Footer. Breadcrumbs gibt es nirgends (0 Fundstellen). Die URL-Pfade `/premium/…`, `/business/…` und `/basis/…` suggerieren Ebenen, die nicht existieren.
+- **Beleg:** N008, N031, Code-Suche vom 24.09.2026
+- **Auswirkung:** Keine Auswahlhilfe zwischen ähnlichen Leistungen. Wer eine URL kürzt, landet auf 404. Die Hierarchie ist für Nutzer und Suchmaschinen nur indirekt erkennbar.
+- **Priorität:** P2 · **Launch-Blocker:** nein
+- **Konkrete Vorgabe:** Nach Klärung des Leistungsumfangs (B03) eine Seite „Alle Leistungen“ als Auswahlhilfe anlegen (je Leistung: für wen, was genau, Abgrenzung) und eine Seite zum Einzugsgebiet mit der tatsächlichen Abdeckung (B04). Sichtbare Breadcrumbs auf Unterseiten, passend zur tatsächlichen Hierarchie. Kategorie-Pfade entweder mit Inhalt belegen oder in der künftigen URL-Struktur vermeiden (mit Weiterleitungsplan, [S07]).
+- **Abnahmekriterium:** Jede Ebene einer URL führt zu einer sinnvollen Seite oder existiert nicht. Die Breadcrumbs entsprechen der Navigation. Nutzertest: Die passende Leistung wird von der Übersicht aus in unter einer Minute gefunden.
+- **Aufwand/Verantwortlich:** Redaktion/Entwicklung, mittel
+- **Abhängigkeiten:** B03, B04, GLOBAL-030
+- **Evidenz/Sicherheit:** HTTP- und Codebefund
+- **Quelle:** S04, S07, S11
+
+### GLOBAL-034 · Viele konkurrierende und unklare Handlungsaufforderungen
+
+- **Betroffen:** alle Seiten
+- **Prüfdatum/Umgebung:** 24.09.2026, Volltext, erste Ansicht (N020)
+- **Ist-Zustand:** Nebeneinander stehen „Kontakt aufnehmen“, „Kostenlose Beratung“, „Termin vereinbaren“ (öffnet den defekten Chat, GLOBAL-002), „Jetzt anfragen“, „Jetzt Beratung anfordern“, „Zum Kontaktformular“, „Nachricht senden“, „Chat öffnen“ und „Jetzt analysieren“ (KI-Berater). Link-Buttons heißen nur „Mehr erfahren“, „Details“ oder „Mehr Info“. Auf Mobilgeräten ist in der ersten Ansicht der Startseite und der Zürich-Seite nur „Chat öffnen“ sicher sichtbar.
+- **Beleg:** N020, N027
+- **Auswirkung:** Unklar, welcher Weg zum Ziel führt und was danach passiert. Mehrere Wege führen in defekte Funktionen.
+- **Priorität:** P2 · **Launch-Blocker:** nein (die defekten Ziele laufen über GLOBAL-002 und GLOBAL-003)
+- **Konkrete Vorgabe:** Eine primäre Zielhandlung festlegen (B05), z. B. „Unverbindliche Besichtigung anfragen“, und eine sekundäre für frühe Recherche (z. B. „Leistungen vergleichen“). Einheitliche Beschriftungen, die sagen, was passiert. Linktexte mit Ziel, z. B. „Büroreinigung ansehen“. Nur Kanäle anbieten, die betreut und funktionsfähig sind.
+- **Abnahmekriterium:** Jede Seite hat höchstens eine primäre und eine sekundäre Handlungsaufforderung mit einheitlichem Wortlaut. Kein Linktext lautet nur „Mehr erfahren“, „Details“ oder „Mehr Info“. Jede Handlungsaufforderung führt nachweislich zu einem funktionierenden Ziel.
+- **Aufwand/Verantwortlich:** Marketing/Redaktion/Design, klein
+- **Abhängigkeiten:** B05, B10, GLOBAL-002, GLOBAL-003
+- **Evidenz/Sicherheit:** Inhaltsbefund. Wirkung auf die Conversion = HYPOTHESE
+- **Quelle:** S04
+
+### GLOBAL-035 · Mögliche API-Schlüssel in öffentlich einsehbaren Projektdokumenten
+
+- **Betroffen:** `DEPLOYMENT.md`, `EMAIL_SETUP.md` im Repository `Brandea-ai/bgs-gebaeudeservice`, das laut GitHub-Liste **öffentlich** ist
+- **Prüfdatum/Umgebung:** 24.09.2026, Mustersuche über den Repository-Stand `d7e1122`
+- **Ist-Zustand:** Eine Suche nach Zeichenfolgen im Format bekannter API-Schlüssel meldet Treffer in `DEPLOYMENT.md` (2) und `EMAIL_SETUP.md` (1). **Der Inhalt der Treffer wurde bewusst nicht eingesehen und nicht notiert.** Die Schutzregel der Arbeitsumgebung hat das Anzeigen (auch maskiert) verhindert, und die Vorgabe verbietet Geheimnisse in Markdown (Regel 7). Ob es sich um echte, gültige Schlüssel oder um Beispiele handelt, ist deshalb offen.
+- **Beleg:** Mustersuche (Trefferzahl je Datei), Sichtbarkeit laut GitHub-Repository-Liste
+- **Auswirkung:** Falls echt, kann jeder Dritte die Schlüssel nutzen (z. B. Versand über das Mail-Konto, Kosten bei KI- oder Karten-Diensten). Das gilt auch für Schlüssel, die nur in der Git-Historie liegen.
+- **Priorität:** P0 · **Launch-Blocker:** ja (G06)
+- **Konkrete Vorgabe:** Sofort durch eine verantwortliche Person (Brandea) prüfen lassen. Echte Schlüssel beim jeweiligen Anbieter widerrufen und neu ausstellen, danach aus Dateien und Git-Historie entfernen und die Sichtbarkeit des Repositorys prüfen (öffentlich nötig?). Künftig nur Platzhalter in Dokumentationen und eine automatische Geheimnis-Prüfung im CI (GLOBAL-007).
+- **Abnahmekriterium:** Die Verantwortliche bestätigt schriftlich, dass die Treffer keine gültigen Schlüssel sind oder dass sie widerrufen und ersetzt wurden. Eine erneute Mustersuche über Dateien und Historie ergibt keine gültigen Schlüssel. Das Repository ist nur so sichtbar wie nötig.
+- **Aufwand/Verantwortlich:** Operations/Entwicklung (Brandea), klein
+- **Abhängigkeiten:** GLOBAL-005, GLOBAL-007
+- **Evidenz/Sicherheit:** HYPOTHESE auf Basis einer Mustersuche. Inhalt nicht eingesehen, Gültigkeit unbekannt.
+- **Quelle:** S28, S29
+
 ## O. Globales Ergebnis nach der Prüfung
+
+**Stand 24.09.2026 (Phase 2):** 35 globale Befunde, davon **P0: 4** (GLOBAL-001, -002, -003, -035), **P1: 19**, **P2: 11**, **P3: 1**. 17 Befunde sind als Launch-Blocker markiert (einschließlich vorgeschlagener). Die Priorisierung wird in Phase 5 überprüft und in `06-MASSNAHMEN-BACKLOG.md` übertragen.
 
 | Bereich | Status | Wichtigster Nachweis/Befund | Launch-relevant? | Verantwortliche Rolle |
 |---|---|---|---|---|
-| Positionierung und Belege | NICHT GEPRÜFT | Offen | Offen | Geschäftsführung/Marketing |
-| Branding und UX | NICHT GEPRÜFT | Offen | Offen | Design |
-| Content und Suchintention | NICHT GEPRÜFT | Offen | Offen | Redaktion/SEO |
-| Crawling und Metadaten | NICHT GEPRÜFT | Offen | Offen | SEO/Frontend |
-| Performance | NICHT GEPRÜFT | Offen | Offen | Frontend |
-| Backend und Sicherheit | NICHT GEPRÜFT | Offen | Offen | Backend/Operations |
-| Datenschutz und Accessibility | NICHT GEPRÜFT | Offen | Offen | Fachprüfung/QA |
-| Messung und Betrieb | NICHT GEPRÜFT | Offen | Offen | Marketing/Operations |
+| Positionierung und Belege | BEFUND (Kundenangaben offen) | Kein einziger Beleg im Nachweisregister, ISO-Angabe durch das eigene Impressum widerlegt, vermutlich erfundene Kundenstimmen (GLOBAL-021, -022, -030) | Ja (G09) | Geschäftsführung Kunde/Marketing |
+| Branding und UX | BEFUND | Die Seite tritt als „Swiss Reinigungsfirma“ auf, „BGS“ erscheint nicht. KI-Bildwelt, CTA-Vielfalt (GLOBAL-020, -023, -032, -034) | Ja für Identität (G09) | Design/Kunde |
+| Content und Suchintention | BEFUND (Intent-Matrix folgt in Phase 4) | Austauschbare Texte, FAQ-/Reiter-Inhalte nicht im HTML, fehlende Übersichtsseiten, Blog-Scheinaktualität (GLOBAL-030, -011, -033, -031, -017) | Teilweise (G09) | Redaktion/SEO |
+| Crawling und Metadaten | BEFUND | 32 identische Titel und Beschreibungen, kein Canonical, keine strukturierten Daten, 7 defekte Links, offene Indexierungsstrategie (GLOBAL-010, -016, -018, -015) | Ja (G03, G04, G10) | SEO/Frontend |
+| Performance | BEFUND (Labor) | Mobiler LCP 4,4–8,5 s, unsichtbarer Hero, übergroße Bilder (GLOBAL-025, -012, -024) | Nach Budgetentscheidung (G12) | Frontend |
+| Backend und Sicherheit | BEFUND (kritisch) | Next.js mit kritischen Meldungen, Chat defekt, Formular mit stillem Verlust, mögliche Schlüssel im öffentlichen Repository (GLOBAL-001, -002, -003, -035, -004, -005, -007) | Ja (G02, G05, G06) | Backend/Operations |
+| Datenschutz und Accessibility | BEFUND | Karte ohne Einwilligung, wirkungsloser Banner, Datenschutzerklärung passt nicht zur Technik, Kontrast und Tastatur (GLOBAL-019, -027, -026) | Ja für Datenschutz (G07). A11y nach G08 | Fachprüfung/QA |
+| Messung und Betrieb | BEFUND | Keine Messung, keine Alarmierung, der Chat-Ausfall blieb unbemerkt (GLOBAL-029, -002) | Nach Projektentscheidung (G13) | Marketing/Operations |
 
 **Befunde hier nicht aus dieser Checkliste ableiten. Erst prüfen, dann behaupten.**
 
 ---
 
-**Quellen zu dieser Datei:** siehe 09-QUELLEN.md (S01, S02, S03, S04, S05, S06, S07, S10, S11, S12, S13, S14, S15, S16, S17, S18, S19, S20, S21, S22, S23, S24, S25, S26, S27, S28, S29, S32, S33, S34, S35, S37, S38, S39, S40, S41).
+**Quellen zu dieser Datei:** siehe 09-QUELLEN.md (S01, S02, S03, S04, S05, S06, S07, S10, S11, S12, S13, S14, S15, S16, S17, S18, S19, S20, S21, S22, S23, S24, S25, S26, S27, S28, S29, S32, S33, S34, S35, S37, S38, S39, S40, S41, S42).
