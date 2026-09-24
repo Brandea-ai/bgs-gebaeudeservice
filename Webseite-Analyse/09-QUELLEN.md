@@ -256,6 +256,12 @@ Quelle: [Gesetze im Internet: § 3 BFSG](https://www.gesetze-im-internet.de/bfsg
 Verwendung: Anforderungen und unter anderem Ausnahme für bestimmte Kleinstunternehmen bei Dienstleistungen.  
 Abruf: 24.09.2026.
 
+### S42 · GitHub Advisory Database (über `npm audit`)
+
+Quelle: [GitHub Advisory Database](https://github.com/advisories), abgefragt über `npm audit` gegen die npm-Registry. Einzelne Einträge: GHSA-2xp9-vwfh-vxw4, GHSA-p293-qw3h-jr36, GHSA-f82v-jwr5-mffw und die übrigen in N006 genannten.  
+Verwendung: Bekannte Sicherheitsmeldungen zu den installierten Paketversionen. Die Anwendbarkeit wird je Meldung gegen die tatsächliche Konfiguration bewertet.  
+Abruf: 24.09.2026 (ergänzt während der Prüfung).
+
 ## Besonders wichtige Aktualisierungen gegenüber älteren Checklisten
 
 - FAQ-Rich-Results werden seit dem 7. Mai 2026 nicht mehr in Google angezeigt. Der Verweis „nur für autoritative Gesundheits-/Behördenseiten“ wäre für den aktuellen Stand bereits überholt. [S13]

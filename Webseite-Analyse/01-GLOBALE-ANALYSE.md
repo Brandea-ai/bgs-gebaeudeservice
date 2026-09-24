@@ -273,6 +273,266 @@ Dieser Abschnitt beschreibt Prüfaufträge, keine individuelle Rechtsfreigabe. R
 - [ ] Für Google-KI-Funktionen auf eigenständige hilfreiche Inhalte und normale technische Zugänglichkeit setzen. Kein besonderes „KI-Schema“ oder `llms.txt` als Pflichtaufgabe behaupten. [S34]
 - [ ] Neue Funktionen nur bei konkretem Nutzen priorisieren: echte Fallstudie, transparente Leistungsabgrenzung, verständlicher Ablauf, geeignete Anfragehilfe oder hilfreiche Entscheidungsvorlage.
 
+## Befundregister (global)
+
+Format nach `00-START-HIER.md`, Abschnitt 6. Gemeinsame Befunde stehen nur hier, Seitenberichte verweisen auf die ID. Geprüft wurden der Stand `d7e1122` und die Produktion `bgs-gebaeudeservice.vercel.app` am 24.09.2026. Der Behebungsstatus ist bei allen Befunden „offen“, in diesem Auftrag wird nichts behoben.
+
+### GLOBAL-001 · Next.js-Version mit bekannten kritischen und hohen Sicherheitsmeldungen
+
+- **Betroffen:** alle Routen. `package.json` (`next@15.1.11`), `next.config.ts:15-23`
+- **Prüfdatum/Umgebung:** 24.09.2026, `npm audit` in der isolierten Kopie, Vercel-Build-Log der Produktion
+- **Ist-Zustand:** Die Produktion läuft mit Next.js 15.1.11 (N003). Die Version liegt im betroffenen Bereich von 29 veröffentlichten Advisories, darunter 3 kritische und 9 hohe. Die Produktionsabhängigkeiten melden insgesamt 23 Meldungen (1 kritisch, 11 hoch). Zusätzlich ist die Bildoptimierung für beliebige HTTPS-Hosts und AVIF freigegeben, obwohl `next/image` nicht genutzt wird (N018).
+- **Anwendbarkeit der kritischen Meldungen:** GHSA-2xp9-vwfh-vxw4 (RCE im Image-Optimierer bei AVIF): Die Konfiguration entspricht dem betroffenen Muster. Ob Vercels verwaltete Bildoptimierung betroffen ist, ist nicht geprüft. GHSA-p293-qw3h-jr36: NICHT ANWENDBAR (Vercel, kein Windows-Hosting). GHSA-f82v-jwr5-mffw: NICHT ANWENDBAR (keine Middleware). Die hohen DoS-Meldungen zu Server Components betreffen den App Router und sind anwendbar.
+- **Beleg:** N003, N005, N006, N018
+- **Auswirkung:** Datenrisiko und Ausfallrisiko für die öffentlich erreichbare Seite, dazu mögliche Kosten durch Missbrauch der offenen Bildoptimierung.
+- **Priorität:** P0 · **Launch-Blocker:** ja (G06)
+- **Konkrete Vorgabe:** Next.js innerhalb von Version 15 auf einen gepatchten Stand heben. Laut Audit vom 24.09.2026 ist das mindestens 15.5.26, vor der Umsetzung erneut gegen die aktuellen Next.js-Sicherheitsmeldungen prüfen. Die Bildoptimierung für fremde Hosts schließen, solange `next/image` nicht genutzt wird. Später nur die tatsächlich benötigten Quellen freigeben. Nicht genutzte Pakete mit Meldungen entfernen (axios, nanoid, siehe GLOBAL-008), direkt betroffene Pakete (postcss) aktualisieren.
+- **Abnahmekriterium:** `npm audit --omit=dev` meldet keine kritischen und keine hohen Treffer mehr, oder jede verbleibende Meldung ist mit Begründung als nicht anwendbar dokumentiert. Das Vercel-Build-Log zeigt die gepatchte Version. Eine Anfrage an `/_next/image` mit fremder Bild-URL wird abgelehnt (Test in Preview-Umgebung).
+- **Aufwand/Verantwortlich:** Entwicklung, klein bis mittel (Minor-Update innerhalb 15.x plus Regressionstest aller 32 Seiten)
+- **Abhängigkeiten:** GLOBAL-007 (reproduzierbare Installation)
+- **Evidenz/Sicherheit:** Codebefund aus der Advisory-Datenbank. Die Ausnutzbarkeit wurde bewusst nicht getestet (keine Exploit-Versuche).
+- **Quelle:** S23, S28, S29, S42
+
+### GLOBAL-002 · KI-Chat fällt in Produktion aus, der Fehler bleibt unsichtbar
+
+- **Betroffen:** alle Seiten (Chat-Button „Chat öffnen“ aus `app/layout.tsx`), `/api/chat`, vermutlich auch `/api/industry-analysis` (Startseite, „KI-Branchen-Berater“), `server/gemini.ts:591-596, 860-866`
+- **Prüfdatum/Umgebung:** Vercel-Runtime-Logs und Fehlergruppen 17.–24.09.2026 (nur lesend)
+- **Ist-Zustand:** Die Gemini-API lehnt den hinterlegten Schlüssel ab („API key not valid“, 24.09.2026 10:13:16 UTC). Der Server fängt den Fehler ab und antwortet trotzdem mit **HTTP 200** und einem Entschuldigungstext, der die Telefonnummer `+41 41 320 56 10` enthält (N017). Diese Nummer ist nicht belegt (GLOBAL-020).
+- **Beleg:** N012, N017
+- **Auswirkung:** Jeder Chat-Versuch scheitert, obwohl der Chat auf jeder Seite als Kontaktweg angeboten wird. Das bedeutet Lead-Verlust und Vertrauensverlust. Über HTTP-Statuscodes ist der Ausfall nicht erkennbar, eine Überwachung schlägt nicht an.
+- **Priorität:** P0 · **Launch-Blocker:** ja (G05, sofern der Chat Teil der Conversion-Strecke bleibt)
+- **Konkrete Vorgabe:** Zuerst entscheiden, ob der KI-Chat bleibt (Rückfrage B05/B10). Bleibt er, einen gültigen, serverseitig und als „sensitiv“ gespeicherten Schlüssel hinterlegen. Fehler des KI-Anbieters als Fehlerstatus (5xx) protokollieren und melden. Dem Besucher einen belegten Ersatzkontakt anzeigen. Entfällt er, Chat-Button und „KI-Branchen-Berater“ vollständig entfernen statt eine defekte Funktion anzubieten.
+- **Abnahmekriterium:** In der freigegebenen Testumgebung beantwortet der Chat eine Testfrage. Ein erzwungener Anbieterfehler erzeugt einen 5xx-Eintrag im Log und eine sichtbare Meldung mit bestätigter Telefonnummer. Innerhalb von 7 Tagen nach Launch gibt es keine Fehlergruppe „API key not valid“ in den Vercel-Fehlergruppen.
+- **Aufwand/Verantwortlich:** Entwicklung/Operations, klein. Entscheidung: Geschäftsführung/Marketing
+- **Abhängigkeiten:** GLOBAL-005 (Schlüsselverwaltung), GLOBAL-020 (Kontaktdaten)
+- **Evidenz/Sicherheit:** Plattformdaten (Log). Dass `/api/industry-analysis` betroffen ist, ist eine HYPOTHESE (gleicher Schlüssel, im Zeitraum nicht aufgerufen).
+- **Quelle:** S28
+
+### GLOBAL-003 · Kontaktformular meldet Erfolg ohne Zustellnachweis, der Zustellweg ist nicht eingerichtet
+
+- **Betroffen:** Formular im Footer aller Seiten und `/kontakt`, `app/api/contact/route.ts:36-58`, `server/email.ts:27-37, 103-105`, ebenso der Chat-Weg `/api/chat-to-specialist`
+- **Prüfdatum/Umgebung:** 24.09.2026, Code-Lektüre, öffentliches DNS, Vercel-Logs. Kein Absenden auf Produktion.
+- **Ist-Zustand:** (1) Die Route antwortet **immer mit `success: true`**, auch wenn der Versand scheitert oder eine Ausnahme wirft. Die Meldung „Email sending failed, but form submission logged“ ist irreführend, denn gespeichert wird nichts. (2) Absender ist `info@bgs-service.ch`. Für diese Domain gibt es im DNS **keinen Resend-DKIM-Eintrag und keinen `send.`-MX**, der Versand über Resend ist damit sehr wahrscheinlich abgewiesen. (3) Empfänger ist `info@brandea.de`, also die Agentur, nicht der Kunde. (4) Anfragende erhalten keine Bestätigung. (5) Preview und Produktion nutzen denselben Schlüssel (N011).
+- **Beleg:** N011, N013, N016. Keine Formularanfrage in den Logs der letzten 7 Tage (N012).
+- **Auswirkung:** Anfragen können still verloren gehen, während Besuchern Erfolg angezeigt wird. Selbst bei Zustellung landen sie nicht beim Kunden. Das trifft die zentrale Zielhandlung der Website.
+- **Priorität:** P0 · **Launch-Blocker:** ja (G05)
+- **Konkrete Vorgabe:** Erfolg erst anzeigen, wenn der Versanddienst die Nachricht serverseitig angenommen hat (Nachrichten-ID protokollieren). Bei Fehler eine verständliche Meldung zeigen, die Eingaben erhalten und einen alternativen Kontaktweg nennen. Absenderdomain beim Versanddienst verifizieren (DKIM, SPF bzw. Return-Path, DMARC) oder eine bereits verifizierte Domain nutzen. Den Empfänger mit dem Kunden festlegen (B10). Getrennte Schlüssel oder Test-Empfänger für Preview. Optional eine Eingangsbestätigung an Anfragende, sofern der Kunde das will.
+- **Abnahmekriterium:** End-to-End-Test in der freigegebenen Testumgebung mit Test-Empfänger: gültige Anfrage → Erfolgsmeldung, Nachricht kommt im Test-Postfach an, Nachrichten-ID im Log. Simulierter Anbieterfehler → Fehlermeldung, Eingaben bleiben erhalten, kein „success“. DNS zeigt DKIM für die Absenderdomain. Der Kunde bestätigt den Empfänger schriftlich.
+- **Aufwand/Verantwortlich:** Entwicklung, klein bis mittel. DNS: Kunde bzw. dessen Hoster (Swizzonic). Empfänger: Kunde
+- **Abhängigkeiten:** GLOBAL-020, B10
+- **Evidenz/Sicherheit:** „Erfolg ohne Zustellnachweis“ = BEFUND (Code). „Versand scheitert“ = HYPOTHESE mit hoher Wahrscheinlichkeit (DNS), nicht end-to-end bewiesen.
+- **Quelle:** S28, S29
+
+### GLOBAL-004 · API-Routen ohne Missbrauchsschutz, Formulareingaben unmaskiert im Mail-HTML
+
+- **Betroffen:** `/api/contact`, `/api/chat-to-specialist`, `/api/chat`, `/api/industry-analysis`, `server/email.ts:75-91`
+- **Prüfdatum/Umgebung:** 24.09.2026, Code-Lektüre
+- **Ist-Zustand:** Kein Rate-Limit, kein Spam-Schutz, keine Längenbegrenzung der Eingaben. `/api/chat-to-specialist` prüft die E-Mail-Adresse gar nicht. Name, E-Mail, Telefon, Leistung und Nachricht werden ohne Maskierung in das HTML der Benachrichtigungsmail eingesetzt.
+- **Beleg:** Codebefund (siehe Pfade). Log-Ausgaben enthalten im Produktionspfad keine personenbezogenen Daten, das ist BESTANDEN.
+- **Auswirkung:** Massenhafte Spam- oder Phishing-Mails an das Empfängerpostfach über das eigene Formular. Kostenrisiko durch automatisierte Aufrufe der kostenpflichtigen KI-Schnittstelle.
+- **Priorität:** P1 · **Launch-Blocker:** ja (G06)
+- **Konkrete Vorgabe:** Alle Eingaben serverseitig auf Pflichtfelder, Format und Maximallänge prüfen. Werte vor dem Einsetzen in HTML maskieren. Einen nutzerfreundlichen Spam-Schutz einsetzen (z. B. unsichtbares Prüffeld plus serverseitiges Rate-Limit je IP und Zeitfenster) und die Abwägung dokumentieren. Für KI-Routen ein Kontingent pro Besucher und ein Budget-Limit beim Anbieter festlegen.
+- **Abnahmekriterium:** Test in der Testumgebung: HTML-Eingabe erscheint in der Mail als Text. Über-lange Eingaben werden mit verständlicher Meldung abgelehnt. Die 11. Anfrage innerhalb einer Minute von derselben Quelle wird gebremst, echte Einzelanfragen bleiben unbeeinträchtigt.
+- **Aufwand/Verantwortlich:** Entwicklung, klein bis mittel
+- **Abhängigkeiten:** GLOBAL-003
+- **Evidenz/Sicherheit:** Codebefund. Nicht live getestet (keine Missbrauchsversuche).
+- **Quelle:** S28, S29
+
+### GLOBAL-005 · Schlüsselverwaltung: lesbare Geheimnisse, gleiche Schlüssel in allen Umgebungen, ungenutzter Schlüssel
+
+- **Betroffen:** Vercel-Projekt, Umgebungsvariablen
+- **Prüfdatum/Umgebung:** 24.09.2026, Vercel-API (nur Namen)
+- **Ist-Zustand:** `GEMINI_API_KEY`, `RESEND_API_KEY` und `ANTHROPIC_API_KEY` sind für Production, Preview und Development identisch gesetzt, Vercel markiert sie als „readable-secret“. `ANTHROPIC_API_KEY` wird nicht verwendet. Der Gemini-Schlüssel ist ungültig. Der Karten-Schlüssel liegt unter dem Vite-Namen `VITE_GOOGLE_MAPS_API_KEY` und wird vom Code nicht gelesen.
+- **Beleg:** N011, N012
+- **Auswirkung:** Unnötige Angriffsfläche. Aus Vorschauen können echte Mails verschickt werden. Tote und ungültige Schlüssel verschleiern den Betriebszustand.
+- **Priorität:** P1 · **Launch-Blocker:** nein
+- **Konkrete Vorgabe:** Geheimnisse als „sensitiv“ speichern. Getrennte Schlüssel oder Test-Empfänger für Preview und Development. Ungenutzte Schlüssel entfernen und beim Anbieter widerrufen. Variablennamen an den Code anpassen. Eine kurze Liste führen: welcher Schlüssel, wofür, wer ist verantwortlich.
+- **Abnahmekriterium:** Die Vercel-Liste zeigt keine „readable-secret“-Hinweise und keine ungenutzten Schlüssel mehr. Preview nutzt nachweislich andere Schlüssel oder Test-Empfänger als Production.
+- **Aufwand/Verantwortlich:** Operations, klein
+- **Abhängigkeiten:** GLOBAL-002, GLOBAL-019 (Kartenentscheidung)
+- **Evidenz/Sicherheit:** Plattformdaten, Werte nicht eingesehen
+- **Quelle:** S28, S30
+
+### GLOBAL-006 · Keine Content-Security-Policy und keine Permissions-Policy
+
+- **Betroffen:** alle Antworten (`next.config.ts`, `headers()`)
+- **Prüfdatum/Umgebung:** 24.09.2026, HTTP-Header der Startseite
+- **Ist-Zustand:** HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy und DNS-Prefetch-Control sind gesetzt (BESTANDEN). Content-Security-Policy und Permissions-Policy fehlen.
+- **Beleg:** N004
+- **Auswirkung:** Kein zusätzlicher Schutz gegen eingeschleuste Skripte und ungewollte Browser-Funktionen.
+- **Priorität:** P2 · **Launch-Blocker:** nein
+- **Konkrete Vorgabe:** Eine CSP passend zu den tatsächlich genutzten Quellen definieren (eigene Domain, gegebenenfalls Kartenanbieter nach Einwilligung) und zuerst im Report-Only-Modus testen. Eine Permissions-Policy, die ungenutzte Funktionen (Kamera, Mikrofon, Standort usw.) abschaltet. Keine ungeprüfte Standardliste übernehmen.
+- **Abnahmekriterium:** Header auf allen Seiten vorhanden, keine CSP-Verstöße in der Konsole beim Durchklicken aller 32 Seiten und des Formulars.
+- **Aufwand/Verantwortlich:** Entwicklung, klein
+- **Abhängigkeiten:** GLOBAL-019
+- **Evidenz/Sicherheit:** HTTP-Befund
+- **Quelle:** S28, S29
+
+### GLOBAL-007 · Build nicht reproduzierbar abgesichert: Lockfile nicht synchron, kein Lint, keine Tests, kein CI
+
+- **Betroffen:** Repository-Wurzel, Vercel-Projekteinstellungen
+- **Prüfdatum/Umgebung:** 24.09.2026, isolierte Kopie, Vercel-Build-Log
+- **Ist-Zustand:** `npm ci` bricht ab, weil `package-lock.json` nicht zu `package.json` passt (next 15.5.6 gegenüber 15.1.11). Vercel installiert mit `npm install` und löst die Versionen bei jedem Build neu auf. Zusätzlich liegt ein veraltetes `pnpm-lock.yaml` vor. ESLint ist nicht konfiguriert, der Lint-Schritt im Build prüft also nichts. Es gibt keine Tests und keinen CI-Workflow. Die Framework-Voreinstellung im Vercel-Projekt steht noch auf „vite“.
+- **Beleg:** N002, N003, N005
+- **Auswirkung:** Ein Build kann ohne Codeänderung andere Paketversionen ausliefern. Fehler fallen erst in Produktion auf. „Grüner Build“ ist kein Qualitätsnachweis.
+- **Priorität:** P1 · **Launch-Blocker:** ja (G02)
+- **Konkrete Vorgabe:** Einen Paketmanager festlegen, das andere Lockfile entfernen und ein synchrones Lockfile erzeugen. Vercel auf `npm ci` (oder das Äquivalent) umstellen. ESLint mit der Next.js-Konfiguration einrichten und bestehende Meldungen abarbeiten. Mindesttests für API-Routen (Erfolg, Validierungsfehler, Anbieterfehler) und einen Render-Test aller Routen anlegen. Einen CI-Lauf für Build, Typecheck, Lint und Tests bei jedem Pull Request einrichten. Die Framework-Voreinstellung auf Next.js setzen.
+- **Abnahmekriterium:** `npm ci`, Build, Typecheck, Lint und Tests laufen im CI grün, ohne Ignorier-Schalter. Ein absichtlich eingebauter Lint-Fehler lässt den CI-Lauf scheitern.
+- **Aufwand/Verantwortlich:** Entwicklung, mittel
+- **Abhängigkeiten:** GLOBAL-001, GLOBAL-008
+- **Evidenz/Sicherheit:** Codebefund + Build-Nachweis
+- **Quelle:** S23
+
+### GLOBAL-008 · Altlasten des Vite-Aufbaus, ungenutzte Pakete und doppelter Asset-Ordner
+
+- **Betroffen:** `client/src/pages/` (56 Dateien), `client/src/App.tsx`, `main.tsx`, `vite.config.ts`, `server/index.ts`, `patches/`, `client/public/`, ungenutzte Komponenten (`Footer`, `Navigation`, `ManusDialog`, `AccordionSection`, `ServiceTemplate`, `ScrollPinning`), ungenutzte Abhängigkeiten (`@tanstack/react-query`, `axios`, `nanoid`, `streamdown`, `zod`)
+- **Prüfdatum/Umgebung:** 24.09.2026, Code-Suche
+- **Ist-Zustand:** Neben der Next.js-App liegt der komplette frühere Vite-Aufbau, dazu Seiten eines anderen Projekts (`FractionalCXO`, `KIAutomation`, `Turnaround`) und eine veraltete Projektbeschreibung (`PROJEKT_ANALYSE.md` beschreibt Vite/Wouter). `client/public/` dupliziert `public/`.
+- **Beleg:** N019, Code-Suche vom 24.09.2026
+- **Auswirkung:** Verwechslungsgefahr bei Änderungen (falsche Datei gepflegt), größere Angriffsfläche durch ungenutzte Pakete mit Sicherheitsmeldungen, fremde Projektinhalte im Kunden-Repository.
+- **Priorität:** P2 · **Launch-Blocker:** nein
+- **Konkrete Vorgabe:** Nach Bestätigung, dass nichts davon ausgeliefert wird, die Vite-Reste, fremden Seiten, ungenutzten Komponenten und Pakete sowie den doppelten Asset-Ordner entfernen. Veraltete Projektdokumente aktualisieren oder entfernen.
+- **Abnahmekriterium:** Build und alle Routen unverändert funktionsfähig (Render-Test aller 32 Seiten). Eine Prüfung auf ungenutzte Abhängigkeiten meldet keine Treffer. Im Repository gibt es keine Inhalte fremder Projekte mehr.
+- **Aufwand/Verantwortlich:** Entwicklung, klein
+- **Abhängigkeiten:** GLOBAL-007
+- **Evidenz/Sicherheit:** Codebefund. Ob die fremden Seiten vertrauliche Inhalte enthalten, wurde nicht bewertet.
+- **Quelle:** —
+
+### GLOBAL-009 · Alle Seiten vollständig clientseitig, Metadaten nur global (Architektur-Ursache für GLOBAL-010)
+
+- **Betroffen:** alle 32 `page.tsx`, `client/src/components/SEO.tsx`, `app/layout.tsx`
+- **Prüfdatum/Umgebung:** 24.09.2026, Code-Lektüre
+- **Ist-Zustand:** Jede Seite ist als Ganzes eine Client-Komponente (`'use client'`). Seitenbezogene Metadaten können so nicht über die Next.js-Metadaten-API exportiert werden. Die als Ersatz eingebundene `SEO`-Komponente tut nichts (`return null`), die an sie übergebenen Titel, Beschreibungen und Schema-Daten gehen verloren.
+- **Beleg:** N015
+- **Auswirkung:** Ursache der identischen Metadaten (GLOBAL-010). Unnötig großes JavaScript je Seite (First Load 170–181 kB auf Leistungsseiten laut Build).
+- **Priorität:** P1 · **Launch-Blocker:** nein (Wirkung wird über GLOBAL-010 abgenommen)
+- **Konkrete Vorgabe:** Seiten als Server-Komponenten aufbauen, die ihre eigenen Metadaten exportieren. Nur interaktive Teile (Formular, Reiter, Animationen, Chat) als Client-Komponenten einbinden. Die wirkungslose `SEO`-Komponente entfernen. Entspricht der gewünschten Struktur aus Abschnitt 8 der Vorgabe: Seitenordner mit zusammensetzender `page.tsx` und getrennten Sektionskomponenten.
+- **Abnahmekriterium:** Jede Route liefert im HTML ihre eigenen Metadaten (siehe GLOBAL-010). Keine `page.tsx` beginnt mit `'use client'`. Das First-Load-JavaScript der Leistungsseiten sinkt messbar gegenüber 170–181 kB (Build-Ausgabe).
+- **Aufwand/Verantwortlich:** Entwicklung, mittel bis groß (alle Seiten betroffen, gut mit dem geplanten Umbau zu verbinden)
+- **Abhängigkeiten:** Umbau-Entscheidung (E05)
+- **Evidenz/Sicherheit:** Codebefund + Build-Ausgabe
+- **Quelle:** S24, S25, S26
+
+### GLOBAL-010 · Alle 32 Seiten mit identischem Titel und identischer Beschreibung, ohne Canonical, mit falscher `og:url` und ohne strukturierte Daten
+
+- **Betroffen:** alle 32 URLs
+- **Prüfdatum/Umgebung:** 24.09.2026, ausgeliefertes HTML
+- **Ist-Zustand:** `<title>` überall „BGS Gebäudeservice - Professionelle Reinigungsdienstleistungen in der Schweiz“, identische Beschreibung, kein `canonical`, `og:url` zeigt überall auf die Startseite, OG-/Twitter-Bild ist 404 (GLOBAL-014), keine JSON-LD-Daten. Parameter-Varianten (`?utm_source=…`) liefern denselben Inhalt ohne Canonical.
+- **Beleg:** N007, N008, N015
+- **Auswirkung:** Suchmaschinen und soziale Netzwerke können die Seiten nicht unterscheiden. Leistungs- und Standortseiten treten mit dem Titel der Startseite auf. Das erschwert gezielte Sichtbarkeit und begünstigt die Auswahl einer unerwünschten URL. Geteilte Links zeigen immer die Startseite ohne Bild.
+- **Priorität:** P1 · **Launch-Blocker:** ja (vorgeschlagen, betrifft die Grundfunktion der Suchmaschinen-Darstellung auf allen Seiten, Entscheidung bei G14)
+- **Konkrete Vorgabe:** Je Seite einen eigenen Titel und eine eigene Beschreibung aus bestätigten Inhalten. Die konkreten Formulierungen stehen in den Seitenberichten (Phase 3). Selbstreferenzierendes Canonical auf die bevorzugte URL. `og:url`, `og:title`, `og:description` und ein existierendes Vorschaubild je Seite. Strukturierte Daten nur passend zu sichtbaren, bestätigten Angaben: Organisation/Unternehmen global, `Service` auf Leistungsseiten, gegebenenfalls `BreadcrumbList`. Kein FAQ-Pflichtschema [S13].
+- **Abnahmekriterium:** Ein Crawl aller Seiten zeigt 32 verschiedene Titel und Beschreibungen, Canonical = eigene URL, `og:url` = eigene URL, erreichbares OG-Bild (200). Schema.org-Validierung ohne Fehler, Rich-Result-Test getrennt dokumentiert.
+- **Aufwand/Verantwortlich:** Redaktion/SEO (Texte), Entwicklung (Umsetzung), mittel
+- **Abhängigkeiten:** GLOBAL-009, B03 (Leistungsumfang), GLOBAL-020 (Identität)
+- **Evidenz/Sicherheit:** HTTP-/Renderbefund
+- **Quelle:** S05, S08, S09, S10, S11, S12, S13, S14, S26
+
+### GLOBAL-011 · FAQ-Antworten und Reiter-Inhalte fehlen im ausgelieferten HTML
+
+- **Betroffen:** 26 Seiten, vor allem alle Leistungs- und Standortseiten, `/datenschutz` und drei Blogartikel
+- **Prüfdatum/Umgebung:** 24.09.2026, echte Klicks im Browser, Abgleich mit dem ausgelieferten HTML
+- **Ist-Zustand:** Die Inhalte geschlossener Akkordeons (0 von 100 im HTML, ca. 21.300 Zeichen, überwiegend FAQ-Antworten) und nicht aktiver Reiter (bei 20 Seiten 2 von 3, ca. 16.300 Zeichen) werden erst nach einem Klick erzeugt.
+- **Beleg:** N023
+- **Auswirkung:** Suchmaschinen klicken nicht. Diese Inhalte gelten daher als voraussichtlich nicht indexierbar, und die Seite wirkt dünner, als sie ist. Ohne JavaScript sind sie auch für Nutzer unerreichbar.
+- **Priorität:** P1 · **Launch-Blocker:** nein
+- **Konkrete Vorgabe:** Alle Inhalte, die zur Seite gehören, im HTML ausliefern. Geschlossene Bereiche nur optisch einklappen, z. B. mit einem nativen Auf-/Zuklapp-Element oder Komponenten, deren Inhalt im DOM bleibt. Kerninformationen nicht hinter Reitern verstecken, wenn eine lineare Darstellung ebenso gut funktioniert.
+- **Abnahmekriterium:** Für jede FAQ-Antwort und jeden Reiter-Inhalt findet sich der Text im ausgelieferten HTML (Textproben-Abgleich wie in N023). Die Bedienung per Tastatur bleibt erhalten.
+- **Aufwand/Verantwortlich:** Entwicklung, klein bis mittel
+- **Abhängigkeiten:** GLOBAL-009
+- **Evidenz/Sicherheit:** Renderbefund. Ob Google die Texte im konkreten Fall ignoriert, ist ohne Search Console NICHT PRÜFBAR, das Risiko ist technisch belegt.
+- **Quelle:** S01, S03
+
+### GLOBAL-012 · Hero-Inhalte werden unsichtbar ausgeliefert und erst per JavaScript eingeblendet
+
+- **Betroffen:** vor allem `/` (43 Elemente mit `opacity:0`, darunter die H1), weitere Seiten mit Einblendungen
+- **Prüfdatum/Umgebung:** 24.09.2026, ausgeliefertes HTML, Bildschirmfotos Desktop/Mobil
+- **Ist-Zustand:** Überschrift, Einleitung und Buttons des Heros stehen im HTML mit `opacity:0`. Auf dem Mobil-Bildschirmfoto direkt nach dem Laden sind weder H1 noch Button zu sehen, nur das Hero-Bild. Auf Desktop sind die Buttons zum Aufnahmezeitpunkt halbtransparent.
+- **Beleg:** N022, N026
+- **Auswirkung:** Die erste Ansicht vermittelt auf Mobilgeräten kein Angebot und keinen nächsten Schritt, solange die Animation nicht gelaufen ist. Ohne oder bei langsamem JavaScript bleibt der Inhalt unsichtbar. Das LCP-Element verzögert sich.
+- **Priorität:** P1 · **Launch-Blocker:** nein
+- **Konkrete Vorgabe:** Inhalte der ersten Ansicht sofort sichtbar ausliefern. Einblendungen nur als Verstärkung einsetzen, die ohne JavaScript und bei „Bewegung reduzieren“ entfällt. Keine Animation, die Text oder Handlungsaufforderung verbirgt.
+- **Abnahmekriterium:** Mit deaktiviertem JavaScript sind H1, Einleitung und Haupt-Button der Startseite sichtbar. Das Mobil-Bildschirmfoto direkt nach dem Laden (390×844) zeigt H1 und Button. Mit `prefers-reduced-motion` finden keine Einblendungen statt.
+- **Aufwand/Verantwortlich:** Entwicklung/Design, klein
+- **Abhängigkeiten:** —
+- **Evidenz/Sicherheit:** Renderbefund
+- **Quelle:** S19, S22
+
+### GLOBAL-013 · Hydration-Fehler auf allen Seiten durch das beim Build berechnete Jahr
+
+- **Betroffen:** alle Seiten, `client/src/components/SwissFooter.tsx:8, 345`
+- **Prüfdatum/Umgebung:** 24.09.2026, Browser-Test Produktion und isolierter Entwicklungsmodus
+- **Ist-Zustand:** Bei 63 von 64 Seitenaufrufen tritt React-Fehler #418 auf. Ursache: Das Copyright-Jahr stammt im statischen HTML vom Build (2025), der Browser berechnet 2026. Nebenbei steht dort „Swiss Reinigungsfirma“ statt des Firmennamens (GLOBAL-020).
+- **Beleg:** N020, N021
+- **Auswirkung:** React verwirft die ausgelieferte Darstellung und rendert clientseitig neu. Das kostet Ladeleistung, kann sichtbares Flackern verursachen und startet Animationen neu (verstärkt GLOBAL-012). Jeder künftige Build zeigt denselben Fehler, sobald das Jahr wechselt.
+- **Priorität:** P1 · **Launch-Blocker:** nein
+- **Konkrete Vorgabe:** Werte, die sich zwischen Build und Aufruf ändern (Jahr, Datum, Zufall, Browser-Speicher), nicht in die vorgerenderte Ausgabe schreiben. Das Jahr zentral und fest pflegen oder erst nach dem Laden setzen. Danach die Konsole aller Seiten auf weitere Hydration-Fehler prüfen.
+- **Abnahmekriterium:** Browser-Test aller 32 Seiten (Desktop und Mobil) ohne Fehler #418/#423/#425. Wiederholung nach einem simulierten Jahreswechsel (Systemdatum der Testumgebung) ebenfalls fehlerfrei.
+- **Aufwand/Verantwortlich:** Entwicklung, klein
+- **Abhängigkeiten:** —
+- **Evidenz/Sicherheit:** Renderbefund + Ursachennachweis
+- **Quelle:** S23
+
+### GLOBAL-014 · Favicon, Touch-Icon und Vorschaubild fehlen, das Manifest passt nicht zur Marke
+
+- **Betroffen:** `app/layout.tsx:50, 61, 87-88`, `public/manifest.json`
+- **Prüfdatum/Umgebung:** 24.09.2026, HTTP
+- **Ist-Zustand:** `/favicon.ico`, `/apple-touch-icon.png` und `/og-image.jpg` liefern 404, sind aber im `<head>` referenziert. Das Manifest nutzt Blau (`#3b82f6`) statt des Markenrots und dieselbe WebP-Datei für 192 und 512 px.
+- **Beleg:** N008
+- **Auswirkung:** Browser-Tabs, Lesezeichen, Startbildschirm und geteilte Links zeigen kein oder ein generisches Symbol. Das wirkt unfertig.
+- **Priorität:** P2 · **Launch-Blocker:** nein
+- **Konkrete Vorgabe:** Favicon (ICO/SVG), Apple-Touch-Icon (180×180 PNG) und ein Vorschaubild (1200×630) aus dem freigegebenen Logo erzeugen. Manifest-Farbe und Icon-Größen korrigieren. Erst nach der Markenentscheidung (GLOBAL-020, B09) finalisieren.
+- **Abnahmekriterium:** Alle referenzierten Dateien liefern 200 mit passendem Typ. Eine Vorschau im Link-Test eines sozialen Netzwerks zeigt Titel, Beschreibung und Bild der jeweiligen Seite.
+- **Aufwand/Verantwortlich:** Design/Entwicklung, klein
+- **Abhängigkeiten:** B09
+- **Evidenz/Sicherheit:** HTTP-Befund
+- **Quelle:** S14, S26
+
+### GLOBAL-015 · Vorlagenreste in technischen SEO-Angaben
+
+- **Betroffen:** alle Seiten (`app/layout.tsx:74-76`), 404-Seite, `public/sitemap.xml`, `public/robots.txt`
+- **Prüfdatum/Umgebung:** 24.09.2026, HTTP
+- **Ist-Zustand:** Platzhalter `google-site-verification="your-google-verification-code"` auf allen 32 Seiten. Die 404-Seite enthält zwei widersprüchliche robots-Angaben (`noindex` und `index, follow`). Die Sitemap nennt für alle Seiten das Änderungsdatum 2025-01-02, das vor Projektbeginn liegt. `robots.txt` trägt den Kopfkommentar „Swiss Reinigungsfirma“ und ein von Google ignoriertes `Crawl-delay`.
+- **Beleg:** N007, N008
+- **Auswirkung:** Unprofessionelle Platzhalter im Quelltext. Unzuverlässige Änderungsdaten entwerten die Sitemap als Signal [S06]. Widersprüchliche robots-Angaben erschweren die Kontrolle.
+- **Priorität:** P2 · **Launch-Blocker:** ja für den Platzhalter (G09, geringer Aufwand), sonst nein
+- **Konkrete Vorgabe:** Verifizierung nur mit echtem Code oder gar nicht ausgeben. Auf der 404-Seite nur `noindex`. Die Sitemap aus den Routen erzeugen, mit tatsächlichen Änderungsdaten oder ohne `lastmod`. Den Kommentar in `robots.txt` korrigieren und `Crawl-delay` entfernen.
+- **Abnahmekriterium:** Im HTML aller Seiten kein Platzhalter. Die 404-Seite hat genau eine robots-Angabe `noindex`. Die `lastmod`-Werte entsprechen den letzten inhaltlichen Änderungen.
+- **Aufwand/Verantwortlich:** Entwicklung, klein
+- **Abhängigkeiten:** GLOBAL-009
+- **Evidenz/Sicherheit:** HTTP-Befund
+- **Quelle:** S01, S06
+
+### GLOBAL-016 · Sieben defekte interne Links auf der Zürich-Seite
+
+- **Betroffen:** `/standorte/zuerich`, `app/standorte/zuerich/page.tsx:131, 148, 164`
+- **Prüfdatum/Umgebung:** 24.09.2026, HTTP und Browser
+- **Ist-Zustand:** Die Buttons „Mehr erfahren“, „Details“ und „Mehr Info“ in den Reitern Premium, Business und Basis führen bei 7 von 17 Leistungen auf 404-Seiten, weil die Linkziele aus den Anzeigenamen berechnet werden (z. B. `/business/büroreinigung` statt `/business/bueroreinigung`).
+- **Beleg:** N009, N024
+- **Auswirkung:** Besucher landen aus der Standortseite auf Fehlerseiten, Linkkraft geht verloren.
+- **Priorität:** P1 · **Launch-Blocker:** ja (G03, geringer Aufwand)
+- **Konkrete Vorgabe:** Linkziele aus einer zentralen Liste der tatsächlichen Leistungsseiten beziehen, nicht aus Anzeigenamen berechnen. Dasselbe Muster auf allen Standortseiten vermeiden.
+- **Abnahmekriterium:** Ein Linkprüfer über alle Seiten, inklusive aller Reiter-Zustände, findet keine internen Links mit Status 404.
+- **Aufwand/Verantwortlich:** Entwicklung, klein
+- **Abhängigkeiten:** B03 (welche Leistungsseiten bleiben)
+- **Evidenz/Sicherheit:** HTTP-/Renderbefund
+- **Quelle:** S04
+
+### GLOBAL-018 · Indexierungsstrategie der neuen Seite vor dem Launch ungeklärt
+
+- **Betroffen:** alle 32 URLs unter `*.vercel.app`
+- **Prüfdatum/Umgebung:** 24.09.2026, HTTP (robots, Sitemap, Meta-Robots)
+- **Ist-Zustand:** Die neue Seite ist unter der vorläufigen Adresse `bgs-gebaeudeservice.vercel.app` vollständig zur Indexierung freigegeben (`index, follow`, Sitemap), während der Kunde unter `bgs-service.ch` eine andere Website betreibt (E07, N014). Ob Seiten bereits im Google-Index sind, ist ohne Search Console NICHT PRÜFBAR.
+- **Beleg:** N002, N007, N008, N014
+- **Auswirkung:** Eine noch nicht freigegebene Seite mit unbelegten Angaben (GLOBAL-020/021) kann unter einer Zweitadresse sichtbar werden und mit der Kunden-Domain konkurrieren. Beim späteren Umzug entstehen Doppelstrukturen.
+- **Priorität:** P1 · **Launch-Blocker:** ja (G04/G10, Entscheidung nötig)
+- **Konkrete Vorgabe:** Festlegen, unter welcher Domain die neue Seite startet (B08). Bis zum Launch die Vorab-Adresse von der Indexierung ausnehmen, z. B. mit Zugriffsschutz oder `noindex` (Header), und die Sitemap dort nicht bewerben. Zum Launch die eigene Domain verbinden, Canonicals und Sitemap auf sie ausrichten und die `vercel.app`-Adresse per permanenter Weiterleitung auf die Domain führen.
+- **Abnahmekriterium:** Vor dem Launch liefert die Vorab-Adresse `noindex` bzw. ist geschützt. Nach dem Launch leiten alle `vercel.app`-URLs mit 308/301 auf die gleichnamige URL der eigenen Domain, Canonicals und Sitemap nennen ausschließlich die eigene Domain.
+- **Aufwand/Verantwortlich:** Entwicklung/SEO, klein. Entscheidung: Kunde/Brandea
+- **Abhängigkeiten:** B08, E07
+- **Evidenz/Sicherheit:** HTTP-Befund, Auswirkung auf den Index = HYPOTHESE (NICHT PRÜFBAR ohne Search Console)
+- **Quelle:** S01, S05, S07, S30
+
 ## O. Globales Ergebnis nach der Prüfung
 
 | Bereich | Status | Wichtigster Nachweis/Befund | Launch-relevant? | Verantwortliche Rolle |
