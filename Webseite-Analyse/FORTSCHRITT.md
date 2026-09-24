@@ -31,8 +31,8 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 
 | Phase | Inhalt | Status | Ergebnis/Datei |
 |---|---|---|---|
-| 0 | Scope klären | In Arbeit | `07-BRIEFING-UND-ENTSCHEIDUNGEN.md` |
-| 1 | Bestand sichern: URL-Inventar, Baseline, Architektur | Offen | `02-URL-INVENTAR.md`, `08-PRUEFNACHWEISE.md` |
+| 0 | Scope klären | **Erledigt 24.09.2026** (B03 dokumentiert offen) | `07-BRIEFING-UND-ENTSCHEIDUNGEN.md` |
+| 1 | Bestand sichern: URL-Inventar, Baseline, Architektur | **Erledigt 24.09.2026** (Browser-Systemtests → Phase 2) | `02-URL-INVENTAR.md`, `08-PRUEFNACHWEISE.md` (N001–N019), `01-GLOBALE-ANALYSE.md` (Bestandsaufnahme) |
 | 2 | Strategie und globale Prüfung | Offen | `01-GLOBALE-ANALYSE.md` |
 | 3 | Seitenprüfung | Offen | `Seiten/` |
 | 4 | Querprüfung | Offen | `03-SUCHINTENTION-UND-KANNIBALISIERUNG.md` u. a. |
@@ -46,11 +46,24 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 |---|---|---|
 | 24.09.2026 | Setup | Prüfauftrag in 22 Arbeitsdateien zerlegt, Original in `_GOLDENER-STAND/` gesichert, Vollständigkeit geprüft (1.542/1.542 Inhaltszeilen). Nutzerentscheidungen E01–E06 protokolliert. Kontrolle FIMI-Klon: unverändert (HEAD `1143a9f`, 0 geänderte Dateien). |
 
+| 24.09.2026 | Phase 0 | Produktion bestätigt: `bgs-gebaeudeservice.vercel.app` = `d7e1122`, keine eigene Domain. Rollen geklärt (E07): Kunde BGS Gebäudeservice GmbH, neue Seite von Brandea, bisherige Kunden-Website `bgs-service.ch` nicht Prüfziel. Vercel-MCP nur lesend (E08). Leistungs- und Regionsabweichungen dokumentiert (B03, B04, B10). |
+| 24.09.2026 | Phase 1 | 32 Inhalts-URLs inventarisiert und live geprüft, Varianten und Systemdateien, interne Links, Migrationsbestand. Isolierter Build: Build/Typecheck ok, `npm ci` scheitert (Lockfile), kein Lint/Test/CI. `npm audit`: 23 Meldungen in Produktionsabhängigkeiten, Next.js mit kritischen Advisories. Runtime: KI-Chat fällt aus. Nachweise N001–N019. |
+
 ## Offene Punkte
 
-- **B03, Leistungsumfang:** Die Vorgabe nennt genau fünf Leistungen, BGS hat laut Code 18 Leistungsseiten. Das wird in Phase 0 dokumentiert und als gebündelte Rückfrage vorgelegt. Bis dahin werden alle tatsächlich vorhandenen Seiten geprüft.
-- **B04–B10, B13, B14:** Geschäftsfragen, die sich nicht aus dem Repository beantworten lassen. Sie werden nach Phase 1 gebündelt gestellt.
+- **B03, Leistungsumfang:** Die Vorgabe nennt fünf, die neue Seite hat 18, die bisherige Kunden-Website nennt 2 Bereiche mit 7 Unterleistungen. Bis zur Antwort werden alle 18 vorhandenen Seiten geprüft. Die fünf Leistungsdateien werden erst nach der Klärung umbenannt.
+- **B04–B10, B13, B14:** Geschäftsfragen, die sich nicht aus dem Repository beantworten lassen. Sie werden gebündelt gestellt, sobald die globale Prüfung zeigt, welche Antworten wirklich fehlen.
+- **B08:** Soll die neue Seite später unter `bgs-service.ch` laufen und die bisherige ersetzen? Davon hängen der Migrationsbestand und die Indexierungsstrategie für `*.vercel.app` ab.
+
+## Auffälligste Zwischenbefunde (noch nicht priorisiert, Details in 08 und später 01/06)
+
+1. Next.js 15.1.11 mit bekannten kritischen und hohen Sicherheitsmeldungen, ein Fix ohne Major-Sprung ist verfügbar (N006).
+2. KI-Chat fällt in Produktion aus, und der Fehler bleibt dank HTTP 200 unsichtbar (N012).
+3. Das Kontaktformular meldet immer Erfolg. Die Absenderdomain ist laut DNS nicht für Resend eingerichtet, Leads gehen an die Agentur statt an den Kunden (N013, N016).
+4. Alle 32 Seiten haben denselben Titel und dieselbe Beschreibung, kein Canonical, keine strukturierten Daten, OG-Bild, Favicon und Touch-Icon sind 404 (N007, N008).
+5. Angaben widersprechen der Eigenangabe des Kunden: Telefonnummer, Arbeitsgebiet (Zürich, „Schweizweit“), Leistungsumfang. Zudem eine E-Mail-Adresse auf einer geparkten Domain ohne MX (N009, N013, N014).
+6. 7 defekte Links auf der Zürich-Seite (N009).
 
 ## Nächste Aufgabe
 
-Phase 0 abschließen: Produktionsdomain über Vercel (nur lesend) und HTTP bestätigen, tatsächliche Leistungsseiten und Regionen aus dem Code erfassen, Prüfberechtigungen festhalten.
+Phase 2: globale Prüfung A–N. Reihenfolge: zuerst K (Backend/Sicherheit) und F/G (Crawling/Metadaten) mit formalen Befunden, danach Browser-Tests (Rendering, Formular im lokalen Build, Consent, Tastatur, Breiten-Matrix), Performance-Labormessung, Medieninventar, Content/Vertrauen, Positionierung.

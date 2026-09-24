@@ -61,8 +61,8 @@ Verwende kein pauschales „100 % fertig“, solange zwingende Prüfungen offen 
 
 ## 4. Bearbeitungsreihenfolge
 
-- [ ] **Phase 0: Scope klären.** Ziel, Referenz, Produktionsdomain, fünf Leistungen, Regionen und Prüfberechtigungen festhalten.
-- [ ] **Phase 1: Bestand sichern.** URL-Inventar, bestehende SEO-/Lead-Baseline und aktuelle Architektur dokumentieren. Funktionierende Inhalte und URLs ausdrücklich markieren.
+- [x] **Phase 0: Scope klären.** *(erledigt 24.09.2026, siehe FORTSCHRITT.md)* Ziel, Referenz, Produktionsdomain, fünf Leistungen, Regionen und Prüfberechtigungen festhalten.
+- [x] **Phase 1: Bestand sichern.** *(erledigt 24.09.2026, siehe FORTSCHRITT.md)* URL-Inventar, bestehende SEO-/Lead-Baseline und aktuelle Architektur dokumentieren. Funktionierende Inhalte und URLs ausdrücklich markieren.
 - [ ] **Phase 2: Strategie und globale Prüfung.** Positionierung, Suchintentionen, Markenbild, Navigation, technische Grundlagen und Lead-Prozess analysieren.
 - [ ] **Phase 3: Seitenprüfung.** Homepage, Leistungsübersicht, die fünf Leistungen einzeln, Über uns, Einzugsgebiete, Kontakt, Rechtliches und zusätzliche vorhandene URLs bearbeiten.
 - [ ] **Phase 4: Querprüfung.** Kannibalisierung, widersprüchliche Aussagen, Metadaten, interne Links, Designkonsistenz, Seitentemplates und gemeinsame Backend-Abhängigkeiten prüfen.

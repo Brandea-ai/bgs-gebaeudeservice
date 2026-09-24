@@ -1,6 +1,28 @@
 # Globale Website-Analyse
 
-**Status: NICHT GEPRÜFT.** Die folgenden Punkte sind Prüfaufträge, keine festgestellten Mängel. Erst nach Sichtung der bestätigten Zielwebsite Befunde, Nachweise und konkrete Maßnahmen ergänzen. Quellen-IDs beziehen sich auf `09-QUELLEN.md`.
+**Status: Bestandsaufnahme (Phase 1) erfasst, globale Prüfung (Phase 2) folgt.** Die Punkte A–N sind Prüfaufträge. Befunde werden erst nach Prüfung mit ID und Nachweis eingetragen. Quellen-IDs beziehen sich auf `09-QUELLEN.md`, Nachweis-IDs (N…) auf `08-PRUEFNACHWEISE.md`.
+
+## Bestandsaufnahme der aktuellen Architektur (Phase 1, Stand 24.09.2026)
+
+Dokumentiert, nicht bewertet. Die Bewertung folgt in den Abschnitten A–N.
+
+| Bereich | Ist-Zustand | Nachweis |
+|---|---|---|
+| Projektrolle | Neue Website, die Brandea für den Kunden BGS Gebäudeservice GmbH baut. Die bisherige Kunden-Website `www.bgs-service.ch` (Wix) läuft parallel | E07, N014 |
+| Hosting | Vercel, Projekt `bgs-gebaeudeservice`, nur `*.vercel.app`-Domains. Build- und Funktionsregion iad1 (Washington, D.C., USA). Vorschauen per Vercel Authentication geschützt | N002, N003, N008 |
+| Framework | Next.js **15.1.11** (App Router), React 19.2.0, TypeScript 5.6.3 (`strict`), Tailwind CSS 3.4, Radix UI/shadcn-Komponenten, Framer Motion | N003, N005 |
+| Paketverwaltung | Vercel installiert mit `npm install`. `package-lock.json` ist nicht synchron mit `package.json`. Zusätzlich liegt ein `pnpm-lock.yaml` vor. Framework-Voreinstellung im Vercel-Projekt steht noch auf „vite“ | N002, N003, N005 |
+| Qualitätssicherung | Build und Typecheck laufen. ESLint ist nicht konfiguriert, es gibt keine Tests und kein CI | N005 |
+| Rendering | 32 Inhaltsseiten, alle `'use client'`, statisch vorgerendert. Keine dynamischen Routen, keine Middleware, keine Server Actions, keine Rewrites | N005, N015 |
+| Metadaten | Nur global in `app/layout.tsx`. Die `SEO`-Komponente der Seiten ist wirkungslos (`return null`). Keine strukturierten Daten im HTML | N007, N015 |
+| Inhalte | Fest im TSX-Code je Seite, kein CMS und keine zentrale Datenquelle für Firmendaten (Telefon/E-Mail an mehreren Stellen) | N009, N015 |
+| Globale Bausteine | `SwissNavigation` (Mega-Menü), `SwissFooter` (mit Kontaktformular, Anker `#kontakt-formular`), `AIChatbot`, `CookieConsent`, `ErrorBoundary` auf jeder Seite über das Layout bzw. je Seite | N009, `app/layout.tsx:92-104` |
+| Backend | 5 API-Routen: `/api/contact` (Resend, Absender `info@bgs-service.ch` → `info@brandea.de`), `/api/chat` und `/api/industry-analysis` (Google Gemini `gemini-2.5-flash`), `/api/chat-to-specialist` (Resend), `/api/health` | N016, N017 |
+| Drittdienste | Resend (E-Mail), Google Gemini (KI), Google Maps JS nur auf `/kontakt`. Keine Analytics, keine externen Schriften | N010, N011 |
+| Umgebungsvariablen | `ANTHROPIC_API_KEY` (ungenutzt), `GEMINI_API_KEY`, `RESEND_API_KEY`, `VITE_GOOGLE_MAPS_API_KEY`, jeweils identisch in Production, Preview und Development. `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` fehlt | N011 |
+| Laufzeitzustand | KI-Chat fällt aus (ungültiger Gemini-Schlüssel), wird aber mit HTTP 200 beantwortet. Keine Formularanfrage in den letzten 7 Tagen | N012 |
+| Altlasten | Vollständiger früherer Vite-Aufbau im Repository (56 Seiten-Dateien, Express-Server, Vite-Konfiguration, Wouter-Patch). Doppelter Asset-Ordner `client/public/` | N019 |
+| Medien | 102 Dateien in `public/`. `next/image` wird nicht verwendet, die Bildoptimierung ist aber für beliebige Hosts offen | N018, N019 |
 
 ## A. Positionierung, Zielgruppe und Leistungsversprechen
 
