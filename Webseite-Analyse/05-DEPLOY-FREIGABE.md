@@ -76,7 +76,7 @@ LCP ≤ 2,5 s, INP ≤ 200 ms und CLS ≤ 0,1 am 75. Perzentil sind die dokument
 - [ ] Verantwortliche Person und klaren Kommunikationsweg festlegen. → *Offen (R12).*
 - [x] Auslöser für Rücknahme definieren: zum Beispiel ausgefallene Hauptanfragen, sensible Daten offengelegt oder kritische Produktionsfehler. → *Vorschlag: (1) Eine Testanfrage kommt nicht innerhalb von 15 Minuten beim Kunden an. (2) Sensible Daten oder Schlüssel sind öffentlich. (3) Eine Kernseite liefert 5xx oder zeigt keinen Inhalt. (4) Weiterleitungen führen in Schleifen oder auf 404.*
 - [x] Vercel-Rollback auf tatsächliche Projekt-/Tarifmöglichkeiten prüfen. Ein Code-Rollback macht nicht automatisch externe E-Mails, CRM-Schreibvorgänge oder Datenbankänderungen rückgängig. [S31] → *Teilweise: Frühere Deployments existieren (N003, N035). Welche Rollback-Funktion der Tarif erlaubt, ist nicht geprüft (nur lesender Zugriff). Bei einem Domainwechsel betrifft eine Rücknahme auch DNS und Weiterleitungen, das braucht einen eigenen Plan.*
-- [x] Im Analysemodus nur den Plan erstellen; keinen Rollback und kein Testdeployment selbst auslösen. → *Eingehalten für Rollback und manuelle Deployments. Abweichung: Die Git-Anbindung hat bei jedem Push dieses Audits automatisch ein geschütztes Preview gebaut (N035, E10).*
+- [x] Im Analysemodus nur den Plan erstellen; keinen Rollback und kein Testdeployment selbst auslösen. → *Eingehalten für Rollback und manuelle Deployments. Abweichung: Die Git-Anbindung hat bei jedem Push dieses Audits automatisch ein geschütztes Preview gebaut (N035). Der Nutzer hat das nachträglich akzeptiert (E10).*
 
 ## 7. Nach dem Launch: kontrollierte Aufgaben, noch keine Ausführung
 

@@ -65,7 +65,7 @@ Alle Effekte sind HYPOTHESE, es gibt keine Baseline (GLOBAL-029). Deshalb keine 
 
 - **Behauptungen ohne Beleg** (vollständige Liste im Nachweisregister, 01 Abschnitt A): ISO-Zertifizierungen (widerlegt), „24/7“ auf 15 Seiten, „500+ Kunden“ bzw. „500 in Zürich“, „15+ Jahre“, Gründung 2005, „seit 2008“, „führend“, Versicherungssummen 5 bzw. 10 Mio. CHF, Preise auf vier Seiten, Fachzertifikate (Höhenarbeit, HACCP, GMP), Winterdienst-Zusagen, Vertragsbedingungen, Umweltaussagen, Region Zürich und „schweizweit“, alle Kundenstimmen und Referenzfälle.
 - **Nicht geprüfte Risiken:** ob die Projektdokumente gültige Schlüssel enthalten (R1), ob Anfragen der letzten Monate verloren gingen (Logs reichen nicht zurück), ob die Rechtstexte genügen (B07), ob die Seite bereits von Google indexiert ist, wie Screenreader-Nutzer die Seite erleben.
-- **Vorfall dieses Audits:** Die Pushes der Analyse haben automatisch sechs geschützte Preview-Deployments ausgelöst (N035). Produktion war nicht betroffen, weitere Pushes warten auf die Nutzerentscheidung E10.
+- **Vorfall dieses Audits:** Die Pushes der Analyse haben automatisch sechs geschützte Preview-Deployments ausgelöst (N035). Produktion war nicht betroffen. Der Nutzer hat Pushes samt Previews erlaubt (E10).
 
 ## 3. Wichtigste Maßnahmen
 
@@ -93,7 +93,6 @@ Gebündelt in 07, Abschnitt 2a. Die dringlichsten:
 - **R5:** An wen gehen Anfragen, welche Telefonnummer und Rückmeldezeit gelten?
 - **R6 und R7:** Welche Belege gibt es, wer prüft die Rechtstexte?
 - **R8 und R9:** Bleiben Chat, KI-Berater und Karte? Übernimmt die neue Seite `bgs-service.ch`?
-- **E10:** Soll der Analyse-Stand weiter gepusht werden, obwohl jeder Push ein geschütztes Preview-Deployment auslöst?
 
 ## 5. Roadmap 14/30/90 Tage (nach Freigabe der Umsetzung)
 

@@ -31,7 +31,7 @@ Priorität und Launch-Blocker sind getrennte Felder. Nicht jede SEO-Idee ist ein
 | R10 Ziele und Zielgruppen | M28, M41 | Arbeitshypothese Verwaltungen, Eigentümer, Gewerbe |
 | R11 Datenzugänge | M32, M55 | Baseline fehlt, nach dem Launch aufbauen |
 | R12 Verantwortung | G14 in 05 | Kein Launch ohne benannte Freigabe |
-| E10 Push/Previews | Sicherung dieses Audits | Nur lokale Commits |
+| E10 Push/Previews (entschieden) | — | Pushes auf den Arbeits-Branch erlaubt, M06 bleibt als Empfehlung |
 
 ## Aufgabenmatrix
 

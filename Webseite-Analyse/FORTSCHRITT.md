@@ -61,14 +61,14 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 
 | Datum | Was | Auswirkung | Behandlung |
 |---|---|---|---|
-| 24.09.2026 | **Jeder der sechs Pushes auf den Arbeits-Branch hat automatisch ein Vercel-Preview-Deployment ausgelöst** (N035). Regel 3 verbietet Deployments, E03 erlaubt nur Commit und Push. | Produktion unverändert (`d7e1122`). Die Previews sind per Vercel Authentication geschützt, enthalten nur zusätzliches Markdown, nutzen aber die gemeinsamen Umgebungsvariablen. Build-Minuten verbraucht. | Seit der Entdeckung wird nur lokal committet. Nutzerentscheidung angefragt (E10). Keine Previews gelöscht, weil nur lesender Zugriff erlaubt ist (E08). |
+| 24.09.2026 | **Jeder der sechs Pushes auf den Arbeits-Branch hat automatisch ein Vercel-Preview-Deployment ausgelöst** (N035). Regel 3 verbietet Deployments, E03 erlaubt nur Commit und Push. | Produktion unverändert (`d7e1122`). Die Previews sind per Vercel Authentication geschützt, enthalten nur zusätzliches Markdown, nutzen aber die gemeinsamen Umgebungsvariablen. Build-Minuten verbraucht. | Nach der Entdeckung nur lokal committet und den Nutzer gefragt. **Entscheidung E10 (24.09.2026): Pushes mit Previews sind in Ordnung.** Keine Previews gelöscht, weil nur lesender Zugriff erlaubt ist (E08). |
 | 24.09.2026 | Drei Hilfsagenten haben entgegen der Vorgabe je einen lesenden git-Befehl ausgeführt (`git log -1` bzw. `git status`). | Keine inhaltliche Änderung. `git status` kann höchstens den Index-Zeitstempel auffrischen. | Dokumentiert. Die Ergebnisse der Agenten wurden geprüft: Nur die vorgesehenen Berichtsdateien wurden geschrieben, FIMI blieb unberührt. |
 | 24.09.2026 | Messartefakt in N023 bei zwei Seiten (Reiterwechsel nicht ausgelöst). | Zahlen zu verborgenen Inhalten zu niedrig, eine Seite fälschlich als unbetroffen geführt. | Per Code-Abgleich korrigiert (N023, GLOBAL-011). |
 
 ## Offene Punkte
 
 - **B03/R3, Leistungsumfang:** Die Vorgabe nennt fünf, die neue Seite hat 18, die bisherige Kunden-Website nennt 2 Bereiche mit 7 Unterleistungen. Alle 18 Seiten sind geprüft. Die fünf Leistungsdateien sind vorläufig zugeordnet (E09). Für die übrigen 13 gilt bis zur Antwort Pfad (b) der Berichte (308 auf eine bestätigte Leistung oder 410, siehe 02).
-- **E10, Push und Preview-Deployments:** Nutzerentscheidung ausstehend. Bis dahin nur lokale Commits.
+- **E10, Push und Preview-Deployments:** entschieden, Pushes auf den Arbeits-Branch sind erlaubt.
 - **R1–R12 (gebündelte Rückfragen, 07 Abschnitt 2a):** Geschäftsfragen, die sich nicht aus dem Repository beantworten lassen. R7 ist durch das UID-Register teilweise beantwortet (N033). Zu R2, R5 und R6 gibt es Hinweise aus Registern und Verzeichnissen (N037, N038).
 - **B08:** Soll die neue Seite später unter `bgs-service.ch` laufen und die bisherige ersetzen? Davon hängen der Migrationsbestand und die Indexierungsstrategie für `*.vercel.app` ab.
 
@@ -97,7 +97,6 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 **Die Analyse nach dem goldenen Stand ist abgeschlossen (Phasen 0–7).** Es wird nichts umgesetzt, bis die Umsetzung eigens freigegeben ist (E05).
 
 Offen beim Nutzer bzw. Kunden:
-1. **E10:** Wie mit Pushes umgehen (Preview-Deployments)? Bis dahin liegen die Commits nur lokal.
-2. **R1 (sofort):** Enthalten `DEPLOYMENT.md` und `EMAIL_SETUP.md` gültige Schlüssel?
-3. **R2–R12:** Kundentermin (07, Abschnitt 2a).
-4. **Freigabe der Umsetzung:** Danach Welle 0 aus 06 (M01–M09).
+1. **R1 (sofort):** Enthalten `DEPLOYMENT.md` und `EMAIL_SETUP.md` gültige Schlüssel?
+2. **R2–R12:** Kundentermin (07, Abschnitt 2a).
+3. **Freigabe der Umsetzung:** Danach Welle 0 aus 06 (M01–M09).
