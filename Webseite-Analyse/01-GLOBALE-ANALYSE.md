@@ -313,14 +313,14 @@ Format nach `00-START-HIER.md`, Abschnitt 6. Gemeinsame Befunde stehen nur hier,
 - **Betroffen:** Formular im Footer aller Seiten und `/kontakt`, `app/api/contact/route.ts:36-58`, `server/email.ts:27-37, 103-105`, ebenso der Chat-Weg `/api/chat-to-specialist`
 - **Prüfdatum/Umgebung:** 24.09.2026, Code-Lektüre, öffentliches DNS, Vercel-Logs. Kein Absenden auf Produktion.
 - **Ist-Zustand:** (1) Die Route antwortet **immer mit `success: true`**, auch wenn der Versand scheitert oder eine Ausnahme wirft. Die Meldung „Email sending failed, but form submission logged“ ist irreführend, denn gespeichert wird nichts. (2) Absender ist `info@bgs-service.ch`. Für diese Domain gibt es im DNS **keinen Resend-DKIM-Eintrag und keinen `send.`-MX**, der Versand über Resend ist damit sehr wahrscheinlich abgewiesen. (3) Empfänger ist `info@brandea.de`, also die Agentur, nicht der Kunde. (4) Anfragende erhalten keine Bestätigung. (5) Preview und Produktion nutzen denselben Schlüssel (N011).
-- **Beleg:** N011, N013, N016. Keine Formularanfrage in den Logs der letzten 7 Tage (N012).
+- **Beleg:** N011, N013, N016, **N032** (End-to-End-Test in der isolierten Testumgebung: Bei Anbieterfehler 401 meldet die Oberfläche „erfolgreich versendet“). Keine Formularanfrage in den Logs der letzten 7 Tage (N012).
 - **Auswirkung:** Anfragen können still verloren gehen, während Besuchern Erfolg angezeigt wird. Selbst bei Zustellung landen sie nicht beim Kunden. Das trifft die zentrale Zielhandlung der Website.
 - **Priorität:** P0 · **Launch-Blocker:** ja (G05)
 - **Konkrete Vorgabe:** Erfolg erst anzeigen, wenn der Versanddienst die Nachricht serverseitig angenommen hat (Nachrichten-ID protokollieren). Bei Fehler eine verständliche Meldung zeigen, die Eingaben erhalten und einen alternativen Kontaktweg nennen. Absenderdomain beim Versanddienst verifizieren (DKIM, SPF bzw. Return-Path, DMARC) oder eine bereits verifizierte Domain nutzen. Den Empfänger mit dem Kunden festlegen (B10). Getrennte Schlüssel oder Test-Empfänger für Preview. Optional eine Eingangsbestätigung an Anfragende, sofern der Kunde das will.
 - **Abnahmekriterium:** End-to-End-Test in der freigegebenen Testumgebung mit Test-Empfänger: gültige Anfrage → Erfolgsmeldung, Nachricht kommt im Test-Postfach an, Nachrichten-ID im Log. Simulierter Anbieterfehler → Fehlermeldung, Eingaben bleiben erhalten, kein „success“. DNS zeigt DKIM für die Absenderdomain. Der Kunde bestätigt den Empfänger schriftlich.
 - **Aufwand/Verantwortlich:** Entwicklung, klein bis mittel. DNS: Kunde bzw. dessen Hoster (Swizzonic). Empfänger: Kunde
 - **Abhängigkeiten:** GLOBAL-020, B10
-- **Evidenz/Sicherheit:** „Erfolg ohne Zustellnachweis“ = BEFUND (Code). „Versand scheitert“ = HYPOTHESE mit hoher Wahrscheinlichkeit (DNS), nicht end-to-end bewiesen.
+- **Evidenz/Sicherheit:** „Erfolg ohne Zustellnachweis“ = BEFUND (Code und End-to-End-Test N032). „Versand in Produktion scheitert“ = HYPOTHESE mit hoher Wahrscheinlichkeit (DNS), nicht mit dem Produktionsschlüssel bewiesen (Regel 5).
 - **Quelle:** S28, S29
 
 ### GLOBAL-004 · API-Routen ohne Missbrauchsschutz, Formulareingaben unmaskiert im Mail-HTML
@@ -532,6 +532,231 @@ Format nach `00-START-HIER.md`, Abschnitt 6. Gemeinsame Befunde stehen nur hier,
 - **Abhängigkeiten:** B08, E07
 - **Evidenz/Sicherheit:** HTTP-Befund, Auswirkung auf den Index = HYPOTHESE (NICHT PRÜFBAR ohne Search Console)
 - **Quelle:** S01, S05, S07, S30
+
+### GLOBAL-017 · Blogartikel nur über die Blog-Übersicht erreichbar
+
+- **Betroffen:** `/blog/*` (U29–U32), Leistungs- und Standortseiten
+- **Prüfdatum/Umgebung:** 24.09.2026, interne Verlinkung aus N007
+- **Ist-Zustand:** Jeder der vier Artikel hat genau einen internen Entdeckungspfad (`/blog`). Weder Leistungs- noch Standortseiten verweisen kontextuell auf sie, und die Artikel verweisen kaum auf passende Leistungen (Detailprüfung in Phase 3/4).
+- **Beleg:** N009
+- **Auswirkung:** Hilfreiche Inhalte werden selten gefunden und stützen die Leistungsseiten nicht. Der Mindest-Entdeckungspfad ist erfüllt (BESTANDEN), die Verzahnung fehlt.
+- **Priorität:** P3 · **Launch-Blocker:** nein
+- **Konkrete Vorgabe:** Erst nach der inhaltlichen Prüfung der Artikel (GLOBAL-031) je Artikel 1–2 fachlich passende Kontextlinks von Leistungsseiten und umgekehrt setzen, mit beschreibendem Linktext. Ziel-URL und Linktext stehen in den Seitenberichten.
+- **Abnahmekriterium:** Jeder behaltene Artikel hat mindestens einen kontextuellen Link von einer passenden Leistungsseite und verweist selbst auf die passende Leistung.
+- **Aufwand/Verantwortlich:** Redaktion/SEO, klein
+- **Abhängigkeiten:** GLOBAL-031, Intent-Matrix (Phase 4)
+- **Evidenz/Sicherheit:** HTTP-Befund. Nutzen = HYPOTHESE
+- **Quelle:** S04
+
+### GLOBAL-019 · Google Maps lädt ohne Einwilligung, der Cookie-Banner steuert nichts und beschreibt nicht die Realität
+
+- **Betroffen:** `/kontakt` (Karte), alle Seiten (Banner), `client/src/components/CookieConsent.tsx`, `client/src/components/GoogleMap.tsx`, `app/kontakt/page.tsx:148-149`
+- **Prüfdatum/Umgebung:** 24.09.2026, Browser-Test Produktion, Code-Lektüre
+- **Ist-Zustand:** Beim Aufruf von `/kontakt` werden ohne jede Auswahl im Banner Google Maps und Google Fonts geladen. Dabei gehen Daten wie die IP-Adresse an Google. Die Karte funktioniert trotzdem nicht („NoApiKeys“, „InvalidKey“), denn `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` ist nicht gesetzt. Der Banner verspricht Cookies zur „Verbesserung“, die es nicht gibt, und seine Auswahl wird nirgends ausgewertet.
+- **Beleg:** N010, N011, N020, N025
+- **Auswirkung:** Datenübermittlung an einen Drittanbieter ohne Wahlmöglichkeit, zugleich ein sichtbar defektes Element auf der Kontaktseite. Der Banner stört auf allen Seiten, ohne einen Zweck zu erfüllen.
+- **Priorität:** P1 · **Launch-Blocker:** ja (G07)
+- **Konkrete Vorgabe:** Entscheiden, ob eine interaktive Karte nötig ist. Ohne Karte: durch Adresse als Text plus Link „Route in Google Maps öffnen“ ersetzen. Mit Karte: erst nach aktiver Einwilligung laden, mit gültigem, auf die Domain beschränktem Schlüssel. Den Banner nur behalten, wenn tatsächlich einwilligungsbedürftige Technik eingesetzt wird. Sein Text muss genau diese Technik nennen, und Ablehnen muss sie nachweislich verhindern. Rechtsraum und Rechtsgrundlage fachlich klären (Schweizer DSG, gegebenenfalls DSGVO).
+- **Abnahmekriterium:** Netzwerkprotokoll von `/kontakt` bei Ablehnen bzw. ohne Auswahl: keine Anfragen an `*.googleapis.com` oder `*.gstatic.com`. Nach Zustimmung lädt die Karte ohne Konsolenfehler. Der Widerruf ist über einen dauerhaft erreichbaren Link möglich. Der Bannertext entspricht der eingesetzten Technik.
+- **Aufwand/Verantwortlich:** Entwicklung, klein. Fachprüfung Datenschutz
+- **Abhängigkeiten:** GLOBAL-027
+- **Evidenz/Sicherheit:** HTTP-/Renderbefund. Die rechtliche Bewertung ist nicht Teil dieser Prüfung.
+- **Quelle:** S39 (für DE/EU), Schweizer Recht fachlich zu klären
+
+### GLOBAL-020 · Unternehmensidentität und Kontaktdaten sind widersprüchlich
+
+- **Betroffen:** alle Seiten (Logo, Footer, Texte), `/impressum`, `/datenschutz`, `/kontakt`, Standortseiten, `server/email.ts`, `server/gemini.ts`
+- **Prüfdatum/Umgebung:** 24.09.2026, Volltext aller Seiten, DNS, Eigenangabe des Kunden
+- **Ist-Zustand:** Der Kunde heißt laut eigener Website „BGS Gebäudeservice GmbH“ (N014). Die neue Seite nennt „BGS“ im sichtbaren Text **kein einziges Mal**. Sie tritt als „Swiss Reinigungsfirma“ auf (42-mal), das Logo zeigt „SWISS REINIGUNG“, auch Impressum und Datenschutz nennen „Swiss Reinigungsfirma“ ohne Rechtsform als Verantwortlichen. Telefonnummer `+41 41 320 56 10` weicht von der Nummer auf der Kunden-Website ab. `info@swiss-reinigung.ch` (3 Standortseiten) liegt auf einer geparkten Domain ohne MX-Eintrag. Die Adresse (Emmenbrücke) und die UID sind nicht belegt. Anfragen gehen an die Agentur (`info@brandea.de`), das Widget trägt „Powered by Brandea AI“.
+- **Beleg:** N009, N013, N014, N016, N026, N027, N028
+- **Auswirkung:** Interessenten können den Anbieter nicht eindeutig zuordnen. Anfragen an die geparkte Adresse gehen verloren oder im schlimmsten Fall an einen Dritten, falls die Domain den Besitzer wechselt. Ein Markenname ohne eigene Domain und ohne Rechtsträger schwächt Vertrauen und Auffindbarkeit (Markensuche „BGS“).
+- **Priorität:** P1 · **Launch-Blocker:** ja (G07, G09)
+- **Konkrete Vorgabe:** Mit dem Kunden die Marke festlegen (B09). Rechtlicher Name „BGS Gebäudeservice GmbH“ in Impressum, Datenschutz, Footer und strukturierten Daten. Alle Kontaktdaten (Telefon, E-Mail, Adresse, UID, Empfänger der Anfragen) vom Kunden schriftlich bestätigen lassen und an **einer** zentralen Stelle im Code pflegen. `info@swiss-reinigung.ch` sofort entfernen. Agentur-Kennzeichnung („Powered by Brandea AI“) aus der Kundenseite entfernen oder bewusst im Impressum als Umsetzungspartner nennen.
+- **Abnahmekriterium:** Volltextsuche über alle Seiten findet nur die bestätigten Angaben, keine abweichende Nummer oder Adresse und keine Domain ohne MX. Firmenname und Rechtsform stimmen in Impressum, Datenschutz, Footer und Schema überein. Eine Testmail an die angezeigte Adresse wird zugestellt (vom Kunden bestätigt).
+- **Aufwand/Verantwortlich:** Geschäftsführung Kunde (Fakten), Redaktion/Entwicklung (Umsetzung), klein
+- **Abhängigkeiten:** B07, B09, B10, GLOBAL-003
+- **Evidenz/Sicherheit:** Inhaltsbefund + DNS. Welche Angaben richtig sind, ist offen (Kundenbestätigung nötig).
+- **Quelle:** S14, S38 (DE-Referenz, Schweizer Pflichtangaben fachlich zu klären)
+
+### GLOBAL-021 · Unbelegte und widersprüchliche Leistungs- und Erfolgsbehauptungen
+
+- **Betroffen:** Startseite (Kennzahlen-Leiste), Leistungsseiten, Standortseiten, Über uns
+- **Prüfdatum/Umgebung:** 24.09.2026, Volltext aller Seiten
+- **Ist-Zustand:** Behauptet werden „ISO 9001 zertifiziert“, „Zertifizierte Qualität“ und ein „Zertifiziertes Qualitätsmanagementsystem“. **Das eigene Impressum sagt: „Die ISO-Zertifizierung befindet sich derzeit in Bearbeitung.“** Dazu kommen „500+ Kunden“, „15+ Jahre Erfahrung“, Gründung 2005, „einer der führenden Reinigungsunternehmen in der Schweiz“, „Schweizweit“, Service an „allen großen Schweizer Flughäfen“, „24/7“, Vor-Ort-Zeiten von 1–2 bzw. 2–4 Stunden und eine „Festpreis-Garantie“. Die Kunden-Website nennt dagegen nur Luzern und Zug und zwei Leistungsbereiche. Premium-Leistungen wie Privatjet, Yacht und Luxusimmobilien kommen dort nicht vor.
+- **Beleg:** N014, N027, N028
+- **Auswirkung:** Irreführende Aussagen, bei der ISO-Angabe sogar selbst widerlegt, gefährden Vertrauen und können rechtlich angreifbar sein. Leistungsversprechen, die nicht erfüllt werden, erzeugen unpassende Anfragen.
+- **Priorität:** P1 (die ISO-Angabe ist sofort zu entscheiden, weil öffentlich sichtbar) · **Launch-Blocker:** ja (G09)
+- **Konkrete Vorgabe:** Jede Behauptung ins Nachweisregister (Abschnitt A) übernehmen: Aussage, Beleg, zulässige Formulierung, verantwortliche Person. Ohne Beleg streichen oder ehrlich umformulieren, z. B. „ISO-9001-Zertifizierung in Vorbereitung“ nur, wenn ein Verfahren nachweisbar läuft. Leistungen und Regionen nur nennen, wenn der Kunde sie bestätigt (B03, B04).
+- **Abnahmekriterium:** Für jede verbleibende Zahl, Zertifizierung, Zeit- oder Regionsangabe liegt ein Beleg oder eine schriftliche Kundenfreigabe vor. Keine Aussage widerspricht dem Impressum.
+- **Aufwand/Verantwortlich:** Geschäftsführung Kunde (Belege), Redaktion, klein bis mittel
+- **Abhängigkeiten:** B03, B04, B06, B07
+- **Evidenz/Sicherheit:** Inhaltsbefund. Der Wahrheitsgehalt der übrigen Behauptungen ist offen, nur der ISO-Widerspruch ist intern belegt.
+- **Quelle:** S02
+
+### GLOBAL-022 · Testimonials und Referenzen ohne Nachweis, mit Merkmalen erfundener Stimmen
+
+- **Betroffen:** `/` („Was unsere Kunden sagen“), `/ueber-uns`, `/referenzen`, Standortseiten (Detailprüfung Phase 3)
+- **Prüfdatum/Umgebung:** 24.09.2026, Volltext
+- **Ist-Zustand:** Kundenstimmen mit sehr allgemeinen Namen und Firmen („Dr. Thomas Müller, CEO, TechCorp AG“, „Anna Meier, CEO, Meier AG“, „Peter Schmidt, Schmidt & Partner“, „Maria Rossi, Rossi Boutique“) bzw. Kurzformen („Thomas M., Geschäftsführer, Zürich“). Die Zitate loben „Swiss Reinigungsfirma“, also eine Marke ohne Rechtsträger. Keine Quelle, kein Datum, keine Freigabe erkennbar.
+- **Beleg:** N027
+- **Auswirkung:** Sind die Stimmen nicht echt, ist das eine Täuschung von Interessenten mit rechtlichem Risiko. Auch echte Stimmen ohne Einordnung wirken austauschbar.
+- **Priorität:** P1 (sofortige Entscheidung empfohlen, da öffentlich) · **Launch-Blocker:** ja (G09)
+- **Konkrete Vorgabe:** Vom Kunden für jede Stimme und jede Referenz einen Nachweis anfordern: echte Person oder Organisation, Freigabe zur Veröffentlichung, Zeitraum, erbrachte Leistung. Nicht belegbare Stimmen und Referenzen entfernen. Echte Stimmen mit Kontext zeigen (Branche, Leistung, Zeitraum). Keine erfundenen Stimmen als „Platzhalter“.
+- **Abnahmekriterium:** Für jede veröffentlichte Stimme und Referenz liegt eine dokumentierte Freigabe vor. Stichprobe: Die genannten Organisationen existieren und bestätigen die Zusammenarbeit.
+- **Aufwand/Verantwortlich:** Geschäftsführung Kunde, Redaktion, klein
+- **Abhängigkeiten:** B07
+- **Evidenz/Sicherheit:** HYPOTHESE (erfunden) mit hoher Plausibilität. Ob sie echt sind, kann nur der Kunde belegen.
+- **Quelle:** S02, S15
+
+### GLOBAL-023 · KI-generierte Bilder in vertrauensentscheidenden Zusammenhängen
+
+- **Betroffen:** Startseite (Hero-Team, „Vorher/Nachher – Erleben Sie die Qualität unserer Arbeit“), `/ueber-uns` (Alt-Text „Das Team der Swiss Reinigungsfirma“), `/referenzen` (Projektbilder), Leistungs- und Standortseiten
+- **Prüfdatum/Umgebung:** 24.09.2026, Sichtprüfung einer Stichprobe, Impressum
+- **Ist-Zustand:** Das Impressum bestätigt KI-generierte Bilder, die „die Qualität unserer Dienstleistungen repräsentieren“. Sichtbar werden solche Bilder als eigenes Team, als Vorher/Nachher-Beleg und als Referenzprojekt eingesetzt. Die „Team“-Kleidung wechselt je Bild (rot bzw. dunkelblau mit grünem Logo).
+- **Beleg:** N026, N028, N029
+- **Auswirkung:** Besucher halten die Bilder für echte Mitarbeitende und echte Arbeitsergebnisse. Die Offenlegung im Impressum hebt diesen Eindruck an der Fundstelle nicht auf. Das widerspricht der Vorgabe (H, B).
+- **Priorität:** P1 · **Launch-Blocker:** ja (G09)
+- **Konkrete Vorgabe:** Für Team, Referenzen und Vorher/Nachher echte, freigegebene Fotos des Kunden verwenden (Fotoshooting oder vorhandenes Material, B07). Bis dahin diese Bereiche ohne Bild, mit neutraler Grafik oder ganz ohne den Abschnitt gestalten. Illustrative KI-Bilder höchstens für neutrale Themen und dann nicht als Nachweis beschriften. Alt-Texte an den tatsächlichen Bildinhalt anpassen.
+- **Abnahmekriterium:** Im Medieninventar ist für jedes Bild Quelle und Nutzungsrecht dokumentiert. Kein KI-Bild steht in den Abschnitten Team, Referenzen oder Vorher/Nachher.
+- **Aufwand/Verantwortlich:** Kunde (Fotos), Design/Redaktion, mittel
+- **Abhängigkeiten:** B07
+- **Evidenz/Sicherheit:** BEFUND für den Einsatzkontext (Impressum und Alt-Text). Die Herkunft einzelner Bilder ist eine Einschätzung.
+- **Quelle:** S16, S17
+
+### GLOBAL-024 · Bilder weder responsiv noch verzögert geladen, viele ungenutzte Dateien
+
+- **Betroffen:** alle Seiten, `public/`
+- **Prüfdatum/Umgebung:** 24.09.2026, Browser-Messung, Dateisystem, Lighthouse
+- **Ist-Zustand:** 170 `<img>` ohne `loading="lazy"` und ohne `srcset`. Mobilgeräte laden dieselben 1536-px-JPGs wie Desktops, bis 14,6-fach größer als dargestellt. Lighthouse schätzt je Seite bis 1,4 MB Einsparung durch passende Größen und bis 1,2 MB durch moderne Formate. 51 von 94 Dateien in `public/` werden nicht genutzt, dazu der doppelte Ordner `client/public/`. 62 Bilder haben leeren Alt-Text, darunter vermutlich informative.
+- **Beleg:** N029, N030
+- **Auswirkung:** Unnötige Datenmenge vor allem mobil, trägt zur langsamen mobilen Ladezeit bei (GLOBAL-025). Pflegeaufwand und Verwechslungsgefahr.
+- **Priorität:** P2 · **Launch-Blocker:** nein
+- **Konkrete Vorgabe:** Bilder responsiv mit passenden Breiten ausliefern (z. B. über `next/image` mit korrekt gesetzten `sizes`), nur das LCP-Bild priorisieren, alles unterhalb der ersten Ansicht verzögert laden. Fotos als AVIF/WebP. Budgets je Einsatzklasse festlegen (Hero, Inhaltsbild, Karte). Ungenutzte Dateien entfernen. Alt-Texte je Zweck formulieren [S17].
+- **Abnahmekriterium:** Lighthouse meldet keine Einsparung über 100 KB bei „responsive Bilder“ und „Offscreen-Bilder“ auf den geprüften Seitentypen. Das Medieninventar zeigt nur genutzte Dateien. Jede informative Abbildung hat einen passenden Alt-Text.
+- **Aufwand/Verantwortlich:** Entwicklung/Redaktion, mittel
+- **Abhängigkeiten:** GLOBAL-023 (welche Bilder bleiben), GLOBAL-009
+- **Evidenz/Sicherheit:** Messung und Renderbefund
+- **Quelle:** S16, S17, S19, S27
+
+### GLOBAL-025 · Mobile Ladeleistung im Labor deutlich über den Zielwerten
+
+- **Betroffen:** alle Seitentypen, Stichprobe von 5 URLs
+- **Prüfdatum/Umgebung:** 24.09.2026, Lighthouse-Labor (siehe N030), keine Felddaten
+- **Ist-Zustand:** Mobiler Median-LCP 4,4–8,5 s gegenüber dem Zielwert ≤ 2,5 s [S18]. Desktop 0,7–2,2 s. CLS ≈ 0 (BESTANDEN), TBT mobil bis 252 ms. Ursachen laut Messung: Hero-Inhalt startet unsichtbar (GLOBAL-012), dadurch wird der verzögert erscheinende Cookie-Banner zum LCP-Element. Dazu übergroße Bilder (GLOBAL-024), vollständig clientseitige Seiten (GLOBAL-009) und das Neu-Rendern nach dem Hydration-Fehler (GLOBAL-013).
+- **Beleg:** N020, N022, N030
+- **Auswirkung:** Schlechtere Nutzererfahrung auf Mobilgeräten. Ein Einfluss auf Anfragen ist wahrscheinlich, aber nicht gemessen.
+- **Priorität:** P1 · **Launch-Blocker:** nein, soweit nicht als Projektbudget festgelegt (G12)
+- **Konkrete Vorgabe:** Nach Behebung von GLOBAL-009, -012, -013, -019 und -024 erneut messen. Projektbudget vorschlagen: mobiler Labor-LCP ≤ 2,5 s und TBT ≤ 200 ms je Seitentyp mit dokumentierten Bedingungen. Nach dem Launch Felddaten (CrUX oder eigenes RUM) beobachten.
+- **Abnahmekriterium:** Wiederholte Labormessung (3 Läufe je Seitentyp, gleiche Bedingungen) erreicht das vereinbarte Budget. Nach dem Launch zeigen Felddaten am 75. Perzentil LCP ≤ 2,5 s, INP ≤ 200 ms und CLS ≤ 0,1, sobald ausreichend Daten vorliegen.
+- **Aufwand/Verantwortlich:** Entwicklung, mittel (größtenteils durch die genannten Befunde abgedeckt)
+- **Abhängigkeiten:** GLOBAL-009, -012, -013, -019, -024
+- **Evidenz/Sicherheit:** Laborwerte über einen Proxy, eher pessimistisch. Keine Felddaten, also nicht „Feldwerte nicht bestanden“.
+- **Quelle:** S18, S19, S20, S21, S35, S37
+
+### GLOBAL-026 · Barrierefreiheit: Kontrast, Zielgrößen, fehlende Orientierungshilfen, Menü per Tastatur
+
+- **Betroffen:** alle Seiten, `SwissNavigation`, `SwissFooter`, Primär-Buttons, Cookie-Banner
+- **Prüfdatum/Umgebung:** 24.09.2026, axe-core auf 31 Seiten, Lighthouse, Tastaturtest
+- **Ist-Zustand:** Der Primär-Button (weiße Schrift auf Markenrot) erreicht 3,78:1 statt 4,5:1. Insgesamt 166 Kontrastverstöße, zum Teil auch in der Navigation über dem Hero-Bild. 775 zu kleine Klickziele, u. a. Footer-Links 20 px hoch. Kein Skip-Link, keine `<main>`-Landmarke. Das Mega-Menü „Leistungen“ lässt sich per Tastatur nicht öffnen. Der mobile Menü-Button hat keinen zugänglichen Namen und keinen Zustand. Der Cookie-Banner ist kein Dialog. Der Fokus ist sichtbar (BESTANDEN).
+- **Beleg:** N031, N030
+- **Auswirkung:** Erschwerte Nutzung für Menschen mit Seh- oder Motorikeinschränkungen und für Tastatur- und Screenreader-Nutzer. Der Kernpfad ist über den Footer erreichbar, daher kein vollständiger Ausschluss.
+- **Priorität:** P1 · **Launch-Blocker:** nein (Kernpfad nicht blockiert, G08). Ob das BFSG gilt, ist fachlich zu klären [S40][S41].
+- **Konkrete Vorgabe:** Markenrot für Flächen mit Text so abdunkeln, dass mindestens 4,5:1 erreicht wird (Designentscheidung, B09). Klickziele mindestens 24×24 px oder ausreichender Abstand. Skip-Link und `<main>` ergänzen. Das Mega-Menü per Tastatur bedienbar machen (Enter/Space öffnet, Escape schließt, Zustand per `aria-expanded`). Den Menü-Button benennen („Menü öffnen“) mit Zustand. Den Cookie-Banner als Dialog mit Fokusführung oder als nicht-modalen, klar erreichbaren Bereich gestalten.
+- **Abnahmekriterium:** axe-core ohne Verstöße „serious/critical“ auf allen Seiten. Manueller Tastaturdurchlauf Startseite → Leistung → Formular → Absenden ohne Maus möglich. Screenreader-Stichprobe (NVDA oder VoiceOver) für Menü und Formular dokumentiert.
+- **Aufwand/Verantwortlich:** Design/Entwicklung, mittel
+- **Abhängigkeiten:** B09 (Farbe)
+- **Evidenz/Sicherheit:** Automatisierte Messung plus Tastatursimulation. Die Screenreader-Prüfung steht aus.
+- **Quelle:** S22, S40, S41
+
+### GLOBAL-027 · Datenschutzerklärung und Impressum passen nicht zur tatsächlichen Verarbeitung und zum Anbieter
+
+- **Betroffen:** `/datenschutz`, `/impressum`, Formular-Einwilligung (alle Seiten)
+- **Prüfdatum/Umgebung:** 24.09.2026, Inhaltsbefund im Abgleich mit der technischen Bestandsaufnahme
+- **Ist-Zustand:** Die Datenschutzerklärung ist ein DSGVO-Muster ohne Bezug zum Schweizer DSG. Sie nennt Nutzungsanalyse und Cookies, die es nicht gibt. Tatsächlich eingesetzte Empfänger und Orte fehlen: Vercel mit Funktionsregion USA, Resend, Google Gemini mit den Chat-Inhalten, Google Maps, Weiterleitung aller Anfragen an die Agentur. Speicherdauer fehlt. Die Pflicht-Checkbox im Formular verlangt die Zustimmung zu „dauerhaft gespeichert“, gespeichert wird aber nichts. Das Impressum nennt keinen Rechtsträger mit Rechtsform (GLOBAL-020).
+- **Beleg:** N003, N010, N011, N016, N027, N028
+- **Auswirkung:** Besucher werden über die Verarbeitung nicht zutreffend informiert. Rechtliches Risiko für den Kunden als Verantwortlichen.
+- **Priorität:** P1 · **Launch-Blocker:** ja (G07)
+- **Konkrete Vorgabe:** Erst die Technik festlegen (Chat ja/nein, Karte ja/nein, Versanddienst, Empfänger, Hosting-Region). Dann Datenschutzerklärung und Impressum von fachkundiger Stelle für den tatsächlichen Rechtsraum erstellen lassen, mit allen Empfängern, Übermittlungen ins Ausland, Zwecken, Speicherdauer und Rechten. Die Formular-Einwilligung nur verwenden, wenn die Rechtsgrundlage sie verlangt, und dann ohne „dauerhaft“.
+- **Abnahmekriterium:** Jeder im Netzwerkprotokoll oder Code nachweisbare Dienst ist in der Datenschutzerklärung genannt, und umgekehrt ist kein dort genannter Dienst ungenutzt. Eine fachliche Freigabe mit Datum und Rolle ist dokumentiert (G07, G14).
+- **Aufwand/Verantwortlich:** Fachprüfung Recht/Datenschutz, Kunde, Redaktion, mittel
+- **Abhängigkeiten:** GLOBAL-002, -003, -019, -020, B13
+- **Evidenz/Sicherheit:** Technischer Abgleich (BEFUND). Die rechtliche Bewertung ist ausdrücklich nicht Teil dieser Prüfung.
+- **Quelle:** S38, S39 (DE/EU-Referenzen), Schweizer DSG fachlich zu klären
+
+### GLOBAL-028 · Formular: doppelte Leistungsauswahl, fehlende Grenzen, uneinheitliche Rückmeldeversprechen
+
+- **Betroffen:** Formular im Footer aller Seiten, `/kontakt`, Chat
+- **Prüfdatum/Umgebung:** 24.09.2026, Volltext und lokaler Formulartest
+- **Ist-Zustand:** Die Auswahl „Gewünschte Leistung“ enthält jede Business-Leistung doppelt („Büroreinigung“ und „Business Büroreinigung“ usw.), insgesamt 26 Optionen. Nachrichten mit 20.000 Zeichen werden angenommen. Formular und Kontaktseite versprechen Rückmeldung „innerhalb von 24 Stunden“, der Chat „innerhalb von 12 Stunden (werktags)“. Die Erfolgsmeldung verschwindet nach 5 Sekunden. Gut gelöst (BESTANDEN): Pflichtfeld- und E-Mail-Prüfung im Browser, Schutz vor Doppelklick, Eingaben bleiben bei Fehler erhalten.
+- **Beleg:** N027, N032
+- **Auswirkung:** Verwirrende Auswahl, unklare Erwartung an die Reaktionszeit.
+- **Priorität:** P2 · **Launch-Blocker:** nein
+- **Konkrete Vorgabe:** Die Auswahl aus der zentralen, bestätigten Leistungsliste erzeugen (B03), ohne Doppelungen und mit „Sonstiges“. Eine einheitliche, vom Kunden bestätigte Rückmeldezeit (B10) an allen Stellen. Die Erfolgsmeldung dauerhaft stehen lassen und den nächsten Schritt nennen.
+- **Abnahmekriterium:** Jede Option erscheint genau einmal und entspricht einer bestätigten Leistung. Die Volltextsuche findet nur eine Rückmeldezeit.
+- **Aufwand/Verantwortlich:** Entwicklung/Redaktion, klein
+- **Abhängigkeiten:** B03, B10, GLOBAL-003, GLOBAL-004
+- **Evidenz/Sicherheit:** Inhalts- und Testbefund
+- **Quelle:** —
+
+### GLOBAL-029 · Keine Erfolgsmessung und keine Fehlerüberwachung
+
+- **Betroffen:** gesamte Website und API
+- **Prüfdatum/Umgebung:** 24.09.2026, Code, Vercel
+- **Ist-Zustand:** Es gibt keine Analytics, keine Conversion-Ereignisse, keine Search Console (B11) und keine Alarmierung bei Fehlern. Der Chat-Ausfall (GLOBAL-002) wäre unbemerkt geblieben.
+- **Beleg:** N010, N012
+- **Auswirkung:** Weder Sichtbarkeit noch qualifizierte Anfragen oder Ausfälle sind messbar. Eine Baseline für den Relaunch fehlt.
+- **Priorität:** P2 · **Launch-Blocker:** nach Projektentscheidung (G13)
+- **Konkrete Vorgabe:** Search Console für die Ziel-Domain einrichten. Eine datenschutzfreundliche Messung festlegen, die „Anfrage serverseitig angenommen“ als Ereignis zählt, ohne personenbezogene Daten in Ereignissen und nur im zulässigen Einwilligungsrahmen. Fehlerüberwachung mit Benachrichtigung einer benannten Person für API-Fehler und Zustellfehler.
+- **Abnahmekriterium:** Ein Testereignis „Anfrage angenommen“ erscheint in der Messung ohne personenbezogene Daten. Ein simulierter API-Fehler löst eine Benachrichtigung aus. Die Search-Console-Property ist verifiziert.
+- **Aufwand/Verantwortlich:** Marketing/Operations, klein bis mittel
+- **Abhängigkeiten:** GLOBAL-027 (Datenschutz), B11, B14
+- **Evidenz/Sicherheit:** Codebefund
+- **Quelle:** S01, S18, S36
+
+### GLOBAL-030 · Positionierung: breites Premium-Versprechen statt belegbarem Kaufgrund
+
+- **Betroffen:** Startseite, Leistungsarchitektur (18 Leistungen in 3 Kategorien), alle Leistungsseiten
+- **Prüfdatum/Umgebung:** 24.09.2026, Volltext, Vergleich mit der Eigenangabe des Kunden
+- **Ist-Zustand:** Die Seite verspricht „Erstklassige Gebäudereinigung“ mit „Schweizer Präzision“ vom Privatjet bis zum Winterdienst. Die Kunden-Website beschreibt eine „Hauswart- und Reinigungsfirma“ mit zwei Bereichen in Luzern und Zug. Der Austauschtest ist nicht bestanden: Texte wie „Qualität, Zuverlässigkeit und Kundennähe“, „Professionelle …reinigung“ und „maßgeschneiderte Lösungen“ passen unverändert zu jedem Wettbewerber. Es fehlt jede belegbare Besonderheit (Team, Arbeitsweise, Referenzen, Zahlen).
+- **Beleg:** N014, N027
+- **Auswirkung:** Passende Kunden erkennen nicht, warum sie diesen Anbieter wählen sollten. Unpassende Anfragen, etwa Privatjet oder Zürich, werden eher begünstigt.
+- **Priorität:** P1 · **Launch-Blocker:** nein (strategisch, aber Grundlage für alle Texte)
+- **Konkrete Vorgabe:** Mit dem Kunden die Positionierung klären: für wen (z. B. Verwaltungen, Gewerbe, Eigentümer in LU/ZG), welches Problem, welches Ergebnis, welche belastbare Besonderheit (B04–B06). Leistungsarchitektur danach ausrichten, Umfang und Anzahl der Leistungsseiten richten sich nach dem realen Angebot (B03). Erst danach Texte schreiben.
+- **Abnahmekriterium:** Ein freigegebener Positionierungssatz mit Belegen liegt vor. Jede Leistungsseite beantwortet die Fragen „für wen“, „was genau“, „wo“ und „welche Belege“. Der Austauschtest schlägt fehl, weil die Texte nur auf BGS passen.
+- **Aufwand/Verantwortlich:** Geschäftsführung Kunde, Marketing/Redaktion, mittel
+- **Abhängigkeiten:** B03–B07, E05 (Umbau)
+- **Evidenz/Sicherheit:** Inhaltsbefund. Die Zielgruppen sind ohne Kundenangaben HYPOTHESEN.
+- **Quelle:** S02
+
+### GLOBAL-031 · Blog: Scheinaktualität und Zahlen ohne Quelle
+
+- **Betroffen:** `/blog` und 4 Artikel
+- **Prüfdatum/Umgebung:** 24.09.2026, Volltext
+- **Ist-Zustand:** Veröffentlichungsdaten 1.–15. Januar 2025, also vor Beginn des Projekts (Vercel-Projekt 04.11.2025, Repository-Historie ab November 2025). Preisangaben (z. B. CHF 8–12, CHF 45–65) und Aussagen wie „10–15 % über dem Schweizer Durchschnitt“ ohne Quelle, Zeitraum oder Bezugsgröße. Ein Artikel empfiehlt ISO-Zertifikate als Auswahlkriterium, die der Anbieter selbst nicht hat (GLOBAL-021).
+- **Beleg:** N002, N027
+- **Auswirkung:** Unglaubwürdige Aktualität, nicht belegte Zahlen, Widerspruch zum eigenen Angebot.
+- **Priorität:** P2 · **Launch-Blocker:** ja für die falschen Daten (G09), sonst nein
+- **Konkrete Vorgabe:** Datumsangaben nur mit tatsächlichem Veröffentlichungs- bzw. Überarbeitungsdatum. Zahlen belegen (Quelle, Zeitraum, Region) oder streichen. Artikel auf echte Kundenfragen ausrichten und mit eigenen Erfahrungen des Kunden anreichern. Artikel ohne Mehrwert zurückstellen. Detailvorgaben je Artikel in Phase 3.
+- **Abnahmekriterium:** Jedes Datum ist korrekt. Jede Zahl hat eine Quelle oder ist als Beispielrechnung gekennzeichnet. Kein Widerspruch zu Leistungsseiten und Impressum.
+- **Aufwand/Verantwortlich:** Redaktion, klein bis mittel
+- **Abhängigkeiten:** GLOBAL-021, GLOBAL-030
+- **Evidenz/Sicherheit:** Inhaltsbefund
+- **Quelle:** S02, S34
+
+### GLOBAL-032 · Gestaltung: solide Grundstruktur, aber Kontrast, Bildwelt und Icon-Muster schwächen den seriösen Eindruck
+
+- **Betroffen:** alle Seiten
+- **Prüfdatum/Umgebung:** 24.09.2026, Bildschirmfotos 360–2560 px, Browser-Messung
+- **Ist-Zustand:** Positiv (BESTANDEN): gemeinsame Navigation, Footer und Buttons auf allen Seiten, Inhalt auf großen Monitoren zentriert statt über die volle Breite gezogen, kein horizontaler Overflow (Ausnahme `/referenzen` bei 768 px), keine Layoutsprünge. Kritisch: Navigation über dem Hero-Bild mit zu wenig Kontrast (besonders ab 1920 px). Wiederkehrende Karten-Raster mit generischen Symbolen (Gebäude, Uhr, Schild, Funkeln) auf jeder Leistungsseite. Bildwelt aus KI-Motiven mit wechselnden „Uniformen“. Geschätzte Zeilenlänge von Fließtext um 100 Zeichen ab 1280 px (Heuristik 45–80). Das Logo zeigt eine andere Marke (GLOBAL-020).
+- **Beleg:** N020, N026, N029, N031, Bildschirmfotos der Breiten-Matrix
+- **Auswirkung:** Der Gesamteindruck ist ordentlich, aber austauschbar. Für eine seriöse Positionierung fehlen eigene Bildsprache und Markenkonsistenz.
+- **Priorität:** P2 · **Launch-Blocker:** nein
+- **Konkrete Vorgabe:** Nach der Markenentscheidung (B09) zwei bis drei Gestaltungsrichtungen beschreiben und auswählen (Abschnitt C). Zentrale Design-Tokens mit barrierefreien Farbkombinationen. Icons nur mit Funktion. Echte Fotos statt KI-Motiven. Fließtext auf eine Lesebreite von etwa 65–75 Zeichen begrenzen (Heuristik, im Test prüfen). Prinzipien aus FIMI nur als Inspiration übernehmen (Abschnitt „FIMI-Inspiration“, folgt).
+- **Abnahmekriterium:** Bildschirmfotos der Breiten-Matrix zeigen einheitliche Muster, lesbare Navigation und Zeilenlängen im Zielbereich. Die Kontrastprüfung ist ohne Verstöße.
+- **Aufwand/Verantwortlich:** Design, mittel
+- **Abhängigkeiten:** B09, GLOBAL-020, GLOBAL-023, GLOBAL-026
+- **Evidenz/Sicherheit:** Renderbefund plus gestalterische Einschätzung (Projektkriterium, keine Google-Vorschrift)
+- **Quelle:** S25
 
 ## O. Globales Ergebnis nach der Prüfung
 
