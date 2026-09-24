@@ -52,7 +52,7 @@ Eine konkrete Leistungsentscheidung ermöglichen und passende Interessenten zur 
 
 ## 4. Konkrete redaktionelle und technische Vorgaben
 
-Die Vorschläge nutzen nur Fakten aus der Eigenangabe des Kunden (N014): Firmenname BGS Gebäudeservice GmbH, Arbeitsgebiet Kanton Luzern und Kanton Zug, Leistung „regelmässige Unterhaltsreinigung“, „kostenlose und unverbindliche Offerte vor Ort“. Sie gelten, sobald R2 (Marke) und R4 (Region) bestätigt sind.
+Die Vorschläge nutzen nur Fakten aus der Eigenangabe des Kunden (N014): Firmenname BGS Gebäudeservice GmbH, Arbeitsgebiet Kanton Luzern und Kanton Zug, Leistung „regelmässige Unterhaltsreinigung“, „kostenlose und unverbindliche Offerte“ nach einem Besuch vor Ort. Sie gelten, sobald R2 (Marke) und R4 (Region) bestätigt sind.
 
 - **Meta-Title soll lauten:** „Unterhaltsreinigung in Luzern und Zug | BGS Gebäudeservice“. Begründung: Leistung und reale Region vorne, Marke zur Wiedererkennung. Grenzt sich klar von Sonderreinigung und Hauswartung ab.
 - **Meta-Description soll lauten:** „Regelmässige Unterhaltsreinigung für Büros und Gewerbeflächen in den Kantonen Luzern und Zug. BGS Gebäudeservice kommt für eine kostenlose, unverbindliche Offerte bei Ihnen vorbei.“ Nur belegte Aussagen. Die Zielgruppe „Büros und Gewerbeflächen“ nach R10 bestätigen.

@@ -203,6 +203,21 @@ Am Ende tatsächliche Zahlen eintragen: gefundene Inhalts-URLs, geprüfte Inhalt
 | Offene Systemtests | Formular, Consent, Navigation/Tastatur, Ladezustände |
 | Nicht prüfbar | Search-Console-Landingpages, historische Rankings |
 
+**Endstand 24.09.2026 (nach Phase 6):**
+
+| Kennzahl | Wert |
+|---|---|
+| Gefundene Inhalts-URLs | 32 (dazu 5 API-Routen, die 404-Seite und die fehlende Übersicht `/leistungen`) |
+| Per HTTP geprüft | 32 von 32 (N007, N008) |
+| Im Browser gerendert (Desktop und Mobil) | 32 von 32 (N020), Breiten-Matrix auf Stichprobe (N020, N036) |
+| Volltext inklusive Reiter und Akkordeons | 32 von 32 (N027). Für 2 Seiten per Code-Abgleich korrigiert (N023) |
+| Individuell inhaltlich geprüft (Seitenbericht) | 32 von 32 in 31 Berichten, dazu P02 als Befund |
+| Nur als Template-Stichprobe geprüft | keine. Lighthouse auf 5 Seitentypen (N030), axe auf 31 Seiten (N031) |
+| Ungeprüfte Inhalts-URLs | 0 |
+| Dokumentierte Varianten | 9 (dazu `/business` und `/premium` → 404) |
+| Systemtests | Formular (N032, Testumgebung), Consent und Speicher (N025, N034), Navigation und Tastatur (N031), Ladezustände teilweise (N012, N020, N022), Umbruch (N036) |
+| Offen bzw. nicht prüfbar | Zustellung in Produktion, Screenreader, Search Console, historische Rankings, vollständiger Altbestand der Kunden-Website |
+
 ---
 
 **Quellen zu dieser Datei:** siehe 09-QUELLEN.md (S01, S05, S06, S07).

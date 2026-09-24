@@ -35,10 +35,10 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 | 1 | Bestand sichern: URL-Inventar, Baseline, Architektur | **Erledigt 24.09.2026** (Browser-Systemtests → Phase 2) | `02-URL-INVENTAR.md`, `08-PRUEFNACHWEISE.md` (N001–N019), `01-GLOBALE-ANALYSE.md` (Bestandsaufnahme) |
 | 2 | Strategie und globale Prüfung | **Erledigt 24.09.2026** (35 Befunde, 169 Prüfpunkte, Rückfragen R1–R12) | `01-GLOBALE-ANALYSE.md`, `08` (N020–N032), `07` (Abschnitt 2a) |
 | 3 | Seitenprüfung | **Erledigt 24.09.2026** (31 Berichte, 88 SEITE-Befunde, Nachweise N033–N038) | `Seiten/`, `02-URL-INVENTAR.md` (Empfehlung je URL) |
-| 4 | Querprüfung | Offen | `03-SUCHINTENTION-UND-KANNIBALISIERUNG.md` u. a. |
-| 5 | Risiko und Priorisierung | Offen | `06-MASSNAHMEN-BACKLOG.md`, `05-DEPLOY-FREIGABE.md` |
-| 6 | Gegenprüfung | Offen | alle |
-| 7 | Abschlussbericht | Offen | Abschlussbericht |
+| 4 | Querprüfung | **Erledigt 24.09.2026** (K01–K13, Zielbild, Alt-neu-Mapping, widersprüchliche Aussagen, Vorlagen, Backend) | `03-SUCHINTENTION-UND-KANNIBALISIERUNG.md`, `04-WETTBEWERB-UND-MARKT.md` |
+| 5 | Risiko und Priorisierung | **Erledigt 24.09.2026** (55 Maßnahmen, P0: 4; Freigabe: nicht freigabefähig) | `06-MASSNAHMEN-BACKLOG.md`, `05-DEPLOY-FREIGABE.md` |
+| 6 | Gegenprüfung | **Erledigt 24.09.2026** (Querverweise, Zitatabgleich, SEO-Regeln, Prüfabdeckung) | alle, `08` (Prüfabdeckung), `02` (Vollständigkeit) |
+| 7 | Abschlussbericht | **Erledigt 24.09.2026** (No-Go, fünf Fragen, Roadmap 14/30/90) | `10-ABSCHLUSSBERICHT.md` |
 
 ## Protokoll
 
@@ -52,6 +52,10 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 | 24.09.2026 | Phase 2 | Browser-Prüfung aller 32 Seiten (Desktop/Mobil, 7 Breiten), versteckte Inhalte, Volltext und Behauptungen, Impressum/Datenschutz, Medien, Lighthouse-Labor, axe-core/Tastatur, lokaler End-to-End-Formulartest. FIMI-Prinzipien nur lesend ausgewertet. 35 globale Befunde (P0: 4, P1: 19, P2: 11, P3: 1), 169 Prüfpunkte A–N bearbeitet, Nachweisregister, Markenrichtungen, Budgets, Datenfluss. Gebündelte Rückfragen R1–R12. |
 
 | 24.09.2026 | Phase 3 | 31 Seitenberichte für alle 32 URLs und die fehlende Übersicht, 88 seitenspezifische Befunde (P1: 36, P2: 44, P3: 8), alle Seiten „BEFUND, nicht freigabefähig“. 13 Berichte selbst geschrieben, 18 von vier Hilfsagenten nach dem Musterbericht P03 entworfen und stichprobenartig gegen Code und HTML geprüft. Amtliches UID-Register: Kundin ist die „BGS - Gebäudeservice GmbH“ (N033), Registerdaten zu Gründung und Zweck (N037). Cookie-Messung (N034), Umbruchtest (N036), Suchergebnis-Stichprobe (N038). Nachweisregister um alle Fundstellen erweitert. Messkorrektur N023/GLOBAL-011 (alle vier Blogartikel betroffen). Namen aus Kundenstimmen durch ein Muster ersetzt. |
+
+| 24.09.2026 | Phasen 4 und 5 | Suchintention und Querprüfung (03): Zielbild mit fünf Kernleistungen unter `/leistungen/…`, Alt-neu-Mapping aller 32 URLs und der bekannten Kunden-URLs, Konflikte K01–K13 mit Erfolgskriterien, widersprüchliche Aussagen über Seiten hinweg, Vorlagen und gemeinsame Backend-Abhängigkeiten. Backlog (06): 55 Maßnahmen in Wellen, jede der 37 globalen und 88 Seitenbefunde zugeordnet (maschinell geprüft). Deploy-Freigabe (05): G01–G14 ausgefüllt, Ergebnis nicht freigabefähig. |
+
+| 24.09.2026 | Phasen 6 und 7 | Gegenprüfung: Alle Verweise auf Befunde, Nachweise, Quellen, Maßnahmen, Konflikte und Entscheidungen lösen auf. 3.493 Zitate maschinell gegen Code, HTML und Volltexte abgeglichen, 31 Stellen mit abweichendem Wortlaut korrigiert (u. a. „zu einem der führenden …“, „repräsentieren die Qualität …“). Keine veraltete SEO-Regel in den Empfehlungen. Prüfabdeckung in 08 und Vollständigkeit in 02 ausgewiesen. Abschlussbericht mit No-Go, den fünf Fragen und der Roadmap 14/30/90 (10). |
 
 ## Abweichungen und Vorfälle
 
@@ -90,4 +94,10 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 
 ## Nächste Aufgabe
 
-Phase 4: Querprüfung. Intent-Matrix und Zuständigkeit je Suchintention, Konflikte mit Empfehlung, Alt-neu-Mapping (Zielstruktur), widersprüchliche Aussagen über Seiten hinweg, Metadaten, interne Links, Designkonsistenz, Seitenvorlagen und gemeinsame Backend-Abhängigkeiten (`03-SUCHINTENTION-UND-KANNIBALISIERUNG.md`). Wettbewerbsvergleich in `04-WETTBEWERB-UND-MARKT.md` (Entwurf durch Hilfsagent läuft).
+**Die Analyse nach dem goldenen Stand ist abgeschlossen (Phasen 0–7).** Es wird nichts umgesetzt, bis die Umsetzung eigens freigegeben ist (E05).
+
+Offen beim Nutzer bzw. Kunden:
+1. **E10:** Wie mit Pushes umgehen (Preview-Deployments)? Bis dahin liegen die Commits nur lokal.
+2. **R1 (sofort):** Enthalten `DEPLOYMENT.md` und `EMAIL_SETUP.md` gültige Schlüssel?
+3. **R2–R12:** Kundentermin (07, Abschnitt 2a).
+4. **Freigabe der Umsetzung:** Danach Welle 0 aus 06 (M01–M09).

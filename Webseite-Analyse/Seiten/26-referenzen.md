@@ -87,7 +87,7 @@ Die Prüfliste ist an eine Referenz- und Vertrauensseite angepasst, abgeleitet a
 - **Übergangslösung für einzelne Belege:** Liegen einzelne echte Stimmen, aber noch keine Fälle vor, diese auf der passenden Leistungsseite im Abschnitt „Beleg“ zeigen (Seitenbericht P03, Abschnittsfolge Punkt 5), statt eine dünne Referenzseite zu veröffentlichen.
 - **Prüfung nach Umsetzung (Übergangszustand):** `/referenzen` antwortet mit 404. Kein Link und kein Sitemap-Eintrag verweist darauf. Die Volltextsuche über alle Seiten findet „98%“, „TechCorp“, „Luxury Hotel“ und „Maschinenwartung“ nicht mehr.
 
-**Zielbild mit echten, freigegebenen Belegen (nach R6):** Die Vorschläge nutzen nur Fakten aus der Eigenangabe des Kunden (N014: BGS Gebäudeservice GmbH, Hauswart- und Reinigungsfirma, Kantone Luzern und Zug, „kostenlose und unverbindliche Offerte vor Ort“). Sie gelten, sobald R2 (Marke), R4 (Region) und R6 (Belege) beantwortet sind.
+**Zielbild mit echten, freigegebenen Belegen (nach R6):** Die Vorschläge nutzen nur Fakten aus der Eigenangabe des Kunden (N014: BGS Gebäudeservice GmbH, Hauswart- und Reinigungsfirma, Kantone Luzern und Zug, „kostenlose und unverbindliche Offerte“ nach einem Besuch vor Ort). Sie gelten, sobald R2 (Marke), R4 (Region) und R6 (Belege) beantwortet sind.
 
 - **Meta-Title soll lauten:** „Referenzen aus Luzern und Zug | BGS Gebäudeservice“. Begründung: Seitenzweck und reale Region vorne, Marke zur Wiedererkennung, klar unterscheidbar von allen Leistungsseiten. Nur so, wenn die Fälle aus LU/ZG stammen.
 - **Meta-Description soll lauten:** „Ausgewählte Aufträge von BGS Gebäudeservice in den Kantonen Luzern und Zug: Ausgangslage, erbrachte Leistung und Ergebnis – veröffentlicht mit Zustimmung unserer Kunden.“

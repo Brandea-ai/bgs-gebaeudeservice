@@ -18,7 +18,7 @@ Eine konkrete Informationsfrage hilfreich, belegt und mit eigener Erfahrung des 
 
 **Primäre Zielhandlung:** „Kostenlose Offerte vor Ort anfragen“ (belegt, N014), als Einstieg in die Prüfung, die der Artikel empfiehlt. Heute „Jetzt Kontakt aufnehmen“ → `/kontakt`.
 
-**Ergebnis der Prüfung:** Der umfangreichste Artikel (rund 750 Wörter einschließlich Akkordeon, davon rund 440 im ausgelieferten HTML) mit brauchbarer Grundstruktur aus Kriterien und Schrittfolge. Der Kern, die fünf „Detaillierten Auswahlkriterien“, steht nur im Akkordeon und nicht im HTML (GLOBAL-011). Inhaltlich empfiehlt der Artikel Maßstäbe, die BGS selbst nicht belegt oder auf der eigenen Website widersprüchlich beantwortet (SEITE-P30-001). Der Abschnitt zu regionalen Besonderheiten bietet keine Entscheidungshilfe und nennt Zürich (SEITE-P30-002). Im Artikel steht das Datum „15. Januar 2025“, also vor Projektbeginn (GLOBAL-031), und „8 Minuten Lesezeit“ (SEITE-P27-001).
+**Ergebnis der Prüfung:** Der umfangreichste Artikel (rund 750 Wörter einschließlich Akkordeon, davon rund 440 im ausgelieferten HTML) mit brauchbarer Grundstruktur aus Kriterien und Schrittfolge. Der Kern, die fünf Kriterien unter „Detaillierte Auswahlkriterien“, steht nur im Akkordeon und nicht im HTML (GLOBAL-011). Inhaltlich empfiehlt der Artikel Maßstäbe, die BGS selbst nicht belegt oder auf der eigenen Website widersprüchlich beantwortet (SEITE-P30-001). Der Abschnitt zu regionalen Besonderheiten bietet keine Entscheidungshilfe und nennt Zürich (SEITE-P30-002). Im Artikel steht das Datum „15. Januar 2025“, also vor Projektbeginn (GLOBAL-031), und „8 Minuten Lesezeit“ (SEITE-P27-001).
 
 ## 2. Seitenspezifische Prüfliste
 
@@ -61,7 +61,7 @@ Eine konkrete Informationsfrage hilfreich, belegt und mit eigener Erfahrung des 
 
 ## 4. Konkrete redaktionelle und technische Vorgaben
 
-Die Vorschläge nutzen nur Fakten aus der Eigenangabe des Kunden (N014): Firmenname BGS Gebäudeservice GmbH, Arbeitsgebiet Kanton Luzern und Kanton Zug, „kostenlose und unverbindliche Offerte vor Ort“. Allgemeine Ratschläge sind als solche formuliert. Aussagen über BGS gelten erst nach Bestätigung (R2, R4, R6).
+Die Vorschläge nutzen nur Fakten aus der Eigenangabe des Kunden (N014): Firmenname BGS Gebäudeservice GmbH, Arbeitsgebiet Kanton Luzern und Kanton Zug, „kostenlose und unverbindliche Offerte“ nach einem Besuch vor Ort. Allgemeine Ratschläge sind als solche formuliert. Aussagen über BGS gelten erst nach Bestätigung (R2, R4, R6).
 
 - **Entscheidung: behalten und überarbeiten**, einschließlich der verwertbaren Teile aus P28. Begründung: Der Artikel beantwortet eine konkrete Frage vor der Vergabe, hat die tragfähigste Struktur der vier Artikel, und die H1 ist bereits eine klare Frage. Voraussetzung für die Veröffentlichung ist die Lösung von SEITE-P30-001 (R6), sonst untergräbt der Artikel die Glaubwürdigkeit des Anbieters.
 - **Meta-Title soll lauten:** „Reinigungsfirma finden: Kriterien und Fragen für die Vergabe | BGS Gebäudeservice“. Begründung: sagt, was der Artikel liefert, ohne eine Zahl („10 Tipps“), die der Inhalt nicht einlöst.

@@ -14,7 +14,7 @@ Nachvollziehbar machen, wer Verantwortung trägt und warum dem Unternehmen vertr
 
 **Primäre Zielhandlung:** Passende Ansprechperson beziehungsweise Kontaktweg finden.
 
-**Ergebnis der Prüfung:** Die Seite erzählt die Geschichte der „Swiss Reinigungsfirma“, nicht die der BGS Gebäudeservice GmbH. Sie nennt ein Gründungsjahr (2005) und eine Marktstellung („einer der führenden Reinigungsunternehmen in der Schweiz“) ohne Beleg, zeigt ein KI-typisches „Team“-Bild und drei vermutlich erfundene Kundenstimmen. Eine Ansprechperson mit Funktion und direktem Kontakt fehlt. Die Seite ist kein Leistungsverkauf (BESTANDEN), erfüllt ihren Vertrauenszweck aber nicht.
+**Ergebnis der Prüfung:** Die Seite erzählt die Geschichte der „Swiss Reinigungsfirma“, nicht die der BGS Gebäudeservice GmbH. Sie nennt ein Gründungsjahr (2005) und eine Marktstellung („einem der führenden Reinigungsunternehmen in der Schweiz“) ohne Beleg, zeigt ein KI-typisches „Team“-Bild und drei vermutlich erfundene Kundenstimmen. Eine Ansprechperson mit Funktion und direktem Kontakt fehlt. Die Seite ist kein Leistungsverkauf (BESTANDEN), erfüllt ihren Vertrauenszweck aber nicht.
 
 ## 2. Seitenspezifische Prüfliste
 
@@ -37,7 +37,7 @@ Nachvollziehbar machen, wer Verantwortung trägt und warum dem Unternehmen vertr
 | Meta-Description | Globale Standardbeschreibung | Siehe Vorgabe | N007, GLOBAL-010 |
 | H1 und Abschnittsstruktur | H1 „Unsere Geschichte: Von einer Vision zu Ihrem vertrauenswürdigen Partner“ (sofort sichtbar, BESTANDEN). H2 „Unsere Werte: Das Fundament unseres Erfolgs“, „Was unsere Kunden sagen“, „Ein Wort vom Gründer“, „Bereit für eine saubere Zukunft?“. Cookie-Banner-H3 vor der H1 | Siehe Abschnittsfolge | Faktenblatt, N020 |
 | Canonical/Robots/Sitemap | kein Canonical, `index, follow`, Sitemap ja | Canonical auf die Launch-Domain | N007, N008 |
-| Wichtigste Textpassagen | 358 sichtbare Wörter. Gründung 2005, „einer der führenden Reinigungsunternehmen in der Schweiz“, Werte, drei Kundenstimmen, Gründerzitat | Siehe Streichliste | N027 |
+| Wichtigste Textpassagen | 358 sichtbare Wörter. Gründung 2005, „einem der führenden Reinigungsunternehmen in der Schweiz“, Werte, drei Kundenstimmen, Gründerzitat | Siehe Streichliste | N027 |
 | Haupt-CTA und Ziel | „Werden Sie Teil unserer Geschichte“ → `/kontakt` (Hero), „Jetzt Kontakt aufnehmen“ → `/kontakt` (Abschluss), Footer-Formular | Eine klare CTA „Kontakt aufnehmen“ mit direkter Ansprechperson | Code Z. 37, 196 |
 | Bildmotive und Alt-Texte | Hero `ueber-uns-hero.jpg`, Alt „Das Team der Swiss Reinigungsfirma“, 1536×1024 geliefert, 666×517 dargestellt (KI-typisch). Gründerporträt 1024×1536, Alt mit Namen und „Gründer der Swiss Reinigungsfirma“, 644×600 dargestellt | Echte Fotos mit Einwilligung oder weglassen | N029 |
 | Interne Links | Nur Navigation, Footer und zweimal `/kontakt` | Siehe Linkempfehlungen | N009 |

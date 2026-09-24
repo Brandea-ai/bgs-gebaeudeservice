@@ -65,10 +65,10 @@ Verwende kein pauschales „100 % fertig“, solange zwingende Prüfungen offen 
 - [x] **Phase 1: Bestand sichern.** *(erledigt 24.09.2026, siehe FORTSCHRITT.md)* URL-Inventar, bestehende SEO-/Lead-Baseline und aktuelle Architektur dokumentieren. Funktionierende Inhalte und URLs ausdrücklich markieren.
 - [x] **Phase 2: Strategie und globale Prüfung.** *(erledigt 24.09.2026, 35 globale Befunde, siehe 01-GLOBALE-ANALYSE.md)* Positionierung, Suchintentionen, Markenbild, Navigation, technische Grundlagen und Lead-Prozess analysieren.
 - [x] **Phase 3: Seitenprüfung.** *(erledigt 24.09.2026, 31 Seitenberichte, 88 seitenspezifische Befunde, siehe Seiten/ und 02-URL-INVENTAR.md)* Homepage, Leistungsübersicht, die fünf Leistungen einzeln, Über uns, Einzugsgebiete, Kontakt, Rechtliches und zusätzliche vorhandene URLs bearbeiten.
-- [ ] **Phase 4: Querprüfung.** Kannibalisierung, widersprüchliche Aussagen, Metadaten, interne Links, Designkonsistenz, Seitentemplates und gemeinsame Backend-Abhängigkeiten prüfen.
-- [ ] **Phase 5: Risiko und Priorisierung.** Launch-Blocker von Wachstumsmaßnahmen unterscheiden; Aufwand, Verantwortung und Abnahmekriterien ergänzen.
-- [ ] **Phase 6: Gegenprüfung.** Jede wichtige Behauptung auf Nachweis prüfen; veraltete SEO-Regeln entfernen; tatsächliche Prüfabdeckung dokumentieren.
-- [ ] **Phase 7: Abschlussbericht.** Go/No-Go, offene Fragen, wichtigste Maßnahmen und spätere 14-/30-/90-Tage-Roadmap liefern. Nicht implementieren.
+- [x] **Phase 4: Querprüfung.** *(erledigt 24.09.2026, Konflikte K01–K13, Zielbild und Alt-neu-Mapping, siehe 03; Wettbewerb in 04)* Kannibalisierung, widersprüchliche Aussagen, Metadaten, interne Links, Designkonsistenz, Seitentemplates und gemeinsame Backend-Abhängigkeiten prüfen.
+- [x] **Phase 5: Risiko und Priorisierung.** *(erledigt 24.09.2026, 55 Maßnahmen, Freigabematrix G01–G14, siehe 05 und 06)* Launch-Blocker von Wachstumsmaßnahmen unterscheiden; Aufwand, Verantwortung und Abnahmekriterien ergänzen.
+- [x] **Phase 6: Gegenprüfung.** *(erledigt 24.09.2026: alle IDs aufgelöst, 3.493 Zitate gegen den Bestand abgeglichen und korrigiert, keine veraltete SEO-Regel, Prüfabdeckung in 08 und 02)* Jede wichtige Behauptung auf Nachweis prüfen; veraltete SEO-Regeln entfernen; tatsächliche Prüfabdeckung dokumentieren.
+- [x] **Phase 7: Abschlussbericht.** *(erledigt 24.09.2026, siehe 10-ABSCHLUSSBERICHT.md: No-Go)* Go/No-Go, offene Fragen, wichtigste Maßnahmen und spätere 14-/30-/90-Tage-Roadmap liefern. Nicht implementieren.
 
 Arbeite pro Durchlauf an einem klar abgegrenzten Abschnitt. Aktualisiere danach Fortschritt, offene Punkte und nächste Aufgabe. Bei begrenztem Kontext aus den Markdown-Dateien fortsetzen, nicht auf Erinnerung vertrauen.
 

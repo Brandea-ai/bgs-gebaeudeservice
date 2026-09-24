@@ -90,7 +90,7 @@ Die Identität über die ganze Website führt GLOBAL-020, die ISO- und Bildaussa
 
 ### SEITE-P11-002 · Standard- und Marketingtexte statt schlanker Anbieterinformation
 
-- **Ist-Zustand:** Haftungsausschluss mit „Der Autor …“ und „Alle Angebote sind unverbindlich“, ein Datenschutzabsatz mit Verweis auf „diese Datenschutzerklärung“, ein Block „⚠️ Wichtige Hinweise“ mit ISO-Status und KI-Bild-Hinweis („repräsentieren die Qualität unserer Dienstleistungen“).
+- **Ist-Zustand:** Haftungsausschluss mit „Der Autor …“ und „Alle Angebote sind unverbindlich“, ein Datenschutzabsatz mit Verweis auf „dieser Datenschutzerklärung“, ein Block „⚠️ Wichtige Hinweise“ mit ISO-Status und KI-Bild-Hinweis („repräsentieren die Qualität unserer Dienstleistungen“).
 - **Auswirkung:** Die Hinweise widerlegen die ISO-Aussagen der Leistungsseiten und verstecken die KI-Kennzeichnung auf einer Seite, die kaum jemand liest. Die Mustertexte sind ungeprüft.
 - **Priorität:** P2 · **Launch-Blocker:** nein (ISO und Bilder sind über GLOBAL-021 und -023 Blocker)
 - **Vorgabe:** Streichungen und Ersatz nach Abschnitt 4. Die Rechtstexte liefert die Rechtsprüfung.

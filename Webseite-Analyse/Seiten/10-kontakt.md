@@ -38,7 +38,7 @@ Einen verlässlichen, verständlichen und betreuten Weg zur echten Anfrage biete
 | Meta-Description | Globale Standardbeschreibung | Siehe Vorgabe | N007 |
 | H1 und Abschnittsstruktur | H1 „Kontaktieren Sie uns“, H3 „Telefon/E-Mail/Adresse“, H2 „Unsere Standorte“ (Karte), „Bereit für professionelle Reinigung?“, „Häufig gestellte Fragen“ (4 Fragen, Antworten sichtbar und im HTML, BESTANDEN) | Siehe Abschnittsfolge | Faktenblatt |
 | Canonical/Robots/Sitemap | kein Canonical, `index, follow`, Sitemap ja | Canonical auf die Launch-Domain | N007, N008 |
-| Wichtigste Textpassagen | „melden uns innerhalb von 24 Stunden“ (3×), „Zentral gelegen in der Zentralschweiz - schnell erreichbar aus Luzern, Zug und Zürich“, FAQ „gesamte Zentralschweiz … Schwerpunkt auf Luzern, Zug und Zürich“, „umfassende Betriebshaftpflichtversicherung“, „24/7 für Sie erreichbar“ | Siehe Streichliste | N027 |
+| Wichtigste Textpassagen | „melden uns innerhalb von 24 Stunden“ (3×), „Zentral gelegen in der Zentralschweiz - schnell erreichbar aus Luzern, Zug und Zürich“, FAQ „gesamten Zentralschweiz … Schwerpunkt auf Luzern, Zug und Zürich“, „umfassende Betriebshaftpflichtversicherung“, „24/7 für Sie erreichbar“ | Siehe Streichliste | N027 |
 | Haupt-CTA und Ziel | „Zum Kontaktformular“ (2×, Button) scrollt per JavaScript zum Footer-Formular (`#kontakt-formular`). Die Seite hat kein eigenes Formular. Formularlogik in `app/kontakt/page.tsx:15-78` ist ungenutzt (GLOBAL-008) | Formular direkt auf der Seite | Code |
 | Bildmotive und Alt-Texte | Nur Kartenkacheln von Google (Alt leer) | Keine Einbettung, statischer Ausschnitt oder Link | N020 |
 | Interne Links | Navigation, Footer, Datenschutz im Formular | Siehe Linkempfehlungen | N009 |

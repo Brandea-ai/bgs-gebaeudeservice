@@ -46,7 +46,7 @@ Gemeinsam für alle drei Seiten: globaler Standardtitel und -beschreibung (GLOBA
 | Schema-Typen | keine | keine | keine | N007 |
 | Globale Abhängigkeiten | GLOBAL-002, -003, -010, -011, -016, -018, -020, -021, -023, -024, -025, -026, -037 | GLOBAL-002, -003, -010, -011, -020, -021, -023, -024, -026, -037 | GLOBAL-002, -003, -010, -011, -020, -021, -023, -024, -026, -037 | 01 |
 
-**Ergänzungen zum Nachweisregister (01, Abschnitt A):** „ISO 9001 & ISO 14001 zertifiziert“ (Zürich), „ISO 27001 zertifiziert“ (Zug), „Über 500 zufriedene Kunden in Zürich“, „EU Ecolabel“ (Zürich), „Mehrsprachiges Team (DE, EN, FR, IT)“, „Mitarbeiter geprüft, Vertraulichkeitsvereinbarungen“ (Zug), „Spezialisiert auf Hotellerie & Gastronomie“, „innerhalb von 24 Stunden reagieren“ (Luzern), Preisangaben (Zürich).
+**Ergänzungen zum Nachweisregister (01, Abschnitt A):** „ISO 9001 & ISO 14001 zertifiziert“ (Zürich), „ISO 27001 (Informationssicherheit) zertifiziert“ (Zug), „Über 500 zufriedene Kunden in Zürich“, „EU Ecolabel“ (Zürich), „Mehrsprachiges Team (DE, EN, FR, IT)“, „Alle unsere Mitarbeiter sind sorgfältig geprüft und unterzeichnen Vertraulichkeitsvereinbarungen“ (Zug), „Spezialisiert auf Hotellerie & Gastronomie“, „innerhalb von 24 Stunden reagieren“ (Luzern), Preisangaben (Zürich).
 
 ## 4. Konkrete redaktionelle und technische Vorgaben
 
