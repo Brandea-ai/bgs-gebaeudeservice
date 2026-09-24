@@ -2,6 +2,25 @@
 
 **Status: Phase 5 durchgeführt am 24.09.2026, angepasst nach den Rückfragen Runde 1 (11).** Alle 37 globalen Befunde (01) und alle 88 seitenspezifischen Befunde (`Seiten/`) sind in 55 Maßnahmen überführt, dazu kommen M56–M59 aus Runde 1. **Die Umsetzung ist seit 24.09.2026 freigegeben (E11)** und läuft auf dem Arbeits-Branch in den Wellen unten. Produktions-Deployments brauchen weiter eine ausdrückliche Zustimmung. Geänderte Maßnahmen sind mit „Runde 1“ markiert. Dort gilt der Runde-1-Text vor dem ursprünglichen Text derselben Zelle.
 
+## Umsetzungsstand auf dem Arbeits-Branch (Stand 24.09.2026)
+
+Umgesetzt heisst: auf `claude/optimistic-sagan-h5y2i9` committet, in der isolierten Kopie gebaut und getestet (N048). **Nichts davon ist in Produktion.** Wirksam auf der Vorab-Adresse wird es erst nach einem Produktions-Deployment, das Brandea ausdrücklich freigeben muss (Runde 2, Frage „LIVE“).
+
+| ID | Stand | Commit | Offen |
+|---|---|---|---|
+| M01 | umgesetzt: abgelaufener Google-Schlüssel in `DEPLOYMENT.md` durch Platzhalter ersetzt. `EMAIL_SETUP.md` enthielt nur einen x-Platzhalter | `6abe7c8` | Repository privat stellen (Brandea). Der Schlüssel bleibt in der Git-Historie, unkritisch, weil abgelaufen |
+| M02 | umgesetzt: Next.js 15.5.26, nicht-brechende Updates transitiver Pakete, Bildoptimierer ohne fremde Hosts | `e43e262` | PostCSS-Meldungen in der von Next mitgelieferten Version (nur Build-Zeit, eigenes CSS), Behebung mit Next 16 |
+| M03 | Zwischenstand: Chat per Schalter aus, Termin-Buttons zum Formular, Berater mit ehrlichem Hinweis, APIs melden 503 | `3cd05f8` | Reparatur mit Modell und Zugang (Runde 2). Vor dem Einschalten Prompt aus M54 neu aufbauen: keine unbelegten Aussagen, keine erfundenen Beraterpersonen mit Foto |
+| M04 | umgesetzt: Erfolg nur nach Versand, Empfänger und Absender per Umgebungsvariable | `0a5d5bc` | Echttest bis ins Postfach mit Freigabe, Kundendomain zum Launch (M58) |
+| M05 | teilweise: ein Lockfile, `npm ci` läuft | `e43e262` | ESLint-Konfiguration, CI, Framework-Preset in Vercel |
+| M07 | umgesetzt: Längen, Typen, HTML-Escaping, Honeypot, Ratenbegrenzung je Instanz, keine Formularinhalte im Log | `0a5d5bc` | Ratenbegrenzung über alle Instanzen (Vercel-Firewall) |
+| M08 | umgesetzt: `noindex` per `SITE_INDEXABLE` | `6abe7c8` | Produktions-Deployment (Freigabe). Zum Launch `SITE_INDEXABLE=true` nur in Produktion |
+| M09 | teilweise: `info@swiss-reinigung.ch` entfernt | `3cd05f8` | Alle Kontaktangaben aus M54 speisen (Welle 1) |
+| M17 | teilweise: Verifizierungs-Platzhalter entfernt | `6abe7c8` | Sitemap und 404-Seite |
+| M54 | begonnen: `shared/company.ts` für Firma, Adresse, Telefon, E-Mail, Rückmeldezeit | `0a5d5bc` | Alle Seiten darauf umstellen |
+
+**Umgebungsvariablen für Vercel (neu):** `SITE_INDEXABLE` (nur Produktion, erst zum Launch `true`), `NEXT_PUBLIC_CHAT_ENABLED` (erst nach der Reparatur `true`), optional `CONTACT_TO_EMAIL` und `CONTACT_FROM_EMAIL`. Ohne Angabe gelten `admin@brandea.de` und ein Absender unter `brandea.de`.
+
 ## Priorisierung
 
 | Priorität | Bedeutung | Typische, erst nachzuweisende Beispiele |
