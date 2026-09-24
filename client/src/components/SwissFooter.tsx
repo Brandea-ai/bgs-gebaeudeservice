@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useState } from "react";
+import { company } from "../../../shared/company";
 
 export default function SwissFooter() {
   const currentYear = new Date().getFullYear();
@@ -12,10 +13,14 @@ export default function SwissFooter() {
     phone: "",
     service: "",
     message: "",
-    acceptPrivacy: false
+    acceptPrivacy: false,
+    website: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const fallbackError = `Ihre Nachricht konnte nicht gesendet werden. Bitte rufen Sie uns an (${company.phone.display}) oder schreiben Sie an ${company.email}.`;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -31,7 +36,9 @@ export default function SwissFooter() {
         body: JSON.stringify(formData),
       });
 
-      if (response.ok) {
+      const data = await response.json().catch(() => null);
+
+      if (response.ok && data?.success) {
         setSubmitStatus("success");
         setFormData({
           name: "",
@@ -39,13 +46,16 @@ export default function SwissFooter() {
           phone: "",
           service: "",
           message: "",
-          acceptPrivacy: false
+          acceptPrivacy: false,
+          website: ""
         });
         setTimeout(() => setSubmitStatus("idle"), 5000);
       } else {
+        setErrorMessage(data?.message || fallbackError);
         setSubmitStatus("error");
       }
     } catch (error) {
+      setErrorMessage(fallbackError);
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
@@ -204,6 +214,20 @@ export default function SwissFooter() {
                 />
               </div>
 
+              {/* Honeypot gegen Spam, für Menschen unsichtbar (M07) */}
+              <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
+                <label htmlFor="website">Website</label>
+                <input
+                  type="text"
+                  id="website"
+                  name="website"
+                  value={formData.website}
+                  onChange={handleChange}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
+
               {/* Datenschutz Checkbox */}
               <div className="mb-6">
                 <label className="flex items-start gap-3 cursor-pointer group">
@@ -256,16 +280,16 @@ export default function SwissFooter() {
 
               {/* Status Messages */}
               {submitStatus === "success" && (
-                <div className="mt-4 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-md">
+                <div role="status" className="mt-4 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-md">
                   <p className="text-sm text-green-700 dark:text-green-400">
-                    ✓ Vielen Dank! Ihre Nachricht wurde erfolgreich versendet. Wir melden uns in Kürze bei Ihnen.
+                    ✓ Vielen Dank! Ihre Nachricht wurde versendet. Wir melden uns {company.responseTime}.
                   </p>
                 </div>
               )}
               {submitStatus === "error" && (
-                <div className="mt-4 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-md">
+                <div role="alert" className="mt-4 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-md">
                   <p className="text-sm text-red-700 dark:text-red-400">
-                    ✗ Es gab ein Problem beim Senden Ihrer Nachricht. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt.
+                    ✗ {errorMessage || fallbackError}
                   </p>
                 </div>
               )}
