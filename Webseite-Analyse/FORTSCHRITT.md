@@ -16,8 +16,8 @@ Die übrigen Dateien in diesem Ordner sind wortgleich aus dem Original abgeleite
 
 Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 
-- Nur Markdown in `Webseite-Analyse/`. Kein Quellcode, keine Konfiguration, keine Lockfiles, keine Medien ändern.
-- **Ausnahme E03:** Commit und Push dieser Markdown-Dateien auf den Arbeits-Branch sind erlaubt, niemals auf `main`, kein Deployment auslösen.
+- ~~Nur Markdown in `Webseite-Analyse/`.~~ **Seit E11 (24.09.2026): Umsetzung freigegeben.** Quellcode darf auf dem Arbeits-Branch geändert werden, in den Wellen aus 06, jede Welle mit Build und Typecheck. Lockfile nur mit dem Paketmanager des Projekts ändern.
+- **E03, E10, E11:** Commit und Push nur auf den Arbeits-Branch `claude/optimistic-sagan-h5y2i9`, niemals auf `main`. Preview-Deployments durch Pushes sind akzeptiert. **Produktions- oder Live-Deployment nur mit ausdrücklicher Zustimmung von Brandea.** Keine Schlüssel in Dateien (E13).
 - **FIMI niemals anfassen (E06, ausdrücklich vom Nutzer):** Erlaubt ist nur das Lesen des lokalen Klons. Keine Änderungen, keine Dateien, keine Installation, keine Skripte, keine Commits, Pushes, Issues oder PRs. Auf der FIMI-Live-Seite nie etwas abschicken.
 - Keine Produktionsdaten: keine echten Formulare, Leads, Mails, Buchungen.
 - Builds und Tests nur in der freigegebenen isolierten Kopie (E04).
@@ -25,7 +25,7 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 - Fehlender Zugang heißt „NICHT PRÜFBAR“, nicht „in Ordnung“.
 - Status: NICHT GEPRÜFT · BESTANDEN · BEFUND · HYPOTHESE · NICHT PRÜFBAR · NICHT ANWENDBAR. Prüfstatus und Behebungsstatus getrennt führen.
 - Jeder wichtige Befund hat eine ID, Nachweise, Auswirkung, Priorität (P0–P3), Launch-Blocker ja/nein, eine konkrete Vorgabe und ein Abnahmekriterium.
-- Nichts umsetzen. Eine Empfehlung ist keine Freigabe zur Umsetzung.
+- Umgesetzt wird nur, was in 06 steht oder in 07/11 entschieden ist. Tatsachen über den Kunden nur mit Eigenangabe oder Beleg (E18, E23).
 
 ## Phasenstatus
 
@@ -39,6 +39,8 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 | 5 | Risiko und Priorisierung | **Erledigt 24.09.2026** (55 Maßnahmen, P0: 4; Freigabe: nicht freigabefähig) | `06-MASSNAHMEN-BACKLOG.md`, `05-DEPLOY-FREIGABE.md` |
 | 6 | Gegenprüfung | **Erledigt 24.09.2026** (Querverweise, Zitatabgleich, SEO-Regeln, Prüfabdeckung) | alle, `08` (Prüfabdeckung), `02` (Vollständigkeit) |
 | 7 | Abschlussbericht | **Erledigt 24.09.2026** (No-Go, fünf Fragen, Roadmap 14/30/90) | `10-ABSCHLUSSBERICHT.md` |
+| 8 | Rückfragen Runde 1 | **Erledigt 24.09.2026** (58 Antworten ausgewertet, Widersprüche W01–W08, Entscheidungen E11–E26, Zielbild v2, Nachweise N041–N047, Quellen S43–S50, M56–M59) | `11-ANTWORTEN-RUNDE-1.md`, `03` (2a, 2b), `05`, `06`, `07` |
+| 9 | Umsetzung Welle 0 | **In Arbeit** (seit 24.09.2026, E11) | Arbeits-Branch |
 
 ## Protokoll
 
@@ -56,6 +58,7 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 | 24.09.2026 | Phasen 4 und 5 | Suchintention und Querprüfung (03): Zielbild mit fünf Kernleistungen unter `/leistungen/…`, Alt-neu-Mapping aller 32 URLs und der bekannten Kunden-URLs, Konflikte K01–K13 mit Erfolgskriterien, widersprüchliche Aussagen über Seiten hinweg, Vorlagen und gemeinsame Backend-Abhängigkeiten. Backlog (06): 55 Maßnahmen in Wellen, jede der 37 globalen und 88 Seitenbefunde zugeordnet (maschinell geprüft). Deploy-Freigabe (05): G01–G14 ausgefüllt, Ergebnis nicht freigabefähig. |
 
 | 24.09.2026 | Phasen 6 und 7 | Gegenprüfung: Alle Verweise auf Befunde, Nachweise, Quellen, Maßnahmen, Konflikte und Entscheidungen lösen auf. 3.493 Zitate maschinell gegen Code, HTML und Volltexte abgeglichen, 31 Stellen mit abweichendem Wortlaut korrigiert (u. a. „zu einem der führenden …“, „repräsentieren die Qualität …“). Keine veraltete SEO-Regel in den Empfehlungen. Prüfabdeckung in 08 und Vollständigkeit in 02 ausgewiesen. Abschlussbericht mit No-Go, den fünf Fragen und der Roadmap 14/30/90 (10). |
+| 24.09.2026 | Rückfragen Runde 1 | Fragebogen als Artifact erstellt, 58 Antworten eingegangen (N041) und ausgewertet (11). Geprüft: Kontaktdaten der Kunden-Website und local.ch (N042, N046), `swiss-reinigung.ch` gehört Dritten (N043), Resend nur mit `brandea.de` (N044), Chat-Modelle FIMI/BGS (N045), Bewertungsauszüge unbestätigt (N047). Recht und Signale recherchiert (S43–S50). Zielbild v2, Backlog, Freigabematrix und Entscheidungen angepasst. Umsetzung freigegeben (E11) |
 
 ## Abweichungen und Vorfälle
 
@@ -66,6 +69,10 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 | 24.09.2026 | Messartefakt in N023 bei zwei Seiten (Reiterwechsel nicht ausgelöst). | Zahlen zu verborgenen Inhalten zu niedrig, eine Seite fälschlich als unbetroffen geführt. | Per Code-Abgleich korrigiert (N023, GLOBAL-011). |
 
 ## Offene Punkte
+
+- **Runde 2 (11, Abschnitt 7):** Name und Marke (W03), Produktion für `noindex`, Umzugsreinigung für Mieter (W01), Winterdienst (W02), Einzugsgebiet (W04), E-Mail (W05), Einheit „CHF 50'000“ (W07), Verwaltungen als Zielgruppe (W08), Kontaktdaten, Chat-Modell, R4d.
+- **Nur Brandea:** Repository auf privat stellen (R1), Vercel-Variablen als „sensitive“ markieren (M06).
+- *Die folgenden Punkte stammen aus der Analyse und sind durch Runde 1 weitgehend beantwortet (11).*
 
 - **B03/R3, Leistungsumfang:** Die Vorgabe nennt fünf, die neue Seite hat 18, die bisherige Kunden-Website nennt 2 Bereiche mit 7 Unterleistungen. Alle 18 Seiten sind geprüft. Die fünf Leistungsdateien sind vorläufig zugeordnet (E09). Für die übrigen 13 gilt bis zur Antwort Pfad (b) der Berichte (308 auf eine bestätigte Leistung oder 410, siehe 02).
 - **E10, Push und Preview-Deployments:** entschieden, Pushes auf den Arbeits-Branch sind erlaubt.
@@ -94,9 +101,14 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 
 ## Nächste Aufgabe
 
-**Die Analyse nach dem goldenen Stand ist abgeschlossen (Phasen 0–7).** Es wird nichts umgesetzt, bis die Umsetzung eigens freigegeben ist (E05).
+**Analyse (Phasen 0–7) und Rückfragen Runde 1 sind abgeschlossen. Die Umsetzung ist freigegeben (E11).**
 
-Offen beim Nutzer bzw. Kunden:
-1. **R1 (sofort):** Enthalten `DEPLOYMENT.md` und `EMAIL_SETUP.md` gültige Schlüssel?
-2. **R2–R12:** Kundentermin (07, Abschnitt 2a).
-3. **Freigabe der Umsetzung:** Danach Welle 0 aus 06 (M01–M09).
+1. **Welle 0 auf dem Arbeits-Branch:**
+   - `noindex` per Umgebungsvariable (M08, E12)
+   - Schlüssel durch Platzhalter ersetzen (M01, E13)
+   - Formular mit echter Fehlermeldung und vorläufigem Empfänger (M04, E15)
+   - Chat und Berater mit sichtbarem Fehlerzustand (M03, E14)
+   - `swiss-reinigung.ch` entfernen und Kontaktdaten zentral führen (M09, M54)
+   - unbelegte Aussagen und Kundenstimmen entfernen (M11, M12, E18)
+2. **Runde 2 mit Brandea** (11, Abschnitt 7), vor allem Name und Marke und die Zustimmung zum Produktions-Deployment für `noindex`.
+3. **Danach Welle 1** nach dem Zielbild v2 (03), Zeitplan bis Ende November in 11, Abschnitt 6.

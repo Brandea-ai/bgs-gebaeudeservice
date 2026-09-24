@@ -262,6 +262,54 @@ Quelle: [GitHub Advisory Database](https://github.com/advisories), abgefragt üb
 Verwendung: Bekannte Sicherheitsmeldungen zu den installierten Paketversionen. Die Anwendbarkeit wird je Meldung gegen die tatsächliche Konfiguration bewertet.  
 Abruf: 24.09.2026 (ergänzt während der Prüfung).
 
+### S43 · Fedlex: Art. 954a OR (Firmen- und Namensgebrauchspflicht)
+
+Quelle: [Fedlex: Obligationenrecht, Art. 954a](https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_954_a)  
+Verwendung: Die eingetragene Firma ist in Korrespondenz, auf Bestellscheinen, Rechnungen und in Bekanntmachungen vollständig und unverändert anzugeben. Kurzbezeichnungen, Logos, Geschäftsbezeichnungen und Enseignes sind zusätzlich zulässig. Wortlaut über Suchergebnisse abgeglichen (lawbrary.ch, droit-bilingue.ch). Keine Rechtsberatung.  
+Abruf: 24.09.2026 (Runde 1, 11).
+
+### S44 · SECO: Allgemeinverbindlich erklärter GAV für die Reinigungsbranche in der Deutschschweiz
+
+Quelle: [SECO: GAV Reinigungsbranche Deutschschweiz](https://www.seco.admin.ch/seco/de/home/Arbeit/Personenfreizugigkeit_Arbeitsbeziehungen/Gesamtarbeitsvertraege_Normalarbeitsvertraege/Gesamtarbeitsvertraege_Bund/Allgemeinverbindlich_erklaerte_Gesamtarbeitsvertraege/Reinigung_Deutschschweiz.html)  
+Verwendung: Der GAV 2026–2029 ist allgemeinverbindlich für Betriebe, die Unterhalts- oder Spezialreinigung an, in und um Gebäude ausführen und mindestens 6 Arbeitnehmende beschäftigen.  
+Abruf: 24.09.2026 (Runde 1, über Suchergebnis).
+
+### S45 · ZPK Reinigung: GAV-Inhalte
+
+Quelle: [ZPK Reinigung: GAV-Inhalte](https://zpk-reinigung.ch/recht-lohn/gav-inhalte)  
+Verwendung: Unterstellte Reinigungsunternehmen können bei der Geschäftsstelle der PK Reinigung eine Bestätigung beziehen, etwa für Submissionen. Kontrollen durch die paritätischen Organe.  
+Abruf: 24.09.2026 (Runde 1, über Suchergebnis).
+
+### S46 · Allpura: Mitgliedschaft
+
+Quelle: [Allpura: Mitgliedschaft](https://allpura.ch/mitgliedschaft/mitgliedschaft.php)  
+Verwendung: Aktivmitglied kann jedes Reinigungsunternehmen mit Sitz in der Schweiz werden, das mindestens zwei Jahre am Markt ist. Leistungen für Mitglieder.  
+Abruf: 24.09.2026 (Runde 1, über Suchergebnis).
+
+### S47 · Allpura: Anmeldung Branchenlösung EKAS Nr. 54
+
+Quelle: [Allpura: Anmeldung Branchenlösung EKAS Nr. 54](https://allpura.ch/verband/anmeldung-branchenloesung.php)  
+Verwendung: Branchenlösung für Arbeitssicherheit und Gesundheitsschutz in der Gebäudereinigung. Voraussetzung: SIBE-Grundkurs für mindestens eine Person. Beitrag einmalig CHF 1'150 (Allpura-Mitglieder) bzw. CHF 1'950, jährlich CHF 550.  
+Abruf: 24.09.2026 (Runde 1, über Suchergebnis; Beträge bei Umsetzung erneut prüfen).
+
+### S48 · Google Search Central: SEO Starter Guide
+
+Quelle: [Google Search Central: SEO Starter Guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide)  
+Verwendung: Thematisch ähnliche Seiten in Verzeichnissen gruppieren. Zu Subdomains und Unterverzeichnissen: tun, was für das Geschäft sinnvoll ist, Unterverzeichnisse sind oft leichter zu verwalten.  
+Abruf: 24.09.2026 (Runde 1).
+
+### S49 · IGE: Schweizerkreuz
+
+Quelle: [IGE: Schweizerkreuz](https://www.ige.ch/de/etwas-schuetzen/herkunftsangaben/grundlegendes/swissness/schweizerkreuz)  
+Verwendung: Das Schweizerkreuz darf für Dienstleistungen verwendet werden, die die Kriterien der Herkunftsangabe „Schweiz“ erfüllen: Sitz in der Schweiz und tatsächliche Verwaltung von der Schweiz aus.  
+Abruf: 24.09.2026 (Runde 1, über Suchergebnis).
+
+### S50 · IGE: Schweizerwappen
+
+Quelle: [IGE: Schweizerwappen](https://www.ige.ch/de/etwas-schuetzen/herkunftsangaben/grundlegendes/swissness/schweizerwappen)  
+Verwendung: „Seit Inkrafttreten des revidierten Wappenschutzgesetzes ist sein Gebrauch der Eidgenossenschaft vorbehalten.“ Das Schweizerwappen (Kreuz im Schild) steht damit für Firmenlogos nicht zur Verfügung, anders als das Schweizerkreuz (S49).  
+Abruf: 24.09.2026 (Runde 1).
+
 ## Besonders wichtige Aktualisierungen gegenüber älteren Checklisten
 
 - FAQ-Rich-Results werden seit dem 7. Mai 2026 nicht mehr in Google angezeigt. Der Verweis „nur für autoritative Gesundheits-/Behördenseiten“ wäre für den aktuellen Stand bereits überholt. [S13]
@@ -316,3 +364,11 @@ Originalquelle mit Datum prüfen, tatsächlichen Anwendungsbereich ermitteln, Au
 [S39]: https://www.gesetze-im-internet.de/ttdsg/__25.html "Gesetze im Internet: § 25 TDDDG"
 [S40]: https://www.gesetze-im-internet.de/bfsg/__1.html "Gesetze im Internet: § 1 BFSG"
 [S41]: https://www.gesetze-im-internet.de/bfsg/__3.html "Gesetze im Internet: § 3 BFSG"
+[S43]: https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_954_a "Fedlex: Art. 954a OR"
+[S44]: https://www.seco.admin.ch/seco/de/home/Arbeit/Personenfreizugigkeit_Arbeitsbeziehungen/Gesamtarbeitsvertraege_Normalarbeitsvertraege/Gesamtarbeitsvertraege_Bund/Allgemeinverbindlich_erklaerte_Gesamtarbeitsvertraege/Reinigung_Deutschschweiz.html "SECO: GAV Reinigungsbranche Deutschschweiz"
+[S45]: https://zpk-reinigung.ch/recht-lohn/gav-inhalte "ZPK Reinigung: GAV-Inhalte"
+[S46]: https://allpura.ch/mitgliedschaft/mitgliedschaft.php "Allpura: Mitgliedschaft"
+[S47]: https://allpura.ch/verband/anmeldung-branchenloesung.php "Allpura: Anmeldung Branchenlösung EKAS Nr. 54"
+[S48]: https://developers.google.com/search/docs/fundamentals/seo-starter-guide "Google Search Central: SEO Starter Guide"
+[S49]: https://www.ige.ch/de/etwas-schuetzen/herkunftsangaben/grundlegendes/swissness/schweizerkreuz "IGE: Schweizerkreuz"
+[S50]: https://www.ige.ch/de/etwas-schuetzen/herkunftsangaben/grundlegendes/swissness/schweizerwappen "IGE: Schweizerwappen"

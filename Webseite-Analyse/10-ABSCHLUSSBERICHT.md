@@ -86,6 +86,8 @@ Die vollständige Liste mit Abnahmetests steht in 06 (55 Maßnahmen, P0: 4, P1: 
 
 ## 4. Offene Fragen
 
+**Nachtrag 24.09.2026:** Die Fragen R1–R12 sind per Fragebogen beantwortet und in 11-ANTWORTEN-RUNDE-1.md ausgewertet. Offen bleiben die Punkte für Runde 2 (11, Abschnitt 7), vor allem Name und Marke. Launch-Ziel ist Ende November 2026 (11, Abschnitt 6). Die Umsetzung ist freigegeben (E11). Die folgende Liste ist der Stand vor Runde 1.
+
 Gebündelt in 07, Abschnitt 2a. Die dringlichsten:
 
 - **R1 (sofort):** Enthalten `DEPLOYMENT.md` und `EMAIL_SETUP.md` gültige Schlüssel?

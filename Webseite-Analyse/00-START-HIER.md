@@ -69,6 +69,7 @@ Verwende kein pauschales „100 % fertig“, solange zwingende Prüfungen offen 
 - [x] **Phase 5: Risiko und Priorisierung.** *(erledigt 24.09.2026, 55 Maßnahmen, Freigabematrix G01–G14, siehe 05 und 06)* Launch-Blocker von Wachstumsmaßnahmen unterscheiden; Aufwand, Verantwortung und Abnahmekriterien ergänzen.
 - [x] **Phase 6: Gegenprüfung.** *(erledigt 24.09.2026: alle IDs aufgelöst, 3.493 Zitate gegen den Bestand abgeglichen und korrigiert, keine veraltete SEO-Regel, Prüfabdeckung in 08 und 02)* Jede wichtige Behauptung auf Nachweis prüfen; veraltete SEO-Regeln entfernen; tatsächliche Prüfabdeckung dokumentieren.
 - [x] **Phase 7: Abschlussbericht.** *(erledigt 24.09.2026, siehe 10-ABSCHLUSSBERICHT.md: No-Go)* Go/No-Go, offene Fragen, wichtigste Maßnahmen und spätere 14-/30-/90-Tage-Roadmap liefern. Nicht implementieren.
+- [x] **Ergänzung: Rückfragen Runde 1.** *(erledigt 24.09.2026, siehe 11-ANTWORTEN-RUNDE-1.md: Antworten geprüft, Zielbild v2, Umsetzung freigegeben mit E11)*
 
 Arbeite pro Durchlauf an einem klar abgegrenzten Abschnitt. Aktualisiere danach Fortschritt, offene Punkte und nächste Aufgabe. Bei begrenztem Kontext aus den Markdown-Dateien fortsetzen, nicht auf Erinnerung vertrauen.
 
@@ -141,6 +142,7 @@ Die vorbereiteten Dateien in diesem Paket dienen als Arbeitsstruktur. Benenne di
 - `07-BRIEFING-UND-ENTSCHEIDUNGEN.md`: gebündelte Rückfragen und dokumentierte Entscheidungen.
 - `08-PRUEFNACHWEISE.md`: Verfahren, Datenzugänge, Messprotokolle und Grenzen.
 - `09-QUELLEN.md`: recherchierte Originalquellen und Aktualisierungsregeln.
+- `11-ANTWORTEN-RUNDE-1.md` *(ergänzt)*: Antworten auf die Rückfragen, Prüfung, Widersprüche, Entscheidungen und Runde 2.
 - `Seiten/`: eine eigene MD-Datei je Seite.
 
 ## 10. Abschlussformat

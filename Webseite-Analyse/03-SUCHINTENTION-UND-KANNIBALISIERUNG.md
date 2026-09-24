@@ -39,58 +39,67 @@ Werkzeug: Websuche der Prüfumgebung, 24.09.2026 ~12:45 UTC, Standort USA, Suchm
 
 ## 2. Intent-Matrix
 
-### 2a. Zielbild: Zuständigkeit je Seite (Vorschlag nach Eigenangabe N014, gilt nach R3/R4)
+### 2a. Zielbild v2: Zuständigkeit je Seite (Stand nach Rückfragen Runde 1, 11)
+
+Grundlage sind die Antworten vom 24.09.2026 (N041): Leistungen R3a–R3c, Premium-Bereich R3f und R7b, Einzugsgebiet R4a, keine Preise R3e (Entscheidungen E16, E17). **Die erste Fassung (fünf Kernleistungen nach N014) ist damit ersetzt.** Zwei getrennte Bereiche auf derselben Domain: B2B unter `/leistungen/…`, Premium unter `/premium/…` (11, Abschnitt 3.8).
 
 | Seite (Ziel-URL) | Primäre Nutzeraufgabe | Themen-/Query-Cluster (Arbeitshypothese, ohne Volumen) | Nicht ihr Hauptthema | Abgrenzung/Beleg | Primärer nächster Schritt |
 |---|---|---|---|---|---|
-| Startseite `/` | Anbieter erkennen und einordnen | Marke („BGS Gebäudeservice“), „Reinigungsfirma/Hauswartung Emmenbrücke, Luzern, Zug“ | Leistungsdetails, Preise | Zwei Bereiche, Region, Offerte vor Ort (N014) | Leistung ansehen oder Offerte anfragen |
-| Leistungen `/leistungen` | Passende Leistung auswählen | „Gebäudereinigung und Hauswartung Luzern/Zug“, Vergleich der Leistungen | Volltexte der Leistungen | Auswahlhilfe Ausgangslage → Leistung (P02) | Leistungsseite |
-| Unterhaltsreinigung `/leistungen/unterhaltsreinigung` | Regelmässige Reinigung vergeben | „Unterhaltsreinigung Luzern/Zug“, „Büroreinigung Luzern/Zug“ (als Abschnitt), Nachfüllservice | Grund- und Bauendreinigung, Hauswartung | Rhythmus, Umfang, Ablauf (P03) | Offerte vor Ort |
-| Sonderreinigungen `/leistungen/sonderreinigungen` | Einmalige oder spezielle Reinigung vergeben | „Grundreinigung“, „Bauendreinigung“, weitere Spezialreinigungen nach R3 | Laufende Reinigung | Leistungsliste vom Kunden (SEITE-P05-001) | Offerte vor Ort |
-| Hauswartung `/leistungen/hauswartung` | Liegenschaft betreuen lassen | „Hauswartung Luzern/Zug“, „Hausmeisterservice“, „Liegenschaftsbetreuung“, „Facility-Services“ (als Begriff im Text) | Einzelne Reinigungsleistungen | Klassische Hauswartung und infrastrukturelle Pflege (N014) | Offerte vor Ort |
-| Winterdienst `/leistungen/winterdienst` | Schneeräumung und Streudienst sichern | „Winterdienst Luzern/Zug“, „Schneeräumung Liegenschaft“ | Grünflächenpflege | Einzige Seite mit Winterdienst-Zusagen (SEITE-P06-002) | Offerte vor dem Winter |
-| Aussen- und Grünflächenpflege `/leistungen/aussen-und-gruenflaechenpflege` | Umgebung der Liegenschaft pflegen lassen | „Umgebungspflege Liegenschaft“, „Gartenunterhalt Liegenschaft“, „Grünflächenpflege“ | Winterdienst (nur Link), Gartenbau/Neuanlage | Teil der Hauswartung (N014) | Offerte vor Ort |
-| Über uns `/ueber-uns` | Anbieter prüfen und Vertrauen gewinnen | Markensuche, „BGS Gebäudeservice Erfahrungen“ | Keine sechste Leistungsseite | Registerdaten, Personen, Arbeitsweise (P08) | Kontakt |
-| Einzugsgebiet `/einzugsgebiet` | Klären, ob das Objekt im Gebiet liegt | „Reinigung/Hauswartung Kanton Luzern/Zug“, Gemeindenamen (nur bestätigte) | Keine Niederlassungen, keine Stadtvarianten | Gemeindeliste nach R4 (P09) | Offerte oder Rückfrage |
-| Kontakt `/kontakt` | Unternehmen erreichen | Marke + „Kontakt“, Adresse, Telefon | Kein SEO-Langtext | Bestätigte Kontaktdaten (R5) | Abgeschlossene Anfrage |
-| Referenzen `/referenzen` | Belege prüfen | Markensuche, „Referenzen“ | Leistungsbeschreibung | Nur echte, freigegebene Fälle (P26) | Kontakt |
-| Ratgeber `/blog/…` | Vorab informieren (Kosten, Auswahl) | „Was kostet eine Unterhaltsreinigung“, „Reinigungsfirma finden Kriterien“ | Leistungsverkauf | Ehrliche Kostenfaktoren, Auswahlkriterien (P29, P30) | Passende Leistung |
-| Impressum/Datenschutz | Anbieter- und Rechtsinformationen finden | Keine kommerzielle Optimierung | Leistungskeywords | Registerdaten (N033), tatsächliche Verarbeitung (P12) | Information |
+| Startseite `/` | Anbieter erkennen und einordnen | Marke, „Reinigungsfirma/Hauswartung Emmenbrücke, Luzern, Zug“ | Leistungsdetails, Preise | Zwei Einstiege: Gebäudereinigung und Hauswartung (B2B) sowie Premium | Leistung wählen oder Offerte anfragen |
+| Leistungen `/leistungen` | Passende Leistung auswählen | „Gebäudereinigung und Hauswartung Luzern/Zug“ | Volltexte der Leistungen | Auswahlhilfe nach Objekt und Anlass, Hinweis auf Facility Services | Leistungsseite |
+| Unterhaltsreinigung `/leistungen/unterhaltsreinigung` | Regelmässige Reinigung von Liegenschaften und Gewerbeflächen vergeben | „Unterhaltsreinigung Luzern/Zug“, „Treppenhausreinigung“, Nachfüllservice (Abschnitt) | Büros und Praxen (eigene Seite), Grund- und Bauendreinigung | Objektarten Mehrfamilienhaus und Gewerbe, Rhythmus ab zwei- bis dreimal pro Woche (R10c) | Offerte vor Ort |
+| Büroreinigung `/leistungen/bueroreinigung` | Büros und Praxen reinigen lassen | „Büroreinigung Luzern/Zug“, „Praxisreinigung“ | Liegenschaften, Treppenhäuser | Reinigung ausserhalb der Arbeitszeit, Hygiene in Praxen ohne unbelegte Normen (K01) | Offerte vor Ort |
+| Sonderreinigungen `/leistungen/sonderreinigungen` | Einmalige oder besondere Reinigung vergeben | „Grundreinigung“, „Umzugsreinigung mit Abnahmegarantie“ | Laufende Reinigung | Fünf bestätigte Sonderreinigungen (R3b), Links zu Bau-, Fenster- und Fassadenreinigung | Offerte vor Ort |
+| Baureinigung `/leistungen/baureinigung` | Bau- oder Bauendreinigung vergeben | „Baureinigung Luzern“, „Bauendreinigung“ | Grundreinigung bewohnter Objekte | Ablauf nach Bauphasen, Übergabe an Bauherrschaft | Offerte vor Ort |
+| Fenster und Fassade `/leistungen/fenster-und-fassadenreinigung` | Glas- und Fassadenflächen reinigen lassen | „Fensterreinigung Luzern“, „Fassadenreinigung“, „Hochdruckreinigung“ | Innenreinigung | Ohne „zertifizierte Höhenarbeiter“, solange kein Beleg (K05) | Offerte vor Ort |
+| Industrie und Hallen `/leistungen/industrie-und-hallenreinigung` | Produktions-, Lager- und Hallenflächen reinigen lassen | „Industriereinigung“, „Hallenreinigung“, Maschinen (Abschnitt) | Büroflächen | Eine Seite für den Cluster (K04), Arbeitssicherheit nur belegt | Offerte vor Ort |
+| Hauswartung `/leistungen/hauswartung` | Liegenschaft betreuen lassen | „Hauswartung Luzern/Zug“, „Hausmeisterservice“ | Einzelne Reinigungsleistungen, Winterdienst | Aufgabenkatalog mit acht Aufgaben und Grenzen (R3c) | Offerte vor Ort |
+| Aussen- und Grünflächenpflege `/leistungen/aussen-und-gruenflaechenpflege` | Umgebung der Liegenschaft pflegen lassen | „Umgebungspflege Liegenschaft“, „Grünflächenpflege“ | Gartenbau, Winterdienst | Verlinkt aus der Hauswartung (Umgebungspflege) | Offerte vor Ort |
+| Facility Services `/leistungen/facility-services` | Mehrere Leistungen aus einer Hand vergeben | „Facility Services Luzern/Zug“ | Einzelleistungen im Detail | Bündel nur aus bestätigten Leistungen, ein Vertrag und ein Ansprechpartner, keine technischen FM-Zusagen (K02) | Offerte vor Ort |
+| Premium `/premium` | Diskreten Anbieter für gehobene Objekte finden | Markensuche, „Premium Reinigung Luzern“ | B2B-Leistungen | Eigener Auftritt, Diskretion, Sprachen, Versicherung (11, 3.8) | Diskreter Rückruf |
+| Luxusimmobilien `/premium/luxusimmobilien` | Residenz regelmässig betreuen lassen | „Reinigung Villa/Luxusimmobilie“, „Materialpflege“ | Normale Privathaushalte | Rhythmus und Objektgrösse wie R10c, ersetzt Housekeeping (K06) | Diskreter Rückruf |
+| Privatjet `/premium/privatjet` | Kabinenreinigung vergeben | „Privatjet Reinigung“ | — | Nur bestätigte Abläufe, keine erfundenen Zahlen | Diskreter Rückruf |
+| Yacht `/premium/yacht` | Boots- und Yachtreinigung vergeben | „Yacht Reinigung“, „Bootsreinigung Vierwaldstättersee“ | — | Nur bestätigte Abläufe | Diskreter Rückruf |
+| Über uns `/ueber-uns` | Anbieter prüfen und Vertrauen gewinnen | Markensuche | Keine Leistungsseite | Registerdaten, Erfahrung seit 2006, Mitarbeitende, Sprachen (E18) | Kontakt |
+| Einzugsgebiet `/einzugsgebiet` | Klären, ob das Objekt im Gebiet liegt | „Reinigung/Hauswartung Kanton Luzern/Zug/Aargau“ | Keine Stadtvarianten | Drei Kantone, Gemeinden erst nach Bestätigung (W04) | Offerte oder Rückfrage |
+| Kontakt `/kontakt` | Unternehmen erreichen | Marke + „Kontakt“ | Kein SEO-Langtext | Zentrale Kontaktdaten (11, 3.1), Karte nach Klick (E20) | Abgeschlossene Anfrage |
+| Referenzen `/referenzen` | Belege prüfen | — | — | **Offline**, keine Referenzen (R6f) | — |
+| Ratgeber `/blog/…` | Vorab informieren | „Reinigungsfirma finden“, Kostenfaktoren ohne Zahlen | Leistungsverkauf | Keine Preise (R3e), Umweltthema nur „auf Wunsch“ (R6i) | Passende Leistung |
+| Impressum/Datenschutz | Anbieter- und Rechtsinformationen finden | Keine kommerzielle Optimierung | Leistungskeywords | Eingetragene Firma nach Art. 954a OR (S43), tatsächliche Verarbeitung (P12) | Information |
 
-Das ist eine Rollenverteilung, keine bereits validierte Keyword-Zuordnung. Ein Themencluster darf verwandte Formulierungen enthalten; nicht jede Suchphrase braucht eine eigene Seite.
+Das ist eine Rollenverteilung, keine validierte Keyword-Zuordnung. Ein Themencluster darf verwandte Formulierungen enthalten; nicht jede Suchphrase braucht eine eigene Seite. **Entfallen:** Winterdienst, Haushaltsreinigung für normale Privathaushalte, eigene Seiten für Hallen, Maschinen, Nachfüllservice und Standorte.
 
-**Bedingte Zusatzseiten, nur wenn R3 die Leistung bestätigt:** Fenster- und Fassadenreinigung (U14, U15 zusammen), Industrie- und Hallenreinigung mit Abschnitt Maschinen (U13, U17, U18 zusammen), Büroreinigung als eigene Seite (U11, nur mit klar anderem Inhalt als die Unterhaltsreinigung), Haushaltsreinigung für Privatpersonen mit Materialpflege (U09, U10 zusammen). Privatjet und Yacht (U07, U08) gehören nach der Eigenangabe nicht dazu.
+### 2b. Alt-neu-Mapping v2
 
-### 2b. Alt-neu-Mapping (Vorschlag)
+Die heutigen Pfade `/basis/` und `/business/` spiegeln eine Preisstufen-Einteilung, die das Zielbild aufgibt (SEITE-P02-002). `/premium/` bleibt als eigener Bereich (E16). Jede alte URL erhält ein fachlich passendes Ziel [S07], keine Weiterleitung auf die Startseite.
 
-Die heutigen Pfade `/basis/`, `/business/` und `/premium/` spiegeln eine Preisstufen-Einteilung, die das Zielbild aufgibt (SEITE-P02-002). **Vor dem Launch ist eine Umstellung am günstigsten.** Die Vorab-Adresse hat vermutlich kaum Suchsignale, belegt ist das nicht (N038). Trotzdem erhält jede alte URL ein fachlich passendes Ziel [S07]. Keine Weiterleitung auf die Startseite.
-
-| Heutige URL | Ziel | Status | Bedingung |
+| Heutige URL | Ziel | Status | Bemerkung |
 |---|---|---|---|
 | `/` | `/` | bleibt | — |
 | (fehlt) | `/leistungen` | neu | — |
 | `/basis/unterhaltsreinigung` | `/leistungen/unterhaltsreinigung` | 308 | — |
-| `/business/bueroreinigung` | `/leistungen/unterhaltsreinigung` (Abschnitt Büros) | 308 | Falls R3 eine eigene Büroreinigung mit eigenem Inhalt bestätigt: `/leistungen/bueroreinigung` |
-| `/basis/beschaffung` | `/leistungen/unterhaltsreinigung` (Abschnitt Nachfüllservice) | 308 | — |
-| `/basis/sonderleistungen` | `/leistungen/sonderreinigungen` | 308 | Seite nur mit Leistungsliste veröffentlichen (SEITE-P05-001) |
-| `/business/baureinigung` | `/leistungen/sonderreinigungen` | 308 | Nur wenn die Sonderreinigungen die Bauendreinigung beschreiben, sonst 410 |
+| `/business/bueroreinigung` | `/leistungen/bueroreinigung` | 308 | Eigene Seite (R3d) |
+| `/basis/beschaffung` | `/leistungen/unterhaltsreinigung` (Abschnitt Nachfüllservice) | 308 | R3a |
+| `/basis/sonderleistungen` | `/leistungen/sonderreinigungen` | 308 | Leistungsliste liegt vor (R3b) |
+| `/business/baureinigung` | `/leistungen/baureinigung` | 308 | — |
+| `/business/fensterreinigung`, `/business/fassadenreinigung` | `/leistungen/fenster-und-fassadenreinigung` | 308 | — |
+| `/business/industriereinigung`, `/business/hallenreinigung`, `/business/maschinenreinigung` | `/leistungen/industrie-und-hallenreinigung` | 308 | — |
 | `/basis/hausmeisterservice` | `/leistungen/hauswartung` | 308 | — |
-| `/business/facility-management` | `/leistungen/hauswartung` | 308 | — |
-| `/basis/winterdienst` | `/leistungen/winterdienst` | 308 | — |
 | `/business/aussenanlagen` | `/leistungen/aussen-und-gruenflaechenpflege` | 308 | — |
-| `/business/fensterreinigung`, `/business/fassadenreinigung` | `/leistungen/fenster-und-fassadenreinigung` | 308 | Nur wenn R3 bestätigt. Sonst Fenster → Unterhaltsreinigung (falls dort als Zusatz bestätigt) bzw. Sonderreinigungen, Fassaden → Sonderreinigungen oder 410 |
-| `/business/industriereinigung`, `/business/hallenreinigung`, `/business/maschinenreinigung` | `/leistungen/industrie-und-hallenreinigung` | 308 | Nur wenn R3 bestätigt, sonst 410 bzw. Sonderreinigungen bei fachlicher Eignung |
-| `/premium/housekeeping`, `/premium/luxusimmobilien` | `/leistungen/haushaltsreinigung` | 308 | Nur wenn R3 Privathaushalte bestätigt, sonst 410. Luxusimmobilien alternativ auf die Sonderreinigungen, wenn diese die Materialpflege beschreiben |
-| `/premium/privatjet`, `/premium/yacht` | — | 410 | Ausser R3 bestätigt die Leistung ausdrücklich |
-| `/standorte/zuerich`, `/standorte/zug`, `/standorte/luzern` | `/einzugsgebiet` | 308 | Eigene Ortsseiten nur mit echtem lokalem Inhalt (P09) |
+| `/business/facility-management` | `/leistungen/facility-services` | 308 | Bündel (K02) |
+| `/basis/winterdienst` | — | 410 | Leistung entfällt (R3a, R6j, W02) |
+| (fehlt) | `/premium` | neu | Premium-Übersicht |
+| `/premium/luxusimmobilien`, `/premium/privatjet`, `/premium/yacht` | gleich | bleibt | Inhalte neu (R3a) |
+| `/premium/housekeeping` | `/premium/luxusimmobilien` | 308 | Normale Privathaushalte entfallen (K06) |
+| `/standorte/zuerich`, `/standorte/zug`, `/standorte/luzern` | `/einzugsgebiet` | 308 | Zürich liegt ausserhalb des Gebiets (R4a) |
 | `/ueber-uns`, `/kontakt`, `/impressum`, `/datenschutz`, `/blog` | gleich | bleibt | — |
-| `/referenzen` | gleich | 404 bis zu echten Belegen | P26 |
+| `/referenzen` | — | 404 bis zu echten Belegen | R6f |
 | `/blog/professionelle-gebaeudereinigung` | `/blog/richtige-reinigungsfirma-finden` | 308 | P28 |
-| `/blog/reinigungskosten-schweiz` | gleich (Titel neu, Slug prüfen) | bleibt | Nur ohne unbelegte Zahlen (P29) |
+| `/blog/reinigungskosten-schweiz` | gleich | bleibt | Kostenfaktoren ohne Zahlen (R3e) |
 | `/blog/richtige-reinigungsfirma-finden` | gleich | bleibt | — |
-| `/blog/umweltfreundliche-reinigung` | — | vor Launch nicht ausliefern | P31, bis Angaben des Kunden vorliegen |
+| `/blog/umweltfreundliche-reinigung` | gleich | bleibt | Nur „auf Wunsch“, ohne unbelegte Label- und Produktangaben (R6i) |
 
-**Bisherige Website des Kunden, nur falls die neue Seite `bgs-service.ch` übernimmt (R9):** `/` → `/`, `/gebäudereinigung` → `/leistungen`, `/hauswartung` → `/leistungen/hauswartung`, `/kontakt` → `/kontakt`, dazu die drei älteren Seiten aus N038: `/bgs-gebaeude-serviceleistungen.html` → `/leistungen`, `/gebaeude-serviceleistungen-luzern.html` → `/kontakt` (Inhalt vorher prüfen), `/impressum.html` → `/impressum`. Alle per 308. Vor dem Umzug alle alten URLs vollständig erfassen, etwa per Search Console oder Crawl mit Freigabe des Kunden.
+**Bisherige Website des Kunden, die neue Seite übernimmt `bgs-service.ch` (R9b):** `/` → `/`, `/gebäudereinigung` → `/leistungen`, `/hauswartung` → `/leistungen/hauswartung`, `/kontakt` → `/kontakt`, dazu die drei älteren Seiten aus N038: `/bgs-gebaeude-serviceleistungen.html` → `/leistungen`, `/gebaeude-serviceleistungen-luzern.html` → `/kontakt` (Inhalt vorher prüfen), `/impressum.html` → `/impressum`. Alle per 308. Vor dem Umzug alle alten URLs vollständig erfassen, etwa per Crawl mit Zugang des Kunden (R9d). Wählt Brandea in Runde 2 eine neue Domain (W03), wird `bgs-service.ch` vollständig auf die neue Domain umgeleitet [S07].
 
 ## 3. Prüfverfahren
 
@@ -136,6 +145,8 @@ Alle Einträge sind HYPOTHESE bzw. Risiko: Ohne Suchdaten ist keine Kannibalisie
 | K11 | `/`, künftige `/leistungen`, Facility Management (Pfad a) | Drei Vorschläge mit „Reinigung und Hauswartung … in Luzern und Zug“ | gering | Startseite: Marke vorne (Titel „BGS Gebäudeservice – …“). Übersicht: „Leistungen: …“. Facility Management entfällt (K02) oder wird Abschnitt „Aus einer Hand“ auf `/leistungen` | Unterschiedliche Titel und H1, jede Seite mit eigener Aufgabe (2a) |
 | K12 | Blog „Reinigungskosten“, Zürich-FAQ, Fassaden, Privatjet | Preisangaben an vier Stellen, teils identische Zahlen, teils als eigenes Angebot (SEITE-P09-001, -P16-003, -P21-003, -P29-001) | Ob der Kunde Preise nennen will (R6) | Kosteninformation nur an einer Stelle (Ratgeber P29), ohne unbelegte Zahlen. Keine Preise auf Leistungs- oder Ortsseiten ohne Freigabe | Volltextsuche findet CHF-Beträge nur mit Freigabe und Stand |
 | K13 | `/standorte/zuerich` für „Reinigungsfirma Zürich“ | Die Seite bedient eine Suchintention in einem Gebiet, das der Kunde nicht angibt (N014) | R4 | Entfernen (K09). Zürich nur nennen, wenn R4 es bestätigt | Keine Zürich-Aussage ohne Bestätigung |
+
+**Auflösung nach Rückfragen Runde 1 (11):** K01 zwei Seiten mit getrenntem Fokus (Büros und Praxen bzw. Liegenschaften und Gewerbe). K02 Facility Services als eigenes Bündel, Hauswartung eigenständig. K03 entfällt, weil der Winterdienst entfällt. K04 eine Seite Industrie und Hallen. K05 eine Seite Fenster und Fassade. K06 eine Premium-Seite Luxusimmobilien. K07 Sonderreinigungen als Übersicht. K08 Abschnitt Nachfüllservice. K09 und K13 eine Einzugsgebiet-Seite ohne Zürich. K12 keine Preise. K10 und K11 unverändert.
 
 **Technische URL-Varianten:** `/kontakt/` leitet per 308 auf `/kontakt` (BESTANDEN). Grossschreibung liefert 404 (BESTANDEN). Parameter wie `?utm_source=` liefern 200 ohne Canonical (N008). Mit selbstreferenzierenden Canonicals auf die Launch-Domain ist das gelöst (GLOBAL-010, -018).
 
