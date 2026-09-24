@@ -1,7 +1,8 @@
 'use client'
 
 import { useState } from 'react';
-import { Sparkles, ArrowRight, Loader2, Building2 } from 'lucide-react';
+import { Sparkles, ArrowRight, Loader2, Building2, Phone } from 'lucide-react';
+import { company } from '../../../shared/company';
 
 interface AdvisorResponse {
   recommendation: string;
@@ -14,6 +15,8 @@ export default function IndustryAdvisor() {
   const [loading, setLoading] = useState(false);
   const [response, setResponse] = useState<AdvisorResponse | null>(null);
   const [error, setError] = useState('');
+
+  const fallbackError = `Der KI-Berater ist gerade nicht verfügbar. Bitte rufen Sie uns an (${company.phone.display}) oder nutzen Sie das Kontaktformular.`;
 
   const handleAnalyze = async () => {
     if (!industry.trim()) {
@@ -34,14 +37,16 @@ export default function IndustryAdvisor() {
         body: JSON.stringify({ industry: industry.trim() }),
       });
 
+      const data = await res.json().catch(() => null);
+
       if (!res.ok) {
-        throw new Error('Analyse fehlgeschlagen');
+        setError(data?.message || fallbackError);
+        return;
       }
 
-      const data = await res.json();
       setResponse(data);
     } catch (err) {
-      setError('Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.');
+      setError(fallbackError);
       console.error('Industry analysis error:', err);
     } finally {
       setLoading(false);
@@ -91,7 +96,26 @@ export default function IndustryAdvisor() {
           </div>
 
           {error && (
-            <p className="text-red-400 text-sm">{error}</p>
+            <div role="alert" className="space-y-3">
+              <p className="text-red-300 text-sm">{error}</p>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href={company.phone.href}
+                  className="inline-flex items-center gap-2 rounded-lg border border-gray-600 px-4 py-2 text-sm font-medium text-white hover:bg-gray-700"
+                >
+                  <Phone className="w-4 h-4" />
+                  {company.phone.display}
+                </a>
+                <button
+                  type="button"
+                  onClick={scrollToContact}
+                  className="inline-flex items-center gap-2 rounded-lg border border-gray-600 px-4 py-2 text-sm font-medium text-white hover:bg-gray-700"
+                >
+                  Zum Kontaktformular
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
           )}
 
           <button

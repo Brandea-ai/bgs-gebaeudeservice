@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { MessageCircle, X, Send, Loader2, CheckCircle2, Shield, Sparkles, Phone, Mail, Circle } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import { useChatbot } from '../contexts/ChatbotContext';
+import { chatEnabled } from '../../../shared/features';
 
 interface Message {
   role: 'user' | 'assistant';
@@ -76,7 +77,7 @@ const getRandomSupporter = (): Supporter => {
   return SUPPORTERS[Math.floor(Math.random() * SUPPORTERS.length)];
 };
 
-export default function AIChatbot() {
+function AIChatbotWidget() {
   const { isOpen, appointmentMode, openChat, closeChat } = useChatbot();
   const [hasConsent, setHasConsent] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -538,4 +539,10 @@ Zeitpunkt: ${extractedInfo.timing || 'nicht angegeben'}
       )}
     </div>
   );
+}
+
+// Bis zur Reparatur (E14) nicht anzeigen, siehe shared/features.ts
+export default function AIChatbot() {
+  if (!chatEnabled) return null;
+  return <AIChatbotWidget />;
 }

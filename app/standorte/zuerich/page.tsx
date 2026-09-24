@@ -14,6 +14,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import Link from "next/link";
 import { MapPin, Phone, Mail, Clock, Check, ArrowRight, Building2, Sparkles } from "lucide-react";
 import AppointmentButton from "@/components/AppointmentButton";
+import { company } from "../../../shared/company";
 
 export default function Zuerich() {
   const locationData = {
@@ -237,7 +238,7 @@ export default function Zuerich() {
                 <div className="text-center">
                   <Mail className="w-8 h-8 text-primary mx-auto mb-3"/>
                   <div className="font-semibold mb-1">E-Mail</div>
-                  <a href="mailto:info@swiss-reinigung.ch" className="text-primary hover:underline">info@swiss-reinigung.ch</a>
+                  <a href={`mailto:${company.email}`} className="text-primary hover:underline">{company.email}</a>
                 </div>
                 <div className="text-center">
                   <Clock className="w-8 h-8 text-primary mx-auto mb-3"/>

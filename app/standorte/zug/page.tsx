@@ -15,6 +15,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import Link from "next/link";
 import { MapPin, Phone, Mail, Clock, Check, ArrowRight, TrendingUp } from "lucide-react";
 import AppointmentButton from "@/components/AppointmentButton";
+import { company } from "../../../shared/company";
 
 export default function Zug() {
   const locationData = {
@@ -223,7 +224,7 @@ export default function Zug() {
                 <div className="text-center">
                   <Mail className="w-8 h-8 text-primary mx-auto mb-3"/>
                   <div className="font-semibold mb-1">E-Mail</div>
-                  <a href="mailto:info@swiss-reinigung.ch" className="text-primary hover:underline">info@swiss-reinigung.ch</a>
+                  <a href={`mailto:${company.email}`} className="text-primary hover:underline">{company.email}</a>
                 </div>
                 <div className="text-center">
                   <Clock className="w-8 h-8 text-primary mx-auto mb-3"/>

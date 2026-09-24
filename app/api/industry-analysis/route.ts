@@ -1,19 +1,13 @@
-import { NextRequest, NextResponse } from 'next/server'
+import { NextResponse } from 'next/server'
+import { company } from '../../../shared/company'
 
-export async function POST(request: NextRequest) {
-  console.log('🤖 Industry analysis request')
-
-  try {
-    const body = await request.json()
-    const { analyzeIndustry } = await import('@/server/gemini')
-    const result = await analyzeIndustry(body)
-
-    return NextResponse.json(result)
-  } catch (error) {
-    console.error('❌ Industry analysis error:', error)
-    return NextResponse.json(
-      { error: 'Analysis failed' },
-      { status: 500 }
-    )
-  }
+// Der KI-Berater liefert bis zur Reparatur keine Analyse (E14, M03).
+// Die bisherige Antwort war ein fester Text für jede Branche, keine
+// KI-Auswertung. 503 statt Scheinergebnis.
+export async function POST() {
+  const message = `Der KI-Berater wird gerade überarbeitet. Bitte rufen Sie uns an (${company.phone.display}) oder nutzen Sie das Kontaktformular.`
+  return NextResponse.json(
+    { success: false, unavailable: true, message, error: message },
+    { status: 503 }
+  )
 }

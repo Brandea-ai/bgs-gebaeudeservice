@@ -9,6 +9,8 @@
  * - Respekt-Regel für abgelehnte Daten
  */
 
+import { company } from '../shared/company';
+
 interface ChatMessage {
   role: 'user' | 'assistant';
   content: string;
@@ -53,6 +55,7 @@ interface ExtractedInfo {
 }
 
 interface ChatResponse {
+  unavailable?: boolean;
   response: string;
   extractedInfo: ExtractedInfo;
   detectedService?: { code: string; name: string };
@@ -858,10 +861,11 @@ ANTWORTE JETZT ALS ${supporterName} (${isFemale ? 'weiblich' : 'männlich'}):
     };
 
   } catch (error) {
-    console.error('Gemini Chat API Error:', error);
+    console.error('Gemini Chat API Error:', error instanceof Error ? error.message : error);
 
     return {
-      response: "Entschuldigung, es gab einen technischen Fehler. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt unter +41 41 320 56 10.",
+      unavailable: true,
+      response: `Der Chat ist gerade nicht verfügbar. Bitte rufen Sie uns an (${company.phone.display}) oder nutzen Sie das Kontaktformular.`,
       extractedInfo: {},
       readyToSend: false,
       missingFields: ['Name', 'Firma/Privatperson', 'Branche', 'Service', 'Größe', 'Frequenz', 'Stadt', 'Timeline', 'Kontakt'],

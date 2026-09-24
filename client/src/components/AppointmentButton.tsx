@@ -4,6 +4,7 @@ import { Calendar } from 'lucide-react';
 import { Button } from './ui/button';
 import { useChatbot } from '../contexts/ChatbotContext';
 import { MagneticHover } from './PremiumParallax';
+import { chatEnabled } from '../../../shared/features';
 
 interface AppointmentButtonProps {
   size?: 'default' | 'sm' | 'lg' | 'icon';
@@ -21,6 +22,16 @@ export default function AppointmentButton({
   const { openChat } = useChatbot();
 
   const handleClick = () => {
+    if (!chatEnabled) {
+      // Bis zur Reparatur des Chats (E14) führt der Button zum Kontaktformular
+      const form = document.getElementById('kontakt-formular');
+      if (form) {
+        form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        window.location.href = '/kontakt#kontakt-formular';
+      }
+      return;
+    }
     openChat(true); // Open chat in appointment mode
   };
 
