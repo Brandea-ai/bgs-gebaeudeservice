@@ -884,6 +884,36 @@ Format nach `00-START-HIER.md`, Abschnitt 6. Gemeinsame Befunde stehen nur hier,
 - **Evidenz/Sicherheit:** HYPOTHESE auf Basis einer Mustersuche. Inhalt nicht eingesehen, Gültigkeit unbekannt.
 - **Quelle:** S28, S29
 
+### GLOBAL-036 · Leistungsseiten inhaltlich dünn und nach einer Schablone befüllt
+
+- **Betroffen:** alle 18 Leistungsseiten (U07–U24)
+- **Prüfdatum/Umgebung:** 24.09.2026, Volltext mit allen Reitern (Phase 3, Faktenblätter)
+- **Ist-Zustand:** Sichtbarer Text inklusive aller Reiter je Leistungsseite: 76 bis 447 Wörter, Median 318. `/basis/sonderleistungen` hat 76 Wörter und eine einzige FAQ. Alle Seiten folgen derselben Schablone: Hero mit „Professionelle …“, vier Merkmalskarten, drei Reiter (Leistungen / Ablauf / Service-Pakete mit „Individuelles Angebot“), vier FAQs, CTA. Die Service-Pakete „Basic/Standard/Premium“ haben keinen unterscheidbaren Inhalt.
+- **Beleg:** N023, N027, Faktenblätter Phase 3
+- **Auswirkung:** Die Seiten beantworten die Kaufentscheidung kaum (Umfang, Grenzen, Ablauf, Belege). Sie wirken austauschbar und bieten Suchmaschinen wenig eigenständigen Inhalt [S02].
+- **Priorität:** P1 · **Launch-Blocker:** nein
+- **Konkrete Vorgabe:** Nach Klärung des Leistungsumfangs (R3) je bestätigter Leistung eine Seite mit echtem Inhalt: Kundenproblem, konkreter Umfang und Grenzen, Ablauf ab Anfrage, Rhythmus-Beispiele, Belege, echte FAQs, eine klare Handlungsaufforderung. Nicht bestätigte Leistungen nicht mit Schablonentext füllen. Keine Mindestwortzahl als Ziel, die Vollständigkeit der Entscheidungsinformation zählt. Die Detailvorgaben stehen in den Seitenberichten.
+- **Abnahmekriterium:** Je Leistungsseite sind die Fragen „für wen“, „was genau, was nicht“, „wie läuft es ab“, „wo“ und „welche Belege“ im sichtbaren Text beantwortet. Die Redaktion bestätigt die Fakten. Der Austauschtest schlägt fehl.
+- **Aufwand/Verantwortlich:** Redaktion mit Fachinput des Kunden, mittel bis groß
+- **Abhängigkeiten:** R3, GLOBAL-030, GLOBAL-011
+- **Evidenz/Sicherheit:** Inhaltsbefund
+- **Quelle:** S02
+
+### GLOBAL-037 · Deutschland-Deutsch statt Schweizer Hochdeutsch
+
+- **Betroffen:** 26 von 32 Seiten, `app/layout.tsx:85` (`lang="de"`)
+- **Prüfdatum/Umgebung:** 24.09.2026, Volltext
+- **Ist-Zustand:** 75 Schreibungen mit „ß“ im sichtbaren Haupttext, z. B. „Außenanlagen“, „regelmäßige“, „maßgeschneidert“, „Größe“. In der Schweiz ist „ss“ üblich, die Kunden-Website schreibt selbst „Regelmässige“ und „Aussen“ (N014). Die Sprachangabe ist `lang="de"` statt `de-CH`, obwohl `og:locale` bereits `de_CH` ist.
+- **Beleg:** N007, N014, Zählung Phase 3
+- **Auswirkung:** Die Seite wirkt für ein Schweizer Publikum nicht lokal. Das ist ein kleiner, aber sichtbarer Vertrauensfaktor.
+- **Priorität:** P2 · **Launch-Blocker:** nein
+- **Konkrete Vorgabe:** Durchgehend Schweizer Rechtschreibung („ss“), Schweizer Begriffe (z. B. „Offerte“, „Hauswartung“) dort, wo sie für die Zielgruppe üblich sind, und `lang="de-CH"`. Slugs bleiben unverändert, sie enthalten bereits kein „ß“.
+- **Abnahmekriterium:** Die Volltextsuche über alle Seiten findet kein „ß“. `<html lang="de-CH">` ist gesetzt. Die Redaktion bestätigt die Begriffswahl.
+- **Aufwand/Verantwortlich:** Redaktion, klein
+- **Abhängigkeiten:** Neutexte aus GLOBAL-036
+- **Evidenz/Sicherheit:** Inhaltsbefund
+- **Quelle:** —
+
 ## O. Globales Ergebnis nach der Prüfung
 
 **Stand 24.09.2026 (Phase 2):** 35 globale Befunde, davon **P0: 4** (GLOBAL-001, -002, -003, -035), **P1: 19**, **P2: 11**, **P3: 1**. 17 Befunde sind als Launch-Blocker markiert (einschließlich vorgeschlagener). Die Priorisierung wird in Phase 5 überprüft und in `06-MASSNAHMEN-BACKLOG.md` übertragen.
