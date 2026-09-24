@@ -15,14 +15,11 @@ const nextConfig: NextConfig = {
   },
 
   // Image Optimization
+  // Keine fremden Hosts: Die Seiten nutzen next/image nicht, ein offenes
+  // Muster würde den Bildoptimierer als Proxy für beliebige Hosts öffnen (M02).
   images: {
     formats: ['image/avif', 'image/webp'],
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '**',
-      },
-    ],
+    remotePatterns: [],
   },
 
   // Experimental Features
