@@ -34,7 +34,7 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 | 0 | Scope klären | **Erledigt 24.09.2026** (B03 dokumentiert offen) | `07-BRIEFING-UND-ENTSCHEIDUNGEN.md` |
 | 1 | Bestand sichern: URL-Inventar, Baseline, Architektur | **Erledigt 24.09.2026** (Browser-Systemtests → Phase 2) | `02-URL-INVENTAR.md`, `08-PRUEFNACHWEISE.md` (N001–N019), `01-GLOBALE-ANALYSE.md` (Bestandsaufnahme) |
 | 2 | Strategie und globale Prüfung | **Erledigt 24.09.2026** (35 Befunde, 169 Prüfpunkte, Rückfragen R1–R12) | `01-GLOBALE-ANALYSE.md`, `08` (N020–N032), `07` (Abschnitt 2a) |
-| 3 | Seitenprüfung | Offen | `Seiten/` |
+| 3 | Seitenprüfung | **Erledigt 24.09.2026** (31 Berichte, 88 SEITE-Befunde, Nachweise N033–N038) | `Seiten/`, `02-URL-INVENTAR.md` (Empfehlung je URL) |
 | 4 | Querprüfung | Offen | `03-SUCHINTENTION-UND-KANNIBALISIERUNG.md` u. a. |
 | 5 | Risiko und Priorisierung | Offen | `06-MASSNAHMEN-BACKLOG.md`, `05-DEPLOY-FREIGABE.md` |
 | 6 | Gegenprüfung | Offen | alle |
@@ -51,10 +51,21 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 
 | 24.09.2026 | Phase 2 | Browser-Prüfung aller 32 Seiten (Desktop/Mobil, 7 Breiten), versteckte Inhalte, Volltext und Behauptungen, Impressum/Datenschutz, Medien, Lighthouse-Labor, axe-core/Tastatur, lokaler End-to-End-Formulartest. FIMI-Prinzipien nur lesend ausgewertet. 35 globale Befunde (P0: 4, P1: 19, P2: 11, P3: 1), 169 Prüfpunkte A–N bearbeitet, Nachweisregister, Markenrichtungen, Budgets, Datenfluss. Gebündelte Rückfragen R1–R12. |
 
+| 24.09.2026 | Phase 3 | 31 Seitenberichte für alle 32 URLs und die fehlende Übersicht, 88 seitenspezifische Befunde (P1: 36, P2: 44, P3: 8), alle Seiten „BEFUND, nicht freigabefähig“. 13 Berichte selbst geschrieben, 18 von vier Hilfsagenten nach dem Musterbericht P03 entworfen und stichprobenartig gegen Code und HTML geprüft. Amtliches UID-Register: Kundin ist die „BGS - Gebäudeservice GmbH“ (N033), Registerdaten zu Gründung und Zweck (N037). Cookie-Messung (N034), Umbruchtest (N036), Suchergebnis-Stichprobe (N038). Nachweisregister um alle Fundstellen erweitert. Messkorrektur N023/GLOBAL-011 (alle vier Blogartikel betroffen). Namen aus Kundenstimmen durch ein Muster ersetzt. |
+
+## Abweichungen und Vorfälle
+
+| Datum | Was | Auswirkung | Behandlung |
+|---|---|---|---|
+| 24.09.2026 | **Jeder der sechs Pushes auf den Arbeits-Branch hat automatisch ein Vercel-Preview-Deployment ausgelöst** (N035). Regel 3 verbietet Deployments, E03 erlaubt nur Commit und Push. | Produktion unverändert (`d7e1122`). Die Previews sind per Vercel Authentication geschützt, enthalten nur zusätzliches Markdown, nutzen aber die gemeinsamen Umgebungsvariablen. Build-Minuten verbraucht. | Seit der Entdeckung wird nur lokal committet. Nutzerentscheidung angefragt (E10). Keine Previews gelöscht, weil nur lesender Zugriff erlaubt ist (E08). |
+| 24.09.2026 | Drei Hilfsagenten haben entgegen der Vorgabe je einen lesenden git-Befehl ausgeführt (`git log -1` bzw. `git status`). | Keine inhaltliche Änderung. `git status` kann höchstens den Index-Zeitstempel auffrischen. | Dokumentiert. Die Ergebnisse der Agenten wurden geprüft: Nur die vorgesehenen Berichtsdateien wurden geschrieben, FIMI blieb unberührt. |
+| 24.09.2026 | Messartefakt in N023 bei zwei Seiten (Reiterwechsel nicht ausgelöst). | Zahlen zu verborgenen Inhalten zu niedrig, eine Seite fälschlich als unbetroffen geführt. | Per Code-Abgleich korrigiert (N023, GLOBAL-011). |
+
 ## Offene Punkte
 
-- **B03, Leistungsumfang:** Die Vorgabe nennt fünf, die neue Seite hat 18, die bisherige Kunden-Website nennt 2 Bereiche mit 7 Unterleistungen. Bis zur Antwort werden alle 18 vorhandenen Seiten geprüft. Die fünf Leistungsdateien werden erst nach der Klärung umbenannt.
-- **B04–B10, B13, B14:** Geschäftsfragen, die sich nicht aus dem Repository beantworten lassen. Sie werden gebündelt gestellt, sobald die globale Prüfung zeigt, welche Antworten wirklich fehlen.
+- **B03/R3, Leistungsumfang:** Die Vorgabe nennt fünf, die neue Seite hat 18, die bisherige Kunden-Website nennt 2 Bereiche mit 7 Unterleistungen. Alle 18 Seiten sind geprüft. Die fünf Leistungsdateien sind vorläufig zugeordnet (E09). Für die übrigen 13 gilt bis zur Antwort Pfad (b) der Berichte (308 auf eine bestätigte Leistung oder 410, siehe 02).
+- **E10, Push und Preview-Deployments:** Nutzerentscheidung ausstehend. Bis dahin nur lokale Commits.
+- **R1–R12 (gebündelte Rückfragen, 07 Abschnitt 2a):** Geschäftsfragen, die sich nicht aus dem Repository beantworten lassen. R7 ist durch das UID-Register teilweise beantwortet (N033). Zu R2, R5 und R6 gibt es Hinweise aus Registern und Verzeichnissen (N037, N038).
 - **B08:** Soll die neue Seite später unter `bgs-service.ch` laufen und die bisherige ersetzen? Davon hängen der Migrationsbestand und die Indexierungsstrategie für `*.vercel.app` ab.
 
 ## Die wichtigsten Befunde nach Phase 2 (Details in 01)
@@ -69,6 +80,14 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 
 **SEO-Grundlage (P1):** 32 identische Titel und Beschreibungen, kein Canonical, keine strukturierten Daten, FAQ-/Reiter-Inhalte nicht im HTML, unsichtbarer Hero, Hydration-Fehler auf allen Seiten (GLOBAL-009 bis -013).
 
+## Die wichtigsten Ergebnisse aus Phase 3
+
+- **Registerdaten statt Werbetext:** Die Kundin heißt amtlich „BGS - Gebäudeservice GmbH“ (N033). Laut Registerdaten hat sie den Zweck Gebäudereinigung und -unterhalt erst seit 2012 (N037). „Gründung 2005“, „15+ Jahre“ und „Erfahrung seit 2008“ sind damit nicht belegt.
+- **Leistungsangebot:** 13 der 18 Leistungsseiten haben keine direkte Entsprechung in der Eigenangabe des Kunden. Manche lassen sich als Teil einer Kernleistung deuten, etwa Büro- oder Fensterreinigung, Facility Management als „Facility-Services“. Einige sind in sich widersprüchlich: Versicherungssumme 5 bzw. 10 Mio. CHF, Öko-Mittel „immer“ bzw. „auf Wunsch“, ISO „zertifiziert“, „erreicht“ bzw. „in Bearbeitung“.
+- **Preise ohne Grundlage** auf vier Seiten, eine davon als verbindlich formuliert („berechnen wir“).
+- **Die Kernleistungen des Kunden** (Unterhaltsreinigung, Hauswartung, Winterdienst, Aussenanlagen, Sonderreinigungen) sind die dünnsten Seiten. Den Begriff „Hauswartung“ nennt keine davon.
+- **Datenschutz:** Die Website setzt ohne Einwilligung keine Cookies, lädt auf `/kontakt` aber Google-Dienste. Die Erklärung beschreibt eine andere Verarbeitung als die tatsächliche.
+
 ## Nächste Aufgabe
 
-Phase 3: Seitenprüfung. Seitenberichte für P01, P02 (fehlt, als Befund), die Leistungsseiten, Über uns, Einzugsgebiete (3 Standortseiten), Kontakt, Impressum, Datenschutz sowie zusätzliche Berichte für Referenzen und Blog. Je Seite: Ist-Zustand, seitenspezifische Befunde (SEITE-…), konkrete Vorgaben (Titel, Beschreibung, H1, Abschnitte, Bilder, Links, Schema). Wo Kundenangaben fehlen (R2–R7), als bedingter Vorschlag.
+Phase 4: Querprüfung. Intent-Matrix und Zuständigkeit je Suchintention, Konflikte mit Empfehlung, Alt-neu-Mapping (Zielstruktur), widersprüchliche Aussagen über Seiten hinweg, Metadaten, interne Links, Designkonsistenz, Seitenvorlagen und gemeinsame Backend-Abhängigkeiten (`03-SUCHINTENTION-UND-KANNIBALISIERUNG.md`). Wettbewerbsvergleich in `04-WETTBEWERB-UND-MARKT.md` (Entwurf durch Hilfsagent läuft).

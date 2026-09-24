@@ -1,6 +1,6 @@
 # URL-Inventar und Prüfabdeckung
 
-**Status: Phase 1 durchgeführt am 24.09.2026.** Alle Routen des geprüften Stands (`main` @ `d7e1122`, identisch mit dem Produktions-Deployment laut N003) sind inventarisiert und auf Produktion per HTTP geprüft (N007, N008). Die individuelle Inhalts- und Metadatenprüfung je Seite folgt in Phase 3. Slugs werden weder erfunden noch stillschweigend geändert.
+**Status: Phase 1 durchgeführt am 24.09.2026, Seitenberichte aus Phase 3 ergänzt (siehe „Seitenberichte und Empfehlung je URL“).** Alle Routen des geprüften Stands (`main` @ `d7e1122`, identisch mit dem Produktions-Deployment laut N003) sind inventarisiert und auf Produktion per HTTP geprüft (N007, N008). Die individuelle Inhalts- und Metadatenprüfung je Seite folgt in Phase 3. Slugs werden weder erfunden noch stillschweigend geändert.
 
 **Produktions-URL:** `https://bgs-gebaeudeservice.vercel.app`. Das ist die neue Website, die Brandea für den Kunden baut (E07). Eine eigene Domain ist nicht verbunden (N002). Die bisherige Website des Kunden liegt auf `www.bgs-service.ch` (Wix, N014). Sie ist nicht Teil dieses Projekts, wird hier aber als Migrationsbestand geführt (siehe unten).
 
@@ -10,15 +10,15 @@ Zuordnung der zwölf im Auftrag erwarteten Seiten zum tatsächlichen Bestand:
 
 | ID | Seite | Tatsächliche URL | Codepfad | Bericht | Prüfstatus |
 |---|---|---|---|---|---|
-| P01 | Homepage | `/` (U01) | `app/page.tsx` | Seiten/01-homepage.md | HTTP geprüft (N007). Seitenprüfung offen |
-| P02 | Alle Leistungen | **Keine eigene URL** (`/leistungen` → 404, N008). Übersicht nur als Mega-Menü (18 Links in 3 Gruppen), als Startseiten-Abschnitt „Unsere Reinigungsdienstleistungen“ und im Footer | — | Seiten/02-alle-leistungen.md | BEFUND: erwartete Seite fehlt. Bewertung in Phase 3 |
-| P03–P07 | Leistung 1–5 | **18 Leistungsseiten statt 5:** 4 Premium (U07–U10), 9 Business (U11–U19), 5 Basis (U20–U24) | `app/premium/*`, `app/business/*`, `app/basis/*` | Seiten/03–07 (Umbenennung nach Klärung B03) | Zuordnung offen (B03). Bis dahin werden alle 18 geprüft |
-| P08 | Über uns | `/ueber-uns` (U02) | `app/ueber-uns/page.tsx` | Seiten/08-ueber-uns.md | HTTP geprüft. Seitenprüfung offen |
-| P09 | Einzugsgebiete | **Keine Übersichtsseite** (`/standorte` → 404). Drei Standortseiten: `/standorte/zuerich`, `/standorte/zug`, `/standorte/luzern` (U25–U27) | `app/standorte/*` | Seiten/09-einzugsgebiete.md (deckt U25–U27 ab) | HTTP geprüft. Seitenprüfung offen |
-| P10 | Kontakt | `/kontakt` (U03) | `app/kontakt/page.tsx` | Seiten/10-kontakt.md | HTTP geprüft. Seitenprüfung offen |
-| P11 | Impressum | `/impressum` (U04) | `app/impressum/page.tsx` | Seiten/11-impressum.md | HTTP geprüft. Seitenprüfung offen |
-| P12 | Datenschutz | `/datenschutz` (U05) | `app/datenschutz/page.tsx` | Seiten/12-datenschutz.md | HTTP geprüft. Seitenprüfung offen |
-| Zusatz | Referenzen, Blog-Übersicht, 4 Blogartikel | U06, U28–U32 | siehe unten | Werden in Phase 3 als zusätzliche Seitenberichte angelegt (tatsächlich vorhanden) | HTTP geprüft |
+| P01 | Homepage | `/` (U01) | `app/page.tsx` | Seiten/01-homepage.md | Seitenprüfung erledigt: BEFUND |
+| P02 | Alle Leistungen | **Keine eigene URL** (`/leistungen` → 404, N008). Übersicht nur als Mega-Menü (18 Links in 3 Gruppen), als Startseiten-Abschnitt „Unsere Reinigungsdienstleistungen“ und im Footer | — | Seiten/02-alle-leistungen.md | Seitenprüfung erledigt: BEFUND, Seite fehlt (Vorgabe für `/leistungen` im Bericht) |
+| P03–P07 | Leistung 1–5 | **18 Leistungsseiten statt 5:** 4 Premium (U07–U10), 9 Business (U11–U19), 5 Basis (U20–U24) | `app/premium/*`, `app/business/*`, `app/basis/*` | Seiten/03–07 (vorläufige Zuordnung E09), weitere 13 Leistungsseiten in Seiten/13–25 | Alle 18 geprüft: BEFUND. Endgültige Zuordnung hängt an R3 |
+| P08 | Über uns | `/ueber-uns` (U02) | `app/ueber-uns/page.tsx` | Seiten/08-ueber-uns.md | Seitenprüfung erledigt: BEFUND |
+| P09 | Einzugsgebiete | **Keine Übersichtsseite** (`/standorte` → 404). Drei Standortseiten: `/standorte/zuerich`, `/standorte/zug`, `/standorte/luzern` (U25–U27) | `app/standorte/*` | Seiten/09-einzugsgebiete.md (deckt U25–U27 ab) | Seitenprüfung erledigt: BEFUND |
+| P10 | Kontakt | `/kontakt` (U03) | `app/kontakt/page.tsx` | Seiten/10-kontakt.md | Seitenprüfung erledigt: BEFUND |
+| P11 | Impressum | `/impressum` (U04) | `app/impressum/page.tsx` | Seiten/11-impressum.md | Seitenprüfung erledigt: BEFUND |
+| P12 | Datenschutz | `/datenschutz` (U05) | `app/datenschutz/page.tsx` | Seiten/12-datenschutz.md | Seitenprüfung erledigt: BEFUND |
+| Zusatz | Referenzen, Blog-Übersicht, 4 Blogartikel | U06, U28–U32 | siehe unten | Seiten/26–31 | Seitenprüfung erledigt: BEFUND |
 
 **Hinweis zum Leistungsumfang (für B03):** Die bisherige Website des Kunden nennt zwei Leistungsbereiche, Gebäudereinigung und Hauswartung, mit zusammen sieben Unterleistungen (N014). Die neue Seite führt 18 Leistungen, darunter Privatjet, Yacht, Luxusimmobilien, Maschinen- und Industriereinigung, die dort nicht vorkommen. Welche Leistungen der Kunde tatsächlich anbietet, ist eine Geschäftsfrage und bleibt bis zur Antwort offen.
 
@@ -29,7 +29,7 @@ Zuordnung der zwölf im Auftrag erwarteten Seiten zum tatsächlichen Bestand:
 - [ ] Vorhandene Search-Console-Landingpages und historische URLs ergänzen, soweit zugänglich. *Search Console: NICHT PRÜFBAR (kein Zugang, B11). Historische URLs: Die Menü-URLs der bisherigen Kunden-Website sind erfasst (siehe unten), weitere Unterseiten sind unbekannt.*
 - [x] Alle tatsächlich bestehenden Regional-, Branchen-, Ratgeber- oder sonstigen Unterseiten zusätzlich aufnehmen. *3 Standortseiten, 4 Blogartikel, Referenzen.*
 - [x] HTTP-/Host-/Trailing-Slash- und Parameter-Varianten dokumentieren, ohne jede technische Dublette als eigene redaktionelle Seite zu zählen. *Siehe „Varianten und Systemdateien“.*
-- [ ] Weiterleitungen, Fehlerseiten und systemische Zustände gesondert prüfen. *404 geprüft, Formulare, Consent, Navigation und Ladezustände folgen im Browser-Test (Phase 2/3).*
+- [x] Weiterleitungen, Fehlerseiten und systemische Zustände gesondert prüfen. *Erledigt, siehe „Systemische Zustände“ (N008, N012, N020, N022, N025, N031, N032, N034).*
 
 ## Tatsächliches Inventar (Stand 24.09.2026, Quelle N005, N007, N009)
 
@@ -131,14 +131,59 @@ Nur nachrichtlich, ohne weitere Abrufe (E07). Soll die neue Seite später die bi
 | `https://www.bgs-service.ch/gebäudereinigung` | Gebäudereinigung | Offen, abhängig von B03 | Offen |
 | `https://www.bgs-service.ch/hauswartung` | Hauswartung | Offen (heute am ehesten `/basis/hausmeisterservice`) | Offen |
 | `https://www.bgs-service.ch/kontakt` | Kontakt | `/kontakt` | Offen |
+| `http://www.bgs-service.ch/bgs-gebaeude-serviceleistungen.html` | Ältere Seite, laut Suchtreffer „gebäudereinigung emmenbrücke, emmen, luzern, zug, zürich“ | Offen (Leistungsübersicht P02) | Nur aus Suchergebnis bekannt (N038), nicht abgerufen |
+| `http://www.bgs-service.ch/gebaeude-serviceleistungen-luzern.html` | Ältere Seite „angebot, kontakt“ | Offen (`/kontakt` oder P02) | Nur aus Suchergebnis bekannt (N038), nicht abgerufen |
+| `http://www.bgs-service.ch/impressum.html` | Ältere Impressumsseite | `/impressum` | Nur aus Suchergebnis bekannt (N038), nicht abgerufen |
+
+## Seitenberichte und Empfehlung je URL (Phase 3, Stand 24.09.2026)
+
+Alle 32 Inhalts-URLs und die fehlende Übersicht P02 haben einen Seitenbericht. **Urteil überall: BEFUND, nicht freigabefähig.** Die Spalte „Empfehlung“ fasst den Pfad zusammen, der gilt, **solange R3 (Leistungen) und R4 (Region) nicht beantwortet sind**. Bestätigt der Kunde eine Leistung, gilt der Pfad (a) des jeweiligen Berichts. Das endgültige Alt-neu-Mapping mit der Zielstruktur steht in `03-SUCHINTENTION-UND-KANNIBALISIERUNG.md`.
+
+| ID | URL | Bericht | Empfehlung bis R3/R4 | Seitenspezifische Befunde |
+|---|---|---|---|---|
+| — | `/leistungen` (fehlt) | 02 | Neu anlegen (Übersicht Gebäudereinigung/Hauswartung) | SEITE-P02-001, -002 |
+| U01 | `/` | 01 | Behalten, umbauen | SEITE-P01-001, -002 |
+| U02 | `/ueber-uns` | 08 | Behalten, neu schreiben | SEITE-P08-001, -002 |
+| U03 | `/kontakt` | 10 | Behalten, Formular auf die Seite | SEITE-P10-001, -002 |
+| U04 | `/impressum` | 11 | Behalten, registrierter Name | SEITE-P11-001, -002 |
+| U05 | `/datenschutz` | 12 | Behalten, zuletzt gegen die Umsetzung neu schreiben | SEITE-P12-001, -002 |
+| U06 | `/referenzen` | 26 | Nicht veröffentlichen, bis echte Belege vorliegen (404, aus Navigation, Footer und Sitemap entfernen) | SEITE-P26-001 bis -004 |
+| U07 | `/premium/privatjet` | 21 | 410 | SEITE-P21-001 bis -003 |
+| U08 | `/premium/yacht` | 22 | 410 | SEITE-P22-001, -002 |
+| U09 | `/premium/housekeeping` | 23 | 410. Nur wenn Privathaushalte bestätigt werden: 308 auf die Unterhaltsreinigung | SEITE-P23-001 bis -004 |
+| U10 | `/premium/luxusimmobilien` | 24 | 308 auf die Sonderleistungen, wenn diese die Materialpflege beschreiben, sonst 410 | SEITE-P24-001 bis -004 |
+| U11 | `/business/bueroreinigung` | 13 | 308 auf die Unterhaltsreinigung | SEITE-P13-001 bis -003 |
+| U12 | `/business/baureinigung` | 14 | 308 auf die Sonderleistungen bei fachlicher Eignung, sonst 410 | SEITE-P14-001 bis -003 |
+| U13 | `/business/industriereinigung` | 15 | 308 auf die Sonderleistungen bei fachlicher Eignung, sonst 410 | SEITE-P15-001 bis -003 |
+| U14 | `/business/fassadenreinigung` | 16 | 308 (Fenster- bzw. Sonderreinigung) oder 410 | SEITE-P16-001 bis -004 |
+| U15 | `/business/fensterreinigung` | 17 | 308 (Unterhalts- bzw. Fassadenreinigung) oder 410 | SEITE-P17-001 bis -003 |
+| U16 | `/business/aussenanlagen` | 07 | Behalten (Kernleistung laut N014), Winterdienst-Doppelung entfernen | SEITE-P07-001, -002 |
+| U17 | `/business/hallenreinigung` | 18 | 308 (Industrie- bzw. Unterhaltsreinigung) oder 410 | SEITE-P18-001 bis -003 |
+| U18 | `/business/maschinenreinigung` | 19 | 308 (Industrie- bzw. Sonderreinigung) oder 410 | SEITE-P19-001 bis -004 |
+| U19 | `/business/facility-management` | 20 | 308 auf den Hausmeisterservice | SEITE-P20-001 bis -004 |
+| U20 | `/basis/unterhaltsreinigung` | 03 | Behalten (Kernleistung) | SEITE-P03-001, -002 |
+| U21 | `/basis/hausmeisterservice` | 04 | Behalten (Kernleistung), Kundenbegriff „Hauswartung“ | SEITE-P04-001, -002 |
+| U22 | `/basis/winterdienst` | 06 | Behalten (Kernleistung), einzige Winterdienst-Seite | SEITE-P06-001, -002 |
+| U23 | `/basis/beschaffung` | 25 | 308 auf die Unterhaltsreinigung | SEITE-P25-001 bis -003 |
+| U24 | `/basis/sonderleistungen` | 05 | Behalten nur mit Leistungsliste (R3), sonst zurückstellen | SEITE-P05-001 bis -003 |
+| U25 | `/standorte/zuerich` | 09 | 308 auf die künftige Einzugsgebietsseite | SEITE-P09-001, -002 |
+| U26 | `/standorte/zug` | 09 | 308 auf die Einzugsgebietsseite oder eigene Seite mit echtem lokalem Inhalt | SEITE-P09-002 |
+| U27 | `/standorte/luzern` | 09 | wie Zug | SEITE-P09-002 |
+| U28 | `/blog` | 27 | Behalten, überarbeiten | SEITE-P27-001 bis -003 |
+| U29 | `/blog/professionelle-gebaeudereinigung` | 28 | 308 auf `/blog/richtige-reinigungsfirma-finden` (zusammenführen) | SEITE-P28-001, -002 |
+| U30 | `/blog/reinigungskosten-schweiz` | 29 | Behalten nur ohne unbelegte Zahlen | SEITE-P29-001 bis -003 |
+| U31 | `/blog/richtige-reinigungsfirma-finden` | 30 | Behalten, überarbeiten | SEITE-P30-001 bis -003 |
+| U32 | `/blog/umweltfreundliche-reinigung` | 31 | Zurückstellen (vor Launch nicht ausliefern) | SEITE-P31-001 bis -003 |
+
+**Summe:** 88 seitenspezifische Befunde (P1: 36, P2: 44, P3: 8). 34 davon sind als Launch-Blocker markiert, fast alle als Einzelfälle von GLOBAL-021 (unbelegte Aussagen) oder GLOBAL-022/-023 (Stimmen, Bilder).
 
 ## Systemische Zustände, soweit vorhanden
 
 - [x] 404 und serverseitiger Fehler. *404 liefert korrekt Status 404 (N008). Widersprüchliche robots-Meta-Tags werden als Befund geführt. Ein serverseitiger Fehler bei `/api/chat` wird als HTTP 200 ausgeliefert (N012, N017).*
-- [ ] Formular: leer, ungültig, wird gesendet, erfolgreich, Providerfehler, Wiederholung. *Code gelesen (N016), Browser-Test mit lokalem Build folgt. Kein Absenden auf Produktion.*
-- [ ] Cookie-/Consent-Zustände und Widerruf. *Code gelesen (N010), Browser-Test folgt.*
-- [ ] Navigation: mobil, Tastatur, geöffnetes Menü, Fokuswechsel.
-- [ ] Ladezustände, ausfallende API, fehlendes Bild und blockierter Drittanbieter. *Belegt: Die Chat-API fällt in Produktion aus (N012).*
+- [x] Formular: leer, ungültig, wird gesendet, erfolgreich, Providerfehler, Wiederholung. *Geprüft im lokalen Build (N032): leer und ungültig abgefangen, Doppelklick eine Anfrage, Providerfehler wird als Erfolg gemeldet (GLOBAL-003). Kein Absenden auf Produktion.*
+- [x] Cookie-/Consent-Zustände und Widerruf. *Geprüft (N025, N034): ohne Auswahl keine Cookies, Google-Dienste auf `/kontakt` trotzdem geladen, Auswahl wirkungslos, kein Widerrufsweg (GLOBAL-019, SEITE-P12-001).*
+- [x] Navigation: mobil, Tastatur, geöffnetes Menü, Fokuswechsel. *Geprüft (N031): Fokus sichtbar. Das Mega-Menü öffnet nur per Maus (GLOBAL-026, SEITE-P02-001). Der mobile Menü-Button hat weder Namen noch Zustand, die Gruppenüberschriften im mobilen Menü sind keine Links.*
+- [x] Ladezustände, ausfallende API, fehlendes Bild und blockierter Drittanbieter. *Teilweise geprüft: Die Chat-API fällt in Produktion aus und meldet HTTP 200 (N012, N017). Die Karte zeigt ohne gültigen Schlüssel eine Google-Fehlermeldung (N020). Ohne JavaScript bleibt der Hero unsichtbar (N022). Ein fehlendes Bild wurde nicht simuliert (NICHT GEPRÜFT, geringe Relevanz, weil alle Bilder lokal liegen).*
 - [x] Preview/Staging und geschützte interne Bereiche. *Vorschauen und Team-Aliase sind per Vercel Authentication geschützt (N002, N008). Offener Punkt: Preview und Production teilen dieselben API-Schlüssel (N011).*
 
 Diese Zustände benötigen keine erfundenen öffentlichen Marketing-URLs. Gemeinsame Befunde im globalen Bericht führen und von betroffenen Seiten darauf verweisen.

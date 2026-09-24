@@ -1,6 +1,6 @@
 # Globale Website-Analyse
 
-**Status: Phase 2 durchgeführt am 24.09.2026.** Bestandsaufnahme (Phase 1), 169 Prüfpunkte A–N bearbeitet (145 mit Status abgehakt, 24 begründet offen), 35 globale Befunde. Die Punkte A–N sind Prüfaufträge. Befunde werden erst nach Prüfung mit ID und Nachweis eingetragen. Quellen-IDs beziehen sich auf `09-QUELLEN.md`, Nachweis-IDs (N…) auf `08-PRUEFNACHWEISE.md`.
+**Status: Phase 2 durchgeführt am 24.09.2026.** Bestandsaufnahme (Phase 1), 169 Prüfpunkte A–N bearbeitet (145 mit Status abgehakt, 24 begründet offen), 35 globale Befunde. **Nachtrag Phase 3:** 37 globale Befunde (GLOBAL-036, -037), Nachträge N033–N035. Die Punkte A–N sind Prüfaufträge. Befunde werden erst nach Prüfung mit ID und Nachweis eingetragen. Quellen-IDs beziehen sich auf `09-QUELLEN.md`, Nachweis-IDs (N…) auf `08-PRUEFNACHWEISE.md`.
 
 ## Bestandsaufnahme der aktuellen Architektur (Phase 1, Stand 24.09.2026)
 
@@ -34,7 +34,7 @@ Dokumentiert, nicht bewertet. Die Bewertung folgt in den Abschnitten A–N.
 - [x] Persona-Aussagen nach Herkunft trennen: Kundeninterview, Vertriebsbeobachtung, CRM-Auswertung oder noch unbestätigte Hypothese. → *NICHT ANWENDBAR im Bestand (die Seite enthält keine Persona-Aussagen). Zielgruppen in dieser Analyse sind als HYPOTHESE markiert (GLOBAL-030)*
 - [x] Überprüfen, ob Texte den Kundenbedarf beschreiben oder überwiegend Selbstlob des Unternehmens enthalten. → *BEFUND: überwiegend Selbstlob und austauschbare Formeln → GLOBAL-030*
 - [x] Differenzierungsbehauptungen in ein Nachweisregister aufnehmen: behaupteter Vorteil, Beleg, zulässige Formulierung und zuständige Person. → *BEFUND: Register siehe unten („Nachweisregister Unternehmensbehauptungen“), für keine Behauptung liegt ein Beleg vor → GLOBAL-021, GLOBAL-022*
-- [ ] Leistungsumfang, Grenzen, Mitwirkungspflichten und realistischer Einstieg sind verständlich. → *Offen, je Leistungsseite in Phase 3*
+- [x] Leistungsumfang, Grenzen, Mitwirkungspflichten und realistischer Einstieg sind verständlich. → *BEFUND (Phase 3, alle 18 Leistungsberichte): Umfang nur als Stichworte, Grenzen und Mitwirkung fehlen fast überall (GLOBAL-036, z. B. SEITE-P19-002). Den realen Einstieg des Kunden, die kostenlose Offerte nach Besichtigung (N014), nennt keine Seite*
 - [ ] Untersuchen, ob die fünf Leistungen inhaltlich unterscheidbar sind und sinnvolle Auswahlhilfe bieten. → *Offen, Phase 4 (Kannibalisierung) nach Klärung B03*
 - [ ] Für das gesamte Angebot eine prägnante Positionierung formulieren lassen: für wen, welches Problem, welches Ergebnis, welche belastbare Besonderheit. → *Offen, braucht B04–B06 → GLOBAL-030*
 - [x] Unbequeme Frage beantworten: **Warum sollte ein passender Kunde dieses Unternehmen wählen, wenn alle Wettbewerber ebenfalls „professionell, zuverlässig und individuell“ versprechen?** → *BEFUND: Derzeit nicht beantwortbar, die Seite enthält keine belegte Besonderheit. Die Antwort muss vom Kunden kommen → B06, GLOBAL-030*
@@ -48,17 +48,25 @@ Keine der Behauptungen ist bisher belegt. Die Spalte „Zulässige Formulierung�
 
 | Behauptung | Fundstelle | Beleg | Zulässige Formulierung (Vorschlag) | Zuständig |
 |---|---|---|---|---|
-| „ISO 9001 zertifiziert“, „Zertifizierte Qualität“, „Zertifiziertes Qualitätsmanagementsystem“ | Büroreinigung, Startseite, Baureinigung, Industriereinigung | **Widerlegt:** laut Impressum „in Bearbeitung“ | Streichen. Erst nach Zertifikat nennen, mit Norm, Stelle und Gültigkeit | Geschäftsführung Kunde |
-| „500+ Kunden“ | Startseite | fehlt | Streichen oder belegte Zahl mit Stichtag | Geschäftsführung Kunde |
-| „15+ Jahre Erfahrung“, Gründung 2005 | Startseite, Baureinigung, Über uns | fehlt (Rechtsform und Gründung der GmbH unbekannt) | Nur mit belegtem Gründungsjahr, z. B. Handelsregister | Geschäftsführung Kunde |
+| „ISO 9001 zertifiziert“, „Zertifizierte Qualität“, „Zertifiziertes Qualitätsmanagementsystem“, „ISO 9001 & ISO 14001 zertifiziert“, „ISO 27001 (Informationssicherheit) zertifiziert“ | Büroreinigung, Startseite, Baureinigung, Industriereinigung, Zürich, Zug (FAQ), Referenzen („ISO-Zertifizierung erreicht“), Privatjet („ISO 9001 & Aviation Standards“), Luxusimmobilien („Zertifiziert“), Facility Management („Qualitätsmanagement nach ISO-Standards“) | **Widerlegt:** laut Impressum „in Bearbeitung“ | Streichen. Erst nach Zertifikat nennen, mit Norm, Stelle und Gültigkeit | Geschäftsführung Kunde |
+| „500+ Kunden“, „Über 500 zufriedene Kunden in Zürich“, „98%“ (Referenzen), „über 50 Privatjet-Besitzern“ | Startseite, Zürich, Referenzen, Privatjet | fehlt, „500“ widersprüchlich (gesamt oder nur Zürich?) | Streichen oder belegte Zahl mit Stichtag | Geschäftsführung Kunde |
+| „15+ Jahre Erfahrung“, Gründung 2005, „Erfahrung seit 2008“ | Startseite, Baureinigung, Über uns, Privatjet | **Widerspricht den Registerdaten:** GmbH eingetragen 1997, bis 2012 mit anderem Zweck, Reinigung und Gebäudeunterhalt erst seit 20.11.2012 (N033, N037). Eine frühere Tätigkeit, etwa als Einzelfirma, wäre vom Kunden zu belegen | Nur mit belegtem Gründungsjahr, z. B. Handelsregister | Geschäftsführung Kunde |
 | „einer der führenden Reinigungsunternehmen in der Schweiz“, „führende Reinigungsfirma in Zug“ | Über uns, Zug | fehlt | Streichen | Redaktion |
-| „Schweizweit“, Standort Zürich, „alle großen Schweizer Flughäfen“ | Startseite, Zürich-Seite, Karte, Privatjet | Widerspruch zur Eigenangabe (LU/ZG) | Nur tatsächlich bediente Regionen (B04) | Geschäftsführung Kunde |
-| „24/7“, Vor Ort in 1–2 bzw. 2–4 Stunden | Startseite, Hausmeister, Winterdienst, Sonderleistungen, Privatjet | fehlt | Nur mit nachweisbarer Bereitschaftsregelung, sonst reale Erreichbarkeitszeiten | Geschäftsführung Kunde |
+| „Schweizweit“, Standort Zürich, „alle großen Schweizer Flughäfen“ (Flugplätze in ZH, GE, BE, SG, TI, GR), „Mittelmeerhäfen“ | Startseite, Zürich-Seite, Karte, Privatjet, Yacht, Aussenanlagen (Überschrift „Schweizweit“), Kontakt („Schwerpunkt auf Luzern, Zug und Zürich“) | Widerspruch zur Eigenangabe (LU/ZG) | Nur tatsächlich bediente Regionen (B04) | Geschäftsführung Kunde |
+| „24/7“, Vor Ort in 1–2 bzw. 2–4 Stunden, „innerhalb von 24 Stunden reagieren“ | Startseite, Hausmeister, Winterdienst, Sonderleistungen, Privatjet, Yacht, Housekeeping, Luxusimmobilien, Facility Management, Industriereinigung, Fassadenreinigung, Zürich, Kontakt, Aussenanlagen, Luzern. Widerspruch auf den Standortseiten: „Erreichbarkeit Mo-Fr 7:00-18:00“ | fehlt | Nur mit nachweisbarer Bereitschaftsregelung, sonst reale Erreichbarkeitszeiten | Geschäftsführung Kunde |
 | „Festpreis-Garantie“ | Fassadenreinigung | fehlt | Nur mit Bedingungen, sonst streichen | Geschäftsführung Kunde |
 | Kundenstimmen (Startseite, Über uns, Referenzen) | siehe GLOBAL-022 | fehlt | Nur mit Freigabe der Person/Organisation | Kunde/Redaktion |
 | Referenzprojekte, Vorher/Nachher, Teambild | Referenzen, Startseite, Über uns | Impressum: KI-Bilder | Nur echte, freigegebene Fotos | Kunde/Design |
 | Rückmeldung „innerhalb von 24 Stunden“ bzw. „12 Stunden (werktags)“ | Formular, Kontakt, Chat | fehlt | Eine bestätigte Zeit (B10) | Geschäftsführung Kunde |
 | „Erstklassig“, „Schweizer Präzision“, „höchste Standards“ | Startseite, diverse | nicht belegbar | Durch konkrete, prüfbare Aussagen ersetzen (Ablauf, Zuständigkeit, Kontrolle) | Redaktion |
+| Preisangaben „CHF 8-12 pro m² monatlich“, „Für Unterhaltsreinigung berechnen wir CHF 45-65 pro Stunde“, Privatjet „beginnt bei CHF 800“, Fassaden „Durchschnittlich CHF 8-15 pro m²“ (Nachtrag Phase 3) | Zürich-FAQ, gleiche Zahlen im Blog (GLOBAL-031), Privatjet, Fassadenreinigung | fehlt | Streichen. Preise nur mit Freigabe, Stand und Bedingungen (SEITE-P09-001) | Geschäftsführung Kunde |
+| „EU Ecolabel oder vergleichbare Zertifizierungen“, „Umweltfreundliche Reinigungsmethoden“, „konsequent auf ökologische Reinigungsmittel“, „Alle Mittel sind umweltfreundlich und biologisch abbaubar“ gegenüber „Auf Wunsch verwenden wir auch ökologische Produkte“ (Nachtrag Phase 3) | Zürich, Maschinenreinigung, Yacht, Unterhaltsreinigung, Blog „Umweltfreundliche Reinigung“ | fehlt, **widersprüchlich** (immer oder nur auf Wunsch?) | Nur mit Produktnachweis, z. B. „Wir setzen Reinigungsmittel mit [Label] ein“ | Geschäftsführung Kunde |
+| „Mehrsprachiges Team (DE, EN, FR, IT)“, „Alle unsere Mitarbeiter sind sorgfältig geprüft und unterzeichnen Vertraulichkeitsvereinbarungen“, „Compliance mit internationalen Standards“ (Nachtrag Phase 3) | Zug, Housekeeping („Führungszeugnisse“, in der Schweiz „Strafregisterauszug“) | fehlt | Nur mit Bestätigung, sonst streichen | Geschäftsführung Kunde |
+| Spezialisierungen je Stadt („von Banken über Tech-Unternehmen bis hin zu Hotels“, „internationale Unternehmen“, „Hotellerie & Gastronomie“), „Lokales Team aus Luzern“, „Lokales Team mit Zürich-Expertise“ (Nachtrag Phase 3) | Standortseiten | fehlt | Nur bestätigte Zielgruppen (R10), sonst streichen (SEITE-P09-002) | Geschäftsführung Kunde |
+| „umfassende Betriebshaftpflichtversicherung“, „CHF 10 Millionen Deckungssumme“, „Betriebshaftpflicht über CHF 5 Millionen“ (Nachtrag Phase 3) | Kontakt-FAQ, Industriereinigung, Luxusimmobilien, Privatjet (10 Mio.), Housekeeping (5 Mio.) | fehlt, **widersprüchliche Summen**. Wäre mit Nachweis ein nützlicher Beleg | Mit Nachweis: „Wir sind haftpflichtversichert, den Nachweis erhalten Sie mit der Offerte“ | Geschäftsführung Kunde |
+| Winterdienst-Zusagen: „ab 2cm Schneehöhe“, „zwischen 4-7 Uhr morgens“, „digital mit Fotos, GPS-Daten und Zeitstempel dokumentiert“, „monatlicher Bericht als Nachweis für die Erfüllung Ihrer Räumpflicht“, „Eigene Streufahrzeuge“, „Dokumentation für Versicherung“ (Nachtrag Phase 3) | Winterdienst, Aussenanlagen | fehlt | Nur mit bestätigter Einsatzregel und einem Beispielbericht (SEITE-P06-001, -P07-001) | Geschäftsführung Kunde |
+| Fach- und Qualifikationsaussagen: „Zertifizierte Höhenarbeiter“, „Hebebühnen bis 60m“, „bis 20m Höhe“, „HACCP-konforme Reinigung“, „Reinraum-Reinigung nach GMP-Standards“, „Arbeitssicherheit (SUVA)“, „Zertifizierte Fachkräfte/Experten“ (Nachtrag Phase 3) | Fassaden, Fenster, Industrie, Maschinen, Hallen | fehlt | Nur mit Nachweis (Schulungs- oder Zertifikatsnachweis, Gerätepark), sonst streichen (SEITE-P15-002, -P16-002, -P17-001, -P19-001) | Geschäftsführung Kunde |
+| Leistungs- und Vertragszusagen: „ab 3 Monaten Laufzeit mit 1 Monat Kündigungsfrist“, „Wir garantieren Vertretung“, „von 500 m² bis zu mehreren 10.000 m²“, Zeitangaben wie „Wohnung (100m²) 1-2 Tage“, „50 Fenster 2-3 Stunden“ (Nachtrag Phase 3) | Büroreinigung, Hallen, Baureinigung, Fenster | fehlt | Vertragsbedingungen nur nach Freigabe (AGB), Zeitangaben nur als Beispiel mit Annahmen | Geschäftsführung Kunde |
 
 ## B. Unternehmensidentität und Vertrauen
 
@@ -70,7 +78,7 @@ Unser Prüfkatalog:
 - [x] Unternehmensgeschichte, Teamgröße, Erfahrung, Zertifikate, Mitgliedschaften und Leistungsfähigkeit sind belegbar. → *BEFUND: unbelegt, ISO-Angabe durch das eigene Impressum widerlegt → GLOBAL-021*
 - [x] Kundenlogos und Referenzen haben nachvollziehbare Nutzungsfreigaben. Kein Logo bedeutet automatisch eine aktuelle Kundenbeziehung. → *BEFUND: keine Freigaben erkennbar, Referenzbilder vermutlich KI → GLOBAL-022, GLOBAL-023. Referenzen-Seite im Detail: Phase 3*
 - [x] Testimonials stammen von echten Personen/Organisationen, stimmen mit dem Original überein und verschweigen keine relevante Gegenleistung. → *HYPOTHESE (vermutlich erfunden) → GLOBAL-022*
-- [ ] Fallbeispiele nennen nachvollziehbar Ausgangslage, Vorgehen, Ergebnis, Zeitraum, eigenen Beitrag und Grenzen. Anonymisierung ist transparent, nicht vorgetäuscht. → *Offen, Referenzen-Seite in Phase 3*
+- [x] Fallbeispiele nennen nachvollziehbar Ausgangslage, Vorgehen, Ergebnis, Zeitraum, eigenen Beitrag und Grenzen. Anonymisierung ist transparent, nicht vorgetäuscht. → *BEFUND (P26): drei Fälle mit Prozentangaben ohne Bezugsgröße, KI-typische Projektbilder, Stimmen passend zu genau einem Fall (SEITE-P26-001 bis -004). Luxusimmobilien nennt identifizierbar wirkende Objekte ohne Nachweis (SEITE-P24-001)*
 - [x] Ansprechpartner und Verantwortlichkeiten sind erkennbar; keine erfundenen KI-Mitarbeiter als reale Teammitglieder. → *BEFUND: KI-Teambild als eigenes Team ausgegeben → GLOBAL-023. Eine verantwortliche Person ist nur in Impressum und Über uns genannt*
 - [x] Aussagen wie „führend“, „Nr. 1“, „garantiert“, „zertifiziert“ oder „100 %“ auf Nachweis und rechtliche Belastbarkeit prüfen. → *BEFUND → GLOBAL-021*
 - [x] Erreichbarkeit und Rückmeldeversprechen passen zur tatsächlichen Organisation. → *BEFUND: 24 h gegenüber 12 h, 24/7 und Vor-Ort-Zeiten unbelegt → GLOBAL-021, GLOBAL-028. Operativ offen → B10*
@@ -143,14 +151,14 @@ Gelesen wurden `FIMI-STANDARDS.md`, `MASTERPLAN-WEBSITE-REDESIGN.md` und `STADT-
 
 **Eigene redaktionelle Prüfung, orientiert an den Qualitätsfragen in [S02]:**
 
-- [ ] Jede Seite beantwortet eine konkrete Frage beziehungsweise unterstützt eine konkrete Entscheidung. → *Offen, Phase 3*
+- [x] Jede Seite beantwortet eine konkrete Frage beziehungsweise unterstützt eine konkrete Entscheidung. → *BEFUND (Phase 3): Die Leistungsseiten folgen einer Vorlage mit austauschbaren Aussagen (GLOBAL-036), die Standortseiten sind Varianten (SEITE-P09-002), die Übersicht fehlt (P02). Konkrete Fragen beantworten am ehesten die FAQ, deren Antworten aber nicht im HTML stehen (GLOBAL-011)*
 - [x] Textaussagen lassen sich auf das tatsächliche Unternehmen beziehen. Der Austauschtest wird durchgeführt: Könnte unverändert ein beliebiger Firmenname eingesetzt werden? → *BEFUND: Austauschtest nicht bestanden → GLOBAL-030*
-- [ ] Konkrete Abläufe, Zuständigkeiten, Leistungsgrenzen und Beispiele ersetzen Füllwörter. → *Offen, Phase 3*
-- [ ] Fachbegriffe sind korrekt und werden bei Bedarf erklärt; Fachlichkeit nicht mit unnötiger Komplexität verwechseln. → *Offen, Phase 3*
+- [x] Konkrete Abläufe, Zuständigkeiten, Leistungsgrenzen und Beispiele ersetzen Füllwörter. → *BEFUND: Schablonenformeln („Professionelle …“ in 12 H1, „höchste Standards“, „makellos“). Wo es konkret wird, sind es unbelegte Zusagen (Nachweisregister, Nachträge Phase 3)*
+- [x] Fachbegriffe sind korrekt und werden bei Bedarf erklärt; Fachlichkeit nicht mit unnötiger Komplexität verwechseln. → *BEFUND: „Unterhaltsreinigung“ als „regelmäßige Grundreinigung“ definiert (SEITE-P28-001). „Beschaffungsmanagement“ verspricht ein System, das es nicht gibt (SEITE-P25-001). Der Schweizer Kundenbegriff „Hauswartung“ fehlt (SEITE-P04-001). „Führungszeugnis“ statt „Strafregisterauszug“ (SEITE-P23-002)*
 - [x] Satzrhythmus, Überschriften und Wortwahl klingen natürlich, nicht wie ein seriell befülltes Template. → *BEFUND: seriell befüllte Vorlage, z. B. H1-Muster „Professionelle …“ auf 12 Seiten (N007) → GLOBAL-030*
 - [x] Kundennutzen und reale Belege stehen zusammen. Zahlen ohne Zeitraum, Bezugsgröße oder Quelle werden markiert. → *BEFUND: Zahlen ohne Beleg markiert → GLOBAL-021, GLOBAL-031*
-- [ ] FAQs stammen aus echten Einwänden oder plausibel begründeten Recherchefragen, nicht aus dem Wunsch nach mehr Keywords. → *Offen, Phase 3 (FAQ-Inhalte liegen in Akkordeons, GLOBAL-011)*
-- [ ] Einstieg, Zwischenüberschriften und CTA sind auf Suchintention und Entscheidungsreife abgestimmt. → *Offen, Phase 3/4*
+- [x] FAQs stammen aus echten Einwänden oder plausibel begründeten Recherchefragen, nicht aus dem Wunsch nach mehr Keywords. → *Teilweise BESTANDEN: Die Fragen sind überwiegend plausibel (Häufigkeit, Kosten, Versicherung, Mittel). BEFUND: Herkunft unbelegt, Antworten mit unbelegten und widersprüchlichen Zusagen (Versicherungssumme 5 bzw. 10 Mio., Öko-Mittel „immer“ bzw. „auf Wunsch“), alle nicht im HTML (GLOBAL-011)*
+- [x] Einstieg, Zwischenüberschriften und CTA sind auf Suchintention und Entscheidungsreife abgestimmt. → *BEFUND: gleiche Einstiegsformel auf allen Leistungsseiten, CTA-Vielfalt (GLOBAL-034). Vorschläge je Seite in den Berichten, Zuständigkeit je Suchintention in 03*
 - [x] Keine Keyword-Dichte, Mindestwortzahl oder vermeintlicher „KI-Erkennungswert“ als Abnahmeziel. → *Eingehalten: Diese Analyse nutzt keine solchen Abnahmeziele*
 - [x] Keine Scheinaktualität durch automatisch geänderte Jahreszahlen; inhaltliche Pflege und echte Überarbeitung unterscheiden. → *BEFUND: automatisches Footer-Jahr (GLOBAL-013), Blog-Daten vor Projektbeginn (GLOBAL-031)*
 - [ ] Redaktionsverantwortung und spätere Aktualisierungsanlässe sind zugeordnet. → *NICHT PRÜFBAR → B14*
@@ -201,7 +209,7 @@ Crawlbar, renderbar, indexierbar, tatsächlich indexiert und gut gerankt sind un
 - [x] Pro Seite Ist-Titel, Ist-Beschreibung, sichtbare Hauptüberschrift, Canonical und Vorschauangaben erfassen. → *Erfasst (02-URL-INVENTAR, N007)*
 - [x] Doppelte oder widersprüchliche Titel mit tatsächlichem Seitenzweck abgleichen. → *BEFUND → GLOBAL-010*
 - [x] Genau eine klar erkennbare Hauptüberschrift als Projektkonvention; keine angebliche Google-Strafe allein aus der Anzahl von H1 ableiten. → *BESTANDEN: 32 von 32 mit genau einer H1*
-- [ ] Konkrete neue Titel und Beschreibungen nur aus bestätigten Informationen entwickeln; keine übertriebenen Superlative. → *Offen, Phase 3, abhängig von B03/B09*
+- [x] Konkrete neue Titel und Beschreibungen nur aus bestätigten Informationen entwickeln; keine übertriebenen Superlative. → *Erledigt in Phase 3: Jeder Seitenbericht enthält Titel, Beschreibung und H1 auf Basis der Eigenangabe (N014) bzw. des Registers (N033). Bei unbestätigten Leistungen stehen zwei Pfade (R3)*
 - [x] Metadaten nicht gleichzeitig an mehreren Stellen widersprüchlich pflegen; Framework-Vererbung und gerenderte Ausgabe kontrollieren. [S26] → *BEFUND: wirkungslose SEO-Komponente neben den Layout-Metadaten → GLOBAL-009*
 - [x] Open-Graph-Vorschauen, Logo, Favicon und Social-Sharing testen. Das sind Darstellungs-/Vertrauensprüfungen, keine Rankinggarantie. → *BEFUND → GLOBAL-014, GLOBAL-010*
 - [x] Unternehmensentität mit stabiler Identität modellieren; Name, Logo und Kontaktdaten konsistent halten. [S14] → *BEFUND: kein Organisations-Markup, Identität widersprüchlich → GLOBAL-020, GLOBAL-010*
@@ -219,7 +227,7 @@ Crawlbar, renderbar, indexierbar, tatsächlich indexiert und gut gerankt sind un
 - [x] KI-Bilder auf künstliche Gesichter, fehlerhafte Hände, erfundene Beschriftungen, unplausible Arbeitsabläufe und falsche Branchenrealität prüfen. → *BEFUND (Stichprobe) → GLOBAL-023*
 - [x] Keine KI-Szene als Foto des echten Teams, eines realen Kundenobjekts oder einer echten Referenz ausgeben. → *BEFUND → GLOBAL-023*
 - [x] Für vertrauensentscheidende Stellen echte, freigegebene Unternehmensbilder bevorzugen; kreative Illustrationen als solche behandeln. → *BEFUND → GLOBAL-023*
-- [ ] Für jedes wichtige Bild Motiv, Platzierung, Mobil-Crop und Aussage definieren. Bilder müssen Inhalt ergänzen, nicht nur große Flächen füllen. → *Offen, Phase 3*
+- [x] Für jedes wichtige Bild Motiv, Platzierung, Mobil-Crop und Aussage definieren. Bilder müssen Inhalt ergänzen, nicht nur große Flächen füllen. → *Erledigt in Phase 3: je Seitenbericht Abschnitt 4 „Bilder“ (Motiv, Format, Budget, Alt-Text, Nutzungsrecht). Grundsatz: echte Fotos mit Freigabe oder weglassen (GLOBAL-023)*
 - [x] Responsive Auslieferung und `sizes` gegen die tatsächliche Layoutbreite prüfen; kein winziges Bild auf großem Display und keine riesige Datei auf Mobilgeräten. [S27] → *BEFUND → GLOBAL-024*
 - [x] Fotoformate anhand Browserunterstützung, Qualität und Transfergröße auswählen; SVG für geeignete Vektorgrafiken gesondert behandeln. [S16] → *BEFUND: JPG statt AVIF/WebP → GLOBAL-024*
 - [x] Kein universelles „jedes Bild maximal 100 KB“. Pro Einsatzklasse begründete Budgets festlegen und mit LCP, Qualität und realen Nutzungsgrößen validieren. → *Budgets vorgeschlagen, siehe „Leistungsbudgets (Vorschlag)“ in I*
@@ -311,9 +319,9 @@ Ein grünes Frontend beweist kein funktionierendes Backend. Prüfe nur tatsächl
 
 - [x] Die erste sichtbare Ansicht vermittelt Angebot, Zielgruppe, belegbaren Nutzen und einen verständlichen nächsten Schritt. → *BEFUND: Mobil ohne Text (GLOBAL-012), belegbarer Nutzen fehlt (GLOBAL-030)*
 - [x] CTA-Beschriftung sagt, was geschieht, statt nur „Mehr“ oder „Absenden“. → *BEFUND → GLOBAL-034*
-- [ ] Für frühe Recherche und konkrete Kaufabsicht gibt es passende nächste Schritte; nicht jeder Besucher wird sofort zur großen Anfrage gedrängt. → *Offen, Phase 3/4*
+- [x] Für frühe Recherche und konkrete Kaufabsicht gibt es passende nächste Schritte; nicht jeder Besucher wird sofort zur großen Anfrage gedrängt. → *BEFUND: Es gibt nur Anfrage, Termin (Chat, defekt) und KI-Berater. Für frühe Recherche fehlen Auswahlhilfe (P02) und belastbare Ratgeber (P28–P31). Vorschläge: Auswahlhilfe auf `/leistungen`, ehrlicher Kostenartikel (P29)*
 - [x] Relevante Belege stehen in der Nähe riskanter Entscheidungen, nicht ausschließlich im Footer. → *BEFUND: vorhandene „Belege“ unbelegt → GLOBAL-021, GLOBAL-022*
-- [ ] Prozess, Aufwand, benötigte Informationen und mögliche Kosten beziehungsweise Angebotslogik werden soweit zutreffend erklärt. → *Offen, Phase 3 (vereinzelte Preisangaben, Blog)*
+- [x] Prozess, Aufwand, benötigte Informationen und mögliche Kosten beziehungsweise Angebotslogik werden soweit zutreffend erklärt. → *BEFUND: Der Ablauf fehlt oder steht in Reitern. Die reale Angebotslogik (Besichtigung, dann kostenlose Offerte, N014) wird nirgends erklärt. Dafür stehen unbelegte Preise auf vier Seiten (SEITE-P09-001, -P16-003, -P21-003, -P29-001)*
 - [x] Formular verlangt nur Informationen, die für den nächsten Schritt wirklich gebraucht werden; spätere Qualifizierung und Spam-Risiko mitdenken. → *BESTANDEN (Pflicht nur Name, E-Mail, Nachricht). Hinweise → GLOBAL-028, GLOBAL-027*
 - [x] Vertrauensaufbau beruht auf echten Ansprechpartnern, Referenzen und Transparenz, nicht auf erfundenen Siegeln. → *BEFUND → GLOBAL-021, GLOBAL-022, GLOBAL-023*
 - [x] Kein künstlicher Countdown, keine erfundene Knappheit und keine manipulative Zustimmungsgestaltung. → *BESTANDEN: kein Countdown, keine Knappheit, „Nur notwendige“ gleichwertig erreichbar*
@@ -338,8 +346,8 @@ Dieser Abschnitt beschreibt Prüfaufträge, keine individuelle Rechtsfreigabe. R
 - [x] BFSG-Anwendungsbereich und Ausnahmen für das konkrete Angebot prüfen. Nicht pauschal behaupten, jede B2B-Unternehmenswebsite falle darunter. [S40][S41] → *NICHT PRÜFBAR in dieser Analyse: Schweizer Anbieter, Anwendbarkeit fachlich zu klären (B13). WCAG trotzdem als Projektmaßstab angewandt*
 - [x] WCAG 2.2 AA als technischen Projektmaßstab anwenden: semantische Struktur, Tastaturbedienbarkeit, sichtbarer Fokus, Kontrast, Formulare, verständliche Fehler und sinnvolle Statusmeldungen. [S22] → *BEFUND → GLOBAL-026*
 - [x] Navigation und Dialoge auf Fokusführung, Schließen und Rückkehr zum Auslöser prüfen. → *BEFUND: Mega-Menü, Menü-Button, Banner → GLOBAL-026. Chat-Dialog nicht geprüft (Chat defekt)*
-- [ ] Vergrößerung, Umbruch und mobile Bedienung testen; reine automatische Scannergebnisse sind keine vollständige Barrierefreiheitsprüfung. → *Teilweise: Breiten-Matrix geprüft, Zoom 200 % offen → Phase 3*
-- [ ] Haupt-Conversion-Strecke zusätzlich manuell per Tastatur und mit geeigneter Screenreader-Stichprobe überprüfen. → *Offen: Tastatur teilweise geprüft, Screenreader-Stichprobe fehlt → Phase 3/6*
+- [x] Vergrößerung, Umbruch und mobile Bedienung testen; reine automatische Scannergebnisse sind keine vollständige Barrierefreiheitsprüfung. → *BESTANDEN mit Einschränkung (N036): kein Seitenüberlauf bei 640 px (≈ 200 % Zoom) und 320 px, nur `/referenzen` 1 px bei 320 px und Überlauf bei 768 px (N020). Mobilbedienung: Menü-Button ohne Namen (GLOBAL-026)*
+- [x] Haupt-Conversion-Strecke zusätzlich manuell per Tastatur und mit geeigneter Screenreader-Stichprobe überprüfen. → *Tastatur geprüft (N031): Formular erreichbar und bedienbar, Fokus sichtbar. Screenreader NICHT PRÜFBAR (kein Screenreader in der Prüfumgebung, N036). Ersatzprüfung per Code: Statusmeldungen werden nicht angekündigt (SEITE-P10-002). Echte Stichprobe mit NVDA oder VoiceOver vor dem Launch nötig*
 
 ## N. Analytics, lokale Sichtbarkeit und Weiterentwicklung
 
@@ -423,8 +431,8 @@ Format nach `00-START-HIER.md`, Abschnitt 6. Gemeinsame Befunde stehen nur hier,
 
 - **Betroffen:** Vercel-Projekt, Umgebungsvariablen
 - **Prüfdatum/Umgebung:** 24.09.2026, Vercel-API (nur Namen)
-- **Ist-Zustand:** `GEMINI_API_KEY`, `RESEND_API_KEY` und `ANTHROPIC_API_KEY` sind für Production, Preview und Development identisch gesetzt, Vercel markiert sie als „readable-secret“. `ANTHROPIC_API_KEY` wird nicht verwendet. Der Gemini-Schlüssel ist ungültig. Der Karten-Schlüssel liegt unter dem Vite-Namen `VITE_GOOGLE_MAPS_API_KEY` und wird vom Code nicht gelesen.
-- **Beleg:** N011, N012
+- **Ist-Zustand:** `GEMINI_API_KEY`, `RESEND_API_KEY` und `ANTHROPIC_API_KEY` sind für Production, Preview und Development identisch gesetzt, Vercel markiert sie als „readable-secret“. `ANTHROPIC_API_KEY` wird nicht verwendet. Der Gemini-Schlüssel ist ungültig. Der Karten-Schlüssel liegt unter dem Vite-Namen `VITE_GOOGLE_MAPS_API_KEY` und wird vom Code nicht gelesen. Nachtrag Phase 3: Jeder Push auf einen beliebigen Branch baut automatisch ein Preview-Deployment mit genau diesen Schlüsseln. Belegt ist das durch sechs Previews aus den Pushes dieser Prüfung, geschützt per Vercel Authentication (N035).
+- **Beleg:** N011, N012, N035
 - **Auswirkung:** Unnötige Angriffsfläche. Aus Vorschauen können echte Mails verschickt werden. Tote und ungültige Schlüssel verschleiern den Betriebszustand.
 - **Priorität:** P1 · **Launch-Blocker:** nein
 - **Konkrete Vorgabe:** Geheimnisse als „sensitiv“ speichern. Getrennte Schlüssel oder Test-Empfänger für Preview und Development. Ungenutzte Schlüssel entfernen und beim Anbieter widerrufen. Variablennamen an den Code anpassen. Eine kurze Liste führen: welcher Schlüssel, wofür, wer ist verantwortlich.
@@ -511,9 +519,9 @@ Format nach `00-START-HIER.md`, Abschnitt 6. Gemeinsame Befunde stehen nur hier,
 
 ### GLOBAL-011 · FAQ-Antworten und Reiter-Inhalte fehlen im ausgelieferten HTML
 
-- **Betroffen:** 26 Seiten, vor allem alle Leistungs- und Standortseiten, `/datenschutz` und drei Blogartikel
+- **Betroffen:** 26 Seiten, vor allem alle Leistungs- und Standortseiten, `/datenschutz` und alle vier Blogartikel (korrigiert in Phase 3, vorher „drei“, siehe N023)
 - **Prüfdatum/Umgebung:** 24.09.2026, echte Klicks im Browser, Abgleich mit dem ausgelieferten HTML
-- **Ist-Zustand:** Die Inhalte geschlossener Akkordeons (0 von 100 im HTML, ca. 21.300 Zeichen, überwiegend FAQ-Antworten) und nicht aktiver Reiter (bei 20 Seiten 2 von 3, ca. 16.300 Zeichen) werden erst nach einem Klick erzeugt.
+- **Ist-Zustand:** Die Inhalte geschlossener Akkordeons (0 von 100 im HTML, ca. 21.300 Zeichen, überwiegend FAQ-Antworten) und nicht aktiver Reiter (bei 20 Seiten 2 von 3, ca. 16.300 Zeichen) werden erst nach einem Klick erzeugt. Nachmessung in Phase 3: Betroffen sind alle 20 Seiten mit Reitern. Die Zeichenzahlen sind Untergrenzen (N023, Korrektur).
 - **Beleg:** N023
 - **Auswirkung:** Suchmaschinen klicken nicht. Diese Inhalte gelten daher als voraussichtlich nicht indexierbar, und die Seite wirkt dünner, als sie ist. Ohne JavaScript sind sie auch für Nutzer unerreichbar.
 - **Priorität:** P1 · **Launch-Blocker:** nein
@@ -648,11 +656,11 @@ Format nach `00-START-HIER.md`, Abschnitt 6. Gemeinsame Befunde stehen nur hier,
 
 - **Betroffen:** alle Seiten (Logo, Footer, Texte), `/impressum`, `/datenschutz`, `/kontakt`, Standortseiten, `server/email.ts`, `server/gemini.ts`
 - **Prüfdatum/Umgebung:** 24.09.2026, Volltext aller Seiten, DNS, Eigenangabe des Kunden
-- **Ist-Zustand:** Der Kunde heißt laut eigener Website „BGS Gebäudeservice GmbH“ (N014). Die neue Seite nennt „BGS“ im sichtbaren Text **kein einziges Mal**. Sie tritt als „Swiss Reinigungsfirma“ auf (42-mal), das Logo zeigt „SWISS REINIGUNG“, auch Impressum und Datenschutz nennen „Swiss Reinigungsfirma“ ohne Rechtsform als Verantwortlichen. Telefonnummer `+41 41 320 56 10` weicht von der Nummer auf der Kunden-Website ab. `info@swiss-reinigung.ch` (3 Standortseiten) liegt auf einer geparkten Domain ohne MX-Eintrag. Die Adresse (Emmenbrücke) und die UID sind nicht belegt. Anfragen gehen an die Agentur (`info@brandea.de`), das Widget trägt „Powered by Brandea AI“.
-- **Beleg:** N009, N013, N014, N016, N026, N027, N028
+- **Ist-Zustand:** Der Kunde heißt laut eigener Website „BGS Gebäudeservice GmbH“ (N014). Die neue Seite nennt „BGS“ im sichtbaren Text **kein einziges Mal**. Sie tritt als „Swiss Reinigungsfirma“ auf (42-mal), das Logo zeigt „SWISS REINIGUNG“, auch Impressum und Datenschutz nennen „Swiss Reinigungsfirma“ ohne Rechtsform als Verantwortlichen. Telefonnummer `+41 41 320 56 10` weicht von der Nummer auf der Kunden-Website ab (Mobilnummer). Verzeichnisse führen sie aber als Festnetznummer der Firma (N038), R5 klärt, welche gilt. `info@swiss-reinigung.ch` (3 Standortseiten) liegt auf einer geparkten Domain ohne MX-Eintrag. Adresse (Tannhof 10, 6020 Emmenbrücke) und UID sind **amtlich belegt** und gehören laut UID-Register der **„BGS - Gebäudeservice GmbH“** (Nachtrag Phase 3, N033). Den registrierten Namen nennt keine Seite. Anfragen gehen an die Agentur (`info@brandea.de`), das Widget trägt „Powered by Brandea AI“.
+- **Beleg:** N009, N013, N014, N016, N026, N027, N028, N033
 - **Auswirkung:** Interessenten können den Anbieter nicht eindeutig zuordnen. Anfragen an die geparkte Adresse gehen verloren oder im schlimmsten Fall an einen Dritten, falls die Domain den Besitzer wechselt. Ein Markenname ohne eigene Domain und ohne Rechtsträger schwächt Vertrauen und Auffindbarkeit (Markensuche „BGS“).
 - **Priorität:** P1 · **Launch-Blocker:** ja (G07, G09)
-- **Konkrete Vorgabe:** Mit dem Kunden die Marke festlegen (B09). Rechtlicher Name „BGS Gebäudeservice GmbH“ in Impressum, Datenschutz, Footer und strukturierten Daten. Alle Kontaktdaten (Telefon, E-Mail, Adresse, UID, Empfänger der Anfragen) vom Kunden schriftlich bestätigen lassen und an **einer** zentralen Stelle im Code pflegen. `info@swiss-reinigung.ch` sofort entfernen. Agentur-Kennzeichnung („Powered by Brandea AI“) aus der Kundenseite entfernen oder bewusst im Impressum als Umsetzungspartner nennen.
+- **Konkrete Vorgabe:** Mit dem Kunden die Marke festlegen (B09). Rechtlicher Name exakt wie im Register, „BGS - Gebäudeservice GmbH“ (N033), in Impressum, Datenschutz, Footer und strukturierten Daten. Alle Kontaktdaten (Telefon, E-Mail, Adresse, UID, Empfänger der Anfragen) vom Kunden schriftlich bestätigen lassen und an **einer** zentralen Stelle im Code pflegen. `info@swiss-reinigung.ch` sofort entfernen. Agentur-Kennzeichnung („Powered by Brandea AI“) aus der Kundenseite entfernen oder bewusst im Impressum als Umsetzungspartner nennen.
 - **Abnahmekriterium:** Volltextsuche über alle Seiten findet nur die bestätigten Angaben, keine abweichende Nummer oder Adresse und keine Domain ohne MX. Firmenname und Rechtsform stimmen in Impressum, Datenschutz, Footer und Schema überein. Eine Testmail an die angezeigte Adresse wird zugestellt (vom Kunden bestätigt).
 - **Aufwand/Verantwortlich:** Geschäftsführung Kunde (Fakten), Redaktion/Entwicklung (Umsetzung), klein
 - **Abhängigkeiten:** B07, B09, B10, GLOBAL-003
@@ -678,7 +686,7 @@ Format nach `00-START-HIER.md`, Abschnitt 6. Gemeinsame Befunde stehen nur hier,
 
 - **Betroffen:** `/` („Was unsere Kunden sagen“), `/ueber-uns`, `/referenzen`, Standortseiten (Detailprüfung Phase 3)
 - **Prüfdatum/Umgebung:** 24.09.2026, Volltext
-- **Ist-Zustand:** Kundenstimmen mit sehr allgemeinen Namen und Firmen („Dr. Thomas Müller, CEO, TechCorp AG“, „Anna Meier, CEO, Meier AG“, „Peter Schmidt, Schmidt & Partner“, „Maria Rossi, Rossi Boutique“) bzw. Kurzformen („Thomas M., Geschäftsführer, Zürich“). Die Zitate loben „Swiss Reinigungsfirma“, also eine Marke ohne Rechtsträger. Keine Quelle, kein Datum, keine Freigabe erkennbar.
+- **Ist-Zustand:** Kundenstimmen mit sehr allgemeinen Namen und Firmen: eine „CEO, TechCorp AG“, drei nach dem Muster „[Vorname Nachname], [Funktion], [Nachname] AG / & Partner / Boutique“, bei denen der Firmenname aus dem Nachnamen gebildet ist, dazu Kurzformen wie „Thomas M., Geschäftsführer, Zürich“. Die vollen Namen werden hier bewusst nicht wiedergegeben. Die Zitate loben „Swiss Reinigungsfirma“, also eine Marke ohne Rechtsträger. Keine Quelle, kein Datum, keine Freigabe erkennbar.
 - **Beleg:** N027
 - **Auswirkung:** Sind die Stimmen nicht echt, ist das eine Täuschung von Interessenten mit rechtlichem Risiko. Auch echte Stimmen ohne Einordnung wirken austauschbar.
 - **Priorität:** P1 (sofortige Entscheidung empfohlen, da öffentlich) · **Launch-Blocker:** ja (G09)
@@ -738,8 +746,8 @@ Format nach `00-START-HIER.md`, Abschnitt 6. Gemeinsame Befunde stehen nur hier,
 
 - **Betroffen:** alle Seiten, `SwissNavigation`, `SwissFooter`, Primär-Buttons, Cookie-Banner
 - **Prüfdatum/Umgebung:** 24.09.2026, axe-core auf 31 Seiten, Lighthouse, Tastaturtest
-- **Ist-Zustand:** Der Primär-Button (weiße Schrift auf Markenrot) erreicht 3,78:1 statt 4,5:1. Insgesamt 166 Kontrastverstöße, zum Teil auch in der Navigation über dem Hero-Bild. 775 zu kleine Klickziele, u. a. Footer-Links 20 px hoch. Kein Skip-Link, keine `<main>`-Landmarke. Das Mega-Menü „Leistungen“ lässt sich per Tastatur nicht öffnen. Der mobile Menü-Button hat keinen zugänglichen Namen und keinen Zustand. Der Cookie-Banner ist kein Dialog. Der Fokus ist sichtbar (BESTANDEN).
-- **Beleg:** N031, N030
+- **Ist-Zustand:** Der Primär-Button (weiße Schrift auf Markenrot) erreicht 3,78:1 statt 4,5:1. Insgesamt 166 Kontrastverstöße, zum Teil auch in der Navigation über dem Hero-Bild. 775 zu kleine Klickziele, u. a. Footer-Links 20 px hoch. Kein Skip-Link, keine `<main>`-Landmarke. Das Mega-Menü „Leistungen“ lässt sich per Tastatur nicht öffnen. Der mobile Menü-Button hat keinen zugänglichen Namen und keinen Zustand. Der Cookie-Banner ist kein Dialog. Der Fokus ist sichtbar (BESTANDEN). Nachtrag Phase 3: Das Footer-Formular sitzt in einem `<footer>`, der einen zweiten `<footer>` enthält, also zwei `contentinfo`-Landmarken, laut HTML unzulässig verschachtelt. Seine Status-Meldungen werden nicht angekündigt (SEITE-P10-002).
+- **Beleg:** N031, N030, Code `SwissFooter.tsx:63, 278`
 - **Auswirkung:** Erschwerte Nutzung für Menschen mit Seh- oder Motorikeinschränkungen und für Tastatur- und Screenreader-Nutzer. Der Kernpfad ist über den Footer erreichbar, daher kein vollständiger Ausschluss.
 - **Priorität:** P1 · **Launch-Blocker:** nein (Kernpfad nicht blockiert, G08). Ob das BFSG gilt, ist fachlich zu klären [S40][S41].
 - **Konkrete Vorgabe:** Markenrot für Flächen mit Text so abdunkeln, dass mindestens 4,5:1 erreicht wird (Designentscheidung, B09). Klickziele mindestens 24×24 px oder ausreichender Abstand. Skip-Link und `<main>` ergänzen. Das Mega-Menü per Tastatur bedienbar machen (Enter/Space öffnet, Escape schließt, Zustand per `aria-expanded`). Den Menü-Button benennen („Menü öffnen“) mit Zustand. Den Cookie-Banner als Dialog mit Fokusführung oder als nicht-modalen, klar erreichbaren Bereich gestalten.
@@ -916,7 +924,7 @@ Format nach `00-START-HIER.md`, Abschnitt 6. Gemeinsame Befunde stehen nur hier,
 
 ## O. Globales Ergebnis nach der Prüfung
 
-**Stand 24.09.2026 (Phase 2):** 35 globale Befunde, davon **P0: 4** (GLOBAL-001, -002, -003, -035), **P1: 19**, **P2: 11**, **P3: 1**. 17 Befunde sind als Launch-Blocker markiert (einschließlich vorgeschlagener). Die Priorisierung wird in Phase 5 überprüft und in `06-MASSNAHMEN-BACKLOG.md` übertragen.
+**Stand 24.09.2026 (Phase 3):** 37 globale Befunde, davon **P0: 4** (GLOBAL-001, -002, -003, -035), **P1: 20**, **P2: 12**, **P3: 1**. 17 Befunde sind als Launch-Blocker markiert (einschließlich vorgeschlagener). GLOBAL-036 (dünne Leistungsseiten) und -037 (Schweizer Schreibweise) kamen in Phase 3 hinzu. Nachträge aus Phase 3 (N033–N035) stehen bei GLOBAL-005, -020, -026 und im Nachweisregister. Die Priorisierung wird in Phase 5 überprüft und in `06-MASSNAHMEN-BACKLOG.md` übertragen.
 
 | Bereich | Status | Wichtigster Nachweis/Befund | Launch-relevant? | Verantwortliche Rolle |
 |---|---|---|---|---|
