@@ -60,6 +60,12 @@ Umgesetzt heisst: auf `claude/optimistic-sagan-h5y2i9` committet, in der isolier
 | M48 | ergänzt: Seeufer und Ferienorte als Text, keine Ortsseiten (E42) | — |
 | M60 | geplant (14, Abschnitt 5) | Umsetzung nach M56 und M29 |
 
+**Metadaten (Commit `fa01801`, 25.09.2026, Tests N059):**
+
+| ID | Stand | Offen |
+|---|---|---|
+| M16 | umgesetzt: eigene Titel und Beschreibungen für alle 24 Seiten aus `shared/seo.ts`, selbstreferenzierende Canonicals, Open Graph je Seite, 404 mit eigenem Titel | Canonical-Domain beim Launch per `NEXT_PUBLIC_SITE_URL`, Vorschaubild nach M35, Übersetzung der Metadaten (M60) |
+
 **Umgebungsvariablen für Vercel (neu):** `SITE_INDEXABLE` (nur Produktion, erst zum Launch `true`), `NEXT_PUBLIC_CHAT_ENABLED` (erst nach der Reparatur `true`), optional `CONTACT_TO_EMAIL` und `CONTACT_FROM_EMAIL`. Ohne Angabe gelten `admin@brandea.de` und ein Absender unter `brandea.de`.
 
 ## Priorisierung
