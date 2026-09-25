@@ -133,7 +133,6 @@ export default function Hausmeisterservice() {
                     <ul className="space-y-2">
                       {[
                         "Schlüsselverwaltung",
-                        "Handwerker-Koordination",
                         "Mieterwechsel-Begleitung",
                         "Technische Wartungen"
                       ].map((item, i) => (
@@ -255,10 +254,10 @@ export default function Hausmeisterservice() {
             
             <AccordionItem value="item-3">
               <AccordionTrigger className="text-lg font-semibold">
-                Können Sie auch größere Reparaturen durchführen?
+                Können Sie auch grössere Reparaturen durchführen?
               </AccordionTrigger>
               <AccordionContent className="text-slate-700 leading-relaxed pt-4">
-                Kleinreparaturen führen wir selbst durch. Bei größeren Arbeiten koordinieren wir qualifizierte Handwerker aus unserem Netzwerk und überwachen die Ausführung.
+                Kleinreparaturen führen wir selbst durch. Grössere Arbeiten gehören zu einem Fachbetrieb. Was wir bei unseren Kontrollgängen feststellen, melden wir Ihnen.
               </AccordionContent>
             </AccordionItem>
             
