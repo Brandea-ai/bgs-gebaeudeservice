@@ -2,7 +2,7 @@
 
 **Recherchiert am 24.09.2026.** Die folgenden Originalseiten waren bei Erstellung dieses Pakets abrufbar. Das Datum bedeutet Quellenprüfung, nicht Prüfung der Zielwebsite. Dokumentationen und Funktionen können sich ändern; bei späterer Verwendung relevante Angaben erneut prüfen.
 
-**Ergänzt am 25.09.2026:** S51–S74 aus der Namens- und Marktrecherche (13, Nachweise N053 und N054).
+**Ergänzt am 25.09.2026:** S51–S74 aus der Namens- und Marktrecherche (13, Nachweise N053 und N054). S75–S81 aus Runde 3 (14): Mehrsprachigkeit und Freigabe in Claude Code.
 
 ## Einordnung
 
@@ -456,6 +456,48 @@ Quelle: [Bürgenstock Resort: Live and Own](https://burgenstockresort.com/en/liv
 Verwendung: Bestehen der Bürgenstock Residences mit Resort-Services, ohne Zahlen.  
 Abruf: 25.09.2026 (N054).
 
+### S75 · Google Search: Managing multi-regional and multilingual sites
+
+Quelle: [Google Search: Managing multi-regional and multilingual sites](https://developers.google.com/search/docs/specialty/international/managing-multi-regional-sites)  
+Verwendung: Eigene URL je Sprache, Unterverzeichnisse leicht einzurichten. „Avoid automatically redirecting users from one language version of a site to a different language version.“ Google erkennt die Sprache am sichtbaren Inhalt, nur übersetzte Rahmentexte schaden. Stand der Seite 10.12.2025.  
+Abruf: 25.09.2026 (Runde 3, M60).
+
+### S76 · Google Search: Tell Google about localized versions of your page
+
+Quelle: [Google Search: Tell Google about localized versions of your page](https://developers.google.com/search/docs/specialty/international/localized-versions)  
+Verwendung: hreflang per HTML, HTTP-Header oder Sitemap. „Each language version must list itself as well as all other language versions.“ `x-default` als Rückfall. Codes nach ISO 639-1, Region nach ISO 3166-1 Alpha 2, etwa `de-CH`. Stand der Seite 21.09.2026.  
+Abruf: 25.09.2026 (Runde 3, M60).
+
+### S77 · Next.js: Internationalization
+
+Quelle: [Next.js: Internationalization](https://nextjs.org/docs/app/guides/internationalization)  
+Verwendung: App Router mit Sprachsegment `app/[lang]`, Wörterbücher auf dem Server, `generateStaticParams` je Sprache, `lang` im HTML. Das Beispiel leitet nach der Browsersprache um, das widerspricht S75 für die Suche. Dokumentiert ist Next.js 16.3.6, das Projekt nutzt 15.5.  
+Abruf: 25.09.2026 (Runde 3, M60).
+
+### S78 · Claude Code: Claude Code on the web
+
+Quelle: [Claude Code: Claude Code on the web](https://code.claude.com/docs/en/claude-code-on-the-web.md)  
+Verwendung: Modi einer Cloud-Sitzung im Auswahlfeld neben dem Eingabefeld: „Accept edits“, „Plan“ und „Auto“.  
+Abruf: 25.09.2026 durch einen Hilfsagenten (claude-code-guide), nicht selbst abgerufen.
+
+### S79 · Claude Code: Permission modes
+
+Quelle: [Claude Code: Permission modes](https://code.claude.com/docs/en/permission-modes.md)  
+Verwendung: Modus während der Sitzung wechselbar. Ausserhalb von „Auto“ fragt die App vor nicht freigegebenen Befehlen nach.  
+Abruf: 25.09.2026 durch einen Hilfsagenten, nicht selbst abgerufen.
+
+### S80 · Claude Code: Settings
+
+Quelle: [Claude Code: Settings](https://code.claude.com/docs/en/settings.md)  
+Verwendung: Cloud-Sitzungen lesen `.claude/settings.json` des Repositorys. Regeln `allow` und `ask` für einzelne Befehle, gelesen beim Start der Sitzung.  
+Abruf: 25.09.2026 durch einen Hilfsagenten, nicht selbst abgerufen.
+
+### S81 · Claude Code: Auto mode configuration
+
+Quelle: [Claude Code: Auto mode configuration](https://code.claude.com/docs/en/auto-mode-config.md)  
+Verwendung: Die Rechteprüfung im Modus „Auto“ stuft einen Push auf den Standard-Branch als Produktions-Deployment ein. Eine Regel `ask` erzwingt stattdessen eine Rückfrage.  
+Abruf: 25.09.2026 durch einen Hilfsagenten, nicht selbst abgerufen.
+
 ## Besonders wichtige Aktualisierungen gegenüber älteren Checklisten
 
 - FAQ-Rich-Results werden seit dem 7. Mai 2026 nicht mehr in Google angezeigt. Der Verweis „nur für autoritative Gesundheits-/Behördenseiten“ wäre für den aktuellen Stand bereits überholt. [S13]
@@ -542,3 +584,10 @@ Originalquelle mit Datum prüfen, tatsächlichen Anwendungsbereich ermitteln, Au
 [S72]: https://www.smart-apartments.ch/en/serviced-apartments-zug "Smart Apartments: Serviced Apartments Zug"
 [S73]: https://www.iszl.ch/ "International School of Zug and Luzern"
 [S74]: https://burgenstockresort.com/en/live-and-own "Bürgenstock Resort: Live and Own"
+[S75]: https://developers.google.com/search/docs/specialty/international/managing-multi-regional-sites "Google Search: Managing multi-regional and multilingual sites"
+[S76]: https://developers.google.com/search/docs/specialty/international/localized-versions "Google Search: Tell Google about localized versions of your page"
+[S77]: https://nextjs.org/docs/app/guides/internationalization "Next.js: Internationalization"
+[S78]: https://code.claude.com/docs/en/claude-code-on-the-web.md "Claude Code: Claude Code on the web"
+[S79]: https://code.claude.com/docs/en/permission-modes.md "Claude Code: Permission modes"
+[S80]: https://code.claude.com/docs/en/settings.md "Claude Code: Settings"
+[S81]: https://code.claude.com/docs/en/auto-mode-config.md "Claude Code: Auto mode configuration"

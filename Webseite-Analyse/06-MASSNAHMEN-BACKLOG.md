@@ -1,6 +1,6 @@
 # Maßnahmen-Backlog
 
-**Status: Phase 5 durchgeführt am 24.09.2026, angepasst nach den Rückfragen Runde 1 (11).** Alle 37 globalen Befunde (01) und alle 88 seitenspezifischen Befunde (`Seiten/`) sind in 55 Maßnahmen überführt, dazu kommen M56–M59 aus Runde 1. **Die Umsetzung ist seit 24.09.2026 freigegeben (E11)** und läuft auf dem Arbeits-Branch in den Wellen unten. Produktions-Deployments brauchen weiter eine ausdrückliche Zustimmung. Geänderte Maßnahmen sind mit „Runde 1“ markiert. Dort gilt der Runde-1-Text vor dem ursprünglichen Text derselben Zelle.
+**Status: Phase 5 durchgeführt am 24.09.2026, angepasst nach den Rückfragen Runde 1 (11).** Alle 37 globalen Befunde (01) und alle 88 seitenspezifischen Befunde (`Seiten/`) sind in 55 Maßnahmen überführt, dazu kommen M56–M59 aus Runde 1 und M60 aus Runde 3. **Die Umsetzung ist seit 24.09.2026 freigegeben (E11)** und läuft auf dem Arbeits-Branch in den Wellen unten. Produktions-Deployments brauchen weiter eine ausdrückliche Zustimmung. Geänderte Maßnahmen sind mit „Runde 1“ markiert. Dort gilt der Runde-1-Text vor dem ursprünglichen Text derselben Zelle.
 
 ## Umsetzungsstand auf dem Arbeits-Branch (Stand 25.09.2026)
 
@@ -51,6 +51,14 @@ Umgesetzt heisst: auf `claude/optimistic-sagan-h5y2i9` committet, in der isolier
 | M46 | umgesetzt: Fenster mit Fassaden, Hallen und Maschinen mit Industrie zusammengeführt, alte Adressen 308 | — |
 | M57 | umgesetzt: Premium-Übersicht `/premium` mit eigenem Menüpunkt, drei Angeboten, belegten Zusagen (E18) und diskretem Kontakt | Eigener Auftritt nach dem Namensentscheid (M56), Texte der drei Seiten (M29), Nischen aus 13 nur nach Bestätigung |
 | M17 | teilweise: Sitemap mit 24 Adressen, nur Seiten mit Status 200 | 404-Seite |
+
+**Runde 3 (Commit `31f87eb`, 25.09.2026, Tests N055 und N058):**
+
+| ID | Stand | Offen |
+|---|---|---|
+| M57 | erweitert: sechs weitere Angebote (Zweitwohnungen, Hotels, Büros und Family Offices, Räume mit Kunst, Privatanlässe, Makler und Verwaltungen), zehn Zusagen, Seeufer als Einsatzorte (E40–E42) | Drei Zusagen erst mit Beleg (M59), Texte der drei Premium-Seiten (M29), Gegenlesen durch den Kunden |
+| M48 | ergänzt: Seeufer und Ferienorte als Text, keine Ortsseiten (E42) | — |
+| M60 | geplant (14, Abschnitt 5) | Umsetzung nach M56 und M29 |
 
 **Umgebungsvariablen für Vercel (neu):** `SITE_INDEXABLE` (nur Produktion, erst zum Launch `true`), `NEXT_PUBLIC_CHAT_ENABLED` (erst nach der Reparatur `true`), optional `CONTACT_TO_EMAIL` und `CONTACT_FROM_EMAIL`. Ohne Angabe gelten `admin@brandea.de` und ein Absender unter `brandea.de`.
 
@@ -145,10 +153,16 @@ Priorität und Launch-Blocker sind getrennte Felder. Nicht jede SEO-Idee ist ein
 
 | ID | URL/Bereich | Befundstatus | Priorität | Launch-Blocker | Konkrete Maßnahme | Abnahmetest | Verantwortliche Rolle | Aufwand | Abhängigkeit | Nachweis |
 |---|---|---|---|---|---|---|---|---|---|---|
-| M56 | Marke, Name | Entscheidung offen | P1 | ja (G07, G09) | Namensentscheid nach Option A, B oder C (11, 3.6). Bei neuem Namen: Handelsregister, Markenregister (Klasse 37), `.ch`-Domain und Verwechslungsgefahr prüfen, Wortmarke vor Logo und Website sichern | Schriftlicher Namensentscheid mit Prüfprotokoll. Impressum nennt die eingetragene Firma | Brandea, Kunde | S–M | Runde 2 | W03, S43 |
+| M56 | Marke, Name | Entscheidung offen | P1 | ja (G07, G09) | **Runde 3:** Dachmarke plus eigener Premium-Name (E37). Domains der Favoriten sofort sichern, dann Recherche beim IGE (E38). Namensrunde 2 läuft (14, Abschnitt 4). Namensentscheid nach Option A, B oder C (11, 3.6). Bei neuem Namen: Handelsregister, Markenregister (Klasse 37), `.ch`-Domain und Verwechslungsgefahr prüfen, Wortmarke vor Logo und Website sichern | Schriftlicher Namensentscheid mit Prüfprotokoll. Impressum nennt die eingetragene Firma | Brandea, Kunde | S–M | Runde 2 | W03, S43 |
 | M57 | Premium-Bereich `/premium` | Auftrag | P2 | nein | Premium-Übersicht mit eigenem Auftritt und diskretem Kontaktweg, drei Seiten Luxusimmobilien, Privatjet, Yacht. Nur bestätigte Abläufe, keine erfundenen Fälle | Eigener Menüpunkt, keine Vermischung mit B2B-Seiten, jede Aussage belegt | Redaktion, Design, Entwicklung | M | M56, M54 | R3f, E16 |
 | M58 | DNS-Umzug `bgs-service.ch` zu Vercel, E-Mail | Risiko | P0 zum Launch | ja (G05, G10) | Vor dem Wechsel der Nameserver alle MX-, SPF-, DKIM- und DMARC-Einträge des heutigen Mailanbieters in Vercel anlegen. Absenderdomain des Kunden in Resend verifizieren, Empfänger umstellen | Mail an die Kundenadresse kommt nach dem Wechsel an. Testanfrage bis ins Kundenpostfach. Resend zeigt die Domain als verifiziert | Brandea, Kunde (Registrar) | S | R9d, M04 | N013, N044, R5h |
-| M59 | Vertrauenssignale beim Kunden | Empfehlung | P2 | nein | Police belegen, Bestätigung der PK Reinigung beziehen (falls GAV eingehalten), Allpura-Mitgliedschaft und Branchenlösung EKAS Nr. 54 prüfen, ISO erst nach Zertifikat nennen | Jede Aussage auf der Website hat einen abgelegten Beleg | Kunde | S–M | — | 11, 3.7, S44–S47 |
+| M59 | Vertrauenssignale beim Kunden | Empfehlung | P2 | nein | **Runde 3:** Belege für die zurückgestellten Premium-Zusagen: Police mit Deckung für Kunst und Wertgegenstände, Zutritt Flugfeld Buochs, Prüfverfahren für das Personal (E41). Police belegen, Bestätigung der PK Reinigung beziehen (falls GAV eingehalten), Allpura-Mitgliedschaft und Branchenlösung EKAS Nr. 54 prüfen, ISO erst nach Zertifikat nennen | Jede Aussage auf der Website hat einen abgelegten Beleg | Kunde | S–M | — | 11, 3.7, S44–S47 |
+
+### Neue Maßnahmen aus Runde 3 (14)
+
+| ID | URL/Bereich | Befundstatus | Priorität | Launch-Blocker | Konkrete Maßnahme | Abnahmetest | Verantwortliche Rolle | Aufwand | Abhängigkeit | Nachweis/Quelle |
+|---|---|---|---|---|---|---|---|---|---|---|
+| M60 | Alle Seiten, Sprachen DE, EN, FR, IT | Auftrag | P1 | ja (Launch-Umfang, E43) | Deutsch ohne Präfix unter den heutigen Adressen, Englisch, Französisch und Italienisch unter `/en`, `/fr`, `/it`. Sprachumschalter in Kopfzeile und Footer, keine automatische Umleitung nach Browsersprache oder Standort. hreflang `de-CH`, `fr-CH`, `it-CH`, `en` und `x-default` im Kopf oder in der Sitemap. Inhalte und Metadaten in Wörterbüchern, Rechtstexte übersetzt (14, Abschnitt 5) | Jede Seite in vier Sprachen mit Status 200. hreflang gegenseitig vollständig (Prüfskript). Umschalter führt zur gleichen Seite in der anderen Sprache. Keine Umleitung nach Browsersprache. Übersetzungen von Muttersprachlern freigegeben | Entwicklung, Redaktion, Kunde (Prüfung) | L | M56, M29 | E43, S75–S77 |
 
 ### Seitenmaßnahmen nach Zielseite (03, Abschnitt 2a)
 

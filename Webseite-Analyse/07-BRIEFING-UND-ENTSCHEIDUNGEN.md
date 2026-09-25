@@ -118,3 +118,12 @@ Dieser Block ist nur ein austauschbares Briefingformat, kein Programmcode. Leere
 | E34 | 25.09.2026 | **Zielgruppen:** B2B mit relevantem Umsatz inkl. Verwaltungen und Stockwerkeigentümer, privat nur vermögende Kunden | W08 | Positionierung | Nutzer | — |
 | E35 | 25.09.2026 | **Modell für Chat und Berater später**, Chat bleibt aus | MODELL | Chat, Berater | Nutzer | — |
 | E36 | 25.09.2026 | **Aufgaben ausserhalb des Codes über das Terminal von Brandea**, Rückmeldung als JSON | BRANDEA | Repository, Vercel | Nutzer | Terminal-Bericht |
+| E37 | 25.09.2026 | **Markenaufbau: Dachmarke plus eigener Name für Premium.** Eingetragene Firma bleibt in Impressum, Offerten und Rechnungen | AUFBAU (14) | Marke, alle Seiten | Nutzer | Namensrunde 2 (14, Abschnitt 4) |
+| E38 | 25.09.2026 | **Nach der Namenswahl:** Domains der Favoriten sofort sichern (Brandea), dann Markenrecherche beim IGE, Nutzung erst danach | PRUEFUNG (14) | Marke, Domain | Nutzer | M56 |
+| E39 | 25.09.2026 | **Produktion durch den Agenten, von Brandea freigegeben.** Zweiter Versuch erneut von der Rechteprüfung blockiert, nicht umgangen | LIVE (14), N057 | Alle | Nutzer | Freigabe nach 14, Abschnitt 3 |
+| E40 | 25.09.2026 | **Alle zehn Premium-Nischen** aus 13 werden heute schon bedient (Eigenangabe) | NISCHEN (14) | `/premium` | Nutzer | Gegenlesen durch den Kunden vor dem Launch |
+| E41 | 25.09.2026 | **Premium-Zusagen:** Arbeitsweisen veröffentlichen. Deckung für Kunst und Wertgegenstände, Zutritt Flugfeld Buochs und Prüfmethode erst mit Beleg | VORAUS (14), E18 | `/premium` | Agent (Belegregel) | M59 |
+| E42 | 25.09.2026 | **Seeufer und Orte nennen**, nur als Text auf `/einzugsgebiet` und `/premium`, keine Ortsseiten | ORTE (14), M48, S33 | `/einzugsgebiet`, `/premium` (`31f87eb`) | Nutzer | — |
+| E43 | 25.09.2026 | **Mehrsprachige Website:** Deutsch, Englisch, Französisch, Italienisch, mit Umschalter | ENGLISCH (14), S75–S77 | Alle | Nutzer | M60, Prüfung der Übersetzungen |
+| E44 | 25.09.2026 | **Anfahrt:** überall dieselben Bedingungen | ANFAHRT (14) | `/einzugsgebiet` | Nutzer | — |
+| E45 | 25.09.2026 | **Terminal-Auftrag vorerst nicht ausgeführt.** Repository bleibt öffentlich, R1 und M06 offen | TERMINAL (14) | Repository, Vercel | Nutzer | Risiko genannt (14, E45) |

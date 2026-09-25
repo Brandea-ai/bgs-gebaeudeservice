@@ -45,6 +45,7 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 | 11 | Umsetzung Welle 1, Teil 1 | **Auf dem Branch umgesetzt 25.09.2026** (Aussagen, Kundenstimmen, Einzugsgebiet, Winterdienst, Bilder, Karte, Impressum; nicht in Produktion) | Commit `fe75da7`, `06` (Umsetzungsstand), N052 |
 | 12 | Zielbild v2 | **Auf dem Branch umgesetzt 25.09.2026** (`/leistungen` mit neun Seiten, `/premium`, 13 Weiterleitungen, Menü, Footer, Startseite, Sitemap, Tastaturbedienung des Menüs; nicht in Produktion) | Commits `bf42af2`, `2fb0508`, `06` (Umsetzungsstand), N055 |
 | 13 | Namen und Nischen | **Erledigt 25.09.2026** (19 Namen geprüft, Top 5; wohlhabende Gemeinden aus der ESTV-Statistik nachgerechnet; zehn Nischen bewertet) | `13-NAMEN-UND-NISCHEN.md`, N053, N054, S51–S74 |
+| 14 | Rückfragen Runde 3 | **Ausgewertet 25.09.2026** (8 von 11 beantwortet, E37–E45, M60; Seeufer und Premium-Zusagen umgesetzt; Produktions-Push erneut blockiert; Namensrunde 2 läuft) | `14-ANTWORTEN-RUNDE-3.md`, Commit `31f87eb`, N056–N058, S75–S81 |
 
 ## Protokoll
 
@@ -66,6 +67,7 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 | 24.09.2026 | Welle 0 | `noindex` per Umgebungsvariable, Schlüssel-Platzhalter, Next.js 15.5.26 und Bildoptimierer ohne fremde Hosts, ein Lockfile, Formular mit echtem Erfolg und Missbrauchsschutz, Chat per Schalter aus bis zur Reparatur, ehrlicher Berater-Zustand, tote Adresse entfernt. Alles in der isolierten Kopie getestet (N048). Rückfragen Runde 2 als Fragebogen bereitgestellt |
 | 25.09.2026 | Runde 2 und Welle 1 | Antworten ausgewertet (12). Push nach `main` von der Rechteprüfung blockiert, nicht umgangen (N051). Welle 1, Teil 1 umgesetzt und getestet (N052). Namens- und Nischenrecherche gestartet |
 | 25.09.2026 | Zielbild v2, Namen und Nischen | Neun Leistungsseiten nach `/leistungen/…`, Übersichten `/leistungen` und `/premium`, 13 Weiterleitungen 308, Menü, Footer, Startseite und Sitemap umgestellt, getestet (N055). Befund beim Test: Leistungsmenü nur per Maus bedienbar, behoben (`2fb0508`). Namens- und Marktrecherche ausgewertet und nachgeprüft (13, N053, N054). Korrektur: 691 statt „mindestens 561“ Steuerpflichtige über CHF 1 Mio. |
+| 25.09.2026 | Runde 3 | Fragebogen Runde 3 veröffentlicht, Antworten ausgewertet (14). Seeufer und Premium-Zusagen umgesetzt und getestet (`31f87eb`, N055, N058). Zweiter Push nach `main` blockiert (N057), Freigabe liegt bei Brandea. Namensrunde 2 mit Fable gestartet. Mehrsprachigkeit geplant (M60) |
 
 ## Abweichungen und Vorfälle
 
@@ -78,7 +80,8 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 ## Offene Punkte
 
 - **Runde 2 ist ausgewertet (12).** Offen daraus: Name und Marke (W03, Vorschläge in 13) und die Freigabe für Produktion (E27).
-- **Runde 3 (13, Abschnitt 6):** Namenswahl, Nischen, Voraussetzungen für Premium, englische Premium-Seiten, Anfahrt.
+- **Runde 3 ist ausgewertet (14).** Offen daraus: Namenswahl nach Namensrunde 2 (W03), Produktion (E39), Partner (PARTNER), Terminal-Auftrag bewusst zurückgestellt (E45).
+- **Runde 4 (vorgemerkt):** Namenswahl, Prüfung der Übersetzungen (M60), Adressen je Sprache, Partner.
 - **Nur Brandea:** Repository auf privat stellen (R1), Vercel-Variablen als „sensitive“ markieren (M06).
 - *Die folgenden Punkte stammen aus der Analyse und sind durch Runde 1 weitgehend beantwortet (11).*
 
@@ -109,14 +112,15 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 
 ## Nächste Aufgabe
 
-**Welle 0, Welle 1 (Teil 1) und Zielbild v2 sind auf dem Arbeits-Branch umgesetzt. In Produktion ist noch nichts (N051).**
+**Welle 0, Welle 1 (Teil 1), Zielbild v2 und die Premium-Inhalte aus Runde 3 sind auf dem Arbeits-Branch umgesetzt. In Produktion ist noch nichts (N051, N057).**
 
-1. **Produktion:** Brandea entscheidet, wie der Stand live geht (12, Abschnitt 3).
-2. **Runde 3:** Name aus den geprüften Vorschlägen wählen (13, Abschnitt 2.2, W03, M56) und Nischen bestätigen (13, Abschnitt 6).
-3. **Terminal-Bericht von Brandea** auswerten: Repository privat, Schlüssel „sensitive“.
-4. **Welle 1, Teil 2:**
+1. **Produktion:** Brandea stellt die Freigabe ein oder spielt den Stand selbst ein (14, Abschnitt 3).
+2. **Namensrunde 2** abschliessen: Ping-Pong Fable und Opus, Prüfung, Schlussrunde, Ergebnis mit Bedeutungen in 13, Abschnitt 8. Danach Wahl durch Brandea (E37, E38).
+3. **Welle 1, Teil 2:**
    - Metadaten je Seite (M16): 21 Seiten tragen noch den Standard-Titel
-   - Texte der Kern- und Premiumseiten (M29), Nischen aus 13 nur nach Bestätigung
+   - Texte der Kern- und Premiumseiten (M29), gleich in einer übersetzbaren Inhaltsschicht für M60
    - Favicon und Logo nach dem Namensentscheid (M35)
    - Ratgeber (M53)
    - Breadcrumbs (M20)
+4. **Mehrsprachigkeit (M60)** nach M56 und M29.
+5. **Belege** für die zurückgestellten Premium-Zusagen (M59).
