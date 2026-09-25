@@ -343,7 +343,8 @@ export default function SwissFooter() {
           <div className="container py-6">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400">
               <div>
-                © {currentYear} {company.legalName}. Alle Rechte vorbehalten.
+                {/* Jahr wird beim Build eingesetzt, im Browser ggf. aktualisiert (M24, React-Fehler #418) */}
+                © <span suppressHydrationWarning>{currentYear}</span> {company.legalName}. Alle Rechte vorbehalten.
               </div>
               <div className="flex gap-6">
                 <Link href="/impressum"><span className="hover:text-white transition-smooth cursor-pointer">Impressum</span></Link>
