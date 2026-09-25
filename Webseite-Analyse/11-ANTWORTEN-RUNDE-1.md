@@ -238,7 +238,7 @@ Brandea kennt den Grund nicht und möchte ihn mit Daten belegt haben. Heute gibt
 
 ## 4. Widersprüche aus Runde 1
 
-**Stand nach Runde 2 (12):** W01, W02, W04, W05, W06, W07 und W08 sind geklärt. W03 (Name) ist offen, die Namensrecherche läuft.
+**Stand nach Runde 2 (12):** W01, W02, W04, W05, W06, W07 und W08 sind geklärt. W03 (Name) ist offen. Die geprüften Vorschläge stehen in 13, die Wahl folgt in Runde 3.
 
 Nach Regel 3 des Ping-Pong-Verfahrens wird kein Widerspruch stillschweigend aufgelöst. Die vorläufige Behandlung steht in der Tabelle, die Entscheidung fällt in Runde 2.
 

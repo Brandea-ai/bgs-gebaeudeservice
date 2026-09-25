@@ -4,7 +4,7 @@
 
 ## 1. Kurzfassung
 
-- **Name:** Brandea möchte zuerst geprüfte Namensvorschläge sehen (W03). Die Recherche läuft, das Ergebnis folgt in Abschnitt 4.
+- **Name:** Brandea möchte zuerst geprüfte Namensvorschläge sehen (W03). Die Vorschläge liegen vor (Abschnitt 4 und 13).
 - **Produktion:** Brandea will, dass der Agent selbst committet und pusht, auch nach `main` (LIVE). Der Versuch am 25.09.2026 hat die Rechteprüfung der Arbeitssitzung als Produktions-Deployment blockiert. Er wurde nicht umgangen (Abschnitt 3).
 - **Privatkunden:** Nur exklusive Aufträge (Villen, Lofts, Luxusimmobilien) und Hotels mit besonderen Wünschen. Keine Umzugsreinigung für private Mieter (W01). Welche Nischen es dafür gibt, soll recherchiert werden (Abschnitt 4).
 - **Winterdienst:** endgültig nicht im Angebot (W02).
@@ -20,7 +20,7 @@
 
 | ID | Antwort (sinngemäss) | Einordnung | Prüfung | Folge | Status |
 |---|---|---|---|---|---|
-| W03 | Zuerst geprüfte Namensvorschläge sehen. „Lassen wir uns einen Namen einfallen.“ | Auftrag | Rechtlicher Rahmen in 11, 3.6 (Art. 954a OR) | Namensrecherche mit Domain-, Register- und Konfliktprüfung (Abschnitt 4). Bis dahin Arbeitsmarke (E26) | OFFEN (Auftrag läuft) |
+| W03 | Zuerst geprüfte Namensvorschläge sehen. „Lassen wir uns einen Namen einfallen.“ | Auftrag | Rechtlicher Rahmen in 11, 3.6 (Art. 954a OR) | Namensrecherche mit Domain-, Register- und Konfliktprüfung (Abschnitt 4). Bis dahin Arbeitsmarke (E26) | OFFEN (Vorschläge in 13, Wahl in Runde 3) |
 | LIVE | „Du committest und pushst selbst.“ | Präferenz | Push nach `main` am 25.09.2026 von der Rechteprüfung blockiert (N051) | E27. Entscheidung zur Freigabe liegt bei Brandea | OFFEN (blockiert) |
 | W01 | Keine Mieter. Privat nur exklusiv: Villen, Lofts, Hotels mit besonderen Wünschen. Nischenmärkte identifizieren | Präferenz + Auftrag | — | Umzugsreinigung nur für Verwaltungen, Eigentümer und Premium-Objekte. Nischenrecherche (Abschnitt 4) | GEKLÄRT |
 | W02 | Kein Winterdienst | Fakt | Kunden-Website und local.ch führen ihn noch (N014, N046) | E29. Der Kunde sollte local.ch und die alte Website bereinigen | GEKLÄRT |
@@ -49,10 +49,16 @@ Die Rechteprüfung der Arbeitssitzung hat den Push als Produktions-Deployment bl
 - **Option a:** Brandea erlaubt dem Agenten den Push nach `main` über eine Berechtigungsregel in den Einstellungen der Sitzung.
 - **Option b:** Brandea spielt den Stand selbst ein.
 
-## 4. Recherchen (werden ergänzt)
+## 4. Recherchen
 
-- **Namensvorschläge** mit Prüfung von Domain, Register und Konflikten: siehe 13-NAMEN-UND-NISCHEN.md, sobald abgeschlossen.
-- **Wohlhabende Gemeinden und Premium-Nischen im Einzugsgebiet:** siehe 13-NAMEN-UND-NISCHEN.md, sobald abgeschlossen.
+Die Ergebnisse stehen vollständig in 13-NAMEN-UND-NISCHEN.md (N053, N054).
+
+- **Namen:** 19 geprüft, 4 verworfen.
+  - Empfohlen: Werthüter als Dachmarke und Firnglanz als Premium-Linie, beide `.ch` frei.
+  - Ebenfalls stark: Seeklar, Nitor und Perlmutt.
+  - Die Markenrecherche beim IGE steht vor jeder Entscheidung aus, weil Swissreg und Zefix nicht maschinell prüfbar waren.
+- **Wohlhabende Gebiete:** die Seeufer am Zugersee und im Ägerital, am Vierwaldstättersee (Meggen, Weggis, Vitznau) und in Nidwalden (Hergiswil, Stansstad, Ennetbürgen). Dazu Oberwil-Lieli, Meisterschwanden und Engelberg. In den fünf Kantonen haben 691 Steuerpflichtige über CHF 1 Mio. reines Einkommen (2022).
+- **Nischen:** Villen und Residenzen an den Seeufern, Büros und Family Offices in Zug und Baar, Makler und Verwaltungen als Kanal, Zweitwohnungen sowie Hotels mit 5 Sternen für Spezialaufträge.
 
 ## 5. Terminal-Auftrag für Brandea
 
@@ -138,4 +144,4 @@ Diese Einträge stehen auch im Entscheidungsprotokoll in 07.
 
 ---
 
-**Nachweise:** N049–N052 in 08-PRUEFNACHWEISE.md.
+**Nachweise:** N049–N054 in 08-PRUEFNACHWEISE.md.

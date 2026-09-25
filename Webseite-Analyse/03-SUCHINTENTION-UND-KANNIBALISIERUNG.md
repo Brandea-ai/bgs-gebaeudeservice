@@ -99,6 +99,8 @@ Die heutigen Pfade `/basis/` und `/business/` spiegeln eine Preisstufen-Einteilu
 | `/blog/richtige-reinigungsfirma-finden` | gleich | bleibt | — |
 | `/blog/umweltfreundliche-reinigung` | gleich | bleibt | Nur „auf Wunsch“, ohne unbelegte Label- und Produktangaben (R6i) |
 
+**Umsetzungsstand 25.09.2026:** Die Zeilen für Leistungen, Premium und Standorte sind auf dem Arbeits-Branch umgesetzt (`bf42af2`, N055). Offen sind die Blog-Zeilen (M53) und die Kunden-URLs zum Launch (M58).
+
 **Bisherige Website des Kunden, die neue Seite übernimmt `bgs-service.ch` (R9b):** `/` → `/`, `/gebäudereinigung` → `/leistungen`, `/hauswartung` → `/leistungen/hauswartung`, `/kontakt` → `/kontakt`, dazu die drei älteren Seiten aus N038: `/bgs-gebaeude-serviceleistungen.html` → `/leistungen`, `/gebaeude-serviceleistungen-luzern.html` → `/kontakt` (Inhalt vorher prüfen), `/impressum.html` → `/impressum`. Alle per 308. Vor dem Umzug alle alten URLs vollständig erfassen, etwa per Crawl mit Zugang des Kunden (R9d). Wählt Brandea in Runde 2 eine neue Domain (W03), wird `bgs-service.ch` vollständig auf die neue Domain umgeleitet [S07].
 
 ## 3. Prüfverfahren

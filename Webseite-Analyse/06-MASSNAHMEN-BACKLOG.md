@@ -2,7 +2,7 @@
 
 **Status: Phase 5 durchgeführt am 24.09.2026, angepasst nach den Rückfragen Runde 1 (11).** Alle 37 globalen Befunde (01) und alle 88 seitenspezifischen Befunde (`Seiten/`) sind in 55 Maßnahmen überführt, dazu kommen M56–M59 aus Runde 1. **Die Umsetzung ist seit 24.09.2026 freigegeben (E11)** und läuft auf dem Arbeits-Branch in den Wellen unten. Produktions-Deployments brauchen weiter eine ausdrückliche Zustimmung. Geänderte Maßnahmen sind mit „Runde 1“ markiert. Dort gilt der Runde-1-Text vor dem ursprünglichen Text derselben Zelle.
 
-## Umsetzungsstand auf dem Arbeits-Branch (Stand 24.09.2026)
+## Umsetzungsstand auf dem Arbeits-Branch (Stand 25.09.2026)
 
 Umgesetzt heisst: auf `claude/optimistic-sagan-h5y2i9` committet, in der isolierten Kopie gebaut und getestet (N048). **Nichts davon ist in Produktion.** Wirksam auf der Vorab-Adresse wird es erst nach einem Produktions-Deployment, das Brandea ausdrücklich freigeben muss (Runde 2, Frage „LIVE“).
 
@@ -37,6 +37,20 @@ Umgesetzt heisst: auf `claude/optimistic-sagan-h5y2i9` committet, in der isolier
 | M52 | umgesetzt: `/referenzen` offline (404), aus Navigation und Sitemap | — |
 | M53 | teilweise: Kostenartikel offline bis zur Fassung ohne Preise | übrige Artikel |
 | M10 | teilweise: Platzhaltermarke durch Arbeitsmarke als Schriftzug ersetzt | Name und Logo (M56) |
+
+**Zielbild v2 (Commits `bf42af2` und `2fb0508`, 25.09.2026, Tests N055):**
+
+| ID | Stand | Offen |
+|---|---|---|
+| M20 | umgesetzt: neun Leistungsseiten unter `/leistungen/…`, Übersicht `/leistungen`, 13 alte Adressen 308 nach 03 (2b), Winterdienst 410. Menü, Footer, Startseite und Sitemap folgen der neuen Gliederung | Breadcrumbs. Alte Adressen der Kunden-Website zum Launch (M58) |
+| M40 | umgesetzt: `/leistungen` mit Auswahl nach Anlass in drei Gruppen, jede Leistung mit einem Klick erreichbar. Menü per Tastatur bedienbar (`2fb0508`) | Gesamter Barrierefreiheitstest (Welle 2) |
+| M41 | umgesetzt (Struktur): Unterhaltsreinigung mit Abschnitt Nachfüllservice, Büro- und Praxisreinigung als eigene Seite | Texte (M29) |
+| M42 | umgesetzt (Struktur): Sonderreinigungen und Bau- und Bauendreinigung unter `/leistungen` | Texte (M29) |
+| M43 | umgesetzt (Struktur): Hauswartung und Facility Services als eigene Seiten | Aufgabenkatalog R3c im Text (M29) |
+| M45 | umgesetzt: ein Name „Aussen- und Grünflächenpflege“ in Menü, Footer, Formular und Seite, ohne Winterdienst | Texte (M29) |
+| M46 | umgesetzt: Fenster mit Fassaden, Hallen und Maschinen mit Industrie zusammengeführt, alte Adressen 308 | — |
+| M57 | umgesetzt: Premium-Übersicht `/premium` mit eigenem Menüpunkt, drei Angeboten, belegten Zusagen (E18) und diskretem Kontakt | Eigener Auftritt nach dem Namensentscheid (M56), Texte der drei Seiten (M29), Nischen aus 13 nur nach Bestätigung |
+| M17 | teilweise: Sitemap mit 24 Adressen, nur Seiten mit Status 200 | 404-Seite |
 
 **Umgebungsvariablen für Vercel (neu):** `SITE_INDEXABLE` (nur Produktion, erst zum Launch `true`), `NEXT_PUBLIC_CHAT_ENABLED` (erst nach der Reparatur `true`), optional `CONTACT_TO_EMAIL` und `CONTACT_FROM_EMAIL`. Ohne Angabe gelten `admin@brandea.de` und ein Absender unter `brandea.de`.
 

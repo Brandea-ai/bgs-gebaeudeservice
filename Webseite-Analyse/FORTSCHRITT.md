@@ -2,7 +2,7 @@
 
 **Prüfziel:** BGS Gebäudeservice (`Brandea-ai/bgs-gebaeudeservice`, geprüfter Stand `main` @ `d7e1122`)
 **Referenz:** FIMI-Gebäudereinigung (`Brandea-ai/FIMI-Gebaeudereinigung` @ `1143a9f`), nur lesend, nur Inspiration
-**Letzte Aktualisierung:** 24.09.2026
+**Letzte Aktualisierung:** 25.09.2026
 
 ## Goldener Stand
 
@@ -43,6 +43,8 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 | 9 | Umsetzung Welle 0 | **Auf dem Branch umgesetzt 24.09.2026** (M01, M02, M03 als Zwischenstand, M04, M07, M08, M09 teilweise, M05 teilweise; nicht in Produktion) | Commits `6abe7c8`, `e43e262`, `0a5d5bc`, `3cd05f8`; `06` (Umsetzungsstand), `08` (N048) |
 | 10 | Rückfragen Runde 2 | **Erledigt 25.09.2026** (12 Antworten, E27–E36, N049–N052; Produktions-Push blockiert) | `12-ANTWORTEN-RUNDE-2.md` |
 | 11 | Umsetzung Welle 1, Teil 1 | **Auf dem Branch umgesetzt 25.09.2026** (Aussagen, Kundenstimmen, Einzugsgebiet, Winterdienst, Bilder, Karte, Impressum; nicht in Produktion) | Commit `fe75da7`, `06` (Umsetzungsstand), N052 |
+| 12 | Zielbild v2 | **Auf dem Branch umgesetzt 25.09.2026** (`/leistungen` mit neun Seiten, `/premium`, 13 Weiterleitungen, Menü, Footer, Startseite, Sitemap, Tastaturbedienung des Menüs; nicht in Produktion) | Commits `bf42af2`, `2fb0508`, `06` (Umsetzungsstand), N055 |
+| 13 | Namen und Nischen | **Erledigt 25.09.2026** (19 Namen geprüft, Top 5; wohlhabende Gemeinden aus der ESTV-Statistik nachgerechnet; zehn Nischen bewertet) | `13-NAMEN-UND-NISCHEN.md`, N053, N054, S51–S74 |
 
 ## Protokoll
 
@@ -63,6 +65,7 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 | 24.09.2026 | Rückfragen Runde 1 | Fragebogen als Artifact erstellt, 58 Antworten eingegangen (N041) und ausgewertet (11). Geprüft: Kontaktdaten der Kunden-Website und local.ch (N042, N046), `swiss-reinigung.ch` gehört Dritten (N043), Resend nur mit `brandea.de` (N044), Chat-Modelle FIMI/BGS (N045), Bewertungsauszüge unbestätigt (N047). Recht und Signale recherchiert (S43–S50). Zielbild v2, Backlog, Freigabematrix und Entscheidungen angepasst. Umsetzung freigegeben (E11) |
 | 24.09.2026 | Welle 0 | `noindex` per Umgebungsvariable, Schlüssel-Platzhalter, Next.js 15.5.26 und Bildoptimierer ohne fremde Hosts, ein Lockfile, Formular mit echtem Erfolg und Missbrauchsschutz, Chat per Schalter aus bis zur Reparatur, ehrlicher Berater-Zustand, tote Adresse entfernt. Alles in der isolierten Kopie getestet (N048). Rückfragen Runde 2 als Fragebogen bereitgestellt |
 | 25.09.2026 | Runde 2 und Welle 1 | Antworten ausgewertet (12). Push nach `main` von der Rechteprüfung blockiert, nicht umgangen (N051). Welle 1, Teil 1 umgesetzt und getestet (N052). Namens- und Nischenrecherche gestartet |
+| 25.09.2026 | Zielbild v2, Namen und Nischen | Neun Leistungsseiten nach `/leistungen/…`, Übersichten `/leistungen` und `/premium`, 13 Weiterleitungen 308, Menü, Footer, Startseite und Sitemap umgestellt, getestet (N055). Befund beim Test: Leistungsmenü nur per Maus bedienbar, behoben (`2fb0508`). Namens- und Marktrecherche ausgewertet und nachgeprüft (13, N053, N054). Korrektur: 691 statt „mindestens 561“ Steuerpflichtige über CHF 1 Mio. |
 
 ## Abweichungen und Vorfälle
 
@@ -74,7 +77,8 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 
 ## Offene Punkte
 
-- **Runde 2 (11, Abschnitt 7):** Name und Marke (W03), Produktion für `noindex`, Umzugsreinigung für Mieter (W01), Winterdienst (W02), Einzugsgebiet (W04), E-Mail (W05), Einheit „CHF 50'000“ (W07), Verwaltungen als Zielgruppe (W08), Kontaktdaten, Chat-Modell, R4d.
+- **Runde 2 ist ausgewertet (12).** Offen daraus: Name und Marke (W03, Vorschläge in 13) und die Freigabe für Produktion (E27).
+- **Runde 3 (13, Abschnitt 6):** Namenswahl, Nischen, Voraussetzungen für Premium, englische Premium-Seiten, Anfahrt.
 - **Nur Brandea:** Repository auf privat stellen (R1), Vercel-Variablen als „sensitive“ markieren (M06).
 - *Die folgenden Punkte stammen aus der Analyse und sind durch Runde 1 weitgehend beantwortet (11).*
 
@@ -105,14 +109,14 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 
 ## Nächste Aufgabe
 
-**Welle 0 und Welle 1 (Teil 1) sind auf dem Arbeits-Branch umgesetzt. In Produktion ist noch nichts (N051).**
+**Welle 0, Welle 1 (Teil 1) und Zielbild v2 sind auf dem Arbeits-Branch umgesetzt. In Produktion ist noch nichts (N051).**
 
 1. **Produktion:** Brandea entscheidet, wie der Stand live geht (12, Abschnitt 3).
-2. **Name:** Aus den geprüften Vorschlägen in 13 wählen (W03, M56).
+2. **Runde 3:** Name aus den geprüften Vorschlägen wählen (13, Abschnitt 2.2, W03, M56) und Nischen bestätigen (13, Abschnitt 6).
 3. **Terminal-Bericht von Brandea** auswerten: Repository privat, Schlüssel „sensitive“.
 4. **Welle 1, Teil 2:**
-   - Zielbild v2 mit `/leistungen/…`, `/premium` und Weiterleitungen (M20)
-   - Texte der Kernseiten (M29)
-   - Metadaten je Seite (M16)
+   - Metadaten je Seite (M16): 21 Seiten tragen noch den Standard-Titel
+   - Texte der Kern- und Premiumseiten (M29), Nischen aus 13 nur nach Bestätigung
    - Favicon und Logo nach dem Namensentscheid (M35)
    - Ratgeber (M53)
+   - Breadcrumbs (M20)
