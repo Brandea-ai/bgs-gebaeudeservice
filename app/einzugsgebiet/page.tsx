@@ -8,12 +8,22 @@ import { company } from "../../shared/company";
 
 export const metadata: Metadata = {
   title: "Einzugsgebiet: Luzern, Zug, Aargau, Nidwalden und Obwalden",
-  description: `${company.brand} arbeitet von ${company.address.city} aus in den Kantonen Luzern, Zug, Aargau, Nidwalden und Obwalden. Alle Leistungen im ganzen Gebiet.`,
+  description: `${company.brand} arbeitet von ${company.address.city} aus in den Kantonen Luzern, Zug, Aargau, Nidwalden und Obwalden, auch an den Seeufern und in Engelberg. Alle Leistungen im ganzen Gebiet.`,
 };
 
 // Bestätigt in den Rückfragen (R4b, W04, R4d): ein Sitz, fünf Kantone,
 // alle Leistungen im ganzen Gebiet. Keine Ortsseiten ohne eigenen Inhalt (K09).
 const cantons = ["Luzern", "Zug", "Aargau", "Nidwalden", "Obwalden"];
+
+// Seeufer und Ferienorte (Runde 3, ORTE). Orte aus 13, Abschnitt 3, alle im Gebiet.
+// Nur als Text auf dieser Seite und auf /premium, keine eigenen Ortsseiten (M48).
+const places = [
+  { title: "Am Vierwaldstättersee", items: ["Luzern", "Horw", "Meggen", "Weggis", "Vitznau", "Hergiswil", "Stansstad", "Ennetbürgen"] },
+  { title: "Am Zuger- und Ägerisee", items: ["Zug", "Cham", "Risch", "Hünenberg", "Walchwil", "Baar", "Oberägeri"] },
+  { title: "Am Sempacher- und Hallwilersee", items: ["Eich", "Meisterschwanden"] },
+  { title: "Region Baden und Mutschellen", items: ["Ennetbaden", "Bergdietikon", "Oberwil-Lieli"] },
+  { title: "In den Bergen", items: ["Engelberg"] },
+];
 
 export default function Einzugsgebiet() {
   return (
@@ -67,6 +77,25 @@ export default function Einzugsgebiet() {
               </li>
             </ul>
           </Card>
+        </div>
+      </section>
+
+      <section className="pb-16">
+        <div className="container max-w-4xl">
+          <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">Seeufer und Ferienorte</h2>
+          <p className="text-slate-700 mb-8 max-w-3xl">
+            Auch an den Seeufern und in den Ferienorten der Region sind wir für Sie da, etwa für Villen,
+            Zweitwohnungen und Hotels. Für besondere Ansprüche gibt es unseren{" "}
+            <Link href="/premium" className="text-primary underline underline-offset-4 hover:no-underline">Premium-Bereich</Link>.
+          </p>
+          <dl className="grid gap-x-10 gap-y-6 sm:grid-cols-2">
+            {places.map((group) => (
+              <div key={group.title} className="border-t border-slate-200 pt-4">
+                <dt className="font-semibold text-slate-900">{group.title}</dt>
+                <dd className="text-slate-600 mt-1">{group.items.join(", ")}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
 
