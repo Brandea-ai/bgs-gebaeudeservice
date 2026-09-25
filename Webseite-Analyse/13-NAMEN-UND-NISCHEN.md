@@ -9,7 +9,8 @@ Grundlage sind zwei Recherchen mit Nachprüfung durch den Agenten (N053 Namen, N
 
 ## 1. Kurzfassung
 
-- **Namen:** 19 Kandidaten geprüft, 4 verworfen.
+- **Neu, Namensrunde 2 (Abschnitt 8):** Brandea wollte in Runde 3 neue Namen. Fable und Opus empfehlen jetzt gemeinsam **Mantena** als Dachmarke und **Silendo** als Premium-Linie. Die Empfehlung von Werthüter und Firnglanz unten ist damit überholt.
+- **Namen, erste Recherche:** 19 Kandidaten geprüft, 4 verworfen.
   - **Empfohlen:** **Werthüter** als Dachmarke und **Firnglanz** als Premium-Linie. Bei beiden ist die `.ch`-Domain frei, es gibt keine aktive Firma und keinen Markentreffer bei Moneyhouse.
   - **Ebenfalls stark:** **Seeklar** und **Nitor**. Die exakte `.ch` ist vergeben, Ausweich-Domains sind frei. **Perlmutt** eignet sich als Premium-Linie.
 - **Kontinuität mit wenig Aufwand:** „BGS Facility Services“ plus „BGS Privé“. Die Domains sind frei, die Marke bleibt aber schwach: 25 aktive Firmen tragen „BGS“ im Namen, mehrere davon im Einzugsgebiet.
@@ -45,6 +46,8 @@ Grundlage sind zwei Recherchen mit Nachprüfung durch den Agenten (N053 Namen, N
 - **Web:** Je Name gab es höchstens eine Websuche. Bei Candor, Tutela, Alabaster, Mundaris und Tectum gab es keine.
 
 ### 2.2 Empfehlung
+
+**Überholt:** Brandea hat in Runde 3 keinen dieser Namen gewählt und neue verlangt. Die aktuelle Empfehlung steht in Abschnitt 8.
 
 | Rang | Name | Rolle | `.ch` | Stärken | Risiken |
 |---|---|---|---|---|---|
@@ -255,3 +258,110 @@ Das sind Vorschläge. Umgesetzt ist davon nichts, jede Aussage auf der Website b
 - **Nachweise:** N053 (Namen) und N054 (Markt) in 08.
 - **Quellen:** S51 bis S74 in 09.
 - **Nicht verwendet:** Treffer, die nur aus Suchergebnis-Auszügen stammen und deren Seite nicht abgerufen wurde. Dazu gehören Zeitungsartikel zu Bootsplätzen in Meggen und zu temporärem Wohnraum in Zug, Werften in Hergiswil und Angaben zu Eventräumen auf dem Bürgenstock. Sie sind nicht bestätigt.
+
+## 8. Namensrunde 2 (25.09.2026)
+
+### 8.1 Auftrag und Ablauf
+
+Auftrag aus Runde 3 (NAME): neue Namen, Fable einbeziehen, gegenseitig prüfen und jede Bedeutung erklären. Vorgaben:
+- **Rollen:** Dachmarke plus eigener Name für die Premium-Linie (E37).
+- **Sprachen:** Die Namen müssen auf Deutsch, Französisch, Italienisch und Englisch funktionieren (E43).
+- **Eintragbarkeit:** Das IGE prüft, ob ein Zeichen in einer Landessprache oder auf Englisch die Leistung beschreibt oder nur anpreist. Deshalb Kunstwörter statt Wörterbuchwörter.
+
+Ablauf:
+1. **Runde 1:** Fable entwickelte 27 Namen und prüfte die Domains. Ein Opus-Agent sollte unabhängig arbeiten. Nach einer Unterbrechung las er aber Fables Domainprotokoll im gemeinsamen Arbeitsordner und lieferte dieselben 27 Namen, nur mit eigener Bewertung (Spitze: Mantena und Egida). Seither arbeitet jedes Modell in einem eigenen Ordner.
+2. **Runde 2:**
+   - Fable kritisierte die Opus-Bewertung und entwickelte 16 neue Kunstwörter.
+   - Zwei weitere Opus-Agenten lieferten kein Ergebnis. Der erste dachte 22 Minuten und stiess an die Ausgabegrenze, der zweite wurde nach 16 Minuten ohne Ausgabe gestoppt.
+   - Die Opus-Seite übernahm deshalb die Hauptsitzung, die ebenfalls auf Opus läuft. Sie prüfte 33 Namen, meist Kunstwörter. Bei 15 ist die `.ch` frei.
+3. **Prüfung 1:** Ein Prüfagent prüfte zehn Finalisten von Fable über Moneyhouse, Websuche und RDAP.
+4. **Prüfung 2:** Derselbe Prüfagent prüfte acht Finalisten von Opus.
+5. **Schlussrunde:** Fable kritisierte die Opus-Liste. Danach gaben beide Modelle ihre drei besten Namen je Rolle und ihre Paarungen ab.
+
+Grenzen:
+- **Markenregister:** Swissreg und Zefix sind NICHT PRÜFBAR, weil sie nur mit JavaScript laufen. Die Risikostufen beruhen auf Domain, Moneyhouse und Websuche.
+- **Websuche:** Sie läuft über einen US-Index, lokale Schweizer Treffer fehlen dort eher.
+- **Markenrecherche:** Keine dieser Prüfungen ersetzt sie. Vor der Nutzung braucht es die Recherche beim IGE (E38).
+
+### 8.2 Die Finalisten und was sie bedeuten
+
+| Name | Rolle | Herkunft und Bedeutung | `.ch` | Prüfung | Vorbehalt | Von |
+|---|---|---|---|---|---|---|
+| **Mantena** | Dachmarke | Kunstwort aus italienisch «mantenere» und englisch «maintain» (lateinisch «manu tenere», in der Hand halten): instand halten. Aussage: Wir halten Ihr Gebäude dauerhaft in Ordnung. | frei | niedrig | Mantena AS (Norwegen, Instandhaltung von Zügen) und Maintain GmbH (Facility Services, Schweiz) in der Markenrecherche klären. Ähnlich geschrieben: montena sa (Zug) und MANTANA AG (Thalwil), beide in anderen Branchen | Fable, Runde 1 |
+| **Takta** | Dachmarke | Vom deutschen «Takt» (fester Rhythmus, wie beim Taktfahrplan) und «Taktgefühl» (Feingefühl), französisch und englisch «tact». Aussage: Wir kommen zuverlässig und treten diskret auf. | frei | niedrig | «Getaktet» steht in Reinigung und Pflege für Zeitdruck. Der Name braucht die Geschichte «Takt heisst Verlässlichkeit». takta.com gehört einer Firma in Iran | Fable, Runde 2 |
+| **Immera** | Dachmarke, Reserve | Aus deutsch «immer» und «Immobilie» (FR immeuble, IT immobile). Aussage: immer da für Ihre Liegenschaft. | frei | mittel | Immero AG (Immobilien, Köniz BE) ist einen Buchstaben entfernt, imora (Reinigung) klingt ähnlich. Auf Englisch ohne Bedeutung | Fable, Runde 2 |
+| **Silendo** | Premium | Lateinisch «silendo», im Schweigen, in aller Stille (von «silere», schweigen). Aussage: Unser Team arbeitet leise, unauffällig und verschwiegen. | frei | niedrig | Im Italienischen erinnert der Name an das Motto eines früheren Militärgeheimdiensts. Vorher mit italienischsprachigen Personen testen | Fable, Runde 2 |
+| **Intendia** | Premium | Vom «Intendanten», dem Verwalter eines grossen Hauses oder Landsitzes (FR intendant, IT intendente). Aussage: Ein festes Team führt Ihr Haus, als wäre es sein eigenes. | frei | niedrig | Im Italienischen ist «incendia» (setzt in Brand) nur einen Buchstaben entfernt. Vorher mit italienischsprachigen Personen testen. Ähnlich geschrieben: Incendia AG (Informatik, Kloten ZH) | Fable, Runde 2 |
+| **Clavea** | Premium | Kunstwort vom lateinischen «clavis», dem Schlüssel (FR clé, DE Klavier und Enklave). Aussage: Sie geben uns den Schlüssel zu Ihrem Haus, und wir behandeln ihn wie unseren eigenen. Goldene Schlüssel sind in der Hotellerie das Zeichen der Concierges. | frei | mittel | Die Claves SA in Lugano (Liegenschaftsbewirtschaftung seit 1996) ist ähnlich geschrieben und arbeitet im Immobilienfeld. Clavia (Keyboards) und Claves Records (Musiklabel) klingen ähnlich. Der Name kann an Schlüsseldienste erinnern | Opus (Hauptsitzung), Bild aus Fables Runde 1 (Clavis) |
+
+Bei allen sechs ist die `.com` vergeben. Stand der Domains: 25.09.2026.
+
+### 8.3 Gestrichen und warum
+
+- **Gleichnamige Firma in der Schweiz:**
+  - Egida: Egida SA in St. Moritz verwaltet Liegenschaften, die Egidas AG ist ein Sicherheitsdienst.
+  - Edilia: Die EDILIA SA in Agno ist eine Immobilienagentur mit Reinigung im Zweck und hält edilia.ch.
+  - Subrosa: In Zug gibt es gleichlautende Firmen, subrosa.ch ist belegt.
+  - Perenne: Die Perenne Sàrl berät zur Sicherheit, an vier Standorten in der Westschweiz, und hält perenne.ch.
+  - Sostena: Die Sostena Group AG in Zug trägt denselben Namen (Managementdienste für die Autobranche, seit 2022). Im Italienischen liest sich der Name zudem wie ein gekürztes «nachhaltig».
+- **Sperrliste oder Regel verletzt (Opus):**
+  - Candora leitet sich von «Candor» ab, das auf der Sperrliste stand. Die Prüfung ergab zudem mittleres Risiko: eine Pariser Parfummarke gleichen Namens und die Nähe zu Pandora und Candida.
+  - Tacenda ist ein echtes englisches Wort [S83] und stammt vom Stamm des gesperrten Tacita.
+  - Sigilla und Velanda leiten sich von Fables Runde-1-Namen ab. Dazu kommen eine gespaltene Aussprache und die Nähe zu «Veranda».
+  - Servanda stand ebenfalls auf der Sperrliste, servanda.ch ist zudem vergeben.
+  - Im Register war das Risiko bei Tacenda, Sigilla und Velanda niedrig, bei Tacenda am geringsten: keine Firma, im Web nur Musikprojekte (N067). Gestrichen sind die drei aus sprachlichen Gründen. Tacenda lässt sich zurückholen, wenn Brandea die Aussprache in Kauf nimmt.
+- **Schwach in der Sache:**
+  - Opus: Colenda (erinnert an «colander», das Küchensieb; im Register niedriges Risiko), Solerta (im Italienischen ein Lobwort; die Sollertia SA, eine Ingenieurgruppe für Bauten im Wallis und in der Waadt, klingt fast gleich), Curenza, Tenenda, Tuenda, Metodia, Sedula, Vellura, Velando
+  - Fable: Sempera, Domiva, Accudia, Omnera, Coordia, Serenza, Villica, Ebana, Detalia, Discretia
+  - Credenza (Runde 1): ein Möbelwort, dazu die Credence Services GmbH mit Family Offices
+- **`.ch` vergeben:**
+  - Opus: Alvea, Curanda, Vespera, Operia, Limina, Edora, Diligo, Fidora, Munda, Tenora, Sustena, Gestia, Albora, Marmora, Plumea, Clavio, Lenia
+  - Fable, Runde 1: die meisten Namen, etwa Clavis, Sigillo und Velata
+
+### 8.4 Das Ping-Pong in Kürze
+
+1. **Opus zu Fable, Runde 1:**
+   - Italienische Alltagswörter sind schwach, weil das IGE in allen Landessprachen prüft.
+   - «In riserva» heisst im Italienischen «Tank fast leer». Sesto heisst zuerst «der Sechste» und ist ein Ortsname.
+   - Spitze: Mantena und Egida.
+2. **Fable zu Opus:**
+   - Ein Alltagswort ist nicht automatisch beschreibend.
+   - Die Opus-Rangliste widerspricht der eigenen Kritik.
+   - Cimelia wird in jeder Sprache anders gesprochen.
+   - Mantena und Egida klingen beide kühl und enden gleich. Fables Vorschlag: Mantena und Silendo.
+3. **Opus zu Fable, Runde 2:**
+   - Takta weckt das Bild «getaktet».
+   - Intendia liegt einen Buchstaben neben «incendia».
+   - Silendo hat im Italienischen eine Geheimdienst-Note.
+   - Dazu kamen neue Opus-Namen.
+4. **Fable zu Opus, Schlussrunde:**
+   - Candora verstösst gegen die Sperrliste. Tacenda ist ein echtes Wort.
+   - Clavea, Sigilla und Velanda sind Ableitungen.
+   - Sostena hat denselben Stamm wie Mantena.
+   - Clavea ist die beste neue Idee von Opus.
+5. **Opus, Schlusswort:**
+   - Opus räumt die Fehler ein und streicht die Namen.
+   - Clavea stellt Opus vor Intendia.
+6. **Prüfung 2:**
+   - Sostena fällt wegen der gleichnamigen AG in Zug weg.
+   - Clavea hat mittleres Risiko wegen der Claves SA in Lugano. Opus stellt Clavea danach hinter Intendia. Die Rangfolge der Premium-Linie ist damit bei beiden Modellen gleich: Silendo, Intendia, Clavea.
+
+### 8.5 Empfehlung
+
+- **Beide Modelle einigen sich auf:** **Mantena + Silendo.** Die Dachmarke klingt sachlich, die Linie leise. Beide Namen sind Kunstwörter, bei beiden ist die `.ch` frei und das Prüfrisiko niedrig, und die Endungen unterscheiden sich (-a, -o).
+- **Alternativen:**
+  - **Takta + Intendia** (Fable): Präzision und der Haushofmeister, bei Problemen im Tessin Takta + Clavea
+  - **Mantena + Clavea** (Opus): der anvertraute Schlüssel statt der Stille, nach Prüfung 2 mit mittlerem Risiko
+- **Vor dem Entscheid:** Das Team spricht Italienisch. Ein kurzer Test mit zwei oder drei italienischsprachigen Mitarbeitenden klärt, wie Silendo und Intendia klingen.
+- **Nächste Schritte (E38):**
+  1. Wahl in Runde 4 (Fragen DACH und PREMIUM).
+  2. Domains der Favoriten sichern.
+  3. Markenrecherche beim IGE: Die Klassen klärt die Recherche, voraussichtlich 37 (Reinigung, Unterhalt) und 44 (Grünflächenpflege), für die Premium-Linie allenfalls 45.
+
+### 8.6 Nachweise
+
+- **N065:** Domainprüfung der Namensrunde 2
+- **N066:** Prüfung 1, Fable-Finalisten
+- **N067:** Prüfung 2, Opus-Finalisten
+
+Die Nachweise stehen in 08, die Quelle zu Tacenda ist S83.

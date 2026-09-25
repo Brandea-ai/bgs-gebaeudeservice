@@ -80,9 +80,9 @@ Ablauf:
 1. Fable und ein zweites Modell entwickeln unabhängig voneinander Namen, je mit Bedeutung und Domain-Vorprüfung.
 2. Jedes Modell kritisiert die Liste des anderen.
 3. Ein dritter Agent prüft die Finalisten: `.ch` und `.com` per RDAP, Firmen über Moneyhouse und Websuche.
-4. Fable gibt auf dieser Grundlage die Schlussempfehlung ab.
+4. Beide Modelle geben auf dieser Grundlage ihre Schlussempfehlung ab.
 
-Das Ergebnis mit der Bedeutung jedes Namens folgt in 13, Abschnitt 8.
+**Ergebnis (13, Abschnitt 8):** Beide Modelle empfehlen Mantena als Dachmarke und Silendo als Premium-Linie. Alternativen sind Takta + Intendia und Mantena + Clavea. Die Wahl folgt in Runde 4.
 
 ## 5. Mehrsprachigkeit (M60)
 

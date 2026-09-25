@@ -2,7 +2,7 @@
 
 **Recherchiert am 24.09.2026.** Die folgenden Originalseiten waren bei Erstellung dieses Pakets abrufbar. Das Datum bedeutet Quellenprüfung, nicht Prüfung der Zielwebsite. Dokumentationen und Funktionen können sich ändern; bei späterer Verwendung relevante Angaben erneut prüfen.
 
-**Ergänzt am 25.09.2026:** S51–S74 aus der Namens- und Marktrecherche (13, Nachweise N053 und N054). S75–S81 aus Runde 3 (14): Mehrsprachigkeit und Freigabe in Claude Code.
+**Ergänzt am 25.09.2026:** S51–S74 aus der Namens- und Marktrecherche (13, Nachweise N053 und N054). S75–S81 aus Runde 3 (14): Mehrsprachigkeit und Freigabe in Claude Code. S82 und S83 aus der Namensrunde 2 und dem Fragebogen Runde 4.
 
 ## Einordnung
 
@@ -498,6 +498,18 @@ Quelle: [Claude Code: Auto mode configuration](https://code.claude.com/docs/en/a
 Verwendung: Die Rechteprüfung im Modus „Auto“ stuft einen Push auf den Standard-Branch als Produktions-Deployment ein. Eine Regel `ask` erzwingt stattdessen eine Rückfrage.  
 Abruf: 25.09.2026 durch einen Hilfsagenten, nicht selbst abgerufen.
 
+### S82 · Google Search: URL structure best practices
+
+Quelle: [Google Search: URL structure best practices](https://developers.google.com/search/docs/crawling-indexing/url-structure)  
+Verwendung: „Use words in your audience's language in the URL (and, if applicable, transliterated words).“ Beispiel für ein deutschsprachiges Publikum: `/lebensmittel/pfefferminz`. Grundlage für übersetzte Adressen je Sprache (M60, Frage ADRESSEN in Runde 4). Stand der Seite 10.12.2025.  
+Abruf: 25.09.2026 (Runde 4).
+
+### S83 · Wiktionary: tacenda
+
+Quelle: [Wiktionary: tacenda](https://en.wiktionary.org/wiki/tacenda)  
+Verwendung: Englisches Substantiv, nur Mehrzahl: „Things that are not to be spoken about or made public.“ Aus dem Lateinischen, Partizip Futur Passiv von „taceo“ (schweigen). Beleg für die Bedeutung des Namensvorschlags Tacenda (13, Abschnitt 8).  
+Abruf: 25.09.2026 (Namensrunde 2).
+
 ## Besonders wichtige Aktualisierungen gegenüber älteren Checklisten
 
 - FAQ-Rich-Results werden seit dem 7. Mai 2026 nicht mehr in Google angezeigt. Der Verweis „nur für autoritative Gesundheits-/Behördenseiten“ wäre für den aktuellen Stand bereits überholt. [S13]
@@ -591,3 +603,5 @@ Originalquelle mit Datum prüfen, tatsächlichen Anwendungsbereich ermitteln, Au
 [S79]: https://code.claude.com/docs/en/permission-modes.md "Claude Code: Permission modes"
 [S80]: https://code.claude.com/docs/en/settings.md "Claude Code: Settings"
 [S81]: https://code.claude.com/docs/en/auto-mode-config.md "Claude Code: Auto mode configuration"
+[S82]: https://developers.google.com/search/docs/crawling-indexing/url-structure "Google Search: URL structure best practices"
+[S83]: https://en.wiktionary.org/wiki/tacenda "Wiktionary: tacenda"

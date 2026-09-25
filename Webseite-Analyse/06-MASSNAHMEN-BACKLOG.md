@@ -79,6 +79,12 @@ Umgesetzt heisst: auf `claude/optimistic-sagan-h5y2i9` committet, in der isolier
 | M54 | ergänzt (`9c6adcc`): Adresse auf Kontakt- und Impressumsseite aus `shared/company.ts` | Chat-Prompt in `server/gemini.ts` mit alter Adresse, wird bei M03 neu aufgebaut |
 | M05 | ergänzt (`3b3bef4`): Vercel installiert mit `npm ci` | ESLint-Konfiguration, CI, Framework-Preset im Vercel-Projekt (heute „vite“, per `vercel.json` übersteuert) |
 
+**Namensrunde 2 (25.09.2026, Nachweise N065 bis N067):**
+
+| ID | Stand | Offen |
+|---|---|---|
+| M56 | Empfehlung erarbeitet: Fable und Opus im Wechsel, Prüfung der Finalisten. Beide empfehlen Mantena + Silendo, Alternativen sind Takta + Intendia und Mantena + Clavea (13, Abschnitt 8) | Wahl in Runde 4. Danach Domains sichern und Markenrecherche beim IGE (E38). Test mit italienischsprachigen Mitarbeitenden für Silendo und Intendia |
+
 **Umgebungsvariablen für Vercel (neu):** `SITE_INDEXABLE` (nur Produktion, erst zum Launch `true`), `NEXT_PUBLIC_CHAT_ENABLED` (erst nach der Reparatur `true`), optional `CONTACT_TO_EMAIL` und `CONTACT_FROM_EMAIL`. Ohne Angabe gelten `admin@brandea.de` und ein Absender unter `brandea.de`.
 
 ## Priorisierung
@@ -172,7 +178,7 @@ Priorität und Launch-Blocker sind getrennte Felder. Nicht jede SEO-Idee ist ein
 
 | ID | URL/Bereich | Befundstatus | Priorität | Launch-Blocker | Konkrete Maßnahme | Abnahmetest | Verantwortliche Rolle | Aufwand | Abhängigkeit | Nachweis |
 |---|---|---|---|---|---|---|---|---|---|---|
-| M56 | Marke, Name | Entscheidung offen | P1 | ja (G07, G09) | **Runde 3:** Dachmarke plus eigener Premium-Name (E37). Domains der Favoriten sofort sichern, dann Recherche beim IGE (E38). Namensrunde 2 läuft (14, Abschnitt 4). Namensentscheid nach Option A, B oder C (11, 3.6). Bei neuem Namen: Handelsregister, Markenregister (Klasse 37), `.ch`-Domain und Verwechslungsgefahr prüfen, Wortmarke vor Logo und Website sichern | Schriftlicher Namensentscheid mit Prüfprotokoll. Impressum nennt die eingetragene Firma | Brandea, Kunde | S–M | Runde 2 | W03, S43 |
+| M56 | Marke, Name | Entscheidung offen | P1 | ja (G07, G09) | **Runde 3:** Dachmarke plus eigener Premium-Name (E37). Domains der Favoriten sofort sichern, dann Recherche beim IGE (E38). Namensrunde 2 abgeschlossen (13, Abschnitt 8): Beide Modelle empfehlen Mantena + Silendo, Alternativen sind Takta + Intendia und Mantena + Clavea. Wahl in Runde 4 (DACH, PREMIUM). Namensentscheid nach Option A, B oder C (11, 3.6). Bei neuem Namen: Handelsregister, Markenregister (voraussichtlich Klassen 37 und 44, für die Premium-Linie allenfalls 45), `.ch`-Domain und Verwechslungsgefahr prüfen, Wortmarke vor Logo und Website sichern | Schriftlicher Namensentscheid mit Prüfprotokoll. Impressum nennt die eingetragene Firma | Brandea, Kunde | S–M | Runde 2 | W03, S43 |
 | M57 | Premium-Bereich `/premium` | Auftrag | P2 | nein | Premium-Übersicht mit eigenem Auftritt und diskretem Kontaktweg, drei Seiten Luxusimmobilien, Privatjet, Yacht. Nur bestätigte Abläufe, keine erfundenen Fälle | Eigener Menüpunkt, keine Vermischung mit B2B-Seiten, jede Aussage belegt | Redaktion, Design, Entwicklung | M | M56, M54 | R3f, E16 |
 | M58 | DNS-Umzug `bgs-service.ch` zu Vercel, E-Mail | Risiko | P0 zum Launch | ja (G05, G10) | Vor dem Wechsel der Nameserver alle MX-, SPF-, DKIM- und DMARC-Einträge des heutigen Mailanbieters in Vercel anlegen. Absenderdomain des Kunden in Resend verifizieren, Empfänger umstellen | Mail an die Kundenadresse kommt nach dem Wechsel an. Testanfrage bis ins Kundenpostfach. Resend zeigt die Domain als verifiziert | Brandea, Kunde (Registrar) | S | R9d, M04 | N013, N044, R5h |
 | M59 | Vertrauenssignale beim Kunden | Empfehlung | P2 | nein | **Runde 3:** Belege für die zurückgestellten Premium-Zusagen: Police mit Deckung für Kunst und Wertgegenstände, Zutritt Flugfeld Buochs, Prüfverfahren für das Personal (E41). Police belegen, Bestätigung der PK Reinigung beziehen (falls GAV eingehalten), Allpura-Mitgliedschaft und Branchenlösung EKAS Nr. 54 prüfen, ISO erst nach Zertifikat nennen | Jede Aussage auf der Website hat einen abgelegten Beleg | Kunde | S–M | — | 11, 3.7, S44–S47 |

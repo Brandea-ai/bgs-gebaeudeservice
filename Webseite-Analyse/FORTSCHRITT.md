@@ -69,6 +69,7 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 | 25.09.2026 | Zielbild v2, Namen und Nischen | Neun Leistungsseiten nach `/leistungen/…`, Übersichten `/leistungen` und `/premium`, 13 Weiterleitungen 308, Menü, Footer, Startseite und Sitemap umgestellt, getestet (N055). Befund beim Test: Leistungsmenü nur per Maus bedienbar, behoben (`2fb0508`). Namens- und Marktrecherche ausgewertet und nachgeprüft (13, N053, N054). Korrektur: 691 statt „mindestens 561“ Steuerpflichtige über CHF 1 Mio. |
 | 25.09.2026 | Runde 3 | Fragebogen Runde 3 veröffentlicht, Antworten ausgewertet (14). Seeufer und Premium-Zusagen umgesetzt und getestet (`31f87eb`, N055, N058). Zweiter Push nach `main` blockiert (N057), Freigabe liegt bei Brandea. Namensrunde 2 mit Fable gestartet. Mehrsprachigkeit geplant (M60) |
 | 25.09.2026 | Welle 1 und 2, Technik | Metadaten je Seite (M16, `fa01801`), Aufräumen des Vite-Aufbaus (M34), Formularfelder Ort und Rhythmus (M30), Sicherheitsheader (M33), `npm ci` in Vercel (M05), eine Hauptaktion je Seite und keine Buttons in Links (M31), zehn weitere unbelegte Aussagen aus zugeklappten FAQ entfernt (N064), Adressen aus `company.ts` (M54), Sitemap und robots.txt generiert (M17). Alles getestet, Previews READY |
+| 25.09.2026 | Namensrunde 2 | Fable und Opus im Wechsel: drei Runden, gegenseitige Kritik, zwei Prüfrunden der Finalisten (N065 bis N067). Beide empfehlen Mantena + Silendo, Alternativen Takta + Intendia und Mantena + Clavea (13, Abschnitt 8). Fragebogen Runde 4 mit Bedeutung je Name veröffentlicht |
 
 ## Abweichungen und Vorfälle
 
@@ -77,12 +78,14 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 | 24.09.2026 | **Jeder der sechs Pushes auf den Arbeits-Branch hat automatisch ein Vercel-Preview-Deployment ausgelöst** (N035). Regel 3 verbietet Deployments, E03 erlaubt nur Commit und Push. | Produktion unverändert (`d7e1122`). Die Previews sind per Vercel Authentication geschützt, enthalten nur zusätzliches Markdown, nutzen aber die gemeinsamen Umgebungsvariablen. Build-Minuten verbraucht. | Nach der Entdeckung nur lokal committet und den Nutzer gefragt. **Entscheidung E10 (24.09.2026): Pushes mit Previews sind in Ordnung.** Keine Previews gelöscht, weil nur lesender Zugriff erlaubt ist (E08). |
 | 24.09.2026 | Drei Hilfsagenten haben entgegen der Vorgabe je einen lesenden git-Befehl ausgeführt (`git log -1` bzw. `git status`). | Keine inhaltliche Änderung. `git status` kann höchstens den Index-Zeitstempel auffrischen. | Dokumentiert. Die Ergebnisse der Agenten wurden geprüft: Nur die vorgesehenen Berichtsdateien wurden geschrieben, FIMI blieb unberührt. |
 | 24.09.2026 | Messartefakt in N023 bei zwei Seiten (Reiterwechsel nicht ausgelöst). | Zahlen zu verborgenen Inhalten zu niedrig, eine Seite fälschlich als unbetroffen geführt. | Per Code-Abgleich korrigiert (N023, GLOBAL-011). |
+| 25.09.2026 | Namensrunde 2, Runde 1: Der Opus-Agent las nach einer Unterbrechung Fables Domainprotokoll im gemeinsamen Arbeitsordner und lieferte dieselben 27 Namen. | Runde 1 hatte nur eine unabhängige Namensliste. Die Bewertung von Opus war trotzdem eigenständig. | Seither ein eigener Ordner je Modell. In Runde 2 hat jedes Modell eigene Namen entwickelt (13, Abschnitt 8.1). |
+| 25.09.2026 | Namensrunde 2, Runde 2: Zwei Opus-Agenten lieferten kein Ergebnis. Der erste stiess nach 22 Minuten Denkzeit an die Ausgabegrenze, der zweite wurde nach 16 Minuten ohne Ausgabe gestoppt. | Rund 40 Minuten Verzögerung, keine Daten verloren. | Die Hauptsitzung (ebenfalls Opus) hat die Opus-Seite übernommen (13, Abschnitt 8.1). |
 
 ## Offene Punkte
 
 - **Runde 2 ist ausgewertet (12).** Offen daraus: Name und Marke (W03, Vorschläge in 13) und die Freigabe für Produktion (E27).
 - **Runde 3 ist ausgewertet (14).** Offen daraus: Namenswahl nach Namensrunde 2 (W03), Produktion (E39), Partner (PARTNER), Terminal-Auftrag bewusst zurückgestellt (E45).
-- **Runde 4 (vorgemerkt):** Namenswahl, Prüfung der Übersetzungen (M60), Adressen je Sprache, Partner.
+- **Runde 4 (veröffentlicht 25.09.2026):** Namenswahl (DACH, PREMIUM), Domains, Logo, Prüfung der Übersetzungen (M60), Adressen je Sprache, Belege, Partner.
 - **Nur Brandea:** Repository auf privat stellen (R1), Vercel-Variablen als „sensitive“ markieren (M06).
 - *Die folgenden Punkte stammen aus der Analyse und sind durch Runde 1 weitgehend beantwortet (11).*
 
@@ -113,15 +116,14 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 
 ## Nächste Aufgabe
 
-**Welle 0, Welle 1 (Teil 1), Zielbild v2 und die Premium-Inhalte aus Runde 3 sind auf dem Arbeits-Branch umgesetzt. In Produktion ist noch nichts (N051, N057).**
+**Welle 0, Welle 1 (Teil 1), Zielbild v2, die Premium-Inhalte aus Runde 3 und die Technik aus Welle 2 sind auf dem Arbeits-Branch umgesetzt. In Produktion ist noch nichts (N051, N057).**
 
-1. **Produktion:** Brandea stellt die Freigabe ein oder spielt den Stand selbst ein (14, Abschnitt 3).
-2. **Namensrunde 2** abschliessen: Ping-Pong Fable und Opus, Prüfung, Schlussrunde, Ergebnis mit Bedeutungen in 13, Abschnitt 8. Danach Wahl durch Brandea (E37, E38).
-3. **Welle 1, Teil 2:**
-   - Metadaten je Seite (M16): 21 Seiten tragen noch den Standard-Titel
+1. **Produktion:** Brandea stellt den Modus der Sitzung auf „Accept edits“ und bestätigt den Push, oder spielt den Stand selbst ein (14, Abschnitt 3).
+2. **Runde 4:** Namenswahl aus der Namensrunde 2 (13, Abschnitt 8), Domains, Logo, Prüfung der Übersetzungen, Adressen je Sprache, Belege, Partner.
+3. **Nach der Namenswahl:** Domains sichern und Markenrecherche beim IGE (E38). Danach Name in `company.ts`, Titel und Metadaten, Favicon und Logo (M35).
+4. **Welle 1, Teil 2:**
    - Texte der Kern- und Premiumseiten (M29), gleich in einer übersetzbaren Inhaltsschicht für M60
-   - Favicon und Logo nach dem Namensentscheid (M35)
    - Ratgeber (M53)
    - Breadcrumbs (M20)
-4. **Mehrsprachigkeit (M60)** nach M56 und M29.
-5. **Belege** für die zurückgestellten Premium-Zusagen (M59).
+5. **Mehrsprachigkeit (M60)** nach M56 und M29.
+6. **Belege** für die zurückgestellten Premium-Zusagen (M59).
