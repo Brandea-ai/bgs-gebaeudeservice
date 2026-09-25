@@ -1,3 +1,5 @@
+> **Veraltet (Stand 25.09.2026), nicht verwenden.** Diese Anleitung stammt aus der Vite-Zeit und empfiehlt `--dangerously-skip-permissions` sowie Pushes direkt nach `main`. Das widerspricht den Regeln des Projekts. Massgeblich sind `CLAUDE.md` und `Webseite-Analyse/00-START-HIER.md`.
+
 # 🚀 Claude Code Quick Start
 
 ## Start Claude (Full Autonomy Mode)

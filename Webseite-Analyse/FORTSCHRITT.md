@@ -71,6 +71,7 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 | 25.09.2026 | Welle 1 und 2, Technik | Metadaten je Seite (M16, `fa01801`), Aufräumen des Vite-Aufbaus (M34), Formularfelder Ort und Rhythmus (M30), Sicherheitsheader (M33), `npm ci` in Vercel (M05), eine Hauptaktion je Seite und keine Buttons in Links (M31), zehn weitere unbelegte Aussagen aus zugeklappten FAQ entfernt (N064), Adressen aus `company.ts` (M54), Sitemap und robots.txt generiert (M17). Alles getestet, Previews READY |
 | 25.09.2026 | Namensrunde 2 | Fable und Opus im Wechsel: drei Runden, gegenseitige Kritik, zwei Prüfrunden der Finalisten (N065 bis N067). Beide empfehlen Mantena + Silendo, Alternativen Takta + Intendia und Mantena + Clavea (13, Abschnitt 8). Fragebogen Runde 4 mit Bedeutung je Name veröffentlicht |
 | 25.09.2026 | Runde 4 | Antworten ausgewertet (15). Mantena als Dachmarke, Clavea als Premium-Linie. Domains frei (N069). Zefix und Swissreg erstmals abgefragt (N070, N071): Mantena ohne Konflikt, Clavea mit mittlerem Risiko wegen der Marke CLAVIS. Name auf dem Branch eingebaut und getestet (`85024bb`, N073), Handwerker-Netzwerk entfernt (`ff99f92`). Zwei Vorhaben von der Rechteprüfung abgelehnt, nicht umgangen (N072) |
+| 25.09.2026 | Pause | Auf Wunsch von Brandea pausiert, Fortsetzung später auch lokal. `CLAUDE.md` mit Einstieg und Regeln angelegt, `.env.example` auf die heutigen Variablen gebracht, Prüfskripte in `werkzeuge/` (Seiten, Browser), `CLAUDE-QUICKSTART.md` als veraltet markiert. Alles gepusht, keine laufenden Prozesse |
 
 ## Abweichungen und Vorfälle
 
@@ -116,6 +117,8 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 - **Datenschutz:** Die Website setzt ohne Einwilligung keine Cookies, lädt auf `/kontakt` aber Google-Dienste. Die Erklärung beschreibt eine andere Verarbeitung als die tatsächliche.
 
 ## Nächste Aufgabe
+
+**Pausiert seit 25.09.2026.** Lokal weitermachen: Repository klonen, Branch `claude/optimistic-sagan-h5y2i9` auschecken, `npm ci`, dann Claude Code im Ordner starten. Einstieg und Regeln stehen in `CLAUDE.md`.
 
 **Welle 0, Welle 1 (Teil 1), Zielbild v2, die Premium-Inhalte aus Runde 3, die Technik aus Welle 2 und der neue Name sind auf dem Arbeits-Branch umgesetzt. In Produktion ist noch nichts (N051, N057).**
 
