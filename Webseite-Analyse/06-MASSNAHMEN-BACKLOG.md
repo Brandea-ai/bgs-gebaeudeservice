@@ -75,6 +75,8 @@ Umgesetzt heisst: auf `claude/optimistic-sagan-h5y2i9` committet, in der isolier
 | M33 | umgesetzt: Content-Security-Policy, Permissions-Policy, Referrer-Policy | Nonce-basierte CSP erst bei dynamischem Rendern sinnvoll |
 | M31 | umgesetzt (`46fefce`): Hauptaktion überall „Kostenlose Offerte anfragen“, Telefon als zweite Aktion, solange der Chat aus ist. KI-Berater auf der Startseite nur mit Chat. 39 Buttons in Links auf gültiges HTML umgestellt | Texte der Abschnitte rund um die Aktionen (M29) |
 | M11 | ergänzt (`ebdf3ec`): zehn weitere Aussagen aus zugeklappten FAQ und Reitern entfernt, ISO-Hinweise im Ratgeber durch überprüfbare Nachweise ersetzt (N064) | Übrige Einträge des Nachweisregisters bei der Textüberarbeitung (M29) |
+| M17 | umgesetzt (`0ada91c`): Sitemap und robots.txt aus `shared/seo.ts` erzeugt, statische Dateien mit Platzhalternamen entfernt, 404 fest auf „noindex, follow“ | Sitemap mit Sprachversionen (M60) |
+| M54 | ergänzt (`9c6adcc`): Adresse auf Kontakt- und Impressumsseite aus `shared/company.ts` | Chat-Prompt in `server/gemini.ts` mit alter Adresse, wird bei M03 neu aufgebaut |
 | M05 | ergänzt (`3b3bef4`): Vercel installiert mit `npm ci` | ESLint-Konfiguration, CI, Framework-Preset im Vercel-Projekt (heute „vite“, per `vercel.json` übersteuert) |
 
 **Umgebungsvariablen für Vercel (neu):** `SITE_INDEXABLE` (nur Produktion, erst zum Launch `true`), `NEXT_PUBLIC_CHAT_ENABLED` (erst nach der Reparatur `true`), optional `CONTACT_TO_EMAIL` und `CONTACT_FROM_EMAIL`. Ohne Angabe gelten `admin@brandea.de` und ein Absender unter `brandea.de`.

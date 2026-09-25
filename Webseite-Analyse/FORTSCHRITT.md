@@ -68,6 +68,7 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 | 25.09.2026 | Runde 2 und Welle 1 | Antworten ausgewertet (12). Push nach `main` von der Rechteprüfung blockiert, nicht umgangen (N051). Welle 1, Teil 1 umgesetzt und getestet (N052). Namens- und Nischenrecherche gestartet |
 | 25.09.2026 | Zielbild v2, Namen und Nischen | Neun Leistungsseiten nach `/leistungen/…`, Übersichten `/leistungen` und `/premium`, 13 Weiterleitungen 308, Menü, Footer, Startseite und Sitemap umgestellt, getestet (N055). Befund beim Test: Leistungsmenü nur per Maus bedienbar, behoben (`2fb0508`). Namens- und Marktrecherche ausgewertet und nachgeprüft (13, N053, N054). Korrektur: 691 statt „mindestens 561“ Steuerpflichtige über CHF 1 Mio. |
 | 25.09.2026 | Runde 3 | Fragebogen Runde 3 veröffentlicht, Antworten ausgewertet (14). Seeufer und Premium-Zusagen umgesetzt und getestet (`31f87eb`, N055, N058). Zweiter Push nach `main` blockiert (N057), Freigabe liegt bei Brandea. Namensrunde 2 mit Fable gestartet. Mehrsprachigkeit geplant (M60) |
+| 25.09.2026 | Welle 1 und 2, Technik | Metadaten je Seite (M16, `fa01801`), Aufräumen des Vite-Aufbaus (M34), Formularfelder Ort und Rhythmus (M30), Sicherheitsheader (M33), `npm ci` in Vercel (M05), eine Hauptaktion je Seite und keine Buttons in Links (M31), zehn weitere unbelegte Aussagen aus zugeklappten FAQ entfernt (N064), Adressen aus `company.ts` (M54), Sitemap und robots.txt generiert (M17). Alles getestet, Previews READY |
 
 ## Abweichungen und Vorfälle
 
