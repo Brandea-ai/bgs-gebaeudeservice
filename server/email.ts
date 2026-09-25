@@ -20,7 +20,7 @@ interface EmailData {
   message: string;
 }
 
-const DEFAULT_FROM = 'BGS Website <website@brandea.de>';
+const DEFAULT_FROM = `${company.brand} Website <website@brandea.de>`;
 
 function escapeHtml(value: string): string {
   return value

@@ -61,11 +61,17 @@ export default function Premium() {
 
       <section className="pt-32 pb-16 bg-slate-900 text-white">
         <div className="container max-w-5xl">
-          <p className="text-sm font-semibold uppercase tracking-wide text-red-300 mb-4">Premium</p>
+          <p className="text-sm font-semibold uppercase tracking-wide text-red-300 mb-4">
+            {company.premiumBrand} · Premium-Linie von {company.brand}
+          </p>
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Reinigung für besondere Ansprüche</h1>
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-3xl">
             Für Villen und Residenzen, Zweitwohnungen, Hotels mit besonderen Wünschen, Family Offices, Privatjets
             und Yachten. Diskret, sorgfältig und in Ihrer Sprache.
+          </p>
+          <p className="text-sm text-slate-400 leading-relaxed max-w-3xl mt-4">
+            Der Name {company.premiumBrand} kommt vom lateinischen «clavis», dem Schlüssel. Sie vertrauen uns Ihr Haus
+            an, wir gehen damit um, als wäre es unser eigenes.
           </p>
         </div>
       </section>

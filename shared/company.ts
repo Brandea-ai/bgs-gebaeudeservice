@@ -3,8 +3,10 @@
  * Nur Angaben mit Eigenangabe des Kunden oder Beleg. Änderungen nur hier.
  */
 export const company = {
-  // Arbeitsmarke bis zum Namensentscheid (E26)
-  brand: 'BGS Gebäudeservice',
+  // Dachmarke und Premium-Linie aus Runde 4 (E46, E47). Vor der Veröffentlichung
+  // Domains sichern und Markenrecherche beim IGE (E38, Webseite-Analyse/15).
+  brand: 'Mantena',
+  premiumBrand: 'Clavea',
   // Eingetragene Firma für Impressum, Offerten und Rechnungen (Art. 954a OR)
   legalName: 'BGS - Gebäudeservice GmbH',
   uid: 'CHE-108.687.458',

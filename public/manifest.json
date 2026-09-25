@@ -1,7 +1,7 @@
 {
-  "name": "BGS Gebäudeservice",
-  "short_name": "BGS",
-  "description": "Professionelle Gebäudereinigung für Premium, Business und Basis-Services in der Schweiz",
+  "name": "Mantena",
+  "short_name": "Mantena",
+  "description": "Reinigung, Hauswartung und Facility Services in Luzern, Zug, Aargau, Nidwalden und Obwalden",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

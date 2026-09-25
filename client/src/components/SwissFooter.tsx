@@ -332,8 +332,9 @@ export default function SwissFooter() {
         <div className="container py-16">
           <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
             <div>
-              {/* Platzhalter bis zum neuen Logo (R2d, E26) */}
-              <p className="text-2xl font-bold tracking-tight mb-6">{company.brand}</p>
+              {/* Schriftzug bis zum Logo von Brandea (M35, E49) */}
+              <p className="text-2xl font-bold tracking-tight mb-1">{company.brand}</p>
+              <p className="text-slate-500 text-xs mb-6">Eine Marke der {company.legalName}</p>
               <p className="text-slate-400 text-sm leading-relaxed mb-6">
                 Reinigung und Hauswartung für Unternehmen und anspruchsvolle Privatkunden. Sitz in {company.address.city}.
               </p>
@@ -345,7 +346,7 @@ export default function SwissFooter() {
             </div>
 
             <div>
-              <h3 className="font-semibold text-lg mb-4">Premium</h3>
+              <h3 className="font-semibold text-lg mb-4">{company.premiumBrand} Premium</h3>
               <div className="space-y-2">
                 <Link href="/premium"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Premium im Überblick</div></Link>
                 <Link href="/premium/luxusimmobilien"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Luxusimmobilien</div></Link>

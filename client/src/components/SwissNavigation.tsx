@@ -94,7 +94,7 @@ export default function SwissNavigation() {
                   <div className="bg-white rounded-lg shadow-2xl p-8">
                     <div className="grid grid-cols-3 gap-8">
                       <div>
-                        <p className="text-sm font-bold text-primary mb-4 uppercase tracking-wide">Premium</p>
+                        <p className="text-sm font-bold text-primary mb-4 uppercase tracking-wide">{company.premiumBrand} Premium</p>
                         <div className="space-y-2">
                           {premiumServices.map((service, index) => (
                             <Link key={index} href={service.href}>
@@ -169,7 +169,7 @@ export default function SwissNavigation() {
               <div className="py-2 text-foreground hover:text-primary transition-smooth">Home</div>
             </Link>
             <div>
-              <div className="py-2 font-semibold text-foreground">Premium</div>
+              <div className="py-2 font-semibold text-foreground">{company.premiumBrand} Premium</div>
               <div className="pl-4 space-y-2">
                 {premiumServices.map((service, index) => (
                   <Link key={index} href={service.href} onClick={() => setIsOpen(false)}>

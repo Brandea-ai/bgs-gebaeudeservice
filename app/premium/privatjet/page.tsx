@@ -15,6 +15,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import Link from "next/link";
 import { CheckCircle, Star, Shield, Clock, Sparkles, ArrowRight } from "lucide-react";
 import AppointmentButton from "@/components/AppointmentButton";
+import { company } from "../../../shared/company";
 
 export default function Privatjet() {
   const serviceData = {
@@ -192,7 +193,7 @@ export default function Privatjet() {
             
             <TabsContent value="vorteile" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Warum BGS Gebäudeservice?</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Warum {company.premiumBrand}?</h3>
                 <div className="grid md:grid-cols-2 gap-8">
                   {[
                     {

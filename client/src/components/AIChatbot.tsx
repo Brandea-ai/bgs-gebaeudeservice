@@ -116,8 +116,8 @@ function AIChatbotWidget() {
   const handleConsent = () => {
     setHasConsent(true);
     const greeting = supporter.gender === 'male'
-      ? `Guten Tag! Ich bin ${supporter.name}, Ihr persönlicher Berater von der BGS Gebäudeservice.`
-      : `Guten Tag! Ich bin ${supporter.name}, Ihre persönliche Beraterin von der BGS Gebäudeservice.`;
+      ? `Guten Tag! Ich bin ${supporter.name}, Ihr persönlicher Berater von ${company.brand}.`
+      : `Guten Tag! Ich bin ${supporter.name}, Ihre persönliche Beraterin von ${company.brand}.`;
 
     let content;
     if (appointmentMode) {

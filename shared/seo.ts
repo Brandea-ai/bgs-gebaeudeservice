@@ -18,7 +18,7 @@ export const pages = {
   },
   '/premium': {
     title: 'Premium: Reinigung für besondere Ansprüche',
-    description: 'Diskrete Reinigung für Villen, Zweitwohnungen, Hotels, Family Offices, Privatjets und Yachten am Vierwaldstättersee, am Zugersee und in der Region.',
+    description: `${company.premiumBrand}, die Premium-Linie von ${company.brand}: diskrete Reinigung für Villen, Zweitwohnungen, Hotels, Family Offices, Privatjets und Yachten.`,
   },
   '/premium/luxusimmobilien': {
     title: 'Reinigung von Villen und Luxusimmobilien',
@@ -112,12 +112,17 @@ export const pages = {
 
 export type PagePath = keyof typeof pages
 
+// Premium-Seiten tragen die Linie mit Dachmarke, alle anderen die Dachmarke (E37, E47)
+function brandFor(path: string): string {
+  return path.startsWith('/premium') ? `${company.premiumBrand} von ${company.brand}` : company.brand
+}
+
 export function metaFor(path: PagePath): Metadata {
   const { title, description } = pages[path]
   return {
     // Vollständiger Titel statt Vorlage: Ein Layout mit eigenem Titel (etwa /blog)
     // hebt die Vorlage für seine Unterseiten sonst auf. Die Startseite trägt die Marke schon.
-    title: { absolute: path === '/' ? title : `${title} | ${company.brand}` },
+    title: { absolute: path === '/' ? title : `${title} | ${brandFor(path)}` },
     description,
     alternates: { canonical: path },
     openGraph: {
