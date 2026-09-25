@@ -38,6 +38,14 @@ const nextConfig: NextConfig = {
     ],
   },
 
+  // Weggefallene Seiten auf fachlich passende Ziele (03, Abschnitt 2b)
+  async redirects() {
+    return [
+      { source: '/standorte/:slug*', destination: '/einzugsgebiet', permanent: true },
+      { source: '/premium/housekeeping', destination: '/premium/luxusimmobilien', permanent: true },
+    ]
+  },
+
   // Headers for SEO
   async headers() {
     return [

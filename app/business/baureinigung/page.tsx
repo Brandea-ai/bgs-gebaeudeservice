@@ -32,7 +32,7 @@ export default function Baureinigung() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Baureinigung Zürich, Zug & Luzern - Swiss Reinigungsfirma"
+        title="Baureinigung Luzern, Zug & Umgebung - BGS Gebäudeservice"
         description="Professionelle Baureinigung in der Schweiz. Bauschlussreinigung, Baustellenreinigung und Entsorgung für Neubauten und Renovierungen."
         keywords="Baureinigung, Bauschlussreinigung, Baustellenreinigung Schweiz, Endreinigung Neubau"
         url="/business/baureinigung"
@@ -52,7 +52,7 @@ export default function Baureinigung() {
                 Professionelle Baureinigung
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
-                Zuverlässige Baureinigung für Neubauten, Umbauten und Renovierungen in Zürich, Zug und Luzern. Von der Grobreinigung bis zur Endreinigung.
+                Zuverlässige Baureinigung für Neubauten, Umbauten und Renovierungen in Luzern, Zug und Umgebung. Von der Grobreinigung bis zur Endreinigung.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a href="#kontakt-formular">
@@ -87,8 +87,8 @@ export default function Baureinigung() {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-full mb-4">
                 <Shield className="w-8 h-8" />
               </div>
-              <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">Zertifizierte Qualität</h3>
-              <p className="text-slate-600 text-xs sm:text-sm md:text-base">Professionelle Baureinigung nach Schweizer Standards</p>
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">Offerte vor Ort</h3>
+              <p className="text-slate-600 text-xs sm:text-sm md:text-base">Kostenlos und unverbindlich</p>
             </div>
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-full mb-4">
@@ -101,8 +101,8 @@ export default function Baureinigung() {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-full mb-4">
                 <Award className="w-8 h-8" />
               </div>
-              <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">15+ Jahre Erfahrung</h3>
-              <p className="text-slate-600 text-xs sm:text-sm md:text-base">Expertise in allen Bauphasen</p>
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">Seit 2006</h3>
+              <p className="text-slate-600 text-xs sm:text-sm md:text-base">Erfahrung in Reinigung und Hauswartung</p>
             </div>
           </div>
         </div>

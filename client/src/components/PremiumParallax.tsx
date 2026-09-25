@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform, useSpring, MotionValue } from "framer-motion";
 import { useRef, ReactNode } from "react";
+import { imagesArePlaceholders } from '../../../shared/features';
 
 interface ParallaxSectionProps {
   children: ReactNode;
@@ -85,6 +86,7 @@ export function ParallaxImage({
   const scaleValue = useTransform(smoothProgress, [0, 0.5, 1], scale ? [1.2, 1, 1.2] : [1, 1, 1]);
   const opacity = useTransform(smoothProgress, [0, 0.2, 0.8, 1], [0.6, 1, 1, 0.6]);
   const blurValue = useTransform(smoothProgress, [0, 0.5, 1], blur ? [8, 0, 8] : [0, 0, 0]);
+  const filter = useTransform(blurValue, (v) => `blur(${v}px)`);
 
   return (
     <div ref={ref} className={`relative overflow-hidden ${className}`}>
@@ -96,14 +98,22 @@ export function ParallaxImage({
         }}
         className="w-full h-full"
       >
-        <motion.img
-          src={src}
-          alt={alt}
-          style={{
-            filter: useTransform(blurValue, (v) => `blur(${v}px)`),
-          }}
-          className="w-full h-full object-cover"
-        />
+        {imagesArePlaceholders ? (
+          <div
+            role="img"
+            aria-label={alt}
+            className="w-full h-full bg-gradient-to-br from-slate-600 to-slate-800 flex items-center justify-center"
+          >
+            <span className="text-xs sm:text-sm text-white/60">Bild folgt</span>
+          </div>
+        ) : (
+          <motion.img
+            src={src}
+            alt={alt}
+            style={{ filter }}
+            className="w-full h-full object-cover"
+          />
+        )}
       </motion.div>
       {overlay && (
         <motion.div 
@@ -186,10 +196,14 @@ export function ParallaxBackground({
         style={{ y }}
         className="absolute inset-0 w-full h-[120%] -top-[10%]"
       >
-        <div
-          className="w-full h-full bg-cover bg-center"
-          style={{ backgroundImage: `url(${src})` }}
-        />
+        {imagesArePlaceholders ? (
+          <div className="w-full h-full bg-gradient-to-br from-slate-700 to-slate-900" />
+        ) : (
+          <div
+            className="w-full h-full bg-cover bg-center"
+            style={{ backgroundImage: `url(${src})` }}
+          />
+        )}
       </motion.div>
       {overlay && (
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50" />

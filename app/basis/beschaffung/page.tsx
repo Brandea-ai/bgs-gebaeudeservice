@@ -27,7 +27,7 @@ export default function Beschaffung() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Beschaffungsmanagement Zürich, Zug & Luzern - Swiss Reinigungsfirma"
+        title="Beschaffungsmanagement Luzern, Zug & Umgebung - BGS Gebäudeservice"
         description="Professionelles Beschaffungsmanagement in der Schweiz. Reinigungsmittel und Verbrauchsmaterialien automatisch und bedarfsgerecht."
         keywords="Beschaffungsmanagement, Reinigungsmittel Beschaffung, Verbrauchsmaterial Schweiz, Procurement"
         url="/basis/beschaffung"
@@ -47,7 +47,7 @@ export default function Beschaffung() {
                 Professionelles Beschaffungsmanagement
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
-                Automatische Beschaffung von Reinigungsmitteln und Verbrauchsmaterialien in Zürich, Zug und Luzern. Bedarfsgerecht, nachhaltig und kosteneffizient.
+                Automatische Beschaffung von Reinigungsmitteln und Verbrauchsmaterialien in Luzern, Zug und Umgebung. Bedarfsgerecht, nachhaltig und kosteneffizient.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a href="#kontakt-formular">
@@ -280,7 +280,7 @@ export default function Beschaffung() {
                 Sind ökologische Produkte verfügbar?
               </AccordionTrigger>
               <AccordionContent className="text-slate-700 leading-relaxed pt-4">
-                Selbstverständlich. Wir bieten ein vollständiges Sortiment an umweltfreundlichen Reinigungsmitteln mit Öko-Zertifizierungen, die genauso effektiv sind wie konventionelle Produkte.
+                Ja, auf Wunsch setzen wir umweltfreundliche Reinigungsmittel ein, die genauso effektiv sind wie konventionelle Produkte.
               </AccordionContent>
             </AccordionItem>
             

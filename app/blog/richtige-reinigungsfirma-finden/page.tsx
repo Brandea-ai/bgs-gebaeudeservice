@@ -22,7 +22,7 @@ export default function RichtigeReinigungsfirmaFinden() {
   return (
     <>
       <SEO 
-        title="Die richtige Reinigungsfirma finden: 10 Tipps | Swiss Reinigungsfirma"
+        title="Die richtige Reinigungsfirma finden: 10 Tipps | BGS Gebäudeservice"
         description="10 wichtige Kriterien für die Auswahl der richtigen Reinigungsfirma. Von Zertifizierungen bis Referenzen - so finden Sie den perfekten Partner."
         keywords="Reinigungsfirma finden, Reinigungsfirma auswählen, Kriterien Reinigungsfirma, professionelle Reinigung"
       />
@@ -65,7 +65,7 @@ function RichtigeReinigungsfirmaFindenContent() {
 
           <div className="prose prose-lg max-w-none">
             <p className="text-lg leading-relaxed text-slate-700 mb-8">
-              Die Wahl der richtigen Reinigungsfirma ist eine wichtige Entscheidung für jedes Unternehmen. Eine professionelle Gebäudereinigung trägt nicht nur zur Hygiene und Sauberkeit bei, sondern beeinflusst auch das Image Ihres Unternehmens und das Wohlbefinden Ihrer Mitarbeiter. In diesem umfassenden Ratgeber erfahren Sie, worauf Sie bei der Auswahl einer Reinigungsfirma in Zürich, Zug oder Luzern achten sollten.
+              Die Wahl der richtigen Reinigungsfirma ist eine wichtige Entscheidung für jedes Unternehmen. Eine professionelle Gebäudereinigung trägt nicht nur zur Hygiene und Sauberkeit bei, sondern beeinflusst auch das Image Ihres Unternehmens und das Wohlbefinden Ihrer Mitarbeiter. In diesem umfassenden Ratgeber erfahren Sie, worauf Sie bei der Auswahl einer Reinigungsfirma in Luzern, Zug und Umgebung achten sollten.
             </p>
 
             <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-slate-900 mt-12 mb-6">Warum ist die richtige Wahl so wichtig?</h2>
@@ -187,16 +187,10 @@ function RichtigeReinigungsfirmaFindenContent() {
 
             <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-slate-900 mt-12 mb-6">Regionale Besonderheiten in der Schweiz</h2>
             <p className="text-lg leading-relaxed text-slate-700 mb-8">
-              Bei der Auswahl einer Reinigungsfirma in Zürich, Zug oder Luzern sollten Sie auch regionale Faktoren berücksichtigen. Eine lokale Reinigungsfirma kennt die örtlichen Gegebenheiten, hat kurze Anfahrtswege und kann flexibel auf Ihre Bedürfnisse reagieren. Zudem unterstützen Sie mit der Wahl eines regionalen Anbieters die lokale Wirtschaft.
+              Bei der Auswahl einer Reinigungsfirma in Luzern, Zug und Umgebung sollten Sie auch regionale Faktoren berücksichtigen. Eine lokale Reinigungsfirma kennt die örtlichen Gegebenheiten, hat kurze Anfahrtswege und kann flexibel auf Ihre Bedürfnisse reagieren. Zudem unterstützen Sie mit der Wahl eines regionalen Anbieters die lokale Wirtschaft.
             </p>
 
-            <div className="grid md:grid-cols-3 gap-6 mb-12">
-              <Card className="p-6 hover-lift hover-tilt hover-tilt">
-                <h3 className="text-sm sm:text-base md:text-lg font-bold mb-3">Zürich</h3>
-                <p className="text-slate-600 text-xs sm:text-sm md:text-base">
-                  Größte Stadt der Schweiz mit hoher Nachfrage nach professionellen Reinigungsdienstleistungen für Büros, Hotels und Geschäfte.
-                </p>
-              </Card>
+            <div className="grid md:grid-cols-2 gap-6 mb-12">
               <Card className="p-6 hover-lift hover-tilt hover-tilt">
                 <h3 className="text-sm sm:text-base md:text-lg font-bold mb-3">Zug</h3>
                 <p className="text-slate-600 text-xs sm:text-sm md:text-base">

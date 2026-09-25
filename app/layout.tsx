@@ -5,7 +5,6 @@ import { Toaster } from '@/components/ui/sonner'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { ThemeProvider } from '@/contexts/ThemeContext'
 import { ChatbotProvider } from '@/contexts/ChatbotContext'
-import CookieConsent from '@/components/CookieConsent'
 import AIChatbot from '@/components/AIChatbot'
 import ErrorBoundary from '@/components/ErrorBoundary'
 
@@ -19,14 +18,14 @@ export const metadata: Metadata = {
     default: 'BGS Gebäudeservice - Professionelle Reinigungsdienstleistungen in der Schweiz',
     template: '%s | BGS Gebäudeservice'
   },
-  description: 'Professionelle Gebäudereinigung für Premium, Business und Basis-Services in Zürich, Zug und Luzern. Büroreinigung, Industriereinigung, Facility Management und mehr.',
+  description: 'Professionelle Gebäudereinigung für Premium, Business und Basis-Services in Luzern, Zug und Umgebung. Büroreinigung, Industriereinigung, Facility Management und mehr.',
   keywords: [
     'Gebäudereinigung',
     'Reinigungsservice',
     'Büroreinigung',
     'Industriereinigung',
     'Facility Management',
-    'Zürich',
+    'Aargau',
     'Zug',
     'Luzern',
     'Schweiz',
@@ -101,7 +100,7 @@ export default function RootLayout({
             <ChatbotProvider>
               <TooltipProvider>
                 <Toaster />
-                <CookieConsent />
+                {/* Kein Cookie-Banner: keine einwilligungspflichtigen Dienste, die Karte fragt selbst (M15, E20) */}
                 <AIChatbot />
                 {children}
               </TooltipProvider>

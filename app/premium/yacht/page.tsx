@@ -245,10 +245,6 @@ export default function Yacht() {
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
-                        <span>24/7 Notfall-Service</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
                         <span>Persönlicher Ansprechpartner</span>
                       </li>
                     </ul>
@@ -274,7 +270,7 @@ export default function Yacht() {
                 Wo bieten Sie Yacht Reinigung an?
               </AccordionTrigger>
               <AccordionContent className="text-slate-700 leading-relaxed pt-4">
-                Primär am Vierwaldstättersee, Zürichsee und Zugersee. Auf Anfrage auch an anderen Schweizer Seen und Mittelmeerhäfen während der Saison.
+                Am Vierwaldstättersee und am Zugersee, also in unserem Einzugsgebiet. Andere Orte auf Anfrage.
               </AccordionContent>
             </AccordionItem>
             

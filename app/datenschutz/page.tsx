@@ -3,6 +3,7 @@ import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
 import { Card } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { company } from "../../shared/company";
 
 export default function Datenschutz() {
   return (
@@ -20,10 +21,10 @@ export default function Datenschutz() {
             <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-4">Verantwortliche Stelle</h2>
             <div className="text-slate-700 leading-relaxed">
               <p className="mb-2">Verantwortlich für die Datenverarbeitung auf dieser Website ist:</p>
-              <p className="font-semibold mt-4">Swiss Reinigungsfirma</p>
-              <p>Tannhof 10, 6020 Emmenbrücke, Schweiz</p>
-              <p>Telefon: +41 41 320 56 10</p>
-              <p>E-Mail: info@bgs-service.ch</p>
+              <p className="font-semibold mt-4">{company.legalName}</p>
+              <p>{company.address.street}, {company.address.postalCode} {company.address.city}, Schweiz</p>
+              <p>Telefon: {company.phone.display}</p>
+              <p>E-Mail: {company.email}</p>
             </div>
           </Card>
 
@@ -119,7 +120,7 @@ export default function Datenschutz() {
                   <li>Beschwerde bei einer Aufsichtsbehörde einzureichen</li>
                 </ul>
                 <p>
-                  Zur Ausübung Ihrer Rechte wenden Sie sich bitte an: info@bgs-service.ch
+                  Zur Ausübung Ihrer Rechte wenden Sie sich bitte an: {company.email}
                 </p>
               </AccordionContent>
             </AccordionItem>
@@ -162,7 +163,7 @@ export default function Datenschutz() {
               Bei Fragen zur Erhebung, Verarbeitung oder Nutzung Ihrer personenbezogenen Daten, bei Auskünften, Berichtigung, Sperrung oder Löschung von Daten sowie Widerruf erteilter Einwilligungen wenden Sie sich bitte an:
             </p>
             <p className="text-slate-900 font-semibold mt-4">
-              info@bgs-service.ch
+              {company.email}
             </p>
           </Card>
         </div>

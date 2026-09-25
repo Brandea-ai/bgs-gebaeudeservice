@@ -27,7 +27,7 @@ export default function Sonderleistungen() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Sonderleistungen Zürich, Zug & Luzern - Swiss Reinigungsfirma"
+        title="Sonderleistungen Luzern, Zug & Umgebung - BGS Gebäudeservice"
         description="Professionelle Sonderleistungen in der Schweiz. Spezialreinigungen für außergewöhnliche Anforderungen."
         keywords="Sonderleistungen, Spezialreinigung Schweiz, Notfallreinigung, Express Reinigung"
         url="/basis/sonderleistungen"
@@ -47,7 +47,7 @@ export default function Sonderleistungen() {
                 Professionelle Sonderleistungen
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
-                Spezielle Reinigungsleistungen für außergewöhnliche Anforderungen in Zürich, Zug und Luzern.
+                Spezielle Reinigungsleistungen für außergewöhnliche Anforderungen in Luzern, Zug und Umgebung.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a href="#kontakt-formular">
@@ -94,21 +94,13 @@ export default function Sonderleistungen() {
             </Card>
             <Card className="p-6 text-center">
               <Clock className="w-12 h-12 text-primary mx-auto mb-4"/>
-              <div className="font-bold text-lg mb-2">24/7 Verfügbar</div>
-              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Auch an Wochenenden</div>
+              <div className="font-bold text-lg mb-2">Offerte vor Ort</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Kostenlos und unverbindlich</div>
             </Card>
           </div>
 
           <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-8 text-center">Häufig gestellte Fragen</h2>
           <Accordion type="single" collapsible className="max-w-3xl mx-auto">
-            <AccordionItem value="item-1">
-              <AccordionTrigger className="text-lg font-semibold">
-                Wie schnell können Sie bei Notfällen vor Ort sein?
-              </AccordionTrigger>
-              <AccordionContent className="text-slate-700 leading-relaxed pt-4">
-                Bei Notfällen sind wir innerhalb von 2-4 Stunden vor Ort. Unsere 24/7-Hotline ist immer erreichbar.
-              </AccordionContent>
-            </AccordionItem>
           </Accordion>
         </div>
       </section>

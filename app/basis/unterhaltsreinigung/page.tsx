@@ -27,7 +27,7 @@ export default function Unterhaltsreinigung() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Unterhaltsreinigung Zürich, Zug & Luzern - Swiss Reinigungsfirma"
+        title="Unterhaltsreinigung Luzern, Zug & Umgebung - BGS Gebäudeservice"
         description="Professionelle Unterhaltsreinigung in der Schweiz. Regelmäßig, zuverlässig und auf höchstem Qualitätsniveau."
         keywords="Unterhaltsreinigung, Regelmäßige Reinigung Schweiz, Büroreinigung, Gewerbereinigung"
         url="/basis/unterhaltsreinigung"
@@ -47,7 +47,7 @@ export default function Unterhaltsreinigung() {
                 Professionelle Unterhaltsreinigung
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
-                Regelmäßige Reinigung für Büros, Geschäfte und Gewerbeflächen in Zürich, Zug und Luzern. Zuverlässig, flexibel und auf Ihre Bedürfnisse zugeschnitten.
+                Regelmäßige Reinigung für Büros, Geschäfte und Gewerbeflächen in Luzern, Zug und Umgebung. Zuverlässig, flexibel und auf Ihre Bedürfnisse zugeschnitten.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a href="#kontakt-formular">

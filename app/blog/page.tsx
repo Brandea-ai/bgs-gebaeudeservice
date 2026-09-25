@@ -9,6 +9,7 @@ import SwissFooter from "@/components/SwissFooter";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
+import { imagesArePlaceholders } from "../../shared/features";
 
 export default function Blog() {
   const articles = [
@@ -27,14 +28,6 @@ export default function Blog() {
       date: "10. Januar 2025",
       readTime: "10 Min.",
       slug: "professionelle-gebaeudereinigung"
-    },
-    {
-      title: "Reinigungskosten in der Schweiz: Ein Überblick",
-      excerpt: "Transparente Informationen zu Reinigungskosten und Preisgestaltung in Zürich, Zug und Luzern.",
-      image: "/blog-kosten.jpg",
-      date: "5. Januar 2025",
-      readTime: "7 Min.",
-      slug: "reinigungskosten-schweiz"
     },
     {
       title: "Umweltfreundliche Reinigung: Tipps und Tricks",
@@ -69,11 +62,17 @@ export default function Blog() {
             {articles.map((article, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-xl transition-all duration-300 group">
                 <div className="relative h-64 overflow-hidden">
-                  <img 
-                    src={article.image} 
-                    alt={article.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
+                  {imagesArePlaceholders ? (
+                    <div role="img" aria-label={article.title} className="w-full h-full bg-gradient-to-br from-slate-600 to-slate-800 flex items-center justify-center">
+                      <span className="text-xs sm:text-sm text-white/60">Bild folgt</span>
+                    </div>
+                  ) : (
+                    <img 
+                      src={article.image} 
+                      alt={article.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 </div>
                 <div className="p-8">

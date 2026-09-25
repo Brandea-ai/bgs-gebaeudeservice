@@ -3,13 +3,14 @@ import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
 import SEO from "@/components/SEO";
 import { Card } from "@/components/ui/card";
+import { company } from "../../shared/company";
 
 export default function Impressum() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Impressum - Swiss Reinigungsfirma"
-        description="Rechtliche Hinweise und Impressum der Swiss Reinigungsfirma. Alle Informationen zu unserem Unternehmen."
+        title="Impressum - BGS Gebäudeservice"
+        description="Rechtliche Hinweise und Impressum der BGS Gebäudeservice. Alle Informationen zu unserem Unternehmen."
         keywords="Impressum, rechtliche Hinweise, Kontakt, Adresse, UID"
         url="/impressum"
       />
@@ -23,7 +24,8 @@ export default function Impressum() {
             <Card className="p-8">
               <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-6 text-slate-900">Verantwortlich für den Inhalt</h2>
               <div className="space-y-4 text-lg text-slate-700">
-                <p className="font-bold text-xl text-slate-900">Swiss Reinigungsfirma</p>
+                {/* Eingetragene Firma, vollständig und unverändert (Art. 954a OR) */}
+                <p className="font-bold text-xl text-slate-900">{company.legalName}</p>
                 <p>Nezir Bozhdaraj</p>
                 <p>Tannhof 10</p>
                 <p>6020 Emmenbrücke</p>
@@ -34,16 +36,18 @@ export default function Impressum() {
             <Card className="p-8">
               <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-6 text-slate-900">Kontakt</h2>
               <div className="space-y-4 text-lg text-slate-700">
-                <p><strong>Telefon:</strong> <a href="tel:+41413205610" className="text-primary hover:underline">+41 41 320 56 10</a></p>
-                <p><strong>E-Mail:</strong> <a href="mailto:info@bgs-service.ch" className="text-primary hover:underline">info@bgs-service.ch</a></p>
+                <p><strong>Telefon:</strong> <a href={company.phone.href} className="text-primary hover:underline">{company.phone.display}</a></p>
+                <p><strong>E-Mail:</strong> <a href={`mailto:${company.email}`} className="text-primary hover:underline">{company.email}</a></p>
               </div>
             </Card>
 
             <Card className="p-8">
               <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-6 text-slate-900">Handelsregistereintrag</h2>
               <div className="space-y-4 text-lg text-slate-700">
+                <p>Eingetragen im Handelsregister des Kantons Luzern</p>
                 <p><strong>Unternehmens-Identifikationsnummer (UID):</strong></p>
-                <p className="font-mono">CHE-108.687.458</p>
+                <p className="font-mono">{company.uid}</p>
+                <p><strong>Mehrwertsteuernummer:</strong> <span className="font-mono">{company.uid} MWST</span></p>
               </div>
             </Card>
 
@@ -65,17 +69,13 @@ export default function Impressum() {
             <Card className="p-8">
               <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-6 text-slate-900">Urheberrechte</h2>
               <div className="space-y-4 text-slate-700 leading-relaxed text-base">
-                <p>Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf dieser Website gehören ausschliesslich der <strong>Swiss Reinigungsfirma</strong> oder den speziell genannten Rechtsinhabern. Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung der Urheberrechtsträger im Voraus einzuholen.</p>
+                <p>Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf dieser Website gehören ausschliesslich der <strong>{company.legalName}</strong> oder den speziell genannten Rechtsinhabern. Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung der Urheberrechtsträger im Voraus einzuholen.</p>
               </div>
             </Card>
 
             <Card className="p-8 bg-amber-50 border-l-4 border-amber-500">
-              <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-6 text-amber-900">⚠️ Wichtige Hinweise</h2>
+              <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-6 text-amber-900">Hinweis zu Bildern</h2>
               <div className="space-y-6 text-amber-800 leading-relaxed text-base">
-                <div>
-                  <p className="font-bold text-lg mb-2">ISO-Zertifizierung:</p>
-                  <p>Die ISO-Zertifizierung befindet sich derzeit in Bearbeitung. Wir arbeiten aktiv an der Erfüllung aller Standards und erwarten die Zertifizierung in naher Zukunft.</p>
-                </div>
                 <div>
                   <p className="font-bold text-lg mb-2">Verwendung von KI-generierten Bildern:</p>
                   <p>Einige Bilder auf dieser Website wurden mit Unterstützung von künstlicher Intelligenz (AI) erstellt. Diese dienen ausschließlich zu Illustrations- und Marketingzwecken und repräsentieren die Qualität unserer Dienstleistungen.</p>

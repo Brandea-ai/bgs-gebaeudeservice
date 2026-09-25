@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { company } from "../../../shared/company";
 
 export default function SwissNavigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +22,6 @@ export default function SwissNavigation() {
   const premiumServices = [
     { title: "Privatjet Reinigung", href: "/premium/privatjet" },
     { title: "Yacht Reinigung", href: "/premium/yacht" },
-    { title: "Private Housekeeping", href: "/premium/housekeeping" },
     { title: "Luxusimmobilien", href: "/premium/luxusimmobilien" }
   ];
 
@@ -39,27 +39,21 @@ export default function SwissNavigation() {
 
   const basisServices = [
     { title: "Unterhaltsreinigung", href: "/basis/unterhaltsreinigung" },
-    { title: "Hausmeisterservice", href: "/basis/hausmeisterservice" },
-    { title: "Winterdienst", href: "/basis/winterdienst" },
+    { title: "Hauswartung", href: "/basis/hausmeisterservice" },
     { title: "Beschaffungsmanagement", href: "/basis/beschaffung" },
     { title: "Sonderleistungen", href: "/basis/sonderleistungen" }
   ];
 
-  const regions = [
-    { title: "Zürich", href: "/standorte/zuerich" },
-    { title: "Zug", href: "/standorte/zug" },
-    { title: "Luzern", href: "/standorte/luzern" }
-  ];
-
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled ? "bg-white shadow-lg" : "bg-white/98 backdrop-blur-sm"
+      scrolled ? "bg-white shadow-lg" : "bg-white/95 backdrop-blur-sm"
     }`}>
       <div className="container">
         <div className="flex items-center justify-between h-20 md:h-24">
           <Link href="/">
             <div className="flex items-center gap-3 cursor-pointer">
-              <img src="/swiss-logo.webp" alt="Swiss Reinigung" className="h-20 md:h-24 w-auto" />
+              {/* Platzhalter bis zum neuen Logo (R2d, E26) */}
+              <span className="text-xl md:text-2xl font-bold tracking-tight text-foreground">{company.brand}</span>
             </div>
           </Link>
 
@@ -122,34 +116,12 @@ export default function SwissNavigation() {
               )}
             </div>
 
-            <div 
-              className="relative group"
-              onMouseEnter={() => setActiveDropdown('standorte')}
-              onMouseLeave={() => setActiveDropdown(null)}
-            >
-              <button className="text-foreground hover:text-primary transition-smooth font-medium">
-                Standorte
-              </button>
-              {activeDropdown === 'standorte' && (
-                <div className="absolute top-full left-0 pt-4">
-                  <div className="bg-white rounded-lg shadow-2xl p-4 min-w-[200px]">
-                    {regions.map((region, index) => (
-                      <Link key={index} href={region.href}>
-                        <div className="px-4 py-2 hover:bg-secondary rounded-md transition-smooth cursor-pointer">
-                          {region.title}
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
+            <Link href="/einzugsgebiet" className="text-foreground hover:text-primary transition-smooth font-medium">
+              Einzugsgebiet
+            </Link>
 
             <Link href="/ueber-uns" className="text-foreground hover:text-primary transition-smooth font-medium">
               Über uns
-            </Link>
-            <Link href="/referenzen" className="text-foreground hover:text-primary transition-smooth font-medium">
-              Referenzen
             </Link>
             <Link href="/blog" className="text-foreground hover:text-primary transition-smooth font-medium">
               Blog
@@ -211,22 +183,14 @@ export default function SwissNavigation() {
               </div>
             </div>
             <div>
-              <div className="py-2 font-semibold text-foreground">Standorte</div>
-              <div className="pl-4 space-y-2">
-                {regions.map((region, index) => (
-                  <Link key={index} href={region.href} onClick={() => setIsOpen(false)}>
-                    <div className="py-2 text-muted-foreground hover:text-primary transition-smooth">
-                      {region.title}
-                    </div>
-                  </Link>
-                ))}
+              <div className="pl-0 space-y-2">
+                <Link href="/einzugsgebiet" onClick={() => setIsOpen(false)}>
+                  <div className="py-2 text-foreground hover:text-primary transition-smooth">Einzugsgebiet</div>
+                </Link>
               </div>
             </div>
             <Link href="/ueber-uns" onClick={() => setIsOpen(false)}>
               <div className="py-2 text-foreground hover:text-primary transition-smooth">Über uns</div>
-            </Link>
-            <Link href="/referenzen" onClick={() => setIsOpen(false)}>
-              <div className="py-2 text-foreground hover:text-primary transition-smooth">Referenzen</div>
             </Link>
             <Link href="/blog" onClick={() => setIsOpen(false)}>
               <div className="py-2 text-foreground hover:text-primary transition-smooth">Blog</div>

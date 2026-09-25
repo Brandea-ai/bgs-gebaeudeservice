@@ -19,7 +19,7 @@ import AppointmentButton from "@/components/AppointmentButton";
 export default function Bueroreinigung() {
   const serviceData = {
     name: "Professionelle Büroreinigung",
-    description: "Zuverlässige Büroreinigung für Unternehmen in Zürich, Zug und Luzern. Flexibel, effizient und auf Ihre Bedürfnisse zugeschnitten.",
+    description: "Zuverlässige Büroreinigung für Unternehmen in Luzern, Zug und Umgebung. Flexibel, effizient und auf Ihre Bedürfnisse zugeschnitten.",
     url: "/business/bueroreinigung",
     category: "Commercial Cleaning"
   };
@@ -27,9 +27,9 @@ export default function Bueroreinigung() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Büroreinigung Zürich, Zug & Luzern - Swiss Reinigungsfirma"
+        title="Büroreinigung Luzern, Zug & Umgebung - BGS Gebäudeservice"
         description="Professionelle Büroreinigung für Unternehmen in der Schweiz. Zuverlässig, flexibel und auf höchstem Qualitätsniveau."
-        keywords="Büroreinigung, Büroreinigung Zürich, Gebäudereinigung Büro, Reinigung Geschäftsräume"
+        keywords="Büroreinigung, Büroreinigung Luzern, Gebäudereinigung Büro, Reinigung Geschäftsräume"
         url="/business/bueroreinigung"
         schema={serviceSchema(serviceData)}
       />
@@ -47,7 +47,7 @@ export default function Bueroreinigung() {
                 Professionelle Büroreinigung
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
-                Zuverlässige Reinigungslösungen für Büros und Geschäftsräume in Zürich, Zug und Luzern. Flexibel, effizient und auf Ihre Bedürfnisse zugeschnitten.
+                Zuverlässige Reinigungslösungen für Büros und Geschäftsräume in Luzern, Zug und Umgebung. Flexibel, effizient und auf Ihre Bedürfnisse zugeschnitten.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a href="#kontakt-formular">
@@ -94,8 +94,8 @@ export default function Bueroreinigung() {
             </Card>
             <Card className="p-6 text-center">
               <Sparkles className="w-12 h-12 text-primary mx-auto mb-4"/>
-              <div className="font-bold text-lg mb-2">Qualität</div>
-              <div className="text-slate-600 text-xs sm:text-sm md:text-base">ISO 9001 zertifiziert</div>
+              <div className="font-bold text-lg mb-2">Offerte</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Kostenlos vor Ort</div>
             </Card>
           </div>
 

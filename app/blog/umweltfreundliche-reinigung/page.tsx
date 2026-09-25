@@ -16,7 +16,7 @@ export default function UmweltfreundlicheReinigung() {
   return (
     <>
       <SEO 
-        title="Umweltfreundliche Reinigung: Nachhaltig & Effektiv | Swiss Reinigungsfirma"
+        title="Umweltfreundliche Reinigung: Nachhaltig & Effektiv | BGS Gebäudeservice"
         description="Nachhaltige Reinigungsmethoden und umweltfreundliche Reinigungsmittel. Wie Sie Sauberkeit und Umweltschutz perfekt kombinieren."
         keywords="umweltfreundliche Reinigung, nachhaltige Reinigung, ökologische Reinigungsmittel, Green Cleaning"
       />

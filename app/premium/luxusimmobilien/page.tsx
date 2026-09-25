@@ -28,7 +28,7 @@ export default function Luxusimmobilien() {
     <div className="min-h-screen bg-white">
       <SEO
         title="Luxusimmobilien-Reinigung - Premium Service"
-        description="Maßgeschneiderte Reinigung für Luxusimmobilien in Zürich, Zug und Luzern. Spezialisiert auf Edeloberflächen und Kunstobjekte."
+        description="Maßgeschneiderte Reinigung für Luxusimmobilien in Luzern, Zug und Umgebung. Spezialisiert auf Edeloberflächen und Kunstobjekte."
         keywords="Luxusimmobilien Reinigung, Villa Reinigung Schweiz, Premium Immobilien Service, Luxus Reinigung"
         url="/premium/luxusimmobilien"
         schema={serviceSchema(serviceData)}
@@ -47,7 +47,7 @@ export default function Luxusimmobilien() {
                 Luxusimmobilien-Reinigung
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
-                Maßgeschneiderte Reinigung für Luxusimmobilien. Spezialisiert auf Edeloberflächen, Kunstobjekte und exklusive Materialien in Zürich, Zug und Luzern.
+                Maßgeschneiderte Reinigung für Luxusimmobilien. Spezialisiert auf Edeloberflächen, Kunstobjekte und exklusive Materialien in Luzern, Zug und Umgebung.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a href="#kontakt-formular">
@@ -94,16 +94,15 @@ export default function Luxusimmobilien() {
             </Card>
             <Card className="p-6 text-center">
               <Award className="w-12 h-12 text-primary mx-auto mb-4"/>
-              <div className="font-bold text-lg mb-2">Zertifiziert</div>
-              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Höchste Standards</div>
+              <div className="font-bold text-lg mb-2">Versichert</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Betriebshaftpflicht CHF 10 Mio.</div>
             </Card>
           </div>
 
           <Tabs defaultValue="materialien" className="mb-20">
-            <TabsList className="grid w-full grid-cols-3 mb-8">
+            <TabsList className="grid w-full grid-cols-2 mb-8">
               <TabsTrigger value="materialien" className="text-sm sm:text-base">Materialien</TabsTrigger>
               <TabsTrigger value="kunst" className="text-sm sm:text-base">Kunst & Antiquitäten</TabsTrigger>
-              <TabsTrigger value="referenzen" className="text-sm sm:text-base">Referenzen</TabsTrigger>
             </TabsList>
             
             <TabsContent value="materialien" className="space-y-6">
@@ -184,50 +183,6 @@ export default function Luxusimmobilien() {
               </Card>
             </TabsContent>
             
-            <TabsContent value="referenzen" className="space-y-6">
-              <Card className="p-8">
-                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Unsere Referenz-Objekte</h3>
-                <div className="space-y-8">
-                  {[
-                    {
-                      title: "Penthouse Zürichberg",
-                      size: "450 m²",
-                      features: ["Marmor-Böden", "Kunst-Sammlung", "Dachterrasse"],
-                      desc: "Regelmäßige Pflege eines exklusiven Penthouses mit umfangreicher Kunstsammlung und hochwertigen Materialien."
-                    },
-                    {
-                      title: "Villa Zugersee",
-                      size: "800 m²",
-                      features: ["Naturstein", "Infinity-Pool", "Weinkeller"],
-                      desc: "Komplettbetreuung einer Seevilla inklusive Außenanlagen, Pool-Reinigung und klimatisiertem Weinkeller."
-                    },
-                    {
-                      title: "Chalet Luzern",
-                      size: "600 m²",
-                      features: ["Altholz", "Wellness-Bereich", "Smart Home"],
-                      desc: "Spezialisierte Reinigung eines modernen Chalets mit historischen Holzelementen und integrierter Haustechnik."
-                    }
-                  ].map((item, i) => (
-                    <Card key={i} className="p-6 bg-slate-50">
-                      <div className="flex justify-between items-start mb-4">
-                        <h4 className="text-lg sm:text-xl md:text-2xl font-bold">{item.title}</h4>
-                        <span className="bg-primary text-white px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">
-                          {item.size}
-                        </span>
-                      </div>
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {item.features.map((feature, j) => (
-                          <span key={j} className="bg-white px-3 py-1 rounded-full text-sm text-slate-700 text-xs sm:text-sm md:text-base">
-                            {feature}
-                          </span>
-                        ))}
-                      </div>
-                      <p className="text-slate-600 leading-relaxed">{item.desc}</p>
-                    </Card>
-                  ))}
-                </div>
-              </Card>
-            </TabsContent>
           </Tabs>
 
           <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-8 text-center">Häufig gestellte Fragen</h2>
@@ -246,7 +201,7 @@ export default function Luxusimmobilien() {
                 Sind Sie für Schäden versichert?
               </AccordionTrigger>
               <AccordionContent className="text-slate-700 leading-relaxed pt-4">
-                Ja, wir verfügen über eine Betriebshaftpflicht mit CHF 10 Millionen Deckungssumme, die auch wertvolle Kunstgegenstände und Antiquitäten einschließt.
+                Ja, wir verfügen über eine Betriebshaftpflicht mit CHF 10 Mio. Deckung. Die Bedingungen für besonders wertvolle Gegenstände klären wir vor Auftragsbeginn mit Ihnen.
               </AccordionContent>
             </AccordionItem>
             
@@ -259,14 +214,6 @@ export default function Luxusimmobilien() {
               </AccordionContent>
             </AccordionItem>
             
-            <AccordionItem value="item-4">
-              <AccordionTrigger className="text-lg font-semibold">
-                Bieten Sie auch Notfall-Reinigung an?
-              </AccordionTrigger>
-              <AccordionContent className="text-slate-700 leading-relaxed pt-4">
-                Ja, bei Notfällen wie Wasserschäden oder vor wichtigen Events sind wir auch kurzfristig für Sie da. 24/7 Erreichbarkeit für Premium-Kunden.
-              </AccordionContent>
-            </AccordionItem>
           </Accordion>
         </div>
       </section>

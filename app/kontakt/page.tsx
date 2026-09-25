@@ -10,7 +10,8 @@ import SEO from "@/components/SEO";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin, CheckCircle, AlertCircle } from "lucide-react";
-import GoogleMap from "@/components/GoogleMap";
+import ConsentMap from "@/components/ConsentMap";
+import { company } from "../../shared/company";
 
 export default function Kontakt() {
   const [formData, setFormData] = useState({
@@ -81,8 +82,8 @@ export default function Kontakt() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Kontakt - Swiss Reinigungsfirma | Jetzt Angebot anfordern"
-        description="Kontaktieren Sie die Swiss Reinigungsfirma für ein individuelles Angebot. Wir sind für Sie da - per Telefon, E-Mail oder über unser Kontaktformular."
+        title="Kontakt - BGS Gebäudeservice | Jetzt Angebot anfordern"
+        description="Kontaktieren Sie die BGS Gebäudeservice für ein individuelles Angebot. Wir sind für Sie da - per Telefon, E-Mail oder über unser Kontaktformular."
         keywords="Kontakt, Angebot, Reinigungsfirma Schweiz, Anfrage, Beratung"
         url="/kontakt"
       />
@@ -114,8 +115,8 @@ export default function Kontakt() {
               <Phone className="w-12 h-12 text-primary mx-auto mb-4" />
               <h3 className="font-bold text-xl mb-2">Telefon</h3>
               <p className="text-slate-600 mb-4">Rufen Sie uns an - wir beraten Sie gerne</p>
-              <a href="tel:+41413205610" className="text-primary font-semibold hover:underline">
-                +41 41 320 56 10
+              <a href={company.phone.href} className="text-primary font-semibold hover:underline">
+                {company.phone.display}
               </a>
             </Card>
 
@@ -123,8 +124,8 @@ export default function Kontakt() {
               <Mail className="w-12 h-12 text-primary mx-auto mb-4" />
               <h3 className="font-bold text-xl mb-2">E-Mail</h3>
               <p className="text-slate-600 mb-4">Schreiben Sie uns eine Nachricht</p>
-              <a href="mailto:info@bgs-service.ch" className="text-primary font-semibold hover:underline">
-                info@bgs-service.ch
+              <a href={`mailto:${company.email}`} className="text-primary font-semibold hover:underline">
+                {company.email}
               </a>
             </Card>
 
@@ -142,40 +143,13 @@ export default function Kontakt() {
           {/* Standort-Karte */}
           <div className="mb-16">
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-8 text-center">
-              Unsere Standorte
+              So finden Sie uns
             </h2>
             <div className="rounded-2xl overflow-hidden shadow-xl">
-              <GoogleMap
-                apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ""}
-                center={{ lat: 47.0502, lng: 8.3093 }}
-                zoom={10}
-                markers={[
-                  {
-                    position: { lat: 47.0502, lng: 8.3093 },
-                    title: "Hauptsitz Emmenbrücke",
-                    info: "Swiss Reinigungsfirma<br/>Tannhof 10<br/>6020 Emmenbrücke"
-                  },
-                  {
-                    position: { lat: 47.3769, lng: 8.5417 },
-                    title: "Standort Zürich",
-                    info: "Professionelle Gebäudereinigung in Zürich"
-                  },
-                  {
-                    position: { lat: 47.1667, lng: 8.5167 },
-                    title: "Standort Zug",
-                    info: "Professionelle Gebäudereinigung in Zug"
-                  },
-                  {
-                    position: { lat: 47.0502, lng: 8.3093 },
-                    title: "Standort Luzern",
-                    info: "Professionelle Gebäudereinigung in Luzern"
-                  }
-                ]}
-                className="w-full h-[500px]"
-              />
+              <ConsentMap />
             </div>
             <p className="text-center text-slate-600 mt-4">
-              Zentral gelegen in der Zentralschweiz - schnell erreichbar aus Luzern, Zug und Zürich
+              Sitz in Emmenbrücke. Wir arbeiten in den Kantonen Luzern, Zug, Aargau, Nidwalden und Obwalden.
             </p>
           </div>
 
@@ -215,7 +189,7 @@ export default function Kontakt() {
             <Card className="p-6 hover-lift hover-tilt hover-tilt">
               <h3 className="font-bold text-lg mb-2">In welchen Regionen sind Sie tätig?</h3>
               <p className="text-slate-600">
-                Wir sind in der gesamten Zentralschweiz tätig, mit Schwerpunkt auf Luzern, Zug und Zürich. Für andere Regionen kontaktieren Sie uns bitte direkt.
+                In den Kantonen Luzern, Zug, Aargau, Nidwalden und Obwalden, mit allen Leistungen im ganzen Gebiet.
               </p>
             </Card>
 
@@ -229,7 +203,7 @@ export default function Kontakt() {
             <Card className="p-6 hover-lift hover-tilt hover-tilt">
               <h3 className="font-bold text-lg mb-2">Bieten Sie auch Notfallreinigungen an?</h3>
               <p className="text-slate-600">
-                Selbstverständlich! Wir sind 24/7 für Sie erreichbar und können bei Bedarf auch kurzfristig Reinigungseinsätze durchführen.
+                Rufen Sie uns an. Wir klären mit Ihnen, was kurzfristig möglich ist.
               </p>
             </Card>
           </div>

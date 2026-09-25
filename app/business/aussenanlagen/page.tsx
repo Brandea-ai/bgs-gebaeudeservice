@@ -24,7 +24,7 @@ import {
 export default function Aussenanlagen() {
   const serviceData = {
     name: "Außenanlage & Grünflächenpflege",
-    description: "Professionelle Pflege von Außenanlagen. Grünflächenpflege, Winterdienst und Außenreinigung.",
+    description: "Professionelle Pflege von Außenanlagen. Grünflächenpflege und Aussenreinigung.",
     url: "/business/aussenanlagen",
     category: "Outdoor Facility Management"
   };
@@ -32,8 +32,8 @@ export default function Aussenanlagen() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Außenanlage Zürich, Zug & Luzern - Swiss Reinigungsfirma"
-        description="Professionelle Pflege von Außenanlagen in der Schweiz. Grünflächenpflege, Winterdienst und Außenreinigung."
+        title="Außenanlage Luzern, Zug & Umgebung - BGS Gebäudeservice"
+        description="Professionelle Pflege von Außenanlagen in der Schweiz. Grünflächenpflege und Aussenreinigung."
         keywords="Außenanlagen Pflege, Grünflächenpflege Schweiz, Außenreinigung, Facility Management Außen"
         url="/business/aussenanlagen"
         schema={serviceSchema(serviceData)}
@@ -52,7 +52,7 @@ export default function Aussenanlagen() {
                 Außenanlagen & Grünflächenpflege
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
-                Professionelle Pflege Ihrer Außenanlagen und Grünflächen in Zürich, Zug und Luzern. Für einen gepflegten ersten Eindruck.
+                Professionelle Pflege Ihrer Außenanlagen und Grünflächen in Luzern, Zug und Umgebung. Für einen gepflegten ersten Eindruck.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a href="#kontakt-formular">
@@ -102,7 +102,7 @@ export default function Aussenanlagen() {
                 <Award className="w-8 h-8" />
               </div>
               <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">Schweizweit</h3>
-              <p className="text-slate-600 text-xs sm:text-sm md:text-base">Service in Zürich, Zug und Luzern</p>
+              <p className="text-slate-600 text-xs sm:text-sm md:text-base">Service in Luzern, Zug und Umgebung</p>
             </div>
           </div>
         </div>
@@ -111,10 +111,9 @@ export default function Aussenanlagen() {
       <section className="py-20 bg-white">
         <div className="container">
           <Tabs defaultValue="reinigung" className="mb-20">
-            <TabsList className="grid w-full grid-cols-3 mb-8">
+            <TabsList className="grid w-full grid-cols-2 mb-8">
               <TabsTrigger value="reinigung" className="text-xs sm:text-sm md:text-base px-2 sm:px-4">Außenreinigung</TabsTrigger>
               <TabsTrigger value="gruenflaechen" className="text-xs sm:text-sm md:text-base px-2 sm:px-4">Grünflächenpflege</TabsTrigger>
-              <TabsTrigger value="winter" className="text-xs sm:text-sm md:text-base px-2 sm:px-4">Winterdienst</TabsTrigger>
             </TabsList>
             
             <TabsContent value="reinigung">
@@ -160,22 +159,6 @@ export default function Aussenanlagen() {
               </Card>
             </TabsContent>
             
-            <TabsContent value="winter">
-              <Card className="p-8">
-                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Winterdienst</h3>
-                <p className="text-slate-600 mb-6">
-                  Zuverlässiger Winterdienst für sichere Zugänge und Verkehrswege:
-                </p>
-                <ul className="space-y-3">
-                  {["Schneeräumung", "Streudienst", "Eisbeseitigung", "24/7 Bereitschaft", "Dokumentation für Versicherung", "Eigene Streufahrzeuge"].map((item, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <CheckCircle className="w-5 h-5 text-primary mt-0.5"/>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </Card>
-            </TabsContent>
           </Tabs>
         </div>
       </section>
@@ -196,14 +179,6 @@ export default function Aussenanlagen() {
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-2" className="bg-white rounded-lg px-6">
-              <AccordionTrigger className="text-left font-semibold">
-                Welche Leistungen sind im Winterdienst enthalten?
-              </AccordionTrigger>
-              <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
-                Unser Winterdienst umfasst Schneeräumung, Streudienst mit umweltfreundlichen Materialien, Enteisungsarbeiten und die Sicherstellung der Verkehrssicherheit auf allen Außenanlagen. Wir sind 24/7 im Einsatz.
-              </AccordionContent>
-            </AccordionItem>
 
             <AccordionItem value="item-3" className="bg-white rounded-lg px-6">
               <AccordionTrigger className="text-left font-semibold">

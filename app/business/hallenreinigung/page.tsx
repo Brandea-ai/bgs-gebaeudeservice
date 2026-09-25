@@ -32,7 +32,7 @@ export default function Hallenreinigung() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Hallenreinigung Zürich, Zug & Luzern - Swiss Reinigungsfirma"
+        title="Hallenreinigung Luzern, Zug & Umgebung - BGS Gebäudeservice"
         description="Spezialisierte Hallenreinigung in der Schweiz für Industrie, Logistik und Lager. Effizient und gründlich."
         keywords="Hallenreinigung, Industriehallen Reinigung, Lager Reinigung Schweiz, Logistikhallen Reinigung"
         url="/business/hallenreinigung"
@@ -53,7 +53,7 @@ export default function Hallenreinigung() {
                 Professionelle Hallenreinigung
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
-                Effiziente Reinigung großer Hallen und Lagerflächen in Zürich, Zug und Luzern. Mit Industriegeräten für schnelle Ergebnisse und makellose Sauberkeit.
+                Effiziente Reinigung großer Hallen und Lagerflächen in Luzern, Zug und Umgebung. Mit Industriegeräten für schnelle Ergebnisse und makellose Sauberkeit.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a href="#kontakt-formular">
@@ -104,9 +104,9 @@ export default function Hallenreinigung() {
               </p>
               <div className="grid md:grid-cols-2 gap-4">
                 {[
-                  { icon: Shield, text: "Zertifizierte Fachkräfte" },
+                  { icon: Shield, text: "Betriebshaftpflicht CHF 10 Mio." },
                   { icon: Clock, text: "Flexible Einsatzzeiten" },
-                  { icon: Award, text: "Modernste Technologie" },
+                  { icon: Award, text: "Passende Maschinen und Geräte" },
                   { icon: Warehouse, text: "Große Flächen" }
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
@@ -211,7 +211,7 @@ export default function Hallenreinigung() {
                 Bieten Sie auch Außenreinigung an?
               </AccordionTrigger>
               <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
-                Ja, unsere <Link href="/business/aussenanlagen" className="text-primary hover:underline">Außenanlagenpflege</Link> umfasst die Reinigung von Parkplätzen, Zufahrten und Außenbereichen. Im Winter bieten wir auch <Link href="/basis/winterdienst" className="text-primary hover:underline">Winterdienst</Link> an.
+                Ja, unsere <Link href="/business/aussenanlagen" className="text-primary hover:underline">Außenanlagenpflege</Link> umfasst die Reinigung von Parkplätzen, Zufahrten und Außenbereichen.
               </AccordionContent>
             </AccordionItem>
 
@@ -234,7 +234,7 @@ export default function Hallenreinigung() {
             Bereit für professionelle Hallenreinigung?
           </h2>
           <p className="text-sm sm:text-base md:text-lg mb-8 max-w-2xl mx-auto">
-            Kontaktieren Sie uns für ein unverbindliches Angebot. Unsere Experten beraten Sie gerne zu allen Reinigungsdienstleistungen in Zürich, Zug und Luzern.
+            Kontaktieren Sie uns für ein unverbindliches Angebot. Unsere Experten beraten Sie gerne zu allen Reinigungsdienstleistungen in Luzern, Zug und Umgebung.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <a href="#kontakt-formular">

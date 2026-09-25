@@ -116,7 +116,7 @@ export default function SwissFooter() {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-2.5 lg:py-3 rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all text-sm sm:text-base"
-                    placeholder="ihre@email.de"
+                    placeholder="name@firma.ch"
                   />
                 </div>
 
@@ -132,7 +132,7 @@ export default function SwissFooter() {
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full px-4 py-2.5 lg:py-3 rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all text-sm sm:text-base"
-                    placeholder="+41 41 320 56 10"
+                    placeholder="Ihre Telefonnummer"
                   />
                 </div>
 
@@ -150,43 +150,22 @@ export default function SwissFooter() {
                   >
                     <option value="">Bitte wählen...</option>
                     
-                    <optgroup label="Premium Services">
+                    <optgroup label="Premium">
+                      <option value="Luxusimmobilien">Luxusimmobilien (Villen, Lofts)</option>
                       <option value="Privatjet Reinigung">Privatjet Reinigung</option>
                       <option value="Yacht Reinigung">Yacht Reinigung</option>
-                      <option value="Private Housekeeping">Private Housekeeping</option>
-                      <option value="Luxusimmobilien">Luxusimmobilien</option>
                     </optgroup>
                     
-                    <optgroup label="B2B Lösungen">
-                      <option value="Büroreinigung">Büroreinigung</option>
-                      <option value="Industriereinigung">Industriereinigung</option>
-                      <option value="Fassadenreinigung">Fassadenreinigung</option>
-                      <option value="Fensterreinigung">Fensterreinigung</option>
-                      <option value="Hallenreinigung">Hallenreinigung</option>
-                      <option value="Maschinenreinigung">Maschinenreinigung</option>
-                      <option value="Baureinigung">Baureinigung</option>
-                      <option value="Außenanlagen">Außenanlagen</option>
-                      <option value="Facility Management">Facility Management</option>
-                    </optgroup>
-                    
-                    <optgroup label="Business Services">
-                      <option value="Business Büroreinigung">Business Büroreinigung</option>
-                      <option value="Business Industriereinigung">Business Industriereinigung</option>
-                      <option value="Business Fassadenreinigung">Business Fassadenreinigung</option>
-                      <option value="Business Fensterreinigung">Business Fensterreinigung</option>
-                      <option value="Business Hallenreinigung">Business Hallenreinigung</option>
-                      <option value="Business Maschinenreinigung">Business Maschinenreinigung</option>
-                      <option value="Business Baureinigung">Business Baureinigung</option>
-                      <option value="Business Außenanlagen">Business Außenanlagen</option>
-                      <option value="Business Facility Management">Business Facility Management</option>
-                    </optgroup>
-                    
-                    <optgroup label="Basis Services">
+                    <optgroup label="Reinigung und Hauswartung">
                       <option value="Unterhaltsreinigung">Unterhaltsreinigung</option>
-                      <option value="Hausmeisterservice">Hausmeisterservice</option>
-                      <option value="Winterdienst">Winterdienst</option>
-                      <option value="Beschaffung">Beschaffung</option>
-                      <option value="Sonderleistungen">Sonderleistungen</option>
+                      <option value="Büroreinigung">Büro- und Praxisreinigung</option>
+                      <option value="Sonderreinigungen">Sonderreinigungen (Grund-, Umzugsreinigung)</option>
+                      <option value="Baureinigung">Bau- und Bauendreinigung</option>
+                      <option value="Fenster- und Fassadenreinigung">Fenster- und Fassadenreinigung</option>
+                      <option value="Industrie- und Hallenreinigung">Industrie-, Hallen- und Maschinenreinigung</option>
+                      <option value="Hauswartung">Hauswartung</option>
+                      <option value="Aussen- und Grünflächenpflege">Aussen- und Grünflächenpflege</option>
+                      <option value="Facility Services">Facility Services (mehrere Leistungen)</option>
                     </optgroup>
                     
                     <optgroup label="Sonstiges">
@@ -303,14 +282,14 @@ export default function SwissFooter() {
         <div className="container py-16">
           <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
             <div>
-              <img src="/swiss-logo.webp" alt="Swiss Reinigung" className="h-24 w-auto mb-6 brightness-0 invert" />
+              {/* Platzhalter bis zum neuen Logo (R2d, E26) */}
+              <p className="text-2xl font-bold tracking-tight mb-6">{company.brand}</p>
               <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                Ihre professionelle Reinigungsfirma in der Schweiz. Qualität, Zuverlässigkeit und Präzision seit Jahren.
+                Reinigung und Hauswartung für Unternehmen und anspruchsvolle Privatkunden. Sitz in {company.address.city}.
               </p>
               <div className="space-y-2">
                 <Link href="/ueber-uns"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Über Uns</div></Link>
                 <Link href="/kontakt"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Kontakt</div></Link>
-                <Link href="/referenzen"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Referenzen</div></Link>
                 <Link href="/blog"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Blog</div></Link>
               </div>
             </div>
@@ -320,7 +299,6 @@ export default function SwissFooter() {
               <div className="space-y-2">
                 <Link href="/premium/privatjet"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Privatjet Reinigung</div></Link>
                 <Link href="/premium/yacht"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Yacht Reinigung</div></Link>
-                <Link href="/premium/housekeeping"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Private Housekeeping</div></Link>
                 <Link href="/premium/luxusimmobilien"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Luxusimmobilien</div></Link>
               </div>
             </div>
@@ -344,19 +322,18 @@ export default function SwissFooter() {
               <h3 className="font-semibold text-lg mb-4">Basis Services</h3>
               <div className="space-y-2">
                 <Link href="/basis/unterhaltsreinigung"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Unterhaltsreinigung</div></Link>
-                <Link href="/basis/hausmeisterservice"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Hausmeisterservice</div></Link>
-                <Link href="/basis/winterdienst"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Winterdienst</div></Link>
+                <Link href="/basis/hausmeisterservice"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Hauswartung</div></Link>
                 <Link href="/basis/beschaffung"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Beschaffung</div></Link>
                 <Link href="/basis/sonderleistungen"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Sonderleistungen</div></Link>
               </div>
             </div>
 
             <div>
-              <h3 className="font-semibold text-lg mb-4">Standorte</h3>
+              <h3 className="font-semibold text-lg mb-4">Einzugsgebiet</h3>
               <div className="space-y-2 mb-6">
-                <Link href="/standorte/zuerich"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Zürich</div></Link>
-                <Link href="/standorte/zug"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Zug</div></Link>
-                <Link href="/standorte/luzern"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Luzern</div></Link>
+                <Link href="/einzugsgebiet"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Luzern, Zug, Aargau, Nid- und Obwalden</div></Link>
+                <div className="text-slate-400 text-sm">{company.address.street}, {company.address.postalCode} {company.address.city}</div>
+                <a href={company.phone.href} className="block text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">{company.phone.display}</a>
               </div>
             </div>
           </div>
@@ -366,7 +343,7 @@ export default function SwissFooter() {
           <div className="container py-6">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400">
               <div>
-                © {currentYear} Swiss Reinigungsfirma. Alle Rechte vorbehalten.
+                © {currentYear} {company.legalName}. Alle Rechte vorbehalten.
               </div>
               <div className="flex gap-6">
                 <Link href="/impressum"><span className="hover:text-white transition-smooth cursor-pointer">Impressum</span></Link>

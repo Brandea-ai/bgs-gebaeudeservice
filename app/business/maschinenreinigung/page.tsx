@@ -32,7 +32,7 @@ export default function Maschinenreinigung() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Maschinenreinigung Zürich, Zug & Luzern - Swiss Reinigungsfirma"
+        title="Maschinenreinigung Luzern, Zug & Umgebung - BGS Gebäudeservice"
         description="Professionelle Maschinenreinigung in der Schweiz für Industrie und Produktion. Präzise, sicher und normgerecht."
         keywords="Maschinenreinigung, Industriemaschinen Reinigung, Produktionsanlagen Reinigung Schweiz"
         url="/business/maschinenreinigung"
@@ -53,7 +53,7 @@ export default function Maschinenreinigung() {
                 Professionelle Maschinenreinigung
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
-                Spezialisierte Reinigung von Produktionsmaschinen und Industrieanlagen in Zürich, Zug und Luzern. Für optimale Leistung und längere Lebensdauer Ihrer Maschinen.
+                Spezialisierte Reinigung von Produktionsmaschinen und Industrieanlagen in Luzern, Zug und Umgebung. Für optimale Leistung und längere Lebensdauer Ihrer Maschinen.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a href="#kontakt-formular">
@@ -106,7 +106,7 @@ export default function Maschinenreinigung() {
                 {[
                   { icon: Shield, text: "Schonende Reinigung" },
                   { icon: Wrench, text: "Fachgerechte Methoden" },
-                  { icon: Award, text: "Zertifizierte Experten" },
+                  { icon: Award, text: "Betriebshaftpflicht CHF 10 Mio." },
                   { icon: Settings, text: "Alle Maschinentypen" }
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
@@ -141,8 +141,7 @@ export default function Maschinenreinigung() {
                   "Förderanlagen und Transportbänder",
                   "Verpackungsmaschinen",
                   "Druckmaschinen und Offset-Anlagen",
-                  "Lebensmittelmaschinen (HACCP-konform)",
-                  "Pharma-Anlagen (GMP-konform)"
+                  "Lebensmittelmaschinen"
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"/>
@@ -184,7 +183,7 @@ export default function Maschinenreinigung() {
                 Welche Reinigungsmittel verwenden Sie?
               </AccordionTrigger>
               <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
-                Wir verwenden spezialisierte, materialschonende Reinigungsmittel, die auf den jeweiligen Maschinentyp abgestimmt sind. Für Lebensmittelmaschinen setzen wir HACCP-konforme Produkte ein, für Pharma-Anlagen GMP-konforme Reiniger. Alle Mittel sind umweltfreundlich und biologisch abbaubar.
+                Wir verwenden spezialisierte, materialschonende Reinigungsmittel, die auf den jeweiligen Maschinentyp abgestimmt sind. Umweltfreundliche Mittel setzen wir auf Wunsch ein.
               </AccordionContent>
             </AccordionItem>
 
@@ -234,7 +233,7 @@ export default function Maschinenreinigung() {
             Bereit für professionelle Maschinenreinigung?
           </h2>
           <p className="text-sm sm:text-base md:text-lg mb-8 max-w-2xl mx-auto">
-            Kontaktieren Sie uns für ein unverbindliches Angebot. Unsere Experten beraten Sie gerne zu allen Reinigungsdienstleistungen in Zürich, Zug und Luzern.
+            Kontaktieren Sie uns für ein unverbindliches Angebot. Unsere Experten beraten Sie gerne zu allen Reinigungsdienstleistungen in Luzern, Zug und Umgebung.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <a href="#kontakt-formular">

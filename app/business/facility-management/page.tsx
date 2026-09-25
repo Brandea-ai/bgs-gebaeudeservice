@@ -32,7 +32,7 @@ export default function FacilityManagement() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Facility Management Zürich, Zug & Luzern - Swiss Reinigungsfirma"
+        title="Facility Management Luzern, Zug & Umgebung - BGS Gebäudeservice"
         description="Umfassendes Facility Management in der Schweiz. Reinigung, Wartung und Instandhaltung aus einer Hand."
         keywords="Facility Management, Gebäudemanagement Schweiz, Facility Services, Immobilienverwaltung"
         url="/business/facility-management"
@@ -52,7 +52,7 @@ export default function FacilityManagement() {
                 Ganzheitliches Facility Management
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
-                Umfassende Gebäudedienstleistungen aus einer Hand in Zürich, Zug und Luzern. Von Reinigung über Hausmeister bis Winterdienst.
+                Umfassende Gebäudedienstleistungen aus einer Hand in Luzern, Zug und Umgebung. Von der Reinigung über die Hauswartung bis zur Grünflächenpflege.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a href="#kontakt-formular">
@@ -94,15 +94,15 @@ export default function FacilityManagement() {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-full mb-4">
                 <Clock className="w-8 h-8" />
               </div>
-              <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">24/7 Verfügbar</h3>
-              <p className="text-slate-600 text-xs sm:text-sm md:text-base">Notfall-Hotline für dringende Anliegen</p>
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">Offerte vor Ort</h3>
+              <p className="text-slate-600 text-xs sm:text-sm md:text-base">Kostenlos und unverbindlich</p>
             </div>
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-full mb-4">
                 <Award className="w-8 h-8" />
               </div>
-              <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">Zertifiziert</h3>
-              <p className="text-slate-600 text-xs sm:text-sm md:text-base">Qualitätsmanagement nach ISO-Standards</p>
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">Versichert</h3>
+              <p className="text-slate-600 text-xs sm:text-sm md:text-base">Betriebshaftpflicht CHF 10 Mio.</p>
             </div>
           </div>
         </div>
@@ -135,7 +135,7 @@ export default function FacilityManagement() {
                   <div>
                     <h4 className="font-bold text-lg mb-3 text-primary">Hausmeisterservice</h4>
                     <ul className="space-y-2">
-                      {["Kleinreparaturen", "Wartungsarbeiten", "Grünflächenpflege", "Winterdienst", "Müllentsorgung", "Objektbetreuung"].map((item, i) => (
+                      {["Kleinreparaturen", "Wartungsarbeiten", "Grünflächenpflege", "Entsorgung", "Objektbetreuung"].map((item, i) => (
                         <li key={i} className="flex items-start gap-2">
                           <CheckCircle className="w-5 h-5 text-primary mt-0.5"/>
                           <span>{item}</span>
@@ -175,7 +175,7 @@ export default function FacilityManagement() {
                     { title: "Einkaufszentren", desc: "7-Tage-Service mit flexiblen Öffnungszeiten" },
                     { title: "Industrieanlagen", desc: "Spezialisierte Reinigung und Wartung" },
                     { title: "Wohnanlagen", desc: "Treppenhausreinigung, Gartenpflege, Hausmeister" },
-                    { title: "Hotels", desc: "24/7 Service für höchste Gästezufriedenheit" },
+                    { title: "Hotels", desc: "Reinigung nach Ihren Abläufen und besonderen Wünschen" },
                     { title: "Gesundheitswesen", desc: "Hygienische Reinigung nach Vorschriften" }
                   ].map((item, i) => (
                     <div key={i} className="p-4 bg-slate-50 rounded-lg">
@@ -202,7 +202,7 @@ export default function FacilityManagement() {
                 Was umfasst Facility Management?
               </AccordionTrigger>
               <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
-                Facility Management umfasst alle Dienstleistungen rund um Ihr Gebäude: Reinigung, Hausmeisterdienste, Winterdienst, technische Wartung, Grünflächenpflege und vieles mehr. Wir koordinieren alle Leistungen zentral.
+                Facility Management umfasst alle Dienstleistungen rund um Ihr Gebäude: Reinigung, Hauswartung, Aussen- und Grünflächenpflege sowie Sonderreinigungen. Wir koordinieren alle Leistungen zentral.
               </AccordionContent>
             </AccordionItem>
 
@@ -215,14 +215,6 @@ export default function FacilityManagement() {
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-3" className="bg-white rounded-lg px-6">
-              <AccordionTrigger className="text-left font-semibold">
-                Sind Sie auch im Notfall erreichbar?
-              </AccordionTrigger>
-              <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
-                Ja, unsere Notfall-Hotline ist 24/7 erreichbar. Bei dringenden Problemen wie Wasserschäden, Heizungsausfällen oder Sicherheitsfragen sind wir innerhalb kürzester Zeit vor Ort.
-              </AccordionContent>
-            </AccordionItem>
 
             <AccordionItem value="item-4" className="bg-white rounded-lg px-6">
               <AccordionTrigger className="text-left font-semibold">
@@ -238,7 +230,7 @@ export default function FacilityManagement() {
                 Wie wird die Qualität sichergestellt?
               </AccordionTrigger>
               <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
-                Wir arbeiten nach ISO-zertifizierten Qualitätsstandards, führen regelmäßige Kontrollen durch und dokumentieren alle Leistungen digital. Sie erhalten transparente Berichte und können jederzeit Feedback geben.
+                Wir führen regelmässige Kontrollgänge durch und stimmen Umfang und Rhythmus mit Ihnen ab. Rückmeldungen nimmt der Geschäftsführer persönlich entgegen.
               </AccordionContent>
             </AccordionItem>
           </Accordion>

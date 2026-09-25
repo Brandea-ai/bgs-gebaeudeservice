@@ -1,5 +1,5 @@
 /**
- * SWISS REINIGUNGSFIRMA - PROFESSIONAL SALES CHATBOT
+ * BGS GEBÄUDESERVICE - PROFESSIONAL SALES CHATBOT
  *
  * Premium AI Sales Consultant mit:
  * - 9 Pflicht-Datenpunkte (strukturierte Lead-Qualifizierung)
@@ -670,7 +670,7 @@ export async function chatWithAI(data: ChatRequest): Promise<ChatResponse> {
     // OPTIMALER PROMPT - Phase-Gated mit erzwungener Reihenfolge
     // ========================================================================
 
-    const SYSTEM_PROMPT = `Du bist ${supporterName}, ${genderText} der Swiss Reinigungsfirma (Zürich, Zug, Luzern).
+    const SYSTEM_PROMPT = `Du bist ${supporterName}, ${genderText} der BGS Gebäudeservice (Zürich, Zug, Luzern).
 
 **ABSOLUTE REGELN (NIEMALS VERLETZEN!):**
 1. NIEMALS "du" → IMMER "Sie"

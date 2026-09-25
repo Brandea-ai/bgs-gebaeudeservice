@@ -18,7 +18,7 @@ export default function ProfessionelleGebaeudereinigung() {
   return (
     <>
       <SEO 
-        title="Professionelle Gebäudereinigung: Qualität & Hygiene | Swiss Reinigungsfirma"
+        title="Professionelle Gebäudereinigung: Qualität & Hygiene | BGS Gebäudeservice"
         description="Erfahren Sie, was professionelle Gebäudereinigung ausmacht. Tipps zu Qualitätsstandards, Hygiene-Anforderungen und Auswahl der richtigen Reinigungsfirma."
         keywords="professionelle Gebäudereinigung, Qualitätsstandards Reinigung, Hygiene Büro, Reinigungsfirma Schweiz"
       />

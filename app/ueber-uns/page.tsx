@@ -10,13 +10,14 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
 import { ArrowRight, Users, Award, Heart, CheckCircle2 } from "lucide-react";
+import { company } from "../../shared/company";
 
 export default function UeberUns() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Über Uns - Swiss Reinigungsfirma | Qualität & Vertrauen"
-        description="Lernen Sie die Geschichte und die Werte der Swiss Reinigungsfirma kennen. Erfahren Sie, warum wir Ihr vertrauenswürdiger Partner für professionelle Reinigung sind."
+        title="Über Uns - BGS Gebäudeservice | Qualität & Vertrauen"
+        description="Lernen Sie die Geschichte und die Werte der BGS Gebäudeservice kennen. Erfahren Sie, warum wir Ihr vertrauenswürdiger Partner für professionelle Reinigung sind."
         keywords="Über uns, Reinigungsfirma Schweiz, Team, Werte, Mission, Geschichte"
         url="/ueber-uns"
       />
@@ -29,21 +30,21 @@ export default function UeberUns() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
-                Unsere Geschichte: Von einer Vision zu Ihrem vertrauenswürdigen Partner
+                Reinigung und Hauswartung aus {company.address.city}
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
-                Seit unserer Gründung durch Nezir Bozhdaraj im Jahr 2005 hat sich die Swiss Reinigungsfirma von einem kleinen, engagierten Team zu einem der führenden Reinigungsunternehmen in der Schweiz entwickelt. Unsere Mission war von Anfang an klar: Wir wollen nicht nur reinigen, wir wollen Werte schaffen und Vertrauen aufbauen.
+                Seit 2006 sind wir in der Reinigung und Hauswartung tätig. Heute betreuen über 50 Mitarbeitende mehr als 120 Kunden in den Kantonen Luzern, Zug, Aargau, Nidwalden und Obwalden, auf Deutsch, Englisch, Französisch und Italienisch.
               </p>
               <Link href="/kontakt">
                 <MagneticHover><Button size="lg" className="text-lg">
-                  Werden Sie Teil unserer Geschichte <ArrowRight className="ml-2 w-5 h-5" />
+                  Offerte anfragen <ArrowRight className="ml-2 w-5 h-5" />
                 </Button></MagneticHover>
               </Link>
             </div>
             <div className="relative">
               <ParallaxImage 
                 src="/ueber-uns-hero.jpg" 
-                alt="Das Team der Swiss Reinigungsfirma"
+                alt="Symbolbild Reinigung"
                 className="rounded-2xl shadow-2xl w-full h-[500px] object-cover h-[400px] lg:h-[500px]"
                 speed={0.2}
                 scale={true}
@@ -72,7 +73,7 @@ export default function UeberUns() {
               <Award className="w-16 h-16 text-primary mx-auto mb-6" />
               <h3 className="font-bold text-xl mb-4">Qualität</h3>
               <p className="text-slate-600 text-xs sm:text-sm md:text-base">
-                Wir verwenden nur die besten Materialien und modernsten Techniken, um ein makelloses Ergebnis zu garantieren. Unsere Mitarbeiter werden kontinuierlich geschult, um die höchsten Standards zu erfüllen.
+                Wir arbeiten sorgfältig und mit geeigneten Materialien und Geräten, abgestimmt auf Ihr Objekt.
               </p>
             </Card>
             
@@ -95,91 +96,26 @@ export default function UeberUns() {
         </div>
       </section>
 
-      {/* Social Proof Section */}
-      <section className="py-20 bg-slate-50">
-        <div className="container">
-          <RevealOnScroll><div className="text-center mb-16">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-              Was unsere Kunden sagen
-            </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
-              Die Zufriedenheit unserer Kunden ist der beste Beweis für unsere Qualität. Hier sind einige Stimmen von Unternehmen, die uns vertrauen.
-            </p>
-          </div></RevealOnScroll>
-          
-          <div className="grid lg:grid-cols-3 gap-8">
-            <Card className="p-8 hover-lift hover:shadow-xl transition-shadow hover-tilt hover-tilt">
-              <div className="flex mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <CheckCircle2 key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-                ))}
-              </div>
-              <p className="text-slate-700 mb-6 font-serif italic text-lg">
-                "Die Zusammenarbeit mit der Swiss Reinigungsfirma ist ein echter Gewinn. Das Team ist professionell, zuverlässig und das Ergebnis immer perfekt. Wir können sie uneingeschränkt empfehlen."
-              </p>
-              <div>
-                <div className="font-bold text-slate-900">Anna Meier</div>
-                <div className="text-slate-600 text-sm">CEO, Meier AG</div>
-              </div>
-            </Card>
-            
-            <Card className="p-8 hover-lift hover:shadow-xl transition-shadow hover-tilt hover-tilt">
-              <div className="flex mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <CheckCircle2 key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-                ))}
-              </div>
-              <p className="text-slate-700 mb-6 font-serif italic text-lg">
-                "Seit wir die Reinigung unserer Büros an die Swiss Reinigungsfirma übergeben haben, hat sich die Arbeitsatmosphäre spürbar verbessert. Ein sauberes Umfeld motiviert!"
-              </p>
-              <div>
-                <div className="font-bold text-slate-900">Peter Schmidt</div>
-                <div className="text-slate-600 text-sm">Office Manager, Schmidt & Partner</div>
-              </div>
-            </Card>
-            
-            <Card className="p-8 hover-lift hover:shadow-xl transition-shadow hover-tilt hover-tilt">
-              <div className="flex mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <CheckCircle2 key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-                ))}
-              </div>
-              <p className="text-slate-700 mb-6 font-serif italic text-lg">
-                "Die Flexibilität und die hohe Qualität der Arbeit haben uns überzeugt. Die Swiss Reinigungsfirma ist ein Partner, auf den man sich verlassen kann."
-              </p>
-              <div>
-                <div className="font-bold text-slate-900">Maria Rossi</div>
-                <div className="text-slate-600 text-sm">Inhaberin, Rossi Boutique</div>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Meet the Founder Section */}
+      {/* Ansprechperson und Registerdaten (R5d, N033, M47) */}
       <section className="py-20 bg-white">
-        <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative">
-              <ParallaxImage
-                src="/nezir-bozhdaraj.jpg?v=2"
-                alt="Nezir Bozhdaraj, Gründer der Swiss Reinigungsfirma"
-                className="rounded-2xl shadow-2xl w-full h-[500px] lg:h-[600px] object-cover object-[50%_20%]"
-                speed={0.2}
-                scale={false}
-                overlay={false}
-              />
-            </div>
-            <div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
-                Ein Wort vom Gründer
-              </h2>
-              <p className="text-slate-700 mb-6 font-serif italic text-lg">
-                "Als ich die Swiss Reinigungsfirma gründete, hatte ich eine einfache Vision: einen Reinigungsservice anzubieten, der auf Vertrauen, Qualität und persönlichem Engagement basiert. Ich bin stolz darauf, dass wir diese Werte auch heute noch leben und jeden Tag unser Bestes geben, um die Erwartungen unserer Kunden zu übertreffen."
+        <div className="container max-w-4xl">
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="p-8">
+              <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4">Ihre Ansprechperson</h2>
+              <p className="text-slate-700 leading-relaxed">
+                Ihre Anfrage bearbeitet der Geschäftsführer persönlich. Wir melden uns {company.responseTime}.
               </p>
-              <div className="font-bold text-slate-900 text-lg">Nezir Bozhdaraj</div>
-              <div className="text-slate-600">Gründer & Geschäftsführer</div>
-            </div>
+            </Card>
+            <Card className="p-8">
+              <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4">Registerdaten</h2>
+              <p className="text-slate-700 leading-relaxed">
+                {company.legalName}
+                <br />
+                Handelsregister des Kantons Luzern
+                <br />
+                UID {company.uid}
+              </p>
+            </Card>
           </div>
         </div>
       </section>

@@ -27,7 +27,7 @@ export default function Fensterreinigung() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Fensterreinigung Zürich, Zug & Luzern - Swiss Reinigungsfirma"
+        title="Fensterreinigung Luzern, Zug & Umgebung - BGS Gebäudeservice"
         description="Professionelle Fensterreinigung in der Schweiz. Streifenfrei, sicher und zuverlässig für Gewerbe und Industrie."
         keywords="Fensterreinigung, Fenster putzen Schweiz, Glasreinigung, Fensterreinigung Gewerbe"
         url="/business/fensterreinigung"
@@ -47,7 +47,7 @@ export default function Fensterreinigung() {
                 Professionelle Fensterreinigung
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
-                Streifenfreie Fensterreinigung für Gewerbe und Industrie in Zürich, Zug und Luzern. Von Bürogebäuden bis zu Produktionshallen.
+                Streifenfreie Fensterreinigung für Gewerbe und Industrie in Luzern, Zug und Umgebung. Von Bürogebäuden bis zu Produktionshallen.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a href="#kontakt-formular">
@@ -96,8 +96,8 @@ export default function Fensterreinigung() {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-full mb-4">
                 <Award className="w-8 h-8" />
               </div>
-              <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">Sicherheit</h3>
-              <p className="text-slate-600 text-xs sm:text-sm md:text-base">Zertifizierte Höhenarbeiter</p>
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">Versichert</h3>
+              <p className="text-slate-600 text-xs sm:text-sm md:text-base">Betriebshaftpflicht CHF 10 Mio.</p>
             </div>
           </div>
         </div>

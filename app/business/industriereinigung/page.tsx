@@ -27,7 +27,7 @@ export default function Industriereinigung() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Industriereinigung Zürich, Zug & Luzern - Swiss Reinigungsfirma"
+        title="Industriereinigung Luzern, Zug & Umgebung - BGS Gebäudeservice"
         description="Professionelle Industriereinigung in der Schweiz. Spezialisiert auf Produktionshallen, Werkstätten und Industrieanlagen."
         keywords="Industriereinigung, Produktionshallen Reinigung, Werkstatt Reinigung Schweiz, Industrieanlagen Reinigung"
         url="/business/industriereinigung"
@@ -47,7 +47,7 @@ export default function Industriereinigung() {
                 Professionelle Industriereinigung
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
-                Spezialisierte Reinigungslösungen für Produktionshallen, Werkstätten und Industrieanlagen in Zürich, Zug und Luzern. Sicher, effizient und normgerecht.
+                Spezialisierte Reinigungslösungen für Produktionshallen, Werkstätten und Industrieanlagen in Luzern, Zug und Umgebung. Sicher, effizient und normgerecht.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a href="#kontakt-formular">
@@ -89,8 +89,8 @@ export default function Industriereinigung() {
             </Card>
             <Card className="p-6 text-center">
               <AlertTriangle className="w-12 h-12 text-primary mx-auto mb-4"/>
-              <div className="font-bold text-lg mb-2">Normgerecht</div>
-              <div className="text-slate-600 text-xs sm:text-sm md:text-base">ISO & Arbeitssicherheit</div>
+              <div className="font-bold text-lg mb-2">Versichert</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Betriebshaftpflicht CHF 10 Mio.</div>
             </Card>
             <Card className="p-6 text-center">
               <Sparkles className="w-12 h-12 text-primary mx-auto mb-4"/>
@@ -157,11 +157,7 @@ export default function Industriereinigung() {
                   {[
                     {
                       title: "Lebensmittelindustrie",
-                      desc: "HACCP-konforme Reinigung mit lebensmitteltauglichen Produkten. Dokumentation für Audits inklusive."
-                    },
-                    {
-                      title: "Pharma & Medizintechnik",
-                      desc: "Reinraum-Reinigung nach GMP-Standards. Validierte Prozesse und geschultes Personal."
+                      desc: "Reinigung nach Ihren Hygienevorgaben, abgestimmt auf Ihre Produktion."
                     },
                     {
                       title: "Logistik & Lager",
@@ -191,28 +187,16 @@ export default function Industriereinigung() {
             
             <TabsContent value="sicherheit" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Sicherheit & Zertifizierungen</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Sicherheit und Versicherung</h3>
                 <div className="space-y-6">
                   {[
                     {
-                      title: "Arbeitssicherheit (SUVA)",
-                      desc: "Alle Mitarbeiter sind in Arbeitssicherheit geschult. PSA (Persönliche Schutzausrüstung) wird konsequent getragen. Regelmäßige Sicherheitsunterweisungen."
-                    },
-                    {
-                      title: "ISO 9001 Qualitätsmanagement",
-                      desc: "Zertifiziertes Qualitätsmanagementsystem garantiert gleichbleibend hohe Standards und kontinuierliche Verbesserung."
-                    },
-                    {
-                      title: "Gefahrstoff-Schulung",
-                      desc: "Unser Personal ist im Umgang mit Gefahrstoffen geschult und kennt die relevanten Sicherheitsdatenblätter."
+                      title: "Ihre Sicherheitsvorgaben",
+                      desc: "Wir arbeiten nach den Sicherheitsvorgaben Ihres Betriebs und stimmen Zeiten und Abläufe mit Ihnen ab."
                     },
                     {
                       title: "Versicherungsschutz",
-                      desc: "Umfassende Betriebs- und Produkthaftpflicht mit CHF 10 Millionen Deckungssumme. Alle Mitarbeiter unfallversichert."
-                    },
-                    {
-                      title: "Dokumentation",
-                      desc: "Lückenlose Dokumentation aller Reinigungsvorgänge für Ihre Audits und Qualitätssicherung."
+                      desc: "Betriebshaftpflicht mit CHF 10 Mio. Deckung."
                     }
                   ].map((item, i) => (
                     <div key={i}>
@@ -250,18 +234,10 @@ export default function Industriereinigung() {
                 Wie gehen Sie mit Gefahrstoffen um?
               </AccordionTrigger>
               <AccordionContent className="text-slate-700 leading-relaxed pt-4">
-                Unser Personal ist geschult und zertifiziert. Wir arbeiten nach Ihren Sicherheitsvorgaben und entsorgen Gefahrstoffe fachgerecht über zugelassene Entsorgungsfirmen.
+                Wir arbeiten nach Ihren Sicherheitsvorgaben und entsorgen Gefahrstoffe fachgerecht über zugelassene Entsorgungsfirmen.
               </AccordionContent>
             </AccordionItem>
             
-            <AccordionItem value="item-4">
-              <AccordionTrigger className="text-lg font-semibold">
-                Bieten Sie auch Notfall-Reinigung an?
-              </AccordionTrigger>
-              <AccordionContent className="text-slate-700 leading-relaxed pt-4">
-                Ja, bei Produktionsunfällen, Leckagen oder anderen Notfällen sind wir kurzfristig für Sie da. 24/7 Erreichbarkeit für Notfälle.
-              </AccordionContent>
-            </AccordionItem>
           </Accordion>
         </div>
       </section>

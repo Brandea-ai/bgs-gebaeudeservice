@@ -27,7 +27,7 @@ export default function Fassadenreinigung() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Fassadenreinigung Zürich, Zug & Luzern - Swiss Reinigungsfirma"
+        title="Fassadenreinigung Luzern, Zug & Umgebung - BGS Gebäudeservice"
         description="Professionelle Fassadenreinigung in der Schweiz. Schonend und effektiv für alle Materialien - Glas, Naturstein, Verbundmaterialien."
         keywords="Fassadenreinigung, Gebäudereinigung Außen, Fassade reinigen Schweiz, Hochhaus Fassadenreinigung"
         url="/business/fassadenreinigung"
@@ -47,7 +47,7 @@ export default function Fassadenreinigung() {
                 Professionelle Fassadenreinigung
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
-                Schonende und effektive Fassadenreinigung für alle Materialien in Zürich, Zug und Luzern. Von Glas über Naturstein bis zu modernen Verbundmaterialien.
+                Schonende und effektive Fassadenreinigung für alle Materialien in Luzern, Zug und Umgebung. Von Glas über Naturstein bis zu modernen Verbundmaterialien.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a href="#kontakt-formular">
@@ -89,8 +89,8 @@ export default function Fassadenreinigung() {
             </Card>
             <Card className="p-6 text-center">
               <Shield className="w-12 h-12 text-primary mx-auto mb-4"/>
-              <div className="font-bold text-lg mb-2">Sicher</div>
-              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Zertifizierte Höhenarbeiter</div>
+              <div className="font-bold text-lg mb-2">Versichert</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Betriebshaftpflicht CHF 10 Mio.</div>
             </Card>
             <Card className="p-6 text-center">
               <Sparkles className="w-12 h-12 text-primary mx-auto mb-4"/>
@@ -246,10 +246,6 @@ export default function Fassadenreinigung() {
                         <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
                         <span>Fester Ansprechpartner</span>
                       </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
-                        <span>24/7 Notfall-Hotline</span>
-                      </li>
                     </ul>
                   </Card>
                 </div>
@@ -268,14 +264,6 @@ export default function Fassadenreinigung() {
               </AccordionContent>
             </AccordionItem>
             
-            <AccordionItem value="item-2">
-              <AccordionTrigger className="text-lg font-semibold">
-                Können Sie auch Hochhäuser reinigen?
-              </AccordionTrigger>
-              <AccordionContent className="text-slate-700 leading-relaxed pt-4">
-                Ja, unser Team ist für Höhenarbeiten zertifiziert. Wir verfügen über Hebebühnen bis 60m und arbeiten mit professionellen Industriekletterern zusammen.
-              </AccordionContent>
-            </AccordionItem>
             
             <AccordionItem value="item-3">
               <AccordionTrigger className="text-lg font-semibold">
@@ -291,7 +279,7 @@ export default function Fassadenreinigung() {
                 Was kostet eine Fassadenreinigung?
               </AccordionTrigger>
               <AccordionContent className="text-slate-700 leading-relaxed pt-4">
-                Die Kosten hängen von Fassadengröße, Material, Verschmutzungsgrad und Zugänglichkeit ab. Durchschnittlich CHF 8-15 pro m². Gerne erstellen wir ein kostenloses Angebot.
+                Die Kosten hängen von Fassadengröße, Material, Verschmutzungsgrad und Zugänglichkeit ab. Nach einer Besichtigung erstellen wir Ihnen gerne eine kostenlose Offerte.
               </AccordionContent>
             </AccordionItem>
           </Accordion>

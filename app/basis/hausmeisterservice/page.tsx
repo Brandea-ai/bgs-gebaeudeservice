@@ -19,7 +19,7 @@ import AppointmentButton from "@/components/AppointmentButton";
 export default function Hausmeisterservice() {
   const serviceData = {
     name: "Professioneller Hausmeisterservice",
-    description: "Zuverlässiger Hausmeisterservice für Ihre Immobilie. Objektbetreuung, Kleinreparaturen und 24/7 Notfall-Service.",
+    description: "Zuverlässiger Hausmeisterservice für Ihre Immobilie. Kontrollgänge, Kleinreparaturen und Wohnungsübergaben.",
     url: "/basis/hausmeisterservice",
     category: "Facility Caretaker Service"
   };
@@ -27,8 +27,8 @@ export default function Hausmeisterservice() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Hausmeisterservice Zürich, Zug & Luzern - Swiss Reinigungsfirma"
-        description="Professioneller Hausmeisterservice in der Schweiz. Objektbetreuung, Kleinreparaturen und 24/7 Notfall-Service."
+        title="Hausmeisterservice Luzern, Zug & Umgebung - BGS Gebäudeservice"
+        description="Professioneller Hausmeisterservice in der Schweiz. Kontrollgänge, Kleinreparaturen und Wohnungsübergaben."
         keywords="Hausmeisterservice, Hausmeister Schweiz, Objektbetreuung, Facility Caretaker"
         url="/basis/hausmeisterservice"
         schema={serviceSchema(serviceData)}
@@ -47,7 +47,7 @@ export default function Hausmeisterservice() {
                 Professioneller Hausmeisterservice
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
-                Umfassende Objektbetreuung für Wohn- und Geschäftsimmobilien in Zürich, Zug und Luzern. Zuverlässig, kompetent und immer erreichbar.
+                Umfassende Objektbetreuung für Wohn- und Geschäftsimmobilien in Luzern, Zug und Umgebung. Zuverlässig und aus einer Hand.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a href="#kontakt-formular">
@@ -79,8 +79,8 @@ export default function Hausmeisterservice() {
           <div className="grid md:grid-cols-4 gap-8 mb-20">
             <Card className="p-6 text-center">
               <Phone className="w-12 h-12 text-primary mx-auto mb-4"/>
-              <div className="font-bold text-lg mb-2">24/7 Erreichbar</div>
-              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Notfall-Hotline rund um die Uhr</div>
+              <div className="font-bold text-lg mb-2">Offerte vor Ort</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Kostenlos und unverbindlich</div>
             </Card>
             <Card className="p-6 text-center">
               <Wrench className="w-12 h-12 text-primary mx-auto mb-4"/>
@@ -132,10 +132,8 @@ export default function Hausmeisterservice() {
                     <h4 className="font-bold text-lg mb-3 text-primary">Zusatzleistungen</h4>
                     <ul className="space-y-2">
                       {[
-                        "Winterdienst & Schneeräumung",
                         "Schlüsselverwaltung",
                         "Handwerker-Koordination",
-                        "Notfall-Bereitschaft 24/7",
                         "Mieterwechsel-Begleitung",
                         "Technische Wartungen"
                       ].map((item, i) => (
@@ -167,10 +165,6 @@ export default function Hausmeisterservice() {
                       title: "Digitale Dokumentation",
                       desc: "Alle Tätigkeiten werden digital erfasst. Sie erhalten regelmäßige Berichte über durchgeführte Arbeiten, Mängel und anstehende Wartungen."
                     },
-                    {
-                      title: "Notfall-Service",
-                      desc: "Bei Notfällen wie Wasserschäden, Heizungsausfall oder Sturmschäden sind wir 24/7 erreichbar und kümmern uns um die Schadensbegrenzung."
-                    }
                   ].map((item, i) => (
                     <div key={i}>
                       <h4 className="text-sm sm:text-base md:text-lg font-bold mb-2 text-primary">{item.title}</h4>
@@ -238,10 +232,6 @@ export default function Hausmeisterservice() {
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
-                        <span>24/7 Präsenz-Service</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
                         <span>Alle Zusatzleistungen</span>
                       </li>
                       <li className="flex items-start gap-2">
@@ -266,14 +256,6 @@ export default function Hausmeisterservice() {
               </AccordionContent>
             </AccordionItem>
             
-            <AccordionItem value="item-2">
-              <AccordionTrigger className="text-lg font-semibold">
-                Wie schnell reagieren Sie bei Notfällen?
-              </AccordionTrigger>
-              <AccordionContent className="text-slate-700 leading-relaxed pt-4">
-                Bei Notfällen wie Wasserschäden oder Heizungsausfall sind wir innerhalb von 1-2 Stunden vor Ort. Unsere 24/7-Hotline ist immer erreichbar.
-              </AccordionContent>
-            </AccordionItem>
             
             <AccordionItem value="item-3">
               <AccordionTrigger className="text-lg font-semibold">
@@ -284,14 +266,6 @@ export default function Hausmeisterservice() {
               </AccordionContent>
             </AccordionItem>
             
-            <AccordionItem value="item-4">
-              <AccordionTrigger className="text-lg font-semibold">
-                Ist der Winterdienst im Service enthalten?
-              </AccordionTrigger>
-              <AccordionContent className="text-slate-700 leading-relaxed pt-4">
-                Der Winterdienst kann als Zusatzleistung gebucht werden. Wir kümmern uns um Schneeräumung, Streudienst und die Verkehrssicherungspflicht.
-              </AccordionContent>
-            </AccordionItem>
           </Accordion>
         </div>
       </section>
