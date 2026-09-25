@@ -101,8 +101,8 @@ export default function Aussenanlagen() {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-full mb-4">
                 <Award className="w-8 h-8" />
               </div>
-              <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">Schweizweit</h3>
-              <p className="text-slate-600 text-xs sm:text-sm md:text-base">Service in Luzern, Zug und Umgebung</p>
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">Im ganzen Einzugsgebiet</h3>
+              <p className="text-slate-600 text-xs sm:text-sm md:text-base">Luzern, Zug, Aargau, Nidwalden und Obwalden</p>
             </div>
           </div>
         </div>
@@ -194,7 +194,7 @@ export default function Aussenanlagen() {
                 Arbeiten Sie auch an Wochenenden?
               </AccordionTrigger>
               <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
-                Ja, wir bieten flexible Einsatzzeiten an, auch an Wochenenden und Feiertagen. Besonders bei Schneefall und Notfällen sind wir rund um die Uhr für Sie da.
+                Ja, nach Absprache arbeiten wir auch abends und am Wochenende.
               </AccordionContent>
             </AccordionItem>
 
@@ -203,7 +203,7 @@ export default function Aussenanlagen() {
                 Wie schnell können Sie bei Bedarf reagieren?
               </AccordionTrigger>
               <AccordionContent className="text-slate-600 text-xs sm:text-sm md:text-base">
-                Bei Notfällen wie Schneefall oder Verschmutzungen können wir innerhalb weniger Stunden vor Ort sein. Für reguläre Pflegearbeiten vereinbaren wir feste Termine nach Ihrem Bedarf.
+                Reguläre Pflegearbeiten planen wir mit festen Terminen nach Ihrem Bedarf. Für kurzfristige Einsätze rufen Sie uns an, wir klären dann, was möglich ist.
               </AccordionContent>
             </AccordionItem>
           </Accordion>

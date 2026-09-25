@@ -154,7 +154,7 @@ export default function FacilityManagement() {
                   {[
                     { title: "Ein Ansprechpartner", desc: "Für alle Gebäudedienstleistungen haben Sie nur einen Ansprechpartner. Das spart Zeit und Koordinationsaufwand." },
                     { title: "Kosteneffizienz", desc: "Durch Bündelung der Leistungen profitieren Sie von attraktiven Paketpreisen und reduzierten Verwaltungskosten." },
-                    { title: "Qualitätssicherung", desc: "Einheitliche Standards und regelmäßige Kontrollen garantieren gleichbleibend hohe Qualität." },
+                    { title: "Qualitätssicherung", desc: "Einheitliche Standards und regelmässige Kontrollen sorgen für gleichbleibende Qualität." },
                     { title: "Flexibilität", desc: "Wir passen unsere Leistungen flexibel an Ihre sich ändernden Bedürfnisse an." }
                   ].map((item, i) => (
                     <div key={i}>

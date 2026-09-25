@@ -23,7 +23,7 @@ export default function RichtigeReinigungsfirmaFinden() {
     <>
       <SEO 
         title="Die richtige Reinigungsfirma finden: 10 Tipps | BGS Gebäudeservice"
-        description="10 wichtige Kriterien für die Auswahl der richtigen Reinigungsfirma. Von Zertifizierungen bis Referenzen - so finden Sie den perfekten Partner."
+        description="Wichtige Kriterien für die Auswahl der richtigen Reinigungsfirma: Nachweise, Versicherung, Referenzen und Offerte."
         keywords="Reinigungsfirma finden, Reinigungsfirma auswählen, Kriterien Reinigungsfirma, professionelle Reinigung"
       />
       <RichtigeReinigungsfirmaFindenContent />
@@ -77,7 +77,7 @@ function RichtigeReinigungsfirmaFindenContent() {
               <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4">Die wichtigsten Auswahlkriterien auf einen Blick</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 {[
-                  "Zertifizierungen und Qualifikationen",
+                  "Nachweise und Qualifikationen",
                   "Erfahrung in Ihrer Branche",
                   "Versicherungsschutz",
                   "Referenzen und Bewertungen",
@@ -99,29 +99,33 @@ function RichtigeReinigungsfirmaFindenContent() {
             <Accordion type="single" collapsible className="mb-12">
               <AccordionItem value="item-1">
                 <AccordionTrigger className="text-sm sm:text-base md:text-lg font-semibold">
-                  1. Zertifizierungen und Qualifikationen
+                  1. Nachweise und Qualifikationen
                 </AccordionTrigger>
                 <AccordionContent className="text-lg leading-relaxed text-slate-700 pt-4">
                   <p className="mb-4">
-                    Achten Sie darauf, dass die Reinigungsfirma über relevante Zertifizierungen verfügt. In der Schweiz sind ISO-Standards besonders wichtig. Eine ISO 9001-Zertifizierung garantiert ein funktionierendes Qualitätsmanagementsystem, während ISO 14001 für umweltbewusstes Handeln steht.
+                    Fragen Sie nach Nachweisen statt nach Versprechen. Dazu gehören eine Bestätigung der Betriebshaftpflicht mit Deckungssumme und, bei Firmen mit Gesamtarbeitsvertrag, eine Bestätigung der Paritätischen Kommission Reinigung (PK Reinigung).
                   </p>
                   <p className="mb-4">
-                    Weitere wichtige Qualifikationen umfassen Schulungen im Umgang mit speziellen Reinigungsmitteln, Hygienezertifikate und branchenspezifische Ausbildungen. Fragen Sie nach Nachweisen und lassen Sie sich diese zeigen.
+                    Wichtig sind auch Schulungen zu Reinigungsmitteln und Arbeitssicherheit. Der Branchenverband Allpura bietet dafür eine Branchenlösung an. Nennt eine Firma eine Zertifizierung, lassen Sie sich das gültige Zertifikat zeigen.
                   </p>
                   <div className="bg-white p-6 rounded-lg mt-6">
-                    <h4 className="font-bold mb-3">Wichtige Zertifizierungen:</h4>
+                    <h4 className="font-bold mb-3">Nützliche Nachweise:</h4>
                     <ul className="space-y-2">
                       <li className="flex items-start gap-2">
                         <Star className="w-4 h-4 text-primary mt-1" />
-                        <span>ISO 9001 (Qualitätsmanagement)</span>
+                        <span>Versicherungsbestätigung mit Deckungssumme</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <Star className="w-4 h-4 text-primary mt-1" />
-                        <span>ISO 14001 (Umweltmanagement)</span>
+                        <span>Bestätigung der PK Reinigung (Gesamtarbeitsvertrag)</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <Star className="w-4 h-4 text-primary mt-1" />
-                        <span>ISO 45001 (Arbeitsschutz)</span>
+                        <span>Schulungsnachweise zu Reinigungsmitteln und Arbeitssicherheit</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Star className="w-4 h-4 text-primary mt-1" />
+                        <span>Gültiges Zertifikat, wenn eine Zertifizierung genannt wird</span>
                       </li>
                     </ul>
                   </div>

@@ -289,7 +289,7 @@ export default function Bueroreinigung() {
                 Was passiert bei Krankheit des Reinigungspersonals?
               </AccordionTrigger>
               <AccordionContent className="text-slate-700 leading-relaxed pt-4">
-                Wir garantieren Vertretung. Unser Team ist so organisiert, dass bei Ausfall sofort eine geschulte Ersatzkraft einspringt – ohne Qualitätsverlust.
+                Wie wir Vertretungen bei Ferien und Krankheit organisieren, besprechen wir mit Ihnen bei der Offerte.
               </AccordionContent>
             </AccordionItem>
           </Accordion>

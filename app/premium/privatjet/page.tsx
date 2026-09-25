@@ -19,7 +19,7 @@ import AppointmentButton from "@/components/AppointmentButton";
 export default function Privatjet() {
   const serviceData = {
     name: "Privatjet-Reinigung",
-    description: "Professionelle Reinigung für Privatjets mit höchsten Standards. Diskretion, Präzision und Verfügbarkeit rund um die Uhr.",
+    description: "Kabinenreinigung für Privatjets mit Rücksicht auf hochwertige Materialien. Diskret und nach Absprache.",
     url: "/premium/privatjet",
     category: "Aviation Cleaning"
   };
@@ -80,7 +80,7 @@ export default function Privatjet() {
             <Card className="p-6 text-center">
               <Shield className="w-12 h-12 text-primary mx-auto mb-4"/>
               <div className="font-bold text-lg mb-2">VIP-Service</div>
-              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Höchste Diskretion garantiert</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Auf Wunsch mit Geheimhaltungsvereinbarung</div>
             </Card>
             <Card className="p-6 text-center">
               <Clock className="w-12 h-12 text-primary mx-auto mb-4"/>

@@ -241,14 +241,6 @@ export default function Fassadenreinigung() {
                         <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
                         <span>Versiegelung</span>
                       </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
-                        <span>Notfall-Service</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
-                        <span>Festpreis-Garantie</span>
-                      </li>
                     </ul>
                   </Card>
                   <Card className="p-6 bg-slate-50">

@@ -213,10 +213,6 @@ export default function Hausmeisterservice() {
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
-                        <span>Notfall-Hotline</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
                         <span>Ideal für Mehrfamilienhäuser</span>
                       </li>
                     </ul>

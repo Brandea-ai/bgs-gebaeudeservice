@@ -68,10 +68,10 @@ function ProfessionelleGebaeudereinigungContent() {
                 <Card className="p-6 hover-lift hover-tilt hover-tilt">
                   <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4">Qualitätsstandards</h3>
                   <p className="text-slate-700 mb-4">
-                    Professionelle Reinigungsfirmen arbeiten nach definierten Qualitätsstandards wie ISO 9001. Diese Standards garantieren gleichbleibende Qualität, dokumentierte Prozesse und kontinuierliche Verbesserung.
+                    Professionelle Reinigung folgt festen Abläufen: Reinigungspläne legen fest, was wann gereinigt wird, Kontrollen prüfen das Ergebnis, und Rückmeldungen fliessen in die Planung ein.
                   </p>
                   <div className="space-y-3">
-                    {["ISO 9001 Zertifizierung", "Definierte Reinigungspläne", "Qualitätskontrollen", "Dokumentation", "Kundenfeedback-Systeme"].map((item, i) => (
+                    {["Definierte Reinigungspläne", "Qualitätskontrollen", "Dokumentation", "Rückmeldungen der Kunden"].map((item, i) => (
                       <div key={i} className="flex items-center gap-3">
                         <Shield className="w-5 h-5 text-primary"/>
                         <span>{item}</span>
@@ -142,7 +142,7 @@ function ProfessionelleGebaeudereinigungContent() {
             <Card className="p-8 hover-lift bg-gradient-to-br from-primary/10 to-red-50 mb-12 hover-tilt hover-tilt">
               <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4">Qualitätsmerkmale auf einen Blick</h3>
               <div className="grid md:grid-cols-2 gap-4">
-                {["Zertifizierte Prozesse", "Geschultes Personal", "Moderne Ausrüstung", "Umweltfreundliche Produkte", "Transparente Kommunikation", "Flexible Einsatzzeiten", "Versicherungsschutz", "Qualitätskontrollen"].map((item, i) => (
+                {["Feste Abläufe", "Geschultes Personal", "Moderne Ausrüstung", "Umweltfreundliche Produkte", "Transparente Kommunikation", "Flexible Einsatzzeiten", "Versicherungsschutz", "Qualitätskontrollen"].map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-primary mt-0.5"/>
                     <span>{item}</span>
