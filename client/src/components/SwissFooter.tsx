@@ -80,7 +80,7 @@ export default function SwissFooter() {
                 Jetzt Kontakt aufnehmen
               </h2>
               <p className="text-sm sm:text-base lg:text-lg text-slate-600 dark:text-slate-400">
-                Fordern Sie ein unverbindliches Angebot an – wir melden uns innerhalb von 24 Stunden
+                Fordern Sie ein unverbindliches Angebot an. Wir melden uns {company.responseTime}.
               </p>
             </div>
 
@@ -152,8 +152,8 @@ export default function SwissFooter() {
                     
                     <optgroup label="Premium">
                       <option value="Luxusimmobilien">Luxusimmobilien (Villen, Lofts)</option>
-                      <option value="Privatjet Reinigung">Privatjet Reinigung</option>
-                      <option value="Yacht Reinigung">Yacht Reinigung</option>
+                      <option value="Privatjet-Reinigung">Privatjet-Reinigung</option>
+                      <option value="Yacht-Reinigung">Yacht-Reinigung</option>
                     </optgroup>
                     
                     <optgroup label="Reinigung und Hauswartung">
@@ -288,43 +288,41 @@ export default function SwissFooter() {
                 Reinigung und Hauswartung für Unternehmen und anspruchsvolle Privatkunden. Sitz in {company.address.city}.
               </p>
               <div className="space-y-2">
-                <Link href="/ueber-uns"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Über Uns</div></Link>
+                <Link href="/ueber-uns"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Über uns</div></Link>
                 <Link href="/kontakt"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Kontakt</div></Link>
                 <Link href="/blog"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Blog</div></Link>
               </div>
             </div>
 
             <div>
-              <h3 className="font-semibold text-lg mb-4">Premium Services</h3>
+              <h3 className="font-semibold text-lg mb-4">Premium</h3>
               <div className="space-y-2">
-                <Link href="/premium/privatjet"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Privatjet Reinigung</div></Link>
-                <Link href="/premium/yacht"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Yacht Reinigung</div></Link>
+                <Link href="/premium"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Premium im Überblick</div></Link>
                 <Link href="/premium/luxusimmobilien"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Luxusimmobilien</div></Link>
+                <Link href="/premium/privatjet"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Privatjet-Reinigung</div></Link>
+                <Link href="/premium/yacht"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Yacht-Reinigung</div></Link>
               </div>
             </div>
 
             <div>
-              <h3 className="font-semibold text-lg mb-4">Business Services</h3>
+              <h3 className="font-semibold text-lg mb-4">Reinigung</h3>
               <div className="space-y-2">
-                <Link href="/business/bueroreinigung"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Büroreinigung</div></Link>
-                <Link href="/business/industriereinigung"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Industriereinigung</div></Link>
-                <Link href="/business/fassadenreinigung"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Fassadenreinigung</div></Link>
-                <Link href="/business/fensterreinigung"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Fensterreinigung</div></Link>
-                <Link href="/business/hallenreinigung"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Hallenreinigung</div></Link>
-                <Link href="/business/maschinenreinigung"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Maschinenreinigung</div></Link>
-                <Link href="/business/baureinigung"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Baureinigung</div></Link>
-                <Link href="/business/aussenanlagen"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Außenanlagen</div></Link>
-                <Link href="/business/facility-management"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Facility Management</div></Link>
+                <Link href="/leistungen/unterhaltsreinigung"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Unterhaltsreinigung</div></Link>
+                <Link href="/leistungen/bueroreinigung"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Büro- und Praxisreinigung</div></Link>
+                <Link href="/leistungen/sonderreinigungen"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Sonderreinigungen</div></Link>
+                <Link href="/leistungen/baureinigung"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Bau- und Bauendreinigung</div></Link>
+                <Link href="/leistungen/fenster-und-fassadenreinigung"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Fenster und Fassaden</div></Link>
+                <Link href="/leistungen/industrie-und-hallenreinigung"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Industrie und Hallen</div></Link>
               </div>
             </div>
 
             <div>
-              <h3 className="font-semibold text-lg mb-4">Basis Services</h3>
+              <h3 className="font-semibold text-lg mb-4">Hauswartung und Pflege</h3>
               <div className="space-y-2">
-                <Link href="/basis/unterhaltsreinigung"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Unterhaltsreinigung</div></Link>
-                <Link href="/basis/hausmeisterservice"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Hauswartung</div></Link>
-                <Link href="/basis/beschaffung"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Beschaffung</div></Link>
-                <Link href="/basis/sonderleistungen"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Sonderleistungen</div></Link>
+                <Link href="/leistungen/hauswartung"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Hauswartung</div></Link>
+                <Link href="/leistungen/aussen-und-gruenflaechenpflege"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Aussen- und Grünflächenpflege</div></Link>
+                <Link href="/leistungen/facility-services"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Facility Services</div></Link>
+                <Link href="/leistungen"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Alle Leistungen</div></Link>
               </div>
             </div>
 

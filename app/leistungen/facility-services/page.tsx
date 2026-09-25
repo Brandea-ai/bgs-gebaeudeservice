@@ -25,7 +25,7 @@ export default function FacilityManagement() {
   const serviceData = {
     name: "Ganzheitliches Facility Management",
     description: "Umfassendes Facility Management für Ihre Immobilien. Reinigung, Wartung und Instandhaltung aus einer Hand.",
-    url: "/business/facility-management",
+    url: "/leistungen/facility-services",
     category: "Facility Management"
   };
 
@@ -35,7 +35,7 @@ export default function FacilityManagement() {
         title="Facility Management Luzern, Zug & Umgebung - BGS Gebäudeservice"
         description="Umfassendes Facility Management in der Schweiz. Reinigung, Wartung und Instandhaltung aus einer Hand."
         keywords="Facility Management, Gebäudemanagement Schweiz, Facility Services, Immobilienverwaltung"
-        url="/business/facility-management"
+        url="/leistungen/facility-services"
         schema={serviceSchema(serviceData)}
       />
       <SwissNavigation />
@@ -49,7 +49,7 @@ export default function FacilityManagement() {
                 Business Lösung
               </div>
               <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
-                Ganzheitliches Facility Management
+                Facility Services aus einer Hand
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
                 Umfassende Gebäudedienstleistungen aus einer Hand in Luzern, Zug und Umgebung. Von der Reinigung über die Hauswartung bis zur Grünflächenpflege.

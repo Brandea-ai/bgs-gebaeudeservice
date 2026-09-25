@@ -19,29 +19,28 @@ export default function SwissNavigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Leistungsgruppen nach Zielbild v2 (Webseite-Analyse/03, Abschnitt 2a)
   const premiumServices = [
-    { title: "Privatjet Reinigung", href: "/premium/privatjet" },
-    { title: "Yacht Reinigung", href: "/premium/yacht" },
-    { title: "Luxusimmobilien", href: "/premium/luxusimmobilien" }
+    { title: "Premium im Überblick", href: "/premium" },
+    { title: "Luxusimmobilien", href: "/premium/luxusimmobilien" },
+    { title: "Privatjet-Reinigung", href: "/premium/privatjet" },
+    { title: "Yacht-Reinigung", href: "/premium/yacht" }
   ];
 
   const businessServices = [
-    { title: "Büroreinigung", href: "/business/bueroreinigung" },
-    { title: "Baureinigung", href: "/business/baureinigung" },
-    { title: "Industriereinigung", href: "/business/industriereinigung" },
-    { title: "Fassadenreinigung", href: "/business/fassadenreinigung" },
-    { title: "Fensterreinigung", href: "/business/fensterreinigung" },
-    { title: "Außenanlagenpflege", href: "/business/aussenanlagen" },
-    { title: "Hallenreinigung", href: "/business/hallenreinigung" },
-    { title: "Maschinenreinigung", href: "/business/maschinenreinigung" },
-    { title: "Facility Management", href: "/business/facility-management" }
+    { title: "Unterhaltsreinigung", href: "/leistungen/unterhaltsreinigung" },
+    { title: "Büro- und Praxisreinigung", href: "/leistungen/bueroreinigung" },
+    { title: "Sonderreinigungen", href: "/leistungen/sonderreinigungen" },
+    { title: "Bau- und Bauendreinigung", href: "/leistungen/baureinigung" },
+    { title: "Fenster und Fassaden", href: "/leistungen/fenster-und-fassadenreinigung" },
+    { title: "Industrie und Hallen", href: "/leistungen/industrie-und-hallenreinigung" }
   ];
 
   const basisServices = [
-    { title: "Unterhaltsreinigung", href: "/basis/unterhaltsreinigung" },
-    { title: "Hauswartung", href: "/basis/hausmeisterservice" },
-    { title: "Beschaffungsmanagement", href: "/basis/beschaffung" },
-    { title: "Sonderleistungen", href: "/basis/sonderleistungen" }
+    { title: "Hauswartung", href: "/leistungen/hauswartung" },
+    { title: "Aussen- und Grünflächenpflege", href: "/leistungen/aussen-und-gruenflaechenpflege" },
+    { title: "Facility Services", href: "/leistungen/facility-services" },
+    { title: "Alle Leistungen", href: "/leistungen" }
   ];
 
   return (
@@ -75,7 +74,7 @@ export default function SwissNavigation() {
                   <div className="bg-white rounded-lg shadow-2xl p-8">
                     <div className="grid grid-cols-3 gap-8">
                       <div>
-                        <h3 className="text-sm font-bold text-primary mb-4 uppercase tracking-wide">Premium Services</h3>
+                        <h3 className="text-sm font-bold text-primary mb-4 uppercase tracking-wide">Premium</h3>
                         <div className="space-y-2">
                           {premiumServices.map((service, index) => (
                             <Link key={index} href={service.href}>
@@ -87,7 +86,7 @@ export default function SwissNavigation() {
                         </div>
                       </div>
                       <div>
-                        <h3 className="text-sm font-bold text-primary mb-4 uppercase tracking-wide">Business Lösungen</h3>
+                        <h3 className="text-sm font-bold text-primary mb-4 uppercase tracking-wide">Reinigung</h3>
                         <div className="space-y-2">
                           {businessServices.map((service, index) => (
                             <Link key={index} href={service.href}>
@@ -99,7 +98,7 @@ export default function SwissNavigation() {
                         </div>
                       </div>
                       <div>
-                        <h3 className="text-sm font-bold text-primary mb-4 uppercase tracking-wide">Basisreinigung</h3>
+                        <h3 className="text-sm font-bold text-primary mb-4 uppercase tracking-wide">Hauswartung und Pflege</h3>
                         <div className="space-y-2">
                           {basisServices.map((service, index) => (
                             <Link key={index} href={service.href}>
@@ -132,10 +131,13 @@ export default function SwissNavigation() {
           </div>
 
           <button
+            type="button"
             onClick={() => setIsOpen(!isOpen)}
             className="lg:hidden p-2 text-foreground"
+            aria-label={isOpen ? "Menü schliessen" : "Menü öffnen"}
+            aria-expanded={isOpen}
           >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isOpen ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
           </button>
         </div>
       </div>
@@ -147,7 +149,7 @@ export default function SwissNavigation() {
               <div className="py-2 text-foreground hover:text-primary transition-smooth">Home</div>
             </Link>
             <div>
-              <div className="py-2 font-semibold text-foreground">Premium Services</div>
+              <div className="py-2 font-semibold text-foreground">Premium</div>
               <div className="pl-4 space-y-2">
                 {premiumServices.map((service, index) => (
                   <Link key={index} href={service.href} onClick={() => setIsOpen(false)}>
@@ -159,7 +161,7 @@ export default function SwissNavigation() {
               </div>
             </div>
             <div>
-              <div className="py-2 font-semibold text-foreground">Business Lösungen</div>
+              <div className="py-2 font-semibold text-foreground">Reinigung</div>
               <div className="pl-4 space-y-2">
                 {businessServices.map((service, index) => (
                   <Link key={index} href={service.href} onClick={() => setIsOpen(false)}>
@@ -171,7 +173,7 @@ export default function SwissNavigation() {
               </div>
             </div>
             <div>
-              <div className="py-2 font-semibold text-foreground">Basisreinigung</div>
+              <div className="py-2 font-semibold text-foreground">Hauswartung und Pflege</div>
               <div className="pl-4 space-y-2">
                 {basisServices.map((service, index) => (
                   <Link key={index} href={service.href} onClick={() => setIsOpen(false)}>

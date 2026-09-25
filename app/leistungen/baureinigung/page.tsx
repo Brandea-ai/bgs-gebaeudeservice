@@ -25,7 +25,7 @@ export default function Baureinigung() {
   const serviceData = {
     name: "Professionelle Baureinigung",
     description: "Professionelle Baureinigung für Neubauten und Renovierungen. Bauschlussreinigung, Baustellenreinigung und Entsorgung.",
-    url: "/business/baureinigung",
+    url: "/leistungen/baureinigung",
     category: "Construction Cleaning"
   };
 
@@ -35,7 +35,7 @@ export default function Baureinigung() {
         title="Baureinigung Luzern, Zug & Umgebung - BGS Gebäudeservice"
         description="Professionelle Baureinigung in der Schweiz. Bauschlussreinigung, Baustellenreinigung und Entsorgung für Neubauten und Renovierungen."
         keywords="Baureinigung, Bauschlussreinigung, Baustellenreinigung Schweiz, Endreinigung Neubau"
-        url="/business/baureinigung"
+        url="/leistungen/baureinigung"
         schema={serviceSchema(serviceData)}
       />
       <SwissNavigation />
@@ -49,7 +49,7 @@ export default function Baureinigung() {
                 Business Lösung
               </div>
               <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
-                Professionelle Baureinigung
+                Bau- und Bauendreinigung
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
                 Zuverlässige Baureinigung für Neubauten, Umbauten und Renovierungen in Luzern, Zug und Umgebung. Von der Grobreinigung bis zur Endreinigung.

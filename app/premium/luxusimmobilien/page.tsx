@@ -29,7 +29,7 @@ export default function Luxusimmobilien() {
       <SEO
         title="Luxusimmobilien-Reinigung - Premium Service"
         description="Maßgeschneiderte Reinigung für Luxusimmobilien in Luzern, Zug und Umgebung. Spezialisiert auf Edeloberflächen und Kunstobjekte."
-        keywords="Luxusimmobilien Reinigung, Villa Reinigung Schweiz, Premium Immobilien Service, Luxus Reinigung"
+        keywords="Luxusimmobilien-Reinigung, Villa Reinigung Schweiz, Premium Immobilien Service, Luxus Reinigung"
         url="/premium/luxusimmobilien"
         schema={serviceSchema(serviceData)}
       />

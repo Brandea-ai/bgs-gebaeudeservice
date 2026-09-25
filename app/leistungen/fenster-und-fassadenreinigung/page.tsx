@@ -20,7 +20,7 @@ export default function Fassadenreinigung() {
   const serviceData = {
     name: "Professionelle Fassadenreinigung",
     description: "Schonende und effektive Fassadenreinigung für alle Materialien. Von Glas über Naturstein bis zu modernen Verbundmaterialien.",
-    url: "/business/fassadenreinigung",
+    url: "/leistungen/fenster-und-fassadenreinigung",
     category: "Facade Cleaning"
   };
 
@@ -30,7 +30,7 @@ export default function Fassadenreinigung() {
         title="Fassadenreinigung Luzern, Zug & Umgebung - BGS Gebäudeservice"
         description="Professionelle Fassadenreinigung in der Schweiz. Schonend und effektiv für alle Materialien - Glas, Naturstein, Verbundmaterialien."
         keywords="Fassadenreinigung, Gebäudereinigung Außen, Fassade reinigen Schweiz, Hochhaus Fassadenreinigung"
-        url="/business/fassadenreinigung"
+        url="/leistungen/fenster-und-fassadenreinigung"
         schema={serviceSchema(serviceData)}
       />
       <SwissNavigation />
@@ -44,7 +44,7 @@ export default function Fassadenreinigung() {
                 Business Lösung
               </div>
               <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
-                Professionelle Fassadenreinigung
+                Fenster- und Fassadenreinigung
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
                 Schonende und effektive Fassadenreinigung für alle Materialien in Luzern, Zug und Umgebung. Von Glas über Naturstein bis zu modernen Verbundmaterialien.
@@ -70,6 +70,28 @@ export default function Fassadenreinigung() {
                 overlayOpacity={0.15}
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Zusammengelegt aus /business/fensterreinigung (Zielbild v2, K05) */}
+      <section className="py-16 bg-slate-50">
+        <div className="container max-w-5xl">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-4">Fenster- und Glasreinigung</h2>
+          <p className="text-slate-600 mb-8 max-w-3xl">Fenster und Glasflächen reinigen wir innen und aussen, einmalig oder in einem festen Rhythmus.</p>
+          <div className="grid sm:grid-cols-2 gap-3">
+            {[
+              "Fenster innen und aussen, mit Rahmen und Fensterbrettern",
+              "Schaufenster und Glastüren",
+              "Wintergärten, Glasdächer und Oberlichter",
+              "Treppenhausfenster",
+              "Jalousien und Storen"
+            ].map((item) => (
+              <div key={item} className="flex items-start gap-2 text-slate-700">
+                <CheckCircle className="w-5 h-5 text-primary mt-0.5 shrink-0" aria-hidden="true" />
+                <span>{item}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>

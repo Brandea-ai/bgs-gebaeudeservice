@@ -20,7 +20,7 @@ export default function Industriereinigung() {
   const serviceData = {
     name: "Professionelle Industriereinigung",
     description: "Spezialisierte Reinigungslösungen für Produktionshallen, Werkstätten und Industrieanlagen. Sicher, effizient und normgerecht.",
-    url: "/business/industriereinigung",
+    url: "/leistungen/industrie-und-hallenreinigung",
     category: "Industrial Cleaning"
   };
 
@@ -30,7 +30,7 @@ export default function Industriereinigung() {
         title="Industriereinigung Luzern, Zug & Umgebung - BGS Gebäudeservice"
         description="Professionelle Industriereinigung in der Schweiz. Spezialisiert auf Produktionshallen, Werkstätten und Industrieanlagen."
         keywords="Industriereinigung, Produktionshallen Reinigung, Werkstatt Reinigung Schweiz, Industrieanlagen Reinigung"
-        url="/business/industriereinigung"
+        url="/leistungen/industrie-und-hallenreinigung"
         schema={serviceSchema(serviceData)}
       />
       <SwissNavigation />
@@ -44,7 +44,7 @@ export default function Industriereinigung() {
                 Business Lösung
               </div>
               <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
-                Professionelle Industriereinigung
+                Industrie- und Hallenreinigung
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
                 Spezialisierte Reinigungslösungen für Produktionshallen, Werkstätten und Industrieanlagen in Luzern, Zug und Umgebung. Sicher, effizient und normgerecht.
@@ -70,6 +70,49 @@ export default function Industriereinigung() {
                 overlayOpacity={0.15}
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Zusammengelegt aus /business/maschinenreinigung (Zielbild v2, K04) */}
+      <section className="py-16 bg-slate-50">
+        <div className="container max-w-5xl">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-4">Maschinen und Anlagen</h2>
+          <p className="text-slate-600 mb-8 max-w-3xl">Maschinen und Anlagen reinigen wir materialschonend und abgestimmt auf Ihre Produktionszeiten.</p>
+          <div className="grid sm:grid-cols-2 gap-3">
+            {[
+              "Produktionsanlagen und Fertigungsstrassen",
+              "Förderanlagen und Transportbänder",
+              "Pressen, Stanzen und Verpackungsmaschinen",
+              "Lebensmittelmaschinen nach Ihren Hygienevorgaben"
+            ].map((item) => (
+              <div key={item} className="flex items-start gap-2 text-slate-700">
+                <CheckCircle className="w-5 h-5 text-primary mt-0.5 shrink-0" aria-hidden="true" />
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Zusammengelegt aus /business/hallenreinigung (Zielbild v2, K04) */}
+      <section className="py-16 bg-slate-50">
+        <div className="container max-w-5xl">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-4">Hallenreinigung</h2>
+          <p className="text-slate-600 mb-8 max-w-3xl">Lager- und Produktionshallen reinigen wir ausserhalb Ihrer Betriebszeiten oder im laufenden Betrieb nach Absprache.</p>
+          <div className="grid sm:grid-cols-2 gap-3">
+            {[
+              "Hallenböden, maschinell gereinigt",
+              "Verladezonen und Rampen",
+              "Sozialräume, Sanitäranlagen und Umkleiden",
+              "Büros in Produktionshallen",
+              "Regale entstauben"
+            ].map((item) => (
+              <div key={item} className="flex items-start gap-2 text-slate-700">
+                <CheckCircle className="w-5 h-5 text-primary mt-0.5 shrink-0" aria-hidden="true" />
+                <span>{item}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>

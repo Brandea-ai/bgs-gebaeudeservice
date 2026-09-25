@@ -43,6 +43,20 @@ const nextConfig: NextConfig = {
     return [
       { source: '/standorte/:slug*', destination: '/einzugsgebiet', permanent: true },
       { source: '/premium/housekeeping', destination: '/premium/luxusimmobilien', permanent: true },
+      // Zielbild v2: Leistungen unter /leistungen (03, Abschnitt 2b)
+      { source: '/basis/unterhaltsreinigung', destination: '/leistungen/unterhaltsreinigung', permanent: true },
+      { source: '/basis/beschaffung', destination: '/leistungen/unterhaltsreinigung', permanent: true },
+      { source: '/basis/sonderleistungen', destination: '/leistungen/sonderreinigungen', permanent: true },
+      { source: '/basis/hausmeisterservice', destination: '/leistungen/hauswartung', permanent: true },
+      { source: '/business/bueroreinigung', destination: '/leistungen/bueroreinigung', permanent: true },
+      { source: '/business/baureinigung', destination: '/leistungen/baureinigung', permanent: true },
+      { source: '/business/fensterreinigung', destination: '/leistungen/fenster-und-fassadenreinigung', permanent: true },
+      { source: '/business/fassadenreinigung', destination: '/leistungen/fenster-und-fassadenreinigung', permanent: true },
+      { source: '/business/industriereinigung', destination: '/leistungen/industrie-und-hallenreinigung', permanent: true },
+      { source: '/business/hallenreinigung', destination: '/leistungen/industrie-und-hallenreinigung', permanent: true },
+      { source: '/business/maschinenreinigung', destination: '/leistungen/industrie-und-hallenreinigung', permanent: true },
+      { source: '/business/aussenanlagen', destination: '/leistungen/aussen-und-gruenflaechenpflege', permanent: true },
+      { source: '/business/facility-management', destination: '/leistungen/facility-services', permanent: true },
     ]
   },
 

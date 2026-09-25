@@ -13,24 +13,24 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Link from "next/link";
-import { CheckCircle, Calendar, Clock, Shield, Sparkles, ArrowRight } from "lucide-react";
+import { CheckCircle, Building, Clock, Shield, Sparkles, ArrowRight } from "lucide-react";
 import AppointmentButton from "@/components/AppointmentButton";
 
-export default function Unterhaltsreinigung() {
+export default function Bueroreinigung() {
   const serviceData = {
-    name: "Professionelle Unterhaltsreinigung",
-    description: "Regelmäßige Unterhaltsreinigung für Büros und Gewerbe. Zuverlässig, flexibel und auf höchstem Qualitätsniveau.",
-    url: "/basis/unterhaltsreinigung",
-    category: "Maintenance Cleaning"
+    name: "Professionelle Büroreinigung",
+    description: "Zuverlässige Büroreinigung für Unternehmen in Luzern, Zug und Umgebung. Flexibel, effizient und auf Ihre Bedürfnisse zugeschnitten.",
+    url: "/leistungen/bueroreinigung",
+    category: "Commercial Cleaning"
   };
 
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Unterhaltsreinigung Luzern, Zug & Umgebung - BGS Gebäudeservice"
-        description="Professionelle Unterhaltsreinigung in der Schweiz. Regelmäßig, zuverlässig und auf höchstem Qualitätsniveau."
-        keywords="Unterhaltsreinigung, Regelmäßige Reinigung Schweiz, Büroreinigung, Gewerbereinigung"
-        url="/basis/unterhaltsreinigung"
+        title="Büroreinigung Luzern, Zug & Umgebung - BGS Gebäudeservice"
+        description="Professionelle Büroreinigung für Unternehmen in der Schweiz. Zuverlässig, flexibel und auf höchstem Qualitätsniveau."
+        keywords="Büroreinigung, Büroreinigung Luzern, Gebäudereinigung Büro, Reinigung Geschäftsräume"
+        url="/leistungen/bueroreinigung"
         schema={serviceSchema(serviceData)}
       />
       <SwissNavigation />
@@ -41,13 +41,13 @@ export default function Unterhaltsreinigung() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-xs sm:text-sm font-semibold mb-6">
-                Basis Service
+                Business Lösung
               </div>
               <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
-                Professionelle Unterhaltsreinigung
+                Büro- und Praxisreinigung
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
-                Regelmäßige Reinigung für Büros, Geschäfte und Gewerbeflächen in Luzern, Zug und Umgebung. Zuverlässig, flexibel und auf Ihre Bedürfnisse zugeschnitten.
+                Zuverlässige Reinigungslösungen für Büros und Geschäftsräume in Luzern, Zug und Umgebung. Flexibel, effizient und auf Ihre Bedürfnisse zugeschnitten.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a href="#kontakt-formular">
@@ -61,8 +61,8 @@ export default function Unterhaltsreinigung() {
             </div>
             <div className="relative">
               <ParallaxImage 
-                src="/unterhaltsreinigung-hero.jpg" 
-                alt="Unterhaltsreinigung"
+                src="/bueroreinigung-business-hero.jpg" 
+                alt="Modernes Büro"
                 className="rounded-2xl shadow-2xl w-full h-[500px] object-cover h-[500px]"
                 speed={0.2}
                 scale={true}
@@ -78,44 +78,44 @@ export default function Unterhaltsreinigung() {
         <div className="container">
           <div className="grid md:grid-cols-4 gap-8 mb-20">
             <Card className="p-6 text-center">
-              <Calendar className="w-12 h-12 text-primary mx-auto mb-4"/>
-              <div className="font-bold text-lg mb-2">Regelmäßig</div>
-              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Täglich, wöchentlich oder nach Bedarf</div>
+              <Building className="w-12 h-12 text-primary mx-auto mb-4"/>
+              <div className="font-bold text-lg mb-2">Alle Bürogrößen</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Von Startup bis Konzern</div>
             </Card>
             <Card className="p-6 text-center">
               <Clock className="w-12 h-12 text-primary mx-auto mb-4"/>
               <div className="font-bold text-lg mb-2">Flexible Zeiten</div>
-              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Angepasst an Ihre Öffnungszeiten</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Auch außerhalb der Geschäftszeiten</div>
             </Card>
             <Card className="p-6 text-center">
               <Shield className="w-12 h-12 text-primary mx-auto mb-4"/>
               <div className="font-bold text-lg mb-2">Zuverlässig</div>
-              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Festes Reinigungsteam</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Feste Ansprechpartner</div>
             </Card>
             <Card className="p-6 text-center">
               <Sparkles className="w-12 h-12 text-primary mx-auto mb-4"/>
-              <div className="font-bold text-lg mb-2">Qualität</div>
-              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Geprüfte Standards</div>
+              <div className="font-bold text-lg mb-2">Offerte</div>
+              <div className="text-slate-600 text-xs sm:text-sm md:text-base">Kostenlos vor Ort</div>
             </Card>
           </div>
 
           <Tabs defaultValue="leistungen" className="mb-20">
             <TabsList className="grid w-full grid-cols-3 mb-8">
               <TabsTrigger value="leistungen" className="text-xs sm:text-sm md:text-base px-2 sm:px-4">Unsere Leistungen</TabsTrigger>
-              <TabsTrigger value="ablauf" className="text-xs sm:text-sm md:text-base px-2 sm:px-4">Ablauf & Rhythmus</TabsTrigger>
+              <TabsTrigger value="ablauf" className="text-xs sm:text-sm md:text-base px-2 sm:px-4">Ablauf & Zeiten</TabsTrigger>
               <TabsTrigger value="pakete" className="text-xs sm:text-sm md:text-base px-2 sm:px-4">Service-Pakete</TabsTrigger>
             </TabsList>
             
             <TabsContent value="leistungen" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Umfassende Unterhaltsreinigung</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Umfassende Büroreinigung</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <h4 className="font-bold text-lg mb-3 text-primary">Standardleistungen</h4>
+                    <h4 className="font-bold text-lg mb-3 text-primary">Tägliche Unterhaltsreinigung</h4>
                     <ul className="space-y-2">
                       {[
                         "Böden saugen & wischen",
-                        "Oberflächen abstauben",
+                        "Schreibtische abstauben",
                         "Papierkörbe leeren",
                         "Sanitäranlagen reinigen",
                         "Küchen & Pausenräume",
@@ -137,7 +137,7 @@ export default function Unterhaltsreinigung() {
                         "Polsterreinigung",
                         "Grundreinigung",
                         "Desinfektionsservice",
-                        "Glasflächen pflegen"
+                        "Grünpflanzen-Pflege"
                       ].map((item, i) => (
                         <li key={i} className="flex items-start gap-2">
                           <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"/>
@@ -152,24 +152,24 @@ export default function Unterhaltsreinigung() {
             
             <TabsContent value="ablauf" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Flexibler Reinigungsrhythmus</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Flexibler Reinigungsablauf</h3>
                 <div className="space-y-6">
                   {[
                     {
                       title: "Bedarfsanalyse",
-                      desc: "Wir analysieren Ihre Räumlichkeiten und erstellen einen maßgeschneiderten Reinigungsplan basierend auf Nutzungsfrequenz, Fläche und spezifischen Anforderungen."
+                      desc: "Wir besichtigen Ihre Räumlichkeiten und erstellen ein maßgeschneidertes Reinigungskonzept basierend auf Ihrer Bürogröße, Mitarbeiterzahl und spezifischen Anforderungen."
                     },
                     {
-                      title: "Rhythmus festlegen",
-                      desc: "Tägliche, wöchentliche oder individuelle Reinigungsintervalle – wir passen uns Ihrem Bedarf an. Auch kurzfristige Anpassungen sind möglich."
+                      title: "Zeitplanung",
+                      desc: "Reinigung nach Feierabend, früh morgens oder am Wochenende – wir passen uns Ihren Geschäftszeiten an, damit Ihre Mitarbeiter ungestört arbeiten können."
                     },
                     {
                       title: "Festes Team",
-                      desc: "Sie erhalten ein festes Reinigungsteam, das Ihre Räumlichkeiten kennt und kontinuierlich für gleichbleibende Qualität sorgt."
+                      desc: "Sie erhalten ein festes Reinigungsteam, das Ihre Räumlichkeiten und Anforderungen kennt. Vertretungsregelungen sind selbstverständlich organisiert."
                     },
                     {
                       title: "Qualitätskontrolle",
-                      desc: "Regelmäßige Kontrollen und digitale Dokumentation stellen sicher, dass alle Bereiche nach Plan gereinigt werden."
+                      desc: "Regelmäßige Kontrollen durch unsere Objektleitung und digitale Dokumentation der Reinigungsleistungen für transparente Qualitätssicherung."
                     }
                   ].map((item, i) => (
                     <div key={i}>
@@ -186,7 +186,7 @@ export default function Unterhaltsreinigung() {
                 <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Unsere Service-Pakete</h3>
                 <div className="grid md:grid-cols-3 gap-6">
                   <Card className="p-6 bg-slate-50">
-                    <h4 className="text-sm sm:text-base md:text-lg font-bold mb-4">Basic</h4>
+                    <h4 className="text-sm sm:text-base md:text-lg font-bold mb-4">Starter</h4>
                     <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-primary mb-2">Individuelles Angebot</div>
                     <div className="text-sm text-slate-600 mb-4">Auf Ihre Bedürfnisse zugeschnitten</div>
                     <ul className="space-y-2 text-sm">
@@ -196,22 +196,22 @@ export default function Unterhaltsreinigung() {
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
-                        <span>1-2x pro Woche</span>
+                        <span>1-3x pro Woche</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
-                        <span>Ideal für kleine Flächen</span>
+                        <span>Ideal für kleine Büros</span>
                       </li>
                     </ul>
                   </Card>
                   <Card className="p-6 bg-primary/5 border-primary">
-                    <h4 className="text-sm sm:text-base md:text-lg font-bold mb-4">Standard</h4>
+                    <h4 className="text-sm sm:text-base md:text-lg font-bold mb-4">Business</h4>
                     <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-primary mb-2">Individuelles Angebot</div>
                     <div className="text-sm text-slate-600 mb-4">Auf Ihre Bedürfnisse zugeschnitten</div>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
-                        <span>Regelmäßige Reinigung</span>
+                        <span>Tägliche Reinigung</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
@@ -223,12 +223,12 @@ export default function Unterhaltsreinigung() {
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
-                        <span>Ideal für mittlere Flächen</span>
+                        <span>Ideal für 10-50 Mitarbeiter</span>
                       </li>
                     </ul>
                   </Card>
                   <Card className="p-6 bg-slate-50">
-                    <h4 className="text-sm sm:text-base md:text-lg font-bold mb-4">Premium</h4>
+                    <h4 className="text-sm sm:text-base md:text-lg font-bold mb-4">Enterprise</h4>
                     <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-primary mb-2">Individuell</div>
                     <div className="text-sm text-slate-600 mb-4">auf Anfrage</div>
                     <ul className="space-y-2 text-sm">
@@ -238,15 +238,15 @@ export default function Unterhaltsreinigung() {
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
-                        <span>Tägliche Reinigung</span>
+                        <span>Mehrere Standorte</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
-                        <span>Alle Zusatzleistungen</span>
+                        <span>Objektleitung vor Ort</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-primary mt-0.5"/>
-                        <span>Ideal für große Objekte</span>
+                        <span>SLA & Reporting</span>
                       </li>
                     </ul>
                   </Card>
@@ -259,37 +259,37 @@ export default function Unterhaltsreinigung() {
           <Accordion type="single" collapsible className="max-w-3xl mx-auto">
             <AccordionItem value="item-1">
               <AccordionTrigger className="text-lg font-semibold">
-                Wie oft sollte eine Unterhaltsreinigung stattfinden?
+                Wann findet die Reinigung statt?
               </AccordionTrigger>
               <AccordionContent className="text-slate-700 leading-relaxed pt-4">
-                Das hängt von der Nutzungsintensität ab. Büros werden üblicherweise täglich oder 3-5x pro Woche gereinigt, Geschäfte je nach Kundenfrequenz. Wir beraten Sie gerne individuell.
+                Ganz nach Ihren Wünschen – üblicherweise nach Feierabend (ab 18 Uhr), früh morgens (ab 6 Uhr) oder am Wochenende. Wir passen uns flexibel Ihren Geschäftszeiten an.
               </AccordionContent>
             </AccordionItem>
             
             <AccordionItem value="item-2">
               <AccordionTrigger className="text-lg font-semibold">
-                Können wir den Reinigungsrhythmus anpassen?
+                Benötigen wir eigene Reinigungsmittel?
               </AccordionTrigger>
               <AccordionContent className="text-slate-700 leading-relaxed pt-4">
-                Ja, jederzeit. Bei saisonalen Schwankungen oder Veränderungen in Ihrem Betrieb passen wir die Reinigungsfrequenz flexibel an.
+                Nein, wir bringen alle Reinigungsmittel und Geräte mit. Auf Wunsch verwenden wir auch Ihre bevorzugten Produkte oder ökologische Alternativen.
               </AccordionContent>
             </AccordionItem>
             
             <AccordionItem value="item-3">
               <AccordionTrigger className="text-lg font-semibold">
-                Was ist der Unterschied zur Grundreinigung?
+                Wie flexibel sind die Verträge?
               </AccordionTrigger>
               <AccordionContent className="text-slate-700 leading-relaxed pt-4">
-                Die Unterhaltsreinigung erhält den Zustand durch regelmäßige Pflege. Die Grundreinigung ist eine intensive Tiefenreinigung, die 1-2x jährlich empfohlen wird.
+                Sehr flexibel. Wir bieten Verträge ab 3 Monaten Laufzeit mit 1 Monat Kündigungsfrist. Bei Änderungen der Bürogröße passen wir das Konzept kurzfristig an.
               </AccordionContent>
             </AccordionItem>
             
             <AccordionItem value="item-4">
               <AccordionTrigger className="text-lg font-semibold">
-                Bringen Sie eigene Reinigungsmittel mit?
+                Was passiert bei Krankheit des Reinigungspersonals?
               </AccordionTrigger>
               <AccordionContent className="text-slate-700 leading-relaxed pt-4">
-                Ja, wir bringen alle Reinigungsmittel und Geräte mit. Auf Wunsch verwenden wir auch ökologische Produkte oder Ihre bevorzugten Reiniger.
+                Wir garantieren Vertretung. Unser Team ist so organisiert, dass bei Ausfall sofort eine geschulte Ersatzkraft einspringt – ohne Qualitätsverlust.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
@@ -300,10 +300,10 @@ export default function Unterhaltsreinigung() {
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-6">
-              Bereit für regelmäßige Sauberkeit?
+              Bereit für ein sauberes Büro?
             </h2>
             <p className="text-sm sm:text-base md:text-lg text-slate-600 mb-8">
-              Kontaktieren Sie uns für ein kostenloses Angebot. Wir erstellen ein maßgeschneidertes Reinigungskonzept.
+              Kontaktieren Sie uns für ein kostenloses Angebot. Wir beraten Sie gerne persönlich.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="#kontakt-formular">

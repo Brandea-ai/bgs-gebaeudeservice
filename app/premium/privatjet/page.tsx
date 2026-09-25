@@ -18,7 +18,7 @@ import AppointmentButton from "@/components/AppointmentButton";
 
 export default function Privatjet() {
   const serviceData = {
-    name: "Privatjet Reinigung",
+    name: "Privatjet-Reinigung",
     description: "Professionelle Reinigung für Privatjets mit höchsten Standards. Diskretion, Präzision und Verfügbarkeit rund um die Uhr.",
     url: "/premium/privatjet",
     category: "Aviation Cleaning"
@@ -27,9 +27,9 @@ export default function Privatjet() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Privatjet Reinigung - Exklusiver Premium Service"
-        description="Professionelle Privatjet Reinigung in der Schweiz. Diskretion und sorgfältige Materialpflege für anspruchsvolle Kunden."
-        keywords="Privatjet Reinigung, Flugzeug Reinigung Schweiz, Aviation Cleaning, Private Jet Service"
+        title="Privatjet-Reinigung - Exklusiver Premium Service"
+        description="Professionelle Privatjet-Reinigung in der Schweiz. Diskretion und sorgfältige Materialpflege für anspruchsvolle Kunden."
+        keywords="Privatjet-Reinigung, Flugzeug Reinigung Schweiz, Aviation Cleaning, Private Jet Service"
         url="/premium/privatjet"
         schema={serviceSchema(serviceData)}
       />
@@ -44,7 +44,7 @@ export default function Privatjet() {
                 Premium Service
               </div>
               <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
-                Privatjet Reinigung
+                Privatjet-Reinigung
               </h1>
               <p className="text-lg sm:text-xl md:text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
                 Professionelle Reinigung für Privatjets mit höchsten Standards. Diskretion und Präzision für anspruchsvolle Kunden in Luzern, Zug und Umgebung.
@@ -108,7 +108,7 @@ export default function Privatjet() {
             
             <TabsContent value="leistungen" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Umfassende Privatjet Reinigung</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Umfassende Privatjet-Reinigung</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h4 className="font-bold text-lg mb-3 text-primary">Innenreinigung</h4>
@@ -241,7 +241,7 @@ export default function Privatjet() {
             
             <AccordionItem value="item-4">
               <AccordionTrigger className="text-lg font-semibold">
-                Was kostet eine Privatjet Reinigung?
+                Was kostet eine Privatjet-Reinigung?
               </AccordionTrigger>
               <AccordionContent className="text-slate-700 leading-relaxed pt-4">
                 Das hängt von der Grösse des Jets und vom Leistungsumfang ab. Gerne erstellen wir Ihnen eine kostenlose Offerte.

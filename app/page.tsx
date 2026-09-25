@@ -4,7 +4,7 @@ import { scrollToContact } from "@/utils/scroll";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Check, ArrowRight, Star, Shield, Clock, Users, Sparkles, Award } from "lucide-react";
+import { Check, ArrowRight, Star, Shield, Clock, Users, Sparkles, Award, Building2, Wrench } from "lucide-react";
 import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
 import SEO from "@/components/SEO";
@@ -154,10 +154,10 @@ export default function SwissHome() {
           <RevealOnScroll>
             <div className="text-center mb-16">
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
-                Unsere Reinigungsdienstleistungen
+                Unsere Leistungen
               </h2>
               <p className="text-sm sm:text-base md:text-lg text-slate-600 max-w-3xl mx-auto">
-                Von Premium-Services für Luxusimmobilien bis zur professionellen Gebäudereinigung für Unternehmen – wir bieten maßgeschneiderte Reinigungslösungen für jeden Bedarf.
+                Reinigung für besondere Ansprüche sowie Gebäudereinigung und Hauswartung für Unternehmen und Liegenschaften.
               </p>
             </div>
           </RevealOnScroll>
@@ -169,27 +169,27 @@ export default function SwissHome() {
             viewport={{ once: true, amount: 0.2 }}
             variants={staggerContainer}
           >
-            {/* Premium Services */}
+            {/* Premium (Zielbild v2, M20) */}
             <motion.div variants={fadeInUp}>
               
                 <Card className="p-10 hover-lift h-full hover-tilt hover-tilt">
                   <Sparkles className="w-16 h-16 text-primary mb-6" />
-                  <h3 className="text-2xl sm:text-3xl font-bold mb-4 hover:text-primary transition-colors">Premium Services</h3>
+                  <h3 className="text-2xl sm:text-3xl font-bold mb-4 hover:text-primary transition-colors">Premium</h3>
                   <p className="text-slate-600 mb-6">
-                    Reinigung für besondere Ansprüche: Villen und Lofts, Privatjets und Yachten.
+                    Reinigung für besondere Ansprüche, diskret und in Ihrer Sprache.
                   </p>
                   <ul className="space-y-3 mb-8">
-                    {["Luxusimmobilien-Reinigung", "Privatjet Reinigung", "Yacht Reinigung"].map((item, i) => (
+                    {["Villen, Lofts und Luxusimmobilien", "Privatjets", "Yachten"].map((item, i) => (
                       <li key={i} className="flex items-center gap-2 text-slate-700 text-xs sm:text-sm md:text-base">
                         <Check className="w-5 h-5 text-primary flex-shrink-0" />
                         {item}
                       </li>
                     ))}
                   </ul>
-                  <Link href="/premium/privatjet">
+                  <Link href="/premium">
                     <MagneticHover>
                       <Button variant="outline" className="w-full hover:bg-primary hover:text-white transition-all">
-                        Mehr erfahren
+                        Zum Premium-Bereich
                         <ArrowRight className="ml-2 w-4 h-4" />
                       </Button>
                     </MagneticHover>
@@ -198,27 +198,27 @@ export default function SwissHome() {
               
             </motion.div>
 
-            {/* Business Lösungen */}
+            {/* Reinigung */}
             <motion.div variants={fadeInUp}>
               
                 <Card className="p-10 hover-lift h-full hover-tilt hover-tilt">
-                  <Users className="w-16 h-16 text-primary mb-6" />
-                  <h3 className="text-2xl sm:text-3xl font-bold mb-4 hover:text-primary transition-colors">Business Lösungen</h3>
+                  <Building2 className="w-16 h-16 text-primary mb-6" />
+                  <h3 className="text-2xl sm:text-3xl font-bold mb-4 hover:text-primary transition-colors">Reinigung</h3>
                   <p className="text-slate-600 mb-6">
-                    Gebäudereinigung und Facility Services für Unternehmen in Luzern, Zug und Umgebung.
+                    Für Liegenschaften, Büros, Praxen und Gewerbe in Luzern, Zug und Umgebung.
                   </p>
                   <ul className="space-y-3 mb-8">
-                    {["Büroreinigung", "Industriereinigung", "Fassaden- & Fensterreinigung", "Facility Management"].map((item, i) => (
+                    {["Unterhalts- und Büroreinigung", "Sonder- und Baureinigung", "Fenster und Fassaden", "Industrie und Hallen"].map((item, i) => (
                       <li key={i} className="flex items-center gap-2 text-slate-700 text-xs sm:text-sm md:text-base">
                         <Check className="w-5 h-5 text-primary flex-shrink-0" />
                         {item}
                       </li>
                     ))}
                   </ul>
-                  <Link href="/business/bueroreinigung">
+                  <Link href="/leistungen">
                     <MagneticHover>
                       <Button variant="outline" className="w-full hover:bg-primary hover:text-white transition-all">
-                        Mehr erfahren
+                        Alle Leistungen
                         <ArrowRight className="ml-2 w-4 h-4" />
                       </Button>
                     </MagneticHover>
@@ -227,27 +227,27 @@ export default function SwissHome() {
               
             </motion.div>
 
-            {/* Basisreinigung */}
+            {/* Hauswartung und Pflege */}
             <motion.div variants={fadeInUp}>
               
                 <Card className="p-10 hover-lift h-full hover-tilt hover-tilt">
-                  <Shield className="w-16 h-16 text-primary mb-6" />
-                  <h3 className="text-2xl sm:text-3xl font-bold mb-4 hover:text-primary transition-colors">Basisreinigung</h3>
+                  <Wrench className="w-16 h-16 text-primary mb-6" />
+                  <h3 className="text-2xl sm:text-3xl font-bold mb-4 hover:text-primary transition-colors">Hauswartung und Pflege</h3>
                   <p className="text-slate-600 mb-6">
-                    Zuverlässige Unterhaltsreinigung und Hausmeisterservice für Wohn- und Geschäftsobjekte.
+                    Für Verwaltungen, Eigentümer und Unternehmen, die ihre Liegenschaft betreuen lassen.
                   </p>
                   <ul className="space-y-3 mb-8">
-                    {["Unterhaltsreinigung", "Hauswartung", "Sonderreinigungen", "Aussen- und Grünflächenpflege"].map((item, i) => (
+                    {["Hauswartung", "Aussen- und Grünflächenpflege", "Facility Services"].map((item, i) => (
                       <li key={i} className="flex items-center gap-2 text-slate-700 text-xs sm:text-sm md:text-base">
                         <Check className="w-5 h-5 text-primary flex-shrink-0" />
                         {item}
                       </li>
                     ))}
                   </ul>
-                  <Link href="/basis/unterhaltsreinigung">
+                  <Link href="/leistungen/hauswartung">
                     <MagneticHover>
                       <Button variant="outline" className="w-full hover:bg-primary hover:text-white transition-all">
-                        Mehr erfahren
+                        Zur Hauswartung
                         <ArrowRight className="ml-2 w-4 h-4" />
                       </Button>
                     </MagneticHover>

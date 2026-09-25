@@ -18,7 +18,7 @@ import AppointmentButton from "@/components/AppointmentButton";
 
 export default function Yacht() {
   const serviceData = {
-    name: "Yacht Reinigung",
+    name: "Yacht-Reinigung",
     description: "Spezialisierte Reinigung für Luxus-Yachten mit Marine-Expertise. Von der Hochglanzpolitur bis zur Teakholz-Pflege.",
     url: "/premium/yacht",
     category: "Marine Cleaning"
@@ -27,9 +27,9 @@ export default function Yacht() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Yacht Reinigung - Professioneller Marine Service"
-        description="Spezialisierte Yacht Reinigung in der Schweiz. Marine-Expertise, Hochglanzpolitur und Teakholz-Pflege für Luxus-Yachten."
-        keywords="Yacht Reinigung, Boot Reinigung Schweiz, Marine Cleaning, Luxus Yacht Service"
+        title="Yacht-Reinigung - Professioneller Marine Service"
+        description="Spezialisierte Yacht-Reinigung in der Schweiz. Marine-Expertise, Hochglanzpolitur und Teakholz-Pflege für Luxus-Yachten."
+        keywords="Yacht-Reinigung, Boot Reinigung Schweiz, Marine Cleaning, Luxus Yacht Service"
         url="/premium/yacht"
         schema={serviceSchema(serviceData)}
       />
@@ -44,7 +44,7 @@ export default function Yacht() {
                 Premium Service
               </div>
               <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
-                Yacht Reinigung
+                Yacht-Reinigung
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
                 Spezialisierte Reinigung für Luxus-Yachten mit Marine-Expertise. Von der Hochglanzpolitur bis zur Teakholz-Pflege – wir sorgen für makellose Sauberkeit auf höchstem Niveau.
@@ -108,7 +108,7 @@ export default function Yacht() {
             
             <TabsContent value="leistungen" className="space-y-6">
               <Card className="p-8">
-                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Umfassende Yacht Reinigung</h3>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-6">Umfassende Yacht-Reinigung</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h4 className="font-bold text-lg mb-3 text-primary">Außenreinigung</h4>
@@ -267,7 +267,7 @@ export default function Yacht() {
             
             <AccordionItem value="item-2">
               <AccordionTrigger className="text-lg font-semibold">
-                Wo bieten Sie Yacht Reinigung an?
+                Wo bieten Sie Yacht-Reinigung an?
               </AccordionTrigger>
               <AccordionContent className="text-slate-700 leading-relaxed pt-4">
                 Am Vierwaldstättersee und am Zugersee, also in unserem Einzugsgebiet. Andere Orte auf Anfrage.

@@ -20,7 +20,7 @@ export default function Sonderleistungen() {
   const serviceData = {
     name: "Professionelle Sonderleistungen",
     description: "Spezielle Reinigungsleistungen für außergewöhnliche Anforderungen. Schnell, kompetent und zuverlässig.",
-    url: "/basis/sonderleistungen",
+    url: "/leistungen/sonderreinigungen",
     category: "Special Services"
   };
 
@@ -30,7 +30,7 @@ export default function Sonderleistungen() {
         title="Sonderleistungen Luzern, Zug & Umgebung - BGS Gebäudeservice"
         description="Professionelle Sonderleistungen in der Schweiz. Spezialreinigungen für außergewöhnliche Anforderungen."
         keywords="Sonderleistungen, Spezialreinigung Schweiz, Notfallreinigung, Express Reinigung"
-        url="/basis/sonderleistungen"
+        url="/leistungen/sonderreinigungen"
         schema={serviceSchema(serviceData)}
       />
       <SwissNavigation />
@@ -44,7 +44,7 @@ export default function Sonderleistungen() {
                 Basis Service
               </div>
               <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
-                Professionelle Sonderleistungen
+                Sonderreinigungen
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
                 Spezielle Reinigungsleistungen für außergewöhnliche Anforderungen in Luzern, Zug und Umgebung.

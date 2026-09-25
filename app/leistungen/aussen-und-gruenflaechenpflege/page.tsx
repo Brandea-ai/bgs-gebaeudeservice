@@ -25,7 +25,7 @@ export default function Aussenanlagen() {
   const serviceData = {
     name: "Außenanlage & Grünflächenpflege",
     description: "Professionelle Pflege von Außenanlagen. Grünflächenpflege und Aussenreinigung.",
-    url: "/business/aussenanlagen",
+    url: "/leistungen/aussen-und-gruenflaechenpflege",
     category: "Outdoor Facility Management"
   };
 
@@ -35,7 +35,7 @@ export default function Aussenanlagen() {
         title="Außenanlage Luzern, Zug & Umgebung - BGS Gebäudeservice"
         description="Professionelle Pflege von Außenanlagen in der Schweiz. Grünflächenpflege und Aussenreinigung."
         keywords="Außenanlagen Pflege, Grünflächenpflege Schweiz, Außenreinigung, Facility Management Außen"
-        url="/business/aussenanlagen"
+        url="/leistungen/aussen-und-gruenflaechenpflege"
         schema={serviceSchema(serviceData)}
       />
       <SwissNavigation />
@@ -49,7 +49,7 @@ export default function Aussenanlagen() {
                 Business Lösung
               </div>
               <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
-                Außenanlagen & Grünflächenpflege
+                Aussen- und Grünflächenpflege
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
                 Professionelle Pflege Ihrer Außenanlagen und Grünflächen in Luzern, Zug und Umgebung. Für einen gepflegten ersten Eindruck.
