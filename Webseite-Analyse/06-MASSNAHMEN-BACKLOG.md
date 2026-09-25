@@ -73,6 +73,8 @@ Umgesetzt heisst: auf `claude/optimistic-sagan-h5y2i9` committet, in der isolier
 | M34 | umgesetzt: doppelter Asset-Ordner `client/public` (24 MB), alte Vite-Seiten, Express-Server, neun ungenutzte Komponenten, Patch und Altdateien entfernt | Ungenutzte UI-Bausteine und Pakete, Personenbilder des alten Chats in `public/` (mit M03) |
 | M30 | umgesetzt: Felder „Ort oder PLZ des Objekts“ und „Rhythmus“, Längengrenzen im Formular wie in der API, Premium-Auswahl ergänzt | — |
 | M33 | umgesetzt: Content-Security-Policy, Permissions-Policy, Referrer-Policy | Nonce-basierte CSP erst bei dynamischem Rendern sinnvoll |
+| M31 | umgesetzt (`46fefce`): Hauptaktion überall „Kostenlose Offerte anfragen“, Telefon als zweite Aktion, solange der Chat aus ist. KI-Berater auf der Startseite nur mit Chat. 39 Buttons in Links auf gültiges HTML umgestellt | Texte der Abschnitte rund um die Aktionen (M29) |
+| M05 | ergänzt (`3b3bef4`): Vercel installiert mit `npm ci` | ESLint-Konfiguration, CI, Framework-Preset im Vercel-Projekt (heute „vite“, per `vercel.json` übersteuert) |
 
 **Umgebungsvariablen für Vercel (neu):** `SITE_INDEXABLE` (nur Produktion, erst zum Launch `true`), `NEXT_PUBLIC_CHAT_ENABLED` (erst nach der Reparatur `true`), optional `CONTACT_TO_EMAIL` und `CONTACT_FROM_EMAIL`. Ohne Angabe gelten `admin@brandea.de` und ein Absender unter `brandea.de`.
 
