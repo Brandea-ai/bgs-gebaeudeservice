@@ -27,8 +27,8 @@ export default function Impressum() {
                 {/* Eingetragene Firma, vollständig und unverändert (Art. 954a OR) */}
                 <p className="font-bold text-xl text-slate-900">{company.legalName}</p>
                 <p>Nezir Bozhdaraj</p>
-                <p>Tannhof 10</p>
-                <p>6020 Emmenbrücke</p>
+                <p>{company.address.street}</p>
+                <p>{company.address.postalCode} {company.address.city}</p>
                 <p>Schweiz</p>
               </div>
             </Card>

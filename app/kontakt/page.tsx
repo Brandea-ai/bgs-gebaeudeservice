@@ -132,10 +132,10 @@ export default function Kontakt() {
             <Card className="p-8 hover-lift text-center hover:shadow-xl transition-shadow hover-tilt hover-tilt">
               <MapPin className="w-12 h-12 text-primary mx-auto mb-4" />
               <h3 className="font-bold text-xl mb-2">Adresse</h3>
-              <p className="text-slate-600 mb-4">Besuchen Sie uns vor Ort</p>
+              <p className="text-slate-600 mb-4">Unser Sitz</p>
               <p className="text-slate-900 font-semibold">
-                Tannhof 10<br />
-                6020 Emmenbrücke
+                {company.address.street}<br />
+                {company.address.postalCode} {company.address.city}
               </p>
             </Card>
           </div>
@@ -149,7 +149,7 @@ export default function Kontakt() {
               <ConsentMap />
             </div>
             <p className="text-center text-slate-600 mt-4">
-              Sitz in Emmenbrücke. Wir arbeiten in den Kantonen Luzern, Zug, Aargau, Nidwalden und Obwalden.
+              Sitz in {company.address.city}. Wir arbeiten in den Kantonen Luzern, Zug, Aargau, Nidwalden und Obwalden.
             </p>
           </div>
 
