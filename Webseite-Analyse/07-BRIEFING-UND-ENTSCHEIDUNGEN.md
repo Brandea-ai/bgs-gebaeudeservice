@@ -108,3 +108,13 @@ Dieser Block ist nur ein austauschbares Briefingformat, kein Programmcode. Leere
 | E24 | 24.09.2026 | **Farbwelt Rot-Weiss** mit barrierefreiem Rotton (≥ 4,5:1 zu Weiss) und dunklem Neutral. Schweizerkreuz nur nach IGE-Regeln, kein Schweizerwappen | R12a, S49, S50 | Gestaltung | Nutzer | Logo nach Namensentscheid |
 | E25 | 24.09.2026 | **Ergänzung zu E07:** Start- und Kontaktseite der Kunden-Website einmal gelesen, nur zur Prüfung der Kontaktdaten | R5a, R5g: „Schau auf der aktuellen Webseite … Validiere.“ | Kontakt | Nutzer | — |
 | E26 | 24.09.2026 | **Arbeitsmarke „BGS Gebäudeservice“ bis zum Namensentscheid**, an einer zentralen Stelle. Impressum „BGS - Gebäudeservice GmbH“. Platzhalter „Swiss Reinigungsfirma“ entfällt | R2a, R2b, R7e, S43 | Alle | Agent nach Best Practice (E23) | Name (W03, Runde 2) |
+| E27 | 25.09.2026 | **Produktions-Deployments macht der Agent selbst** (Push nach `main`). Der Versuch wurde von der Rechteprüfung der Arbeitssitzung blockiert und nicht umgangen | LIVE: „du commit und pusht selber“, N051 | Alle | Nutzer | Freigabe per Berechtigungsregel oder Einspielen durch Brandea (12, Abschnitt 3) |
+| E28 | 25.09.2026 | **Privatkunden nur im Premium-Segment** (Villen, Lofts, Luxusimmobilien). Hotels mit besonderen Wünschen als B2B-Premium. Keine Umzugsreinigung für private Mieter | W01 | Sonderreinigungen, Premium | Nutzer | Nischen (13) |
+| E29 | 25.09.2026 | **Kein Winterdienst**, endgültig | W02 | Winterdienst 410 (`fe75da7`) | Nutzer | Kunde bereinigt local.ch und die alte Website |
+| E30 | 25.09.2026 | **Einzugsgebiet:** ganze Kantone Luzern, Zug, Aargau, Nidwalden, Obwalden, alle Leistungen überall | W04, R4d | `/einzugsgebiet` | Nutzer | Wohlhabende Gebiete (13) |
+| E31 | 25.09.2026 | **E-Mail `admin@brandea.de` bis kurz vor dem Launch**, zuvor Name und Domain | W05 | Kontakt, Formular | Nutzer | M58 |
+| E32 | 25.09.2026 | **Kontaktdaten bestätigt:** Festnetz Hauptnummer, Mobilnummer zusätzlich, Öffnungszeiten laut local.ch | KONTAKT, N046, N049 | `shared/company.ts` | Nutzer | — |
+| E33 | 25.09.2026 | **Gute Anfrage:** Unterhaltsreinigung ab CHF 50'000 pro Jahr (interner Richtwert) | W07 | Formular, Messung | Nutzer | — |
+| E34 | 25.09.2026 | **Zielgruppen:** B2B mit relevantem Umsatz inkl. Verwaltungen und Stockwerkeigentümer, privat nur vermögende Kunden | W08 | Positionierung | Nutzer | — |
+| E35 | 25.09.2026 | **Modell für Chat und Berater später**, Chat bleibt aus | MODELL | Chat, Berater | Nutzer | — |
+| E36 | 25.09.2026 | **Aufgaben ausserhalb des Codes über das Terminal von Brandea**, Rückmeldung als JSON | BRANDEA | Repository, Vercel | Nutzer | Terminal-Bericht |

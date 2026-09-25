@@ -143,6 +143,8 @@ Die vorbereiteten Dateien in diesem Paket dienen als Arbeitsstruktur. Benenne di
 - `08-PRUEFNACHWEISE.md`: Verfahren, Datenzugänge, Messprotokolle und Grenzen.
 - `09-QUELLEN.md`: recherchierte Originalquellen und Aktualisierungsregeln.
 - `11-ANTWORTEN-RUNDE-1.md` *(ergänzt)*: Antworten auf die Rückfragen, Prüfung, Widersprüche, Entscheidungen und Runde 2.
+- `12-ANTWORTEN-RUNDE-2.md` *(ergänzt)*: Antworten Runde 2, Produktions-Deployment, Entscheidungen E27–E36.
+- `13-NAMEN-UND-NISCHEN.md` *(ergänzt, folgt)*: geprüfte Namensvorschläge, wohlhabende Gebiete und Premium-Nischen.
 - `Seiten/`: eine eigene MD-Datei je Seite.
 
 ## 10. Abschlussformat

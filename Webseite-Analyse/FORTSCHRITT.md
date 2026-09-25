@@ -41,6 +41,8 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 | 7 | Abschlussbericht | **Erledigt 24.09.2026** (No-Go, fünf Fragen, Roadmap 14/30/90) | `10-ABSCHLUSSBERICHT.md` |
 | 8 | Rückfragen Runde 1 | **Erledigt 24.09.2026** (58 Antworten ausgewertet, Widersprüche W01–W08, Entscheidungen E11–E26, Zielbild v2, Nachweise N041–N047, Quellen S43–S50, M56–M59) | `11-ANTWORTEN-RUNDE-1.md`, `03` (2a, 2b), `05`, `06`, `07` |
 | 9 | Umsetzung Welle 0 | **Auf dem Branch umgesetzt 24.09.2026** (M01, M02, M03 als Zwischenstand, M04, M07, M08, M09 teilweise, M05 teilweise; nicht in Produktion) | Commits `6abe7c8`, `e43e262`, `0a5d5bc`, `3cd05f8`; `06` (Umsetzungsstand), `08` (N048) |
+| 10 | Rückfragen Runde 2 | **Erledigt 25.09.2026** (12 Antworten, E27–E36, N049–N052; Produktions-Push blockiert) | `12-ANTWORTEN-RUNDE-2.md` |
+| 11 | Umsetzung Welle 1, Teil 1 | **Auf dem Branch umgesetzt 25.09.2026** (Aussagen, Kundenstimmen, Einzugsgebiet, Winterdienst, Bilder, Karte, Impressum; nicht in Produktion) | Commit `fe75da7`, `06` (Umsetzungsstand), N052 |
 
 ## Protokoll
 
@@ -60,6 +62,7 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 | 24.09.2026 | Phasen 6 und 7 | Gegenprüfung: Alle Verweise auf Befunde, Nachweise, Quellen, Maßnahmen, Konflikte und Entscheidungen lösen auf. 3.493 Zitate maschinell gegen Code, HTML und Volltexte abgeglichen, 31 Stellen mit abweichendem Wortlaut korrigiert (u. a. „zu einem der führenden …“, „repräsentieren die Qualität …“). Keine veraltete SEO-Regel in den Empfehlungen. Prüfabdeckung in 08 und Vollständigkeit in 02 ausgewiesen. Abschlussbericht mit No-Go, den fünf Fragen und der Roadmap 14/30/90 (10). |
 | 24.09.2026 | Rückfragen Runde 1 | Fragebogen als Artifact erstellt, 58 Antworten eingegangen (N041) und ausgewertet (11). Geprüft: Kontaktdaten der Kunden-Website und local.ch (N042, N046), `swiss-reinigung.ch` gehört Dritten (N043), Resend nur mit `brandea.de` (N044), Chat-Modelle FIMI/BGS (N045), Bewertungsauszüge unbestätigt (N047). Recht und Signale recherchiert (S43–S50). Zielbild v2, Backlog, Freigabematrix und Entscheidungen angepasst. Umsetzung freigegeben (E11) |
 | 24.09.2026 | Welle 0 | `noindex` per Umgebungsvariable, Schlüssel-Platzhalter, Next.js 15.5.26 und Bildoptimierer ohne fremde Hosts, ein Lockfile, Formular mit echtem Erfolg und Missbrauchsschutz, Chat per Schalter aus bis zur Reparatur, ehrlicher Berater-Zustand, tote Adresse entfernt. Alles in der isolierten Kopie getestet (N048). Rückfragen Runde 2 als Fragebogen bereitgestellt |
+| 25.09.2026 | Runde 2 und Welle 1 | Antworten ausgewertet (12). Push nach `main` von der Rechteprüfung blockiert, nicht umgangen (N051). Welle 1, Teil 1 umgesetzt und getestet (N052). Namens- und Nischenrecherche gestartet |
 
 ## Abweichungen und Vorfälle
 
@@ -102,16 +105,14 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 
 ## Nächste Aufgabe
 
-**Welle 0 ist auf dem Arbeits-Branch umgesetzt (06, Umsetzungsstand). Nichts davon ist in Produktion.**
+**Welle 0 und Welle 1 (Teil 1) sind auf dem Arbeits-Branch umgesetzt. In Produktion ist noch nichts (N051).**
 
-1. **Antworten auf Runde 2 abwarten** (Fragebogen, 11 Abschnitt 7). Am dringendsten: Name und Marke (W03) und ob bzw. wie der Stand in Produktion darf (LIVE).
-2. **Danach Welle 1:**
-   - unbelegte Aussagen und Kundenstimmen entfernen (M11, M12, E18)
-   - Bilder durch Platzhalter ersetzen (M13, E19)
-   - Marke nach dem Namensentscheid (M10, M56)
-   - Zielbild v2 mit Weiterleitungen (M20)
-   - Kontaktangaben aus `shared/company.ts` (M54)
-3. **Nur Brandea:**
-   - Repository privat stellen
-   - Vercel-Schlüssel als „sensitive“ markieren (M06)
-   - Zugang für das Chat-Modell anlegen
+1. **Produktion:** Brandea entscheidet, wie der Stand live geht (12, Abschnitt 3).
+2. **Name:** Aus den geprüften Vorschlägen in 13 wählen (W03, M56).
+3. **Terminal-Bericht von Brandea** auswerten: Repository privat, Schlüssel „sensitive“.
+4. **Welle 1, Teil 2:**
+   - Zielbild v2 mit `/leistungen/…`, `/premium` und Weiterleitungen (M20)
+   - Texte der Kernseiten (M29)
+   - Metadaten je Seite (M16)
+   - Favicon und Logo nach dem Namensentscheid (M35)
+   - Ratgeber (M53)

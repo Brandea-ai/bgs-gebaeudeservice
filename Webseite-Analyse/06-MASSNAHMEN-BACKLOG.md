@@ -19,6 +19,25 @@ Umgesetzt heisst: auf `claude/optimistic-sagan-h5y2i9` committet, in der isolier
 | M17 | teilweise: Verifizierungs-Platzhalter entfernt | `6abe7c8` | Sitemap und 404-Seite |
 | M54 | begonnen: `shared/company.ts` für Firma, Adresse, Telefon, E-Mail, Rückmeldezeit | `0a5d5bc` | Alle Seiten darauf umstellen |
 
+**Welle 1, Teil 1 (Commit `fe75da7`, 25.09.2026, Tests N052):**
+
+| ID | Stand | Offen |
+|---|---|---|
+| M11 | umgesetzt für die Belegregel E18 (24/7, ISO, Zertifikate, HACCP/GMP, Jahre, Kundenzahl, Preise, Notfall-Zusagen, Referenzobjekte) | übrige Einträge des Nachweisregisters bei der Textüberarbeitung (M29), allgemeiner ISO-Hinweis im Ratgeber (M53) |
+| M12 | umgesetzt: alle Kundenstimmen entfernt | — |
+| M13 | umgesetzt: alle Bildflächen als Platzhalter (Schalter `NEXT_PUBLIC_REAL_IMAGES`), Vorher/Nachher entfernt | neue Bilder als Symbolbilder (E19) |
+| M15 | umgesetzt: Karte nach Klick nur mit Sitz, Cookie-Banner entfernt | Datenschutztext anpassen (M51) |
+| M18 | erledigt durch 308 der Standortseiten | — |
+| M30 | teilweise: Leistungsauswahl nur bestätigte Leistungen, ohne Dubletten | Feld Ort/PLZ und Rhythmus |
+| M44 | entfällt (E29): Seite 410, Aussagen entfernt | — |
+| M46 | teilweise: Housekeeping 308 auf Luxusimmobilien, Zürich-Flughäfen und Referenzobjekte entfernt | Zusammenlegungen nach Zielbild v2 (M20) |
+| M47 | teilweise: belegte Angaben, Registerdaten, Ansprechperson als Rolle | Personen nur mit Einwilligung |
+| M48 | umgesetzt: `/einzugsgebiet`, Standortseiten 308 | — |
+| M50 | umgesetzt: eingetragene Firma, Handelsregister Luzern, UID, MWST, ohne ISO | Rechtstexte durch Brandea (E22) |
+| M52 | umgesetzt: `/referenzen` offline (404), aus Navigation und Sitemap | — |
+| M53 | teilweise: Kostenartikel offline bis zur Fassung ohne Preise | übrige Artikel |
+| M10 | teilweise: Platzhaltermarke durch Arbeitsmarke als Schriftzug ersetzt | Name und Logo (M56) |
+
 **Umgebungsvariablen für Vercel (neu):** `SITE_INDEXABLE` (nur Produktion, erst zum Launch `true`), `NEXT_PUBLIC_CHAT_ENABLED` (erst nach der Reparatur `true`), optional `CONTACT_TO_EMAIL` und `CONTACT_FROM_EMAIL`. Ohne Angabe gelten `admin@brandea.de` und ein Absender unter `brandea.de`.
 
 ## Priorisierung
