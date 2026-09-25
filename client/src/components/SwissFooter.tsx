@@ -12,6 +12,8 @@ export default function SwissFooter() {
     email: "",
     phone: "",
     service: "",
+    location: "",
+    frequency: "",
     message: "",
     acceptPrivacy: false,
     website: ""
@@ -45,6 +47,8 @@ export default function SwissFooter() {
           email: "",
           phone: "",
           service: "",
+          location: "",
+          frequency: "",
           message: "",
           acceptPrivacy: false,
           website: ""
@@ -98,6 +102,8 @@ export default function SwissFooter() {
                     value={formData.name}
                     onChange={handleChange}
                     required
+                    maxLength={100}
+                    autoComplete="name"
                     className="w-full px-4 py-2.5 lg:py-3 rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all text-sm sm:text-base"
                     placeholder="Ihr vollständiger Name"
                   />
@@ -115,6 +121,8 @@ export default function SwissFooter() {
                     value={formData.email}
                     onChange={handleChange}
                     required
+                    maxLength={254}
+                    autoComplete="email"
                     className="w-full px-4 py-2.5 lg:py-3 rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all text-sm sm:text-base"
                     placeholder="name@firma.ch"
                   />
@@ -131,6 +139,8 @@ export default function SwissFooter() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
+                    maxLength={40}
+                    autoComplete="tel"
                     className="w-full px-4 py-2.5 lg:py-3 rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all text-sm sm:text-base"
                     placeholder="Ihre Telefonnummer"
                   />
@@ -154,6 +164,8 @@ export default function SwissFooter() {
                       <option value="Luxusimmobilien">Luxusimmobilien (Villen, Lofts)</option>
                       <option value="Privatjet-Reinigung">Privatjet-Reinigung</option>
                       <option value="Yacht-Reinigung">Yacht-Reinigung</option>
+                      <option value="Zweitwohnungen und Residences">Zweitwohnungen und Residences</option>
+                      <option value="Hotels">Hotels</option>
                     </optgroup>
                     
                     <optgroup label="Reinigung und Hauswartung">
@@ -174,6 +186,43 @@ export default function SwissFooter() {
                     </optgroup>
                   </select>
                 </div>
+
+                {/* Ort des Objekts und Rhythmus helfen bei der Einschätzung der Anfrage (M30, E33) */}
+                <div>
+                  <label htmlFor="location" className="block text-sm font-medium text-slate-900 dark:text-white mb-2">
+                    Ort oder PLZ des Objekts
+                  </label>
+                  <input
+                    type="text"
+                    id="location"
+                    name="location"
+                    value={formData.location}
+                    onChange={handleChange}
+                    maxLength={100}
+                    className="w-full px-4 py-2.5 lg:py-3 rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all text-sm sm:text-base"
+                    placeholder="z. B. 6300 Zug"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="frequency" className="block text-sm font-medium text-slate-900 dark:text-white mb-2">
+                    Rhythmus
+                  </label>
+                  <select
+                    id="frequency"
+                    name="frequency"
+                    value={formData.frequency}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2.5 lg:py-3 rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all text-sm sm:text-base"
+                  >
+                    <option value="">Bitte wählen...</option>
+                    <option value="Einmalig">Einmalig</option>
+                    <option value="Wöchentlich">Wöchentlich</option>
+                    <option value="Mehrmals pro Woche">Mehrmals pro Woche</option>
+                    <option value="Täglich">Täglich</option>
+                    <option value="Noch offen">Noch offen</option>
+                  </select>
+                </div>
               </div>
 
               {/* Nachricht */}
@@ -187,6 +236,7 @@ export default function SwissFooter() {
                   value={formData.message}
                   onChange={handleChange}
                   required
+                  maxLength={5000}
                   rows={4}
                   className="w-full px-4 py-2.5 lg:py-3 rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all resize-none text-sm sm:text-base"
                   placeholder="Beschreiben Sie Ihr Anliegen..."

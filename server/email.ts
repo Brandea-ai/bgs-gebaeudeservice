@@ -15,6 +15,8 @@ interface EmailData {
   email: string;
   phone?: string;
   service?: string;
+  location?: string;
+  frequency?: string;
   message: string;
 }
 
@@ -34,6 +36,8 @@ export function buildContactEmail(data: EmailData) {
   const email = escapeHtml(data.email);
   const phone = escapeHtml(data.phone || 'Nicht angegeben');
   const service = escapeHtml(data.service || 'Nicht angegeben');
+  const location = escapeHtml(data.location || 'Nicht angegeben');
+  const frequency = escapeHtml(data.frequency || 'Nicht angegeben');
   const message = escapeHtml(data.message);
 
   const subject = `Neue Kontaktanfrage von ${data.name.replace(/[\r\n]+/g, ' ').slice(0, 100)}`;
@@ -78,6 +82,14 @@ export function buildContactEmail(data: EmailData) {
         <div class="value">${service}</div>
       </div>
       <div class="field">
+        <div class="label">Ort oder PLZ des Objekts:</div>
+        <div class="value">${location}</div>
+      </div>
+      <div class="field">
+        <div class="label">Rhythmus:</div>
+        <div class="value">${frequency}</div>
+      </div>
+      <div class="field">
         <div class="label">Nachricht:</div>
         <div class="message-box">${message}</div>
       </div>
@@ -97,6 +109,8 @@ Name: ${data.name}
 E-Mail: ${data.email}
 Telefon: ${data.phone || 'Nicht angegeben'}
 Gewünschte Leistung: ${data.service || 'Nicht angegeben'}
+Ort oder PLZ des Objekts: ${data.location || 'Nicht angegeben'}
+Rhythmus: ${data.frequency || 'Nicht angegeben'}
 
 Nachricht:
 ${data.message}

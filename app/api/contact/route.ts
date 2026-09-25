@@ -8,6 +8,8 @@ const LIMITS = {
   email: 254,
   phone: 40,
   service: 100,
+  location: 100,
+  frequency: 40,
   message: 5000,
 } as const
 
@@ -72,9 +74,11 @@ export async function POST(request: NextRequest) {
   const email = readField(fields, 'email')
   const phone = readField(fields, 'phone')
   const service = readField(fields, 'service')
+  const location = readField(fields, 'location')
+  const frequency = readField(fields, 'frequency')
   const message = readField(fields, 'message')
 
-  if (name === null || email === null || phone === null || service === null || message === null) {
+  if (name === null || email === null || phone === null || service === null || location === null || frequency === null || message === null) {
     return fail(400, 'Eine Eingabe ist zu lang oder ungültig. Bitte kürzen Sie Ihre Nachricht.')
   }
   if (!name || !email || !message) {
@@ -90,6 +94,8 @@ export async function POST(request: NextRequest) {
     email,
     phone: phone || undefined,
     service: service || undefined,
+    location: location || undefined,
+    frequency: frequency || undefined,
     message,
   })
 
