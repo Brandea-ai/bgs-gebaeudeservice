@@ -3,6 +3,27 @@ import type { NextConfig } from 'next'
 // Bis zum Launch nicht indexierbar, siehe app/layout.tsx (Entscheidung E12).
 const isIndexable = process.env.SITE_INDEXABLE === 'true'
 
+// Sicherheitsheader (M33). Die Seiten werden statisch erzeugt, darum braucht Next.js
+// 'unsafe-inline' für seine Inline-Skripte (Nonces verlangen dynamisches Rendern).
+// Fremd geladen wird nur die Karte nach Klick (M15). Die Vercel-Toolbar nur in Previews.
+const isPreview = process.env.VERCEL_ENV === 'preview'
+const isDev = process.env.NODE_ENV !== 'production'
+const toolbar = (...sources: string[]) => (isPreview ? sources : [])
+
+const contentSecurityPolicy = [
+  "default-src 'self'",
+  ["script-src 'self' 'unsafe-inline'", ...(isDev ? ["'unsafe-eval'"] : []), ...toolbar('https://vercel.live')].join(' '),
+  ["style-src 'self' 'unsafe-inline'", ...toolbar('https://vercel.live')].join(' '),
+  ["img-src 'self' data: blob:", ...toolbar('https://vercel.live', 'https://vercel.com')].join(' '),
+  ["font-src 'self' data:", ...toolbar('https://vercel.live', 'https://assets.vercel.com')].join(' '),
+  ["connect-src 'self'", ...(isDev ? ['ws:'] : []), ...toolbar('https://vercel.live', 'wss://ws-us3.pusher.com')].join(' '),
+  ['frame-src https://www.google.com https://maps.google.com', ...toolbar('https://vercel.live')].join(' '),
+  "frame-ancestors 'self'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "object-src 'none'",
+].join('; ')
+
 const nextConfig: NextConfig = {
   reactStrictMode: true,
 
@@ -84,7 +105,15 @@ const nextConfig: NextConfig = {
           },
           {
             key: 'Referrer-Policy',
-            value: 'origin-when-cross-origin'
+            value: 'strict-origin-when-cross-origin'
+          },
+          {
+            key: 'Content-Security-Policy',
+            value: contentSecurityPolicy
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=(), payment=(), usb=()'
           },
           ...(isIndexable
             ? []
