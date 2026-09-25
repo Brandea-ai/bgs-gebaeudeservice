@@ -17,12 +17,12 @@ export default function NotFound() {
           <p className="text-muted-foreground mb-8">
             Die von Ihnen gesuchte Seite existiert leider nicht oder wurde verschoben.
           </p>
-          <Link href="/">
-            <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
+          <Button asChild size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
+            <Link href="/">
               <HomeIcon className="mr-2 w-5 h-5" />
               Zurück zur Startseite
-            </Button>
-          </Link>
+            </Link>
+          </Button>
         </div>
       </div>
     </div>

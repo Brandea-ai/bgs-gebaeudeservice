@@ -35,11 +35,11 @@ export default function UeberUns() {
               <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
                 Seit 2006 sind wir in der Reinigung und Hauswartung tätig. Heute betreuen über 50 Mitarbeitende mehr als 120 Kunden in den Kantonen Luzern, Zug, Aargau, Nidwalden und Obwalden, auf Deutsch, Englisch, Französisch und Italienisch.
               </p>
-              <Link href="/kontakt">
-                <MagneticHover><Button size="lg" className="text-lg">
-                  Offerte anfragen <ArrowRight className="ml-2 w-5 h-5" />
-                </Button></MagneticHover>
-              </Link>
+              <MagneticHover>
+                <Button asChild size="lg" className="text-lg"><Link href="/kontakt">
+                  Kostenlose Offerte anfragen <ArrowRight className="ml-2 w-5 h-5" />
+                </Link></Button>
+              </MagneticHover>
             </div>
             <div className="relative">
               <ParallaxImage 
@@ -129,11 +129,11 @@ export default function UeberUns() {
           <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto mb-8">
             Lassen Sie uns gemeinsam für eine saubere und professionelle Umgebung sorgen. Kontaktieren Sie uns noch heute für ein unverbindliches Erstgespräch und ein individuelles Angebot.
           </p>
-          <Link href="/kontakt">
-            <MagneticHover><Button size="lg" variant="secondary" className="text-lg">
-              Jetzt Kontakt aufnehmen <ArrowRight className="ml-2 w-5 h-5" />
-            </Button></MagneticHover>
-          </Link>
+          <MagneticHover>
+            <Button asChild size="lg" variant="secondary" className="text-lg"><Link href="/kontakt">
+              Kostenlose Offerte anfragen <ArrowRight className="ml-2 w-5 h-5" />
+            </Link></Button>
+          </MagneticHover>
         </div>
       </section>
 

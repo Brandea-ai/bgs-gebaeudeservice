@@ -154,7 +154,7 @@ function ProfessionelleGebaeudereinigungContent() {
             <div className="mt-16 pt-12 border-t text-center">
               <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-4">Professionelle Reinigung gewünscht?</h3>
               <p className="text-sm sm:text-base md:text-lg text-slate-600 mb-8">Kontaktieren Sie uns für eine unverbindliche Beratung.</p>
-              <Link href="/kontakt"><MagneticHover><Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">Jetzt anfragen<ArrowRight className="ml-2 w-5 h-5"/></Button></MagneticHover></Link>
+              <MagneticHover><Button asChild size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8"><Link href="/kontakt">Kostenlose Offerte anfragen<ArrowRight className="ml-2 w-5 h-5"/></Link></Button></MagneticHover>
             </div>
           </div>
         </div>

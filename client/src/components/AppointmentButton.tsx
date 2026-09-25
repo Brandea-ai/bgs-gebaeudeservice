@@ -1,10 +1,11 @@
 'use client'
 
-import { Calendar } from 'lucide-react';
+import { Calendar, Phone } from 'lucide-react';
 import { Button } from './ui/button';
 import { useChatbot } from '../contexts/ChatbotContext';
 import { MagneticHover } from './PremiumParallax';
 import { chatEnabled } from '../../../shared/features';
+import { company } from '../../../shared/company';
 
 interface AppointmentButtonProps {
   size?: 'default' | 'sm' | 'lg' | 'icon';
@@ -21,18 +22,23 @@ export default function AppointmentButton({
 }: AppointmentButtonProps) {
   const { openChat } = useChatbot();
 
+  // Solange der Chat aus ist (E14, E35), ist die zweite Handlungsaufforderung
+  // das Telefon, die erste führt zum Formular (M31).
+  if (!chatEnabled) {
+    return (
+      <MagneticHover>
+        <Button asChild size={size} variant={variant} className={`${fullWidth ? 'w-full' : ''} ${className}`}>
+          <a href={company.phone.href}>
+            <Phone className="mr-2 w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
+            {company.phone.display}
+          </a>
+        </Button>
+      </MagneticHover>
+    );
+  }
+
   const handleClick = () => {
-    if (!chatEnabled) {
-      // Bis zur Reparatur des Chats (E14) führt der Button zum Kontaktformular
-      const form = document.getElementById('kontakt-formular');
-      if (form) {
-        form.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      } else {
-        window.location.href = '/kontakt#kontakt-formular';
-      }
-      return;
-    }
-    openChat(true); // Open chat in appointment mode
+    openChat(true); // Chat im Terminmodus öffnen
   };
 
   return (
@@ -43,7 +49,7 @@ export default function AppointmentButton({
         onClick={handleClick}
         className={`${fullWidth ? 'w-full' : ''} ${className}`}
       >
-        <Calendar className="mr-2 w-4 h-4 sm:w-5 sm:h-5" />
+        <Calendar className="mr-2 w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
         Termin vereinbaren
       </Button>
     </MagneticHover>

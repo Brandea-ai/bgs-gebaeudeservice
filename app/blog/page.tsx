@@ -92,12 +92,12 @@ export default function Blog() {
                   <p className="text-slate-600 mb-6 leading-relaxed">
                     {article.excerpt}
                   </p>
-                  <Link href={`/blog/${article.slug}`}>
-                    <Button variant="outline" className="group-hover:bg-primary group-hover:text-white transition-all">
+                  <Button asChild variant="outline" className="group-hover:bg-primary group-hover:text-white transition-all">
+                    <Link href={`/blog/${article.slug}`}>
                       Weiterlesen
                       <ArrowRight className="ml-2 w-4 h-4" />
-                    </Button>
-                  </Link>
+                    </Link>
+                  </Button>
                 </div>
               </Card>
             ))}

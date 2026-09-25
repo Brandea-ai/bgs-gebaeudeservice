@@ -50,12 +50,12 @@ export default function Hausmeisterservice() {
                 Umfassende Objektbetreuung für Wohn- und Geschäftsimmobilien in Luzern, Zug und Umgebung. Zuverlässig und aus einer Hand.
               </p>
               <div className="flex flex-wrap gap-4">
-                <a href="#kontakt-formular">
-                  <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
-                    Jetzt anfragen
+                <Button asChild size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
+                  <a href="#kontakt-formular">
+                    Kostenlose Offerte anfragen
                     <ArrowRight className="ml-2 w-5 h-5"/>
-                  </Button>
-                </a>
+                  </a>
+                </Button>
                 <AppointmentButton size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8" />
               </div>
             </div>
@@ -280,12 +280,12 @@ export default function Hausmeisterservice() {
               Kontaktieren Sie uns für ein kostenloses Beratungsgespräch. Wir erstellen ein maßgeschneidertes Betreuungskonzept.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="#kontakt-formular">
-                <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
-                  Jetzt Kontakt aufnehmen
+              <Button asChild size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
+                <a href="#kontakt-formular">
+                  Kostenlose Offerte anfragen
                   <ArrowRight className="ml-2 w-5 h-5"/>
-                </Button>
-              </a>
+                </a>
+              </Button>
               <AppointmentButton size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8" />
             </div>
           </div>

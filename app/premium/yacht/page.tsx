@@ -50,12 +50,12 @@ export default function Yacht() {
                 Spezialisierte Reinigung für Luxus-Yachten mit Marine-Expertise. Von der Hochglanzpolitur bis zur Teakholz-Pflege – wir sorgen für makellose Sauberkeit auf höchstem Niveau.
               </p>
               <div className="flex flex-wrap gap-4">
-                <a href="#kontakt-formular">
-                  <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
-                    Jetzt anfragen
+                <Button asChild size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
+                  <a href="#kontakt-formular">
+                    Kostenlose Offerte anfragen
                     <ArrowRight className="ml-2 w-5 h-5"/>
-                  </Button>
-                </a>
+                  </a>
+                </Button>
                 <AppointmentButton size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8" />
               </div>
             </div>
@@ -305,12 +305,12 @@ export default function Yacht() {
               Kontaktieren Sie uns für ein individuelles Angebot. Wir beraten Sie gerne persönlich.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <a href="#kontakt-formular">
-                <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
-                  Jetzt Kontakt aufnehmen
+              <Button asChild size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
+                <a href="#kontakt-formular">
+                  Kostenlose Offerte anfragen
                   <ArrowRight className="ml-2 w-5 h-5"/>
-                </Button>
-              </a>
+                </a>
+              </Button>
               <AppointmentButton size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8" />
             </div>
           </div>

@@ -50,12 +50,12 @@ export default function Unterhaltsreinigung() {
                 Regelmäßige Reinigung für Büros, Geschäfte und Gewerbeflächen in Luzern, Zug und Umgebung. Zuverlässig, flexibel und auf Ihre Bedürfnisse zugeschnitten.
               </p>
               <div className="flex flex-wrap gap-4">
-                <a href="#kontakt-formular">
-                  <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
-                    Jetzt anfragen
+                <Button asChild size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
+                  <a href="#kontakt-formular">
+                    Kostenlose Offerte anfragen
                     <ArrowRight className="ml-2 w-5 h-5"/>
-                  </Button>
-                </a>
+                  </a>
+                </Button>
                 <AppointmentButton size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8" />
               </div>
             </div>
@@ -326,12 +326,12 @@ export default function Unterhaltsreinigung() {
               Kontaktieren Sie uns für ein kostenloses Angebot. Wir erstellen ein maßgeschneidertes Reinigungskonzept.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="#kontakt-formular">
-                <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
-                  Jetzt Kontakt aufnehmen
+              <Button asChild size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
+                <a href="#kontakt-formular">
+                  Kostenlose Offerte anfragen
                   <ArrowRight className="ml-2 w-5 h-5"/>
-                </Button>
-              </a>
+                </a>
+              </Button>
               <AppointmentButton size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8" />
             </div>
           </div>

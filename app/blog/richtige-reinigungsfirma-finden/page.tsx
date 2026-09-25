@@ -270,12 +270,12 @@ function RichtigeReinigungsfirmaFindenContent() {
               <p className="text-sm sm:text-base md:text-lg text-slate-600 mb-8">
                 Kontaktieren Sie uns für ein unverbindliches Beratungsgespräch.
               </p>
-              <Link href="/kontakt">
-                <MagneticHover><Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
-                  Jetzt Kontakt aufnehmen
+              <MagneticHover>
+                <Button asChild size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8"><Link href="/kontakt">
+                  Kostenlose Offerte anfragen
                   <ArrowRight className="ml-2 w-5 h-5" />
-                </Button></MagneticHover>
-              </Link>
+                </Link></Button>
+              </MagneticHover>
             </div>
           </div>
         </div>

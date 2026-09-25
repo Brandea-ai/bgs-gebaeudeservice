@@ -22,6 +22,7 @@ import IndustryAdvisor from "@/components/IndustryAdvisor";
 import AppointmentButton from "@/components/AppointmentButton";
 import { useScrollToAnchor } from "@/hooks/useScrollToAnchor";
 import { company } from "../../shared/company";
+import { chatEnabled } from "../../shared/features";
 
 import {
   fadeInUp,
@@ -88,17 +89,17 @@ export default function SwissHome() {
               className="flex flex-col sm:flex-row gap-3 sm:gap-4"
               variants={fadeInUp}
             >
-              <a href="#kontakt-formular" className="w-full sm:w-auto">
-                <MagneticHover>
-                  <Button
+              <MagneticHover>
+                <Button asChild
                     size="lg"
                     className="w-full sm:w-auto text-sm sm:text-base md:text-lg px-6 sm:px-8 shadow-2xl hover:shadow-primary/50 transition-all"
                   >
-                    Kostenlose Beratung
+                  <a href="#kontakt-formular" className="w-full sm:w-auto">
+                    Kostenlose Offerte anfragen
                     <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
-                  </Button>
-                </MagneticHover>
-              </a>
+                  </a>
+                </Button>
+              </MagneticHover>
               <AppointmentButton
                 size="lg"
                 variant="outline"
@@ -106,13 +107,15 @@ export default function SwissHome() {
               />
             </motion.div>
             
-            {/* KI Industry Advisor */}
-            <motion.div 
-              className="mt-12 max-w-3xl"
-              variants={fadeInUp}
-            >
-              <IndustryAdvisor />
-            </motion.div>
+            {/* KI-Berater erst mit Modell und Zugang (E35), bis dahin keine Handlungsaufforderung dorthin (M31) */}
+            {chatEnabled && (
+              <motion.div
+                className="mt-12 max-w-3xl"
+                variants={fadeInUp}
+              >
+                <IndustryAdvisor />
+              </motion.div>
+            )}
           </motion.div>
         </div>
       </section>
@@ -186,14 +189,14 @@ export default function SwissHome() {
                       </li>
                     ))}
                   </ul>
-                  <Link href="/premium">
-                    <MagneticHover>
-                      <Button variant="outline" className="w-full hover:bg-primary hover:text-white transition-all">
+                  <MagneticHover>
+                    <Button asChild variant="outline" className="w-full hover:bg-primary hover:text-white transition-all">
+                      <Link href="/premium">
                         Zum Premium-Bereich
                         <ArrowRight className="ml-2 w-4 h-4" />
-                      </Button>
-                    </MagneticHover>
-                  </Link>
+                      </Link>
+                    </Button>
+                  </MagneticHover>
                 </Card>
               
             </motion.div>
@@ -215,14 +218,14 @@ export default function SwissHome() {
                       </li>
                     ))}
                   </ul>
-                  <Link href="/leistungen">
-                    <MagneticHover>
-                      <Button variant="outline" className="w-full hover:bg-primary hover:text-white transition-all">
+                  <MagneticHover>
+                    <Button asChild variant="outline" className="w-full hover:bg-primary hover:text-white transition-all">
+                      <Link href="/leistungen">
                         Alle Leistungen
                         <ArrowRight className="ml-2 w-4 h-4" />
-                      </Button>
-                    </MagneticHover>
-                  </Link>
+                      </Link>
+                    </Button>
+                  </MagneticHover>
                 </Card>
               
             </motion.div>
@@ -244,14 +247,14 @@ export default function SwissHome() {
                       </li>
                     ))}
                   </ul>
-                  <Link href="/leistungen/hauswartung">
-                    <MagneticHover>
-                      <Button variant="outline" className="w-full hover:bg-primary hover:text-white transition-all">
+                  <MagneticHover>
+                    <Button asChild variant="outline" className="w-full hover:bg-primary hover:text-white transition-all">
+                      <Link href="/leistungen/hauswartung">
                         Zur Hauswartung
                         <ArrowRight className="ml-2 w-4 h-4" />
-                      </Button>
-                    </MagneticHover>
-                  </Link>
+                      </Link>
+                    </Button>
+                  </MagneticHover>
                 </Card>
               
             </motion.div>
@@ -269,12 +272,12 @@ export default function SwissHome() {
             Von unserem Sitz in {company.address.city} aus arbeiten wir in den Kantonen Luzern, Zug, Aargau,
             Nidwalden und Obwalden. Alle Leistungen bieten wir im ganzen Gebiet an.
           </p>
-          <Link href="/einzugsgebiet">
-            <Button size="lg" variant="outline" className="text-sm sm:text-base">
+          <Button asChild size="lg" variant="outline" className="text-sm sm:text-base">
+            <Link href="/einzugsgebiet">
               Zum Einzugsgebiet
               <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-          </Link>
+            </Link>
+          </Button>
         </div>
       </section>
 
@@ -290,14 +293,14 @@ export default function SwissHome() {
                 Kontaktieren Sie uns für eine kostenlose Beratung und ein individuelles Angebot
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/kontakt">
-                  <MagneticHover>
-                    <Button size="lg" className="text-sm sm:text-base md:text-lg px-8 shadow-2xl">
-                      Jetzt Beratung anfordern
+                <MagneticHover>
+                  <Button asChild size="lg" className="text-sm sm:text-base md:text-lg px-8 shadow-2xl">
+                    <Link href="/kontakt">
+                      Kostenlose Offerte anfragen
                       <ArrowRight className="ml-2 w-5 h-5" />
-                    </Button>
-                  </MagneticHover>
-                </Link>
+                    </Link>
+                  </Button>
+                </MagneticHover>
                 <AppointmentButton
                   size="lg"
                   variant="outline"

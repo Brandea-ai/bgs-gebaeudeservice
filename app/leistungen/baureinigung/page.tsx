@@ -55,12 +55,12 @@ export default function Baureinigung() {
                 Zuverlässige Baureinigung für Neubauten, Umbauten und Renovierungen in Luzern, Zug und Umgebung. Von der Grobreinigung bis zur Endreinigung.
               </p>
               <div className="flex flex-wrap gap-4">
-                <a href="#kontakt-formular">
-                  <Button size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
-                    Jetzt anfragen
+                <Button asChild size="lg" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
+                  <a href="#kontakt-formular">
+                    Kostenlose Offerte anfragen
                     <ArrowRight className="ml-2 w-5 h-5"/>
-                  </Button>
-                </a>
+                  </a>
+                </Button>
                 <AppointmentButton size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8" />
               </div>
             </div>
@@ -244,11 +244,11 @@ export default function Baureinigung() {
             Kontaktieren Sie uns für ein unverbindliches Angebot. Unsere Experten beraten Sie gerne zu allen Bauphasen.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#kontakt-formular">
-              <Button size="lg" variant="secondary" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
-                Kostenlose Beratung
-              </Button>
-            </a>
+            <Button asChild size="lg" variant="secondary" className="text-sm sm:text-base md:text-lg px-6 sm:px-8">
+              <a href="#kontakt-formular">
+                Kostenlose Offerte anfragen
+              </a>
+            </Button>
             <AppointmentButton size="lg" variant="outline" className="text-sm sm:text-base md:text-lg px-6 sm:px-8 bg-transparent border-white text-white hover:bg-white hover:text-primary" />
           </div>
         </div>
