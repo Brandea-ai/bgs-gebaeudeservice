@@ -61,20 +61,40 @@ export default function SwissNavigation() {
               Home
             </Link>
             
-            <div 
+            {/* Per Maus und Tastatur bedienbar: Enter/Leertaste schaltet um, Escape schliesst (M40) */}
+            <div
               className="relative group"
               onMouseEnter={() => setActiveDropdown('leistungen')}
               onMouseLeave={() => setActiveDropdown(null)}
+              onKeyDown={(e) => {
+                if (e.key === 'Escape' && activeDropdown === 'leistungen') {
+                  setActiveDropdown(null);
+                  e.currentTarget.querySelector('button')?.focus();
+                }
+              }}
+              onBlur={(e) => {
+                if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setActiveDropdown(null);
+              }}
             >
-              <button className="text-foreground hover:text-primary transition-smooth font-medium">
+              <button
+                type="button"
+                className="text-foreground hover:text-primary transition-smooth font-medium"
+                aria-expanded={activeDropdown === 'leistungen'}
+                aria-controls="leistungen-menu"
+                onClick={(e) => {
+                  // Tastatur (detail 0) schaltet um, ein Mausklick lässt das per Hover geöffnete Menü offen
+                  if (e.detail === 0) setActiveDropdown(activeDropdown === 'leistungen' ? null : 'leistungen');
+                  else setActiveDropdown('leistungen');
+                }}
+              >
                 Leistungen
               </button>
               {activeDropdown === 'leistungen' && (
-                <div className="absolute top-full left-1/2 transform -translate-x-1/2 pt-4 w-[800px]">
+                <div id="leistungen-menu" className="absolute top-full left-1/2 transform -translate-x-1/2 pt-4 w-[800px]">
                   <div className="bg-white rounded-lg shadow-2xl p-8">
                     <div className="grid grid-cols-3 gap-8">
                       <div>
-                        <h3 className="text-sm font-bold text-primary mb-4 uppercase tracking-wide">Premium</h3>
+                        <p className="text-sm font-bold text-primary mb-4 uppercase tracking-wide">Premium</p>
                         <div className="space-y-2">
                           {premiumServices.map((service, index) => (
                             <Link key={index} href={service.href}>
@@ -86,7 +106,7 @@ export default function SwissNavigation() {
                         </div>
                       </div>
                       <div>
-                        <h3 className="text-sm font-bold text-primary mb-4 uppercase tracking-wide">Reinigung</h3>
+                        <p className="text-sm font-bold text-primary mb-4 uppercase tracking-wide">Reinigung</p>
                         <div className="space-y-2">
                           {businessServices.map((service, index) => (
                             <Link key={index} href={service.href}>
@@ -98,7 +118,7 @@ export default function SwissNavigation() {
                         </div>
                       </div>
                       <div>
-                        <h3 className="text-sm font-bold text-primary mb-4 uppercase tracking-wide">Hauswartung und Pflege</h3>
+                        <p className="text-sm font-bold text-primary mb-4 uppercase tracking-wide">Hauswartung und Pflege</p>
                         <div className="space-y-2">
                           {basisServices.map((service, index) => (
                             <Link key={index} href={service.href}>
