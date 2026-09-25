@@ -6,6 +6,9 @@ import { company } from './company'
 // Nur belegte Aussagen (E18, E41). Titel ohne Marke, metaFor() hängt sie an.
 export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://bgs-gebaeudeservice.vercel.app'
 
+// Stand der Inhalte für die Sitemap (M17). Bei inhaltlichen Änderungen nachführen.
+export const contentUpdated = '2026-09-25'
+
 const region = 'Luzern, Zug, Aargau, Nidwalden und Obwalden'
 
 export const pages = {

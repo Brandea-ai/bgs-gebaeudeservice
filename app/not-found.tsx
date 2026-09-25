@@ -3,7 +3,8 @@ import { Home as HomeIcon } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = { title: "Seite nicht gefunden" };
+// Immer noindex, auch nach dem Launch, damit die robots-Angaben nicht widersprechen (M17)
+export const metadata: Metadata = { title: "Seite nicht gefunden", robots: { index: false, follow: true } };
 
 export default function NotFound() {
   return (
