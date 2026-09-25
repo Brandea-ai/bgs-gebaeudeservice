@@ -19,11 +19,9 @@ import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
 import { Card } from "@/components/ui/card";
 import { company } from "../../shared/company";
+import { metaFor } from "../../shared/seo";
 
-export const metadata: Metadata = {
-  title: "Premium: Reinigung für besondere Ansprüche",
-  description: `Diskrete Reinigung für Villen, Zweitwohnungen, Hotels, Family Offices, Privatjets und Yachten am Vierwaldstättersee, am Zugersee und in der ganzen Region. ${company.brand}.`,
-};
+export const metadata: Metadata = metaFor("/premium");
 
 // Premium-Bereich (E16, E28). Nischen und Zusagen laut Runde 3 (NISCHEN, VORAUS, ORTE).
 // Nur belegte bzw. vom Kunden bestätigte Angaben (E18), keine Referenzen (R6f).

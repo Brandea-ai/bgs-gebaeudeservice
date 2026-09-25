@@ -5,11 +5,9 @@ import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
 import { Card } from "@/components/ui/card";
 import { company } from "../../shared/company";
+import { metaFor } from "../../shared/seo";
 
-export const metadata: Metadata = {
-  title: "Leistungen: Reinigung und Hauswartung",
-  description: `Unterhalts-, Büro-, Sonder-, Bau-, Fenster- und Industriereinigung, Hauswartung und Facility Services von ${company.brand} in Luzern, Zug und Umgebung.`,
-};
+export const metadata: Metadata = metaFor("/leistungen");
 
 // Auswahlhilfe nach Anlass (Zielbild v2, Webseite-Analyse/03, Abschnitt 2a).
 // Nur Leistungen, die der Kunde bestätigt hat (R3a–R3c).

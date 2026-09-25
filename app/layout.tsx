@@ -7,33 +7,21 @@ import { ThemeProvider } from '@/contexts/ThemeContext'
 import { ChatbotProvider } from '@/contexts/ChatbotContext'
 import AIChatbot from '@/components/AIChatbot'
 import ErrorBoundary from '@/components/ErrorBoundary'
+import { company } from '../shared/company'
+import { pages, siteUrl } from '../shared/seo'
 
 const inter = Inter({ subsets: ['latin'] })
 
 const isIndexable = process.env.SITE_INDEXABLE === 'true'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://bgs-gebaeudeservice.vercel.app'),
+  metadataBase: new URL(siteUrl),
+  // Titel und Beschreibungen je Seite in shared/seo.ts (M16). Kein Vorschaubild bis zum neuen Logo (M35).
   title: {
-    default: 'BGS Gebäudeservice - Professionelle Reinigungsdienstleistungen in der Schweiz',
-    template: '%s | BGS Gebäudeservice'
+    default: pages['/'].title,
+    template: `%s | ${company.brand}`,
   },
-  description: 'Professionelle Gebäudereinigung für Premium, Business und Basis-Services in Luzern, Zug und Umgebung. Büroreinigung, Industriereinigung, Facility Management und mehr.',
-  keywords: [
-    'Gebäudereinigung',
-    'Reinigungsservice',
-    'Büroreinigung',
-    'Industriereinigung',
-    'Facility Management',
-    'Aargau',
-    'Zug',
-    'Luzern',
-    'Schweiz',
-    'BGS'
-  ],
-  authors: [{ name: 'BGS Gebäudeservice' }],
-  creator: 'BGS Gebäudeservice',
-  publisher: 'BGS Gebäudeservice',
+  description: pages['/'].description,
   formatDetection: {
     email: false,
     address: false,
@@ -42,24 +30,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'de_CH',
-    url: 'https://bgs-gebaeudeservice.vercel.app',
-    siteName: 'BGS Gebäudeservice',
-    title: 'BGS Gebäudeservice - Professionelle Reinigungsdienstleistungen',
-    description: 'Professionelle Gebäudereinigung in der Schweiz - Premium, Business & Basis Services',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'BGS Gebäudeservice',
-      },
-    ],
+    siteName: company.brand,
+    title: pages['/'].title,
+    description: pages['/'].description,
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'BGS Gebäudeservice - Professionelle Reinigungsdienstleistungen',
-    description: 'Professionelle Gebäudereinigung in der Schweiz',
-    images: ['/og-image.jpg'],
+    card: 'summary',
+    title: pages['/'].title,
+    description: pages['/'].description,
   },
   // Bis zum Launch nicht indexierbar. Freischalten nur in der Vercel-Produktion
   // mit SITE_INDEXABLE=true (Entscheidung E12, Webseite-Analyse/11).

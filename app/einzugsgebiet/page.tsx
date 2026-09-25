@@ -5,11 +5,9 @@ import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
 import { Card } from "@/components/ui/card";
 import { company } from "../../shared/company";
+import { metaFor } from "../../shared/seo";
 
-export const metadata: Metadata = {
-  title: "Einzugsgebiet: Luzern, Zug, Aargau, Nidwalden und Obwalden",
-  description: `${company.brand} arbeitet von ${company.address.city} aus in den Kantonen Luzern, Zug, Aargau, Nidwalden und Obwalden, auch an den Seeufern und in Engelberg. Alle Leistungen im ganzen Gebiet.`,
-};
+export const metadata: Metadata = metaFor("/einzugsgebiet");
 
 // Bestätigt in den Rückfragen (R4b, W04, R4d): ein Sitz, fünf Kantone,
 // alle Leistungen im ganzen Gebiet. Keine Ortsseiten ohne eigenen Inhalt (K09).

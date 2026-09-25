@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Home as HomeIcon } from "lucide-react";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = { title: "Seite nicht gefunden" };
 
 export default function NotFound() {
   return (

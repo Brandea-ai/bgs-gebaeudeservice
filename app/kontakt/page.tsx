@@ -54,7 +54,7 @@ export default function Kontakt() {
       if (response.ok && data.success) {
         setSubmitStatus({
           type: "success",
-          message: data.message || "Vielen Dank für Ihre Nachricht! Wir melden uns innerhalb von 24 Stunden bei Ihnen.",
+          message: data.message || `Vielen Dank für Ihre Nachricht! Wir melden uns ${company.responseTime}.`,
         });
         setFormData({
           name: "",
@@ -96,7 +96,7 @@ export default function Kontakt() {
             Kontaktieren Sie uns
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-8">
-            Wir freuen uns auf Ihre Anfrage und melden uns innerhalb von 24 Stunden bei Ihnen zurück.
+            Wir freuen uns auf Ihre Anfrage und melden uns {company.responseTime}.
           </p>
           <button 
             onClick={scrollToForm}
@@ -159,7 +159,7 @@ export default function Kontakt() {
               Bereit für professionelle Reinigung?
             </h2>
             <p className="text-lg text-slate-600 mb-8">
-              Nutzen Sie unser Kontaktformular im Footer und fordern Sie ein unverbindliches Angebot an. Wir melden uns innerhalb von 24 Stunden bei Ihnen zurück.
+              Nutzen Sie unser Kontaktformular im Footer und fordern Sie ein unverbindliches Angebot an. Wir melden uns {company.responseTime}.
             </p>
             <button
               onClick={scrollToForm}
@@ -182,7 +182,7 @@ export default function Kontakt() {
             <Card className="p-6 hover-lift hover-tilt hover-tilt">
               <h3 className="font-bold text-lg mb-2">Wie schnell erhalte ich ein Angebot?</h3>
               <p className="text-slate-600">
-                Wir melden uns innerhalb von 24 Stunden bei Ihnen zurück und erstellen ein individuelles, auf Ihre Bedürfnisse zugeschnittenes Angebot.
+                Wir melden uns {company.responseTime} und erstellen ein individuelles, auf Ihre Bedürfnisse zugeschnittenes Angebot.
               </p>
             </Card>
 
