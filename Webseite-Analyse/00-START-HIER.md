@@ -146,6 +146,7 @@ Die vorbereiteten Dateien in diesem Paket dienen als Arbeitsstruktur. Benenne di
 - `12-ANTWORTEN-RUNDE-2.md` *(ergänzt)*: Antworten Runde 2, Produktions-Deployment, Entscheidungen E27–E36.
 - `13-NAMEN-UND-NISCHEN.md` *(ergänzt 25.09.2026)*: geprüfte Namensvorschläge, wohlhabende Gebiete und Premium-Nischen. Abschnitt 8: Namensrunde 2 mit Fable und Opus, Bedeutung jedes Finalisten, Empfehlung Mantena + Silendo.
 - `14-ANTWORTEN-RUNDE-3.md` *(ergänzt 25.09.2026)*: Antworten Runde 3, Freigabe für die Produktion, Plan für die Mehrsprachigkeit, Entscheidungen E37–E45.
+- `15-ANTWORTEN-RUNDE-4.md` *(ergänzt 25.09.2026)*: Antworten Runde 4, Vorprüfung von Mantena und Clavea in Zefix und Swissreg, Aufgaben für Brandea, Entscheidungen E46–E53.
 - `Seiten/`: eine eigene MD-Datei je Seite.
 
 ## 10. Abschlussformat

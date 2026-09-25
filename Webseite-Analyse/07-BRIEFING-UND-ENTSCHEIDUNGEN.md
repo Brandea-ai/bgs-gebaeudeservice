@@ -127,3 +127,11 @@ Dieser Block ist nur ein austauschbares Briefingformat, kein Programmcode. Leere
 | E43 | 25.09.2026 | **Mehrsprachige Website:** Deutsch, Englisch, Französisch, Italienisch, mit Umschalter | ENGLISCH (14), S75–S77 | Alle | Nutzer | M60, Prüfung der Übersetzungen |
 | E44 | 25.09.2026 | **Anfahrt:** überall dieselben Bedingungen | ANFAHRT (14) | `/einzugsgebiet` | Nutzer | — |
 | E45 | 25.09.2026 | **Terminal-Auftrag vorerst nicht ausgeführt.** Repository bleibt öffentlich, R1 und M06 offen | TERMINAL (14) | Repository, Vercel | Nutzer | Risiko genannt (14, E45) |
+| E46 | 25.09.2026 | **Dachmarke Mantena.** Eingetragene Firma bleibt «BGS - Gebäudeservice GmbH» | DACH (15), 13 Abschnitt 8 | Alle (`85024bb`) | Nutzer | Öffentlich erst nach der Markenrecherche (E38) |
+| E47 | 25.09.2026 | **Premium-Linie Clavea**, Ersatz Silendo | PREMIUM (15), 13 Abschnitt 8 | `/premium` (`85024bb`) | Nutzer | Verwechslungsgefahr mit der Marke CLAVIS (Klassen 37, 45) klären (15, Abschnitt 3.3) |
+| E48 | 25.09.2026 | **Domains:** Brandea registriert, Inhaberin ist die Firma des Kunden | DOMAINS (15) | — | Nutzer | `mantena.ch`, `clavea.ch` frei um 19:45 UTC (N069) |
+| E49 | 25.09.2026 | **Logo:** Brandea gestaltet es, bis dahin Schriftzug | LOGO (15) | Alle, M35 | Nutzer | Dateiliste in 15, Abschnitt 5 |
+| E50 | 25.09.2026 | **Übersetzungen:** Brandea prüft die Entwürfe des Agenten | LEKTORAT (15) | Alle, M60 | Nutzer | — |
+| E51 | 25.09.2026 | **Übersetzte Adressen** je Sprache, z. B. `/fr/prestations/…` | ADRESSEN (15), S82 | Alle, M60 | Nutzer | Zuordnungstabelle bei M60 |
+| E52 | 25.09.2026 | **Die drei zurückgestellten Premium-Zusagen bleiben weg** (Deckung Kunst, Flugfeld, Prüfmethode) | BELEGE (15), E41 | `/premium` | Nutzer | M59 geschlossen |
+| E53 | 25.09.2026 | **Keine Partner.** Die Website nennt weder Partner noch ein Netzwerk | PARTNER (15) | `/leistungen/hauswartung` (`ff99f92`) | Nutzer | — |

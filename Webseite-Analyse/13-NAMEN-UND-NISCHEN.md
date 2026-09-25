@@ -10,6 +10,7 @@ Grundlage sind zwei Recherchen mit Nachprüfung durch den Agenten (N053 Namen, N
 ## 1. Kurzfassung
 
 - **Neu, Namensrunde 2 (Abschnitt 8):** Brandea wollte in Runde 3 neue Namen. Fable und Opus empfehlen jetzt gemeinsam **Mantena** als Dachmarke und **Silendo** als Premium-Linie. Die Empfehlung von Werthüter und Firnglanz unten ist damit überholt.
+- **Entscheid Runde 4 (15):** Brandea wählt **Mantena** als Dachmarke und **Clavea** als Premium-Linie (E46, E47). Die Vorprüfung in Zefix und Swissreg ergab für Clavea mittleres Risiko wegen der Marke CLAVIS (15, Abschnitt 3.3). Ersatz ist Silendo.
 - **Namen, erste Recherche:** 19 Kandidaten geprüft, 4 verworfen.
   - **Empfohlen:** **Werthüter** als Dachmarke und **Firnglanz** als Premium-Linie. Bei beiden ist die `.ch`-Domain frei, es gibt keine aktive Firma und keinen Markentreffer bei Moneyhouse.
   - **Ebenfalls stark:** **Seeklar** und **Nitor**. Die exakte `.ch` ist vergeben, Ausweich-Domains sind frei. **Perlmutt** eignet sich als Premium-Linie.
@@ -358,10 +359,19 @@ Bei allen sechs ist die `.com` vergeben. Stand der Domains: 25.09.2026.
   2. Domains der Favoriten sichern.
   3. Markenrecherche beim IGE: Die Klassen klärt die Recherche, voraussichtlich 37 (Reinigung, Unterhalt) und 44 (Grünflächenpflege), für die Premium-Linie allenfalls 45.
 
-### 8.6 Nachweise
+### 8.6 Entscheid und Vorprüfung (Runde 4)
+
+- **Entscheid:** Mantena als Dachmarke und Clavea als Premium-Linie (E46, E47).
+- **Vorprüfung** (15, Abschnitt 3):
+  - Beide Namen fehlen im Handelsregister und im Markenregister.
+  - Mantena hat in den Klassen 37, 44 und 45 keinen ähnlichen aktiven Eintrag.
+  - Für Clavea ist die Marke CLAVIS aktiv, unter anderem in Klasse 37 (Reinigung, Unterhalt). Die Verwechslungsgefahr muss vor der Nutzung eine Fachperson beurteilen. Ersatz ist Silendo.
+
+### 8.7 Nachweise
 
 - **N065:** Domainprüfung der Namensrunde 2
 - **N066:** Prüfung 1, Fable-Finalisten
 - **N067:** Prüfung 2, Opus-Finalisten
+- **N069 bis N071:** Vorprüfung nach der Wahl: Domains, Zefix und Swissreg (15)
 
 Die Nachweise stehen in 08, die Quelle zu Tacenda ist S83.

@@ -2,7 +2,7 @@
 
 **Recherchiert am 24.09.2026.** Die folgenden Originalseiten waren bei Erstellung dieses Pakets abrufbar. Das Datum bedeutet Quellenprüfung, nicht Prüfung der Zielwebsite. Dokumentationen und Funktionen können sich ändern; bei späterer Verwendung relevante Angaben erneut prüfen.
 
-**Ergänzt am 25.09.2026:** S51–S74 aus der Namens- und Marktrecherche (13, Nachweise N053 und N054). S75–S81 aus Runde 3 (14): Mehrsprachigkeit und Freigabe in Claude Code. S82 und S83 aus der Namensrunde 2 und dem Fragebogen Runde 4.
+**Ergänzt am 25.09.2026:** S51–S74 aus der Namens- und Marktrecherche (13, Nachweise N053 und N054). S75–S81 aus Runde 3 (14): Mehrsprachigkeit und Freigabe in Claude Code. S82 und S83 aus der Namensrunde 2 und dem Fragebogen Runde 4, S84 aus Runde 4 (15).
 
 ## Einordnung
 
@@ -510,6 +510,12 @@ Quelle: [Wiktionary: tacenda](https://en.wiktionary.org/wiki/tacenda)
 Verwendung: Englisches Substantiv, nur Mehrzahl: „Things that are not to be spoken about or made public.“ Aus dem Lateinischen, Partizip Futur Passiv von „taceo“ (schweigen). Beleg für die Bedeutung des Namensvorschlags Tacenda (13, Abschnitt 8).  
 Abruf: 25.09.2026 (Namensrunde 2).
 
+### S84 · IGE: Marken, Kosten und Gebühren
+
+Quelle: [IGE: Kosten und Gebühren](https://www.ige.ch/de/etwas-schuetzen/marken/anmeldung-in-der-schweiz/kosten-und-gebuehren)  
+Verwendung: Gebühren ab 1.7.2024: Hinterlegung CHF 450 für zehn Jahre, Klassengebühr CHF 100 ab der vierten Klasse, CHF 100 Rabatt bei elektronischer Anmeldung, Widerspruch CHF 800, Verlängerung CHF 550. Das IGE empfiehlt vor der Anmeldung eine Recherche nach ähnlichen Marken und Firmen, Kosten dafür nicht auf dieser Seite.  
+Abruf: 25.09.2026 (Runde 4). Die Werte stammen aus der Zusammenfassung des Abrufwerkzeugs, eine Websuche nannte dieselben Beträge. Wie viele Klassen die Hinterlegungsgebühr enthält, gaben die beiden Abrufe verschieden wieder (eine oder drei). Laut Seite gilt die Klassengebühr ab der vierten Klasse, vor der Anmeldung bitte am Original prüfen.
+
 ## Besonders wichtige Aktualisierungen gegenüber älteren Checklisten
 
 - FAQ-Rich-Results werden seit dem 7. Mai 2026 nicht mehr in Google angezeigt. Der Verweis „nur für autoritative Gesundheits-/Behördenseiten“ wäre für den aktuellen Stand bereits überholt. [S13]
@@ -605,3 +611,4 @@ Originalquelle mit Datum prüfen, tatsächlichen Anwendungsbereich ermitteln, Au
 [S81]: https://code.claude.com/docs/en/auto-mode-config.md "Claude Code: Auto mode configuration"
 [S82]: https://developers.google.com/search/docs/crawling-indexing/url-structure "Google Search: URL structure best practices"
 [S83]: https://en.wiktionary.org/wiki/tacenda "Wiktionary: tacenda"
+[S84]: https://www.ige.ch/de/etwas-schuetzen/marken/anmeldung-in-der-schweiz/kosten-und-gebuehren "IGE: Kosten und Gebühren"

@@ -36,7 +36,7 @@ Umgesetzt heisst: auf `claude/optimistic-sagan-h5y2i9` committet, in der isolier
 | M50 | umgesetzt: eingetragene Firma, Handelsregister Luzern, UID, MWST, ohne ISO | Rechtstexte durch Brandea (E22) |
 | M52 | umgesetzt: `/referenzen` offline (404), aus Navigation und Sitemap | — |
 | M53 | teilweise: Kostenartikel offline bis zur Fassung ohne Preise | übrige Artikel |
-| M10 | teilweise: Platzhaltermarke durch Arbeitsmarke als Schriftzug ersetzt | Name und Logo (M56) |
+| M10 | teilweise: Platzhaltermarke durch Arbeitsmarke als Schriftzug ersetzt, seit `85024bb` «Mantena» (E46) | Logo von Brandea (M35, E49) |
 
 **Zielbild v2 (Commits `bf42af2` und `2fb0508`, 25.09.2026, Tests N055):**
 
@@ -58,7 +58,7 @@ Umgesetzt heisst: auf `claude/optimistic-sagan-h5y2i9` committet, in der isolier
 |---|---|---|
 | M57 | erweitert: sechs weitere Angebote (Zweitwohnungen, Hotels, Büros und Family Offices, Räume mit Kunst, Privatanlässe, Makler und Verwaltungen), zehn Zusagen, Seeufer als Einsatzorte (E40–E42) | Drei Zusagen erst mit Beleg (M59), Texte der drei Premium-Seiten (M29), Gegenlesen durch den Kunden |
 | M48 | ergänzt: Seeufer und Ferienorte als Text, keine Ortsseiten (E42) | — |
-| M60 | geplant (14, Abschnitt 5) | Umsetzung nach M56 und M29 |
+| M60 | geplant (14, Abschnitt 5). Runde 4: Brandea prüft die Übersetzungen (E50), Adressen übersetzt (E51) | Umsetzung nach M29 |
 
 **Metadaten (Commit `fa01801`, 25.09.2026, Tests N059):**
 
@@ -83,7 +83,15 @@ Umgesetzt heisst: auf `claude/optimistic-sagan-h5y2i9` committet, in der isolier
 
 | ID | Stand | Offen |
 |---|---|---|
-| M56 | Empfehlung erarbeitet: Fable und Opus im Wechsel, Prüfung der Finalisten. Beide empfehlen Mantena + Silendo, Alternativen sind Takta + Intendia und Mantena + Clavea (13, Abschnitt 8) | Wahl in Runde 4. Danach Domains sichern und Markenrecherche beim IGE (E38). Test mit italienischsprachigen Mitarbeitenden für Silendo und Intendia |
+| M56 | Empfehlung erarbeitet: Fable und Opus im Wechsel, Prüfung der Finalisten. Beide empfehlen Mantena + Silendo, Alternativen sind Takta + Intendia und Mantena + Clavea (13, Abschnitt 8). **Runde 4:** Mantena und Clavea gewählt (E46, E47), Vorprüfung in Zefix und Swissreg (15, Abschnitt 3), auf dem Branch eingebaut (`85024bb`) | Domains (Brandea, E48), Markenrecherche beim IGE, Verwechslungsgefahr Clavea und CLAVIS. Öffentlich erst danach (E38) |
+
+**Runde 4 (Commits `ff99f92` und `85024bb`, 25.09.2026, Tests N073):**
+
+| ID | Stand | Offen |
+|---|---|---|
+| M56 | umgesetzt auf dem Branch: «Mantena» als Dachmarke, «Clavea» für die Premium-Seiten, Registername im Footer und Impressum | Nicht öffentlich vor Domainregistrierung und Markenrecherche (E38). Stand ohne neuen Namen für die Produktion: `ff99f92` |
+| M11 | ergänzt (`ff99f92`): «Handwerker aus unserem Netzwerk» und «Handwerker-Koordination» entfernt (E53, R3c) | — |
+| M59 | geschlossen für die drei Premium-Zusagen (E52) | Übrige Vertrauenssignale bei Bedarf |
 
 **Umgebungsvariablen für Vercel (neu):** `SITE_INDEXABLE` (nur Produktion, erst zum Launch `true`), `NEXT_PUBLIC_CHAT_ENABLED` (erst nach der Reparatur `true`), optional `CONTACT_TO_EMAIL` und `CONTACT_FROM_EMAIL`. Ohne Angabe gelten `admin@brandea.de` und ein Absender unter `brandea.de`.
 
@@ -169,7 +177,7 @@ Priorität und Launch-Blocker sind getrennte Felder. Nicht jede SEO-Idee ist ein
 | M32 | Messung, Monitoring | BEFUND | P2 | nach Projektentscheidung (G13) | Fehlerüberwachung für Formular und Server-Routen (Alarm bei Versandfehlern), datenschutzkonforme Reichweitenmessung nach Entscheidung. Lead = serverseitig bestätigte, zugestellte Anfrage | Ein simulierter Versandfehler löst einen Alarm aus. Messkonzept dokumentiert und in der Datenschutzerklärung beschrieben | Operations/Marketing | S–M | M14, R11 | GLOBAL-029 |
 | M33 | Sicherheitsheader | BEFUND | P2 | nein | Content-Security-Policy und Permissions-Policy passend zu den verbleibenden Diensten | Header vorhanden, Konsole ohne CSP-Verstösse | Entwicklung | S | M15 | GLOBAL-006, N004 |
 | M34 | Repository | BEFUND | P2 | nein | Altlasten des Vite-Aufbaus, ungenutzte Pakete, doppelten Asset-Ordner und ungenutzte Komponenten entfernen (u. a. `ServiceTemplate`, Formularlogik in `app/kontakt/page.tsx`) | Build grün, keine ungenutzten Abhängigkeiten laut Prüfwerkzeug | Entwicklung | S | M05 | GLOBAL-008 |
-| M35 | Favicon, Touch-Icon, Vorschaubild, Manifest | BEFUND | P2 | nein | Dateien nach der Markenentscheidung erstellen, Manifest-Farbe und Icons anpassen | Alle drei Pfade liefern 200 mit der richtigen Marke | Design/Entwicklung | S | R2 | GLOBAL-014, N008 |
+| M35 | Favicon, Touch-Icon, Vorschaubild, Manifest | BEFUND | P2 | nein | **Runde 4:** Brandea gestaltet das Logo (E49), benötigte Dateien in 15, Abschnitt 5. Manifest-Name seit `85024bb` «Mantena». Dateien nach der Markenentscheidung erstellen, Manifest-Farbe und Icons anpassen | Alle drei Pfade liefern 200 mit der richtigen Marke | Design/Entwicklung | S | R2 | GLOBAL-014, N008 |
 | M36 | Gestaltung | BEFUND | P2 | nein | Farb- und Kontrastsystem, Bildwelt mit echten Fotos, einheitliche Icons, keine Emoji in Überschriften | Design-Abnahme mit Kontrastwerten ≥ 4,5:1 für Text | Design | M | R2, M13 | GLOBAL-032 |
 | M37 | Texte | BEFUND | P2 | nein | Schweizer Hochdeutsch („ss“ statt „ß“), Schweizer Begriffe („Hauswartung“, „Offerte“, „Strafregisterauszug“) | Volltextsuche findet kein „ß“ | Redaktion | S | M29 | GLOBAL-037, SEITE-P04-001, -P23-002 |
 | M38 | Blog-Verlinkung | BEFUND | P3 | nein | Artikel aus passenden Leistungsseiten verlinken (z. B. Kostenartikel aus der Unterhaltsreinigung) | Jeder Artikel hat mindestens einen Kontextlink von einer Leistungsseite | Redaktion/SEO | S | M53 | GLOBAL-017 |
@@ -178,16 +186,16 @@ Priorität und Launch-Blocker sind getrennte Felder. Nicht jede SEO-Idee ist ein
 
 | ID | URL/Bereich | Befundstatus | Priorität | Launch-Blocker | Konkrete Maßnahme | Abnahmetest | Verantwortliche Rolle | Aufwand | Abhängigkeit | Nachweis |
 |---|---|---|---|---|---|---|---|---|---|---|
-| M56 | Marke, Name | Entscheidung offen | P1 | ja (G07, G09) | **Runde 3:** Dachmarke plus eigener Premium-Name (E37). Domains der Favoriten sofort sichern, dann Recherche beim IGE (E38). Namensrunde 2 abgeschlossen (13, Abschnitt 8): Beide Modelle empfehlen Mantena + Silendo, Alternativen sind Takta + Intendia und Mantena + Clavea. Wahl in Runde 4 (DACH, PREMIUM). Namensentscheid nach Option A, B oder C (11, 3.6). Bei neuem Namen: Handelsregister, Markenregister (voraussichtlich Klassen 37 und 44, für die Premium-Linie allenfalls 45), `.ch`-Domain und Verwechslungsgefahr prüfen, Wortmarke vor Logo und Website sichern | Schriftlicher Namensentscheid mit Prüfprotokoll. Impressum nennt die eingetragene Firma | Brandea, Kunde | S–M | Runde 2 | W03, S43 |
+| M56 | Marke, Name | Entschieden, Markenprüfung offen | P1 | ja (G07, G09) | **Runde 4:** Dachmarke Mantena, Premium-Linie Clavea (E46, E47), Ersatz Silendo. Brandea registriert die Domains (E48). Vorprüfung: Mantena niedriges, Clavea mittleres Risiko wegen der Marke CLAVIS in Klasse 37 (15, Abschnitt 3). **Runde 3:** Dachmarke plus eigener Premium-Name (E37). Domains der Favoriten sofort sichern, dann Recherche beim IGE (E38). Namensrunde 2 abgeschlossen (13, Abschnitt 8): Beide Modelle empfehlen Mantena + Silendo, Alternativen sind Takta + Intendia und Mantena + Clavea. Wahl in Runde 4 (DACH, PREMIUM). Namensentscheid nach Option A, B oder C (11, 3.6). Bei neuem Namen: Handelsregister, Markenregister (voraussichtlich Klassen 37 und 44, für die Premium-Linie allenfalls 45), `.ch`-Domain und Verwechslungsgefahr prüfen, Wortmarke vor Logo und Website sichern | Schriftlicher Namensentscheid mit Prüfprotokoll. Impressum nennt die eingetragene Firma | Brandea, Kunde | S–M | Runde 2 | W03, S43 |
 | M57 | Premium-Bereich `/premium` | Auftrag | P2 | nein | Premium-Übersicht mit eigenem Auftritt und diskretem Kontaktweg, drei Seiten Luxusimmobilien, Privatjet, Yacht. Nur bestätigte Abläufe, keine erfundenen Fälle | Eigener Menüpunkt, keine Vermischung mit B2B-Seiten, jede Aussage belegt | Redaktion, Design, Entwicklung | M | M56, M54 | R3f, E16 |
 | M58 | DNS-Umzug `bgs-service.ch` zu Vercel, E-Mail | Risiko | P0 zum Launch | ja (G05, G10) | Vor dem Wechsel der Nameserver alle MX-, SPF-, DKIM- und DMARC-Einträge des heutigen Mailanbieters in Vercel anlegen. Absenderdomain des Kunden in Resend verifizieren, Empfänger umstellen | Mail an die Kundenadresse kommt nach dem Wechsel an. Testanfrage bis ins Kundenpostfach. Resend zeigt die Domain als verifiziert | Brandea, Kunde (Registrar) | S | R9d, M04 | N013, N044, R5h |
-| M59 | Vertrauenssignale beim Kunden | Empfehlung | P2 | nein | **Runde 3:** Belege für die zurückgestellten Premium-Zusagen: Police mit Deckung für Kunst und Wertgegenstände, Zutritt Flugfeld Buochs, Prüfverfahren für das Personal (E41). Police belegen, Bestätigung der PK Reinigung beziehen (falls GAV eingehalten), Allpura-Mitgliedschaft und Branchenlösung EKAS Nr. 54 prüfen, ISO erst nach Zertifikat nennen | Jede Aussage auf der Website hat einen abgelegten Beleg | Kunde | S–M | — | 11, 3.7, S44–S47 |
+| M59 | Vertrauenssignale beim Kunden | Geschlossen für die drei Premium-Zusagen | P2 | nein | **Runde 4:** Keine Belege, die drei zurückgestellten Aussagen bleiben weg (E52). **Runde 3:** Belege für die zurückgestellten Premium-Zusagen: Police mit Deckung für Kunst und Wertgegenstände, Zutritt Flugfeld Buochs, Prüfverfahren für das Personal (E41). Police belegen, Bestätigung der PK Reinigung beziehen (falls GAV eingehalten), Allpura-Mitgliedschaft und Branchenlösung EKAS Nr. 54 prüfen, ISO erst nach Zertifikat nennen | Jede Aussage auf der Website hat einen abgelegten Beleg | Kunde | S–M | — | 11, 3.7, S44–S47 |
 
 ### Neue Maßnahmen aus Runde 3 (14)
 
 | ID | URL/Bereich | Befundstatus | Priorität | Launch-Blocker | Konkrete Maßnahme | Abnahmetest | Verantwortliche Rolle | Aufwand | Abhängigkeit | Nachweis/Quelle |
 |---|---|---|---|---|---|---|---|---|---|---|
-| M60 | Alle Seiten, Sprachen DE, EN, FR, IT | Auftrag | P1 | ja (Launch-Umfang, E43) | Deutsch ohne Präfix unter den heutigen Adressen, Englisch, Französisch und Italienisch unter `/en`, `/fr`, `/it`. Sprachumschalter in Kopfzeile und Footer, keine automatische Umleitung nach Browsersprache oder Standort. hreflang `de-CH`, `fr-CH`, `it-CH`, `en` und `x-default` im Kopf oder in der Sitemap. Inhalte und Metadaten in Wörterbüchern, Rechtstexte übersetzt (14, Abschnitt 5) | Jede Seite in vier Sprachen mit Status 200. hreflang gegenseitig vollständig (Prüfskript). Umschalter führt zur gleichen Seite in der anderen Sprache. Keine Umleitung nach Browsersprache. Übersetzungen von Muttersprachlern freigegeben | Entwicklung, Redaktion, Kunde (Prüfung) | L | M56, M29 | E43, S75–S77 |
+| M60 | Alle Seiten, Sprachen DE, EN, FR, IT | Auftrag | P1 | ja (Launch-Umfang, E43) | Deutsch ohne Präfix unter den heutigen Adressen, Englisch, Französisch und Italienisch unter `/en`, `/fr`, `/it`. Sprachumschalter in Kopfzeile und Footer, keine automatische Umleitung nach Browsersprache oder Standort. hreflang `de-CH`, `fr-CH`, `it-CH`, `en` und `x-default` im Kopf oder in der Sitemap. Inhalte und Metadaten in Wörterbüchern, Rechtstexte übersetzt (14, Abschnitt 5). **Runde 4:** Adressen je Sprache übersetzt (E51, S82), Entwürfe vom Agenten, Prüfung durch Brandea (E50) | Jede Seite in vier Sprachen mit Status 200. hreflang gegenseitig vollständig (Prüfskript). Umschalter führt zur gleichen Seite in der anderen Sprache. Keine Umleitung nach Browsersprache. Übersetzungen von Muttersprachlern freigegeben | Entwicklung, Redaktion, Kunde (Prüfung) | L | M56, M29 | E43, S75–S77 |
 
 ### Seitenmaßnahmen nach Zielseite (03, Abschnitt 2a)
 

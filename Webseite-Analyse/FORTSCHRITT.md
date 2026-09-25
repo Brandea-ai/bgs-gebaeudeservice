@@ -70,6 +70,7 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 | 25.09.2026 | Runde 3 | Fragebogen Runde 3 veröffentlicht, Antworten ausgewertet (14). Seeufer und Premium-Zusagen umgesetzt und getestet (`31f87eb`, N055, N058). Zweiter Push nach `main` blockiert (N057), Freigabe liegt bei Brandea. Namensrunde 2 mit Fable gestartet. Mehrsprachigkeit geplant (M60) |
 | 25.09.2026 | Welle 1 und 2, Technik | Metadaten je Seite (M16, `fa01801`), Aufräumen des Vite-Aufbaus (M34), Formularfelder Ort und Rhythmus (M30), Sicherheitsheader (M33), `npm ci` in Vercel (M05), eine Hauptaktion je Seite und keine Buttons in Links (M31), zehn weitere unbelegte Aussagen aus zugeklappten FAQ entfernt (N064), Adressen aus `company.ts` (M54), Sitemap und robots.txt generiert (M17). Alles getestet, Previews READY |
 | 25.09.2026 | Namensrunde 2 | Fable und Opus im Wechsel: drei Runden, gegenseitige Kritik, zwei Prüfrunden der Finalisten (N065 bis N067). Beide empfehlen Mantena + Silendo, Alternativen Takta + Intendia und Mantena + Clavea (13, Abschnitt 8). Fragebogen Runde 4 mit Bedeutung je Name veröffentlicht |
+| 25.09.2026 | Runde 4 | Antworten ausgewertet (15). Mantena als Dachmarke, Clavea als Premium-Linie. Domains frei (N069). Zefix und Swissreg erstmals abgefragt (N070, N071): Mantena ohne Konflikt, Clavea mit mittlerem Risiko wegen der Marke CLAVIS. Name auf dem Branch eingebaut und getestet (`85024bb`, N073), Handwerker-Netzwerk entfernt (`ff99f92`). Zwei Vorhaben von der Rechteprüfung abgelehnt, nicht umgangen (N072) |
 
 ## Abweichungen und Vorfälle
 
@@ -85,7 +86,7 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 
 - **Runde 2 ist ausgewertet (12).** Offen daraus: Name und Marke (W03, Vorschläge in 13) und die Freigabe für Produktion (E27).
 - **Runde 3 ist ausgewertet (14).** Offen daraus: Namenswahl nach Namensrunde 2 (W03), Produktion (E39), Partner (PARTNER), Terminal-Auftrag bewusst zurückgestellt (E45).
-- **Runde 4 (veröffentlicht 25.09.2026):** Namenswahl (DACH, PREMIUM), Domains, Logo, Prüfung der Übersetzungen (M60), Adressen je Sprache, Belege, Partner.
+- **Runde 4 ist ausgewertet (15).** Offen daraus: Domains registrieren (Brandea, E48), Markenrecherche beim IGE mit der Frage CLAVIS (E38, E47), Logo (Brandea, E49).
 - **Nur Brandea:** Repository auf privat stellen (R1), Vercel-Variablen als „sensitive“ markieren (M06).
 - *Die folgenden Punkte stammen aus der Analyse und sind durch Runde 1 weitgehend beantwortet (11).*
 
@@ -116,14 +117,19 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 
 ## Nächste Aufgabe
 
-**Welle 0, Welle 1 (Teil 1), Zielbild v2, die Premium-Inhalte aus Runde 3 und die Technik aus Welle 2 sind auf dem Arbeits-Branch umgesetzt. In Produktion ist noch nichts (N051, N057).**
+**Welle 0, Welle 1 (Teil 1), Zielbild v2, die Premium-Inhalte aus Runde 3, die Technik aus Welle 2 und der neue Name sind auf dem Arbeits-Branch umgesetzt. In Produktion ist noch nichts (N051, N057).**
 
-1. **Produktion:** Brandea stellt den Modus der Sitzung auf „Accept edits“ und bestätigt den Push, oder spielt den Stand selbst ein (14, Abschnitt 3).
-2. **Runde 4:** Namenswahl aus der Namensrunde 2 (13, Abschnitt 8), Domains, Logo, Prüfung der Übersetzungen, Adressen je Sprache, Belege, Partner.
-3. **Nach der Namenswahl:** Domains sichern und Markenrecherche beim IGE (E38). Danach Name in `company.ts`, Titel und Metadaten, Favicon und Logo (M35).
-4. **Welle 1, Teil 2:**
+1. **Produktion:** Brandea stellt den Modus der Sitzung auf „Accept edits“ und bestätigt den Push (14, Abschnitt 3).
+   - Bis zur Markenrecherche den Stand ohne neuen Namen einspielen: `ff99f92`.
+   - Danach den Stand mit Mantena und Clavea: `85024bb` oder später (15, Abschnitt 4).
+2. **Brandea:**
+   - Domains `mantena.ch` und `clavea.ch` registrieren, Inhaberin ist die Kundin.
+   - Markenrecherche mit der Frage CLAVIS.
+   - Logo-Dateien (15, Abschnitt 5).
+3. **Welle 1, Teil 2:**
    - Texte der Kern- und Premiumseiten (M29), gleich in einer übersetzbaren Inhaltsschicht für M60
    - Ratgeber (M53)
    - Breadcrumbs (M20)
-5. **Mehrsprachigkeit (M60)** nach M56 und M29.
-6. **Belege** für die zurückgestellten Premium-Zusagen (M59).
+   - leere `SEO`-Aufrufe entfernen (M16)
+4. **Mehrsprachigkeit (M60)** mit übersetzten Adressen (E51). Entwürfe vom Agenten, Prüfung durch Brandea (E50).
+5. **Chat (M03)** nach der Modellwahl, mit neuem Prompt ohne alten Namen.
