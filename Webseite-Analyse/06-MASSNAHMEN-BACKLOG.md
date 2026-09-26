@@ -119,6 +119,8 @@ Umgesetzt heisst: auf dem Arbeits-Branch committet (bis 25.09.2026 `claude/optim
 | M52 | ergänzt (E59): Bildflächen bleiben als Platzhalter, Komponente `ImageSlot` ohne Animation, Über uns wieder mit Bildfläche | Echte Bilder (E19) |
 | M21, M31 | ergänzt (N081): `main`-Landmarke auf Einzugsgebiet, Leistungs- und Premium-Übersicht. Abschluss überall mit `OfferCta` (Offerte als Hauptaktion, Telefon als zweite). Auf `/premium` war das Telefon die Hauptaktion, `/leistungen` hatte keine Offerte | — |
 | M26 | ergänzt (N082): Vorlage `ServicePage` mit `min-w-0` und Silbentrennung in der H1. «Geschäftsliegenschaften» sprengte auf 390 px die Spalte (Hauswartung, 12 px Überlauf). Jetzt kein Überlauf auf allen 23 Seiten | — |
+| M54, M27 | ergänzt (N083): Menü, Footer, Kontaktformular und 404 aus `content/de/navigation.ts`, Menü und Footer mit denselben Leistungsgruppen, Kernleistungen zuerst. Footer-Links als Liste mit Innenabstand: axe-core meldet keine `target-size`-Verstösse mehr (vorher 368). Verschachteltes `footer` im `footer` aufgelöst, Formular als `section` | Weitere Punkte aus Welle 2 (M25) |
+| M17 | ergänzt (N083): 404 mit Menü, Footer, `main`, Titel mit Marke und drei Wegweisern, weiter `noindex` | — |
 
 **Umgebungsvariablen für Vercel (neu):** `SITE_INDEXABLE` (nur Produktion, erst zum Launch `true`), `NEXT_PUBLIC_CHAT_ENABLED` (erst nach der Reparatur `true`), optional `CONTACT_TO_EMAIL` und `CONTACT_FROM_EMAIL`. Ohne Angabe gelten `admin@brandea.de` und ein Absender unter `brandea.de`.
 

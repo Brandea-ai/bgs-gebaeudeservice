@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useState } from "react";
-import { company, newBrandActive, premiumLabel } from "../../../shared/company";
+import { company, newBrandActive } from "../../../shared/company";
+import { contactForm as form, footer as texts, serviceGroups } from "../../../content/de/navigation";
 
 export default function SwissFooter() {
   const currentYear = new Date().getFullYear();
@@ -22,7 +23,7 @@ export default function SwissFooter() {
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const fallbackError = `Ihre Nachricht konnte nicht gesendet werden. Bitte rufen Sie uns an (${company.phone.display}) oder schreiben Sie an ${company.email}.`;
+  const fallbackError = form.error;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -74,17 +75,17 @@ export default function SwissFooter() {
   };
 
   return (
-    <footer id="kontakt-formular" className="bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-950 border-t border-slate-200 dark:border-slate-800">
-      {/* Kontaktformular Section */}
-      <div className="bg-gradient-to-r from-red-50 to-red-100/50 dark:from-red-950/20 dark:to-red-900/10 py-12 lg:py-16">
+    <div id="kontakt-formular" className="bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-950 border-t border-slate-200 dark:border-slate-800">
+      {/* Kontaktformular, auf jeder Seite (M04). Ziel aller Offerte-Aktionen. */}
+      <section aria-labelledby="kontakt-titel" className="bg-gradient-to-r from-red-50 to-red-100/50 dark:from-red-950/20 dark:to-red-900/10 py-12 lg:py-16">
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-3">
-                Jetzt Kontakt aufnehmen
+              <h2 id="kontakt-titel" className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-3">
+                {form.title}
               </h2>
               <p className="text-sm sm:text-base lg:text-lg text-slate-600 dark:text-slate-400">
-                Fordern Sie eine unverbindliche Offerte an. Wir melden uns {company.responseTime}.
+                {form.intro}
               </p>
             </div>
 
@@ -93,7 +94,7 @@ export default function SwissFooter() {
                 {/* Name */}
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-slate-900 dark:text-white mb-2">
-                    Name *
+                    {form.fields.name.label}
                   </label>
                   <input
                     type="text"
@@ -105,14 +106,14 @@ export default function SwissFooter() {
                     maxLength={100}
                     autoComplete="name"
                     className="w-full px-4 py-2.5 lg:py-3 rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all text-sm sm:text-base"
-                    placeholder="Ihr vollständiger Name"
+                    placeholder={form.fields.name.placeholder}
                   />
                 </div>
 
                 {/* Email */}
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-slate-900 dark:text-white mb-2">
-                    E-Mail *
+                    {form.fields.email.label}
                   </label>
                   <input
                     type="email"
@@ -124,14 +125,14 @@ export default function SwissFooter() {
                     maxLength={254}
                     autoComplete="email"
                     className="w-full px-4 py-2.5 lg:py-3 rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all text-sm sm:text-base"
-                    placeholder="name@firma.ch"
+                    placeholder={form.fields.email.placeholder}
                   />
                 </div>
 
                 {/* Telefon */}
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-slate-900 dark:text-white mb-2">
-                    Telefon
+                    {form.fields.phone.label}
                   </label>
                   <input
                     type="tel"
@@ -142,14 +143,14 @@ export default function SwissFooter() {
                     maxLength={40}
                     autoComplete="tel"
                     className="w-full px-4 py-2.5 lg:py-3 rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all text-sm sm:text-base"
-                    placeholder="Ihre Telefonnummer"
+                    placeholder={form.fields.phone.placeholder}
                   />
                 </div>
 
                 {/* Service - Gruppiert nach Kategorien */}
                 <div>
                   <label htmlFor="service" className="block text-sm font-medium text-slate-900 dark:text-white mb-2">
-                    Gewünschte Leistung
+                    {form.fields.service.label}
                   </label>
                   <select
                     id="service"
@@ -158,39 +159,21 @@ export default function SwissFooter() {
                     onChange={handleChange}
                     className="w-full px-4 py-2.5 lg:py-3 rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all text-sm sm:text-base"
                   >
-                    <option value="">Bitte wählen...</option>
-                    
-                    <optgroup label="Premium">
-                      <option value="Luxusimmobilien">Luxusimmobilien (Villen, Lofts)</option>
-                      <option value="Privatjet-Reinigung">Privatjet-Reinigung</option>
-                      <option value="Yacht-Reinigung">Yacht-Reinigung</option>
-                      <option value="Zweitwohnungen und Residences">Zweitwohnungen und Residences</option>
-                      <option value="Hotels">Hotels</option>
-                    </optgroup>
-                    
-                    <optgroup label="Reinigung und Hauswartung">
-                      <option value="Unterhaltsreinigung">Unterhaltsreinigung</option>
-                      <option value="Büroreinigung">Büro- und Praxisreinigung</option>
-                      <option value="Sonderreinigungen">Sonderreinigungen (Grund-, Umzugsreinigung)</option>
-                      <option value="Baureinigung">Bau- und Bauendreinigung</option>
-                      <option value="Fenster- und Fassadenreinigung">Fenster- und Fassadenreinigung</option>
-                      <option value="Industrie- und Hallenreinigung">Industrie-, Hallen- und Maschinenreinigung</option>
-                      <option value="Hauswartung">Hauswartung</option>
-                      <option value="Aussen- und Grünflächenpflege">Aussen- und Grünflächenpflege</option>
-                      <option value="Facility Services">Facility Services (mehrere Leistungen)</option>
-                    </optgroup>
-                    
-                    <optgroup label="Sonstiges">
-                      <option value="Beratung">Beratung</option>
-                      <option value="Andere">Andere</option>
-                    </optgroup>
+                    <option value="">{form.choose}</option>
+                    {form.serviceOptions.map((group) => (
+                      <optgroup key={group.group} label={group.group}>
+                        {group.options.map((option) => (
+                          <option key={option.value} value={option.value}>{option.label}</option>
+                        ))}
+                      </optgroup>
+                    ))}
                   </select>
                 </div>
 
                 {/* Ort des Objekts und Rhythmus helfen bei der Einschätzung der Anfrage (M30, E33) */}
                 <div>
                   <label htmlFor="location" className="block text-sm font-medium text-slate-900 dark:text-white mb-2">
-                    Ort oder PLZ des Objekts
+                    {form.fields.location.label}
                   </label>
                   <input
                     type="text"
@@ -200,13 +183,13 @@ export default function SwissFooter() {
                     onChange={handleChange}
                     maxLength={100}
                     className="w-full px-4 py-2.5 lg:py-3 rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all text-sm sm:text-base"
-                    placeholder="z. B. 6300 Zug"
+                    placeholder={form.fields.location.placeholder}
                   />
                 </div>
 
                 <div>
                   <label htmlFor="frequency" className="block text-sm font-medium text-slate-900 dark:text-white mb-2">
-                    Rhythmus
+                    {form.fields.frequency.label}
                   </label>
                   <select
                     id="frequency"
@@ -215,12 +198,10 @@ export default function SwissFooter() {
                     onChange={handleChange}
                     className="w-full px-4 py-2.5 lg:py-3 rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all text-sm sm:text-base"
                   >
-                    <option value="">Bitte wählen...</option>
-                    <option value="Einmalig">Einmalig</option>
-                    <option value="Wöchentlich">Wöchentlich</option>
-                    <option value="Mehrmals pro Woche">Mehrmals pro Woche</option>
-                    <option value="Täglich">Täglich</option>
-                    <option value="Noch offen">Noch offen</option>
+                    <option value="">{form.choose}</option>
+                    {form.frequencyOptions.map((option) => (
+                      <option key={option} value={option}>{option}</option>
+                    ))}
                   </select>
                 </div>
               </div>
@@ -228,7 +209,7 @@ export default function SwissFooter() {
               {/* Nachricht */}
               <div className="mb-6">
                 <label htmlFor="message" className="block text-sm font-medium text-slate-900 dark:text-white mb-2">
-                  Ihre Nachricht *
+                  {form.fields.message.label}
                 </label>
                 <textarea
                   id="message"
@@ -239,7 +220,7 @@ export default function SwissFooter() {
                   maxLength={5000}
                   rows={4}
                   className="w-full px-4 py-2.5 lg:py-3 rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all resize-none text-sm sm:text-base"
-                  placeholder="Beschreiben Sie Ihr Anliegen..."
+                  placeholder={form.fields.message.placeholder}
                 />
               </div>
 
@@ -269,16 +250,16 @@ export default function SwissFooter() {
                     className="mt-1 w-4 h-4 rounded border-slate-300 dark:border-slate-600 text-red-600 focus:ring-2 focus:ring-red-500 focus:ring-offset-0 cursor-pointer"
                   />
                   <span className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                    Ich habe die{" "}
+                    {form.consentBefore}{" "}
                     <a
                       href="/datenschutz"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-red-600 dark:text-red-400 hover:underline font-medium"
                     >
-                      Datenschutzerklärung
+                      {form.consentLink}
                     </a>{" "}
-                    zur Kenntnis genommen und bin einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage verwendet werden. *
+                    {form.consentAfter}
                   </span>
                 </label>
               </div>
@@ -286,7 +267,7 @@ export default function SwissFooter() {
               {/* Submit Button */}
               <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                 <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
-                  * Pflichtfelder
+                  {form.required}
                 </p>
                 <button
                   type="submit"
@@ -296,12 +277,12 @@ export default function SwissFooter() {
                   {isSubmitting ? (
                     <>
                       <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                      Wird gesendet...
+                      {form.sending}
                     </>
                   ) : (
                     <>
-                      <Send className="w-4 h-4" />
-                      Nachricht senden
+                      <Send className="w-4 h-4" aria-hidden="true" />
+                      {form.submit}
                     </>
                   )}
                 </button>
@@ -311,7 +292,7 @@ export default function SwissFooter() {
               {submitStatus === "success" && (
                 <div role="status" className="mt-4 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-md">
                   <p className="text-sm text-green-700 dark:text-green-400">
-                    ✓ Vielen Dank! Ihre Nachricht wurde versendet. Wir melden uns {company.responseTime}.
+                    ✓ {form.success}
                   </p>
                 </div>
               )}
@@ -325,7 +306,7 @@ export default function SwissFooter() {
             </form>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Footer Content */}
       <footer className="bg-slate-900 text-white">
@@ -336,57 +317,42 @@ export default function SwissFooter() {
                   eigener Marke, die Arbeitsmarke ist schon der Firmenname (E38). */}
               <div className="mb-6">
                 <p className="text-2xl font-bold tracking-tight">{company.brand}</p>
-                {newBrandActive && <p className="text-slate-400 text-xs mt-1">Eine Marke der {company.legalName}</p>}
+                {newBrandActive && <p className="text-slate-400 text-xs mt-1">{texts.newBrandLine}</p>}
               </div>
-              <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                Reinigung und Hauswartung für Unternehmen und anspruchsvolle Privatkunden. Sitz in {company.address.city}.
-              </p>
-              <div className="space-y-2">
-                <Link href="/ueber-uns"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Über uns</div></Link>
-                <Link href="/kontakt"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Kontakt</div></Link>
-                <Link href="/blog"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Ratgeber</div></Link>
-              </div>
+              <p className="text-slate-400 text-sm leading-relaxed mb-6">{texts.about}</p>
+              <ul className="space-y-1">
+                {texts.companyLinks.map((link) => (
+                  <li key={link.path}>
+                    <Link href={link.path} className="text-slate-400 hover:text-white transition-smooth text-sm inline-block py-0.5">{link.label}</Link>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            <div>
-              <h3 className="font-semibold text-lg mb-4">{premiumLabel}</h3>
-              <div className="space-y-2">
-                <Link href="/premium"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Premium im Überblick</div></Link>
-                <Link href="/premium/luxusimmobilien"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Luxusimmobilien</div></Link>
-                <Link href="/premium/privatjet"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Privatjet-Reinigung</div></Link>
-                <Link href="/premium/yacht"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Yacht-Reinigung</div></Link>
+            {serviceGroups.map((group) => (
+              <div key={group.title}>
+                <h3 className="font-semibold text-lg mb-4">{group.title}</h3>
+                <ul className="space-y-1">
+                  {group.links.map((link) => (
+                    <li key={link.path}>
+                      <Link href={link.path} className="text-slate-400 hover:text-white transition-smooth text-sm inline-block py-0.5">{link.label}</Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </div>
+            ))}
 
             <div>
-              <h3 className="font-semibold text-lg mb-4">Reinigung</h3>
-              <div className="space-y-2">
-                <Link href="/leistungen/unterhaltsreinigung"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Unterhaltsreinigung</div></Link>
-                <Link href="/leistungen/bueroreinigung"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Büro- und Praxisreinigung</div></Link>
-                <Link href="/leistungen/sonderreinigungen"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Sonderreinigungen</div></Link>
-                <Link href="/leistungen/baureinigung"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Bau- und Bauendreinigung</div></Link>
-                <Link href="/leistungen/fenster-und-fassadenreinigung"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Fenster und Fassaden</div></Link>
-                <Link href="/leistungen/industrie-und-hallenreinigung"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Industrie und Hallen</div></Link>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="font-semibold text-lg mb-4">Hauswartung und Pflege</h3>
-              <div className="space-y-2">
-                <Link href="/leistungen/hauswartung"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Hauswartung</div></Link>
-                <Link href="/leistungen/aussen-und-gruenflaechenpflege"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Aussen- und Grünflächenpflege</div></Link>
-                <Link href="/leistungen/facility-services"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Facility Services</div></Link>
-                <Link href="/leistungen"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Alle Leistungen</div></Link>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="font-semibold text-lg mb-4">Einzugsgebiet</h3>
-              <div className="space-y-2 mb-6">
-                <Link href="/einzugsgebiet"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Luzern, Zug, Aargau, Nid- und Obwalden</div></Link>
-                <div className="text-slate-400 text-sm">{company.address.street}, {company.address.postalCode} {company.address.city}</div>
-                <a href={company.phone.href} className="block text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">{company.phone.display}</a>
-              </div>
+              <h3 className="font-semibold text-lg mb-4">{texts.areaTitle}</h3>
+              <ul className="space-y-1 mb-6">
+                <li>
+                  <Link href={texts.areaLink.path} className="text-slate-400 hover:text-white transition-smooth text-sm inline-block py-0.5">{texts.areaLink.label}</Link>
+                </li>
+                <li className="text-slate-400 text-sm">{company.address.street}, {company.address.postalCode} {company.address.city}</li>
+                <li>
+                  <a href={company.phone.href} className="text-slate-400 hover:text-white transition-smooth text-sm inline-block py-0.5">{company.phone.display}</a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -396,16 +362,19 @@ export default function SwissFooter() {
             <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400">
               <div>
                 {/* Jahr wird beim Build eingesetzt, im Browser ggf. aktualisiert (M24, React-Fehler #418) */}
-                © <span suppressHydrationWarning>{currentYear}</span> {company.legalName}. Alle Rechte vorbehalten.
+                © <span suppressHydrationWarning>{currentYear}</span> {texts.rights}
               </div>
-              <div className="flex gap-6">
-                <Link href="/impressum"><span className="hover:text-white transition-smooth cursor-pointer">Impressum</span></Link>
-                <Link href="/datenschutz"><span className="hover:text-white transition-smooth cursor-pointer">Datenschutz</span></Link>
-              </div>
+              <ul className="flex gap-6">
+                {texts.legal.map((link) => (
+                  <li key={link.path}>
+                    <Link href={link.path} className="hover:text-white transition-smooth inline-block py-0.5">{link.label}</Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
       </footer>
-    </footer>
+    </div>
   );
 }

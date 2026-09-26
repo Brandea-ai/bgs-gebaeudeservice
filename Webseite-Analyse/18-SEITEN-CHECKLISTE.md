@@ -36,16 +36,16 @@ Nicht Teil dieses Durchgangs: Übersetzungen (M60) und Klickflächen (M27, Welle
 | [x] | `/leistungen/aussen-und-gruenflaechenpflege` | Vorlage, Texte bestätigt (E56) | N082: alle Prüfpunkte |
 | [x] | `/leistungen/facility-services` | Vorlage, Texte bestätigt (E56) | N082: alle Prüfpunkte |
 | [x] | `/premium` | Inhaltsschicht (N079) | N081: `main` ergänzt, Offerte als Hauptaktion statt Telefon |
-| [ ] | `/premium/luxusimmobilien` | Vorlage, Texte bestätigt (E56) | |
-| [ ] | `/premium/privatjet` | Vorlage, nur Kabine (E56) | |
-| [ ] | `/premium/yacht` | Vorlage, Texte bestätigt (E56) | |
-| [ ] | `/blog` Ratgeber | Übersicht neu (M53) | |
-| [ ] | `/blog/richtige-reinigungsfirma-finden` | Neu (M53) | |
-| [ ] | `/blog/reinigungskosten-schweiz` | Neu (M53) | |
-| [ ] | 404-Seite | Alter Stand | |
-| [ ] | Navigation (alle Seiten) | Umgestellt, Texte noch im Code | |
-| [ ] | Footer mit Formular (alle Seiten) | Umgestellt, Texte noch im Code. Einwilligungssatz ohne «dauerhaft gespeichert» angepasst (N080) | |
+| [x] | `/premium/luxusimmobilien` | Vorlage, Texte bestätigt (E56) | N083: alle Prüfpunkte, Zusagen nach E41, E52, M59 |
+| [x] | `/premium/privatjet` | Vorlage, nur Kabine (E56) | N083: alle Prüfpunkte, Zusagen nach E41, E52, M59 |
+| [x] | `/premium/yacht` | Vorlage, Texte bestätigt (E56) | N083: alle Prüfpunkte, Zusagen nach E41, E52, M59 |
+| [x] | `/blog` Ratgeber | Übersicht neu (M53) | N083: alle Prüfpunkte |
+| [x] | `/blog/richtige-reinigungsfirma-finden` | Neu (M53) | N083: alle Prüfpunkte |
+| [x] | `/blog/reinigungskosten-schweiz` | Neu (M53) | N083: alle Prüfpunkte |
+| [x] | 404-Seite | Alter Stand | N083: mit Menü, Footer, `main` und drei Wegweisern, Texte in `content/de/navigation.ts` |
+| [x] | Navigation (alle Seiten) | Umgestellt, Texte noch im Code | N083: Texte und Gruppen aus `content/de/navigation.ts`, Kernleistungen zuerst, Links als Liste |
+| [x] | Footer mit Formular (alle Seiten) | Umgestellt, Texte noch im Code. Einwilligungssatz ohne «dauerhaft gespeichert» angepasst (N080) | N083: Texte aus `content/de/navigation.ts`, kein `footer` mehr im `footer`, Links als Liste mit ausreichender Klickfläche |
 
-**Stand 26.09.2026:** 17 von 26 erledigt. Bereiche Hauptseiten und Leistungsseiten fertig, als Nächstes der Bereich Premium (E64).
+**Stand 26.09.2026:** 26 von 26 erledigt. Alle Bereiche fertig (N081 bis N083). Offen sind nur die Antworten aus Runde 8 und der Push nach `main`.
 
 **Reihenfolge:** Rechtstexte zuerst (E60), dann Über uns wegen der Bildfläche, danach bereichsweise mit Fragebogen am Ende jedes Bereichs (E64): Hauptseiten, Leistungsseiten, Premium, Ratgeber, Globales.
