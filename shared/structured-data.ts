@@ -49,7 +49,7 @@ export function serviceJsonLd(path: PagePath) {
     url: absolute(path),
     provider: { '@id': organizationId },
     areaServed,
-    ...(path.startsWith('/premium/') ? { brand: { '@type': 'Brand', name: company.premiumBrand } } : {}),
+    ...(path.startsWith('/premium/') && company.premiumBrand ? { brand: { '@type': 'Brand', name: company.premiumBrand } } : {}),
   }
 }
 

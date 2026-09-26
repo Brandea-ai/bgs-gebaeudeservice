@@ -1,4 +1,4 @@
-import { cantonList, company, listDe } from '../../shared/company'
+import { cantonList, company, listDe, premiumLine } from '../../shared/company'
 import type { Step } from '../types'
 
 /**
@@ -12,7 +12,7 @@ export const ui = {
   steps: 'So läuft es ab',
   faq: 'Häufige Fragen',
   related: 'Passt auch dazu',
-  premiumLine: `${company.premiumBrand} · Premium-Linie von ${company.brand}`,
+  premiumLine,
   factArea: 'Gebiet',
   factAreaValue: `Kantone ${cantonList}`,
   factOffer: 'Offerte',

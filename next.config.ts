@@ -3,6 +3,13 @@ import type { NextConfig } from 'next'
 // Bis zum Launch nicht indexierbar, siehe app/layout.tsx (Entscheidung E12).
 const isIndexable = process.env.SITE_INDEXABLE === 'true'
 
+// Neuer Name erst nach der Markenrecherche (E38): In der Produktion nur mit
+// NEW_BRAND=true, in Previews und lokal ohne Angabe an. Der Wert wird beim Build
+// für Server und Browser gleich eingesetzt (shared/company.ts).
+const newBrandActive = process.env.NEW_BRAND
+  ? process.env.NEW_BRAND === 'true'
+  : process.env.VERCEL_ENV !== 'production'
+
 // Sicherheitsheader (M33). Die Seiten werden statisch erzeugt, darum braucht Next.js
 // 'unsafe-inline' für seine Inline-Skripte (Nonces verlangen dynamisches Rendern).
 // Fremd geladen wird nur die Karte nach Klick (M15). Die Vercel-Toolbar nur in Previews.
@@ -26,6 +33,10 @@ const contentSecurityPolicy = [
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+
+  env: {
+    NEW_BRAND_ACTIVE: String(newBrandActive),
+  },
 
   // TypeScript & ESLint
   typescript: {

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useState } from "react";
-import { company } from "../../../shared/company";
+import { company, newBrandActive, premiumLabel } from "../../../shared/company";
 
 export default function SwissFooter() {
   const currentYear = new Date().getFullYear();
@@ -332,9 +332,12 @@ export default function SwissFooter() {
         <div className="container py-16">
           <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
             <div>
-              {/* Schriftzug bis zum Logo von Brandea (M35, E49) */}
-              <p className="text-2xl font-bold tracking-tight mb-1">{company.brand}</p>
-              <p className="text-slate-400 text-xs mb-6">Eine Marke der {company.legalName}</p>
+              {/* Schriftzug bis zum Logo von Brandea (M35, E49). «Eine Marke der …» nur bei
+                  eigener Marke, die Arbeitsmarke ist schon der Firmenname (E38). */}
+              <div className="mb-6">
+                <p className="text-2xl font-bold tracking-tight">{company.brand}</p>
+                {newBrandActive && <p className="text-slate-400 text-xs mt-1">Eine Marke der {company.legalName}</p>}
+              </div>
               <p className="text-slate-400 text-sm leading-relaxed mb-6">
                 Reinigung und Hauswartung für Unternehmen und anspruchsvolle Privatkunden. Sitz in {company.address.city}.
               </p>
@@ -346,7 +349,7 @@ export default function SwissFooter() {
             </div>
 
             <div>
-              <h3 className="font-semibold text-lg mb-4">{company.premiumBrand} Premium</h3>
+              <h3 className="font-semibold text-lg mb-4">{premiumLabel}</h3>
               <div className="space-y-2">
                 <Link href="/premium"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Premium im Überblick</div></Link>
                 <Link href="/premium/luxusimmobilien"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Luxusimmobilien</div></Link>

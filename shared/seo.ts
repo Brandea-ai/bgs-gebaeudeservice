@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { cantonList, company } from './company'
+import { cantonList, company, premiumLabel, premiumTitleBrand } from './company'
 
 // Name, Titel und Beschreibung je Seite (M16). Der Name (label) steht in Brotkrumen
 // und strukturierten Daten (M20). Eine Quelle für alle Seiten, damit
@@ -19,9 +19,11 @@ export const pages = {
     description: `Gebäudereinigung, Hauswartung und Facility Services für Unternehmen und Liegenschaften in ${region}, dazu Premium-Reinigung.`,
   },
   '/premium': {
-    label: `${company.premiumBrand} Premium`,
+    label: premiumLabel,
     title: 'Premium: Reinigung für besondere Ansprüche',
-    description: `${company.premiumBrand}, die Premium-Linie von ${company.brand}: diskrete Reinigung für Villen, Zweitwohnungen, Hotels, Family Offices, Privatjets und Yachten.`,
+    description: company.premiumBrand
+      ? `${company.premiumBrand}, die Premium-Linie von ${company.brand}: diskrete Reinigung für Villen, Zweitwohnungen, Hotels, Family Offices, Privatjets und Yachten.`
+      : 'Diskrete Reinigung für Villen, Zweitwohnungen, Hotels, Family Offices, Privatjets und Yachten am Vierwaldstättersee, am Zugersee und in der Region.',
   },
   '/premium/luxusimmobilien': {
     label: 'Luxusimmobilien',
@@ -100,12 +102,12 @@ export const pages = {
   },
   '/blog/richtige-reinigungsfirma-finden': {
     label: 'Reinigungsfirma finden',
-    title: 'Reinigungsfirma finden: Kriterien und Fragen für die Vergabe',
+    title: 'Reinigungsfirma finden: Kriterien und Fragen',
     description: 'Leistungsumfang, Versicherung, Qualitätskontrolle, Referenzen und Offerte: Diese Punkte sollten Sie klären, bevor Sie eine Reinigungsfirma beauftragen. Mit Ablauf bis zum Vertrag.',
   },
   '/blog/reinigungskosten-schweiz': {
     label: 'Kosten der Unterhaltsreinigung',
-    title: 'Was kostet eine Unterhaltsreinigung? Die Kostenfaktoren',
+    title: 'Was kostet eine Unterhaltsreinigung?',
     description: 'Wovon der Preis einer Unterhaltsreinigung abhängt: Fläche, Rhythmus, Nutzung und Einsatzzeiten. Mit Hinweisen zum Vergleich von Offerten.',
   },
   '/ueber-uns': {
@@ -134,7 +136,7 @@ export type PagePath = keyof typeof pages
 
 // Premium-Seiten tragen die Linie mit Dachmarke, alle anderen die Dachmarke (E37, E47)
 function brandFor(path: string): string {
-  return path.startsWith('/premium') ? `${company.premiumBrand} von ${company.brand}` : company.brand
+  return path.startsWith('/premium') ? premiumTitleBrand : company.brand
 }
 
 export function metaFor(path: PagePath): Metadata {

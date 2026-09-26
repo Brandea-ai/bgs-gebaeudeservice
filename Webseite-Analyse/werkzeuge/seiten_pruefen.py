@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Prüft die laufende Website: Seiten, Weiterleitungen, Links, Titel und Marke.
 
-Aufruf (Server vorher starten, z. B. `npm run build && npm start`):
+Aufruf (Server vorher starten, z. B. `npm run build && npm start`, für die Arbeitsmarke
+mit `NEW_BRAND=false npm run build`):
     python3 Webseite-Analyse/werkzeuge/seiten_pruefen.py [BASIS-URL] [--indexierbar]
 
 BASIS-URL ist standardmässig http://localhost:3000. Ohne --indexierbar muss jede
@@ -30,12 +31,21 @@ def req(path):
     return r.status, {k.lower(): v for k, v in r.getheaders()}, r.read().decode("utf-8", "replace")
 
 
-# Marke aus shared/company.ts (M56)
+# Marke (M56): beide Namen aus shared/company.ts, der aktive aus og:site_name der
+# Startseite. Mit der Arbeitsmarke darf der neue Name nirgends stehen (E38).
 company = (pathlib.Path(__file__).resolve().parents[2] / "shared" / "company.ts").read_text(encoding="utf-8")
-BRAND = re.search(r"brand: '([^']+)'", company).group(1)
-PREMIUM = re.search(r"premiumBrand: '([^']+)'", company).group(1)
+NEU = re.search(r"\? \{ brand: '([^']+)', premiumBrand: '([^']+)' \}", company)
+ALT = re.search(r": \{ brand: '([^']+)', premiumBrand: null \}", company)
 
 fails = []
+site = html.unescape(re.search(r'<meta property="og:site_name" content="([^"]+)"', req("/")[2]).group(1))
+if site == NEU.group(1):
+    BRAND, PREMIUM = NEU.group(1), NEU.group(2)
+elif site == ALT.group(1):
+    BRAND, PREMIUM = ALT.group(1), None
+else:
+    fails.append(("marke unbekannt", site))
+    BRAND, PREMIUM = site, None
 s, _, sm = req("/sitemap.xml")
 paths = [urlparse(x).path or "/" for x in re.findall(r"<loc>([^<]+)</loc>", sm)]
 pages = {}
@@ -121,7 +131,7 @@ titles = {}
 for p, b in pages.items():
     t = html.unescape(re.search(r"<title>(.*?)</title>", b, re.S).group(1))
     titles[p] = t
-    marke = f"{PREMIUM} von {BRAND}" if p.startswith("/premium") else BRAND
+    marke = f"{PREMIUM} von {BRAND}" if p.startswith("/premium") and PREMIUM else BRAND
     if len(t) > 70 or marke not in t:
         fails.append(("titel", p, t))
     if len(re.findall(r"<h1[\s>]", b)) != 1:
@@ -129,7 +139,16 @@ for p, b in pages.items():
 dup = {t for t in titles.values() if list(titles.values()).count(t) > 1}
 if dup:
     fails.append(("doppelte titel", sorted(dup)))
-print(f"Titel: {len(titles)}, Marke {BRAND} / {PREMIUM} von {BRAND}")
+print(f"Titel: {len(titles)}, Marke {BRAND}" + (f" / {PREMIUM} von {BRAND}" if PREMIUM else " (Arbeitsmarke)"))
+
+# E38: Mit der Arbeitsmarke kommt der neue Name in keiner Seite und im Manifest vor
+if PREMIUM is None:
+    s, _, manifest = req("/manifest.webmanifest")
+    for p, b in list(pages.items()) + [("/manifest.webmanifest", manifest)]:
+        for name in (NEU.group(1), NEU.group(2)):
+            if name in b:
+                fails.append(("neuer name sichtbar", p, name))
+    print(f"Neuer Name ({NEU.group(1)}, {NEU.group(2)}) in {len(pages) + 1} Dokumenten gesucht")
 
 print("FEHLER:" if fails else "Alles in Ordnung.")
 for f in fails:
