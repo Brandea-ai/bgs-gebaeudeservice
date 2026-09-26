@@ -334,7 +334,7 @@ export default function SwissFooter() {
             <div>
               {/* Schriftzug bis zum Logo von Brandea (M35, E49) */}
               <p className="text-2xl font-bold tracking-tight mb-1">{company.brand}</p>
-              <p className="text-slate-500 text-xs mb-6">Eine Marke der {company.legalName}</p>
+              <p className="text-slate-400 text-xs mb-6">Eine Marke der {company.legalName}</p>
               <p className="text-slate-400 text-sm leading-relaxed mb-6">
                 Reinigung und Hauswartung für Unternehmen und anspruchsvolle Privatkunden. Sitz in {company.address.city}.
               </p>

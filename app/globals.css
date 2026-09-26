@@ -10,7 +10,9 @@
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 0 84% 60%;
+    /* Rot mit 4,8:1 zu Weiss für Text und weisse Schrift auf Buttons (E24, M27).
+       Zwischenwert bis zur Hausfarbe aus dem Logo (E49). */
+    --primary: 0 72% 51%;
     --primary-foreground: 0 0% 100%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -22,7 +24,7 @@
     --destructive-foreground: 0 0% 100%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 0 84% 60%;
+    --ring: 0 72% 51%;
     --radius: 0.5rem;
   }
 
