@@ -96,7 +96,7 @@ export default function SwissNavigation() {
               </Link>
             ))}
             <Button asChild>
-              <Link href={menu.cta.path}>{menu.cta.label}</Link>
+              <a href={menu.cta.href}>{menu.cta.label}</a>
             </Button>
           </div>
 
@@ -138,7 +138,7 @@ export default function SwissNavigation() {
               </Link>
             ))}
             <Button asChild className="w-full">
-              <Link href={menu.cta.path} onClick={() => setIsOpen(false)}>{menu.cta.label}</Link>
+              <a href={menu.cta.href} onClick={() => setIsOpen(false)}>{menu.cta.label}</a>
             </Button>
           </div>
         </div>

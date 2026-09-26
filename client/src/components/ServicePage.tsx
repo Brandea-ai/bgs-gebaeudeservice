@@ -4,6 +4,7 @@ import SwissNavigation from './SwissNavigation'
 import SwissFooter from './SwissFooter'
 import AppointmentButton from './AppointmentButton'
 import Breadcrumbs from './Breadcrumbs'
+import ImageSlot from './ImageSlot'
 import Faq from './Faq'
 import JsonLd from './JsonLd'
 import OfferCta from './OfferCta'
@@ -83,6 +84,9 @@ export default function ServicePage({ content }: { content: ServicePageContent }
                 </div>
               </div>
 
+              <div className="space-y-6">
+              {/* Bildfläche oben rechts, bis zur Freigabe ein Platzhalter (E59, E66) */}
+              <ImageSlot src={content.image?.src} alt={content.image?.alt} className="hidden lg:flex w-full h-48" />
               <aside
                 aria-labelledby="auf-einen-blick"
                 className={`rounded-xl p-6 ${premium ? 'border border-white/15 bg-white/5' : 'border border-slate-200 bg-white shadow-sm'}`}
@@ -99,6 +103,7 @@ export default function ServicePage({ content }: { content: ServicePageContent }
                   ))}
                 </dl>
               </aside>
+              </div>
             </div>
           </div>
         </section>

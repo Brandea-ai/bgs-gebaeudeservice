@@ -44,6 +44,8 @@ export type ServicePageContent = {
   /** Verwandte Leistungen mit einem Satz, wann sie passen */
   related: { path: PagePath; text: string }[]
   cta: { title: string; text: string }
+  /** Freigegebenes Bild oben rechts (E19, E66). Ohne Angabe ein Platzhalter. */
+  image?: { src: string; alt: string }
 }
 
 /** Abschnitt eines Ratgeberartikels. Reihenfolge der Darstellung wie hier. */

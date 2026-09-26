@@ -49,7 +49,8 @@ export const menu = {
     { path: '/ueber-uns', label: 'Über uns' },
     { path: '/blog', label: 'Ratgeber' },
   ] satisfies NavLink[],
-  cta: { path: '/kontakt', label: 'Kontakt aufnehmen' } satisfies NavLink,
+  // Hauptaktion im Kopf führt zum Formular im Footer (M31, E68)
+  cta: { href: '#kontakt-formular', label: 'Offerte anfragen' },
   open: 'Menü öffnen',
   close: 'Menü schliessen',
   label: 'Hauptmenü',

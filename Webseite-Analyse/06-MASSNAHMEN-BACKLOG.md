@@ -121,6 +121,7 @@ Umgesetzt heisst: auf dem Arbeits-Branch committet (bis 25.09.2026 `claude/optim
 | M26 | ergänzt (N082): Vorlage `ServicePage` mit `min-w-0` und Silbentrennung in der H1. «Geschäftsliegenschaften» sprengte auf 390 px die Spalte (Hauswartung, 12 px Überlauf). Jetzt kein Überlauf auf allen 23 Seiten | — |
 | M54, M27 | ergänzt (N083): Menü, Footer, Kontaktformular und 404 aus `content/de/navigation.ts`, Menü und Footer mit denselben Leistungsgruppen, Kernleistungen zuerst. Footer-Links als Liste mit Innenabstand: axe-core meldet keine `target-size`-Verstösse mehr (vorher 368). Verschachteltes `footer` im `footer` aufgelöst, Formular als `section` | Weitere Punkte aus Welle 2 (M25) |
 | M17 | ergänzt (N083): 404 mit Menü, Footer, `main`, Titel mit Marke und drei Wegweisern, weiter `noindex` | — |
+| M52, M31 | ergänzt (N084, E66, E68): Leistungs- und Premiumseiten mit Bildfläche oben rechts über «Auf einen Blick», als Platzhalter bis zur Freigabe, auf dem Handy ausgeblendet. Optionales Feld `image` in `ServicePageContent`. Knopf im Kopf «Offerte anfragen» mit Ziel Formular | Echte Bilder (E19) |
 
 **Umgebungsvariablen für Vercel (neu):** `SITE_INDEXABLE` (nur Produktion, erst zum Launch `true`), `NEXT_PUBLIC_CHAT_ENABLED` (erst nach der Reparatur `true`), optional `CONTACT_TO_EMAIL` und `CONTACT_FROM_EMAIL`. Ohne Angabe gelten `admin@brandea.de` und ein Absender unter `brandea.de`.
 

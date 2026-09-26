@@ -5,8 +5,9 @@ import { imagesArePlaceholders } from '../../../shared/features'
  * neutraler Platzhalter in derselben Grösse, damit das Layout stehen bleibt.
  * alt beschreibt das echte Bild und gilt erst, wenn es erscheint.
  */
-export default function ImageSlot({ src, alt, className = '' }: { src: string; alt: string; className?: string }) {
-  if (imagesArePlaceholders) {
+export default function ImageSlot({ src, alt = '', className = '' }: { src?: string; alt?: string; className?: string }) {
+  // Ohne freigegebenes Bild (src) bleibt die Fläche ein Platzhalter
+  if (imagesArePlaceholders || !src) {
     return (
       <div
         role="img"
