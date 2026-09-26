@@ -75,6 +75,7 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 | 25.09.2026 | Pause | Auf Wunsch von Brandea pausiert, Fortsetzung später auch lokal. `CLAUDE.md` mit Einstieg und Regeln angelegt, `.env.example` auf die heutigen Variablen gebracht, Prüfskripte in `werkzeuge/` (Seiten, Browser), `CLAUDE-QUICKSTART.md` als veraltet markiert. Alles gepusht, keine laufenden Prozesse |
 | 26.09.2026 | Fortsetzung, Welle 1, Teil 2 | Branch per Fast-Forward auf `claude/funny-einstein-5acss7` übernommen, Baseline grün. Wirkungslose `SEO`-Aufrufe entfernt (M16), strukturierte Daten aus den zentralen Angaben und Brotkrumen (M20, GLOBAL-010). Neun Leistungs- und drei Premiumseiten mit neuen Texten aus `content/de/` und gemeinsamer Vorlage (M29). Ratgeber: zwei Artikel neu, zwei per 308, keine Scheinaktualität (M53, M19, M38). Primärrot mit 4,8:1 (E24), axe-Kontrast von 166 auf 2 Treffer (N075). Marken-Schalter `NEW_BRAND`: Der aktuelle Stand kann ohne neuen Namen in die Produktion (E38, E39). Produktion unverändert alt und indexierbar (N076). Draft-PR #7 als Entwurf zur Durchsicht, nicht mergen. Widerspruch zu P31 dokumentiert (03, 2b) |
 | 26.09.2026 | Runde 5 | Fragebogen als Artifact, 13 von 13 beantwortet (16). Produktion durch den Agenten freigegeben (E54), Umwelt-Artikel bleibt zurückgestellt (E55), Texte bestätigt (E56) |
+| 26.09.2026 | Produktion | `main` per Fast-Forward auf `613f3cf` (E54). Live-Seite geprüft: noindex, Arbeitsmarke, kein neuer Name, keine alten Aussagen (N078) |
 
 ## Abweichungen und Vorfälle
 
@@ -91,7 +92,7 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 
 ## Offene Punkte
 
-- **Produktion (26.09.2026):** Die alte Seite ist weiter öffentlich und indexierbar, mit «Swiss Reinigungsfirma» und «500+» (N076). Der aktuelle Stand kann dank `NEW_BRAND` ohne neuen Namen live (Nächste Aufgabe, Punkt 1).
+- **Produktion:** seit 26.09.2026 der neue Stand mit Arbeitsmarke und `noindex` (N078). Offen: `NEW_BRAND=true` nach der Markenrecherche, `SITE_INDEXABLE=true` zum Launch.
 - **Widerspruch P31:** entschieden in Runde 5, bleibt zurückgestellt (E55).
 - **Texte gegenlesen:** In Runde 5 bestätigt, Lektorat durch Brandea (E56, 16).
 - **Runde 2 ist ausgewertet (12).** Offen daraus: Name und Marke (W03, Vorschläge in 13) und die Freigabe für Produktion (E27).
@@ -146,7 +147,7 @@ Die neuen Texte in `content/de/` beruhen auf Eigenangaben und Entscheidungen (E1
 
 **Stand 26.09.2026:** Welle 1, Teil 2 und der Marken-Schalter sind auf `claude/funny-einstein-5acss7` umgesetzt und getestet (N074 bis N077). Durchsicht über den Draft-PR Brandea-ai/bgs-gebaeudeservice#7 (Entwurf, **nicht mergen**). In Produktion ist nichts davon, dort steht weiter der alte Stand (N076).
 
-1. **Produktion (Brandea, dringend):** Die alte Seite mit «Swiss Reinigungsfirma», «500+» und `index, follow` ist öffentlich. Dank `NEW_BRAND` kann der aktuelle Stand ohne neuen Namen live:
+1. **Produktion: erledigt am 26.09.2026 (N078).** Ursprünglicher Plan zur Dokumentation: Die alte Seite mit «Swiss Reinigungsfirma», «500+» und `index, follow` ist öffentlich. Dank `NEW_BRAND` kann der aktuelle Stand ohne neuen Namen live:
    - In Vercel für Production **kein** `NEW_BRAND` setzen (oder `false`), `SITE_INDEXABLE` erst zum Launch.
    - Dann den Arbeits-Branch nach `main` bringen. Das macht Brandea selbst, oder Brandea erlaubt es dem Agenten ausdrücklich in der Sitzung (E27, E39, 14 Abschnitt 3).
    - Danach die Live-Seite kontrollieren: Arbeitsmarke, `noindex`, keine Kundenstimmen.

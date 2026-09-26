@@ -11,7 +11,7 @@ Website der BGS - Gebäudeservice GmbH in Emmenbrücke LU. Die neue Dachmarke he
 ## Stand
 
 - **Arbeits-Branch** `claude/funny-einstein-5acss7` (seit 26.09.2026): Fortsetzung von `claude/optimistic-sagan-h5y2i9`, per Fast-Forward übernommen. Hier ist alles umgesetzt und getestet. Der alte Branch bleibt unverändert als Stand vom 25.09.2026.
-- **`main` und Produktion** stehen noch auf `d7e1122`. Das ist der alte Stand mit unbelegten Aussagen und erfundenen Kundenstimmen, öffentlich und indexierbar (N076).
+- **`main` und Produktion** stehen seit 26.09.2026 auf `613f3cf`: neuer Stand, Arbeitsmarke, `noindex` (N078). Weitere Pushes nach `main` nur mit neuer ausdrücklicher Zustimmung.
 - **Welcher Stand in die Produktion darf:** der aktuelle Arbeits-Branch, gesteuert über den Schalter `NEW_BRAND` (seit `9e62a2f`):
   - Ohne `NEW_BRAND` zeigt ein Produktions-Build die Arbeitsmarke «BGS Gebäudeservice», Previews und lokale Builds Mantena und Clavea.
   - Erst nach der Markenrecherche (E38) in Vercel für Production `NEW_BRAND=true` setzen.
