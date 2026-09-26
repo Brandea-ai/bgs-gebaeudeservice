@@ -1,12 +1,14 @@
 import Link from 'next/link'
-import { ArrowRight, Check, ChevronDown, Phone } from 'lucide-react'
+import { ArrowRight, Check, Phone } from 'lucide-react'
 import SwissNavigation from './SwissNavigation'
 import SwissFooter from './SwissFooter'
 import AppointmentButton from './AppointmentButton'
 import Breadcrumbs from './Breadcrumbs'
+import Faq from './Faq'
 import JsonLd from './JsonLd'
 import OfferCta from './OfferCta'
 import RichText from './RichText'
+import Steps from './Steps'
 import { Button } from './ui/button'
 import { company } from '../../../shared/company'
 import { chatEnabled } from '../../../shared/features'
@@ -176,22 +178,7 @@ export default function ServicePage({ content }: { content: ServicePageContent }
             <h2 id="ablauf" className="text-2xl md:text-3xl font-bold text-slate-900 mb-8">
               {ui.steps}
             </h2>
-            <ol className={`grid gap-6 md:grid-cols-2 ${content.steps.length === 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-4'}`}>
-              {content.steps.map((step, index) => (
-                <li key={step.title} className="rounded-xl border border-slate-200 p-6">
-                  <span
-                    className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-900 text-sm font-semibold text-white"
-                    aria-hidden="true"
-                  >
-                    {index + 1}
-                  </span>
-                  <h3 className="mt-4 font-semibold text-slate-900">{step.title}</h3>
-                  <p className="mt-2 text-slate-600 leading-relaxed">
-                    <RichText text={step.text} />
-                  </p>
-                </li>
-              ))}
-            </ol>
+            <Steps steps={content.steps} />
           </div>
         </section>
 
@@ -200,19 +187,7 @@ export default function ServicePage({ content }: { content: ServicePageContent }
             <h2 id="fragen" className="text-2xl md:text-3xl font-bold text-slate-900 mb-8">
               {ui.faq}
             </h2>
-            <div className="max-w-4xl divide-y divide-slate-200 rounded-xl border border-slate-200 bg-white">
-              {content.faq.map((item) => (
-                <details key={item.question} className="group px-6 py-5">
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
-                    <h3 className="text-base md:text-lg font-semibold text-slate-900">{item.question}</h3>
-                    <ChevronDown className="w-5 h-5 shrink-0 text-slate-500 transition-transform group-open:rotate-180" aria-hidden="true" />
-                  </summary>
-                  <p className="mt-3 text-slate-700 leading-relaxed">
-                    <RichText text={item.answer} />
-                  </p>
-                </details>
-              ))}
-            </div>
+            <Faq items={content.faq} />
           </div>
         </section>
 

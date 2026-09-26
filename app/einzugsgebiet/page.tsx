@@ -4,25 +4,15 @@ import { MapPin, Phone, Mail, CheckCircle } from "lucide-react";
 import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
 import { Card } from "@/components/ui/card";
+import RichText from "@/components/RichText";
 import { company } from "../../shared/company";
 import { metaFor } from "../../shared/seo";
+import { area } from "../../content/de/seiten";
 
 export const metadata: Metadata = metaFor("/einzugsgebiet");
 
-// Bestätigt in den Rückfragen (R4b, W04, R4d): ein Sitz, fünf Kantone,
-// alle Leistungen im ganzen Gebiet. Keine Ortsseiten ohne eigenen Inhalt (K09).
-const cantons = ["Luzern", "Zug", "Aargau", "Nidwalden", "Obwalden"];
-
-// Seeufer und Ferienorte (Runde 3, ORTE). Orte aus 13, Abschnitt 3, alle im Gebiet.
-// Nur als Text auf dieser Seite und auf /premium, keine eigenen Ortsseiten (M48).
-const places = [
-  { title: "Am Vierwaldstättersee", items: ["Luzern", "Horw", "Meggen", "Weggis", "Vitznau", "Hergiswil", "Stansstad", "Ennetbürgen"] },
-  { title: "Am Zuger- und Ägerisee", items: ["Zug", "Cham", "Risch", "Hünenberg", "Walchwil", "Baar", "Oberägeri"] },
-  { title: "Am Sempacher- und Hallwilersee", items: ["Eich", "Meisterschwanden"] },
-  { title: "Region Baden und Mutschellen", items: ["Ennetbaden", "Bergdietikon", "Oberwil-Lieli"] },
-  { title: "In den Bergen", items: ["Engelberg"] },
-];
-
+// Ein Sitz, fünf Kantone, alle Leistungen im ganzen Gebiet (R4b, W04, R4d).
+// Texte aus content/de/seiten.ts, Kantone aus shared/company.ts (M54).
 export default function Einzugsgebiet() {
   return (
     <div className="min-h-screen bg-white">
@@ -31,11 +21,10 @@ export default function Einzugsgebiet() {
       <section className="pt-32 pb-16 bg-gradient-to-br from-slate-50 to-red-50/40">
         <div className="container max-w-4xl">
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-            Einzugsgebiet: Luzern, Zug, Aargau, Nidwalden und Obwalden
+            {area.h1}
           </h1>
           <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
-            Wir arbeiten von unserem Sitz in {company.address.city} aus in fünf Kantonen. Alle Leistungen
-            bieten wir im ganzen Gebiet an, für Unternehmen ebenso wie für anspruchsvolle Privatkunden.
+            {area.lead}
           </p>
         </div>
       </section>
@@ -43,9 +32,9 @@ export default function Einzugsgebiet() {
       <section className="py-16">
         <div className="container max-w-4xl grid gap-8 md:grid-cols-2">
           <Card className="p-6">
-            <h2 className="text-lg font-semibold text-slate-900 mb-4">Kantone</h2>
+            <h2 className="text-lg font-semibold text-slate-900 mb-4">{area.cantonsTitle}</h2>
             <ul className="space-y-3">
-              {cantons.map((canton) => (
+              {company.cantons.map((canton) => (
                 <li key={canton} className="flex items-center gap-3 text-slate-700">
                   <CheckCircle className="w-5 h-5 text-primary shrink-0" aria-hidden="true" />
                   Kanton {canton}
@@ -55,7 +44,7 @@ export default function Einzugsgebiet() {
           </Card>
 
           <Card className="p-6">
-            <h2 className="text-lg font-semibold text-slate-900 mb-4">Sitz und Kontakt</h2>
+            <h2 className="text-lg font-semibold text-slate-900 mb-4">{area.seatTitle}</h2>
             <ul className="space-y-3 text-slate-700">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" aria-hidden="true" />
@@ -80,14 +69,12 @@ export default function Einzugsgebiet() {
 
       <section className="pb-16">
         <div className="container max-w-4xl">
-          <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">Seeufer und Ferienorte</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">{area.places.title}</h2>
           <p className="text-slate-700 mb-8 max-w-3xl">
-            Auch an den Seeufern und in den Ferienorten der Region sind wir für Sie da, etwa für Villen,
-            Zweitwohnungen und Hotels. Für besondere Ansprüche gibt es unseren{" "}
-            <Link href="/premium" className="text-primary underline underline-offset-4 hover:no-underline">Premium-Bereich</Link>.
+            <RichText text={area.places.text} />
           </p>
           <dl className="grid gap-x-10 gap-y-6 sm:grid-cols-2">
-            {places.map((group) => (
+            {area.places.groups.map((group) => (
               <div key={group.title} className="border-t border-slate-200 pt-4">
                 <dt className="font-semibold text-slate-900">{group.title}</dt>
                 <dd className="text-slate-600 mt-1">{group.items.join(", ")}</dd>
@@ -100,10 +87,9 @@ export default function Einzugsgebiet() {
       <section className="pb-20">
         <div className="container max-w-4xl">
           <div className="rounded-xl bg-slate-900 text-white p-8">
-            <h2 className="text-xl font-semibold mb-3">Liegt Ihr Objekt im Gebiet?</h2>
+            <h2 className="text-xl font-semibold mb-3">{area.cta.title}</h2>
             <p className="text-slate-300 mb-6">
-              Beschreiben Sie uns Objekt und Ort. Wir kommen für eine kostenlose und unverbindliche Offerte
-              vorbei und melden uns {company.responseTime}.
+              {area.cta.text}
             </p>
             <Link
               href="#kontakt-formular"

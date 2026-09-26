@@ -110,6 +110,11 @@ Umgesetzt heisst: auf dem Arbeits-Branch committet (bis 25.09.2026 `claude/optim
 | M34 | ergänzt (`a03bc73`): vier ungenutzte Blogbilder aus `public/` entfernt | übrige ungenutzte Dateien |
 | M56 | ergänzt (`9e62a2f`): Schalter `NEW_BRAND`. Ohne Angabe zeigt ein Produktions-Build die Arbeitsmarke «BGS Gebäudeservice», Previews und lokal Mantena und Clavea. Damit kann der aktuelle Stand vor der Markenrecherche in die Produktion (E38, E39), `ff99f92` ist nicht mehr nötig. Das Prüfskript sucht im Arbeitsmarken-Modus nach dem neuen Namen | Nach der Markenrecherche in Vercel (Production) `NEW_BRAND=true` setzen und neu deployen |
 | M35 | ergänzt (`9e62a2f`): Manifest aus `app/manifest.ts` mit dem geltenden Namen und Rot statt Blau. Das Icon `swiss-logo.webp` («SWISS REINIGUNG» mit Kreuz im Schild) entfernt, bis zum Logo keine Icons | Logo-Dateien von Brandea (15, Abschnitt 5), Favicon und Touch-Icon (heute 404) |
+| M21, M22, M23 | ergänzt: Startseite, Über uns und Kontakt als Server-Komponenten, Antworten der FAQ im HTML (`Faq`), Ablauf als gemeinsame Komponente (`Steps`). Hero ohne Einblendung, Hintergrund, Karte und Chat als Client-Inseln. Kontrastverstösse (axe-core) von 2 auf 0 | Rechtstexte |
+| M39 | umgesetzt nach P01: Kernleistungen zuerst (Reinigung, Hauswartung), Premium als dritte Karte. Belegte Kennzahlen, neuer Abschnitt «So kommen Sie zu Ihrer Offerte», Einzugsgebiet, eine Hauptaktion | Bilder nach Freigabe (E19) |
+| M47 | ergänzt: «Unsere Werte» mit Floskeln und «ß» ersetzt durch «Worauf Sie sich verlassen können» mit belegten Zusagen (E18). Platzhalterbild im Hero entfernt | Personen nur mit Einwilligung |
+| M49 | ergänzt: Kontaktwege mit Festnetz und Mobil, Ablauf bis zum ersten Einsatz, FAQ mit Versicherungssumme statt «umfassend», toter Formularcode entfernt. Formular bleibt im Footer, Karte nach Klick (E20) | Empfängeradresse des Kunden (W05) |
+| M54 | ergänzt: Texte von Startseite, Über uns, Kontakt, Einzugsgebiet und beiden Übersichten in `content/de/seiten.ts`, Kantonslisten überall aus `cantonList` | Rechtstexte, Footer |
 
 **Umgebungsvariablen für Vercel (neu):** `SITE_INDEXABLE` (nur Produktion, erst zum Launch `true`), `NEXT_PUBLIC_CHAT_ENABLED` (erst nach der Reparatur `true`), optional `CONTACT_TO_EMAIL` und `CONTACT_FROM_EMAIL`. Ohne Angabe gelten `admin@brandea.de` und ein Absender unter `brandea.de`.
 

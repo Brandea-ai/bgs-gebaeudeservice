@@ -76,6 +76,7 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 | 26.09.2026 | Fortsetzung, Welle 1, Teil 2 | Branch per Fast-Forward auf `claude/funny-einstein-5acss7` übernommen, Baseline grün. Wirkungslose `SEO`-Aufrufe entfernt (M16), strukturierte Daten aus den zentralen Angaben und Brotkrumen (M20, GLOBAL-010). Neun Leistungs- und drei Premiumseiten mit neuen Texten aus `content/de/` und gemeinsamer Vorlage (M29). Ratgeber: zwei Artikel neu, zwei per 308, keine Scheinaktualität (M53, M19, M38). Primärrot mit 4,8:1 (E24), axe-Kontrast von 166 auf 2 Treffer (N075). Marken-Schalter `NEW_BRAND`: Der aktuelle Stand kann ohne neuen Namen in die Produktion (E38, E39). Produktion unverändert alt und indexierbar (N076). Draft-PR #7 als Entwurf zur Durchsicht, nicht mergen. Widerspruch zu P31 dokumentiert (03, 2b) |
 | 26.09.2026 | Runde 5 | Fragebogen als Artifact, 13 von 13 beantwortet (16). Produktion durch den Agenten freigegeben (E54), Umwelt-Artikel bleibt zurückgestellt (E55), Texte bestätigt (E56) |
 | 26.09.2026 | Produktion | `main` per Fast-Forward auf `613f3cf` (E54). Live-Seite geprüft: noindex, Arbeitsmarke, kein neuer Name, keine alten Aussagen (N078) |
+| 26.09.2026 | Restseiten in der Inhaltsschicht | Startseite, Über uns, Kontakt, Einzugsgebiet und Übersichten in `content/de/seiten.ts`, die drei ersten als Server-Komponenten. Kernleistungen zuerst auf der Startseite (M39), «Unsere Werte» ersetzt (M47), Kontakt mit Ablauf (M49), Kantonslisten zentral (M54). Getestet (N079) |
 
 ## Abweichungen und Vorfälle
 
@@ -142,6 +143,7 @@ Die neuen Texte in `content/de/` beruhen auf Eigenangaben und Entscheidungen (E1
 - **Facility Services:** «ein Vertrag, eine Ansprechperson», technisches Facility Management und Vermittlung von Drittfirmen nicht enthalten.
 - **Premium:** Privatjet nur Kabine (Sitze, Teppiche, Holz, Glas, Bordküche, Waschraum) mit Besichtigung. Yacht innen und aussen, ohne Unterwasserschiff und Technik. Luxusimmobilien ohne Restaurierung von Kunst.
 - **Ratgeber:** Kostenfaktoren (Fläche, Rhythmus, Nutzung, Einsatzzeiten, Zusatzleistungen) nach P29 bestätigen. Absatz zu Zertifikaten fachlich prüfen (P30). Veröffentlichungsdatum zum Launch eintragen.
+- **Startseite, Über uns, Kontakt:** Dritter Schritt «Start: Mit Ihrer Zusage legen wir den ersten Einsatz fest und stimmen Zeiten und Zugang mit Ihnen ab.» Über uns: «Einen Preis nennen wir erst, wenn wir Ihr Objekt gesehen haben.» Kontakt: Frage «Übernehmen Sie auch kurzfristige Einsätze?» statt «Notfallreinigungen».
 
 ## Nächste Aufgabe
 
@@ -153,7 +155,7 @@ Die neuen Texte in `content/de/` beruhen auf Eigenangaben und Entscheidungen (E1
    - Danach die Live-Seite kontrollieren: Arbeitsmarke, `noindex`, keine Kundenstimmen.
    - Nach der Markenrecherche `NEW_BRAND=true` in Production setzen und neu deployen.
 2. **Brandea und Kunde:** Texte gegenlesen (Liste oben), Entscheid P31, Domains `mantena.ch` und `clavea.ch` (E48), Markenrecherche mit der Frage CLAVIS (E38, E47), Logo-Dateien (15, Abschnitt 5).
-3. **Agent, nächster Block: restliche Seiten in die Inhaltsschicht**, damit alle deutschen Texte in `content/de/` liegen:
+3. **Erledigt am 26.09.2026 (N079), ausser Rechtstexten und Footer.** Ursprünglicher Plan: **restliche Seiten in die Inhaltsschicht**, damit alle deutschen Texte in `content/de/` liegen:
    - Startseite (M39), Über uns (M47, der Abschnitt «Unsere Werte» enthält Floskeln und «ß»), Kontakt (M49), Einzugsgebiet, Übersichten `/leistungen` und `/premium`
    - Kantonslisten auf `cantonList` umstellen (M54)
 4. **Mehrsprachigkeit (M60)** mit übersetzten Adressen (E51). Entwürfe vom Agenten, Prüfung durch Brandea (E50).

@@ -1,134 +1,89 @@
-'use client'
-import { motion } from "framer-motion";
-import { ParallaxImage, ParallaxBackground, RevealOnScroll, TiltCard, MagneticHover, ZoomOnScroll } from "@/components/PremiumParallax";
-import { fadeInUp, staggerContainer, scaleIn } from "@/utils/animations";
-
+import { ArrowRight, Check } from "lucide-react";
 import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
+import OfferCta from "@/components/OfferCta";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import Link from "next/link";
-import { ArrowRight, Users, Award, Heart, CheckCircle2 } from "lucide-react";
 import { company } from "../../shared/company";
+import { metaFor } from "../../shared/seo";
+import { ui } from "../../content/de/common";
+import { about, proof } from "../../content/de/seiten";
 
+export const metadata = metaFor("/ueber-uns");
+
+// Über uns als Server-Komponente (M21, M47), Texte aus content/de/seiten.ts.
+// Personen erst mit Einwilligung, Bilder erst nach Freigabe (E19).
 export default function UeberUns() {
   return (
     <div className="min-h-screen bg-white">
       <SwissNavigation />
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 relative bg-gradient-to-br from-slate-50 to-blue-50">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-red-50/30 -z-10" />
-        <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
-                Reinigung und Hauswartung aus {company.address.city}
-              </h1>
-              <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
-                Seit 2006 sind wir in der Reinigung und Hauswartung tätig. Heute betreuen über 50 Mitarbeitende mehr als 120 Kunden in den Kantonen Luzern, Zug, Aargau, Nidwalden und Obwalden, auf Deutsch, Englisch, Französisch und Italienisch.
-              </p>
-              <MagneticHover>
-                <Button asChild size="lg" className="text-lg"><Link href="/kontakt">
-                  Kostenlose Offerte anfragen <ArrowRight className="ml-2 w-5 h-5" />
-                </Link></Button>
-              </MagneticHover>
-            </div>
-            <div className="relative">
-              <ParallaxImage 
-                src="/ueber-uns-hero.jpg" 
-                alt="Symbolbild Reinigung"
-                className="rounded-2xl shadow-2xl w-full h-[500px] object-cover h-[400px] lg:h-[500px]"
-                speed={0.2}
-                scale={true}
-                overlay={true}
-                overlayOpacity={0.1}
-              />
-            </div>
+      <main>
+        <section className="pt-28 md:pt-32 pb-16 bg-gradient-to-br from-slate-50 to-red-50/40">
+          <div className="container max-w-5xl">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight mb-6">{about.h1}</h1>
+            <p className="text-base sm:text-lg md:text-xl text-slate-700 leading-relaxed max-w-3xl mb-8">{about.lead}</p>
+            <Button asChild size="lg" className="text-sm sm:text-base px-6">
+              <a href="#kontakt-formular">
+                {ui.offerCta}
+                <ArrowRight className="ml-2 w-5 h-5" aria-hidden="true" />
+              </a>
+            </Button>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Unsere Werte Section */}
-      <section className="py-20 bg-white">
-        <div className="container">
-          <RevealOnScroll><div className="text-center mb-16">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-              Unsere Werte: Das Fundament unseres Erfolgs
-            </h2>
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
-              Qualität, Zuverlässigkeit und Kundennähe sind für uns nicht nur Worte, sondern die Grundpfeiler unserer täglichen Arbeit. Sie sind das Versprechen, das wir jedem einzelnen Kunden geben.
-            </p>
-          </div></RevealOnScroll>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="p-8 hover-lift text-center hover:shadow-xl transition-shadow hover-tilt hover-tilt">
-              <Award className="w-16 h-16 text-primary mx-auto mb-6" />
-              <h3 className="font-bold text-xl mb-4">Qualität</h3>
-              <p className="text-slate-600 text-xs sm:text-sm md:text-base">
-                Wir arbeiten sorgfältig und mit geeigneten Materialien und Geräten, abgestimmt auf Ihr Objekt.
-              </p>
-            </Card>
-            
-            <Card className="p-8 hover-lift text-center hover:shadow-xl transition-shadow hover-tilt hover-tilt">
-              <Users className="w-16 h-16 text-primary mx-auto mb-6" />
-              <h3 className="font-bold text-xl mb-4">Zuverlässigkeit</h3>
-              <p className="text-slate-600 text-xs sm:text-sm md:text-base">
-                Pünktlichkeit, Diskretion und ein fester Ansprechpartner sind für uns selbstverständlich. Sie können sich darauf verlassen, dass wir unsere Zusagen einhalten – immer.
-              </p>
-            </Card>
-            
-            <Card className="p-8 hover-lift text-center hover:shadow-xl transition-shadow hover-tilt hover-tilt">
-              <Heart className="w-16 h-16 text-primary mx-auto mb-6" />
-              <h3 className="font-bold text-xl mb-4">Kundennähe</h3>
-              <p className="text-slate-600 text-xs sm:text-sm md:text-base">
-                Wir hören Ihnen zu und entwickeln individuelle Lösungen, die perfekt auf Ihre Bedürfnisse zugeschnitten sind. Ihre Zufriedenheit ist unser größter Ansporn.
-              </p>
-            </Card>
+        <section aria-label="In Zahlen" className="py-12 border-b border-slate-200">
+          <div className="container max-w-5xl">
+            <dl className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+              {proof.map((item) => (
+                <div key={item.label}>
+                  <dt className="text-sm text-slate-600">{item.label}</dt>
+                  <dd className="text-xl md:text-2xl font-bold text-slate-900 mt-1">{item.value}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Ansprechperson und Registerdaten (R5d, N033, M47) */}
-      <section className="py-20 bg-white">
-        <div className="container max-w-4xl">
-          <div className="grid md:grid-cols-2 gap-8">
+        <section aria-labelledby="zusagen" className="py-16">
+          <div className="container max-w-5xl">
+            <h2 id="zusagen" className="text-2xl md:text-3xl font-bold text-slate-900 mb-8">{about.promises.title}</h2>
+            <ul className="grid gap-6 sm:grid-cols-2">
+              {about.promises.items.map((item) => (
+                <li key={item.title} className="flex items-start gap-4">
+                  <Check className="w-6 h-6 text-red-700 shrink-0 mt-0.5" aria-hidden="true" />
+                  <div>
+                    <h3 className="font-semibold text-slate-900">{item.title}</h3>
+                    <p className="text-slate-600">{item.text}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* Ansprechperson und Registerdaten (R5d, N033, M47) */}
+        <section className="pb-20">
+          <div className="container max-w-5xl grid md:grid-cols-2 gap-8">
             <Card className="p-8">
-              <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4">Ihre Ansprechperson</h2>
-              <p className="text-slate-700 leading-relaxed">
-                Ihre Anfrage bearbeitet der Geschäftsführer persönlich. Wir melden uns {company.responseTime}.
-              </p>
+              <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4">{about.contact.title}</h2>
+              <p className="text-slate-700 leading-relaxed">{about.contact.text}</p>
             </Card>
             <Card className="p-8">
-              <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4">Registerdaten</h2>
+              <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4">{about.register.title}</h2>
               <p className="text-slate-700 leading-relaxed">
                 {company.legalName}
                 <br />
-                Handelsregister des Kantons Luzern
+                {about.register.court}
                 <br />
                 UID {company.uid}
               </p>
             </Card>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Call to Action Section */}
-      <section className="py-20 bg-primary text-white">
-        <div className="container text-center">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6">
-            Bereit für eine saubere Zukunft?
-          </h2>
-          <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto mb-8">
-            Lassen Sie uns gemeinsam für eine saubere und professionelle Umgebung sorgen. Kontaktieren Sie uns noch heute für ein unverbindliches Erstgespräch und ein individuelles Angebot.
-          </p>
-          <MagneticHover>
-            <Button asChild size="lg" variant="secondary" className="text-lg"><Link href="/kontakt">
-              Kostenlose Offerte anfragen <ArrowRight className="ml-2 w-5 h-5" />
-            </Link></Button>
-          </MagneticHover>
-        </div>
-      </section>
+        <OfferCta title={about.cta.title} text={about.cta.text} />
+      </main>
 
       <SwissFooter />
     </div>
