@@ -13,7 +13,7 @@ export const pages = {
   '/': {
     label: 'Accueil',
     title: `${company.brand} – Nettoyage et conciergerie à Lucerne et Zoug`,
-    description: `Nettoyage de bâtiments, conciergerie et facility services pour entreprises et immeubles à ${region}, ainsi que nettoyage premium.`,
+    description: `Nettoyage de bâtiments, conciergerie et facility services pour entreprises et immeubles à ${region}, et nettoyage premium.`,
   },
   '/premium': {
     label: premiumLabel,
@@ -45,7 +45,7 @@ export const pages = {
   '/leistungen/unterhaltsreinigung': {
     label: 'Nettoyage d’entretien',
     title: 'Nettoyage d’entretien à Lucerne et Zoug',
-    description: `Nettoyage régulier d’immeubles, de cages d’escalier et de surfaces commerciales, réapprovisionnement compris. Cantons de ${region}.`,
+    description: `Nettoyage régulier d’immeubles, de cages d’escalier et de surfaces commerciales, avec réapprovisionnement. Cantons de ${region}.`,
   },
   '/leistungen/bueroreinigung': {
     label: 'Bureaux et cabinets',
@@ -65,12 +65,12 @@ export const pages = {
   '/leistungen/fenster-und-fassadenreinigung': {
     label: 'Vitres et façades',
     title: 'Nettoyage de vitres et de façades',
-    description: `Nettoyage de fenêtres, de surfaces vitrées et de façades, aussi à haute pression, pour entreprises et immeubles. Cantons de ${region}.`,
+    description: `Nettoyage de fenêtres, vitrages et façades, aussi à haute pression, pour entreprises et immeubles. Cantons de ${region}.`,
   },
   '/leistungen/industrie-und-hallenreinigung': {
     label: 'Industrie et halles',
     title: 'Nettoyage industriel et de halles',
-    description: `Nettoyage de halles de production et d’entrepôts, de machines et d’installations, adapté à votre exploitation. Cantons de ${region}.`,
+    description: `Nettoyage des halles de production, entrepôts, machines et installations, adapté à votre exploitation. Cantons de ${region}.`,
   },
   '/leistungen/hauswartung': {
     label: 'Conciergerie',
@@ -120,7 +120,7 @@ export const pages = {
   '/impressum': {
     label: 'Mentions légales',
     title: 'Mentions légales',
-    description: `Mentions légales de ${company.legalName}, ${company.address.street}, ${company.address.postalCode} ${company.address.city} : registre du commerce, IDE et contact.`,
+    description: `Mentions légales de ${company.legalName}, ${company.address.street}, ${company.address.postalCode} ${company.address.city} : registre du commerce, numéro IDE et coordonnées.`,
   },
   '/datenschutz': {
     label: 'Protection des données',
