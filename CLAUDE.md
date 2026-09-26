@@ -26,6 +26,7 @@ Website der BGS - Gebäudeservice GmbH in Emmenbrücke LU. Die neue Dachmarke he
 - **Daten:** Keine Schlüssel in Dateien, keine Personennamen in der Analyse.
 - **Formular:** Keine echten Anfragen an den Kunden ohne Freigabe. Tests laufen gegen einen Nachbau der Resend-API (`RESEND_BASE_URL`).
 - **FIMI:** Das Projekt nie ändern.
+- **Rückfragen:** Immer als Artifact-Fragebogen (Wunsch von Brandea, 26.09.2026): Abschnitt für Abschnitt, kurze Fragen mit Ja/Nein oder Auswahl, Empfehlung vorgewählt markiert, Visualisierung des Stands, globale Notiz und JSON-Kopie am Ende. Nie als offene Fragen im Chat.
 - **Alte Anleitung:** `CLAUDE-QUICKSTART.md` ist veraltet und gilt nicht.
 
 ## Befehle
