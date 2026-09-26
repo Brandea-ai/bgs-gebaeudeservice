@@ -20,4 +20,16 @@ export const company = {
   // Vorläufige Adresse bis zur Adresse des Kunden (E15, W05)
   email: 'admin@brandea.de',
   responseTime: 'innerhalb von 24 Stunden an Werktagen',
+  // Einzugsgebiet: ganze Kantone, alle Leistungen überall (E30, R4d)
+  cantons: ['Luzern', 'Zug', 'Aargau', 'Nidwalden', 'Obwalden'],
+  // Sprachen der Mitarbeitenden (E18)
+  languages: ['Deutsch', 'Englisch', 'Französisch', 'Italienisch'],
 } as const
+
+/** «a, b und c» für Aufzählungen im Fliesstext */
+export function listDe(items: readonly string[]): string {
+  return items.length < 2 ? items.join('') : `${items.slice(0, -1).join(', ')} und ${items[items.length - 1]}`
+}
+
+/** «Luzern, Zug, Aargau, Nidwalden und Obwalden» */
+export const cantonList = listDe(company.cantons)

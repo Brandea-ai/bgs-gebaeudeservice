@@ -7,8 +7,10 @@ import { ThemeProvider } from '@/contexts/ThemeContext'
 import { ChatbotProvider } from '@/contexts/ChatbotContext'
 import AIChatbot from '@/components/AIChatbot'
 import ErrorBoundary from '@/components/ErrorBoundary'
+import JsonLd from '@/components/JsonLd'
 import { company } from '../shared/company'
 import { pages, siteUrl } from '../shared/seo'
+import { organizationJsonLd } from '../shared/structured-data'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -73,6 +75,8 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body className={inter.className}>
+        {/* Unternehmen als strukturierte Daten, Leistungsseiten verweisen darauf (GLOBAL-010) */}
+        <JsonLd data={organizationJsonLd} />
         <ErrorBoundary>
           <ThemeProvider defaultTheme="light">
             <ChatbotProvider>
