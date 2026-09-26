@@ -10,6 +10,7 @@ const LIMITS = {
   service: 100,
   location: 100,
   frequency: 40,
+  language: 2,
   message: 5000,
 } as const
 
@@ -76,6 +77,8 @@ export async function POST(request: NextRequest) {
   const service = readField(fields, 'service')
   const location = readField(fields, 'location')
   const frequency = readField(fields, 'frequency')
+  // Sprache der Seite, von der die Anfrage kommt (M60), nur bekannte Codes
+  const language = readField(fields, 'language')
   const message = readField(fields, 'message')
 
   if (name === null || email === null || phone === null || service === null || location === null || frequency === null || message === null) {
@@ -96,6 +99,7 @@ export async function POST(request: NextRequest) {
     service: service || undefined,
     location: location || undefined,
     frequency: frequency || undefined,
+    language: language && ['en', 'fr', 'it'].includes(language) ? language : undefined,
     message,
   })
 

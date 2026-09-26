@@ -41,7 +41,7 @@ export default function SwissFooter({ lang = "de", path = "/" }: { lang?: Locale
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, language: lang }),
       });
 
       const data = await response.json().catch(() => null);
