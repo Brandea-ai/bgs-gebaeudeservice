@@ -143,3 +143,7 @@ Dieser Block ist nur ein austauschbares Briefingformat, kein Programmcode. Leere
 | E59 | 26.09.2026 | **Bildflächen als Platzhalter, kein KI-Hinweis im Impressum** bis zu echten Bildern | KIBILD (17) | Impressum, alle Seiten mit Bildern | Nutzer | Echte Bilder (E19) |
 | E60 | 26.09.2026 | **Nächster Block: Impressum und Datenschutz** nach Schweizer Recht | NEXT (17) | `/impressum`, `/datenschutz` | Nutzer | — |
 | E61 | 26.09.2026 | **Seiten-Checkliste:** jede Seite einzeln, erledigte angekreuzt | Globale Notiz (17) | Alle | Nutzer | `18-SEITEN-CHECKLISTE.md` |
+| E62 | 26.09.2026 | **Rechtstexte bestätigt:** Brandea als Empfängerin im Datenschutz, Vertretung mit Namen im Impressum | POSTFACH, VERTRETUNG (19) | `/datenschutz`, `/impressum` | Nutzer | Kundenadresse (W05) |
+| E63 | 26.09.2026 | **USA-Satz bleibt** ohne Einzelprüfung der Anbieter | DPF (19) | `/datenschutz` | Nutzer | — |
+| E64 | 26.09.2026 | **Fragebogen nach jedem Bereich** im Seitendurchgang | TEMPO (19) | Alle | Nutzer | — |
+| E65 | 26.09.2026 | **Rechtstexte in die Produktion**, Push durch den Agenten | LIVE (19) | Alle | Nutzer | — |
