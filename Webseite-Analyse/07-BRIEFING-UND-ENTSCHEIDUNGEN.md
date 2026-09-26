@@ -135,3 +135,6 @@ Dieser Block ist nur ein austauschbares Briefingformat, kein Programmcode. Leere
 | E51 | 25.09.2026 | **Übersetzte Adressen** je Sprache, z. B. `/fr/prestations/…` | ADRESSEN (15), S82 | Alle, M60 | Nutzer | Zuordnungstabelle bei M60 |
 | E52 | 25.09.2026 | **Die drei zurückgestellten Premium-Zusagen bleiben weg** (Deckung Kunst, Flugfeld, Prüfmethode) | BELEGE (15), E41 | `/premium` | Nutzer | M59 geschlossen |
 | E53 | 25.09.2026 | **Keine Partner.** Die Website nennt weder Partner noch ein Netzwerk | PARTNER (15) | `/leistungen/hauswartung` (`ff99f92`) | Nutzer | — |
+| E54 | 26.09.2026 | **Produktion durch den Agenten:** Arbeits-Branch nach `main`, ohne `NEW_BRAND` (Arbeitsmarke) | LIVE (16) | Alle | Nutzer | Mantena erst nach der Markenrecherche (E38) |
+| E55 | 26.09.2026 | **Umwelt-Artikel zurückgestellt**, 308 auf die Unterhaltsreinigung | UMWELT (16) | `/blog/umweltfreundliche-reinigung` | Nutzer | Wiederaufnahme mit Angaben zu Mitteln |
+| E56 | 26.09.2026 | **Neue Leistungstexte bestätigt** (Abnahmegarantie, Mieter, Rhythmus, Offerte, Nachfüllservice, Haustechnik, Jet, Garten), Lektorat Brandea | 16 | Leistungs- und Premiumseiten | Nutzer | — |

@@ -74,6 +74,7 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 | 25.09.2026 | Runde 4 | Antworten ausgewertet (15). Mantena als Dachmarke, Clavea als Premium-Linie. Domains frei (N069). Zefix und Swissreg erstmals abgefragt (N070, N071): Mantena ohne Konflikt, Clavea mit mittlerem Risiko wegen der Marke CLAVIS. Name auf dem Branch eingebaut und getestet (`85024bb`, N073), Handwerker-Netzwerk entfernt (`ff99f92`). Zwei Vorhaben von der Rechteprüfung abgelehnt, nicht umgangen (N072) |
 | 25.09.2026 | Pause | Auf Wunsch von Brandea pausiert, Fortsetzung später auch lokal. `CLAUDE.md` mit Einstieg und Regeln angelegt, `.env.example` auf die heutigen Variablen gebracht, Prüfskripte in `werkzeuge/` (Seiten, Browser), `CLAUDE-QUICKSTART.md` als veraltet markiert. Alles gepusht, keine laufenden Prozesse |
 | 26.09.2026 | Fortsetzung, Welle 1, Teil 2 | Branch per Fast-Forward auf `claude/funny-einstein-5acss7` übernommen, Baseline grün. Wirkungslose `SEO`-Aufrufe entfernt (M16), strukturierte Daten aus den zentralen Angaben und Brotkrumen (M20, GLOBAL-010). Neun Leistungs- und drei Premiumseiten mit neuen Texten aus `content/de/` und gemeinsamer Vorlage (M29). Ratgeber: zwei Artikel neu, zwei per 308, keine Scheinaktualität (M53, M19, M38). Primärrot mit 4,8:1 (E24), axe-Kontrast von 166 auf 2 Treffer (N075). Marken-Schalter `NEW_BRAND`: Der aktuelle Stand kann ohne neuen Namen in die Produktion (E38, E39). Produktion unverändert alt und indexierbar (N076). Draft-PR #7 als Entwurf zur Durchsicht, nicht mergen. Widerspruch zu P31 dokumentiert (03, 2b) |
+| 26.09.2026 | Runde 5 | Fragebogen als Artifact, 13 von 13 beantwortet (16). Produktion durch den Agenten freigegeben (E54), Umwelt-Artikel bleibt zurückgestellt (E55), Texte bestätigt (E56) |
 
 ## Abweichungen und Vorfälle
 
@@ -91,8 +92,8 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 ## Offene Punkte
 
 - **Produktion (26.09.2026):** Die alte Seite ist weiter öffentlich und indexierbar, mit «Swiss Reinigungsfirma» und «500+» (N076). Der aktuelle Stand kann dank `NEW_BRAND` ohne neuen Namen live (Nächste Aufgabe, Punkt 1).
-- **Widerspruch P31 (26.09.2026):** `/blog/umweltfreundliche-reinigung` ist nach M53 und P31 zurückgestellt (308), 03 Abschnitt 2b sagte nach Runde 1 «bleibt». Entscheid Brandea.
-- **Texte gegenlesen:** Die neuen Leistungs-, Premium- und Ratgebertexte sind Entwürfe (Liste unten).
+- **Widerspruch P31:** entschieden in Runde 5, bleibt zurückgestellt (E55).
+- **Texte gegenlesen:** In Runde 5 bestätigt, Lektorat durch Brandea (E56, 16).
 - **Runde 2 ist ausgewertet (12).** Offen daraus: Name und Marke (W03, Vorschläge in 13) und die Freigabe für Produktion (E27).
 - **Runde 3 ist ausgewertet (14).** Offen daraus: Namenswahl nach Namensrunde 2 (W03), Produktion (E39), Partner (PARTNER), Terminal-Auftrag bewusst zurückgestellt (E45).
 - **Runde 4 ist ausgewertet (15).** Offen daraus: Domains registrieren (Brandea, E48), Markenrecherche beim IGE mit der Frage CLAVIS (E38, E47), Logo (Brandea, E49).
