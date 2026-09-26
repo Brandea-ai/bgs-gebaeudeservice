@@ -97,9 +97,9 @@ Die heutigen Pfade `/basis/` und `/business/` spiegeln eine Preisstufen-Einteilu
 | `/blog/professionelle-gebaeudereinigung` | `/blog/richtige-reinigungsfirma-finden` | 308 | P28 |
 | `/blog/reinigungskosten-schweiz` | gleich | bleibt | Kostenfaktoren ohne Zahlen (R3e) |
 | `/blog/richtige-reinigungsfirma-finden` | gleich | bleibt | — |
-| `/blog/umweltfreundliche-reinigung` | gleich | bleibt | Nur „auf Wunsch“, ohne unbelegte Label- und Produktangaben (R6i) |
+| `/blog/umweltfreundliche-reinigung` | `/leistungen/unterhaltsreinigung` | 308 (vorläufig, 26.09.2026) | **Widerspruch, Entscheid Brandea:** Diese Zeile sagte nach Runde 1 „bleibt, nur ‚auf Wunsch‘“ (R6i), M53 und P31 sagen „zurückstellen“. Umgesetzt ist vorläufig P31: Ausser „auf Wunsch“ gibt es keine Angaben zu Mitteln und Methoden, die Frage beantwortet die FAQ der Unterhaltsreinigung. Vor dem Launch ohne Verkehr, jederzeit umkehrbar |
 
-**Umsetzungsstand 25.09.2026:** Die Zeilen für Leistungen, Premium und Standorte sind auf dem Arbeits-Branch umgesetzt (`bf42af2`, N055). Offen sind die Blog-Zeilen (M53) und die Kunden-URLs zum Launch (M58).
+**Umsetzungsstand 26.09.2026:** Die Zeilen für Leistungen, Premium und Standorte sind auf dem Arbeits-Branch umgesetzt (`bf42af2`, N055), die Blog-Zeilen ebenfalls (`a03bc73`, N074). Offen sind die Kunden-URLs zum Launch (M58) und der Entscheid zu `/blog/umweltfreundliche-reinigung`.
 
 **Bisherige Website des Kunden, die neue Seite übernimmt `bgs-service.ch` (R9b):** `/` → `/`, `/gebäudereinigung` → `/leistungen`, `/hauswartung` → `/leistungen/hauswartung`, `/kontakt` → `/kontakt`, dazu die drei älteren Seiten aus N038: `/bgs-gebaeude-serviceleistungen.html` → `/leistungen`, `/gebaeude-serviceleistungen-luzern.html` → `/kontakt` (Inhalt vorher prüfen), `/impressum.html` → `/impressum`. Alle per 308. Vor dem Umzug alle alten URLs vollständig erfassen, etwa per Crawl mit Zugang des Kunden (R9d). Wählt Brandea in Runde 2 eine neue Domain (W03), wird `bgs-service.ch` vollständig auf die neue Domain umgeleitet [S07].
 

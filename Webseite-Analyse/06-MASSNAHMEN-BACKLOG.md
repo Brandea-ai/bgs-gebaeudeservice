@@ -2,9 +2,9 @@
 
 **Status: Phase 5 durchgeführt am 24.09.2026, angepasst nach den Rückfragen Runde 1 (11).** Alle 37 globalen Befunde (01) und alle 88 seitenspezifischen Befunde (`Seiten/`) sind in 55 Maßnahmen überführt, dazu kommen M56–M59 aus Runde 1 und M60 aus Runde 3. **Die Umsetzung ist seit 24.09.2026 freigegeben (E11)** und läuft auf dem Arbeits-Branch in den Wellen unten. Produktions-Deployments brauchen weiter eine ausdrückliche Zustimmung. Geänderte Maßnahmen sind mit „Runde 1“ markiert. Dort gilt der Runde-1-Text vor dem ursprünglichen Text derselben Zelle.
 
-## Umsetzungsstand auf dem Arbeits-Branch (Stand 25.09.2026)
+## Umsetzungsstand auf dem Arbeits-Branch (Stand 26.09.2026)
 
-Umgesetzt heisst: auf `claude/optimistic-sagan-h5y2i9` committet, in der isolierten Kopie gebaut und getestet (N048). **Nichts davon ist in Produktion.** Wirksam auf der Vorab-Adresse wird es erst nach einem Produktions-Deployment, das Brandea ausdrücklich freigeben muss (Runde 2, Frage „LIVE“).
+Umgesetzt heisst: auf dem Arbeits-Branch committet (bis 25.09.2026 `claude/optimistic-sagan-h5y2i9`, seit 26.09.2026 `claude/funny-einstein-5acss7`), gebaut und getestet (N048, N074). **Nichts davon ist in Produktion.** Wirksam auf der Vorab-Adresse wird es erst nach einem Produktions-Deployment, das Brandea ausdrücklich freigeben muss (Runde 2, Frage „LIVE“).
 
 | ID | Stand | Commit | Offen |
 |---|---|---|---|
@@ -92,6 +92,24 @@ Umgesetzt heisst: auf `claude/optimistic-sagan-h5y2i9` committet, in der isolier
 | M56 | umgesetzt auf dem Branch: «Mantena» als Dachmarke, «Clavea» für die Premium-Seiten, Registername im Footer und Impressum | Nicht öffentlich vor Domainregistrierung und Markenrecherche (E38). Stand ohne neuen Namen für die Produktion: `ff99f92` |
 | M11 | ergänzt (`ff99f92`): «Handwerker aus unserem Netzwerk» und «Handwerker-Koordination» entfernt (E53, R3c) | — |
 | M59 | geschlossen für die drei Premium-Zusagen (E52) | Übrige Vertrauenssignale bei Bedarf |
+
+**Welle 1, Teil 2 (Commits `2ec126e` bis `9e62a2f`, 26.09.2026, Tests N074, N075 und N077):**
+
+| ID | Stand | Offen |
+|---|---|---|
+| M16 | ergänzt (`2ec126e`): 19 wirkungslose `SEO`-Aufrufe mit alten Titeln entfernt, dazu die nie ausgegebenen Schema-Hilfen mit erfundener Bewertung (4.9 bei 127). Strukturierte Daten aus den zentralen Angaben (`2b1fa59`, GLOBAL-010): LocalBusiness einmal im Layout, Service je Leistungsseite, BlogPosting, BreadcrumbList, nur sichtbare und belegte Angaben | Vorschaubild (M35), Übersetzung (M60) |
+| M20 | Brotkrumen umgesetzt (`2b1fa59`, `72787d4`, `a03bc73`): sichtbar ab der zweiten Ebene auf den 12 Leistungs- und Premiumseiten und den Ratgeberartikeln, mit BreadcrumbList. Seiten der ersten Ebene ohne Brotkrumen, dort genügt das Menü | Alte Adressen der Kunden-Website zum Launch (M58) |
+| M29 | Entwürfe umgesetzt (`72787d4`): 9 Leistungs- und 3 Premiumseiten mit neuen Texten aus `content/de/`, gemeinsame Vorlage `ServicePage`. Je Seite für wen, Umfang, Grenzen («Nicht Teil dieser Leistung»), Ablauf, Gebiet und FAQ. Service-Pakete ohne Inhalt, «Express-Service», Aussenreinigung von Jets, Salzwasser und Bewuchs auf Schweizer Seen und weitere unbelegte Zusagen entfernt | Gegenlesen durch den Kunden (Liste in FORTSCHRITT), Übersetzung (M60) |
+| M53 | umgesetzt (`a03bc73`): P30 neu mit den Teilen aus P28, P28 per 308 auf P30, P29 ohne Zahlen wieder online (R3e), P31 zurückgestellt und per 308 auf die Unterhaltsreinigung, Übersicht «Ratgeber Gebäudereinigung», Menü und Footer «Ratgeber» | P31: Widerspruch zu 03, Abschnitt 2b («bleibt»), Entscheid Brandea. Kostenfaktoren vom Kunden bestätigen lassen (P29) |
+| M19 | umgesetzt (`a03bc73`): keine erfundenen Daten und Lesezeiten mehr. Sichtbar ist der Stand des Textes, `datePublished` erst ab dem Launch | Veröffentlichungsdatum zum Launch in `content/de/ratgeber.ts` eintragen |
+| M38 | umgesetzt (`a03bc73`): Unterhalts- und Büroreinigung verlinken beide Artikel, der Ratgeber verlinkt die Leistungen | — |
+| M21, M22, M23 | für 15 Seiten umgesetzt (12 Leistungs- und Premiumseiten, Ratgeber mit zwei Artikeln): Server-Komponenten, FAQ als `details` im HTML, Hero ohne Einblendung, `main`-Landmarke | Startseite, Über uns, Kontakt, Einzugsgebiet, Übersichten, Rechtstexte |
+| M27 | teilweise (`ff87765`): Primärrot 4,80:1 zu Weiss statt 3,78:1 (E24), Footer-Zeile 6,9:1. axe `color-contrast` 2 Treffer statt 166 (N075) | Zielgrössen (368 Treffer, v. a. Footer-Links), Skip-Link, Einblendungen auf `/ueber-uns` (M23), Screenreader-Stichprobe |
+| M37 | für die neuen Texte umgesetzt: kein «ß», Footer-Formular «Offerte» statt «Angebot» | Startseite, Über uns und weitere Seiten mit alten Texten |
+| M54 | ergänzt (`2b1fa59`): Kantone und Sprachen als Listen in `company.ts`, Namen aller Seiten in `seo.ts` | Kantonsliste als Text auf Startseite, Kontakt, Über uns, Premium, Leistungen und Einzugsgebiet auf `cantonList` umstellen |
+| M34 | ergänzt (`a03bc73`): vier ungenutzte Blogbilder aus `public/` entfernt | übrige ungenutzte Dateien |
+| M56 | ergänzt (`9e62a2f`): Schalter `NEW_BRAND`. Ohne Angabe zeigt ein Produktions-Build die Arbeitsmarke «BGS Gebäudeservice», Previews und lokal Mantena und Clavea. Damit kann der aktuelle Stand vor der Markenrecherche in die Produktion (E38, E39), `ff99f92` ist nicht mehr nötig. Das Prüfskript sucht im Arbeitsmarken-Modus nach dem neuen Namen | Nach der Markenrecherche in Vercel (Production) `NEW_BRAND=true` setzen und neu deployen |
+| M35 | ergänzt (`9e62a2f`): Manifest aus `app/manifest.ts` mit dem geltenden Namen und Rot statt Blau. Das Icon `swiss-logo.webp` («SWISS REINIGUNG» mit Kreuz im Schild) entfernt, bis zum Logo keine Icons | Logo-Dateien von Brandea (15, Abschnitt 5), Favicon und Touch-Icon (heute 404) |
 
 **Umgebungsvariablen für Vercel (neu):** `SITE_INDEXABLE` (nur Produktion, erst zum Launch `true`), `NEXT_PUBLIC_CHAT_ENABLED` (erst nach der Reparatur `true`), optional `CONTACT_TO_EMAIL` und `CONTACT_FROM_EMAIL`. Ohne Angabe gelten `admin@brandea.de` und ein Absender unter `brandea.de`.
 

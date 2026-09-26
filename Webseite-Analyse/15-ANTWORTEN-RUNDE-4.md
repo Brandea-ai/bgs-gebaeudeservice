@@ -109,6 +109,7 @@
   - Bis dahin gehört in die Produktion der Stand `ff99f92`. Er enthält alle Korrekturen ohne den neuen Namen.
   - Nach der Recherche folgt `85024bb` oder ein späterer Stand.
   - Den Push nach `main` blockiert die Rechteprüfung weiterhin, solange die Sitzung im Modus «Auto» läuft (14, Abschnitt 3).
+  - **Nachtrag 26.09.2026:** Überholt durch den Schalter `NEW_BRAND` (`9e62a2f`, N077). Der aktuelle Arbeits-Branch zeigt in einem Produktions-Build ohne `NEW_BRAND` die Arbeitsmarke. `ff99f92` ist nicht mehr nötig (FORTSCHRITT, Nächste Aufgabe).
 - **Noch nicht umgestellt:**
   - Der Prompt des abgeschalteten Chats in `server/gemini.ts` nennt noch den alten Namen und falsche Orte. Er wird bei M03 neu aufgebaut.
   - Leere `SEO`-Aufrufe auf rund 20 Seiten enthalten alte Titel. Sie geben nichts aus, sollten aber entfernt werden (M16).

@@ -2,7 +2,7 @@
 
 **Prüfziel:** BGS Gebäudeservice (`Brandea-ai/bgs-gebaeudeservice`, geprüfter Stand `main` @ `d7e1122`)
 **Referenz:** FIMI-Gebäudereinigung (`Brandea-ai/FIMI-Gebaeudereinigung` @ `1143a9f`), nur lesend, nur Inspiration
-**Letzte Aktualisierung:** 25.09.2026
+**Letzte Aktualisierung:** 26.09.2026
 
 ## Goldener Stand
 
@@ -17,7 +17,7 @@ Die übrigen Dateien in diesem Ordner sind wortgleich aus dem Original abgeleite
 Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 
 - ~~Nur Markdown in `Webseite-Analyse/`.~~ **Seit E11 (24.09.2026): Umsetzung freigegeben.** Quellcode darf auf dem Arbeits-Branch geändert werden, in den Wellen aus 06, jede Welle mit Build und Typecheck. Lockfile nur mit dem Paketmanager des Projekts ändern.
-- **E03, E10, E11:** Commit und Push nur auf den Arbeits-Branch `claude/optimistic-sagan-h5y2i9`, niemals auf `main`. Preview-Deployments durch Pushes sind akzeptiert. **Produktions- oder Live-Deployment nur mit ausdrücklicher Zustimmung von Brandea.** Keine Schlüssel in Dateien (E13).
+- **E03, E10, E11:** Commit und Push nur auf den Arbeits-Branch (bis 25.09.2026 `claude/optimistic-sagan-h5y2i9`, seit 26.09.2026 `claude/funny-einstein-5acss7`), niemals auf `main`. Preview-Deployments durch Pushes sind akzeptiert. **Produktions- oder Live-Deployment nur mit ausdrücklicher Zustimmung von Brandea.** Keine Schlüssel in Dateien (E13).
 - **FIMI niemals anfassen (E06, ausdrücklich vom Nutzer):** Erlaubt ist nur das Lesen des lokalen Klons. Keine Änderungen, keine Dateien, keine Installation, keine Skripte, keine Commits, Pushes, Issues oder PRs. Auf der FIMI-Live-Seite nie etwas abschicken.
 - Keine Produktionsdaten: keine echten Formulare, Leads, Mails, Buchungen.
 - Builds und Tests nur in der freigegebenen isolierten Kopie (E04).
@@ -46,6 +46,7 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 | 12 | Zielbild v2 | **Auf dem Branch umgesetzt 25.09.2026** (`/leistungen` mit neun Seiten, `/premium`, 13 Weiterleitungen, Menü, Footer, Startseite, Sitemap, Tastaturbedienung des Menüs; nicht in Produktion) | Commits `bf42af2`, `2fb0508`, `06` (Umsetzungsstand), N055 |
 | 13 | Namen und Nischen | **Erledigt 25.09.2026** (19 Namen geprüft, Top 5; wohlhabende Gemeinden aus der ESTV-Statistik nachgerechnet; zehn Nischen bewertet) | `13-NAMEN-UND-NISCHEN.md`, N053, N054, S51–S74 |
 | 14 | Rückfragen Runde 3 | **Ausgewertet 25.09.2026** (8 von 11 beantwortet, E37–E45, M60; Seeufer und Premium-Zusagen umgesetzt; Produktions-Push erneut blockiert; Namensrunde 2 läuft) | `14-ANTWORTEN-RUNDE-3.md`, Commit `31f87eb`, N056–N058, S75–S81 |
+| 15 | Umsetzung Welle 1, Teil 2 | **Auf dem Branch umgesetzt 26.09.2026** (M16, M20, M29, M53, M19, M38, E24, Marken-Schalter; nicht in Produktion) | Commits `2ec126e` bis `9e62a2f`, `06` (Umsetzungsstand), N074 bis N077, Draft-PR Brandea-ai/bgs-gebaeudeservice#7 |
 
 ## Protokoll
 
@@ -72,6 +73,7 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 | 25.09.2026 | Namensrunde 2 | Fable und Opus im Wechsel: drei Runden, gegenseitige Kritik, zwei Prüfrunden der Finalisten (N065 bis N067). Beide empfehlen Mantena + Silendo, Alternativen Takta + Intendia und Mantena + Clavea (13, Abschnitt 8). Fragebogen Runde 4 mit Bedeutung je Name veröffentlicht |
 | 25.09.2026 | Runde 4 | Antworten ausgewertet (15). Mantena als Dachmarke, Clavea als Premium-Linie. Domains frei (N069). Zefix und Swissreg erstmals abgefragt (N070, N071): Mantena ohne Konflikt, Clavea mit mittlerem Risiko wegen der Marke CLAVIS. Name auf dem Branch eingebaut und getestet (`85024bb`, N073), Handwerker-Netzwerk entfernt (`ff99f92`). Zwei Vorhaben von der Rechteprüfung abgelehnt, nicht umgangen (N072) |
 | 25.09.2026 | Pause | Auf Wunsch von Brandea pausiert, Fortsetzung später auch lokal. `CLAUDE.md` mit Einstieg und Regeln angelegt, `.env.example` auf die heutigen Variablen gebracht, Prüfskripte in `werkzeuge/` (Seiten, Browser), `CLAUDE-QUICKSTART.md` als veraltet markiert. Alles gepusht, keine laufenden Prozesse |
+| 26.09.2026 | Fortsetzung, Welle 1, Teil 2 | Branch per Fast-Forward auf `claude/funny-einstein-5acss7` übernommen, Baseline grün. Wirkungslose `SEO`-Aufrufe entfernt (M16), strukturierte Daten aus den zentralen Angaben und Brotkrumen (M20, GLOBAL-010). Neun Leistungs- und drei Premiumseiten mit neuen Texten aus `content/de/` und gemeinsamer Vorlage (M29). Ratgeber: zwei Artikel neu, zwei per 308, keine Scheinaktualität (M53, M19, M38). Primärrot mit 4,8:1 (E24), axe-Kontrast von 166 auf 2 Treffer (N075). Marken-Schalter `NEW_BRAND`: Der aktuelle Stand kann ohne neuen Namen in die Produktion (E38, E39). Produktion unverändert alt und indexierbar (N076). Draft-PR #7 als Entwurf zur Durchsicht, nicht mergen. Widerspruch zu P31 dokumentiert (03, 2b) |
 
 ## Abweichungen und Vorfälle
 
@@ -82,9 +84,15 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 | 24.09.2026 | Messartefakt in N023 bei zwei Seiten (Reiterwechsel nicht ausgelöst). | Zahlen zu verborgenen Inhalten zu niedrig, eine Seite fälschlich als unbetroffen geführt. | Per Code-Abgleich korrigiert (N023, GLOBAL-011). |
 | 25.09.2026 | Namensrunde 2, Runde 1: Der Opus-Agent las nach einer Unterbrechung Fables Domainprotokoll im gemeinsamen Arbeitsordner und lieferte dieselben 27 Namen. | Runde 1 hatte nur eine unabhängige Namensliste. Die Bewertung von Opus war trotzdem eigenständig. | Seither ein eigener Ordner je Modell. In Runde 2 hat jedes Modell eigene Namen entwickelt (13, Abschnitt 8.1). |
 | 25.09.2026 | Namensrunde 2, Runde 2: Zwei Opus-Agenten lieferten kein Ergebnis. Der erste stiess nach 22 Minuten Denkzeit an die Ausgabegrenze, der zweite wurde nach 16 Minuten ohne Ausgabe gestoppt. | Rund 40 Minuten Verzögerung, keine Daten verloren. | Die Hauptsitzung (ebenfalls Opus) hat die Opus-Seite übernommen (13, Abschnitt 8.1). |
+| 26.09.2026 | Builds und Tests liefen im Arbeitsverzeichnis der Sitzung, nicht in einer separaten Kopie (E04). | Keine Quelldatei verändert: `.next/` und `node_modules/` sind per `.gitignore` ausgeschlossen, `git status` blieb nach jedem Build sauber. Weder `RESEND_API_KEY` noch `GEMINI_API_KEY` gesetzt, kein Formular abgeschickt. | Dokumentiert. Seit E11 und `CLAUDE.md` (Befehle) ist Bauen im Projektordner der vorgesehene Weg, E04 galt für die Analysephase. |
+| 26.09.2026 | In der Umgebung der Sitzung ist `VERCEL_TOKEN` gesetzt. | Nur der Name wurde geprüft, der Wert nie gelesen oder verwendet. Kein Deployment, keine Einstellung geändert (E08). | Dokumentiert. Brandea kann prüfen, ob der Token in dieser Umgebung nötig ist. |
+| 26.09.2026 | Zwei Commits nach dem ersten Aufteilen korrigiert (vor dem Push): Die Löschung von zwölf `layout.tsx` war im falschen Commit gelandet. | Keine, nichts war gepusht. | Commits neu aufgebaut, jeder Commit für sich baubar. |
 
 ## Offene Punkte
 
+- **Produktion (26.09.2026):** Die alte Seite ist weiter öffentlich und indexierbar, mit «Swiss Reinigungsfirma» und «500+» (N076). Der aktuelle Stand kann dank `NEW_BRAND` ohne neuen Namen live (Nächste Aufgabe, Punkt 1).
+- **Widerspruch P31 (26.09.2026):** `/blog/umweltfreundliche-reinigung` ist nach M53 und P31 zurückgestellt (308), 03 Abschnitt 2b sagte nach Runde 1 «bleibt». Entscheid Brandea.
+- **Texte gegenlesen:** Die neuen Leistungs-, Premium- und Ratgebertexte sind Entwürfe (Liste unten).
 - **Runde 2 ist ausgewertet (12).** Offen daraus: Name und Marke (W03, Vorschläge in 13) und die Freigabe für Produktion (E27).
 - **Runde 3 ist ausgewertet (14).** Offen daraus: Namenswahl nach Namensrunde 2 (W03), Produktion (E39), Partner (PARTNER), Terminal-Auftrag bewusst zurückgestellt (E45).
 - **Runde 4 ist ausgewertet (15).** Offen daraus: Domains registrieren (Brandea, E48), Markenrecherche beim IGE mit der Frage CLAVIS (E38, E47), Logo (Brandea, E49).
@@ -116,23 +124,36 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 - **Die Kernleistungen des Kunden** (Unterhaltsreinigung, Hauswartung, Winterdienst, Aussenanlagen, Sonderreinigungen) sind die dünnsten Seiten. Den Begriff „Hauswartung“ nennt keine davon.
 - **Datenschutz:** Die Website setzt ohne Einwilligung keine Cookies, lädt auf `/kontakt` aber Google-Dienste. Die Erklärung beschreibt eine andere Verarbeitung als die tatsächliche.
 
+## Zum Gegenlesen durch den Kunden (Stand 26.09.2026)
+
+Die neuen Texte in `content/de/` beruhen auf Eigenangaben und Entscheidungen (E18, R3a bis R3c, E28 bis E30, E40 bis E42, E52, E53). An diesen Stellen geht der Text über die wörtliche Angabe hinaus oder beschreibt, was eine Leistung «typischerweise» umfasst. Bitte bestätigen oder korrigieren:
+
+- **Allgemein:** Offerten sind schriftlich. Unterhalts- und Büroreinigung «mehrmals pro Woche» (aus R10c) darf öffentlich stehen. Umfangslisten gelten als «typisch», verbindlich ist die Offerte.
+- **Unterhaltsreinigung:** Umfang (Treppenhäuser, Lifte, Waschküchen, Nebenräume), Nachfüllservice: Wer beschafft das Material?
+- **Büro und Praxis:** Reinigung in Praxen «nach Ihrem Hygieneplan», Aufbereitung von Instrumenten nicht enthalten, Zugang mit Schlüssel oder Badge.
+- **Sonderreinigungen:** Abnahmegarantie so formuliert: «Beanstandet die Verwaltung bei der Abnahme etwas an unserer Reinigung, reinigen wir kostenlos nach.» Bedingungen bestätigen. Umzugsreinigungen für Mieterinnen und Mieter ausdrücklich ausgeschlossen (W01).
+- **Baureinigung:** Zielgruppe Generalunternehmen, Etappen Grob-, Zwischen- und Endreinigung.
+- **Fenster und Fassade:** Storen nach Absprache, keine Renovation oder Reparaturen, Zugang zu hohen Flächen wird je Objekt geklärt.
+- **Industrie und Hallen:** Das Team hält sich an die Sicherheitsregeln des Kunden, keine Wartung oder Reparatur von Maschinen.
+- **Hauswartung:** Auslegung von «Haustechnik» (im Blick behalten, Störungen melden), Beispiel «Leuchtmittel ersetzen», «bei Wohnungsübergaben mitwirken».
+- **Aussen- und Grünflächen:** Aufgabenliste (Rasen, Hecken, Beete, Laub, Wege, Unkraut, Abfall), Gartenbau und Neuanlagen nicht enthalten.
+- **Facility Services:** «ein Vertrag, eine Ansprechperson», technisches Facility Management und Vermittlung von Drittfirmen nicht enthalten.
+- **Premium:** Privatjet nur Kabine (Sitze, Teppiche, Holz, Glas, Bordküche, Waschraum) mit Besichtigung. Yacht innen und aussen, ohne Unterwasserschiff und Technik. Luxusimmobilien ohne Restaurierung von Kunst.
+- **Ratgeber:** Kostenfaktoren (Fläche, Rhythmus, Nutzung, Einsatzzeiten, Zusatzleistungen) nach P29 bestätigen. Absatz zu Zertifikaten fachlich prüfen (P30). Veröffentlichungsdatum zum Launch eintragen.
+
 ## Nächste Aufgabe
 
-**Pausiert seit 25.09.2026.** Lokal weitermachen: Repository klonen, Branch `claude/optimistic-sagan-h5y2i9` auschecken, `npm ci`, dann Claude Code im Ordner starten. Einstieg und Regeln stehen in `CLAUDE.md`.
+**Stand 26.09.2026:** Welle 1, Teil 2 und der Marken-Schalter sind auf `claude/funny-einstein-5acss7` umgesetzt und getestet (N074 bis N077). Durchsicht über den Draft-PR Brandea-ai/bgs-gebaeudeservice#7 (Entwurf, **nicht mergen**). In Produktion ist nichts davon, dort steht weiter der alte Stand (N076).
 
-**Welle 0, Welle 1 (Teil 1), Zielbild v2, die Premium-Inhalte aus Runde 3, die Technik aus Welle 2 und der neue Name sind auf dem Arbeits-Branch umgesetzt. In Produktion ist noch nichts (N051, N057).**
-
-1. **Produktion:** Brandea stellt den Modus der Sitzung auf „Accept edits“ und bestätigt den Push (14, Abschnitt 3).
-   - Bis zur Markenrecherche den Stand ohne neuen Namen einspielen: `ff99f92`.
-   - Danach den Stand mit Mantena und Clavea: `85024bb` oder später (15, Abschnitt 4).
-2. **Brandea:**
-   - Domains `mantena.ch` und `clavea.ch` registrieren, Inhaberin ist die Kundin.
-   - Markenrecherche mit der Frage CLAVIS.
-   - Logo-Dateien (15, Abschnitt 5).
-3. **Welle 1, Teil 2:**
-   - Texte der Kern- und Premiumseiten (M29), gleich in einer übersetzbaren Inhaltsschicht für M60
-   - Ratgeber (M53)
-   - Breadcrumbs (M20)
-   - leere `SEO`-Aufrufe entfernen (M16)
+1. **Produktion (Brandea, dringend):** Die alte Seite mit «Swiss Reinigungsfirma», «500+» und `index, follow` ist öffentlich. Dank `NEW_BRAND` kann der aktuelle Stand ohne neuen Namen live:
+   - In Vercel für Production **kein** `NEW_BRAND` setzen (oder `false`), `SITE_INDEXABLE` erst zum Launch.
+   - Dann den Arbeits-Branch nach `main` bringen. Das macht Brandea selbst, oder Brandea erlaubt es dem Agenten ausdrücklich in der Sitzung (E27, E39, 14 Abschnitt 3).
+   - Danach die Live-Seite kontrollieren: Arbeitsmarke, `noindex`, keine Kundenstimmen.
+   - Nach der Markenrecherche `NEW_BRAND=true` in Production setzen und neu deployen.
+2. **Brandea und Kunde:** Texte gegenlesen (Liste oben), Entscheid P31, Domains `mantena.ch` und `clavea.ch` (E48), Markenrecherche mit der Frage CLAVIS (E38, E47), Logo-Dateien (15, Abschnitt 5).
+3. **Agent, nächster Block: restliche Seiten in die Inhaltsschicht**, damit alle deutschen Texte in `content/de/` liegen:
+   - Startseite (M39), Über uns (M47, der Abschnitt «Unsere Werte» enthält Floskeln und «ß»), Kontakt (M49), Einzugsgebiet, Übersichten `/leistungen` und `/premium`
+   - Kantonslisten auf `cantonList` umstellen (M54)
 4. **Mehrsprachigkeit (M60)** mit übersetzten Adressen (E51). Entwürfe vom Agenten, Prüfung durch Brandea (E50).
-5. **Chat (M03)** nach der Modellwahl, mit neuem Prompt ohne alten Namen.
+5. **Welle 2:** Zielgrössen und Skip-Link (M27), JavaScript-Last senken, etwa den abgeschalteten Chat gar nicht erst laden (M25, N074), Einblendungen (M23).
+6. **Chat (M03)** nach der Modellwahl, mit neuem Prompt ohne alten Namen.

@@ -2,6 +2,8 @@
 
 **Nachtrag Runde 1 (24.09.2026, 11):** Status unverändert NICHT FREIGABEFÄHIG. Die Umsetzung ist freigegeben (E11), Änderungen an G05, G07, G09, G10 und G14 sind in der Matrix markiert. Welle 0 ist auf dem Arbeits-Branch umgesetzt und getestet (06, Umsetzungsstand; N048), aber nicht in Produktion. Die Befunde zu G04, G05 und G06 bleiben deshalb bis zu einem freigegebenen Produktions-Deployment bestehen.
 
+**Nachtrag 26.09.2026:** Status unverändert NICHT FREIGABEFÄHIG, weil die Produktion unverändert ist (N076). Auf dem Arbeits-Branch sind Welle 1, Teil 2, der Kontrast der Primärfarbe und der Marken-Schalter umgesetzt (N074 bis N077). Für G09 hängt der Branch jetzt vor allem am Gegenlesen der neuen Texte durch den Kunden (FORTSCHRITT). Der Branch kann ohne neuen Namen in die Produktion (`NEW_BRAND`, E38).
+
 **Aktueller Status (24.09.2026, Phase 5): NICHT FREIGABEFÄHIG.** Geprüft wurde der Produktionsstand `d7e1122` auf `bgs-gebaeudeservice.vercel.app` einschliesslich der Anfragestrecke in einer isolierten Testumgebung (N032). 12 der 14 Kriterien sind BEFUND, G10 ist nur geplant, G14 ist offen. Dieses Dokument ist keine Freigabe. Die Matrix gilt unverändert als Abnahmeinstrument für den späteren Umbau.
 
 ## 1. Drei getrennte Entscheidungen
