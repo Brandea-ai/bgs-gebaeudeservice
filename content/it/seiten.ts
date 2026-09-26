@@ -82,10 +82,10 @@ export const about = {
   promises: {
     title: 'Su che cosa può contare',
     items: [
-      { title: 'Personale', text: 'La Sua richiesta è trattata personalmente dal direttore.' },
+      { title: 'Contatto personale', text: 'La Sua richiesta è trattata personalmente dal direttore.' },
       { title: 'Offerta dopo il sopralluogo', text: 'Indichiamo un prezzo solo dopo aver visto il Suo oggetto. Sopralluogo e offerta sono gratuiti e senza impegno.' },
       { title: 'In tutta la zona', text: `Tutti i servizi nei Cantoni ${cantonListIt}, ovunque alle stesse condizioni.` },
-      { title: 'Assicurati', text: answers.versicherung.replace('Sì. ', '') },
+      { title: 'Assicurazione', text: answers.versicherung.replace('Sì. ', '') },
       { title: 'Quattro lingue', text: answers.sprachen },
       { title: 'Prodotti ecologici', text: 'Su richiesta puliamo con prodotti ecologici.' },
     ] satisfies Card[],
@@ -200,15 +200,15 @@ export const servicesOverview = {
 // La lista tedesca è dichiarata «as const»: titoli e testi hanno tipi letterali
 // tedeschi. La lista italiana ha le stesse chiavi nello stesso ordine.
 const promises = [
-  { key: 'persoenlich', title: 'Personale', text: 'La Sua richiesta è trattata personalmente dal direttore.' },
-  { key: 'diskret', title: 'Discreto', text: 'Su richiesta sottoscriviamo un accordo di riservatezza.' },
+  { key: 'persoenlich', title: 'Contatto personale', text: 'La Sua richiesta è trattata personalmente dal direttore.' },
+  { key: 'diskret', title: 'Discrezione', text: 'Su richiesta sottoscriviamo un accordo di riservatezza.' },
   { key: 'teams', title: 'Team fissi', text: 'Da Lei lavora sempre lo stesso team.' },
   { key: 'personal', title: 'Personale verificato', text: 'Chi lavora da Lei è stato verificato da noi.' },
   { key: 'schluessel', title: 'Chiavi e allarme', text: 'Secondo regole fisse che concordiamo con Lei.' },
   { key: 'zeiten', title: 'Nei Suoi orari', text: 'Anche la sera, nel fine settimana e durante la Sua assenza.' },
   { key: 'material', title: 'Conoscenza dei materiali', text: 'Pietra naturale, parquet e superfici lucide; per le imbarcazioni teak, gelcoat e imbottiture.' },
   { key: 'sprachen', title: 'Quattro lingue', text: 'Tedesco, inglese, francese e italiano.' },
-  { key: 'versichert', title: 'Assicurati', text: 'Responsabilità civile aziendale con una copertura di CHF 10 milioni.' },
+  { key: 'versichert', title: 'Assicurazione', text: 'Responsabilità civile aziendale con una copertura di CHF 10 milioni.' },
   { key: 'offerte', title: 'Offerta sul posto', text: 'Gratuita e senza impegno, dopo un sopralluogo.' },
 ] as const
 
@@ -242,6 +242,6 @@ export const premiumOverview = {
   },
   cta: {
     title: 'Richiesta discreta',
-    text: `Ci telefoni o ci scriva. La Sua richiesta è trattata personalmente dal direttore, su richiesta con garanzia di riservatezza. La contattiamo ${responseTime}.`,
+    text: `Ci telefoni o ci scriva. La Sua richiesta è trattata personalmente dal direttore, su richiesta con vincolo di riservatezza. La contattiamo ${responseTime}.`,
   },
 }
