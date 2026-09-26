@@ -117,6 +117,7 @@ Umgesetzt heisst: auf dem Arbeits-Branch committet (bis 25.09.2026 `claude/optim
 | M54 | ergänzt: Texte von Startseite, Über uns, Kontakt, Einzugsgebiet und beiden Übersichten in `content/de/seiten.ts`, Kantonslisten überall aus `cantonList` | Rechtstexte, Footer |
 | M14, M50 | umgesetzt (E22, E60): Impressum und Datenschutz neu aus `content/de/recht.ts` als Server-Seiten mit gemeinsamer Vorlage `LegalPage`. Datenschutz nach DSG auf Grundlage des Inventars (N080): Vercel, Resend, Postfach von Brandea bis zur Kundenadresse, Karte nach Klick, keine Cookies, keine Analyse, Bekanntgabe ins Ausland, Rechte, EDÖB. Impressum mit Mobilnummer, Registerangaben aus `company.ts`, ohne KI-Satz (E59). Einwilligung im Formular ohne «dauerhaft gespeichert» | Fachprüfung bleibt aus (E22). Nachführen bei Chat (M03) und Kundenadresse (W05) |
 | M52 | ergänzt (E59): Bildflächen bleiben als Platzhalter, Komponente `ImageSlot` ohne Animation, Über uns wieder mit Bildfläche | Echte Bilder (E19) |
+| M21, M31 | ergänzt (N081): `main`-Landmarke auf Einzugsgebiet, Leistungs- und Premium-Übersicht. Abschluss überall mit `OfferCta` (Offerte als Hauptaktion, Telefon als zweite). Auf `/premium` war das Telefon die Hauptaktion, `/leistungen` hatte keine Offerte | — |
 
 **Umgebungsvariablen für Vercel (neu):** `SITE_INDEXABLE` (nur Produktion, erst zum Launch `true`), `NEXT_PUBLIC_CHAT_ENABLED` (erst nach der Reparatur `true`), optional `CONTACT_TO_EMAIL` und `CONTACT_FROM_EMAIL`. Ohne Angabe gelten `admin@brandea.de` und ein Absender unter `brandea.de`.
 

@@ -22,10 +22,10 @@ Nicht Teil dieses Durchgangs: Übersetzungen (M60) und Klickflächen (M27, Welle
 | [x] | `/impressum` | Alter Text, «ß», KI-Satz (E59) | N080: neu aus `content/de/recht.ts`, ohne KI-Satz, mit Mobil und MWST |
 | [x] | `/datenschutz` | Alter Text nach DSGVO, «ß», Schweizer DSG fehlt | N080: nach DSG, gemäss Inventar (Vercel, Resend, Karte nach Klick, keine Cookies) |
 | [x] | `/ueber-uns` | Inhaltsschicht (N079), Bildplatz als Platzhalter zurückholen (E59) | N080: Bildfläche als Platzhalter (`ImageSlot`) |
-| [~] | `/` Startseite | Inhaltsschicht (N079), Reihenfolge bestätigt (E57) | |
-| [ ] | `/kontakt` | Inhaltsschicht (N079) | |
-| [ ] | `/einzugsgebiet` | Inhaltsschicht (N079) | |
-| [ ] | `/leistungen` | Inhaltsschicht (N079) | |
+| [x] | `/` Startseite | Inhaltsschicht (N079), Reihenfolge bestätigt (E57) | N081: alle Prüfpunkte, Hintergrund als Platzhalter |
+| [x] | `/kontakt` | Inhaltsschicht (N079) | N081: alle Prüfpunkte, Karte nach Klick |
+| [x] | `/einzugsgebiet` | Inhaltsschicht (N079) | N081: `main` ergänzt, Abschluss mit Offerte und Telefon |
+| [x] | `/leistungen` | Inhaltsschicht (N079) | N081: `main` ergänzt, neuer Abschluss mit Offerte |
 | [ ] | `/leistungen/unterhaltsreinigung` | Vorlage, Texte bestätigt (E56) | |
 | [ ] | `/leistungen/bueroreinigung` | Vorlage, Texte bestätigt (E56) | |
 | [ ] | `/leistungen/sonderreinigungen` | Vorlage, Texte bestätigt (E56) | |
@@ -35,7 +35,7 @@ Nicht Teil dieses Durchgangs: Übersetzungen (M60) und Klickflächen (M27, Welle
 | [ ] | `/leistungen/hauswartung` | Vorlage, Texte bestätigt (E56) | |
 | [ ] | `/leistungen/aussen-und-gruenflaechenpflege` | Vorlage, Texte bestätigt (E56) | |
 | [ ] | `/leistungen/facility-services` | Vorlage, Texte bestätigt (E56) | |
-| [ ] | `/premium` | Inhaltsschicht (N079) | |
+| [x] | `/premium` | Inhaltsschicht (N079) | N081: `main` ergänzt, Offerte als Hauptaktion statt Telefon |
 | [ ] | `/premium/luxusimmobilien` | Vorlage, Texte bestätigt (E56) | |
 | [ ] | `/premium/privatjet` | Vorlage, nur Kabine (E56) | |
 | [ ] | `/premium/yacht` | Vorlage, Texte bestätigt (E56) | |
@@ -46,6 +46,6 @@ Nicht Teil dieses Durchgangs: Übersetzungen (M60) und Klickflächen (M27, Welle
 | [ ] | Navigation (alle Seiten) | Umgestellt, Texte noch im Code | |
 | [ ] | Footer mit Formular (alle Seiten) | Umgestellt, Texte noch im Code. Einwilligungssatz ohne «dauerhaft gespeichert» angepasst (N080) | |
 
-**Stand 26.09.2026:** 3 von 26 erledigt, als Nächstes die Startseite.
+**Stand 26.09.2026:** 8 von 26 erledigt. Bereich Hauptseiten fertig, als Nächstes der Bereich Leistungsseiten (E64).
 
-**Reihenfolge:** Rechtstexte zuerst (E60), dann Über uns wegen der Bildfläche, danach von oben nach unten.
+**Reihenfolge:** Rechtstexte zuerst (E60), dann Über uns wegen der Bildfläche, danach bereichsweise mit Fragebogen am Ende jedes Bereichs (E64): Hauptseiten, Leistungsseiten, Premium, Ratgeber, Globales.

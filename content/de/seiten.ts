@@ -192,6 +192,10 @@ export const servicesOverview = {
     text: 'Für besondere Ansprüche gibt es unseren Premium-Bereich.',
     link: 'Zum Premium-Bereich',
   },
+  cta: {
+    title: 'Nicht sicher, was Sie brauchen?',
+    text: `Beschreiben Sie uns Objekt und Anliegen. Wir kommen vorbei, klären den Umfang mit Ihnen und melden uns ${company.responseTime}.`,
+  },
 }
 
 export const premiumOverview = {
@@ -238,7 +242,6 @@ export const premiumOverview = {
   },
   cta: {
     title: 'Diskret anfragen',
-    text: `Rufen Sie uns an oder schreiben Sie uns. Wir melden uns ${company.responseTime}.`,
-    form: 'Zum Formular',
+    text: `Rufen Sie uns an oder schreiben Sie uns. Ihre Anfrage bearbeitet der Geschäftsführer persönlich, auf Wunsch unter Geheimhaltung. Wir melden uns ${company.responseTime}.`,
   },
 }
