@@ -10,6 +10,12 @@ const newBrandActive = process.env.NEW_BRAND
   ? process.env.NEW_BRAND === 'true'
   : process.env.VERCEL_ENV !== 'production'
 
+// Englisch, Französisch und Italienisch erst nach der Prüfung der Übersetzungen
+// (M60, E50): in der Produktion nur mit LANGUAGES=true, sonst an (shared/i18n.ts).
+const languagesActive = process.env.LANGUAGES
+  ? process.env.LANGUAGES === 'true'
+  : process.env.VERCEL_ENV !== 'production'
+
 // Sicherheitsheader (M33). Die Seiten werden statisch erzeugt, darum braucht Next.js
 // 'unsafe-inline' für seine Inline-Skripte (Nonces verlangen dynamisches Rendern).
 // Fremd geladen wird nur die Karte nach Klick (M15). Die Vercel-Toolbar nur in Previews.
@@ -36,6 +42,7 @@ const nextConfig: NextConfig = {
 
   env: {
     NEW_BRAND_ACTIVE: String(newBrandActive),
+    LANGUAGES_ACTIVE: String(languagesActive),
   },
 
   // TypeScript & ESLint
@@ -56,6 +63,8 @@ const nextConfig: NextConfig = {
 
   // Experimental Features
   experimental: {
+    // 404-Seite bei einem Grundlayout je Sprache (M60), seit Next.js 15.4
+    globalNotFound: true,
     optimizePackageImports: [
       '@radix-ui/react-accordion',
       '@radix-ui/react-dialog',

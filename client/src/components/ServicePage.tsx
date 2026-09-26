@@ -13,9 +13,9 @@ import Steps from './Steps'
 import { Button } from './ui/button'
 import { company } from '../../../shared/company'
 import { chatEnabled } from '../../../shared/features'
-import { pages } from '../../../shared/seo'
 import { serviceJsonLd } from '../../../shared/structured-data'
-import { ui } from '../../../content/de/common'
+import { getDict } from '../../../content'
+import { localizePath, type Locale } from '../../../shared/i18n'
 import type { ServicePageContent } from '../../../content/types'
 
 /**
@@ -23,7 +23,8 @@ import type { ServicePageContent } from '../../../content/types'
  * Server-Komponente, alle Texte stehen im HTML, auch die Antworten der FAQ
  * (M21, M22). Hero ohne Einblendung (M23). Texte aus content/de/.
  */
-export default function ServicePage({ content }: { content: ServicePageContent }) {
+export default function ServicePage({ content, lang = 'de' }: { content: ServicePageContent; lang?: Locale }) {
+  const { ui, pages } = getDict(lang)
   const premium = content.area === 'premium'
   // Gebiet, Offerte und Rückmeldung gelten überall, eine Seite kann sie mit eigenem Text ersetzen
   const standardFacts = [
@@ -50,13 +51,13 @@ export default function ServicePage({ content }: { content: ServicePageContent }
 
   return (
     <div className="min-h-screen bg-white">
-      <SwissNavigation />
-      <JsonLd data={serviceJsonLd(content.path)} />
+      <SwissNavigation lang={lang} path={content.path} />
+      <JsonLd data={serviceJsonLd(content.path, lang)} />
 
       <main>
         <section className={`pt-28 md:pt-32 pb-14 md:pb-16 ${premium ? 'bg-slate-900 text-white' : 'bg-gradient-to-br from-slate-50 to-red-50/40'}`}>
           <div className="container max-w-6xl">
-            <Breadcrumbs path={content.path} tone={premium ? 'dark' : 'light'} />
+            <Breadcrumbs path={content.path} tone={premium ? 'dark' : 'light'} lang={lang} />
             <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-start">
               <div className="min-w-0">
                 <p className={`text-sm font-semibold uppercase tracking-wide mb-4 ${premium ? 'text-red-300' : 'text-red-700'}`}>
@@ -69,6 +70,7 @@ export default function ServicePage({ content }: { content: ServicePageContent }
                   <p key={paragraph} className={`text-base sm:text-lg leading-relaxed mb-4 max-w-2xl ${premium ? 'text-slate-300' : 'text-slate-700'}`}>
                     <RichText
                       text={paragraph}
+                      lang={lang}
                       linkClassName={premium ? 'font-medium text-white underline underline-offset-4 hover:no-underline' : undefined}
                     />
                   </p>
@@ -86,7 +88,7 @@ export default function ServicePage({ content }: { content: ServicePageContent }
 
               <div className="space-y-6">
               {/* Bildfläche oben rechts, bis zur Freigabe ein Platzhalter (E59, E66) */}
-              <ImageSlot src={content.image?.src} alt={content.image?.alt} className="hidden lg:flex w-full h-48" />
+              <ImageSlot src={content.image?.src} alt={content.image?.alt} className="hidden lg:flex w-full h-48" lang={lang} />
               <aside
                 aria-labelledby="auf-einen-blick"
                 className={`rounded-xl p-6 ${premium ? 'border border-white/15 bg-white/5' : 'border border-slate-200 bg-white shadow-sm'}`}
@@ -116,7 +118,7 @@ export default function ServicePage({ content }: { content: ServicePageContent }
               </h2>
               {content.scope.intro && (
                 <p className="text-slate-700 leading-relaxed mb-6 max-w-2xl">
-                  <RichText text={content.scope.intro} />
+                  <RichText text={content.scope.intro} lang={lang} />
                 </p>
               )}
               <ul className="grid gap-x-8 gap-y-3 sm:grid-cols-2">
@@ -124,7 +126,7 @@ export default function ServicePage({ content }: { content: ServicePageContent }
                   <li key={item} className="flex items-start gap-3 text-slate-800">
                     <Check className="w-5 h-5 text-red-700 mt-0.5 shrink-0" aria-hidden="true" />
                     <span>
-                      <RichText text={item} />
+                      <RichText text={item} lang={lang} />
                     </span>
                   </li>
                 ))}
@@ -138,7 +140,7 @@ export default function ServicePage({ content }: { content: ServicePageContent }
                 <ul className="space-y-3 text-slate-700">
                   {content.scope.notIncluded.map((item) => (
                     <li key={item}>
-                      <RichText text={item} />
+                      <RichText text={item} lang={lang} />
                     </li>
                   ))}
                 </ul>
@@ -156,7 +158,7 @@ export default function ServicePage({ content }: { content: ServicePageContent }
                     <h2 className="text-2xl font-bold text-slate-900 mb-4">{section.title}</h2>
                     {section.paragraphs?.map((paragraph) => (
                       <p key={paragraph} className="text-slate-700 leading-relaxed mb-4">
-                        <RichText text={paragraph} />
+                        <RichText text={paragraph} lang={lang} />
                       </p>
                     ))}
                     {section.items && (
@@ -165,7 +167,7 @@ export default function ServicePage({ content }: { content: ServicePageContent }
                           <li key={item} className="flex items-start gap-3 text-slate-800">
                             <Check className="w-5 h-5 text-red-700 mt-0.5 shrink-0" aria-hidden="true" />
                             <span>
-                              <RichText text={item} />
+                              <RichText text={item} lang={lang} />
                             </span>
                           </li>
                         ))}
@@ -183,7 +185,7 @@ export default function ServicePage({ content }: { content: ServicePageContent }
             <h2 id="ablauf" className="text-2xl md:text-3xl font-bold text-slate-900 mb-8">
               {ui.steps}
             </h2>
-            <Steps steps={content.steps} />
+            <Steps steps={content.steps} lang={lang} />
           </div>
         </section>
 
@@ -192,7 +194,7 @@ export default function ServicePage({ content }: { content: ServicePageContent }
             <h2 id="fragen" className="text-2xl md:text-3xl font-bold text-slate-900 mb-8">
               {ui.faq}
             </h2>
-            <Faq items={content.faq} />
+            <Faq items={content.faq} lang={lang} />
           </div>
         </section>
 
@@ -204,7 +206,7 @@ export default function ServicePage({ content }: { content: ServicePageContent }
             <ul className="grid gap-6 md:grid-cols-3">
               {content.related.map((item) => (
                 <li key={item.path}>
-                  <Link href={item.path} className="group block h-full rounded-xl border border-slate-200 p-6 transition-shadow hover:shadow-lg">
+                  <Link href={localizePath(item.path, lang)} className="group block h-full rounded-xl border border-slate-200 p-6 transition-shadow hover:shadow-lg">
                     <span className="flex items-center justify-between gap-4 font-semibold text-slate-900">
                       {pages[item.path].label}
                       <ArrowRight className="w-5 h-5 shrink-0 text-red-700 transition-transform group-hover:translate-x-1" aria-hidden="true" />
@@ -217,10 +219,10 @@ export default function ServicePage({ content }: { content: ServicePageContent }
           </div>
         </section>
 
-        <OfferCta title={content.cta.title} text={content.cta.text} />
+        <OfferCta title={content.cta.title} text={content.cta.text} lang={lang} />
       </main>
 
-      <SwissFooter />
+      <SwissFooter lang={lang} path={content.path} />
     </div>
   )
 }

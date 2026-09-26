@@ -4,9 +4,14 @@ import Link from "next/link";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useState } from "react";
 import { company, newBrandActive } from "../../../shared/company";
-import { contactForm as form, footer as texts, serviceGroups } from "../../../content/de/navigation";
+import { navDicts } from "../../../content/navigation";
+import { localizePath, type Locale } from "../../../shared/i18n";
+import type { PagePath } from "../../../shared/seo";
+import LanguageSwitcher from "./LanguageSwitcher";
 
-export default function SwissFooter() {
+export default function SwissFooter({ lang = "de", path = "/" }: { lang?: Locale; path?: PagePath }) {
+  const { contactForm: form, footer: texts, serviceGroups, languageSwitch } = navDicts[lang];
+  const href = (target: PagePath) => localizePath(target, lang);
   const currentYear = new Date().getFullYear();
   const [formData, setFormData] = useState({
     name: "",
@@ -56,7 +61,7 @@ export default function SwissFooter() {
         });
         setTimeout(() => setSubmitStatus("idle"), 5000);
       } else {
-        setErrorMessage(data?.message || fallbackError);
+        setErrorMessage(lang === "de" ? data?.message || fallbackError : fallbackError);
         setSubmitStatus("error");
       }
     } catch (error) {
@@ -252,7 +257,7 @@ export default function SwissFooter() {
                   <span className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                     {form.consentBefore}{" "}
                     <a
-                      href="/datenschutz"
+                      href={href("/datenschutz")}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-red-600 dark:text-red-400 hover:underline font-medium"
@@ -323,7 +328,7 @@ export default function SwissFooter() {
               <ul className="space-y-1">
                 {texts.companyLinks.map((link) => (
                   <li key={link.path}>
-                    <Link href={link.path} className="text-slate-400 hover:text-white transition-smooth text-sm inline-block py-0.5">{link.label}</Link>
+                    <Link href={href(link.path)} className="text-slate-400 hover:text-white transition-smooth text-sm inline-block py-0.5">{link.label}</Link>
                   </li>
                 ))}
               </ul>
@@ -335,7 +340,7 @@ export default function SwissFooter() {
                 <ul className="space-y-1">
                   {group.links.map((link) => (
                     <li key={link.path}>
-                      <Link href={link.path} className="text-slate-400 hover:text-white transition-smooth text-sm inline-block py-0.5">{link.label}</Link>
+                      <Link href={href(link.path)} className="text-slate-400 hover:text-white transition-smooth text-sm inline-block py-0.5">{link.label}</Link>
                     </li>
                   ))}
                 </ul>
@@ -346,7 +351,7 @@ export default function SwissFooter() {
               <h3 className="font-semibold text-lg mb-4">{texts.areaTitle}</h3>
               <ul className="space-y-1 mb-6">
                 <li>
-                  <Link href={texts.areaLink.path} className="text-slate-400 hover:text-white transition-smooth text-sm inline-block py-0.5">{texts.areaLink.label}</Link>
+                  <Link href={href(texts.areaLink.path)} className="text-slate-400 hover:text-white transition-smooth text-sm inline-block py-0.5">{texts.areaLink.label}</Link>
                 </li>
                 <li className="text-slate-400 text-sm">{company.address.street}, {company.address.postalCode} {company.address.city}</li>
                 <li>
@@ -364,10 +369,11 @@ export default function SwissFooter() {
                 {/* Jahr wird beim Build eingesetzt, im Browser ggf. aktualisiert (M24, React-Fehler #418) */}
                 © <span suppressHydrationWarning>{currentYear}</span> {texts.rights}
               </div>
+              <LanguageSwitcher lang={lang} path={path} label={languageSwitch} tone="dark" />
               <ul className="flex gap-6">
                 {texts.legal.map((link) => (
                   <li key={link.path}>
-                    <Link href={link.path} className="hover:text-white transition-smooth inline-block py-0.5">{link.label}</Link>
+                    <Link href={href(link.path)} className="hover:text-white transition-smooth inline-block py-0.5">{link.label}</Link>
                   </li>
                 ))}
               </ul>

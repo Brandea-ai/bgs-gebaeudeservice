@@ -97,6 +97,7 @@ export const about = {
     text: `Ihre Anfrage bearbeitet der Geschäftsführer persönlich. Wir melden uns ${company.responseTime}.`,
   },
   register: { title: 'Registerdaten', court: company.register },
+  statsLabel: 'In Zahlen',
   cta: {
     title: 'Lernen wir uns kennen',
     text: 'Bei der Besichtigung sehen wir uns Ihr Objekt an und klären Umfang und Zeiten. Danach erhalten Sie eine schriftliche Offerte.',
@@ -107,6 +108,7 @@ export const contact = {
   h1: 'Kontakt und Offerte',
   lead: `Rufen Sie uns an oder schreiben Sie uns. Wir melden uns ${company.responseTime}.`,
   formLink: 'Zum Kontaktformular',
+  channelsLabel: 'Kontaktwege',
   phone: { title: 'Telefon', text: 'Festnetz und Mobil', mobile: 'Mobil' },
   email: { title: 'E-Mail', text: 'Schreiben Sie uns eine Nachricht' },
   address: { title: 'Adresse', text: 'Unser Sitz' },
@@ -135,6 +137,7 @@ export const area = {
   h1: `Einzugsgebiet: ${cantonList}`,
   lead: `Wir arbeiten von unserem Sitz in ${company.address.city} aus in fünf Kantonen. Alle Leistungen bieten wir im ganzen Gebiet an, für Unternehmen ebenso wie für anspruchsvolle Privatkunden.`,
   cantonsTitle: 'Kantone',
+  cantonLabels: company.cantons.map((canton) => `Kanton ${canton}`),
   seatTitle: 'Sitz und Kontakt',
   places: {
     title: 'Seeufer und Ferienorte',

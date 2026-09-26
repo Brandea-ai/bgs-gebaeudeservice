@@ -140,3 +140,15 @@ export const notFound = {
     { path: '/kontakt', label: 'Kontakt und Offerte' },
   ] satisfies NavLink[],
 }
+
+/** Alles, was Menü, Footer, Formular und 404 brauchen, in einem Objekt (M60) */
+export const nav = {
+  serviceGroups,
+  menu,
+  footer,
+  contactForm,
+  notFound,
+  languageSwitch: 'Sprache',
+}
+
+export type NavDictionary = typeof nav

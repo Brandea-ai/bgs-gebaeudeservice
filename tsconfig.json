@@ -35,6 +35,7 @@
     "client/src/hooks/**/*",
     "client/src/lib/**/*",
     "client/src/utils/**/*",
+    "client/src/views/**/*",
     "server/gemini.ts",
     "server/email.ts"
   ],

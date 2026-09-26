@@ -1,8 +1,9 @@
 import { ChevronDown } from 'lucide-react'
 import RichText from './RichText'
+import type { Locale } from '../../../shared/i18n'
 
 /** Häufige Fragen als details im HTML, Antworten ohne JavaScript lesbar (M22) */
-export default function Faq({ items }: { items: { question: string; answer: string }[] }) {
+export default function Faq({ items, lang = 'de' }: { items: { question: string; answer: string }[]; lang?: Locale }) {
   return (
     <div className="max-w-4xl divide-y divide-slate-200 rounded-xl border border-slate-200 bg-white">
       {items.map((item) => (
@@ -12,7 +13,7 @@ export default function Faq({ items }: { items: { question: string; answer: stri
             <ChevronDown className="w-5 h-5 shrink-0 text-slate-500 transition-transform group-open:rotate-180" aria-hidden="true" />
           </summary>
           <p className="mt-3 text-slate-700 leading-relaxed">
-            <RichText text={item.answer} />
+            <RichText text={item.answer} lang={lang} />
           </p>
         </details>
       ))}

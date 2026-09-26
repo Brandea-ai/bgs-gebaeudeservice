@@ -1,5 +1,7 @@
 import { company } from './company'
-import { pages, siteUrl, trailFor, type PagePath } from './seo'
+import { siteUrl, trailFor, type PagePath } from './seo'
+import { getDict } from '../content'
+import { hreflang, localizePath, type Locale } from './i18n'
 
 /**
  * Strukturierte Daten (GLOBAL-010, Webseite-Analyse/01, Abschnitt G).
@@ -37,16 +39,18 @@ export const organizationJsonLd = {
 }
 
 /** Eine Leistung auf ihrer eigenen Seite. Premium-Leistungen tragen die Premium-Linie als Marke (E47). */
-export function serviceJsonLd(path: PagePath) {
-  const { label, description } = pages[path]
+export function serviceJsonLd(path: PagePath, lang: Locale = 'de') {
+  const { label, description } = getDict(lang).pages[path]
+  const url = localizePath(path, lang)
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    '@id': `${absolute(path)}#leistung`,
+    '@id': `${absolute(url)}#leistung`,
     name: label,
     serviceType: label,
     description,
-    url: absolute(path),
+    url: absolute(url),
+    inLanguage: hreflang[lang],
     provider: { '@id': organizationId },
     areaServed,
     ...(path.startsWith('/premium/') && company.premiumBrand ? { brand: { '@type': 'Brand', name: company.premiumBrand } } : {}),
@@ -54,34 +58,35 @@ export function serviceJsonLd(path: PagePath) {
 }
 
 /** Brotkrumen wie sichtbar auf der Seite (M20) */
-export function breadcrumbJsonLd(path: PagePath) {
+export function breadcrumbJsonLd(path: PagePath, lang: Locale = 'de') {
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
-    itemListElement: trailFor(path).map((crumb, index) => ({
+    itemListElement: trailFor(path, lang).map((crumb, index) => ({
       '@type': 'ListItem',
       position: index + 1,
       name: crumb.label,
-      item: absolute(crumb.path),
+      item: absolute(localizePath(crumb.path, lang)),
     })),
   }
 }
 
 /** Ratgeberartikel (P29, P30): Autor und Herausgeber ist das Unternehmen, keine erfundenen Personen */
-export function articleJsonLd(path: PagePath, article: { h1: string; updated: string; published?: string }) {
+export function articleJsonLd(path: PagePath, article: { h1: string; updated: string; published?: string }, lang: Locale = 'de') {
+  const url = localizePath(path, lang)
   return {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
-    '@id': `${absolute(path)}#artikel`,
+    '@id': `${absolute(url)}#artikel`,
     headline: article.h1,
-    description: pages[path].description,
+    description: getDict(lang).pages[path].description,
     // Veröffentlichungsdatum erst ab dem Launch (M19)
     ...(article.published ? { datePublished: article.published } : {}),
     dateModified: article.updated,
     author: { '@id': organizationId },
     publisher: { '@id': organizationId },
-    mainEntityOfPage: absolute(path),
-    url: absolute(path),
-    inLanguage: 'de-CH',
+    mainEntityOfPage: absolute(url),
+    url: absolute(url),
+    inLanguage: hreflang[lang],
   }
 }

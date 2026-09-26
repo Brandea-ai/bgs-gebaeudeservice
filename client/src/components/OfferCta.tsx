@@ -1,13 +1,15 @@
 import { Phone } from 'lucide-react'
 import { Button } from './ui/button'
 import { company } from '../../../shared/company'
-import { ui } from '../../../content/de/common'
+import { getDict } from '../../../content'
+import type { Locale } from '../../../shared/i18n'
 
 /**
  * Abschluss einer Seite: eine Hauptaktion (Offerte) und das Telefon als
  * zweite Aktion (M31). Das Formular steht im Footer (#kontakt-formular).
  */
-export default function OfferCta({ title, text }: { title: string; text: string }) {
+export default function OfferCta({ title, text, lang = 'de' }: { title: string; text: string; lang?: Locale }) {
+  const { ui } = getDict(lang)
   return (
     <section className="pb-20">
       <div className="container max-w-6xl">

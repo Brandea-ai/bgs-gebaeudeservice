@@ -6,7 +6,9 @@ import { company } from '../../../shared/company';
 
 // Karte erst nach Klick laden, nur der Sitz (E20). Vorher werden keine Daten
 // an Google übertragen.
-export default function ConsentMap() {
+type MapTexts = { label: string; notice: string; load: string; open: string };
+
+export default function ConsentMap({ texts }: { texts: MapTexts }) {
   const [loaded, setLoaded] = useState(false);
   const address = `${company.address.street}, ${company.address.postalCode} ${company.address.city}`;
   const query = encodeURIComponent(`${company.legalName}, ${address}`);
@@ -14,7 +16,7 @@ export default function ConsentMap() {
   if (loaded) {
     return (
       <iframe
-        title={`Karte: ${address}`}
+        title={`${texts.label}: ${address}`}
         src={`https://www.google.com/maps?q=${query}&output=embed`}
         className="w-full h-[400px] border-0"
         loading="lazy"
@@ -32,7 +34,7 @@ export default function ConsentMap() {
         {address}
       </p>
       <p className="text-sm text-slate-600 max-w-md">
-        Die Karte wird von Google Maps geladen. Dabei werden Daten an Google übertragen.
+        {texts.notice}
       </p>
       <div className="flex flex-wrap justify-center gap-3">
         <button
@@ -40,7 +42,7 @@ export default function ConsentMap() {
           onClick={() => setLoaded(true)}
           className="rounded-md bg-primary px-5 py-2.5 font-semibold text-primary-foreground hover:bg-primary/90"
         >
-          Karte laden
+          {texts.load}
         </button>
         <a
           href={`https://www.google.com/maps/search/?api=1&query=${query}`}
@@ -48,7 +50,7 @@ export default function ConsentMap() {
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 rounded-md border border-slate-300 px-5 py-2.5 font-semibold text-slate-700 hover:bg-white"
         >
-          In Google Maps öffnen
+          {texts.open}
           <ExternalLink className="w-4 h-4" aria-hidden="true" />
         </a>
       </div>
