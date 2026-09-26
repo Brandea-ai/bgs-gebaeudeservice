@@ -278,7 +278,7 @@ export default function SwissFooter() {
                     >
                       Datenschutzerklärung
                     </a>{" "}
-                    zur Kenntnis genommen. Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und für Rückfragen dauerhaft gespeichert werden. *
+                    zur Kenntnis genommen und bin einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage verwendet werden. *
                   </span>
                 </label>
               </div>

@@ -78,6 +78,7 @@ export const home = {
 
 export const about = {
   h1: `Reinigung und Hauswartung aus ${company.address.city}`,
+  imageAlt: 'Unser Team bei der Arbeit',
   lead: `Seit 2006 sind wir in der Reinigung und Hauswartung tätig. Heute betreuen über 50 Mitarbeitende mehr als 120 Kunden in den Kantonen ${cantonList}, auf ${listDe(company.languages)}.`,
   // Ersetzt «Unsere Werte» (M47): nur Zusagen, die belegt oder bestätigt sind (E18)
   promises: {
@@ -95,7 +96,7 @@ export const about = {
     title: 'Ihre Ansprechperson',
     text: `Ihre Anfrage bearbeitet der Geschäftsführer persönlich. Wir melden uns ${company.responseTime}.`,
   },
-  register: { title: 'Registerdaten', court: 'Handelsregister des Kantons Luzern' },
+  register: { title: 'Registerdaten', court: company.register },
   cta: {
     title: 'Lernen wir uns kennen',
     text: 'Bei der Besichtigung sehen wir uns Ihr Objekt an und klären Umfang und Zeiten. Danach erhalten Sie eine schriftliche Offerte.',

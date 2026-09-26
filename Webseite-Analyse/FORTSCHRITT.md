@@ -77,6 +77,8 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 | 26.09.2026 | Runde 5 | Fragebogen als Artifact, 13 von 13 beantwortet (16). Produktion durch den Agenten freigegeben (E54), Umwelt-Artikel bleibt zurückgestellt (E55), Texte bestätigt (E56) |
 | 26.09.2026 | Produktion | `main` per Fast-Forward auf `613f3cf` (E54). Live-Seite geprüft: noindex, Arbeitsmarke, kein neuer Name, keine alten Aussagen (N078) |
 | 26.09.2026 | Restseiten in der Inhaltsschicht | Startseite, Über uns, Kontakt, Einzugsgebiet und Übersichten in `content/de/seiten.ts`, die drei ersten als Server-Komponenten. Kernleistungen zuerst auf der Startseite (M39), «Unsere Werte» ersetzt (M47), Kontakt mit Ablauf (M49), Kantonslisten zentral (M54). Getestet (N079) |
+| 26.09.2026 | Runde 6 und Produktion | Antworten ausgewertet (17, E57 bis E61). `main` per Fast-Forward auf `8604593`, Live-Seite geprüft: neue Seiten, noindex, Arbeitsmarke. Seiten-Checkliste angelegt (18) |
+| 26.09.2026 | Seitendurchgang: Rechtstexte, Über uns | Impressum und Datenschutz nach DSG neu, Über uns mit Bildfläche als Platzhalter. 3 von 26 Seiten angekreuzt (N080) |
 
 ## Abweichungen und Vorfälle
 
@@ -146,6 +148,8 @@ Die neuen Texte in `content/de/` beruhen auf Eigenangaben und Entscheidungen (E1
 - **Startseite, Über uns, Kontakt:** Dritter Schritt «Start: Mit Ihrer Zusage legen wir den ersten Einsatz fest und stimmen Zeiten und Zugang mit Ihnen ab.» Über uns: «Einen Preis nennen wir erst, wenn wir Ihr Objekt gesehen haben.» Kontakt: Frage «Übernehmen Sie auch kurzfristige Einsätze?» statt «Notfallreinigungen».
 
 ## Nächste Aufgabe
+
+**Stand 26.09.2026, Seitendurchgang (E61):** Arbeitsstand steht in `18-SEITEN-CHECKLISTE.md`. Erledigt: Impressum, Datenschutz, Über uns. Als Nächstes die Startseite, dann von oben nach unten. Produktion steht auf `8604593` (E57). Die Rechtstexte sind nur auf dem Branch, ein Push nach `main` braucht eine neue Freigabe.
 
 **Stand 26.09.2026:** Welle 1, Teil 2 und der Marken-Schalter sind auf `claude/funny-einstein-5acss7` umgesetzt und getestet (N074 bis N077). Durchsicht über den Draft-PR Brandea-ai/bgs-gebaeudeservice#7 (Entwurf, **nicht mergen**). In Produktion ist nichts davon, dort steht weiter der alte Stand (N076).
 

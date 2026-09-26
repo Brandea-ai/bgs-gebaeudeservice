@@ -77,3 +77,12 @@ export type ArticleContent = {
   sections: ArticleSection[]
   cta: { title: string; text: string }
 }
+
+/** Rechtstexte (Impressum, Datenschutz). Einfache Abschnitte, Reihenfolge wie hier. */
+export type LegalContent = {
+  h1: string
+  intro?: Text
+  sections: { title: string; paragraphs?: Text[]; items?: Text[]; lines?: string[] }[]
+  /** Stand des Textes (JJJJ-MM-TT), sichtbar am Ende */
+  updated: string
+}

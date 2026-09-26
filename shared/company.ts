@@ -21,6 +21,10 @@ export const company = {
   // Eingetragene Firma für Impressum, Offerten und Rechnungen (Art. 954a OR)
   legalName: 'BGS - Gebäudeservice GmbH',
   uid: 'CHE-108.687.458',
+  vat: 'CHE-108.687.458 MWST',
+  register: 'Handelsregister des Kantons Luzern',
+  // Vertretung laut Register, bestätigt in Runde 1 (R7a). Nur im Impressum.
+  representative: 'Nezir Bozhdaraj',
   address: {
     street: 'Tannhof 10',
     postalCode: '6020',
