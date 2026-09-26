@@ -45,7 +45,7 @@ export const pages: Dictionary['pages'] = {
   '/leistungen/unterhaltsreinigung': {
     label: 'Maintenance cleaning',
     title: 'Maintenance cleaning in Lucerne and Zug',
-    description: `Regular cleaning of residential and commercial buildings, stairwells and business premises, with a restocking service. In ${region}.`,
+    description: `Regular cleaning of buildings, stairwells and business premises, with a restocking service. In ${region}.`,
   },
   '/leistungen/bueroreinigung': {
     label: 'Office and practice cleaning',
@@ -65,7 +65,7 @@ export const pages: Dictionary['pages'] = {
   '/leistungen/fenster-und-fassadenreinigung': {
     label: 'Window and facade cleaning',
     title: 'Window and facade cleaning',
-    description: `Cleaning of windows, glass surfaces and facades, including high-pressure cleaning, for businesses and properties in ${region}.`,
+    description: `Cleaning of windows, glass and facades, including high-pressure cleaning, for businesses and properties in ${region}.`,
   },
   '/leistungen/industrie-und-hallenreinigung': {
     label: 'Industrial and warehouse cleaning',
@@ -115,16 +115,16 @@ export const pages: Dictionary['pages'] = {
   '/kontakt': {
     label: 'Contact',
     title: 'Contact and quote',
-    description: `Call us on ${company.phone.display} or write to us. Free quote after an on-site visit, reply ${responseTime}.`,
+    description: `Call us on ${company.phone.display} or write to us. Free, non-binding quote after an on-site visit, and a reply ${responseTime}.`,
   },
   '/impressum': {
     label: 'Legal notice',
     title: 'Legal notice',
-    description: `Legal notice of ${company.legalName}, ${company.address.street}, ${company.address.postalCode} ${company.address.city}: commercial register, UID and contact.`,
+    description: `Legal notice of ${company.legalName}, ${company.address.street}, ${company.address.postalCode} ${company.address.city}: commercial register, UID, VAT number and contact details.`,
   },
   '/datenschutz': {
     label: 'Privacy',
     title: 'Privacy policy',
-    description: `How ${company.legalName} processes personal data on this website and what rights you have.`,
+    description: `How ${company.legalName} processes personal data on this website, to whom it is passed on and what rights you have under Swiss data protection law.`,
   },
 }
