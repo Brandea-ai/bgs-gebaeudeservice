@@ -143,7 +143,7 @@ export default function SwissNavigation() {
               Über uns
             </Link>
             <Link href="/blog" className="text-foreground hover:text-primary transition-smooth font-medium">
-              Blog
+              Ratgeber
             </Link>
             <Button asChild>
               <Link href="/kontakt">Kontakt aufnehmen</Link>
@@ -215,7 +215,7 @@ export default function SwissNavigation() {
               <div className="py-2 text-foreground hover:text-primary transition-smooth">Über uns</div>
             </Link>
             <Link href="/blog" onClick={() => setIsOpen(false)}>
-              <div className="py-2 text-foreground hover:text-primary transition-smooth">Blog</div>
+              <div className="py-2 text-foreground hover:text-primary transition-smooth">Ratgeber</div>
             </Link>
             <Button asChild className="w-full">
               <Link href="/kontakt" onClick={() => setIsOpen(false)}>Kontakt aufnehmen</Link>

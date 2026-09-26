@@ -84,7 +84,7 @@ export default function SwissFooter() {
                 Jetzt Kontakt aufnehmen
               </h2>
               <p className="text-sm sm:text-base lg:text-lg text-slate-600 dark:text-slate-400">
-                Fordern Sie ein unverbindliches Angebot an. Wir melden uns {company.responseTime}.
+                Fordern Sie eine unverbindliche Offerte an. Wir melden uns {company.responseTime}.
               </p>
             </div>
 
@@ -341,7 +341,7 @@ export default function SwissFooter() {
               <div className="space-y-2">
                 <Link href="/ueber-uns"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Über uns</div></Link>
                 <Link href="/kontakt"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Kontakt</div></Link>
-                <Link href="/blog"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Blog</div></Link>
+                <Link href="/blog"><div className="text-slate-400 hover:text-white transition-smooth cursor-pointer text-sm">Ratgeber</div></Link>
               </div>
             </div>
 

@@ -8,7 +8,7 @@ import { cantonList, company } from './company'
 export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://bgs-gebaeudeservice.vercel.app'
 
 // Stand der Inhalte für die Sitemap (M17). Bei inhaltlichen Änderungen nachführen.
-export const contentUpdated = '2026-09-25'
+export const contentUpdated = '2026-09-26'
 
 const region = cantonList
 
@@ -95,23 +95,18 @@ export const pages = {
   },
   '/blog': {
     label: 'Ratgeber',
-    title: 'Ratgeber Reinigung und Hauswartung',
-    description: 'Ratgeber zur Gebäudereinigung: wie Sie eine passende Reinigungsfirma finden, was professionelle Reinigung ausmacht und wie umweltfreundlich gereinigt wird.',
+    title: 'Ratgeber Gebäudereinigung',
+    description: `Ratgeber von ${company.brand}: worauf Sie bei der Wahl einer Reinigungsfirma achten sollten und wovon die Kosten einer Unterhaltsreinigung abhängen.`,
   },
   '/blog/richtige-reinigungsfirma-finden': {
     label: 'Reinigungsfirma finden',
-    title: 'Wie finde ich die richtige Reinigungsfirma?',
-    description: 'Leitfaden für Unternehmen und Verwaltungen: Kriterien, regionale Besonderheiten in der Schweiz und der Auswahlprozess Schritt für Schritt.',
+    title: 'Reinigungsfirma finden: Kriterien und Fragen für die Vergabe',
+    description: 'Leistungsumfang, Versicherung, Qualitätskontrolle, Referenzen und Offerte: Diese Punkte sollten Sie klären, bevor Sie eine Reinigungsfirma beauftragen. Mit Ablauf bis zum Vertrag.',
   },
-  '/blog/professionelle-gebaeudereinigung': {
-    label: 'Professionelle Gebäudereinigung',
-    title: 'Professionelle Gebäudereinigung erklärt',
-    description: 'Was professionelle Gebäudereinigung ausmacht, welche Reinigungsarten es gibt und worauf Sie bei Qualität und Ablauf achten sollten.',
-  },
-  '/blog/umweltfreundliche-reinigung': {
-    label: 'Umweltfreundliche Reinigung',
-    title: 'Umweltfreundliche Reinigung: Methoden und Mittel',
-    description: 'Nachhaltige Reinigungsmethoden und umweltfreundliche Mittel im Überblick. Bei uns auf Wunsch für Ihre Reinigung.',
+  '/blog/reinigungskosten-schweiz': {
+    label: 'Kosten der Unterhaltsreinigung',
+    title: 'Was kostet eine Unterhaltsreinigung? Die Kostenfaktoren',
+    description: 'Wovon der Preis einer Unterhaltsreinigung abhängt: Fläche, Rhythmus, Nutzung und Einsatzzeiten. Mit Hinweisen zum Vergleich von Offerten.',
   },
   '/ueber-uns': {
     label: 'Über uns',

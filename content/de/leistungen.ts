@@ -83,7 +83,12 @@ const unterhaltsreinigung: ServicePageContent = {
       answer: 'Ja. Wenn sich die Nutzung ändert, besprechen wir mit Ihnen einen neuen Umfang oder Rhythmus.',
     },
     { question: 'Reinigen Sie mit umweltfreundlichen Mitteln?', answer: answers.mittel },
-    { question: 'Was kostet eine Unterhaltsreinigung?', answer: answers.kosten },
+    { question: 'Was kostet eine Unterhaltsreinigung?', answer: `${answers.kosten} Mehr dazu im Ratgeber: [Wovon die Kosten einer Unterhaltsreinigung abhängen](/blog/reinigungskosten-schweiz).` },
+    {
+      question: 'Worauf sollten wir bei der Wahl einer Reinigungsfirma achten?',
+      answer:
+        'Auf einen klar beschriebenen Leistungsumfang, eine belegte Versicherung, eine feste Ansprechperson und eine Offerte nach Besichtigung. Mehr dazu im Ratgeber: [Wie finde ich die richtige Reinigungsfirma?](/blog/richtige-reinigungsfirma-finden)',
+    },
     { question: 'In welchen Regionen sind Sie tätig?', answer: answers.gebiet },
   ],
   related: [
@@ -165,7 +170,7 @@ const bueroreinigung: ServicePageContent = {
       answer: `${answers.sprachen} Das ist praktisch, wenn in Ihrem Büro mehrere Sprachen gesprochen werden.`,
     },
     { question: 'Sind Sie versichert?', answer: answers.versicherung },
-    { question: 'Was kostet die Büroreinigung?', answer: answers.kosten },
+    { question: 'Was kostet die Büroreinigung?', answer: `${answers.kosten} Mehr dazu im Ratgeber: [Wovon die Kosten einer Unterhaltsreinigung abhängen](/blog/reinigungskosten-schweiz).` },
     { question: 'In welchen Regionen sind Sie tätig?', answer: answers.gebiet },
   ],
   related: [

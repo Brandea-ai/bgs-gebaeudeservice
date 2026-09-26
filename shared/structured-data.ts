@@ -66,3 +66,22 @@ export function breadcrumbJsonLd(path: PagePath) {
     })),
   }
 }
+
+/** Ratgeberartikel (P29, P30): Autor und Herausgeber ist das Unternehmen, keine erfundenen Personen */
+export function articleJsonLd(path: PagePath, article: { h1: string; updated: string; published?: string }) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    '@id': `${absolute(path)}#artikel`,
+    headline: article.h1,
+    description: pages[path].description,
+    // Veröffentlichungsdatum erst ab dem Launch (M19)
+    ...(article.published ? { datePublished: article.published } : {}),
+    dateModified: article.updated,
+    author: { '@id': organizationId },
+    publisher: { '@id': organizationId },
+    mainEntityOfPage: absolute(path),
+    url: absolute(path),
+    inLanguage: 'de-CH',
+  }
+}

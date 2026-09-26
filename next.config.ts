@@ -78,6 +78,9 @@ const nextConfig: NextConfig = {
       { source: '/business/maschinenreinigung', destination: '/leistungen/industrie-und-hallenreinigung', permanent: true },
       { source: '/business/aussenanlagen', destination: '/leistungen/aussen-und-gruenflaechenpflege', permanent: true },
       { source: '/business/facility-management', destination: '/leistungen/facility-services', permanent: true },
+      // Ratgeber (M53): P28 in P30 zusammengeführt, P31 zurückgestellt, die Frage nach den Mitteln steht in der FAQ der Unterhaltsreinigung
+      { source: '/blog/professionelle-gebaeudereinigung', destination: '/blog/richtige-reinigungsfirma-finden', permanent: true },
+      { source: '/blog/umweltfreundliche-reinigung', destination: '/leistungen/unterhaltsreinigung', permanent: true },
     ]
   },
 

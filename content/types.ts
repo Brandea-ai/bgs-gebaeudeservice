@@ -45,3 +45,35 @@ export type ServicePageContent = {
   related: { path: PagePath; text: string }[]
   cta: { title: string; text: string }
 }
+
+/** Abschnitt eines Ratgeberartikels. Reihenfolge der Darstellung wie hier. */
+export type ArticleSection = {
+  title: string
+  paragraphs?: Text[]
+  /** Begriffe mit Erklärung, dargestellt als Definitionsliste */
+  definitions?: { term: string; text: Text }[]
+  /** Unterabschnitte mit eigener Überschrift */
+  subsections?: { title: string; text: Text }[]
+  items?: Text[]
+  /** Liste als nummerierte Schritte */
+  ordered?: boolean
+  /** Satz nach der Liste */
+  note?: Text
+}
+
+export type ArticleContent = {
+  /** Adresse, zugleich Schlüssel für Titel und Beschreibung in shared/seo.ts */
+  path: PagePath
+  h1: string
+  subtitle: string
+  /** Anreisser für die Übersicht /blog */
+  teaser: string
+  /** Stand der Inhalte (JJJJ-MM-TT), sichtbar und als dateModified */
+  updated: string
+  /** Veröffentlichung auf der Launch-Domain (JJJJ-MM-TT). Erst zum Launch eintragen, keine Scheinaktualität (M19). */
+  published?: string
+  intro?: Text[]
+  summary: { title: string; items: Text[] }
+  sections: ArticleSection[]
+  cta: { title: string; text: string }
+}

@@ -6,7 +6,7 @@ Aufruf (Server vorher starten, z. B. `npm run build && npm start`):
 
 BASIS-URL ist standardmässig http://localhost:3000. Ohne --indexierbar muss jede
 Seite `noindex` tragen (Stand bis zum Launch, M08). Nur Python-Standardbibliothek.
-Entspricht den Prüfungen der Nachweise N055, N059 und N073 in 08.
+Entspricht den Prüfungen der Nachweise N055, N059, N073 und N074 in 08.
 """
 import html
 import http.client
@@ -67,6 +67,9 @@ redirects = {
     "/standorte/zug": "/einzugsgebiet",
     "/standorte/zuerich": "/einzugsgebiet",
     "/premium/housekeeping": "/premium/luxusimmobilien",
+    # Ratgeber (M53)
+    "/blog/professionelle-gebaeudereinigung": "/blog/richtige-reinigungsfirma-finden",
+    "/blog/umweltfreundliche-reinigung": "/leistungen/unterhaltsreinigung",
 }
 ok = 0
 for src, dst in redirects.items():
@@ -77,7 +80,7 @@ for src, dst in redirects.items():
         fails.append(("weiterleitung", src, s, h.get("location")))
 print(f"Weiterleitungen: {ok}/{len(redirects)}")
 
-for p, soll in [("/basis/winterdienst", 410), ("/referenzen", 404), ("/blog/reinigungskosten-schweiz", 404), ("/business", 404), ("/basis", 404)]:
+for p, soll in [("/basis/winterdienst", 410), ("/referenzen", 404), ("/business", 404), ("/basis", 404)]:
     s = req(p)[0]
     if s != soll:
         fails.append(("status", p, s, soll))
