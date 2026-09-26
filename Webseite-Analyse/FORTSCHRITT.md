@@ -81,6 +81,7 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 | 26.09.2026 | Seitendurchgang: Rechtstexte, Über uns | Impressum und Datenschutz nach DSG neu, Über uns mit Bildfläche als Platzhalter. 3 von 26 Seiten angekreuzt (N080) |
 | 26.09.2026 | Runde 7 und Produktion | Antworten ausgewertet (19, E62 bis E65). `main` per Fast-Forward auf `f3e9074`, Live-Seite geprüft: neue Rechtstexte, noindex, Arbeitsmarke |
 | 26.09.2026 | Seitendurchgang: Hauptseiten | Startseite, Kontakt, Einzugsgebiet, Leistungs- und Premium-Übersicht geprüft und angepasst, 8 von 26 Seiten angekreuzt (N081) |
+| 26.09.2026 | Seitendurchgang: Leistungsseiten | 9 Leistungsseiten geprüft, Überlauf auf Hauswartung behoben, 17 von 26 Seiten angekreuzt (N082) |
 
 ## Abweichungen und Vorfälle
 
@@ -151,7 +152,7 @@ Die neuen Texte in `content/de/` beruhen auf Eigenangaben und Entscheidungen (E1
 
 ## Nächste Aufgabe
 
-**Stand 26.09.2026, Seitendurchgang (E61, E64):** Arbeitsstand steht in `18-SEITEN-CHECKLISTE.md`, 8 von 26 Seiten erledigt. Bereich Hauptseiten fertig, Fragebogen Runde 8 offen. Als Nächstes der Bereich Leistungsseiten. Produktion steht auf `f3e9074` (E65), die Hauptseiten-Anpassungen sind nur auf dem Branch.
+**Stand 26.09.2026, Seitendurchgang (E61, E64):** Arbeitsstand steht in `18-SEITEN-CHECKLISTE.md`, 17 von 26 Seiten erledigt. Bereiche Hauptseiten und Leistungsseiten fertig, Fragebogen Runde 8 offen (beide Bereiche). Als Nächstes der Bereich Premium. Produktion steht auf `f3e9074` (E65), alles danach nur auf dem Branch.
 
 **Stand 26.09.2026:** Welle 1, Teil 2 und der Marken-Schalter sind auf `claude/funny-einstein-5acss7` umgesetzt und getestet (N074 bis N077). Durchsicht über den Draft-PR Brandea-ai/bgs-gebaeudeservice#7 (Entwurf, **nicht mergen**). In Produktion ist nichts davon, dort steht weiter der alte Stand (N076).
 

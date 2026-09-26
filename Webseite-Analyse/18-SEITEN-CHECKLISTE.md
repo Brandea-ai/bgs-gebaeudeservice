@@ -26,15 +26,15 @@ Nicht Teil dieses Durchgangs: Übersetzungen (M60) und Klickflächen (M27, Welle
 | [x] | `/kontakt` | Inhaltsschicht (N079) | N081: alle Prüfpunkte, Karte nach Klick |
 | [x] | `/einzugsgebiet` | Inhaltsschicht (N079) | N081: `main` ergänzt, Abschluss mit Offerte und Telefon |
 | [x] | `/leistungen` | Inhaltsschicht (N079) | N081: `main` ergänzt, neuer Abschluss mit Offerte |
-| [ ] | `/leistungen/unterhaltsreinigung` | Vorlage, Texte bestätigt (E56) | |
-| [ ] | `/leistungen/bueroreinigung` | Vorlage, Texte bestätigt (E56) | |
-| [ ] | `/leistungen/sonderreinigungen` | Vorlage, Texte bestätigt (E56) | |
-| [ ] | `/leistungen/baureinigung` | Vorlage, Texte bestätigt (E56) | |
-| [ ] | `/leistungen/fenster-und-fassadenreinigung` | Vorlage, Texte bestätigt (E56) | |
-| [ ] | `/leistungen/industrie-und-hallenreinigung` | Vorlage, Texte bestätigt (E56) | |
-| [ ] | `/leistungen/hauswartung` | Vorlage, Texte bestätigt (E56) | |
-| [ ] | `/leistungen/aussen-und-gruenflaechenpflege` | Vorlage, Texte bestätigt (E56) | |
-| [ ] | `/leistungen/facility-services` | Vorlage, Texte bestätigt (E56) | |
+| [x] | `/leistungen/unterhaltsreinigung` | Vorlage, Texte bestätigt (E56) | N082: alle Prüfpunkte |
+| [x] | `/leistungen/bueroreinigung` | Vorlage, Texte bestätigt (E56) | N082: alle Prüfpunkte |
+| [x] | `/leistungen/sonderreinigungen` | Vorlage, Texte bestätigt (E56) | N082: alle Prüfpunkte |
+| [x] | `/leistungen/baureinigung` | Vorlage, Texte bestätigt (E56) | N082: alle Prüfpunkte |
+| [x] | `/leistungen/fenster-und-fassadenreinigung` | Vorlage, Texte bestätigt (E56) | N082: alle Prüfpunkte |
+| [x] | `/leistungen/industrie-und-hallenreinigung` | Vorlage, Texte bestätigt (E56) | N082: alle Prüfpunkte |
+| [x] | `/leistungen/hauswartung` | Vorlage, Texte bestätigt (E56) | N082: alle Prüfpunkte, Überlauf auf dem Handy behoben |
+| [x] | `/leistungen/aussen-und-gruenflaechenpflege` | Vorlage, Texte bestätigt (E56) | N082: alle Prüfpunkte |
+| [x] | `/leistungen/facility-services` | Vorlage, Texte bestätigt (E56) | N082: alle Prüfpunkte |
 | [x] | `/premium` | Inhaltsschicht (N079) | N081: `main` ergänzt, Offerte als Hauptaktion statt Telefon |
 | [ ] | `/premium/luxusimmobilien` | Vorlage, Texte bestätigt (E56) | |
 | [ ] | `/premium/privatjet` | Vorlage, nur Kabine (E56) | |
@@ -46,6 +46,6 @@ Nicht Teil dieses Durchgangs: Übersetzungen (M60) und Klickflächen (M27, Welle
 | [ ] | Navigation (alle Seiten) | Umgestellt, Texte noch im Code | |
 | [ ] | Footer mit Formular (alle Seiten) | Umgestellt, Texte noch im Code. Einwilligungssatz ohne «dauerhaft gespeichert» angepasst (N080) | |
 
-**Stand 26.09.2026:** 8 von 26 erledigt. Bereich Hauptseiten fertig, als Nächstes der Bereich Leistungsseiten (E64).
+**Stand 26.09.2026:** 17 von 26 erledigt. Bereiche Hauptseiten und Leistungsseiten fertig, als Nächstes der Bereich Premium (E64).
 
 **Reihenfolge:** Rechtstexte zuerst (E60), dann Über uns wegen der Bildfläche, danach bereichsweise mit Fragebogen am Ende jedes Bereichs (E64): Hauptseiten, Leistungsseiten, Premium, Ratgeber, Globales.

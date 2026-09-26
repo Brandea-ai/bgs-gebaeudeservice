@@ -57,11 +57,11 @@ export default function ServicePage({ content }: { content: ServicePageContent }
           <div className="container max-w-6xl">
             <Breadcrumbs path={content.path} tone={premium ? 'dark' : 'light'} />
             <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-start">
-              <div>
+              <div className="min-w-0">
                 <p className={`text-sm font-semibold uppercase tracking-wide mb-4 ${premium ? 'text-red-300' : 'text-red-700'}`}>
                   {premium ? ui.premiumLine : content.eyebrow}
                 </p>
-                <h1 className={`text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6 ${premium ? 'text-white' : 'text-slate-900'}`}>
+                <h1 className={`text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6 hyphens-auto break-words ${premium ? 'text-white' : 'text-slate-900'}`}>
                   {content.h1}
                 </h1>
                 {content.lead.map((paragraph) => (
