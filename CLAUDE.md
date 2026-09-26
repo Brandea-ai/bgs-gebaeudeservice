@@ -1,6 +1,6 @@
 # Hinweise für Claude Code
 
-Website der BGS - Gebäudeservice GmbH in Emmenbrücke LU. Die neue Dachmarke heisst **Mantena**, die Premium-Linie **Clavea**. Die Arbeit ruht seit dem 25.09.2026 und wird später fortgesetzt.
+Website der BGS - Gebäudeservice GmbH in Emmenbrücke LU. Die neue Dachmarke heisst **Mantena**, die Premium-Linie **Clavea**. Pause vom 25.09.2026, seit dem 26.09.2026 fortgesetzt.
 
 ## Wo anfangen
 
@@ -10,7 +10,7 @@ Website der BGS - Gebäudeservice GmbH in Emmenbrücke LU. Die neue Dachmarke he
 
 ## Stand
 
-- **Arbeits-Branch** `claude/optimistic-sagan-h5y2i9`: Hier ist alles umgesetzt und getestet.
+- **Arbeits-Branch** `claude/funny-einstein-5acss7` (seit 26.09.2026): Fortsetzung von `claude/optimistic-sagan-h5y2i9`, per Fast-Forward übernommen. Hier ist alles umgesetzt und getestet. Der alte Branch bleibt unverändert als Stand vom 25.09.2026.
 - **`main` und Produktion** stehen noch auf `d7e1122`. Das ist der alte Stand mit unbelegten Aussagen und erfundenen Kundenstimmen.
 - **Welcher Stand in die Produktion darf:**
   - Solange die Markenrecherche fehlt: `ff99f92`, ohne den neuen Namen.
@@ -18,7 +18,7 @@ Website der BGS - Gebäudeservice GmbH in Emmenbrücke LU. Die neue Dachmarke he
 
 ## Regeln
 
-- **Branches:** Commit und Push nur auf den Arbeits-Branch. Ein Push auf `main` geht über Vercel direkt in die Produktion und braucht die ausdrückliche Zustimmung von Brandea.
+- **Branches:** Commit und Push nur auf den Arbeits-Branch (E03, E10, E11 gelten für ihn wie für den alten). Ein Push oder Merge auf `main` geht über Vercel direkt in die Produktion und braucht die ausdrückliche Zustimmung von Brandea. Der Pull Request des Arbeits-Branches ist ein Entwurf zur Durchsicht, kein Weg an dieser Freigabe vorbei.
 - **Aussagen:** Über das Unternehmen nur Belegtes (E18), also keine erfundenen Zahlen, Kundenstimmen oder Zertifikate.
 - **Neuer Name:** Er wird erst nach der Markenrecherche öffentlich (E38). Für Clavea ist die Verwechslungsgefahr mit der Marke CLAVIS zu klären (E47).
 - **Daten:** Keine Schlüssel in Dateien, keine Personennamen in der Analyse.
@@ -43,7 +43,9 @@ Website der BGS - Gebäudeservice GmbH in Emmenbrücke LU. Die neue Dachmarke he
 ## Wo was steht
 
 - Firmenangaben und Marke: `shared/company.ts`
-- Titel und Beschreibungen aller Seiten: `shared/seo.ts`
+- Name, Titel und Beschreibung aller Seiten, Brotkrumen: `shared/seo.ts`
+- Texte der Leistungs- und Premiumseiten: `content/de/`, Vorlage `client/src/components/ServicePage.tsx`
+- Strukturierte Daten: `shared/structured-data.ts`
 - Schalter für Chat und Bilder: `shared/features.ts`
 - Sicherheitsheader und Weiterleitungen: `next.config.ts`
 - Kontaktformular: `app/api/contact/route.ts`, `server/email.ts`
