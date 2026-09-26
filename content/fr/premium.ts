@@ -27,7 +27,7 @@ const luxusimmobilien: ServicePageContent = {
   h1: 'Nettoyage et entretien de villas et de résidences',
   lead: [
     'Dans une maison faite de pierre naturelle, de parquet et de surfaces laquées brillantes, chaque détail compte, tout comme la confiance envers les personnes qui y travaillent. Nous nettoyons villas, lofts et résidences régulièrement ou avant des occasions particulières, dans le respect des matériaux délicats.',
-    'Chez vous, c’est toujours la même équipe qui travaille, aux heures qui vous conviennent : aussi le soir, le week-end ou pendant votre absence.',
+    'Chez vous, c’est toujours la même équipe qui travaille, aux heures qui vous conviennent : aussi le soir, le week-end ou pendant votre absence.',
   ],
   facts: [
     { label: 'Pour', value: 'Villas, lofts, résidences et résidences secondaires' },
@@ -37,7 +37,7 @@ const luxusimmobilien: ServicePageContent = {
   ],
   scope: {
     title: 'Ce qui est compris',
-    intro: 'Nous fixons l’étendue après un tour de votre maison. Typiquement :',
+    intro: 'Nous fixons l’étendue après un tour de votre maison. Typiquement :',
     items: [
       'Pièces de séjour, chambres à coucher et chambres d’amis',
       'Cuisines et salles de bains',
@@ -47,7 +47,7 @@ const luxusimmobilien: ServicePageContent = {
       'Rondes de contrôle pendant votre absence',
       'Nettoyage avant et après des réceptions, aussi le week-end',
       'Pièces abritant des œuvres d’art et des antiquités, les œuvres uniquement avec votre accord',
-      'Pour les courtiers et les gérances : à bref délai avant une vente, une séance photo ou une remise',
+      'Pour les courtiers et les gérances : à bref délai avant une vente, une séance photo ou une remise',
     ],
     notIncluded: ['Restauration d’œuvres d’art et d’antiquités.'],
   },
@@ -74,21 +74,21 @@ const luxusimmobilien: ServicePageContent = {
   ],
   faq: [
     {
-      question: 'Est-ce toujours la même équipe qui travaille chez nous ?',
+      question: 'Est-ce toujours la même équipe qui travaille chez nous ?',
       answer: 'Oui. Chez vous, c’est toujours la même équipe qui travaille, une équipe qui connaît votre maison et vos souhaits.',
     },
     {
-      question: 'Comment traitez-vous les œuvres d’art et les antiquités ?',
+      question: 'Comment traitez-vous les œuvres d’art et les antiquités ?',
       answer: 'Nous nettoyons les pièces avec soin. Les œuvres d’art elles-mêmes, nous ne les nettoyons qu’avec votre accord explicite.',
     },
     {
-      question: 'Pouvez-vous nettoyer pendant notre absence ?',
+      question: 'Pouvez-vous nettoyer pendant notre absence ?',
       answer: 'Oui, aussi pendant votre absence, le soir ou le week-end. Pour les clés et l’alarme, nous convenons de règles fixes.',
     },
-    { question: 'Êtes-vous assurés ?', answer: answers.versicherung },
-    { question: 'Dans quelles langues pouvons-nous communiquer ?', answer: answers.sprachen },
-    { question: 'Combien coûte le nettoyage ?', answer: answers.kosten },
-    { question: 'Où intervenez-vous ?', answer: answers.gebiet },
+    { question: 'Êtes-vous assurés ?', answer: answers.versicherung },
+    { question: 'Dans quelles langues pouvons-nous communiquer ?', answer: answers.sprachen },
+    { question: 'Combien coûte le nettoyage ?', answer: answers.kosten },
+    { question: 'Où intervenez-vous ?', answer: answers.gebiet },
   ],
   related: [
     { path: '/premium/yacht', text: 'Pour les yachts et les bateaux à moteur sur le lac des Quatre-Cantons et le lac de Zoug.' },
@@ -114,7 +114,7 @@ const privatjet: ServicePageContent = {
   ],
   scope: {
     title: 'Ce qui est compris',
-    intro: 'Nous fixons l’étendue au préalable avec vous. Typiquement :',
+    intro: 'Nous fixons l’étendue au préalable avec vous. Typiquement :',
     items: [
       'Sièges et garnitures en cuir et en tissu',
       'Moquettes et sols',
@@ -145,21 +145,21 @@ const privatjet: ServicePageContent = {
   ],
   faq: [
     {
-      question: 'Comment planifiez-vous le nettoyage autour de nos vols ?',
+      question: 'Comment planifiez-vous le nettoyage autour de nos vols ?',
       answer: 'Nous coordonnons le moment avec vous et votre exploitant, afin que la cabine soit prête avant le prochain vol.',
     },
     {
-      question: 'Comment traitez-vous le cuir et le bois ?',
+      question: 'Comment traitez-vous le cuir et le bois ?',
       answer: 'Nous nettoyons dans le respect des matériaux et clarifions au préalable quels produits conviennent à votre cabine.',
     },
     {
-      question: 'Qui travaille dans notre cabine ?',
+      question: 'Qui travaille dans notre cabine ?',
       answer:
         'Toujours la même équipe. Les personnes qui interviennent chez vous ont été vérifiées par nos soins. Sur demande, nous signons un accord de confidentialité.',
     },
-    { question: 'Êtes-vous assurés ?', answer: answers.versicherung },
-    { question: 'Dans quelles langues pouvons-nous communiquer ?', answer: answers.sprachen },
-    { question: 'Combien coûte le nettoyage ?', answer: answers.kosten },
+    { question: 'Êtes-vous assurés ?', answer: answers.versicherung },
+    { question: 'Dans quelles langues pouvons-nous communiquer ?', answer: answers.sprachen },
+    { question: 'Combien coûte le nettoyage ?', answer: answers.kosten },
   ],
   related: [
     { path: '/premium/luxusimmobilien', text: 'Pour les villas, les résidences et les résidences secondaires.' },
@@ -185,7 +185,7 @@ const yacht: ServicePageContent = {
   ],
   scope: {
     title: 'Ce qui est compris',
-    intro: 'Nous fixons l’étendue après une visite à la place d’amarrage. Typiquement :',
+    intro: 'Nous fixons l’étendue après une visite à la place d’amarrage. Typiquement :',
     items: [
       'Pont et surfaces en teck',
       'Surfaces en gelcoat sur le pont et les superstructures',
@@ -210,16 +210,16 @@ const yacht: ServicePageContent = {
   ],
   faq: [
     {
-      question: 'Où nettoyez-vous les bateaux ?',
+      question: 'Où nettoyez-vous les bateaux ?',
       answer: 'À la place d’amarrage, sur le lac des Quatre-Cantons et le lac de Zoug. Nous clarifions au préalable avec vous l’accès au ponton ou au port.',
     },
     {
-      question: 'Quels matériaux nettoyez-vous ?',
+      question: 'Quels matériaux nettoyez-vous ?',
       answer: 'Le teck, le gelcoat et la sellerie ainsi que l’intérieur. Nous clarifions lors de la visite les produits que nous utilisons pour votre bateau.',
     },
-    { question: 'Pouvez-vous nettoyer avec des produits respectueux de l’environnement ?', answer: answers.mittel },
-    { question: 'Êtes-vous assurés ?', answer: answers.versicherung },
-    { question: 'Combien coûte le nettoyage ?', answer: answers.kosten },
+    { question: 'Pouvez-vous nettoyer avec des produits respectueux de l’environnement ?', answer: answers.mittel },
+    { question: 'Êtes-vous assurés ?', answer: answers.versicherung },
+    { question: 'Combien coûte le nettoyage ?', answer: answers.kosten },
   ],
   related: [
     { path: '/premium/luxusimmobilien', text: 'Pour les villas, les résidences et les résidences secondaires au bord du lac.' },

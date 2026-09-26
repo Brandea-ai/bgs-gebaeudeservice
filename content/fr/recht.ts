@@ -62,14 +62,14 @@ export const datenschutz: LegalContent = {
     {
       title: 'Visite du site web',
       paragraphs: [
-        'Le site web est hébergé chez Vercel Inc., États-Unis. Chaque consultation génère des données de journal techniquement nécessaires : adresse IP, date et heure, page consultée, navigateur et système d’exploitation, ainsi que la page d’où vous venez.',
+        'Le site web est hébergé chez Vercel Inc., États-Unis. Chaque consultation génère des données de journal techniquement nécessaires : adresse IP, date et heure, page consultée, navigateur et système d’exploitation, ainsi que la page d’où vous venez.',
         'Nous avons besoin de ces données pour fournir le site web, détecter les erreurs et repousser les attaques. Nous ne les exploitons pas à des fins publicitaires et ne les relions pas à d’autres données. Vercel ne les conserve que le temps nécessaire à l’exploitation et à la sécurité.',
       ],
     },
     {
       title: 'Formulaire de contact et e-mail',
       paragraphs: [
-        'Lorsque vous nous écrivez au moyen du formulaire, nous traitons vos indications : nom, adresse e-mail et message, ainsi que, de manière facultative, numéro de téléphone, prestation souhaitée, lieu du bien et fréquence. Nous les utilisons pour répondre à votre demande et établir votre devis.',
+        'Lorsque vous nous écrivez au moyen du formulaire, nous traitons vos indications : nom, adresse e-mail et message, ainsi que, de manière facultative, numéro de téléphone, prestation souhaitée, lieu du bien et fréquence. Nous les utilisons pour répondre à votre demande et établir votre devis.',
         `Le formulaire est envoyé à notre boîte de réception au moyen du service d’e-mail Resend, Inc., États-Unis. Jusqu’à la mise en place de notre propre adresse, il s’agit de ${company.email}, la boîte de réception de Brandea GbR en Allemagne, qui exploite ce site web pour nous et nous transmet les demandes.`,
         'Pour prévenir les abus, le serveur conserve brièvement votre adresse IP en mémoire vive afin de détecter un nombre excessif de demandes en peu de temps. Elle n’est pas enregistrée durablement.',
         'Nous conservons votre demande aussi longtemps que nous en avons besoin pour la traiter et pour d’éventuelles questions. Si un mandat est conclu, les délais légaux de conservation s’appliquent.',
@@ -78,7 +78,7 @@ export const datenschutz: LegalContent = {
     {
       title: 'Carte',
       paragraphs: [
-        'Sur la page de contact, nous n’affichons une carte Google Maps que lorsque vous cliquez sur « Charger la carte ». Ce n’est qu’à ce moment que Google reçoit votre adresse IP et des informations techniques sur votre navigateur. Le prestataire est Google Ireland Limited, les données peuvent aussi être traitées aux États-Unis. Plus d’informations dans la politique de confidentialité de Google sous policies.google.com/privacy.',
+        'Sur la page de contact, nous n’affichons une carte Google Maps que lorsque vous cliquez sur « Charger la carte ». Ce n’est qu’à ce moment que Google reçoit votre adresse IP et des informations techniques sur votre navigateur. Le prestataire est Google Ireland Limited, les données peuvent aussi être traitées aux États-Unis. Plus d’informations dans la politique de confidentialité de Google sous policies.google.com/privacy.',
       ],
     },
     {
@@ -95,7 +95,7 @@ export const datenschutz: LegalContent = {
     },
     {
       title: 'Vos droits',
-      paragraphs: ['Vous pouvez à tout moment :'],
+      paragraphs: ['Vous pouvez à tout moment :'],
       items: [
         'demander quelles données personnelles nous traitons à votre sujet',
         'faire rectifier des données inexactes',

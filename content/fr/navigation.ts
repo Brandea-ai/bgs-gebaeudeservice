@@ -121,7 +121,7 @@ export const nav: NavDictionary = {
     required: '* Champs obligatoires',
     submit: 'Envoyer le message',
     sending: 'Envoi en cours…',
-    success: `Merci beaucoup ! Votre message a bien été envoyé. Nous vous répondons ${responseTime}.`,
+    success: `Merci beaucoup ! Votre message a bien été envoyé. Nous vous répondons ${responseTime}.`,
     error: `Votre message n’a pas pu être envoyé. Veuillez nous appeler (${company.phone.display}) ou nous écrire à ${company.email}.`,
   },
   notFound: {

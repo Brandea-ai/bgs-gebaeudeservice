@@ -119,22 +119,22 @@ export const contact = {
   },
   faq: [
     {
-      question: 'En combien de temps vais-je recevoir un devis ?',
+      question: 'En combien de temps vais-je recevoir un devis ?',
       answer: `Nous vous répondons ${responseTime} et convenons d’un rendez-vous pour la visite. Vous recevez ensuite le devis par écrit.`,
     },
-    { question: 'Combien coûte le nettoyage ?', answer: `${answers.kosten} Plus d’informations dans nos conseils : [Ce qui détermine le coût d’un nettoyage d’entretien](/blog/reinigungskosten-schweiz).` },
-    { question: 'Dans quelles régions intervenez-vous ?', answer: answers.gebiet },
-    { question: 'Êtes-vous assurés ?', answer: answers.versicherung },
-    { question: 'Acceptez-vous aussi des interventions à bref délai ?', answer: 'Appelez-nous. Nous voyons avec vous ce qui est possible à bref délai.' },
+    { question: 'Combien coûte le nettoyage ?', answer: `${answers.kosten} Plus d’informations dans nos conseils : [Ce qui détermine le coût d’un nettoyage d’entretien](/blog/reinigungskosten-schweiz).` },
+    { question: 'Dans quelles régions intervenez-vous ?', answer: answers.gebiet },
+    { question: 'Êtes-vous assurés ?', answer: answers.versicherung },
+    { question: 'Acceptez-vous aussi des interventions à bref délai ?', answer: 'Appelez-nous. Nous voyons avec vous ce qui est possible à bref délai.' },
   ],
   cta: {
-    title: 'Prêt pour votre devis ?',
+    title: 'Prêt pour votre devis ?',
     text: `Le formulaire se trouve au bas de chaque page. Nous vous répondons ${responseTime}.`,
   },
 }
 
 export const area = {
-  h1: `Zone d’intervention : ${cantonList}`,
+  h1: `Zone d’intervention : ${cantonList}`,
   lead: `Depuis notre siège à ${company.address.city}, nous intervenons dans cinq cantons. Nous proposons toutes nos prestations dans toute la zone, aux entreprises comme à une clientèle privée exigeante.`,
   cantonsTitle: 'Cantons',
   cantonLabels: ['Canton de Lucerne', 'Canton de Zoug', 'Canton d’Argovie', 'Canton de Nidwald', 'Canton d’Obwald'],
@@ -151,13 +151,13 @@ export const area = {
     ],
   },
   cta: {
-    title: 'Votre bien se trouve-t-il dans notre zone ?',
+    title: 'Votre bien se trouve-t-il dans notre zone ?',
     text: `Décrivez-nous le bien et le lieu. Nous passons pour un devis gratuit et sans engagement et vous répondons ${responseTime}.`,
   },
 }
 
 export const servicesOverview = {
-  h1: 'Prestations : nettoyage et conciergerie',
+  h1: 'Prestations : nettoyage et conciergerie',
   lead: `Choisissez selon votre besoin. Nous proposons toutes nos prestations dans les cantons de ${cantonList}. Pour un devis, nous passons gratuitement et sans engagement.`,
   groups: [
     {
@@ -189,12 +189,12 @@ export const servicesOverview = {
     },
   ] satisfies { title: string; text: string; items: LinkCard[] }[],
   premium: {
-    title: 'Villas, jets privés ou yachts ?',
+    title: 'Villas, jets privés ou yachts ?',
     text: 'Pour des exigences particulières, nous proposons notre offre Premium.',
     link: 'Vers l’offre Premium',
   },
   cta: {
-    title: 'Vous ne savez pas exactement ce dont vous avez besoin ?',
+    title: 'Vous ne savez pas exactement ce dont vous avez besoin ?',
     text: `Décrivez-nous le bien et votre demande. Nous passons chez vous, clarifions l’étendue avec vous et vous répondons ${responseTime}.`,
   },
 }
@@ -218,7 +218,7 @@ export const premiumOverview = {
   h1: 'Des nettoyages pour des exigences particulières',
   lead: 'Pour les villas et les résidences, les résidences secondaires, les hôtels aux souhaits particuliers, les family offices, les jets privés et les yachts. Discrets, soigneux et dans votre langue.',
   nameMeaning: company.premiumBrand
-    ? `Le nom ${company.premiumBrand} vient du latin « clavis », la clé. Vous nous confiez votre maison, nous en prenons soin comme si c’était la nôtre.`
+    ? `Le nom ${company.premiumBrand} vient du latin « clavis », la clé. Vous nous confiez votre maison, nous en prenons soin comme si c’était la nôtre.`
     : null,
   offers: [
     { title: 'Biens de prestige', path: '/premium/luxusimmobilien', text: 'Villas, lofts et résidences, régulièrement ou avant des occasions particulières, avec l’entretien des matériaux délicats.' },
