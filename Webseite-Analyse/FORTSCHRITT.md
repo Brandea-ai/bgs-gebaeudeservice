@@ -85,6 +85,7 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 | 26.09.2026 | Seitendurchgang: Premium, Ratgeber, Globales | Premium- und Ratgeberseiten geprüft ohne Änderung, Menü, Footer, Formular und 404 in die Inhaltsschicht, 0 axe-Verstösse. 26 von 26 Seiten angekreuzt (N083) |
 | 26.09.2026 | Runde 8 und Produktion | Antworten ausgewertet (20, E66 bis E69). `main` per Fast-Forward auf `c0aedc5`, Live-Seite geprüft. Bildfläche auf Leistungsseiten und «Offerte anfragen» im Kopf auf dem Branch (N084) |
 | 26.09.2026 | Durcharbeiten (E70), Mehrsprachigkeit | Routine-Freigaben entfallen (E70), Runde 9 nach Empfehlung entschieden (E71), Foto-Briefing (21). M60 umgesetzt: vier Sprachen mit übersetzten Adressen, Umschalter, hreflang, Formular mit Sprachhinweis. In der Produktion bis zur Prüfung nur Deutsch (N085) |
+| 26.09.2026 | Ladezeit | JavaScript je Seite von 759 auf 430 KB, Chat-Code nur bei eingeschaltetem Chat (N086) |
 
 ## Abweichungen und Vorfälle
 
@@ -155,7 +156,7 @@ Die neuen Texte in `content/de/` beruhen auf Eigenangaben und Entscheidungen (E1
 
 ## Nächste Aufgabe
 
-**Stand 26.09.2026 (E70, E71):** Seitendurchgang und Mehrsprachigkeit fertig und live, weitere Sprachen in der Produktion noch aus. **Offen bei Brandea:** Übersetzungen EN, FR, IT prüfen (Preview-Adressen unter `/en`, `/fr`, `/it`), dann in Vercel `LANGUAGES=true`. Markenrecherche (E38), dann `NEW_BRAND=true`. Fotos nach 21. **Agent als Nächstes:** Ladezeit (M25: Animationsbibliothek und Chat-Code nicht mehr laden), danach Chat (M03) nach der Modellwahl.
+**Stand 26.09.2026 (E70, E71):** Seitendurchgang und Mehrsprachigkeit fertig und live, weitere Sprachen in der Produktion noch aus. **Offen bei Brandea:** Übersetzungen EN, FR, IT prüfen (Preview-Adressen unter `/en`, `/fr`, `/it`), dann in Vercel `LANGUAGES=true`. Markenrecherche (E38), dann `NEW_BRAND=true`. Fotos nach 21. **Agent als Nächstes:** Chat (M03), sobald Brandea Modell und Zugang festlegt. Bis dahin Pflege: ungenutzte Dateien und alte KI-Bilder aufräumen (M34), sobald echte Fotos da sind.
 
 **Stand 26.09.2026:** Welle 1, Teil 2 und der Marken-Schalter sind auf `claude/funny-einstein-5acss7` umgesetzt und getestet (N074 bis N077). Durchsicht über den Draft-PR Brandea-ai/bgs-gebaeudeservice#7 (Entwurf, **nicht mergen**). In Produktion ist nichts davon, dort steht weiter der alte Stand (N076).
 

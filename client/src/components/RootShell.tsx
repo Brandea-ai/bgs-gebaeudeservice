@@ -1,11 +1,9 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import '../../../app/globals.css'
-import { Toaster } from '@/components/ui/sonner'
-import { TooltipProvider } from '@/components/ui/tooltip'
 import { ThemeProvider } from '@/contexts/ThemeContext'
 import { ChatbotProvider } from '@/contexts/ChatbotContext'
-import AIChatbot from '@/components/AIChatbot'
+import { LazyChatbot } from '@/components/LazyChat'
 import ErrorBoundary from '@/components/ErrorBoundary'
 import JsonLd from '@/components/JsonLd'
 import { company } from '../../../shared/company'
@@ -64,12 +62,10 @@ export default function RootShell({ lang, children }: { lang: Locale; children: 
         <ErrorBoundary>
           <ThemeProvider defaultTheme="light">
             <ChatbotProvider>
-              <TooltipProvider>
-                <Toaster />
-                {/* Kein Cookie-Banner: keine einwilligungspflichtigen Dienste, die Karte fragt selbst (M15, E20) */}
-                <AIChatbot />
-                {children}
-              </TooltipProvider>
+              {/* Kein Cookie-Banner: keine einwilligungspflichtigen Dienste, die Karte fragt selbst (M15, E20) */}
+              {/* Chat erst mit Modell und Zugang (E14, E35), vorher kein Code im Browser (M25) */}
+              <LazyChatbot />
+              {children}
             </ChatbotProvider>
           </ThemeProvider>
         </ErrorBoundary>

@@ -13,10 +13,10 @@ import {
 import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
 import AppointmentButton from "@/components/AppointmentButton";
-import IndustryAdvisor from "@/components/IndustryAdvisor";
+import { LazyIndustryAdvisor } from "@/components/LazyChat";
 import OfferCta from "@/components/OfferCta";
 import Steps from "@/components/Steps";
-import { ParallaxBackground } from "@/components/PremiumParallax";
+import HeroBackground from "@/components/HeroBackground";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { chatEnabled } from "../../../shared/features";
@@ -41,11 +41,7 @@ export default function HomeView({ lang }: { lang: Locale }) {
 
       <main>
         <section className="relative min-h-[80vh] flex items-center overflow-hidden">
-          <ParallaxBackground
-            src="/swiss-hero-main.jpg"
-            speed={0.5}
-            overlay={true}
-          />
+          <HeroBackground src="/swiss-hero-main.jpg" />
           <div className="container relative z-10 py-24 md:py-32">
             <div className="max-w-4xl">
               <p className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-white/10 rounded-full mb-4 sm:mb-6 text-white font-semibold text-sm sm:text-base">
@@ -81,7 +77,7 @@ export default function HomeView({ lang }: { lang: Locale }) {
               {/* KI-Berater erst mit Modell und Zugang (E35), bis dahin keine Handlungsaufforderung dorthin (M31) */}
               {chatEnabled && (
                 <div className="mt-12 max-w-3xl">
-                  <IndustryAdvisor />
+                  <LazyIndustryAdvisor />
                 </div>
               )}
             </div>

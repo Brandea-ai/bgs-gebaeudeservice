@@ -3,7 +3,6 @@
 import { Calendar, Phone } from 'lucide-react';
 import { Button } from './ui/button';
 import { useChatbot } from '../contexts/ChatbotContext';
-import { MagneticHover } from './PremiumParallax';
 import { chatEnabled } from '../../../shared/features';
 import { company } from '../../../shared/company';
 
@@ -26,14 +25,12 @@ export default function AppointmentButton({
   // das Telefon, die erste führt zum Formular (M31).
   if (!chatEnabled) {
     return (
-      <MagneticHover>
         <Button asChild size={size} variant={variant} className={`${fullWidth ? 'w-full' : ''} ${className}`}>
           <a href={company.phone.href}>
             <Phone className="mr-2 w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
             {company.phone.display}
           </a>
         </Button>
-      </MagneticHover>
     );
   }
 
@@ -42,7 +39,6 @@ export default function AppointmentButton({
   };
 
   return (
-    <MagneticHover>
       <Button
         size={size}
         variant={variant}
@@ -52,6 +48,5 @@ export default function AppointmentButton({
         <Calendar className="mr-2 w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
         Termin vereinbaren
       </Button>
-    </MagneticHover>
   );
 }
