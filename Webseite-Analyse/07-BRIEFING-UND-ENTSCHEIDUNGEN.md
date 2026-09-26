@@ -151,3 +151,4 @@ Dieser Block ist nur ein austauschbares Briefingformat, kein Programmcode. Leere
 | E67 | 26.09.2026 | **Kernleistungen zuerst** in Menü und Footer | MENU_ORDER (20) | Alle | Nutzer | — |
 | E68 | 26.09.2026 | **Knopf im Kopf «Offerte anfragen»** statt «Kontakt aufnehmen» | HEADER_CTA (20) | Alle | Nutzer | — |
 | E69 | 26.09.2026 | **Seitendurchgang in die Produktion**, Push durch den Agenten | LIVE (20) | Alle | Nutzer | E66, E68 mit eigener Freigabe |
+| E70 | 26.09.2026 | **Durcharbeiten ohne Routine-Freigaben:** Agent pusht nach grünen Prüfungen selbst nach `main`, fragt nur bei wichtigen Punkten (Aussagen, Recht, Marke, Schalter, Kosten, Widersprüche). Offene Fragen aus Runde 9 entscheidet der Agent nach seiner Empfehlung | Nutzer: «bitte nicht mehr so viele unnötigen Freigaben, arbeite mal etwas mehr durch, nur dann wenn es wirklich wichtig wird» | Alle | Nutzer | Ersetzt die Einzelfreigaben aus E54, E57, E65, E69 |

@@ -154,7 +154,7 @@ Die neuen Texte in `content/de/` beruhen auf Eigenangaben und Entscheidungen (E1
 
 ## Nächste Aufgabe
 
-**Stand 26.09.2026, Seitendurchgang (E61, E64):** Abgeschlossen, 26 von 26 Seiten in `18-SEITEN-CHECKLISTE.md`, live seit `c0aedc5` (E69). Auf dem Branch warten E66 und E68 auf Freigabe (Runde 9). Nächster grosser Block nach Wahl in Runde 9: Mehrsprachigkeit (M60), Chat (M03) oder Ladezeit (M25).
+**Stand 26.09.2026 (E70):** Seitendurchgang abgeschlossen und live. Der Agent arbeitet ohne Routine-Freigaben durch und pusht geprüfte Blöcke selbst nach `main`. Runde 9 nach Empfehlung entschieden: Bildfläche auf dem Handy aus, Foto-Briefing durch den Agenten, nächster Block Mehrsprachigkeit (M60).
 
 **Stand 26.09.2026:** Welle 1, Teil 2 und der Marken-Schalter sind auf `claude/funny-einstein-5acss7` umgesetzt und getestet (N074 bis N077). Durchsicht über den Draft-PR Brandea-ai/bgs-gebaeudeservice#7 (Entwurf, **nicht mergen**). In Produktion ist nichts davon, dort steht weiter der alte Stand (N076).
 

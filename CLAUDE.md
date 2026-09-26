@@ -11,7 +11,7 @@ Website der BGS - Gebäudeservice GmbH in Emmenbrücke LU. Die neue Dachmarke he
 ## Stand
 
 - **Arbeits-Branch** `claude/funny-einstein-5acss7` (seit 26.09.2026): Fortsetzung von `claude/optimistic-sagan-h5y2i9`, per Fast-Forward übernommen. Hier ist alles umgesetzt und getestet. Der alte Branch bleibt unverändert als Stand vom 25.09.2026.
-- **`main` und Produktion** stehen seit 26.09.2026 auf `613f3cf`: neuer Stand, Arbeitsmarke, `noindex` (N078). Weitere Pushes nach `main` nur mit neuer ausdrücklicher Zustimmung.
+- **`main` und Produktion** folgen dem Arbeits-Branch nach jedem geprüften Block (E70): Arbeitsmarke, `noindex`.
 - **Welcher Stand in die Produktion darf:** der aktuelle Arbeits-Branch, gesteuert über den Schalter `NEW_BRAND` (seit `9e62a2f`):
   - Ohne `NEW_BRAND` zeigt ein Produktions-Build die Arbeitsmarke «BGS Gebäudeservice», Previews und lokale Builds Mantena und Clavea.
   - Erst nach der Markenrecherche (E38) in Vercel für Production `NEW_BRAND=true` setzen.
@@ -20,13 +20,14 @@ Website der BGS - Gebäudeservice GmbH in Emmenbrücke LU. Die neue Dachmarke he
 
 ## Regeln
 
-- **Branches:** Commit und Push nur auf den Arbeits-Branch (E03, E10, E11 gelten für ihn wie für den alten). Ein Push oder Merge auf `main` geht über Vercel direkt in die Produktion und braucht die ausdrückliche Zustimmung von Brandea. Der Pull Request des Arbeits-Branches ist ein Entwurf zur Durchsicht, kein Weg an dieser Freigabe vorbei.
+- **Branches:** Gearbeitet wird auf dem Arbeits-Branch (E03, E10, E11). Ein Push auf `main` geht über Vercel direkt in die Produktion.
+- **Durcharbeiten (E70, 26.09.2026):** Brandea will keine Freigabe für Routineschritte. Der Agent pusht selbst nach `main`, wenn Typprüfung, Build, beide Prüfskripte (beide Marken-Modi) und axe-core grün sind und die Seite weiter `noindex` und die Arbeitsmarke zeigt. Danach die Live-Seite prüfen. Gefragt wird nur bei wichtigen Punkten: neue Aussagen über das Unternehmen (E18), Rechtstexte, Marke und Name (E38), `NEW_BRAND` und `SITE_INDEXABLE`, echte Anfragen an den Kunden, Kosten, Löschungen, Widersprüche in den Entscheidungen. Dann gesammelt als Fragebogen.
 - **Aussagen:** Über das Unternehmen nur Belegtes (E18), also keine erfundenen Zahlen, Kundenstimmen oder Zertifikate.
 - **Neuer Name:** Er wird erst nach der Markenrecherche öffentlich (E38). Für Clavea ist die Verwechslungsgefahr mit der Marke CLAVIS zu klären (E47).
 - **Daten:** Keine Schlüssel in Dateien, keine Personennamen in der Analyse.
 - **Formular:** Keine echten Anfragen an den Kunden ohne Freigabe. Tests laufen gegen einen Nachbau der Resend-API (`RESEND_BASE_URL`).
 - **FIMI:** Das Projekt nie ändern.
-- **Rückfragen:** Immer als Artifact-Fragebogen (Wunsch von Brandea, 26.09.2026): Abschnitt für Abschnitt, kurze Fragen mit Ja/Nein oder Auswahl, Empfehlung vorgewählt markiert, Visualisierung des Stands, globale Notiz und JSON-Kopie am Ende. Nie als offene Fragen im Chat.
+- **Rückfragen:** Nur bei wichtigen Punkten (E70), dann immer als Artifact-Fragebogen (Wunsch von Brandea, 26.09.2026): Abschnitt für Abschnitt, kurze Fragen mit Ja/Nein oder Auswahl, Empfehlung vorgewählt markiert, Visualisierung des Stands, globale Notiz und JSON-Kopie am Ende. Nie als offene Fragen im Chat.
 - **Alte Anleitung:** `CLAUDE-QUICKSTART.md` ist veraltet und gilt nicht.
 
 ## Befehle
