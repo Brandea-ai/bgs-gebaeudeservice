@@ -37,7 +37,7 @@ export const en: Dictionary = {
       load: 'Load map',
       open: 'Open in Google Maps',
     },
-    // The German type is the literal German register name, hence the assertion
+    // The German type is the literal German register name (company.register is «as const»)
     registerCourt: register as Dictionary['misc']['registerCourt'],
   },
 }

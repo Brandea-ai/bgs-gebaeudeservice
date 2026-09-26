@@ -94,7 +94,7 @@ export const about: Seiten['about'] = {
     title: 'Your contact person',
     text: `Your enquiry is handled personally by our managing director. We will get back to you ${responseTime}.`,
   },
-  // The German type is the literal German register name, hence the assertion
+  // The German type is the literal German register name (company.register is «as const»)
   register: { title: 'Registration details', court: register as Seiten['about']['register']['court'] },
   statsLabel: 'In figures',
   cta: {
@@ -236,8 +236,9 @@ export const premiumOverview: Seiten['premiumOverview'] = {
     { title: 'Estate agents and property managers', text: 'Cleaning at short notice before a sale, photo shoot or handover.' },
   ] satisfies Card[],
   promisesTitle: 'What you can rely on',
-  // The German list is declared «as const», so its titles and texts are literal
-  // German types. The English list has the same keys and order.
+  // Same keys and order as the German list (symbols in app/premium/page.tsx). The
+  // German list is declared «as const», so its titles and texts are literal German
+  // types; the assertion bridges that without changing content/de.
   promises: promises as unknown as Seiten['premiumOverview']['promises'],
   places: {
     title: 'Where we are there for you',

@@ -14,7 +14,7 @@ export const responseTime = 'within 24 hours on working days'
 export const cantons = 'Lucerne, Zug, Aargau, Nidwalden and Obwalden'
 
 /** English form of company.register */
-export const register = 'Commercial Register of the Canton of Lucerne'
+export const register: string = 'Commercial Register of the Canton of Lucerne'
 
 /** English form of company.languages */
 export const languages = 'German, English, French and Italian'
