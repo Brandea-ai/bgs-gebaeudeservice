@@ -38,6 +38,6 @@ export const fr: Dictionary = {
       open: 'Ouvrir dans Google Maps',
     },
     // Le type allemand reprend la valeur littérale de company.register, le texte français la remplace
-    registerCourt: register as Dictionary['misc']['registerCourt'],
+    registerCourt: register,
   },
 }

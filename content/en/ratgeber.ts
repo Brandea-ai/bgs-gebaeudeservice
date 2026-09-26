@@ -13,7 +13,7 @@ export const ratgeberUebersicht = {
   services:
     'Go straight to our services: [maintenance cleaning](/leistungen/unterhaltsreinigung), [caretaking](/leistungen/hauswartung) and [all services](/leistungen).',
   byline: `A guide by ${company.brand}`,
-  updatedLabel: 'Last updated',
+  updatedLabel: 'Last updated:',
   publishedLabel: 'Published on',
 }
 

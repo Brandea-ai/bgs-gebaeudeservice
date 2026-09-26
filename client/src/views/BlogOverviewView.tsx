@@ -45,9 +45,9 @@ export default function BlogOverviewView({ lang }: { lang: Locale }) {
                     </h2>
                     <p className="text-slate-600 mb-4">{article.teaser}</p>
                     <p className="text-sm text-slate-500">
-                      {t.updatedLabel}:{" "}
+                      {t.updatedLabel}{" "}
                       <time dateTime={article.updated}>
-                        {formatDate(article.updated)}
+                        {formatDate(article.updated, lang)}
                       </time>
                     </p>
                   </article>

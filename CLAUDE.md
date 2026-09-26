@@ -17,6 +17,7 @@ Website der BGS - Gebäudeservice GmbH in Emmenbrücke LU. Die neue Dachmarke he
   - Erst nach der Markenrecherche (E38) in Vercel für Production `NEW_BRAND=true` setzen.
   - Den Arbeitsmarken-Modus lokal prüfen: `NEW_BRAND=false npm run build`, dann das Seiten-Prüfskript. Es meldet jeden Treffer des neuen Namens.
   - `ff99f92` ist damit überholt.
+- **Sprachen (M60, seit 26.09.2026):** Deutsch ohne Präfix, Englisch, Französisch und Italienisch unter `/en`, `/fr`, `/it` mit übersetzten Adressen. Schalter `LANGUAGES` wie `NEW_BRAND`: ohne Angabe in der Produktion nur Deutsch, in Previews und lokal alle Sprachen. Erst nach der Prüfung der Übersetzungen durch Brandea (E50) in Vercel für Production `LANGUAGES=true` setzen. Lokal prüfen: `LANGUAGES=false npm run build`.
 
 ## Regeln
 
@@ -47,8 +48,9 @@ Website der BGS - Gebäudeservice GmbH in Emmenbrücke LU. Die neue Dachmarke he
 ## Wo was steht
 
 - Firmenangaben und Marke: `shared/company.ts`, Marken-Schalter in `next.config.ts`
-- Name, Titel und Beschreibung aller Seiten, Brotkrumen: `shared/seo.ts`
-- Texte der Leistungs- und Premiumseiten: `content/de/`, Vorlage `client/src/components/ServicePage.tsx`
+- Sprachen, übersetzte Adressen, hreflang: `shared/i18n.ts`
+- Alle Texte je Sprache: `content/de/`, `content/en/`, `content/fr/`, `content/it/` (Typ `Dictionary` aus `content/de/index.ts`, fehlende Einträge meldet TypeScript). Seitentitel in `content/<sprache>/seo.ts`, Metadaten und Brotkrumen in `shared/seo.ts`
+- Seiten: eine Route je Sprache (`app/(de)`, `app/(en)`, …), Darstellung in `client/src/views/`, Zuordnung in `client/src/views/registry.tsx`, Vorlagen in `client/src/components/` (`ServicePage`, `ArticlePage`, `LegalPage`)
 - Strukturierte Daten: `shared/structured-data.ts`
 - Schalter für Chat und Bilder: `shared/features.ts`
 - Sicherheitsheader und Weiterleitungen: `next.config.ts`

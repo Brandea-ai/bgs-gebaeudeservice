@@ -54,7 +54,7 @@ export const pages = {
   },
   '/leistungen/sonderreinigungen': {
     label: 'Nettoyages spéciaux',
-    title: 'Nettoyages spéciaux : en profondeur et fin de bail',
+    title: 'Nettoyages spéciaux et fin de bail',
     description: 'Nettoyage en profondeur et nettoyage de fin de bail avec garantie de remise, pour gérances, propriétaires et entreprises à Lucerne, Zoug et environs.',
   },
   '/leistungen/baureinigung': {

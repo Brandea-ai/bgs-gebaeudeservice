@@ -96,7 +96,7 @@ export const about = {
     text: `Notre directeur traite personnellement votre demande. Nous vous répondons ${responseTime}.`,
   },
   // Le type allemand reprend la valeur littérale de company.register, le texte français la remplace
-  register: { title: 'Données du registre', court: register as Seiten['about']['register']['court'] },
+  register: { title: 'Données du registre', court: register },
   statsLabel: 'En chiffres',
   cta: {
     title: 'Faisons connaissance',
@@ -199,8 +199,7 @@ export const servicesOverview = {
   },
 }
 
-// Le type allemand fige les textes des engagements (as const), le texte français les remplace
-const promises = [
+const promises: Seiten['premiumOverview']['promises'] = [
   { key: 'persoenlich', title: 'Un suivi personnel', text: 'Notre directeur traite personnellement votre demande.' },
   { key: 'diskret', title: 'Discrétion', text: 'Sur demande, nous signons un accord de confidentialité.' },
   { key: 'teams', title: 'Des équipes fixes', text: 'Chez vous, c’est toujours la même équipe qui travaille.' },
@@ -211,7 +210,7 @@ const promises = [
   { key: 'sprachen', title: 'Quatre langues', text: 'Allemand, anglais, français et italien.' },
   { key: 'versichert', title: 'Assurés', text: 'Responsabilité civile d’entreprise avec une couverture de CHF 10 millions.' },
   { key: 'offerte', title: 'Devis sur place', text: 'Gratuit et sans engagement, après une visite.' },
-] as const
+]
 
 export const premiumOverview = {
   line: premiumLine,
@@ -235,7 +234,7 @@ export const premiumOverview = {
     { title: 'Courtiers et gérances', text: 'Nettoyage à bref délai avant une vente, une séance photo ou une remise.' },
   ] satisfies Card[],
   promisesTitle: 'Ce sur quoi vous pouvez compter',
-  promises: promises as unknown as Seiten['premiumOverview']['promises'],
+  promises,
   places: {
     title: 'Où nous sommes à votre service',
     text: `Au bord du lac des Quatre-Cantons, de Lucerne et Meggen jusqu’à Weggis, Vitznau, Hergiswil et Ennetbürgen, au bord des lacs de Zoug et d’Ägeri, de Zoug et Walchwil jusqu’à Oberägeri, à Engelberg et dans l’ensemble des cantons de ${cantonList}. [Vers la zone d’intervention](/einzugsgebiet)`,

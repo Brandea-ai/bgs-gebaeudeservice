@@ -38,7 +38,7 @@ export default function SwissNavigation({ lang = "de", path = "/" }: { lang?: Lo
             </div>
           </Link>
 
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden xl:flex items-center gap-6 2xl:gap-8">
             <Link href={href(menu.home.path)} className="text-foreground hover:text-primary transition-smooth font-medium">
               {menu.home.label}
             </Link>
@@ -109,7 +109,7 @@ export default function SwissNavigation({ lang = "de", path = "/" }: { lang?: Lo
           <button
             type="button"
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-foreground"
+            className="xl:hidden p-2 text-foreground"
             aria-label={isOpen ? menu.close : menu.open}
             aria-expanded={isOpen}
           >
@@ -119,7 +119,7 @@ export default function SwissNavigation({ lang = "de", path = "/" }: { lang?: Lo
       </div>
 
       {isOpen && (
-        <div className="lg:hidden bg-white border-t max-h-[80vh] overflow-y-auto">
+        <div className="xl:hidden bg-white border-t max-h-[80vh] overflow-y-auto">
           <div className="container py-4 space-y-4">
             <Link href={href(menu.home.path)} onClick={() => setIsOpen(false)} className="block py-2 text-foreground hover:text-primary transition-smooth">
               {menu.home.label}

@@ -54,7 +54,7 @@ export default function LegalPage({ content, path, lang = 'de' }: { content: Leg
             ))}
           </div>
 
-          <p className="text-sm text-slate-600 mt-8">{getDict(lang).ratgeber.overview.updatedLabel}: {formatDate(content.updated, lang)}</p>
+          <p className="text-sm text-slate-600 mt-8">{getDict(lang).ratgeber.overview.updatedLabel} {formatDate(content.updated, lang)}</p>
         </div>
       </main>
 

@@ -94,8 +94,7 @@ export const about: Seiten['about'] = {
     title: 'Your contact person',
     text: `Your enquiry is handled personally by our managing director. We will get back to you ${responseTime}.`,
   },
-  // The German type is the literal German register name (company.register is «as const»)
-  register: { title: 'Registration details', court: register as Seiten['about']['register']['court'] },
+  register: { title: 'Registration details', court: register },
   statsLabel: 'In figures',
   cta: {
     title: 'Let us get to know each other',
@@ -201,7 +200,7 @@ export const servicesOverview: Seiten['servicesOverview'] = {
   },
 }
 
-const promises = [
+const promises: Seiten['premiumOverview']['promises'] = [
   { key: 'persoenlich', title: 'Personal', text: 'Your enquiry is handled personally by our managing director.' },
   { key: 'diskret', title: 'Discreet', text: 'On request, we sign a non-disclosure agreement.' },
   { key: 'teams', title: 'Dedicated teams', text: 'The same team always works for you.' },
@@ -212,7 +211,7 @@ const promises = [
   { key: 'sprachen', title: 'Four languages', text: `${languages}.` },
   { key: 'versichert', title: 'Insured', text: 'Business liability insurance with CHF 10 million cover.' },
   { key: 'offerte', title: 'Quote on site', text: 'Free of charge and non-binding, after a site visit.' },
-] as const
+]
 
 export const premiumOverview: Seiten['premiumOverview'] = {
   line: premiumLine,
@@ -237,9 +236,8 @@ export const premiumOverview: Seiten['premiumOverview'] = {
   ] satisfies Card[],
   promisesTitle: 'What you can rely on',
   // Same keys and order as the German list (symbols in app/premium/page.tsx). The
-  // German list is declared «as const», so its titles and texts are literal German
   // types; the assertion bridges that without changing content/de.
-  promises: promises as unknown as Seiten['premiumOverview']['promises'],
+  promises,
   places: {
     title: 'Where we are there for you',
     text: `On Lake Lucerne from Lucerne and Meggen to Weggis, Vitznau, Hergiswil and Ennetbürgen, on Lake Zug and Lake Aegeri from Zug and Walchwil to Oberägeri, in Engelberg and throughout the cantons of ${cantons}. [View service area](/einzugsgebiet)`,

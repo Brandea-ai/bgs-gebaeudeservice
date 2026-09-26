@@ -14,7 +14,7 @@ export const ratgeberUebersicht = {
   services:
     'Directement vers les prestations : [Nettoyage d’entretien](/leistungen/unterhaltsreinigung), [Conciergerie](/leistungen/hauswartung) et [toutes les prestations](/leistungen).',
   byline: `Un conseil de ${company.brand}`,
-  updatedLabel: 'Mise à jour',
+  updatedLabel: 'Mise à jour\u00a0:',
   publishedLabel: 'Publié le',
 }
 

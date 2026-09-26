@@ -20,7 +20,8 @@ export const ratgeberUebersicht = {
   services:
     'Direkt zu den Leistungen: [Unterhaltsreinigung](/leistungen/unterhaltsreinigung), [Hauswartung](/leistungen/hauswartung) und [alle Leistungen](/leistungen).',
   byline: `Ein Ratgeber von ${company.brand}`,
-  updatedLabel: 'Stand',
+  // Mit Satzzeichen, weil es je Sprache anders steht (fr: Leerschlag vor dem Doppelpunkt, it: ohne)
+  updatedLabel: 'Stand:',
   publishedLabel: 'Veröffentlicht am',
 }
 

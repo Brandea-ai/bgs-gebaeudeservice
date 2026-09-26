@@ -99,7 +99,7 @@ export const pages: Dictionary['pages'] = {
   },
   '/blog/richtige-reinigungsfirma-finden': {
     label: 'Choosing a cleaning company',
-    title: 'Choosing a cleaning company: criteria and questions',
+    title: 'Choosing a cleaning company: what to check',
     description: 'Scope of services, insurance, quality control, references and quote: what to clarify before hiring a cleaning company, with the steps up to the contract.',
   },
   '/blog/reinigungskosten-schweiz': {

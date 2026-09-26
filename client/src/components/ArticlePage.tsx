@@ -39,7 +39,7 @@ export default function ArticlePage({ article, lang = 'de' }: { article: Article
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-slate-900 mb-4">{article.h1}</h1>
                 <p className="text-lg md:text-xl text-slate-700 leading-relaxed mb-6">{article.subtitle}</p>
                 <p className="text-sm text-slate-600">
-                  {t.byline} · {t.updatedLabel}: <time dateTime={article.updated}>{formatDate(article.updated, lang)}</time>
+                  {t.byline} · {t.updatedLabel} <time dateTime={article.updated}>{formatDate(article.updated, lang)}</time>
                   {article.published && (
                     <>
                       {' '}
