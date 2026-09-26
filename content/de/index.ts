@@ -39,7 +39,7 @@ export const de = {
       load: 'Karte laden',
       open: 'In Google Maps öffnen',
     },
-    registerCourt: company.register,
+    registerCourt: company.register as string,
   },
 }
 

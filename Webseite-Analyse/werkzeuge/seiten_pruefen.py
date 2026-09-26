@@ -127,15 +127,44 @@ for p, b in pages.items():
             fails.append(("link", p, href, checked[path]))
 print(f"Interne Linkziele: {len(checked)}")
 
+# Mehrsprachigkeit (M60): Sprache aus dem Präfix, lang-Attribut und hreflang je Seite
+LANG = {"en": "en", "fr": "fr-CH", "it": "it-CH"}
+def lang_of(p):
+    first = p.strip("/").split("/")[0]
+    return first if first in LANG else "de"
+langs = sorted({lang_of(p) for p in paths})
+alternates = {}
 titles = {}
 for p, b in pages.items():
     t = html.unescape(re.search(r"<title>(.*?)</title>", b, re.S).group(1))
     titles[p] = t
-    marke = f"{PREMIUM} von {BRAND}" if p.startswith("/premium") and PREMIUM else BRAND
-    if len(t) > 70 or marke not in t:
+    lang = lang_of(p)
+    rest = p if lang == "de" else p[len(lang) + 1:]
+    premium = rest.startswith("/premium")
+    # Premium-Seiten tragen Linie und Dachmarke, das Bindewort hängt von der Sprache ab
+    if premium and PREMIUM:
+        ok_brand = PREMIUM in t and BRAND in t
+    else:
+        ok_brand = BRAND in t
+    if len(t) > 70 or not ok_brand:
         fails.append(("titel", p, t))
     if len(re.findall(r"<h1[\s>]", b)) != 1:
         fails.append(("h1", p))
+    html_lang = re.search(r'<html[^>]*\slang="([^"]+)"', b)
+    if not html_lang or html_lang.group(1) != LANG.get(lang, "de-CH"):
+        fails.append(("lang", p, html_lang and html_lang.group(1)))
+    if len(langs) > 1:
+        links = {m.group(1): urlparse(html.unescape(m.group(2))).path or "/" for m in re.finditer(r'<link rel="alternate" hrefLang="([^"]+)" href="([^"]+)"', b)}
+        alternates[p] = links
+        if len(links) != len(langs) + 1 or links.get(LANG.get(lang, "de-CH")) != p:
+            fails.append(("hreflang", p, links))
+# Gegenseitig: Jede verlinkte Sprachversion verweist auf dieselbe Gruppe zurück (S76)
+for p, links in alternates.items():
+    for code, target in links.items():
+        if code != "x-default" and alternates.get(target) != links:
+            fails.append(("hreflang nicht gegenseitig", p, target))
+if len(langs) > 1:
+    print(f"Sprachen: {', '.join(langs)}, hreflang in {len(alternates)} Seiten geprüft")
 dup = {t for t in titles.values() if list(titles.values()).count(t) > 1}
 if dup:
     fails.append(("doppelte titel", sorted(dup)))

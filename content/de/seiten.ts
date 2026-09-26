@@ -11,6 +11,17 @@ import { answers, steps } from './common'
  */
 
 type Card = { title: string; text: string }
+type PromiseKey =
+  | 'persoenlich'
+  | 'diskret'
+  | 'teams'
+  | 'personal'
+  | 'schluessel'
+  | 'zeiten'
+  | 'material'
+  | 'sprachen'
+  | 'versichert'
+  | 'offerte'
 type LinkCard = Card & { path: PagePath }
 
 /** Belegte Kennzahlen (E18, Stand September 2026) */
@@ -96,7 +107,7 @@ export const about = {
     title: 'Ihre Ansprechperson',
     text: `Ihre Anfrage bearbeitet der Geschäftsführer persönlich. Wir melden uns ${company.responseTime}.`,
   },
-  register: { title: 'Registerdaten', court: company.register },
+  register: { title: 'Registerdaten', court: company.register as string },
   statsLabel: 'In Zahlen',
   cta: {
     title: 'Lernen wir uns kennen',
@@ -238,7 +249,7 @@ export const premiumOverview = {
     { key: 'sprachen', title: 'Vier Sprachen', text: `${listDe(company.languages)}.` },
     { key: 'versichert', title: 'Versichert', text: 'Betriebshaftpflicht mit CHF 10 Mio. Deckung.' },
     { key: 'offerte', title: 'Offerte vor Ort', text: 'Kostenlos und unverbindlich, nach einer Besichtigung.' },
-  ] as const,
+  ] satisfies { key: PromiseKey; title: string; text: string }[] as { key: PromiseKey; title: string; text: string }[],
   places: {
     title: 'Wo wir für Sie da sind',
     text: `Am Vierwaldstättersee von Luzern und Meggen bis Weggis, Vitznau, Hergiswil und Ennetbürgen, am Zuger- und Ägerisee von Zug und Walchwil bis Oberägeri, in Engelberg und in den ganzen Kantonen ${cantonList}. [Zum Einzugsgebiet](/einzugsgebiet)`,
