@@ -1,5 +1,6 @@
 import { company } from '../../shared/company'
 import type { LegalContent } from '../types'
+import { registerIt } from './common'
 
 /**
  * Note legali e informativa sulla protezione dei dati in italiano (M14, M50, M60).
@@ -22,7 +23,7 @@ export const impressum: LegalContent = {
     {
       title: 'Dati del registro',
       lines: [
-        'Iscritta nel Registro di commercio del Cantone di Lucerna',
+        `Iscritta nel ${registerIt}`,
         `IDI ${company.uid}`,
         `Numero IVA ${company.uid} IVA`,
       ],

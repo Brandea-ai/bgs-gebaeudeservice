@@ -2,7 +2,7 @@ import { company, premiumLabel } from '../../shared/company'
 import type { PagePath } from '../../shared/seo'
 import type { Dictionary } from '../de'
 import type { Step } from '../types'
-import { answers, cantonListIt, languagesIt, premiumLine, responseTime, steps } from './common'
+import { answers, cantonListIt, languagesIt, premiumLine, registerIt, responseTime, steps } from './common'
 
 /**
  * Testi della pagina iniziale, di Chi siamo, Contatto, Zona d’intervento e delle
@@ -94,7 +94,7 @@ export const about = {
     title: 'Il Suo interlocutore',
     text: `La Sua richiesta è trattata personalmente dal direttore. La contattiamo ${responseTime}.`,
   },
-  register: { title: 'Dati del registro', court: 'Registro di commercio del Cantone di Lucerna' },
+  register: { title: 'Dati del registro', court: registerIt as Seiten['about']['register']['court'] },
   statsLabel: 'In cifre',
   cta: {
     title: 'Conosciamoci',

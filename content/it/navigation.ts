@@ -72,7 +72,7 @@ const footer: NavDictionary['footer'] = {
 
 /** Modulo di contatto nel piè di pagina. I valori (value) restano in tedesco per l’e-mail. */
 const contactForm: NavDictionary['contactForm'] = {
-  title: 'Contattateci ora',
+  title: 'Ci contatti ora',
   intro: `Richieda un’offerta senza impegno. La contattiamo ${responseTime}.`,
   choose: 'Selezioni...',
   fields: {

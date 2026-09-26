@@ -10,6 +10,8 @@ import type { Step } from '../types'
 export const responseTime = 'entro 24 ore nei giorni feriali'
 export const cantonListIt = 'Lucerna, Zugo, Argovia, Nidvaldo e Obvaldo'
 export const languagesIt = 'tedesco, inglese, francese e italiano'
+/** Registro di commercio in italiano */
+export const registerIt = 'Registro di commercio del Cantone di Lucerna'
 
 /** Riga sopra il titolo principale delle pagine premium */
 export const premiumLine = company.premiumBrand ? `${company.premiumBrand} · Linea premium di ${company.brand}` : 'Premium'
