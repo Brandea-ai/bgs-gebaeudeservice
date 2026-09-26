@@ -6,8 +6,6 @@ import { fadeInUp, staggerContainer, scaleIn } from "@/utils/animations";
 import SwissNavigation from "@/components/SwissNavigation";
 import { scrollToContact } from "@/utils/scroll";
 import SwissFooter from "@/components/SwissFooter";
-import SEO from "@/components/SEO";
-import { serviceSchema } from "@/utils/schema";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -22,22 +20,8 @@ import {
 } from "@/components/ui/accordion";
 
 export default function FacilityManagement() {
-  const serviceData = {
-    name: "Ganzheitliches Facility Management",
-    description: "Umfassendes Facility Management für Ihre Immobilien. Reinigung, Wartung und Instandhaltung aus einer Hand.",
-    url: "/leistungen/facility-services",
-    category: "Facility Management"
-  };
-
   return (
     <div className="min-h-screen bg-white">
-      <SEO
-        title="Facility Management Luzern, Zug & Umgebung - BGS Gebäudeservice"
-        description="Umfassendes Facility Management in der Schweiz. Reinigung, Wartung und Instandhaltung aus einer Hand."
-        keywords="Facility Management, Gebäudemanagement Schweiz, Facility Services, Immobilienverwaltung"
-        url="/leistungen/facility-services"
-        schema={serviceSchema(serviceData)}
-      />
       <SwissNavigation />
       
       <section className="pt-32 pb-20 relative">

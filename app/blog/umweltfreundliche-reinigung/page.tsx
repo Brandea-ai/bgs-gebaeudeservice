@@ -4,7 +4,6 @@ import { ParallaxImage, ParallaxBackground, RevealOnScroll, TiltCard, MagneticHo
 import { fadeInUp, staggerContainer, scaleIn } from "@/utils/animations";
 
 import SwissNavigation from "@/components/SwissNavigation";
-import SEO from "@/components/SEO";
 import SwissFooter from "@/components/SwissFooter";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card } from "@/components/ui/card";
@@ -15,11 +14,6 @@ import { Check, ArrowRight, Leaf, Droplets, Recycle } from "lucide-react";
 export default function UmweltfreundlicheReinigung() {
   return (
     <>
-      <SEO 
-        title="Umweltfreundliche Reinigung: Nachhaltig & Effektiv | BGS Gebäudeservice"
-        description="Nachhaltige Reinigungsmethoden und umweltfreundliche Reinigungsmittel. Wie Sie Sauberkeit und Umweltschutz perfekt kombinieren."
-        keywords="umweltfreundliche Reinigung, nachhaltige Reinigung, ökologische Reinigungsmittel, Green Cleaning"
-      />
       <UmweltfreundlicheReinigungContent />
     </>
   );

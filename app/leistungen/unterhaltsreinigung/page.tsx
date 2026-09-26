@@ -6,8 +6,6 @@ import { fadeInUp, staggerContainer, scaleIn } from "@/utils/animations";
 import SwissNavigation from "@/components/SwissNavigation";
 import { scrollToContact } from "@/utils/scroll";
 import SwissFooter from "@/components/SwissFooter";
-import SEO from "@/components/SEO";
-import { serviceSchema } from "@/utils/schema";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -17,22 +15,8 @@ import { CheckCircle, Calendar, Clock, Shield, Sparkles, ArrowRight } from "luci
 import AppointmentButton from "@/components/AppointmentButton";
 
 export default function Unterhaltsreinigung() {
-  const serviceData = {
-    name: "Professionelle Unterhaltsreinigung",
-    description: "Regelmäßige Unterhaltsreinigung für Büros und Gewerbe. Zuverlässig, flexibel und auf höchstem Qualitätsniveau.",
-    url: "/leistungen/unterhaltsreinigung",
-    category: "Maintenance Cleaning"
-  };
-
   return (
     <div className="min-h-screen bg-white">
-      <SEO
-        title="Unterhaltsreinigung Luzern, Zug & Umgebung - BGS Gebäudeservice"
-        description="Professionelle Unterhaltsreinigung in der Schweiz. Regelmäßig, zuverlässig und auf höchstem Qualitätsniveau."
-        keywords="Unterhaltsreinigung, Regelmäßige Reinigung Schweiz, Büroreinigung, Gewerbereinigung"
-        url="/leistungen/unterhaltsreinigung"
-        schema={serviceSchema(serviceData)}
-      />
       <SwissNavigation />
       
       <section className="pt-32 pb-20 relative">

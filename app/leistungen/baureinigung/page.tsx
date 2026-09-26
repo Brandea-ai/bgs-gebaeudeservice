@@ -6,8 +6,6 @@ import { fadeInUp, staggerContainer, scaleIn } from "@/utils/animations";
 import SwissNavigation from "@/components/SwissNavigation";
 import { scrollToContact } from "@/utils/scroll";
 import SwissFooter from "@/components/SwissFooter";
-import SEO from "@/components/SEO";
-import { serviceSchema } from "@/utils/schema";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -22,22 +20,8 @@ import {
 import AppointmentButton from "@/components/AppointmentButton";
 
 export default function Baureinigung() {
-  const serviceData = {
-    name: "Professionelle Baureinigung",
-    description: "Professionelle Baureinigung für Neubauten und Renovierungen. Bauschlussreinigung, Baustellenreinigung und Entsorgung.",
-    url: "/leistungen/baureinigung",
-    category: "Construction Cleaning"
-  };
-
   return (
     <div className="min-h-screen bg-white">
-      <SEO
-        title="Baureinigung Luzern, Zug & Umgebung - BGS Gebäudeservice"
-        description="Professionelle Baureinigung in der Schweiz. Bauschlussreinigung, Baustellenreinigung und Entsorgung für Neubauten und Renovierungen."
-        keywords="Baureinigung, Bauschlussreinigung, Baustellenreinigung Schweiz, Endreinigung Neubau"
-        url="/leistungen/baureinigung"
-        schema={serviceSchema(serviceData)}
-      />
       <SwissNavigation />
       
       <section className="pt-32 pb-20 relative">

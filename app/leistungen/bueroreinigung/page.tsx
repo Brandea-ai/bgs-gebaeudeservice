@@ -6,8 +6,6 @@ import { fadeInUp, staggerContainer, scaleIn } from "@/utils/animations";
 import SwissNavigation from "@/components/SwissNavigation";
 import { scrollToContact } from "@/utils/scroll";
 import SwissFooter from "@/components/SwissFooter";
-import SEO from "@/components/SEO";
-import { serviceSchema } from "@/utils/schema";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -17,22 +15,8 @@ import { CheckCircle, Building, Clock, Shield, Sparkles, ArrowRight } from "luci
 import AppointmentButton from "@/components/AppointmentButton";
 
 export default function Bueroreinigung() {
-  const serviceData = {
-    name: "Professionelle Büroreinigung",
-    description: "Zuverlässige Büroreinigung für Unternehmen in Luzern, Zug und Umgebung. Flexibel, effizient und auf Ihre Bedürfnisse zugeschnitten.",
-    url: "/leistungen/bueroreinigung",
-    category: "Commercial Cleaning"
-  };
-
   return (
     <div className="min-h-screen bg-white">
-      <SEO
-        title="Büroreinigung Luzern, Zug & Umgebung - BGS Gebäudeservice"
-        description="Professionelle Büroreinigung für Unternehmen in der Schweiz. Zuverlässig, flexibel und auf höchstem Qualitätsniveau."
-        keywords="Büroreinigung, Büroreinigung Luzern, Gebäudereinigung Büro, Reinigung Geschäftsräume"
-        url="/leistungen/bueroreinigung"
-        schema={serviceSchema(serviceData)}
-      />
       <SwissNavigation />
       
       <section className="pt-32 pb-20 relative">

@@ -6,8 +6,6 @@ import { fadeInUp, staggerContainer, scaleIn } from "@/utils/animations";
 import SwissNavigation from "@/components/SwissNavigation";
 import { scrollToContact } from "@/utils/scroll";
 import SwissFooter from "@/components/SwissFooter";
-import SEO from "@/components/SEO";
-import { serviceSchema } from "@/utils/schema";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -17,22 +15,8 @@ import { CheckCircle, Building2, Droplets, Shield, Sparkles, ArrowRight } from "
 import AppointmentButton from "@/components/AppointmentButton";
 
 export default function Fassadenreinigung() {
-  const serviceData = {
-    name: "Professionelle Fassadenreinigung",
-    description: "Schonende und effektive Fassadenreinigung für alle Materialien. Von Glas über Naturstein bis zu modernen Verbundmaterialien.",
-    url: "/leistungen/fenster-und-fassadenreinigung",
-    category: "Facade Cleaning"
-  };
-
   return (
     <div className="min-h-screen bg-white">
-      <SEO
-        title="Fassadenreinigung Luzern, Zug & Umgebung - BGS Gebäudeservice"
-        description="Professionelle Fassadenreinigung in der Schweiz. Schonend und effektiv für alle Materialien - Glas, Naturstein, Verbundmaterialien."
-        keywords="Fassadenreinigung, Gebäudereinigung Außen, Fassade reinigen Schweiz, Hochhaus Fassadenreinigung"
-        url="/leistungen/fenster-und-fassadenreinigung"
-        schema={serviceSchema(serviceData)}
-      />
       <SwissNavigation />
       
       <section className="pt-32 pb-20 relative">

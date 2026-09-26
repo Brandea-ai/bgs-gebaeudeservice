@@ -6,8 +6,6 @@ import { fadeInUp, staggerContainer, scaleIn } from "@/utils/animations";
 import SwissNavigation from "@/components/SwissNavigation";
 import { scrollToContact } from "@/utils/scroll";
 import SwissFooter from "@/components/SwissFooter";
-import SEO from "@/components/SEO";
-import { serviceSchema } from "@/utils/schema";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -17,22 +15,8 @@ import { CheckCircle, Star, Clock, Shield, Zap, ArrowRight } from "lucide-react"
 import AppointmentButton from "@/components/AppointmentButton";
 
 export default function Sonderleistungen() {
-  const serviceData = {
-    name: "Professionelle Sonderleistungen",
-    description: "Spezielle Reinigungsleistungen für außergewöhnliche Anforderungen. Schnell, kompetent und zuverlässig.",
-    url: "/leistungen/sonderreinigungen",
-    category: "Special Services"
-  };
-
   return (
     <div className="min-h-screen bg-white">
-      <SEO
-        title="Sonderleistungen Luzern, Zug & Umgebung - BGS Gebäudeservice"
-        description="Professionelle Sonderleistungen in der Schweiz. Spezialreinigungen für außergewöhnliche Anforderungen."
-        keywords="Sonderleistungen, Spezialreinigung Schweiz, Notfallreinigung, Express Reinigung"
-        url="/leistungen/sonderreinigungen"
-        schema={serviceSchema(serviceData)}
-      />
       <SwissNavigation />
       
       <section className="pt-32 pb-20 relative">

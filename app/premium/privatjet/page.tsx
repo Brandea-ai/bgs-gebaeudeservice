@@ -6,8 +6,6 @@ import { fadeInUp, staggerContainer, scaleIn } from "@/utils/animations";
 import SwissNavigation from "@/components/SwissNavigation";
 import { scrollToContact } from "@/utils/scroll";
 import SwissFooter from "@/components/SwissFooter";
-import SEO from "@/components/SEO";
-import { serviceSchema } from "@/utils/schema";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -18,22 +16,8 @@ import AppointmentButton from "@/components/AppointmentButton";
 import { company } from "../../../shared/company";
 
 export default function Privatjet() {
-  const serviceData = {
-    name: "Privatjet-Reinigung",
-    description: "Kabinenreinigung für Privatjets mit Rücksicht auf hochwertige Materialien. Diskret und nach Absprache.",
-    url: "/premium/privatjet",
-    category: "Aviation Cleaning"
-  };
-
   return (
     <div className="min-h-screen bg-white">
-      <SEO
-        title="Privatjet-Reinigung - Exklusiver Premium Service"
-        description="Professionelle Privatjet-Reinigung in der Schweiz. Diskretion und sorgfältige Materialpflege für anspruchsvolle Kunden."
-        keywords="Privatjet-Reinigung, Flugzeug Reinigung Schweiz, Aviation Cleaning, Private Jet Service"
-        url="/premium/privatjet"
-        schema={serviceSchema(serviceData)}
-      />
       <SwissNavigation />
       
       <section className="pt-32 pb-20 relative">

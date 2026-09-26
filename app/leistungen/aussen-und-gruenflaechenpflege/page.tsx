@@ -6,8 +6,6 @@ import { fadeInUp, staggerContainer, scaleIn } from "@/utils/animations";
 import SwissNavigation from "@/components/SwissNavigation";
 import { scrollToContact } from "@/utils/scroll";
 import SwissFooter from "@/components/SwissFooter";
-import SEO from "@/components/SEO";
-import { serviceSchema } from "@/utils/schema";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -22,22 +20,8 @@ import {
 } from "@/components/ui/accordion";
 
 export default function Aussenanlagen() {
-  const serviceData = {
-    name: "Außenanlage & Grünflächenpflege",
-    description: "Professionelle Pflege von Außenanlagen. Grünflächenpflege und Aussenreinigung.",
-    url: "/leistungen/aussen-und-gruenflaechenpflege",
-    category: "Outdoor Facility Management"
-  };
-
   return (
     <div className="min-h-screen bg-white">
-      <SEO
-        title="Außenanlage Luzern, Zug & Umgebung - BGS Gebäudeservice"
-        description="Professionelle Pflege von Außenanlagen in der Schweiz. Grünflächenpflege und Aussenreinigung."
-        keywords="Außenanlagen Pflege, Grünflächenpflege Schweiz, Außenreinigung, Facility Management Außen"
-        url="/leistungen/aussen-und-gruenflaechenpflege"
-        schema={serviceSchema(serviceData)}
-      />
       <SwissNavigation />
       
       <section className="pt-32 pb-20 relative">

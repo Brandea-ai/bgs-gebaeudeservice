@@ -7,8 +7,6 @@ import { Card } from "@/components/ui/card";
 import { Check, ArrowRight, Star, Shield, Clock, Users, Sparkles, Award, Building2, Wrench } from "lucide-react";
 import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
-import SEO from "@/components/SEO";
-import { organizationSchema } from "@/utils/schema";
 import { motion } from "framer-motion";
 import {
   ParallaxImage,
@@ -43,13 +41,6 @@ export default function SwissHome() {
 
   return (
     <div className="min-h-screen bg-white">
-      <SEO
-        title="Gebäudereinigung und Hauswartung in Luzern, Zug und Umgebung"
-        description="BGS Gebäudeservice - Professionelle Reinigungsfirma in der Schweiz für Unternehmen und Premium-Kunden. Gebäudereinigung, Büroreinigung und exklusive Premium Services."
-        keywords="Gebäudereinigung Luzern, Hauswartung Luzern, Büroreinigung Zug, Unterhaltsreinigung, Facility Services"
-        url="/"
-        schema={organizationSchema}
-      />
       <SwissNavigation />
 
       {/* Hero Section with Advanced Parallax */}

@@ -6,7 +6,6 @@ import { fadeInUp, staggerContainer, scaleIn } from "@/utils/animations";
 
 import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
-import SEO from "@/components/SEO";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin, CheckCircle, AlertCircle } from "lucide-react";
@@ -81,12 +80,6 @@ export default function Kontakt() {
 
   return (
     <div className="min-h-screen bg-white">
-      <SEO
-        title="Kontakt - BGS Gebäudeservice | Jetzt Angebot anfordern"
-        description="Kontaktieren Sie die BGS Gebäudeservice für ein individuelles Angebot. Wir sind für Sie da - per Telefon, E-Mail oder über unser Kontaktformular."
-        keywords="Kontakt, Angebot, Reinigungsfirma Schweiz, Anfrage, Beratung"
-        url="/kontakt"
-      />
       <SwissNavigation />
 
       {/* Hero Section */}

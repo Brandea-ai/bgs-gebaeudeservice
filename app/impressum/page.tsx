@@ -1,19 +1,12 @@
 'use client'
 import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
-import SEO from "@/components/SEO";
 import { Card } from "@/components/ui/card";
 import { company } from "../../shared/company";
 
 export default function Impressum() {
   return (
     <div className="min-h-screen bg-white">
-      <SEO
-        title="Impressum - BGS Gebäudeservice"
-        description="Rechtliche Hinweise und Impressum der BGS Gebäudeservice. Alle Informationen zu unserem Unternehmen."
-        keywords="Impressum, rechtliche Hinweise, Kontakt, Adresse, UID"
-        url="/impressum"
-      />
       <SwissNavigation />
 
       <section className="pt-32 pb-20 bg-slate-50">

@@ -6,8 +6,6 @@ import { fadeInUp, staggerContainer, scaleIn } from "@/utils/animations";
 import SwissNavigation from "@/components/SwissNavigation";
 import { scrollToContact } from "@/utils/scroll";
 import SwissFooter from "@/components/SwissFooter";
-import SEO from "@/components/SEO";
-import { serviceSchema } from "@/utils/schema";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -17,22 +15,8 @@ import { CheckCircle, Wrench, Clock, Shield, Phone, ArrowRight } from "lucide-re
 import AppointmentButton from "@/components/AppointmentButton";
 
 export default function Hausmeisterservice() {
-  const serviceData = {
-    name: "Professioneller Hausmeisterservice",
-    description: "Zuverlässiger Hausmeisterservice für Ihre Immobilie. Kontrollgänge, Kleinreparaturen und Wohnungsübergaben.",
-    url: "/leistungen/hauswartung",
-    category: "Facility Caretaker Service"
-  };
-
   return (
     <div className="min-h-screen bg-white">
-      <SEO
-        title="Hausmeisterservice Luzern, Zug & Umgebung - BGS Gebäudeservice"
-        description="Professioneller Hausmeisterservice in der Schweiz. Kontrollgänge, Kleinreparaturen und Wohnungsübergaben."
-        keywords="Hausmeisterservice, Hausmeister Schweiz, Objektbetreuung, Facility Caretaker"
-        url="/leistungen/hauswartung"
-        schema={serviceSchema(serviceData)}
-      />
       <SwissNavigation />
       
       <section className="pt-32 pb-20 relative">

@@ -5,7 +5,6 @@ import { fadeInUp, staggerContainer, scaleIn } from "@/utils/animations";
 
 import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
-import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
@@ -15,12 +14,6 @@ import { company } from "../../shared/company";
 export default function UeberUns() {
   return (
     <div className="min-h-screen bg-white">
-      <SEO
-        title="Über Uns - BGS Gebäudeservice | Qualität & Vertrauen"
-        description="Lernen Sie die Geschichte und die Werte der BGS Gebäudeservice kennen. Erfahren Sie, warum wir Ihr vertrauenswürdiger Partner für professionelle Reinigung sind."
-        keywords="Über uns, Reinigungsfirma Schweiz, Team, Werte, Mission, Geschichte"
-        url="/ueber-uns"
-      />
       <SwissNavigation />
 
       {/* Hero Section */}

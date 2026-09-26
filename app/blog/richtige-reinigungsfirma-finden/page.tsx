@@ -4,7 +4,6 @@ import { ParallaxImage, ParallaxBackground, RevealOnScroll, TiltCard, MagneticHo
 import { fadeInUp, staggerContainer, scaleIn } from "@/utils/animations";
 
 import SwissNavigation from "@/components/SwissNavigation";
-import SEO from "@/components/SEO";
 import { scrollToContact } from "@/utils/scroll";
 import SwissFooter from "@/components/SwissFooter";
 import {
@@ -21,11 +20,6 @@ import { Check, ArrowRight, Star } from "lucide-react";
 export default function RichtigeReinigungsfirmaFinden() {
   return (
     <>
-      <SEO 
-        title="Die richtige Reinigungsfirma finden: 10 Tipps | BGS Gebäudeservice"
-        description="Wichtige Kriterien für die Auswahl der richtigen Reinigungsfirma: Nachweise, Versicherung, Referenzen und Offerte."
-        keywords="Reinigungsfirma finden, Reinigungsfirma auswählen, Kriterien Reinigungsfirma, professionelle Reinigung"
-      />
       <RichtigeReinigungsfirmaFindenContent />
     </>
   );
