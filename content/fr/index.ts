@@ -11,7 +11,7 @@ import { pages } from './seo'
 /**
  * Tous les textes français (M60), même forme que l’objet allemand (type
  * Dictionary). Les liens internes restent avec l’adresse allemande, l’affichage
- * insère l’adresse de la langue (shared/i18n.ts). Entwurf zur Prüfung durch Brandea (E50).
+ * insère l’adresse de la langue (shared/i18n.ts). Projet soumis à la relecture de Brandea (E50).
  */
 export const fr: Dictionary = {
   pages,

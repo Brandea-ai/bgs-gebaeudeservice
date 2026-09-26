@@ -38,7 +38,6 @@ export const it: Dictionary = {
       load: 'Carica la mappa',
       open: 'Apri in Google Maps',
     },
-    // Il tipo tedesco è un valore letterale (company è «as const»)
-    registerCourt: registerIt as Dictionary['misc']['registerCourt'],
+    registerCourt: registerIt,
   },
 }

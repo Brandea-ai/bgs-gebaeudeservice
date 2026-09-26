@@ -13,7 +13,7 @@ export const pages = {
   '/': {
     label: 'Pagina iniziale',
     title: `${company.brand} – Pulizie e custodia di stabili a Lucerna e Zugo`,
-    description: `Pulizia di edifici, custodia di stabili e facility services per aziende e stabili nei Cantoni ${region}, oltre a pulizie premium.`,
+    description: `Pulizia di edifici, custodia di stabili e facility services per aziende e stabili nei Cantoni ${region}, e pulizie premium.`,
   },
   '/premium': {
     label: premiumLabel,
@@ -30,7 +30,7 @@ export const pages = {
   '/premium/privatjet': {
     label: 'Jet privato',
     title: 'Pulizia di jet privati',
-    description: 'Pulizia della cabina di jet privati con riguardo per i materiali di pregio. Discreta, secondo accordi e con team fissi, dalla Svizzera centrale.',
+    description: 'Pulizia della cabina di jet privati con riguardo per i materiali di pregio. Un servizio discreto, secondo accordi con Lei e con team fissi.',
   },
   '/premium/yacht': {
     label: 'Yacht',
@@ -40,7 +40,7 @@ export const pages = {
   '/leistungen': {
     label: 'Servizi',
     title: 'Servizi: pulizia e custodia di stabili',
-    description: `Pulizia di manutenzione, di uffici, speciale, di cantiere, di finestre e industriale, custodia e facility services di ${company.brand} a Lucerna, Zugo e dintorni.`,
+    description: `Pulizia di manutenzione, di uffici, speciale, di cantiere, di finestre e industriale, custodia e facility services di ${company.brand} a Lucerna e Zugo.`,
   },
   '/leistungen/unterhaltsreinigung': {
     label: 'Pulizia di manutenzione',
@@ -59,7 +59,7 @@ export const pages = {
   },
   '/leistungen/baureinigung': {
     label: 'Pulizia di cantiere',
-    title: 'Pulizia di fine cantiere a Lucerna e Zugo',
+    title: 'Pulizia di cantiere e di fine cantiere a Lucerna e Zugo',
     description: 'Pulizia durante e dopo lavori di costruzione e ristrutturazione, fino alla consegna. Per committenti, architetti e amministrazioni a Lucerna e Zugo.',
   },
   '/leistungen/fenster-und-fassadenreinigung': {
@@ -70,7 +70,7 @@ export const pages = {
   '/leistungen/industrie-und-hallenreinigung': {
     label: 'Pulizia industriale',
     title: 'Pulizia industriale e di capannoni',
-    description: `Pulizia di capannoni di produzione e di stoccaggio, macchinari e impianti, in funzione della Sua attività. Nei Cantoni ${region}.`,
+    description: `Pulizia di capannoni di produzione e di stoccaggio, macchinari e impianti, adeguata alla Sua attività. Nei Cantoni ${region}.`,
   },
   '/leistungen/hauswartung': {
     label: 'Custodia di stabili',
@@ -115,12 +115,12 @@ export const pages = {
   '/kontakt': {
     label: 'Contatto',
     title: 'Contatto e offerta',
-    description: `Ci telefoni al numero ${company.phone.display} o ci scriva. Offerta gratuita sul posto, risposta entro 24 ore nei giorni feriali.`,
+    description: `Ci telefoni al numero ${company.phone.display} o ci scriva un messaggio. Offerta gratuita sul posto, risposta entro 24 ore nei giorni feriali.`,
   },
   '/impressum': {
     label: 'Note legali',
     title: 'Note legali',
-    description: `Note legali della ${company.legalName}, ${company.address.street}, ${company.address.postalCode} ${company.address.city}: registro di commercio, IDI e contatto.`,
+    description: `Note legali della ${company.legalName}, ${company.address.street}, ${company.address.postalCode} ${company.address.city}: iscrizione nel registro di commercio, numero IDI e dati di contatto.`,
   },
   '/datenschutz': {
     label: 'Protezione dei dati',

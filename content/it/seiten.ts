@@ -94,7 +94,7 @@ export const about = {
     title: 'Il Suo interlocutore',
     text: `La Sua richiesta è trattata personalmente dal direttore. La contattiamo ${responseTime}.`,
   },
-  register: { title: 'Dati del registro', court: registerIt as Seiten['about']['register']['court'] },
+  register: { title: 'Dati del registro', court: registerIt },
   statsLabel: 'In cifre',
   cta: {
     title: 'Conosciamoci',
@@ -197,9 +197,8 @@ export const servicesOverview = {
   },
 }
 
-// La lista tedesca è dichiarata «as const»: titoli e testi hanno tipi letterali
-// tedeschi. La lista italiana ha le stesse chiavi nello stesso ordine.
-const promises = [
+// Stesse chiavi e stesso ordine della lista tedesca (simboli in app/premium/page.tsx)
+const promises: Seiten['premiumOverview']['promises'] = [
   { key: 'persoenlich', title: 'Contatto personale', text: 'La Sua richiesta è trattata personalmente dal direttore.' },
   { key: 'diskret', title: 'Discrezione', text: 'Su richiesta sottoscriviamo un accordo di riservatezza.' },
   { key: 'teams', title: 'Team fissi', text: 'Da Lei lavora sempre lo stesso team.' },
@@ -210,7 +209,7 @@ const promises = [
   { key: 'sprachen', title: 'Quattro lingue', text: 'Tedesco, inglese, francese e italiano.' },
   { key: 'versichert', title: 'Assicurazione', text: 'Responsabilità civile aziendale con una copertura di CHF 10 milioni.' },
   { key: 'offerte', title: 'Offerta sul posto', text: 'Gratuita e senza impegno, dopo un sopralluogo.' },
-] as const
+]
 
 export const premiumOverview = {
   line: premiumLine,
@@ -235,7 +234,7 @@ export const premiumOverview = {
     { title: 'Agenti immobiliari e amministrazioni', text: 'Pulizia con breve preavviso prima di vendita, servizio fotografico e consegna.' },
   ] satisfies Card[],
   promisesTitle: 'Su che cosa può contare',
-  promises: promises as unknown as Seiten['premiumOverview']['promises'],
+  promises,
   places: {
     title: 'Dove siamo a Sua disposizione',
     text: `Sul lago dei Quattro Cantoni da Lucerna e Meggen fino a Weggis, Vitznau, Hergiswil ed Ennetbürgen, sul lago di Zugo e sul lago di Ägeri da Zugo e Walchwil fino a Oberägeri, a Engelberg e nell’intero territorio dei Cantoni ${cantonListIt}. [Alla zona d’intervento](/einzugsgebiet)`,
