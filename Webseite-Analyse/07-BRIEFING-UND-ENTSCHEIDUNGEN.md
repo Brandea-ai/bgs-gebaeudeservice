@@ -138,3 +138,8 @@ Dieser Block ist nur ein austauschbares Briefingformat, kein Programmcode. Leere
 | E54 | 26.09.2026 | **Produktion durch den Agenten:** Arbeits-Branch nach `main`, ohne `NEW_BRAND` (Arbeitsmarke) | LIVE (16) | Alle | Nutzer | Mantena erst nach der Markenrecherche (E38) |
 | E55 | 26.09.2026 | **Umwelt-Artikel zurückgestellt**, 308 auf die Unterhaltsreinigung | UMWELT (16) | `/blog/umweltfreundliche-reinigung` | Nutzer | Wiederaufnahme mit Angaben zu Mitteln |
 | E56 | 26.09.2026 | **Neue Leistungstexte bestätigt** (Abnahmegarantie, Mieter, Rhythmus, Offerte, Nachfüllservice, Haustechnik, Jet, Garten), Lektorat Brandea | 16 | Leistungs- und Premiumseiten | Nutzer | — |
+| E57 | 26.09.2026 | **Neue Seiten in die Produktion:** Arbeits-Branch mit `b1c7acf` nach `main`, Push durch den Agenten | LIVE (17) | Alle | Nutzer | — |
+| E58 | 26.09.2026 | **Kennzahlen schriftlich belegt:** seit 2006, über 120 Kunden, über 50 Mitarbeitende | ZAHLEN (17) | Startseite, Über uns | Nutzer | Beleg bei Brandea |
+| E59 | 26.09.2026 | **Bildflächen als Platzhalter, kein KI-Hinweis im Impressum** bis zu echten Bildern | KIBILD (17) | Impressum, alle Seiten mit Bildern | Nutzer | Echte Bilder (E19) |
+| E60 | 26.09.2026 | **Nächster Block: Impressum und Datenschutz** nach Schweizer Recht | NEXT (17) | `/impressum`, `/datenschutz` | Nutzer | — |
+| E61 | 26.09.2026 | **Seiten-Checkliste:** jede Seite einzeln, erledigte angekreuzt | Globale Notiz (17) | Alle | Nutzer | `18-SEITEN-CHECKLISTE.md` |
