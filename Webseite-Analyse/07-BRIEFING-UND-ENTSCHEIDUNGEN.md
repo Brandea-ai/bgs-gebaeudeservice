@@ -147,3 +147,7 @@ Dieser Block ist nur ein austauschbares Briefingformat, kein Programmcode. Leere
 | E63 | 26.09.2026 | **USA-Satz bleibt** ohne Einzelprüfung der Anbieter | DPF (19) | `/datenschutz` | Nutzer | — |
 | E64 | 26.09.2026 | **Fragebogen nach jedem Bereich** im Seitendurchgang | TEMPO (19) | Alle | Nutzer | — |
 | E65 | 26.09.2026 | **Rechtstexte in die Produktion**, Push durch den Agenten | LIVE (19) | Alle | Nutzer | — |
+| E66 | 26.09.2026 | **Bildfläche als Platzhalter** oben rechts auf Leistungs- und Premiumseiten | BILDER_LEISTUNG (20) | Vorlage `ServicePage` | Nutzer | Echte Bilder (E19) |
+| E67 | 26.09.2026 | **Kernleistungen zuerst** in Menü und Footer | MENU_ORDER (20) | Alle | Nutzer | — |
+| E68 | 26.09.2026 | **Knopf im Kopf «Offerte anfragen»** statt «Kontakt aufnehmen» | HEADER_CTA (20) | Alle | Nutzer | — |
+| E69 | 26.09.2026 | **Seitendurchgang in die Produktion**, Push durch den Agenten | LIVE (20) | Alle | Nutzer | E66, E68 mit eigener Freigabe |
