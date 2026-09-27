@@ -391,14 +391,34 @@
   .process[data-active='4'] .pf-4 {
     opacity: 1;
   }
-  .process[data-active] .process-step {
-    opacity: 0.55;
+  /* Inaktive Schritte: Nummer und Punkt in Tinte statt Signal, der Text bleibt voll lesbar (Kontrast) */
+  .process[data-active] .process-num,
+  .process[data-active] .process-dot {
+    color: #3f454e;
   }
-  .process[data-active='1'] [data-step='1'],
-  .process[data-active='2'] [data-step='2'],
-  .process[data-active='3'] [data-step='3'],
-  .process[data-active='4'] [data-step='4'] {
-    opacity: 1;
+  .process--dark[data-active] .process-num,
+  .process--dark[data-active] .process-dot {
+    color: rgba(255, 255, 255, 0.72);
+  }
+  .process[data-active='1'] [data-step='1'] .process-num,
+  .process[data-active='2'] [data-step='2'] .process-num,
+  .process[data-active='3'] [data-step='3'] .process-num,
+  .process[data-active='4'] [data-step='4'] .process-num,
+  .process[data-active='1'] [data-step='1'] .process-dot,
+  .process[data-active='2'] [data-step='2'] .process-dot,
+  .process[data-active='3'] [data-step='3'] .process-dot,
+  .process[data-active='4'] [data-step='4'] .process-dot {
+    color: #b8121b;
+  }
+  .process--dark[data-active='1'] [data-step='1'] .process-num,
+  .process--dark[data-active='2'] [data-step='2'] .process-num,
+  .process--dark[data-active='3'] [data-step='3'] .process-num,
+  .process--dark[data-active='4'] [data-step='4'] .process-num,
+  .process--dark[data-active='1'] [data-step='1'] .process-dot,
+  .process--dark[data-active='2'] [data-step='2'] .process-dot,
+  .process--dark[data-active='3'] [data-step='3'] .process-dot,
+  .process--dark[data-active='4'] [data-step='4'] .process-dot {
+    color: #c8a96e;
   }
   .process[data-active='1'] [data-step='1'] .process-dot,
   .process[data-active='2'] [data-step='2'] .process-dot,
@@ -657,7 +677,6 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  .process[data-active] .process-step,
   .process[data-active] .pf {
     opacity: 1;
   }
@@ -665,7 +684,7 @@
 
 /* Druck: Kopfzeile, Leisten und Formular weg, Text schwarz auf weiss */
 @media print {
-  header,
+  header.sticky,
   footer,
   nav,
   .skip-link,

@@ -1,6 +1,5 @@
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import PageFrame from "@/components/PageFrame";
-import { RevealGroup } from "@/components/Reveal";
 import { navDicts } from "../../../content/navigation";
 import { localizePath, type Locale } from "../../../shared/i18n";
 
@@ -39,8 +38,8 @@ export default function NotFoundView({ lang }: { lang: Locale }) {
               {notFound.text}
             </p>
           </div>
-          <RevealGroup
-            as="ul"
+          {/* Statisch: die Wegweiser liegen im ersten Bildschirm (R04) */}
+          <ul
             className="min-w-0 self-end border-t border-white/15 lg:col-span-4 lg:col-start-9"
           >
             {notFound.links.map(link => (
@@ -58,7 +57,7 @@ export default function NotFoundView({ lang }: { lang: Locale }) {
                 </a>
               </li>
             ))}
-          </RevealGroup>
+          </ul>
         </div>
       </section>
     </PageFrame>

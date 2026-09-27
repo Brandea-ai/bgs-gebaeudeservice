@@ -123,11 +123,12 @@ export default function ArticlePage({
 
         {/* Inhalt: Verzeichnis klebt links, der Text rechts in lesbarer Zeilenlänge */}
         <div className="container grid gap-12 py-14 lg:grid-cols-12 lg:gap-10 lg:py-20">
-          <aside className="hidden lg:col-span-3 lg:block">
+          {/* div statt aside: das Verzeichnis (nav) ist die Landmarke, ein aside in einer Region wäre eine verschachtelte */}
+          <div className="hidden lg:col-span-3 lg:block">
             <div className="sticky top-[calc(var(--header-h)+2rem)]">
               <TocNav label={ui.onThisPage} items={toc} />
             </div>
-          </aside>
+          </div>
 
           <div className="min-w-0 space-y-14 lg:col-span-9 lg:space-y-16 xl:col-span-8 xl:col-start-5">
             {article.intro && (

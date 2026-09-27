@@ -12,7 +12,6 @@ import Faq from "@/components/Faq";
 import JsonLd from "@/components/JsonLd";
 import PageHero from "@/components/PageHero";
 import ProcessScrolly from "@/components/ProcessScrolly";
-import { RevealGroup } from "@/components/Reveal";
 import SectionHead from "@/components/SectionHead";
 import TrustStrip from "@/components/TrustStrip";
 import { Button } from "@/components/ui/button";
@@ -78,8 +77,8 @@ export default function ContactView({ lang }: { lang: Locale }) {
         title={contact.h1}
         lead={contact.lead}
         aside={
-          <RevealGroup
-            as="ul"
+          // Erster Bildschirm statisch, keine Einblendung (Pflicht 1)
+          <ul
             aria-label={contact.channelsLabel}
             // Zwischen lg und xl ist die Spalte schmal (5/12): eine Reihe je
             // Karte, damit E-Mail und längere FR/IT-Werte nicht brechen
@@ -104,7 +103,7 @@ export default function ContactView({ lang }: { lang: Locale }) {
                 </a>
               </li>
             ))}
-          </RevealGroup>
+          </ul>
         }
       >
         <div className="flex flex-col gap-3 sm:flex-row">

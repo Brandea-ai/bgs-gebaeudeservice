@@ -100,16 +100,6 @@ function Figure({
               weight="regular"
               className={glyph}
             />
-            <text
-              x={x}
-              y={y + 48}
-              textAnchor="middle"
-              className={`font-mono ${dark ? "fill-white/70" : "fill-ink/70"}`}
-              fontSize="11"
-              letterSpacing="1.5"
-            >
-              {String(i + 1).padStart(2, "0")}
-            </text>
           </g>
         );
       })}
@@ -165,7 +155,9 @@ export default function ProcessScrolly({
         className={`process-line ${dark ? "bg-white/20" : "bg-ink/15"}`}
         aria-hidden="true"
       >
-        <span className="process-line-fill block h-full w-full bg-signal" />
+        <span
+          className={`process-line-fill block h-full w-full ${dark ? "bg-brass" : "bg-signal"}`}
+        />
       </span>
       {steps.map((step, i) => {
         const Glyph = glyphs[keys[i]];
@@ -218,7 +210,11 @@ export default function ProcessScrolly({
 
   if (!pinned) {
     return (
-      <ProcessSection n={n} labelledBy={labelledBy}>
+      <ProcessSection
+        n={n}
+        labelledBy={labelledBy}
+        className={dark ? "process--dark" : ""}
+      >
         {list}
       </ProcessSection>
     );
@@ -228,7 +224,7 @@ export default function ProcessScrolly({
     <ProcessSection
       n={n}
       labelledBy={labelledBy}
-      className={`grid gap-10 ${cols} lg:gap-12`}
+      className={`grid gap-10 ${cols} lg:gap-12 ${dark ? "process--dark" : ""}`}
     >
       <figure
         className={`process-figure hidden ${figureCol} lg:block`}
