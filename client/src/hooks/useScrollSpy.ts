@@ -23,7 +23,6 @@ export function useScrollSpy(
       .filter((el): el is HTMLElement => Boolean(el));
     if (!targets.length) return;
     const order = new Map(targets.map((el, i) => [el.id, i]));
-    const visible = new Set<string>();
     let frame = 0;
 
     const pick = () => {
@@ -35,15 +34,12 @@ export function useScrollSpy(
         setActive(targets[targets.length - 1].id);
         return;
       }
-      if (visible.size) {
-        const first = [...visible].sort(
-          (a, b) => (order.get(a) ?? 0) - (order.get(b) ?? 0)
-        )[0];
-        setActive(first);
-        return;
-      }
-      // Kein Abschnitt im Band: der letzte, dessen Oberkante über dem Band liegt
-      const line = window.innerHeight * 0.25;
+      // Aktiv ist der letzte Abschnitt, dessen Oberkante über der Landelinie liegt
+      // (scroll-padding-top): so stimmt die Markierung auch direkt nach einem Ankerklick
+      const line =
+        (parseFloat(
+          getComputedStyle(document.documentElement).scrollPaddingTop
+        ) || 0) + 2;
       let current: string | null = null;
       for (const el of targets) {
         if (el.getBoundingClientRect().top <= line) current = el.id;
@@ -55,13 +51,7 @@ export function useScrollSpy(
     };
 
     const observer = new IntersectionObserver(
-      entries => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) visible.add(entry.target.id);
-          else visible.delete(entry.target.id);
-        }
-        schedule();
-      },
+      () => schedule(),
       { rootMargin, threshold: 0 }
     );
     targets.forEach(el => observer.observe(el));

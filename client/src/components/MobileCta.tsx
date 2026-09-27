@@ -39,7 +39,8 @@ export default function MobileCta({ lang = "de" }: { lang?: Locale }) {
   }, []);
 
   return (
-    <div
+    <nav
+      aria-label={chrome.mobileCta}
       id="mobil-cta"
       className={`fixed inset-x-0 bottom-0 z-40 grid grid-cols-[1fr_auto] gap-2 border-t border-line bg-white p-3 pb-[calc(0.75rem+env(safe-area-inset-bottom,0px))] shadow-[0_-8px_24px_-16px_rgba(14,17,22,0.25)] transition-transform duration-300 md:hidden ${
         hidden ? "translate-y-full" : "translate-y-0"
@@ -63,6 +64,6 @@ export default function MobileCta({ lang = "de" }: { lang?: Locale }) {
       >
         <Phone weight="regular" className="size-5" aria-hidden="true" />
       </a>
-    </div>
+    </nav>
   );
 }

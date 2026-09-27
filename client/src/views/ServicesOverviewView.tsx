@@ -111,13 +111,13 @@ function WideCards({ items, groupId, lang, toService }: GroupProps) {
             <Link
               href={localizePath(item.path, lang)}
               aria-labelledby={titleId}
-              className="flex h-full flex-col md:grid md:grid-cols-[5fr_7fr]"
+              className="grid h-full grid-cols-[5.5rem_minmax(0,1fr)] md:grid-cols-[5fr_7fr]"
             >
               <ImageSlot
                 lang={lang}
                 hover
                 decorative
-                className="aspect-[16/10] w-full md:aspect-auto md:min-h-[14rem] md:h-full"
+                className="aspect-square w-full self-start md:aspect-auto md:min-h-[14rem] md:h-full"
               />
               <CardBody item={item} titleId={titleId} toService={toService} />
             </Link>
@@ -323,7 +323,8 @@ export default function ServicesOverviewView({ lang }: { lang: Locale }) {
       </PageHero>
 
       {/* Abschnittsleiste mit Scrollspy: drei Gruppen und Premium (L04) */}
-      <SectionNav label={ui.onThisPage} items={navItems} />
+      {/* Auf dem Handy bleibt die Sprungliste im Kopf die Auswahl (LU-07) */}
+      <SectionNav label={ui.onThisPage} items={navItems} className="max-lg:hidden" />
 
       {servicesOverview.groups.map((group, index) => {
         const id = groupId(index);
@@ -341,7 +342,6 @@ export default function ServicesOverviewView({ lang }: { lang: Locale }) {
                 id={`${id}-titel`}
                 eyebrow={String(index + 1).padStart(2, "0")}
                 title={group.title}
-                intro={group.text}
               />
               <Layout
                 items={group.items}

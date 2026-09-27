@@ -14,7 +14,6 @@ import TrustStrip from "@/components/TrustStrip";
 import { Button } from "@/components/ui/button";
 import { chatEnabled, imagesArePlaceholders } from "../../../shared/features";
 import { company } from "../../../shared/company";
-import { cantonName } from "../../../shared/cantons";
 import { placePins } from "../../../shared/canton-map";
 import { getDict } from "../../../content";
 import { navDicts } from "../../../content/navigation";
@@ -62,12 +61,12 @@ function ProofCells({
  * Einblendungen nur als Gruppe auf Listen unterhalb des ersten Bildschirms.
  */
 export default function HomeView({ lang }: { lang: Locale }) {
-  const { home, proof, about, contact, area } = getDict(lang).seiten;
+  const { home, proof, about, contact } = getDict(lang).seiten;
   const { ui, misc } = getDict(lang);
   const { serviceGroups, chrome } = navDicts[lang];
   const href = (path: PagePath) => localizePath(path, lang);
   const pins = placePins.filter(pin =>
-    ["Zug", "Aarau", "Stans", "Sarnen"].includes(pin.name)
+    ["Aarau", "Stans", "Sarnen"].includes(pin.name)
   );
   // Einwände (H11, Conversion H8): Kosten, Schnelligkeit, kurzfristige Einsätze.
   // «Versichert» steht direkt darüber in den Zusagen, «Regionen» folgt als Abschnitt.
@@ -84,7 +83,7 @@ export default function HomeView({ lang }: { lang: Locale }) {
         className="on-dark relative isolate overflow-hidden bg-ink text-white"
       >
         <HeroBackground />
-        <div className="container relative grid gap-10 pt-12 pb-12 md:pt-16 lg:grid-cols-12 lg:items-center lg:gap-8 lg:py-20 xl:pt-24">
+        <div className="container relative grid gap-8 pt-10 pb-12 md:pt-16 lg:grid-cols-12 lg:items-center lg:gap-8 lg:py-20 xl:pt-24">
           <div className="min-w-0 lg:col-span-7 xl:col-span-6">
             <h1 id="start-titel" className="t-display max-w-[20ch] text-white">
               {home.h1}
@@ -92,7 +91,7 @@ export default function HomeView({ lang }: { lang: Locale }) {
             <p className="t-lead mt-7 max-w-[46ch] text-white/90">
               {home.lead}
             </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row">
               <Button asChild size="xl" className="arrow-link">
                 <a href="#kontakt-formular" data-cta="hero">
                   {ui.offerCta}
@@ -110,8 +109,8 @@ export default function HomeView({ lang }: { lang: Locale }) {
                 </Button>
               )}
             </div>
-            {/* Antwortzeile nur, wo die schmale Kopfzeile sie nicht schon zeigt (S13, H12) */}
-            <p className="mt-8 flex items-center gap-2 text-sm font-medium text-white/80 xl:hidden">
+            {/* Antwortzeile nur auf Handy und Tablet; ab lg steht sie in der Vertrauensleiste darunter (S13, H12, S-05) */}
+            <p className="mt-6 flex items-center gap-2 text-sm font-medium text-white/80 sm:mt-8 lg:hidden">
               <span
                 className="inline-block h-1.5 w-1.5 rounded-full bg-brass"
                 aria-hidden="true"
@@ -204,19 +203,6 @@ export default function HomeView({ lang }: { lang: Locale }) {
               intro={home.services.intro}
               className="lg:col-span-8"
             />
-            <div className="lg:col-span-4 lg:justify-self-end">
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="arrow-link"
-              >
-                <Link href={href("/leistungen")}>
-                  {home.services.groups[0].link.text}
-                  <ArrowRight weight="regular" aria-hidden="true" />
-                </Link>
-              </Button>
-            </div>
           </div>
 
           <RevealGroup
@@ -259,12 +245,6 @@ export default function HomeView({ lang }: { lang: Locale }) {
                     />
                   </Link>
                   <div className="flex flex-1 flex-col p-7 md:p-8">
-                    {/* Kennzeile nur mit eigener Premium-Marke (S12, E38) */}
-                    {premium && company.premiumBrand && (
-                      <p className="t-eyebrow mb-3 text-brass">
-                        {ui.premiumLine}
-                      </p>
-                    )}
                     <h3 className="t-h3">
                       <Link
                         href={href(group.link.path)}
@@ -360,11 +340,14 @@ export default function HomeView({ lang }: { lang: Locale }) {
       >
         <div className="container">
           <SectionHead id="zusagen-titel" title={about.promises.title} />
+          {/* Vier der sechs Zusagen: Offerte und Gebiet stehen im Ablauf und in der Kartensektion daneben (S-07) */}
           <RevealGroup
             as="ul"
-            className="mt-12 grid gap-x-10 gap-y-12 sm:grid-cols-2 xl:grid-cols-3"
+            className="mt-12 grid gap-x-10 gap-y-12 sm:grid-cols-2 xl:grid-cols-4"
           >
-            {about.promises.items.map((item, index) => (
+            {about.promises.items
+              .filter((_, index) => index !== 1 && index !== 2)
+              .map((item, index) => (
               <li key={item.title} className="min-w-0 border-t border-ink pt-6">
                 <span
                   className="font-display text-2xl font-bold leading-none tabular-nums text-signal"
@@ -418,23 +401,6 @@ export default function HomeView({ lang }: { lang: Locale }) {
               intro={home.area.text}
               tone="dark"
             />
-            <ul
-              className="mt-8 flex flex-wrap gap-2"
-              aria-label={area.cantonsTitle}
-            >
-              {company.cantons.map(name => (
-                <li
-                  key={name}
-                  className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/25 px-4 py-2 text-sm font-semibold text-white"
-                >
-                  <span
-                    className="inline-block h-2 w-2 bg-signal"
-                    aria-hidden="true"
-                  />
-                  {cantonName(name, lang)}
-                </li>
-              ))}
-            </ul>
             <Button
               asChild
               size="lg"

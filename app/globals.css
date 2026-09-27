@@ -110,9 +110,11 @@
     }
   }
 
-  /* Überschriften mit id: auch Browser ohne scroll-padding scrollen den Fokus richtig */
-  [id] {
-    scroll-margin-top: calc(var(--header-h) + var(--subnav-h, 0px) + 1.5rem);
+  /* Unter der Mobil-Leiste: fokussierte Elemente landen über der Leiste (WCAG 2.4.11) */
+  @media (max-width: 767px) {
+    html {
+      scroll-padding-bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px));
+    }
   }
 
   ::selection {
@@ -246,23 +248,12 @@
   }
 
   /*
-   * Stapel-Effekt (F7, F14): Der Inhalt liegt über dem Footer und gibt ihn beim
-   * Scrollen frei. Nur auf grossen, hohen Bildschirmen; auf dem Handy wäre der
-   * Footer höher als der Bildschirm und sein Anfang nie erreichbar.
+   * Kein Stapel-Effekt mehr (F7, F16): Ein klebender Footer hinter dem Inhalt
+   * bekam Tastaturfokus, während er verdeckt war (WCAG 2.4.11), und meldete
+   * sich als LCP-Element. Der Footer steht im Fluss, die Klassen bleiben als Anker.
    */
   .stack-main {
     position: relative;
-    z-index: 1;
-  }
-  @media (min-width: 1024px) and (min-height: 720px) {
-    .stack-main {
-      box-shadow: 0 40px 80px -30px rgba(14, 17, 22, 0.25);
-    }
-    .stack-footer {
-      position: sticky;
-      bottom: 0;
-      z-index: 0;
-    }
   }
 
   /* Haarlinien-Raster als Hintergrund, wie Achsen auf einem Plan */

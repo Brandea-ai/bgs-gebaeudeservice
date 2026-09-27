@@ -41,14 +41,16 @@ export default function ProcessSection({
     return () => observer.disconnect();
   }, []);
 
+  // Ohne eigenen Namen kein zweites section in der Sektion (Landmarke ohne Namen)
+  const Tag = labelledBy ? "section" : "div";
   return (
-    <section
-      ref={ref}
+    <Tag
+      ref={ref as React.RefObject<HTMLDivElement>}
       aria-labelledby={labelledBy}
       className={`process ${className ?? ""}`}
       style={{ "--n": n } as React.CSSProperties}
     >
       {children}
-    </section>
+    </Tag>
   );
 }

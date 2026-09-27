@@ -31,32 +31,33 @@ export default function TrustStrip({
   tone = "light",
   compact = false,
   only,
+  reveal = false,
 }: {
   lang?: Locale;
   tone?: "light" | "dark";
   compact?: boolean;
   only?: string[];
+  /** Gestaffelt einblenden; aus, weil die Leiste meist im ersten Bildschirm steht */
+  reveal?: boolean;
 }) {
   const all = navDicts[lang].chrome.trust;
   const trust = only ? all.filter(item => only.includes(item.key)) : all;
   const dark = tone === "dark";
   const cols =
     trust.length >= 6
-      ? "sm:grid-cols-3 xl:grid-cols-6"
+      ? "min-[360px]:grid-cols-2 sm:grid-cols-3 xl:grid-cols-6"
       : trust.length === 4
-        ? "sm:grid-cols-2 lg:grid-cols-4"
+        ? "min-[360px]:grid-cols-2 lg:grid-cols-4"
         : "sm:grid-cols-3";
-  return (
-    <RevealGroup
-      as="ul"
-      className={`grid gap-px ${cols} ${dark ? "bg-white/10" : "bg-line"}`}
-    >
+  const className = `grid gap-px ${cols} ${dark ? "bg-white/10" : "bg-line"}`;
+  const rows = (
+    <>
       {trust.map(item => {
         const Glyph = icons[item.key] ?? SealCheck;
         return (
           <li
             key={item.key}
-            className={`flex items-start gap-3 ${compact ? "p-4" : "p-5 lg:p-6"} ${dark ? "bg-ink" : "bg-white"}`}
+            className={`flex items-start gap-3 ${compact ? "p-3 sm:p-4" : "p-4 sm:p-5 lg:p-6"} ${dark ? "bg-ink" : "bg-white"}`}
           >
             <Glyph
               weight="duotone"
@@ -79,6 +80,13 @@ export default function TrustStrip({
           </li>
         );
       })}
+    </>
+  );
+  return reveal ? (
+    <RevealGroup as="ul" className={className}>
+      {rows}
     </RevealGroup>
+  ) : (
+    <ul className={className}>{rows}</ul>
   );
 }

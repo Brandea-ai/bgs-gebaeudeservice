@@ -142,13 +142,13 @@ export default function ProcessScrolly({
       : variant === "narrow"
         ? "lg:grid-cols-12"
         : "";
-  const figureCol = variant === "wide" ? "lg:col-span-5" : "lg:col-span-5";
+  const figureCol = "lg:col-span-5";
   const stepsCol =
     variant === "wide" ? "lg:col-span-6 lg:col-start-7" : "lg:col-span-7";
 
   const list = (
     <ol
-      className={`relative ${pinned ? "" : ""}`}
+      className="relative"
       style={{ "--step-h": n <= 3 ? "44vh" : "38vh" } as React.CSSProperties}
     >
       <span
@@ -178,14 +178,12 @@ export default function ProcessScrolly({
               className={`process-dot ${dark ? "text-brass" : "text-signal"}`}
               aria-hidden="true"
             />
-            {/* Kleine Marke je Schritt, wo die Figur nicht steht */}
-            {(!pinned || true) && (
-              <Glyph
-                weight="regular"
-                aria-hidden="true"
-                className={`mb-3 size-6 ${dark ? "text-brass" : "text-signal"} ${pinned ? "lg:hidden" : ""}`}
-              />
-            )}
+            {/* Kleine Marke je Schritt; in der gepinnten Variante ab lg trägt die Figur das Symbol */}
+            <Glyph
+              weight="regular"
+              aria-hidden="true"
+              className={`mb-3 size-6 ${dark ? "text-brass" : "text-signal"} ${pinned ? "lg:hidden" : ""}`}
+            />
             <h3 className={`t-h3 ${dark ? "text-white" : "text-ink"}`}>
               {step.title}
             </h3>

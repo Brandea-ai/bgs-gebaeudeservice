@@ -568,7 +568,7 @@ export function SiteFooter({
               <br />
               <a
                 href={`mailto:${company.email}`}
-                className="inline-flex min-h-11 items-center text-white/80 transition-colors hover:text-white"
+                className="inline-flex min-h-11 items-center text-white/80 underline decoration-white/40 underline-offset-4 transition-colors hover:text-white hover:decoration-white"
               >
                 {company.email}
               </a>

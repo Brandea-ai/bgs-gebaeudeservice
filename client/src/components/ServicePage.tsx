@@ -198,8 +198,8 @@ export default function ServicePage({
             <h2 id="auf-einen-blick" className="sr-only">
               {ui.atAGlance}
             </h2>
-            <RevealGroup
-              as="dl"
+            {/* Statisch: die Eckdaten sind der erste Beleg und liegen oft am Rand des ersten Bildschirms */}
+            <dl
               aria-labelledby="auf-einen-blick"
               className={`grid gap-x-6 ${factCols}`}
             >
@@ -220,7 +220,7 @@ export default function ServicePage({
                   </dd>
                 </div>
               ))}
-            </RevealGroup>
+            </dl>
           </div>
         </div>
       </section>

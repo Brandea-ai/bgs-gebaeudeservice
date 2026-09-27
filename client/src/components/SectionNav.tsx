@@ -14,11 +14,13 @@ export default function SectionNav({
   items,
   tone = "light",
   sticky = true,
+  className = "",
 }: {
   label: string;
   items: { id: string; title: string }[];
   tone?: "light" | "dark";
   sticky?: boolean;
+  className?: string;
 }) {
   const active = useScrollSpy(items.map(item => item.id));
   const ref = useRef<HTMLElement>(null);
@@ -66,7 +68,7 @@ export default function SectionNav({
     <nav
       ref={ref}
       aria-label={label}
-      className={`subnav ${sticky ? "subnav--sticky" : ""} border-b ${dark ? "border-white/10 bg-ink text-white" : "border-line bg-white text-ink"}`}
+      className={`subnav ${sticky ? "subnav--sticky" : ""} border-b ${dark ? "border-white/10 bg-ink text-white" : "border-line bg-white text-ink"} ${className}`}
     >
       <div className="container">
         <ol className="subnav -mx-1 flex gap-1 overflow-x-auto py-1 lg:mx-0 lg:gap-2">
