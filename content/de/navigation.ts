@@ -149,6 +149,17 @@ export const nav = {
   contactForm,
   notFound,
   languageSwitch: 'Sprache',
+  chrome: {
+    skip: 'Zum Inhalt springen',
+    answer: `Antwort ${company.responseTime}`,
+    seat: `Sitz in ${company.address.city}`,
+    megaTitle: 'Offerte vor Ort',
+    megaText: 'Wir sehen uns Ihr Objekt an und erstellen eine schriftliche Offerte, kostenlos und unverbindlich.',
+    phone: 'Telefon',
+    email: 'E-Mail',
+    address: 'Adresse',
+    contactEyebrow: 'Kontakt',
+  },
   errorPage: { title: 'Leider ist ein Fehler aufgetreten.', reload: 'Seite neu laden' },
 }
 

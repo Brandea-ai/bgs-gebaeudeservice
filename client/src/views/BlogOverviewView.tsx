@@ -1,60 +1,52 @@
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
+import PageHero from "@/components/PageHero";
 import RichText from "@/components/RichText";
 import { formatDate } from "@/components/ArticlePage";
 import { getDict } from "../../../content";
+import { navDicts } from "../../../content/navigation";
 import { localizePath, type Locale } from "../../../shared/i18n";
 
-// Übersicht nur der überarbeiteten Artikel (M53, P27). Titel als einziger Link je
-// Karte, «Stand» statt erfundener Daten und Lesezeiten (M19).
+/**
+ * Ratgeber-Übersicht (F5, M53, P27): Titel als einziger Link je Eintrag,
+ * «Stand» statt erfundener Daten und Lesezeiten (M19).
+ */
 export default function BlogOverviewView({ lang }: { lang: Locale }) {
   const { overview: t, articles } = getDict(lang).ratgeber;
   const artikel = Object.values(articles);
+  const eyebrow = navDicts[lang].menu.after.find((link) => link.path === "/blog")?.label;
   return (
     <div className="min-h-screen bg-white">
       <SwissNavigation lang={lang} path="/blog" />
 
-      <main>
-        <section className="pt-28 md:pt-32 pb-12 bg-gradient-to-br from-slate-50 to-red-50/40">
-          <div className="container max-w-6xl">
-            <div className="max-w-3xl">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-slate-900 mb-6">
-                {t.h1}
-              </h1>
-              <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
-                {t.intro}
-              </p>
-            </div>
-          </div>
-        </section>
+      <main id="inhalt">
+        <PageHero path="/blog" lang={lang} eyebrow={eyebrow} title={t.h1} lead={t.intro} />
 
-        <section className="py-12 md:py-16">
-          <div className="container max-w-6xl">
-            <ul className="grid gap-6 md:grid-cols-2">
-              {artikel.map(article => (
-                <li key={article.path}>
-                  <article className="relative h-full rounded-xl border border-slate-200 p-6 transition-shadow hover:shadow-lg">
-                    <h2 className="text-xl font-semibold text-slate-900 mb-3">
-                      <Link
-                        href={localizePath(article.path, lang)}
-                        className="after:absolute after:inset-0 hover:text-red-700"
-                      >
-                        {article.h1}
-                      </Link>
-                    </h2>
-                    <p className="text-slate-600 mb-4">{article.teaser}</p>
-                    <p className="text-sm text-slate-500">
-                      {t.updatedLabel}{" "}
-                      <time dateTime={article.updated}>
-                        {formatDate(article.updated, lang)}
-                      </time>
-                    </p>
+        <section className="section-tight">
+          <div className="container">
+            <ul className="grid gap-px bg-line md:grid-cols-2">
+              {artikel.map((article) => (
+                <li key={article.path} className="min-w-0 bg-white">
+                  <article className="arrow-link group relative flex h-full min-h-[20rem] flex-col justify-between gap-10 p-8 transition-colors hover:bg-stone md:p-12">
+                    <div>
+                      <p className="font-mono text-xs uppercase tracking-[0.12em] text-mute">
+                        {t.updatedLabel} <time dateTime={article.updated}>{formatDate(article.updated, lang)}</time>
+                      </p>
+                      <h2 className="t-h2 mt-6 max-w-[22ch] text-ink">
+                        <Link href={localizePath(article.path, lang)} className="after:absolute after:inset-0 group-hover:text-signal transition-colors">
+                          {article.h1}
+                        </Link>
+                      </h2>
+                      <p className="mt-5 max-w-[56ch] leading-relaxed text-mute">{article.teaser}</p>
+                    </div>
+                    <ArrowRight className="h-6 w-6 text-signal" aria-hidden="true" />
                   </article>
                 </li>
               ))}
             </ul>
-            <p className="mt-10 text-slate-700">
+            <p className="mt-12 max-w-[68ch] text-ink-700">
               <RichText text={t.services} lang={lang} />
             </p>
           </div>

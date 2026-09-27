@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { IBM_Plex_Mono, IBM_Plex_Sans, Schibsted_Grotesk } from 'next/font/google'
 import '../../../app/globals.css'
 import { ThemeProvider } from '@/contexts/ThemeContext'
 import { ChatbotProvider } from '@/contexts/ChatbotContext'
@@ -12,7 +12,11 @@ import { organizationJsonLd } from '../../../shared/structured-data'
 import { hreflang, ogLocale, type Locale } from '../../../shared/i18n'
 import { getDict } from '../../../content'
 
-const inter = Inter({ subsets: ['latin'] })
+// Schriften (F1): Schibsted Grotesk für Titel, IBM Plex Sans für Text, Plex Mono für Kennzeichnungen.
+// next/font lädt sie vom eigenen Server, ohne Anfrage an Google im Browser.
+const display = Schibsted_Grotesk({ subsets: ['latin'], weight: ['500', '600', '700'], variable: '--font-display', display: 'swap' })
+const body = IBM_Plex_Sans({ subsets: ['latin'], weight: ['400', '500', '600'], variable: '--font-body', display: 'swap' })
+const mono = IBM_Plex_Mono({ subsets: ['latin'], weight: ['500'], variable: '--font-mono', display: 'swap' })
 
 const isIndexable = process.env.SITE_INDEXABLE === 'true'
 
@@ -51,12 +55,12 @@ export function rootMetadata(lang: Locale): Metadata {
  */
 export default function RootShell({ lang, children }: { lang: Locale; children: React.ReactNode }) {
   return (
-    <html lang={hreflang[lang]} suppressHydrationWarning>
+    <html lang={hreflang[lang]} className={`${display.variable} ${body.variable} ${mono.variable}`} suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>
-      <body className={inter.className}>
+      <body className="font-sans">
         {/* Unternehmen als strukturierte Daten, Leistungsseiten verweisen darauf (GLOBAL-010) */}
         <JsonLd data={organizationJsonLd(lang)} />
         <ErrorBoundary lang={lang}>

@@ -134,5 +134,16 @@ export const nav: NavDictionary = {
     ],
   },
   languageSwitch: 'Langue',
+  chrome: {
+    skip: 'Aller au contenu',
+    answer: `Réponse ${responseTime}`,
+    seat: `Siège à ${company.address.city}`,
+    megaTitle: 'Devis sur place',
+    megaText: 'Nous visitons votre bien et établissons un devis écrit, gratuit et sans engagement.',
+    phone: 'Téléphone',
+    email: 'E-mail',
+    address: 'Adresse',
+    contactEyebrow: 'Contact',
+  },
   errorPage: { title: 'Désolés, une erreur s’est produite.', reload: 'Recharger la page' },
 }

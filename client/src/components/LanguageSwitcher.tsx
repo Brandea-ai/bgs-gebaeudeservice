@@ -12,16 +12,19 @@ export default function LanguageSwitcher({
   label,
   className = '',
   tone = 'light',
+  compact = false,
 }: {
   lang: Locale
   path: PagePath
   label: string
   className?: string
   tone?: 'light' | 'dark'
+  compact?: boolean
 }) {
   if (activeLocales.length < 2) return null
-  const idle = tone === 'dark' ? 'text-slate-400 hover:text-white' : 'text-slate-600 hover:text-primary'
-  const current = tone === 'dark' ? 'text-white' : 'text-slate-900'
+  const idle = tone === 'dark' ? 'text-white/55 hover:text-white' : 'text-mute hover:text-signal'
+  const current = tone === 'dark' ? 'text-white' : 'text-ink'
+  const size = compact ? 'px-1.5 py-1 text-xs' : 'px-2 py-1.5 text-sm'
   return (
     <nav aria-label={label} className={className}>
       <ul className="flex items-center gap-1">
@@ -33,7 +36,7 @@ export default function LanguageSwitcher({
               lang={hreflang[locale]}
               aria-current={locale === lang ? 'true' : undefined}
               title={languageNames[locale]}
-              className={`inline-block px-2 py-1.5 text-sm font-semibold uppercase transition-smooth ${locale === lang ? current : idle}`}
+              className={`inline-block font-mono font-medium uppercase tracking-wider transition-colors ${size} ${locale === lang ? `${current} underline decoration-signal decoration-2 underline-offset-[0.4em]` : idle}`}
             >
               <span aria-hidden="true">{locale}</span>
               <span className="sr-only">{languageNames[locale]}</span>

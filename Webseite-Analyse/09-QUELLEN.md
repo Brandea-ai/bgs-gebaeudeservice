@@ -516,6 +516,12 @@ Quelle: [IGE: Kosten und Gebühren](https://www.ige.ch/de/etwas-schuetzen/marken
 Verwendung: Gebühren ab 1.7.2024: Hinterlegung CHF 450 für zehn Jahre, Klassengebühr CHF 100 ab der vierten Klasse, CHF 100 Rabatt bei elektronischer Anmeldung, Widerspruch und Löschungsverfahren je CHF 800, Verlängerung CHF 550. Das IGE empfiehlt vor der Anmeldung eine Recherche nach ähnlichen Marken und Firmen, Kosten dafür nicht auf dieser Seite.  
 Abruf: 25.09.2026 (Runde 4). Die Werte stammen aus der Zusammenfassung des Abrufwerkzeugs, eine Websuche nannte dieselben Beträge. Wie viele Klassen die Hinterlegungsgebühr enthält, gaben die beiden Abrufe verschieden wieder (eine oder drei). Laut Seite gilt die Klassengebühr ab der vierten Klasse, vor der Anmeldung bitte am Original prüfen.
 
+### S85 · swisstopo: swissBOUNDARIES3D, Kantonsgrenzen
+
+Quelle: [geo.admin.ch API, Layer ch.swisstopo.swissboundaries3d-kanton-flaeche.fill](https://api3.geo.admin.ch/rest/services/api/MapServer/ch.swisstopo.swissboundaries3d-kanton-flaeche.fill)  
+Verwendung: Kantonsgrenzen in LV95 für die Karte des Einzugsgebiets (`shared/canton-map.ts`, F3). Offene Behördendaten von swisstopo, frei nutzbar mit Quellenangabe. Die Karte nennt «© swisstopo». Nicht verwendet: das npm-Paket `swiss-maps`, dessen Geodaten nur nicht-kommerziell genutzt werden dürfen.  
+Abruf: 27.09.2026.
+
 ## Besonders wichtige Aktualisierungen gegenüber älteren Checklisten
 
 - FAQ-Rich-Results werden seit dem 7. Mai 2026 nicht mehr in Google angezeigt. Der Verweis „nur für autoritative Gesundheits-/Behördenseiten“ wäre für den aktuellen Stand bereits überholt. [S13]
@@ -612,3 +618,4 @@ Originalquelle mit Datum prüfen, tatsächlichen Anwendungsbereich ermitteln, Au
 [S82]: https://developers.google.com/search/docs/crawling-indexing/url-structure "Google Search: URL structure best practices"
 [S83]: https://en.wiktionary.org/wiki/tacenda "Wiktionary: tacenda"
 [S84]: https://www.ige.ch/de/etwas-schuetzen/marken/anmeldung-in-der-schweiz/kosten-und-gebuehren "IGE: Kosten und Gebühren"
+[S85]: https://api3.geo.admin.ch/rest/services/api/MapServer/ch.swisstopo.swissboundaries3d-kanton-flaeche.fill "swisstopo: swissBOUNDARIES3D, Kantonsgrenzen"

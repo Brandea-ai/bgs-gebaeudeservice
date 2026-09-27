@@ -12,6 +12,7 @@ export const ui = {
   steps: 'So läuft es ab',
   faq: 'Häufige Fragen',
   related: 'Passt auch dazu',
+  onThisPage: 'Auf dieser Seite',
   premiumLine,
   factArea: 'Gebiet',
   factAreaValue: `Kantone ${cantonList}`,

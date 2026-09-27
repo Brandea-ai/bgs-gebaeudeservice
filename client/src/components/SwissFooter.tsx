@@ -1,7 +1,7 @@
 'use client'
 
 import Link from "next/link";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, Mail, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
 import { company, newBrandActive } from "../../../shared/company";
 import { navDicts } from "../../../content/navigation";
@@ -9,11 +9,20 @@ import { localizePath, type Locale } from "../../../shared/i18n";
 import type { PagePath } from "../../../shared/seo";
 import LanguageSwitcher from "./LanguageSwitcher";
 
+const fieldClass =
+  "block w-full rounded-[0.25rem] border border-input bg-white px-4 py-3 text-[1rem] text-ink placeholder:text-mute/70 transition-colors hover:border-ink/40 focus:border-ink focus:outline-none focus:ring-2 focus:ring-signal/25";
+const labelClass = "mb-2 block text-sm font-medium text-ink";
+
+/**
+ * Kontaktbereich und Footer (F2). Das Formular steht auf jeder Seite und ist das
+ * Ziel aller Offerte-Aktionen (#kontakt-formular, M04, M31). Links die direkten
+ * Wege, rechts das Formular.
+ */
 export default function SwissFooter({ lang = "de", path = "/" }: { lang?: Locale; path?: PagePath }) {
-  const { contactForm: form, footer: texts, serviceGroups, languageSwitch } = navDicts[lang];
+  const { contactForm: form, footer: texts, serviceGroups, languageSwitch, chrome } = navDicts[lang];
   const href = (target: PagePath) => localizePath(target, lang);
   const currentYear = new Date().getFullYear();
-  const [formData, setFormData] = useState({
+  const emptyForm = {
     name: "",
     email: "",
     phone: "",
@@ -22,8 +31,9 @@ export default function SwissFooter({ lang = "de", path = "/" }: { lang?: Locale
     frequency: "",
     message: "",
     acceptPrivacy: false,
-    website: ""
-  });
+    website: "",
+  };
+  const [formData, setFormData] = useState(emptyForm);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
@@ -38,9 +48,7 @@ export default function SwissFooter({ lang = "de", path = "/" }: { lang?: Locale
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...formData, language: lang }),
       });
 
@@ -48,23 +56,13 @@ export default function SwissFooter({ lang = "de", path = "/" }: { lang?: Locale
 
       if (response.ok && data?.success) {
         setSubmitStatus("success");
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          service: "",
-          location: "",
-          frequency: "",
-          message: "",
-          acceptPrivacy: false,
-          website: ""
-        });
+        setFormData(emptyForm);
         setTimeout(() => setSubmitStatus("idle"), 5000);
       } else {
         setErrorMessage(lang === "de" ? data?.message || fallbackError : fallbackError);
         setSubmitStatus("error");
       }
-    } catch (error) {
+    } catch {
       setErrorMessage(fallbackError);
       setSubmitStatus("error");
     } finally {
@@ -73,312 +71,232 @@ export default function SwissFooter({ lang = "de", path = "/" }: { lang?: Locale
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const channels = [
+    { icon: Phone, label: chrome.phone, value: company.phone.display, href: company.phone.href },
+    { icon: Mail, label: chrome.email, value: company.email, href: `mailto:${company.email}` },
+    {
+      icon: MapPin,
+      label: chrome.address,
+      value: `${company.address.street}, ${company.address.postalCode} ${company.address.city}`,
+    },
+  ];
+
   return (
-    <div id="kontakt-formular" className="bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-950 border-t border-slate-200 dark:border-slate-800">
+    <div className="border-t border-line">
       {/* Kontaktformular, auf jeder Seite (M04). Ziel aller Offerte-Aktionen. */}
-      <section aria-labelledby="kontakt-titel" className="bg-gradient-to-r from-red-50 to-red-100/50 dark:from-red-950/20 dark:to-red-900/10 py-12 lg:py-16">
-        <div className="container">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-8">
-              <h2 id="kontakt-titel" className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-3">
+      <section id="kontakt-formular" aria-labelledby="kontakt-titel" className="section bg-stone scroll-mt-[var(--header-h)]">
+        <div className="container grid gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-5 xl:col-span-4">
+            <div className="lg:sticky lg:top-[calc(var(--header-h)+2.5rem)]">
+              <p className="t-eyebrow text-signal mb-5">{chrome.contactEyebrow}</p>
+              <h2 id="kontakt-titel" className="t-h2 text-ink mb-5">
                 {form.title}
               </h2>
-              <p className="text-sm sm:text-base lg:text-lg text-slate-600 dark:text-slate-400">
-                {form.intro}
+              <p className="t-lead text-mute mb-10 max-w-[34ch]">{form.intro}</p>
+
+              <dl className="divide-y divide-line border-y border-line">
+                {channels.map(({ icon: Icon, label, value, href: link }) => (
+                  <div key={label} className="relative py-5 pl-9">
+                    <dt className="t-eyebrow mb-1 text-mute">
+                      <Icon className="absolute left-0 top-6 h-5 w-5 text-signal" aria-hidden="true" />
+                      {label}
+                    </dt>
+                    <dd className="text-[1.0625rem] text-ink break-words">
+                      {link ? (
+                        <a href={link} className="font-medium tabular-nums hover:text-signal transition-colors">{value}</a>
+                      ) : (
+                        value
+                      )}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+              <p className="mt-5 flex items-center gap-2 text-sm text-mute">
+                <span className="inline-block h-1.5 w-1.5 rounded-full bg-signal" aria-hidden="true" />
+                {chrome.answer}
               </p>
             </div>
-
-            <form onSubmit={handleSubmit} className="bg-white dark:bg-slate-800 rounded-lg shadow-xl p-6 lg:p-8 border border-slate-200 dark:border-slate-700">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 mb-4 lg:mb-6">
-                {/* Name */}
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-slate-900 dark:text-white mb-2">
-                    {form.fields.name.label}
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    maxLength={100}
-                    autoComplete="name"
-                    className="w-full px-4 py-2.5 lg:py-3 rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all text-sm sm:text-base"
-                    placeholder={form.fields.name.placeholder}
-                  />
-                </div>
-
-                {/* Email */}
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-slate-900 dark:text-white mb-2">
-                    {form.fields.email.label}
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    maxLength={254}
-                    autoComplete="email"
-                    className="w-full px-4 py-2.5 lg:py-3 rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all text-sm sm:text-base"
-                    placeholder={form.fields.email.placeholder}
-                  />
-                </div>
-
-                {/* Telefon */}
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-slate-900 dark:text-white mb-2">
-                    {form.fields.phone.label}
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    maxLength={40}
-                    autoComplete="tel"
-                    className="w-full px-4 py-2.5 lg:py-3 rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all text-sm sm:text-base"
-                    placeholder={form.fields.phone.placeholder}
-                  />
-                </div>
-
-                {/* Service - Gruppiert nach Kategorien */}
-                <div>
-                  <label htmlFor="service" className="block text-sm font-medium text-slate-900 dark:text-white mb-2">
-                    {form.fields.service.label}
-                  </label>
-                  <select
-                    id="service"
-                    name="service"
-                    value={formData.service}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2.5 lg:py-3 rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all text-sm sm:text-base"
-                  >
-                    <option value="">{form.choose}</option>
-                    {form.serviceOptions.map((group) => (
-                      <optgroup key={group.group} label={group.group}>
-                        {group.options.map((option) => (
-                          <option key={option.value} value={option.value}>{option.label}</option>
-                        ))}
-                      </optgroup>
-                    ))}
-                  </select>
-                </div>
-
-                {/* Ort des Objekts und Rhythmus helfen bei der Einschätzung der Anfrage (M30, E33) */}
-                <div>
-                  <label htmlFor="location" className="block text-sm font-medium text-slate-900 dark:text-white mb-2">
-                    {form.fields.location.label}
-                  </label>
-                  <input
-                    type="text"
-                    id="location"
-                    name="location"
-                    value={formData.location}
-                    onChange={handleChange}
-                    maxLength={100}
-                    className="w-full px-4 py-2.5 lg:py-3 rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all text-sm sm:text-base"
-                    placeholder={form.fields.location.placeholder}
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="frequency" className="block text-sm font-medium text-slate-900 dark:text-white mb-2">
-                    {form.fields.frequency.label}
-                  </label>
-                  <select
-                    id="frequency"
-                    name="frequency"
-                    value={formData.frequency}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2.5 lg:py-3 rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all text-sm sm:text-base"
-                  >
-                    <option value="">{form.choose}</option>
-                    {/* Wert auf Deutsch, weil die E-Mail an den Betrieb deutsch ist */}
-                    {form.frequencyOptions.map((option, index) => (
-                      <option key={option} value={navDicts.de.contactForm.frequencyOptions[index] ?? option}>{option}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-
-              {/* Nachricht */}
-              <div className="mb-6">
-                <label htmlFor="message" className="block text-sm font-medium text-slate-900 dark:text-white mb-2">
-                  {form.fields.message.label}
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  maxLength={5000}
-                  rows={4}
-                  className="w-full px-4 py-2.5 lg:py-3 rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all resize-none text-sm sm:text-base"
-                  placeholder={form.fields.message.placeholder}
-                />
-              </div>
-
-              {/* Honeypot gegen Spam, für Menschen unsichtbar (M07) */}
-              <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
-                <label htmlFor="website">Website</label>
-                <input
-                  type="text"
-                  id="website"
-                  name="website"
-                  value={formData.website}
-                  onChange={handleChange}
-                  tabIndex={-1}
-                  autoComplete="off"
-                />
-              </div>
-
-              {/* Datenschutz Checkbox */}
-              <div className="mb-6">
-                <label className="flex items-start gap-3 cursor-pointer group">
-                  <input
-                    type="checkbox"
-                    name="acceptPrivacy"
-                    checked={formData.acceptPrivacy}
-                    onChange={(e) => setFormData({ ...formData, acceptPrivacy: e.target.checked })}
-                    required
-                    className="mt-1 w-4 h-4 rounded border-slate-300 dark:border-slate-600 text-red-600 focus:ring-2 focus:ring-red-500 focus:ring-offset-0 cursor-pointer"
-                  />
-                  <span className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                    {form.consentBefore}{" "}
-                    <a
-                      href={href("/datenschutz")}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-red-600 dark:text-red-400 hover:underline font-medium"
-                    >
-                      {form.consentLink}
-                    </a>{" "}
-                    {form.consentAfter}
-                  </span>
-                </label>
-              </div>
-
-              {/* Submit Button */}
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
-                  {form.required}
-                </p>
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full sm:w-auto px-6 lg:px-8 py-3 lg:py-3.5 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-md transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl text-sm sm:text-base"
-                >
-                  {isSubmitting ? (
-                    <>
-                      <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                      {form.sending}
-                    </>
-                  ) : (
-                    <>
-                      <Send className="w-4 h-4" aria-hidden="true" />
-                      {form.submit}
-                    </>
-                  )}
-                </button>
-              </div>
-
-              {/* Status Messages */}
-              {submitStatus === "success" && (
-                <div role="status" className="mt-4 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-md">
-                  <p className="text-sm text-green-700 dark:text-green-400">
-                    ✓ {form.success}
-                  </p>
-                </div>
-              )}
-              {submitStatus === "error" && (
-                <div role="alert" className="mt-4 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-md">
-                  <p className="text-sm text-red-700 dark:text-red-400">
-                    ✗ {errorMessage || fallbackError}
-                  </p>
-                </div>
-              )}
-            </form>
           </div>
+
+          <form
+            onSubmit={handleSubmit}
+            className="relative lg:col-span-7 xl:col-span-8 bg-white p-6 sm:p-10 xl:p-14 shadow-[0_1px_0_rgba(14,17,22,0.04),0_40px_80px_-48px_rgba(14,17,22,0.35)]"
+          >
+            <div className="grid gap-x-6 gap-y-6 md:grid-cols-2">
+              <div>
+                <label htmlFor="name" className={labelClass}>{form.fields.name.label}</label>
+                <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required maxLength={100} autoComplete="name" className={fieldClass} placeholder={form.fields.name.placeholder} />
+              </div>
+              <div>
+                <label htmlFor="email" className={labelClass}>{form.fields.email.label}</label>
+                <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required maxLength={254} autoComplete="email" className={fieldClass} placeholder={form.fields.email.placeholder} />
+              </div>
+              <div>
+                <label htmlFor="phone" className={labelClass}>{form.fields.phone.label}</label>
+                <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} maxLength={40} autoComplete="tel" className={fieldClass} placeholder={form.fields.phone.placeholder} />
+              </div>
+              <div>
+                <label htmlFor="service" className={labelClass}>{form.fields.service.label}</label>
+                <select id="service" name="service" value={formData.service} onChange={handleChange} className={fieldClass}>
+                  <option value="">{form.choose}</option>
+                  {form.serviceOptions.map((group) => (
+                    <optgroup key={group.group} label={group.group}>
+                      {group.options.map((option) => (
+                        <option key={option.value} value={option.value}>{option.label}</option>
+                      ))}
+                    </optgroup>
+                  ))}
+                </select>
+              </div>
+              {/* Ort des Objekts und Rhythmus helfen bei der Einschätzung der Anfrage (M30, E33) */}
+              <div>
+                <label htmlFor="location" className={labelClass}>{form.fields.location.label}</label>
+                <input type="text" id="location" name="location" value={formData.location} onChange={handleChange} maxLength={100} autoComplete="postal-code" className={fieldClass} placeholder={form.fields.location.placeholder} />
+              </div>
+              <div>
+                <label htmlFor="frequency" className={labelClass}>{form.fields.frequency.label}</label>
+                <select id="frequency" name="frequency" value={formData.frequency} onChange={handleChange} className={fieldClass}>
+                  <option value="">{form.choose}</option>
+                  {/* Wert auf Deutsch, weil die E-Mail an den Betrieb deutsch ist */}
+                  {form.frequencyOptions.map((option, index) => (
+                    <option key={option} value={navDicts.de.contactForm.frequencyOptions[index] ?? option}>{option}</option>
+                  ))}
+                </select>
+              </div>
+              <div className="md:col-span-2">
+                <label htmlFor="message" className={labelClass}>{form.fields.message.label}</label>
+                <textarea id="message" name="message" value={formData.message} onChange={handleChange} required maxLength={5000} rows={5} className={`${fieldClass} resize-y min-h-[8rem]`} placeholder={form.fields.message.placeholder} />
+              </div>
+            </div>
+
+            {/* Honeypot gegen Spam, für Menschen unsichtbar (M07) */}
+            <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
+              <label htmlFor="website">Website</label>
+              <input type="text" id="website" name="website" value={formData.website} onChange={handleChange} tabIndex={-1} autoComplete="off" />
+            </div>
+
+            <label className="mt-8 flex cursor-pointer items-start gap-3">
+              <input
+                type="checkbox"
+                name="acceptPrivacy"
+                checked={formData.acceptPrivacy}
+                onChange={(e) => setFormData({ ...formData, acceptPrivacy: e.target.checked })}
+                required
+                className="mt-1 h-5 w-5 shrink-0 cursor-pointer accent-signal"
+              />
+              <span className="text-sm leading-relaxed text-mute">
+                {form.consentBefore}{" "}
+                <a href={href("/datenschutz")} target="_blank" rel="noopener noreferrer" className="link-inline">
+                  {form.consentLink}
+                </a>{" "}
+                {form.consentAfter}
+              </span>
+            </label>
+
+            <div className="mt-8 flex flex-col-reverse gap-4 border-t border-line pt-8 sm:flex-row sm:items-center sm:justify-between">
+              <p className="text-sm text-mute">{form.required}</p>
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="arrow-link inline-flex h-14 items-center justify-center gap-3 rounded-[0.25rem] bg-signal px-8 text-base font-medium text-white transition-colors hover:bg-signal-dark disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                {isSubmitting ? (
+                  <>
+                    <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" aria-hidden="true" />
+                    {form.sending}
+                  </>
+                ) : (
+                  <>
+                    {form.submit}
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </>
+                )}
+              </button>
+            </div>
+
+            {submitStatus === "success" && (
+              <div role="status" className="mt-6 flex items-start gap-3 border-l-2 border-emerald-700 bg-emerald-50 p-4">
+                <Check className="mt-0.5 h-5 w-5 shrink-0 text-emerald-800" aria-hidden="true" />
+                <p className="text-sm text-emerald-900">{form.success}</p>
+              </div>
+            )}
+            {submitStatus === "error" && (
+              <div role="alert" className="mt-6 border-l-2 border-signal bg-signal-light/40 p-4">
+                <p className="text-sm text-signal-dark">{errorMessage || fallbackError}</p>
+              </div>
+            )}
+          </form>
         </div>
       </section>
 
-      {/* Footer Content */}
-      <footer className="bg-slate-900 text-white">
-        <div className="container py-16">
-          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
-            <div>
+      <footer className="bg-ink text-white">
+        <div className="container pt-20 pb-12 lg:pt-24">
+          <div className="grid gap-12 lg:grid-cols-12">
+            <div className="lg:col-span-4">
               {/* Schriftzug bis zum Logo von Brandea (M35, E49). «Eine Marke der …» nur bei
                   eigener Marke, die Arbeitsmarke ist schon der Firmenname (E38). */}
-              <div className="mb-6">
-                <p className="text-2xl font-bold tracking-tight">{company.brand}</p>
-                {newBrandActive && <p className="text-slate-400 text-xs mt-1">{texts.newBrandLine}</p>}
+              <p className="font-display text-[2rem] font-semibold leading-none tracking-[-0.03em]">{company.brand}</p>
+              {newBrandActive && <p className="mt-2 text-sm text-white/55">{texts.newBrandLine}</p>}
+              <p className="mt-6 max-w-[36ch] leading-relaxed text-white/65">{texts.about}</p>
+              <div className="mt-8 space-y-2 text-[0.9875rem]">
+                <a href={company.phone.href} className="block font-medium tabular-nums hover:text-brass transition-colors">{company.phone.display}</a>
+                <a href={`mailto:${company.email}`} className="block text-white/75 hover:text-white transition-colors">{company.email}</a>
+                <p className="text-white/55">
+                  {company.address.street}, {company.address.postalCode} {company.address.city}
+                </p>
               </div>
-              <p className="text-slate-400 text-sm leading-relaxed mb-6">{texts.about}</p>
-              <ul className="space-y-1">
-                {texts.companyLinks.map((link) => (
-                  <li key={link.path}>
-                    <Link href={href(link.path)} className="text-slate-400 hover:text-white transition-smooth text-sm inline-block py-0.5">{link.label}</Link>
-                  </li>
-                ))}
-              </ul>
             </div>
 
-            {serviceGroups.map((group) => (
-              <div key={group.title}>
-                <h3 className="font-semibold text-lg mb-4">{group.title}</h3>
+            <div className="grid gap-10 sm:grid-cols-2 lg:col-span-8 lg:grid-cols-4">
+              {serviceGroups.map((group) => (
+                <div key={group.title}>
+                  <h3 className="t-eyebrow mb-5 text-white/50">{group.title}</h3>
+                  <ul className="space-y-1">
+                    {group.links.map((link) => (
+                      <li key={link.path}>
+                        <Link href={href(link.path)} className="inline-block py-1.5 text-[0.9375rem] text-white/80 hover:text-white transition-colors">{link.label}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+              <div>
+                <h3 className="t-eyebrow mb-5 text-white/50">{texts.areaTitle}</h3>
                 <ul className="space-y-1">
-                  {group.links.map((link) => (
+                  <li>
+                    <Link href={href(texts.areaLink.path)} className="inline-block py-1.5 text-[0.9375rem] text-white/80 hover:text-white transition-colors">{texts.areaLink.label}</Link>
+                  </li>
+                  {texts.companyLinks.map((link) => (
                     <li key={link.path}>
-                      <Link href={href(link.path)} className="text-slate-400 hover:text-white transition-smooth text-sm inline-block py-0.5">{link.label}</Link>
+                      <Link href={href(link.path)} className="inline-block py-1.5 text-[0.9375rem] text-white/80 hover:text-white transition-colors">{link.label}</Link>
                     </li>
                   ))}
                 </ul>
               </div>
-            ))}
-
-            <div>
-              <h3 className="font-semibold text-lg mb-4">{texts.areaTitle}</h3>
-              <ul className="space-y-1 mb-6">
-                <li>
-                  <Link href={href(texts.areaLink.path)} className="text-slate-400 hover:text-white transition-smooth text-sm inline-block py-0.5">{texts.areaLink.label}</Link>
-                </li>
-                <li className="text-slate-400 text-sm">{company.address.street}, {company.address.postalCode} {company.address.city}</li>
-                <li>
-                  <a href={company.phone.href} className="text-slate-400 hover:text-white transition-smooth text-sm inline-block py-0.5">{company.phone.display}</a>
-                </li>
-              </ul>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-slate-800">
-          <div className="container py-6">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400">
-              <div>
-                {/* Jahr wird beim Build eingesetzt, im Browser ggf. aktualisiert (M24, React-Fehler #418) */}
-                © <span suppressHydrationWarning>{currentYear}</span> {texts.rights}
-              </div>
-              <LanguageSwitcher lang={lang} path={path} label={languageSwitch} tone="dark" />
-              <ul className="flex gap-6">
-                {texts.legal.map((link) => (
-                  <li key={link.path}>
-                    <Link href={href(link.path)} className="hover:text-white transition-smooth inline-block py-0.5">{link.label}</Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+        <div className="border-t border-white/10">
+          <div className="container flex flex-col gap-4 py-6 text-sm text-white/55 md:flex-row md:items-center md:justify-between">
+            <p>
+              {/* Jahr wird beim Build eingesetzt, im Browser ggf. aktualisiert (M24, React-Fehler #418) */}
+              © <span suppressHydrationWarning>{currentYear}</span> {texts.rights}
+            </p>
+            <LanguageSwitcher lang={lang} path={path} label={languageSwitch} tone="dark" />
+            <ul className="flex gap-6">
+              {texts.legal.map((link) => (
+                <li key={link.path}>
+                  <Link href={href(link.path)} className="inline-flex items-center gap-1 py-1.5 hover:text-white transition-colors">
+                    {link.label}
+                    <ArrowUpRight className="h-3.5 w-3.5 opacity-60" aria-hidden="true" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </footer>

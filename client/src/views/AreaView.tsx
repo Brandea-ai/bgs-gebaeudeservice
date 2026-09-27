@@ -1,120 +1,123 @@
-import { MapPin, Phone, Mail, CheckCircle } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
 import OfferCta from "@/components/OfferCta";
-import { Card } from "@/components/ui/card";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import CantonMap from "@/components/CantonMap";
+import SectionHead from "@/components/SectionHead";
 import RichText from "@/components/RichText";
 import { company } from "../../../shared/company";
+import { cantonInfo } from "../../../shared/cantons";
 import { getDict } from "../../../content";
-import { localizePath, type Locale } from "../../../shared/i18n";
+import { navDicts } from "../../../content/navigation";
+import type { Locale } from "../../../shared/i18n";
 
-// Ein Sitz, fünf Kantone, alle Leistungen im ganzen Gebiet (R4b, W04, R4d).
-// Texte aus content/de/seiten.ts, Kantone aus shared/company.ts (M54).
+/**
+ * Einzugsgebiet (F5): ein Sitz, fünf Kantone, alle Leistungen im ganzen Gebiet
+ * (R4b, W04, R4d). Karte aus den Kantonsgrenzen von swisstopo, Texte aus
+ * content/<sprache>/seiten.ts, Kantone aus shared/company.ts (M54).
+ */
 export default function AreaView({ lang }: { lang: Locale }) {
   const { area } = getDict(lang).seiten;
+  const { chrome } = navDicts[lang];
+
   return (
     <div className="min-h-screen bg-white">
       <SwissNavigation lang={lang} path="/einzugsgebiet" />
 
-      <main>
-        <section className="pt-32 pb-16 bg-gradient-to-br from-slate-50 to-red-50/40">
-          <div className="container max-w-4xl">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-              {area.h1}
-            </h1>
-            <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
-              {area.lead}
-            </p>
+      <main id="inhalt">
+        <section className="border-b border-line bg-stone">
+          <div className="container grid items-center gap-12 pt-10 pb-16 md:pt-14 lg:grid-cols-12 lg:gap-10 lg:pb-20">
+            <div className="lg:col-span-6">
+              <Breadcrumbs path="/einzugsgebiet" lang={lang} />
+              <h1 className="t-h1 max-w-[18ch] text-ink">{area.h1}</h1>
+              <p className="t-lead mt-8 max-w-[48ch] text-mute">{area.lead}</p>
+            </div>
+            <div className="lg:col-span-6 xl:col-span-5 xl:col-start-8">
+              <CantonMap lang={lang} />
+            </div>
           </div>
         </section>
 
-        <section className="py-16">
-          <div className="container max-w-4xl grid gap-8 md:grid-cols-2">
-            <Card className="p-6">
-              <h2 className="text-lg font-semibold text-slate-900 mb-4">
-                {area.cantonsTitle}
-              </h2>
-              <ul className="space-y-3">
-                {area.cantonLabels.map(canton => (
-                  <li
-                    key={canton}
-                    className="flex items-center gap-3 text-slate-700"
-                  >
-                    <CheckCircle
-                      className="w-5 h-5 text-primary shrink-0"
-                      aria-hidden="true"
-                    />
-                    {canton}
-                  </li>
-                ))}
-              </ul>
-            </Card>
-
-            <Card className="p-6">
-              <h2 className="text-lg font-semibold text-slate-900 mb-4">
-                {area.seatTitle}
-              </h2>
-              <ul className="space-y-3 text-slate-700">
-                <li className="flex items-start gap-3">
-                  <MapPin
-                    className="w-5 h-5 text-primary shrink-0 mt-0.5"
-                    aria-hidden="true"
-                  />
-                  <span>
-                    {company.legalName}
-                    <br />
-                    {company.address.street}, {company.address.postalCode}{" "}
-                    {company.address.city}
+        {/* Kantone als Reihe */}
+        <section aria-labelledby="kantone" className="section-tight">
+          <div className="container">
+            <h2 id="kantone" className="t-eyebrow mb-6 text-mute">{area.cantonsTitle}</h2>
+            <ul className="grid grid-cols-2 gap-px bg-line sm:grid-cols-3 lg:grid-cols-5">
+              {area.cantonLabels.map((label, index) => (
+                <li key={label} className="flex min-h-[9rem] flex-col justify-between bg-white p-6">
+                  <span className="font-mono text-sm font-medium tracking-[0.14em] text-signal" aria-hidden="true">
+                    {cantonInfo[company.cantons[index]]?.code}
                   </span>
+                  <span className="font-display text-xl font-semibold leading-tight text-ink">{label}</span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <Phone
-                    className="w-5 h-5 text-primary shrink-0"
-                    aria-hidden="true"
-                  />
-                  <a href={company.phone.href} className="hover:text-primary">
-                    {company.phone.display}
-                  </a>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Mail
-                    className="w-5 h-5 text-primary shrink-0"
-                    aria-hidden="true"
-                  />
-                  <a
-                    href={`mailto:${company.email}`}
-                    className="hover:text-primary"
-                  >
-                    {company.email}
-                  </a>
-                </li>
-              </ul>
-            </Card>
+              ))}
+            </ul>
           </div>
         </section>
 
-        <section className="pb-16">
-          <div className="container max-w-4xl">
-            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
-              {area.places.title}
-            </h2>
-            <p className="text-slate-700 mb-8 max-w-3xl">
-              <RichText text={area.places.text} lang={lang} />
-            </p>
-            <dl className="grid gap-x-10 gap-y-6 sm:grid-cols-2">
-              {area.places.groups.map(group => (
-                <div
-                  key={group.title}
-                  className="border-t border-slate-200 pt-4"
-                >
-                  <dt className="font-semibold text-slate-900">
-                    {group.title}
-                  </dt>
-                  <dd className="text-slate-600 mt-1">
-                    {group.items.join(", ")}
+        {/* Orte an Seen und in den Bergen */}
+        <section aria-labelledby="orte" className="section bg-stone">
+          <div className="container grid gap-12 lg:grid-cols-12">
+            <div className="lg:col-span-4">
+              <div className="lg:sticky lg:top-[calc(var(--header-h)+2.5rem)]">
+                <SectionHead id="orte" title={area.places.title} />
+                <p className="t-lead mt-6 max-w-[40ch] text-mute">
+                  <RichText text={area.places.text} lang={lang} />
+                </p>
+              </div>
+            </div>
+            <dl className="grid gap-x-10 sm:grid-cols-2 lg:col-span-8">
+              {area.places.groups.map((group) => (
+                <div key={group.title} className="border-t border-ink py-6">
+                  <dt className="t-h3 text-ink">{group.title}</dt>
+                  <dd className="mt-4 flex flex-wrap gap-2">
+                    {group.items.map((place) => (
+                      <span key={place} className="border border-line bg-white px-3 py-1.5 text-sm text-ink-700">
+                        {place}
+                      </span>
+                    ))}
                   </dd>
                 </div>
               ))}
+            </dl>
+          </div>
+        </section>
+
+        {/* Sitz und Kontakt */}
+        <section aria-labelledby="sitz" className="section-tight">
+          <div className="container grid gap-10 lg:grid-cols-12">
+            <h2 id="sitz" className="t-h2 text-ink lg:col-span-4">{area.seatTitle}</h2>
+            <dl className="grid gap-px bg-line sm:grid-cols-3 lg:col-span-8">
+              <div className="bg-white p-6">
+                <dt className="t-eyebrow mb-3 flex items-center gap-2 text-mute">
+                  <MapPin className="h-4 w-4 text-signal" aria-hidden="true" />
+                  {chrome.address}
+                </dt>
+                <dd className="leading-relaxed text-ink">
+                  {company.legalName}
+                  <br />
+                  {company.address.street}, {company.address.postalCode} {company.address.city}
+                </dd>
+              </div>
+              <div className="bg-white p-6">
+                <dt className="t-eyebrow mb-3 flex items-center gap-2 text-mute">
+                  <Phone className="h-4 w-4 text-signal" aria-hidden="true" />
+                  {chrome.phone}
+                </dt>
+                <dd>
+                  <a href={company.phone.href} className="font-medium text-ink tabular-nums hover:text-signal">{company.phone.display}</a>
+                </dd>
+              </div>
+              <div className="bg-white p-6">
+                <dt className="t-eyebrow mb-3 flex items-center gap-2 text-mute">
+                  <Mail className="h-4 w-4 text-signal" aria-hidden="true" />
+                  {chrome.email}
+                </dt>
+                <dd className="break-words">
+                  <a href={`mailto:${company.email}`} className="font-medium text-ink hover:text-signal">{company.email}</a>
+                </dd>
+              </div>
             </dl>
           </div>
         </section>

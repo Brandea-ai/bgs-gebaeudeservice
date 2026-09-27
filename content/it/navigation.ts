@@ -145,5 +145,16 @@ export const nav: NavDictionary = {
   contactForm,
   notFound,
   languageSwitch: 'Lingua',
+  chrome: {
+    skip: 'Vai al contenuto',
+    answer: `Risposta ${responseTime}`,
+    seat: `Sede a ${company.address.city}`,
+    megaTitle: 'Offerta sul posto',
+    megaText: 'Visitiamo il vostro immobile e allestiamo un’offerta scritta, gratuita e senza impegno.',
+    phone: 'Telefono',
+    email: 'E-mail',
+    address: 'Indirizzo',
+    contactEyebrow: 'Contatto',
+  },
   errorPage: { title: 'Siamo spiacenti, si è verificato un errore.', reload: 'Ricarica la pagina' },
 }

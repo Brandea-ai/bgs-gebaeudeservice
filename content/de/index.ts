@@ -38,6 +38,8 @@ export const de = {
       notice: 'Die Karte wird von Google Maps geladen. Dabei werden Daten an Google übertragen.',
       load: 'Karte laden',
       open: 'In Google Maps öffnen',
+      source: 'Kartengrundlage: © swisstopo',
+      areaLabel: 'Einzugsgebiet',
     },
     registerCourt: company.register as string,
   },

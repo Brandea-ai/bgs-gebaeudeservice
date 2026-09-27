@@ -18,7 +18,7 @@ export default function ConsentMap({ texts }: { texts: MapTexts }) {
       <iframe
         title={`${texts.label}: ${address}`}
         src={`https://www.google.com/maps?q=${query}&output=embed`}
-        className="w-full h-[400px] border-0"
+        className="w-full h-[28rem] border-0"
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
       />
@@ -26,21 +26,21 @@ export default function ConsentMap({ texts }: { texts: MapTexts }) {
   }
 
   return (
-    <div className="w-full h-[400px] bg-slate-100 flex flex-col items-center justify-center gap-4 p-6 text-center">
-      <MapPin className="w-10 h-10 text-primary" aria-hidden="true" />
-      <p className="font-semibold text-slate-900">
+    <div className="w-full min-h-[28rem] bg-white flex flex-col items-center justify-center gap-5 p-8 text-center" style={{ backgroundImage: "linear-gradient(rgba(14,17,22,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(14,17,22,0.05) 1px, transparent 1px)", backgroundSize: "2.5rem 2.5rem" }}>
+      <MapPin className="w-8 h-8 text-signal" aria-hidden="true" />
+      <p className="font-display text-lg font-semibold text-ink">
         {company.legalName}
         <br />
         {address}
       </p>
-      <p className="text-sm text-slate-600 max-w-md">
+      <p className="text-sm text-mute max-w-md">
         {texts.notice}
       </p>
       <div className="flex flex-wrap justify-center gap-3">
         <button
           type="button"
           onClick={() => setLoaded(true)}
-          className="rounded-md bg-primary px-5 py-2.5 font-semibold text-primary-foreground hover:bg-primary/90"
+          className="h-12 rounded-[0.25rem] bg-signal px-6 font-medium text-white hover:bg-signal-dark"
         >
           {texts.load}
         </button>
@@ -48,7 +48,7 @@ export default function ConsentMap({ texts }: { texts: MapTexts }) {
           href={`https://www.google.com/maps/search/?api=1&query=${query}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-md border border-slate-300 px-5 py-2.5 font-semibold text-slate-700 hover:bg-white"
+          className="inline-flex h-12 items-center gap-2 rounded-[0.25rem] border border-ink/20 bg-white px-6 font-medium text-ink hover:border-ink"
         >
           {texts.open}
           <ExternalLink className="w-4 h-4" aria-hidden="true" />

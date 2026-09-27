@@ -37,6 +37,8 @@ export const it: Dictionary = {
       notice: 'La mappa viene caricata da Google Maps. Durante il caricamento vengono trasmessi dati a Google.',
       load: 'Carica la mappa',
       open: 'Apri in Google Maps',
+      source: 'Base cartografica: © swisstopo',
+      areaLabel: 'Zona d’intervento',
     },
     registerCourt: registerIt,
   },

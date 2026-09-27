@@ -13,13 +13,13 @@ import { breadcrumbJsonLd } from '../../../shared/structured-data'
  */
 export default function Breadcrumbs({ path, tone = 'light', lang = 'de' }: { path: PagePath; tone?: 'light' | 'dark'; lang?: Locale }) {
   const trail = trailFor(path, lang)
-  const muted = tone === 'dark' ? 'text-slate-300' : 'text-slate-600'
-  const current = tone === 'dark' ? 'text-white' : 'text-slate-900'
+  const muted = tone === 'dark' ? 'text-white/60' : 'text-mute'
+  const current = tone === 'dark' ? 'text-white' : 'text-ink'
 
   return (
     <>
-      <nav aria-label={getDict(lang).misc.breadcrumbs} className="mb-6">
-        <ol className={`flex flex-wrap items-center gap-x-1.5 gap-y-1 text-sm ${muted}`}>
+      <nav aria-label={getDict(lang).misc.breadcrumbs} className="mb-8">
+        <ol className={`flex flex-wrap items-center gap-x-1.5 gap-y-1 text-[0.8125rem] ${muted}`}>
           {trail.map((crumb, index) => {
             const isCurrent = index === trail.length - 1
             return (
@@ -30,7 +30,7 @@ export default function Breadcrumbs({ path, tone = 'light', lang = 'de' }: { pat
                   </span>
                 ) : (
                   <>
-                    <Link href={localizePath(crumb.path, lang)} className="underline-offset-4 hover:underline">
+                    <Link href={localizePath(crumb.path, lang)} className="underline-offset-4 transition-colors hover:underline">
                       {crumb.label}
                     </Link>
                     <ChevronRight className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />

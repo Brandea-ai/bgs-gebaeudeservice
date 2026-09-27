@@ -32,6 +32,7 @@ export const ui = {
   steps: 'Déroulement',
   faq: 'Questions fréquentes',
   related: 'Cela peut aussi vous intéresser',
+  onThisPage: 'Sur cette page',
   premiumLine,
   factArea: 'Région',
   factAreaValue: `Cantons de ${cantonList}`,

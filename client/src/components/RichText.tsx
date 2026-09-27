@@ -5,7 +5,7 @@ import { localizeHref, type Locale } from '../../../shared/i18n'
 // [Linktext](/pfad), nur interne Pfade (content/types.ts)
 const LINK = /\[([^\]]+)\]\((\/[^)\s]*)\)/g
 
-const linkStyle = 'font-medium text-red-700 underline underline-offset-4 hover:no-underline'
+const linkStyle = 'link-inline'
 
 /** Fliesstext aus der Inhaltsschicht mit internen Links. Auf dunklem Grund linkClassName setzen. Links stehen mit deutscher Adresse und werden je Sprache übersetzt (M60). */
 export default function RichText({ text, linkClassName = linkStyle, lang = 'de' }: { text: string; linkClassName?: string; lang?: Locale }) {

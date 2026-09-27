@@ -1,19 +1,21 @@
 import { imagesArePlaceholders } from '../../../shared/features'
 
 /**
- * Hintergrund der Startseite ohne Animationsbibliothek (M25). Bis zur Freigabe
- * echter Bilder ein dunkler Verlauf (E19, E59), die Überlagerung hält die weisse
- * Schrift lesbar.
+ * Hintergrund dunkler Kopfbereiche ohne Animationsbibliothek (M25). Bis zur
+ * Freigabe echter Bilder (E19, E59) Graphit mit Haarlinien-Raster, danach das
+ * Foto unter einer Überlagerung, die weisse Schrift lesbar hält.
  */
-export default function HeroBackground({ src }: { src: string }) {
+export default function HeroBackground({ src }: { src?: string }) {
   return (
-    <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
-      {imagesArePlaceholders ? (
-        <div className="h-full w-full bg-gradient-to-br from-slate-700 to-slate-900" />
-      ) : (
-        <div className="h-full w-full bg-cover bg-center" style={{ backgroundImage: `url(${src})` }} />
+    <div className="absolute inset-0 overflow-hidden bg-ink" aria-hidden="true">
+      {!imagesArePlaceholders && src && (
+        <>
+          <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${src})` }} />
+          <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/40" />
+        </>
       )}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_85%_10%,rgba(57,64,74,0.55),transparent_70%)]" />
+      <div className="container grid-lines absolute inset-0 max-md:hidden" />
     </div>
   )
 }

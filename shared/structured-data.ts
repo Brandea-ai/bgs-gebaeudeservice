@@ -2,6 +2,7 @@ import { company } from './company'
 import { siteUrl, trailFor, type PagePath } from './seo'
 import { getDict } from '../content'
 import { hreflang, localizePath, type Locale } from './i18n'
+import { cantonTitle } from './cantons'
 
 /**
  * Strukturierte Daten (GLOBAL-010, Webseite-Analyse/01, Abschnitt G).
@@ -14,17 +15,8 @@ const organizationId = `${siteUrl}/#organization`
 const absolute = (path: string) => new URL(path, siteUrl).href
 
 // Einzugsgebiet: ganze Kantone (E30), Namen in der Sprache der Seite
-const cantonNames: Record<Exclude<Locale, 'de'>, Record<string, string>> = {
-  en: { Luzern: 'Canton of Lucerne', Zug: 'Canton of Zug', Aargau: 'Canton of Aargau', Nidwalden: 'Canton of Nidwalden', Obwalden: 'Canton of Obwalden' },
-  fr: { Luzern: 'Canton de Lucerne', Zug: 'Canton de Zoug', Aargau: 'Canton d’Argovie', Nidwalden: 'Canton de Nidwald', Obwalden: 'Canton d’Obwald' },
-  it: { Luzern: 'Cantone di Lucerna', Zug: 'Cantone di Zugo', Aargau: 'Cantone di Argovia', Nidwalden: 'Cantone di Nidvaldo', Obwalden: 'Cantone di Obvaldo' },
-}
-
 const areaServed = (lang: Locale) =>
-  company.cantons.map((name) => ({
-    '@type': 'AdministrativeArea',
-    name: lang === 'de' ? `Kanton ${name}` : (cantonNames[lang][name] ?? `Kanton ${name}`),
-  }))
+  company.cantons.map((name) => ({ '@type': 'AdministrativeArea', name: cantonTitle(name, lang) }))
 
 /** Das Unternehmen, einmal je Seite im Layout. Leistungen verweisen per @id darauf. */
 export const organizationJsonLd = (lang: Locale = 'de') => ({

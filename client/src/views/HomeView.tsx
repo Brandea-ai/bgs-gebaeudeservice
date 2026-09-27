@@ -1,15 +1,5 @@
 import Link from "next/link";
-import {
-  ArrowRight,
-  Award,
-  Building2,
-  Check,
-  Clock,
-  Shield,
-  Sparkles,
-  Users,
-  Wrench,
-} from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
 import AppointmentButton from "@/components/AppointmentButton";
@@ -17,61 +7,63 @@ import { LazyIndustryAdvisor } from "@/components/LazyChat";
 import OfferCta from "@/components/OfferCta";
 import Steps from "@/components/Steps";
 import HeroBackground from "@/components/HeroBackground";
+import SectionHead from "@/components/SectionHead";
+import CantonMap from "@/components/CantonMap";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { chatEnabled } from "../../../shared/features";
+import { company } from "../../../shared/company";
+import { cantonName } from "../../../shared/cantons";
 import { getDict } from "../../../content";
+import { navDicts } from "../../../content/navigation";
 import { localizePath, type Locale } from "../../../shared/i18n";
+import type { PagePath } from "../../../shared/seo";
 
-const proofIcons = [Award, Users, Clock, Shield];
-const serviceIcons = {
-  reinigung: Building2,
-  hauswartung: Wrench,
-  premium: Sparkles,
-};
-
-// Startseite als Server-Komponente (M21, M39), Texte aus content/de/seiten.ts.
-// Hero ohne Einblendung (M23), Hintergrund und Chat als Client-Inseln.
+/**
+ * Startseite (F3, M39): Server-Komponente, alle Texte im HTML (M21). Hero ohne
+ * Einblendung (M23). Aufbau: Aussage und Kennzahlen, Leistungen mit klebender
+ * Einleitung, Ablauf, Einzugsgebiet mit Karte, Abschluss mit Formular im Footer.
+ */
 export default function HomeView({ lang }: { lang: Locale }) {
   const { home, proof } = getDict(lang).seiten;
   const { ui } = getDict(lang);
+  const { serviceGroups, menu } = navDicts[lang];
+  const href = (path: PagePath) => localizePath(path, lang);
+
   return (
     <div className="min-h-screen bg-white">
       <SwissNavigation lang={lang} path="/" />
 
-      <main>
-        <section className="relative min-h-[80vh] flex items-center overflow-hidden">
+      <main id="inhalt">
+        {/* Aussage und Kennzahlen */}
+        <section aria-labelledby="start-titel" className="relative isolate overflow-hidden text-white">
           <HeroBackground src="/swiss-hero-main.jpg" />
-          <div className="container relative z-10 py-24 md:py-32">
-            <div className="max-w-4xl">
-              <p className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-white/10 rounded-full mb-4 sm:mb-6 text-white font-semibold text-sm sm:text-base">
+          <div className="container relative grid gap-14 pt-16 pb-14 md:pt-24 lg:grid-cols-12 lg:gap-10 lg:pt-28 lg:pb-20 xl:pt-36">
+            <div className="lg:col-span-7 xl:col-span-7">
+              <p className="t-eyebrow mb-7 flex items-center gap-3 text-white/70">
+                <span className="inline-block h-px w-10 bg-signal" aria-hidden="true" />
                 {home.eyebrow}
               </p>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
+              <h1 id="start-titel" className="t-display max-w-[16ch] text-white">
                 {home.h1}
               </h1>
-              <p className="text-base md:text-lg text-white/95 mb-8 leading-relaxed max-w-2xl">
-                {home.lead}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <Button
-                  asChild
-                  size="lg"
-                  className="w-full sm:w-auto text-sm sm:text-base md:text-lg px-6 sm:px-8"
-                >
+              <p className="t-lead mt-8 max-w-[44ch] text-white/75">{home.lead}</p>
+              <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+                <Button asChild size="xl" className="arrow-link">
                   <a href="#kontakt-formular">
                     {ui.offerCta}
-                    <ArrowRight
-                      className="ml-2 w-4 h-4 sm:w-5 sm:h-5"
-                      aria-hidden="true"
-                    />
+                    <ArrowRight aria-hidden="true" />
                   </a>
                 </Button>
-                <AppointmentButton
-                  size="lg"
-                  variant="outline"
-                  className="w-full sm:w-auto text-sm sm:text-base md:text-lg px-6 sm:px-8 bg-white/10 border-white text-white hover:bg-white hover:text-slate-900"
-                />
+                {chatEnabled ? (
+                  <AppointmentButton size="lg" variant="inverse" className="h-14 px-7" />
+                ) : (
+                  <Button asChild size="xl" variant="inverse">
+                    <a href={company.phone.href} className="tabular-nums">
+                      <Phone aria-hidden="true" />
+                      {company.phone.display}
+                    </a>
+                  </Button>
+                )}
               </div>
 
               {/* KI-Berater erst mit Modell und Zugang (E35), bis dahin keine Handlungsaufforderung dorthin (M31) */}
@@ -81,139 +73,131 @@ export default function HomeView({ lang }: { lang: Locale }) {
                 </div>
               )}
             </div>
-          </div>
-        </section>
 
-        <section
-          aria-labelledby="auf-einen-blick"
-          className="py-16 bg-slate-50"
-        >
-          <div className="container">
-            <h2 id="auf-einen-blick" className="sr-only">
-              {home.proofTitle}
-            </h2>
-            <ul className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-              {proof.map((item, index) => {
-                const Icon = proofIcons[index];
-                return (
-                  <li key={item.label}>
-                    <Card className="h-full p-6 md:p-8 text-center">
-                      <Icon
-                        className="w-10 h-10 text-red-700 mx-auto mb-4"
-                        aria-hidden="true"
-                      />
-                      <p className="text-lg md:text-xl font-bold text-slate-900 mb-2">
-                        {item.value}
-                      </p>
-                      <p className="text-sm md:text-base text-slate-600">
-                        {item.label}
-                      </p>
-                    </Card>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        </section>
-
-        <section aria-labelledby="leistungen" className="py-20 md:py-24">
-          <div className="container">
-            <div className="text-center mb-12">
-              <h2
-                id="leistungen"
-                className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-4"
-              >
-                {home.services.title}
+            <aside aria-labelledby="auf-einen-blick" className="lg:col-span-5 lg:col-start-8 lg:self-end">
+              <h2 id="auf-einen-blick" className="t-eyebrow mb-5 text-white/55">
+                {home.proofTitle}
               </h2>
-              <p className="text-base md:text-lg text-slate-600 max-w-3xl mx-auto">
-                {home.services.intro}
+              <dl className="grid grid-cols-2 border-t border-white/15">
+                {proof.map((item, index) => (
+                  <div
+                    key={item.label}
+                    className={`flex flex-col gap-3 border-b border-white/15 py-7 ${index % 2 === 0 ? "pr-5 border-r" : "pl-5"}`}
+                  >
+                    <dt className="order-2 text-sm leading-snug text-white/65">{item.label}</dt>
+                    <dd className="order-1 sm:whitespace-nowrap font-display text-[clamp(1.75rem,1.2rem+1.3vw,2.75rem)] font-semibold leading-none tracking-[-0.03em] text-white">{item.value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </aside>
+          </div>
+
+          {/* Gebiet und Sprachen als ruhige Leiste am Fuss */}
+          <div className="relative border-t border-white/10">
+            <div className="container flex flex-col gap-2 py-5 text-sm text-white/60 md:flex-row md:items-center md:justify-between">
+              <p>
+                <span className="t-eyebrow mr-3 text-white/45">{ui.factArea}</span>
+                {company.cantons.map((name) => cantonName(name, lang)).join(" · ")}
+              </p>
+              <p className="font-mono text-xs uppercase tracking-[0.14em] text-white/45">
+                {company.address.city} · {company.address.postalCode}
               </p>
             </div>
-            <div className="grid lg:grid-cols-3 gap-8">
-              {home.services.groups.map(group => {
-                const Icon =
-                  serviceIcons[group.key as keyof typeof serviceIcons];
-                return (
-                  <Card
-                    key={group.key}
-                    className="p-8 md:p-10 h-full flex flex-col"
-                  >
-                    <Icon
-                      className="w-12 h-12 text-red-700 mb-6"
-                      aria-hidden="true"
-                    />
-                    <h3 className="text-2xl font-bold text-slate-900 mb-4">
-                      {group.title}
-                    </h3>
-                    <p className="text-slate-600 mb-6">{group.text}</p>
-                    <ul className="space-y-3 mb-8">
-                      {group.items.map(item => (
-                        <li
-                          key={item}
-                          className="flex items-center gap-2 text-slate-700"
-                        >
-                          <Check
-                            className="w-5 h-5 text-red-700 shrink-0"
-                            aria-hidden="true"
-                          />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                    <Button
-                      asChild
-                      variant="outline"
-                      className="w-full mt-auto"
-                    >
-                      <Link href={group.link.path}>
-                        {group.link.text}
-                        <ArrowRight
-                          className="ml-2 w-4 h-4"
-                          aria-hidden="true"
-                        />
-                      </Link>
-                    </Button>
-                  </Card>
-                );
-              })}
+          </div>
+        </section>
+
+        {/* Leistungen: Einleitung klebt links, Gruppen rollen rechts */}
+        <section aria-labelledby="leistungen" className="section">
+          <div className="container grid gap-12 lg:grid-cols-12 lg:gap-10">
+            <div className="lg:col-span-4">
+              <div className="lg:sticky lg:top-[calc(var(--header-h)+3rem)]">
+                <SectionHead id="leistungen" eyebrow={menu.services} title={home.services.title} intro={home.services.intro} />
+                <Link href={href("/leistungen")} className="arrow-link mt-8 inline-flex items-center gap-2 font-medium text-ink hover:text-signal transition-colors">
+                  {home.services.groups[0].link.text}
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </Link>
+              </div>
+            </div>
+
+            <div className="lg:col-span-8 lg:col-start-5 xl:col-span-7 xl:col-start-6">
+              <ul className="border-t border-ink">
+                {home.services.groups.map((group, index) => {
+                  const links = serviceGroups[index]?.links.filter((link) => link.path !== "/leistungen") ?? [];
+                  const premium = group.key === "premium";
+                  return (
+                    <li key={group.key} className={`reveal border-b border-line ${premium ? "mt-10 border-b-0 bg-ink p-8 text-white md:p-12" : "py-10 md:py-12"}`}>
+                      <div className="grid gap-8 md:grid-cols-2 md:gap-12">
+                        <div>
+                          {premium && <p className="t-eyebrow mb-4 text-brass">{ui.premiumLine}</p>}
+                          <h3 className={`t-h3 ${premium ? "text-white" : "text-ink"}`}>
+                            <Link href={href(group.link.path)} className="hover:text-signal transition-colors">
+                              {group.title}
+                            </Link>
+                          </h3>
+                          <p className={`mt-3 leading-relaxed ${premium ? "text-white/70" : "text-mute"}`}>{group.text}</p>
+                          <Link
+                            href={href(group.link.path)}
+                            className={`arrow-link mt-6 inline-flex items-center gap-2 text-sm font-medium ${premium ? "text-brass hover:text-white" : "text-signal hover:text-signal-dark"} transition-colors`}
+                          >
+                            {group.link.text}
+                            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                          </Link>
+                        </div>
+                        <ul className={`divide-y ${premium ? "divide-white/15 border-y border-white/15" : "divide-line border-y border-line"}`}>
+                          {links.map((link) => (
+                            <li key={link.path}>
+                              <Link
+                                href={href(link.path)}
+                                className={`arrow-link group flex items-center justify-between gap-4 py-3.5 text-[1rem] transition-colors ${premium ? "text-white/85 hover:text-white" : "text-ink hover:text-signal"}`}
+                              >
+                                {link.label}
+                                <ArrowRight className={`h-4 w-4 shrink-0 ${premium ? "text-brass" : "text-mute group-hover:text-signal"}`} aria-hidden="true" />
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
           </div>
         </section>
 
-        <section aria-labelledby="ablauf" className="py-16 bg-slate-50">
-          <div className="container max-w-6xl">
-            <h2
-              id="ablauf"
-              className="text-2xl md:text-3xl font-bold text-slate-900 mb-8"
-            >
-              {home.steps.title}
-            </h2>
+        {/* Ablauf bis zur Offerte */}
+        <section aria-labelledby="ablauf" className="section bg-stone">
+          <div className="container">
+            <div className="mb-14 grid gap-6 lg:grid-cols-12">
+              <SectionHead id="ablauf" eyebrow={ui.steps} title={home.steps.title} className="lg:col-span-6" />
+            </div>
             <Steps steps={home.steps.items} lang={lang} />
           </div>
         </section>
 
-        <section aria-labelledby="gebiet" className="py-20">
-          <div className="container max-w-4xl text-center">
-            <h2
-              id="gebiet"
-              className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6"
-            >
-              {home.area.title}
-            </h2>
-            <p className="text-base md:text-lg text-slate-600 mb-8">
-              {home.area.text}
-            </p>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="text-sm sm:text-base"
-            >
-              <Link href={localizePath("/einzugsgebiet", lang)}>
-                {home.area.link}
-                <ArrowRight className="ml-2 w-5 h-5" aria-hidden="true" />
-              </Link>
-            </Button>
+        {/* Einzugsgebiet mit Karte */}
+        <section aria-labelledby="gebiet" className="section">
+          <div className="container grid items-center gap-14 lg:grid-cols-12 lg:gap-10">
+            <div className="lg:col-span-5">
+              <SectionHead id="gebiet" eyebrow={ui.factArea} title={home.area.title} intro={home.area.text} />
+              <ul className="mt-10 grid grid-cols-2 border-t border-line sm:grid-cols-3">
+                {company.cantons.map((name) => (
+                  <li key={name} className="flex items-center gap-3 border-b border-line py-4 text-ink">
+                    <span className="inline-block h-2 w-2 bg-signal" aria-hidden="true" />
+                    {cantonName(name, lang)}
+                  </li>
+                ))}
+              </ul>
+              <Button asChild size="lg" variant="outline" className="arrow-link mt-10">
+                <Link href={href("/einzugsgebiet")}>
+                  {home.area.link}
+                  <ArrowRight aria-hidden="true" />
+                </Link>
+              </Button>
+            </div>
+            <div className="lg:col-span-7 lg:col-start-6 xl:col-span-6 xl:col-start-7">
+              <CantonMap lang={lang} className="mx-auto max-w-[44rem]" />
+            </div>
           </div>
         </section>
 

@@ -26,6 +26,7 @@ export const ui = {
   steps: 'Come si svolge',
   faq: 'Domande frequenti',
   related: 'Potrebbe interessarLe anche',
+  onThisPage: 'In questa pagina',
   premiumLine,
   factArea: 'Zona',
   factAreaValue: `Cantoni di ${cantonListIt}`,

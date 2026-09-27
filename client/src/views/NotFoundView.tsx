@@ -11,20 +11,25 @@ export default function NotFoundView({ lang }: { lang: Locale }) {
     <div className="min-h-screen bg-white">
       <SwissNavigation lang={lang} />
 
-      <main className="pt-28 md:pt-32 pb-20">
-        <div className="container max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-wide text-red-700 mb-4">404</p>
-          <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">{notFound.title}</h1>
-          <p className="text-lg text-slate-700 leading-relaxed mb-8">{notFound.text}</p>
-          <ul className="space-y-3">
+      <main id="inhalt" className="relative overflow-hidden bg-ink text-white">
+        <div className="container grid-lines pointer-events-none absolute inset-0 max-md:hidden" aria-hidden="true" />
+        <div className="container relative grid gap-12 py-24 lg:grid-cols-12 lg:py-36">
+          <div className="lg:col-span-7">
+            <p className="font-display text-[clamp(5rem,3rem+8vw,11rem)] font-semibold leading-none tracking-[-0.05em] text-white/10" aria-hidden="true">
+              404
+            </p>
+            <h1 className="t-h1 mt-6 text-white">{notFound.title}</h1>
+            <p className="t-lead mt-6 max-w-[48ch] text-white/70">{notFound.text}</p>
+          </div>
+          <ul className="self-end border-t border-white/20 lg:col-span-4 lg:col-start-9">
             {notFound.links.map((link) => (
-              <li key={link.path}>
+              <li key={link.path} className="border-b border-white/15">
                 <a
                   href={localizePath(link.path, lang)}
-                  className="inline-flex items-center gap-2 font-medium text-red-700 underline-offset-4 hover:underline"
+                  className="arrow-link flex items-center justify-between gap-4 py-5 font-display text-xl font-semibold text-white hover:text-brass transition-colors"
                 >
                   {link.label}
-                  <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                  <ArrowRight className="h-5 w-5 text-brass" aria-hidden="true" />
                 </a>
               </li>
             ))}

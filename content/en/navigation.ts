@@ -132,5 +132,16 @@ export const nav: NavDictionary = {
     ],
   },
   languageSwitch: 'Language',
+  chrome: {
+    skip: 'Skip to content',
+    answer: `Reply ${responseTime}`,
+    seat: `Based in ${company.address.city}`,
+    megaTitle: 'On-site quote',
+    megaText: 'We visit your property and prepare a written quote, free of charge and without obligation.',
+    phone: 'Phone',
+    email: 'Email',
+    address: 'Address',
+    contactEyebrow: 'Contact',
+  },
   errorPage: { title: 'Sorry, something went wrong.', reload: 'Reload page' },
 }

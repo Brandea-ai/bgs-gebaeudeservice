@@ -5,57 +5,220 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 216 22% 7%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 216 22% 7%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    /* Rot mit 4,8:1 zu Weiss für Text und weisse Schrift auf Buttons (E24, M27).
-       Zwischenwert bis zur Hausfarbe aus dem Logo (E49). */
-    --primary: 0 72% 51%;
+    --popover-foreground: 216 22% 7%;
+    /* Signalrot #B8121B, 6,7:1 zu Weiss (E24, M27). Zwischenwert bis zur Hausfarbe aus dem Logo (E49). */
+    --primary: 357 82% 40%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
+    --secondary: 48 14% 95%;
+    --secondary-foreground: 216 22% 7%;
+    --muted: 48 14% 95%;
+    --muted-foreground: 214 7% 37%;
+    --accent: 48 14% 95%;
+    --accent-foreground: 216 22% 7%;
+    --destructive: 357 82% 40%;
     --destructive-foreground: 0 0% 100%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 0 72% 51%;
-    --radius: 0.5rem;
+    --border: 43 13% 86%;
+    --input: 43 10% 78%;
+    --ring: 357 82% 40%;
+    --radius: 0.25rem;
+
+    /* Seitenrand: wächst mit der Breite, nie unter 20 px (F1) */
+    --gutter: clamp(1.25rem, 4.2vw, 5rem);
+    /* Höhe der Kopfzeile, für Sprungziele und klebende Spalten */
+    --header-h: 4.75rem;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 0 72% 51%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 0 72% 51%;
+  /*
+   * Grosse Bildschirme bis 4K (F1): Ab 1920 px wächst die Grundschrift mit der
+   * Breite. Weil Schrift, Abstände und Raster in rem angegeben sind, bleibt die
+   * Aufteilung wie bei 1920 px, nur grösser. Kein leerer Rand links und rechts,
+   * und die Zeilen werden nicht länger.
+   */
+  @media (min-width: 1920px) {
+    html {
+      font-size: calc(100vw / 120);
+    }
   }
-}
 
-@layer base {
+  html {
+    scroll-padding-top: calc(var(--header-h) + 1.5rem);
+    -webkit-text-size-adjust: 100%;
+  }
+
   * {
     border-color: hsl(var(--border));
   }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    font-feature-settings: 'kern', 'liga';
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Lange Wörter wie «Unterhaltsreinigung» dürfen in schmalen Spalten umbrechen */
+  h1,
+  h2,
+  h3,
+  .t-h3 {
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  ::selection {
+    background: #b8121b;
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid #b8121b;
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  /* Inhaltsbreite: bis 120rem, also 1920 px und bei 4K 3840 px, mit Seitenrand */
+  .container {
+    width: 100%;
+    max-width: 120rem;
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+  }
+
+  .section {
+    padding-block: clamp(4.5rem, 2.5rem + 5.5vw, 9rem);
+  }
+
+  .section-tight {
+    padding-block: clamp(3.5rem, 2rem + 3.5vw, 6rem);
+  }
+
+  /* Schriftstufen */
+  .t-display {
+    @apply font-display font-semibold;
+    font-size: clamp(2.5rem, 1.1rem + 4.1vw, 6rem);
+    line-height: 1;
+    letter-spacing: -0.035em;
+  }
+
+  .t-h1 {
+    @apply font-display font-semibold;
+    font-size: clamp(2.25rem, 1.2rem + 3vw, 4.5rem);
+    line-height: 1.04;
+    letter-spacing: -0.03em;
+  }
+
+  .t-h2 {
+    @apply font-display font-semibold;
+    font-size: clamp(1.875rem, 1.2rem + 1.9vw, 3.5rem);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+  }
+
+  .t-h3 {
+    @apply font-display font-semibold;
+    font-size: clamp(1.25rem, 1.05rem + 0.55vw, 1.75rem);
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+  }
+
+  .t-lead {
+    font-size: clamp(1.125rem, 1rem + 0.4vw, 1.4375rem);
+    line-height: 1.55;
+  }
+
+  .t-eyebrow {
+    @apply font-mono uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    font-weight: 500;
+  }
+
+  .t-figure {
+    @apply font-display font-semibold;
+    font-size: clamp(2rem, 1.4rem + 1.6vw, 3.25rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    font-variant-numeric: lining-nums;
+  }
+
+  /* Fliesstext mit Links im Inhalt */
+  .prose-body {
+    @apply text-ink-700;
+    max-width: 68ch;
+  }
+  .prose-body a,
+  .link-inline {
+    @apply font-medium text-ink underline decoration-signal/50 decoration-[0.08em] underline-offset-[0.22em] transition-colors hover:decoration-signal;
+  }
+
+  /* Haarlinien-Raster als Hintergrund, wie Achsen auf einem Plan */
+  .grid-lines {
+    background-image: repeating-linear-gradient(
+      to right,
+      transparent 0,
+      transparent calc(100% / 12 - 1px),
+      var(--grid-line, rgba(255, 255, 255, 0.06)) calc(100% / 12 - 1px),
+      var(--grid-line, rgba(255, 255, 255, 0.06)) calc(100% / 12)
+    );
+    background-origin: content-box;
+    background-clip: content-box;
+  }
+
+  /* Pfeil in Links bewegt sich beim Überfahren */
+  .arrow-link svg {
+    transition: transform 0.25s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .arrow-link:hover svg,
+  .arrow-link:focus-visible svg {
+    transform: translateX(0.25rem);
+  }
+
+  /* Sprunglink zum Inhalt (M27) */
+  .skip-link {
+    @apply fixed left-4 top-4 z-[100] -translate-y-[200%] bg-ink px-4 py-3 text-sm font-medium text-white transition-transform focus:translate-y-0;
+  }
+}
+
+/*
+ * Ruhige Bewegung beim Scrollen, nur mit Browser-Unterstützung und ohne Wunsch
+ * nach weniger Bewegung. Nur Verschiebung, keine Transparenz: Inhalte sind immer
+ * lesbar, auch für Suchmaschinen und Vorschaubilder.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: reveal-rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 55%;
+    }
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@keyframes reveal-rise {
+  from {
+    transform: translateY(2.25rem);
+  }
+  to {
+    transform: none;
   }
 }

@@ -1,151 +1,104 @@
-import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowRight, Mail, MapPin, Phone, Smartphone } from "lucide-react";
 import SwissNavigation from "@/components/SwissNavigation";
 import SwissFooter from "@/components/SwissFooter";
 import ConsentMap from "@/components/ConsentMap";
 import Faq from "@/components/Faq";
 import OfferCta from "@/components/OfferCta";
+import PageHero from "@/components/PageHero";
+import SectionHead from "@/components/SectionHead";
 import Steps from "@/components/Steps";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { company } from "../../../shared/company";
 import { getDict } from "../../../content";
-import { localizePath, type Locale } from "../../../shared/i18n";
+import { navDicts } from "../../../content/navigation";
+import type { Locale } from "../../../shared/i18n";
 
-// Kontakt als Server-Komponente (M21, M49), Texte aus content/de/seiten.ts.
-// Das Formular steht im Footer jeder Seite (#kontakt-formular), die Karte lädt erst nach Klick (E20).
+/**
+ * Kontakt (F5, M21, M49): Kontaktwege im Kopf, Ablauf, Karte und Fragen. Das
+ * Formular steht im Footer jeder Seite (#kontakt-formular), die Karte lädt erst
+ * nach Klick (E20).
+ */
 export default function ContactView({ lang }: { lang: Locale }) {
   const { contact } = getDict(lang).seiten;
-  const { ui } = getDict(lang);
+  const { ui, misc } = getDict(lang);
+  const { chrome } = navDicts[lang];
+
+  const channels = [
+    { icon: Phone, title: contact.phone.title, value: company.phone.display, href: company.phone.href },
+    { icon: Smartphone, title: contact.phone.mobile, value: company.mobile.display, href: company.mobile.href },
+    { icon: Mail, title: contact.email.title, value: company.email, href: `mailto:${company.email}` },
+    { icon: MapPin, title: contact.address.title, value: `${company.address.street}, ${company.address.postalCode} ${company.address.city}` },
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       <SwissNavigation lang={lang} path="/kontakt" />
 
-      <main>
-        <section className="pt-28 md:pt-32 pb-16 bg-gradient-to-br from-slate-50 to-red-50/40">
-          <div className="container max-w-5xl">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
-              {contact.h1}
-            </h1>
-            <p className="text-base sm:text-lg md:text-xl text-slate-700 max-w-3xl mb-8">
-              {contact.lead}
-            </p>
-            <Button asChild size="lg" className="text-sm sm:text-base px-6">
-              <a href="#kontakt-formular">
-                {contact.formLink}
-                <ArrowRight className="ml-2 w-5 h-5" aria-hidden="true" />
-              </a>
-            </Button>
-          </div>
-        </section>
+      <main id="inhalt">
+        <PageHero
+          path="/kontakt"
+          lang={lang}
+          eyebrow={chrome.contactEyebrow}
+          title={contact.h1}
+          lead={contact.lead}
+          aside={
+            <dl aria-label={contact.channelsLabel} className="border-t border-ink">
+              {channels.map(({ icon: Icon, title, value, href }) => (
+                <div key={title} className="relative border-b border-line py-5 pl-9">
+                  <dt className="t-eyebrow mb-1 text-mute">
+                    <Icon className="absolute left-0 top-6 h-5 w-5 text-signal" aria-hidden="true" />
+                    {title}
+                  </dt>
+                  <dd className="break-words text-[1.125rem] text-ink">
+                    {href ? (
+                      <a href={href} className="font-medium tabular-nums hover:text-signal transition-colors">{value}</a>
+                    ) : (
+                      value
+                    )}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          }
+        >
+          <Button asChild size="xl" className="arrow-link mt-10">
+            <a href="#kontakt-formular">
+              {contact.formLink}
+              <ArrowRight aria-hidden="true" />
+            </a>
+          </Button>
+        </PageHero>
 
-        <section aria-label={contact.channelsLabel} className="py-16">
-          <div className="container max-w-5xl grid md:grid-cols-3 gap-6">
-            <Card className="p-8 text-center">
-              <Phone
-                className="w-10 h-10 text-red-700 mx-auto mb-4"
-                aria-hidden="true"
-              />
-              <h2 className="font-bold text-xl text-slate-900 mb-2">
-                {contact.phone.title}
-              </h2>
-              <p className="text-slate-600 mb-4">{contact.phone.text}</p>
-              <p className="space-y-1">
-                <a
-                  href={company.phone.href}
-                  className="block text-red-700 font-semibold hover:underline"
-                >
-                  {company.phone.display}
-                </a>
-                <a
-                  href={company.mobile.href}
-                  className="block text-red-700 font-semibold hover:underline"
-                >
-                  {contact.phone.mobile} {company.mobile.display}
-                </a>
-              </p>
-            </Card>
-
-            <Card className="p-8 text-center">
-              <Mail
-                className="w-10 h-10 text-red-700 mx-auto mb-4"
-                aria-hidden="true"
-              />
-              <h2 className="font-bold text-xl text-slate-900 mb-2">
-                {contact.email.title}
-              </h2>
-              <p className="text-slate-600 mb-4">{contact.email.text}</p>
-              <a
-                href={`mailto:${company.email}`}
-                className="text-red-700 font-semibold hover:underline break-all"
-              >
-                {company.email}
-              </a>
-            </Card>
-
-            <Card className="p-8 text-center">
-              <MapPin
-                className="w-10 h-10 text-red-700 mx-auto mb-4"
-                aria-hidden="true"
-              />
-              <h2 className="font-bold text-xl text-slate-900 mb-2">
-                {contact.address.title}
-              </h2>
-              <p className="text-slate-600 mb-4">{contact.address.text}</p>
-              <p className="text-slate-900 font-semibold">
-                {company.address.street}
-                <br />
-                {company.address.postalCode} {company.address.city}
-              </p>
-            </Card>
-          </div>
-        </section>
-
-        <section aria-labelledby="ablauf" className="py-16 bg-slate-50">
-          <div className="container max-w-5xl">
-            <h2
-              id="ablauf"
-              className="text-2xl md:text-3xl font-bold text-slate-900 mb-8"
-            >
-              {contact.steps.title}
-            </h2>
+        <section aria-labelledby="ablauf" className="section">
+          <div className="container">
+            <SectionHead id="ablauf" eyebrow={ui.steps} title={contact.steps.title} className="mb-14 max-w-3xl" />
             <Steps steps={contact.steps.items} lang={lang} />
           </div>
         </section>
 
-        <section aria-labelledby="karte" className="py-16">
-          <div className="container max-w-5xl">
-            <h2
-              id="karte"
-              className="text-2xl md:text-3xl font-bold text-slate-900 mb-8"
-            >
-              {contact.map.title}
-            </h2>
-            <div className="rounded-2xl overflow-hidden shadow-xl">
-              <ConsentMap texts={getDict(lang).misc.map} />
+        <section aria-labelledby="karte" className="section bg-stone">
+          <div className="container grid gap-12 lg:grid-cols-12">
+            <div className="lg:col-span-4">
+              <SectionHead id="karte" title={contact.map.title} intro={contact.map.text} />
             </div>
-            <p className="text-slate-600 mt-4">{contact.map.text}</p>
+            <div className="overflow-hidden bg-white lg:col-span-8">
+              <ConsentMap texts={misc.map} />
+            </div>
           </div>
         </section>
 
-        <section aria-labelledby="fragen" className="py-16 bg-slate-50">
-          <div className="container max-w-5xl">
-            <h2
-              id="fragen"
-              className="text-2xl md:text-3xl font-bold text-slate-900 mb-8"
-            >
-              {ui.faq}
-            </h2>
-            <Faq items={contact.faq} lang={lang} />
+        <section aria-labelledby="fragen" className="section">
+          <div className="container grid gap-12 lg:grid-cols-12">
+            <div className="lg:col-span-4">
+              <SectionHead id="fragen" title={ui.faq} className="lg:sticky lg:top-[calc(var(--header-h)+2.5rem)]" />
+            </div>
+            <div className="lg:col-span-8">
+              <Faq items={contact.faq} lang={lang} />
+            </div>
           </div>
         </section>
 
-        <div className="pt-16">
-          <OfferCta
-            title={contact.cta.title}
-            text={contact.cta.text}
-            lang={lang}
-          />
-        </div>
+        <OfferCta title={contact.cta.title} text={contact.cta.text} lang={lang} />
       </main>
 
       <SwissFooter lang={lang} path="/kontakt" />

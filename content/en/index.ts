@@ -36,6 +36,8 @@ export const en: Dictionary = {
       notice: 'The map is loaded from Google Maps. This transfers data to Google.',
       load: 'Load map',
       open: 'Open in Google Maps',
+      source: 'Map data: © swisstopo',
+      areaLabel: 'Service area',
     },
     registerCourt: register,
   },

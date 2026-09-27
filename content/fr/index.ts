@@ -36,6 +36,8 @@ export const fr: Dictionary = {
       notice: 'La carte est chargée depuis Google Maps. Des données sont alors transmises à Google.',
       load: 'Charger la carte',
       open: 'Ouvrir dans Google Maps',
+      source: 'Fond de carte : © swisstopo',
+      areaLabel: 'Zone d’intervention',
     },
     // Le type allemand reprend la valeur littérale de company.register, le texte français la remplace
     registerCourt: register,
