@@ -52,6 +52,7 @@ Website der BGS - Gebäudeservice GmbH in Emmenbrücke LU. Die neue Dachmarke he
 - Alle Texte je Sprache: `content/de/`, `content/en/`, `content/fr/`, `content/it/` (Typ `Dictionary` aus `content/de/index.ts`, fehlende Einträge meldet TypeScript). Seitentitel in `content/<sprache>/seo.ts`, Metadaten und Brotkrumen in `shared/seo.ts`
 - Seiten: eine Route je Sprache (`app/(de)`, `app/(en)`, …), Darstellung in `client/src/views/`, Zuordnung in `client/src/views/registry.tsx`, Vorlagen in `client/src/components/` (`ServicePage`, `ArticlePage`, `LegalPage`)
 - Strukturierte Daten: `shared/structured-data.ts`
+- Bewegung und Bausteine v3 (E79): Regeln in `app/globals.css` (Tokens, `.rv-group`, `.process*`, `.stack*`), Bausteine `ProcessScrolly`, `SectionNav`, `StackPanels`, `RevealGroup`, Hook `client/src/hooks/useScrollSpy.ts`; erster Bildschirm immer statisch
 - Schalter für Chat und Bilder: `shared/features.ts`
 - Sicherheitsheader und Weiterleitungen: `next.config.ts`
 - Kontaktformular: `app/api/contact/route.ts`, `server/email.ts`

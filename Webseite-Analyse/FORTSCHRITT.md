@@ -164,7 +164,7 @@ Die neuen Texte in `content/de/` beruhen auf Eigenangaben und Entscheidungen (E1
 1. Freigabe der Übersetzungen durch Muttersprachler vor `SITE_INDEXABLE` (E72), je Sprache 12 bis 17 Stilpunkte.
 2. Fotos nach 21, bis dahin nichts zu tun.
 
-**Frontend (M61, E77, E78, E79, N090 bis N092):** Alle Seiten neu gestaltet, zweiter Durchgang mit Bewegung und Bildflächen, dritter Durchgang nach dem Premium-Brief (Audit, Fundament v3, Umbau je Seite, Gegenprüfung je Seite): Phosphor-Icons ohne Platten, Prozess-Sektion, Scrollspy-Leisten, Stapel-Tafeln, statische erste Bildschirme, Mobil-Leiste sichtbar, Formular mit Prüfung in der Seitensprache, 404 in der Sprache der Adresse, Titel gekürzt (T13). Offen: Abnahme der Gestaltung durch Brandea, echte Fotos, Logo, Fragebogen Runde 12 (Löschung toter Dateien, Rechtstext-Auszeichnung R08–R10, Messung, Kantonsseiten).
+**Frontend (M61, E77, E78, E79, N090 bis N092):** Alle Seiten neu gestaltet, zweiter Durchgang mit Bewegung und Bildflächen, dritter Durchgang nach dem Premium-Brief (Audit, Fundament v3, Umbau je Seite, Gegenprüfung je Seite): Phosphor-Icons ohne Platten, Prozess-Sektion, Scrollspy-Leisten, Stapel-Tafeln, statische erste Bildschirme, Mobil-Leiste sichtbar, Formular mit Prüfung in der Seitensprache, 404 in der Sprache der Adresse, Titel gekürzt (T13); Stapel-Footer wieder entfernt (verdeckter Fokus). Live seit 27.09.2026 nach E70. Offen: Abnahme der Gestaltung durch Brandea, echte Fotos, Logo, Fragebogen Runde 12 (Löschung toter Dateien, Rechtstext-Auszeichnung R08–R10, Messung, Kantonsseiten).
 
 **Agent als Nächstes:** Chat (M03), sobald Brandea Modell und Zugang festlegt. Nach Runde 12: tote Dateien löschen, Rechtstexte auszeichnen, Messung einrichten.
 
