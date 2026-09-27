@@ -1,9 +1,12 @@
 import { imagesArePlaceholders } from "../../../shared/features";
 
 /**
- * Hintergrund dunkler Kopfbereiche ohne Animationsbibliothek (M25). Bis zur
- * Freigabe echter Bilder (E19, E59) Graphit mit Haarlinien-Raster, danach das
- * Foto unter einer Überlagerung, die weisse Schrift lesbar hält.
+ * Hintergrund dunkler Kopfbereiche ohne Animationsbibliothek (M25, F14). Bis
+ * zur Freigabe echter Bilder (E19, E59) Graphit mit Haarlinien-Raster, danach
+ * das Foto unter einer Überlagerung, die weisse Schrift lesbar hält. Die
+ * Bildebene trägt .hero-media: sie driftet beim Wegscrollen um 6 % langsamer
+ * als die Seite (globals.css, nur ab lg, mit Unterstützung und ohne reduced
+ * motion) und ist dafür 12 % höher, damit keine Kante freiliegt.
  */
 export default function HeroBackground({ src }: { src?: string }) {
   return (
@@ -11,7 +14,7 @@ export default function HeroBackground({ src }: { src?: string }) {
       {!imagesArePlaceholders && src && (
         <>
           <div
-            className="absolute inset-0 bg-cover bg-center"
+            className="hero-media absolute inset-x-0 top-0 h-[112%] bg-cover bg-center"
             style={{ backgroundImage: `url(${src})` }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/40" />
