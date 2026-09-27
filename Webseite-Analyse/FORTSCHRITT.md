@@ -164,9 +164,9 @@ Die neuen Texte in `content/de/` beruhen auf Eigenangaben und Entscheidungen (E1
 1. Freigabe der Übersetzungen durch Muttersprachler vor `SITE_INDEXABLE` (E72), je Sprache 12 bis 17 Stilpunkte.
 2. Fotos nach 21, bis dahin nichts zu tun.
 
-**Frontend (M61, E77, E78, N090, N091):** Alle Seiten neu gestaltet, zweiter Durchgang mit Bewegung, Bildflächen, Vertrauensleiste und Stapel-Effekt, bis 4K, live seit 27.09.2026. Offen: Abnahme der Gestaltung durch Brandea, echte Fotos, Logo, Entscheid zu eigenen Kantonsseiten (Runde 11).
+**Frontend (M61, E77, E78, E79, N090 bis N092):** Alle Seiten neu gestaltet, zweiter Durchgang mit Bewegung und Bildflächen, dritter Durchgang nach dem Premium-Brief (Audit, Fundament v3, Umbau je Seite, Gegenprüfung je Seite): Phosphor-Icons ohne Platten, Prozess-Sektion, Scrollspy-Leisten, Stapel-Tafeln, statische erste Bildschirme, Mobil-Leiste sichtbar, Formular mit Prüfung in der Seitensprache, 404 in der Sprache der Adresse, Titel gekürzt (T13). Offen: Abnahme der Gestaltung durch Brandea, echte Fotos, Logo, Fragebogen Runde 12 (Löschung toter Dateien, Rechtstext-Auszeichnung R08–R10, Messung, Kantonsseiten).
 
-**Agent als Nächstes:** Chat (M03), sobald Brandea Modell und Zugang festlegt. 404-Seite in der Sprache der Adresse, falls gewünscht (heute nur Deutsch, N085).
+**Agent als Nächstes:** Chat (M03), sobald Brandea Modell und Zugang festlegt. Nach Runde 12: tote Dateien löschen, Rechtstexte auszeichnen, Messung einrichten.
 
 **Stand 26.09.2026 (E70, E71):** Seitendurchgang und Mehrsprachigkeit fertig und live, weitere Sprachen in der Produktion noch aus. **Offen bei Brandea:** Übersetzungen EN, FR, IT prüfen (Preview-Adressen unter `/en`, `/fr`, `/it`), dann in Vercel `LANGUAGES=true`. Markenrecherche (E38), dann `NEW_BRAND=true`. Fotos nach 21. **Frontend (M61, E77, E78, N090, N091):** Alle Seiten neu gestaltet, zweiter Durchgang mit Bewegung, Bildflächen, Vertrauensleiste und Stapel-Effekt, bis 4K, live seit 27.09.2026. Offen: Abnahme der Gestaltung durch Brandea, echte Fotos, Logo, Entscheid zu eigenen Kantonsseiten (Runde 11).
 

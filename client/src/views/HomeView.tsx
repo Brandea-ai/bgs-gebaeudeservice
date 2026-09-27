@@ -46,7 +46,7 @@ function ProofCells({
       <dt className="order-2 text-sm font-medium leading-snug text-white/85">
         {item.label}
       </dt>
-      <dd className={`t-figure order-1 tabular-nums text-white ${figure}`}>
+      <dd className={`t-figure order-1 text-white ${figure}`}>
         {item.value}
       </dd>
     </div>

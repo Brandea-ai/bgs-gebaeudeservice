@@ -213,7 +213,8 @@
     font-size: clamp(2rem, 1.4rem + 1.6vw, 3.25rem);
     line-height: 1;
     letter-spacing: -0.03em;
-    font-variant-numeric: lining-nums tabular-nums;
+    /* keine Tabellenziffern: der Punkt in «CHF 10 Mio.» bekäme sonst Ziffernbreite */
+    font-variant-numeric: lining-nums;
   }
 
   /* Fliesstext mit Links im Inhalt */
