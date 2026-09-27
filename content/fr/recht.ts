@@ -46,8 +46,12 @@ export const impressum: LegalContent = {
       title: 'Protection des données',
       paragraphs: ['La manière dont nous traitons les données personnelles est décrite dans la [déclaration de protection des données](/datenschutz).'],
     },
+    {
+      title: 'Version linguistique',
+      paragraphs: ['Ce texte est une traduction de la version allemande. En cas de divergence, seule la version allemande fait foi.'],
+    },
   ],
-  updated: '2026-09-26',
+  updated: '2026-09-27',
 }
 
 export const datenschutz: LegalContent = {
@@ -118,6 +122,10 @@ export const datenschutz: LegalContent = {
       title: 'Modifications',
       paragraphs: ['Nous adaptons cette déclaration lorsque le site web ou la situation juridique change. La version publiée ici fait foi.'],
     },
+    {
+      title: 'Version linguistique',
+      paragraphs: ['Ce texte est une traduction de la version allemande. En cas de divergence, seule la version allemande fait foi.'],
+    },
   ],
-  updated: '2026-09-26',
+  updated: '2026-09-27',
 }

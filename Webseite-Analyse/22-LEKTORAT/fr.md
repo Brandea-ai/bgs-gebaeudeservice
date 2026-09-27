@@ -2,7 +2,7 @@
 
 Website der BGS - Gebäudeservice GmbH, Ordner `content/fr/`, geprüft gegen `content/de/`. Stand 27.09.2026.
 
-> **Nachtrag 27.09.2026 (N088):** Behoben sind die technischen Punkte ohne Entscheid: `areaServed` mit Kantonsnamen je Sprache, Rhythmus kommt als deutscher Wert in die E-Mail, Fehlerseite (ErrorBoundary) in der Sprache der Seite. Offen bleiben der Hinweis «deutsche Fassung massgebend» (Rechtstext, Brandea), die 404-Seite nur auf Deutsch (bekannt, N085) und die Stilpunkte für Muttersprachler (E72).
+> **Nachtrag 27.09.2026 (N088):** Behoben sind die technischen Punkte ohne Entscheid: `areaServed` mit Kantonsnamen je Sprache, Rhythmus kommt als deutscher Wert in die E-Mail, Fehlerseite (ErrorBoundary) in der Sprache der Seite. Der Hinweis «deutsche Fassung massgebend» ist nach E75 eingebaut (N089). Offen bleiben die 404-Seite nur auf Deutsch (bekannt, N085) und die Stilpunkte für Muttersprachler (E72).
 
 Dieses Lektorat übernimmt die Prüfung, die nach E50 Brandea selbst machen sollte. Es ist die Grundlage für den Entscheid, ob in Vercel für Production `LANGUAGES=true` gesetzt wird. Der Entscheid selbst bleibt bei Brandea.
 

@@ -45,8 +45,12 @@ export const impressum: LegalContent = {
       title: 'Data protection',
       paragraphs: ['How we handle personal data is set out in our [privacy policy](/datenschutz).'],
     },
+    {
+      title: 'Language',
+      paragraphs: ['This English version is a translation provided for your convenience. In the event of any discrepancy between the English and the German version, the German version shall prevail.'],
+    },
   ],
-  updated: '2026-09-26',
+  updated: '2026-09-27',
 }
 
 export const datenschutz: LegalContent = {
@@ -117,6 +121,10 @@ export const datenschutz: LegalContent = {
       title: 'Changes',
       paragraphs: ['We will update this policy if the website or the legal situation changes. The version published here applies.'],
     },
+    {
+      title: 'Language',
+      paragraphs: ['This English version is a translation provided for your convenience. In the event of any discrepancy between the English and the German version, the German version shall prevail.'],
+    },
   ],
-  updated: '2026-09-26',
+  updated: '2026-09-27',
 }

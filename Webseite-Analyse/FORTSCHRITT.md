@@ -156,12 +156,12 @@ Die neuen Texte in `content/de/` beruhen auf Eigenangaben und Entscheidungen (E1
 
 ## Nächste Aufgabe
 
-**Stand 27.09.2026 (E72, E73):** Alle vier Sprachen sind live (`LANGUAGES=true`), Lektorat EN, FR, IT durch Claude im Auftrag von Brandea (N087, Details in `22-LEKTORAT/`). Die technischen Restpunkte aus dem Lektorat sind behoben (N088). `NEW_BRAND` bleibt aus. **Offen bei Brandea:**
-1. Name der Premium-Linie (E73): Clavea nach Beurteilung durch eine Fachperson, Silendo oder kein eigener Name. Ohne eigenen Premium-Namen braucht es einen zweiten Schalter, weil `NEW_BRAND` beide Namen zusammen schaltet.
-2. Swissreg vor jeder Veröffentlichung erneut prüfen, frühestens am 29.09.2026. Markenrecherche durch einen Anbieter oder Beurteilung durch eine Fachperson, das IGE recherchiert nicht mehr selbst.
-3. Hinweis «bei Abweichungen gilt die deutsche Fassung» in den übersetzten Rechtstexten (Vorschlag in `22-LEKTORAT/`).
-4. Freigabe der Übersetzungen durch Muttersprachler vor `SITE_INDEXABLE` (E72), je Sprache 12 bis 17 Stilpunkte.
-5. Fotos nach 21, bis dahin nichts zu tun.
+**Stand 27.09.2026 (E72, E73):** Alle vier Sprachen sind live (`LANGUAGES=true`), Lektorat EN, FR, IT durch Claude im Auftrag von Brandea (N087, Details in `22-LEKTORAT/`). Die technischen Restpunkte aus dem Lektorat sind behoben (N088). `NEW_BRAND` bleibt aus. **Entschieden in Runde 10:** Premium-Linie heisst Clavea, ohne Beurteilung durch eine Fachperson (E74). Hinweis «deutsche Fassung massgebend» ist in den Rechtstexten EN, FR, IT (E75, N089).
+
+**Offen bei Brandea:**
+1. Swissreg vor der Veröffentlichung erneut prüfen, frühestens am 29.09.2026 (E73), dann in Vercel für Production `NEW_BRAND=true`.
+2. Freigabe der Übersetzungen durch Muttersprachler vor `SITE_INDEXABLE` (E72), je Sprache 12 bis 17 Stilpunkte.
+3. Fotos nach 21, bis dahin nichts zu tun.
 
 **Agent als Nächstes:** Chat (M03), sobald Brandea Modell und Zugang festlegt. 404-Seite in der Sprache der Adresse, falls gewünscht (heute nur Deutsch, N085).
 
