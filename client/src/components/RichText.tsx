@@ -2,12 +2,13 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { localizeHref, type Locale } from "../../../shared/i18n";
 
-// [Linktext](/pfad), nur interne Pfade (content/types.ts)
-const LINK = /\[([^\]]+)\]\((\/[^)\s]*)\)/g;
+// [Linktext](/pfad) für interne Seiten (content/types.ts); dazu https:// und
+// mailto: für Rechtstexte (R08), die dann als normale Links ausgegeben werden.
+const LINK = /\[([^\]]+)\]\((\/[^)\s]*|https?:\/\/[^)\s]+|mailto:[^)\s]+)\)/g;
 
 const linkStyle = "link-inline";
 
-/** Fliesstext aus der Inhaltsschicht mit internen Links. Auf dunklem Grund linkClassName setzen. Links stehen mit deutscher Adresse und werden je Sprache übersetzt (M60). */
+/** Fliesstext aus der Inhaltsschicht mit Links. Auf dunklem Grund linkClassName setzen. Interne Links stehen mit deutscher Adresse und werden je Sprache übersetzt (M60). */
 export default function RichText({
   text,
   linkClassName = linkStyle,
@@ -22,15 +23,25 @@ export default function RichText({
   for (const match of text.matchAll(LINK)) {
     const start = match.index ?? 0;
     if (start > last) parts.push(text.slice(last, start));
-    parts.push(
-      <Link
-        key={start}
-        href={localizeHref(match[2], lang)}
-        className={linkClassName}
-      >
-        {match[1]}
-      </Link>
-    );
+    const target = match[2];
+    if (target.startsWith("/")) {
+      parts.push(
+        <Link key={start} href={localizeHref(target, lang)} className={linkClassName}>
+          {match[1]}
+        </Link>
+      );
+    } else {
+      parts.push(
+        <a
+          key={start}
+          href={target}
+          className={linkClassName}
+          {...(target.startsWith("http") ? { rel: "noopener noreferrer" } : {})}
+        >
+          {match[1]}
+        </a>
+      );
+    }
     last = start + match[0].length;
   }
   parts.push(text.slice(last));
