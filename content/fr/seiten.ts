@@ -16,7 +16,7 @@ type Seiten = Dictionary['seiten']
 
 /** Chiffres attestés (E18, état septembre 2026) */
 export const proof = [
-  { value: 'Depuis 2006', label: 'D’expérience en nettoyage et conciergerie' },
+  { value: 'Depuis 2006', label: 'Expérience en nettoyage et en conciergerie' },
   { value: 'Plus de 120', label: 'Clients' },
   { value: 'Plus de 50', label: 'Collaboratrices et collaborateurs, quatre langues' },
   { value: 'CHF 10 millions', label: 'Responsabilité civile d’entreprise' },
@@ -34,7 +34,7 @@ const offerSteps: Step[] = [
 
 export const home = {
   eyebrow: `Nettoyage et conciergerie depuis ${company.address.city}`,
-  h1: 'Nettoyage de bâtiments et conciergerie pour Lucerne, Zoug et environs',
+  h1: 'Nettoyage de bâtiments et conciergerie à Lucerne, Zoug et environs',
   lead: 'Pour les entreprises, les gérances et une clientèle privée exigeante. Nous passons chez vous pour un devis gratuit et sans engagement.',
   proofTitle: 'En bref',
   services: {
@@ -96,7 +96,7 @@ export const about = {
     text: `Notre directeur traite personnellement votre demande. Nous vous répondons ${responseTime}.`,
   },
   // Le type allemand reprend la valeur littérale de company.register, le texte français la remplace
-  register: { title: 'Données du registre', court: register },
+  register: { title: 'Données du registre', court: register, uid: 'IDE' },
   statsLabel: 'En chiffres',
   cta: {
     title: 'Faisons connaissance',
@@ -122,7 +122,7 @@ export const contact = {
       question: 'En combien de temps vais-je recevoir un devis ?',
       answer: `Nous vous répondons ${responseTime} et convenons d’un rendez-vous pour la visite. Vous recevez ensuite le devis par écrit.`,
     },
-    { question: 'Combien coûte le nettoyage ?', answer: `${answers.kosten} Plus d’informations dans nos conseils : [Ce qui détermine le coût d’un nettoyage d’entretien](/blog/reinigungskosten-schweiz).` },
+    { question: 'Combien coûte le nettoyage ?', answer: `${answers.kosten} Plus d’informations dans notre guide : [Ce qui détermine le coût d’un nettoyage d’entretien](/blog/reinigungskosten-schweiz).` },
     { question: 'Dans quelles régions intervenez-vous ?', answer: answers.gebiet },
     { question: 'Êtes-vous assurés ?', answer: answers.versicherung },
     { question: 'Acceptez-vous aussi des interventions à bref délai ?', answer: 'Appelez-nous. Nous voyons avec vous ce qui est possible à bref délai.' },
@@ -134,7 +134,7 @@ export const contact = {
 }
 
 export const area = {
-  h1: `Zone d’intervention : ${cantonList}`,
+  h1: `Zone d’intervention : ${cantonList}`,
   lead: `Depuis notre siège à ${company.address.city}, nous intervenons dans cinq cantons. Nous proposons toutes nos prestations dans toute la zone, aux entreprises comme à une clientèle privée exigeante.`,
   cantonsTitle: 'Cantons',
   cantonLabels: ['Canton de Lucerne', 'Canton de Zoug', 'Canton d’Argovie', 'Canton de Nidwald', 'Canton d’Obwald'],
@@ -157,7 +157,7 @@ export const area = {
 }
 
 export const servicesOverview = {
-  h1: 'Prestations : nettoyage et conciergerie',
+  h1: 'Prestations : nettoyage et conciergerie',
   lead: `Choisissez selon votre besoin. Nous proposons toutes nos prestations dans les cantons de ${cantonList}. Pour un devis, nous passons gratuitement et sans engagement.`,
   groups: [
     {
@@ -172,7 +172,7 @@ export const servicesOverview = {
       title: 'Nettoyage ponctuel et spécial',
       text: 'Pour la construction, le déménagement, les surfaces vitrées et la production.',
       items: [
-        { title: 'Nettoyages spéciaux', path: '/leistungen/sonderreinigungen', text: 'Nettoyage en profondeur ainsi que nettoyage de fin de bail et nettoyage final d’appartement avec garantie de remise.' },
+        { title: 'Nettoyages spéciaux', path: '/leistungen/sonderreinigungen', text: 'Nettoyage en profondeur ainsi que nettoyage de déménagement et de fin de bail avec garantie de remise.' },
         { title: 'Nettoyage de chantier et de fin de chantier', path: '/leistungen/baureinigung', text: 'Nettoyage pendant et après des travaux de construction ou de transformation.' },
         { title: 'Nettoyage de vitres et de façades', path: '/leistungen/fenster-und-fassadenreinigung', text: 'Fenêtres, surfaces vitrées et façades, aussi à haute pression.' },
         { title: 'Nettoyage industriel et de halles', path: '/leistungen/industrie-und-hallenreinigung', text: 'Halles de production et entrepôts, machines et installations.' },
@@ -180,7 +180,7 @@ export const servicesOverview = {
     },
     {
       title: 'Suivi d’immeubles',
-      text: 'Pour les gérances, les propriétaires et les entreprises qui veulent tout d’un seul prestataire.',
+      text: 'Pour les gérances, les propriétaires et les entreprises qui souhaitent tout confier à un seul prestataire.',
       items: [
         { title: 'Conciergerie', path: '/leistungen/hauswartung', text: 'Rondes de contrôle, cage d’escalier, buanderie, petites réparations, technique du bâtiment, états des lieux, élimination des déchets et abords.' },
         { title: 'Entretien des extérieurs et des espaces verts', path: '/leistungen/aussen-und-gruenflaechenpflege', text: 'Entretien des abords et des espaces verts de votre immeuble.' },
@@ -215,12 +215,12 @@ const promises: Seiten['premiumOverview']['promises'] = [
 export const premiumOverview = {
   line: premiumLine,
   h1: 'Des nettoyages pour des exigences particulières',
-  lead: 'Pour les villas et les résidences, les résidences secondaires, les hôtels aux souhaits particuliers, les family offices, les jets privés et les yachts. Discrets, soigneux et dans votre langue.',
+  lead: 'Pour les villas et les résidences, les résidences secondaires, les hôtels aux souhaits particuliers, les family offices, les jets privés et les yachts. En toute discrétion, avec soin et dans votre langue.',
   nameMeaning: company.premiumBrand
     ? `Le nom ${company.premiumBrand} vient du latin « clavis », la clé. Vous nous confiez votre maison, nous en prenons soin comme si c’était la nôtre.`
     : null,
   offers: [
-    { title: 'Biens de prestige', path: '/premium/luxusimmobilien', text: 'Villas, lofts et résidences, régulièrement ou avant des occasions particulières, avec l’entretien des matériaux délicats.' },
+    { title: 'Biens de prestige', path: '/premium/luxusimmobilien', text: 'Villas, lofts et résidences, régulièrement ou avant des événements particuliers, avec l’entretien des matériaux délicats.' },
     { title: 'Jet privé', path: '/premium/privatjet', text: 'Nettoyage de cabine dans le respect des matériaux haut de gamme, en accord avec vous.' },
     { title: 'Yacht', path: '/premium/yacht', text: 'Nettoyage de bateaux et de yachts sur le lac des Quatre-Cantons et le lac de Zoug.' },
   ] satisfies LinkCard[],
@@ -230,7 +230,7 @@ export const premiumOverview = {
     { title: 'Hôtels', text: 'Nettoyages spéciaux et en profondeur, interventions avant une ouverture et après des rénovations.' },
     { title: 'Bureaux et family offices', text: 'En toute confidentialité, en dehors de vos heures de travail, avec des équipes fixes.' },
     { title: 'Pièces abritant des œuvres d’art et des antiquités', text: 'Nettoyage soigneux des pièces, les œuvres d’art uniquement avec votre accord.' },
-    { title: 'Réceptions privées', text: 'Nettoyage avant et après la réception, aussi le week-end.' },
+    { title: 'Événements privés', text: 'Nettoyage avant et après l’événement, aussi le week-end.' },
     { title: 'Courtiers et gérances', text: 'Nettoyage à bref délai avant une vente, une séance photo ou une remise.' },
   ] satisfies Card[],
   promisesTitle: 'Ce sur quoi vous pouvez compter',
@@ -240,7 +240,7 @@ export const premiumOverview = {
     text: `Au bord du lac des Quatre-Cantons, de Lucerne et Meggen jusqu’à Weggis, Vitznau, Hergiswil et Ennetbürgen, au bord des lacs de Zoug et d’Ägeri, de Zoug et Walchwil jusqu’à Oberägeri, à Engelberg et dans l’ensemble des cantons de ${cantonList}. [Vers la zone d’intervention](/einzugsgebiet)`,
   },
   cta: {
-    title: 'Demande discrète',
-    text: `Appelez-nous ou écrivez-nous. Notre directeur traite personnellement votre demande, sur demande en toute confidentialité. Nous vous répondons ${responseTime}.`,
+    title: 'Demandez en toute discrétion',
+    text: `Appelez-nous ou écrivez-nous. Notre directeur traite personnellement votre demande, en toute confidentialité si vous le souhaitez. Nous vous répondons ${responseTime}.`,
   },
 }

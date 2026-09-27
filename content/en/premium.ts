@@ -13,7 +13,7 @@ const anfrage: Step = {
 
 const team: Step = {
   title: 'Your team',
-  text: 'The same team always works for you. Everyone who works in your home has been vetted by us.',
+  text: 'The same team always works for you. Everyone who works for you has been vetted by us.',
 }
 
 const cta = {
@@ -27,7 +27,7 @@ const luxusimmobilien: ServicePageContent = {
   h1: 'Cleaning and care for villas and residences',
   lead: [
     'In a house with natural stone, parquet and high-gloss surfaces, every detail counts, and so does trust in the people who work there. We clean villas, lofts and residences on a regular basis or ahead of special occasions, with care for delicate materials.',
-    'The same team always works for you, at times that suit you: including evenings, weekends or while you are away.',
+    'The same team always works for you, at times that suit you, including evenings, weekends or while you are away.',
   ],
   facts: [
     { label: 'For', value: 'Villas, lofts, residences and second homes' },
@@ -93,7 +93,7 @@ const luxusimmobilien: ServicePageContent = {
   related: [
     { path: '/premium/yacht', text: 'For yachts and motorboats on Lake Lucerne and Lake Zug.' },
     { path: '/premium/privatjet', text: 'For the cabin of your private jet.' },
-    { path: '/premium', text: 'All offers and commitments of our premium line.' },
+    { path: '/premium', text: 'All services and commitments of our premium line.' },
   ],
   cta,
 }
@@ -104,7 +104,7 @@ const privatjet: ServicePageContent = {
   h1: 'Cabin cleaning for private jets',
   lead: [
     'In the cabin of a private jet, leather, wood, high-gloss surfaces and fine textiles come together in a confined space. Cleaning it calls for care, discretion and planning that fits around your flights.',
-    'We clean the cabin by arrangement with you and your flight operator, with care for high-quality materials.',
+    'We clean the cabin by arrangement with you and your aircraft operator, with care for high-quality materials.',
   ],
   facts: [
     { label: 'For', value: 'Owners and operators of private jets' },
@@ -127,7 +127,7 @@ const privatjet: ServicePageContent = {
     {
       title: 'Planning around your flights',
       paragraphs: [
-        'Where and when we clean the cabin is agreed with you and your flight operator, so that the work fits into your flight schedule.',
+        'Where and when we clean the cabin is agreed with you and your aircraft operator, so that the work fits into your flight schedule.',
       ],
     },
   ],
@@ -135,7 +135,7 @@ const privatjet: ServicePageContent = {
     anfrage,
     {
       title: 'Inspection and quote',
-      text: 'We look at the cabin and clarify materials, location and time window with you and your flight operator. You then receive a quote, free of charge and non-binding.',
+      text: 'We look at the cabin and clarify materials, location and time window with you and your aircraft operator. You then receive a quote, free of charge and non-binding.',
     },
     {
       title: 'Cleaning',
@@ -146,7 +146,7 @@ const privatjet: ServicePageContent = {
   faq: [
     {
       question: 'How do you plan the cleaning around our flights?',
-      answer: 'We agree the timing with you and your flight operator so that the cabin is ready before the next flight.',
+      answer: 'We agree the timing with you and your aircraft operator so that the cabin is ready before the next flight.',
     },
     {
       question: 'How do you treat leather and wood?',
@@ -163,7 +163,7 @@ const privatjet: ServicePageContent = {
   related: [
     { path: '/premium/luxusimmobilien', text: 'For villas, residences and second homes.' },
     { path: '/premium/yacht', text: 'For yachts and motorboats on Lake Lucerne and Lake Zug.' },
-    { path: '/premium', text: 'All offers and commitments of our premium line.' },
+    { path: '/premium', text: 'All services and commitments of our premium line.' },
   ],
   cta,
 }
@@ -223,7 +223,7 @@ const yacht: ServicePageContent = {
   related: [
     { path: '/premium/luxusimmobilien', text: 'For villas, residences and second homes by the lake.' },
     { path: '/premium/privatjet', text: 'For the cabin of your private jet.' },
-    { path: '/premium', text: 'All offers and commitments of our premium line.' },
+    { path: '/premium', text: 'All services and commitments of our premium line.' },
   ],
   cta,
 }

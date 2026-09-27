@@ -29,7 +29,7 @@ export const ui = {
   offerCta: 'Demander un devis gratuit',
   atAGlance: 'En bref',
   notIncluded: 'Non compris dans cette prestation',
-  steps: 'Comment cela se passe',
+  steps: 'Déroulement',
   faq: 'Questions fréquentes',
   related: 'Cela peut aussi vous intéresser',
   premiumLine,

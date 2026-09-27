@@ -8,7 +8,7 @@ import { answers, responseTime } from './common'
 
 const anfrage: Step = {
   title: 'Richiesta discreta',
-  text: `Ci telefoni o ci scriva. La Sua richiesta è trattata personalmente dal direttore; riceverà nostre notizie ${responseTime}.`,
+  text: `Ci telefoni o ci scriva. La Sua richiesta è trattata personalmente dal gerente; riceverà nostre notizie ${responseTime}.`,
 }
 
 const team: Step = {
@@ -18,7 +18,7 @@ const team: Step = {
 
 const cta = {
   title: 'Richiesta discreta',
-  text: `Ci telefoni o ci scriva. La Sua richiesta è trattata personalmente dal direttore; riceverà nostre notizie ${responseTime}.`,
+  text: `Ci telefoni o ci scriva. La Sua richiesta è trattata personalmente dal gerente; riceverà nostre notizie ${responseTime}.`,
 }
 
 const luxusimmobilien: ServicePageContent = {
@@ -30,14 +30,14 @@ const luxusimmobilien: ServicePageContent = {
     'Da Lei lavora sempre lo stesso team, negli orari che Le convengono: anche la sera, nel fine settimana o durante la Sua assenza.',
   ],
   facts: [
-    { label: 'Per', value: 'Ville, loft, residenze e residenze secondarie' },
+    { label: 'Per', value: 'Ville, loft, residenze e abitazioni secondarie' },
     { label: 'Cadenza', value: 'Regolarmente o prima di occasioni particolari' },
     { label: 'Team', value: 'Sempre lo stesso team' },
     { label: 'Discrezione', value: 'Su richiesta con accordo di riservatezza' },
   ],
   scope: {
     title: 'Che cosa comprende',
-    intro: 'L’entità la stabiliamo dopo un giro della Sua casa. Di norma:',
+    intro: 'L’entità del servizio la stabiliamo dopo una visita della Sua casa. Di norma:',
     items: [
       'Soggiorni, camere da letto e camere per gli ospiti',
       'Cucine e bagni',
@@ -56,7 +56,7 @@ const luxusimmobilien: ServicePageContent = {
       title: 'Chiavi, allarme e discrezione',
       paragraphs: [
         'Per chiavi e impianto d’allarme concordiamo con Lei regole fisse. Su richiesta sottoscriviamo un accordo di riservatezza.',
-        'La Sua richiesta è trattata personalmente dal direttore. Chi lavora da Lei è stato verificato da noi.',
+        'La Sua richiesta è trattata personalmente dal gerente. Chi lavora da Lei è stato verificato da noi.',
       ],
     },
   ],
@@ -104,17 +104,17 @@ const privatjet: ServicePageContent = {
   h1: 'Pulizia della cabina di jet privati',
   lead: [
     'Nella cabina di un jet privato pelle, legno, superfici lucide e tessuti pregiati si trovano in uno spazio ristretto. La pulizia richiede cura, discrezione e una pianificazione in linea con i Suoi voli.',
-    'Puliamo la cabina d’intesa con Lei e con il Suo operatore di volo, con riguardo per i materiali di pregio.',
+    'Puliamo la cabina d’intesa con Lei e con il Suo operatore aereo, con riguardo per i materiali di pregio.',
   ],
   facts: [
     { label: 'Per', value: 'Proprietari e operatori di jet privati' },
-    { label: 'Entità', value: 'Pulizia della cabina' },
-    { label: 'Appuntamenti', value: 'Su accordo, in funzione del Suo piano di volo' },
+    { label: 'Prestazioni', value: 'Pulizia della cabina' },
+    { label: 'Appuntamenti', value: 'Previo accordo, in funzione del Suo piano di volo' },
     { label: 'Discrezione', value: 'Su richiesta con accordo di riservatezza' },
   ],
   scope: {
     title: 'Che cosa comprende',
-    intro: 'L’entità la stabiliamo con Lei in anticipo. Di norma:',
+    intro: 'L’entità del servizio la stabiliamo con Lei in anticipo. Di norma:',
     items: [
       'Sedili e imbottiture in pelle e tessuto',
       'Tappeti e pavimenti',
@@ -127,7 +127,7 @@ const privatjet: ServicePageContent = {
     {
       title: 'Pianificazione in funzione dei Suoi voli',
       paragraphs: [
-        'Dove e quando puliamo la cabina lo concordiamo con Lei e con il Suo operatore di volo. Così l’intervento si inserisce nel Suo piano di volo.',
+        'Dove e quando puliamo la cabina lo concordiamo con Lei e con il Suo operatore aereo. Così l’intervento si inserisce nel Suo piano di volo.',
       ],
     },
   ],
@@ -135,7 +135,7 @@ const privatjet: ServicePageContent = {
     anfrage,
     {
       title: 'Sopralluogo e offerta',
-      text: 'Visitiamo la cabina e chiariamo materiali, luogo e finestra temporale con Lei e con il Suo operatore di volo. In seguito riceve un’offerta, gratuita e senza impegno.',
+      text: 'Visitiamo la cabina e chiariamo materiali, luogo e finestra temporale con Lei e con il Suo operatore aereo. In seguito riceve un’offerta, gratuita e senza impegno.',
     },
     {
       title: 'Pulizia',
@@ -146,7 +146,7 @@ const privatjet: ServicePageContent = {
   faq: [
     {
       question: 'Come pianificate la pulizia in funzione dei nostri voli?',
-      answer: 'Il momento lo concordiamo con Lei e con il Suo operatore di volo, affinché la cabina sia pronta prima del volo successivo.',
+      answer: 'Il momento lo concordiamo con Lei e con il Suo operatore aereo, affinché la cabina sia pronta prima del volo successivo.',
     },
     {
       question: 'Come trattate pelle e legno?',
@@ -162,7 +162,7 @@ const privatjet: ServicePageContent = {
     { question: 'Quanto costa la pulizia?', answer: answers.kosten },
   ],
   related: [
-    { path: '/premium/luxusimmobilien', text: 'Per ville, residenze e residenze secondarie.' },
+    { path: '/premium/luxusimmobilien', text: 'Per ville, residenze e abitazioni secondarie.' },
     { path: '/premium/yacht', text: 'Per yacht e motoscafi sul lago dei Quattro Cantoni e sul lago di Zugo.' },
     { path: '/premium', text: 'Tutte le offerte e gli impegni della nostra linea premium.' },
   ],
@@ -181,11 +181,11 @@ const yacht: ServicePageContent = {
     { label: 'Per', value: 'Proprietari di yacht e motoscafi' },
     { label: 'Zona', value: 'Sul lago dei Quattro Cantoni e sul lago di Zugo' },
     { label: 'Materiali', value: 'Teak, gelcoat e imbottiture' },
-    { label: 'Appuntamenti', value: 'Su accordo, una tantum o regolarmente' },
+    { label: 'Appuntamenti', value: 'Previo accordo, una tantum o regolarmente' },
   ],
   scope: {
     title: 'Che cosa comprende',
-    intro: 'L’entità la stabiliamo dopo un sopralluogo all’ormeggio. Di norma:',
+    intro: 'L’entità del servizio la stabiliamo dopo un sopralluogo all’ormeggio. Di norma:',
     items: [
       'Ponte e superfici in teak',
       'Superfici in gelcoat su ponte e sovrastrutture',
@@ -222,7 +222,7 @@ const yacht: ServicePageContent = {
     { question: 'Quanto costa la pulizia?', answer: answers.kosten },
   ],
   related: [
-    { path: '/premium/luxusimmobilien', text: 'Per ville, residenze e residenze secondarie sul lago.' },
+    { path: '/premium/luxusimmobilien', text: 'Per ville, residenze e abitazioni secondarie sul lago.' },
     { path: '/premium/privatjet', text: 'Per la cabina del Suo jet privato.' },
     { path: '/premium', text: 'Tutte le offerte e gli impegni della nostra linea premium.' },
   ],

@@ -38,20 +38,20 @@ export const home = {
   proofTitle: 'In sintesi',
   services: {
     title: 'I nostri servizi',
-    intro: 'Pulizia di edifici e custodia di stabili per aziende e stabili, oltre a pulizie per esigenze particolari.',
+    intro: 'Pulizia di edifici e custodia di stabili per aziende e immobili, oltre a pulizie per esigenze particolari.',
     groups: [
       {
         key: 'reinigung',
         title: 'Pulizia',
         text: 'Per stabili, uffici, studi e superfici commerciali.',
-        items: ['Pulizia di manutenzione e di uffici', 'Pulizie speciali e di cantiere', 'Finestre e facciate', 'Industria e capannoni'],
+        items: ['Pulizia di manutenzione e di uffici', 'Pulizie speciali e di cantiere', 'Vetri e facciate', 'Industria e capannoni'],
         link: { path: '/leistungen', text: 'Tutti i servizi' },
       },
       {
         key: 'hauswartung',
-        title: 'Custodia e cura',
+        title: 'Custodia e manutenzione',
         text: 'Per amministrazioni immobiliari, proprietari e aziende che affidano la cura del proprio stabile.',
-        items: ['Custodia di stabili', 'Cura delle aree esterne e verdi', 'Facility services'],
+        items: ['Custodia di stabili', 'Manutenzione delle aree esterne e verdi', 'Facility services'],
         link: { path: '/leistungen/hauswartung', text: 'Alla custodia di stabili' },
       },
       {
@@ -66,25 +66,25 @@ export const home = {
   steps: { title: 'Come ottenere la Sua offerta', items: offerSteps },
   area: {
     title: 'La nostra zona d’intervento',
-    text: `Dalla nostra sede di ${company.address.city} operiamo nei Cantoni ${cantonListIt}. Offriamo tutti i servizi nell’intera zona.`,
+    text: `Dalla nostra sede di ${company.address.city} operiamo nei Cantoni di ${cantonListIt}. Offriamo tutti i servizi nell’intera zona.`,
     link: 'Alla zona d’intervento',
   },
   cta: {
-    title: 'Offerta per il Suo oggetto',
-    text: `Ci descriva brevemente oggetto e richiesta. La contattiamo ${responseTime} e veniamo per il sopralluogo.`,
+    title: 'Offerta per il Suo immobile',
+    text: `Ci descriva brevemente l’immobile e la Sua richiesta. La contattiamo ${responseTime} e veniamo da Lei per il sopralluogo.`,
   },
 }
 
 export const about = {
   h1: `Pulizia e custodia di stabili da ${company.address.city}`,
   imageAlt: 'Il nostro team al lavoro',
-  lead: `Dal 2006 operiamo nella pulizia e nella custodia di stabili. Oggi oltre 50 collaboratrici e collaboratori seguono più di 120 clienti nei Cantoni ${cantonListIt}, in ${languagesIt}.`,
+  lead: `Dal 2006 operiamo nella pulizia e nella custodia di stabili. Oggi oltre 50 collaboratrici e collaboratori seguono più di 120 clienti nei Cantoni di ${cantonListIt}, in ${languagesIt}.`,
   promises: {
     title: 'Su che cosa può contare',
     items: [
-      { title: 'Contatto personale', text: 'La Sua richiesta è trattata personalmente dal direttore.' },
-      { title: 'Offerta dopo il sopralluogo', text: 'Indichiamo un prezzo solo dopo aver visto il Suo oggetto. Sopralluogo e offerta sono gratuiti e senza impegno.' },
-      { title: 'In tutta la zona', text: `Tutti i servizi nei Cantoni ${cantonListIt}, ovunque alle stesse condizioni.` },
+      { title: 'Contatto personale', text: 'La Sua richiesta è trattata personalmente dal gerente.' },
+      { title: 'Offerta dopo il sopralluogo', text: 'Indichiamo un prezzo solo dopo aver visto il Suo immobile. Sopralluogo e offerta sono gratuiti e senza impegno.' },
+      { title: 'In tutta la zona', text: `Tutti i servizi nei Cantoni di ${cantonListIt}, ovunque alle stesse condizioni.` },
       { title: 'Assicurazione', text: answers.versicherung.replace('Sì. ', '') },
       { title: 'Quattro lingue', text: answers.sprachen },
       { title: 'Prodotti ecologici', text: 'Su richiesta puliamo con prodotti ecologici.' },
@@ -92,13 +92,13 @@ export const about = {
   },
   contact: {
     title: 'Il Suo interlocutore',
-    text: `La Sua richiesta è trattata personalmente dal direttore. La contattiamo ${responseTime}.`,
+    text: `La Sua richiesta è trattata personalmente dal gerente. La contattiamo ${responseTime}.`,
   },
-  register: { title: 'Dati del registro', court: registerIt },
+  register: { title: 'Dati del registro', court: registerIt, uid: 'IDI' },
   statsLabel: 'In cifre',
   cta: {
     title: 'Conosciamoci',
-    text: 'Durante il sopralluogo visitiamo il Suo oggetto e chiariamo entità del lavoro e orari. In seguito riceve un’offerta scritta.',
+    text: 'Durante il sopralluogo esaminiamo il Suo immobile e chiariamo l’entità del lavoro e gli orari. In seguito riceve un’offerta scritta.',
   },
 }
 
@@ -113,7 +113,7 @@ export const contact = {
   steps: { title: 'Dalla richiesta al primo intervento', items: offerSteps },
   map: {
     title: 'Come raggiungerci',
-    text: `Sede a ${company.address.city}. Operiamo nei Cantoni ${cantonListIt}.`,
+    text: `Sede a ${company.address.city}. Operiamo nei Cantoni di ${cantonListIt}.`,
   },
   faq: [
     {
@@ -126,7 +126,7 @@ export const contact = {
     { question: 'Eseguite anche interventi con breve preavviso?', answer: 'Ci telefoni. Chiariamo con Lei che cosa è possibile con breve preavviso.' },
   ],
   cta: {
-    title: 'Pronto per la Sua offerta?',
+    title: 'Desidera un’offerta?',
     text: `Il modulo si trova in fondo a ogni pagina. La contattiamo ${responseTime}.`,
   },
 }
@@ -139,24 +139,24 @@ export const area = {
   seatTitle: 'Sede e contatto',
   places: {
     title: 'Rive dei laghi e località di villeggiatura',
-    text: 'Siamo a Sua disposizione anche sulle rive dei laghi e nelle località di villeggiatura della regione, ad esempio per ville, residenze secondarie e alberghi. Per esigenze particolari è a disposizione il nostro [settore Premium](/premium).',
+    text: 'Siamo a Sua disposizione anche sulle rive dei laghi e nelle località di villeggiatura della regione, ad esempio per ville, abitazioni secondarie e alberghi. Per esigenze particolari è a disposizione il nostro [settore Premium](/premium).',
     groups: [
       { title: 'Sul lago dei Quattro Cantoni', items: ['Lucerna', 'Horw', 'Meggen', 'Weggis', 'Vitznau', 'Hergiswil', 'Stansstad', 'Ennetbürgen'] },
       { title: 'Sul lago di Zugo e sul lago di Ägeri', items: ['Zugo', 'Cham', 'Risch', 'Hünenberg', 'Walchwil', 'Baar', 'Oberägeri'] },
       { title: 'Sul lago di Sempach e sul lago di Hallwil', items: ['Eich', 'Meisterschwanden'] },
-      { title: 'Regione di Baden e Mutschellen', items: ['Ennetbaden', 'Bergdietikon', 'Oberwil-Lieli'] },
+      { title: 'Regione di Baden e del Mutschellen', items: ['Ennetbaden', 'Bergdietikon', 'Oberwil-Lieli'] },
       { title: 'In montagna', items: ['Engelberg'] },
     ],
   },
   cta: {
-    title: 'Il Suo oggetto si trova nella nostra zona?',
-    text: `Ci descriva oggetto e località. Veniamo da Lei per un’offerta gratuita e senza impegno e La contattiamo ${responseTime}.`,
+    title: 'Il Suo immobile si trova nella nostra zona?',
+    text: `Ci descriva l’immobile e la località. Veniamo da Lei per un’offerta gratuita e senza impegno e La contattiamo ${responseTime}.`,
   },
 }
 
 export const servicesOverview = {
   h1: 'Servizi: pulizia e custodia di stabili',
-  lead: `Scelga in base all’occasione. Offriamo tutti i servizi nei Cantoni ${cantonListIt}. Per un’offerta veniamo da Lei gratuitamente e senza impegno.`,
+  lead: `Scelga in base alla Sua situazione. Offriamo tutti i servizi nei Cantoni di ${cantonListIt}. Per un’offerta veniamo da Lei gratuitamente e senza impegno.`,
   groups: [
     {
       title: 'Pulizia regolare',
@@ -170,9 +170,9 @@ export const servicesOverview = {
       title: 'Pulizie una tantum e speciali',
       text: 'Per cantieri, traslochi, superfici vetrate e produzione.',
       items: [
-        { title: 'Pulizie speciali', path: '/leistungen/sonderreinigungen', text: 'Pulizia a fondo e pulizia di fine locazione con garanzia di riconsegna.' },
+        { title: 'Pulizie speciali', path: '/leistungen/sonderreinigungen', text: 'Pulizia a fondo, pulizia di fine locazione e pulizia finale con garanzia di consegna.' },
         { title: 'Pulizia di cantiere e di fine cantiere', path: '/leistungen/baureinigung', text: 'Pulizia durante e dopo lavori di costruzione e di ristrutturazione.' },
-        { title: 'Pulizia di finestre e facciate', path: '/leistungen/fenster-und-fassadenreinigung', text: 'Finestre, superfici vetrate e facciate, anche ad alta pressione.' },
+        { title: 'Pulizia di vetri e facciate', path: '/leistungen/fenster-und-fassadenreinigung', text: 'Finestre, superfici vetrate e facciate, anche ad alta pressione.' },
         { title: 'Pulizia industriale e di capannoni', path: '/leistungen/industrie-und-hallenreinigung', text: 'Capannoni di produzione e di stoccaggio, macchinari e impianti.' },
       ],
     },
@@ -180,8 +180,8 @@ export const servicesOverview = {
       title: 'Cura degli stabili',
       text: 'Per amministrazioni immobiliari, proprietari e aziende che desiderano un unico fornitore.',
       items: [
-        { title: 'Custodia di stabili', path: '/leistungen/hauswartung', text: 'Giri di controllo, vano scale, lavanderia, piccole riparazioni, impiantistica, riconsegne degli appartamenti, smaltimento e aree esterne.' },
-        { title: 'Cura delle aree esterne e verdi', path: '/leistungen/aussen-und-gruenflaechenpflege', text: 'Cura delle aree esterne e delle aree verdi del Suo stabile.' },
+        { title: 'Custodia di stabili', path: '/leistungen/hauswartung', text: 'Giri di controllo, vano scale, lavanderia, piccole riparazioni, impiantistica, consegne e riconsegne degli appartamenti, smaltimento e aree esterne.' },
+        { title: 'Manutenzione delle aree esterne e verdi', path: '/leistungen/aussen-und-gruenflaechenpflege', text: 'Manutenzione delle aree esterne e delle aree verdi del Suo stabile.' },
         { title: 'Facility services', path: '/leistungen/facility-services', text: 'Più servizi in un unico contratto con un solo interlocutore.' },
       ],
     },
@@ -192,14 +192,14 @@ export const servicesOverview = {
     link: 'Al settore Premium',
   },
   cta: {
-    title: 'Non è sicuro di che cosa ha bisogno?',
-    text: `Ci descriva oggetto e richiesta. Veniamo da Lei, chiariamo con Lei l’entità del lavoro e La contattiamo ${responseTime}.`,
+    title: 'Non sa esattamente di che cosa ha bisogno?',
+    text: `Ci descriva l’immobile e la Sua richiesta. Veniamo da Lei, chiariamo insieme l’entità del lavoro e La contattiamo ${responseTime}.`,
   },
 }
 
 // Stesse chiavi e stesso ordine della lista tedesca (simboli in app/premium/page.tsx)
 const promises: Seiten['premiumOverview']['promises'] = [
-  { key: 'persoenlich', title: 'Contatto personale', text: 'La Sua richiesta è trattata personalmente dal direttore.' },
+  { key: 'persoenlich', title: 'Contatto personale', text: 'La Sua richiesta è trattata personalmente dal gerente.' },
   { key: 'diskret', title: 'Discrezione', text: 'Su richiesta sottoscriviamo un accordo di riservatezza.' },
   { key: 'teams', title: 'Team fissi', text: 'Da Lei lavora sempre lo stesso team.' },
   { key: 'personal', title: 'Personale verificato', text: 'Chi lavora da Lei è stato verificato da noi.' },
@@ -214,19 +214,19 @@ const promises: Seiten['premiumOverview']['promises'] = [
 export const premiumOverview = {
   line: premiumLine,
   h1: 'Pulizie per esigenze particolari',
-  lead: 'Per ville e residenze, residenze secondarie, alberghi con esigenze particolari, family office, jet privati e yacht. Discreti, accurati e nella Sua lingua.',
+  lead: 'Per ville e residenze, abitazioni secondarie, alberghi con esigenze particolari, family office, jet privati e yacht. Con discrezione, cura e nella Sua lingua.',
   // Significato del nome solo con il nuovo nome (E38)
   nameMeaning: company.premiumBrand
     ? `Il nome ${company.premiumBrand} deriva dal latino «clavis», la chiave. Lei ci affida la Sua casa, e noi ce ne prendiamo cura come se fosse la nostra.`
     : null,
   offers: [
     { title: 'Immobili di pregio', path: '/premium/luxusimmobilien', text: 'Ville, loft e residenze, regolarmente o prima di occasioni particolari, con cura dei materiali delicati.' },
-    { title: 'Jet privato', path: '/premium/privatjet', text: 'Pulizia della cabina con riguardo per i materiali di pregio, secondo accordi con Lei.' },
+    { title: 'Jet privato', path: '/premium/privatjet', text: 'Pulizia della cabina con riguardo per i materiali di pregio, previo accordo con Lei.' },
     { title: 'Yacht', path: '/premium/yacht', text: 'Pulizia di imbarcazioni e yacht sul lago dei Quattro Cantoni e sul lago di Zugo.' },
   ] satisfies LinkCard[],
   moreTitle: 'Inoltre per',
   more: [
-    { title: 'Residenze secondarie e residences', text: 'Pulizia prima del Suo arrivo e dopo la Sua partenza, giri di controllo durante la Sua assenza.' },
+    { title: 'Abitazioni secondarie e residence', text: 'Pulizia prima del Suo arrivo e dopo la Sua partenza, giri di controllo durante la Sua assenza.' },
     { title: 'Alberghi', text: 'Pulizie speciali e a fondo, interventi prima di aperture e dopo rinnovi.' },
     { title: 'Uffici e family office', text: 'In modo confidenziale, al di fuori dei Suoi orari di lavoro, con team fissi.' },
     { title: 'Locali con opere d’arte e oggetti d’antiquariato', text: 'Pulizia accurata dei locali, opere d’arte solo con la Sua autorizzazione.' },
@@ -237,10 +237,10 @@ export const premiumOverview = {
   promises,
   places: {
     title: 'Dove siamo a Sua disposizione',
-    text: `Sul lago dei Quattro Cantoni da Lucerna e Meggen fino a Weggis, Vitznau, Hergiswil ed Ennetbürgen, sul lago di Zugo e sul lago di Ägeri da Zugo e Walchwil fino a Oberägeri, a Engelberg e nell’intero territorio dei Cantoni ${cantonListIt}. [Alla zona d’intervento](/einzugsgebiet)`,
+    text: `Sul lago dei Quattro Cantoni da Lucerna e Meggen fino a Weggis, Vitznau, Hergiswil ed Ennetbürgen, sul lago di Zugo e sul lago di Ägeri da Zugo e Walchwil fino a Oberägeri, a Engelberg e nell’intero territorio dei Cantoni di ${cantonListIt}. [Alla zona d’intervento](/einzugsgebiet)`,
   },
   cta: {
     title: 'Richiesta discreta',
-    text: `Ci telefoni o ci scriva. La Sua richiesta è trattata personalmente dal direttore, su richiesta con vincolo di riservatezza. La contattiamo ${responseTime}.`,
+    text: `Ci telefoni o ci scriva. La Sua richiesta è trattata personalmente dal gerente, su richiesta con vincolo di riservatezza. La contattiamo ${responseTime}.`,
   },
 }

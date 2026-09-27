@@ -68,7 +68,7 @@ export const nav: NavDictionary = {
   },
   contactForm: {
     title: 'Get in touch',
-    intro: `Request a free, non-binding quote. We will get back to you ${responseTime}.`,
+    intro: `Request a non-binding quote. We will get back to you ${responseTime}.`,
     choose: 'Please select...',
     fields: {
       name: { label: 'Name *', placeholder: 'Your full name' },
@@ -96,7 +96,7 @@ export const nav: NavDictionary = {
           { value: 'Unterhaltsreinigung', label: 'Maintenance cleaning' },
           { value: 'Büroreinigung', label: 'Office and practice cleaning' },
           { value: 'Sonderreinigungen', label: 'Special cleaning (deep cleaning, move-out cleaning)' },
-          { value: 'Baureinigung', label: 'Construction and final construction cleaning' },
+          { value: 'Baureinigung', label: 'Construction and post-construction cleaning' },
           { value: 'Fenster- und Fassadenreinigung', label: 'Window and facade cleaning' },
           { value: 'Industrie- und Hallenreinigung', label: 'Industrial, warehouse and machine cleaning' },
           { value: 'Hauswartung', label: 'Caretaking' },

@@ -43,7 +43,7 @@ export const home: Seiten['home'] = {
       {
         key: 'reinigung',
         title: 'Cleaning',
-        text: 'For residential and commercial buildings, offices, practices and businesses.',
+        text: 'For properties, offices, practices and businesses.',
         items: ['Maintenance and office cleaning', 'Special and construction cleaning', 'Windows and facades', 'Industrial and warehouse'],
         link: { path: '/leistungen', text: 'All services' },
       },
@@ -83,7 +83,7 @@ export const about: Seiten['about'] = {
     title: 'What you can rely on',
     items: [
       { title: 'Personal', text: 'Your enquiry is handled personally by our managing director.' },
-      { title: 'Quote after a site visit', text: 'We only name a price once we have seen your property. The site visit and the quote are free of charge and non-binding.' },
+      { title: 'Quote after a site visit', text: 'We only quote a price once we have seen your property. The site visit and the quote are free of charge and non-binding.' },
       { title: 'Throughout the area', text: `All services in the cantons of ${cantons}, on the same terms everywhere.` },
       { title: 'Insured', text: answers.versicherung.replace('Yes. ', '') },
       { title: 'Four languages', text: answers.sprachen },
@@ -94,7 +94,7 @@ export const about: Seiten['about'] = {
     title: 'Your contact person',
     text: `Your enquiry is handled personally by our managing director. We will get back to you ${responseTime}.`,
   },
-  register: { title: 'Registration details', court: register },
+  register: { title: 'Registration details', court: register, uid: 'UID' },
   statsLabel: 'In figures',
   cta: {
     title: 'Let us get to know each other',
@@ -141,11 +141,11 @@ export const area: Seiten['area'] = {
   cantonLabels: ['Canton of Lucerne', 'Canton of Zug', 'Canton of Aargau', 'Canton of Nidwalden', 'Canton of Obwalden'],
   seatTitle: 'Head office and contact',
   places: {
-    title: 'Lakeshores and holiday resorts',
-    text: 'We are also there for you on the lakeshores and in the holiday resorts of the region, for example for villas, second homes and hotels. For exacting standards, there is our [premium range](/premium).',
+    title: 'Lakeside areas and holiday resorts',
+    text: 'We also work in lakeside areas and holiday resorts across the region, for example for villas, second homes and hotels. For exacting standards, see our [premium services](/premium).',
     groups: [
       { title: 'On Lake Lucerne', items: ['Lucerne', 'Horw', 'Meggen', 'Weggis', 'Vitznau', 'Hergiswil', 'Stansstad', 'Ennetbürgen'] },
-      { title: 'On Lake Zug and Lake Aegeri', items: ['Zug', 'Cham', 'Risch', 'Hünenberg', 'Walchwil', 'Baar', 'Oberägeri'] },
+      { title: 'On Lake Zug and Lake Ägeri', items: ['Zug', 'Cham', 'Risch', 'Hünenberg', 'Walchwil', 'Baar', 'Oberägeri'] },
       { title: 'On Lake Sempach and Lake Hallwil', items: ['Eich', 'Meisterschwanden'] },
       { title: 'Baden and Mutschellen region', items: ['Ennetbaden', 'Bergdietikon', 'Oberwil-Lieli'] },
       { title: 'In the mountains', items: ['Engelberg'] },
@@ -159,13 +159,13 @@ export const area: Seiten['area'] = {
 
 export const servicesOverview: Seiten['servicesOverview'] = {
   h1: 'Services: cleaning and caretaking',
-  lead: `Choose by occasion. We offer all services in the cantons of ${cantons}. We visit you free of charge and without obligation to prepare a quote.`,
+  lead: `Choose by what you need. We offer all services in the cantons of ${cantons}. We visit you free of charge and without obligation to prepare a quote.`,
   groups: [
     {
       title: 'Ongoing cleaning',
-      text: 'For residential and commercial buildings, offices and business premises on a fixed schedule.',
+      text: 'For properties, offices and business premises, on a fixed schedule.',
       items: [
-        { title: 'Maintenance cleaning', path: '/leistungen/unterhaltsreinigung', text: 'Regular cleaning of residential and commercial buildings and business premises, restocking service included.' },
+        { title: 'Maintenance cleaning', path: '/leistungen/unterhaltsreinigung', text: 'Regular cleaning of properties and business premises, restocking service included.' },
         { title: 'Office and practice cleaning', path: '/leistungen/bueroreinigung', text: 'Cleaning of offices and practices, scheduled around your working hours.' },
       ],
     },
@@ -174,9 +174,9 @@ export const servicesOverview: Seiten['servicesOverview'] = {
       text: 'For construction, moves, glass surfaces and production.',
       items: [
         { title: 'Special cleaning', path: '/leistungen/sonderreinigungen', text: 'Deep cleaning and move-out cleaning with a handover guarantee.' },
-        { title: 'Construction and final construction cleaning', path: '/leistungen/baureinigung', text: 'Cleaning during and after construction and renovation work.' },
+        { title: 'Construction and post-construction cleaning', path: '/leistungen/baureinigung', text: 'Cleaning during and after construction and renovation work.' },
         { title: 'Window and facade cleaning', path: '/leistungen/fenster-und-fassadenreinigung', text: 'Windows, glass surfaces and facades, including high-pressure cleaning.' },
-        { title: 'Industrial and warehouse cleaning', path: '/leistungen/industrie-und-hallenreinigung', text: 'Production halls, warehouses, machinery and installations.' },
+        { title: 'Industrial and warehouse cleaning', path: '/leistungen/industrie-und-hallenreinigung', text: 'Production halls, warehouses, machinery and equipment.' },
       ],
     },
     {
@@ -191,7 +191,7 @@ export const servicesOverview: Seiten['servicesOverview'] = {
   ] satisfies { title: string; text: string; items: LinkCard[] }[],
   premium: {
     title: 'Villas, private jets or yachts?',
-    text: 'For exacting standards, there is our premium range.',
+    text: 'For exacting standards, we offer our premium services.',
     link: 'Premium services',
   },
   cta: {
@@ -210,7 +210,7 @@ const promises: Seiten['premiumOverview']['promises'] = [
   { key: 'material', title: 'Knowledge of materials', text: 'Natural stone, parquet and high-gloss surfaces, and on boats teak, gelcoat and upholstery.' },
   { key: 'sprachen', title: 'Four languages', text: `${languages}.` },
   { key: 'versichert', title: 'Insured', text: 'Business liability insurance with CHF 10 million cover.' },
-  { key: 'offerte', title: 'Quote on site', text: 'Free of charge and non-binding, after a site visit.' },
+  { key: 'offerte', title: 'On-site quote', text: 'Free of charge and non-binding, after a site visit.' },
 ]
 
 export const premiumOverview: Seiten['premiumOverview'] = {
@@ -218,7 +218,7 @@ export const premiumOverview: Seiten['premiumOverview'] = {
   h1: 'Cleaning for exacting standards',
   lead: 'For villas and residences, second homes, hotels with special requirements, family offices, private jets and yachts. Discreet, meticulous and in your language.',
   nameMeaning: company.premiumBrand
-    ? `The name ${company.premiumBrand} comes from the Latin «clavis», the key. You entrust us with your home, and we treat it as if it were our own.`
+    ? `The name ${company.premiumBrand} comes from the Latin ‘clavis’, meaning key. You entrust us with your home, and we treat it as if it were our own.`
     : null,
   offers: [
     { title: 'Luxury properties', path: '/premium/luxusimmobilien', text: 'Villas, lofts and residences, regularly or ahead of special occasions, with care for delicate materials.' },
@@ -239,8 +239,8 @@ export const premiumOverview: Seiten['premiumOverview'] = {
   // types; the assertion bridges that without changing content/de.
   promises,
   places: {
-    title: 'Where we are there for you',
-    text: `On Lake Lucerne from Lucerne and Meggen to Weggis, Vitznau, Hergiswil and Ennetbürgen, on Lake Zug and Lake Aegeri from Zug and Walchwil to Oberägeri, in Engelberg and throughout the cantons of ${cantons}. [View service area](/einzugsgebiet)`,
+    title: 'Where we work',
+    text: `On Lake Lucerne from Lucerne and Meggen to Weggis, Vitznau, Hergiswil and Ennetbürgen, on Lake Zug and Lake Ägeri from Zug and Walchwil to Oberägeri, in Engelberg and throughout the cantons of ${cantons}. [View service area](/einzugsgebiet)`,
   },
   cta: {
     title: 'Enquire discreetly',

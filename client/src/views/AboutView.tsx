@@ -109,7 +109,7 @@ export default function AboutView({ lang }: { lang: Locale }) {
                 <br />
                 {about.register.court}
                 <br />
-                UID {company.uid}
+                {about.register.uid} {company.uid}
               </p>
             </Card>
           </div>

@@ -12,7 +12,7 @@ const region = cantonList
 export const pages = {
   '/': {
     label: 'Startseite',
-    title: `${company.brand} – Reinigung und Hauswartung in Luzern und Zug`,
+    title: `${company.brand} | Reinigung und Hauswartung in Luzern und Zug`,
     description: `Gebäudereinigung, Hauswartung und Facility Services für Unternehmen und Liegenschaften in ${region}, dazu Premium-Reinigung.`,
   },
   '/premium': {

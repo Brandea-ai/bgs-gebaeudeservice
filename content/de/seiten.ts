@@ -107,7 +107,7 @@ export const about = {
     title: 'Ihre Ansprechperson',
     text: `Ihre Anfrage bearbeitet der Geschäftsführer persönlich. Wir melden uns ${company.responseTime}.`,
   },
-  register: { title: 'Registerdaten', court: company.register as string },
+  register: { title: 'Registerdaten', court: company.register as string, uid: 'UID' },
   statsLabel: 'In Zahlen',
   cta: {
     title: 'Lernen wir uns kennen',

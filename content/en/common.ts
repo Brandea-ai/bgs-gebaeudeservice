@@ -59,8 +59,8 @@ export const steps = {
 /** Answers that are the same on several pages */
 export const answers = {
   kosten:
-    'That depends on the property and the work involved. We therefore only quote prices once we have seen the property. The site visit and the quote are free of charge and non-binding.',
-  gebiet: `Throughout the cantons of ${cantons}, with all services and on the same terms everywhere. More under [Service area](/einzugsgebiet).`,
+    'That depends on what needs cleaning and how much work is involved. We therefore only give prices in our quote, once we have seen everything on site. The site visit and the quote are free of charge and non-binding.',
+  gebiet: `Throughout the cantons of ${cantons}, with all services and on the same terms everywhere. Find out more about our [service area](/einzugsgebiet).`,
   versicherung: 'Yes. We hold business liability insurance with cover of CHF 10 million.',
   mittel: 'Yes, on request we clean with environmentally friendly products. Just let us know during the site visit.',
   sprachen: `Our staff speak ${languages}.`,

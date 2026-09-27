@@ -28,7 +28,7 @@ export const ui = {
   related: 'Potrebbe interessarLe anche',
   premiumLine,
   factArea: 'Zona',
-  factAreaValue: `Cantoni ${cantonListIt}`,
+  factAreaValue: `Cantoni di ${cantonListIt}`,
   factOffer: 'Offerta',
   factOfferValue: 'Gratuita e senza impegno, dopo un sopralluogo',
   factAnswer: 'Risposta',
@@ -36,25 +36,25 @@ export const ui = {
 }
 
 /**
- * I primi due passi sono uguali per tutti i servizi: richiesta al direttore
+ * I primi due passi sono uguali per tutti i servizi: richiesta al gerente
  * (R5d) e offerta dopo il sopralluogo (N014, R3e).
  */
 export const steps = {
   anfrage: {
     title: 'Richiesta',
-    text: `Ci telefoni o ci scriva. La Sua richiesta è trattata personalmente dal direttore; riceverà nostre notizie ${responseTime}.`,
+    text: `Ci telefoni o ci scriva. La Sua richiesta è trattata personalmente dal gerente; riceverà nostre notizie ${responseTime}.`,
   },
   besichtigung: {
     title: 'Sopralluogo e offerta',
-    text: 'Visitiamo l’oggetto sul posto e chiariamo con Lei entità del lavoro e orari. In seguito riceve un’offerta scritta, gratuita e senza impegno.',
+    text: 'Visitiamo l’immobile e chiariamo con Lei l’entità del lavoro e gli orari. In seguito riceve un’offerta scritta, gratuita e senza impegno.',
   },
 } satisfies Record<string, Step>
 
 /** Risposte uguali su più pagine (E18, R3e, E30, E44) */
 export const answers = {
   kosten:
-    'Dipende dall’oggetto e dall’impegno richiesto. Per questo indichiamo i prezzi solo nell’offerta, dopo aver visto l’oggetto. Sopralluogo e offerta sono gratuiti e senza impegno.',
-  gebiet: `Nell’intero territorio dei Cantoni ${cantonListIt}, con tutti i servizi e ovunque alle stesse condizioni. Maggiori informazioni alla pagina [Zona d’intervento](/einzugsgebiet).`,
+    'Dipende da ciò che va pulito e dall’impegno richiesto. Per questo indichiamo i prezzi solo nell’offerta, dopo aver visto tutto sul posto. Sopralluogo e offerta sono gratuiti e senza impegno.',
+  gebiet: `Nell’intero territorio dei Cantoni di ${cantonListIt}, con tutti i servizi e ovunque alle stesse condizioni. Maggiori informazioni alla pagina [Zona d’intervento](/einzugsgebiet).`,
   versicherung: 'Sì. Disponiamo di un’assicurazione di responsabilità civile aziendale con una copertura di CHF 10 milioni.',
   mittel: 'Sì, su richiesta puliamo con prodotti ecologici. Ce lo dica in occasione del sopralluogo.',
   sprachen: `Le nostre collaboratrici e i nostri collaboratori parlano ${languagesIt}.`,

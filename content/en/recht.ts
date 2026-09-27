@@ -27,7 +27,7 @@ export const impressum: LegalContent = {
     {
       title: 'Liability for content',
       paragraphs: [
-        'We compile the content of this website with care. However, we accept no liability for its accuracy, completeness or timeliness. Only our quotes and contracts are binding.',
+        'We compile the content of this website with care. However, we give no guarantee that it is accurate, complete or up to date. It is our quotes and contracts that are binding.',
         'Liability claims for damage arising from access to or use of this website, or from technical faults, are excluded to the extent permitted by law.',
       ],
     },
@@ -52,7 +52,7 @@ export const impressum: LegalContent = {
 export const datenschutz: LegalContent = {
   h1: 'Privacy policy',
   intro:
-    'This policy explains which personal data we process when you visit this website, for what purpose and to whom it is passed on. It is governed by the Swiss Federal Act on Data Protection (FADP).',
+    'This policy explains which personal data we process when you visit this website, for what purpose and to whom it is passed on. The Swiss Federal Act on Data Protection (FADP) applies.',
   sections: [
     {
       title: 'Controller',
@@ -77,7 +77,7 @@ export const datenschutz: LegalContent = {
     {
       title: 'Map',
       paragraphs: [
-        'On the contact page, we only show a Google Maps map once you click «Load map». Only then does Google receive your IP address and technical information about your browser. The provider is Google Ireland Limited; the data may also be processed in the USA. For more information, see the Google privacy policy at policies.google.com/privacy.',
+        'On the contact page, we only show a Google Maps map once you click ‘Load map’. Only then does Google receive your IP address and technical information about your browser. The provider is Google Ireland Limited; the data may also be processed in the USA. For more information, see the Google privacy policy at policies.google.com/privacy.',
       ],
     },
     {
@@ -96,7 +96,7 @@ export const datenschutz: LegalContent = {
       title: 'Your rights',
       paragraphs: ['You may at any time:'],
       items: [
-        'request information about which personal data we process about you',
+        'request information on which personal data we process about you',
         'have incorrect data corrected',
         'request the deletion of your data, unless we are obliged to retain it',
         'object to the processing',

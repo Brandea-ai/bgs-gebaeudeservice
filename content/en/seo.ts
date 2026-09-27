@@ -12,7 +12,7 @@ const region = cantons
 export const pages: Dictionary['pages'] = {
   '/': {
     label: 'Home',
-    title: `${company.brand} – Cleaning and caretaking in Lucerne and Zug`,
+    title: `${company.brand} | Cleaning and caretaking in Lucerne and Zug`,
     description: `Building cleaning, caretaking and facility services for businesses and properties in ${region}, plus premium cleaning.`,
   },
   '/premium': {
@@ -30,7 +30,7 @@ export const pages: Dictionary['pages'] = {
   '/premium/privatjet': {
     label: 'Private jet',
     title: 'Private jet cabin cleaning',
-    description: 'Cabin cleaning for private jets with care for high-quality materials. Discreet, by arrangement and always with the same dedicated team.',
+    description: 'Cabin cleaning for private jets with care for high-quality materials. Discreet, by arrangement and with dedicated teams.',
   },
   '/premium/yacht': {
     label: 'Yacht',
@@ -45,7 +45,7 @@ export const pages: Dictionary['pages'] = {
   '/leistungen/unterhaltsreinigung': {
     label: 'Maintenance cleaning',
     title: 'Maintenance cleaning in Lucerne and Zug',
-    description: `Regular cleaning of buildings, stairwells and business premises, with a restocking service. In ${region}.`,
+    description: `Regular cleaning of properties, stairwells and business premises, with a restocking service. In ${region}.`,
   },
   '/leistungen/bueroreinigung': {
     label: 'Office and practice cleaning',
@@ -55,12 +55,12 @@ export const pages: Dictionary['pages'] = {
   '/leistungen/sonderreinigungen': {
     label: 'Special cleaning',
     title: 'Special cleaning: deep and move-out cleaning',
-    description: 'Deep cleaning and move-out cleaning with a handover guarantee for property managers, owners and businesses in Lucerne, Zug and the surrounding area.',
+    description: 'Deep cleaning, move-out and end-of-tenancy cleaning with a handover guarantee for property managers, owners and businesses in Lucerne, Zug and beyond.',
   },
   '/leistungen/baureinigung': {
     label: 'Construction cleaning',
     title: 'Construction cleaning in Lucerne and Zug',
-    description: 'Cleaning during and after construction and renovation work, through to handover. For clients, architects and property managers in Lucerne, Zug and beyond.',
+    description: 'Cleaning during and after building and renovation work, through to handover. For building owners, architects and property managers in Lucerne, Zug and beyond.',
   },
   '/leistungen/fenster-und-fassadenreinigung': {
     label: 'Window and facade cleaning',
@@ -70,7 +70,7 @@ export const pages: Dictionary['pages'] = {
   '/leistungen/industrie-und-hallenreinigung': {
     label: 'Industrial and warehouse cleaning',
     title: 'Industrial and warehouse cleaning',
-    description: `Cleaning of production halls, warehouses, machinery and installations, planned around your operations. In ${region}.`,
+    description: `Cleaning of production halls, warehouses, machinery and equipment, planned around your operations. In ${region}.`,
   },
   '/leistungen/hauswartung': {
     label: 'Caretaking',
@@ -90,7 +90,7 @@ export const pages: Dictionary['pages'] = {
   '/einzugsgebiet': {
     label: 'Service area',
     title: 'Service area: Central Switzerland and Aargau',
-    description: `From ${company.address.city} across the cantons of ${region}, including the lakeshores and Engelberg. All services throughout the area.`,
+    description: `From ${company.address.city} across the cantons of ${region}, including lakeside areas and Engelberg. All services throughout the area.`,
   },
   '/blog': {
     label: 'Guides',
@@ -105,7 +105,7 @@ export const pages: Dictionary['pages'] = {
   '/blog/reinigungskosten-schweiz': {
     label: 'Cost of maintenance cleaning',
     title: 'How much does maintenance cleaning cost?',
-    description: 'What the price of maintenance cleaning depends on: floor area, frequency, use and working hours. With tips on how to compare quotes from providers.',
+    description: 'What the price of maintenance cleaning depends on: floor area, frequency, use and cleaning times. With tips on comparing quotes.',
   },
   '/ueber-uns': {
     label: 'About us',
@@ -115,16 +115,16 @@ export const pages: Dictionary['pages'] = {
   '/kontakt': {
     label: 'Contact',
     title: 'Contact and quote',
-    description: `Call us on ${company.phone.display} or write to us. Free, non-binding quote after an on-site visit, and a reply ${responseTime}.`,
+    description: `Call us on ${company.phone.display} or write to us. Free quote after an on-site visit, and a reply ${responseTime}.`,
   },
   '/impressum': {
     label: 'Legal notice',
     title: 'Legal notice',
-    description: `Legal notice of ${company.legalName}, ${company.address.street}, ${company.address.postalCode} ${company.address.city}: commercial register, UID, VAT number and contact details.`,
+    description: `Legal notice of ${company.legalName}, ${company.address.street}, ${company.address.postalCode} ${company.address.city}: commercial register, UID and contact details.`,
   },
   '/datenschutz': {
     label: 'Privacy',
     title: 'Privacy policy',
-    description: `How ${company.legalName} processes personal data on this website, to whom it is passed on and what rights you have under Swiss data protection law.`,
+    description: `How ${company.legalName} processes personal data on this website and what rights you have.`,
   },
 }

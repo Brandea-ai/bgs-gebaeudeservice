@@ -9,7 +9,7 @@ import { cantons, languages, responseTime } from './common'
 
 export const ratgeberUebersicht = {
   h1: 'Guides to building cleaning',
-  intro: `Answers to questions about awarding, costing and running building cleaning contracts. By ${company.brand}, for businesses, property managers and owners in the cantons of ${cantons}.`,
+  intro: `Answers to questions about awarding building cleaning contracts, the costs involved and how the work is organised. By ${company.brand}, for businesses, property managers and owners in the cantons of ${cantons}.`,
   services:
     'Go straight to our services: [maintenance cleaning](/leistungen/unterhaltsreinigung), [caretaking](/leistungen/hauswartung) and [all services](/leistungen).',
   byline: `A guide by ${company.brand}`,
@@ -42,15 +42,15 @@ const reinigungsfirmaFinden: ArticleContent = {
       definitions: [
         {
           term: 'Maintenance cleaning',
-          text: 'Recurring cleaning on a fixed schedule, for example several times a week. It keeps premises clean and hygienic. More under [maintenance cleaning](/leistungen/unterhaltsreinigung).',
+          text: 'Recurring cleaning on a fixed schedule, for example several times a week. It keeps premises clean and hygienic. Find out more about [maintenance cleaning](/leistungen/unterhaltsreinigung).',
         },
         {
           term: 'Deep cleaning',
-          text: 'A thorough clean at longer intervals. It removes dirt that regular cleaning leaves behind. More under [deep and special cleaning](/leistungen/sonderreinigungen).',
+          text: 'A thorough clean at longer intervals. It removes dirt that regular cleaning leaves behind. Find out more about [deep and special cleaning](/leistungen/sonderreinigungen).',
         },
         {
           term: 'Caretaking',
-          text: 'Looking after a property beyond cleaning, for example with inspection rounds, minor repairs and waste disposal. More under [caretaking](/leistungen/hauswartung).',
+          text: 'Looking after a property beyond cleaning, for example with inspection rounds, minor repairs and waste disposal. Find out more about [caretaking](/leistungen/hauswartung).',
         },
       ],
       note: 'Also decide how often and at what times cleaning should take place, for example before work starts or after the shop closes. All providers need this information so that their quotes are comparable.',
@@ -125,12 +125,12 @@ const reinigungsfirmaFinden: ArticleContent = {
         'Insurance: business liability insurance with cover of CHF 10 million.',
         'Experience: since 2006, today over 50 employees and over 120 clients (as of September 2026).',
         `Languages: ${languages}.`,
-        `Area: the cantons of ${cantons}, with all services. More under [Service area](/einzugsgebiet).`,
+        `Area: the cantons of ${cantons}, with all services. Find out more about our [service area](/einzugsgebiet).`,
       ],
     },
   ],
   cta: {
-    title: 'Quote on site',
+    title: 'On-site quote',
     text: 'We will visit you to prepare a free, non-binding quote. Tell us about the property, the floor area and the frequency you would like.',
   },
 }
@@ -142,15 +142,15 @@ const kosten: ArticleContent = {
   teaser: 'What the price of maintenance cleaning depends on, how it is billed and how to compare quotes.',
   updated: '2026-09-26',
   intro: [
-    'This guide covers [maintenance cleaning](/leistungen/unterhaltsreinigung), that is, the regular cleaning of residential and commercial buildings, offices and business premises. It explains what the price depends on and what a quote should contain.',
+    'This guide covers [maintenance cleaning](/leistungen/unterhaltsreinigung), that is, the regular cleaning of properties, offices and business premises. It explains what the price depends on and what a quote should contain.',
   ],
   summary: {
     title: 'In brief',
     items: [
-      'The price depends mainly on floor area, frequency, use and working hours.',
+      'The price depends mainly on floor area, frequency, use and cleaning times.',
       'A reliable figure is only possible after a site visit.',
       'Compare quotes by scope of services and monthly amount, not by the hourly rate alone.',
-      'We visit you for the site visit free of charge and without obligation.',
+      'We carry out the site visit free of charge and without obligation.',
     ],
   },
   sections: [
@@ -164,7 +164,7 @@ const kosten: ArticleContent = {
         },
         { term: 'Use', text: 'Busy entrances, kitchens and sanitary facilities take more time than rooms that are rarely used.' },
         {
-          term: 'Working hours',
+          term: 'Cleaning times',
           text: 'Cleaning in the evening, at night or at weekends may incur surcharges. Ask whether such surcharges are included in the quote.',
         },
         {
@@ -176,7 +176,7 @@ const kosten: ArticleContent = {
     {
       title: 'Why we do not publish prices online',
       paragraphs: [
-        'Two properties with the same floor area can involve very different amounts of work, depending on the floor covering, use and access. A price without a site visit would therefore either be set too high or turn out to be wrong later. We only quote prices once we have seen the property.',
+        'Two properties with the same floor area can involve very different amounts of work, depending on the floor covering, use and access. A price without a site visit would therefore either be set too high or turn out to be wrong later. We only give prices in our quote, once we have seen the property.',
       ],
     },
     {
@@ -190,7 +190,7 @@ const kosten: ArticleContent = {
       paragraphs: ['A comparable quote states at least:'],
       items: [
         'which rooms and tasks are included',
-        'frequency and working hours',
+        'frequency and cleaning times',
         'consumables and cleaning products',
         'any surcharges and additional costs such as travel',
         'term and notice period',

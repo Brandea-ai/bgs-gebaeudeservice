@@ -9,7 +9,7 @@ import { cantonListIt, languagesIt, responseTime } from './common'
 
 export const ratgeberUebersicht = {
   h1: 'Guida alla pulizia di edifici',
-  intro: `Risposte a domande sull’affidamento, sui costi e sullo svolgimento della pulizia di edifici. Di ${company.brand}, per aziende, amministrazioni immobiliari e proprietari nei Cantoni ${cantonListIt}.`,
+  intro: `Risposte a domande sull’affidamento, sui costi e sullo svolgimento della pulizia di edifici. A cura di ${company.brand}, per aziende, amministrazioni immobiliari e proprietari nei Cantoni di ${cantonListIt}.`,
   services:
     'Direttamente ai servizi: [Pulizia di manutenzione](/leistungen/unterhaltsreinigung), [Custodia di stabili](/leistungen/hauswartung) e [tutti i servizi](/leistungen).',
   byline: `Una guida di ${company.brand}`,
@@ -76,7 +76,7 @@ const reinigungsfirmaFinden: ArticleContent = {
         },
         {
           title: 'Referenze e valutazioni',
-          text: 'Chieda referenze relative a oggetti comparabili. Se un colloquio con clienti di riferimento sia possibile dipende dal loro consenso. Verifichi anche le valutazioni online.',
+          text: 'Chieda referenze relative a immobili comparabili. Se un colloquio con clienti di riferimento sia possibile dipende dal loro consenso. Verifichi anche le valutazioni online.',
         },
         {
           title: 'Offerta e prezzo',
@@ -84,10 +84,10 @@ const reinigungsfirmaFinden: ArticleContent = {
         },
         {
           title: 'Contratto',
-          text: 'Durata, termine di disdetta e la sostituzione in caso di vacanze o malattia devono figurare nel contratto.',
+          text: 'La durata, il termine di disdetta e la sostituzione in caso di vacanze o malattia devono figurare nel contratto.',
         },
         {
-          title: 'Vicinanza e raggiungibilità',
+          title: 'Vicinanza e reperibilità',
           text: 'Chieda quanto rapidamente qualcuno è sul posto in caso di difetto e come può raggiungere il Suo interlocutore.',
         },
       ],
@@ -102,7 +102,7 @@ const reinigungsfirmaFinden: ArticleContent = {
         'Confrontare le offerte: entità, cadenza, costi accessori e durata.',
         'Chiarire le questioni aperte, preferibilmente per iscritto.',
         'Chiedere se è possibile una pulizia di prova o un inizio con un periodo di prova.',
-        'Concludere il contratto e fissare l’interlocutore.',
+        'Concludere il contratto e indicarvi l’interlocutore.',
       ],
     },
     {
@@ -121,17 +121,17 @@ const reinigungsfirmaFinden: ArticleContent = {
       title: `Come ${company.brand} risponde a queste domande`,
       items: [
         'Offerta: gratuita e senza impegno, dopo un sopralluogo.',
-        `Interlocutore: la Sua richiesta è trattata personalmente dal direttore. Riceverà nostre notizie ${responseTime}.`,
+        `Interlocutore: la Sua richiesta è trattata personalmente dal gerente. Riceverà nostre notizie ${responseTime}.`,
         'Assicurazione: responsabilità civile aziendale con una copertura di CHF 10 milioni.',
-        'Esperienza: dal 2006, oggi oltre 50 collaboratrici e collaboratori e oltre 120 clienti (stato a settembre 2026).',
+        'Esperienza: dal 2006, oggi oltre 50 collaboratrici e collaboratori e oltre 120 clienti (dati di settembre 2026).',
         `Lingue: ${languagesIt}.`,
-        `Zona: i Cantoni ${cantonListIt}, con tutti i servizi. Maggiori informazioni alla pagina [Zona d’intervento](/einzugsgebiet).`,
+        `Zona: i Cantoni di ${cantonListIt}, con tutti i servizi. Maggiori informazioni alla pagina [Zona d’intervento](/einzugsgebiet).`,
       ],
     },
   ],
   cta: {
     title: 'Offerta sul posto',
-    text: 'Veniamo da Lei per un’offerta gratuita e senza impegno. Ci descriva oggetto, superficie e cadenza desiderata.',
+    text: 'Veniamo da Lei per un’offerta gratuita e senza impegno. Ci descriva l’immobile, la superficie e la cadenza desiderata.',
   },
 }
 
@@ -150,7 +150,7 @@ const kosten: ArticleContent = {
       'Il prezzo dipende soprattutto da superficie, cadenza, utilizzo e orari d’intervento.',
       'Una cifra affidabile si ottiene solo dopo un sopralluogo.',
       'Confronti le offerte in base all’entità del servizio e all’importo mensile, non solo in base alla tariffa oraria.',
-      'Veniamo per il sopralluogo gratuitamente e senza impegno.',
+      'Veniamo da Lei per il sopralluogo, gratuitamente e senza impegno.',
     ],
   },
   sections: [
@@ -176,7 +176,7 @@ const kosten: ArticleContent = {
     {
       title: 'Perché non indichiamo prezzi su internet',
       paragraphs: [
-        'Due oggetti con la stessa superficie possono richiedere un impegno molto diverso, a seconda del rivestimento del pavimento, dell’utilizzo e dell’accesso. Un prezzo senza sopralluogo sarebbe quindi o troppo alto o non corrisponderebbe in seguito. Indichiamo i prezzi solo nell’offerta, dopo aver visto l’oggetto.',
+        'Due immobili con la stessa superficie possono richiedere un impegno molto diverso, a seconda del rivestimento del pavimento, dell’utilizzo e dell’accesso. Un prezzo indicato senza sopralluogo sarebbe quindi troppo alto oppure si rivelerebbe inesatto in seguito. Indichiamo i prezzi solo nell’offerta, dopo aver visto l’immobile.',
       ],
     },
     {
@@ -201,16 +201,16 @@ const kosten: ArticleContent = {
       title: `Come ottenere la Sua offerta da ${company.brand}`,
       ordered: true,
       items: [
-        `Ci telefoni o ci scriva. La Sua richiesta è trattata personalmente dal direttore; riceverà nostre notizie ${responseTime}.`,
-        'Visitiamo l’oggetto sul posto e chiariamo entità, cadenza e orari.',
+        `Ci telefoni o ci scriva. La Sua richiesta è trattata personalmente dal gerente; riceverà nostre notizie ${responseTime}.`,
+        'Visitiamo l’immobile e chiariamo l’entità del lavoro, la cadenza e gli orari.',
         'Riceve un’offerta scritta, gratuita e senza impegno.',
       ],
-      note: `Per la trasferta valgono le stesse condizioni nell’intero territorio dei Cantoni ${cantonListIt}.`,
+      note: `Per la trasferta valgono le stesse condizioni nell’intero territorio dei Cantoni di ${cantonListIt}.`,
     },
   ],
   cta: {
-    title: 'Offerta per il Suo oggetto',
-    text: 'Ci descriva oggetto, superficie e cadenza desiderata. Veniamo per il sopralluogo e Le allestiamo un’offerta, gratuita e senza impegno.',
+    title: 'Offerta per il Suo immobile',
+    text: 'Ci descriva l’immobile, la superficie e la cadenza desiderata. Veniamo da Lei per il sopralluogo e Le allestiamo un’offerta, gratuita e senza impegno.',
   },
 }
 

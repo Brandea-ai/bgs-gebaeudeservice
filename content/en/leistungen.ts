@@ -23,7 +23,7 @@ const unterhaltsreinigung: ServicePageContent = {
   ],
   scope: {
     title: 'What is included',
-    intro: 'We record what we clean and how often after the site visit. Typically this includes:',
+    intro: 'After the site visit, we record what we clean and how often. Typically this includes:',
     items: [
       'Stairwells, entrances and lifts',
       'Floors in all agreed rooms',
@@ -36,7 +36,7 @@ const unterhaltsreinigung: ServicePageContent = {
       'Offices and practices: see [office and practice cleaning](/leistungen/bueroreinigung).',
       'One-off deep cleaning or move-out cleaning: see [special cleaning](/leistungen/sonderreinigungen).',
       'Exterior windows and facades: see [window and facade cleaning](/leistungen/fenster-und-fassadenreinigung).',
-      'Private households. For villas and residences, there is our [premium range](/premium).',
+      'Private households. For villas and residences, see our [premium services](/premium).',
     ],
   },
   sections: [
@@ -125,7 +125,7 @@ const bueroreinigung: ServicePageContent = {
       'Reception, entrance area and glass doors',
       'Kitchenettes and staff rooms',
       'Sanitary facilities',
-      'Waste and waste paper, restocking consumables',
+      'Waste and paper recycling, restocking consumables',
     ],
     notIncluded: [
       'Stairwells and common areas of entire buildings: see [maintenance cleaning](/leistungen/unterhaltsreinigung).',
@@ -196,7 +196,7 @@ const sonderreinigungen: ServicePageContent = {
     'We carry them out for property managers, owners and businesses, as a one-off or at longer intervals.',
   ],
   facts: [
-    { label: 'For', value: 'Property managers, owners, condominium owners’ associations and businesses' },
+    { label: 'For', value: 'Property managers, owners, communities of condominium owners and businesses' },
     { label: 'Type', value: 'One-off or at longer intervals' },
     { label: 'Move-out cleaning', value: 'With a handover guarantee' },
   ],
@@ -205,7 +205,7 @@ const sonderreinigungen: ServicePageContent = {
     items: [
       'Deep cleaning of residential, office and commercial premises',
       'Move-out and end-of-tenancy cleaning with a handover guarantee',
-      '[Final construction cleaning](/leistungen/baureinigung) after construction and renovation work',
+      '[Post-construction cleaning](/leistungen/baureinigung) after new builds and renovations',
       '[Window and glass cleaning](/leistungen/fenster-und-fassadenreinigung)',
       '[Facade cleaning](/leistungen/fenster-und-fassadenreinigung), including high-pressure cleaning',
     ],
@@ -226,7 +226,7 @@ const sonderreinigungen: ServicePageContent = {
       title: 'Move-out and end-of-tenancy cleaning with a handover guarantee',
       paragraphs: [
         'When a flat or business premises are handed over, everything must be clean so that the handover goes through without complaints. We clean the rooms thoroughly before the handover, with a handover guarantee: if the property management raises a complaint about our cleaning at the handover, we clean again free of charge. The details are set out in the quote.',
-        'We offer move-out cleaning to property managers, owners and businesses and, for villas and residences in our [premium range](/premium), also to private individuals.',
+        'We offer move-out cleaning to property managers, owners and businesses, and also to private individuals for villas and residences through our [premium services](/premium).',
       ],
     },
   ],
@@ -244,7 +244,7 @@ const sonderreinigungen: ServicePageContent = {
   ],
   faq: [
     {
-      question: 'What does handover guarantee mean?',
+      question: 'What does the handover guarantee mean?',
       answer:
         'If the property management raises a complaint about our cleaning at the handover, we clean again free of charge. The details are set out in the quote.',
     },
@@ -277,13 +277,13 @@ const baureinigung: ServicePageContent = {
   path: '/leistungen/baureinigung',
   area: 'leistungen',
   eyebrow: 'One-off and special cleaning',
-  h1: 'Construction and final construction cleaning for new builds and renovations',
+  h1: 'Construction and post-construction cleaning for new builds and renovations',
   lead: [
     'After construction and renovation work, there is dust, mortar residue and protective film everywhere. Before tenants, buyers or your team move in, everything has to be ready for occupancy, often by a fixed handover date.',
-    'We clean during and after the work until the rooms can be handed over. For building clients, architects, general contractors and property managers.',
+    'We clean during and after the work until the rooms can be handed over. For building owners, architects, general contractors and property managers.',
   ],
   facts: [
-    { label: 'For', value: 'Building clients, architects, general contractors and property managers' },
+    { label: 'For', value: 'Building owners, architects, general contractors and property managers' },
     { label: 'Properties', value: 'New builds, conversions and renovations' },
     { label: 'Timing', value: 'During the construction phase and before handover' },
   ],
@@ -294,13 +294,13 @@ const baureinigung: ServicePageContent = {
     items: [
       'Rough cleaning during the construction phase',
       'Interim cleaning, for example before interior fit-out',
-      'Final construction cleaning before handover',
+      'Post-construction cleaning before handover',
       'Removing dust and residue from windows, frames and glass',
       'Removing adhesive residue and protective film',
       'Cleaning floors, sanitary facilities, kitchens and built-in cupboards ready for occupancy',
     ],
     notIncluded: [
-      'Ongoing cleaning after occupancy: see [maintenance cleaning](/leistungen/unterhaltsreinigung).',
+      'Ongoing cleaning after move-in: see [maintenance cleaning](/leistungen/unterhaltsreinigung).',
       'Facades: see [window and facade cleaning](/leistungen/fenster-und-fassadenreinigung).',
     ],
   },
@@ -321,19 +321,19 @@ const baureinigung: ServicePageContent = {
   ],
   faq: [
     {
-      question: 'What is the difference between construction cleaning and final construction cleaning?',
+      question: 'What is the difference between construction cleaning and post-construction cleaning?',
       answer:
-        'Construction cleaning covers jobs during the construction phase, such as rough cleaning or interim cleaning. Final construction cleaning is the last, thorough clean before the handover, after which the rooms are ready for occupancy.',
+        'Construction cleaning covers jobs during the construction phase, such as rough cleaning or interim cleaning. Post-construction cleaning is the final, thorough clean before the handover, after which the rooms are ready for occupancy.',
     },
     {
-      question: 'When should we schedule the final construction cleaning?',
+      question: 'When should we schedule the post-construction cleaning?',
       answer:
         'As soon as the handover date is fixed. The cleaning takes place after the last trades have finished and before the acceptance inspection. The earlier we know the date, the better we can plan.',
     },
     {
       question: 'Is window cleaning included?',
       answer:
-        'Yes, we clean windows, frames and glass as part of the final construction cleaning. For facades, there is our [window and facade cleaning](/leistungen/fenster-und-fassadenreinigung).',
+        'Yes, we clean windows, frames and glass as part of the post-construction cleaning. For facades, there is our [window and facade cleaning](/leistungen/fenster-und-fassadenreinigung).',
     },
     { question: 'How much does construction cleaning cost?', answer: answers.kosten },
     { question: 'Which regions do you cover?', answer: answers.gebiet },
@@ -342,7 +342,7 @@ const baureinigung: ServicePageContent = {
   related: [
     { path: '/leistungen/sonderreinigungen', text: 'For deep cleaning and move-out cleaning with a handover guarantee.' },
     { path: '/leistungen/fenster-und-fassadenreinigung', text: 'For glass surfaces and facades on the finished building.' },
-    { path: '/leistungen/unterhaltsreinigung', text: 'For ongoing cleaning after occupancy.' },
+    { path: '/leistungen/unterhaltsreinigung', text: 'For ongoing cleaning after move-in.' },
   ],
   cta: {
     title: 'A quote for your construction site',
@@ -397,7 +397,7 @@ const fensterUndFassade: ServicePageContent = {
         'That depends on location and use. On a busy road, glass gets dirty faster than in a green setting. After the site visit, we suggest a frequency.',
     },
     {
-      question: 'Do you clean facades with high pressure?',
+      question: 'Do you use high-pressure cleaning on facades?',
       answer: 'Yes, if the material allows it. Which method suits your facade is clarified during the site visit.',
     },
     {
@@ -410,12 +410,12 @@ const fensterUndFassade: ServicePageContent = {
     { question: 'Are you insured?', answer: answers.versicherung },
   ],
   related: [
-    { path: '/leistungen/unterhaltsreinigung', text: 'For regular cleaning of residential and commercial buildings and business premises.' },
+    { path: '/leistungen/unterhaltsreinigung', text: 'For regular cleaning of properties and business premises.' },
     { path: '/leistungen/bueroreinigung', text: 'For offices and practices, scheduled around your working hours.' },
     { path: '/leistungen/baureinigung', text: 'For glass and frames after construction and renovation work.' },
   ],
   cta: {
-    title: 'A quote for windows and facade',
+    title: 'A quote for your windows and facade',
     text: 'Tell us about the building, the surfaces and the date you would like. We will look at everything on site and prepare a quote for you, free of charge and non-binding.',
   },
 }
@@ -426,12 +426,12 @@ const industrieUndHallen: ServicePageContent = {
   eyebrow: 'One-off and special cleaning',
   h1: 'Industrial and warehouse cleaning for production and storage',
   lead: [
-    'Production and storage generate dust, shavings and films of oil and grease. They make floors slippery and build up in installations. At the same time, cleaning must not hold up operations.',
-    'We clean halls, floors, machinery and installations, as a one-off or regularly, at times we coordinate with you around production and shifts.',
+    'Production and storage generate dust, shavings and films of oil and grease. They make floors slippery and build up in equipment. At the same time, cleaning must not hold up operations.',
+    'We clean halls, floors, machinery and equipment, as a one-off or regularly, at times we coordinate with you around production and shifts.',
   ],
   facts: [
     { label: 'For', value: 'Industrial and commercial businesses, logistics and warehousing' },
-    { label: 'Areas', value: 'Production halls and warehouses, workshops, machinery and installations' },
+    { label: 'Areas', value: 'Production halls and warehouses, workshops, machinery and equipment' },
     { label: 'Times', value: 'Coordinated with production and shift operations' },
   ],
   scope: {
@@ -441,7 +441,7 @@ const industrieUndHallen: ServicePageContent = {
       'Hall and production floors',
       'Storage areas, racking and traffic routes',
       'Workshops and ancillary rooms',
-      'Machinery and installations according to your specifications',
+      'Machinery and equipment according to your specifications',
       'Staff rooms, changing rooms and sanitary facilities',
     ],
     notIncluded: [
@@ -451,9 +451,9 @@ const industrieUndHallen: ServicePageContent = {
   },
   sections: [
     {
-      title: 'Machinery and installations',
+      title: 'Machinery and equipment',
       paragraphs: [
-        'We clean machinery according to your specifications and in consultation with your maintenance team. When an installation is shut down, what is cleaned and which products are suitable is agreed before the job.',
+        'We clean machinery according to your specifications and in consultation with your maintenance team. When equipment is shut down, what is cleaned and which products are suitable is agreed before the job.',
         'Your safety and operating rules also apply to our team. We clarify them with you before the first job.',
       ],
     },
@@ -462,7 +462,7 @@ const industrieUndHallen: ServicePageContent = {
     steps.anfrage,
     {
       title: 'Walk-through and quote',
-      text: 'We look at the halls, installations and processes on site. You then receive a written quote, free of charge and non-binding.',
+      text: 'We look at the halls, equipment and processes on site. You then receive a written quote, free of charge and non-binding.',
     },
     {
       title: 'Job planning',
@@ -509,12 +509,12 @@ const hauswartung: ServicePageContent = {
   h1: 'Caretaking for residential and commercial properties',
   lead: [
     'A property needs more than cleaning: someone has to check on things regularly, fix minor damage, organise waste disposal and be present when flats are handed over. That is what caretaking covers.',
-    'For property managers, owners and condominium owners’ associations. We set out in writing which tasks we take on.',
+    'For property managers, owners and communities of condominium owners. We set out in writing which tasks we take on.',
   ],
   facts: [
-    { label: 'For', value: 'Property managers, owners and condominium owners’ associations' },
+    { label: 'For', value: 'Property managers, owners and communities of condominium owners' },
     { label: 'Properties', value: 'Residential and commercial properties' },
-    { label: 'Not offered', value: 'Winter services and on-call service' },
+    { label: 'Not offered', value: 'Winter maintenance and on-call service' },
   ],
   scope: {
     title: 'What caretaking covers',
@@ -527,19 +527,19 @@ const hauswartung: ServicePageContent = {
       'Keeping an eye on building services and reporting faults',
       'Assisting with flat handovers',
       'Organising the disposal of waste and recyclables',
-      'Grounds maintenance, more under [grounds and green space maintenance](/leistungen/aussen-und-gruenflaechenpflege)',
+      'Grounds maintenance, see [grounds and green space maintenance](/leistungen/aussen-und-gruenflaechenpflege)',
     ],
     notIncluded: [
-      'We do not offer winter services.',
+      'We do not offer winter maintenance.',
       'Round-the-clock on-call and emergency service.',
-      'Major repairs and trade work.',
+      'Major repairs and work by tradespeople.',
     ],
   },
   steps: [
     steps.anfrage,
     {
       title: 'Walk-through and quote',
-      text: 'We look at the property and clarify with you which tasks arise. You then receive a written quote, free of charge and non-binding.',
+      text: 'We look at the property and clarify with you which tasks are needed. You then receive a written quote, free of charge and non-binding.',
     },
     {
       title: 'Defining the tasks',
@@ -559,11 +559,11 @@ const hauswartung: ServicePageContent = {
     {
       question: 'Do you also carry out major repairs?',
       answer:
-        'No, we carry out minor repairs. Major work requires a specialist firm. We report any damage we notice during inspection rounds to you.',
+        'No, we only carry out minor repairs. Major work requires a specialist firm. We report to you any damage we notice during inspection rounds.',
     },
     {
-      question: 'Do you offer winter services or an on-call service?',
-      answer: 'No. Winter services and on-call service are not part of what we offer.',
+      question: 'Do you offer winter maintenance or an on-call service?',
+      answer: 'No. Winter maintenance and on-call service are not part of what we offer.',
     },
     {
       question: 'Can we choose individual tasks?',
@@ -589,26 +589,26 @@ const aussenUndGruen: ServicePageContent = {
   eyebrow: 'Property care',
   h1: 'Grounds and green space maintenance for properties',
   lead: [
-    'The grounds are the first thing tenants, customers and visitors see of a property. Well-kept green spaces, clean paths and open areas are therefore just as much part of its care as the stairwell.',
+    'The grounds are the first thing tenants, customers and visitors see of a property. Well-kept green spaces, clean paths and paved areas are therefore just as much part of its care as the stairwell.',
     'We maintain the grounds of your property, on their own or as part of [caretaking](/leistungen/hauswartung).',
   ],
   facts: [
     { label: 'For', value: 'Property managers, owners and businesses' },
     { label: 'Service', value: 'On its own or as part of caretaking' },
-    { label: 'Not offered', value: 'Winter services' },
+    { label: 'Not offered', value: 'Winter maintenance' },
   ],
   scope: {
     title: 'What is included',
-    intro: 'We record which work we take on after the site visit. Typically this includes:',
+    intro: 'After the site visit, we record which work we take on. Typically this includes:',
     items: [
       'Mowing lawns and trimming edges',
       'Tending hedges, shrubs and flower beds',
-      'Removing leaves',
-      'Keeping paths, open areas and car parks clean',
-      'Removing weeds from open areas and joints',
+      'Clearing leaves',
+      'Keeping paths, paved areas and car parks clean',
+      'Removing weeds from paved areas and joints',
       'Collecting litter from the grounds',
     ],
-    notIncluded: ['We do not offer winter services.', 'Landscaping and new planting schemes.'],
+    notIncluded: ['We do not offer winter maintenance.', 'Landscaping and new planting schemes.'],
   },
   steps: [
     steps.anfrage,
@@ -619,11 +619,11 @@ const aussenUndGruen: ServicePageContent = {
     },
     {
       title: 'Maintenance',
-      text: 'We maintain the grounds according to plan. Please arrange additional visits, for example before an event, with us.',
+      text: 'We maintain the grounds according to plan. Additional visits, for example before an event, can be arranged with us.',
     },
   ],
   faq: [
-    { question: 'Do you also provide winter services?', answer: 'No, we do not offer winter services.' },
+    { question: 'Do you also provide winter maintenance?', answer: 'No, we do not offer winter maintenance.' },
     {
       question: 'Can I contract out grounds maintenance without caretaking?',
       answer: 'Yes. Grounds and green space maintenance is available on its own or as part of [caretaking](/leistungen/hauswartung).',
@@ -649,7 +649,7 @@ const facilityServices: ServicePageContent = {
   h1: 'Facility services: cleaning, caretaking and grounds from a single provider',
   lead: [
     'If you award cleaning, caretaking and grounds maintenance to different companies, you have several contracts, several contact people and a lot of coordination. With facility services, everything comes from us.',
-    'You have one contract and one contact person. We put together the services included with you.',
+    'You have one contract and one contact person. We work out with you which services are included.',
   ],
   facts: [
     { label: 'For', value: 'Property managers, owners and businesses' },
@@ -658,7 +658,7 @@ const facilityServices: ServicePageContent = {
   ],
   scope: {
     title: 'What can be combined',
-    intro: 'We put together facility services from our own services:',
+    intro: 'We put together facility services from these in-house services:',
     items: [
       '[Maintenance cleaning](/leistungen/unterhaltsreinigung) with restocking service',
       '[Office and practice cleaning](/leistungen/bueroreinigung)',
@@ -670,8 +670,8 @@ const facilityServices: ServicePageContent = {
     ],
     notIncluded: [
       'Technical facility management, such as maintenance of heating, ventilation or lifts.',
-      'Winter services.',
-      'Arranging third-party companies, such as tradespeople.',
+      'Winter maintenance.',
+      'Referrals to third-party firms, such as tradespeople.',
     ],
   },
   steps: [
@@ -706,7 +706,7 @@ const facilityServices: ServicePageContent = {
   ],
   related: [
     { path: '/leistungen/hauswartung', text: 'Inspection rounds, minor repairs, building services, waste disposal and flat handovers.' },
-    { path: '/leistungen/unterhaltsreinigung', text: 'Regular cleaning of residential and commercial buildings and business premises.' },
+    { path: '/leistungen/unterhaltsreinigung', text: 'Regular cleaning of properties and business premises.' },
     { path: '/leistungen/aussen-und-gruenflaechenpflege', text: 'Maintenance of grounds and green spaces.' },
   ],
   cta: {

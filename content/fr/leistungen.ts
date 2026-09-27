@@ -4,7 +4,7 @@ import { answers, steps } from './common'
 /**
  * Textes des neuf pages de prestations sous /leistungen en français (M29, M60).
  * Traduction fidèle de content/de/leistungen.ts. Les descriptions générales
- * d’une prestation (« typiquement ») ne sont pas un engagement, l’étendue
+ * d’une prestation (« prestations typiques ») ne sont pas un engagement, l’étendue
  * contractuelle figure dans le devis.
  */
 
@@ -14,7 +14,7 @@ const unterhaltsreinigung: ServicePageContent = {
   eyebrow: 'Nettoyage régulier',
   h1: 'Nettoyage d’entretien pour immeubles et surfaces commerciales',
   lead: [
-    'La cage d’escalier, l’entrée et les locaux communs marquent l’image d’un immeuble, pour les locataires comme pour la clientèle et les visiteurs. Avec un nettoyage d’entretien, ils restent propres sans que vous ayez à vous en occuper vous-même.',
+    'La cage d’escalier, l’entrée et les locaux communs façonnent l’image d’un immeuble, pour les locataires comme pour la clientèle et les visiteurs. Avec un nettoyage d’entretien, ils restent propres sans que vous ayez à vous en occuper vous-même.',
     'Nous nettoyons des immeubles locatifs, des immeubles mixtes d’habitation et de commerce ainsi que des surfaces commerciales selon une fréquence fixe, que nous définissons avec vous après la visite. Nous réapprovisionnons également les consommables.',
   ],
   facts: [
@@ -24,7 +24,7 @@ const unterhaltsreinigung: ServicePageContent = {
   ],
   scope: {
     title: 'Ce qui est compris',
-    intro: 'Ce que nous nettoyons et à quelle fréquence, nous le fixons après la visite. Typiquement :',
+    intro: 'Nous fixons après la visite ce que nous nettoyons et à quelle fréquence. Prestations typiques :',
     items: [
       'Cages d’escalier, entrées et ascenseurs',
       'Sols dans toutes les pièces convenues',
@@ -34,9 +34,9 @@ const unterhaltsreinigung: ServicePageContent = {
       'Vider les poubelles et réapprovisionner les consommables',
     ],
     notIncluded: [
-      'Bureaux et cabinets : voir [Nettoyage de bureaux et de cabinets](/leistungen/bueroreinigung).',
-      'Nettoyages en profondeur ou de fin de bail ponctuels : voir [Nettoyages spéciaux](/leistungen/sonderreinigungen).',
-      'Fenêtres côté extérieur et façades : voir [Nettoyage de vitres et de façades](/leistungen/fenster-und-fassadenreinigung).',
+      'Bureaux et cabinets : voir [Nettoyage de bureaux et de cabinets](/leistungen/bueroreinigung).',
+      'Nettoyages en profondeur ou de fin de bail ponctuels : voir [Nettoyages spéciaux](/leistungen/sonderreinigungen).',
+      'Fenêtres côté extérieur et façades : voir [Nettoyage de vitres et de façades](/leistungen/fenster-und-fassadenreinigung).',
       'Ménages privés. Pour les villas et les résidences, nous proposons notre [offre Premium](/premium).',
     ],
   },
@@ -44,7 +44,7 @@ const unterhaltsreinigung: ServicePageContent = {
     {
       title: 'Service de réapprovisionnement',
       paragraphs: [
-        'Dans le cadre du nettoyage d’entretien, nous réapprovisionnons les consommables. Les articles concernés et qui les achète sont fixés dans le devis.',
+        'Dans le cadre du nettoyage d’entretien, nous réapprovisionnons les consommables. Le devis précise les articles concernés et qui les fournit.',
       ],
       items: [
         'Papier toilette, essuie-mains en papier et savon',
@@ -58,11 +58,11 @@ const unterhaltsreinigung: ServicePageContent = {
     steps.besichtigung,
     {
       title: 'Accord',
-      text: 'Avec votre accord, il est établi quelles pièces nous nettoyons, à quelle fréquence et ce que nous réapprovisionnons.',
+      text: 'Avec votre accord, nous fixons les pièces à nettoyer, la fréquence et les consommables à réapprovisionner.',
     },
     {
       title: 'Début',
-      text: 'Nous commençons à la date convenue. Si l’utilisation change, nous convenons avec vous d’une nouvelle étendue ou d’une nouvelle fréquence.',
+      text: 'Nous commençons à la date convenue. Si l’utilisation change, nous revoyons avec vous l’étendue ou la fréquence.',
     },
   ],
   faq: [
@@ -78,14 +78,14 @@ const unterhaltsreinigung: ServicePageContent = {
     },
     {
       question: 'Pourrons-nous modifier la fréquence plus tard ?',
-      answer: 'Oui. Si l’utilisation change, nous convenons avec vous d’une nouvelle étendue ou d’une nouvelle fréquence.',
+      answer: 'Oui. Si l’utilisation change, nous revoyons avec vous l’étendue ou la fréquence.',
     },
     { question: 'Nettoyez-vous avec des produits respectueux de l’environnement ?', answer: answers.mittel },
-    { question: 'Combien coûte un nettoyage d’entretien ?', answer: `${answers.kosten} Plus d’informations dans nos conseils : [Ce qui détermine le coût d’un nettoyage d’entretien](/blog/reinigungskosten-schweiz).` },
+    { question: 'Combien coûte un nettoyage d’entretien ?', answer: `${answers.kosten} Plus d’informations dans notre guide : [Ce qui détermine le coût d’un nettoyage d’entretien](/blog/reinigungskosten-schweiz).` },
     {
       question: 'À quoi faut-il veiller en choisissant une entreprise de nettoyage ?',
       answer:
-        'À une étendue des prestations clairement décrite, à une assurance attestée, à un interlocuteur fixe et à un devis établi après une visite. Plus d’informations dans nos conseils : [Comment trouver la bonne entreprise de nettoyage ?](/blog/richtige-reinigungsfirma-finden)',
+        'À une étendue des prestations clairement décrite, à une assurance attestée, à un interlocuteur attitré et à un devis établi après une visite. Plus d’informations dans notre guide : [Comment trouver la bonne entreprise de nettoyage ?](/blog/richtige-reinigungsfirma-finden)',
     },
     { question: 'Dans quelles régions intervenez-vous ?', answer: answers.gebiet },
   ],
@@ -106,7 +106,7 @@ const bueroreinigung: ServicePageContent = {
   eyebrow: 'Nettoyage régulier',
   h1: 'Nettoyage de bureaux et de cabinets',
   lead: [
-    'Dans les bureaux et les cabinets, le nettoyage ne doit pas perturber l’activité : pas d’aspirateur pendant une réunion, pas de sol mouillé pendant les consultations. C’est pourquoi nous fixons avec vous les horaires d’intervention, en fonction de vos heures de travail et d’ouverture.',
+    'Dans les bureaux et les cabinets, le nettoyage ne doit pas perturber l’activité : pas d’aspirateur pendant une réunion, pas de sol mouillé pendant les consultations. C’est pourquoi nous fixons avec vous les horaires d’intervention, en fonction de vos heures de travail et d’ouverture.',
     'Nous nettoyons des bureaux, des administrations et des cabinets selon une fréquence fixe. Nos collaboratrices et collaborateurs parlent allemand, anglais, français et italien, un avantage pour les entreprises aux équipes internationales.',
   ],
   facts: [
@@ -116,18 +116,18 @@ const bueroreinigung: ServicePageContent = {
   ],
   scope: {
     title: 'Ce qui est compris',
-    intro: 'Nous fixons l’étendue exacte après la visite. Typiquement :',
+    intro: 'Nous fixons l’étendue exacte après la visite. Prestations typiques :',
     items: [
       'Postes de travail et surfaces dégagées',
       'Sols des bureaux, couloirs et salles de séance',
       'Réception, entrée et portes vitrées',
-      'Cafétérias et salles de pause',
+      'Kitchenettes et salles de pause',
       'Sanitaires',
       'Déchets et vieux papier, réapprovisionnement des consommables',
     ],
     notIncluded: [
-      'Cages d’escalier et locaux communs d’immeubles entiers : voir [Nettoyage d’entretien](/leistungen/unterhaltsreinigung).',
-      'Nettoyages en profondeur ponctuels : voir [Nettoyages spéciaux](/leistungen/sonderreinigungen).',
+      'Cages d’escalier et locaux communs d’immeubles entiers : voir [Nettoyage d’entretien](/leistungen/unterhaltsreinigung).',
+      'Nettoyages en profondeur ponctuels : voir [Nettoyages spéciaux](/leistungen/sonderreinigungen).',
       'Le retraitement des instruments et des dispositifs médicaux, qui reste du ressort de l’équipe de votre cabinet.',
     ],
   },
@@ -144,7 +144,7 @@ const bueroreinigung: ServicePageContent = {
     steps.besichtigung,
     {
       title: 'Horaires et accès',
-      text: 'Nous fixons quand nous nettoyons et comment nous accédons au bâtiment, par exemple avec une clé ou un badge.',
+      text: 'Nous convenons des heures de nettoyage et de l’accès au bâtiment, par exemple avec une clé ou un badge.',
     },
     {
       title: 'Début',
@@ -167,7 +167,7 @@ const bueroreinigung: ServicePageContent = {
       answer: `${answers.sprachen} C’est pratique lorsque plusieurs langues sont parlées dans votre bureau.`,
     },
     { question: 'Êtes-vous assurés ?', answer: answers.versicherung },
-    { question: 'Combien coûte le nettoyage de bureaux ?', answer: `${answers.kosten} Plus d’informations dans nos conseils : [Ce qui détermine le coût d’un nettoyage d’entretien](/blog/reinigungskosten-schweiz).` },
+    { question: 'Combien coûte le nettoyage de bureaux ?', answer: `${answers.kosten} Plus d’informations dans notre guide : [Ce qui détermine le coût d’un nettoyage d’entretien](/blog/reinigungskosten-schweiz).` },
     { question: 'Dans quelles régions intervenez-vous ?', answer: answers.gebiet },
   ],
   related: [
@@ -185,9 +185,9 @@ const sonderreinigungen: ServicePageContent = {
   path: '/leistungen/sonderreinigungen',
   area: 'leistungen',
   eyebrow: 'Nettoyage ponctuel et spécial',
-  h1: 'Nettoyages spéciaux : nettoyage en profondeur et de fin de bail',
+  h1: 'Nettoyages spéciaux : nettoyage en profondeur et de fin de bail',
   lead: [
-    'Certains nettoyages ne reviennent pas chaque semaine : avant la remise d’un appartement, lorsque la saleté s’est incrustée avec le temps ou lorsque de la poussière subsiste après des travaux. C’est à cela que servent nos nettoyages spéciaux.',
+    'Certains nettoyages ne reviennent pas chaque semaine : avant la remise d’un appartement, lorsque la saleté s’est incrustée avec le temps ou lorsque de la poussière subsiste après des travaux. C’est à cela que servent nos nettoyages spéciaux.',
     'Nous les réalisons pour des gérances, des propriétaires et des entreprises, de manière ponctuelle ou à intervalles plus espacés.',
   ],
   facts: [
@@ -198,14 +198,14 @@ const sonderreinigungen: ServicePageContent = {
   scope: {
     title: 'Nos nettoyages spéciaux',
     items: [
-      'Nettoyage en profondeur de surfaces d’habitation, de bureaux et commerciales',
-      'Nettoyage de fin de bail et nettoyage final d’appartement avec garantie de remise',
+      'Nettoyage en profondeur de logements, de bureaux et de surfaces commerciales',
+      'Nettoyage de déménagement et de fin de bail avec garantie de remise',
       '[Nettoyage de fin de chantier](/leistungen/baureinigung) après des travaux de construction ou de transformation',
       '[Nettoyage de fenêtres et de vitres](/leistungen/fenster-und-fassadenreinigung)',
       '[Nettoyage de façades](/leistungen/fenster-und-fassadenreinigung), aussi à haute pression',
     ],
     notIncluded: [
-      'Nettoyage régulier : voir [Nettoyage d’entretien](/leistungen/unterhaltsreinigung).',
+      'Nettoyage régulier : voir [Nettoyage d’entretien](/leistungen/unterhaltsreinigung).',
       'Nettoyages de fin de bail mandatés par les locataires d’appartements individuels.',
     ],
   },
@@ -218,9 +218,9 @@ const sonderreinigungen: ServicePageContent = {
       ],
     },
     {
-      title: 'Nettoyage de fin de bail et nettoyage final d’appartement avec garantie de remise',
+      title: 'Nettoyage de déménagement et de fin de bail avec garantie de remise',
       paragraphs: [
-        'Lors de la remise d’un appartement ou d’une surface commerciale, tout doit être propre pour que l’état des lieux se passe sans réclamation. Nous nettoyons les locaux à fond avant la remise, avec garantie de remise : si la gérance émet une réclamation sur notre nettoyage lors de l’état des lieux, nous repassons gratuitement. Les détails figurent dans le devis.',
+        'Lors de la remise d’un appartement ou d’une surface commerciale, tout doit être propre pour que l’état des lieux se passe sans réclamation. Nous nettoyons les locaux à fond avant la remise, avec garantie de remise : si la gérance émet une réclamation sur notre nettoyage lors de l’état des lieux, nous repassons gratuitement. Les détails figurent dans le devis.',
         'Nous proposons le nettoyage de fin de bail aux gérances, aux propriétaires et aux entreprises et, pour les villas et les résidences, également aux particuliers dans le cadre de notre [offre Premium](/premium).',
       ],
     },
@@ -251,7 +251,7 @@ const sonderreinigungen: ServicePageContent = {
     {
       question: 'Quelle est la différence avec le nettoyage d’entretien ?',
       answer:
-        'Le nettoyage d’entretien maintient les surfaces propres selon une fréquence fixe, le nettoyage en profondeur est une intervention ponctuelle et minutieuse. Les deux se combinent : d’abord un nettoyage en profondeur, puis le [nettoyage d’entretien](/leistungen/unterhaltsreinigung) régulier.',
+        'Le nettoyage d’entretien maintient les surfaces propres selon une fréquence fixe, le nettoyage en profondeur est une intervention ponctuelle et minutieuse. Les deux se combinent : d’abord un nettoyage en profondeur, puis le [nettoyage d’entretien](/leistungen/unterhaltsreinigung) régulier.',
     },
     { question: 'Combien coûte un nettoyage spécial ?', answer: answers.kosten },
     { question: 'Dans quelles régions intervenez-vous ?', answer: answers.gebiet },
@@ -264,7 +264,7 @@ const sonderreinigungen: ServicePageContent = {
   ],
   cta: {
     title: 'Un devis pour votre nettoyage spécial',
-    text: 'Décrivez-nous le bien, l’occasion et la date. Nous examinons les locaux et établissons votre devis, gratuit et sans engagement.',
+    text: 'Décrivez-nous le bien, le motif et la date. Nous examinons les locaux et établissons votre devis, gratuit et sans engagement.',
   },
 }
 
@@ -272,14 +272,14 @@ const baureinigung: ServicePageContent = {
   path: '/leistungen/baureinigung',
   area: 'leistungen',
   eyebrow: 'Nettoyage ponctuel et spécial',
-  h1: 'Nettoyage de chantier et de fin de chantier pour constructions et transformations',
+  h1: 'Nettoyage de chantier et de fin de chantier pour constructions neuves et transformations',
   lead: [
     'Après des travaux de construction ou de transformation, la poussière, les restes de mortier et les films de protection sont partout. Avant l’arrivée des locataires, des acheteurs ou de votre équipe, tout doit être prêt à l’emménagement, souvent pour une date de remise fixe.',
     'Nous nettoyons pendant et après les travaux, jusqu’à ce que les locaux puissent être remis. Pour les maîtres d’ouvrage, les bureaux d’architectes, les entreprises générales et les gérances.',
   ],
   facts: [
     { label: 'Pour', value: 'Maîtres d’ouvrage, bureaux d’architectes, entreprises générales et gérances' },
-    { label: 'Biens', value: 'Constructions neuves, transformations et rénovations' },
+    { label: 'Chantiers', value: 'Constructions neuves, transformations et rénovations' },
     { label: 'Moment', value: 'Pendant la phase de construction et avant la remise' },
   ],
   scope: {
@@ -295,8 +295,8 @@ const baureinigung: ServicePageContent = {
       'Nettoyer sols, sanitaires, cuisines et armoires encastrées pour un emménagement immédiat',
     ],
     notIncluded: [
-      'Nettoyage régulier après l’emménagement : voir [Nettoyage d’entretien](/leistungen/unterhaltsreinigung).',
-      'Façades : voir [Nettoyage de vitres et de façades](/leistungen/fenster-und-fassadenreinigung).',
+      'Nettoyage régulier après l’emménagement : voir [Nettoyage d’entretien](/leistungen/unterhaltsreinigung).',
+      'Façades : voir [Nettoyage de vitres et de façades](/leistungen/fenster-und-fassadenreinigung).',
     ],
   },
   steps: [
@@ -328,7 +328,7 @@ const baureinigung: ServicePageContent = {
     {
       question: 'Le nettoyage des fenêtres est-il compris ?',
       answer:
-        'Oui, nous nettoyons les fenêtres, les cadres et les vitrages lors du nettoyage de fin de chantier. Pour les façades, il y a le [Nettoyage de vitres et de façades](/leistungen/fenster-und-fassadenreinigung).',
+        'Oui, nous nettoyons les fenêtres, les cadres et les vitrages lors du nettoyage de fin de chantier. Pour les façades, nous proposons le [nettoyage de vitres et de façades](/leistungen/fenster-und-fassadenreinigung).',
     },
     { question: 'Combien coûte un nettoyage de chantier ?', answer: answers.kosten },
     { question: 'Dans quelles régions intervenez-vous ?', answer: answers.gebiet },
@@ -361,7 +361,7 @@ const fensterUndFassade: ServicePageContent = {
   ],
   scope: {
     title: 'Ce qui est compris',
-    intro: 'Nous fixons l’étendue après la visite. Typiquement :',
+    intro: 'Nous fixons l’étendue après la visite. Prestations typiques :',
     items: [
       'Fenêtres côtés intérieur et extérieur, avec cadres et feuillures',
       'Façades vitrées, portes vitrées et cloisons vitrées',
@@ -370,7 +370,7 @@ const fensterUndFassade: ServicePageContent = {
       'Nettoyage de façades, aussi à haute pression',
     ],
     notIncluded: [
-      'Nettoyage des locaux intérieurs : voir [Nettoyage d’entretien](/leistungen/unterhaltsreinigung) ou [Nettoyage de bureaux et de cabinets](/leistungen/bueroreinigung).',
+      'Nettoyage des locaux intérieurs : voir [Nettoyage d’entretien](/leistungen/unterhaltsreinigung) ou [Nettoyage de bureaux et de cabinets](/leistungen/bueroreinigung).',
       'Rénovation, peinture et réparations de la façade.',
     ],
   },
@@ -421,7 +421,7 @@ const industrieUndHallen: ServicePageContent = {
   eyebrow: 'Nettoyage ponctuel et spécial',
   h1: 'Nettoyage industriel et de halles pour la production et l’entreposage',
   lead: [
-    'Dans la production et l’entreposage apparaissent poussière, copeaux, films d’huile et de graisse. Ils rendent les sols glissants et s’incrustent dans les installations. En même temps, le nettoyage ne doit pas freiner l’exploitation.',
+    'La production et l’entreposage génèrent de la poussière, des copeaux et des films d’huile et de graisse. Ils rendent les sols glissants et s’incrustent dans les installations. En même temps, le nettoyage ne doit pas freiner l’exploitation.',
     'Nous nettoyons halles, sols, machines et installations, de manière ponctuelle ou régulière, à des horaires que nous coordonnons avec vous en fonction de la production et des équipes.',
   ],
   facts: [
@@ -431,7 +431,7 @@ const industrieUndHallen: ServicePageContent = {
   ],
   scope: {
     title: 'Ce qui est compris',
-    intro: 'Nous fixons l’étendue après un tour de votre entreprise. Typiquement :',
+    intro: 'Nous fixons l’étendue après avoir fait le tour de votre site. Prestations typiques :',
     items: [
       'Sols de halles et de production',
       'Zones de stockage, rayonnages et voies de circulation',
@@ -441,14 +441,14 @@ const industrieUndHallen: ServicePageContent = {
     ],
     notIncluded: [
       'Entretien et réparation des machines.',
-      'Bureaux de l’entreprise : voir [Nettoyage de bureaux et de cabinets](/leistungen/bueroreinigung).',
+      'Bureaux de l’entreprise : voir [Nettoyage de bureaux et de cabinets](/leistungen/bueroreinigung).',
     ],
   },
   sections: [
     {
       title: 'Machines et installations',
       paragraphs: [
-        'Nous nettoyons les machines selon vos prescriptions et en accord avec votre service de maintenance. Quand une installation est à l’arrêt, ce qui est nettoyé et quels produits conviennent, nous le fixons avant l’intervention.',
+        'Nous nettoyons les machines selon vos prescriptions et en accord avec votre service de maintenance. Avant l’intervention, nous fixons quand l’installation est à l’arrêt, ce qui est nettoyé et quels produits conviennent.',
         'Vos règles de sécurité et d’exploitation s’appliquent aussi à notre équipe. Nous les clarifions avec vous avant la première intervention.',
       ],
     },
@@ -476,7 +476,7 @@ const industrieUndHallen: ServicePageContent = {
     },
     {
       question: 'Nettoyez-vous aussi les machines ?',
-      answer: 'Oui. Ce qui est nettoyé sur une machine et quand elle est arrêtée à cet effet, nous le fixons avec vous et votre service de maintenance.',
+      answer: 'Oui. Nous fixons avec vous et votre service de maintenance ce qui est nettoyé sur une machine et quand elle est arrêtée à cet effet.',
     },
     {
       question: 'Quelles règles s’appliquent à votre équipe dans notre entreprise ?',
@@ -503,7 +503,7 @@ const hauswartung: ServicePageContent = {
   eyebrow: 'Suivi d’immeubles',
   h1: 'Conciergerie pour immeubles d’habitation et commerciaux',
   lead: [
-    'Un immeuble a besoin de plus que de nettoyage : quelqu’un doit régulièrement vérifier que tout est en ordre, réparer les petits dégâts, organiser l’élimination des déchets et être présent lors des états des lieux. C’est le rôle de la conciergerie.',
+    'Un immeuble demande plus que du nettoyage : quelqu’un doit régulièrement vérifier que tout est en ordre, réparer les petits dégâts, organiser l’élimination des déchets et être présent lors des états des lieux. C’est le rôle de la conciergerie.',
     'Pour les gérances, les propriétaires et les communautés de PPE. Les tâches que nous prenons en charge sont fixées par écrit.',
   ],
   facts: [
@@ -513,10 +513,10 @@ const hauswartung: ServicePageContent = {
   ],
   scope: {
     title: 'Ce que la conciergerie prend en charge',
-    intro: 'Nous composons la conciergerie de votre immeuble à partir de ces tâches :',
+    intro: 'Nous composons la conciergerie de votre immeuble à partir de ces tâches :',
     items: [
-      'Rondes de contrôle : vérifier régulièrement que tout est en ordre et signaler les défauts',
-      'Cage d’escalier : nettoyer et maintenir en ordre',
+      'Rondes de contrôle : vérifier régulièrement que tout est en ordre et signaler les défauts',
+      'Cage d’escalier : nettoyer et maintenir en ordre',
       'Maintenir propres la buanderie et les séchoirs',
       'Petites réparations, par exemple remplacer des ampoules',
       'Surveiller la technique du bâtiment et signaler les pannes',
@@ -542,14 +542,14 @@ const hauswartung: ServicePageContent = {
     },
     {
       title: 'Début',
-      text: 'Nous commençons à la date convenue. Si l’immeuble a plus tard besoin de davantage ou de moins, nous adaptons les tâches avec vous.',
+      text: 'Nous commençons à la date convenue. Si les besoins de l’immeuble évoluent par la suite, nous adaptons les tâches avec vous.',
     },
   ],
   faq: [
     {
       question: 'Quelle est la différence avec le nettoyage d’entretien ?',
       answer:
-        'Le nettoyage d’entretien nettoie selon une fréquence fixe. La conciergerie va plus loin : rondes de contrôle, petites réparations, technique du bâtiment, élimination des déchets, états des lieux et entretien des abords. Si vous n’avez besoin que du nettoyage, le [nettoyage d’entretien](/leistungen/unterhaltsreinigung) vous convient.',
+        'Le nettoyage d’entretien se fait selon une fréquence fixe. La conciergerie va plus loin : rondes de contrôle, petites réparations, technique du bâtiment, élimination des déchets, états des lieux et entretien des abords. Si vous n’avez besoin que du nettoyage, le [nettoyage d’entretien](/leistungen/unterhaltsreinigung) vous convient.',
     },
     {
       question: 'Prenez-vous aussi en charge des réparations importantes ?',
@@ -594,7 +594,7 @@ const aussenUndGruen: ServicePageContent = {
   ],
   scope: {
     title: 'Ce qui est compris',
-    intro: 'Nous fixons après la visite les travaux que nous prenons en charge. Typiquement :',
+    intro: 'Nous fixons après la visite les travaux que nous prenons en charge. Prestations typiques :',
     items: [
       'Tondre le gazon et tailler les bordures',
       'Entretenir haies, arbustes et plates-bandes',
@@ -603,7 +603,7 @@ const aussenUndGruen: ServicePageContent = {
       'Désherber les places et les joints',
       'Ramasser les déchets aux abords',
     ],
-    notIncluded: ['Nous ne proposons pas de service hivernal.', 'Aménagement paysager et nouvelles plantations.'],
+    notIncluded: ['Nous ne proposons pas de service hivernal.', 'Aménagement paysager et création de nouveaux espaces verts.'],
   },
   steps: [
     steps.anfrage,
@@ -641,7 +641,7 @@ const facilityServices: ServicePageContent = {
   path: '/leistungen/facility-services',
   area: 'leistungen',
   eyebrow: 'Suivi d’immeubles',
-  h1: 'Facility services : nettoyage, conciergerie et abords d’un seul prestataire',
+  h1: 'Facility services : nettoyage, conciergerie et abords d’un seul prestataire',
   lead: [
     'Confier le nettoyage, la conciergerie et l’entretien des abords à différentes entreprises, c’est plusieurs contrats, plusieurs interlocuteurs et beaucoup de coordination. Avec les facility services, tout vient de nous.',
     'Vous avez un seul contrat et un seul interlocuteur. Nous composons avec vous les prestations comprises.',
@@ -653,7 +653,7 @@ const facilityServices: ServicePageContent = {
   ],
   scope: {
     title: 'Ce qui peut être combiné',
-    intro: 'Nous composons les facility services à partir de nos propres prestations :',
+    intro: 'Nous composons les facility services à partir de nos propres prestations :',
     items: [
       '[Nettoyage d’entretien](/leistungen/unterhaltsreinigung) avec service de réapprovisionnement',
       '[Nettoyage de bureaux et de cabinets](/leistungen/bueroreinigung)',

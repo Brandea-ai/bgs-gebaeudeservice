@@ -3,7 +3,7 @@ import type { LegalContent } from '../types'
 import { registerIt } from './common'
 
 /**
- * Note legali e informativa sulla protezione dei dati in italiano (M14, M50, M60).
+ * Note legali e dichiarazione sulla protezione dei dati in italiano (M14, M50, M60).
  * Traduzione fedele di content/de/recht.ts, stessa struttura.
  */
 
@@ -37,7 +37,7 @@ export const impressum: LegalContent = {
     },
     {
       title: 'Link ad altri siti web',
-      paragraphs: ['Dei contenuti di siti web di terzi a cui rimandiamo sono responsabili i rispettivi gestori. La visita avviene sotto la propria responsabilità.'],
+      paragraphs: ['I gestori dei siti web di terzi a cui rimandiamo sono responsabili dei rispettivi contenuti. La visita avviene sotto la propria responsabilità.'],
     },
     {
       title: 'Diritto d’autore',
@@ -47,16 +47,16 @@ export const impressum: LegalContent = {
     },
     {
       title: 'Protezione dei dati',
-      paragraphs: ['Come trattiamo i dati personali è descritto nell’[Informativa sulla protezione dei dati](/datenschutz).'],
+      paragraphs: ['Come trattiamo i dati personali è descritto nella [dichiarazione sulla protezione dei dati](/datenschutz).'],
     },
   ],
   updated: '2026-09-26',
 }
 
 export const datenschutz: LegalContent = {
-  h1: 'Informativa sulla protezione dei dati',
+  h1: 'Dichiarazione sulla protezione dei dati',
   intro:
-    'Qui scopre quali dati personali trattiamo durante la visita di questo sito web, a quale scopo e a chi vengono trasmessi. Determinante è la legge federale sulla protezione dei dati (LPD).',
+    'Qui scopre quali dati personali trattiamo durante la visita di questo sito web, a quale scopo e a chi vengono trasmessi. Fa stato la legge federale sulla protezione dei dati (LPD).',
   sections: [
     {
       title: 'Titolare del trattamento',
@@ -72,16 +72,16 @@ export const datenschutz: LegalContent = {
     {
       title: 'Modulo di contatto ed e-mail',
       paragraphs: [
-        'Se ci scrive tramite il modulo, trattiamo i Suoi dati: nome, indirizzo e-mail e messaggio, facoltativamente anche numero di telefono, servizio desiderato, luogo dell’oggetto e cadenza. Li utilizziamo per rispondere alla Sua richiesta e per allestirLe un’offerta.',
+        'Se ci scrive tramite il modulo, trattiamo i Suoi dati: nome, indirizzo e-mail e messaggio, facoltativamente anche numero di telefono, servizio desiderato, luogo dell’intervento e cadenza. Li utilizziamo per rispondere alla Sua richiesta e per allestirLe un’offerta.',
         `Il modulo viene inviato alla nostra casella di posta tramite il servizio e-mail Resend, Inc., USA. Fino all’attivazione del nostro indirizzo si tratta di ${company.email}, la casella di posta di Brandea GbR in Germania, che gestisce questo sito web per nostro conto e ci inoltra le richieste.`,
-        'Per proteggersi da abusi, il server mantiene brevemente il Suo indirizzo IP nella memoria di lavoro, per riconoscere un numero eccessivo di richieste in poco tempo. L’indirizzo non viene memorizzato in modo permanente.',
-        'Conserviamo la Sua richiesta per il tempo necessario al trattamento e a eventuali domande. Se ne risulta un incarico, si applicano i termini legali di conservazione.',
+        'A protezione dagli abusi, il server conserva brevemente il Suo indirizzo IP nella memoria di lavoro, per riconoscere un numero eccessivo di richieste in poco tempo. L’indirizzo non viene memorizzato in modo permanente.',
+        'Conserviamo la Sua richiesta per il tempo necessario a evaderla e per eventuali domande di chiarimento. Se ne risulta un incarico, si applicano i termini legali di conservazione.',
       ],
     },
     {
       title: 'Mappa',
       paragraphs: [
-        'Sulla pagina dei contatti mostriamo una mappa di Google Maps solo quando clicca su «Carica la mappa». Solo allora Google riceve il Suo indirizzo IP e dati tecnici sul Suo browser. Il fornitore è Google Ireland Limited; i dati possono essere trattati anche negli USA. Maggiori informazioni nell’informativa sulla privacy di Google all’indirizzo policies.google.com/privacy.',
+        'Sulla pagina dei contatti mostriamo una mappa di Google Maps solo quando clicca su «Carica la mappa». Solo allora Google riceve il Suo indirizzo IP e dati tecnici sul Suo browser. Il fornitore è Google Ireland Limited; i dati possono essere trattati anche negli USA. Maggiori informazioni nelle norme sulla privacy di Google all’indirizzo policies.google.com/privacy.',
       ],
     },
     {
@@ -93,16 +93,16 @@ export const datenschutz: LegalContent = {
     {
       title: 'Comunicazione all’estero',
       paragraphs: [
-        'I dati personali possono essere trasmessi negli USA (Vercel, Resend, Google) e in Germania (Brandea GbR). La Germania garantisce una protezione dei dati adeguata. Per gli USA ci basiamo sulla certificazione dei fornitori secondo lo Swiss-U.S. Data Privacy Framework o sulle clausole contrattuali standard.',
+        'I dati personali possono essere trasmessi negli USA (Vercel, Resend, Google) e in Germania (Brandea GbR). La Germania garantisce una protezione dei dati adeguata. Per gli USA ci basiamo sulla certificazione dei fornitori secondo lo Swiss-U.S. Data Privacy Framework o sulle clausole contrattuali tipo.',
       ],
     },
     {
       title: 'I Suoi diritti',
       paragraphs: ['Lei può in qualsiasi momento:'],
       items: [
-        'chiedere informazioni su quali dati personali che La riguardano trattiamo',
+        'chiedere informazioni sui dati personali che La riguardano e che trattiamo',
         'far rettificare dati inesatti',
-        'chiedere la cancellazione dei Suoi dati, se non sussiste un obbligo di conservazione',
+        'chiedere la cancellazione dei Suoi dati, nella misura in cui non sussista un obbligo di conservazione',
         'opporsi al trattamento',
         'chiedere la consegna dei Suoi dati in un formato usuale',
       ],
@@ -119,7 +119,7 @@ export const datenschutz: LegalContent = {
     },
     {
       title: 'Modifiche',
-      paragraphs: ['Adeguiamo la presente informativa quando cambiano il sito web o la situazione giuridica. Fa stato la versione qui pubblicata.'],
+      paragraphs: ['Adeguiamo la presente dichiarazione quando cambiano il sito web o la situazione giuridica. Fa stato la versione qui pubblicata.'],
     },
   ],
   updated: '2026-09-26',

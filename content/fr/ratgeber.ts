@@ -3,18 +3,18 @@ import type { ArticleContent } from '../types'
 import { cantonList, languageList, responseTime } from './common'
 
 /**
- * Conseils (M53) en français (M60). Traduction fidèle de content/de/ratgeber.ts :
+ * Guide (M53) en français (M60). Traduction fidèle de content/de/ratgeber.ts :
  * conseils généraux formulés comme tels, pas de prix, de certificats, de
  * références ni de témoignages de clients (E18).
  */
 
 export const ratgeberUebersicht = {
-  h1: 'Conseils en nettoyage de bâtiments',
-  intro: `Des réponses aux questions sur l’attribution, le coût et le déroulement d’un nettoyage de bâtiments. Par ${company.brand}, pour les entreprises, les gérances et les propriétaires des cantons de ${cantonList}.`,
+  h1: 'Guide du nettoyage de bâtiments',
+  intro: `Des réponses aux questions sur le choix du prestataire, le coût et le déroulement d’un nettoyage de bâtiments. Par ${company.brand}, pour les entreprises, les gérances et les propriétaires des cantons de ${cantonList}.`,
   services:
-    'Directement vers les prestations : [Nettoyage d’entretien](/leistungen/unterhaltsreinigung), [Conciergerie](/leistungen/hauswartung) et [toutes les prestations](/leistungen).',
-  byline: `Un conseil de ${company.brand}`,
-  updatedLabel: 'Mise à jour\u00a0:',
+    'Directement vers les prestations : [Nettoyage d’entretien](/leistungen/unterhaltsreinigung), [Conciergerie](/leistungen/hauswartung) et [toutes les prestations](/leistungen).',
+  byline: `Un guide de ${company.brand}`,
+  updatedLabel: 'Mise à jour\u202f:',
   publishedLabel: 'Publié le',
 }
 
@@ -22,7 +22,7 @@ const reinigungsfirmaFinden: ArticleContent = {
   path: '/blog/richtige-reinigungsfirma-finden',
   h1: 'Comment trouver la bonne entreprise de nettoyage ?',
   subtitle: 'Les questions à clarifier avant d’attribuer le mandat, de l’étendue des prestations jusqu’au contrat.',
-  teaser: 'Les questions à clarifier avant d’attribuer le mandat : étendue des prestations, assurance, contrôle de la qualité, références, devis et contrat.',
+  teaser: 'Les questions à clarifier avant d’attribuer le mandat : étendue des prestations, assurance, contrôle de la qualité, références, devis et contrat.',
   updated: '2026-09-26',
   intro: [
     'Des locaux propres et soignés créent une atmosphère de travail agréable et laissent une bonne première impression à la clientèle. L’entreprise de nettoyage qui s’en charge, vous la choisissez généralement pour plusieurs années. Ce guide montre à quoi veiller lors du choix.',
@@ -30,16 +30,16 @@ const reinigungsfirmaFinden: ArticleContent = {
   summary: {
     title: 'En bref',
     items: [
-      'Clarifiez d’abord vos besoins : quelle prestation, à quelle fréquence et à quels horaires.',
+      'Clarifiez d’abord vos besoins : quelle prestation, à quelle fréquence et à quels horaires.',
       'Demandez trois à cinq devis, chacun après une visite.',
       'Comparez l’étendue des prestations, l’assurance, le contrôle de la qualité, les références, le devis et le contrat.',
-      'Posez des questions là où quelque chose reste flou, et faites-vous donner les réponses par écrit.',
+      'Posez des questions là où quelque chose reste flou, et demandez les réponses par écrit.',
     ],
   },
   sections: [
     {
       title: 'Clarifier d’abord les besoins',
-      paragraphs: ['Avant de comparer des prestataires, vous devriez savoir ce dont vous avez besoin. Les principales prestations :'],
+      paragraphs: ['Avant de comparer des prestataires, vous devriez savoir ce dont vous avez besoin. Les principales prestations :'],
       definitions: [
         {
           term: 'Nettoyage d’entretien',
@@ -61,7 +61,7 @@ const reinigungsfirmaFinden: ArticleContent = {
       subsections: [
         {
           title: 'Étendue des prestations et limites',
-          text: 'Faites-vous indiquer par écrit quelles pièces et quelles tâches sont comprises, et lesquelles ne le sont pas. Demandez : qu’est-ce qui fait partie du nettoyage régulier, et qu’est-ce qui est facturé séparément ?',
+          text: 'Faites-vous indiquer par écrit quelles pièces et quelles tâches sont comprises, et lesquelles ne le sont pas. Demandez : qu’est-ce qui fait partie du nettoyage régulier, et qu’est-ce qui est facturé séparément ?',
         },
         {
           title: 'Assurance',
@@ -69,19 +69,19 @@ const reinigungsfirmaFinden: ArticleContent = {
         },
         {
           title: 'Contrôle de la qualité et interlocuteur',
-          text: 'Demandez comment les nouveaux collaborateurs sont formés et qui contrôle le travail sur place. Il est aussi important de savoir qui est votre interlocuteur et comment les réclamations sont traitées.',
+          text: 'Demandez comment le nouveau personnel est formé et qui contrôle le travail sur place. Il est aussi important de savoir qui est votre interlocuteur et comment les réclamations sont traitées.',
         },
         {
           title: 'Bien évaluer les certificats',
           text: 'Les certificats peuvent montrer que des processus ont été vérifiés selon une norme. Demandez la norme, l’organisme de certification, le champ d’application et la validité. Il est tout aussi important de savoir comment l’entreprise contrôle la qualité au quotidien et corrige les défauts.',
         },
         {
-          title: 'Références et évaluations',
-          text: 'Demandez des références portant sur des biens comparables. Un entretien avec des clients de référence dépend de leur accord. Consultez aussi les évaluations en ligne.',
+          title: 'Références et avis',
+          text: 'Demandez des références portant sur des biens comparables. La possibilité d’un entretien avec des clients de référence dépend de leur accord. Consultez aussi les avis en ligne.',
         },
         {
           title: 'Devis et prix',
-          text: 'Un devis fiable n’est possible qu’après une visite. Veillez à ce que les frais annexes comme le déplacement et les produits de nettoyage soient indiqués et que les nettoyages spéciaux figurent séparément. En cas de devis très avantageux, demandez quelles prestations et quel temps de travail sont compris. Plus d’informations : [Ce qui détermine le coût d’un nettoyage d’entretien](/blog/reinigungskosten-schweiz).',
+          text: 'Un devis fiable n’est possible qu’après une visite. Veillez à ce que les frais annexes comme le déplacement et les produits de nettoyage soient indiqués et que les nettoyages spéciaux figurent séparément. En cas de devis très avantageux, demandez quelles prestations et quel temps de travail sont compris. Plus d’informations : [Ce qui détermine le coût d’un nettoyage d’entretien](/blog/reinigungskosten-schweiz).',
         },
         {
           title: 'Contrat',
@@ -94,13 +94,13 @@ const reinigungsfirmaFinden: ArticleContent = {
       ],
     },
     {
-      title: 'Pas à pas jusqu’à l’entreprise de nettoyage',
+      title: 'Choisir une entreprise de nettoyage pas à pas',
       ordered: true,
       items: [
-        'Clarifier les besoins : noter la prestation, la fréquence, les horaires et les surfaces.',
+        'Clarifier les besoins : noter la prestation, la fréquence, les horaires et les surfaces.',
         'Choisir trois à cinq prestataires actifs dans votre région.',
         'Convenir de visites. Sans visite, pas de devis comparable.',
-        'Comparer les devis : étendue, fréquence, frais annexes et durée.',
+        'Comparer les devis : étendue, fréquence, frais annexes et durée.',
         'Clarifier les questions ouvertes, de préférence par écrit.',
         'Demander si un nettoyage d’essai ou un début avec une période d’essai est possible.',
         'Conclure le contrat et y inscrire l’interlocuteur.',
@@ -114,19 +114,19 @@ const reinigungsfirmaFinden: ArticleContent = {
         'Qui est mon interlocuteur ?',
         'Comment la qualité est-elle contrôlée ?',
         'Comment le remplacement est-il réglé en cas de vacances ou de maladie ?',
-        'Quelle assurance existe, avec quelle couverture ?',
+        'Quelle assurance est en place, avec quelle couverture ?',
         'Comment la facturation se fait-elle, et qu’est-ce qui coûte en plus ?',
       ],
     },
     {
       title: `Les réponses de ${company.brand} à ces questions`,
       items: [
-        'Devis : gratuit et sans engagement, après une visite sur place.',
-        `Interlocuteur : notre directeur traite personnellement votre demande. Vous recevez une réponse ${responseTime}.`,
-        'Assurance : responsabilité civile d’entreprise avec une couverture de CHF 10 millions.',
-        'Expérience : depuis 2006, aujourd’hui plus de 50 collaboratrices et collaborateurs et plus de 120 clients (état septembre 2026).',
-        `Langues : ${languageList}.`,
-        `Région : les cantons de ${cantonList}, avec toutes nos prestations. Plus d’informations sous [Zone d’intervention](/einzugsgebiet).`,
+        'Devis : gratuit et sans engagement, après une visite sur place.',
+        `Interlocuteur : notre directeur traite personnellement votre demande. Vous recevez une réponse ${responseTime}.`,
+        'Assurance : responsabilité civile d’entreprise avec une couverture de CHF 10 millions.',
+        'Expérience : depuis 2006, aujourd’hui plus de 50 collaboratrices et collaborateurs et plus de 120 clients (état en septembre 2026).',
+        `Langues : ${languageList}.`,
+        `Région : les cantons de ${cantonList}, avec toutes nos prestations. Plus d’informations sous [Zone d’intervention](/einzugsgebiet).`,
       ],
     },
   ],
@@ -181,14 +181,14 @@ const kosten: ArticleContent = {
       ],
     },
     {
-      title: 'Comment la facturation se fait',
+      title: 'Modes de facturation',
       paragraphs: [
         'Les tarifs horaires, les forfaits mensuels ou les prix au mètre carré sont courants. Demandez comment la facturation se fait et ce qui est compris dans chaque cas. C’est la seule façon de comparer les devis.',
       ],
     },
     {
       title: 'Comparer les devis',
-      paragraphs: ['Un devis comparable indique au moins :'],
+      paragraphs: ['Un devis comparable indique au moins :'],
       items: [
         'les pièces et les tâches comprises',
         'la fréquence et les horaires d’intervention',
@@ -196,7 +196,7 @@ const kosten: ArticleContent = {
         'les éventuels suppléments et frais annexes comme le déplacement',
         'la durée et le délai de résiliation',
       ],
-      note: 'Plus d’informations : [À quoi veiller en choisissant une entreprise de nettoyage](/blog/richtige-reinigungsfirma-finden).',
+      note: 'Plus d’informations : [À quoi veiller en choisissant une entreprise de nettoyage](/blog/richtige-reinigungsfirma-finden).',
     },
     {
       title: `Comment obtenir votre devis chez ${company.brand}`,

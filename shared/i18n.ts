@@ -81,12 +81,12 @@ const slugs = {
   '/premium': { en: 'premium', fr: 'premium', it: 'premium' },
   '/premium/luxusimmobilien': {
     en: 'premium/luxury-properties',
-    fr: 'premium/proprietes-de-luxe',
-    it: 'premium/immobili-di-lusso',
+    fr: 'premium/biens-de-prestige',
+    it: 'premium/immobili-di-pregio',
   },
   '/premium/privatjet': { en: 'premium/private-jet', fr: 'premium/jet-prive', it: 'premium/jet-privato' },
   '/premium/yacht': { en: 'premium/yacht', fr: 'premium/yacht', it: 'premium/yacht' },
-  '/einzugsgebiet': { en: 'service-area', fr: 'zone-d-intervention', it: 'zona-di-servizio' },
+  '/einzugsgebiet': { en: 'service-area', fr: 'zone-d-intervention', it: 'zona-d-intervento' },
   '/blog': { en: 'guide', fr: 'guide', it: 'guida' },
   '/blog/richtige-reinigungsfirma-finden': {
     en: 'guide/choosing-a-cleaning-company',

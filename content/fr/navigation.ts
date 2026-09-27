@@ -45,7 +45,7 @@ export const nav: NavDictionary = {
     after: [
       { path: '/einzugsgebiet', label: 'Zone d’intervention' },
       { path: '/ueber-uns', label: 'À propos' },
-      { path: '/blog', label: 'Conseils' },
+      { path: '/blog', label: 'Guide' },
     ],
     cta: { href: '#kontakt-formular', label: 'Demander un devis' },
     open: 'Ouvrir le menu',
@@ -58,7 +58,7 @@ export const nav: NavDictionary = {
     companyLinks: [
       { path: '/ueber-uns', label: 'À propos' },
       { path: '/kontakt', label: 'Contact' },
-      { path: '/blog', label: 'Conseils' },
+      { path: '/blog', label: 'Guide' },
     ],
     areaTitle: 'Zone d’intervention',
     areaLink: { path: '/einzugsgebiet', label: 'Lucerne, Zoug, Argovie, Nidwald et Obwald' },
@@ -116,7 +116,7 @@ export const nav: NavDictionary = {
     ],
     frequencyOptions: ['Une seule fois', 'Chaque semaine', 'Plusieurs fois par semaine', 'Chaque jour', 'Encore à définir'],
     consentBefore: 'J’ai pris connaissance de la',
-    consentLink: 'politique de confidentialité',
+    consentLink: 'déclaration de protection des données',
     consentAfter: 'et j’accepte que mes données soient utilisées pour traiter ma demande. *',
     required: '* Champs obligatoires',
     submit: 'Envoyer le message',

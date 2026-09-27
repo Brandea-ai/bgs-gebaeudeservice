@@ -17,7 +17,7 @@ const team: Step = {
 }
 
 const cta = {
-  title: 'Demande discrète',
+  title: 'Demandez en toute discrétion',
   text: `Appelez-nous ou écrivez-nous. Notre directeur traite personnellement votre demande, vous recevez une réponse ${responseTime}.`,
 }
 
@@ -26,18 +26,18 @@ const luxusimmobilien: ServicePageContent = {
   area: 'premium',
   h1: 'Nettoyage et entretien de villas et de résidences',
   lead: [
-    'Dans une maison faite de pierre naturelle, de parquet et de surfaces laquées brillantes, chaque détail compte, tout comme la confiance envers les personnes qui y travaillent. Nous nettoyons villas, lofts et résidences régulièrement ou avant des occasions particulières, dans le respect des matériaux délicats.',
-    'Chez vous, c’est toujours la même équipe qui travaille, aux heures qui vous conviennent : aussi le soir, le week-end ou pendant votre absence.',
+    'Dans une maison faite de pierre naturelle, de parquet et de surfaces laquées brillantes, chaque détail compte, tout comme la confiance envers les personnes qui y travaillent. Nous nettoyons villas, lofts et résidences régulièrement ou avant des événements particuliers, dans le respect des matériaux délicats.',
+    'Chez vous, c’est toujours la même équipe qui travaille, aux heures qui vous conviennent : aussi le soir, le week-end ou pendant votre absence.',
   ],
   facts: [
     { label: 'Pour', value: 'Villas, lofts, résidences et résidences secondaires' },
-    { label: 'Fréquence', value: 'Régulièrement ou avant des occasions particulières' },
+    { label: 'Fréquence', value: 'Régulièrement ou avant des événements particuliers' },
     { label: 'Équipe', value: 'Toujours la même équipe' },
     { label: 'Discrétion', value: 'Sur demande, avec un accord de confidentialité' },
   ],
   scope: {
     title: 'Ce qui est compris',
-    intro: 'Nous fixons l’étendue après un tour de votre maison. Typiquement :',
+    intro: 'Nous fixons l’étendue après avoir fait le tour de votre maison. Prestations typiques :',
     items: [
       'Pièces de séjour, chambres à coucher et chambres d’amis',
       'Cuisines et salles de bains',
@@ -45,9 +45,9 @@ const luxusimmobilien: ServicePageContent = {
       'Surfaces vitrées et miroirs',
       'Nettoyage avant votre arrivée et après votre départ',
       'Rondes de contrôle pendant votre absence',
-      'Nettoyage avant et après des réceptions, aussi le week-end',
+      'Nettoyage avant et après des événements, aussi le week-end',
       'Pièces abritant des œuvres d’art et des antiquités, les œuvres uniquement avec votre accord',
-      'Pour les courtiers et les gérances : à bref délai avant une vente, une séance photo ou une remise',
+      'Pour les courtiers et les gérances : à bref délai avant une vente, une séance photo ou une remise',
     ],
     notIncluded: ['Restauration d’œuvres d’art et d’antiquités.'],
   },
@@ -109,12 +109,12 @@ const privatjet: ServicePageContent = {
   facts: [
     { label: 'Pour', value: 'Propriétaires et exploitants de jets privés' },
     { label: 'Étendue', value: 'Nettoyage de la cabine' },
-    { label: 'Dates', value: 'Selon entente, en fonction de votre plan de vol' },
+    { label: 'Dates', value: 'Selon entente, en fonction de votre programme de vols' },
     { label: 'Discrétion', value: 'Sur demande, avec un accord de confidentialité' },
   ],
   scope: {
     title: 'Ce qui est compris',
-    intro: 'Nous fixons l’étendue au préalable avec vous. Typiquement :',
+    intro: 'Nous fixons l’étendue au préalable avec vous. Prestations typiques :',
     items: [
       'Sièges et garnitures en cuir et en tissu',
       'Moquettes et sols',
@@ -127,7 +127,7 @@ const privatjet: ServicePageContent = {
     {
       title: 'Une planification autour de vos vols',
       paragraphs: [
-        'Où et quand nous nettoyons la cabine, nous le coordonnons avec vous et votre exploitant. Ainsi, l’intervention s’intègre dans votre plan de vol.',
+        'Nous coordonnons avec vous et votre exploitant le lieu et le moment du nettoyage de la cabine. Ainsi, l’intervention s’intègre dans votre programme de vols.',
       ],
     },
   ],
@@ -185,7 +185,7 @@ const yacht: ServicePageContent = {
   ],
   scope: {
     title: 'Ce qui est compris',
-    intro: 'Nous fixons l’étendue après une visite à la place d’amarrage. Typiquement :',
+    intro: 'Nous fixons l’étendue après une visite à la place d’amarrage. Prestations typiques :',
     items: [
       'Pont et surfaces en teck',
       'Surfaces en gelcoat sur le pont et les superstructures',

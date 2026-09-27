@@ -34,7 +34,7 @@ export const it: Dictionary = {
     premiumTitleBrand,
     map: {
       label: 'Mappa',
-      notice: 'La mappa viene caricata da Google Maps. In tal caso vengono trasmessi dati a Google.',
+      notice: 'La mappa viene caricata da Google Maps. Durante il caricamento vengono trasmessi dati a Google.',
       load: 'Carica la mappa',
       open: 'Apri in Google Maps',
     },
