@@ -158,14 +158,15 @@ Die neuen Texte in `content/de/` beruhen auf Eigenangaben und Entscheidungen (E1
 
 **Stand 27.09.2026 (E72, E73):** Alle vier Sprachen sind live (`LANGUAGES=true`), Lektorat EN, FR, IT durch Claude im Auftrag von Brandea (N087, Details in `22-LEKTORAT/`). Die technischen Restpunkte aus dem Lektorat sind behoben (N088). `NEW_BRAND` bleibt aus. **Entschieden in Runde 10:** Premium-Linie heisst Clavea, ohne Beurteilung durch eine Fachperson (E74). Hinweis «deutsche Fassung massgebend» ist in den Rechtstexten EN, FR, IT (E75, N089).
 
-**Offen bei Brandea:**
-1. Swissreg vor der Veröffentlichung erneut prüfen, frühestens am 29.09.2026 (E73), dann in Vercel für Production `NEW_BRAND=true`.
-2. Freigabe der Übersetzungen durch Muttersprachler vor `SITE_INDEXABLE` (E72), je Sprache 12 bis 17 Stilpunkte.
-3. Fotos nach 21, bis dahin nichts zu tun.
+**Agent am 29.09.2026 (E76):** Swissreg nachprüfen, ohne neuen Treffer `NEW_BRAND=true` in Production setzen, deployen, live prüfen. Mit Treffer Brandea fragen.
 
-**Agent als Nächstes:** Chat (M03), sobald Brandea Modell und Zugang festlegt. 404-Seite in der Sprache der Adresse, falls gewünscht (heute nur Deutsch, N085).
+**Offen bei Brandea (nicht blockierend):**
+1. Freigabe der Übersetzungen durch Muttersprachler vor `SITE_INDEXABLE` (E72), je Sprache 12 bis 17 Stilpunkte.
+2. Fotos nach 21, bis dahin nichts zu tun.
 
-**Stand 26.09.2026 (E70, E71):** Seitendurchgang und Mehrsprachigkeit fertig und live, weitere Sprachen in der Produktion noch aus. **Offen bei Brandea:** Übersetzungen EN, FR, IT prüfen (Preview-Adressen unter `/en`, `/fr`, `/it`), dann in Vercel `LANGUAGES=true`. Markenrecherche (E38), dann `NEW_BRAND=true`. Fotos nach 21. **Agent als Nächstes:** Chat (M03), sobald Brandea Modell und Zugang festlegt. Bis dahin Pflege: ungenutzte Dateien und alte KI-Bilder aufräumen (M34), sobald echte Fotos da sind.
+**Agent als Nächstes:** Frontend, Block F1 (Gestaltungsrichtung, dann Designsystem und Startseite). Chat (M03), sobald Brandea Modell und Zugang festlegt. 404-Seite in der Sprache der Adresse, falls gewünscht (heute nur Deutsch, N085).
+
+**Stand 26.09.2026 (E70, E71):** Seitendurchgang und Mehrsprachigkeit fertig und live, weitere Sprachen in der Produktion noch aus. **Offen bei Brandea:** Übersetzungen EN, FR, IT prüfen (Preview-Adressen unter `/en`, `/fr`, `/it`), dann in Vercel `LANGUAGES=true`. Markenrecherche (E38), dann `NEW_BRAND=true`. Fotos nach 21. **Agent als Nächstes:** Frontend, Block F1 (Gestaltungsrichtung, dann Designsystem und Startseite). Chat (M03), sobald Brandea Modell und Zugang festlegt. Bis dahin Pflege: ungenutzte Dateien und alte KI-Bilder aufräumen (M34), sobald echte Fotos da sind.
 
 **Stand 26.09.2026:** Welle 1, Teil 2 und der Marken-Schalter sind auf `claude/funny-einstein-5acss7` umgesetzt und getestet (N074 bis N077). Durchsicht über den Draft-PR Brandea-ai/bgs-gebaeudeservice#7 (Entwurf, **nicht mergen**). In Produktion ist nichts davon, dort steht weiter der alte Stand (N076).
 
