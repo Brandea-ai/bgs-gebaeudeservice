@@ -6,7 +6,7 @@
  * gesetzt ist, erscheint das Chatfenster nicht, und "Termin vereinbaren"
  * führt zum Kontaktformular.
  */
-export const chatEnabled = process.env.NEXT_PUBLIC_CHAT_ENABLED === "true";
+export const chatEnabled = process.env.NEXT_PUBLIC_CHAT_ENABLED === 'true'
 
 /**
  * Bilder als Platzhalter (R6g, E19): Die bisherigen Bilder sind überwiegend
@@ -14,5 +14,4 @@ export const chatEnabled = process.env.NEXT_PUBLIC_CHAT_ENABLED === "true";
  * Bis die neuen Bilder freigegeben sind, zeigen alle Bildflächen einen
  * neutralen Platzhalter. Mit NEXT_PUBLIC_REAL_IMAGES=true wieder Bilder.
  */
-export const imagesArePlaceholders =
-  process.env.NEXT_PUBLIC_REAL_IMAGES !== "true";
+export const imagesArePlaceholders = process.env.NEXT_PUBLIC_REAL_IMAGES !== 'true'

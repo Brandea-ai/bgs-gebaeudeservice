@@ -1,4 +1,4 @@
-import type { PagePath } from "../shared/seo";
+import type { PagePath } from '../shared/seo'
 
 /**
  * Inhaltsschicht der Leistungs- und Premiumseiten (M29), vorbereitet für die
@@ -14,82 +14,77 @@ import type { PagePath } from "../shared/seo";
  */
 
 /** Fliesstext. Interne Links im Format [Linktext](/pfad), nur Seiten aus shared/seo.ts. */
-export type Text = string;
+export type Text = string
 
-export type Step = { title: string; text: Text };
+export type Step = { title: string; text: Text }
 
 export type ServicePageContent = {
   /** Deutsche Adresse, zugleich Schlüssel für Titel, Beschreibung und Namen in shared/seo.ts */
-  path: PagePath;
+  path: PagePath
   /** B2B-Leistung unter /leistungen oder Premium-Linie unter /premium (E16) */
-  area: "leistungen" | "premium";
+  area: 'leistungen' | 'premium'
   /** Kurze Zeile über der Hauptüberschrift. Premium-Seiten zeigen stattdessen die Premium-Linie. */
-  eyebrow?: string;
-  h1: string;
+  eyebrow?: string
+  h1: string
   /** Einstieg aus Sicht der Kundschaft: Anlass und Lösung in ein bis zwei Absätzen */
-  lead: Text[];
+  lead: Text[]
   /** «Auf einen Blick». Gebiet, Offerte und Rückmeldung ergänzt die Vorlage, ausser die Seite nennt sie selbst. */
-  facts: { label: string; value: string }[];
+  facts: { label: string; value: string }[]
   scope: {
-    title: string;
-    intro?: Text;
-    items: Text[];
+    title: string
+    intro?: Text
+    items: Text[]
     /** Was nicht dazugehört, mit Verweis auf die passende Leistung */
-    notIncluded?: Text[];
-  };
+    notIncluded?: Text[]
+  }
   /** Weitere Abschnitte, etwa Nachfüllservice oder Maschinen */
-  sections?: { title: string; paragraphs?: Text[]; items?: Text[] }[];
-  steps: Step[];
-  faq: { question: string; answer: Text }[];
+  sections?: { title: string; paragraphs?: Text[]; items?: Text[] }[]
+  steps: Step[]
+  faq: { question: string; answer: Text }[]
   /** Verwandte Leistungen mit einem Satz, wann sie passen */
-  related: { path: PagePath; text: string }[];
-  cta: { title: string; text: string };
+  related: { path: PagePath; text: string }[]
+  cta: { title: string; text: string }
   /** Freigegebenes Bild oben rechts (E19, E66). Ohne Angabe ein Platzhalter. */
-  image?: { src: string; alt: string };
-};
+  image?: { src: string; alt: string }
+}
 
 /** Abschnitt eines Ratgeberartikels. Reihenfolge der Darstellung wie hier. */
 export type ArticleSection = {
-  title: string;
-  paragraphs?: Text[];
+  title: string
+  paragraphs?: Text[]
   /** Begriffe mit Erklärung, dargestellt als Definitionsliste */
-  definitions?: { term: string; text: Text }[];
+  definitions?: { term: string; text: Text }[]
   /** Unterabschnitte mit eigener Überschrift */
-  subsections?: { title: string; text: Text }[];
-  items?: Text[];
+  subsections?: { title: string; text: Text }[]
+  items?: Text[]
   /** Liste als nummerierte Schritte */
-  ordered?: boolean;
+  ordered?: boolean
   /** Satz nach der Liste */
-  note?: Text;
-};
+  note?: Text
+}
 
 export type ArticleContent = {
   /** Adresse, zugleich Schlüssel für Titel und Beschreibung in shared/seo.ts */
-  path: PagePath;
-  h1: string;
-  subtitle: string;
+  path: PagePath
+  h1: string
+  subtitle: string
   /** Anreisser für die Übersicht /blog */
-  teaser: string;
+  teaser: string
   /** Stand der Inhalte (JJJJ-MM-TT), sichtbar und als dateModified */
-  updated: string;
+  updated: string
   /** Veröffentlichung auf der Launch-Domain (JJJJ-MM-TT). Erst zum Launch eintragen, keine Scheinaktualität (M19). */
-  published?: string;
-  intro?: Text[];
-  summary: { title: string; items: Text[] };
-  sections: ArticleSection[];
-  cta: { title: string; text: string };
-};
+  published?: string
+  intro?: Text[]
+  summary: { title: string; items: Text[] }
+  sections: ArticleSection[]
+  cta: { title: string; text: string }
+}
 
 /** Rechtstexte (Impressum, Datenschutz). Einfache Abschnitte, Reihenfolge wie hier. */
 export type LegalContent = {
-  h1: string;
-  intro?: Text;
-  sections: {
-    title: string;
-    paragraphs?: Text[];
-    items?: Text[];
-    lines?: string[];
-  }[];
+  h1: string
+  intro?: Text
+  sections: { title: string; paragraphs?: Text[]; items?: Text[]; lines?: string[] }[]
   /** Stand des Textes (JJJJ-MM-TT), sichtbar am Ende */
-  updated: string;
-};
+  updated: string
+}

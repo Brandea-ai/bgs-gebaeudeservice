@@ -1,27 +1,12 @@
-import type { Dictionary } from "../de";
-import {
-  answers,
-  premiumLine,
-  premiumTitleBrand,
-  registerIt,
-  steps,
-  ui,
-} from "./common";
-import { leistungen } from "./leistungen";
-import { nav } from "./navigation";
-import { premium } from "./premium";
-import { ratgeber, ratgeberUebersicht } from "./ratgeber";
-import { datenschutz, impressum } from "./recht";
-import {
-  about,
-  area,
-  contact,
-  home,
-  premiumOverview,
-  proof,
-  servicesOverview,
-} from "./seiten";
-import { pages } from "./seo";
+import type { Dictionary } from '../de'
+import { answers, premiumLine, premiumTitleBrand, registerIt, steps, ui } from './common'
+import { leistungen } from './leistungen'
+import { nav } from './navigation'
+import { premium } from './premium'
+import { ratgeber, ratgeberUebersicht } from './ratgeber'
+import { datenschutz, impressum } from './recht'
+import { about, area, contact, home, premiumOverview, proof, servicesOverview } from './seiten'
+import { pages } from './seo'
 
 /**
  * Tutti i testi italiani in un unico punto (M60), stessa forma dell’oggetto
@@ -36,34 +21,25 @@ export const it: Dictionary = {
   leistungen,
   premium,
   ratgeber: { overview: ratgeberUebersicht, articles: ratgeber },
-  seiten: {
-    proof,
-    home,
-    about,
-    contact,
-    area,
-    servicesOverview,
-    premiumOverview,
-  },
+  seiten: { proof, home, about, contact, area, servicesOverview, premiumOverview },
   recht: { impressum, datenschutz },
   nav,
   misc: {
     /** Lingua per le date */
-    dateLocale: "it-CH",
-    breadcrumbs: "Percorso di navigazione",
-    imagePlaceholder: "Immagine in arrivo",
-    imagePlaceholderLabel: "Segnaposto, immagine in arrivo",
+    dateLocale: 'it-CH',
+    breadcrumbs: 'Percorso di navigazione',
+    imagePlaceholder: 'Immagine in arrivo',
+    imagePlaceholderLabel: 'Segnaposto, immagine in arrivo',
     premiumLine,
     premiumTitleBrand,
     map: {
-      label: "Mappa",
-      notice:
-        "La mappa viene caricata da Google Maps. Durante il caricamento vengono trasmessi dati a Google.",
-      load: "Carica la mappa",
-      open: "Apri in Google Maps",
-      source: "Base cartografica: © swisstopo",
-      areaLabel: "Zona d’intervento",
+      label: 'Mappa',
+      notice: 'La mappa viene caricata da Google Maps. Durante il caricamento vengono trasmessi dati a Google.',
+      load: 'Carica la mappa',
+      open: 'Apri in Google Maps',
+      source: 'Base cartografica: © swisstopo',
+      areaLabel: 'Zona d’intervento',
     },
     registerCourt: registerIt,
   },
-};
+}
