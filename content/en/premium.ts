@@ -225,7 +225,10 @@ const yacht: ServicePageContent = {
     { path: '/premium/privatjet', text: 'For the cabin of your private jet.' },
     { path: '/premium', text: 'All services and commitments of our premium line.' },
   ],
-  cta,
+  cta: {
+    title: cta.title,
+    text: 'Tell us about the boat, its berth and your preferred dates. We look at the boat at its berth and prepare a quote for you, free of charge and without obligation.',
+  },
 }
 
 export const premium = { luxusimmobilien, privatjet, yacht }

@@ -1,7 +1,6 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import { AlertTriangle, RotateCcw } from "lucide-react";
+import { ArrowCounterClockwise, Warning } from "@phosphor-icons/react/dist/ssr";
 import { Component, ReactNode } from "react";
 import { navDicts } from "../../../content/navigation";
 import type { Locale } from "../../../shared/i18n";
@@ -31,33 +30,29 @@ class ErrorBoundary extends Component<Props, State> {
     if (this.state.hasError) {
       const texts = navDicts[this.props.lang ?? "de"].errorPage;
       return (
-        <div className="flex items-center justify-center min-h-screen p-8 bg-background">
-          <div className="flex flex-col items-center w-full max-w-2xl p-8">
-            <AlertTriangle
-              size={48}
-              className="text-destructive mb-6 flex-shrink-0"
+        <div className="flex min-h-screen items-center justify-center bg-stone p-8">
+          <div className="flex w-full max-w-2xl flex-col items-start p-8">
+            <Warning
+              weight="regular"
+              className="mb-6 size-8 shrink-0 text-signal"
               aria-hidden="true"
             />
-
-            <h1 className="text-xl mb-4">{texts.title}</h1>
+            <h1 className="t-h2 mb-6 text-ink">{texts.title}</h1>
 
             {process.env.NODE_ENV === "development" && (
-              <div className="p-4 w-full rounded bg-muted overflow-auto mb-6">
-                <pre className="text-sm text-muted-foreground whitespace-break-spaces">
+              <div className="mb-6 w-full overflow-auto bg-white p-4">
+                <pre className="whitespace-break-spaces text-sm text-mute">
                   {this.state.error?.stack}
                 </pre>
               </div>
             )}
 
             <button
+              type="button"
               onClick={() => window.location.reload()}
-              className={cn(
-                "flex items-center gap-2 px-4 py-2 rounded-lg",
-                "bg-primary text-primary-foreground",
-                "hover:opacity-90 cursor-pointer"
-              )}
+              className="press inline-flex h-12 items-center gap-2 rounded-[0.25rem] bg-signal px-6 font-medium text-white hover:bg-signal-dark"
             >
-              <RotateCcw size={16} aria-hidden="true" />
+              <ArrowCounterClockwise weight="regular" className="size-4" aria-hidden="true" />
               {texts.reload}
             </button>
           </div>

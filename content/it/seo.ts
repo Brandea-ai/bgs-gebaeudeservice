@@ -11,7 +11,7 @@ const region = cantonListIt
 
 export const pages = {
   '/': {
-    label: 'Pagina iniziale',
+    label: 'Home',
     title: `${company.brand} | Pulizie e custodia di stabili a Lucerna e Zugo`,
     description: `Pulizia di edifici, custodia di stabili e facility services per aziende e immobili nei Cantoni di ${region}, oltre a pulizie premium.`,
   },

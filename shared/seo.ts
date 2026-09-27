@@ -29,13 +29,15 @@ export function metaFor(path: PagePath, lang: Locale = 'de'): Metadata {
     // Sprachversionen gegenseitig verknüpft (hreflang, S76, M60)
     alternates: { canonical: url, languages: alternatesFor(path) },
     openGraph: {
-      type: 'website',
+      type: path.startsWith('/blog/') ? 'article' : 'website',
       locale: ogLocale[lang],
       siteName: company.brand,
       url,
       title,
       description,
     },
+    // Ohne eigene Angabe erben Unterseiten sonst Titel und Text der Startseite (T09)
+    twitter: { card: 'summary', title, description },
   }
 }
 

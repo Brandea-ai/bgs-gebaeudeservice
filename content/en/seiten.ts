@@ -33,8 +33,8 @@ const offerSteps: Step[] = [
 
 export const home: Seiten['home'] = {
   eyebrow: `Cleaning and caretaking from ${company.address.city}`,
-  h1: 'Building cleaning and caretaking for Lucerne, Zug and the surrounding area',
-  lead: 'For businesses, property managers and discerning private clients. We will visit you to prepare a free, non-binding quote.',
+  h1: 'Building cleaning and caretaking for Lucerne, Zug and the region',
+  lead: 'Clean, well-kept properties, offices and halls, without you having to look after them yourself. For businesses, property managers and discerning private clients. We look at your property and prepare a written quote.',
   proofTitle: 'At a glance',
   services: {
     title: 'Our services',
@@ -52,7 +52,7 @@ export const home: Seiten['home'] = {
         title: 'Caretaking and grounds',
         text: 'For property managers, owners and businesses who want their property looked after.',
         items: ['Caretaking', 'Grounds and green space maintenance', 'Facility services'],
-        link: { path: '/leistungen/hauswartung', text: 'Caretaking' },
+        link: { path: '/leistungen/hauswartung', text: 'Go to caretaking' },
       },
       {
         key: 'premium',
@@ -76,7 +76,7 @@ export const home: Seiten['home'] = {
 }
 
 export const about: Seiten['about'] = {
-  h1: `Cleaning and caretaking from ${company.address.city}`,
+  h1: `Cleaning and caretaking from ${company.address.city}, since 2006`,
   imageAlt: 'Our team at work',
   lead: `We have been working in cleaning and caretaking since 2006. Today, over 50 employees look after more than 120 clients in the cantons of ${cantons}, in ${languages}.`,
   promises: {
@@ -92,12 +92,12 @@ export const about: Seiten['about'] = {
   },
   contact: {
     title: 'Your contact person',
-    text: `Your enquiry is handled personally by our managing director. We will get back to you ${responseTime}.`,
+    text: `Your enquiry goes directly to our managing director. He will get back to you ${responseTime}.`,
   },
   register: { title: 'Registration details', court: register, uid: 'UID' },
   statsLabel: 'In figures',
   cta: {
-    title: 'Let us get to know each other',
+    title: 'Arrange a site visit',
     text: 'During the site visit, we look at your property and clarify the scope and times. You then receive a written quote.',
   },
 }
@@ -129,14 +129,14 @@ export const contact: Seiten['contact'] = {
     { question: 'Do you also take on assignments at short notice?', answer: 'Give us a call. We will discuss with you what is possible at short notice.' },
   ],
   cta: {
-    title: 'Ready for your quote?',
-    text: `The form is at the bottom of every page. We will get back to you ${responseTime}.`,
+    title: 'Your quote in three steps',
+    text: `Describe your property and what you need in the form just below. We will get back to you ${responseTime} and arrange the site visit.`,
   },
 }
 
 export const area: Seiten['area'] = {
-  h1: `Service area: ${cantons}`,
-  lead: `From our base in ${company.address.city}, we work in five cantons. We offer all our services throughout the area, for businesses and discerning private clients alike.`,
+  h1: 'Service area: Central Switzerland and Aargau',
+  lead: `From our base in ${company.address.city}, we work in the cantons of ${cantons}. We offer all our services throughout the area, for businesses and discerning private clients alike.`,
   cantonsTitle: 'Cantons',
   cantonLabels: ['Canton of Lucerne', 'Canton of Zug', 'Canton of Aargau', 'Canton of Nidwalden', 'Canton of Obwalden'],
   seatTitle: 'Head office and contact',
@@ -153,13 +153,13 @@ export const area: Seiten['area'] = {
   },
   cta: {
     title: 'Is your property in our area?',
-    text: `Tell us about the property and its location. We will visit you for a free, non-binding quote and get back to you ${responseTime}.`,
+    text: `Tell us about the property and its location. We will get back to you ${responseTime} and visit you for the site visit, free of charge and without obligation.`,
   },
 }
 
 export const servicesOverview: Seiten['servicesOverview'] = {
-  h1: 'Services: cleaning and caretaking',
-  lead: `Choose by what you need. We offer all services in the cantons of ${cantons}. We visit you free of charge and without obligation to prepare a quote.`,
+  h1: 'Cleaning and caretaking for properties, offices and businesses',
+  lead: `Ongoing cleaning, one-off assignments or looking after entire properties: choose by what you need. For businesses, property managers and owners in the cantons of ${cantons}. Not sure what fits? We clarify it during the site visit.`,
   groups: [
     {
       title: 'Ongoing cleaning',
@@ -216,7 +216,7 @@ const promises: Seiten['premiumOverview']['promises'] = [
 export const premiumOverview: Seiten['premiumOverview'] = {
   line: premiumLine,
   h1: 'Cleaning for exacting standards',
-  lead: 'For villas and residences, second homes, hotels with special requirements, family offices, private jets and yachts. Discreet, meticulous and in your language.',
+  lead: 'For villas and residences, second homes, hotels with special requirements, family offices, private jets and yachts. Always the same team, discreet, familiar with delicate materials and in your language.',
   nameMeaning: company.premiumBrand
     ? `The name ${company.premiumBrand} comes from the Latin ‘clavis’, meaning key. You entrust us with your home, and we treat it as if it were our own.`
     : null,
@@ -240,10 +240,10 @@ export const premiumOverview: Seiten['premiumOverview'] = {
   promises,
   places: {
     title: 'Where we work',
-    text: `On Lake Lucerne from Lucerne and Meggen to Weggis, Vitznau, Hergiswil and Ennetbürgen, on Lake Zug and Lake Ägeri from Zug and Walchwil to Oberägeri, in Engelberg and throughout the cantons of ${cantons}. [View service area](/einzugsgebiet)`,
+    text: `On Lake Lucerne from Lucerne and Meggen to Weggis, Vitznau, Hergiswil and Ennetbürgen, on Lake Zug and Lake Ägeri from Zug and Walchwil to Oberägeri, in Engelberg and throughout the cantons of ${cantons}.`,
   },
   cta: {
     title: 'Enquire discreetly',
-    text: `Call us or write to us. Your enquiry is handled personally by our managing director, under confidentiality if you wish. We will get back to you ${responseTime}.`,
+    text: 'Call us or write to us. Your enquiry is handled personally by our managing director, under confidentiality if you wish.',
   },
 }

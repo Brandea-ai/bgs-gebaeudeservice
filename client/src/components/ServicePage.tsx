@@ -166,7 +166,7 @@ export default function ServicePage({
 
           {/* Bildfläche, bis zur Freigabe ein Platzhalter (E59, E66) */}
           <Reveal
-            variant="scale"
+
             delay={150}
             className="lg:col-span-6 lg:col-start-7"
           >

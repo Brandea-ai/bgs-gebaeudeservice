@@ -22,6 +22,7 @@ export const ratgeberUebersicht = {
   byline: `Ein Ratgeber von ${company.brand}`,
   // Mit Satzzeichen, weil es je Sprache anders steht (fr: Leerschlag vor dem Doppelpunkt, it: ohne)
   updatedLabel: 'Stand:',
+  readMore: 'Zum Ratgeber',
   publishedLabel: 'Veröffentlicht am',
 }
 

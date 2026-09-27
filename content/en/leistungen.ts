@@ -506,15 +506,15 @@ const hauswartung: ServicePageContent = {
   path: '/leistungen/hauswartung',
   area: 'leistungen',
   eyebrow: 'Property care',
-  h1: 'Caretaking for residential and commercial properties',
+  h1: 'Caretaking for residential and commercial buildings',
   lead: [
     'A property needs more than cleaning: someone has to check on things regularly, fix minor damage, organise waste disposal and be present when flats are handed over. That is what caretaking covers.',
-    'For property managers, owners and communities of condominium owners. We set out in writing which tasks we take on.',
+    'For property managers, owners and communities of condominium owners who cannot or do not want to check on things themselves. We set out in writing which tasks we take on, how often we are on site and to whom we report defects.',
   ],
   facts: [
     { label: 'For', value: 'Property managers, owners and communities of condominium owners' },
     { label: 'Properties', value: 'Residential and commercial properties' },
-    { label: 'Not offered', value: 'Winter maintenance and on-call service' },
+    { label: 'Scope', value: 'Tasks as required, set out in writing' },
   ],
   scope: {
     title: 'What caretaking covers',
@@ -569,6 +569,7 @@ const hauswartung: ServicePageContent = {
       question: 'Can we choose individual tasks?',
       answer: 'Yes. We put together the caretaking from the tasks your property needs.',
     },
+    { question: 'Are you insured?', answer: answers.versicherung },
     { question: 'How much does caretaking cost?', answer: answers.kosten },
     { question: 'Which regions do you cover?', answer: answers.gebiet },
   ],

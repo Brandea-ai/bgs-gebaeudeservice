@@ -92,3 +92,37 @@ export function articleJsonLd(path: PagePath, article: { h1: string; updated: st
     inLanguage: hreflang[lang],
   }
 }
+
+/** Übersicht mehrerer Leistungen oder Artikel als Liste (Leistungen, Premium, Ratgeber) */
+export function itemListJsonLd(path: PagePath, items: PagePath[], lang: Locale = 'de') {
+  const texts = getDict(lang).pages
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    '@id': `${absolute(localizePath(path, lang))}#liste`,
+    name: texts[path].label,
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: texts[item].label,
+      url: absolute(localizePath(item, lang)),
+    })),
+  }
+}
+
+/** Über uns und Kontakt als Seitentyp, verweist auf das Unternehmen */
+export function pageJsonLd(path: PagePath, type: 'AboutPage' | 'ContactPage', lang: Locale = 'de') {
+  const { label, description } = getDict(lang).pages[path]
+  const url = absolute(localizePath(path, lang))
+  return {
+    '@context': 'https://schema.org',
+    '@type': type,
+    '@id': `${url}#seite`,
+    name: label,
+    description,
+    url,
+    inLanguage: hreflang[lang],
+    about: { '@id': organizationId },
+    mainEntity: { '@id': organizationId },
+  }
+}

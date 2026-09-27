@@ -23,13 +23,24 @@
     --destructive-foreground: 0 0% 100%;
     --border: 43 13% 86%;
     --input: 43 10% 78%;
-    --ring: 357 82% 40%;
+    --ring: 216 22% 7%;
     --radius: 0.25rem;
 
     /* Seitenrand: wächst mit der Breite, nie unter 20 px (F1) */
     --gutter: clamp(1.25rem, 4.2vw, 5rem);
     /* Höhe der Kopfzeile, für Sprungziele und klebende Spalten */
     --header-h: 4.75rem;
+    /* Höhe einer klebenden Abschnittsleiste (SectionNav), setzt die Seite selbst */
+    --subnav-h: 0px;
+
+    /* Bewegung (F14): eine Kurve, vier Zeiten, überall gleich */
+    --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+    --dur-micro: 160ms;
+    --dur-state: 320ms;
+    --dur-reveal: 520ms;
+    --stagger: 70ms;
+    /* Fokusfarbe, auf dunklen Flächen weiss (siehe .on-dark) */
+    --focus: #0e1116;
   }
 
   /*
@@ -45,8 +56,16 @@
   }
 
   html {
-    scroll-padding-top: calc(var(--header-h) + 1.5rem);
+    /* Sprungziele landen unter Kopfzeile und Abschnittsleiste (WCAG 2.4.11) */
+    scroll-padding-top: calc(var(--header-h) + var(--subnav-h, 0px) + 1.5rem);
     -webkit-text-size-adjust: 100%;
+  }
+
+  /* Weiches Scrollen nur bei Ankerklicks; Zurück-Taste und Wiederherstellung springen sofort */
+  @media (prefers-reduced-motion: no-preference) {
+    html:focus-within {
+      scroll-behavior: smooth;
+    }
   }
 
   * {
@@ -77,7 +96,8 @@
   h1,
   h2,
   h3,
-  .t-h3 {
+  .t-h3,
+  .hyphens {
     hyphens: auto;
     -webkit-hyphens: auto;
   }
@@ -90,14 +110,41 @@
     }
   }
 
+  /* Überschriften mit id: auch Browser ohne scroll-padding scrollen den Fokus richtig */
+  [id] {
+    scroll-margin-top: calc(var(--header-h) + var(--subnav-h, 0px) + 1.5rem);
+  }
+
   ::selection {
     background: #b8121b;
     color: #fff;
   }
 
+  /* Fokus: zwei Farben, damit der Ring auf jeder Fläche 3:1 hat (WCAG 1.4.11) */
   :focus-visible {
-    outline: 2px solid #b8121b;
+    outline: 2px solid var(--focus);
     outline-offset: 3px;
+    box-shadow: 0 0 0 5px #fff;
+  }
+  .on-dark :focus-visible,
+  .on-dark:focus-visible {
+    --focus: #fff;
+    box-shadow: 0 0 0 5px #0e1116;
+  }
+
+  /* Auswahlfelder ohne Systempfeil, eigener Pfeil in Tinte */
+  select.field-select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 256 256' fill='%230E1116'><path d='M213.66 101.66l-80 80a8 8 0 0 1-11.32 0l-80-80A8 8 0 0 1 53.66 90.34L128 164.69l74.34-74.35a8 8 0 0 1 11.32 11.32Z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.75rem;
+  }
+
+  /* Fehlerzustand im Formular erst nach Eingabe, nie beim Laden */
+  .field:user-invalid {
+    border-color: #b8121b;
   }
 }
 
@@ -153,6 +200,7 @@
     font-weight: 500;
   }
 
+  /* Kennzeile: eine Mono-Zeile ohne Fläche, kein Badge (F14) */
   .t-eyebrow {
     @apply font-mono uppercase;
     font-size: 0.75rem;
@@ -165,7 +213,7 @@
     font-size: clamp(2rem, 1.4rem + 1.6vw, 3.25rem);
     line-height: 1;
     letter-spacing: -0.03em;
-    font-variant-numeric: lining-nums;
+    font-variant-numeric: lining-nums tabular-nums;
   }
 
   /* Fliesstext mit Links im Inhalt */
@@ -175,44 +223,45 @@
     font-weight: 450;
   }
 
-  /* Karten mit Bild: heben sich beim Überfahren leicht */
-  .card-lift {
-    transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
-  }
-  .card-lift:hover,
-  .card-lift:focus-within {
-    transform: translateY(-0.375rem);
-    box-shadow: 0 1px 0 rgba(14, 17, 22, 0.04), 0 32px 56px -28px rgba(14, 17, 22, 0.35);
+  .prose-body a,
+  .link-inline {
+    @apply font-medium text-ink underline decoration-signal/50 decoration-[0.08em] underline-offset-[0.22em] transition-colors hover:decoration-signal;
   }
 
-  /* Laufband für die Vertrauensleiste auf dem Handy */
-  .marquee {
-    display: flex;
-    gap: 0;
-    width: max-content;
-    animation: marquee 32s linear infinite;
+  /* Karten, die als Ganzes ein Link sind: heben sich leicht, nur mit Maus */
+  .card-lift {
+    transition:
+      transform var(--dur-state) var(--ease-out),
+      box-shadow var(--dur-state) var(--ease-out);
   }
-  .marquee:hover {
-    animation-play-state: paused;
+  @media (hover: hover) {
+    .card-lift:hover {
+      transform: translateY(-0.25rem);
+      box-shadow: 0 1px 0 rgba(14, 17, 22, 0.04), 0 24px 40px -24px rgba(14, 17, 22, 0.3);
+    }
+  }
+  .card-lift:focus-within {
+    transform: translateY(-0.25rem);
   }
 
   /*
-   * Stapel-Effekt (F7): Der Inhalt liegt über dem Footer und gibt ihn beim
-   * Scrollen frei, als würde er darunter hervorkommen.
+   * Stapel-Effekt (F7, F14): Der Inhalt liegt über dem Footer und gibt ihn beim
+   * Scrollen frei. Nur auf grossen, hohen Bildschirmen; auf dem Handy wäre der
+   * Footer höher als der Bildschirm und sein Anfang nie erreichbar.
    */
   .stack-main {
     position: relative;
     z-index: 1;
-    box-shadow: 0 40px 80px -30px rgba(14, 17, 22, 0.45);
   }
-  .stack-footer {
-    position: sticky;
-    bottom: 0;
-    z-index: 0;
-  }
-  .prose-body a,
-  .link-inline {
-    @apply font-medium text-ink underline decoration-signal/50 decoration-[0.08em] underline-offset-[0.22em] transition-colors hover:decoration-signal;
+  @media (min-width: 1024px) and (min-height: 720px) {
+    .stack-main {
+      box-shadow: 0 40px 80px -30px rgba(14, 17, 22, 0.25);
+    }
+    .stack-footer {
+      position: sticky;
+      bottom: 0;
+      z-index: 0;
+    }
   }
 
   /* Haarlinien-Raster als Hintergrund, wie Achsen auf einem Plan */
@@ -230,7 +279,7 @@
 
   /* Pfeil in Links bewegt sich beim Überfahren */
   .arrow-link svg {
-    transition: transform 0.25s cubic-bezier(0.2, 0.7, 0.2, 1);
+    transition: transform var(--dur-state) var(--ease-out);
   }
   .arrow-link:hover svg,
   .arrow-link:focus-visible svg {
@@ -241,71 +290,406 @@
   .skip-link {
     @apply fixed left-4 top-4 z-[100] -translate-y-[200%] bg-ink px-4 py-3 text-sm font-medium text-white transition-transform focus:translate-y-0;
   }
+
+  /* Bedienelemente: kurzer Druckpunkt */
+  .press:active {
+    transform: translateY(1px);
+  }
+
+  /* Abschnittsleiste (SectionNav): Mobil statisch und seitlich scrollbar, ab lg klebend unter der Kopfzeile */
+  .subnav {
+    scrollbar-width: none;
+  }
+  .subnav::-webkit-scrollbar {
+    display: none;
+  }
+  @media (min-width: 1024px) {
+    .subnav--sticky {
+      position: sticky;
+      top: var(--header-h);
+      z-index: 30;
+    }
+  }
+
+  /* Bildfläche: Zoom nur, wenn die Karte ein Link ist, und nur mit Maus */
+  .img-zoom img {
+    transition: transform 0.7s var(--ease-out);
+  }
+  @media (hover: hover) {
+    a:hover .img-zoom img,
+    .group:hover .img-zoom img {
+      transform: scale(1.03);
+    }
+  }
+
+  /*
+   * Prozess-Sektion (F14): Figur links bleibt stehen, Schritte laufen rechts durch.
+   * Der aktive Schritt wird per data-active gesetzt (useActiveStep), ohne
+   * JavaScript sind alle Schritte und alle Teile der Figur voll sichtbar.
+   */
+  .process-step {
+    position: relative;
+    padding-left: 3.5rem;
+    transition: opacity var(--dur-state) var(--ease-out);
+  }
+  .process-num {
+    @apply font-display font-bold;
+    position: absolute;
+    left: 0;
+    top: 0.1em;
+    font-size: 1.125rem;
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+    transition: color var(--dur-state) var(--ease-out);
+  }
+  .process-dot {
+    position: absolute;
+    left: 2.125rem;
+    top: 0.55em;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 9999px;
+    background: currentColor;
+    transform: translateX(-50%);
+    transition: transform var(--dur-state) var(--ease-out), color var(--dur-state) var(--ease-out);
+  }
+  .process-line {
+    position: absolute;
+    left: 2.125rem;
+    top: 0.75rem;
+    bottom: 0.75rem;
+    width: 1px;
+    transform: translateX(-50%);
+  }
+  .process-line-fill {
+    position: absolute;
+    inset: 0;
+    transform-origin: top;
+    transform: scaleY(1);
+  }
+  @media (min-width: 1024px) {
+    .process-figure {
+      position: sticky;
+      top: calc(var(--header-h) + 2rem);
+      align-self: start;
+    }
+    .process-step {
+      min-height: var(--step-h, 42vh);
+    }
+    .process-step:last-child {
+      min-height: 0;
+    }
+  }
+  /* Aktiver Schritt: Nummer und Punkt in Signalrot, inaktive Teile der Figur zurück */
+  .process[data-active] .pf {
+    transition: opacity var(--dur-state) var(--ease-out);
+    opacity: 0.28;
+  }
+  .process[data-active='1'] .pf-1,
+  .process[data-active='2'] .pf-2,
+  .process[data-active='3'] .pf-3,
+  .process[data-active='4'] .pf-4 {
+    opacity: 1;
+  }
+  .process[data-active] .process-step {
+    opacity: 0.55;
+  }
+  .process[data-active='1'] [data-step='1'],
+  .process[data-active='2'] [data-step='2'],
+  .process[data-active='3'] [data-step='3'],
+  .process[data-active='4'] [data-step='4'] {
+    opacity: 1;
+  }
+  .process[data-active='1'] [data-step='1'] .process-dot,
+  .process[data-active='2'] [data-step='2'] .process-dot,
+  .process[data-active='3'] [data-step='3'] .process-dot,
+  .process[data-active='4'] [data-step='4'] .process-dot {
+    transform: translateX(-50%) scale(1.6);
+  }
+  .process[data-active='1'] .process-line-fill {
+    transform: scaleY(calc(1 / var(--n)));
+  }
+  .process[data-active='2'] .process-line-fill {
+    transform: scaleY(calc(2 / var(--n)));
+  }
+  .process[data-active='3'] .process-line-fill {
+    transform: scaleY(calc(3 / var(--n)));
+  }
+  .process[data-active='4'] .process-line-fill {
+    transform: scaleY(calc(4 / var(--n)));
+  }
+  .process-line-fill {
+    transition: transform 0.5s var(--ease-out);
+  }
+  /* Mit Unterstützung: Linie füllt sich mit dem Scrollen (Compositor, kein Layout) */
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .process[data-active] .process-line-fill {
+        transition: none;
+        animation: process-line linear both;
+        animation-timeline: view();
+        animation-range: entry 30% exit 70%;
+        transform: none;
+      }
+    }
+  }
+
+  /*
+   * Stapel-Tafeln (Premium-Übersicht): Tafeln gleiten ab lg übereinander. Ohne
+   * Unterstützung für view() bleibt das reine Stapeln; bei reduced motion und
+   * auf dem Handy eine normale Abfolge.
+   */
+  @media (min-width: 1024px) and (min-height: 700px) and (prefers-reduced-motion: no-preference) {
+    .stack-panel {
+      position: sticky;
+      top: calc(var(--header-h) + 1rem);
+      min-height: calc(100vh - var(--header-h) - 2rem);
+    }
+    .stack-panel:focus-within {
+      z-index: 10;
+    }
+    @supports (animation-timeline: view()) {
+      .stack {
+        timeline-scope: --sp2, --sp3;
+      }
+      .stack-panel:nth-child(2) {
+        view-timeline: --sp2 block;
+      }
+      .stack-panel:nth-child(3) {
+        view-timeline: --sp3 block;
+      }
+      .stack-panel:nth-child(1) {
+        animation: stack-back linear both;
+        animation-timeline: --sp2;
+        animation-range: entry 0% entry 100%;
+      }
+      .stack-panel:nth-child(2) {
+        animation: stack-back linear both;
+        animation-timeline: --sp3;
+        animation-range: entry 0% entry 100%;
+      }
+      .stack-panel::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: #0e1116;
+        opacity: 0;
+        pointer-events: none;
+      }
+      .stack-panel:nth-child(1)::after {
+        animation: stack-dim linear both;
+        animation-timeline: --sp2;
+        animation-range: entry 0% entry 100%;
+      }
+      .stack-panel:nth-child(2)::after {
+        animation: stack-dim linear both;
+        animation-timeline: --sp3;
+        animation-range: entry 0% entry 100%;
+      }
+    }
+  }
+
+  /* Dezentes Parallax nur auf Bildflächen, nur mit Unterstützung und ohne reduced motion */
+  @supports (animation-timeline: scroll()) {
+    @media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+      .hero-media {
+        animation: hero-drift linear both;
+        animation-timeline: scroll(root block);
+        animation-range: 0 100vh;
+      }
+      .px-depth-slow,
+      .px-depth-fast {
+        animation: linear both;
+        animation-timeline: view();
+        animation-range: entry 0% exit 100%;
+      }
+      .px-depth-slow {
+        animation-name: depth-slow;
+      }
+      .px-depth-fast {
+        animation-name: depth-fast;
+      }
+    }
+  }
 }
 
 /*
- * Einblendungen (F7): Reveal.tsx setzt «in», sobald ein Element sichtbar wird.
+ * Einblendungen (F7, F14): Reveal setzt «in», sobald ein Element sichtbar wird.
+ * Gruppen (.rv-group) staffeln ihre Kinder über nth-child, höchstens sechs.
  * Ohne JavaScript (kein html.js) und bei Wunsch nach weniger Bewegung bleibt
  * alles sofort sichtbar. Nur Verschiebung und Deckkraft, kurz und ruhig.
  */
 @media (prefers-reduced-motion: no-preference) {
   html.js .rv {
     opacity: 0;
+    transform: translateY(0.75rem);
     transition:
-      opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
-      transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+      opacity var(--dur-reveal) var(--ease-out),
+      transform var(--dur-reveal) var(--ease-out);
     transition-delay: var(--rv-delay, 0ms);
-    will-change: opacity, transform;
-  }
-  html.js .rv-up {
-    transform: translateY(2rem);
-  }
-  html.js .rv-left {
-    transform: translateX(-2rem);
-  }
-  html.js .rv-right {
-    transform: translateX(2rem);
-  }
-  html.js .rv-scale {
-    transform: scale(0.94);
+    /* Sicherheitsnetz: spätestens nach 2,5 s sichtbar, auch wenn das Skript hängt */
+    animation: rv-safety 0s linear 2.5s forwards;
   }
   html.js .rv.in {
     opacity: 1;
     transform: none;
+    animation: none;
+  }
+  html.js .rv-group > * {
+    opacity: 0;
+    transform: translateY(0.75rem);
+    transition:
+      opacity var(--dur-reveal) var(--ease-out),
+      transform var(--dur-reveal) var(--ease-out);
+    transition-delay: calc(var(--i, 0) * var(--stagger));
+    animation: rv-safety 0s linear 2.5s forwards;
+  }
+  html.js .rv-group > :nth-child(2) {
+    --i: 1;
+  }
+  html.js .rv-group > :nth-child(3) {
+    --i: 2;
+  }
+  html.js .rv-group > :nth-child(4) {
+    --i: 3;
+  }
+  html.js .rv-group > :nth-child(5) {
+    --i: 4;
+  }
+  html.js .rv-group > :nth-child(n + 6) {
+    --i: 5;
+  }
+  html.js .rv-group.in > * {
+    opacity: 1;
+    transform: none;
+    animation: none;
   }
 
-  /* Karte des Einzugsgebiets: Kantone erscheinen nacheinander, Sitz pulsiert */
+  /* Karte des Einzugsgebiets: Kantone erscheinen nacheinander, Sitz pulsiert dreimal */
   html.js .map-canton {
     opacity: 0;
     transform: translateY(0.75rem);
     transform-origin: center;
-    transition: opacity 0.6s ease, transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
-    transition-delay: calc(var(--i, 0) * 110ms + 150ms);
+    transition:
+      opacity var(--dur-reveal) var(--ease-out),
+      transform var(--dur-reveal) var(--ease-out);
+    transition-delay: calc(var(--i, 0) * var(--stagger) + 120ms);
+    animation: rv-safety 0s linear 2.5s forwards;
   }
-  html.js .in .map-canton,
-  html.js .map-in .map-canton {
+  html.js .in .map-canton {
     opacity: 1;
     transform: none;
+    animation: none;
   }
   html.js .map-pin {
     opacity: 0;
-    transform: scale(0.2);
+    transform: scale(0.4);
     transform-origin: var(--ox) var(--oy);
-    transition: opacity 0.35s ease, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-    transition-delay: calc(var(--i, 0) * 90ms + 800ms);
+    transition:
+      opacity var(--dur-state) var(--ease-out),
+      transform var(--dur-reveal) var(--ease-out);
+    transition-delay: calc(var(--i, 0) * var(--stagger) + 600ms);
+    animation: rv-safety 0s linear 2.5s forwards;
   }
-  html.js .in .map-pin,
-  html.js .map-in .map-pin {
+  html.js .in .map-pin {
     opacity: 1;
     transform: scale(1);
+    animation: none;
   }
   .map-pulse {
     transform-origin: var(--ox) var(--oy);
-    animation: map-pulse 2.4s ease-out infinite;
+    opacity: 0;
+  }
+  html.js .in .map-pulse {
+    animation: map-pulse 2s var(--ease-out) 900ms 3;
+  }
+  html:not(.js) .map-pulse {
+    display: none;
   }
 
-  html {
-    scroll-behavior: smooth;
+  /* FAQ: Antwort gleitet auf, wenn der Browser Höhen interpolieren kann (Zugabe) */
+  details.faq-item::details-content {
+    height: 0;
+    overflow: clip;
+    transition:
+      height var(--dur-state) var(--ease-out),
+      content-visibility var(--dur-state) allow-discrete;
+  }
+  details.faq-item[open]::details-content {
+    height: auto;
+  }
+  @supports (interpolate-size: allow-keywords) {
+    details.faq-item {
+      interpolate-size: allow-keywords;
+    }
+  }
+}
+
+/* Karte: Beschriftungen auf dem Handy grösser (SVG-Einheiten relativ zum viewBox) */
+.map-code {
+  font-size: 17px;
+}
+.map-label {
+  font-size: 15px;
+}
+.map-seat {
+  font-size: 22px;
+}
+@media (max-width: 640px) {
+  .map-code {
+    font-size: 32px;
+  }
+  .map-label {
+    font-size: 28px;
+  }
+  .map-seat {
+    font-size: 38px;
+  }
+}
+
+/* Weniger Bewegung: alles sofort, auch Bibliotheks-Klassen wie animate-spin (Ausnahme .motion-keep) */
+@media (prefers-reduced-motion: reduce) {
+  *:not(.motion-keep),
+  *:not(.motion-keep)::before,
+  *:not(.motion-keep)::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .process[data-active] .process-step,
+  .process[data-active] .pf {
+    opacity: 1;
+  }
+}
+
+/* Druck: Kopfzeile, Leisten und Formular weg, Text schwarz auf weiss */
+@media print {
+  header,
+  footer,
+  nav,
+  .skip-link,
+  .no-print,
+  #kontakt-formular {
+    display: none !important;
+  }
+  .stack-main {
+    box-shadow: none;
+  }
+  body {
+    color: #000;
+    background: #fff;
+  }
+  a[href^='http']::after {
+    content: ' (' attr(href) ')';
+    font-size: 0.85em;
+  }
+}
+
+@keyframes rv-safety {
+  to {
+    opacity: 1;
+    transform: none;
   }
 }
 
@@ -320,20 +704,50 @@
   }
 }
 
-@keyframes marquee {
+@keyframes process-line {
   from {
-    transform: translateX(0);
+    transform: scaleY(0);
   }
   to {
-    transform: translateX(-50%);
+    transform: scaleY(1);
   }
 }
 
-@keyframes hero-pan {
+@keyframes stack-back {
+  to {
+    transform: scale(0.97) translateY(-0.5rem);
+  }
+}
+
+@keyframes stack-dim {
+  to {
+    opacity: 0.35;
+  }
+}
+
+@keyframes hero-drift {
   from {
-    transform: scale(1.06) translateX(0);
+    transform: translateY(0);
   }
   to {
-    transform: scale(1) translateX(0);
+    transform: translateY(-6%);
+  }
+}
+
+@keyframes depth-slow {
+  from {
+    transform: translateY(4%);
+  }
+  to {
+    transform: translateY(-4%);
+  }
+}
+
+@keyframes depth-fast {
+  from {
+    transform: translateY(-4%);
+  }
+  to {
+    transform: translateY(4%);
   }
 }

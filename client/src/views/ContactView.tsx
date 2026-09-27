@@ -125,7 +125,7 @@ export default function ContactView({ lang }: { lang: Locale }) {
             />
           </div>
           <Reveal
-            variant="scale"
+
             className="overflow-hidden bg-white shadow-[0_1px_0_rgba(14,17,22,0.04),0_28px_56px_-32px_rgba(14,17,22,0.35)] lg:col-span-8"
           >
             <ConsentMap texts={misc.map} />

@@ -190,7 +190,7 @@ export default function ServicesOverviewView({ lang }: { lang: Locale }) {
             </Button>
           </Reveal>
           <Reveal
-            variant="scale"
+
             delay={150}
             className="grid grid-cols-3 gap-3 lg:col-span-6"
           >

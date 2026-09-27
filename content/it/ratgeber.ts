@@ -14,6 +14,7 @@ export const ratgeberUebersicht = {
     'Direttamente ai servizi: [Pulizia di manutenzione](/leistungen/unterhaltsreinigung), [Custodia di stabili](/leistungen/hauswartung) e [tutti i servizi](/leistungen).',
   byline: `Una guida di ${company.brand}`,
   updatedLabel: 'Aggiornato al',
+  readMore: 'Leggi la guida',
   publishedLabel: 'Pubblicato il',
 }
 

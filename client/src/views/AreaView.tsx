@@ -242,7 +242,7 @@ export default function AreaView({ lang }: { lang: Locale }) {
             </Reveal>
           </div>
           <Reveal
-            variant="scale"
+
             delay={150}
             className="lg:col-span-7 lg:col-start-6 xl:col-span-6 xl:col-start-7"
           >

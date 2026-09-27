@@ -27,6 +27,7 @@ export const premiumTitleBrand = company.premiumBrand ? `${company.premiumBrand}
 
 export const ui = {
   offerCta: 'Demander un devis gratuit',
+  toService: 'Voir la prestation',
   atAGlance: 'En bref',
   notIncluded: 'Non compris dans cette prestation',
   steps: 'Déroulement',

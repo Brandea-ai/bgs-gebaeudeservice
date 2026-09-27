@@ -45,7 +45,7 @@ const offerSteps: Step[] = [
 export const home = {
   eyebrow: `Reinigung und Hauswartung aus ${company.address.city}`,
   h1: 'Gebäudereinigung und Hauswartung für Luzern, Zug und Umgebung',
-  lead: 'Für Unternehmen, Verwaltungen und anspruchsvolle Privatkunden. Wir kommen für eine kostenlose und unverbindliche Offerte vorbei.',
+  lead: 'Saubere und gepflegte Liegenschaften, Büros und Hallen, ohne dass Sie sich selbst darum kümmern müssen. Für Unternehmen, Verwaltungen und anspruchsvolle Privatkunden. Wir sehen uns Ihr Objekt an und erstellen eine schriftliche Offerte.',
   proofTitle: 'Auf einen Blick',
   services: {
     title: 'Unsere Leistungen',
@@ -88,7 +88,7 @@ export const home = {
 }
 
 export const about = {
-  h1: `Reinigung und Hauswartung aus ${company.address.city}`,
+  h1: `Reinigung und Hauswartung aus ${company.address.city}, seit 2006`,
   imageAlt: 'Unser Team bei der Arbeit',
   lead: `Seit 2006 sind wir in der Reinigung und Hauswartung tätig. Heute betreuen über 50 Mitarbeitende mehr als 120 Kunden in den Kantonen ${cantonList}, auf ${listDe(company.languages)}.`,
   // Ersetzt «Unsere Werte» (M47): nur Zusagen, die belegt oder bestätigt sind (E18)
@@ -105,12 +105,12 @@ export const about = {
   },
   contact: {
     title: 'Ihre Ansprechperson',
-    text: `Ihre Anfrage bearbeitet der Geschäftsführer persönlich. Wir melden uns ${company.responseTime}.`,
+    text: `Ihre Anfrage geht direkt an den Geschäftsführer. Er meldet sich ${company.responseTime}.`,
   },
   register: { title: 'Registerdaten', court: company.register as string, uid: 'UID' },
   statsLabel: 'In Zahlen',
   cta: {
-    title: 'Lernen wir uns kennen',
+    title: 'Besichtigung vereinbaren',
     text: 'Bei der Besichtigung sehen wir uns Ihr Objekt an und klären Umfang und Zeiten. Danach erhalten Sie eine schriftliche Offerte.',
   },
 }
@@ -139,14 +139,14 @@ export const contact = {
     { question: 'Übernehmen Sie auch kurzfristige Einsätze?', answer: 'Rufen Sie uns an. Wir klären mit Ihnen, was kurzfristig möglich ist.' },
   ],
   cta: {
-    title: 'Bereit für Ihre Offerte?',
-    text: `Das Formular steht am Ende jeder Seite. Wir melden uns ${company.responseTime}.`,
+    title: 'Ihre Offerte in drei Schritten',
+    text: `Beschreiben Sie uns Objekt und Anliegen im Formular gleich unten. Wir melden uns ${company.responseTime} und vereinbaren die Besichtigung.`,
   },
 }
 
 export const area = {
-  h1: `Einzugsgebiet: ${cantonList}`,
-  lead: `Wir arbeiten von unserem Sitz in ${company.address.city} aus in fünf Kantonen. Alle Leistungen bieten wir im ganzen Gebiet an, für Unternehmen ebenso wie für anspruchsvolle Privatkunden.`,
+  h1: 'Einzugsgebiet: Zentralschweiz und Aargau',
+  lead: `Von unserem Sitz in ${company.address.city} aus arbeiten wir in den Kantonen ${cantonList}. Alle Leistungen bieten wir im ganzen Gebiet an, für Unternehmen ebenso wie für anspruchsvolle Privatkunden.`,
   cantonsTitle: 'Kantone',
   cantonLabels: company.cantons.map((canton) => `Kanton ${canton}`),
   seatTitle: 'Sitz und Kontakt',
@@ -164,13 +164,13 @@ export const area = {
   },
   cta: {
     title: 'Liegt Ihr Objekt im Gebiet?',
-    text: `Beschreiben Sie uns Objekt und Ort. Wir kommen für eine kostenlose und unverbindliche Offerte vorbei und melden uns ${company.responseTime}.`,
+    text: `Beschreiben Sie uns Objekt und Ort. Wir melden uns ${company.responseTime} und kommen für die Besichtigung vorbei, kostenlos und unverbindlich.`,
   },
 }
 
 export const servicesOverview = {
-  h1: 'Leistungen: Reinigung und Hauswartung',
-  lead: `Wählen Sie nach Anlass. Alle Leistungen bieten wir in den Kantonen ${cantonList} an. Für eine Offerte kommen wir kostenlos und unverbindlich vorbei.`,
+  h1: 'Reinigung und Hauswartung für Liegenschaften, Büros und Gewerbe',
+  lead: `Laufende Reinigung, einmalige Einsätze oder die Betreuung ganzer Liegenschaften: Wählen Sie nach Anlass. Für Unternehmen, Verwaltungen und Eigentümer in den Kantonen ${cantonList}. Nicht sicher, was passt? Wir klären es bei der Besichtigung.`,
   // Auswahlhilfe nach Anlass (Zielbild v2, 03 Abschnitt 2a), nur bestätigte Leistungen (R3a–R3c)
   groups: [
     {
@@ -215,7 +215,7 @@ export const servicesOverview = {
 export const premiumOverview = {
   line: premiumLine,
   h1: 'Reinigung für besondere Ansprüche',
-  lead: 'Für Villen und Residenzen, Zweitwohnungen, Hotels mit besonderen Wünschen, Family Offices, Privatjets und Yachten. Diskret, sorgfältig und in Ihrer Sprache.',
+  lead: 'Für Villen und Residenzen, Zweitwohnungen, Hotels mit besonderen Wünschen, Family Offices, Privatjets und Yachten. Immer dasselbe Team, diskret, mit Kenntnis empfindlicher Materialien und in Ihrer Sprache.',
   // Bedeutung des Namens nur mit dem neuen Namen (E38)
   nameMeaning: company.premiumBrand
     ? `Der Name ${company.premiumBrand} kommt vom lateinischen «clavis», dem Schlüssel. Sie vertrauen uns Ihr Haus an, wir gehen damit um, als wäre es unser eigenes.`
@@ -252,10 +252,10 @@ export const premiumOverview = {
   ] satisfies { key: PromiseKey; title: string; text: string }[] as { key: PromiseKey; title: string; text: string }[],
   places: {
     title: 'Wo wir für Sie da sind',
-    text: `Am Vierwaldstättersee von Luzern und Meggen bis Weggis, Vitznau, Hergiswil und Ennetbürgen, am Zuger- und Ägerisee von Zug und Walchwil bis Oberägeri, in Engelberg und in den ganzen Kantonen ${cantonList}. [Zum Einzugsgebiet](/einzugsgebiet)`,
+    text: `Am Vierwaldstättersee von Luzern und Meggen bis Weggis, Vitznau, Hergiswil und Ennetbürgen, am Zuger- und Ägerisee von Zug und Walchwil bis Oberägeri, in Engelberg und in den ganzen Kantonen ${cantonList}.`,
   },
   cta: {
     title: 'Diskret anfragen',
-    text: `Rufen Sie uns an oder schreiben Sie uns. Ihre Anfrage bearbeitet der Geschäftsführer persönlich, auf Wunsch unter Geheimhaltung. Wir melden uns ${company.responseTime}.`,
+    text: 'Rufen Sie uns an oder schreiben Sie uns. Ihre Anfrage bearbeitet der Geschäftsführer persönlich, auf Wunsch unter Geheimhaltung.',
   },
 }

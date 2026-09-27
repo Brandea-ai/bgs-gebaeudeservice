@@ -87,6 +87,10 @@ export async function POST(request: NextRequest) {
   if (!name || !email || !message) {
     return fail(400, 'Bitte füllen Sie alle Pflichtfelder aus.')
   }
+  // Einwilligung zur Datenschutzerklärung ist Pflicht (M14); der Browser prüft sie, der Server auch
+  if (fields.acceptPrivacy !== true) {
+    return fail(400, 'Bitte bestätigen Sie die Datenschutzerklärung.')
+  }
   if (!EMAIL_REGEX.test(email)) {
     return fail(400, 'Bitte geben Sie eine gültige E-Mail-Adresse ein.')
   }

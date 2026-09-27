@@ -509,15 +509,15 @@ const hauswartung: ServicePageContent = {
   path: '/leistungen/hauswartung',
   area: 'leistungen',
   eyebrow: 'Betreuung von Liegenschaften',
-  h1: 'Hauswartung für Wohn- und Geschäftsliegenschaften',
+  h1: 'Hauswartung für Wohn- und Geschäftshäuser',
   lead: [
     'Eine Liegenschaft braucht mehr als Reinigung: Jemand muss regelmässig nach dem Rechten sehen, kleine Schäden beheben, die Entsorgung organisieren und bei Wohnungsübergaben dabei sein. Das übernimmt die Hauswartung.',
-    'Für Verwaltungen, Eigentümer und Stockwerkeigentümerschaften. Welche Aufgaben wir übernehmen, halten wir schriftlich fest.',
+    'Für Verwaltungen, Eigentümer und Stockwerkeigentümerschaften, die nicht selbst nach dem Rechten sehen können oder wollen. Welche Aufgaben wir übernehmen, wie oft wir vor Ort sind und wem wir Mängel melden, halten wir schriftlich fest.',
   ],
   facts: [
     { label: 'Für', value: 'Verwaltungen, Eigentümer und Stockwerkeigentümerschaften' },
     { label: 'Objekte', value: 'Wohn- und Geschäftsliegenschaften' },
-    { label: 'Nicht im Angebot', value: 'Winterdienst und Pikettdienst' },
+    { label: 'Umfang', value: 'Aufgaben nach Bedarf, schriftlich festgehalten' },
   ],
   scope: {
     title: 'Was die Hauswartung übernimmt',
@@ -572,6 +572,7 @@ const hauswartung: ServicePageContent = {
       question: 'Können wir einzelne Aufgaben wählen?',
       answer: 'Ja. Wir stellen die Hauswartung aus den Aufgaben zusammen, die Ihre Liegenschaft braucht.',
     },
+    { question: 'Sind Sie versichert?', answer: answers.versicherung },
     { question: 'Was kostet die Hauswartung?', answer: answers.kosten },
     { question: 'In welchen Regionen sind Sie tätig?', answer: answers.gebiet },
   ],

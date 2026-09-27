@@ -8,7 +8,6 @@ import Steps from "@/components/Steps";
 import HeroBackground from "@/components/HeroBackground";
 import SectionHead from "@/components/SectionHead";
 import CantonMap from "@/components/CantonMap";
-import CountUp from "@/components/CountUp";
 import ImageSlot from "@/components/ImageSlot";
 import Reveal from "@/components/Reveal";
 import TrustStrip from "@/components/TrustStrip";
@@ -104,7 +103,7 @@ export default function HomeView({ lang }: { lang: Locale }) {
 
           {/* Grosse Bildfläche (E19): später ein Foto des Teams bei der Arbeit */}
           <Reveal
-            variant="scale"
+
             delay={150}
             className="lg:col-span-6 lg:col-start-7"
           >
@@ -120,7 +119,7 @@ export default function HomeView({ lang }: { lang: Locale }) {
               {/* Kennzahl schwebt über dem Bild */}
               <div className="absolute -bottom-5 left-5 bg-signal px-5 py-4 text-white shadow-[0_24px_48px_-20px_rgba(184,18,27,0.7)] sm:-left-6 sm:bottom-8">
                 <p className="font-display text-3xl font-bold leading-none">
-                  <CountUp value={proof[0].value} />
+                  {proof[0].value}
                 </p>
                 <p className="mt-1 text-sm font-medium text-white/90">
                   {proof[0].label}
@@ -143,7 +142,7 @@ export default function HomeView({ lang }: { lang: Locale }) {
                 className="flex flex-col gap-2 bg-ink/80 px-5 py-6 backdrop-blur-sm sm:px-7 sm:py-8"
               >
                 <dd className="order-1 font-display text-[clamp(2rem,1.4rem+1.8vw,3.25rem)] font-bold leading-none tracking-[-0.03em] text-white sm:whitespace-nowrap">
-                  <CountUp value={item.value} />
+                  {item.value}
                 </dd>
                 <dt className="order-2 text-sm font-medium leading-snug text-white/85">
                   {item.label}

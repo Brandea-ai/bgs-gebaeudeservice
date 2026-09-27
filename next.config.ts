@@ -39,6 +39,8 @@ const contentSecurityPolicy = [
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  // Kein Versionsfingerabdruck im Antwortkopf (T15)
+  poweredByHeader: false,
 
   env: {
     NEW_BRAND_ACTIVE: String(newBrandActive),
@@ -75,7 +77,7 @@ const nextConfig: NextConfig = {
       '@radix-ui/react-tabs',
       '@radix-ui/react-tooltip',
       'lucide-react',
-      'framer-motion',
+      '@phosphor-icons/react',
     ],
   },
 

@@ -77,7 +77,7 @@ export default function ArticlePage({
                   )}
                 </p>
               </div>
-              <Reveal variant="scale" delay={150} className="lg:col-span-5">
+              <Reveal delay={150} className="lg:col-span-5">
                 <ImageSlot
                   lang={lang}
                   label={t.byline}

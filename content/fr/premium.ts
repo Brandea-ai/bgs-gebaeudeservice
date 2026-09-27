@@ -226,7 +226,10 @@ const yacht: ServicePageContent = {
     { path: '/premium/privatjet', text: 'Pour la cabine de votre jet privé.' },
     { path: '/premium', text: 'Toutes les offres et tous les engagements de notre ligne premium.' },
   ],
-  cta,
+  cta: {
+    title: cta.title,
+    text: 'Indiquez-nous le bateau, la place d’amarrage et les dates souhaitées. Nous examinons le bateau à sa place d’amarrage et vous remettons un devis, gratuitement et sans engagement.',
+  },
 }
 
 export const premium = { luxusimmobilien, privatjet, yacht }

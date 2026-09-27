@@ -1,4 +1,4 @@
-import { company, premiumLabel } from '../../shared/company'
+import { cantonList, company, premiumLabel } from '../../shared/company'
 import type { PagePath } from '../../shared/seo'
 
 /**
@@ -58,14 +58,14 @@ export const menu = {
 
 export const footer = {
   newBrandLine: `Eine Marke der ${company.legalName}`,
-  about: `Reinigung und Hauswartung für Unternehmen und anspruchsvolle Privatkunden. Sitz in ${company.address.city}.`,
+  about: `Reinigung und Hauswartung für Unternehmen und anspruchsvolle Privatkunden. Sitz in ${company.address.city}, tätig in den Kantonen ${cantonList}.`,
   companyLinks: [
     { path: '/ueber-uns', label: 'Über uns' },
     { path: '/kontakt', label: 'Kontakt' },
     { path: '/blog', label: 'Ratgeber' },
   ] satisfies NavLink[],
-  areaTitle: 'Einzugsgebiet',
-  areaLink: { path: '/einzugsgebiet', label: 'Luzern, Zug, Aargau, Nid- und Obwalden' } satisfies NavLink,
+  areaTitle: 'Unternehmen',
+  areaLink: { path: '/einzugsgebiet', label: 'Einzugsgebiet' } satisfies NavLink,
   rights: `${company.legalName}. Alle Rechte vorbehalten.`,
   legal: [
     { path: '/impressum', label: 'Impressum' },
@@ -75,8 +75,8 @@ export const footer = {
 
 /** Kontaktformular im Footer (M04, M07, M30). Die Werte gehen als Text in die E-Mail. */
 export const contactForm = {
-  title: 'Jetzt Kontakt aufnehmen',
-  intro: `Fordern Sie eine unverbindliche Offerte an. Wir melden uns ${company.responseTime}.`,
+  title: 'Offerte anfragen',
+  intro: `Beschreiben Sie uns Objekt und Anliegen. Wir melden uns ${company.responseTime} und vereinbaren die Besichtigung, kostenlos und unverbindlich.`,
   choose: 'Bitte wählen...',
   fields: {
     name: { label: 'Name *', placeholder: 'Ihr vollständiger Name' },
@@ -84,20 +84,10 @@ export const contactForm = {
     phone: { label: 'Telefon', placeholder: 'Ihre Telefonnummer' },
     service: { label: 'Gewünschte Leistung' },
     location: { label: 'Ort oder PLZ des Objekts', placeholder: 'z. B. 6300 Zug' },
-    frequency: { label: 'Rhythmus' },
-    message: { label: 'Ihre Nachricht *', placeholder: 'Beschreiben Sie Ihr Anliegen...' },
+    frequency: { label: 'Gewünschter Rhythmus' },
+    message: { label: 'Objekt und Anliegen *', placeholder: 'Zum Beispiel: Art des Objekts, ungefähre Fläche oder Anzahl Wohnungen, gewünschter Rhythmus und Startzeitpunkt' },
   },
   serviceOptions: [
-    {
-      group: 'Premium',
-      options: [
-        { value: 'Luxusimmobilien', label: 'Luxusimmobilien (Villen, Lofts)' },
-        { value: 'Privatjet-Reinigung', label: 'Privatjet-Reinigung' },
-        { value: 'Yacht-Reinigung', label: 'Yacht-Reinigung' },
-        { value: 'Zweitwohnungen und Residences', label: 'Zweitwohnungen und Residences' },
-        { value: 'Hotels', label: 'Hotels' },
-      ],
-    },
     {
       group: 'Reinigung und Hauswartung',
       options: [
@@ -113,6 +103,16 @@ export const contactForm = {
       ],
     },
     {
+      group: 'Premium',
+      options: [
+        { value: 'Luxusimmobilien', label: 'Luxusimmobilien (Villen, Lofts)' },
+        { value: 'Privatjet-Reinigung', label: 'Privatjet-Reinigung' },
+        { value: 'Yacht-Reinigung', label: 'Yacht-Reinigung' },
+        { value: 'Zweitwohnungen und Residences', label: 'Zweitwohnungen und Residences' },
+        { value: 'Hotels', label: 'Hotels' },
+      ],
+    },
+    {
       group: 'Sonstiges',
       options: [
         { value: 'Beratung', label: 'Beratung' },
@@ -125,10 +125,17 @@ export const contactForm = {
   consentLink: 'Datenschutzerklärung',
   consentAfter: 'zur Kenntnis genommen und bin einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage verwendet werden. *',
   required: '* Pflichtfelder',
-  submit: 'Nachricht senden',
+  submit: 'Anfrage senden',
   sending: 'Wird gesendet...',
-  success: `Vielen Dank! Ihre Nachricht wurde versendet. Wir melden uns ${company.responseTime}.`,
-  error: `Ihre Nachricht konnte nicht gesendet werden. Bitte rufen Sie uns an (${company.phone.display}) oder schreiben Sie an ${company.email}.`,
+  success: `Vielen Dank, Ihre Anfrage ist bei uns eingegangen. Wir melden uns ${company.responseTime} und vereinbaren mit Ihnen einen Termin für die Besichtigung. Wenn es eilt, erreichen Sie uns unter ${company.phone.display}.`,
+  successTitle: 'Anfrage eingegangen',
+  errors: {
+    required: 'Bitte füllen Sie dieses Feld aus.',
+    email: 'Bitte geben Sie eine gültige E-Mail-Adresse ein.',
+    consent: 'Bitte bestätigen Sie die Datenschutzerklärung, damit wir Ihre Anfrage bearbeiten dürfen.',
+    summary: 'Bitte prüfen Sie die markierten Felder.',
+  },
+  error: `Ihre Anfrage konnte nicht gesendet werden. Bitte rufen Sie uns an (${company.phone.display}) oder schreiben Sie an ${company.email}.`,
 }
 
 export const notFound = {
@@ -149,6 +156,7 @@ export const nav = {
   contactForm,
   notFound,
   languageSwitch: 'Sprache',
+  languageSwitchFooter: 'Sprache im Fussbereich',
   chrome: {
     skip: 'Zum Inhalt springen',
     answer: `Antwort ${company.responseTime}`,
@@ -167,7 +175,7 @@ export const nav = {
       { key: 'antwort', label: '24 Stunden', text: 'Antwort an Werktagen' },
       { key: 'offerte', label: 'Kostenlos', text: 'Offerte nach Besichtigung' },
     ],
-    mobileCta: 'Offerte',
+    mobileCta: 'Offerte anfragen',
     scrollHint: 'Weiter',
   },
   errorPage: { title: 'Leider ist ein Fehler aufgetreten.', reload: 'Seite neu laden' },

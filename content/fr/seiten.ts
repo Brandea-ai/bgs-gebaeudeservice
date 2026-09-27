@@ -35,7 +35,7 @@ const offerSteps: Step[] = [
 export const home = {
   eyebrow: `Nettoyage et conciergerie depuis ${company.address.city}`,
   h1: 'Nettoyage de bâtiments et conciergerie à Lucerne, Zoug et environs',
-  lead: 'Pour les entreprises, les gérances et une clientèle privée exigeante. Nous passons chez vous pour un devis gratuit et sans engagement.',
+  lead: 'Des immeubles, des bureaux et des halles propres et entretenus, sans que vous ayez à vous en occuper. Pour les entreprises, les gérances et une clientèle privée exigeante. Nous examinons votre bien et vous remettons un devis écrit.',
   proofTitle: 'En bref',
   services: {
     title: 'Nos prestations',
@@ -77,7 +77,7 @@ export const home = {
 }
 
 export const about = {
-  h1: `Nettoyage et conciergerie depuis ${company.address.city}`,
+  h1: `Nettoyage et conciergerie depuis ${company.address.city}, depuis 2006`,
   imageAlt: 'Notre équipe au travail',
   lead: `Depuis 2006, nous sommes actifs dans le nettoyage et la conciergerie. Aujourd’hui, plus de 50 collaboratrices et collaborateurs s’occupent de plus de 120 clients dans les cantons de ${cantonList}, en ${languageList}.`,
   promises: {
@@ -93,13 +93,13 @@ export const about = {
   },
   contact: {
     title: 'Votre interlocuteur',
-    text: `Notre directeur traite personnellement votre demande. Nous vous répondons ${responseTime}.`,
+    text: `Votre demande parvient directement à notre directeur. Il vous répond ${responseTime}.`,
   },
   // Le type allemand reprend la valeur littérale de company.register, le texte français la remplace
   register: { title: 'Données du registre', court: register, uid: 'IDE' },
   statsLabel: 'En chiffres',
   cta: {
-    title: 'Faisons connaissance',
+    title: 'Convenir d’une visite',
     text: 'Lors de la visite, nous examinons votre bien et clarifions l’étendue des prestations et les horaires. Vous recevez ensuite un devis écrit.',
   },
 }
@@ -128,14 +128,14 @@ export const contact = {
     { question: 'Acceptez-vous aussi des interventions à bref délai ?', answer: 'Appelez-nous. Nous voyons avec vous ce qui est possible à bref délai.' },
   ],
   cta: {
-    title: 'Prêt pour votre devis ?',
-    text: `Le formulaire se trouve au bas de chaque page. Nous vous répondons ${responseTime}.`,
+    title: 'Votre devis en trois étapes',
+    text: `Décrivez-nous le bien et votre demande dans le formulaire ci-dessous. Nous vous répondons ${responseTime} et convenons de la visite.`,
   },
 }
 
 export const area = {
-  h1: `Zone d’intervention : ${cantonList}`,
-  lead: `Depuis notre siège à ${company.address.city}, nous intervenons dans cinq cantons. Nous proposons toutes nos prestations dans toute la zone, aux entreprises comme à une clientèle privée exigeante.`,
+  h1: 'Zone d’intervention : Suisse centrale et Argovie',
+  lead: `Depuis notre siège à ${company.address.city}, nous intervenons dans les cantons de ${cantonList}. Nous proposons toutes nos prestations dans toute la zone, aux entreprises comme à une clientèle privée exigeante.`,
   cantonsTitle: 'Cantons',
   cantonLabels: ['Canton de Lucerne', 'Canton de Zoug', 'Canton d’Argovie', 'Canton de Nidwald', 'Canton d’Obwald'],
   seatTitle: 'Siège et contact',
@@ -152,13 +152,13 @@ export const area = {
   },
   cta: {
     title: 'Votre bien se trouve-t-il dans notre zone ?',
-    text: `Décrivez-nous le bien et le lieu. Nous passons pour un devis gratuit et sans engagement et vous répondons ${responseTime}.`,
+    text: `Décrivez-nous le bien et le lieu. Nous vous répondons ${responseTime} et passons pour la visite, gratuitement et sans engagement.`,
   },
 }
 
 export const servicesOverview = {
-  h1: 'Prestations : nettoyage et conciergerie',
-  lead: `Choisissez selon votre besoin. Nous proposons toutes nos prestations dans les cantons de ${cantonList}. Pour un devis, nous passons gratuitement et sans engagement.`,
+  h1: 'Nettoyage et conciergerie pour immeubles, bureaux et commerces',
+  lead: `Nettoyage régulier, interventions ponctuelles ou suivi d’immeubles entiers : choisissez selon votre besoin. Pour les entreprises, les gérances et les propriétaires des cantons de ${cantonList}. Vous hésitez ? Nous clarifions cela lors de la visite.`,
   groups: [
     {
       title: 'Nettoyage régulier',
@@ -215,7 +215,7 @@ const promises: Seiten['premiumOverview']['promises'] = [
 export const premiumOverview = {
   line: premiumLine,
   h1: 'Des nettoyages pour des exigences particulières',
-  lead: 'Pour les villas et les résidences, les résidences secondaires, les hôtels aux souhaits particuliers, les family offices, les jets privés et les yachts. En toute discrétion, avec soin et dans votre langue.',
+  lead: 'Pour les villas et les résidences, les résidences secondaires, les hôtels aux souhaits particuliers, les family offices, les jets privés et les yachts. Toujours la même équipe, en toute discrétion, avec la connaissance des matériaux délicats et dans votre langue.',
   nameMeaning: company.premiumBrand
     ? `Le nom ${company.premiumBrand} vient du latin « clavis », la clé. Vous nous confiez votre maison, nous en prenons soin comme si c’était la nôtre.`
     : null,
@@ -237,10 +237,10 @@ export const premiumOverview = {
   promises,
   places: {
     title: 'Où nous sommes à votre service',
-    text: `Au bord du lac des Quatre-Cantons, de Lucerne et Meggen jusqu’à Weggis, Vitznau, Hergiswil et Ennetbürgen, au bord des lacs de Zoug et d’Ägeri, de Zoug et Walchwil jusqu’à Oberägeri, à Engelberg et dans l’ensemble des cantons de ${cantonList}. [Vers la zone d’intervention](/einzugsgebiet)`,
+    text: `Au bord du lac des Quatre-Cantons, de Lucerne et Meggen jusqu’à Weggis, Vitznau, Hergiswil et Ennetbürgen, au bord des lacs de Zoug et d’Ägeri, de Zoug et Walchwil jusqu’à Oberägeri, à Engelberg et dans l’ensemble des cantons de ${cantonList}.`,
   },
   cta: {
     title: 'Demandez en toute discrétion',
-    text: `Appelez-nous ou écrivez-nous. Notre directeur traite personnellement votre demande, en toute confidentialité si vous le souhaitez. Nous vous répondons ${responseTime}.`,
+    text: 'Appelez-nous ou écrivez-nous. Notre directeur traite personnellement votre demande, en toute confidentialité si vous le souhaitez.',
   },
 }

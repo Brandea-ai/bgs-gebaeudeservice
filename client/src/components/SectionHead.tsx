@@ -1,10 +1,9 @@
 import type { ReactNode } from "react";
-import Reveal from "./Reveal";
 
 /**
- * Kopf eines Abschnitts (F1, F7): Titel und Einleitung in festen Schriftstufen,
- * eine kleine Kennzeichnung nur, wenn sie etwas sagt (etwa «Häufige Fragen»).
- * tone passt die Farben an dunkle Flächen an.
+ * Kopf eines Abschnitts (F1, F14): Titel und Einleitung in festen Schriftstufen,
+ * eine Kennzeile nur, wenn sie etwas sagt. Statisch, ohne Einblendung:
+ * Überschriften werden nicht animiert. tone passt die Farben an dunkle Flächen an.
  */
 export default function SectionHead({
   id,
@@ -29,13 +28,11 @@ export default function SectionHead({
 }) {
   const dark = tone === "dark";
   return (
-    <Reveal
+    <div
       className={`${align === "center" ? "mx-auto text-center" : ""} ${className}`}
     >
       {eyebrow && (
-        <p
-          className={`mb-4 inline-flex items-center rounded-full px-3 py-1 font-mono text-[0.6875rem] font-semibold uppercase tracking-[0.14em] ${dark ? "bg-white/10 text-brass" : "bg-signal-light/60 text-signal-dark"}`}
-        >
+        <p className={`t-eyebrow mb-4 ${dark ? "text-brass" : "text-signal"}`}>
           {eyebrow}
         </p>
       )}
@@ -53,6 +50,6 @@ export default function SectionHead({
         </p>
       )}
       {children}
-    </Reveal>
+    </div>
   );
 }

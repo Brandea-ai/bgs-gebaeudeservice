@@ -1,5 +1,6 @@
 import { company, premiumLabel } from '../../shared/company'
 import type { NavDictionary } from '../de/navigation'
+import { cantons } from './common'
 
 /** English texts of menu, footer, contact form and 404 page (M60) */
 
@@ -52,14 +53,14 @@ export const nav: NavDictionary = {
   },
   footer: {
     newBrandLine: `A brand of ${company.legalName}`,
-    about: `Cleaning and caretaking for businesses and discerning private clients. Based in ${company.address.city}.`,
+    about: `Cleaning and caretaking for businesses and discerning private clients. Based in ${company.address.city}, working in the cantons of ${cantons}.`,
     companyLinks: [
       { path: '/ueber-uns', label: 'About us' },
       { path: '/kontakt', label: 'Contact' },
       { path: '/blog', label: 'Guides' },
     ],
-    areaTitle: 'Service area',
-    areaLink: { path: '/einzugsgebiet', label: 'Lucerne, Zug, Aargau, Nidwalden and Obwalden' },
+    areaTitle: 'Company',
+    areaLink: { path: '/einzugsgebiet', label: 'Service area' },
     rights: `${company.legalName}. All rights reserved.`,
     legal: [
       { path: '/impressum', label: 'Legal notice' },
@@ -67,8 +68,8 @@ export const nav: NavDictionary = {
     ],
   },
   contactForm: {
-    title: 'Get in touch',
-    intro: `Request a non-binding quote. We will get back to you ${responseTime}.`,
+    title: 'Request a quote',
+    intro: `Describe your property and what you need. We will get back to you ${responseTime} and arrange the site visit, free of charge and without obligation.`,
     choose: 'Please select...',
     fields: {
       name: { label: 'Name *', placeholder: 'Your full name' },
@@ -76,20 +77,10 @@ export const nav: NavDictionary = {
       phone: { label: 'Phone', placeholder: 'Your phone number' },
       service: { label: 'Service required' },
       location: { label: 'Location or postcode of the property', placeholder: 'e.g. 6300 Zug' },
-      frequency: { label: 'Frequency' },
-      message: { label: 'Your message *', placeholder: 'Tell us what you need...' },
+      frequency: { label: 'Desired frequency' },
+      message: { label: 'Property and request *', placeholder: 'For example: type of property, approximate area or number of flats, desired frequency and start date' },
     },
     serviceOptions: [
-      {
-        group: 'Premium',
-        options: [
-          { value: 'Luxusimmobilien', label: 'Luxury properties (villas, lofts)' },
-          { value: 'Privatjet-Reinigung', label: 'Private jet cleaning' },
-          { value: 'Yacht-Reinigung', label: 'Yacht cleaning' },
-          { value: 'Zweitwohnungen und Residences', label: 'Second homes and residences' },
-          { value: 'Hotels', label: 'Hotels' },
-        ],
-      },
       {
         group: 'Cleaning and caretaking',
         options: [
@@ -105,6 +96,16 @@ export const nav: NavDictionary = {
         ],
       },
       {
+        group: 'Premium',
+        options: [
+          { value: 'Luxusimmobilien', label: 'Luxury properties (villas, lofts)' },
+          { value: 'Privatjet-Reinigung', label: 'Private jet cleaning' },
+          { value: 'Yacht-Reinigung', label: 'Yacht cleaning' },
+          { value: 'Zweitwohnungen und Residences', label: 'Second homes and residences' },
+          { value: 'Hotels', label: 'Hotels' },
+        ],
+      },
+      {
         group: 'Other',
         options: [
           { value: 'Beratung', label: 'Advice' },
@@ -117,10 +118,17 @@ export const nav: NavDictionary = {
     consentLink: 'privacy policy',
     consentAfter: 'and agree that my details will be used to process my enquiry. *',
     required: '* Required fields',
-    submit: 'Send message',
+    submit: 'Send request',
     sending: 'Sending...',
-    success: `Thank you! Your message has been sent. We will get back to you ${responseTime}.`,
-    error: `Your message could not be sent. Please call us (${company.phone.display}) or write to ${company.email}.`,
+    success: `Thank you, we have received your request. We will get back to you ${responseTime} and arrange a date for the site visit with you. If it is urgent, you can reach us on ${company.phone.display}.`,
+    successTitle: 'Request received',
+    errors: {
+      required: 'Please fill in this field.',
+      email: 'Please enter a valid email address.',
+      consent: 'Please confirm the privacy policy so that we may process your request.',
+      summary: 'Please check the highlighted fields.',
+    },
+    error: `Your request could not be sent. Please call us (${company.phone.display}) or write to ${company.email}.`,
   },
   notFound: {
     title: 'Page not found',
@@ -132,6 +140,7 @@ export const nav: NavDictionary = {
     ],
   },
   languageSwitch: 'Language',
+  languageSwitchFooter: 'Language in the footer',
   chrome: {
     skip: 'Skip to content',
     answer: `Reply ${responseTime}`,
@@ -150,7 +159,7 @@ export const nav: NavDictionary = {
       { key: 'antwort', label: '24 hours', text: 'Reply on working days' },
       { key: 'offerte', label: 'Free of charge', text: 'Quote after a site visit' },
     ],
-    mobileCta: 'Quote',
+    mobileCta: 'Request a quote',
     scrollHint: 'Scroll',
   },
   errorPage: { title: 'Sorry, something went wrong.', reload: 'Reload page' },

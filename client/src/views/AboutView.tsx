@@ -3,7 +3,6 @@ import PageFrame from "@/components/PageFrame";
 import ImageSlot from "@/components/ImageSlot";
 import OfferCta from "@/components/OfferCta";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import CountUp from "@/components/CountUp";
 import Reveal from "@/components/Reveal";
 import SectionHead from "@/components/SectionHead";
 import Steps from "@/components/Steps";
@@ -48,7 +47,7 @@ export default function AboutView({ lang }: { lang: Locale }) {
           </div>
           {/* Drei Bildflächen: Team, Sitz, Arbeit */}
           <Reveal
-            variant="scale"
+
             delay={150}
             className="grid grid-cols-3 gap-3 lg:col-span-6"
           >
@@ -85,7 +84,7 @@ export default function AboutView({ lang }: { lang: Locale }) {
                 className="flex flex-col gap-2 bg-ink px-5 py-8 sm:px-7 sm:py-10"
               >
                 <dd className="order-1 font-display text-[clamp(2rem,1.4rem+1.8vw,3.5rem)] font-bold leading-none tracking-[-0.03em]">
-                  <CountUp value={item.value} />
+                  {item.value}
                 </dd>
                 <dt className="order-2 text-sm font-medium leading-snug text-white/85">
                   {item.label}

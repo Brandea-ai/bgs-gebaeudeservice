@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MapPin, ExternalLink } from "lucide-react";
+import { ArrowSquareOut, MapPin } from "@phosphor-icons/react/dist/ssr";
 import { company } from "../../../shared/company";
 
 // Karte erst nach Klick laden, nur der Sitz (E20). Vorher werden keine Daten
@@ -34,7 +34,7 @@ export default function ConsentMap({ texts }: { texts: MapTexts }) {
         backgroundSize: "2.5rem 2.5rem",
       }}
     >
-      <MapPin className="w-8 h-8 text-signal" aria-hidden="true" />
+      <MapPin weight="duotone" className="size-8 text-signal" aria-hidden="true" />
       <p className="font-display text-lg font-semibold text-ink">
         {company.legalName}
         <br />
@@ -45,7 +45,7 @@ export default function ConsentMap({ texts }: { texts: MapTexts }) {
         <button
           type="button"
           onClick={() => setLoaded(true)}
-          className="h-12 rounded-[0.25rem] bg-signal px-6 font-medium text-white hover:bg-signal-dark"
+          className="press h-12 rounded-[0.25rem] bg-signal px-6 font-medium text-white hover:bg-signal-dark"
         >
           {texts.load}
         </button>
@@ -53,10 +53,10 @@ export default function ConsentMap({ texts }: { texts: MapTexts }) {
           href={`https://www.google.com/maps/search/?api=1&query=${query}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex h-12 items-center gap-2 rounded-[0.25rem] border border-ink/20 bg-white px-6 font-medium text-ink hover:border-ink"
+          className="press inline-flex h-12 items-center gap-2 rounded-[0.25rem] border border-ink/20 bg-white px-6 font-medium text-ink hover:border-ink"
         >
           {texts.open}
-          <ExternalLink className="w-4 h-4" aria-hidden="true" />
+          <ArrowSquareOut weight="regular" className="size-4" aria-hidden="true" />
         </a>
       </div>
     </div>

@@ -1,6 +1,4 @@
-"use client";
-
-import { useEffect, useRef } from "react";
+import Reveal from "./Reveal";
 import {
   cantonShapes,
   mapViewBox,
@@ -11,12 +9,12 @@ import { company } from "../../../shared/company";
 import type { Locale } from "../../../shared/i18n";
 
 /**
- * Karte des Einzugsgebiets (F3, F10, E30): Zentralschweiz und Aargau aus den
- * Kantonsgrenzen von swisstopo, die fünf Kantone rot, der Sitz als Punkt.
- * Reines SVG im HTML, ohne Kartendienst und ohne Daten an Dritte. Sobald die
- * Karte ins Bild kommt, erscheinen die Kantone nacheinander und die Pins
- * springen auf (Klassen in globals.css, nur mit JavaScript und ohne Wunsch
- * nach weniger Bewegung).
+ * Karte des Einzugsgebiets (F3, F10, F14, E30): Zentralschweiz und Aargau aus
+ * den Kantonsgrenzen von swisstopo, die fünf Kantone rot, der Sitz als Punkt.
+ * Reines SVG im HTML, ohne Kartendienst und ohne Daten an Dritte. Server-
+ * Komponente; Reveal setzt «in», dann erscheinen die Kantone nacheinander und
+ * der Sitz pulsiert dreimal (globals.css). Ohne JavaScript alles sichtbar.
+ * Beschriftungen über CSS-Klassen, auf dem Handy grösser.
  */
 export default function CantonMap({
   lang = "de",
@@ -24,36 +22,18 @@ export default function CantonMap({
   className = "",
   pins = [],
   texts,
+  mobilePins = "all",
 }: {
   lang?: Locale;
   tone?: "light" | "dark";
   className?: string;
   /** Weitere Orte als Pins, Kartenkoordinaten wie seatPoint */
   pins?: { x: number; y: number; label: string }[];
-  /** Texte aus dem Wörterbuch, als Props, damit das Wörterbuch nicht in den Browser wandert (M25) */
+  /** Texte aus dem Wörterbuch */
   texts: { areaLabel: string; source: string; seat: string };
+  /** Auf dem Handy nur den Sitz beschriften, Orte in der Bildunterschrift nennen */
+  mobilePins?: "all" | "seat";
 }) {
-  const ref = useRef<HTMLElement>(null);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    if (!("IntersectionObserver" in window)) {
-      el.classList.add("map-in");
-      return;
-    }
-    const observer = new IntersectionObserver(
-      entries => {
-        if (entries.some(e => e.isIntersecting)) {
-          el.classList.add("map-in");
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.3 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
   const served = new Map(
     company.cantons.map(name => [cantonInfo[name]?.bfs, name])
   );
@@ -67,9 +47,10 @@ export default function CantonMap({
       "--ox": `${(x / vw) * 100}%`,
       "--oy": `${(y / vh) * 100}%`,
     }) as React.CSSProperties;
+  const pinClass = mobilePins === "seat" ? "max-sm:hidden" : "";
 
   return (
-    <figure ref={ref} className={className}>
+    <Reveal as="figure" className={className}>
       <svg
         viewBox={mapViewBox}
         role="img"
@@ -99,14 +80,14 @@ export default function CantonMap({
             />
           ))}
         </g>
-        <g className="font-mono" fontSize="17" letterSpacing="1.5">
+        <g className="font-mono" letterSpacing="1.5">
           {active.map((shape, index) => (
             <text
               key={shape.id}
               x={shape.label[0]}
               y={shape.label[1]}
               textAnchor="middle"
-              className="map-canton fill-white"
+              className="map-canton map-code fill-white"
               style={{ "--i": index } as React.CSSProperties}
               fontWeight="600"
             >
@@ -117,7 +98,7 @@ export default function CantonMap({
         {pins.map((pin, index) => (
           <g
             key={pin.label}
-            className="map-pin"
+            className={`map-pin ${pinClass}`}
             style={
               {
                 ...origin(pin.x, pin.y),
@@ -137,10 +118,7 @@ export default function CantonMap({
             <text
               x={pin.x + 13}
               y={pin.y + 5}
-              className={
-                dark ? "fill-white stroke-ink" : "fill-ink stroke-white"
-              }
-              fontSize="15"
+              className={`map-label ${dark ? "fill-white stroke-ink" : "fill-ink stroke-white"}`}
               fontWeight="600"
               strokeWidth="4"
               paintOrder="stroke"
@@ -176,8 +154,7 @@ export default function CantonMap({
           <text
             x={seatPoint.x + 30}
             y={seatPoint.y + 7}
-            className={dark ? "fill-white stroke-ink" : "fill-ink stroke-white"}
-            fontSize="22"
+            className={`map-seat ${dark ? "fill-white stroke-ink" : "fill-ink stroke-white"}`}
             fontWeight="700"
             strokeWidth="6"
             paintOrder="stroke"
@@ -190,7 +167,7 @@ export default function CantonMap({
       <figcaption
         className={`mt-3 flex flex-wrap items-center justify-between gap-x-6 gap-y-1 text-xs font-medium ${dark ? "text-white/75" : "text-ink-600"}`}
       >
-        <span className="flex items-center gap-2">
+        <span className="flex flex-wrap items-center gap-2">
           <span
             className="inline-block h-2.5 w-2.5 bg-signal"
             aria-hidden="true"
@@ -204,9 +181,17 @@ export default function CantonMap({
             aria-hidden="true"
           />
           {texts.seat}
+          {mobilePins === "seat" && pins.length > 0 && (
+            <span className="sm:hidden">
+              <span className="mx-1" aria-hidden="true">
+                ·
+              </span>
+              {pins.map(pin => pin.label).join(", ")}
+            </span>
+          )}
         </span>
         <span>{texts.source}</span>
       </figcaption>
-    </figure>
+    </Reveal>
   );
 }

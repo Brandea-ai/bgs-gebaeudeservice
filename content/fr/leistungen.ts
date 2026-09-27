@@ -501,15 +501,15 @@ const hauswartung: ServicePageContent = {
   path: '/leistungen/hauswartung',
   area: 'leistungen',
   eyebrow: 'Suivi d’immeubles',
-  h1: 'Conciergerie pour immeubles d’habitation et commerciaux',
+  h1: 'Conciergerie pour immeubles d’habitation et de bureaux',
   lead: [
     'Un immeuble demande plus que du nettoyage : quelqu’un doit régulièrement vérifier que tout est en ordre, réparer les petits dégâts, organiser l’élimination des déchets et être présent lors des états des lieux. C’est le rôle de la conciergerie.',
-    'Pour les gérances, les propriétaires et les communautés de PPE. Les tâches que nous prenons en charge sont fixées par écrit.',
+    'Pour les gérances, les propriétaires et les communautés de PPE qui ne peuvent ou ne veulent pas veiller eux-mêmes à l’immeuble. Les tâches que nous prenons en charge, la fréquence de nos passages et la personne à qui nous signalons les défauts sont fixées par écrit.',
   ],
   facts: [
     { label: 'Pour', value: 'Gérances, propriétaires et communautés de PPE' },
     { label: 'Biens', value: 'Immeubles d’habitation et commerciaux' },
-    { label: 'Pas dans notre offre', value: 'Service hivernal et service de piquet' },
+    { label: 'Étendue', value: 'Tâches selon les besoins, fixées par écrit' },
   ],
   scope: {
     title: 'Ce que la conciergerie prend en charge',
@@ -564,6 +564,7 @@ const hauswartung: ServicePageContent = {
       question: 'Pouvons-nous choisir certaines tâches ?',
       answer: 'Oui. Nous composons la conciergerie à partir des tâches dont votre immeuble a besoin.',
     },
+    { question: 'Êtes-vous assurés ?', answer: answers.versicherung },
     { question: 'Combien coûte la conciergerie ?', answer: answers.kosten },
     { question: 'Dans quelles régions intervenez-vous ?', answer: answers.gebiet },
   ],

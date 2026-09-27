@@ -500,15 +500,15 @@ const hauswartung: ServicePageContent = {
   path: '/leistungen/hauswartung',
   area: 'leistungen',
   eyebrow: 'Cura degli stabili',
-  h1: 'Custodia di stabili abitativi e commerciali',
+  h1: 'Custodia di stabili abitativi e per uffici',
   lead: [
     'Uno stabile ha bisogno di più della sola pulizia: qualcuno deve controllare regolarmente che tutto sia in ordine, riparare piccoli danni, organizzare lo smaltimento ed essere presente alle consegne e riconsegne degli appartamenti. Questo è il compito del servizio di custodia.',
-    'Per amministrazioni immobiliari, proprietari e comunioni dei proprietari per piani. I compiti che svolgiamo li stabiliamo per iscritto.',
+    'Per amministrazioni immobiliari, proprietari e comunioni dei proprietari per piani che non possono o non vogliono controllare di persona. Quali compiti svolgiamo, con quale frequenza siamo sul posto e a chi segnaliamo i difetti lo stabiliamo per iscritto.',
   ],
   facts: [
     { label: 'Per', value: 'Amministrazioni immobiliari, proprietari e comunioni dei proprietari per piani' },
     { label: 'Immobili', value: 'Stabili abitativi e commerciali' },
-    { label: 'Non offriamo', value: 'Servizio invernale e servizio di picchetto' },
+    { label: 'Prestazioni', value: 'Compiti secondo le esigenze, stabiliti per iscritto' },
   ],
   scope: {
     title: 'Che cosa comprende il servizio di custodia',
@@ -563,6 +563,7 @@ const hauswartung: ServicePageContent = {
       question: 'Possiamo scegliere singoli compiti?',
       answer: 'Sì. Componiamo il servizio di custodia con i compiti di cui il Suo stabile ha bisogno.',
     },
+    { question: 'Siete assicurati?', answer: answers.versicherung },
     { question: 'Quanto costa il servizio di custodia?', answer: answers.kosten },
     { question: 'In quali regioni operate?', answer: answers.gebiet },
   ],

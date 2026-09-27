@@ -34,7 +34,7 @@ const offerSteps: Step[] = [
 export const home = {
   eyebrow: `Pulizia e custodia di stabili da ${company.address.city}`,
   h1: 'Pulizia di edifici e custodia di stabili a Lucerna, Zugo e dintorni',
-  lead: 'Per aziende, amministrazioni immobiliari e clienti privati esigenti. Veniamo da Lei per un’offerta gratuita e senza impegno.',
+  lead: 'Stabili, uffici e capannoni puliti e curati, senza che debba occuparsene Lei. Per aziende, amministrazioni immobiliari e clienti privati esigenti. Esaminiamo il Suo immobile e Le rimettiamo un’offerta scritta.',
   proofTitle: 'In sintesi',
   services: {
     title: 'I nostri servizi',
@@ -76,7 +76,7 @@ export const home = {
 }
 
 export const about = {
-  h1: `Pulizia e custodia di stabili da ${company.address.city}`,
+  h1: `Pulizia e custodia di stabili da ${company.address.city}, dal 2006`,
   imageAlt: 'Il nostro team al lavoro',
   lead: `Dal 2006 operiamo nella pulizia e nella custodia di stabili. Oggi oltre 50 collaboratrici e collaboratori seguono più di 120 clienti nei Cantoni di ${cantonListIt}, in ${languagesIt}.`,
   promises: {
@@ -92,12 +92,12 @@ export const about = {
   },
   contact: {
     title: 'Il Suo interlocutore',
-    text: `La Sua richiesta è trattata personalmente dal gerente. La contattiamo ${responseTime}.`,
+    text: `La Sua richiesta arriva direttamente al gerente. La contatta ${responseTime}.`,
   },
   register: { title: 'Dati del registro', court: registerIt, uid: 'IDI' },
   statsLabel: 'In cifre',
   cta: {
-    title: 'Conosciamoci',
+    title: 'Fissare un sopralluogo',
     text: 'Durante il sopralluogo esaminiamo il Suo immobile e chiariamo l’entità del lavoro e gli orari. In seguito riceve un’offerta scritta.',
   },
 }
@@ -126,14 +126,14 @@ export const contact = {
     { question: 'Eseguite anche interventi con breve preavviso?', answer: 'Ci telefoni. Chiariamo con Lei che cosa è possibile con breve preavviso.' },
   ],
   cta: {
-    title: 'Desidera un’offerta?',
-    text: `Il modulo si trova in fondo a ogni pagina. La contattiamo ${responseTime}.`,
+    title: 'La Sua offerta in tre passi',
+    text: `Ci descriva l’immobile e la Sua richiesta nel modulo qui sotto. La contattiamo ${responseTime} e fissiamo il sopralluogo.`,
   },
 }
 
 export const area = {
-  h1: `Zona d’intervento: ${cantonListIt}`,
-  lead: `Dalla nostra sede di ${company.address.city} operiamo in cinque Cantoni. Offriamo tutti i servizi nell’intera zona, per aziende come per clienti privati esigenti.`,
+  h1: 'Zona d’intervento: Svizzera centrale e Argovia',
+  lead: `Dalla nostra sede di ${company.address.city} operiamo nei Cantoni di ${cantonListIt}. Offriamo tutti i servizi nell’intera zona, per aziende come per clienti privati esigenti.`,
   cantonsTitle: 'Cantoni',
   cantonLabels: ['Cantone di Lucerna', 'Cantone di Zugo', 'Cantone di Argovia', 'Cantone di Nidvaldo', 'Cantone di Obvaldo'],
   seatTitle: 'Sede e contatto',
@@ -150,13 +150,13 @@ export const area = {
   },
   cta: {
     title: 'Il Suo immobile si trova nella nostra zona?',
-    text: `Ci descriva l’immobile e la località. Veniamo da Lei per un’offerta gratuita e senza impegno e La contattiamo ${responseTime}.`,
+    text: `Ci descriva l’immobile e la località. La contattiamo ${responseTime} e veniamo da Lei per il sopralluogo, gratuitamente e senza impegno.`,
   },
 }
 
 export const servicesOverview = {
-  h1: 'Servizi: pulizia e custodia di stabili',
-  lead: `Scelga in base alla Sua situazione. Offriamo tutti i servizi nei Cantoni di ${cantonListIt}. Per un’offerta veniamo da Lei gratuitamente e senza impegno.`,
+  h1: 'Pulizia e custodia per stabili, uffici e attività commerciali',
+  lead: `Pulizia regolare, interventi una tantum o cura di interi stabili: scelga in base alla Sua situazione. Per aziende, amministrazioni immobiliari e proprietari nei Cantoni di ${cantonListIt}. Non sa che cosa serve? Lo chiariamo durante il sopralluogo.`,
   groups: [
     {
       title: 'Pulizia regolare',
@@ -214,7 +214,7 @@ const promises: Seiten['premiumOverview']['promises'] = [
 export const premiumOverview = {
   line: premiumLine,
   h1: 'Pulizie per esigenze particolari',
-  lead: 'Per ville e residenze, abitazioni secondarie, alberghi con esigenze particolari, family office, jet privati e yacht. Con discrezione, cura e nella Sua lingua.',
+  lead: 'Per ville e residenze, abitazioni secondarie, alberghi con esigenze particolari, family office, jet privati e yacht. Sempre lo stesso team, con discrezione, con la conoscenza dei materiali delicati e nella Sua lingua.',
   // Significato del nome solo con il nuovo nome (E38)
   nameMeaning: company.premiumBrand
     ? `Il nome ${company.premiumBrand} deriva dal latino «clavis», la chiave. Lei ci affida la Sua casa, e noi ce ne prendiamo cura come se fosse la nostra.`
@@ -237,10 +237,10 @@ export const premiumOverview = {
   promises,
   places: {
     title: 'Dove siamo a Sua disposizione',
-    text: `Sul lago dei Quattro Cantoni da Lucerna e Meggen fino a Weggis, Vitznau, Hergiswil ed Ennetbürgen, sul lago di Zugo e sul lago di Ägeri da Zugo e Walchwil fino a Oberägeri, a Engelberg e nell’intero territorio dei Cantoni di ${cantonListIt}. [Alla zona d’intervento](/einzugsgebiet)`,
+    text: `Sul lago dei Quattro Cantoni da Lucerna e Meggen fino a Weggis, Vitznau, Hergiswil ed Ennetbürgen, sul lago di Zugo e sul lago di Ägeri da Zugo e Walchwil fino a Oberägeri, a Engelberg e nell’intero territorio dei Cantoni di ${cantonListIt}.`,
   },
   cta: {
     title: 'Richiesta discreta',
-    text: `Ci telefoni o ci scriva. La Sua richiesta è trattata personalmente dal gerente, su richiesta con vincolo di riservatezza. La contattiamo ${responseTime}.`,
+    text: 'Ci telefoni o ci scriva. La Sua richiesta è trattata personalmente dal gerente, su richiesta con vincolo di riservatezza.',
   },
 }

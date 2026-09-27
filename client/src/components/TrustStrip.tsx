@@ -1,60 +1,72 @@
 import {
-  Award,
-  BadgeCheck,
+  CalendarBlank,
   Clock,
-  FileCheck,
-  Languages,
+  FileText,
+  SealCheck,
   ShieldCheck,
-} from "lucide-react";
-import Reveal from "./Reveal";
+  Translate,
+} from "@phosphor-icons/react/dist/ssr";
+import type { Icon } from "@phosphor-icons/react";
+import { RevealGroup } from "./Reveal";
 import { navDicts } from "../../../content/navigation";
 import type { Locale } from "../../../shared/i18n";
 
-const icons = {
-  seit: Award,
+const icons: Record<string, Icon> = {
+  seit: CalendarBlank,
   versichert: ShieldCheck,
-  register: BadgeCheck,
-  sprachen: Languages,
+  register: SealCheck,
+  sprachen: Translate,
   antwort: Clock,
-  offerte: FileCheck,
+  offerte: FileText,
 };
 
 /**
- * Vertrauensleiste (F7, E18): nur belegte Angaben aus shared/company.ts und den
- * Eigenangaben des Kunden. Keine Siegel, keine Bewertungen, keine Zertifikate.
+ * Vertrauensleiste (F7, F14, E18): nur belegte Angaben aus shared/company.ts und
+ * den Eigenangaben des Kunden. Keine Siegel, keine Bewertungen, keine
+ * Zertifikate. Icons ohne Fläche dahinter, eine gestaffelte Gruppe.
+ * only wählt einzelne Einträge, wenn die Seite andere schon selbst nennt.
  */
 export default function TrustStrip({
   lang = "de",
   tone = "light",
   compact = false,
+  only,
 }: {
   lang?: Locale;
   tone?: "light" | "dark";
   compact?: boolean;
+  only?: string[];
 }) {
-  const { trust } = navDicts[lang].chrome;
+  const all = navDicts[lang].chrome.trust;
+  const trust = only ? all.filter(item => only.includes(item.key)) : all;
   const dark = tone === "dark";
+  const cols =
+    trust.length >= 6
+      ? "sm:grid-cols-3 xl:grid-cols-6"
+      : trust.length === 4
+        ? "sm:grid-cols-2 lg:grid-cols-4"
+        : "sm:grid-cols-3";
   return (
-    <ul
-      className={`grid gap-px min-[420px]:grid-cols-2 md:grid-cols-3 ${compact ? "xl:grid-cols-6" : "lg:grid-cols-6"} ${dark ? "bg-white/10" : "bg-line"}`}
+    <RevealGroup
+      as="ul"
+      className={`grid gap-px ${cols} ${dark ? "bg-white/10" : "bg-line"}`}
     >
-      {trust.map((item, index) => {
-        const Icon = icons[item.key as keyof typeof icons] ?? BadgeCheck;
+      {trust.map(item => {
+        const Glyph = icons[item.key] ?? SealCheck;
         return (
-          <Reveal
-            as="li"
+          <li
             key={item.key}
-            delay={index * 70}
             className={`flex items-start gap-3 ${compact ? "p-4" : "p-5 lg:p-6"} ${dark ? "bg-ink" : "bg-white"}`}
           >
-            <span
-              className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${dark ? "bg-white/10 text-brass" : "bg-signal-light/60 text-signal"}`}
-            >
-              <Icon className="h-5 w-5" aria-hidden="true" />
-            </span>
+            <Glyph
+              weight="duotone"
+              className={`mt-0.5 size-6 shrink-0 ${dark ? "text-brass" : "text-signal"}`}
+              aria-hidden="true"
+            />
             <span className="min-w-0">
               <span
-                className={`block break-words font-display text-[1.0625rem] font-bold leading-tight ${dark ? "text-white" : "text-ink"}`}
+                className={`hyphens block font-display text-[1.0625rem] font-bold leading-tight ${dark ? "text-white" : "text-ink"}`}
+                lang={lang === "de" ? "de-CH" : undefined}
               >
                 {item.label}
               </span>
@@ -64,9 +76,9 @@ export default function TrustStrip({
                 {item.text}
               </span>
             </span>
-          </Reveal>
+          </li>
         );
       })}
-    </ul>
+    </RevealGroup>
   );
 }

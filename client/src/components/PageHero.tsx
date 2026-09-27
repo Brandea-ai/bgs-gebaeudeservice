@@ -1,14 +1,14 @@
 import type { ReactNode } from "react";
 import Breadcrumbs from "./Breadcrumbs";
 import ImageSlot from "./ImageSlot";
-import Reveal from "./Reveal";
 import type { Locale } from "../../../shared/i18n";
 import type { PagePath } from "../../../shared/seo";
 
 /**
- * Kopf der Übersichts- und Inhaltsseiten (F5, F7): Brotkrumen, Titel und
- * Einleitung links, rechts eine Bildfläche oder eine Übersicht. Keine
- * Kennzeile, die Brotkrumen sagen schon, wo man ist.
+ * Kopf der Übersichts- und Inhaltsseiten (F5, F14): Brotkrumen, Titel und
+ * Einleitung links, rechts eine Bildfläche oder eine Übersicht. Statisch, ohne
+ * Einblendung, damit der erste Bildschirm sofort lesbar ist und der Titel das
+ * grösste Element beim Laden bleibt (LCP). Kennzeile als Mono-Zeile ohne Fläche.
  */
 export default function PageHero({
   path,
@@ -20,6 +20,7 @@ export default function PageHero({
   aside,
   image,
   children,
+  below,
 }: {
   path: PagePath;
   lang: Locale;
@@ -31,14 +32,17 @@ export default function PageHero({
   aside?: ReactNode;
   /** Bildfläche rechts, mit Kennzeichnung unten links */
   image?: { src?: string; alt?: string; label?: string };
+  /** Aktionen unter der Einleitung: Button und Telefon */
   children?: ReactNode;
+  /** Zeile unter dem Raster, etwa Eckdaten oder Belege */
+  below?: ReactNode;
 }) {
   const dark = tone === "dark";
   return (
     <section
       className={
         dark
-          ? "relative overflow-hidden bg-ink text-white"
+          ? "on-dark relative overflow-hidden bg-ink text-white"
           : "relative overflow-hidden border-b border-line bg-stone"
       }
     >
@@ -48,8 +52,8 @@ export default function PageHero({
           aria-hidden="true"
         />
       )}
-      <div className="container relative grid gap-10 pt-8 pb-14 md:pt-12 lg:grid-cols-12 lg:items-center lg:gap-10 lg:pb-20">
-        <div className="min-w-0 lg:col-span-6">
+      <div className="container relative grid gap-10 pt-6 pb-12 md:pt-10 lg:grid-cols-12 lg:items-center lg:gap-10 lg:pb-16">
+        <div className="min-w-0 lg:col-span-7 xl:col-span-6">
           {path !== "/" && (
             <Breadcrumbs
               path={path}
@@ -57,37 +61,29 @@ export default function PageHero({
               lang={lang}
             />
           )}
-          <Reveal>
-            {eyebrow && (
-              <p
-                className={`mb-5 inline-flex items-center rounded-full px-3 py-1 font-mono text-[0.6875rem] font-semibold uppercase tracking-[0.14em] ${dark ? "bg-white/10 text-brass" : "bg-signal-light/60 text-signal-dark"}`}
-              >
-                {eyebrow}
-              </p>
-            )}
-            <h1
-              className={`t-h1 max-w-[20ch] ${dark ? "text-white" : "text-ink"}`}
+          {eyebrow && (
+            <p
+              className={`t-eyebrow mb-4 ${dark ? "text-brass" : "text-signal"}`}
             >
-              {title}
-            </h1>
-          </Reveal>
-          {lead && (
-            <Reveal delay={120}>
-              <p
-                className={`t-lead mt-7 max-w-[52ch] ${dark ? "text-white/90" : "text-ink-600"}`}
-              >
-                {lead}
-              </p>
-            </Reveal>
+              {eyebrow}
+            </p>
           )}
-          {children && <Reveal delay={220}>{children}</Reveal>}
+          <h1
+            className={`t-h1 max-w-[22ch] ${dark ? "text-white" : "text-ink"}`}
+          >
+            {title}
+          </h1>
+          {lead && (
+            <p
+              className={`t-lead mt-6 max-w-[52ch] ${dark ? "text-white/90" : "text-ink-600"}`}
+            >
+              {lead}
+            </p>
+          )}
+          {children && <div className="mt-8">{children}</div>}
         </div>
         {(aside || image) && (
-          <Reveal
-            variant="scale"
-            delay={150}
-            className="min-w-0 lg:col-span-6 lg:col-start-7"
-          >
+          <div className="min-w-0 lg:col-span-5 lg:col-start-8 xl:col-span-6 xl:col-start-7">
             {aside ?? (
               <ImageSlot
                 src={image?.src}
@@ -95,12 +91,14 @@ export default function PageHero({
                 label={image?.label}
                 lang={lang}
                 tone={dark ? "dark" : "light"}
+                parallax="drift"
                 className="aspect-[4/3] w-full lg:aspect-[5/4] xl:aspect-[16/10]"
               />
             )}
-          </Reveal>
+          </div>
         )}
       </div>
+      {below}
     </section>
   );
 }

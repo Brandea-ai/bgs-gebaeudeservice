@@ -27,6 +27,7 @@ export const premiumTitleBrand = company.premiumBrand ? `${company.premiumBrand}
 
 export const ui = {
   offerCta: 'Request a free quote',
+  toService: 'View service',
   atAGlance: 'At a glance',
   notIncluded: 'Not part of this service',
   steps: 'How it works',

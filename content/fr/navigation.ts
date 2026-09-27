@@ -1,6 +1,6 @@
 import { company, premiumLabel } from '../../shared/company'
 import type { NavDictionary } from '../de/navigation'
-import { responseTime } from './common'
+import { cantonList, responseTime } from './common'
 
 /**
  * Textes du menu, du pied de page, du formulaire de contact et de la page 404
@@ -54,14 +54,14 @@ export const nav: NavDictionary = {
   },
   footer: {
     newBrandLine: `Une marque de ${company.legalName}`,
-    about: `Nettoyage et conciergerie pour les entreprises et une clientèle privée exigeante. Siège à ${company.address.city}.`,
+    about: `Nettoyage et conciergerie pour les entreprises et une clientèle privée exigeante. Siège à ${company.address.city}, actifs dans les cantons de ${cantonList}.`,
     companyLinks: [
       { path: '/ueber-uns', label: 'À propos' },
       { path: '/kontakt', label: 'Contact' },
       { path: '/blog', label: 'Guide' },
     ],
-    areaTitle: 'Zone d’intervention',
-    areaLink: { path: '/einzugsgebiet', label: 'Lucerne, Zoug, Argovie, Nidwald et Obwald' },
+    areaTitle: 'Entreprise',
+    areaLink: { path: '/einzugsgebiet', label: 'Zone d’intervention' },
     rights: `${company.legalName}. Tous droits réservés.`,
     legal: [
       { path: '/impressum', label: 'Mentions légales' },
@@ -69,8 +69,8 @@ export const nav: NavDictionary = {
     ],
   },
   contactForm: {
-    title: 'Prenez contact avec nous',
-    intro: `Demandez un devis sans engagement. Nous vous répondons ${responseTime}.`,
+    title: 'Demander un devis',
+    intro: `Décrivez-nous le bien et votre demande. Nous vous répondons ${responseTime} et convenons de la visite, gratuitement et sans engagement.`,
     choose: 'Veuillez choisir…',
     fields: {
       name: { label: 'Nom *', placeholder: 'Vos prénom et nom' },
@@ -78,20 +78,10 @@ export const nav: NavDictionary = {
       phone: { label: 'Téléphone', placeholder: 'Votre numéro de téléphone' },
       service: { label: 'Prestation souhaitée' },
       location: { label: 'Lieu ou NPA du bien', placeholder: 'p. ex. 6300 Zoug' },
-      frequency: { label: 'Fréquence' },
-      message: { label: 'Votre message *', placeholder: 'Décrivez votre demande…' },
+      frequency: { label: 'Fréquence souhaitée' },
+      message: { label: 'Bien et demande *', placeholder: 'Par exemple : type de bien, surface approximative ou nombre d’appartements, fréquence souhaitée et date de début' },
     },
     serviceOptions: [
-      {
-        group: 'Premium',
-        options: [
-          { value: 'Luxusimmobilien', label: 'Biens de prestige (villas, lofts)' },
-          { value: 'Privatjet-Reinigung', label: 'Nettoyage de jets privés' },
-          { value: 'Yacht-Reinigung', label: 'Nettoyage de yachts' },
-          { value: 'Zweitwohnungen und Residences', label: 'Résidences secondaires et résidences de standing' },
-          { value: 'Hotels', label: 'Hôtels' },
-        ],
-      },
       {
         group: 'Nettoyage et conciergerie',
         options: [
@@ -107,6 +97,16 @@ export const nav: NavDictionary = {
         ],
       },
       {
+        group: 'Premium',
+        options: [
+          { value: 'Luxusimmobilien', label: 'Biens de prestige (villas, lofts)' },
+          { value: 'Privatjet-Reinigung', label: 'Nettoyage de jets privés' },
+          { value: 'Yacht-Reinigung', label: 'Nettoyage de yachts' },
+          { value: 'Zweitwohnungen und Residences', label: 'Résidences secondaires et résidences de standing' },
+          { value: 'Hotels', label: 'Hôtels' },
+        ],
+      },
+      {
         group: 'Autres',
         options: [
           { value: 'Beratung', label: 'Conseil' },
@@ -119,10 +119,17 @@ export const nav: NavDictionary = {
     consentLink: 'déclaration de protection des données',
     consentAfter: 'et j’accepte que mes données soient utilisées pour traiter ma demande. *',
     required: '* Champs obligatoires',
-    submit: 'Envoyer le message',
+    submit: 'Envoyer la demande',
     sending: 'Envoi en cours…',
-    success: `Merci beaucoup ! Votre message a bien été envoyé. Nous vous répondons ${responseTime}.`,
-    error: `Votre message n’a pas pu être envoyé. Veuillez nous appeler (${company.phone.display}) ou nous écrire à ${company.email}.`,
+    success: `Merci, nous avons bien reçu votre demande. Nous vous répondons ${responseTime} et convenons avec vous d’une date pour la visite. En cas d’urgence, vous nous joignez au ${company.phone.display}.`,
+    successTitle: 'Demande reçue',
+    errors: {
+      required: 'Veuillez remplir ce champ.',
+      email: 'Veuillez saisir une adresse e-mail valable.',
+      consent: 'Veuillez confirmer la déclaration de protection des données afin que nous puissions traiter votre demande.',
+      summary: 'Veuillez vérifier les champs signalés.',
+    },
+    error: `Votre demande n’a pas pu être envoyée. Veuillez nous appeler (${company.phone.display}) ou nous écrire à ${company.email}.`,
   },
   notFound: {
     title: 'Page introuvable',
@@ -134,6 +141,7 @@ export const nav: NavDictionary = {
     ],
   },
   languageSwitch: 'Langue',
+  languageSwitchFooter: 'Langue en pied de page',
   chrome: {
     skip: 'Aller au contenu',
     answer: `Réponse ${responseTime}`,
@@ -152,7 +160,7 @@ export const nav: NavDictionary = {
       { key: 'antwort', label: '24 heures', text: 'Réponse les jours ouvrables' },
       { key: 'offerte', label: 'Gratuit', text: 'Devis après visite' },
     ],
-    mobileCta: 'Devis',
+    mobileCta: 'Demander un devis',
     scrollHint: 'Défiler',
   },
   errorPage: { title: 'Désolés, une erreur s’est produite.', reload: 'Recharger la page' },

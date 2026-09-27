@@ -7,6 +7,7 @@ import type { Step } from '../types'
  */
 export const ui = {
   offerCta: 'Kostenlose Offerte anfragen',
+  toService: 'Zur Leistung',
   atAGlance: 'Auf einen Blick',
   notIncluded: 'Nicht Teil dieser Leistung',
   steps: 'So läuft es ab',

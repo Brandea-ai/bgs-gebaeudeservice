@@ -1,6 +1,6 @@
 import { company, premiumLabel } from '../../shared/company'
 import type { NavDictionary, NavLink } from '../de/navigation'
-import { responseTime } from './common'
+import { cantonListIt, responseTime } from './common'
 
 /**
  * Testi di menu, piè di pagina, modulo di contatto e pagina 404 in italiano
@@ -55,14 +55,14 @@ const menu: NavDictionary['menu'] = {
 
 const footer: NavDictionary['footer'] = {
   newBrandLine: `Un marchio della ${company.legalName}`,
-  about: `Pulizia e custodia di stabili per aziende e clienti privati esigenti. Sede a ${company.address.city}.`,
+  about: `Pulizia e custodia di stabili per aziende e clienti privati esigenti. Sede a ${company.address.city}, attivi nei Cantoni di ${cantonListIt}.`,
   companyLinks: [
     { path: '/ueber-uns', label: 'Chi siamo' },
     { path: '/kontakt', label: 'Contatto' },
     { path: '/blog', label: 'Guida' },
   ],
-  areaTitle: 'Zona d’intervento',
-  areaLink: { path: '/einzugsgebiet', label: 'Lucerna, Zugo, Argovia, Nidvaldo e Obvaldo' },
+  areaTitle: 'Azienda',
+  areaLink: { path: '/einzugsgebiet', label: 'Zona d’intervento' },
   rights: `${company.legalName}. Tutti i diritti riservati.`,
   legal: [
     { path: '/impressum', label: 'Note legali' },
@@ -72,8 +72,8 @@ const footer: NavDictionary['footer'] = {
 
 /** Modulo di contatto nel piè di pagina. I valori (value) restano in tedesco per l’e-mail. */
 const contactForm: NavDictionary['contactForm'] = {
-  title: 'Ci contatti ora',
-  intro: `Richieda un’offerta senza impegno. La contattiamo ${responseTime}.`,
+  title: 'Richiedere un’offerta',
+  intro: `Ci descriva l’immobile e la Sua richiesta. La contattiamo ${responseTime} e fissiamo il sopralluogo, gratuitamente e senza impegno.`,
   choose: 'Selezioni...',
   fields: {
     name: { label: 'Nome *', placeholder: 'Nome e cognome' },
@@ -81,20 +81,10 @@ const contactForm: NavDictionary['contactForm'] = {
     phone: { label: 'Telefono', placeholder: 'Il Suo numero di telefono' },
     service: { label: 'Servizio desiderato' },
     location: { label: 'Luogo dell’intervento (località o NPA)', placeholder: 'ad es. 6300 Zugo' },
-    frequency: { label: 'Cadenza' },
-    message: { label: 'Il Suo messaggio *', placeholder: 'Descriva la Sua richiesta...' },
+    frequency: { label: 'Cadenza desiderata' },
+    message: { label: 'Immobile e richiesta *', placeholder: 'Ad esempio: tipo di immobile, superficie approssimativa o numero di appartamenti, cadenza desiderata e data di inizio' },
   },
   serviceOptions: [
-    {
-      group: 'Premium',
-      options: [
-        { value: 'Luxusimmobilien', label: 'Immobili di pregio (ville, loft)' },
-        { value: 'Privatjet-Reinigung', label: 'Pulizia di jet privati' },
-        { value: 'Yacht-Reinigung', label: 'Pulizia di yacht' },
-        { value: 'Zweitwohnungen und Residences', label: 'Abitazioni secondarie e residence' },
-        { value: 'Hotels', label: 'Alberghi' },
-      ],
-    },
     {
       group: 'Pulizia e custodia',
       options: [
@@ -110,6 +100,16 @@ const contactForm: NavDictionary['contactForm'] = {
       ],
     },
     {
+      group: 'Premium',
+      options: [
+        { value: 'Luxusimmobilien', label: 'Immobili di pregio (ville, loft)' },
+        { value: 'Privatjet-Reinigung', label: 'Pulizia di jet privati' },
+        { value: 'Yacht-Reinigung', label: 'Pulizia di yacht' },
+        { value: 'Zweitwohnungen und Residences', label: 'Abitazioni secondarie e residence' },
+        { value: 'Hotels', label: 'Alberghi' },
+      ],
+    },
+    {
       group: 'Altro',
       options: [
         { value: 'Beratung', label: 'Consulenza' },
@@ -122,10 +122,17 @@ const contactForm: NavDictionary['contactForm'] = {
   consentLink: 'dichiarazione sulla protezione dei dati',
   consentAfter: 'e acconsento che i miei dati siano utilizzati per evadere la mia richiesta. *',
   required: '* Campi obbligatori',
-  submit: 'Invia messaggio',
+  submit: 'Invia richiesta',
   sending: 'Invio in corso...',
-  success: `Grazie mille! Il Suo messaggio è stato inviato. La contattiamo ${responseTime}.`,
-  error: `Non è stato possibile inviare il Suo messaggio. La preghiamo di telefonarci (${company.phone.display}) o di scriverci all’indirizzo ${company.email}.`,
+  success: `Grazie, la Sua richiesta ci è pervenuta. La contattiamo ${responseTime} e fissiamo con Lei una data per il sopralluogo. Se ha urgenza, ci raggiunge al numero ${company.phone.display}.`,
+  successTitle: 'Richiesta ricevuta',
+  errors: {
+    required: 'Compili questo campo.',
+    email: 'Inserisca un indirizzo e-mail valido.',
+    consent: 'Confermi l’informativa sulla protezione dei dati affinché possiamo trattare la Sua richiesta.',
+    summary: 'Verifichi i campi evidenziati.',
+  },
+  error: `Non è stato possibile inviare la Sua richiesta. La preghiamo di telefonarci (${company.phone.display}) o di scriverci all’indirizzo ${company.email}.`,
 }
 
 const notFound: NavDictionary['notFound'] = {
@@ -145,6 +152,7 @@ export const nav: NavDictionary = {
   contactForm,
   notFound,
   languageSwitch: 'Lingua',
+  languageSwitchFooter: 'Lingua nel piè di pagina',
   chrome: {
     skip: 'Vai al contenuto',
     answer: `Risposta ${responseTime}`,
@@ -163,7 +171,7 @@ export const nav: NavDictionary = {
       { key: 'antwort', label: '24 ore', text: 'Risposta nei giorni feriali' },
       { key: 'offerte', label: 'Gratuita', text: 'Offerta dopo il sopralluogo' },
     ],
-    mobileCta: 'Offerta',
+    mobileCta: 'Richiedere un’offerta',
     scrollHint: 'Scorri',
   },
   errorPage: { title: 'Siamo spiacenti, si è verificato un errore.', reload: 'Ricarica la pagina' },
