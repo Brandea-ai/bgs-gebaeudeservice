@@ -204,8 +204,9 @@ export default function SwissFooter({ lang = "de", path = "/" }: { lang?: Locale
                     className="w-full px-4 py-2.5 lg:py-3 rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all text-sm sm:text-base"
                   >
                     <option value="">{form.choose}</option>
-                    {form.frequencyOptions.map((option) => (
-                      <option key={option} value={option}>{option}</option>
+                    {/* Wert auf Deutsch, weil die E-Mail an den Betrieb deutsch ist */}
+                    {form.frequencyOptions.map((option, index) => (
+                      <option key={option} value={navDicts.de.contactForm.frequencyOptions[index] ?? option}>{option}</option>
                     ))}
                   </select>
                 </div>

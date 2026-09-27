@@ -149,6 +149,7 @@ export const nav = {
   contactForm,
   notFound,
   languageSwitch: 'Sprache',
+  errorPage: { title: 'Leider ist ein Fehler aufgetreten.', reload: 'Seite neu laden' },
 }
 
 export type NavDictionary = typeof nav

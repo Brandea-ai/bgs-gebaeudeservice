@@ -58,8 +58,8 @@ export default function RootShell({ lang, children }: { lang: Locale; children: 
       </head>
       <body className={inter.className}>
         {/* Unternehmen als strukturierte Daten, Leistungsseiten verweisen darauf (GLOBAL-010) */}
-        <JsonLd data={organizationJsonLd} />
-        <ErrorBoundary>
+        <JsonLd data={organizationJsonLd(lang)} />
+        <ErrorBoundary lang={lang}>
           <ThemeProvider defaultTheme="light">
             <ChatbotProvider>
               {/* Kein Cookie-Banner: keine einwilligungspflichtigen Dienste, die Karte fragt selbst (M15, E20) */}

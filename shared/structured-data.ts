@@ -13,11 +13,21 @@ const organizationId = `${siteUrl}/#organization`
 
 const absolute = (path: string) => new URL(path, siteUrl).href
 
-// Einzugsgebiet: ganze Kantone (E30)
-const areaServed = company.cantons.map((name) => ({ '@type': 'AdministrativeArea', name: `Kanton ${name}` }))
+// Einzugsgebiet: ganze Kantone (E30), Namen in der Sprache der Seite
+const cantonNames: Record<Exclude<Locale, 'de'>, Record<string, string>> = {
+  en: { Luzern: 'Canton of Lucerne', Zug: 'Canton of Zug', Aargau: 'Canton of Aargau', Nidwalden: 'Canton of Nidwalden', Obwalden: 'Canton of Obwalden' },
+  fr: { Luzern: 'Canton de Lucerne', Zug: 'Canton de Zoug', Aargau: 'Canton d’Argovie', Nidwalden: 'Canton de Nidwald', Obwalden: 'Canton d’Obwald' },
+  it: { Luzern: 'Cantone di Lucerna', Zug: 'Cantone di Zugo', Aargau: 'Cantone di Argovia', Nidwalden: 'Cantone di Nidvaldo', Obwalden: 'Cantone di Obvaldo' },
+}
+
+const areaServed = (lang: Locale) =>
+  company.cantons.map((name) => ({
+    '@type': 'AdministrativeArea',
+    name: lang === 'de' ? `Kanton ${name}` : (cantonNames[lang][name] ?? `Kanton ${name}`),
+  }))
 
 /** Das Unternehmen, einmal je Seite im Layout. Leistungen verweisen per @id darauf. */
-export const organizationJsonLd = {
+export const organizationJsonLd = (lang: Locale = 'de') => ({
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   '@id': organizationId,
@@ -33,10 +43,10 @@ export const organizationJsonLd = {
     addressRegion: 'LU',
     addressCountry: 'CH',
   },
-  areaServed,
+  areaServed: areaServed(lang),
   // Deutsch, Englisch, Französisch und Italienisch (company.languages)
   knowsLanguage: ['de', 'en', 'fr', 'it'],
-}
+})
 
 /** Eine Leistung auf ihrer eigenen Seite. Premium-Leistungen tragen die Premium-Linie als Marke (E47). */
 export function serviceJsonLd(path: PagePath, lang: Locale = 'de') {
@@ -52,7 +62,7 @@ export function serviceJsonLd(path: PagePath, lang: Locale = 'de') {
     url: absolute(url),
     inLanguage: hreflang[lang],
     provider: { '@id': organizationId },
-    areaServed,
+    areaServed: areaServed(lang),
     ...(path.startsWith('/premium/') && company.premiumBrand ? { brand: { '@type': 'Brand', name: company.premiumBrand } } : {}),
   }
 }

@@ -2,6 +2,8 @@
 
 Stand 27.09.2026. Geprüft wurde `content/en/` gegen die deutsche Quelle `content/de/` in der Arbeitskopie `scratchpad/bgs-gebaeudeservice`. Dieses Lektorat übernimmt für Englisch die Prüfung, die nach E50 bei Brandea lag. Geändert wurden nur Texte in `content/en/`, keine Schlüssel, Typen, Importe oder Template-Ausdrücke. Kein Commit, kein Build.
 
+> **Nachtrag 27.09.2026 (N088):** Behoben sind die technischen Punkte ohne Entscheid: `areaServed` mit Kantonsnamen je Sprache, Rhythmus kommt als deutscher Wert in die E-Mail, Fehlerseite (ErrorBoundary) in der Sprache der Seite. Offen bleiben der Hinweis «deutsche Fassung massgebend» (Rechtstext, Brandea), die 404-Seite nur auf Deutsch (bekannt, N085) und die Stilpunkte für Muttersprachler (E72).
+
 ## 1. Kurzurteil
 
 **Englisch ist nach den Korrekturen freigabefähig.** Die Übersetzung war schon vorher solide: vollständig, britische Schreibung durchgehend (organise, harbour, grey, enquiry), keine erfundenen Zahlen, Kantone und Orte korrekt. Die zwei kritischen Fehler (eine Haftungsaussage im Impressum, ein falscher Bezug auf den Premiumseiten) sind behoben, ebenso neun unübliche oder missverständliche Begriffe und 40 kleinere Stellen. Typprüfung, Titellängen, Zeichenprüfung sowie der Abgleich von Zahlen und Links laufen fehlerfrei.

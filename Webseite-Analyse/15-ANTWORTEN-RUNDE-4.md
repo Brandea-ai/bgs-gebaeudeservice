@@ -52,7 +52,7 @@
 - **Grenzen:**
   - **Internationale Marken:** Internationale Registrierungen mit Schutz für die Schweiz (System von Madrid, etwa eine Marke der norwegischen Mantena AS) sind NICHT GEPRÜFT.
   - **Verzeichnis von CLAVIS:** Die Dienstleistungen der Marke CLAVIS konnten nicht abgerufen werden. Die Rechteprüfung der Sitzung hat das weitere Auslesen der Swissreg-Anwendung abgelehnt, der Agent hat das nicht umgangen (N072).
-  - **Keine Rechtsauskunft:** Eine Vorprüfung ersetzt weder die Recherche beim IGE noch eine Beratung durch Fachleute für Markenrecht.
+  - **Keine Rechtsauskunft:** Eine Vorprüfung ersetzt weder die Recherche eines Anbieters noch die Beurteilung durch eine Fachperson für Markenrecht.
 
 ### 3.2 Ergebnis Mantena
 
@@ -90,7 +90,7 @@
   - Das IGE prüft ältere Marken nicht von sich aus. Wem CLAVIS gehört, kann nach der Veröffentlichung einer Clavea-Marke Widerspruch erheben (Gebühr CHF 800 [S84]).
 - **Empfehlung:**
   1. Die Domain trotzdem sichern, sie kostet wenig.
-  2. Vor jeder öffentlichen Nutzung die Verwechslungsgefahr mit CLAVIS beurteilen lassen: IGE-Recherche oder Fachperson für Markenrecht.
+  2. Vor jeder öffentlichen Nutzung die Verwechslungsgefahr mit CLAVIS beurteilen lassen: Recherche eines Anbieters oder Beurteilung durch eine Fachperson für Markenrecht.
   3. Fällt die Beurteilung negativ aus, ist Silendo der Ersatz. Beide Modelle hatten den Namen empfohlen, und das Prüfrisiko ist niedrig (13, Abschnitt 8.2). Auf der Website ist das eine einzige Zeile in `shared/company.ts`.
 
 ## 4. Umsetzung und Produktion
@@ -121,14 +121,16 @@
    - `.swiss` ist frei, die Vergabe richtet sich aber nach eigenen Regeln. Die klärt der Registrar.
    - Die Namen stehen im öffentlichen Repository (E45). Deshalb bald registrieren.
 2. **Markenrecherche und Anmeldung (E38):**
-   - Das IGE empfiehlt vor der Anmeldung eine Recherche nach ähnlichen Marken und Firmen [S84].
+   - Das IGE empfiehlt vor der Anmeldung eine Recherche nach ähnlichen Marken und Firmen [S84]. Selbst bietet es seit Juni 2022 keine Markenrecherchen mehr an (Übergabe vom 27.09.2026). Nötig ist also die Recherche eines Anbieters oder die Beurteilung durch eine Fachperson.
    - **Gebühren laut IGE** (Stand der Gebührenliste: 1.7.2024):
      - Hinterlegung CHF 450 für zehn Jahre
      - ab der vierten Klasse CHF 100 je Klasse
      - bei elektronischer Anmeldung CHF 100 Rabatt
+     - Widerspruch und Löschungsverfahren je CHF 800
      - Die Beträge vor der Anmeldung auf der Seite des IGE prüfen [S84].
    - **Klassen:** voraussichtlich 37 (Reinigung, Unterhalt, Hauswartung) und 44 (Garten- und Grünflächenpflege), für die Premium-Linie allenfalls 45. Die genaue Auswahl klärt die Recherche.
    - **Zuerst klären:** die Verwechslungsgefahr zwischen Clavea und CLAVIS (Abschnitt 3.3).
+   - **Stand der Vorprüfung vom 27.09.2026:** siehe E73 in 07.
 3. **Logo (E49, M35):** Für die Website braucht es:
    - den Schriftzug als SVG
    - das Symbol für den Browser-Tab (SVG oder PNG, mindestens 48 × 48)

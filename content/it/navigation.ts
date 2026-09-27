@@ -145,4 +145,5 @@ export const nav: NavDictionary = {
   contactForm,
   notFound,
   languageSwitch: 'Lingua',
+  errorPage: { title: 'Siamo spiacenti, si è verificato un errore.', reload: 'Ricarica la pagina' },
 }

@@ -132,4 +132,5 @@ export const nav: NavDictionary = {
     ],
   },
   languageSwitch: 'Language',
+  errorPage: { title: 'Sorry, something went wrong.', reload: 'Reload page' },
 }

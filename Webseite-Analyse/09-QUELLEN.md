@@ -333,7 +333,7 @@ Abruf: 25.09.2026 (N053).
 ### S54 · Swissreg: Schutzrechte des IGE
 
 Quelle: [Swissreg: Schutzrechte des IGE](https://www.swissreg.ch/)  
-Verwendung: Amtliches Markenregister. Maschinell nicht abfragbar, daher NICHT PRÜFBAR. Vor einer Anmeldung ist eine Recherche beim IGE nötig.  
+Verwendung: Amtliches Markenregister. Maschinell nicht abfragbar, daher NICHT PRÜFBAR. Vor einer Anmeldung ist eine Recherche eines Anbieters oder die Beurteilung durch eine Fachperson nötig. Das IGE bietet seit Juni 2022 keine Markenrecherchen mehr an.  
 Abruf: 25.09.2026 (N053).
 
 ### S55 · ESTV: Statistiken natürliche Personen, Gemeinden
@@ -513,7 +513,7 @@ Abruf: 25.09.2026 (Namensrunde 2).
 ### S84 · IGE: Marken, Kosten und Gebühren
 
 Quelle: [IGE: Kosten und Gebühren](https://www.ige.ch/de/etwas-schuetzen/marken/anmeldung-in-der-schweiz/kosten-und-gebuehren)  
-Verwendung: Gebühren ab 1.7.2024: Hinterlegung CHF 450 für zehn Jahre, Klassengebühr CHF 100 ab der vierten Klasse, CHF 100 Rabatt bei elektronischer Anmeldung, Widerspruch CHF 800, Verlängerung CHF 550. Das IGE empfiehlt vor der Anmeldung eine Recherche nach ähnlichen Marken und Firmen, Kosten dafür nicht auf dieser Seite.  
+Verwendung: Gebühren ab 1.7.2024: Hinterlegung CHF 450 für zehn Jahre, Klassengebühr CHF 100 ab der vierten Klasse, CHF 100 Rabatt bei elektronischer Anmeldung, Widerspruch und Löschungsverfahren je CHF 800, Verlängerung CHF 550. Das IGE empfiehlt vor der Anmeldung eine Recherche nach ähnlichen Marken und Firmen, Kosten dafür nicht auf dieser Seite.  
 Abruf: 25.09.2026 (Runde 4). Die Werte stammen aus der Zusammenfassung des Abrufwerkzeugs, eine Websuche nannte dieselben Beträge. Wie viele Klassen die Hinterlegungsgebühr enthält, gaben die beiden Abrufe verschieden wieder (eine oder drei). Laut Seite gilt die Klassengebühr ab der vierten Klasse, vor der Anmeldung bitte am Original prüfen.
 
 ## Besonders wichtige Aktualisierungen gegenüber älteren Checklisten

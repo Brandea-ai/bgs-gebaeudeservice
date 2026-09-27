@@ -2,6 +2,8 @@
 
 Stand: 27.09.2026. Geprüft: alle Texte in `content/it/` gegen die deutsche Quelle in `content/de/`. Auftrag: Prüfung der Übersetzung anstelle von Brandea (E50), als Grundlage für `LANGUAGES=true` in der Produktion.
 
+> **Nachtrag 27.09.2026 (N088):** Behoben sind die technischen Punkte ohne Entscheid: `areaServed` mit Kantonsnamen je Sprache, Rhythmus kommt als deutscher Wert in die E-Mail, Fehlerseite (ErrorBoundary) in der Sprache der Seite. Offen bleiben der Hinweis «deutsche Fassung massgebend» (Rechtstext, Brandea), die 404-Seite nur auf Deutsch (bekannt, N085) und die Stilpunkte für Muttersprachler (E72).
+
 ## 1. Kurzurteil
 
 **Ja, das Italienische ist nach meinen Korrekturen freigabefähig.** Begründung:

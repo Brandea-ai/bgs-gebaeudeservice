@@ -134,4 +134,5 @@ export const nav: NavDictionary = {
     ],
   },
   languageSwitch: 'Langue',
+  errorPage: { title: 'Désolés, une erreur s’est produite.', reload: 'Recharger la page' },
 }

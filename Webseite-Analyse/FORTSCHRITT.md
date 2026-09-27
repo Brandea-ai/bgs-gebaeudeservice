@@ -2,7 +2,7 @@
 
 **Prüfziel:** BGS Gebäudeservice (`Brandea-ai/bgs-gebaeudeservice`, geprüfter Stand `main` @ `d7e1122`)
 **Referenz:** FIMI-Gebäudereinigung (`Brandea-ai/FIMI-Gebaeudereinigung` @ `1143a9f`), nur lesend, nur Inspiration
-**Letzte Aktualisierung:** 26.09.2026
+**Letzte Aktualisierung:** 27.09.2026
 
 ## Goldener Stand
 
@@ -155,6 +155,15 @@ Die neuen Texte in `content/de/` beruhen auf Eigenangaben und Entscheidungen (E1
 - **Startseite, Über uns, Kontakt:** Dritter Schritt «Start: Mit Ihrer Zusage legen wir den ersten Einsatz fest und stimmen Zeiten und Zugang mit Ihnen ab.» Über uns: «Einen Preis nennen wir erst, wenn wir Ihr Objekt gesehen haben.» Kontakt: Frage «Übernehmen Sie auch kurzfristige Einsätze?» statt «Notfallreinigungen».
 
 ## Nächste Aufgabe
+
+**Stand 27.09.2026 (E72, E73):** Alle vier Sprachen sind live (`LANGUAGES=true`), Lektorat EN, FR, IT durch Claude im Auftrag von Brandea (N087, Details in `22-LEKTORAT/`). Die technischen Restpunkte aus dem Lektorat sind behoben (N088). `NEW_BRAND` bleibt aus. **Offen bei Brandea:**
+1. Name der Premium-Linie (E73): Clavea nach Beurteilung durch eine Fachperson, Silendo oder kein eigener Name. Ohne eigenen Premium-Namen braucht es einen zweiten Schalter, weil `NEW_BRAND` beide Namen zusammen schaltet.
+2. Swissreg vor jeder Veröffentlichung erneut prüfen, frühestens am 29.09.2026. Markenrecherche durch einen Anbieter oder Beurteilung durch eine Fachperson, das IGE recherchiert nicht mehr selbst.
+3. Hinweis «bei Abweichungen gilt die deutsche Fassung» in den übersetzten Rechtstexten (Vorschlag in `22-LEKTORAT/`).
+4. Freigabe der Übersetzungen durch Muttersprachler vor `SITE_INDEXABLE` (E72), je Sprache 12 bis 17 Stilpunkte.
+5. Fotos nach 21, bis dahin nichts zu tun.
+
+**Agent als Nächstes:** Chat (M03), sobald Brandea Modell und Zugang festlegt. 404-Seite in der Sprache der Adresse, falls gewünscht (heute nur Deutsch, N085).
 
 **Stand 26.09.2026 (E70, E71):** Seitendurchgang und Mehrsprachigkeit fertig und live, weitere Sprachen in der Produktion noch aus. **Offen bei Brandea:** Übersetzungen EN, FR, IT prüfen (Preview-Adressen unter `/en`, `/fr`, `/it`), dann in Vercel `LANGUAGES=true`. Markenrecherche (E38), dann `NEW_BRAND=true`. Fotos nach 21. **Agent als Nächstes:** Chat (M03), sobald Brandea Modell und Zugang festlegt. Bis dahin Pflege: ungenutzte Dateien und alte KI-Bilder aufräumen (M34), sobald echte Fotos da sind.
 
