@@ -12,20 +12,20 @@ const region = cantonList
 export const pages = {
   '/': {
     label: 'Accueil',
-    title: `${company.brand} | Nettoyage et conciergerie à Lucerne et Zoug`,
-    description: `Nettoyage de bâtiments, conciergerie et facility services pour entreprises et immeubles, et nettoyage premium. Cantons de ${region}.`,
+    title: `${company.brand} | Nettoyage et conciergerie à Lucerne`,
+    description: `Nettoyage, conciergerie et facility services pour entreprises et immeubles, et nettoyage premium. Cantons de ${region}.`,
   },
   '/premium': {
     label: premiumLabel,
-    title: 'Premium : nettoyage pour des exigences élevées',
+    title: 'Nettoyage premium : exigences élevées',
     description: company.premiumBrand
       ? `${company.premiumBrand}, la ligne premium de ${company.brand} : nettoyage discret pour villas, résidences secondaires, hôtels, family offices, jets privés et yachts.`
-      : 'Nettoyage discret pour villas, résidences secondaires, hôtels, family offices, jets privés et yachts, au bord des lacs des Quatre-Cantons et de Zoug ainsi que dans la région.',
+      : 'Nettoyage discret pour villas, résidences secondaires, hôtels, family offices, jets privés et yachts autour des lacs des Quatre-Cantons et de Zoug.',
   },
   '/premium/luxusimmobilien': {
     label: 'Biens de prestige',
-    title: 'Nettoyage de villas et de biens de prestige',
-    description: 'Nettoyage et entretien discrets de villas, lofts et résidences au bord des lacs des Quatre-Cantons et de Zoug ainsi que dans la région. Équipes fixes, devis sur place.',
+    title: 'Nettoyage de villas de prestige',
+    description: 'Nettoyage et entretien discrets de villas, lofts et résidences autour des lacs des Quatre-Cantons et de Zoug. Équipes fixes, devis sur place.',
   },
   '/premium/privatjet': {
     label: 'Jet privé',
@@ -35,32 +35,32 @@ export const pages = {
   '/premium/yacht': {
     label: 'Yacht',
     title: 'Nettoyage de yachts et de bateaux',
-    description: 'Nettoyage de yachts et de bateaux à moteur sur le lac des Quatre-Cantons et le lac de Zoug : intérieur, sellerie, teck et gelcoat. Discret et selon entente.',
+    description: 'Nettoyage de yachts et bateaux à moteur sur les lacs des Quatre-Cantons et de Zoug : intérieur, sellerie, teck et gelcoat. Discret et selon entente.',
   },
   '/leistungen': {
     label: 'Prestations',
-    title: 'Prestations : nettoyage et conciergerie',
-    description: `Nettoyage d’entretien, de bureaux, spécial, de chantier, de vitres et industriel, conciergerie et facility services de ${company.brand} à Lucerne, Zoug et environs.`,
+    title: 'Prestations : nettoyage, conciergerie',
+    description: 'Nettoyage d’entretien, de bureaux, spécial, de chantier, de vitres et industriel, conciergerie et facility services à Lucerne, Zoug et environs.',
   },
   '/leistungen/unterhaltsreinigung': {
     label: 'Nettoyage d’entretien',
-    title: 'Nettoyage d’entretien à Lucerne et Zoug',
-    description: `Nettoyage régulier d’immeubles, de cages d’escalier et de surfaces commerciales, avec réapprovisionnement. Cantons de ${region}.`,
+    title: 'Nettoyage d’entretien, Lucerne et Zoug',
+    description: `Nettoyage régulier d’immeubles, cages d’escalier et surfaces commerciales, avec réapprovisionnement. Cantons de ${region}.`,
   },
   '/leistungen/bueroreinigung': {
     label: 'Nettoyage de bureaux et de cabinets',
-    title: 'Nettoyage de bureaux et de cabinets à Lucerne',
-    description: `Nettoyage de bureaux et de cabinets, adapté à vos horaires de travail. Devis gratuit sur place, dans les cantons de ${region}.`,
+    title: 'Nettoyage de bureaux à Lucerne et Zoug',
+    description: `Nettoyage de bureaux et cabinets, adapté à vos horaires de travail. Devis gratuit sur place. Cantons de ${region}.`,
   },
   '/leistungen/sonderreinigungen': {
     label: 'Nettoyages spéciaux',
-    title: 'Nettoyage en profondeur et de fin de bail',
+    title: 'Nettoyage en profondeur et fin de bail',
     description: 'Nettoyage en profondeur et nettoyage de fin de bail avec garantie de remise, pour gérances, propriétaires et entreprises à Lucerne, Zoug et environs.',
   },
   '/leistungen/baureinigung': {
     label: 'Nettoyage de chantier et de fin de chantier',
-    title: 'Nettoyage de chantier et de fin de chantier',
-    description: 'Nettoyage pendant et après les travaux de construction ou de transformation, jusqu’à la remise. Pour maîtres d’ouvrage, architectes et gérances à Lucerne, Zoug et environs.',
+    title: 'Nettoyage de chantier, Lucerne et Zoug',
+    description: 'Nettoyage pendant et après les travaux de construction ou de transformation, jusqu’à la remise. Pour maîtres d’ouvrage, architectes et gérances.',
   },
   '/leistungen/fenster-und-fassadenreinigung': {
     label: 'Nettoyage de vitres et de façades',
@@ -70,27 +70,27 @@ export const pages = {
   '/leistungen/industrie-und-hallenreinigung': {
     label: 'Nettoyage industriel et de halles',
     title: 'Nettoyage industriel et de halles',
-    description: `Nettoyage des halles de production, entrepôts, machines et installations, adapté à votre exploitation. Cantons de ${region}.`,
+    description: `Nettoyage de halles de production, entrepôts, machines et installations, adapté à votre exploitation. Cantons de ${region}.`,
   },
   '/leistungen/hauswartung': {
     label: 'Conciergerie',
-    title: 'Conciergerie d’immeubles à Lucerne et Zoug',
-    description: 'Conciergerie pour votre immeuble : rondes de contrôle, cage d’escalier, buanderie, petites réparations, technique du bâtiment, états des lieux, déchets et abords.',
+    title: 'Conciergerie à Lucerne et Zoug',
+    description: 'Conciergerie d’immeuble : rondes de contrôle, cage d’escalier, buanderie, petites réparations, technique du bâtiment, états des lieux, déchets et abords.',
   },
   '/leistungen/aussen-und-gruenflaechenpflege': {
     label: 'Entretien des extérieurs et des espaces verts',
-    title: 'Entretien des extérieurs et des espaces verts',
+    title: 'Entretien des abords et espaces verts',
     description: `Entretien des abords et des espaces verts de votre immeuble, seul ou avec la conciergerie. Cantons de ${region}.`,
   },
   '/leistungen/facility-services': {
     label: 'Facility services',
-    title: 'Facility services : un seul prestataire',
+    title: 'Facility services, un seul prestataire',
     description: 'Nettoyage, conciergerie et entretien des abords dans un seul contrat, avec un seul interlocuteur. Pour gérances et entreprises à Lucerne, Zoug et environs.',
   },
   '/einzugsgebiet': {
     label: 'Zone d’intervention',
-    title: 'Zone d’intervention : Suisse centrale et Argovie',
-    description: `Depuis ${company.address.city}, dans les cantons de ${region}, y compris au bord des lacs et à Engelberg. Toutes les prestations partout.`,
+    title: 'Zone d’intervention : Suisse centrale',
+    description: `Cantons de ${region} depuis ${company.address.city}, y compris au bord des lacs et à Engelberg. Toutes les prestations partout.`,
   },
   '/blog': {
     label: 'Guide',
@@ -99,23 +99,23 @@ export const pages = {
   },
   '/blog/richtige-reinigungsfirma-finden': {
     label: 'Choisir une entreprise de nettoyage',
-    title: 'Choisir une entreprise de nettoyage : critères',
-    description: 'Prestations, assurance, contrôle de la qualité, références et devis : les points à clarifier avant de mandater une entreprise de nettoyage. Avec les étapes jusqu’au contrat.',
+    title: 'Choisir une entreprise de nettoyage',
+    description: 'Prestations, assurance, contrôle de la qualité, références et devis : les points à clarifier avant de mandater une entreprise de nettoyage.',
   },
   '/blog/reinigungskosten-schweiz': {
     label: 'Coût du nettoyage d’entretien',
-    title: 'Combien coûte un nettoyage d’entretien ?',
+    title: 'Que coûte un nettoyage d’entretien ?',
     description: 'Ce qui détermine le prix d’un nettoyage d’entretien : surface, fréquence, utilisation et horaires. Avec des conseils pour comparer les devis.',
   },
   '/ueber-uns': {
     label: 'À propos',
     title: 'À propos de nous',
-    description: `${company.legalName}, ${company.address.city} : expérience depuis 2006, plus de 50 collaborateurs, plus de 120 clients, conseil en allemand, anglais, français et italien.`,
+    description: `${company.legalName}, ${company.address.city} : depuis 2006, plus de 50 collaborateurs, plus de 120 clients, conseil en allemand, anglais, français et italien.`,
   },
   '/kontakt': {
     label: 'Contact',
     title: 'Contact et devis',
-    description: `Appelez-nous au ${company.phone.display} ou écrivez-nous. Devis gratuit sur place, réponse dans les 24 heures les jours ouvrables.`,
+    description: `Appelez-nous au ${company.phone.display} ou écrivez-nous. Devis gratuit et sans engagement sur place, réponse dans les 24 heures les jours ouvrables.`,
   },
   '/impressum': {
     label: 'Mentions légales',
@@ -125,6 +125,6 @@ export const pages = {
   '/datenschutz': {
     label: 'Protection des données',
     title: 'Déclaration de protection des données',
-    description: `Comment ${company.legalName} traite les données personnelles sur ce site web et quels sont vos droits.`,
+    description: `Comment ${company.legalName} traite vos données sur ce site web : hébergement, formulaire de contact, pas de cookies ni d’analyse, et vos droits.`,
   },
 } satisfies Record<string, { label: string; title: string; description: string }>

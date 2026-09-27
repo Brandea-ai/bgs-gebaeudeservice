@@ -12,19 +12,19 @@ const region = cantonList
 export const pages = {
   '/': {
     label: 'Startseite',
-    title: `${company.brand} | Reinigung und Hauswartung in Luzern und Zug`,
-    description: `Gebäudereinigung, Hauswartung und Facility Services für Unternehmen und Liegenschaften in ${region}, dazu Premium-Reinigung.`,
+    title: `${company.brand} | Reinigung und Hauswartung Luzern, Zug`,
+    description: `Gebäudereinigung, Hauswartung, Facility Services und Premium-Reinigung für Unternehmen und Liegenschaften in ${region}.`,
   },
   '/premium': {
     label: premiumLabel,
-    title: 'Premium: Reinigung für besondere Ansprüche',
+    title: 'Premium: Reinigung für hohe Ansprüche',
     description: company.premiumBrand
       ? `${company.premiumBrand}, die Premium-Linie von ${company.brand}: diskrete Reinigung für Villen, Zweitwohnungen, Hotels, Family Offices, Privatjets und Yachten.`
       : 'Diskrete Reinigung für Villen, Zweitwohnungen, Hotels, Family Offices, Privatjets und Yachten am Vierwaldstättersee, am Zugersee und in der Region.',
   },
   '/premium/luxusimmobilien': {
     label: 'Luxusimmobilien',
-    title: 'Reinigung von Villen und Luxusimmobilien',
+    title: 'Villen- und Luxusimmobilienreinigung',
     description: 'Diskrete Reinigung und Pflege von Villen, Lofts und Residenzen am Vierwaldstättersee, am Zugersee und in der Region. Feste Teams, Offerte vor Ort.',
   },
   '/premium/privatjet': {
@@ -49,17 +49,17 @@ export const pages = {
   },
   '/leistungen/bueroreinigung': {
     label: 'Büro- und Praxisreinigung',
-    title: 'Büro- und Praxisreinigung in Luzern und Zug',
+    title: 'Büro- und Praxisreinigung Luzern, Zug',
     description: `Reinigung von Büros und Praxen, abgestimmt auf Ihre Arbeitszeiten. Kostenlose Offerte vor Ort in ${region}.`,
   },
   '/leistungen/sonderreinigungen': {
     label: 'Sonderreinigungen',
-    title: 'Sonderreinigungen: Grund- und Umzugsreinigung',
+    title: 'Grund- und Umzugsreinigung Luzern, Zug',
     description: 'Grundreinigung sowie Umzugs- und Wohnungsendreinigung mit Abnahmegarantie für Verwaltungen, Eigentümer und Unternehmen in Luzern, Zug und Umgebung.',
   },
   '/leistungen/baureinigung': {
     label: 'Bau- und Bauendreinigung',
-    title: 'Bau- und Bauendreinigung in Luzern und Zug',
+    title: 'Bau- und Bauendreinigung Luzern, Zug',
     description: 'Reinigung während und nach Bau- und Umbauarbeiten, bis zur Übergabe. Für Bauherrschaften, Architekten und Verwaltungen in Luzern, Zug und Umgebung.',
   },
   '/leistungen/fenster-und-fassadenreinigung': {
@@ -89,7 +89,7 @@ export const pages = {
   },
   '/einzugsgebiet': {
     label: 'Einzugsgebiet',
-    title: 'Einzugsgebiet: Zentralschweiz und Aargau',
+    title: 'Einzugsgebiet: Zentralschweiz, Aargau',
     description: `Von ${company.address.city} aus in den Kantonen ${region}, auch an den Seeufern und in Engelberg. Alle Leistungen im ganzen Gebiet.`,
   },
   '/blog': {
@@ -99,8 +99,8 @@ export const pages = {
   },
   '/blog/richtige-reinigungsfirma-finden': {
     label: 'Reinigungsfirma finden',
-    title: 'Reinigungsfirma finden: Kriterien und Fragen',
-    description: 'Leistungsumfang, Versicherung, Qualitätskontrolle, Referenzen und Offerte: Diese Punkte sollten Sie klären, bevor Sie eine Reinigungsfirma beauftragen. Mit Ablauf bis zum Vertrag.',
+    title: 'Die richtige Reinigungsfirma finden',
+    description: 'Reinigungsfirma beauftragen: Leistungsumfang, Versicherung, Qualitätskontrolle, Referenzen und Offerte vorher klären. Mit Ablauf bis zum Vertrag.',
   },
   '/blog/reinigungskosten-schweiz': {
     label: 'Kosten der Unterhaltsreinigung',
@@ -110,7 +110,7 @@ export const pages = {
   '/ueber-uns': {
     label: 'Über uns',
     title: 'Über uns',
-    description: `${company.legalName} aus ${company.address.city}: Erfahrung seit 2006, über 50 Mitarbeitende, über 120 Kunden, Beratung auf Deutsch, Englisch, Französisch und Italienisch.`,
+    description: `${company.legalName} aus ${company.address.city}: seit 2006, über 50 Mitarbeitende, über 120 Kunden, Beratung auf Deutsch, Englisch, Französisch und Italienisch.`,
   },
   '/kontakt': {
     label: 'Kontakt',
@@ -120,12 +120,12 @@ export const pages = {
   '/impressum': {
     label: 'Impressum',
     title: 'Impressum',
-    description: `Impressum der ${company.legalName}, ${company.address.street}, ${company.address.postalCode} ${company.address.city}: Handelsregister, UID und Kontakt.`,
+    description: `Impressum der ${company.legalName}, ${company.address.street}, ${company.address.postalCode} ${company.address.city}: Vertretung, Handelsregister, UID, Mehrwertsteuernummer und Kontakt.`,
   },
   '/datenschutz': {
     label: 'Datenschutz',
     title: 'Datenschutzerklärung',
-    description: `Wie die ${company.legalName} Personendaten auf dieser Website bearbeitet und welche Rechte Sie haben.`,
+    description: `Wie die ${company.legalName} Personendaten auf dieser Website bearbeitet und welche Rechte Sie nach dem Schweizer Datenschutzgesetz (DSG) haben.`,
   },
 } satisfies Record<string, { label: string; title: string; description: string }>
 

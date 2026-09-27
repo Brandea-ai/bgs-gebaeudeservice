@@ -12,19 +12,19 @@ const region = cantons
 export const pages: Dictionary['pages'] = {
   '/': {
     label: 'Home',
-    title: `${company.brand} | Cleaning and caretaking in Lucerne and Zug`,
+    title: `${company.brand} | Cleaning and caretaking, Lucerne & Zug`,
     description: `Building cleaning, caretaking and facility services for businesses and properties in ${region}, plus premium cleaning.`,
   },
   '/premium': {
     label: premiumLabel,
-    title: 'Premium cleaning for exacting standards',
+    title: 'Premium cleaning to exacting standards',
     description: company.premiumBrand
       ? `${company.premiumBrand}, the premium line by ${company.brand}: discreet cleaning for villas, second homes, hotels, family offices, private jets and yachts.`
       : 'Discreet cleaning for villas, second homes, hotels, family offices, private jets and yachts on Lake Lucerne, Lake Zug and in the region.',
   },
   '/premium/luxusimmobilien': {
     label: 'Luxury properties',
-    title: 'Cleaning for villas and luxury properties',
+    title: 'Villa and luxury property cleaning',
     description: 'Discreet cleaning and care of villas, lofts and residences on Lake Lucerne, Lake Zug and in the region. Dedicated teams, quote after a site visit.',
   },
   '/premium/privatjet': {
@@ -40,27 +40,27 @@ export const pages: Dictionary['pages'] = {
   '/leistungen': {
     label: 'Services',
     title: 'Services: cleaning and caretaking',
-    description: `Maintenance, office, special, construction, window and industrial cleaning, caretaking and facility services by ${company.brand} in Lucerne, Zug and beyond.`,
+    description: `Maintenance, office, special, construction, window and industrial cleaning, caretaking and facility services in Lucerne, Zug and beyond.`,
   },
   '/leistungen/unterhaltsreinigung': {
     label: 'Maintenance cleaning',
-    title: 'Maintenance cleaning in Lucerne and Zug',
+    title: 'Maintenance cleaning, Lucerne and Zug',
     description: `Regular cleaning of properties, stairwells and business premises, with a restocking service. In ${region}.`,
   },
   '/leistungen/bueroreinigung': {
     label: 'Office and practice cleaning',
-    title: 'Office and practice cleaning in Lucerne and Zug',
-    description: `Cleaning of offices and medical practices, scheduled around your working hours. Free quote after a site visit in ${region}.`,
+    title: 'Office and practice cleaning, Lucerne',
+    description: `Office and medical practice cleaning in ${region}, scheduled around your working hours. Free quote after a site visit.`,
   },
   '/leistungen/sonderreinigungen': {
     label: 'Special cleaning',
-    title: 'Special cleaning: deep and move-out cleaning',
+    title: 'Deep, move-out and special cleaning',
     description: 'Deep cleaning, move-out and end-of-tenancy cleaning with a handover guarantee for property managers, owners and businesses in Lucerne, Zug and beyond.',
   },
   '/leistungen/baureinigung': {
     label: 'Construction cleaning',
-    title: 'Construction cleaning in Lucerne and Zug',
-    description: 'Cleaning during and after building and renovation work, through to handover. For building owners, architects and property managers in Lucerne, Zug and beyond.',
+    title: 'Construction cleaning, Lucerne and Zug',
+    description: 'Cleaning during and after building and renovation work, until handover. For building owners, architects and property managers in Lucerne, Zug and beyond.',
   },
   '/leistungen/fenster-und-fassadenreinigung': {
     label: 'Window and facade cleaning',
@@ -84,13 +84,13 @@ export const pages: Dictionary['pages'] = {
   },
   '/leistungen/facility-services': {
     label: 'Facility services',
-    title: 'Facility services from a single provider',
+    title: 'Facility services from one provider',
     description: 'Cleaning, caretaking and grounds maintenance under one contract with one contact person. For property managers and businesses in Lucerne, Zug and beyond.',
   },
   '/einzugsgebiet': {
     label: 'Service area',
-    title: 'Service area: Central Switzerland and Aargau',
-    description: `From ${company.address.city} across the cantons of ${region}, including lakeside areas and Engelberg. All services throughout the area.`,
+    title: 'Service area: Lucerne, Zug and Aargau',
+    description: `From ${company.address.city} across the cantons of ${region}, including lakeside areas and Engelberg. All services everywhere.`,
   },
   '/blog': {
     label: 'Guides',
@@ -99,12 +99,12 @@ export const pages: Dictionary['pages'] = {
   },
   '/blog/richtige-reinigungsfirma-finden': {
     label: 'Choosing a cleaning company',
-    title: 'Choosing a cleaning company: what to check',
+    title: 'How to choose a cleaning company',
     description: 'Scope of services, insurance, quality control, references and quote: what to clarify before hiring a cleaning company, with the steps up to the contract.',
   },
   '/blog/reinigungskosten-schweiz': {
     label: 'Cost of maintenance cleaning',
-    title: 'How much does maintenance cleaning cost?',
+    title: 'What does maintenance cleaning cost?',
     description: 'What the price of maintenance cleaning depends on: floor area, frequency, use and cleaning times. With tips on comparing quotes.',
   },
   '/ueber-uns': {
@@ -120,11 +120,11 @@ export const pages: Dictionary['pages'] = {
   '/impressum': {
     label: 'Legal notice',
     title: 'Legal notice',
-    description: `Legal notice of ${company.legalName}, ${company.address.street}, ${company.address.postalCode} ${company.address.city}: commercial register, UID and contact details.`,
+    description: `Legal notice of ${company.legalName}, ${company.address.street}, ${company.address.postalCode} ${company.address.city}: commercial register, UID, VAT number and contact details.`,
   },
   '/datenschutz': {
     label: 'Privacy',
     title: 'Privacy policy',
-    description: `How ${company.legalName} processes personal data on this website and what rights you have.`,
+    description: `How ${company.legalName} processes personal data on this website, for what purpose, and what rights you have. No cookies, no analytics.`,
   },
 }
