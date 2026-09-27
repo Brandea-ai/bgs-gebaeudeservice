@@ -139,6 +139,14 @@ export const area: Seiten['area'] = {
   lead: `From our base in ${company.address.city}, we work in the cantons of ${cantons}. We offer all our services throughout the area, for businesses and discerning private clients alike.`,
   cantonsTitle: 'Cantons',
   cantonLabels: ['Canton of Lucerne', 'Canton of Zug', 'Canton of Aargau', 'Canton of Nidwalden', 'Canton of Obwalden'],
+  // Places by canton (S06): same places as places.groups, regrouped; keys as in company.cantons
+  cantonPlaces: {
+    Luzern: ['Lucerne', 'Horw', 'Meggen', 'Weggis', 'Vitznau', 'Eich'],
+    Zug: ['Zug', 'Cham', 'Risch', 'Hünenberg', 'Walchwil', 'Baar', 'Oberägeri'],
+    Aargau: ['Meisterschwanden', 'Ennetbaden', 'Bergdietikon', 'Oberwil-Lieli'],
+    Nidwalden: ['Hergiswil', 'Stansstad', 'Ennetbürgen'],
+    Obwalden: ['Engelberg'],
+  },
   seatTitle: 'Head office and contact',
   places: {
     title: 'Lakeside areas and holiday resorts',

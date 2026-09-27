@@ -149,6 +149,14 @@ export const area = {
   lead: `Von unserem Sitz in ${company.address.city} aus arbeiten wir in den Kantonen ${cantonList}. Alle Leistungen bieten wir im ganzen Gebiet an, für Unternehmen ebenso wie für anspruchsvolle Privatkunden.`,
   cantonsTitle: 'Kantone',
   cantonLabels: company.cantons.map((canton) => `Kanton ${canton}`),
+  // Orte je Kanton (S06, EG-01): nur Umgruppierung der Orte aus places.groups, keine neuen Orte. Schlüssel wie company.cantons.
+  cantonPlaces: {
+    Luzern: ['Luzern', 'Horw', 'Meggen', 'Weggis', 'Vitznau', 'Eich'],
+    Zug: ['Zug', 'Cham', 'Risch', 'Hünenberg', 'Walchwil', 'Baar', 'Oberägeri'],
+    Aargau: ['Meisterschwanden', 'Ennetbaden', 'Bergdietikon', 'Oberwil-Lieli'],
+    Nidwalden: ['Hergiswil', 'Stansstad', 'Ennetbürgen'],
+    Obwalden: ['Engelberg'],
+  } satisfies Record<(typeof company.cantons)[number], string[]>,
   seatTitle: 'Sitz und Kontakt',
   places: {
     title: 'Seeufer und Ferienorte',

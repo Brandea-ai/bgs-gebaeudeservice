@@ -1,261 +1,262 @@
-import Link from "next/link";
-import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
+import {
+  ArrowDown,
+  ArrowRight,
+  Envelope,
+  MapPin,
+  Phone,
+} from "@phosphor-icons/react/dist/ssr";
+import type { Icon } from "@phosphor-icons/react";
 import PageFrame from "@/components/PageFrame";
-import OfferCta from "@/components/OfferCta";
-import Breadcrumbs from "@/components/Breadcrumbs";
+import PageHero from "@/components/PageHero";
 import CantonMap from "@/components/CantonMap";
-import ImageSlot from "@/components/ImageSlot";
-import Reveal from "@/components/Reveal";
-import SectionHead from "@/components/SectionHead";
+import ConsentMap from "@/components/ConsentMap";
+import { RevealGroup } from "@/components/Reveal";
 import RichText from "@/components/RichText";
+import SectionHead from "@/components/SectionHead";
+import SectionNav from "@/components/SectionNav";
 import TrustStrip from "@/components/TrustStrip";
 import { Button } from "@/components/ui/button";
 import { company } from "../../../shared/company";
-import { cantonInfo } from "../../../shared/cantons";
+import { cantonInfo, cantonTitle } from "../../../shared/cantons";
 import { placePins } from "../../../shared/canton-map";
 import { getDict } from "../../../content";
 import { navDicts } from "../../../content/navigation";
-import { localizePath, type Locale } from "../../../shared/i18n";
+import type { Locale } from "../../../shared/i18n";
 
 /**
- * Einzugsgebiet (F5, F10): ein Sitz, fünf Kantone, alle Leistungen im ganzen
- * Gebiet (R4b, W04, R4d). Dunkler Kopf mit animierter Karte: Kantone erscheinen
- * nacheinander, Orte springen als Pins auf. Darunter die fünf Kantone als
- * Bildkarten, die Regionen mit Bildfläche, Sitz und Kontakt.
- * Karte aus den Kantonsgrenzen von swisstopo (S85), Texte aus content/<sprache>/seiten.ts.
+ * Einzugsgebiet (F5, F10, F15): ein Sitz, fünf Kantone, alle Leistungen im
+ * ganzen Gebiet (R4b, W04, R4d). Statischer dunkler Kopf mit der Karte aus den
+ * Kantonsgrenzen von swisstopo (S85), darunter Belege und die Abschnittsleiste
+ * (Kantone, Orte, Sitz). Die Kantone stehen als Abfolge neben der stehenden
+ * Karte statt als Bildkarten (EG-01, S06), die Orte als Gruppen an Seen und in
+ * den Bergen, der Sitz mit Adresse und Karte nach Klick (E20). Texte aus
+ * content/<sprache>/seiten.ts, keine eigenen Ortsseiten (M48).
  */
 export default function AreaView({ lang }: { lang: Locale }) {
-  const { area } = getDict(lang).seiten;
-  const { ui } = getDict(lang);
+  const dict = getDict(lang);
+  const { area } = dict.seiten;
+  const { ui, misc } = dict;
   const { chrome } = navDicts[lang];
+  const mapTexts = { ...misc.map, seat: chrome.seat };
+  // Luzern liegt auf der Karte direkt neben dem Sitz und würde dessen Beschriftung überdecken
+  const pins = placePins
+    .filter(pin => pin.name !== "Luzern")
+    .map(pin => ({ x: pin.x, y: pin.y, label: pin.name }));
+
+  const navItems = [
+    { id: "kantone", title: area.cantonsTitle },
+    { id: "orte", title: area.places.title },
+    { id: "sitz", title: chrome.seat },
+  ];
+
+  // Sitz: Adresse, Telefon, E-Mail (EG-09, EG-14); Icons 20 px ohne Platte (icons.md)
+  const seat: { icon: Icon; label: string; lines: string[]; href?: string }[] =
+    [
+      {
+        icon: MapPin,
+        label: chrome.address,
+        lines: [
+          company.legalName,
+          company.address.street,
+          `${company.address.postalCode} ${company.address.city}`,
+        ],
+      },
+      {
+        icon: Phone,
+        label: chrome.phone,
+        lines: [company.phone.display],
+        href: company.phone.href,
+      },
+      {
+        icon: Envelope,
+        label: chrome.email,
+        lines: [company.email],
+        href: `mailto:${company.email}`,
+      },
+    ];
 
   return (
-    <PageFrame lang={lang} path="/einzugsgebiet">
-      <section className="relative overflow-hidden bg-ink text-white">
-        <div
-          className="container grid-lines pointer-events-none absolute inset-0 max-md:hidden"
-          aria-hidden="true"
-        />
-        <div className="container relative grid items-center gap-10 pt-8 pb-14 md:pt-12 lg:grid-cols-12 lg:gap-10 lg:pb-20">
-          <div className="lg:col-span-5">
-            <Breadcrumbs path="/einzugsgebiet" lang={lang} tone="dark" />
-            <Reveal>
-              <h1 className="t-h1 max-w-[18ch] text-white">{area.h1}</h1>
-            </Reveal>
-            <Reveal delay={120}>
-              <p className="t-lead mt-7 max-w-[48ch] text-white/90">
-                {area.lead}
-              </p>
-            </Reveal>
-            <Reveal delay={220}>
-              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-                <Button asChild size="xl" className="arrow-link">
-                  <a href="#kontakt-formular">
-                    {ui.offerCta}
-                    <ArrowRight aria-hidden="true" />
-                  </a>
-                </Button>
-                <Button asChild size="xl" variant="inverse">
-                  <a href="#kantone">
-                    {area.cantonsTitle}
-                    <ArrowRight className="rotate-90" aria-hidden="true" />
-                  </a>
-                </Button>
-              </div>
-            </Reveal>
-          </div>
-          <div className="lg:col-span-7 lg:col-start-6 xl:col-span-6 xl:col-start-7">
-            <CantonMap
-              lang={lang}
-              texts={{
-                ...getDict(lang).misc.map,
-                seat: navDicts[lang].chrome.seat,
-              }}
-              tone="dark"
-              pins={placePins
-                .filter(pin => pin.name !== "Luzern")
-                .map(pin => ({ x: pin.x, y: pin.y, label: pin.name }))}
-              className="mx-auto max-w-[46rem]"
-            />
-          </div>
-        </div>
-      </section>
-
-      <div className="border-b border-line">
-        <div className="container py-6">
-          <TrustStrip lang={lang} compact />
-        </div>
-      </div>
-
-      {/* Fünf Kantone als Bildkarten */}
-      <section aria-labelledby="kantone" className="section">
-        <div className="container">
-          <SectionHead
-            id="kantone"
-            title={area.cantonsTitle}
-            className="mb-10"
+    <PageFrame lang={lang} path="/einzugsgebiet" contact={area.cta}>
+      {/* Erster Bildschirm statisch: Titel, fünf Kantone im Lead, Aktionen, Karte (EG-07, S05) */}
+      <PageHero
+        path="/einzugsgebiet"
+        lang={lang}
+        tone="dark"
+        title={area.h1}
+        lead={area.lead}
+        aside={
+          <CantonMap
+            lang={lang}
+            tone="dark"
+            texts={mapTexts}
+            pins={pins}
+            mobilePins="seat"
+            className="mx-auto w-full max-w-[44rem]"
           />
-          <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-            {area.cantonLabels.map((label, index) => {
-              const code = cantonInfo[company.cantons[index]]?.code;
-              return (
-                <Reveal
-                  as="li"
-                  key={label}
-                  delay={index * 90}
-                  className="card-lift group bg-white shadow-[0_1px_0_rgba(14,17,22,0.04),0_18px_40px_-28px_rgba(14,17,22,0.35)]"
+        }
+        below={
+          /* Belege direkt unter dem Kopf, vor jeder Bildfläche (Pflicht 7) */
+          <div className="relative bg-white">
+            <div className="container py-5 md:py-6">
+              <TrustStrip lang={lang} compact />
+            </div>
+          </div>
+        }
+      >
+        <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <Button asChild size="xl" className="arrow-link">
+            <a href="#kontakt-formular" data-cta="kopf-seite">
+              {ui.offerCta}
+              <ArrowRight weight="regular" aria-hidden="true" />
+            </a>
+          </Button>
+          {/* Echter Pfeil nach unten, ohne arrow-link: der Hover würde sonst diagonal schieben (EG-14) */}
+          <Button asChild size="xl" variant="inverse">
+            <a href="#kantone">
+              {area.cantonsTitle}
+              <ArrowDown weight="regular" aria-hidden="true" />
+            </a>
+          </Button>
+        </div>
+      </PageHero>
+
+      {/* Abschnittsleiste mit Scrollspy: Kantone, Orte, Sitz (motion.md) */}
+      <SectionNav label={ui.onThisPage} items={navItems} />
+
+      {/* Kantone (EG-01, S06): Sprungziel auf der Sektion, nicht auf einem bewegten Element (EG-06) */}
+      <section id="kantone" aria-labelledby="kantone-titel" className="section">
+        <div className="container">
+          <SectionHead id="kantone-titel" title={area.cantonsTitle} />
+          <div className="mt-10 grid gap-10 lg:mt-12 lg:grid-cols-12 lg:gap-x-12">
+            {/*
+             * Die Karte bleibt beim Lesen stehen: einzige gepinnte Sektion der
+             * Seite. Unter lg steht die Karte im Kopf direkt darüber, darum
+             * hier ausgeblendet.
+             */}
+            <div className="hidden lg:col-span-5 lg:block lg:self-start lg:sticky lg:top-[calc(var(--header-h)+var(--subnav-h,0px)+2rem)]">
+              <CantonMap lang={lang} texts={mapTexts} pins={pins} />
+            </div>
+            <RevealGroup
+              as="ul"
+              className="divide-y divide-line border-y border-line lg:col-span-7"
+            >
+              {company.cantons.map(name => (
+                <li
+                  key={name}
+                  className="grid grid-cols-[4rem_minmax(0,1fr)] gap-x-5 py-7 sm:grid-cols-[5.5rem_minmax(0,1fr)] sm:gap-x-8 md:py-9"
                 >
-                  <a href="#kontakt-formular" className="flex h-full flex-col">
-                    <div className="relative">
-                      <ImageSlot
-                        lang={lang}
-                        hover
-                        label={label}
-                        className="aspect-[4/3] w-full"
-                      />
-                      <span className="absolute left-4 top-4 bg-signal px-3 py-1.5 font-mono text-sm font-bold tracking-[0.14em] text-white">
-                        {code}
-                      </span>
-                    </div>
-                    <div className="flex flex-1 items-center justify-between gap-3 p-5">
-                      <span className="font-display text-lg font-bold leading-tight text-ink transition-colors group-hover:text-signal">
-                        {label}
-                      </span>
-                      <ArrowRight
-                        className="h-5 w-5 shrink-0 text-signal"
-                        aria-hidden="true"
-                      />
-                    </div>
-                  </a>
-                </Reveal>
-              );
-            })}
-          </ul>
+                  {/* Kürzel wie auf der Karte; der Titel daneben nennt den Kanton */}
+                  <span className="t-figure text-signal" aria-hidden="true">
+                    {cantonInfo[name]?.code}
+                  </span>
+                  <div className="min-w-0">
+                    <h3 className="t-h3 text-ink">{cantonTitle(name, lang)}</h3>
+                    <p className="mt-3 font-medium leading-relaxed text-ink-600">
+                      {area.cantonPlaces[name].join(", ")}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </RevealGroup>
+          </div>
         </div>
       </section>
 
-      {/* Orte an Seen und in den Bergen */}
-      <section aria-labelledby="orte" className="section bg-stone">
+      {/* Orte an Seen und in den Bergen: Gruppen als Liste ohne Bildflächen (EG-01); der Premium-Link bleibt im Text (EG-13) */}
+      <section
+        id="orte"
+        aria-labelledby="orte-titel"
+        className="section bg-stone"
+      >
         <div className="container">
           <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
             <SectionHead
-              id="orte"
+              id="orte-titel"
               title={area.places.title}
-              className="lg:col-span-7"
+              className="lg:col-span-6"
             />
-            <Reveal delay={100} className="lg:col-span-5">
-              <p className="t-lead text-ink-600">
-                <RichText text={area.places.text} lang={lang} />
-              </p>
-            </Reveal>
+            <p className="t-lead text-ink-600 lg:col-span-6">
+              <RichText text={area.places.text} lang={lang} />
+            </p>
           </div>
-          <ul className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {area.places.groups.map((group, index) => (
-              <Reveal
-                as="li"
-                key={group.title}
-                delay={index * 90}
-                className={`card-lift group bg-white shadow-[0_1px_0_rgba(14,17,22,0.04),0_18px_40px_-28px_rgba(14,17,22,0.35)] ${index === 0 ? "md:col-span-2 xl:col-span-1" : ""}`}
-              >
-                <ImageSlot
-                  lang={lang}
-                  hover
-                  label={group.title}
-                  className="aspect-[16/9] w-full"
-                />
-                <div className="p-6 md:p-7">
-                  <h3 className="t-h3 text-ink">{group.title}</h3>
-                  <ul className="mt-4 flex flex-wrap gap-2">
+          <RevealGroup
+            as="ul"
+            className="mt-10 divide-y divide-line border-y border-line lg:mt-12"
+          >
+            {area.places.groups.map((group, index) => {
+              const id = `orte-gruppe-${index + 1}`;
+              return (
+                <li
+                  key={group.title}
+                  className="grid gap-4 py-7 md:grid-cols-12 md:gap-8 md:py-8"
+                >
+                  <h3
+                    id={id}
+                    className="t-h3 text-ink md:col-span-5 lg:col-span-4"
+                  >
+                    {group.title}
+                  </h3>
+                  <ul
+                    aria-labelledby={id}
+                    className="flex flex-wrap gap-2 md:col-span-7 lg:col-span-8"
+                  >
                     {group.items.map(place => (
                       <li
                         key={place}
-                        className="rounded-full border border-line bg-stone px-3 py-1.5 text-sm font-semibold text-ink"
+                        className="inline-flex min-h-9 items-center rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-semibold text-ink"
                       >
                         {place}
                       </li>
                     ))}
                   </ul>
-                </div>
-              </Reveal>
-            ))}
-          </ul>
-          <Reveal delay={200} className="mt-10">
-            <Button asChild size="lg" variant="outline" className="arrow-link">
-              <Link href={localizePath("/premium", lang)}>
-                {getDict(lang).seiten.servicesOverview.premium.link}
-                <ArrowRight aria-hidden="true" />
-              </Link>
-            </Button>
-          </Reveal>
+                </li>
+              );
+            })}
+          </RevealGroup>
         </div>
       </section>
 
-      {/* Sitz und Kontakt */}
-      <section aria-labelledby="sitz" className="section">
-        <div className="container grid gap-10 lg:grid-cols-12 lg:items-center">
+      {/* Sitz (EG-09): Überschrift chrome.seat, Adresse mit Karte nach Klick statt Platzhalterfläche; statisch */}
+      <section id="sitz" aria-labelledby="sitz-titel" className="section">
+        <div className="container grid gap-10 lg:grid-cols-12 lg:items-start">
           <div className="lg:col-span-5">
-            <SectionHead id="sitz" title={area.seatTitle} />
-            <Reveal delay={100}>
-              <dl className="mt-8 divide-y divide-line border-y border-line">
-                {[
-                  {
-                    icon: MapPin,
-                    label: chrome.address,
-                    value: `${company.legalName}, ${company.address.street}, ${company.address.postalCode} ${company.address.city}`,
-                  },
-                  {
-                    icon: Phone,
-                    label: chrome.phone,
-                    value: company.phone.display,
-                    href: company.phone.href,
-                  },
-                  {
-                    icon: Mail,
-                    label: chrome.email,
-                    value: company.email,
-                    href: `mailto:${company.email}`,
-                  },
-                ].map(({ icon: Icon, label, value, href }) => (
-                  <div key={label} className="relative py-5 pl-10">
-                    <dt className="font-mono text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-ink-600">
-                      <Icon
-                        className="absolute left-0 top-5 h-5 w-5 text-signal"
-                        aria-hidden="true"
-                      />
-                      {label}
-                    </dt>
-                    <dd className="mt-1 break-words text-[1.0625rem] font-medium text-ink">
-                      {href ? (
-                        <a
-                          href={href}
-                          className="tabular-nums transition-colors hover:text-signal"
-                        >
-                          {value}
-                        </a>
-                      ) : (
-                        value
-                      )}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-            </Reveal>
+            <SectionHead id="sitz-titel" title={chrome.seat} />
+            <dl className="mt-8 divide-y divide-line border-y border-line">
+              {seat.map(({ icon: Glyph, label, lines, href }) => (
+                <div key={label} className="relative py-5 pl-9">
+                  <dt className="t-eyebrow text-ink-600">
+                    <Glyph
+                      weight="regular"
+                      className="absolute left-0 top-5 size-5 text-signal"
+                      aria-hidden="true"
+                    />
+                    {label}
+                  </dt>
+                  <dd className="mt-1.5 break-words text-[1.0625rem] font-medium leading-snug text-ink">
+                    {href ? (
+                      <a
+                        href={href}
+                        className="inline-flex min-h-6 items-center tabular-nums transition-colors hover:text-signal"
+                      >
+                        {lines[0]}
+                      </a>
+                    ) : (
+                      lines.map(line => (
+                        <span key={line} className="block">
+                          {line}
+                        </span>
+                      ))
+                    )}
+                  </dd>
+                </div>
+              ))}
+            </dl>
           </div>
-          <Reveal
-
-            delay={150}
-            className="lg:col-span-7 lg:col-start-6 xl:col-span-6 xl:col-start-7"
-          >
-            <ImageSlot
-              lang={lang}
-              label={chrome.seat}
-              className="aspect-[16/10] w-full"
-            />
-          </Reveal>
+          <div className="overflow-hidden border border-line bg-white lg:col-span-7 lg:col-start-6 xl:col-span-6 xl:col-start-7">
+            <ConsentMap texts={misc.map} />
+          </div>
         </div>
       </section>
-
-      <OfferCta title={area.cta.title} text={area.cta.text} lang={lang} />
     </PageFrame>
   );
 }

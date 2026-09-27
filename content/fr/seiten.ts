@@ -138,6 +138,14 @@ export const area = {
   lead: `Depuis notre siège à ${company.address.city}, nous intervenons dans les cantons de ${cantonList}. Nous proposons toutes nos prestations dans toute la zone, aux entreprises comme à une clientèle privée exigeante.`,
   cantonsTitle: 'Cantons',
   cantonLabels: ['Canton de Lucerne', 'Canton de Zoug', 'Canton d’Argovie', 'Canton de Nidwald', 'Canton d’Obwald'],
+  // Localités par canton (S06) : mêmes localités que places.groups, regroupées ; clés comme company.cantons
+  cantonPlaces: {
+    Luzern: ['Lucerne', 'Horw', 'Meggen', 'Weggis', 'Vitznau', 'Eich'],
+    Zug: ['Zoug', 'Cham', 'Risch', 'Hünenberg', 'Walchwil', 'Baar', 'Oberägeri'],
+    Aargau: ['Meisterschwanden', 'Ennetbaden', 'Bergdietikon', 'Oberwil-Lieli'],
+    Nidwalden: ['Hergiswil', 'Stansstad', 'Ennetbürgen'],
+    Obwalden: ['Engelberg'],
+  },
   seatTitle: 'Siège et contact',
   places: {
     title: 'Rives des lacs et lieux de villégiature',

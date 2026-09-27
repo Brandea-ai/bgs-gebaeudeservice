@@ -136,6 +136,14 @@ export const area = {
   lead: `Dalla nostra sede di ${company.address.city} operiamo nei Cantoni di ${cantonListIt}. Offriamo tutti i servizi nell’intera zona, per aziende come per clienti privati esigenti.`,
   cantonsTitle: 'Cantoni',
   cantonLabels: ['Cantone di Lucerna', 'Cantone di Zugo', 'Cantone di Argovia', 'Cantone di Nidvaldo', 'Cantone di Obvaldo'],
+  // Località per Cantone (S06): le stesse località di places.groups, raggruppate; chiavi come company.cantons
+  cantonPlaces: {
+    Luzern: ['Lucerna', 'Horw', 'Meggen', 'Weggis', 'Vitznau', 'Eich'],
+    Zug: ['Zugo', 'Cham', 'Risch', 'Hünenberg', 'Walchwil', 'Baar', 'Oberägeri'],
+    Aargau: ['Meisterschwanden', 'Ennetbaden', 'Bergdietikon', 'Oberwil-Lieli'],
+    Nidwalden: ['Hergiswil', 'Stansstad', 'Ennetbürgen'],
+    Obwalden: ['Engelberg'],
+  },
   seatTitle: 'Sede e contatto',
   places: {
     title: 'Rive dei laghi e località di villeggiatura',

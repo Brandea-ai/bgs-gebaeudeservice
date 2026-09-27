@@ -1,225 +1,371 @@
 import Link from "next/link";
 import {
   ArrowRight,
-  BadgeCheck,
-  ClipboardCheck,
   Clock,
-  Gem,
-  KeyRound,
-  Languages,
-  Lock,
-  Shield,
+  Diamond,
+  FileText,
+  Key,
+  LockKey,
+  Phone,
+  SealCheck,
+  ShieldCheck,
+  Translate,
   UserCheck,
-  Users,
-} from "lucide-react";
+  UsersThree,
+} from "@phosphor-icons/react/dist/ssr";
+import type { Icon } from "@phosphor-icons/react";
 import PageFrame from "@/components/PageFrame";
-import OfferCta from "@/components/OfferCta";
 import PageHero from "@/components/PageHero";
 import ImageSlot from "@/components/ImageSlot";
-import Reveal from "@/components/Reveal";
+import JsonLd from "@/components/JsonLd";
+import { RevealGroup } from "@/components/Reveal";
 import SectionHead from "@/components/SectionHead";
+import SectionNav from "@/components/SectionNav";
+import StackPanels from "@/components/StackPanels";
+import ProcessScrolly from "@/components/ProcessScrolly";
+import Faq from "@/components/Faq";
 import RichText from "@/components/RichText";
 import CantonMap from "@/components/CantonMap";
 import { Button } from "@/components/ui/button";
 import { getDict } from "../../../content";
 import { navDicts } from "../../../content/navigation";
+import { company } from "../../../shared/company";
+import { imagesArePlaceholders } from "../../../shared/features";
 import { placePins } from "../../../shared/canton-map";
 import { localizePath, type Locale } from "../../../shared/i18n";
+import { itemListJsonLd } from "../../../shared/structured-data";
 
-// Premium-Bereich (E16, E28, F9), Texte aus content/<sprache>/seiten.ts
-const promiseIcons = {
+type PromiseKey = ReturnType<
+  typeof getDict
+>["seiten"]["premiumOverview"]["promises"][number]["key"];
+
+/** Ein Objekt-Icon je Zusage (P05, icons.md): duotone, 28 px, Messing, ohne Fläche */
+const promiseIcons: Record<PromiseKey, Icon> = {
   persoenlich: UserCheck,
-  diskret: Lock,
-  teams: Users,
-  personal: BadgeCheck,
-  schluessel: KeyRound,
+  diskret: LockKey,
+  teams: UsersThree,
+  personal: SealCheck,
+  schluessel: Key,
   zeiten: Clock,
-  material: Gem,
-  sprachen: Languages,
-  versichert: Shield,
-  offerte: ClipboardCheck,
+  material: Diamond,
+  sprachen: Translate,
+  versichert: ShieldCheck,
+  offerte: FileText,
 };
 
+// Orte der Premium-Linie auf der Karte. Luzern liegt 20 Karteneinheiten neben dem
+// Sitz Emmenbrücke, die Beschriftungen würden sich überlagern (wie in AreaView).
+const premiumPlaces = ["Weggis", "Zug", "Engelberg"];
+
+// Links auf dunklem Grund: Weiss mit Messing-Unterstrich (kein Signalrot auf Tinte)
+const darkLink =
+  "font-semibold text-white underline decoration-brass underline-offset-4 hover:decoration-white";
+
 /**
- * Premium-Linie (F9): Graphit mit Messington. Drei grosse Bildkarten als
- * Einstieg, weitere Anlässe, Zusagen als Raster, Orte mit Karte.
+ * Premium-Übersicht (F9, F15, E16, E28): Graphit mit Messington auf der ganzen
+ * Seite. Kopf statisch mit Anfrage und Telefon (P03), darunter die
+ * Abschnittsleiste mit Scrollspy. Die drei Anlässe als Stapel-Tafeln (einzige
+ * gepinnte Sektion), weitere Anlässe als ruhige Liste (P09), der Ablauf und die
+ * Fragen aus den bereits übersetzten Texten der Unterseiten (P04), Zusagen mit
+ * Phosphor-Icons ohne Kreise (P05, P07), Orte mit Karte. Der Abschluss
+ * «Diskret anfragen» beschriftet den Formularabschnitt (PageFrame contact).
  */
 export default function PremiumOverviewView({ lang }: { lang: Locale }) {
-  const { premiumOverview: content } = getDict(lang).seiten;
-  const { ui } = getDict(lang);
-  const pins = placePins.filter(pin =>
-    ["Zug", "Weggis", "Engelberg"].includes(pin.name)
-  );
+  const dict = getDict(lang);
+  const { premiumOverview: content, home, servicesOverview } = dict.seiten;
+  const { ui, pages, misc, premium } = dict;
+  const nav = navDicts[lang];
+
+  const offerPaths = content.offers.map(offer => offer.path);
+  const panels = content.offers.map(offer => ({
+    path: offer.path,
+    label: pages[offer.path].label,
+    text: offer.text,
+  }));
+
+  // Vertrauenszeile im Kopf aus zwei belegten Zusagen (P03, E18)
+  const promise = (key: PromiseKey) =>
+    content.promises.find(item => item.key === key)?.text;
+  const trustLine = [promise("persoenlich"), promise("diskret")]
+    .filter(Boolean)
+    .join(" ");
+
+  // Ablauf: die ersten drei Schritte der Luxusimmobilien-Seite (Anfrage, Rundgang
+  // und Offerte, feste Regeln). «Ihr Team» folgt inhaltlich in den Zusagen.
+  const steps = premium.luxusimmobilien.steps.slice(0, 3);
+  // Fragen ohne «Wo sind Sie tätig?», das beantwortet die Karte direkt darunter
+  const faq = premium.luxusimmobilien.faq.slice(0, 6);
+
+  const pins = placePins
+    .filter(pin => premiumPlaces.includes(pin.name))
+    .map(pin => ({ x: pin.x, y: pin.y, label: pin.name }));
+
+  // Kennzeile nur, wenn die Premium-Linie einen eigenen Namen trägt (S12, E38)
+  const eyebrow = company.premiumBrand ? ui.premiumLine : undefined;
+
+  // Titel der Anlässe-Sektion: die Frage aus dem Premium-Einstieg der Leistungsübersicht
+  const offersTitle = servicesOverview.premium.title;
+
+  const navItems = [
+    { id: "anlaesse", title: offersTitle },
+    { id: "ausserdem", title: content.moreTitle },
+    { id: "zusagen", title: content.promisesTitle },
+    { id: "orte", title: misc.map.areaLabel },
+  ];
+
   return (
-    <PageFrame lang={lang} path="/premium">
+    <PageFrame
+      lang={lang}
+      path="/premium"
+      mainClassName="bg-ink"
+      contact={content.cta}
+    >
+      {/* Hub zu den drei Premium-Seiten als ItemList */}
+      <JsonLd data={itemListJsonLd("/premium", offerPaths, lang)} />
+
       <PageHero
         path="/premium"
         lang={lang}
         tone="dark"
-        eyebrow={content.line}
+        eyebrow={eyebrow}
         title={content.h1}
         lead={content.lead}
-        image={{ label: content.line }}
+        aside={
+          /* Bildfläche erst ab lg, solange kein Foto freigegeben ist: auf dem
+             Handy kein Platzhalter vor dem ersten Beleg (P10, E19) */
+          <ImageSlot
+            lang={lang}
+            tone="dark"
+            label={content.line}
+            parallax="drift"
+            className={`aspect-[16/10] w-full lg:aspect-[5/4] xl:aspect-[16/10] ${
+              imagesArePlaceholders ? "max-lg:hidden" : ""
+            }`}
+          />
+        }
       >
         {content.nameMeaning && (
-          <p className="mt-6 max-w-[56ch] font-medium text-white/80">
+          <p className="mb-8 max-w-[56ch] font-medium text-white/80">
             {content.nameMeaning}
+          </p>
+        )}
+        {/* Nächster Schritt im ersten Bildschirm: Anfrage und Telefon (P03) */}
+        <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <Button asChild size="xl" className="arrow-link">
+            <a href="#kontakt-formular" data-cta="kopf-seite">
+              {content.cta.title}
+              <ArrowRight weight="regular" aria-hidden="true" />
+            </a>
+          </Button>
+          <Button asChild size="xl" variant="inverse">
+            <a href={company.phone.href} className="tabular-nums">
+              <Phone weight="regular" aria-hidden="true" />
+              {company.phone.display}
+            </a>
+          </Button>
+        </div>
+        {trustLine && (
+          <p className="mt-6 max-w-[56ch] text-[0.9375rem] font-medium leading-relaxed text-white/75">
+            {trustLine}
           </p>
         )}
       </PageHero>
 
-      {/* Drei Angebote als Bildkarten */}
+      {/* Abschnittsleiste mit Scrollspy: Anlässe, Ausserdem, Zusagen, Orte */}
+      <SectionNav label={ui.onThisPage} items={navItems} tone="dark" />
+
+      {/* Drei Anlässe als Stapel-Tafeln, die einzige gepinnte Sektion der Seite (P04, P08, P13, P15) */}
       <section
-        aria-label={content.h1}
-        className="bg-ink pb-20 text-white lg:pb-28"
+        id="anlaesse"
+        aria-labelledby="anlaesse-titel"
+        className="on-dark bg-ink text-white"
       >
-        <div className="container">
-          <ul className="grid gap-6 md:grid-cols-3">
-            {content.offers.map((offer, index) => (
-              <Reveal
-                as="li"
-                key={offer.path}
-                delay={index * 120}
-                className="card-lift group bg-ink-800"
-              >
-                <Link
-                  href={localizePath(offer.path, lang)}
-                  className="flex h-full flex-col"
-                >
-                  <ImageSlot
-                    lang={lang}
-                    tone="dark"
-                    hover
-                    label={offer.title}
-                    className="aspect-[4/3] w-full"
-                  />
-                  <div className="flex flex-1 flex-col p-7 md:p-8">
-                    <h2 className="t-h3 text-white transition-colors group-hover:text-brass">
-                      {offer.title}
-                    </h2>
-                    <p className="mt-3 flex-1 font-medium leading-relaxed text-white/85">
-                      {offer.text}
-                    </p>
-                    <span className="arrow-link mt-6 inline-flex items-center gap-2 font-semibold text-brass">
-                      {ui.offerCta}
-                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                    </span>
-                  </div>
-                </Link>
-              </Reveal>
-            ))}
-          </ul>
+        <div className="container pt-12 pb-10 lg:pt-16 lg:pb-12">
+          <SectionHead
+            id="anlaesse-titel"
+            title={offersTitle}
+            tone="dark"
+            className="max-w-3xl"
+          />
         </div>
+        <StackPanels
+          items={panels}
+          lang={lang}
+          eyebrow={eyebrow}
+          linkLabel={ui.toService}
+        />
       </section>
 
-      {/* Weitere Anlässe */}
-      <section aria-labelledby="ausserdem" className="section">
-        <div className="container">
+      {/* Weitere Anlässe als ruhige, nummerierte Liste mit Hairlines statt Karten (P09) */}
+      <section
+        id="ausserdem"
+        aria-labelledby="ausserdem-titel"
+        className="on-dark section bg-ink text-white"
+      >
+        <div className="container grid gap-10 lg:grid-cols-12 lg:gap-x-16">
           <SectionHead
-            id="ausserdem"
+            id="ausserdem-titel"
             title={content.moreTitle}
-            className="mb-10"
+            tone="dark"
+            className="lg:col-span-4"
           />
-          <ul className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+          <RevealGroup
+            as="ol"
+            className="border-t border-white/15 md:grid md:grid-cols-2 md:gap-x-12 lg:col-span-8"
+          >
             {content.more.map((item, index) => (
-              <Reveal
-                as="li"
+              <li
                 key={item.title}
-                delay={index * 80}
-                className="card-lift flex gap-5 bg-stone p-6 md:p-7"
+                className="grid grid-cols-[2.5rem_minmax(0,1fr)] gap-x-4 border-b border-white/15 py-6"
               >
                 <span
-                  className="font-display text-3xl font-bold leading-none text-signal"
+                  className="t-eyebrow pt-1.5 tabular-nums text-brass"
                   aria-hidden="true"
                 >
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <span>
-                  <h3 className="t-h3 text-ink">{item.title}</h3>
-                  <p className="mt-2 font-medium leading-relaxed text-ink-600">
-                    {item.text}
-                  </p>
-                </span>
-              </Reveal>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* Zusagen */}
-      <section aria-labelledby="zusagen" className="section bg-ink text-white">
-        <div className="container">
-          <SectionHead
-            id="zusagen"
-            title={content.promisesTitle}
-            tone="dark"
-            className="mb-12 max-w-3xl"
-          />
-          <ul className="grid gap-px bg-white/10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-            {content.promises.map((item, index) => {
-              const Icon = promiseIcons[item.key];
-              return (
-                <Reveal
-                  as="li"
-                  key={item.title}
-                  delay={index * 60}
-                  className="bg-ink p-6 transition-colors hover:bg-ink-800"
-                >
-                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-brass">
-                    <Icon className="h-5 w-5" aria-hidden="true" />
-                  </span>
-                  <h3 className="mt-5 font-display text-lg font-bold text-white">
+                <div className="min-w-0">
+                  <h3 className="hyphens font-display text-[1.125rem] font-bold leading-snug text-white">
                     {item.title}
                   </h3>
-                  <p className="mt-2 font-medium leading-relaxed text-white/85">
+                  <p className="mt-2 font-medium leading-relaxed text-white/80">
                     {item.text}
                   </p>
-                </Reveal>
-              );
-            })}
-          </ul>
+                </div>
+              </li>
+            ))}
+          </RevealGroup>
         </div>
       </section>
 
-      {/* Orte mit Karte */}
-      <section aria-labelledby="orte" className="section">
-        <div className="container grid items-center gap-12 lg:grid-cols-12">
-          <div className="lg:col-span-5">
-            <SectionHead id="orte" title={content.places.title} />
-            <Reveal delay={120}>
-              <p className="t-lead mt-5 text-ink-600">
-                <RichText text={content.places.text} lang={lang} />
-              </p>
-            </Reveal>
-            <Reveal delay={220}>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="arrow-link mt-8"
-              >
-                <Link href={localizePath("/einzugsgebiet", lang)}>
-                  {getDict(lang).seiten.home.area.link}
-                  <ArrowRight aria-hidden="true" />
-                </Link>
-              </Button>
-            </Reveal>
-          </div>
-          <div className="lg:col-span-7 lg:col-start-6 xl:col-span-6 xl:col-start-7">
-            <CantonMap
+      {/* Ablauf aus den Schritten der Luxusimmobilien-Seite, vertikal ohne Pinning (P04) */}
+      <section
+        id="ablauf"
+        aria-labelledby="ablauf-titel"
+        className="on-dark section border-t border-white/10 bg-ink-800 text-white"
+      >
+        <div className="container grid gap-10 lg:grid-cols-12 lg:gap-x-16">
+          <SectionHead
+            id="ablauf-titel"
+            title={ui.steps}
+            tone="dark"
+            className="lg:col-span-4"
+          />
+          <div className="lg:col-span-7 lg:col-start-6">
+            <ProcessScrolly
+              steps={steps}
               lang={lang}
-              texts={{
-                ...getDict(lang).misc.map,
-                seat: navDicts[lang].chrome.seat,
-              }}
-              pins={pins.map(pin => ({ x: pin.x, y: pin.y, label: pin.name }))}
-              className="mx-auto max-w-[40rem]"
+              tone="dark"
+              variant="vertical"
+              figureKeys={["anfrage", "besichtigung", "offerte"]}
+              idPrefix="ablauf-schritt"
             />
           </div>
         </div>
       </section>
 
-      <OfferCta title={content.cta.title} text={content.cta.text} lang={lang} />
+      {/* Zusagen: Hairline-Raster in Spalten, die zehn teilen (P07), Icons ohne Kreis (P05) */}
+      <section
+        id="zusagen"
+        aria-labelledby="zusagen-titel"
+        className="on-dark section bg-ink text-white"
+      >
+        <div className="container">
+          <SectionHead
+            id="zusagen-titel"
+            title={content.promisesTitle}
+            tone="dark"
+            className="mb-12 max-w-3xl"
+          />
+          <RevealGroup
+            as="ul"
+            className="grid gap-px bg-white/10 sm:grid-cols-2 xl:grid-cols-5"
+          >
+            {content.promises.map(item => {
+              const Glyph = promiseIcons[item.key];
+              return (
+                <li key={item.key} className="bg-ink p-6 lg:p-7">
+                  <Glyph
+                    weight="duotone"
+                    className="mb-5 size-7 text-brass"
+                    aria-hidden="true"
+                  />
+                  <h3 className="hyphens font-display text-lg font-bold leading-snug text-white">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 font-medium leading-relaxed text-white/80">
+                    {item.text}
+                  </p>
+                </li>
+              );
+            })}
+          </RevealGroup>
+        </div>
+      </section>
+
+      {/* Einwände: Fragen und Antworten der Unterseiten, ohne JavaScript lesbar (P04) */}
+      <section
+        id="fragen"
+        aria-labelledby="fragen-titel"
+        className="on-dark section border-t border-white/10 bg-ink-800 text-white"
+      >
+        <div className="container grid gap-10 lg:grid-cols-12 lg:gap-x-16">
+          <SectionHead
+            id="fragen-titel"
+            title={ui.faq}
+            tone="dark"
+            className="lg:col-span-4"
+          />
+          <div className="lg:col-span-8">
+            <Faq items={faq} lang={lang} tone="dark" />
+          </div>
+        </div>
+      </section>
+
+      {/* Orte mit Karte: Text und Button vor der Karte, Orte auf dem Handy in der Bildunterschrift (P11) */}
+      <section
+        id="orte"
+        aria-labelledby="orte-titel"
+        className="on-dark section bg-ink text-white"
+      >
+        <div className="container grid items-center gap-12 lg:grid-cols-12">
+          <div className="lg:col-span-5">
+            <SectionHead
+              id="orte-titel"
+              title={content.places.title}
+              tone="dark"
+              intro={
+                <RichText
+                  text={content.places.text}
+                  lang={lang}
+                  linkClassName={darkLink}
+                />
+              }
+            />
+            <Button
+              asChild
+              size="lg"
+              variant="inverse"
+              className="arrow-link mt-8"
+            >
+              <Link href={localizePath("/einzugsgebiet", lang)}>
+                {home.area.link}
+                <ArrowRight weight="regular" aria-hidden="true" />
+              </Link>
+            </Button>
+          </div>
+          <div className="lg:col-span-7 lg:col-start-6 xl:col-span-6 xl:col-start-7">
+            <CantonMap
+              lang={lang}
+              tone="dark"
+              texts={{ ...misc.map, seat: nav.chrome.seat }}
+              pins={pins}
+              mobilePins="seat"
+              className="mx-auto max-w-[40rem]"
+            />
+          </div>
+        </div>
+      </section>
     </PageFrame>
   );
 }
