@@ -1,6 +1,6 @@
-'use client'
+"use client";
 
-import { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useState, ReactNode } from "react";
 
 interface ChatbotContextType {
   isOpen: boolean;
@@ -27,7 +27,9 @@ export function ChatbotProvider({ children }: { children: ReactNode }) {
   };
 
   return (
-    <ChatbotContext.Provider value={{ isOpen, appointmentMode, openChat, closeChat }}>
+    <ChatbotContext.Provider
+      value={{ isOpen, appointmentMode, openChat, closeChat }}
+    >
       {children}
     </ChatbotContext.Provider>
   );
@@ -36,7 +38,7 @@ export function ChatbotProvider({ children }: { children: ReactNode }) {
 export function useChatbot() {
   const context = useContext(ChatbotContext);
   if (context === undefined) {
-    throw new Error('useChatbot must be used within a ChatbotProvider');
+    throw new Error("useChatbot must be used within a ChatbotProvider");
   }
   return context;
 }

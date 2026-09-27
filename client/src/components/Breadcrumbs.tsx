@@ -1,47 +1,66 @@
-import Link from 'next/link'
-import { ChevronRight } from 'lucide-react'
-import JsonLd from './JsonLd'
-import { trailFor, type PagePath } from '../../../shared/seo'
-import { localizePath, type Locale } from '../../../shared/i18n'
-import { getDict } from '../../../content'
-import { breadcrumbJsonLd } from '../../../shared/structured-data'
+import Link from "next/link";
+import { ChevronRight } from "lucide-react";
+import JsonLd from "./JsonLd";
+import { trailFor, type PagePath } from "../../../shared/seo";
+import { localizePath, type Locale } from "../../../shared/i18n";
+import { getDict } from "../../../content";
+import { breadcrumbJsonLd } from "../../../shared/structured-data";
 
 /**
  * Sichtbare Brotkrumen mit BreadcrumbList (M20, GLOBAL-033), auf Seiten ab der
  * zweiten Ebene. Aufbau nach dem Breadcrumb-Muster der W3C-ARIA-Praktiken:
  * Liste in einer benannten Navigation, die aktuelle Seite mit aria-current.
  */
-export default function Breadcrumbs({ path, tone = 'light', lang = 'de' }: { path: PagePath; tone?: 'light' | 'dark'; lang?: Locale }) {
-  const trail = trailFor(path, lang)
-  const muted = tone === 'dark' ? 'text-white/60' : 'text-mute'
-  const current = tone === 'dark' ? 'text-white' : 'text-ink'
+export default function Breadcrumbs({
+  path,
+  tone = "light",
+  lang = "de",
+}: {
+  path: PagePath;
+  tone?: "light" | "dark";
+  lang?: Locale;
+}) {
+  const trail = trailFor(path, lang);
+  const muted = tone === "dark" ? "text-white/60" : "text-mute";
+  const current = tone === "dark" ? "text-white" : "text-ink";
 
   return (
     <>
       <nav aria-label={getDict(lang).misc.breadcrumbs} className="mb-8">
-        <ol className={`flex flex-wrap items-center gap-x-1.5 gap-y-1 text-[0.8125rem] ${muted}`}>
+        <ol
+          className={`flex flex-wrap items-center gap-x-1.5 gap-y-1 text-[0.8125rem] font-medium ${muted}`}
+        >
           {trail.map((crumb, index) => {
-            const isCurrent = index === trail.length - 1
+            const isCurrent = index === trail.length - 1;
             return (
               <li key={crumb.path} className="inline-flex items-center gap-1.5">
                 {isCurrent ? (
-                  <span aria-current="page" className={`font-medium ${current}`}>
+                  <span
+                    aria-current="page"
+                    className={`font-medium ${current}`}
+                  >
                     {crumb.label}
                   </span>
                 ) : (
                   <>
-                    <Link href={localizePath(crumb.path, lang)} className="underline-offset-4 transition-colors hover:underline">
+                    <Link
+                      href={localizePath(crumb.path, lang)}
+                      className="underline-offset-4 transition-colors hover:underline"
+                    >
                       {crumb.label}
                     </Link>
-                    <ChevronRight className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
+                    <ChevronRight
+                      className="w-3.5 h-3.5 shrink-0"
+                      aria-hidden="true"
+                    />
                   </>
                 )}
               </li>
-            )
+            );
           })}
         </ol>
       </nav>
       <JsonLd data={breadcrumbJsonLd(path, lang)} />
     </>
-  )
+  );
 }

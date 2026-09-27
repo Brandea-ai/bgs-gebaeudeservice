@@ -1,12 +1,20 @@
-import { company, premiumLine, premiumTitleBrand } from '../../shared/company'
-import { answers, steps, ui } from './common'
-import { leistungen } from './leistungen'
-import { nav } from './navigation'
-import { premium } from './premium'
-import { ratgeber, ratgeberUebersicht } from './ratgeber'
-import { datenschutz, impressum } from './recht'
-import { about, area, contact, home, premiumOverview, proof, servicesOverview } from './seiten'
-import { pages } from './seo'
+import { company, premiumLine, premiumTitleBrand } from "../../shared/company";
+import { answers, steps, ui } from "./common";
+import { leistungen } from "./leistungen";
+import { nav } from "./navigation";
+import { premium } from "./premium";
+import { ratgeber, ratgeberUebersicht } from "./ratgeber";
+import { datenschutz, impressum } from "./recht";
+import {
+  about,
+  area,
+  contact,
+  home,
+  premiumOverview,
+  proof,
+  servicesOverview,
+} from "./seiten";
+import { pages } from "./seo";
 
 /**
  * Alle deutschen Texte an einer Stelle (M60). Jede Sprache liefert ein Objekt
@@ -22,27 +30,36 @@ export const de = {
   leistungen,
   premium,
   ratgeber: { overview: ratgeberUebersicht, articles: ratgeber },
-  seiten: { proof, home, about, contact, area, servicesOverview, premiumOverview },
+  seiten: {
+    proof,
+    home,
+    about,
+    contact,
+    area,
+    servicesOverview,
+    premiumOverview,
+  },
   recht: { impressum, datenschutz },
   nav,
   misc: {
     /** Sprache für Datumsangaben */
-    dateLocale: 'de-CH',
-    breadcrumbs: 'Brotkrumen',
-    imagePlaceholder: 'Bild folgt',
-    imagePlaceholderLabel: 'Platzhalter, Bild folgt',
+    dateLocale: "de-CH",
+    breadcrumbs: "Brotkrumen",
+    imagePlaceholder: "Bild folgt",
+    imagePlaceholderLabel: "Platzhalter, Bild folgt",
     premiumLine,
     premiumTitleBrand,
     map: {
-      label: 'Karte',
-      notice: 'Die Karte wird von Google Maps geladen. Dabei werden Daten an Google übertragen.',
-      load: 'Karte laden',
-      open: 'In Google Maps öffnen',
-      source: 'Kartengrundlage: © swisstopo',
-      areaLabel: 'Einzugsgebiet',
+      label: "Karte",
+      notice:
+        "Die Karte wird von Google Maps geladen. Dabei werden Daten an Google übertragen.",
+      load: "Karte laden",
+      open: "In Google Maps öffnen",
+      source: "Kartengrundlage: © swisstopo",
+      areaLabel: "Einzugsgebiet",
     },
     registerCourt: company.register as string,
   },
-}
+};
 
-export type Dictionary = typeof de
+export type Dictionary = typeof de;

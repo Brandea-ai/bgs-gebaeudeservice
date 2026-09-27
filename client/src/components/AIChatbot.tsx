@@ -1,14 +1,25 @@
-'use client'
+"use client";
 
-import { useState, useEffect, useRef } from 'react';
-import { MessageCircle, X, Send, Loader2, CheckCircle2, Shield, Sparkles, Phone, Mail, Circle } from 'lucide-react';
-import ReactMarkdown from 'react-markdown';
-import { useChatbot } from '../contexts/ChatbotContext';
-import { chatEnabled } from '../../../shared/features';
-import { company } from '../../../shared/company';
+import { useState, useEffect, useRef } from "react";
+import {
+  MessageCircle,
+  X,
+  Send,
+  Loader2,
+  CheckCircle2,
+  Shield,
+  Sparkles,
+  Phone,
+  Mail,
+  Circle,
+} from "lucide-react";
+import ReactMarkdown from "react-markdown";
+import { useChatbot } from "../contexts/ChatbotContext";
+import { chatEnabled } from "../../../shared/features";
+import { company } from "../../../shared/company";
 
 interface Message {
-  role: 'user' | 'assistant';
+  role: "user" | "assistant";
   content: string;
   timestamp: Date;
 }
@@ -37,40 +48,40 @@ interface Supporter {
   name: string;
   role: string;
   image: string;
-  gender: 'male' | 'female';
+  gender: "male" | "female";
 }
 
 const SUPPORTERS: Supporter[] = [
   {
-    name: 'Sarah',
-    role: 'Senior Sales Consultant',
-    image: '/Supporter-Sarah.jpeg',
-    gender: 'female'
+    name: "Sarah",
+    role: "Senior Sales Consultant",
+    image: "/Supporter-Sarah.jpeg",
+    gender: "female",
   },
   {
-    name: 'Nina',
-    role: 'Customer Success Manager',
-    image: '/Supporter-Nina.jpeg',
-    gender: 'female'
+    name: "Nina",
+    role: "Customer Success Manager",
+    image: "/Supporter-Nina.jpeg",
+    gender: "female",
   },
   {
-    name: 'Elias',
-    role: 'Technical Advisor',
-    image: '/Supporter-Elias.png',
-    gender: 'male'
+    name: "Elias",
+    role: "Technical Advisor",
+    image: "/Supporter-Elias.png",
+    gender: "male",
   },
   {
-    name: 'Kasandra',
-    role: 'Operations Manager',
-    image: '/Supporter-Kasandra.jpeg',
-    gender: 'female'
+    name: "Kasandra",
+    role: "Operations Manager",
+    image: "/Supporter-Kasandra.jpeg",
+    gender: "female",
   },
   {
-    name: 'Micheal',
-    role: 'Facility Expert',
-    image: '/Supporter-Micheal.jpeg',
-    gender: 'male'
-  }
+    name: "Micheal",
+    role: "Facility Expert",
+    image: "/Supporter-Micheal.jpeg",
+    gender: "male",
+  },
 ];
 
 // Select random supporter on mount
@@ -82,15 +93,24 @@ function AIChatbotWidget() {
   const { isOpen, appointmentMode, openChat, closeChat } = useChatbot();
   const [hasConsent, setHasConsent] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
-  const [userInfo, setUserInfo] = useState<UserInfo>({ name: '', email: '', phone: '', company: '', city: '', service: '' });
+  const [userInfo, setUserInfo] = useState<UserInfo>({
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    city: "",
+    service: "",
+  });
   const [extractedInfo, setExtractedInfo] = useState<ExtractedInfo>({});
   const [showSpecialistPrompt, setShowSpecialistPrompt] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
-  const [identificationCode, setIdentificationCode] = useState('');
+  const [identificationCode, setIdentificationCode] = useState("");
   const [hasShownAutoPopup, setHasShownAutoPopup] = useState(false);
-  const [supporter, setSupporter] = useState<Supporter>(() => getRandomSupporter());
+  const [supporter, setSupporter] = useState<Supporter>(() =>
+    getRandomSupporter()
+  );
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   // Auto-popup after 10 seconds on page
@@ -106,7 +126,7 @@ function AIChatbotWidget() {
   }, [hasShownAutoPopup, isOpen, openChat]);
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   useEffect(() => {
@@ -115,9 +135,10 @@ function AIChatbotWidget() {
 
   const handleConsent = () => {
     setHasConsent(true);
-    const greeting = supporter.gender === 'male'
-      ? `Guten Tag! Ich bin ${supporter.name}, Ihr persönlicher Berater von ${company.brand}.`
-      : `Guten Tag! Ich bin ${supporter.name}, Ihre persönliche Beraterin von ${company.brand}.`;
+    const greeting =
+      supporter.gender === "male"
+        ? `Guten Tag! Ich bin ${supporter.name}, Ihr persönlicher Berater von ${company.brand}.`
+        : `Guten Tag! Ich bin ${supporter.name}, Ihre persönliche Beraterin von ${company.brand}.`;
 
     let content;
     if (appointmentMode) {
@@ -126,77 +147,85 @@ function AIChatbotWidget() {
       content = `${greeting}\n\nIch unterstütze unser Team dabei, für Sie die **perfekte Reinigungslösung** zu finden – zugeschnitten auf Ihre individuellen Anforderungen.\n\nDarf ich fragen: **Welche Art von Räumlichkeiten** möchten Sie reinigen lassen?`;
     }
 
-    setMessages([{
-      role: 'assistant',
-      content,
-      timestamp: new Date()
-    }]);
+    setMessages([
+      {
+        role: "assistant",
+        content,
+        timestamp: new Date(),
+      },
+    ]);
   };
 
   const handleSendMessage = async () => {
     if (!input.trim() || loading) return;
 
     // Check if user is confirming to send to specialist
-    const isConfirmation = input.trim().toLowerCase() === 'ja' && showSpecialistPrompt;
+    const isConfirmation =
+      input.trim().toLowerCase() === "ja" && showSpecialistPrompt;
 
-    console.log('🔍 DEBUG handleSendMessage:', {
+    console.log("🔍 DEBUG handleSendMessage:", {
       input: input.trim(),
       showSpecialistPrompt,
-      isConfirmation
+      isConfirmation,
     });
 
     if (isConfirmation) {
       // User typed "ja" to confirm sending to specialist
-      console.log('✅ User confirmed with "ja" - calling handleSpecialistResponse');
-      setInput('');
+      console.log(
+        '✅ User confirmed with "ja" - calling handleSpecialistResponse'
+      );
+      setInput("");
       await handleSpecialistResponse(true);
       return;
     }
 
     const userMessage: Message = {
-      role: 'user',
+      role: "user",
       content: input,
-      timestamp: new Date()
+      timestamp: new Date(),
     };
 
     setMessages(prev => [...prev, userMessage]);
-    setInput('');
+    setInput("");
     setLoading(true);
 
     try {
-      const response = await fetch('/api/chat', {
-        method: 'POST',
+      const response = await fetch("/api/chat", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          messages: [...messages, userMessage].map(m => ({ role: m.role, content: m.content })),
+          messages: [...messages, userMessage].map(m => ({
+            role: m.role,
+            content: m.content,
+          })),
           userInfo: userInfo,
           supporterName: supporter.name,
           supporterGender: supporter.gender,
-          appointmentMode: appointmentMode
+          appointmentMode: appointmentMode,
         }),
       });
 
       if (!response.ok) {
-        throw new Error('Chat request failed');
+        throw new Error("Chat request failed");
       }
 
       const data = await response.json();
 
-      console.log('📥 Backend Response:', {
+      console.log("📥 Backend Response:", {
         response: data.response,
         extractedInfo: data.extractedInfo,
         detectedService: data.detectedService,
         readyToSend: data.readyToSend,
         missingFields: data.missingFields,
-        conversationPhase: data.conversationPhase
+        conversationPhase: data.conversationPhase,
       });
 
       const assistantMessage: Message = {
-        role: 'assistant',
+        role: "assistant",
         content: data.response,
-        timestamp: new Date()
+        timestamp: new Date(),
       };
 
       setMessages(prev => [...prev, assistantMessage]);
@@ -208,7 +237,10 @@ function AIChatbotWidget() {
         // Auto-fill userInfo with extracted data
         const updatedUserInfo = {
           ...userInfo,
-          service: data.detectedService?.name || data.extractedInfo.service?.name || userInfo.service,
+          service:
+            data.detectedService?.name ||
+            data.extractedInfo.service?.name ||
+            userInfo.service,
           name: data.extractedInfo.name || userInfo.name,
           company: data.extractedInfo.company || userInfo.company,
           city: data.extractedInfo.city || userInfo.city,
@@ -216,42 +248,45 @@ function AIChatbotWidget() {
           email: data.extractedInfo.email || userInfo.email,
         };
 
-        console.log('🔍 Updated userInfo:', updatedUserInfo);
-        console.log('🔍 readyToSend:', data.readyToSend);
-        console.log('🔍 Missing fields:', data.missingFields);
+        console.log("🔍 Updated userInfo:", updatedUserInfo);
+        console.log("🔍 readyToSend:", data.readyToSend);
+        console.log("🔍 Missing fields:", data.missingFields);
 
         setUserInfo(updatedUserInfo);
 
         // Show specialist prompt if ready (email + service required)
         if (data.readyToSend && !emailSent) {
-          const hasRequiredInfo = updatedUserInfo.email && updatedUserInfo.service;
+          const hasRequiredInfo =
+            updatedUserInfo.email && updatedUserInfo.service;
 
-          console.log('✅ READY TO SEND! Checking requirements:', {
+          console.log("✅ READY TO SEND! Checking requirements:", {
             email: !!updatedUserInfo.email,
             service: !!updatedUserInfo.service,
             name: updatedUserInfo.name,
             city: updatedUserInfo.city,
             hasRequiredInfo,
-            emailSent
+            emailSent,
           });
 
           if (hasRequiredInfo) {
-            console.log('✅ Showing Specialist Prompt (Ja/Nein Buttons)');
+            console.log("✅ Showing Specialist Prompt (Ja/Nein Buttons)");
             setShowSpecialistPrompt(true);
           } else {
-            console.log('❌ NOT showing specialist prompt - missing email or service');
+            console.log(
+              "❌ NOT showing specialist prompt - missing email or service"
+            );
           }
         } else {
-          console.log('⏳ Not ready yet. Missing:', data.missingFields);
+          console.log("⏳ Not ready yet. Missing:", data.missingFields);
         }
       }
-
     } catch (error) {
-      console.error('Chat error:', error);
+      console.error("Chat error:", error);
       const errorMessage: Message = {
-        role: 'assistant',
-        content: 'Entschuldigung, es gab einen Fehler. Bitte versuchen Sie es erneut.',
-        timestamp: new Date()
+        role: "assistant",
+        content:
+          "Entschuldigung, es gab einen Fehler. Bitte versuchen Sie es erneut.",
+        timestamp: new Date(),
       };
       setMessages(prev => [...prev, errorMessage]);
     } finally {
@@ -260,13 +295,18 @@ function AIChatbotWidget() {
   };
 
   const handleSpecialistResponse = async (accepted: boolean) => {
-    console.log('🎯 handleSpecialistResponse called:', { accepted, userInfo, extractedInfo });
+    console.log("🎯 handleSpecialistResponse called:", {
+      accepted,
+      userInfo,
+      extractedInfo,
+    });
 
     if (!accepted) {
       const declineMessage: Message = {
-        role: 'assistant',
-        content: 'Kein Problem! Wenn Sie später Interesse haben, können Sie mich jederzeit kontaktieren.',
-        timestamp: new Date()
+        role: "assistant",
+        content:
+          "Kein Problem! Wenn Sie später Interesse haben, können Sie mich jederzeit kontaktieren.",
+        timestamp: new Date(),
       };
       setMessages(prev => [...prev, declineMessage]);
       setShowSpecialistPrompt(false);
@@ -275,72 +315,77 @@ function AIChatbotWidget() {
 
     // Only require email and service (everything else is optional)
     if (!userInfo.email || !userInfo.service) {
-      console.log('❌ Missing required info:', { email: userInfo.email, service: userInfo.service });
-      alert('Bitte geben Sie mindestens E-Mail und Dienstleistung an.');
+      console.log("❌ Missing required info:", {
+        email: userInfo.email,
+        service: userInfo.service,
+      });
+      alert("Bitte geben Sie mindestens E-Mail und Dienstleistung an.");
       return;
     }
 
-    console.log('📧 Sending to specialist via API...');
+    console.log("📧 Sending to specialist via API...");
     setLoading(true);
     setShowSpecialistPrompt(false);
 
     try {
       // Generate identification code
-      const serviceCode = extractedInfo.service?.code || 'SR';
+      const serviceCode = extractedInfo.service?.code || "SR";
       const now = new Date();
-      const day = String(now.getDate()).padStart(2, '0');
-      const month = String(now.getMonth() + 1).padStart(2, '0');
+      const day = String(now.getDate()).padStart(2, "0");
+      const month = String(now.getMonth() + 1).padStart(2, "0");
       const year = now.getFullYear();
       const timestamp = now.getTime();
-      const runningNumber = String(timestamp % 1000000).padStart(6, '0');
+      const runningNumber = String(timestamp % 1000000).padStart(6, "0");
       const idCode = `${serviceCode}${day}${month}${year}${runningNumber}`;
-      
+
       setIdentificationCode(idCode);
 
-      const conversationLong = messages.map(m => 
-        `${m.role === 'user' ? 'Kunde' : 'KI-Assistent'}: ${m.content}`
-      ).join('\n\n');
+      const conversationLong = messages
+        .map(
+          m => `${m.role === "user" ? "Kunde" : "KI-Assistent"}: ${m.content}`
+        )
+        .join("\n\n");
 
       const conversationShort = `
 Leistung: ${userInfo.service}
-Größe: ${extractedInfo.size || 'nicht angegeben'}
-Zeitpunkt: ${extractedInfo.timing || 'nicht angegeben'}
+Größe: ${extractedInfo.size || "nicht angegeben"}
+Zeitpunkt: ${extractedInfo.timing || "nicht angegeben"}
       `.trim();
 
-      const response = await fetch('/api/chat-to-specialist', {
-        method: 'POST',
+      const response = await fetch("/api/chat-to-specialist", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           userInfo,
           conversationLong,
           conversationShort,
           identificationCode: idCode,
-          extractedInfo: extractedInfo
+          extractedInfo: extractedInfo,
         }),
       });
 
       if (!response.ok) {
-        throw new Error('Failed to send to specialist');
+        throw new Error("Failed to send to specialist");
       }
 
       setEmailSent(true);
 
       const successMessage: Message = {
-        role: 'assistant',
+        role: "assistant",
         content: `Vielen Dank! Ihre Anfrage wurde erfolgreich weitergeleitet.\n\n**Identifikationscode**: ${idCode}\n\nEin Spezialist wird sich innerhalb von 12 Stunden (werktags) bei Ihnen melden.`,
-        timestamp: new Date()
+        timestamp: new Date(),
       };
 
       setMessages(prev => [...prev, successMessage]);
-
     } catch (error) {
-      console.error('Specialist request error:', error);
+      console.error("Specialist request error:", error);
       const errorMessage: Message = {
-        role: 'assistant',
-        content: 'Entschuldigung, beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt.',
-        timestamp: new Date()
+        role: "assistant",
+        content:
+          "Entschuldigung, beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt.",
+        timestamp: new Date(),
       };
       setMessages(prev => [...prev, errorMessage]);
     } finally {
@@ -379,7 +424,9 @@ Zeitpunkt: ${extractedInfo.timing || 'nicht angegeben'}
             className="w-12 h-12 rounded-full object-cover border-2 border-white shadow-lg"
           />
           <div>
-            <h3 className="font-semibold text-sm">{supporter.name} - {supporter.role}</h3>
+            <h3 className="font-semibold text-sm">
+              {supporter.name} - {supporter.role}
+            </h3>
             <div className="flex items-center gap-1 text-xs text-red-100">
               <Circle className="w-2 h-2 fill-green-400 text-green-400" />
               <span>Online - Antwortet sofort</span>
@@ -398,12 +445,20 @@ Zeitpunkt: ${extractedInfo.timing || 'nicht angegeben'}
       {!hasConsent && (
         <div className="flex-1 flex flex-col items-center justify-center p-6 text-center">
           <Shield className="w-16 h-16 text-red-600 mb-4" />
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">Datenschutz & Einwilligung</h3>
+          <h3 className="text-lg font-semibold text-gray-900 mb-2">
+            Datenschutz & Einwilligung
+          </h3>
           <p className="text-sm text-gray-600 mb-4">
-            Bevor wir beginnen, benötigen wir Ihre Zustimmung zur Verarbeitung Ihrer Daten gemäß unserer{' '}
-            <a href="/datenschutz" className="text-red-600 underline" target="_blank">
+            Bevor wir beginnen, benötigen wir Ihre Zustimmung zur Verarbeitung
+            Ihrer Daten gemäß unserer{" "}
+            <a
+              href="/datenschutz"
+              className="text-red-600 underline"
+              target="_blank"
+            >
               Datenschutzerklärung
-            </a>.
+            </a>
+            .
           </p>
           <ul className="text-left text-sm text-gray-700 mb-6 space-y-2">
             <li className="flex items-start gap-2">
@@ -435,18 +490,23 @@ Zeitpunkt: ${extractedInfo.timing || 'nicht angegeben'}
             {messages.map((message, index) => (
               <div
                 key={index}
-                className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
+                className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
               >
                 <div
                   className={`max-w-[80%] rounded-lg p-3 ${
-                    message.role === 'user'
-                      ? 'bg-red-600 text-white'
-                      : 'bg-gray-100 text-gray-900'
+                    message.role === "user"
+                      ? "bg-red-600 text-white"
+                      : "bg-gray-100 text-gray-900"
                   }`}
                 >
                   {renderMessage(message)}
-                  <div className={`text-xs mt-1 ${message.role === 'user' ? 'text-red-100' : 'text-gray-500'}`}>
-                    {message.timestamp.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' })}
+                  <div
+                    className={`text-xs mt-1 ${message.role === "user" ? "text-red-100" : "text-gray-500"}`}
+                  >
+                    {message.timestamp.toLocaleTimeString("de-DE", {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    })}
                   </div>
                 </div>
               </div>
@@ -521,8 +581,8 @@ Zeitpunkt: ${extractedInfo.timing || 'nicht angegeben'}
               <input
                 type="text"
                 value={input}
-                onChange={(e) => setInput(e.target.value)}
-                onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
+                onChange={e => setInput(e.target.value)}
+                onKeyPress={e => e.key === "Enter" && handleSendMessage()}
                 placeholder="Ihre Nachricht..."
                 className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
                 disabled={loading}

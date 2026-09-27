@@ -19,10 +19,10 @@ module.exports = {
         mono: ["var(--font-mono)", "ui-monospace", "SFMono-Regular", "monospace"],
       },
       colors: {
-        ink: { DEFAULT: "#0E1116", 800: "#171B21", 700: "#232830", 600: "#39404A" },
+        ink: { DEFAULT: "#0E1116", 800: "#171B21", 700: "#232830", 600: "#2E343D" },
         stone: { DEFAULT: "#F4F3EF", 200: "#EAE8E2" },
         line: { DEFAULT: "#E2DFD8", dark: "rgba(255,255,255,0.12)" },
-        mute: { DEFAULT: "#565D66", light: "#A7ADB5" },
+        mute: { DEFAULT: "#3F454E", light: "#C4C9D0" },
         signal: { DEFAULT: "#B8121B", dark: "#8F0E15", light: "#F2D6D7" },
         brass: { DEFAULT: "#C8A96E", dark: "#8C6F3A" },
         border: "hsl(var(--border))",

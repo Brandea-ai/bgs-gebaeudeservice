@@ -1,8 +1,14 @@
-'use client'
+"use client";
 
-import { motion, useScroll, useTransform, useSpring, MotionValue } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useSpring,
+  MotionValue,
+} from "framer-motion";
 import { useRef, ReactNode } from "react";
-import { imagesArePlaceholders } from '../../../shared/features';
+import { imagesArePlaceholders } from "../../../shared/features";
 
 interface ParallaxSectionProps {
   children: ReactNode;
@@ -35,7 +41,11 @@ interface RevealOnScrollProps {
 }
 
 // Premium Parallax Section with smooth scroll effects
-export function ParallaxSection({ children, className = "", speed = 0.5 }: ParallaxSectionProps) {
+export function ParallaxSection({
+  children,
+  className = "",
+  speed = 0.5,
+}: ParallaxSectionProps) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -52,23 +62,21 @@ export function ParallaxSection({ children, className = "", speed = 0.5 }: Paral
 
   return (
     <div ref={ref} className={className}>
-      <motion.div style={{ y }}>
-        {children}
-      </motion.div>
+      <motion.div style={{ y }}>{children}</motion.div>
     </div>
   );
 }
 
 // Advanced Parallax Image with multiple effects
-export function ParallaxImage({ 
-  src, 
-  alt, 
-  className = "", 
-  speed = 0.3, 
+export function ParallaxImage({
+  src,
+  alt,
+  className = "",
+  speed = 0.3,
   scale = true,
   blur = false,
   overlay = true,
-  overlayOpacity = 0.3
+  overlayOpacity = 0.3,
 }: ParallaxImageProps) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -82,16 +90,32 @@ export function ParallaxImage({
     restDelta: 0.001,
   });
 
-  const y = useTransform(smoothProgress, [0, 1], [`${-speed * 100}%`, `${speed * 100}%`]);
-  const scaleValue = useTransform(smoothProgress, [0, 0.5, 1], scale ? [1.2, 1, 1.2] : [1, 1, 1]);
-  const opacity = useTransform(smoothProgress, [0, 0.2, 0.8, 1], [0.6, 1, 1, 0.6]);
-  const blurValue = useTransform(smoothProgress, [0, 0.5, 1], blur ? [8, 0, 8] : [0, 0, 0]);
-  const filter = useTransform(blurValue, (v) => `blur(${v}px)`);
+  const y = useTransform(
+    smoothProgress,
+    [0, 1],
+    [`${-speed * 100}%`, `${speed * 100}%`]
+  );
+  const scaleValue = useTransform(
+    smoothProgress,
+    [0, 0.5, 1],
+    scale ? [1.2, 1, 1.2] : [1, 1, 1]
+  );
+  const opacity = useTransform(
+    smoothProgress,
+    [0, 0.2, 0.8, 1],
+    [0.6, 1, 1, 0.6]
+  );
+  const blurValue = useTransform(
+    smoothProgress,
+    [0, 0.5, 1],
+    blur ? [8, 0, 8] : [0, 0, 0]
+  );
+  const filter = useTransform(blurValue, v => `blur(${v}px)`);
 
   return (
     <div ref={ref} className={`relative overflow-hidden ${className}`}>
       <motion.div
-        style={{ 
+        style={{
           y,
           scale: scaleValue,
           opacity,
@@ -116,9 +140,15 @@ export function ParallaxImage({
         )}
       </motion.div>
       {overlay && (
-        <motion.div 
+        <motion.div
           className="absolute inset-0 bg-gradient-to-b from-black/0 via-transparent to-black/20"
-          style={{ opacity: useTransform(smoothProgress, [0, 0.5, 1], [overlayOpacity, 0, overlayOpacity]) }}
+          style={{
+            opacity: useTransform(
+              smoothProgress,
+              [0, 0.5, 1],
+              [overlayOpacity, 0, overlayOpacity]
+            ),
+          }}
         />
       )}
     </div>
@@ -126,11 +156,11 @@ export function ParallaxImage({
 }
 
 // Multi-layer parallax for depth effect
-export function ParallaxLayer({ 
-  children, 
-  speed, 
+export function ParallaxLayer({
+  children,
+  speed,
   className = "",
-  direction = "vertical" 
+  direction = "vertical",
 }: ParallaxLayerProps) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -144,20 +174,30 @@ export function ParallaxLayer({
     restDelta: 0.001,
   });
 
-  const y = useTransform(smoothProgress, [0, 1], direction === "vertical" ? ["0%", `${speed * 100}%`] : ["0%", "0%"]);
-  const x = useTransform(smoothProgress, [0, 1], direction === "horizontal" ? ["0%", `${speed * 100}%`] : ["0%", "0%"]);
+  const y = useTransform(
+    smoothProgress,
+    [0, 1],
+    direction === "vertical" ? ["0%", `${speed * 100}%`] : ["0%", "0%"]
+  );
+  const x = useTransform(
+    smoothProgress,
+    [0, 1],
+    direction === "horizontal" ? ["0%", `${speed * 100}%`] : ["0%", "0%"]
+  );
 
   return (
     <div ref={ref} className={`relative ${className}`}>
-      <motion.div style={{ y, x }}>
-        {children}
-      </motion.div>
+      <motion.div style={{ y, x }}>{children}</motion.div>
     </div>
   );
 }
 
 // Reveal on scroll with stagger
-export function RevealOnScroll({ children, className = "", delay = 0 }: RevealOnScrollProps) {
+export function RevealOnScroll({
+  children,
+  className = "",
+  delay = 0,
+}: RevealOnScrollProps) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -181,12 +221,17 @@ export function RevealOnScroll({ children, className = "", delay = 0 }: RevealOn
 }
 
 // Smooth parallax background
-export function ParallaxBackground({ 
-  src, 
+export function ParallaxBackground({
+  src,
   className = "",
   speed = 0.5,
-  overlay = true 
-}: { src: string; className?: string; speed?: number; overlay?: boolean }) {
+  overlay = true,
+}: {
+  src: string;
+  className?: string;
+  speed?: number;
+  overlay?: boolean;
+}) {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 1000], [0, speed * 1000]);
 
@@ -213,30 +258,42 @@ export function ParallaxBackground({
 }
 
 // Horizontal scroll parallax
-export function HorizontalParallax({ children, speed = 0.5 }: { children: ReactNode; speed?: number }) {
+export function HorizontalParallax({
+  children,
+  speed = 0.5,
+}: {
+  children: ReactNode;
+  speed?: number;
+}) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], [`${-speed * 50}%`, `${speed * 50}%`]);
+  const x = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [`${-speed * 50}%`, `${speed * 50}%`]
+  );
 
   return (
     <div ref={ref} className="overflow-hidden">
-      <motion.div style={{ x }}>
-        {children}
-      </motion.div>
+      <motion.div style={{ x }}>{children}</motion.div>
     </div>
   );
 }
 
 // Zoom on scroll effect
-export function ZoomOnScroll({ 
-  children, 
+export function ZoomOnScroll({
+  children,
   className = "",
-  maxScale = 1.5 
-}: { children: ReactNode; className?: string; maxScale?: number }) {
+  maxScale = 1.5,
+}: {
+  children: ReactNode;
+  className?: string;
+  maxScale?: number;
+}) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -244,23 +301,29 @@ export function ZoomOnScroll({
   });
 
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1, maxScale, 1]);
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.5, 1, 1, 0.5]);
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.8, 1],
+    [0.5, 1, 1, 0.5]
+  );
 
   return (
     <div ref={ref} className={`overflow-hidden ${className}`}>
-      <motion.div style={{ scale, opacity }}>
-        {children}
-      </motion.div>
+      <motion.div style={{ scale, opacity }}>{children}</motion.div>
     </div>
   );
 }
 
 // Sticky parallax section
-export function StickyParallax({ 
-  children, 
+export function StickyParallax({
+  children,
   className = "",
-  height = "200vh" 
-}: { children: ReactNode; className?: string; height?: string }) {
+  height = "200vh",
+}: {
+  children: ReactNode;
+  className?: string;
+  height?: string;
+}) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -282,19 +345,25 @@ export function StickyParallax({
 }
 
 // 3D Tilt effect on hover
-export function TiltCard({ children, className = "" }: { children: ReactNode; className?: string }) {
+export function TiltCard({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
   return (
     <motion.div
       className={className}
-      whileHover={{ 
-        rotateX: 5, 
+      whileHover={{
+        rotateX: 5,
         rotateY: 5,
         scale: 1.05,
-        transition: { duration: 0.3 }
+        transition: { duration: 0.3 },
       }}
-      style={{ 
+      style={{
         transformStyle: "preserve-3d",
-        perspective: 1000
+        perspective: 1000,
       }}
     >
       {children}
@@ -303,7 +372,13 @@ export function TiltCard({ children, className = "" }: { children: ReactNode; cl
 }
 
 // Magnetic hover effect
-export function MagneticHover({ children, className = "" }: { children: ReactNode; className?: string }) {
+export function MagneticHover({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
   const ref = useRef<HTMLDivElement>(null);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -311,13 +386,13 @@ export function MagneticHover({ children, className = "" }: { children: ReactNod
     const rect = ref.current.getBoundingClientRect();
     const x = e.clientX - rect.left - rect.width / 2;
     const y = e.clientY - rect.top - rect.height / 2;
-    
+
     ref.current.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
   };
 
   const handleMouseLeave = () => {
     if (!ref.current) return;
-    ref.current.style.transform = 'translate(0px, 0px)';
+    ref.current.style.transform = "translate(0px, 0px)";
   };
 
   return (

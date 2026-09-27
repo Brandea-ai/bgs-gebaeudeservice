@@ -16,7 +16,7 @@
     --secondary: 48 14% 95%;
     --secondary-foreground: 216 22% 7%;
     --muted: 48 14% 95%;
-    --muted-foreground: 214 7% 37%;
+    --muted-foreground: 214 9% 28%;
     --accent: 48 14% 95%;
     --accent-foreground: 216 22% 7%;
     --destructive: 357 82% 40%;
@@ -56,7 +56,8 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-size: 1.0625rem;
-    line-height: 1.65;
+    line-height: 1.6;
+    font-weight: 450;
     font-feature-settings: 'kern', 'liga';
     text-rendering: optimizeLegibility;
   }
@@ -72,13 +73,21 @@
     text-wrap: pretty;
   }
 
-  /* Lange Wörter wie «Unterhaltsreinigung» dürfen in schmalen Spalten umbrechen */
+  /* Lange Wörter wie «Unterhaltsreinigung» dürfen in schmalen Spalten mit Trennstrich umbrechen */
   h1,
   h2,
   h3,
   .t-h3 {
-    overflow-wrap: break-word;
     hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+  @media (max-width: 640px) {
+    h1,
+    h2,
+    h3,
+    .t-h3 {
+      overflow-wrap: anywhere;
+    }
   }
 
   ::selection {
@@ -102,30 +111,30 @@
   }
 
   .section {
-    padding-block: clamp(4.5rem, 2.5rem + 5.5vw, 9rem);
+    padding-block: clamp(3.5rem, 2rem + 4.5vw, 7.5rem);
   }
 
   .section-tight {
-    padding-block: clamp(3.5rem, 2rem + 3.5vw, 6rem);
+    padding-block: clamp(3rem, 1.75rem + 3vw, 5.5rem);
   }
 
   /* Schriftstufen */
   .t-display {
-    @apply font-display font-semibold;
-    font-size: clamp(2.5rem, 1.1rem + 4.1vw, 6rem);
+    @apply font-display font-bold;
+    font-size: clamp(2.25rem, 1rem + 4.2vw, 6rem);
     line-height: 1;
     letter-spacing: -0.035em;
   }
 
   .t-h1 {
-    @apply font-display font-semibold;
-    font-size: clamp(2.25rem, 1.2rem + 3vw, 4.5rem);
+    @apply font-display font-bold;
+    font-size: clamp(1.9rem, 1rem + 3.2vw, 4.5rem);
     line-height: 1.04;
     letter-spacing: -0.03em;
   }
 
   .t-h2 {
-    @apply font-display font-semibold;
+    @apply font-display font-bold;
     font-size: clamp(1.875rem, 1.2rem + 1.9vw, 3.5rem);
     line-height: 1.08;
     letter-spacing: -0.025em;
@@ -140,7 +149,8 @@
 
   .t-lead {
     font-size: clamp(1.125rem, 1rem + 0.4vw, 1.4375rem);
-    line-height: 1.55;
+    line-height: 1.5;
+    font-weight: 500;
   }
 
   .t-eyebrow {
@@ -162,6 +172,43 @@
   .prose-body {
     @apply text-ink-700;
     max-width: 68ch;
+    font-weight: 450;
+  }
+
+  /* Karten mit Bild: heben sich beim Überfahren leicht */
+  .card-lift {
+    transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .card-lift:hover,
+  .card-lift:focus-within {
+    transform: translateY(-0.375rem);
+    box-shadow: 0 1px 0 rgba(14, 17, 22, 0.04), 0 32px 56px -28px rgba(14, 17, 22, 0.35);
+  }
+
+  /* Laufband für die Vertrauensleiste auf dem Handy */
+  .marquee {
+    display: flex;
+    gap: 0;
+    width: max-content;
+    animation: marquee 32s linear infinite;
+  }
+  .marquee:hover {
+    animation-play-state: paused;
+  }
+
+  /*
+   * Stapel-Effekt (F7): Der Inhalt liegt über dem Footer und gibt ihn beim
+   * Scrollen frei, als würde er darunter hervorkommen.
+   */
+  .stack-main {
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 40px 80px -30px rgba(14, 17, 22, 0.45);
+  }
+  .stack-footer {
+    position: sticky;
+    bottom: 0;
+    z-index: 0;
   }
   .prose-body a,
   .link-inline {
@@ -197,28 +244,96 @@
 }
 
 /*
- * Ruhige Bewegung beim Scrollen, nur mit Browser-Unterstützung und ohne Wunsch
- * nach weniger Bewegung. Nur Verschiebung, keine Transparenz: Inhalte sind immer
- * lesbar, auch für Suchmaschinen und Vorschaubilder.
+ * Einblendungen (F7): Reveal.tsx setzt «in», sobald ein Element sichtbar wird.
+ * Ohne JavaScript (kein html.js) und bei Wunsch nach weniger Bewegung bleibt
+ * alles sofort sichtbar. Nur Verschiebung und Deckkraft, kurz und ruhig.
  */
 @media (prefers-reduced-motion: no-preference) {
-  @supports (animation-timeline: view()) {
-    .reveal {
-      animation: reveal-rise linear both;
-      animation-timeline: view();
-      animation-range: entry 0% entry 55%;
-    }
+  html.js .rv {
+    opacity: 0;
+    transition:
+      opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+      transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+    transition-delay: var(--rv-delay, 0ms);
+    will-change: opacity, transform;
   }
+  html.js .rv-up {
+    transform: translateY(2rem);
+  }
+  html.js .rv-left {
+    transform: translateX(-2rem);
+  }
+  html.js .rv-right {
+    transform: translateX(2rem);
+  }
+  html.js .rv-scale {
+    transform: scale(0.94);
+  }
+  html.js .rv.in {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Karte des Einzugsgebiets: Kantone erscheinen nacheinander, Sitz pulsiert */
+  html.js .map-canton {
+    opacity: 0;
+    transform: translateY(0.75rem);
+    transform-origin: center;
+    transition: opacity 0.6s ease, transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+    transition-delay: calc(var(--i, 0) * 110ms + 150ms);
+  }
+  html.js .in .map-canton,
+  html.js .map-in .map-canton {
+    opacity: 1;
+    transform: none;
+  }
+  html.js .map-pin {
+    opacity: 0;
+    transform: scale(0.2);
+    transform-origin: var(--ox) var(--oy);
+    transition: opacity 0.35s ease, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition-delay: calc(var(--i, 0) * 90ms + 800ms);
+  }
+  html.js .in .map-pin,
+  html.js .map-in .map-pin {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .map-pulse {
+    transform-origin: var(--ox) var(--oy);
+    animation: map-pulse 2.4s ease-out infinite;
+  }
+
   html {
     scroll-behavior: smooth;
   }
 }
 
-@keyframes reveal-rise {
+@keyframes map-pulse {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+@keyframes marquee {
   from {
-    transform: translateY(2.25rem);
+    transform: translateX(0);
   }
   to {
-    transform: none;
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes hero-pan {
+  from {
+    transform: scale(1.06) translateX(0);
+  }
+  to {
+    transform: scale(1) translateX(0);
   }
 }

@@ -1,8 +1,8 @@
-'use client'
+"use client";
 
-import { useState } from 'react';
-import { MapPin, ExternalLink } from 'lucide-react';
-import { company } from '../../../shared/company';
+import { useState } from "react";
+import { MapPin, ExternalLink } from "lucide-react";
+import { company } from "../../../shared/company";
 
 // Karte erst nach Klick laden, nur der Sitz (E20). Vorher werden keine Daten
 // an Google übertragen.
@@ -26,16 +26,21 @@ export default function ConsentMap({ texts }: { texts: MapTexts }) {
   }
 
   return (
-    <div className="w-full min-h-[28rem] bg-white flex flex-col items-center justify-center gap-5 p-8 text-center" style={{ backgroundImage: "linear-gradient(rgba(14,17,22,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(14,17,22,0.05) 1px, transparent 1px)", backgroundSize: "2.5rem 2.5rem" }}>
+    <div
+      className="w-full min-h-[28rem] bg-white flex flex-col items-center justify-center gap-5 p-8 text-center"
+      style={{
+        backgroundImage:
+          "linear-gradient(rgba(14,17,22,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(14,17,22,0.05) 1px, transparent 1px)",
+        backgroundSize: "2.5rem 2.5rem",
+      }}
+    >
       <MapPin className="w-8 h-8 text-signal" aria-hidden="true" />
       <p className="font-display text-lg font-semibold text-ink">
         {company.legalName}
         <br />
         {address}
       </p>
-      <p className="text-sm text-mute max-w-md">
-        {texts.notice}
-      </p>
+      <p className="text-sm text-mute max-w-md">{texts.notice}</p>
       <div className="flex flex-wrap justify-center gap-3">
         <button
           type="button"

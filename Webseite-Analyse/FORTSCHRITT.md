@@ -164,11 +164,11 @@ Die neuen Texte in `content/de/` beruhen auf Eigenangaben und Entscheidungen (E1
 1. Freigabe der Übersetzungen durch Muttersprachler vor `SITE_INDEXABLE` (E72), je Sprache 12 bis 17 Stilpunkte.
 2. Fotos nach 21, bis dahin nichts zu tun.
 
-**Frontend (M61, E77, N090):** Alle Seiten neu gestaltet, bis 4K, live seit 27.09.2026. Offen: Abnahme der Gestaltung durch Brandea, echte Fotos, Logo.
+**Frontend (M61, E77, E78, N090, N091):** Alle Seiten neu gestaltet, zweiter Durchgang mit Bewegung, Bildflächen, Vertrauensleiste und Stapel-Effekt, bis 4K, live seit 27.09.2026. Offen: Abnahme der Gestaltung durch Brandea, echte Fotos, Logo, Entscheid zu eigenen Kantonsseiten (Runde 11).
 
 **Agent als Nächstes:** Chat (M03), sobald Brandea Modell und Zugang festlegt. 404-Seite in der Sprache der Adresse, falls gewünscht (heute nur Deutsch, N085).
 
-**Stand 26.09.2026 (E70, E71):** Seitendurchgang und Mehrsprachigkeit fertig und live, weitere Sprachen in der Produktion noch aus. **Offen bei Brandea:** Übersetzungen EN, FR, IT prüfen (Preview-Adressen unter `/en`, `/fr`, `/it`), dann in Vercel `LANGUAGES=true`. Markenrecherche (E38), dann `NEW_BRAND=true`. Fotos nach 21. **Frontend (M61, E77, N090):** Alle Seiten neu gestaltet, bis 4K, live seit 27.09.2026. Offen: Abnahme der Gestaltung durch Brandea, echte Fotos, Logo.
+**Stand 26.09.2026 (E70, E71):** Seitendurchgang und Mehrsprachigkeit fertig und live, weitere Sprachen in der Produktion noch aus. **Offen bei Brandea:** Übersetzungen EN, FR, IT prüfen (Preview-Adressen unter `/en`, `/fr`, `/it`), dann in Vercel `LANGUAGES=true`. Markenrecherche (E38), dann `NEW_BRAND=true`. Fotos nach 21. **Frontend (M61, E77, E78, N090, N091):** Alle Seiten neu gestaltet, zweiter Durchgang mit Bewegung, Bildflächen, Vertrauensleiste und Stapel-Effekt, bis 4K, live seit 27.09.2026. Offen: Abnahme der Gestaltung durch Brandea, echte Fotos, Logo, Entscheid zu eigenen Kantonsseiten (Runde 11).
 
 **Agent als Nächstes:** Chat (M03), sobald Brandea Modell und Zugang festlegt. Bis dahin Pflege: ungenutzte Dateien und alte KI-Bilder aufräumen (M34), sobald echte Fotos da sind.
 

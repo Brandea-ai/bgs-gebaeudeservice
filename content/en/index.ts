@@ -1,12 +1,27 @@
-import type { Dictionary } from '../de'
-import { answers, premiumLine, premiumTitleBrand, register, steps, ui } from './common'
-import { leistungen } from './leistungen'
-import { nav } from './navigation'
-import { premium } from './premium'
-import { ratgeber, ratgeberUebersicht } from './ratgeber'
-import { datenschutz, impressum } from './recht'
-import { about, area, contact, home, premiumOverview, proof, servicesOverview } from './seiten'
-import { pages } from './seo'
+import type { Dictionary } from "../de";
+import {
+  answers,
+  premiumLine,
+  premiumTitleBrand,
+  register,
+  steps,
+  ui,
+} from "./common";
+import { leistungen } from "./leistungen";
+import { nav } from "./navigation";
+import { premium } from "./premium";
+import { ratgeber, ratgeberUebersicht } from "./ratgeber";
+import { datenschutz, impressum } from "./recht";
+import {
+  about,
+  area,
+  contact,
+  home,
+  premiumOverview,
+  proof,
+  servicesOverview,
+} from "./seiten";
+import { pages } from "./seo";
 
 /**
  * All English texts in one place (M60), same shape as content/de (type
@@ -21,24 +36,33 @@ export const en: Dictionary = {
   leistungen,
   premium,
   ratgeber: { overview: ratgeberUebersicht, articles: ratgeber },
-  seiten: { proof, home, about, contact, area, servicesOverview, premiumOverview },
+  seiten: {
+    proof,
+    home,
+    about,
+    contact,
+    area,
+    servicesOverview,
+    premiumOverview,
+  },
   recht: { impressum, datenschutz },
   nav,
   misc: {
-    dateLocale: 'en-GB',
-    breadcrumbs: 'Breadcrumb',
-    imagePlaceholder: 'Image to follow',
-    imagePlaceholderLabel: 'Placeholder, image to follow',
+    dateLocale: "en-GB",
+    breadcrumbs: "Breadcrumb",
+    imagePlaceholder: "Image to follow",
+    imagePlaceholderLabel: "Placeholder, image to follow",
     premiumLine,
     premiumTitleBrand,
     map: {
-      label: 'Map',
-      notice: 'The map is loaded from Google Maps. This transfers data to Google.',
-      load: 'Load map',
-      open: 'Open in Google Maps',
-      source: 'Map data: © swisstopo',
-      areaLabel: 'Service area',
+      label: "Map",
+      notice:
+        "The map is loaded from Google Maps. This transfers data to Google.",
+      load: "Load map",
+      open: "Open in Google Maps",
+      source: "Map data: © swisstopo",
+      areaLabel: "Service area",
     },
     registerCourt: register,
   },
-}
+};

@@ -1,8 +1,8 @@
-'use client'
+"use client";
 
-import { useState } from 'react';
-import { Sparkles, ArrowRight, Loader2, Building2, Phone } from 'lucide-react';
-import { company } from '../../../shared/company';
+import { useState } from "react";
+import { Sparkles, ArrowRight, Loader2, Building2, Phone } from "lucide-react";
+import { company } from "../../../shared/company";
 
 interface AdvisorResponse {
   recommendation: string;
@@ -11,28 +11,28 @@ interface AdvisorResponse {
 }
 
 export default function IndustryAdvisor() {
-  const [industry, setIndustry] = useState('');
+  const [industry, setIndustry] = useState("");
   const [loading, setLoading] = useState(false);
   const [response, setResponse] = useState<AdvisorResponse | null>(null);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   const fallbackError = `Der KI-Berater ist gerade nicht verfügbar. Bitte rufen Sie uns an (${company.phone.display}) oder nutzen Sie das Kontaktformular.`;
 
   const handleAnalyze = async () => {
     if (!industry.trim()) {
-      setError('Bitte geben Sie Ihre Branche ein');
+      setError("Bitte geben Sie Ihre Branche ein");
       return;
     }
 
     setLoading(true);
-    setError('');
+    setError("");
     setResponse(null);
 
     try {
-      const res = await fetch('/api/industry-analysis', {
-        method: 'POST',
+      const res = await fetch("/api/industry-analysis", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ industry: industry.trim() }),
       });
@@ -47,16 +47,16 @@ export default function IndustryAdvisor() {
       setResponse(data);
     } catch (err) {
       setError(fallbackError);
-      console.error('Industry analysis error:', err);
+      console.error("Industry analysis error:", err);
     } finally {
       setLoading(false);
     }
   };
 
   const scrollToContact = () => {
-    const footer = document.querySelector('footer');
+    const footer = document.querySelector("footer");
     if (footer) {
-      footer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      footer.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
@@ -75,8 +75,8 @@ export default function IndustryAdvisor() {
 
       {/* Description */}
       <p className="text-gray-300 mb-6">
-        Nennen Sie uns Ihre Branche und unsere KI analysiert, welche Reinigungsleistungen 
-        perfekt zu Ihren Anforderungen passen.
+        Nennen Sie uns Ihre Branche und unsere KI analysiert, welche
+        Reinigungsleistungen perfekt zu Ihren Anforderungen passen.
       </p>
 
       {/* Input Section */}
@@ -87,8 +87,8 @@ export default function IndustryAdvisor() {
             <input
               type="text"
               value={industry}
-              onChange={(e) => setIndustry(e.target.value)}
-              onKeyPress={(e) => e.key === 'Enter' && handleAnalyze()}
+              onChange={e => setIndustry(e.target.value)}
+              onKeyPress={e => e.key === "Enter" && handleAnalyze()}
               placeholder="z.B. Hotel, Büro, Fabrik, Krankenhaus..."
               className="w-full pl-12 pr-4 py-4 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all"
               disabled={loading}
@@ -155,7 +155,9 @@ export default function IndustryAdvisor() {
 
           {/* Services */}
           <div>
-            <h4 className="text-white font-semibold mb-3">Passende Leistungen:</h4>
+            <h4 className="text-white font-semibold mb-3">
+              Passende Leistungen:
+            </h4>
             <div className="grid gap-3">
               {response.services.map((service, index) => (
                 <div
@@ -187,7 +189,7 @@ export default function IndustryAdvisor() {
               <button
                 onClick={() => {
                   setResponse(null);
-                  setIndustry('');
+                  setIndustry("");
                 }}
                 className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition-colors"
               >

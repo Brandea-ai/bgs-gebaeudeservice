@@ -1,59 +1,89 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import SwissNavigation from "@/components/SwissNavigation";
-import SwissFooter from "@/components/SwissFooter";
+import PageFrame from "@/components/PageFrame";
 import PageHero from "@/components/PageHero";
+import ImageSlot from "@/components/ImageSlot";
+import Reveal from "@/components/Reveal";
 import RichText from "@/components/RichText";
+import TrustStrip from "@/components/TrustStrip";
 import { formatDate } from "@/components/ArticlePage";
 import { getDict } from "../../../content";
-import { navDicts } from "../../../content/navigation";
 import { localizePath, type Locale } from "../../../shared/i18n";
 
 /**
- * Ratgeber-Übersicht (F5, M53, P27): Titel als einziger Link je Eintrag,
- * «Stand» statt erfundener Daten und Lesezeiten (M19).
+ * Ratgeber-Übersicht (F5, F11, M53, P27): Artikel als Bildkarten, Titel als
+ * einziger Link je Eintrag, «Stand» statt erfundener Daten und Lesezeiten (M19).
  */
 export default function BlogOverviewView({ lang }: { lang: Locale }) {
   const { overview: t, articles } = getDict(lang).ratgeber;
   const artikel = Object.values(articles);
-  const eyebrow = navDicts[lang].menu.after.find((link) => link.path === "/blog")?.label;
   return (
-    <div className="min-h-screen bg-white">
-      <SwissNavigation lang={lang} path="/blog" />
+    <PageFrame lang={lang} path="/blog">
+      <PageHero
+        path="/blog"
+        lang={lang}
+        title={t.h1}
+        lead={t.intro}
+        image={{ label: t.byline }}
+      />
 
-      <main id="inhalt">
-        <PageHero path="/blog" lang={lang} eyebrow={eyebrow} title={t.h1} lead={t.intro} />
-
-        <section className="section-tight">
-          <div className="container">
-            <ul className="grid gap-px bg-line md:grid-cols-2">
-              {artikel.map((article) => (
-                <li key={article.path} className="min-w-0 bg-white">
-                  <article className="arrow-link group relative flex h-full min-h-[20rem] flex-col justify-between gap-10 p-8 transition-colors hover:bg-stone md:p-12">
-                    <div>
-                      <p className="font-mono text-xs uppercase tracking-[0.12em] text-mute">
-                        {t.updatedLabel} <time dateTime={article.updated}>{formatDate(article.updated, lang)}</time>
-                      </p>
-                      <h2 className="t-h2 mt-6 max-w-[22ch] text-ink">
-                        <Link href={localizePath(article.path, lang)} className="after:absolute after:inset-0 group-hover:text-signal transition-colors">
-                          {article.h1}
-                        </Link>
-                      </h2>
-                      <p className="mt-5 max-w-[56ch] leading-relaxed text-mute">{article.teaser}</p>
-                    </div>
-                    <ArrowRight className="h-6 w-6 text-signal" aria-hidden="true" />
-                  </article>
-                </li>
-              ))}
-            </ul>
-            <p className="mt-12 max-w-[68ch] text-ink-700">
+      <section className="section-tight">
+        <div className="container">
+          <ul className="grid gap-6 md:grid-cols-2">
+            {artikel.map((article, index) => (
+              <Reveal
+                as="li"
+                key={article.path}
+                delay={index * 120}
+                className="card-lift group relative bg-white shadow-[0_1px_0_rgba(14,17,22,0.04),0_18px_40px_-28px_rgba(14,17,22,0.35)]"
+              >
+                <article className="flex h-full flex-col">
+                  <ImageSlot
+                    lang={lang}
+                    hover
+                    label={t.byline}
+                    className="aspect-[16/9] w-full"
+                  />
+                  <div className="flex flex-1 flex-col p-7 md:p-8">
+                    <p className="font-mono text-xs font-semibold uppercase tracking-[0.12em] text-ink-600">
+                      {t.updatedLabel}{" "}
+                      <time dateTime={article.updated}>
+                        {formatDate(article.updated, lang)}
+                      </time>
+                    </p>
+                    <h2 className="t-h3 mt-4 text-ink">
+                      <Link
+                        href={localizePath(article.path, lang)}
+                        className="transition-colors after:absolute after:inset-0 group-hover:text-signal"
+                      >
+                        {article.h1}
+                      </Link>
+                    </h2>
+                    <p className="mt-3 flex-1 font-medium leading-relaxed text-ink-600">
+                      {article.teaser}
+                    </p>
+                    <span className="arrow-link mt-6 inline-flex items-center gap-2 font-semibold text-signal">
+                      {article.summary.title}
+                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                    </span>
+                  </div>
+                </article>
+              </Reveal>
+            ))}
+          </ul>
+          <Reveal delay={200}>
+            <p className="mt-10 max-w-[68ch] font-medium text-ink-700">
               <RichText text={t.services} lang={lang} />
             </p>
-          </div>
-        </section>
-      </main>
+          </Reveal>
+        </div>
+      </section>
 
-      <SwissFooter lang={lang} path="/blog" />
-    </div>
+      <div className="border-t border-line">
+        <div className="container py-6">
+          <TrustStrip lang={lang} compact />
+        </div>
+      </div>
+    </PageFrame>
   );
 }
