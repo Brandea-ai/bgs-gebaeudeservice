@@ -7,13 +7,18 @@ import UebersichtHero from "./01-hero";
 import UebersichtVertrauen from "./02-vertrauen";
 import UebersichtWegweiser from "./03-wegweiser";
 import UebersichtLeistungen from "./04-leistungen";
-import UebersichtGrundsaetze from "./05-grundsaetze";
+import UebersichtWerkzeuge from "./05-werkzeuge";
 import UebersichtPremium from "./06-premium";
 import UebersichtFragen from "./07-fragen";
 
 /**
- * Leistungsübersicht /leistungen (Factory-Strukturnorm, E80): nur Reihenfolge.
- * Abschnittsleiste mit Scrollspy ab lg, auf dem Handy trägt der Kopf die Sprungliste.
+ * Leistungsübersicht /leistungen (Factory-Strukturnorm, E80, E85): nur
+ * Reihenfolge. Wegweiser, drei Kapitel mit klebendem Bild, Vergleich und
+ * Jahresplan, Premium, Fragen. Die Abschnittsleiste mit Scrollspy steht auf
+ * jeder Breite (visuell.md, /leistungen): ab lg klebend, mobil als wischbare
+ * Reihe, die auch Vergleich, Jahresplan und Fragen erreicht (Prüfbefund S2).
+ * Mobil klebend bräuchte .subnav--sticky ausserhalb der lg-Klammer in
+ * globals.css (Hoheit Integrator).
  */
 export default function LeistungenUebersicht(props: UebersichtProps) {
   const { lang } = props;
@@ -21,6 +26,7 @@ export default function LeistungenUebersicht(props: UebersichtProps) {
   const navItems = [
     { id: "wegweiser", title: servicesOverview.guide.title },
     ...servicesOverview.groups.map((group, index) => ({ id: groupId(index), title: group.title })),
+    ...servicesOverview.tools.map(tool => ({ id: tool.id, title: servicesOverview.toolNav[tool.id] ?? tool.title })),
     { id: "premium", title: pages["/premium"].label },
     { id: "fragen", title: ui.faq },
   ];
@@ -30,10 +36,10 @@ export default function LeistungenUebersicht(props: UebersichtProps) {
       <JsonLd data={itemListJsonLd("/leistungen", servicePaths, lang)} />
       <UebersichtHero {...props} />
       <UebersichtVertrauen {...props} />
-      <SectionNav label={ui.onThisPage} items={navItems} className="max-lg:hidden" />
+      <SectionNav label={ui.onThisPage} items={navItems} />
       <UebersichtWegweiser {...props} />
       <UebersichtLeistungen {...props} />
-      <UebersichtGrundsaetze {...props} />
+      <UebersichtWerkzeuge {...props} />
       <UebersichtPremium {...props} />
       <UebersichtFragen {...props} />
     </PageFrame>

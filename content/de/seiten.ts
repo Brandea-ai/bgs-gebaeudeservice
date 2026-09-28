@@ -35,7 +35,7 @@ type KeyedCard<K> = Card & { key: K }
 export const proof = [
   { value: 'Seit 2006', label: 'Erfahrung in Reinigung und Hauswartung' },
   { value: 'Über 120', label: 'Kunden' },
-  { value: 'Über 50', label: 'Mitarbeitende, vier Sprachen' },
+  { value: 'Über 50', label: 'Mitarbeitende' },
   { value: 'CHF 10 Mio.', label: 'Betriebshaftpflicht' },
 ]
 
@@ -74,101 +74,176 @@ const faq = {
   },
 }
 
+// Startseite (E85): drei Kundengruppen statt vier (K6), jede mit dem Weg zu einem Werkzeug
+type HomeAudienceKey = 'verwaltungen' | 'unternehmen' | 'premium'
+type HomeAudience = Card & {
+  key: HomeAudienceKey
+  /** Kurzname für den Reiter auf dem Handy */
+  short: string
+  points: string[]
+  /** hash: Werkzeug auf der Zielseite, etwa #pflichtenheft */
+  link: { path: PagePath; hash?: string; text: string }
+}
+type HomeFactKey = 'register' | 'persoenlich' | 'umwelt'
+
+/**
+ * Startseite (E85, Audit 25: inhalt.md Abschnitt 1, seo.md M4 und T5, visuell.md
+ * Umbau 5, 7 und 8). Jede Aussage steht einmal: Kennzahlen, Register und
+ * Sprachen nur in «Auf einen Blick», die Antwortzeit nur im Kontaktbereich.
+ * Kartentexte eigenständig, nicht die Einstiege der Leistungsseiten (E18).
+ */
 export const home = {
-  eyebrow: `Reinigung und Hauswartung aus ${company.address.city}`,
   h1: 'Gebäudereinigung und Hauswartung für Luzern, Zug und Umgebung',
-  lead: 'Saubere und gepflegte Liegenschaften, Büros und Hallen, ohne dass Sie sich selbst darum kümmern müssen. Für Unternehmen, Verwaltungen und anspruchsvolle Privatkunden. Wir sehen uns Ihr Objekt an und erstellen eine schriftliche Offerte.',
-  proofTitle: 'Auf einen Blick',
-  // Karten je Leistung mit Bild; Gruppen und Kartentexte kommen aus servicesOverview (eine Quelle)
+  // Zitierfähiger Profilsatz unter den Kennzahlen (T5). Der erste Satz nur mit NEW_BRAND:
+  // premiumBrand ist nur dann gesetzt (wie alternateName in T7). Sitz ist die Gemeinde Emmen (UID-Register,
+  // Impressum), Emmenbrücke nur die Postadresse. Der zweite Satz wörtlich wie Über uns.
+  profile: {
+    title: 'Auf einen Blick',
+    brand: company.premiumBrand
+      ? `${company.brand} ist die Marke der ${company.legalName} mit Sitz in ${company.seat} ${company.address.region}.`
+      : null,
+    text: `Seit 2006 sind wir in der Reinigung und Hauswartung tätig. Heute betreuen über 50 Mitarbeitende mehr als 120 Kunden in den Kantonen ${cantonList}, auf ${listDe(company.languages)}.`,
+    // Vertrauensleiste und Zusagen in einem Baustein (Umbau 8), nur Belegtes (E18)
+    facts: [
+      { key: 'register', label: 'Handelsregister', value: `Kanton Luzern, UID ${company.uid}` },
+      { key: 'persoenlich', label: 'Ihre Anfrage', value: 'Bearbeitet der Geschäftsführer persönlich' },
+      { key: 'umwelt', label: 'Reinigungsmittel', value: 'Auf Wunsch umweltfreundlich' },
+    ] satisfies { key: HomeFactKey; label: string; value: string }[] as { key: HomeFactKey; label: string; value: string }[],
+  },
+  // Leistungen nach Gruppen (Umbau 5): Gruppen und Namen aus servicesOverview, eigene Kurztexte
+  // nur für die grossen und mittleren Karten; die fünf schmalen Karten tragen nur den Namen
   services: {
     title: 'Unsere Leistungen',
-    intro: 'Laufende Reinigung, einmalige Einsätze und die Betreuung ganzer Liegenschaften. Wählen Sie nach Anlass, den Umfang klären wir bei der Besichtigung.',
+    intro: 'Zehn Leistungen in drei Gruppen: was regelmässig anfällt, was einmal gründlich erledigt werden muss und was eine ganze Liegenschaft braucht.',
     all: 'Alle Leistungen im Überblick',
+    swipe: 'Seitlich wischen',
+    cards: {
+      '/leistungen/unterhaltsreinigung': 'Treppenhaus, Eingang und Lift bleiben sauber, ohne dass jemand im Haus zum Besen greift. Seife und Papier füllen wir nach.',
+      '/leistungen/bueroreinigung': 'Arbeitsplätze, Sitzungszimmer, Teeküchen und Praxisräume, gereinigt zu Zeiten, die zu Ihrem Betrieb passen.',
+      '/leistungen/hauswartung': 'Kontrollgänge, kleine Reparaturen, Entsorgung und die Mitwirkung bei Wohnungsübergaben.',
+      '/leistungen/aussen-und-gruenflaechenpflege': 'Eine gepflegte Umgebung übers ganze Jahr, vom ersten Rasenschnitt bis zum Laub im Herbst.',
+      '/leistungen/facility-services': 'Mehrere unserer Leistungen gebündelt, mit einem Vertrag und einer Ansprechperson.',
+    } satisfies Partial<Record<PagePath, string>> as Partial<Record<PagePath, string>>,
     premium: {
       title: premiumLabel,
-      text: 'Reinigung für besondere Ansprüche, diskret und in Ihrer Sprache: Villen, Lofts und Residenzen, Privatjets und Yachten, dazu Hotels und Family Offices.',
+      text: 'Eine eigene Linie für Villen, Lofts und Residenzen, Privatjets und Yachten, dazu Hotels und Family Offices. Diskret und mit festen Teams.',
       link: 'Zum Premium-Bereich',
     },
   },
-  // Für wen (E28, E34): Nutzen nur aus bestätigten Leistungstexten, Privatkunden nur im Premium-Segment
+  // Für wen (K6, E28, E34): drei Gruppen, Premium als eine Gruppe; Wahlbaustein statt Kartenraster
   audiences: {
     title: 'Für wen wir arbeiten',
-    intro: 'Vier Kundengruppen mit verschiedenen Anliegen. Das haben Sie konkret davon.',
+    intro: 'Eine Verwaltung braucht etwas anderes als ein Betrieb oder eine Villa. Wählen Sie Ihre Gruppe.',
     items: [
       {
         key: 'verwaltungen',
-        title: 'Verwaltungen und Stockwerkeigentümer',
-        text: 'Sie betreuen Liegenschaften und brauchen jemanden, der vor Ort nach dem Rechten sieht.',
+        short: 'Verwaltungen',
+        title: 'Verwaltungen und Stockwerkeigentümerschaften',
+        text: 'Sie betreuen Wohn- oder Geschäftsliegenschaften für Eigentümer oder eine Gemeinschaft. Vor Ort braucht es jemanden, der regelmässig kommt und meldet, was auffällt.',
         points: [
-          'Treppenhaus, Eingang und Umgebung in einem festen Rhythmus gepflegt',
-          'Kontrollgänge, bei denen wir Ihnen Mängel melden',
-          'Umzugsreinigung mit Abnahmegarantie beim Wohnungswechsel',
+          'Treppenhaus, Waschküche und Umgebung in einem festen Rhythmus',
+          'Regelmässige Kontrollgänge, Mängel melden wir direkt an Sie',
+          'Endreinigung beim Mieterwechsel, mit Abnahmegarantie',
         ],
-        link: { path: '/leistungen/hauswartung', text: 'Zur Hauswartung' },
+        link: { path: '/leistungen/hauswartung', hash: 'pflichtenheft', text: 'Pflichtenheft Hauswartung als Vorlage' },
       },
       {
         key: 'unternehmen',
+        short: 'Unternehmen',
         title: 'Unternehmen',
-        text: 'Büros, Praxen, Gewerbe und Produktion bleiben sauber, ohne dass die Reinigung den Betrieb stört.',
+        text: 'Büros, Praxen, Gewerbe und Produktion. Die Reinigung richtet sich nach Ihren Abläufen, nicht umgekehrt.',
         points: [
-          'Einsatzzeiten passend zu Ihren Arbeits- und Öffnungszeiten',
+          'Einsatzzeiten, die zu Arbeits- und Öffnungszeiten passen',
           'Nachfüllservice für Verbrauchsmaterial',
-          'Reinigung, Hauswartung und Umgebung auf Wunsch in einem Vertrag',
+          'Hallen und Maschinen zu Zeiten, die auf die Produktion abgestimmt sind',
         ],
-        link: { path: '/leistungen/bueroreinigung', text: 'Zur Büroreinigung' },
-      },
-      {
-        key: 'privat',
-        title: 'Private Eigentümer',
-        text: 'Für Villen, Lofts, Residenzen und Zweitwohnungen. Normale Privathaushalte übernehmen wir nicht.',
-        points: [
-          'Bei Ihnen arbeitet immer dasselbe Team',
-          'Naturstein, Parkett und Hochglanzflächen, materialgerecht gereinigt',
-          'Schlüssel und Alarm nach Regeln, die wir mit Ihnen vereinbaren',
-        ],
-        link: { path: '/premium/luxusimmobilien', text: 'Zu den Luxusimmobilien' },
+        link: { path: '/leistungen/bueroreinigung', hash: 'leistungsverzeichnis', text: 'Leistungsverzeichnis für Ihr Büro' },
       },
       {
         key: 'premium',
-        title: 'Privatjets, Yachten und Hotels',
-        text: 'Für Kabinen, Decks und Räume mit hochwertigen Materialien, die besondere Sorgfalt brauchen.',
+        short: 'Premium',
+        title: 'Villen, Jets, Yachten und Hotels',
+        text: 'Naturstein, Parkett, Leder und Edelholz verzeihen kein falsches Mittel. Wer so etwas pflegen lässt, braucht ein Team, das die Materialien kennt und diskret arbeitet.',
         points: [
-          'Auf Wunsch mit Geheimhaltungsvereinbarung',
-          'Auch abends, am Wochenende und während Ihrer Abwesenheit',
-          'In Hotels Einsätze vor Eröffnungen und nach Renovationen',
+          'Ein festes Team, das Ihr Haus kennt',
+          'Geheimhaltungsvereinbarung, wenn Sie sie wünschen',
+          'In Hotels Reinigung vor der Eröffnung und nach einer Renovation',
         ],
-        link: { path: '/premium', text: 'Zum Premium-Bereich' },
+        link: { path: '/premium/luxusimmobilien', hash: 'materialkunde', text: 'Materialkunde für Naturstein, Parkett und Hochglanz' },
       },
-    ] satisfies Audience[] as Audience[],
+    ] satisfies HomeAudience[] as HomeAudience[],
   },
-  steps: {
-    title: 'So kommen Sie zu Ihrer Offerte',
-    intro: 'Vom ersten Anruf bis zum ersten Einsatz. Besichtigung und Offerte sind kostenlos und unverbindlich.',
-    items: offerSteps,
+  // Baustein 1.1 (ersetzt die Zusagen) und 1.2; den Ablauf in Kürze zeigt der Kontaktbereich («So geht es weiter»)
+  agreed: {
+    title: 'Klar geregelt, bevor wir anfangen',
+    intro: 'Vor dem ersten Einsatz steht das Wichtige auf Papier. So wissen Verwaltung, Eigentümerschaft und unser Team, was gilt.',
+    written: {
+      title: 'Was Sie schriftlich erhalten',
+      items: [
+        { title: 'Offerte', text: 'nach der Besichtigung, mit Umfang und Preis' },
+        { title: 'Umfang', text: 'welche Räume und Aufgaben dazugehören, wie oft und zu welchen Zeiten' },
+        { title: 'Hauswartung', text: 'wie oft wir vor Ort sind und wem wir Mängel melden' },
+        { title: 'Nachfüllservice', text: 'welche Artikel dazugehören und wer sie beschafft' },
+        { title: 'Umzugsreinigung', text: 'die Abnahmegarantie mit ihren Einzelheiten' },
+      ] satisfies Card[] as Card[],
+      note: 'Kommt später eine Fläche dazu, ergänzen wir die Vereinbarung schriftlich.',
+    },
+    limits: {
+      title: 'Was wir nicht übernehmen',
+      intro: 'Damit Sie keine Zeit verlieren, sagen wir es gleich.',
+      items: [
+        'Winterdienst und Schneeräumung',
+        'Einen Pikettdienst, der Tag und Nacht für Notfälle erreichbar ist',
+        'Umzugsreinigungen im Auftrag von Mieterinnen und Mietern einzelner Wohnungen',
+        'Normale Privathaushalte. Villen, Residenzen und Zweitwohnungen betreuen wir im [Premium-Bereich](/premium).',
+        'Wartung von Heizung, Lüftung, Lift und Brandschutz, grössere Reparaturen, Gartenbau und Neuanlagen',
+      ],
+    },
   },
   area: {
     title: 'Unser Einzugsgebiet',
-    text: `Von unserem Sitz in ${company.address.city} aus arbeiten wir in den Kantonen ${cantonList}. Alle Leistungen bieten wir im ganzen Gebiet an, überall zu denselben Bedingungen.`,
+    text: `Von ${company.address.city} aus arbeiten wir in fünf ganzen Kantonen, mit jeder Leistung. Je Kanton finden Sie Orte, typische Objekte und Hinweise für die Planung.`,
     link: 'Zum Einzugsgebiet',
   },
+  // Eigene Fragen der Startseite (inhalt.md 08): keine Standardfragen, die Kostenfrage mit Faktoren.
+  // Nur Fragen über das ganze Angebot; Einzelthemen wie Treppenhaus-Rhythmus oder Firmenwechsel
+  // beantworten die Leistungsseiten selbst (Prüfbefund S1).
   faq: [
-    { question: 'Was kostet eine Reinigungsfirma pro Stunde?', answer: answers.kostenFaktoren },
-    faq.schnell,
+    {
+      question: 'Was kostet eine Reinigungsfirma pro Stunde?',
+      answer:
+        'Ohne das Objekt zu kennen, lässt sich das nicht seriös beantworten. Entscheidend ist der Aufwand: wie gross die Flächen sind, welche Böden dort liegen, wie stark sie genutzt werden, wie oft und zu welchen Zeiten gereinigt wird und wer das Verbrauchsmaterial stellt. Wie sich diese Faktoren auswirken, erklärt der Ratgeber [Reinigungskosten in der Schweiz](/blog/reinigungskosten-schweiz).',
+    },
     {
       question: 'Brauche ich eine Unterhaltsreinigung oder eine Hauswartung?',
       answer:
-        'Die Unterhaltsreinigung reinigt in einem festen Rhythmus. Die Hauswartung geht weiter: Kontrollgänge, Kleinreparaturen, Haustechnik, Entsorgung, Wohnungsübergaben und Umgebungspflege. Wer nur Reinigung braucht, ist mit der [Unterhaltsreinigung](/leistungen/unterhaltsreinigung) richtig.',
+        'Geht es nur ums Reinigen, reicht die [Unterhaltsreinigung](/leistungen/unterhaltsreinigung): Treppenhaus, Böden und Gemeinschaftsräume in einem festen Rhythmus. Die [Hauswartung](/leistungen/hauswartung) kümmert sich zusätzlich um die Liegenschaft selbst, mit Kontrollgängen, kleinen Reparaturen, Entsorgung und bei Wohnungsübergaben.',
     },
     {
-      question: 'Reinigen Sie auch Privathaushalte?',
-      answer: 'Normale Privathaushalte nicht. Für Villen, Lofts, Residenzen und Zweitwohnungen gibt es unseren [Premium-Bereich](/premium).',
+      question: 'Welche Leistung passt zu meinem Objekt?',
+      answer:
+        'Das zeigt der [Wegweiser in der Leistungsübersicht](/leistungen#wegweiser): Er ordnet zehn typische Situationen der passenden Leistung zu. Auf derselben Seite vergleicht eine Tabelle die vier Leistungen, die am häufigsten verwechselt werden. Trifft keine Situation genau zu, beschreiben Sie Ihr Objekt im Formular unten.',
     },
-    faq.kurzfristig,
-    { question: 'Reinigen Sie mit umweltfreundlichen Mitteln?', answer: answers.mittel },
-  ],
+    {
+      question: 'Kann ich Sie auch für einen einzelnen Einsatz beauftragen?',
+      answer:
+        'Ja, etwa die [Grundreinigung](/leistungen/sonderreinigungen), die [Umzugsreinigung](/leistungen/umzugsreinigung) vor einer Übergabe, die [Baureinigung](/leistungen/baureinigung) nach Neu- und Umbauten oder die [Fenster- und Fassadenreinigung](/leistungen/fenster-und-fassadenreinigung). Einen Vertrag für die laufende Reinigung brauchen Sie dafür nicht.',
+    },
+    {
+      question: 'Muss ich mehrere Leistungen zusammen beauftragen?',
+      answer:
+        'Nein. Sie können jede Leistung auch allein beauftragen, etwa nur die Fensterreinigung oder nur die Pflege der Umgebung. Brauchen Sie für dieselbe Liegenschaft mehrere, lassen sie sich als [Facility Services](/leistungen/facility-services) bündeln: ein Vertrag statt mehrerer.',
+    },
+    {
+      question: 'Worauf sollte ich bei der Wahl einer Reinigungsfirma achten?',
+      answer:
+        'Vor allem auf Offerten, die sich wirklich vergleichen lassen. Das gelingt nur, wenn jeder Anbieter das Objekt gesehen hat und mit denselben Räumen, demselben Rhythmus und denselben Einsatzzeiten rechnet. Welche Fragen Sie ausserdem stellen sollten, von der Versicherung bis zum Vertrag, zeigt der Ratgeber [Wie finde ich die richtige Reinigungsfirma?](/blog/richtige-reinigungsfirma-finden).',
+    },
+  ] as { question: string; answer: string }[],
+  // Abschluss mit Formular (PageFrame), auch auf Ratgeber und Rechtstexten; die Antwortzeit nennt der Kontaktbereich
   cta: {
     title: 'Offerte für Ihr Objekt',
-    text: `Beschreiben Sie uns kurz Objekt und Anliegen. Wir melden uns ${company.responseTime} und kommen für die Besichtigung vorbei.`,
+    text: 'Beschreiben Sie kurz Objekt, Ort und Anliegen. Den Termin für die Besichtigung vereinbaren wir danach mit Ihnen.',
   },
 }
 
@@ -370,44 +445,91 @@ export const area = {
   },
 }
 
+/**
+ * Leistungsübersicht /leistungen (E85, Audit 25: inhalt.md Abschnitt 2, visuell.md
+ * Umbau 5 und 7). Eigene Kurztexte je Leistung, nicht die Einstiege der
+ * Leistungsseiten. Dazu zwei Werkzeuge: Vergleich (Baustein 2.1, Werte aus den
+ * Leistungsseiten) und Jahresplan (Baustein 2.2, Quellen gelesen am 28.09.2026:
+ * Vogelwarte, BAFU, OR Art. 266a, 266c und 266d auf Fedlex, Stand 1. Januar 2026).
+ */
 export const servicesOverview = {
   h1: 'Reinigung und Hauswartung für Liegenschaften, Büros und Gewerbe',
-  lead: `Laufende Reinigung, einmalige Einsätze oder die Betreuung ganzer Liegenschaften: Wählen Sie nach Anlass. Für Unternehmen, Verwaltungen und Eigentümer in den Kantonen ${cantonList}. Nicht sicher, was passt? Wir klären es bei der Besichtigung.`,
-  // Auswahlhilfe nach Anlass (Zielbild v2, 03 Abschnitt 2a), nur bestätigte Leistungen (R3a–R3c)
+  lead: 'Zehn Leistungen für Verwaltungen, Eigentümer und Unternehmen, geordnet nach Anlass. Hier sehen Sie, wofür jede gedacht ist, wie sich ähnliche Leistungen unterscheiden und wann im Jahr was ansteht.',
+  // Auswahlhilfe nach Anlass (Zielbild v2, 03 Abschnitt 2a), nur bestätigte Leistungen (R3a bis R3c)
   groups: [
     {
       title: 'Laufende Reinigung',
-      text: 'Für Liegenschaften, Büros und Gewerbeflächen in einem festen Rhythmus.',
+      text: 'Wiederkehrende Reinigung, deren Rhythmus sich nach der Nutzung richtet.',
       items: [
-        { title: 'Unterhaltsreinigung', path: '/leistungen/unterhaltsreinigung', text: 'Regelmässige Reinigung von Liegenschaften und Gewerbeflächen, Nachfüllservice inklusive.' },
-        { title: 'Büro- und Praxisreinigung', path: '/leistungen/bueroreinigung', text: 'Reinigung von Büros und Praxen, abgestimmt auf Ihre Arbeitszeiten.' },
+        {
+          title: 'Unterhaltsreinigung',
+          path: '/leistungen/unterhaltsreinigung',
+          text: 'Für Mehrfamilienhäuser, Wohn- und Geschäftshäuser und Gewerbeflächen: Wir reinigen Treppenhaus, Böden und Nebenräume, meist mehrmals pro Woche, und füllen das Verbrauchsmaterial nach.',
+        },
+        {
+          title: 'Büro- und Praxisreinigung',
+          path: '/leistungen/bueroreinigung',
+          text: 'Büros, Verwaltungen und Praxen, gereinigt zu Zeiten, die sich nach Ihren Besprechungen und Sprechstunden richten.',
+        },
       ],
     },
     {
       title: 'Einmalige und besondere Reinigung',
-      text: 'Für Bau, Umzug, Glasflächen und Produktion.',
+      text: 'Einsätze mit einem festen Anlass, etwa eine Übergabe, das Ende einer Baustelle oder ein Stillstand in der Produktion.',
       items: [
-        { title: 'Grund- und Sonderreinigung', path: '/leistungen/sonderreinigungen', text: 'Grundreinigung von Wohn-, Büro- und Gewerbeflächen, einmalig oder in grösseren Abständen.' },
-        { title: 'Umzugsreinigung', path: '/leistungen/umzugsreinigung', text: 'Endreinigung vor der Übergabe einer Wohnung oder Geschäftsfläche, mit Abnahmegarantie.' },
-        { title: 'Bau- und Bauendreinigung', path: '/leistungen/baureinigung', text: 'Reinigung während und nach Bau- und Umbauarbeiten.' },
-        { title: 'Fenster- und Fassadenreinigung', path: '/leistungen/fenster-und-fassadenreinigung', text: 'Fenster, Glasflächen und Fassaden, auch mit Hochdruck.' },
-        { title: 'Industrie- und Hallenreinigung', path: '/leistungen/industrie-und-hallenreinigung', text: 'Produktions- und Lagerhallen, Maschinen und Anlagen.' },
+        {
+          title: 'Grund- und Sonderreinigung',
+          path: '/leistungen/sonderreinigungen',
+          text: 'Gegen Kalk, Fett, Schmutz in Fugen und alte Pflegeschichten, die die laufende Reinigung in Wohnungen, Büros und Gewerbeflächen nicht mehr löst.',
+        },
+        {
+          title: 'Umzugsreinigung',
+          path: '/leistungen/umzugsreinigung',
+          text: 'Endreinigung von Wohnungen und Geschäftsflächen vor der Abnahme, im Auftrag von Verwaltungen, Eigentümern und Unternehmen. Mit Abnahmegarantie.',
+        },
+        {
+          title: 'Bau- und Bauendreinigung',
+          path: '/leistungen/baureinigung',
+          text: 'Reinigung während der Arbeiten und Bauendreinigung vor der Übergabe an Mieterschaft, Käufer oder Ihr Team.',
+        },
+        {
+          title: 'Fenster- und Fassadenreinigung',
+          path: '/leistungen/fenster-und-fassadenreinigung',
+          text: 'Fenster, Schaufenster und andere Glasflächen, dazu Fassaden, bei Bedarf mit Hochdruck. Als einzelner Auftrag oder im festen Turnus.',
+        },
+        {
+          title: 'Industrie- und Hallenreinigung',
+          path: '/leistungen/industrie-und-hallenreinigung',
+          text: 'Böden, Hallen, Maschinen und Anlagen in Produktion und Lager, abgestimmt auf Schichten und Stillstände.',
+        },
       ],
     },
     {
       title: 'Betreuung von Liegenschaften',
-      text: 'Für Verwaltungen, Eigentümer und Unternehmen, die alles aus einer Hand wollen.',
+      text: 'Wenn jemand regelmässig nach der ganzen Liegenschaft sehen soll, innen wie aussen.',
       items: [
-        { title: 'Hauswartung', path: '/leistungen/hauswartung', text: 'Kontrollgänge, Treppenhaus, Waschküche, Kleinreparaturen, Haustechnik, Wohnungsübergaben, Entsorgung und Umgebung.' },
-        { title: 'Aussen- und Grünflächenpflege', path: '/leistungen/aussen-und-gruenflaechenpflege', text: 'Pflege von Umgebung und Grünflächen Ihrer Liegenschaft.' },
-        { title: 'Facility Services', path: '/leistungen/facility-services', text: 'Mehrere Leistungen in einem Vertrag mit einer Ansprechperson.' },
+        {
+          title: 'Hauswartung',
+          path: '/leistungen/hauswartung',
+          text: 'Kontrollgänge mit Meldung an die Verwaltung, Treppenhaus und Waschküche, Kleinreparaturen, Entsorgung und Wohnungsübergaben. Welche Aufgaben es sind, richtet sich nach Ihrer Liegenschaft.',
+        },
+        {
+          title: 'Aussen- und Grünflächenpflege',
+          path: '/leistungen/aussen-und-gruenflaechenpflege',
+          text: 'Rasen, Hecken, Beete, Wege und Plätze, einzeln vergeben oder zusammen mit der Hauswartung.',
+        },
+        {
+          title: 'Facility Services',
+          path: '/leistungen/facility-services',
+          text: 'Reinigung, Hauswartung und Umgebung unter einem Vertrag. Technische Anlagen wie Heizung, Lüftung oder Lifte gehören nicht dazu.',
+        },
       ],
     },
   ] satisfies { title: string; text: string; items: LinkCard[] }[],
   // Wegweiser nach Situation (E80: mehr Information für die Entscheidung), nur bestätigte Leistungen
   guide: {
     title: 'Welche Leistung passt?',
-    intro: 'Häufige Situationen und die Leistung, die dazu passt. Nicht sicher? Wir klären es bei der Besichtigung.',
+    intro: 'Zehn häufige Situationen und die Leistung, die dazu passt.',
     items: [
       { situation: 'Das Treppenhaus und die Gemeinschaftsräume sollen regelmässig sauber sein.', path: '/leistungen/unterhaltsreinigung' },
       { situation: 'Büro oder Praxis sollen gereinigt werden, ohne den Betrieb zu stören.', path: '/leistungen/bueroreinigung' },
@@ -418,43 +540,151 @@ export const servicesOverview = {
       { situation: 'Halle, Lager oder Maschinen sollen gereinigt werden.', path: '/leistungen/industrie-und-hallenreinigung' },
       { situation: 'Die Liegenschaft braucht jemanden, der regelmässig nach dem Rechten sieht.', path: '/leistungen/hauswartung' },
       { situation: 'Rasen, Hecken, Wege und Plätze sollen gepflegt sein.', path: '/leistungen/aussen-und-gruenflaechenpflege' },
-      { situation: 'Reinigung, Hauswartung und Umgebung sollen aus einer Hand kommen.', path: '/leistungen/facility-services' },
+      { situation: 'Statt mehrerer Firmen soll eine einzige alles übernehmen.', path: '/leistungen/facility-services' },
     ] satisfies { situation: string; path: PagePath }[] as { situation: string; path: PagePath }[],
   },
-  // Was bei allen Leistungen gilt, nur belegte Angaben (E18, R3e, R5d)
+  // Kurze Namen der Werkzeuge für die Abschnittsleiste (die Titel sind dafür zu lang)
+  toolNav: { vergleich: 'Vergleich', jahresplan: 'Jahresplan' } as Record<string, string>,
+  // Werkzeuge (E85) im Aufbau der Leistungsseiten: Vergleich und Jahresplan
+  tools: [
+    {
+      kind: 'table',
+      id: 'vergleich',
+      title: 'Reinigung, Grundreinigung, Hauswartung oder alles zusammen?',
+      intro: 'Vier Leistungen, die sich leicht verwechseln lassen, im direkten Vergleich.',
+      columns: ['Leistung', 'Was', 'Wie oft', 'Typischer Anlass', 'Nicht enthalten'],
+      rows: [
+        [
+          '[Unterhaltsreinigung](/leistungen/unterhaltsreinigung)',
+          'Reinigung in einem festen Rhythmus, mit Nachfüllservice',
+          'Meist mehrmals pro Woche',
+          'Treppenhaus, Allgemeinflächen oder Gewerbefläche sollen laufend sauber sein',
+          'Büros und Praxen, Grundreinigung, Fenster aussen und Fassaden',
+        ],
+        [
+          '[Grund- und Sonderreinigung](/leistungen/sonderreinigungen)',
+          'Ein gründlicher Einsatz gegen Kalk, Fett und alte Schichten',
+          'Einmalig, bei Bedarf in grossen Abständen wieder',
+          'Vor einer Neuvermietung oder nach intensiver Nutzung',
+          'Laufende Reinigung. Die Endreinigung vor der Abgabe übernimmt die Umzugsreinigung',
+        ],
+        [
+          '[Hauswartung](/leistungen/hauswartung)',
+          'Betreuung der Liegenschaft: Kontrollgänge, Kleinreparaturen, Meldungen',
+          'So oft, wie im Pflichtenheft vereinbart',
+          'Der bisherige Hauswart hört auf, oder eine Liegenschaft wird neu übernommen',
+          'Winterdienst, Pikett rund um die Uhr, grössere Reparaturen',
+        ],
+        [
+          '[Facility Services](/leistungen/facility-services)',
+          'Mehrere unserer Leistungen in einem Vertrag',
+          'Je nach Leistung',
+          'Mehrere Firmen sollen durch eine ersetzt werden',
+          'Technisches Facility Management, Winterdienst, Vermittlung von Handwerkern',
+        ],
+      ],
+      printable: true,
+      updated: '2026-09-28',
+    },
+    {
+      kind: 'timeline',
+      id: 'jahresplan',
+      title: 'Welche Arbeit wann ansteht',
+      intro: 'Viele Arbeiten an einer Liegenschaft haben ihre Jahreszeit. So verteilen sie sich typischerweise:',
+      entries: [
+        {
+          label: 'Januar bis März',
+          text: 'Grundreinigung von Büro- und Gewerbeflächen in ruhigen Wochen. Hecken und Sträucher jetzt schneiden: Die Vogelwarte Sempach rät, Gehölze ausserhalb der Brutzeit zu schneiden, am besten zwischen November und März.',
+        },
+        {
+          label: 'April bis Juni',
+          text: 'Fenster und Glas nach dem Winter und dem Blütenstaub reinigen. Wege und Plätze vom Winterschmutz befreien, den Rasen zum ersten Mal mähen. Was danach bis zum Herbst im Garten anfällt, zeigt der [Pflegekalender der Gartenpflege](/leistungen/aussen-und-gruenflaechenpflege#pflegekalender).',
+        },
+        {
+          label: 'Juli und August',
+          text: 'Grundreinigung während der Betriebsferien, Hallen und Maschinen bei geplanten Stillständen. Unkraut in Fugen und auf Plätzen von Hand oder mit Geräten entfernen, denn auf und an Wegen und Plätzen sind Herbizide verboten. Wo Spritzmittel verboten sind und was stattdessen wirkt, zeigt die Seite [Aussen- und Grünflächenpflege](/leistungen/aussen-und-gruenflaechenpflege#spritzmittelverbot).',
+        },
+        {
+          label: 'September bis November',
+          text: 'Laub von Wegen, Plätzen und Rasen entfernen, Beete für den Winter vorbereiten und die Fenster vor der dunklen Jahreszeit reinigen. Ab November beginnt die Zeit für den Heckenschnitt.',
+        },
+        {
+          label: 'Vor dem ersten Schnee',
+          text: 'Schneeräumung und Salzen gehören nicht zu unserem Angebot. Vergeben Sie den Winterdienst frühzeitig an eine Firma, die ihn übernimmt.',
+        },
+        {
+          label: 'Rund um Kündigungstermine',
+          text: 'Das OR sieht für Wohnungen drei Monate Kündigungsfrist vor, für Geschäftsräume sechs, jeweils auf einen ortsüblichen Termin oder, wo es keinen gibt, auf das Ende einer dreimonatigen Mietdauer. Der Mietvertrag kann längere Fristen oder andere Termine festlegen. Planen Sie die Endreinigung mit dem Abgabetermin, die [Termine je Kanton](/leistungen/umzugsreinigung#kuendigungstermine) stehen bei der Umzugsreinigung.',
+        },
+      ],
+      note: 'Die Monate sind Richtwerte. Wann bei Ihrem Objekt was ansteht, hängt von Nutzung, Lage und Vertrag ab.',
+      sources: [
+        {
+          label: 'Schweizerische Vogelwarte: Schnitt von Sträuchern und Hecken in Siedlungen',
+          href: 'https://www.vogelwarte.ch/de/ratgeber/schnitt-von-straeuchern-und-hecken-in-siedlungen-wann-und-wie/',
+        },
+        { label: 'BAFU: Pflanzenschutz in der Gemeinde', href: 'https://www.bafu.admin.ch/de/pflanzenschutz-in-der-gemeinde' },
+        { label: 'Obligationenrecht, Art. 266a, 266c und 266d (Fedlex, Stand 1. Januar 2026)', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_266_c' },
+      ],
+    },
+  ] satisfies import('../types').Tool[] as import('../types').Tool[],
+  // Was bei allen Leistungen gilt (inhalt.md 06: gekürzt auf zwei Punkte)
   principles: {
     title: 'Bei jeder Leistung gleich',
     items: [
-      { title: 'Besichtigung vor der Offerte', text: 'Wir sehen uns das Objekt an, bevor wir einen Preis nennen. Besichtigung und Offerte sind kostenlos und unverbindlich.' },
-      { title: 'Umfang schriftlich', text: 'Was wir wie oft übernehmen, halten wir in der Offerte fest.' },
-      { title: 'Persönliche Anfrage', text: `Ihre Anfrage bearbeitet der Geschäftsführer persönlich, Sie hören ${company.responseTime} von uns.` },
-      { title: 'Rhythmus nach Nutzung', text: 'Wie oft wir kommen, richtet sich nach der Nutzung Ihres Objekts. Ändert sie sich, passen wir Umfang und Rhythmus mit Ihnen an.' },
-      { title: 'Umweltfreundlich auf Wunsch', text: 'Auf Wunsch reinigen wir mit umweltfreundlichen Mitteln.' },
-      { title: 'Klare Grenzen', text: 'Jede Leistungsseite nennt auch, was nicht dazugehört, etwa Winterdienst oder die Wartung technischer Anlagen.' },
+      {
+        title: 'Umfang schriftlich',
+        text: 'Räume, Aufgaben, Rhythmus und Einsatzzeiten stehen fest, bevor wir anfangen. Wird ein Büro umgebaut oder anders genutzt, passen wir die Vereinbarung an.',
+      },
+      {
+        title: 'Klare Grenzen',
+        text: 'Jede Leistungsseite sagt auch, was nicht dazugehört, etwa Winterdienst oder die Wartung technischer Anlagen.',
+      },
     ] satisfies Card[] as Card[],
   },
+  // Eigene Fragen der Übersicht (inhalt.md 08): Unterschiede und Grenzen zwischen den Leistungen.
+  // Die Mieterfrage beantwortet die Umzugsreinigung selbst (Prüfbefund S1).
   faq: [
-    { question: 'Was kosten Ihre Leistungen?', answer: answers.kosten },
     {
-      question: 'Kann ich mehrere Leistungen verbinden?',
-      answer: 'Ja. Mit [Facility Services](/leistungen/facility-services) kommen Reinigung, Hauswartung und Umgebungspflege in einen Vertrag, mit einer Ansprechperson.',
+      question: 'Wovon hängen die Kosten der einzelnen Leistungen ab?',
+      answer:
+        'Jede Leistung hat ihre eigenen Kostentreiber. Bei der Unterhaltsreinigung sind es Fläche, Rhythmus, Einsatzzeiten und das Verbrauchsmaterial. Bei der Grundreinigung zählen Zustand, Bodenbelag und wie viel Mobiliar im Weg steht. Die Hauswartung richtet sich nach den Aufgaben und der Zahl der Kontrollgänge, die Fensterreinigung nach Glasfläche, Höhe und Zugang. Den Preis erhalten Sie deshalb nach der Besichtigung, schriftlich.',
     },
     {
-      question: 'Reinigen Sie auch Privathaushalte?',
-      answer: 'Privathaushalte nur im [Premium-Bereich](/premium), für Villen, Lofts und Residenzen.',
+      question: 'Was unterscheidet die Unterhaltsreinigung von der Büroreinigung?',
+      answer:
+        'Die [Unterhaltsreinigung](/leistungen/unterhaltsreinigung) kümmert sich um die gemeinsam genutzten Flächen einer Liegenschaft, also Treppenhaus, Eingang, Lift und Waschküche. Die [Büro- und Praxisreinigung](/leistungen/bueroreinigung) reinigt die Räume, in denen gearbeitet wird, und richtet sich nach Arbeits- und Öffnungszeiten. In einem Geschäftshaus kommt oft beides vor.',
     },
-    { question: 'Bieten Sie Winterdienst an?', answer: 'Nein. Winterdienst gehört nicht zu unserem Angebot.' },
-    { question: 'In welchen Regionen sind Sie tätig?', answer: answers.gebiet },
+    {
+      question: 'Gehört die Fensterreinigung zur Unterhaltsreinigung?',
+      answer:
+        'Zum Teil. Glas im Eingangsbereich, etwa an Glastüren, gehört zur Unterhaltsreinigung. Fenster aussen und Fassaden übernimmt die [Fenster- und Fassadenreinigung](/leistungen/fenster-und-fassadenreinigung), einmalig oder in festen Abständen.',
+    },
+    {
+      question: 'Was gehört bei Ihnen zu Facility Services?',
+      answer:
+        'Unsere eigenen Leistungen, zusammengestellt nach Bedarf: Reinigung, Hauswartung, Umgebung, Fenster, Grund- und Industriereinigung. Dafür gibt es einen einzigen Vertrag mit einer Ansprechperson. Heizung, Lüftung und Lifte warten wir nicht, und wir vermitteln keine Handwerksbetriebe.',
+    },
+    {
+      question: 'Reinigen Sie auch Arzt- und Therapiepraxen?',
+      answer:
+        'Ja, Praxen gehören zur [Büro- und Praxisreinigung](/leistungen/bueroreinigung). Die Einsatzzeiten richten sich nach Ihren Sprechstunden. Instrumente und Medizinprodukte bereitet weiterhin Ihr Praxisteam auf.',
+    },
+    {
+      question: 'Wann brauche ich eine Grundreinigung, wann eine Umzugsreinigung?',
+      answer:
+        'Das entscheidet der Anlass. Die [Umzugsreinigung](/leistungen/umzugsreinigung) bereitet eine Wohnung oder Geschäftsfläche auf die Abnahme vor, wenn sie übergeben wird, und kommt mit Abnahmegarantie. Die [Grundreinigung](/leistungen/sonderreinigungen) bringt Böden, Fugen und Sanitärräume in einen Zustand zurück, den die laufende Reinigung wieder halten kann, auch in Räumen, die weiter genutzt werden.',
+    },
   ] as { question: string; answer: string }[],
   premium: {
     title: 'Villen, Privatjets oder Yachten?',
-    text: 'Für besondere Ansprüche gibt es unseren Premium-Bereich.',
-    detail: 'Villen und Residenzen, Kabinen von Privatjets, Yachten am Vierwaldstättersee und am Zugersee. Immer dasselbe Team, diskret und mit Kenntnis empfindlicher Materialien.',
+    text: 'Für Privatkundschaft mit besonderen Ansprüchen und für Hotels gibt es eine eigene Linie.',
+    detail: 'Villen und Residenzen, Kabinen von Privatjets, Yachten am Vierwaldstättersee und am Zugersee. Mit festen Teams, die mit empfindlichen Materialien umgehen können.',
     link: 'Zum Premium-Bereich',
   },
   cta: {
     title: 'Nicht sicher, was Sie brauchen?',
-    text: `Beschreiben Sie uns Objekt und Anliegen. Wir kommen vorbei, klären den Umfang mit Ihnen und melden uns ${company.responseTime}.`,
+    text: 'Schreiben Sie uns in ein paar Sätzen, worum es geht. Wir sehen uns das Objekt an und schlagen Ihnen die passende Leistung vor.',
   },
 }
 
