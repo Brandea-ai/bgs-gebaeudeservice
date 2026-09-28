@@ -328,9 +328,13 @@
   }
 
   /*
-   * Prozess-Sektion (F14): Figur links bleibt stehen, Schritte laufen rechts durch.
-   * Der aktive Schritt wird per data-active gesetzt (useActiveStep), ohne
-   * JavaScript sind alle Schritte und alle Teile der Figur voll sichtbar.
+   * Prozess-Sektion (F14, E85): Ab lg eine klebende Szene über die volle
+   * Bildschirmhöhe (Bühne links, alle Schritte rechts), darunter ein Scrollweg
+   * (.process-track), durch den die Szene stehen bleibt; der Fortschritt setzt
+   * nur data-active (ProcessSection). Muster era-residence Dossier 06: sticky
+   * statt Pin. Kein Mindestmass je Schritt. Ohne JavaScript steht die Szene,
+   * alles ist voll sichtbar; mit reduced motion und bei zu wenig Höhe ein
+   * statisches Raster (data-fit="0").
    */
   .process-step {
     position: relative;
@@ -371,32 +375,60 @@
     inset: 0;
     transform-origin: top;
     transform: scaleY(1);
+    transition: transform 0.5s var(--ease-out);
   }
-  @media (min-width: 1024px) {
-    .process-figure {
+  .process-track {
+    display: none;
+  }
+  @media (min-width: 1024px) and (min-height: 640px) and (prefers-reduced-motion: no-preference) {
+    .process--area:not([data-fit='0']) .process-screen {
+      position: sticky;
+      top: calc(var(--header-offset) + var(--subnav-h, 0px));
+      min-height: calc(100svh - var(--header-offset) - var(--subnav-h, 0px));
+      align-content: center;
+      padding-block: 1.5rem;
+    }
+    .process--area:not([data-fit='0']) .process-track {
+      display: block;
+      height: calc(var(--n) * 22svh);
+    }
+    /* Bühne nie höher als der freie Bildschirm, Seitenverhältnis bleibt */
+    .process--area .process-stage {
+      width: min(100%, calc((100svh - var(--header-offset) - var(--subnav-h, 0px) - 5rem) * 4 / 3));
+      margin-inline: auto;
+    }
+    /* Passt die Szene nicht: Bühne klebt neben der langen Liste */
+    .process--area[data-fit='0'] .process-figure {
       position: sticky;
       top: calc(var(--header-offset) + 2rem);
       align-self: start;
     }
-    .process-step {
-      min-height: var(--step-h, 42vh);
-    }
-    .process-step:last-child {
-      min-height: 0;
-    }
   }
-  /* Aktiver Schritt: Nummer und Punkt in Signalrot, inaktive Teile der Figur zurück */
-  .process[data-active] .pf {
-    transition: opacity var(--dur-state) var(--ease-out);
-    opacity: 0.28;
+  /* Aktiver Schritt: Nummer und Punkt im Akzent, inaktive in Tinte (Kontrast bleibt) */
+  .process[data-active='1'] {
+    --step-i: 1;
   }
-  .process[data-active='1'] .pf-1,
-  .process[data-active='2'] .pf-2,
-  .process[data-active='3'] .pf-3,
-  .process[data-active='4'] .pf-4 {
-    opacity: 1;
+  .process[data-active='2'] {
+    --step-i: 2;
   }
-  /* Inaktive Schritte: Nummer und Punkt in Tinte statt Signal, der Text bleibt voll lesbar (Kontrast) */
+  .process[data-active='3'] {
+    --step-i: 3;
+  }
+  .process[data-active='4'] {
+    --step-i: 4;
+  }
+  .process[data-active='5'] {
+    --step-i: 5;
+  }
+  .process[data-active='6'] {
+    --step-i: 6;
+  }
+  .process[data-active='7'] {
+    --step-i: 7;
+  }
+  .process[data-active='8'] {
+    --step-i: 8;
+  }
   .process[data-active] .process-num,
   .process[data-active] .process-dot {
     color: #3f454e;
@@ -409,20 +441,36 @@
   .process[data-active='2'] [data-step='2'] .process-num,
   .process[data-active='3'] [data-step='3'] .process-num,
   .process[data-active='4'] [data-step='4'] .process-num,
+  .process[data-active='5'] [data-step='5'] .process-num,
+  .process[data-active='6'] [data-step='6'] .process-num,
+  .process[data-active='7'] [data-step='7'] .process-num,
+  .process[data-active='8'] [data-step='8'] .process-num,
   .process[data-active='1'] [data-step='1'] .process-dot,
   .process[data-active='2'] [data-step='2'] .process-dot,
   .process[data-active='3'] [data-step='3'] .process-dot,
-  .process[data-active='4'] [data-step='4'] .process-dot {
+  .process[data-active='4'] [data-step='4'] .process-dot,
+  .process[data-active='5'] [data-step='5'] .process-dot,
+  .process[data-active='6'] [data-step='6'] .process-dot,
+  .process[data-active='7'] [data-step='7'] .process-dot,
+  .process[data-active='8'] [data-step='8'] .process-dot {
     color: #b8121b;
   }
   .process--dark[data-active='1'] [data-step='1'] .process-num,
   .process--dark[data-active='2'] [data-step='2'] .process-num,
   .process--dark[data-active='3'] [data-step='3'] .process-num,
   .process--dark[data-active='4'] [data-step='4'] .process-num,
+  .process--dark[data-active='5'] [data-step='5'] .process-num,
+  .process--dark[data-active='6'] [data-step='6'] .process-num,
+  .process--dark[data-active='7'] [data-step='7'] .process-num,
+  .process--dark[data-active='8'] [data-step='8'] .process-num,
   .process--dark[data-active='1'] [data-step='1'] .process-dot,
   .process--dark[data-active='2'] [data-step='2'] .process-dot,
   .process--dark[data-active='3'] [data-step='3'] .process-dot,
-  .process--dark[data-active='4'] [data-step='4'] .process-dot {
+  .process--dark[data-active='4'] [data-step='4'] .process-dot,
+  .process--dark[data-active='5'] [data-step='5'] .process-dot,
+  .process--dark[data-active='6'] [data-step='6'] .process-dot,
+  .process--dark[data-active='7'] [data-step='7'] .process-dot,
+  .process--dark[data-active='8'] [data-step='8'] .process-dot {
     color: #c8a96e;
   }
   /* Helle Premium-Welt: aktiver Schritt in Champagner für Hell (Kontrast 5:1) */
@@ -430,37 +478,46 @@
   .process--premium[data-active='2'] [data-step='2'] .process-num,
   .process--premium[data-active='3'] [data-step='3'] .process-num,
   .process--premium[data-active='4'] [data-step='4'] .process-num,
+  .process--premium[data-active='5'] [data-step='5'] .process-num,
+  .process--premium[data-active='6'] [data-step='6'] .process-num,
+  .process--premium[data-active='7'] [data-step='7'] .process-num,
+  .process--premium[data-active='8'] [data-step='8'] .process-num,
   .process--premium[data-active='1'] [data-step='1'] .process-dot,
   .process--premium[data-active='2'] [data-step='2'] .process-dot,
   .process--premium[data-active='3'] [data-step='3'] .process-dot,
-  .process--premium[data-active='4'] [data-step='4'] .process-dot {
+  .process--premium[data-active='4'] [data-step='4'] .process-dot,
+  .process--premium[data-active='5'] [data-step='5'] .process-dot,
+  .process--premium[data-active='6'] [data-step='6'] .process-dot,
+  .process--premium[data-active='7'] [data-step='7'] .process-dot,
+  .process--premium[data-active='8'] [data-step='8'] .process-dot {
     color: #7d6231;
   }
   .process[data-active='1'] [data-step='1'] .process-dot,
   .process[data-active='2'] [data-step='2'] .process-dot,
   .process[data-active='3'] [data-step='3'] .process-dot,
-  .process[data-active='4'] [data-step='4'] .process-dot {
+  .process[data-active='4'] [data-step='4'] .process-dot,
+  .process[data-active='5'] [data-step='5'] .process-dot,
+  .process[data-active='6'] [data-step='6'] .process-dot,
+  .process[data-active='7'] [data-step='7'] .process-dot,
+  .process[data-active='8'] [data-step='8'] .process-dot {
     transform: translateX(-50%) scale(1.6);
   }
-  .process[data-active='1'] .process-line-fill {
-    transform: scaleY(calc(1 / var(--n)));
+  .process[data-active] .process-line-fill {
+    transform: scaleY(calc(var(--step-i, 1) / var(--n)));
   }
-  .process[data-active='2'] .process-line-fill {
-    transform: scaleY(calc(2 / var(--n)));
-  }
-  .process[data-active='3'] .process-line-fill {
-    transform: scaleY(calc(3 / var(--n)));
-  }
-  .process[data-active='4'] .process-line-fill {
-    transform: scaleY(calc(4 / var(--n)));
-  }
-  .process-line-fill {
-    transition: transform 0.5s var(--ease-out);
-  }
-  /* Mit Unterstützung: Linie füllt sich mit dem Scrollen (Compositor, kein Layout) */
+  /* Liste (Handy, vertikal): die Linie füllt sich mit dem Scrollen (Compositor, kein Layout) */
   @supports (animation-timeline: view()) {
     @media (prefers-reduced-motion: no-preference) {
-      .process[data-active] .process-line-fill {
+      .process:not(.process--area)[data-active] .process-line-fill {
+        transition: none;
+        animation: process-line linear both;
+        animation-timeline: view();
+        animation-range: entry 30% exit 70%;
+        transform: none;
+      }
+    }
+    @media (prefers-reduced-motion: no-preference) and (max-width: 1023px) {
+      .process--area[data-active] .process-line-fill {
         transition: none;
         animation: process-line linear both;
         animation-timeline: view();
@@ -692,9 +749,6 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
-  }
-  .process[data-active] .pf {
-    opacity: 1;
   }
 }
 
@@ -959,7 +1013,7 @@ html[data-nav="hidden"] #mobil-cta:not(:focus-within) {
   }
 }
 
-/* Ablauf-Bühne (E80): sichtbar ist das Video des aktiven Schritts, ohne data-active das erste */
+/* Ablauf-Bühne (E80, E85): sichtbar ist die Figur des aktiven Schritts, ohne data-active die erste */
 .process .pv {
   opacity: 0;
   transition: opacity var(--dur-reveal) var(--ease-out);
@@ -968,7 +1022,11 @@ html[data-nav="hidden"] #mobil-cta:not(:focus-within) {
 .process[data-active="1"] .pv-1,
 .process[data-active="2"] .pv-2,
 .process[data-active="3"] .pv-3,
-.process[data-active="4"] .pv-4 {
+.process[data-active="4"] .pv-4,
+.process[data-active="5"] .pv-5,
+.process[data-active="6"] .pv-6,
+.process[data-active="7"] .pv-7,
+.process[data-active="8"] .pv-8 {
   opacity: 1;
 }
 
@@ -1000,5 +1058,76 @@ html[data-nav="hidden"] #mobil-cta:not(:focus-within) {
   .t-display {
     hyphens: manual;
     -webkit-hyphens: manual;
+  }
+}
+
+/*
+ * Werkzeuge (E85): Kopf für den Druck nur im Druck sichtbar. Beim Drucken
+ * steht jede Tabelle als Tabelle, nie als Karten. Mit dem Knopf «Drucken»
+ * (html.print-tool, Werkzeug mit data-print-target) erscheint nur dieses
+ * Werkzeug, darüber Seitentitel, Firma und Stand; Kopfzeile, Footer,
+ * Formular und alle übrigen Abschnitte fallen weg.
+ */
+.tool-print-head {
+  display: none;
+}
+@media print {
+  .tool-table-wrap {
+    display: block !important;
+    overflow: visible !important;
+  }
+  .tool-table-wrap table {
+    min-width: 0 !important;
+  }
+  .tool-table-cards {
+    display: none !important;
+  }
+  .tool tr,
+  .tool li,
+  .tool-group {
+    break-inside: avoid;
+  }
+  html.print-tool body *:not(:has([data-print-target])):not([data-print-target]):not([data-print-target] *) {
+    display: none !important;
+  }
+  html.print-tool body *:has([data-print-target]) {
+    display: block !important;
+    position: static !important;
+    inset: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    min-height: 0 !important;
+    height: auto !important;
+    max-width: none !important;
+    width: auto !important;
+    background: none !important;
+    box-shadow: none !important;
+    transform: none !important;
+    overflow: visible !important;
+  }
+  html.print-tool [data-print-target] {
+    border: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    background: #fff !important;
+  }
+  html.print-tool [data-print-target] .tool-print-head {
+    display: block;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #0e1116;
+  }
+  .tool-print-page {
+    font-weight: 700;
+    font-size: 1.125rem;
+  }
+  .tool-print-meta {
+    margin-top: 0.25rem;
+    font-size: 0.8125rem;
+    font-weight: 500;
+  }
+  html.print-tool [data-print-target] .tool-box {
+    border-color: #0e1116 !important;
   }
 }

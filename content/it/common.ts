@@ -35,6 +35,20 @@ export const ui = {
   factOfferValue: 'Gratuita e senza impegno, dopo un sopralluogo',
   factAnswer: 'Risposta',
   factAnswerValue: responseTime.charAt(0).toUpperCase() + responseTime.slice(1),
+  stepsBefore: {
+    label: 'Prima di ogni incarico',
+    anfrage: 'Richiesta',
+    anfragePremium: 'Richiesta discreta',
+    anfrageText: `Risposta ${responseTime}`,
+    besichtigung: 'Sopralluogo',
+    besichtigungText: 'Poi riceve la nostra offerta scritta',
+  },
+  tool: {
+    print: 'Stampa',
+    sources: 'Fonti',
+    external: 'link esterno, si apre in una nuova finestra',
+    updated: 'Stato al',
+  },
 }
 
 /**
@@ -49,6 +63,15 @@ export const steps = {
   besichtigung: {
     title: 'Sopralluogo e offerta',
     text: 'Visitiamo l’immobile e chiariamo con Lei l’entità del lavoro e gli orari. In seguito riceve un’offerta scritta, gratuita e senza impegno.',
+  },
+  /** Premium: richiesta discreta e sopralluogo, per lo svolgimento della panoramica premium (fino a E85 in premium.ts) */
+  premiumAnfrage: {
+    title: 'Richiesta discreta',
+    text: `Ci telefoni o ci scriva. La Sua richiesta è trattata personalmente dal gerente; riceverà nostre notizie ${responseTime}.`,
+  },
+  premiumRundgang: {
+    title: 'Visita e offerta',
+    text: 'Visitiamo la Sua casa e chiariamo materiali, orari e accesso. In seguito riceve un’offerta, gratuita e senza impegno.',
   },
 } satisfies Record<string, Step>
 

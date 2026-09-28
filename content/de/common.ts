@@ -21,6 +21,22 @@ export const ui = {
   factOfferValue: 'Kostenlos und unverbindlich, nach einer Besichtigung vor Ort',
   factAnswer: 'Rückmeldung',
   factAnswerValue: company.responseTime.charAt(0).toUpperCase() + company.responseTime.slice(1),
+  /** Zeile über dem Ablauf (E85): die zwei Schritte, die bei jeder Leistung gleich sind (belegt: E18) */
+  stepsBefore: {
+    label: 'Vor jedem Auftrag',
+    anfrage: 'Anfrage',
+    anfragePremium: 'Diskrete Anfrage',
+    anfrageText: `Antwort ${company.responseTime}`,
+    besichtigung: 'Besichtigung vor Ort',
+    besichtigungText: 'Danach erhalten Sie die schriftliche Offerte',
+  },
+  /** Werkzeuge im Hauptinhalt (E85) */
+  tool: {
+    print: 'Drucken',
+    sources: 'Quellen',
+    external: 'externer Link, öffnet in neuem Fenster',
+    updated: 'Stand',
+  },
 }
 
 /**
@@ -35,6 +51,15 @@ export const steps = {
   besichtigung: {
     title: 'Besichtigung und Offerte',
     text: 'Wir sehen uns das Objekt vor Ort an und klären mit Ihnen Umfang und Zeiten. Danach erhalten Sie eine schriftliche Offerte, kostenlos und unverbindlich.',
+  },
+  /** Premium: diskrete Anfrage und Rundgang, für den Ablauf der Premium-Übersicht (bis E85 in premium.ts) */
+  premiumAnfrage: {
+    title: 'Diskrete Anfrage',
+    text: `Rufen Sie uns an oder schreiben Sie uns. Ihre Anfrage bearbeitet der Geschäftsführer persönlich, Sie hören ${company.responseTime} von uns.`,
+  },
+  premiumRundgang: {
+    title: 'Rundgang und Offerte',
+    text: 'Wir sehen uns Ihr Haus an und klären Materialien, Zeiten und Zugang. Danach erhalten Sie eine Offerte, kostenlos und unverbindlich.',
   },
 } satisfies Record<string, Step>
 

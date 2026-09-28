@@ -6,25 +6,32 @@ import { premiumHeadingSm, premiumLightLink } from "@/components/premiumStyles";
 import { Button } from "@/components/ui/button";
 import { company } from "../../../../shared/company";
 import { detailImage } from "../../../../shared/hero-images";
+import { navDicts } from "../../../../content/navigation";
 import Checkliste from "./checkliste";
 import { leistungKontext, type LeistungProps } from "./kontext";
+import Werkzeug from "./werkzeug";
 
 /**
- * Umfang mit ehrlicher Abgrenzung, weitere Abschnitte, daneben Verzeichnis und
- * Offerte-Karte. Premium hell: Elfenbein, Serifentitel, Champagner statt Signalrot.
+ * Hauptinhalt: Werkzeuge (E85), Umfang mit ehrlicher Abgrenzung, weitere
+ * Abschnitte, daneben Verzeichnis in Seitenreihenfolge und Offerte-Karte.
+ * Premium bis zum Ende in der hellen Welt: Elfenbein, Serifentitel, Champagner
+ * statt Signalrot. Standard ohne Champagner (Audit visuell, Umbau 2).
  */
 export default function LeistungInhalt(props: LeistungProps) {
   const { content, lang } = props;
   const { ui, sectionId, premium } = leistungKontext(props);
+  const { menu } = navDicts[lang];
   const h2 = premium ? premiumHeadingSm : "t-h2 text-ink";
   const link = premium ? premiumLightLink : undefined;
   const sections = content.sections ?? [];
+  const tools = content.tools ?? [];
   // Die ersten zwei Abschnitte stehen im Zickzack, sobald die Seite ein Detailbild hat
   const shown = detailImage[content.path] ? 2 : 0;
-  // Verzeichnis in der Reihenfolge der Seite: Zickzack-Abschnitte, Umfang, übrige Abschnitte
+  // Verzeichnis in der Reihenfolge der Seite: Zickzack, Werkzeuge, Umfang, übrige Abschnitte
   const entries = sections.map((section, index) => ({ id: sectionId(index), title: section.title }));
   const toc = [
     ...entries.slice(0, shown),
+    ...tools.map(tool => ({ id: tool.id, title: tool.title })),
     { id: "umfang", title: content.scope.title },
     ...entries.slice(shown),
     { id: "ablauf", title: ui.steps },
@@ -44,16 +51,16 @@ export default function LeistungInhalt(props: LeistungProps) {
             <Button
               asChild
               size="lg"
-              className={`arrow-link mt-5 w-full ${premium ? "bg-anthracite text-white hover:bg-anthracite-700" : "btn-lift"}`}
+              className={`arrow-link mt-5 w-full whitespace-nowrap ${premium ? "bg-anthracite text-white hover:bg-anthracite-700" : "btn-lift"}`}
             >
               <a href="#kontakt-formular" data-cta="aside">
-                {ui.offerCta}
+                {menu.cta.label}
                 <ArrowRight weight="duotone" aria-hidden="true" />
               </a>
             </Button>
             <a
               href={company.phone.href}
-              className={`mt-3 flex min-h-11 items-center justify-center gap-2 py-2 text-sm font-semibold tabular-nums transition-colors ${premium ? "text-anthracite hover:text-brass-dark" : "text-white hover:text-brass"}`}
+              className={`mt-3 flex min-h-11 items-center justify-center gap-2 py-2 text-sm font-semibold tabular-nums transition-colors ${premium ? "text-anthracite hover:text-brass-dark" : "text-white underline-offset-4 hover:underline"}`}
             >
               <Phone weight="duotone" className={`size-4 ${premium ? "text-brass-dark" : ""}`} aria-hidden="true" />
               {company.phone.display}
@@ -63,6 +70,14 @@ export default function LeistungInhalt(props: LeistungProps) {
       </aside>
 
       <div className="min-w-0 space-y-16 lg:col-span-9 lg:space-y-24 xl:col-span-8 xl:col-start-5">
+        {tools.length > 0 && (
+          <div className="space-y-10 lg:space-y-14">
+            {tools.map(tool => (
+              <Werkzeug key={tool.id} tool={tool} lang={lang} premium={premium} pageTitle={content.h1} />
+            ))}
+          </div>
+        )}
+
         <section id="umfang" aria-labelledby="umfang-titel">
           <h2 id="umfang-titel" className={h2}>{content.scope.title}</h2>
           {content.scope.intro && (
@@ -76,29 +91,23 @@ export default function LeistungInhalt(props: LeistungProps) {
           {content.scope.notIncluded && (
             <Reveal
               as="div"
-              className={`mt-8 rounded-[3px] p-6 md:p-8 ${premium ? "border border-brass-dark/25 bg-white text-anthracite" : "on-dark bg-ink text-white"}`}
+              className={`mt-10 rounded-[3px] border p-6 md:p-8 ${premium ? "border-brass-dark/25 bg-white text-anthracite" : "border-ink/15 bg-stone text-ink"}`}
             >
               <h3
                 id="nicht-enthalten"
-                className={premium ? "font-premium text-[1.625rem] font-bold leading-tight" : "font-display text-lg font-semibold"}
+                className={premium ? "font-premium text-[1.625rem] font-bold leading-tight" : "font-display text-lg font-bold"}
               >
                 {ui.notIncluded}
               </h3>
-              <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+              <ul className="mt-4 grid gap-3 sm:grid-cols-2 sm:gap-x-8">
                 {content.scope.notIncluded.map(item => (
                   <li
                     key={item}
-                    className={`flex items-start gap-3 font-medium leading-relaxed ${premium ? "text-ink-600" : "text-white/90"}`}
+                    className={`flex items-start gap-3 font-medium leading-relaxed ${premium ? "text-ink-600" : "text-ink"}`}
                   >
-                    <X weight="duotone" className={`mt-[0.2em] size-5 shrink-0 ${premium ? "text-brass-dark" : "text-brass"}`} aria-hidden="true" />
+                    <X weight="duotone" className={`mt-[0.2em] size-5 shrink-0 ${premium ? "text-brass-dark" : "text-signal"}`} aria-hidden="true" />
                     <span className="min-w-0">
-                      <RichText
-                        text={item}
-                        lang={lang}
-                        linkClassName={
-                          premium ? premiumLightLink : "font-semibold text-brass underline underline-offset-4 hover:text-white"
-                        }
-                      />
+                      <RichText text={item} lang={lang} linkClassName={link} />
                     </span>
                   </li>
                 ))}

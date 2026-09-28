@@ -32,7 +32,7 @@ export default function KantonPlanung(props: KantonProps) {
           className="on-dark min-w-0 self-start rounded-[3px] bg-ink p-7 text-white lg:col-span-5 lg:p-9 xl:col-span-4 xl:col-start-9"
         >
           <p id="sitz-titel" className="t-eyebrow flex items-center gap-2 text-white/90">
-            <MapPin weight="duotone" className="size-5 text-brass" aria-hidden="true" />
+            <MapPin weight="duotone" className="size-5 text-white" aria-hidden="true" />
             {kui.seat}
           </p>
           <p className="mt-4 font-display text-xl font-semibold leading-snug">
@@ -48,7 +48,7 @@ export default function KantonPlanung(props: KantonProps) {
           </Button>
           <a
             href={company.phone.href}
-            className="mt-3 flex min-h-11 items-center justify-center gap-2 py-2 text-sm font-semibold tabular-nums text-white transition-colors hover:text-brass"
+            className="mt-3 flex min-h-11 items-center justify-center gap-2 py-2 text-sm font-semibold tabular-nums text-white underline-offset-4 hover:underline"
           >
             <Phone weight="duotone" className="size-4" aria-hidden="true" />
             {company.phone.display}

@@ -21,25 +21,25 @@ export default function UeberUnsAnsprechperson(props: UeberUnsProps) {
             <li>
               <a
                 href={company.phone.href}
-                className="inline-flex min-h-6 items-center gap-3 font-display text-lg font-bold text-white tabular-nums transition-colors hover:text-brass"
+                className="inline-flex min-h-6 items-center gap-3 font-display text-lg font-bold text-white tabular-nums underline-offset-4 hover:underline"
               >
-                <Phone weight="duotone" className="size-5 shrink-0 text-brass" aria-hidden="true" />
+                <Phone weight="duotone" className="size-5 shrink-0 text-white" aria-hidden="true" />
                 {company.phone.display}
               </a>
             </li>
             <li className="min-w-0">
               <a
                 href={`mailto:${company.email}`}
-                className="inline-flex min-h-6 max-w-full items-center gap-3 font-display text-lg font-bold text-white transition-colors hover:text-brass"
+                className="inline-flex min-h-6 max-w-full items-center gap-3 font-display text-lg font-bold text-white underline-offset-4 hover:underline"
               >
-                <Envelope weight="duotone" className="size-5 shrink-0 text-brass" aria-hidden="true" />
+                <Envelope weight="duotone" className="size-5 shrink-0 text-white" aria-hidden="true" />
                 <span className="min-w-0 break-all">{company.email}</span>
               </a>
             </li>
           </ul>
         </div>
         <div className="min-w-0 md:pl-12 lg:pl-16">
-          <h3 className="t-eyebrow text-brass">{about.register.title}</h3>
+          <h3 className="t-eyebrow text-white/90">{about.register.title}</h3>
           <p className="mt-4 font-display text-xl font-bold leading-snug text-white">{company.legalName}</p>
           <p className="mt-1 font-medium leading-relaxed text-white/90">
             {company.address.street}, {company.address.postalCode} {company.address.city}

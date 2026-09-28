@@ -41,6 +41,20 @@ export const ui = {
   factOfferValue: 'Gratuit et sans engagement, après une visite sur place',
   factAnswer: 'Réponse',
   factAnswerValue: 'Dans les 24 heures les jours ouvrables',
+  stepsBefore: {
+    label: 'Avant chaque mandat',
+    anfrage: 'Demande',
+    anfragePremium: 'Demande discrète',
+    anfrageText: `Réponse ${responseTime}`,
+    besichtigung: 'Visite sur place',
+    besichtigungText: 'Vous recevez ensuite notre devis écrit',
+  },
+  tool: {
+    print: 'Imprimer',
+    sources: 'Sources',
+    external: 'lien externe, s’ouvre dans une nouvelle fenêtre',
+    updated: 'État au',
+  },
 }
 
 /** Les deux premières étapes sont les mêmes pour toutes les prestations */
@@ -52,6 +66,15 @@ export const steps = {
   besichtigung: {
     title: 'Visite et devis',
     text: 'Nous examinons le bien sur place et définissons avec vous l’étendue des travaux et les horaires. Vous recevez ensuite un devis écrit, gratuit et sans engagement.',
+  },
+  /** Premium : demande discrète et visite, pour le déroulement de la vue d’ensemble premium (jusqu’à E85 dans premium.ts) */
+  premiumAnfrage: {
+    title: 'Demande discrète',
+    text: `Appelez-nous ou écrivez-nous. Notre directeur traite personnellement votre demande, vous recevez une réponse ${responseTime}.`,
+  },
+  premiumRundgang: {
+    title: 'Tour des lieux et devis',
+    text: 'Nous visitons votre maison et clarifions les matériaux, les horaires et l’accès. Vous recevez ensuite un devis, gratuit et sans engagement.',
   },
 } satisfies Record<string, Step>
 

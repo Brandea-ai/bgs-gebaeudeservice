@@ -20,6 +20,7 @@ import { localizePath, type Locale } from "../../../shared/i18n";
 import type { PagePath } from "../../../shared/seo";
 import ImageSlot from "./ImageSlot";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { premiumLightLink } from "./premiumStyles";
 
 const fieldClass =
   "field block w-full rounded-[3px] border border-input bg-white px-4 py-3 text-[1rem] text-ink placeholder:font-normal placeholder:text-[#6B717A] transition-colors hover:border-ink/40 focus:border-ink focus:outline-none focus:ring-2 focus:ring-ink/80 focus:ring-offset-1 aria-[invalid=true]:border-signal";
@@ -67,6 +68,8 @@ export default function SwissFooter({
 /**
  * Kontaktbereich mit Formular, Ziel aller Offerte-Aktionen (#kontakt-formular).
  * heading: Titel und Einleitung der Seite (cta), sonst die allgemeinen Texte.
+ * Auf Premium-Seiten (/premium…) in der hellen Premium-Welt: Elfenbein,
+ * Serifentitel, Champagner statt Signalrot, ohne das Standardbild (E85).
  * Eigene Prüfung in der Seitensprache mit Hinweis am Feld (aria-invalid,
  * aria-describedby), Erfolg bleibt stehen und bekommt den Fokus.
  */
@@ -81,6 +84,8 @@ export function ContactSection({
 }) {
   const { contactForm: form, chrome } = navDicts[lang];
   const href = (target: PagePath) => localizePath(target, lang);
+  const premium = path.startsWith("/premium");
+  const accent = premium ? "text-brass-dark" : "text-signal";
   const emptyForm = {
     name: "",
     email: "",
@@ -229,16 +234,30 @@ export function ContactSection({
       <section
         id="kontakt-formular"
         aria-labelledby="kontakt-titel"
-        className="section bg-stone"
+        className={`section ${premium ? "bg-ivory text-anthracite" : "bg-stone"}`}
       >
         <div className="container grid gap-10 lg:grid-cols-12 lg:gap-x-16 lg:gap-y-12">
           <div className="lg:col-span-5 xl:col-span-4">
-            <p className="t-eyebrow mb-5 text-signal">{chrome.contactEyebrow}</p>
-            <h2 id="kontakt-titel" className="t-h2 text-ink">
+            <p className={`t-eyebrow mb-5 ${premium ? "text-brass-dark" : "text-signal"}`}>{chrome.contactEyebrow}</p>
+            <h2
+              id="kontakt-titel"
+              className={
+                premium
+                  ? "font-premium text-[clamp(2.1rem,1.4rem+2.4vw,3.5rem)] font-semibold leading-[1.06] text-anthracite"
+                  : "t-h2 text-ink"
+              }
+            >
               {title}
             </h2>
-            <p className="t-lead mt-5 max-w-[36ch] text-ink">{intro}</p>
-            {/* Bild mit Antwortzeit (E82): die Besichtigung ist der erste echte Kontakt */}
+            <p className={`t-lead mt-5 max-w-[36ch] ${premium ? "text-anthracite" : "text-ink"}`}>{intro}</p>
+            {premium ? (
+              /* Premium ohne Standardbild: Antwortzeit als ruhiger Hinweis mit Kontur */
+              <p className="mt-8 flex items-center gap-3 rounded-[3px] border border-brass-dark/30 bg-white px-5 py-4 text-[0.9375rem] font-semibold text-anthracite">
+                <CheckCircle weight="duotone" className="size-6 shrink-0 text-brass-dark" aria-hidden="true" />
+                {chrome.answer}
+              </p>
+            ) : (
+            /* Bild mit Antwortzeit (E82): die Besichtigung ist der erste echte Kontakt */
             <div className="relative mt-8 overflow-hidden rounded-[3px]">
               <ImageSlot
                 image="detail-facility-services"
@@ -252,6 +271,7 @@ export function ContactSection({
                 {chrome.answer}
               </p>
             </div>
+            )}
           </div>
 
           <div className="lg:col-span-7 lg:col-start-6 lg:row-span-2 xl:col-span-8 xl:col-start-5">
@@ -279,7 +299,11 @@ export function ContactSection({
                 ref={formRef}
                 onSubmit={handleSubmit}
                 noValidate
-                className="relative rounded-[3px] border border-line bg-white p-6 shadow-[0_1px_0_rgba(14,17,22,0.04),0_40px_80px_-48px_rgba(14,17,22,0.35)] sm:p-10 xl:p-14"
+                className={`relative rounded-[3px] border bg-white p-6 sm:p-10 xl:p-14 ${
+                  premium
+                    ? "border-brass-dark/25 shadow-[0_1px_0_rgba(125,98,49,0.08),0_40px_80px_-48px_rgba(90,68,30,0.4)]"
+                    : "border-line shadow-[0_1px_0_rgba(14,17,22,0.04),0_40px_80px_-48px_rgba(14,17,22,0.35)]"
+                }`}
               >
                 <div className="grid gap-x-6 gap-y-6 md:grid-cols-2">
                   <div>
@@ -456,7 +480,7 @@ export function ContactSection({
                           });
                       }}
                       required
-                      className="mt-0.5 h-6 w-6 shrink-0 cursor-pointer accent-signal"
+                      className={`mt-0.5 h-6 w-6 shrink-0 cursor-pointer ${premium ? "accent-anthracite" : "accent-signal"}`}
                       {...invalid("acceptPrivacy")}
                     />
                     <span className="text-sm leading-relaxed text-mute">
@@ -465,7 +489,7 @@ export function ContactSection({
                         href={href("/datenschutz")}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="link-inline"
+                        className={premium ? premiumLightLink : "link-inline"}
                       >
                         {form.consentLink}
                       </a>{" "}
@@ -481,7 +505,9 @@ export function ContactSection({
                     type="submit"
                     aria-disabled={isSubmitting}
                     aria-busy={isSubmitting}
-                    className="press arrow-link inline-flex h-14 items-center justify-center gap-3 rounded-[3px] bg-signal px-8 text-base font-medium text-white transition-colors hover:bg-signal-dark aria-disabled:opacity-70"
+                    className={`press arrow-link inline-flex h-14 items-center justify-center gap-3 rounded-[3px] px-8 text-base font-semibold text-white transition-colors aria-disabled:opacity-70 ${
+                      premium ? "bg-anthracite hover:bg-anthracite-700" : "bg-signal hover:bg-signal-dark"
+                    }`}
                   >
                     {isSubmitting ? (
                       <>
@@ -534,17 +560,17 @@ export function ContactSection({
               {channels.map(({ icon: Icon, label, value, href: link }) => (
                 <div
                   key={label}
-                  className={`relative rounded-[3px] border border-line bg-white p-5 transition-shadow hover:shadow-[0_18px_40px_-28px_rgba(14,17,22,0.35)] ${link?.startsWith("tel:") ? "" : "sm:col-span-2"}`}
+                  className={`relative rounded-[3px] border bg-white p-5 transition-shadow hover:shadow-[0_18px_40px_-28px_rgba(14,17,22,0.35)] ${premium ? "border-brass-dark/20" : "border-line"} ${link?.startsWith("tel:") ? "" : "sm:col-span-2"}`}
                 >
                   <dt className="flex items-center gap-2.5 text-sm font-semibold text-mute">
-                    <Icon weight="duotone" className="size-6 text-signal" aria-hidden="true" />
+                    <Icon weight="duotone" className={`size-6 ${accent}`} aria-hidden="true" />
                     {label}
                   </dt>
-                  <dd className="mt-2 break-words text-[1.125rem] font-bold text-ink">
+                  <dd className={`mt-2 break-words text-[1.125rem] font-bold ${premium ? "text-anthracite" : "text-ink"}`}>
                     {link ? (
                       <a
                         href={link}
-                        className="tabular-nums transition-colors after:absolute after:inset-0 hover:text-signal"
+                        className={`tabular-nums transition-colors after:absolute after:inset-0 ${premium ? "hover:text-brass-dark" : "hover:text-signal"}`}
                       >
                         {value}
                       </a>
@@ -557,13 +583,15 @@ export function ContactSection({
             </dl>
             {/* So geht es weiter: drei Schritte mit Symbolen, ohne Ziffern (E80) */}
             <div>
-              <p className="font-display text-lg font-bold text-ink">{form.nextTitle}</p>
+              <p className={premium ? "font-premium text-[1.625rem] font-semibold leading-tight text-anthracite" : "font-display text-lg font-bold text-ink"}>
+                {form.nextTitle}
+              </p>
               <ul className="mt-4 grid gap-3">
                 {form.nextSteps.map((step, index) => {
                   const StepIcon = [PhoneCall, MapPin, FileText][index] ?? CheckCircle;
                   return (
-                    <li key={step} className="flex items-start gap-3 font-semibold leading-relaxed text-ink">
-                      <StepIcon weight="duotone" className="mt-0.5 size-6 shrink-0 text-signal" aria-hidden="true" />
+                    <li key={step} className={`flex items-start gap-3 font-semibold leading-relaxed ${premium ? "text-anthracite" : "text-ink"}`}>
+                      <StepIcon weight="duotone" className={`mt-0.5 size-6 shrink-0 ${accent}`} aria-hidden="true" />
                       {step}
                     </li>
                   );
