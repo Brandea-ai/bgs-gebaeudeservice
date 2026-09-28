@@ -56,7 +56,7 @@ export default function Zigzag({
                 alt={alt[item.image]}
                 fill
                 sizes="(min-width: 1024px) 58vw, 100vw"
-                className="px-depth-slow object-cover"
+                className={`px-depth-slow object-cover ${item.image.startsWith("hero-") ? "object-[78%_50%]" : ""}`}
               />
             </div>
             <div

@@ -64,7 +64,7 @@ export default function ImageSlot({
           alt={decorative ? "" : bilder[image]}
           fill
           sizes={sizes}
-          className={`object-cover ${px} ${parallax ? "min-h-[112%]" : ""}`}
+          className={`object-cover ${image.startsWith("hero-") ? "object-[78%_50%]" : ""} ${px} ${parallax ? "min-h-[112%]" : ""}`}
         />
       </div>
     );

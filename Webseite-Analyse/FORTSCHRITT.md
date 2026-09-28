@@ -87,6 +87,7 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 | 26.09.2026 | Durcharbeiten (E70), Mehrsprachigkeit | Routine-Freigaben entfallen (E70), Runde 9 nach Empfehlung entschieden (E71), Foto-Briefing (21). M60 umgesetzt: vier Sprachen mit übersetzten Adressen, Umschalter, hreflang, Formular mit Sprachhinweis. In der Produktion bis zur Prüfung nur Deutsch (N085) |
 | 26.09.2026 | Ladezeit | JavaScript je Seite von 759 auf 430 KB, Chat-Code nur bei eingeschaltetem Chat (N086) |
 | 28.09.2026 | Rebranding Phase F (E80) | Lokale Sitzung: schwebende Glas-Kopfzeile mit Ein- und Ausblenden, Mega-Menü mit Premium-Welt, Schrift Geist und Cormorant, 3 px Radius, Duotone-Icons, keine Ziffern, alle Heros mit Bild, Leistungsvorlage als Seitenordner nach Factory-Norm mit Zickzack, Ablauf als Remotion-Videos, 39 Bilder, Logo Mantena und Clavea. Beide Modi grün (N093). Offen: Phase S (jede Seite mit mehr Inhalt), Kantonsseiten |
+| 28.09.2026 | Phase S und Kantonsseiten (E81) | Drei Agenten in getrennten Arbeitskopien: Kantonsseiten mit Mega-Menü, Leistungsinhalte mit Umzugsreinigung und Übersichten, Startseite, Über uns, Kontakt, Ratgeber. SEO-Recherche (24). Zusammengeführt, 116 Seiten in beiden Modi grün (N094). Offen: Lektorat der neuen Texte (E50), Frage Mieter und Umzugsreinigung (E28), `NEW_BRAND` ab 29.09. (E76) |
 
 ## Abweichungen und Vorfälle
 
