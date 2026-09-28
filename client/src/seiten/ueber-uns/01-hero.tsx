@@ -7,9 +7,11 @@ import { ueberUnsKontext, type UeberUnsProps } from "./kontext";
 
 /**
  * Kopf (E84): Bild, Titel, ein Satz, Aktionen. Darunter der Steckbrief: links
- * wer hinter der Marke steht, rechts die belegten Kennzahlen (E18, E58) mit
- * Stichtag, statisch und ohne Zähler. Die Zeitleiste und die zweite
- * Kennzahlenreihe sind entfallen (Audit visuell: «2006» sechsmal).
+ * Leistungen und Gebiet in einem Satz, rechts die belegten Kennzahlen (E18,
+ * E58) mit Stichtag, statisch und ohne Zähler. Die eingetragene Firma steht
+ * bewusst nicht in diesem Band, sondern bei den Firmenangaben (Befund UU-01:
+ * «seit 2006» nicht an die GmbH koppeln, solange Brandea die Frage offen hat).
+ * Die Zeitleiste und die zweite Kennzahlenreihe sind entfallen (Audit visuell).
  */
 export default function UeberUnsHero(props: UeberUnsProps) {
   const { lang } = props;

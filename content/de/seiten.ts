@@ -174,16 +174,24 @@ export const home = {
 }
 
 /**
- * Über uns (E85, Audit 25 Abschnitt 8): nur Belegtes (E18, E58), jede Aussage
- * nur einmal auf der Seite, «2006» höchstens zweimal. Der Name des
- * Geschäftsführers steht nicht hier (offene Frage F6), nur im Impressum.
+ * Über uns (E85, Audit 25 Abschnitt 8): nur Belegtes (E18, E58). «2006» steht
+ * im Hauptinhalt nur in H1 und Steckbrief, als Erfahrung und nie im selben Satz
+ * oder Band wie die eingetragene Firma: Zefix nennt für die GmbH eine frühere
+ * Firma ohne Bezug zur Reinigung, der jüngste SHAB-Eintrag stammt vom 20.11.2012
+ * (gelesen 28.09.2026). Worauf sich 2006 bezieht, ist als Rückfrage an Brandea
+ * offen (Befund UU-01).
+ * Der Name des Geschäftsführers steht nicht hier (offene Frage F6), nur im Impressum.
  */
+const uidRegister = `https://www.uid.admin.ch/Detail.aspx?uid_id=${company.uid.replace(/[-.]/g, '')}&lang=de`
+// Im Fliesstext bricht der Firmenname nicht am Bindestrich um (Audit visuell, 390 px). Geschützte Leerzeichen allein
+// genügen nicht, nach «-» darf der Browser trotzdem umbrechen (UAX #14, LB12a); der Wortverbinder U+2060 verhindert das.
+// Die Tabelle zeigt den Registerwert unverändert.
+const legalNameText = company.legalName.replace(' - ', '\u00a0-\u2060\u00a0')
+
 export const about = {
   h1: 'Über uns: Reinigung und Hauswartung seit 2006',
-  // Mit NEW_BRAND nennt der erste Satz Marke und eingetragene Firma (Audit SEO, T5)
-  lead: company.premiumBrand
-    ? `${company.brand} ist die Marke der ${company.legalName} aus ${company.address.city}. Wir reinigen und betreuen Liegenschaften, Büros, Praxen und Hallen in der Zentralschweiz und im Aargau.`
-    : `Die ${company.legalName} aus ${company.address.city} reinigt und betreut Liegenschaften, Büros, Praxen und Hallen in der Zentralschweiz und im Aargau.`,
+  // Gebiet mit den fünf Kantonen (E30). Marke und eingetragene Firma nennt erst «Firmenangaben zum Nachprüfen» (check.intro)
+  lead: `Wir reinigen und betreuen Liegenschaften, Büros, Praxen und Hallen in den Kantonen ${cantonList}.`,
   // Zusagen mit Schlüssel für das Symbol (E18, M47). Nur die Startseite zeigt sie (06-zusagen.tsx).
   promises: {
     title: 'Worauf Sie sich verlassen können',
@@ -203,7 +211,8 @@ export const about = {
       { value: 'Seit 2006', label: 'Erfahrung' },
       { value: 'Über 50', label: 'Mitarbeitende' },
       { value: 'Über 120', label: 'Kunden' },
-      { value: 'CHF 10 Mio.', label: 'Deckung der Betriebshaftpflicht' },
+      // Zahl und Einheit bleiben zusammen; umbrechen darf nur nach «CHF» (gemessen bei 360, 390 und 1024 px)
+      { value: 'CHF 10\u00a0Mio.', label: 'Deckung der Betriebshaftpflicht' },
     ],
     note: 'Stand September 2026',
   },
@@ -217,7 +226,7 @@ export const about = {
       'Büros, Praxen, Gewerbeflächen oder Hallen mehrmals pro Woche reinigen lassen: [Büro- und Praxisreinigung](/leistungen/bueroreinigung), [Industrie- und Hallenreinigung](/leistungen/industrie-und-hallenreinigung)',
       'Reinigung, Hauswartung und Umgebung in einem Vertrag bündeln möchten, als [Facility Services](/leistungen/facility-services)',
       'einen einzelnen Einsatz planen, etwa eine [Grundreinigung](/leistungen/sonderreinigungen), die [Baureinigung](/leistungen/baureinigung) vor der Übergabe oder die [Umzugsreinigung](/leistungen/umzugsreinigung) zwischen zwei Mietverhältnissen',
-      `privat eine Villa, eine Zweitwohnung, einen Privatjet oder eine Yacht pflegen lassen: dafür gibt es [${premiumLabel}](/premium)`,
+      `privat eine Villa, eine Zweitwohnung oder eine Yacht pflegen oder die Kabine Ihres Privatjets reinigen lassen: dafür gibt es [${premiumLabel}](/premium)`,
     ],
     noTitle: 'Nicht passen wir für',
     no: [
@@ -227,12 +236,14 @@ export const about = {
       'die Reinigung normaler Privathaushalte',
       'Gartenbau und Neuanlagen',
     ],
-    note: `Was eine einzelne Leistung nicht umfasst, steht auf ihrer Seite unter «${ui.notIncluded}».`,
+    // Nur die Seiten unter /leistungen haben diesen Abschnitt (die Privatjet-Seite nicht)
+    note: `Was eine Leistung nicht umfasst, nennt ihre Seite unter [Leistungen](/leistungen) im Abschnitt «${ui.notIncluded}».`,
   },
-  // Arbeitsweise (E80): Werte als Handlungen, nur bestätigte Punkte (E18, E56, E41)
+  // Arbeitsweise (E80): Werte als Handlungen, nur bestätigte Punkte (E18, E56, E41). Nichts zu
+  // Schlüsseln, Alarm oder festem Team im B2B (offene Fragen F2, F7), die Premium-Regeln stehen auf /premium
   work: {
     title: 'So arbeiten wir',
-    intro: 'Vier Regeln für jeden Auftrag, ob Treppenhaus, Büro oder Halle.',
+    intro: 'Vier Grundsätze, nach denen wir Aufträge angehen.',
     items: [
       {
         title: 'Erst das Objekt, dann der Preis',
@@ -247,14 +258,17 @@ export const about = {
         paragraphs: [
           'Die Offerte nennt Räume und Aufgaben, den Rhythmus und die Einsatzzeiten. Mit Ihrer Zusage wird daraus die Vereinbarung, samt der Regel, wie wir ins Gebäude kommen, etwa mit Schlüssel oder Badge.',
           'Was nicht dazugehört, nennen wir ebenso deutlich, zusammen mit der Leistung, die dafür passt.',
-          'Bei der [Umzugsreinigung](/leistungen/umzugsreinigung) gilt unsere Abnahmegarantie: Hat die Verwaltung bei der Abnahme etwas an unserer Reinigung auszusetzen, reinigen wir kostenlos nach.',
+          // Garantiesatz im bestätigten Wortlaut der Umzugsseite (E56), dazu der Vorbehalt der Offerte
+          'Bei der [Umzugsreinigung](/leistungen/umzugsreinigung) gilt unsere Abnahmegarantie: Beanstandet die Verwaltung bei der Abnahme etwas an unserer Reinigung, reinigen wir kostenlos nach. Was die Garantie im Einzelnen umfasst, regelt die Offerte.',
         ],
       },
       {
-        title: 'Kurze Wege, feste Regeln',
+        title: 'Kurze Wege',
         paragraphs: [
-          `Anfragen gehen ohne Umweg an den Geschäftsführer. Eine Antwort erhalten Sie ${company.responseTime}.`,
-          'Im Premium-Bereich kommt immer dasselbe Team. Schlüssel und Alarm handhaben wir dort nach festen Regeln, eine Geheimhaltungsvereinbarung unterzeichnen wir auf Wunsch.',
+          // Bestandsformulierung (R5d); ganz zutreffend erst nach der Umstellung der Adresse (E15, E31, M58).
+          // Die Antwortzeit nennt der Kontaktbereich unten schon zweimal.
+          'Ihre Anfrage bearbeitet der Geschäftsführer persönlich.',
+          'Beziehen Sie mehrere Leistungen als [Facility Services](/leistungen/facility-services), haben Sie dafür eine Ansprechperson bei uns.',
         ],
       },
       {
@@ -267,24 +281,26 @@ export const about = {
       },
     ] satisfies { title: string; paragraphs: string[] }[],
   },
-  // Baustein 8.1: Registerdaten zum Nachprüfen, gelesen am 28.09.2026 (UID-Register, Zefix, Fedlex)
+  // Baustein 8.1: Registerdaten zum Nachprüfen, gelesen am 28.09.2026 (UID-Register in allen vier Sprachen, Fedlex).
+  // Zefix und den Handelsregisterauszug Luzern erst wieder verlinken, wenn Brandea geklärt hat, worauf sich 2006
+  // bezieht (Befund UU-01): Beide zeigen die frühere Firma. Das UID-Register führt alle fünf Angaben selbst.
   check: {
     kind: 'table',
     id: 'firmenangaben',
     title: 'Firmenangaben zum Nachprüfen',
-    intro: 'Für Ihre Lieferantenakte: unsere Angaben, und wo Sie jede davon in einem öffentlichen Register selbst prüfen.',
-    columns: ['Angabe', 'Eintrag', 'Nachprüfen'],
+    intro: `${company.premiumBrand ? `${company.brand} ist die Marke der ${legalNameText}. ` : ''}Für Ihre Lieferantenakte: Jede Angabe unten finden Sie im [UID-Register](${uidRegister}) des Bundesamts für Statistik, jeweils mit dem Feld, in dem sie dort steht.`,
+    columns: ['Angabe', 'Eintrag', 'Feld im UID-Register'],
     rows: [
-      ['Firma', company.legalName, '[Zefix](https://www.zefix.admin.ch/de/search/entity/list/firm/412716), der Firmenindex des Bundes'],
-      ['Sitz und Adresse', `Sitz ${company.seat} LU, ${company.address.street}, ${company.address.postalCode} ${company.address.city}`, '[UID-Register](https://www.uid.admin.ch/Detail.aspx?uid_id=CHE108687458) des Bundesamts für Statistik'],
-      ['Firmennummer', `${company.registerNumber}, ${company.register}`, '[Handelsregisterauszug](https://lu.chregister.ch/cr-portal/auszug/auszug.xhtml?uid=CHE-108.687.458) des Kantons Luzern'],
-      ['UID', company.uid, 'UID-Register, Kernmerkmale'],
-      ['Mehrwertsteuernummer', company.vat, 'UID-Register, Mehrwertsteuerdaten'],
+      ['Firma', company.legalName, '«Name»'],
+      // Sitz ist die Gemeinde, Emmenbrücke der Ort der Postadresse (Befund UU-05, zweite Prüfung)
+      ['Sitz und Adresse', `Sitz ${company.seat} LU. Die Adresse ${company.address.street}, ${company.address.postalCode} ${company.address.city} liegt in der Gemeinde ${company.seat}.`, '«Gemeinde» und Sitzadresse'],
+      ['Firmennummer', `${company.registerNumber}, ${company.register}`, '«Referenznummer» unter Handelsregisterdaten'],
+      ['UID', company.uid, '«UID» unter Kernmerkmale'],
+      ['Mehrwertsteuernummer', company.vat, '«MWST-Nummer» unter Mehrwertsteuerdaten'],
     ],
     note: 'Zum Abgleich von Offerte und Rechnung: Das OR sieht vor, dass die im Handelsregister eingetragene Firma in der Korrespondenz und auf Rechnungen vollständig und unverändert steht (Art. 954a OR). Kurzbezeichnungen, Logos und Geschäftsbezeichnungen dürfen zusätzlich erscheinen. Nach dem Mehrwertsteuergesetz nennt eine Rechnung in der Regel auch die Nummer, unter der die Firma im MWST-Register eingetragen ist (Art. 26 MWSTG).',
     sources: [
-      { label: 'Zefix, Eintrag BGS - Gebäudeservice GmbH', href: 'https://www.zefix.admin.ch/de/search/entity/list/firm/412716' },
-      { label: 'UID-Register, CHE-108.687.458', href: 'https://www.uid.admin.ch/Detail.aspx?uid_id=CHE108687458' },
+      { label: `UID-Register, ${company.uid}`, href: uidRegister },
       { label: 'Art. 954a Obligationenrecht (OR)', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_954_a' },
       { label: 'Art. 26 Mehrwertsteuergesetz (MWSTG)', href: 'https://www.fedlex.admin.ch/eli/cc/2009/615/de#art_26' },
     ],
@@ -293,12 +309,12 @@ export const about = {
   } satisfies TableTool as TableTool,
   languages: {
     title: 'Vier Sprachen',
-    text: 'Rückfragen und Absprachen sind bei uns in vier Sprachen möglich: Deutsch, Englisch, Französisch, Italienisch. Das hilft internationalen Firmen, Eigentümern mit Wohnsitz im Ausland und Mieterinnen und Mietern, die ihre Frage lieber in der eigenen Sprache stellen.',
+    text: 'Rückfragen und Absprachen führen wir auf Deutsch, Englisch, Französisch oder Italienisch. Das hilft internationalen Firmen, Eigentümern mit Wohnsitz im Ausland und Mieterinnen und Mietern, die ihre Frage lieber in der eigenen Sprache stellen.',
     switchLabel: 'Diese Seite auf',
   },
   region: {
     title: 'Fünf Kantone, gleiche Bedingungen',
-    text: `Von ${company.address.city} aus arbeiten wir in fünf ganzen Kantonen, mit allen Leistungen. Die Bedingungen der Anfahrt sind in jedem dieser Kantone dieselben.`,
+    text: `Von ${company.address.city} aus bieten wir jede Leistung im ganzen Gebiet an, zu denselben Anfahrtsbedingungen.`,
     listLabel: 'Die Kantone im Einzelnen',
     link: 'Zum Einzugsgebiet mit Karte',
   },

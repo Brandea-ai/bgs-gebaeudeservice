@@ -122,7 +122,7 @@ export const pages: Dictionary['pages'] = {
   '/ueber-uns': {
     label: 'About us',
     title: 'About us: cleaning and caretaking since 2006',
-    description: `${company.legalName} from ${company.address.city}: how we work, who we are right for and register details you can check. Free quote after a site visit.`,
+    description: 'How we work, who we work for and company details you can check in the UID register. Free quote after a site visit.',
   },
   '/kontakt': {
     label: 'Contact',

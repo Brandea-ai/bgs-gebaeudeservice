@@ -6,14 +6,16 @@ import { ueberUnsKontext, type UeberUnsProps } from "./kontext";
 
 /**
  * Ein Motiv je Grundsatz (E19, Audit visuell /ueber-uns): Besichtigung einer
- * Fläche, Umfang am Plan festlegen, Zutritt übergeben, Beläge im Vergleich.
- * Nicht verwenden: das Hero-Bild der Seite und das Bild des Kontaktbereichs
- * (detail-facility-services, SwissFooter), sonst steht ein Bild zweimal (F4).
+ * Fläche, Umfang am Plan festlegen, Büro mit Telefon für die Anfrage, Beläge
+ * im Vergleich. Kein Bild einer Schlüsselübergabe: Regeln für Schlüssel und
+ * Alarm im B2B sind offene Frage F7. Nicht verwenden: das Hero-Bild der Seite
+ * und das Bild des Kontaktbereichs (detail-facility-services, SwissFooter),
+ * sonst steht ein Bild zweimal (F4).
  */
 const pictures: ImageKey[] = [
   "frage-sonderreinigungen",
   "frage-facility-services",
-  "frage-bueroreinigung",
+  "hero-kontakt",
   "hero-artikel-bodenarten",
 ];
 

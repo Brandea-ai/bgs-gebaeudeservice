@@ -13,9 +13,11 @@ import UeberUnsNachpruefen from "./05-nachpruefen";
  * Über uns (Factory-Strukturnorm, E80; Umbau E85 nach Audit 25, Abschnitt 8):
  * nur Reihenfolge. Kopf mit Steckbrief, Arbeitsweise, für wen wir passen,
  * Sprachen und Gebiet mit echten Links, Firmenangaben zum Nachprüfen; den
- * Abschluss mit dem Formular trägt PageFrame. Jede Aussage steht nur einmal
- * auf der Seite, «2006» höchstens zweimal. Keine Personenbilder als «Team»
- * (E19), kein Name des Geschäftsführers (offene Frage F6).
+ * Abschluss mit dem Formular trägt PageFrame. Die eigenen Texte wiederholen
+ * weder einander noch ihre Überschriften; die Kennzahlen stehen im Steckbrief
+ * mit Stichtag, der Kurzsatz im Kopf kommt aus hero.ts (Fundament) und nennt
+ * sie derzeit ein zweites Mal. «2006» steht im Hauptinhalt zweimal. Keine
+ * Personenbilder als «Team» (E19), kein Name des Geschäftsführers (F6).
  */
 export default function UeberUns(props: UeberUnsProps) {
   const { about } = getDict(props.lang).seiten;

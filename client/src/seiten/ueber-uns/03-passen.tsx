@@ -26,7 +26,9 @@ export default function UeberUnsPassen(props: UeberUnsProps) {
         <div className="grid min-w-0 gap-12 lg:col-span-8">
           <Gruppe id="passen-ja" title={fit.yesTitle} items={fit.yes} glyph={CheckCircle} tone="yes" lang={lang} />
           <Gruppe id="passen-nein" title={fit.noTitle} items={fit.no} glyph={XCircle} tone="no" lang={lang} />
-          <p className="max-w-[62ch] text-[0.9375rem] font-medium leading-relaxed text-ink-600">{fit.note}</p>
+          <p className="max-w-[62ch] text-[0.9375rem] font-medium leading-relaxed text-ink-600">
+            <RichText text={fit.note} lang={lang} />
+          </p>
         </div>
       </div>
     </section>

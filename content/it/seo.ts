@@ -121,7 +121,7 @@ export const pages = {
   '/ueber-uns': {
     label: 'Chi siamo',
     title: 'Chi siamo: pulizia e custodia di stabili dal 2006',
-    description: `${company.legalName} di ${company.address.city}: come lavoriamo, per chi siamo adatti e dati del registro da verificare. Offerta gratuita dopo il sopralluogo.`,
+    description: 'Come lavoriamo, per chi lavoriamo e i nostri dati da verificare nel registro IDI. Offerta gratuita dopo il sopralluogo.',
   },
   '/kontakt': {
     label: 'Contatto',

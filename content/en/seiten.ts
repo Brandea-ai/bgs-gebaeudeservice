@@ -149,11 +149,12 @@ export const home: Seiten['home'] = {
   },
 }
 
+const uidRegister = `https://www.uid.admin.ch/Detail.aspx?uid_id=${company.uid.replace(/[-.]/g, '')}&lang=en`
+const legalNameText = company.legalName.replace(' - ', '\u00a0-\u2060\u00a0')
+
 export const about: Seiten['about'] = {
   h1: 'About us: cleaning and caretaking since 2006',
-  lead: company.premiumBrand
-    ? `${company.brand} is the brand of ${company.legalName}, based in ${company.address.city}. We clean and look after residential buildings, offices, practices and halls in Central Switzerland and in Aargau.`
-    : `${company.legalName}, based in ${company.address.city}, cleans and looks after residential buildings, offices, practices and halls in Central Switzerland and in Aargau.`,
+  lead: `We clean and look after residential buildings, offices, practices and halls in the cantons of ${cantons}.`,
   promises: {
     title: 'What you can rely on',
     items: [
@@ -184,21 +185,21 @@ export const about: Seiten['about'] = {
       'need offices, practices, commercial premises or halls cleaned several times a week: [office and practice cleaning](/leistungen/bueroreinigung), [industrial and warehouse cleaning](/leistungen/industrie-und-hallenreinigung)',
       'want cleaning, caretaking and grounds maintenance combined in one contract, as [facility services](/leistungen/facility-services)',
       'are planning a one-off job, such as a [deep clean](/leistungen/sonderreinigungen), [construction cleaning](/leistungen/baureinigung) before handover or [end-of-tenancy cleaning](/leistungen/umzugsreinigung) between two tenancies',
-      `are a private client with a villa, a second home, a private jet or a yacht to be cared for: that is what [${premiumLabel}](/premium) is for`,
+      `are a private client with a villa, a second home or a yacht to be looked after, or a private jet cabin to be cleaned: that is what [${premiumLabel}](/premium) is for`,
     ],
     noTitle: 'We are not the right choice for',
     no: [
       'winter services and snow clearing',
       'an on-call service around the clock',
       'the end-of-tenancy cleaning of a single rented flat on behalf of the tenant',
-      'the regular cleaning of ordinary private homes',
+      'cleaning for ordinary private households',
       'landscaping and new gardens',
     ],
-    note: `What a particular service does not cover is listed on its page under “${ui.notIncluded}”.`,
+    note: `What a service does not cover is listed on its page under [Services](/leistungen), in the section ‘${ui.notIncluded}’.`,
   },
   work: {
     title: 'How we work',
-    intro: 'Four rules for every assignment, whether a stairwell, an office or a hall.',
+    intro: 'Four principles that guide how we approach an assignment.',
     items: [
       {
         title: 'The property first, then the price',
@@ -213,14 +214,14 @@ export const about: Seiten['about'] = {
         paragraphs: [
           'The quote lists the rooms and tasks, the frequency and the working hours. Once you accept, it becomes the agreement, including how we get into the building, for example with a key or badge.',
           'We state just as clearly what is not included, together with the service that covers it.',
-          '[End-of-tenancy cleaning](/leistungen/umzugsreinigung) comes with our handover guarantee: if the property management finds fault with our cleaning at the handover, we clean again free of charge.',
+          '[End-of-tenancy cleaning](/leistungen/umzugsreinigung) comes with our handover guarantee: if the property management raises a complaint about our cleaning at the handover, we clean again free of charge. The quote sets out exactly what the guarantee covers.',
         ],
       },
       {
-        title: 'Short lines, fixed rules',
+        title: 'Direct contact',
         paragraphs: [
-          `Enquiries go straight to the managing director, with no one in between. The answer reaches you ${responseTime}.`,
-          'For premium clients, it is always the same team. There, we handle keys and alarms according to fixed rules, and we sign a non-disclosure agreement on request.',
+          'Your enquiry is handled personally by our managing director.',
+          'If you combine several services as [facility services](/leistungen/facility-services), you have one contact person with us for all of them.',
         ],
       },
       {
@@ -237,19 +238,19 @@ export const about: Seiten['about'] = {
     kind: 'table',
     id: 'firmenangaben',
     title: 'Company details you can check',
-    intro: 'For your supplier records: our details, and the public register in which you can check each of them yourself.',
-    columns: ['Detail', 'Entry', 'Where to check'],
+    intro: `${company.premiumBrand ? `${company.brand} is the brand of ${legalNameText}. ` : ''}For your supplier records: you will find each detail below in the [UID register](${uidRegister}) of the Federal Statistical Office, together with the field in which it appears there.`,
+    columns: ['Detail', 'Entry', 'Field in the UID register'],
     rows: [
-      ['Company name', company.legalName, '[Zefix](https://www.zefix.admin.ch/en/search/entity/list/firm/412716), the federal index of companies'],
-      ['Registered office and address', `Registered office ${company.seat} LU, ${company.address.street}, ${company.address.postalCode} ${company.address.city}`, '[UID register](https://www.uid.admin.ch/Detail.aspx?uid_id=CHE108687458) of the Federal Statistical Office'],
-      ['Company number', `${company.registerNumber}, ${register}`, '[Commercial register extract](https://lu.chregister.ch/cr-portal/auszug/auszug.xhtml?uid=CHE-108.687.458) of the canton of Lucerne'],
-      ['UID (business identification number)', company.uid, 'UID register, core data'],
-      ['VAT number', company.vat, 'UID register, VAT data'],
+      ['Company name', company.legalName, '‘Name’'],
+      ['Registered office and address', `Registered office ${company.seat} LU. The address ${company.address.street}, ${company.address.postalCode} ${company.address.city} is in the municipality of ${company.seat}.`, '‘Municipality’ and address'],
+      ['Company number', `${company.registerNumber}, ${register}`, '‘Reference number’ under register of commerce data'],
+      ['UID (business identification number)', company.uid, '‘UID’ under core properties'],
+      // The register shows the suffix MWST in the English view too; the FTA does not allow ‘VAT’ (estv.admin.ch)
+      ['VAT number', company.vat, '‘VAT number’ under VAT data'],
     ],
     note: 'For checking quotes and invoices: the Code of Obligations provides that the name entered in the commercial register appears in full and unamended in correspondence and on invoices (Art. 954a CO). Shortened names, logos and trade names may also be used. Under the VAT Act, an invoice as a rule also states the number under which the company is entered in the VAT register (Art. 26 VAT Act).',
     sources: [
-      { label: 'Zefix, entry for BGS - Gebäudeservice GmbH', href: 'https://www.zefix.admin.ch/en/search/entity/list/firm/412716' },
-      { label: 'UID register, CHE-108.687.458', href: 'https://www.uid.admin.ch/Detail.aspx?uid_id=CHE108687458' },
+      { label: `UID register, ${company.uid}`, href: uidRegister },
       { label: 'Art. 954a Code of Obligations (CO)', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/en#art_954_a' },
       { label: 'Art. 26 Value Added Tax Act (VAT Act)', href: 'https://www.fedlex.admin.ch/eli/cc/2009/615/en#art_26' },
     ],
@@ -258,12 +259,12 @@ export const about: Seiten['about'] = {
   },
   languages: {
     title: 'Four languages',
-    text: 'Questions and arrangements are possible in four languages: German, English, French, Italian. That helps international companies, owners who live abroad and tenants who would rather ask their question in their own language.',
+    text: 'You can ask questions and make arrangements with us in German, English, French or Italian. That helps international companies, owners who live abroad and tenants who would rather ask their question in their own language.',
     switchLabel: 'This page in',
   },
   region: {
     title: 'Five cantons, the same terms',
-    text: `From ${company.address.city}, we work throughout five cantons, with all our services. The travel terms are the same in each of them.`,
+    text: `From ${company.address.city}, we offer every service throughout the area, with the same travel terms everywhere.`,
     listLabel: 'The cantons in detail',
     link: 'Service area with map',
   },

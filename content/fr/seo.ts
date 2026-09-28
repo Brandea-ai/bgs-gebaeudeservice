@@ -120,8 +120,8 @@ export const pages = {
   },
   '/ueber-uns': {
     label: 'À propos',
-    title: 'À propos : nettoyage et conciergerie depuis 2006',
-    description: `${company.legalName}, ${company.address.city} : notre façon de travailler, pour qui nous convenons et données du registre à vérifier. Devis gratuit après une visite.`,
+    title: 'À propos : nettoyage et conciergerie depuis 2006',
+    description: 'Notre façon de travailler, à qui nous nous adressons et nos données à vérifier dans le registre IDE. Devis gratuit après une visite.',
   },
   '/kontakt': {
     label: 'Contact',

@@ -150,11 +150,12 @@ export const home = {
   },
 }
 
+const uidRegister = `https://www.uid.admin.ch/Detail.aspx?uid_id=${company.uid.replace(/[-.]/g, '')}&lang=fr`
+const legalNameText = company.legalName.replace(' - ', '\u00a0-\u2060\u00a0')
+
 export const about = {
   h1: 'À propos : nettoyage et conciergerie d’immeubles depuis 2006',
-  lead: company.premiumBrand
-    ? `${company.brand} est la marque de ${company.legalName}, établie à ${company.address.city}. Nous nettoyons et entretenons des immeubles, des bureaux, des cabinets et des halles en Suisse centrale et en Argovie.`
-    : `${company.legalName}, établie à ${company.address.city}, nettoie et entretient des immeubles, des bureaux, des cabinets et des halles en Suisse centrale et en Argovie.`,
+  lead: `Nous nettoyons et entretenons des immeubles, des bureaux, des cabinets et des halles dans les cantons de ${cantonList}.`,
   promises: {
     title: 'Ce sur quoi vous pouvez compter',
     items: [
@@ -170,24 +171,25 @@ export const about = {
     title: 'Profil de l’entreprise',
     items: [
       { value: 'Depuis 2006', label: 'Expérience' },
-      { value: 'Plus de 50', label: 'Collaboratrices et collaborateurs' },
-      { value: 'Plus de 120', label: 'Clients' },
-      { value: 'CHF 10 millions', label: 'Couverture de la responsabilité civile d’entreprise' },
+      { value: 'Plus\u00a0de 50', label: 'Collaboratrices et collaborateurs' },
+      // « Plus de » reste groupé ; le montant garde son unité (mesuré à 360, 390, 1024 et 1440 px)
+      { value: 'Plus\u00a0de 120', label: 'Clients' },
+      { value: 'CHF 10\u00a0mio', label: 'Couverture de la responsabilité civile d’entreprise' },
     ],
     note: 'État : septembre 2026',
   },
   fit: {
-    title: 'Quand nous convenons, et quand ce n’est pas le cas',
+    title: 'Quand nous sommes le bon partenaire, et quand nous ne le sommes pas',
     intro: 'Nous préférons le dire avant le premier rendez-vous. Ainsi, personne ne perd de temps avec une demande qui ne nous correspond pas.',
-    yesTitle: 'Nous convenons si vous',
+    yesTitle: 'Nous sommes le bon partenaire si vous',
     yes: [
       'faites nettoyer ou entretenir un immeuble en tant que gérance, propriétaire ou communauté de PPE, avec la [conciergerie](/leistungen/hauswartung) et le [nettoyage d’entretien](/leistungen/unterhaltsreinigung)',
       'faites nettoyer des bureaux, des cabinets, des surfaces commerciales ou des halles plusieurs fois par semaine : [nettoyage de bureaux et de cabinets](/leistungen/bueroreinigung), [nettoyage industriel et de halles](/leistungen/industrie-und-hallenreinigung)',
       'souhaitez regrouper nettoyage, conciergerie et entretien des extérieurs dans un seul contrat, sous forme de [facility services](/leistungen/facility-services)',
       'prévoyez une intervention unique, par exemple un [nettoyage en profondeur](/leistungen/sonderreinigungen), le [nettoyage de fin de chantier](/leistungen/baureinigung) avant la remise ou le [nettoyage de fin de bail](/leistungen/umzugsreinigung) entre deux locations',
-      `faites entretenir à titre privé une villa, une résidence secondaire, un jet privé ou un yacht : c’est le rôle de [${premiumLabel}](/premium)`,
+      `faites entretenir à titre privé une villa, une résidence secondaire ou un yacht, ou nettoyer la cabine de votre jet privé : c’est le rôle de [${premiumLabel}](/premium)`,
     ],
-    noTitle: 'Nous ne convenons pas pour',
+    noTitle: 'Nous ne sommes pas le bon partenaire pour',
     no: [
       'le service hivernal et le déneigement',
       'un service de piquet 24 heures sur 24',
@@ -195,11 +197,11 @@ export const about = {
       'le nettoyage de ménages privés ordinaires',
       'l’aménagement paysager et les nouveaux jardins',
     ],
-    note: `Ce qu’une prestation ne comprend pas figure sur sa page, sous « ${ui.notIncluded} ».`,
+    note: `Ce qu’une prestation ne comprend pas figure sur sa page, sous [Prestations](/leistungen), dans la rubrique « ${ui.notIncluded} ».`,
   },
   work: {
     title: 'Notre façon de travailler',
-    intro: 'Quatre règles pour chaque mandat, qu’il s’agisse d’une cage d’escalier, d’un bureau ou d’une halle.',
+    intro: 'Quatre principes qui guident notre façon d’aborder un mandat.',
     items: [
       {
         title: 'D’abord le bien, ensuite le prix',
@@ -214,14 +216,14 @@ export const about = {
         paragraphs: [
           'Le devis indique les pièces et les tâches, la fréquence et les horaires d’intervention. Avec votre accord, il devient la convention, y compris la manière dont nous accédons au bâtiment, par exemple avec une clé ou un badge.',
           'Ce qui n’est pas compris, nous le disons tout aussi clairement, avec la prestation qui convient.',
-          'Le [nettoyage de fin de bail](/leistungen/umzugsreinigung) est assorti de notre garantie de remise : si la gérance trouve à redire à notre nettoyage lors de la remise, nous nettoyons à nouveau gratuitement.',
+          'Le [nettoyage de fin de bail](/leistungen/umzugsreinigung) est assorti de notre garantie de remise : si la gérance émet une réclamation sur notre nettoyage lors de l’état des lieux, nous repassons gratuitement. Le devis précise ce que couvre la garantie.',
         ],
       },
       {
-        title: 'Des échanges directs, des règles fixes',
+        title: 'Des échanges directs',
         paragraphs: [
-          `Les demandes parviennent directement au directeur, sans intermédiaire. La réponse vous parvient ${responseTime}.`,
-          'Pour la clientèle Premium, c’est toujours la même équipe. Nous y gérons les clés et l’alarme selon des règles fixes et signons sur demande un accord de confidentialité.',
+          'Notre directeur traite personnellement votre demande.',
+          'Si vous regroupez plusieurs prestations sous forme de [facility services](/leistungen/facility-services), vous avez chez nous un seul interlocuteur pour l’ensemble.',
         ],
       },
       {
@@ -238,19 +240,19 @@ export const about = {
     kind: 'table' as const,
     id: 'firmenangaben',
     title: 'Données de l’entreprise à vérifier',
-    intro: 'Pour votre dossier fournisseur : nos données, et le registre public où vous pouvez vérifier chacune d’elles.',
-    columns: ['Donnée', 'Inscription', 'Où vérifier'],
+    intro: `${company.premiumBrand ? `${company.brand} est la marque de ${legalNameText}. ` : ''}Pour votre dossier fournisseur : vous trouvez chaque donnée ci-dessous dans le [registre IDE](${uidRegister}) de l’Office fédéral de la statistique, avec le champ où elle figure.`,
+    columns: ['Donnée', 'Inscription', 'Champ du registre IDE'],
     rows: [
-      ['Raison de commerce', company.legalName, '[Zefix](https://www.zefix.admin.ch/fr/search/entity/list/firm/412716), l’index central des raisons de commerce de la Confédération'],
-      ['Siège et adresse', `Siège ${company.seat} LU, ${company.address.street}, ${company.address.postalCode} ${company.address.city}`, '[Registre IDE](https://www.uid.admin.ch/Detail.aspx?uid_id=CHE108687458) de l’Office fédéral de la statistique'],
-      ['Numéro du registre du commerce', `${company.registerNumber}, ${register}`, '[Extrait du registre du commerce](https://lu.chregister.ch/cr-portal/auszug/auszug.xhtml?uid=CHE-108.687.458) du canton de Lucerne'],
-      ['IDE (numéro d’identification des entreprises)', company.uid, 'Registre IDE, caractéristiques principales'],
-      ['Numéro TVA', company.vat, 'Registre IDE, données TVA'],
+      ['Raison de commerce', company.legalName, '« Nom »'],
+      ['Siège et adresse', `Siège ${company.seat} LU. L’adresse ${company.address.street}, ${company.address.postalCode} ${company.address.city} se trouve dans la commune d’${company.seat}.`, '« Commune » et adresse du siège'],
+      ['Numéro du registre du commerce', `${company.registerNumber}, ${register}`, '« Numéro de référence » sous Données du registre du commerce'],
+      ['IDE (numéro d’identification des entreprises)', company.uid, '« IDE » sous Caractères clés'],
+      // Suffixe TVA comme dans le registre IDE en français et dans les mentions légales (ESTV : MWST, TVA ou IVA)
+      ['Numéro TVA', `${company.uid} TVA`, '« Numéro TVA » sous Données TVA'],
     ],
     note: 'Pour contrôler devis et factures : le CO prévoit que la raison de commerce inscrite au registre du commerce figure de manière complète et inchangée dans la correspondance et sur les factures (art. 954a CO). Des abréviations, des logos et des noms commerciaux peuvent s’y ajouter. Selon la loi sur la TVA, une facture mentionne en règle générale aussi le numéro sous lequel l’entreprise est inscrite au registre des assujettis (art. 26 LTVA).',
     sources: [
-      { label: 'Zefix, inscription de BGS - Gebäudeservice GmbH', href: 'https://www.zefix.admin.ch/fr/search/entity/list/firm/412716' },
-      { label: 'Registre IDE, CHE-108.687.458', href: 'https://www.uid.admin.ch/Detail.aspx?uid_id=CHE108687458' },
+      { label: `Registre IDE, ${company.uid}`, href: uidRegister },
       { label: 'Art. 954a Code des obligations (CO)', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_954_a' },
       { label: 'Art. 26 Loi sur la TVA (LTVA)', href: 'https://www.fedlex.admin.ch/eli/cc/2009/615/fr#art_26' },
     ],
@@ -259,12 +261,12 @@ export const about = {
   },
   languages: {
     title: 'Quatre langues',
-    text: 'Questions et arrangements sont possibles chez nous en quatre langues : allemand, anglais, français, italien. Cela aide les entreprises internationales, les propriétaires domiciliés à l’étranger et les locataires qui préfèrent poser leur question dans leur langue.',
+    text: 'Vous pouvez nous poser vos questions et convenir des détails en allemand, anglais, français ou italien. Cela aide les entreprises internationales, les propriétaires domiciliés à l’étranger et les locataires qui préfèrent poser leur question dans leur langue.',
     switchLabel: 'Cette page en',
   },
   region: {
     title: 'Cinq cantons, les mêmes conditions',
-    text: `Depuis ${company.address.city}, nous intervenons dans cinq cantons entiers, avec toutes nos prestations. Les conditions de déplacement sont les mêmes dans chacun d’eux.`,
+    text: `Depuis ${company.address.city}, nous proposons chaque prestation dans toute la zone, aux mêmes conditions de déplacement.`,
     listLabel: 'Les cantons en détail',
     link: 'Zone d’intervention avec carte',
   },

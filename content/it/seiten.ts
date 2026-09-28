@@ -149,11 +149,12 @@ export const home = {
   },
 }
 
+const uidRegister = `https://www.uid.admin.ch/Detail.aspx?uid_id=${company.uid.replace(/[-.]/g, '')}&lang=it`
+const legalNameText = company.legalName.replace(' - ', '\u00a0-\u2060\u00a0')
+
 export const about = {
   h1: 'Chi siamo: pulizia e custodia di stabili dal 2006',
-  lead: company.premiumBrand
-    ? `${company.brand} è il marchio della ${company.legalName} di ${company.address.city}. Puliamo e curiamo stabili abitativi, uffici, studi e capannoni nella Svizzera centrale e in Argovia.`
-    : `La ${company.legalName} di ${company.address.city} pulisce e cura stabili abitativi, uffici, studi e capannoni nella Svizzera centrale e in Argovia.`,
+  lead: `Puliamo e curiamo stabili abitativi, uffici, studi e capannoni nei Cantoni di ${cantonListIt}.`,
   promises: {
     title: 'Su che cosa può contare',
     items: [
@@ -171,7 +172,8 @@ export const about = {
       { value: 'Dal 2006', label: 'Esperienza' },
       { value: 'Oltre 50', label: 'Collaboratrici e collaboratori' },
       { value: 'Oltre 120', label: 'Clienti' },
-      { value: 'CHF 10 mio.', label: 'Copertura della responsabilità civile aziendale' },
+      // L’importo resta unito alla sua unità (misurato a 360, 390 e 1024 px)
+      { value: 'CHF 10\u00a0mio.', label: 'Copertura della responsabilità civile aziendale' },
     ],
     note: 'Stato: settembre 2026',
   },
@@ -184,7 +186,7 @@ export const about = {
       'desidera far pulire più volte alla settimana uffici, studi, superfici commerciali o capannoni: [pulizia di uffici e studi](/leistungen/bueroreinigung), [pulizia industriale e di capannoni](/leistungen/industrie-und-hallenreinigung)',
       'vuole riunire pulizia, custodia e cura degli esterni in un unico contratto, come [facility services](/leistungen/facility-services)',
       'pianifica un intervento unico, ad esempio una [pulizia a fondo](/leistungen/sonderreinigungen), la [pulizia di fine cantiere](/leistungen/baureinigung) prima della consegna o la [pulizia di fine locazione](/leistungen/umzugsreinigung) tra due locazioni',
-      `come cliente privato desidera la cura di una villa, di una residenza secondaria, di un jet privato o di uno yacht: a questo serve [${premiumLabel}](/premium)`,
+      `come cliente privato desidera la cura di una villa, di una residenza secondaria o di uno yacht, oppure la pulizia della cabina del Suo jet privato: a questo serve [${premiumLabel}](/premium)`,
     ],
     noTitle: 'Non facciamo al caso Suo per',
     no: [
@@ -194,11 +196,11 @@ export const about = {
       'la pulizia di normali economie domestiche',
       'la costruzione di giardini e le nuove sistemazioni a verde',
     ],
-    note: `Ciò che un singolo servizio non comprende è indicato sulla sua pagina, alla voce «${ui.notIncluded}».`,
+    note: `Ciò che un servizio non comprende è indicato sulla sua pagina, sotto [Servizi](/leistungen), alla voce «${ui.notIncluded}».`,
   },
   work: {
     title: 'Come lavoriamo',
-    intro: 'Quattro regole per ogni incarico, che si tratti di una scala, di un ufficio o di un capannone.',
+    intro: 'Quattro principi con cui affrontiamo un incarico.',
     items: [
       {
         title: 'Prima l’immobile, poi il prezzo',
@@ -213,14 +215,14 @@ export const about = {
         paragraphs: [
           'L’offerta indica locali e compiti, cadenza e orari d’intervento. Con la Sua conferma diventa l’accordo, compreso il modo in cui accediamo all’edificio, ad esempio con chiave o badge.',
           'Ciò che non è compreso lo diciamo con la stessa chiarezza, insieme al servizio adatto.',
-          'Per la [pulizia di fine locazione](/leistungen/umzugsreinigung) vale la nostra garanzia di consegna: se l’amministrazione ha qualcosa da ridire sulla nostra pulizia alla consegna, puliamo di nuovo gratuitamente.',
+          'Per la [pulizia di fine locazione](/leistungen/umzugsreinigung) vale la nostra garanzia di consegna: se in occasione della riconsegna l’amministrazione contesta qualcosa della nostra pulizia, ripuliamo gratuitamente. L’offerta precisa che cosa copre la garanzia.',
         ],
       },
       {
-        title: 'Vie brevi, regole fisse',
+        title: 'Contatti diretti',
         paragraphs: [
-          `Le richieste arrivano direttamente al gerente, senza intermediari. La risposta Le arriva ${responseTime}.`,
-          'Per la clientela premium interviene sempre lo stesso team. Lì gestiamo chiavi e allarme secondo regole fisse e, su richiesta, firmiamo un accordo di riservatezza.',
+          'La Sua richiesta è trattata personalmente dal gerente.',
+          'Se riunisce più servizi come [facility services](/leistungen/facility-services), presso di noi ha un solo interlocutore per tutti.',
         ],
       },
       {
@@ -237,19 +239,19 @@ export const about = {
     kind: 'table' as const,
     id: 'firmenangaben',
     title: 'Dati aziendali da verificare',
-    intro: 'Per il Suo dossier fornitori: i nostri dati e il registro pubblico in cui può verificare ciascuno di essi.',
-    columns: ['Dato', 'Iscrizione', 'Dove verificare'],
+    intro: `${company.premiumBrand ? `${company.brand} è il marchio della ${legalNameText}. ` : ''}Per il Suo dossier fornitori: trova ogni dato qui sotto nel [registro IDI](${uidRegister}) dell’Ufficio federale di statistica, con il campo in cui figura.`,
+    columns: ['Dato', 'Iscrizione', 'Campo nel registro IDI'],
     rows: [
-      ['Ditta', company.legalName, '[Zefix](https://www.zefix.admin.ch/it/search/entity/list/firm/412716), l’indice centrale delle ditte della Confederazione'],
-      ['Sede e indirizzo', `Sede ${company.seat} LU, ${company.address.street}, ${company.address.postalCode} ${company.address.city}`, '[Registro IDI](https://www.uid.admin.ch/Detail.aspx?uid_id=CHE108687458) dell’Ufficio federale di statistica'],
-      ['Numero di registro di commercio', `${company.registerNumber}, ${registerIt}`, '[Estratto del registro di commercio](https://lu.chregister.ch/cr-portal/auszug/auszug.xhtml?uid=CHE-108.687.458) del Cantone di Lucerna'],
-      ['IDI (numero d’identificazione delle imprese)', company.uid, 'Registro IDI, caratteristiche principali'],
-      ['Numero IVA', company.vat, 'Registro IDI, dati IVA'],
+      ['Ditta', company.legalName, '«Nome»'],
+      ['Sede e indirizzo', `Sede ${company.seat} LU. L’indirizzo ${company.address.street}, ${company.address.postalCode} ${company.address.city} si trova nel Comune di ${company.seat}.`, '«Comune» e indirizzo della sede'],
+      ['Numero di registro di commercio', `${company.registerNumber}, ${registerIt}`, '«Numero di riferimento» sotto Dati del registro di commercio'],
+      ['IDI (numero d’identificazione delle imprese)', company.uid, '«IDI» sotto Caratteristiche di base'],
+      // Suffisso IVA come nel registro IDI in italiano e nelle note legali (AFC: MWST, TVA o IVA)
+      ['Numero IVA', `${company.uid} IVA`, '«Numero IVA» sotto Dati dell’IVA'],
     ],
     note: 'Per controllare offerte e fatture: il CO prevede che la ditta iscritta nel registro di commercio figuri in modo completo e senza modifiche nella corrispondenza e sulle fatture (art. 954a CO). Abbreviazioni, simboli e nomi commerciali possono essere usati in aggiunta. Secondo la legge sull’IVA, di regola una fattura indica anche il numero con cui l’impresa è iscritta nel registro dei contribuenti (art. 26 LIVA).',
     sources: [
-      { label: 'Zefix, iscrizione della BGS - Gebäudeservice GmbH', href: 'https://www.zefix.admin.ch/it/search/entity/list/firm/412716' },
-      { label: 'Registro IDI, CHE-108.687.458', href: 'https://www.uid.admin.ch/Detail.aspx?uid_id=CHE108687458' },
+      { label: `Registro IDI, ${company.uid}`, href: uidRegister },
       { label: 'Art. 954a Codice delle obbligazioni (CO)', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/it#art_954_a' },
       { label: 'Art. 26 Legge sull’IVA (LIVA)', href: 'https://www.fedlex.admin.ch/eli/cc/2009/615/it#art_26' },
     ],
@@ -258,12 +260,12 @@ export const about = {
   },
   languages: {
     title: 'Quattro lingue',
-    text: 'Domande e accordi sono possibili da noi in quattro lingue: tedesco, inglese, francese, italiano. Questo aiuta le aziende internazionali, i proprietari domiciliati all’estero e le inquiline e gli inquilini che preferiscono porre la loro domanda nella propria lingua.',
+    text: 'Da noi può porre domande e prendere accordi in tedesco, inglese, francese o italiano. Questo aiuta le aziende internazionali, i proprietari domiciliati all’estero e le inquiline e gli inquilini che preferiscono porre la loro domanda nella propria lingua.',
     switchLabel: 'Questa pagina in',
   },
   region: {
     title: 'Cinque cantoni, le stesse condizioni',
-    text: `Da ${company.address.city} lavoriamo in cinque interi cantoni, con tutti i servizi. Le condizioni di trasferta sono le stesse in ognuno di essi.`,
+    text: `Da ${company.address.city} offriamo ogni servizio in tutta la zona, alle stesse condizioni di trasferta.`,
     listLabel: 'I cantoni in dettaglio',
     link: 'Zona d’intervento con carta',
   },

@@ -122,7 +122,7 @@ export const pages = {
   '/ueber-uns': {
     label: 'Über uns',
     title: 'Über uns: Reinigung und Hauswartung seit 2006',
-    description: `${company.legalName} aus ${company.address.city}: wie wir arbeiten, für wen wir passen und Registerdaten zum Nachprüfen. Kostenlose Offerte nach Besichtigung.`,
+    description: 'Wie wir arbeiten, für wen wir passen und unsere Firmenangaben zum Nachprüfen im UID-Register. Kostenlose Offerte nach Besichtigung.',
   },
   '/kontakt': {
     label: 'Kontakt',
