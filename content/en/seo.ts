@@ -91,7 +91,7 @@ export const pages: Dictionary['pages'] = {
   },
   '/leistungen/facility-services': {
     label: 'Facility services',
-    title: 'Facility services in Lucerne and Zug, one contract',
+    title: 'Facility services in Lucerne & Zug, one contract',
     description: 'Facility services in Lucerne, Zug and beyond: cleaning, caretaking and grounds maintenance under one contract. Free quote after a site visit.',
   },
   '/einzugsgebiet': {

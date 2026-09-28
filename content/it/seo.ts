@@ -61,7 +61,7 @@ export const pages = {
   },
   '/leistungen/umzugsreinigung': {
     label: 'Pulizia di fine locazione',
-    title: 'Pulizia di fine locazione a Lucerna per amministrazioni',
+    title: 'Pulizia di fine locazione a Lucerna per locatori',
     description: 'Pulizia di fine locazione con garanzia di consegna per amministrazioni, proprietari e aziende a Lucerna e Zugo. Offerta gratuita dopo il sopralluogo.',
   },
   '/leistungen/baureinigung': {
@@ -91,7 +91,7 @@ export const pages = {
   },
   '/leistungen/facility-services': {
     label: 'Facility services',
-    title: 'Facility services a Lucerna e Zugo, un solo contratto',
+    title: 'Facility services a Lucerna e Zugo, un contratto',
     description: 'Facility services a Lucerna, Zugo e dintorni: pulizia, custodia e cura delle aree esterne in un unico contratto. Offerta gratuita dopo il sopralluogo.',
   },
   '/einzugsgebiet': {

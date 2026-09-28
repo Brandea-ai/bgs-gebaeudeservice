@@ -61,7 +61,7 @@ export const pages = {
   },
   '/leistungen/umzugsreinigung': {
     label: 'Umzugsreinigung',
-    title: 'Umzugsreinigung Luzern für Verwaltungen, Eigentümer',
+    title: 'Umzugsreinigung Luzern: Verwaltungen, Eigentümer',
     description: 'Umzugsreinigung und Endreinigung mit Abnahmegarantie für Verwaltungen, Eigentümer und Unternehmen in Luzern und Zug. Kostenlose Offerte nach Besichtigung.',
   },
   '/leistungen/baureinigung': {
@@ -91,7 +91,7 @@ export const pages = {
   },
   '/leistungen/facility-services': {
     label: 'Facility Services',
-    title: 'Facility Services in Luzern und Zug aus einer Hand',
+    title: 'Facility Services aus einer Hand, Luzern und Zug',
     description: 'Facility Services in Luzern, Zug und Umgebung: Reinigung, Hauswartung und Umgebungspflege in einem Vertrag. Kostenlose Offerte nach Besichtigung.',
   },
   '/einzugsgebiet': {

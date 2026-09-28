@@ -91,7 +91,7 @@ export const pages = {
   },
   '/leistungen/facility-services': {
     label: 'Facility services',
-    title: 'Facility services à Lucerne et Zoug, un seul contrat',
+    title: 'Facility services à Lucerne et Zoug, un contrat',
     description: 'Facility services à Lucerne, Zoug et environs : nettoyage, conciergerie et entretien des abords dans un seul contrat. Devis gratuit après une visite.',
   },
   '/einzugsgebiet': {
