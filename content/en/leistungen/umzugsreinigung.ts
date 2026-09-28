@@ -6,12 +6,12 @@ export const umzugsreinigung: ServicePageContent = {
   eyebrow: 'Change of tenant and handover',
   h1: 'Move-out and end-of-tenancy cleaning with a handover guarantee',
   lead: [
-    'When a flat is handed back, the property management checks it room by room, from the oven to the cellar compartment, and records every defect in the handover report. There is usually little time for the cleaning between moving out and the handover, and the date is fixed.',
-    'We carry out end-of-tenancy cleaning (Umzugsreinigung) of flats and business premises for property managers, owners and businesses, with a handover guarantee. On this page you will also find the handover checklist to print, the rules on notifying defects and the notice dates in the cantons of Lucerne, Zug, Aargau, Nidwalden and Obwalden.',
+    'When a flat is handed back, the property manager checks it room by room, from the oven to the cellar compartment, and records every defect in the handover report. Between the handover report and the new tenants moving in there is usually little time for the cleaning, and the move-in date is fixed.',
+    'We carry out end-of-tenancy cleaning (Umzugsreinigung) of flats and business premises for property managers, owners and businesses, with a handover guarantee. On this page you will also find the handover checklist to print, the rules on notifying defects, and the termination dates for Zug and Obwalden with notes for Lucerne, Aargau and Nidwalden.',
   ],
   facts: [
     { label: 'Guarantee', value: 'Re-cleaning if our cleaning is objected to, not for damage or wear' },
-    { label: 'Timing', value: 'Between moving out and the handover, or straight after the handover report' },
+    { label: 'Timing', value: 'Before the handover or, for property managers, after the handover report' },
     { label: 'When to ask', value: 'As soon as notice has been received' },
     { label: 'Not for', value: 'Tenants of individual flats' },
   ],
@@ -38,9 +38,9 @@ export const umzugsreinigung: ServicePageContent = {
     {
       title: 'The handover guarantee and its limits',
       paragraphs: [
-        'If the property management raises a complaint about our cleaning at the handover, we clean again free of charge. The details are set out in the quote.',
+        'If the property manager raises a complaint about our cleaning at the handover, we clean again free of charge. The details are set out in the quote.',
         'The guarantee relates to our cleaning. Damage, wear and tear or repairs recorded at the handover do not concern the cleaning and are therefore not covered.',
-        'A film of grease in the oven or a limescale mark on a tap is therefore covered by the guarantee. A burn mark on the parquet, a scratch on the hob or a hole in the wall are not; they call for tradespeople.',
+        'Typical complaints about the cleaning are a film of grease in the oven or limescale on a tap. If the surface itself is damaged, that counts as damage: corroded chrome, for example, a burn mark on the parquet or a scratch on the hob. No re-cleaning can put it right; it calls for tradespeople.',
       ],
     },
     {
@@ -48,13 +48,13 @@ export const umzugsreinigung: ServicePageContent = {
       paragraphs: [
         'Property managers get flats ready for occupancy between two tenancies. If the previous tenants did not clean, or did not clean properly, the handover report comes first and our cleaning second. That way you can prove your claims against the tenants.',
         'Owners and condominium owners need the final clean before handing over to the buyer or before letting the flat for the first time.',
-        'Businesses hand back office and business premises at the end of the lease. For business premises the notice period is at least six months, enough time to schedule the cleaning after the clear-out and any strip-out works.',
+        'Businesses hand back office and business premises at the end of the lease. With a lease of limited duration, that date is known from the start. If a lease of indefinite duration is terminated with ordinary notice, the notice period for business premises is at least six months. Either way there is time to schedule the cleaning after the clear-out and any strip-out works.',
       ],
     },
     {
       title: 'What needs to be ready on cleaning day',
       paragraphs: [
-        'Only an empty flat can be cleaned thoroughly. If the cleaning takes place shortly before the handover, the property management sees exactly the condition we left behind.',
+        'Only an empty flat can be cleaned thoroughly. When businesses hand back premises or owners hand over to a buyer, the cleaning is best done shortly before the handover. The landlord or the buyer then finds exactly the condition we left behind.',
       ],
       items: [
         'Furniture, curtains and personal belongings have been cleared out, including from the cellar and attic',
@@ -93,7 +93,7 @@ export const umzugsreinigung: ServicePageContent = {
       kind: 'checklist',
       id: 'abnahme-checkliste',
       title: 'Handover checklist room by room',
-      intro: 'To print for the return of a flat. The list shows where the handover inspection looks closely and serves as a framework for your report. What our cleaning covers is set out under ‘What the final clean includes’.',
+      intro: 'To print for the return of a flat. The list shows what is checked closely at the handover and serves as a framework for your report. It is a checklist for the inspection, not a list of our services.',
       printable: true,
       updated: '2026-09-28',
       groups: [
@@ -164,22 +164,23 @@ export const umzugsreinigung: ServicePageContent = {
     {
       kind: 'table',
       id: 'kuendigungstermine',
-      title: 'Notice dates by canton',
-      intro: 'Flats are terminated with at least three months’ notice and business premises with at least six months’ notice, in each case for the date stated in the lease. If the lease states none, the date fixed by local custom applies, and without such custom the end of a three-month period of the lease (Art. 266a, 266c and 266d CO). Handovers and final cleans cluster around these dates.',
+      title: 'Termination dates by canton',
+      intro: 'If a lease of indefinite duration is terminated with ordinary notice, the notice period is at least three months for flats and at least six months for business premises, in each case for the termination date stated in the lease. If the lease states none, the date fixed by local custom applies, and without such custom the end of a three-month period of the lease (Art. 266a, 266c and 266d CO). A lease of limited duration ends without notice when the agreed term expires (Art. 266 CO).',
       printable: true,
       updated: '2026-09-28',
-      columns: ['Canton', 'Dates for flats if the lease states none', 'For planning'],
+      columns: ['Canton', 'Customary local dates for flats', 'For planning'],
       rows: [
-        ['Lucerne', 'Usually the end of a month; dates and notice periods are set out in the lease', 'Changes of tenant are possible at almost any month end. The lease gives the exact day.'],
+        ['Lucerne', 'Not stated on the canton’s website. The Lucerne conciliation authority for tenancy matters can advise.', 'According to the canton, notice is usually given for the end of a month, and dates and notice periods are mostly set out in the lease.'],
         ['Zug', 'End of March, end of June, end of September', 'Handovers and final cleans cluster on these three dates.'],
-        ['Obwalden', 'End of March, end of June, end of September', 'Notice must be given in the fourth month before the end of the lease. From then on, the handover date is fixed.'],
-        ['Aargau', 'The lease is decisive. The district’s conciliation authority for tenancy matters can say whether a local custom applies.', 'Include the date from the lease in your enquiry.'],
-        ['Nidwalden', 'The lease is decisive. The Nidwalden conciliation authority can say whether a local custom applies.', 'Take the notice date and the handover day from the lease and state them in your enquiry.'],
+        ['Obwalden', 'End of March, end of June, end of September', 'For a handover at the end of June, notice must be received by the end of March at the latest. From then on, the handover date is fixed.'],
+        ['Aargau and Nidwalden', 'Not stated on the cantons’ websites. The conciliation authorities for tenancy matters can advise, in Aargau the one for the district.', 'State the termination date given in the notice in your enquiry.'],
       ],
-      note: 'If the tenant moves out before the notice date and proposes an acceptable replacement tenant (Art. 264 CO), the handover can fall on any date. So ask for the cleaning as soon as a handover date is fixed.',
+      note: 'Tenants can also return the flat before the termination date. They are only released from their obligations if they propose a new tenant who is acceptable to the landlord (Art. 264 CO). The handover can therefore fall on any date. Ask for the cleaning as soon as a handover date is fixed.',
       sources: [
-        { label: 'Code of Obligations, Art. 264, 266a, 266c and 266d (Fedlex, as at 1 January 2026)', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/en#art_266_c' },
+        { label: 'Code of Obligations, Art. 264, 266, 266a, 266c and 266d (Fedlex, as at 1 January 2026)', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/en#art_266_c' },
+        { label: 'Civil Procedure Code, Art. 201 para. 2 (Fedlex, as at 1 July 2026)', href: 'https://www.fedlex.admin.ch/eli/cc/2010/262/en#art_201' },
         { label: 'Canton of Lucerne: renting a flat (in German)', href: 'https://gruezi.lu.ch/wohnen/wohnung_mieten' },
+        { label: 'Canton of Lucerne: conciliation authority for tenancy (in German)', href: 'https://gerichte.lu.ch/organisation/schlichtungsbehoerden/miete_pacht' },
         { label: 'Canton of Zug: tenancy law FAQ (in German)', href: 'https://zg.ch/de/recht-justiz/zivilverfahren/schlichtung/faq-zum-mietrecht' },
         { label: 'Canton of Obwalden: conciliation authority (in German)', href: 'https://www.ow.ch/fachbereiche/2131' },
         { label: 'Canton of Aargau: conciliation authorities for tenancy (in German)', href: 'https://www.ag.ch/de/ueber-uns/gerichte-kanton-aargau/organisation/schlichtungsbehoerden/schlichtungsbehoerden-fuer-miete-und-pacht' },
@@ -190,7 +191,7 @@ export const umzugsreinigung: ServicePageContent = {
   steps: [
     {
       title: 'Fixing the date',
-      text: 'We schedule the cleaning between moving out and the handover, with as little time in between as possible, and agree with you how the keys are handed over.',
+      text: 'For property managers, the cleaning takes place between the handover report and the new tenants moving in; for owners and businesses, between moving out and the handover. We agree with you how the keys are handed over.',
     },
     {
       title: 'Final clean',
@@ -198,39 +199,39 @@ export const umzugsreinigung: ServicePageContent = {
     },
     {
       title: 'Handover',
-      text: 'The property management inspects the flat. We put right any complaints about our cleaning under the handover guarantee.',
+      text: 'The property manager inspects the premises. We put right any complaints about our cleaning under the handover guarantee.',
     },
   ],
   faq: [
     {
       question: 'What does the price of end-of-tenancy cleaning depend on?',
       answer:
-        'On the effort in this particular flat: number of rooms and floor area, the condition of the kitchen and bathroom (grease, limescale, nicotine), the number and type of windows, whether slatted blinds, roller shutters or shutters are included and which ancillary rooms such as cellar, attic or balcony need cleaning. That is why we do not quote a flat rate per room. You receive the price in writing once we have seen the rooms.',
+        'On the effort in this particular flat: number of rooms and floor area, the condition of the kitchen and bathroom (grease, limescale, nicotine), the number and type of windows, whether slatted blinds, roller shutters or shutters are included and which ancillary rooms such as cellar, attic or balcony need cleaning. That is why we do not quote a flat rate per room.',
     },
     {
       question: 'Do you clean before or after the handover?',
       answer:
-        'Both are possible. If you are an owner or a business handing back premises, we clean before the handover and the handover guarantee applies. If the tenants returned the flat without cleaning it properly, we clean for the property management after the handover, once the defects are in the report.',
+        'Both are possible. When businesses hand back premises or owners hand over to a buyer, we clean beforehand. If the tenants returned the flat without cleaning it properly, we clean for the property manager once the defects are in the report.',
     },
     {
-      question: 'What should the property management look out for at the handover?',
+      question: 'What should property managers look out for at the handover?',
       answer:
         'Defects for which the tenant is answerable must be inspected at the return and notified immediately, otherwise the claims are lost (Art. 267a CO). So the report comes first and the cleaning second. What matters in the report is set out under [handover and notice of defects](/leistungen/umzugsreinigung#abnahme-maengelruege).',
     },
     {
-      question: 'What condition can the property management demand when a flat is returned?',
+      question: 'What condition can property managers demand when a flat is returned?',
       answer:
         'The flat must be returned in the condition resulting from use in accordance with the lease (Art. 267 CO). How thoroughly it has to be cleaned is usually governed by the lease. Normal wear and tear is not the tenant’s responsibility. This answer is not legal advice.',
     },
     {
       question: 'When should I ask for end-of-tenancy cleaning?',
       answer:
-        'As soon as notice has been received. For flats that leaves at least three months until the handover, for business premises at least six. In Zug and Obwalden, the end of March, June and September apply unless agreed otherwise; in Lucerne it is usually the end of any month.',
+        'As soon as notice has been received. With ordinary notice, there are at least three months until the end of the lease for flats and at least six for business premises. If the tenants return the flat earlier, for example with a new tenant, the handover can also be earlier. In Zug and Obwalden, the end of March, June and September apply unless agreed otherwise; in Lucerne, according to the canton, the dates are mostly set out in the lease.',
     },
     {
       question: 'Can cleaning start while furniture is still in the flat?',
       answer:
-        'Better not. The property management looks closely behind furniture, in cupboards and under fitted units, and these places can only be cleaned thoroughly once the rooms are empty. So plan the move-out before the cleaning, including the cellar and attic.',
+        'Better not. At the handover the property manager looks closely behind furniture, in cupboards and under fitted units, and these places can only be cleaned thoroughly once the rooms are empty. We therefore only start once all rooms have been cleared, including the cellar and attic.',
     },
     {
       question: 'Do you also clean offices and business premises before they are handed back?',
@@ -250,6 +251,6 @@ export const umzugsreinigung: ServicePageContent = {
   ],
   cta: {
     title: 'A quote for your handover date',
-    text: 'Tell us the address, the number of rooms or the floor area, the handover date and whether blinds or shutters are included. For several changes of tenant, the easiest way is to send us a list of addresses and dates. We will look at the rooms, and you will then receive the quote in writing, free of charge and non-binding.',
+    text: 'Tell us the address, the number of rooms or the floor area, the handover or move-in date and whether blinds or shutters are included. For several changes of tenant, the easiest way is to send us a list of addresses and dates. The quote is free of charge and non-binding.',
   },
 }

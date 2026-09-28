@@ -6,12 +6,12 @@ export const umzugsreinigung: ServicePageContent = {
   eyebrow: 'Changement de locataire et remise',
   h1: 'Nettoyage de fin de bail et de déménagement avec garantie de remise',
   lead: [
-    'Lors de la restitution d’un logement, la gérance le contrôle pièce par pièce, du four au compartiment de cave, et consigne chaque défaut dans le procès-verbal d’état des lieux. Entre le déménagement et l’état des lieux, il reste en général peu de temps pour le nettoyage, et la date est fixe.',
-    'Nous réalisons le nettoyage de fin de bail d’appartements et de surfaces commerciales pour des gérances, des propriétaires et des entreprises, avec garantie de remise. Vous trouverez aussi sur cette page la liste de contrôle à imprimer pour l’état des lieux, les règles sur l’avis des défauts et les termes de résiliation des cantons de Lucerne, Zoug, Argovie, Nidwald et Obwald.',
+    'Lors de la restitution d’un logement, la gérance le contrôle pièce par pièce, du four au compartiment de cave, et consigne chaque défaut dans le procès-verbal d’état des lieux. Entre le procès-verbal d’état des lieux et l’arrivée des nouveaux locataires, il reste en général peu de temps pour le nettoyage, et la date d’emménagement est fixe.',
+    'Nous réalisons le nettoyage de fin de bail d’appartements et de surfaces commerciales pour des gérances, des propriétaires et des entreprises, avec garantie de remise. Vous trouverez aussi sur cette page la liste de contrôle à imprimer pour l’état des lieux, les règles sur l’avis des défauts ainsi que les termes de résiliation de Zoug et d’Obwald, avec des indications pour Lucerne, Argovie et Nidwald.',
   ],
   facts: [
     { label: 'Garantie', value: 'Nouveau passage si notre nettoyage est contesté, pas pour les dégâts ni l’usure' },
-    { label: 'Moment', value: 'Entre le déménagement et l’état des lieux, ou juste après le procès-verbal' },
+    { label: 'Moment', value: 'Avant l’état des lieux ou, pour les gérances, après le procès-verbal' },
     { label: 'Demande', value: 'Dès réception de la résiliation' },
     { label: 'Pas pour', value: 'Locataires d’appartements individuels' },
   ],
@@ -40,7 +40,7 @@ export const umzugsreinigung: ServicePageContent = {
       paragraphs: [
         'Si la gérance émet une réclamation sur notre nettoyage lors de l’état des lieux, nous repassons gratuitement. Les détails figurent dans le devis.',
         'La garantie porte sur notre nettoyage. Les dégâts, l’usure ou les réparations constatés lors de l’état des lieux ne concernent pas le nettoyage et n’en font donc pas partie.',
-        'Un film de graisse dans le four ou une trace de calcaire sur la robinetterie relève donc de la garantie. Une brûlure sur le parquet, une rayure sur le plan de cuisson ou un trou dans le mur n’en relèvent pas : il faut alors des artisans.',
+        'Les réclamations typiques sur le nettoyage concernent un film de graisse dans le four ou du calcaire sur la robinetterie. Si la surface elle-même est endommagée, il s’agit d’un dégât : par exemple un chrome attaqué, une brûlure sur le parquet ou une rayure sur le plan de cuisson. Aucun nouveau passage ne le répare, il faut alors des artisans.',
       ],
     },
     {
@@ -48,13 +48,13 @@ export const umzugsreinigung: ServicePageContent = {
       paragraphs: [
         'Les gérances préparent des appartements entre deux baux. Si les locataires sortants n’ont pas nettoyé, ou mal, le procès-verbal d’état des lieux vient d’abord et notre nettoyage ensuite. Vous pouvez ainsi prouver vos prétentions envers les locataires.',
         'Les propriétaires et les copropriétaires ont besoin du nettoyage final avant la remise à l’acheteur ou avant une première location.',
-        'Les entreprises restituent des bureaux et des surfaces commerciales à la fin du bail. Pour les locaux commerciaux, le délai de congé est d’au moins six mois, assez pour planifier le nettoyage après le débarras et un éventuel démontage des aménagements.',
+        'Les entreprises restituent des bureaux et des surfaces commerciales à la fin du bail. Avec un bail de durée déterminée, cette date est connue dès le départ. Si un bail de durée indéterminée est résilié de manière ordinaire, le délai de congé est d’au moins six mois pour des locaux commerciaux. Dans les deux cas, il reste le temps de planifier le nettoyage après le débarras et un éventuel démontage des aménagements.',
       ],
     },
     {
       title: 'Ce qui doit être prêt le jour du nettoyage',
       paragraphs: [
-        'Seul un logement vide peut être nettoyé à fond. Si le nettoyage a lieu peu avant l’état des lieux, la gérance voit exactement l’état dans lequel nous l’avons laissé.',
+        'Seul un logement vide peut être nettoyé à fond. Lorsqu’une entreprise restitue des locaux ou qu’un propriétaire remet un bien à l’acheteur, le mieux est de nettoyer peu avant la remise. Le bailleur ou l’acheteur trouve alors exactement l’état dans lequel nous avons laissé les lieux.',
       ],
       items: [
         'Les meubles, les rideaux et les objets personnels sont débarrassés, cave et galetas compris',
@@ -93,7 +93,7 @@ export const umzugsreinigung: ServicePageContent = {
       kind: 'checklist',
       id: 'abnahme-checkliste',
       title: 'Liste de contrôle pour l’état des lieux, pièce par pièce',
-      intro: 'À imprimer pour la restitution d’un logement. La liste montre où l’état des lieux regarde de près et sert de trame pour votre procès-verbal. Ce que couvre notre nettoyage figure sous « Ce que comprend le nettoyage final ».',
+      intro: 'À imprimer pour la restitution d’un logement. La liste montre ce que l’on contrôle de près lors de l’état des lieux et sert de trame pour votre procès-verbal. C’est une liste de contrôle pour l’état des lieux, pas une liste de nos prestations.',
       printable: true,
       updated: '2026-09-28',
       groups: [
@@ -165,21 +165,22 @@ export const umzugsreinigung: ServicePageContent = {
       kind: 'table',
       id: 'kuendigungstermine',
       title: 'Termes de résiliation par canton',
-      intro: 'Un appartement se résilie avec un préavis d’au moins trois mois, un local commercial avec au moins six mois, chaque fois pour le terme prévu dans le bail. Si le bail n’en prévoit pas, le terme fixé par l’usage local s’applique et, à défaut d’un tel usage, la fin d’un trimestre de bail (art. 266a, 266c et 266d CO). Les états des lieux et les nettoyages finaux se concentrent autour de ces dates.',
+      intro: 'Si un bail de durée indéterminée est résilié de manière ordinaire, le délai de congé est d’au moins trois mois pour un appartement et d’au moins six mois pour un local commercial, chaque fois pour le terme prévu dans le bail. Si le bail n’en prévoit pas, le terme fixé par l’usage local s’applique et, à défaut d’un tel usage, la fin d’un trimestre de bail (art. 266a, 266c et 266d CO). Un bail de durée déterminée prend fin sans congé à l’expiration de la durée convenue (art. 266 CO).',
       printable: true,
       updated: '2026-09-28',
-      columns: ['Canton', 'Termes pour les appartements si le bail n’en prévoit pas', 'Pour la planification'],
+      columns: ['Canton', 'Termes d’usage local pour les appartements', 'Pour la planification'],
       rows: [
-        ['Lucerne', 'En règle générale pour la fin d’un mois ; termes et délais figurent dans le bail', 'Les changements de locataire sont possibles presque à chaque fin de mois. Le bail indique le jour exact.'],
+        ['Lucerne', 'Non mentionnés sur le site du canton. L’autorité de conciliation en matière de bail du canton de Lucerne renseigne.', 'Selon le canton, on résilie en règle générale pour la fin d’un mois, et les termes et délais figurent le plus souvent dans le bail.'],
         ['Zoug', 'Fin mars, fin juin, fin septembre', 'États des lieux et nettoyages finaux se concentrent sur ces trois dates.'],
-        ['Obwald', 'Fin mars, fin juin, fin septembre', 'La résiliation doit intervenir au cours du quatrième mois avant la fin du bail. Dès lors, la date de remise est fixée.'],
-        ['Argovie', 'Le bail est déterminant. L’autorité de conciliation en matière de bail du district indique si un usage local existe.', 'Reprendre dans la demande la date figurant dans le bail.'],
-        ['Nidwald', 'Le bail est déterminant. L’autorité de conciliation de Nidwald indique si un usage local existe.', 'Relever dans le bail la date de résiliation et le jour de remise, puis les indiquer dans la demande.'],
+        ['Obwald', 'Fin mars, fin juin, fin septembre', 'Pour une remise fin juin, la résiliation doit parvenir au plus tard fin mars. Dès lors, la date de remise est fixée.'],
+        ['Argovie et Nidwald', 'Non mentionnés sur les sites des cantons. Les autorités de conciliation en matière de bail renseignent, en Argovie celle du district.', 'Indiquer dans la demande le terme figurant dans la résiliation.'],
       ],
-      note: 'Si le locataire part avant le terme et présente un nouveau locataire acceptable (art. 264 CO), la remise peut tomber à n’importe quelle date. Demandez donc le nettoyage dès qu’une date de remise est fixée.',
+      note: 'Le locataire peut aussi restituer le logement avant le terme. Il n’est libéré de ses obligations que s’il présente un nouveau locataire que le bailleur ne puisse raisonnablement refuser (art. 264 CO). La remise peut donc tomber à n’importe quelle date. Demandez le nettoyage dès qu’une date de remise est fixée.',
       sources: [
-        { label: 'Code des obligations, art. 264, 266a, 266c et 266d (Fedlex, état le 1er janvier 2026)', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_266_c' },
+        { label: 'Code des obligations, art. 264, 266, 266a, 266c et 266d (Fedlex, état le 1er janvier 2026)', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_266_c' },
+        { label: 'Code de procédure civile, art. 201, al. 2 (Fedlex, état le 1er juillet 2026)', href: 'https://www.fedlex.admin.ch/eli/cc/2010/262/fr#art_201' },
         { label: 'Canton de Lucerne : louer un logement (en allemand)', href: 'https://gruezi.lu.ch/wohnen/wohnung_mieten' },
+        { label: 'Canton de Lucerne : autorité de conciliation en matière de bail (en allemand)', href: 'https://gerichte.lu.ch/organisation/schlichtungsbehoerden/miete_pacht' },
         { label: 'Canton de Zoug : questions fréquentes sur le droit du bail (en allemand)', href: 'https://zg.ch/de/recht-justiz/zivilverfahren/schlichtung/faq-zum-mietrecht' },
         { label: 'Canton d’Obwald : autorité de conciliation (en allemand)', href: 'https://www.ow.ch/fachbereiche/2131' },
         { label: 'Canton d’Argovie : autorités de conciliation en matière de bail (en allemand)', href: 'https://www.ag.ch/de/ueber-uns/gerichte-kanton-aargau/organisation/schlichtungsbehoerden/schlichtungsbehoerden-fuer-miete-und-pacht' },
@@ -190,7 +191,7 @@ export const umzugsreinigung: ServicePageContent = {
   steps: [
     {
       title: 'Fixer la date',
-      text: 'Nous plaçons le nettoyage entre le déménagement et l’état des lieux, avec le moins de temps possible entre les deux, et convenons avec vous de la remise des clés.',
+      text: 'Pour les gérances, le nettoyage a lieu entre le procès-verbal d’état des lieux et l’arrivée des nouveaux locataires, pour les propriétaires et les entreprises entre le déménagement et la remise. Nous convenons avec vous de la remise des clés.',
     },
     {
       title: 'Nettoyage final',
@@ -198,19 +199,19 @@ export const umzugsreinigung: ServicePageContent = {
     },
     {
       title: 'État des lieux',
-      text: 'La gérance contrôle le logement. Nous corrigeons les réclamations sur notre nettoyage dans le cadre de la garantie de remise.',
+      text: 'La gérance contrôle les locaux. Nous corrigeons les réclamations sur notre nettoyage dans le cadre de la garantie de remise.',
     },
   ],
   faq: [
     {
       question: 'De quoi dépend le prix d’un nettoyage de fin de bail ?',
       answer:
-        'De l’effort dans ce logement précis : nombre de pièces et surface, état de la cuisine et de la salle de bains (graisse, calcaire, nicotine), nombre et type de fenêtres, présence de stores à lamelles, de volets roulants ou de volets, et locaux annexes à nettoyer comme la cave, le galetas ou le balcon. C’est pourquoi nous n’indiquons pas de forfait par pièce. Vous recevez le prix par écrit après que nous avons vu les locaux.',
+        'Du travail que demande ce logement précis : nombre de pièces et surface, état de la cuisine et de la salle de bains (graisse, calcaire, nicotine), nombre et type de fenêtres, présence de stores à lamelles, de volets roulants ou de volets, et locaux annexes à nettoyer comme la cave, le galetas ou le balcon. C’est pourquoi nous n’indiquons pas de forfait par pièce.',
     },
     {
       question: 'Nettoyez-vous avant ou après l’état des lieux ?',
       answer:
-        'Les deux sont possibles. Si vous restituez des locaux en tant que propriétaire ou entreprise, nous nettoyons avant l’état des lieux et la garantie de remise s’applique. Si les locataires ont rendu le logement mal nettoyé, nous nettoyons pour la gérance après l’état des lieux, dès que les défauts figurent dans le procès-verbal.',
+        'Les deux sont possibles. Lorsqu’une entreprise restitue des locaux ou qu’un propriétaire remet un bien à l’acheteur, nous nettoyons avant. Si les locataires ont rendu le logement mal nettoyé, nous nettoyons pour la gérance dès que les défauts figurent dans le procès-verbal.',
     },
     {
       question: 'À quoi la gérance doit-elle veiller lors de l’état des lieux ?',
@@ -225,12 +226,12 @@ export const umzugsreinigung: ServicePageContent = {
     {
       question: 'Quand faut-il demander le nettoyage de fin de bail ?',
       answer:
-        'Dès réception de la résiliation. Il reste alors au moins trois mois jusqu’à la remise pour un appartement, au moins six pour un local commercial. À Zoug et à Obwald, sauf convention contraire, ce sont fin mars, fin juin et fin septembre ; à Lucerne, en règle générale chaque fin de mois.',
+        'Dès réception de la résiliation. En cas de résiliation ordinaire, il reste au moins trois mois jusqu’à la fin du bail pour un appartement, au moins six pour un local commercial. Si le locataire restitue plus tôt, par exemple avec un nouveau locataire, la remise peut aussi avoir lieu plus tôt. À Zoug et à Obwald, sauf convention contraire, ce sont fin mars, fin juin et fin septembre ; à Lucerne, selon le canton, les termes figurent le plus souvent dans le bail.',
     },
     {
       question: 'Le nettoyage peut-il commencer tant que des meubles sont encore dans le logement ?',
       answer:
-        'Mieux vaut pas. Derrière les meubles, dans les armoires et sous les éléments encastrés, la gérance regarde de près lors de l’état des lieux, et ces endroits ne se nettoient à fond que dans des locaux vides. Prévoyez donc le déménagement avant le nettoyage, cave et galetas compris.',
+        'Mieux vaut éviter. Lors de l’état des lieux, la gérance regarde de près derrière les meubles, dans les armoires et sous les éléments encastrés, et ces endroits ne se nettoient à fond que dans des locaux vides. Nous ne commençons donc qu’une fois toutes les pièces vidées, cave et galetas compris.',
     },
     {
       question: 'Nettoyez-vous aussi des bureaux et des surfaces commerciales avant leur restitution ?',
@@ -250,6 +251,6 @@ export const umzugsreinigung: ServicePageContent = {
   ],
   cta: {
     title: 'Un devis pour votre date de remise',
-    text: 'Indiquez-nous l’adresse, le nombre de pièces ou la surface, la date de remise et si les stores ou les volets sont compris. Pour plusieurs changements de locataire, le plus simple est de nous envoyer une liste des adresses et des dates. Nous examinons les locaux, puis vous recevez le devis par écrit, gratuit et sans engagement.',
+    text: 'Indiquez-nous l’adresse, le nombre de pièces ou la surface, la date de remise ou d’emménagement et si les stores ou les volets sont compris. Pour plusieurs changements de locataire, le plus simple est de nous envoyer une liste des adresses et des dates. Le devis est gratuit et sans engagement.',
   },
 }
