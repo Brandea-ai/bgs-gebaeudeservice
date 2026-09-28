@@ -35,8 +35,8 @@ export const pages: Dictionary['pages'] = {
   },
   '/premium/yacht': {
     label: 'Yacht',
-    title: 'Yacht and boat cleaning',
-    description: 'Cleaning of yachts and motorboats on Lake Lucerne and Lake Zug: interior, upholstery, teak and gelcoat. Discreet and by arrangement.',
+    title: 'Yacht and boat cleaning in Lucerne and Zug',
+    description: 'Boat cleaning and yacht cleaning at your mooring: teak, gelcoat, upholstery and saloon, on Lake Lucerne and Lake Zug. Free quote after a site visit.',
   },
   '/leistungen': {
     label: 'Services',
