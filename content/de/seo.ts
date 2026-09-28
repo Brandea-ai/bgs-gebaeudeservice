@@ -55,8 +55,8 @@ export const pages = {
   },
   '/leistungen/sonderreinigungen': {
     label: 'Grund- und Sonderreinigung',
-    title: 'Grund- und Sonderreinigung Luzern, Zug',
-    description: 'Grundreinigung von Wohn-, Büro- und Gewerbeflächen, einmalig oder in Abständen. Für Verwaltungen, Eigentümer und Unternehmen in Luzern, Zug und Umgebung.',
+    title: 'Grundreinigung und Sonderreinigung Luzern, Zug',
+    description: 'Grundreinigung und Sonderreinigung von Böden, Fugen und Sanitärräumen, passend zum Belag, in Luzern, Zug und Umgebung. Kostenlose Offerte nach Besichtigung.',
   },
   '/leistungen/umzugsreinigung': {
     label: 'Umzugsreinigung',

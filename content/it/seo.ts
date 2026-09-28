@@ -56,7 +56,7 @@ export const pages = {
   '/leistungen/sonderreinigungen': {
     label: 'Pulizie a fondo e speciali',
     title: 'Pulizie a fondo e speciali, Lucerna e Zugo',
-    description: 'Pulizia a fondo di abitazioni, uffici e superfici commerciali, una tantum o periodica. Per amministrazioni, proprietari e aziende a Lucerna e Zugo.',
+    description: 'Pulizie a fondo e speciali di pavimenti, fughe e servizi igienici secondo il rivestimento, a Lucerna, Zugo e dintorni. Offerta gratuita dopo il sopralluogo.',
   },
   '/leistungen/umzugsreinigung': {
     label: 'Pulizia di fine locazione',
