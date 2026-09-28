@@ -51,7 +51,7 @@ export const pages = {
   '/leistungen/bueroreinigung': {
     label: 'Pulizia di uffici e studi',
     title: 'Pulizia di uffici a Lucerna e Zugo',
-    description: `Pulizia di uffici e studi in funzione dei Suoi orari di lavoro. Offerta gratuita sul posto nei Cantoni di ${region}.`,
+    description: 'Pulizia di uffici e studi medici fuori orario, con elenco delle prestazioni da stampare. Lucerna, Zugo e dintorni. Offerta gratuita dopo il sopralluogo.',
   },
   '/leistungen/sonderreinigungen': {
     label: 'Pulizie a fondo e speciali',

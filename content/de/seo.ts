@@ -50,8 +50,8 @@ export const pages = {
   },
   '/leistungen/bueroreinigung': {
     label: 'Büro- und Praxisreinigung',
-    title: 'Büro- und Praxisreinigung Luzern, Zug',
-    description: `Reinigung von Büros und Praxen, abgestimmt auf Ihre Arbeitszeiten. Kostenlose Offerte vor Ort in ${region}.`,
+    title: 'Büroreinigung und Praxisreinigung Luzern, Zug',
+    description: 'Büroreinigung und Praxisreinigung zu Randzeiten, mit Leistungsverzeichnis zum Ausdrucken. In Luzern, Zug und Umgebung. Kostenlose Offerte nach Besichtigung.',
   },
   '/leistungen/sonderreinigungen': {
     label: 'Grund- und Sonderreinigung',
