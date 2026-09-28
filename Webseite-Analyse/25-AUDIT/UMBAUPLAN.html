@@ -1,0 +1,283 @@
+<title>BGS Umbauplan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600;700;800&family=Geist+Mono:wght@500;600&display=swap">
+<style>
+  :root {
+    --bg: #F4F3F0;
+    --surface: #FFFFFF;
+    --ink: #0E1116;
+    --ink-2: #2E343D;
+    --line: #E2DFD8;
+    --accent: #B8121B;
+    --accent-soft: #F6E3E4;
+    --ok: #1F6B45;
+    --ok-soft: #E1F0E7;
+    --warn: #8A5A00;
+    --warn-soft: #F7ECD6;
+    --brass: #7D6231;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #121418;
+      --surface: #1B1E24;
+      --ink: #F2F1EE;
+      --ink-2: #D2D4D8;
+      --line: #2E323A;
+      --accent: #F0555D;
+      --accent-soft: #3A1C1F;
+      --ok: #6FCF97;
+      --ok-soft: #173024;
+      --warn: #E8B45A;
+      --warn-soft: #33280F;
+      --brass: #D9BD85;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #121418;
+    --surface: #1B1E24;
+    --ink: #F2F1EE;
+    --ink-2: #D2D4D8;
+    --line: #2E323A;
+    --accent: #F0555D;
+    --accent-soft: #3A1C1F;
+    --ok: #6FCF97;
+    --ok-soft: #173024;
+    --warn: #E8B45A;
+    --warn-soft: #33280F;
+    --brass: #D9BD85;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.6;
+    padding-inline: 16px;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding-block: 40px 72px; display: grid; gap: 56px; }
+  h1, h2, h3 { text-wrap: balance; margin: 0; letter-spacing: -0.015em; }
+  h1 { font-size: clamp(2rem, 1.4rem + 2.4vw, 3.25rem); font-weight: 800; line-height: 1.05; }
+  h2 { font-size: clamp(1.4rem, 1.15rem + 1vw, 1.9rem); font-weight: 800; line-height: 1.15; }
+  h3 { font-size: 1.125rem; font-weight: 700; line-height: 1.3; }
+  p { margin: 0; max-width: 68ch; }
+  .eyebrow {
+    font-family: "Geist Mono", ui-monospace, monospace;
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--accent);
+  }
+  .muted { color: var(--ink-2); }
+  header { display: grid; gap: 14px; }
+  header .meta { display: flex; flex-wrap: wrap; gap: 8px 18px; color: var(--ink-2); font-size: 0.92rem; }
+  code, .mono { font-family: "Geist Mono", ui-monospace, monospace; font-size: 0.86em; }
+  section { display: grid; gap: 20px; }
+  .figures { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 3px; overflow: hidden; }
+  .figure { background: var(--surface); padding: 22px; display: flex; flex-direction: column; gap: 6px; }
+  .figure b { font-size: 2.1rem; font-weight: 800; line-height: 1; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+  .figure span { font-size: 0.92rem; color: var(--ink-2); font-weight: 600; }
+  .done { display: grid; gap: 0; border-top: 1px solid var(--line); }
+  .done li { list-style: none; display: grid; grid-template-columns: 1fr auto; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); font-weight: 600; }
+  .done li .mono { color: var(--ink-2); white-space: nowrap; }
+  ul { margin: 0; padding: 0; }
+  .phases { display: grid; gap: 14px; }
+  .phase { background: var(--surface); border: 1px solid var(--line); border-radius: 3px; padding: 22px 24px; display: grid; gap: 14px; }
+  .phase-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 16px; justify-content: space-between; }
+  .phase-head h3 { font-size: 1.25rem; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { font-family: "Geist Mono", ui-monospace, monospace; font-size: 0.74rem; font-weight: 600; letter-spacing: 0.04em; padding: 4px 9px; border-radius: 3px; border: 1px solid var(--line); color: var(--ink-2); white-space: nowrap; }
+  .chip.first { background: var(--accent-soft); border-color: transparent; color: var(--accent); }
+  .chip.ok { background: var(--ok-soft); border-color: transparent; color: var(--ok); }
+  .phase ul { display: grid; gap: 8px; padding-left: 1.1em; }
+  .phase li { padding-left: 2px; }
+  .phase li::marker { color: var(--accent); }
+  .evidence { font-size: 0.88rem; color: var(--ink-2); }
+  .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 3px; background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 0.95rem; }
+  th, td { text-align: left; vertical-align: top; padding: 13px 16px; border-bottom: 1px solid var(--line); }
+  th { font-family: "Geist Mono", ui-monospace, monospace; font-size: 0.74rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-2); font-weight: 600; }
+  tr:last-child td { border-bottom: 0; }
+  td b { font-weight: 700; }
+  .rec { color: var(--ok); font-weight: 700; }
+  .note { background: var(--warn-soft); color: var(--ink); border-radius: 3px; padding: 18px 20px; display: grid; gap: 6px; }
+  .note h3 { color: var(--warn); font-size: 1rem; }
+  .next { background: var(--surface); border: 1px solid var(--ink); border-radius: 3px; padding: 24px; display: grid; gap: 10px; }
+  .next h2 { font-size: 1.4rem; }
+  footer { font-size: 0.85rem; color: var(--ink-2); border-top: 1px solid var(--line); padding-top: 16px; }
+  a { color: var(--accent); font-weight: 600; }
+  @media (max-width: 560px) {
+    .done li { grid-template-columns: 1fr; gap: 2px; }
+    .phase { padding: 18px; }
+  }
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow">BGS Gebäudeservice · Website</p>
+    <h1>Umbauplan nach dem Seiten-Audit</h1>
+    <p class="muted">Drei unabhängige Prüfungen haben jede Seite und jeden Container gegen Google-Richtlinien, die Go-Live-Checkliste, die FIMI-Erkenntnisse, fünf Wettbewerber und unsere Gestaltungsregeln gemessen. Hier steht, was heute schon erledigt ist, was die Seiten austauschbar macht und in welcher Reihenfolge wir es beheben.</p>
+    <div class="meta">
+      <span>Stand 28.09.2026</span>
+      <span>Live: <span class="mono">9ea5d7a</span> auf bgs-gebaeudeservice.vercel.app</span>
+      <span>Weiterhin <span class="mono">noindex</span> bis zum Launch</span>
+    </div>
+  </header>
+
+  <section aria-labelledby="befund">
+    <p class="eyebrow">Befund</p>
+    <h2 id="befund">Nicht die Sätze sind das Problem, die Schablone ist es</h2>
+    <p>Die Texte sind sauber und belegt, bei den Grenzen offener als alle fünf geprüften Wettbewerber. Austauschbar wirken die Seiten, weil alle 13 Leistungsseiten dieselbe Abfolge, dieselben Zwischentitel und dieselben Standard-Antworten haben. Es fehlt, was Google «original information» nennt: Vorlagen, Protokolle, Rechtspflichten, Materialkunde. Genau das braucht eine Verwaltung, bevor sie anfragt.</p>
+    <div class="figures">
+      <div class="figure"><b>29 %</b><span>der Sätze auf den 13 Leistungsseiten stehen fast gleich auch woanders</span></div>
+      <div class="figure"><b>39 %</b><span>Doppelung auf den 5 Kantonsseiten, nahe an Googles Doorway-Grenze</span></div>
+      <div class="figure"><b>37×</b><span>«kostenlos und unverbindlich» in den deutschen Texten</span></div>
+      <div class="figure"><b>0</b><span>Fehler im strukturierten Markup, Technik ist Goldstandard</span></div>
+    </div>
+    <p class="evidence">Quellen: Satzvergleich per Skript über alle Inhaltsdateien, Schema.org-Validator auf 15 Seiten, Google «Creating helpful content», Search Quality Rater Guidelines 3.2. Berichte: <span class="mono">audit/inhalt.md</span>, <span class="mono">audit/seo.md</span>, <span class="mono">audit/visuell.md</span>.</p>
+  </section>
+
+  <section aria-labelledby="erledigt">
+    <p class="eyebrow">Heute erledigt und live</p>
+    <h2 id="erledigt">Was schon umgesetzt ist</h2>
+    <ul class="done">
+      <li><span>Heros verschlankt: Titel, ein Satz Nutzen, Knöpfe. Einleitung und Eckdaten hell darunter</span><span class="mono">E84</span></li>
+      <li><span>41 neue Bilder im Reportage-Look, jede Leistung im eigenen Kontext, Seeblick nur noch bei Yacht und Kantonen</span><span class="mono">99727a8</span></li>
+      <li><span>Premium hell in Elfenbein, Mega-Menü mit klickbarer Premium-Karte, eigene Icons, Video-Bühne im Premium-Ablauf</span><span class="mono">3a2dd88</span></li>
+      <li><span>Kontaktbereich mit Bild und Kacheln, Öffnungszeiten, NAP gegen Handelsregister und Verzeichnisse geprüft</span><span class="mono">99727a8</span></li>
+      <li><span>Vorschaubild je Seite für Facebook, LinkedIn und X, alle Titel und Beschreibungen im Zielbereich</span><span class="mono">99727a8</span></li>
+      <li><span>Umzugs-Links der Kantonsseiten richtig gesetzt, Heckenschnitt nach Vogelwarte Sempach korrigiert</span><span class="mono">23a2eaa</span></li>
+      <li><span>Markup: Koordinaten aus dem Gebäuderegister, MWST-Nummer, Seitenname, Markenbrücke für Mantena</span><span class="mono">23a2eaa</span></li>
+      <li><span>FAQ springt nicht mehr beim Überfahren (Test 12 von 12), Verzeichnis in richtiger Reihenfolge, 3 px überall</span><span class="mono">9ea5d7a</span></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="phasen">
+    <p class="eyebrow">Reihenfolge</p>
+    <h2 id="phasen">Sechs Umbauphasen, sortiert nach qualifizierten Anfragen</h2>
+    <p class="muted">Jede Phase endet mit Prüfkette in beiden Marken-Modi, Sichtprüfung bei 1440 und 390 px und einem Live-Stand. Die Reihenfolge ist eine begründete Hypothese: Such- und Anfragedaten gibt es erst nach dem Launch.</p>
+    <div class="phases">
+      <article class="phase">
+        <div class="phase-head">
+          <h3>A · Leistungsseiten: Schablone brechen</h3>
+          <div class="chips"><span class="chip first">Zuerst</span><span class="chip">13 Seiten × 4 Sprachen</span></div>
+        </div>
+        <ul>
+          <li><b>Werkzeug je Seite</b> statt Standardabschnitt: Pflichtenheft-Vorlage Hauswartung, Muster-Leistungsverzeichnis Unterhalt mit Nebenkosten (OR 256, 257a), Abnahme-Checkliste Raum für Raum bei der Umzugsreinigung, Materialkunde bei Premium.</li>
+          <li><b>Eigene Fragen</b> statt «Sind Sie versichert?» auf 10 Seiten: Kostenfaktoren dieser Leistung und echte Nutzerfragen aus der Suche. Senkt die Doppelung rechnerisch von 29 auf 14 %.</li>
+          <li><b>Eigene Eckdaten</b> im Band unter dem Hero: «Nicht enthalten», «Garantie», «Einsatzzeiten» statt überall «Für, Rhythmus, Gebiet».</li>
+          <li><b>Hauptbegriffe wörtlich</b> in Titel und H1: Fensterreinigung (1'600 Suchen im Monat), Büroreinigung, Baureinigung, Grundreinigung, Gartenpflege.</li>
+          <li><b>Kein Bild doppelt</b> auf einer Seite: ein drittes Motiv je Leistung. Der Ablauf wird gestrafft, mit Figuren passend zur Leistung.</li>
+        </ul>
+        <p class="evidence">Belege: Inhaltsaudit Maßnahmen 1, 2, 4, 5, 7, 8 · SEO-Audit H3, M1, T2, T4 · Visuell Umbau 4 und 6.</p>
+      </article>
+      <article class="phase">
+        <div class="phase-head">
+          <h3>B · Kontakt und Formular qualifizieren</h3>
+          <div class="chips"><span class="chip">alle Seiten</span></div>
+        </div>
+        <ul>
+          <li>Pflichtfeld <b>«Sie sind»</b> (Verwaltung, Stockwerkeigentümerschaft, Eigentümer, Unternehmen, Premium) und <b>«Grösse»</b> (Fläche oder Anzahl Wohnungen). Erst damit lassen sich Anfragen einordnen und messen.</li>
+          <li>Seitenende neu ordnen: rund 600 px Leerraum unter dem Formular schließen, «24 Stunden» nur einmal, Bildband nur auf der Kontaktseite.</li>
+          <li>Auf <span class="mono">/kontakt</span> steht das Formular direkt unter den Kontaktwegen statt 3'900 px tiefer.</li>
+        </ul>
+        <p class="evidence">Belege: Inhaltsaudit Maßnahme 3 · Visuell Umbau 3.</p>
+      </article>
+      <article class="phase">
+        <div class="phase-head">
+          <h3>C · Kantonsseiten entdoppeln</h3>
+          <div class="chips"><span class="chip">5 Seiten + Übersicht</span></div>
+        </div>
+        <ul>
+          <li>Kantonseigene Fragen statt der wortgleichen Kostenantwort, Kasten «Kantonsdaten für die Planung» mit ortsüblichen Umzugsterminen, Zufahrt und Zweitwohnungsanteil.</li>
+          <li>Karte erzählt: aktiver Kanton voll rot, übrige zurückgenommen, Ortsnamen ab 13 px lesbar, auch auf der Seite Zug.</li>
+        </ul>
+        <p class="evidence">Belege: Inhaltsaudit Maßnahme 6 · SEO-Audit N5, N6 · Visuell Umbau 9 · Google Spam Policies (Doorway).</p>
+      </article>
+      <article class="phase">
+        <div class="phase-head">
+          <h3>D · Startseite und Leistungsübersicht mit Rhythmus</h3>
+          <div class="chips"><span class="chip">2 Seiten</span></div>
+        </div>
+        <ul>
+          <li>Leistungen nach Gruppen statt zehn gleicher Karten, die Übersicht als Kapitel mit klebendem Bild, das beim Lesen wechselt.</li>
+          <li>Zielgruppen auf drei zusammenlegen, zitierfähiger Profilsatz unter den Kennzahlen, Wiederholungen streichen (auf der Startseite heute sechsmal «24 Stunden»).</li>
+        </ul>
+        <p class="evidence">Belege: Visuell Umbau 5 und 8 · Inhaltsaudit K6 · SEO-Audit M4, T5 · Referenz era-residence.</p>
+      </article>
+      <article class="phase">
+        <div class="phase-head">
+          <h3>E · Mobil die Länge halbieren</h3>
+          <div class="chips"><span class="chip">alle Seiten</span></div>
+        </div>
+        <ul>
+          <li>Heute 12 bis 25 Bildschirme je Seite. Kartenstapel werden zu wischbaren Schienen, lange Zeilen zu kompakten Einträgen mit kleinem Vorschaubild, Footer-Linkgruppen zu einem Akkordeon.</li>
+        </ul>
+        <p class="evidence">Belege: Visuell Umbau 7, gemessen bei 390 px.</p>
+      </article>
+      <article class="phase">
+        <div class="phase-head">
+          <h3>F · Ratgeber für Verwaltungen</h3>
+          <div class="chips"><span class="chip">3 neue Artikel</span></div>
+        </div>
+        <ul>
+          <li>Drei Artikel entlang der Suchfragen von Verwaltungen, mit Autor oder fachlicher Prüfung. Die Lücke «Qualitätskontrolle und Vertretung» im bestehenden Artikel schließen.</li>
+        </ul>
+        <p class="evidence">Belege: Inhaltsaudit Maßnahme 9 · Google «Who, How, Why» · FIMI-Erkenntnis 4.</p>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="entscheid">
+    <p class="eyebrow">Human-Gate</p>
+    <h2 id="entscheid">Was nur du oder die Kundin entscheiden könnt</h2>
+    <p class="muted">Alle Textentwürfe kommen ohne diese Punkte aus. Mit Antworten werden die Seiten stärker, ohne erfinden wir nichts (E18).</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Nr.</th><th>Frage</th><th>Wirkung</th><th>Empfehlung</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">E28</td><td><b>Umzugsreinigung auch für Mieter öffnen?</b></td><td>Dort liegt das größte Suchvolumen (720 + 170 + 140). Alle Top-10-Treffer richten sich an Haushalte.</td><td>Deine Entscheidung. Bleibt es beim Nein, schreiben wir die Zielgruppe ehrlich in den Titel.</td></tr>
+          <tr><td class="mono">F1, F2</td><td>Wie kontrolliert BGS die Qualität, wie ist die Vertretung bei Ferien und Krankheit geregelt?</td><td>Der eigene Ratgeber rät, genau das zu fragen, beantwortet es für BGS aber nicht.</td><td class="rec">Bei der Kundin erfragen</td></tr>
+          <tr><td class="mono">F3</td><td>Hält BGS den GAV Reinigung ein, gibt es eine Bestätigung der PK Reinigung?</td><td>Starkes Vertrauenssignal, nur mr. clean nennt es.</td><td class="rec">Bei der Kundin erfragen</td></tr>
+          <tr><td class="mono">F5</td><td>Gibt es nach End- oder Grundreinigung ein Übergabeprotokoll, allenfalls mit Fotos?</td><td>Hebt die Abnahmegarantie von TipTop und Clean Profis ab.</td><td class="rec">Bei der Kundin erfragen</td></tr>
+          <tr><td class="mono">F6</td><td>Darf der Name des Geschäftsführers auf «Über uns» und als Prüfer im Ratgeber stehen?</td><td>Google fragt «Who»; heute steht er nur im Impressum.</td><td class="rec">Ja, empfohlen</td></tr>
+          <tr><td class="mono">F7</td><td>Gelten Regeln für Schlüssel und Alarm mit Protokoll auch im B2B?</td><td>Für Verwaltungen kaufentscheidend.</td><td class="rec">Bei der Kundin erfragen</td></tr>
+          <tr><td class="mono">K4</td><td>Datenschutzerklärung: Die Karte lädt auch auf dem Einzugsgebiet, nicht nur auf Kontakt.</td><td>Rechtstext, darum nur mit Freigabe.</td><td class="rec">Satz anpassen, freigeben</td></tr>
+          <tr><td class="mono">M5</td><td>Keyword-Daten für Englisch, Französisch, Italienisch abrufen?</td><td>87 Seiten beruhen heute auf Übersetzung statt Suchdaten.</td><td class="rec">Ja, rund 0,10 USD</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section aria-labelledby="messung">
+    <p class="eyebrow">Messung</p>
+    <h2 id="messung">Woran wir den Erfolg messen</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Kennzahl</th><th>Heute</th><th>Ziel</th><th>Wann</th></tr></thead>
+        <tbody>
+          <tr><td>Doppelte Sätze auf Leistungsseiten</td><td>29 %</td><td>unter 15 %</td><td>nach Phase A</td></tr>
+          <tr><td>Doppelte Sätze auf Kantonsseiten</td><td>39 %</td><td>unter 20 %</td><td>nach Phase C</td></tr>
+          <tr><td>Länge mobil (Startseite)</td><td>24 Bildschirme</td><td>unter 14</td><td>nach Phase E</td></tr>
+          <tr><td>axe-Verstöße, Überlauf 390 px</td><td>0 und 0</td><td>0 und 0</td><td>jede Phase</td></tr>
+          <tr><td>Qualifizierte Anfragen</td><td>keine Daten</td><td>2 bis 3 Aufträge im Monat (R10e)</td><td>90 Tage nach Launch</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="note">
+    <h3>Ehrlich eingeordnet</h3>
+    <p>Ein Top-Ranking kann niemand garantieren. Auf der Seite selbst schöpfen wir mit diesem Plan aus, was Google belohnt. Zwei Hebel außerhalb der Website wirken aber stärker als jeder Text: das Google-Unternehmensprofil korrigieren (heute zwei Profile mit falscher Adresse) und beim Launch 301-Weiterleitungen von bgs-service.ch (Rank 87, 43 verweisende Domains).</p>
+  </div>
+
+  <div class="next">
+    <p class="eyebrow">Vorschlag</p>
+    <h2>Nächster Schritt: Phase A an einer Pilotseite</h2>
+    <p>Ich baue zuerst die <b>Hauswartung</b> komplett nach dem neuen Muster um, in allen vier Sprachen. Sie hat mit 2'400 Suchen im Monat das größte Volumen und trifft genau die Verwaltungen. Du siehst sie live an, danach rollen wir das Muster auf die übrigen 12 Leistungsseiten aus.</p>
+  </div>
+
+  <footer>Erstellt aus drei Audits vom 28.09.2026 (Inhalt, SEO, Visuell). Websuche und DataForSEO-Kosten rund 0,003 USD. Keine Preise, Zahlen oder Behauptungen über das Unternehmen ohne Beleg (E18).</footer>
+</div>

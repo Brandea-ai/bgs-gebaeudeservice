@@ -53,6 +53,7 @@ Maßgeblich ist `00-START-HIER.md`, Abschnitte 2 bis 7. Kurzfassung:
 | Datum | Durchlauf | Ergebnis |
 |---|---|---|
 | 24.09.2026 | Setup | Prüfauftrag in 22 Arbeitsdateien zerlegt, Original in `_GOLDENER-STAND/` gesichert, Vollständigkeit geprüft (1.542/1.542 Inhaltszeilen). Nutzerentscheidungen E01–E06 protokolliert. Kontrolle FIMI-Klon: unverändert (HEAD `1143a9f`, 0 geänderte Dateien). |
+| 28.09.2026 | E82 bis E84 | Kontaktbereich, NAP-Prüfung, Vorschaubilder je Seite, 41 neue Bilder (`99727a8`). Premium hell und Mega-Menü (`3a2dd88`). Schlanke Heros mit IntroBand. Drei Audits (Inhalt, SEO, Visuell) in `25-AUDIT/`, Sofortkorrekturen (`23a2eaa`, `9ea5d7a`). Prüfkette beide Modi grün: 116 Seiten, 0 axe, 0 Überlauf. Live auf main. Nächster Schritt: Freigabe Umbauplan, dann Phase A mit Pilot Hauswartung. |
 
 | 24.09.2026 | Phase 0 | Produktion bestätigt: `bgs-gebaeudeservice.vercel.app` = `d7e1122`, keine eigene Domain. Rollen geklärt (E07): Kunde BGS Gebäudeservice GmbH, neue Seite von Brandea, bisherige Kunden-Website `bgs-service.ch` nicht Prüfziel. Vercel-MCP nur lesend (E08). Leistungs- und Regionsabweichungen dokumentiert (B03, B04, B10). |
 | 24.09.2026 | Phase 1 | 32 Inhalts-URLs inventarisiert und live geprüft, Varianten und Systemdateien, interne Links, Migrationsbestand. Isolierter Build: Build/Typecheck ok, `npm ci` scheitert (Lockfile), kein Lint/Test/CI. `npm audit`: 23 Meldungen in Produktionsabhängigkeiten, Next.js mit kritischen Advisories. Runtime: KI-Chat fällt aus. Nachweise N001–N019. |
