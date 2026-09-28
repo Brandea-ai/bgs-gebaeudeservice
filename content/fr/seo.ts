@@ -107,17 +107,32 @@ export const pages = {
   '/blog': {
     label: 'Guide',
     title: 'Guide du nettoyage de bâtiments',
-    description: `Le guide de ${company.brand} : les points à vérifier pour choisir une entreprise de nettoyage et ce qui détermine le coût d’un nettoyage d’entretien.`,
+    description: 'Guide pour gérances et entreprises : tâches de la conciergerie, état des lieux de sortie, sols, choix du prestataire et coûts. Imprimez les modèles.',
   },
   '/blog/richtige-reinigungsfirma-finden': {
     label: 'Choisir une entreprise de nettoyage',
     title: 'Choisir une entreprise de nettoyage',
-    description: 'Prestations, assurance, contrôle de la qualité, références et devis : les points à clarifier avant de mandater une entreprise de nettoyage.',
+    description: 'Mandater une entreprise de nettoyage : prestations, assurance, conditions de travail et devis. Imprimez la grille et comparez les devis côte à côte.',
   },
   '/blog/reinigungskosten-schweiz': {
     label: 'Coût du nettoyage d’entretien',
     title: 'Que coûte un nettoyage d’entretien ?',
-    description: 'Ce qui détermine le prix d’un nettoyage d’entretien : surface, fréquence, utilisation et horaires. Avec des conseils pour comparer les devis.',
+    description: 'Ce qui détermine le coût d’un nettoyage d’entretien : heures, fréquence, horaires et salaires. Vérifiez vos devis avec le calcul du montant mensuel.',
+  },
+  '/blog/hauswartung-aufgaben': {
+    label: 'Tâches de la conciergerie',
+    title: 'Tâches de la conciergerie et cahier des charges',
+    description: 'Les tâches de la conciergerie dans le cahier des charges : fréquence, plafond, signalements et frais accessoires, avec un exemple rempli. Vérifiez le vôtre.',
+  },
+  '/blog/wohnungsabgabe-protokoll': {
+    label: 'État des lieux de sortie',
+    title: 'État des lieux de sortie et avis des défauts',
+    description: 'Restitution d’un logement pour les gérances : quel niveau de propreté exiger, comment consigner et signaler les défauts à temps. Imprimez les exemples.',
+  },
+  '/blog/bodenbelaege-reinigen': {
+    label: 'Nettoyer les revêtements de sol',
+    title: 'Nettoyer les sols : pH, joints et entretien',
+    description: 'Quels produits supportent pierre naturelle, carrelage, linoléum, vinyle et parquet. Imprimez le tableau pour votre local de nettoyage et évitez les dégâts.',
   },
   '/ueber-uns': {
     label: 'À propos',

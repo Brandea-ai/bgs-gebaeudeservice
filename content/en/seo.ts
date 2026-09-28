@@ -108,17 +108,32 @@ export const pages: Dictionary['pages'] = {
   '/blog': {
     label: 'Guides',
     title: 'Guides to building cleaning',
-    description: `Guides by ${company.brand}: what to look for when choosing a cleaning company and what the cost of maintenance cleaning depends on.`,
+    description: 'Guides for property managers and businesses: caretaking duties, flat handovers, floor coverings, choosing a cleaning company and costs. Print the templates.',
   },
   '/blog/richtige-reinigungsfirma-finden': {
     label: 'Choosing a cleaning company',
     title: 'How to choose a cleaning company',
-    description: 'Scope of services, insurance, quality control, references and quote: what to clarify before hiring a cleaning company, with the steps up to the contract.',
+    description: 'Hiring a cleaning company: scope, insurance, working conditions and quote to clarify first. Print the comparison grid and set the quotes side by side.',
   },
   '/blog/reinigungskosten-schweiz': {
     label: 'Cost of maintenance cleaning',
     title: 'What does maintenance cleaning cost?',
-    description: 'What the price of maintenance cleaning depends on: floor area, frequency, use and cleaning times. With tips on comparing quotes.',
+    description: 'What the cost of maintenance cleaning depends on: hours, frequency, cleaning times and wages. Check your quotes against the calculation.',
+  },
+  '/blog/hauswartung-aufgaben': {
+    label: 'Caretaking duties',
+    title: 'Caretaking duties and the specification',
+    description: 'Caretaking duties in the specification: frequency, cost limit, reporting lines and service charges, with a completed example. Use it to check your own.',
+  },
+  '/blog/wohnungsabgabe-protokoll': {
+    label: 'Flat handover',
+    title: 'Flat handover: report and notice of defects',
+    description: 'Flat handover for property managers: how clean the flat must be and how to record defects precisely and give notice in time. Print the example entries.',
+  },
+  '/blog/bodenbelaege-reinigen': {
+    label: 'Cleaning floor coverings',
+    title: 'Cleaning floor coverings: pH, joints, care',
+    description: 'Which cleaning products natural stone, tiles, linoleum, vinyl and parquet can take. Print the table for your cleaning cupboard and avoid damage.',
   },
   '/ueber-uns': {
     label: 'About us',

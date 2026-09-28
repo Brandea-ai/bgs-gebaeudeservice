@@ -1,9 +1,9 @@
-import IntroBand from "@/components/IntroBand";
+import IntroBand, { FactList } from "@/components/IntroBand";
 import PageHero from "@/components/PageHero";
 import { getDict } from "../../../../content";
 import { ratgeberKontext, type RatgeberProps } from "./kontext";
 
-/** Kopf mit Bild (E84): Titel und ein Satz; Einleitung und Weg zu den Leistungen im IntroBand */
+/** Kopf mit Bild (E84): Titel und ein Satz; Einleitung und Hinweis zu Quellen und Stand im IntroBand (ohne Linkzeile, die Leistungen stehen weiter unten) */
 export default function RatgeberHero(props: RatgeberProps) {
   const { lang } = props;
   const { t } = ratgeberKontext(props);
@@ -19,8 +19,9 @@ export default function RatgeberHero(props: RatgeberProps) {
       />
       <IntroBand
         title={dict.ui.atAGlance}
-        paragraphs={[t.intro, t.services]}
+        paragraphs={[t.intro, t.note]}
         lang={lang}
+        aside={<FactList facts={t.facts} />}
       />
     </>
   );

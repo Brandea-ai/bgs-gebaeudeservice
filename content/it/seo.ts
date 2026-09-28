@@ -107,17 +107,32 @@ export const pages = {
   '/blog': {
     label: 'Guida',
     title: 'Guida alla pulizia di edifici',
-    description: `Guida di ${company.brand}: come scegliere un’impresa di pulizie e da che cosa dipendono i costi della pulizia di manutenzione.`,
+    description: 'Guida per amministrazioni e aziende: compiti della custodia, riconsegna dell’appartamento, pavimenti, scelta dell’impresa e costi. Stampi i modelli.',
   },
   '/blog/richtige-reinigungsfirma-finden': {
     label: 'Scegliere l’impresa di pulizie',
     title: 'Come scegliere l’impresa di pulizie',
-    description: 'Entità del servizio, assicurazione, controllo della qualità, referenze e offerta: i punti da chiarire prima di incaricare un’impresa di pulizie.',
+    description: 'Incaricare un’impresa di pulizie: prestazioni, assicurazione, condizioni di lavoro e offerta. Stampi la griglia e confronti le offerte fianco a fianco.',
   },
   '/blog/reinigungskosten-schweiz': {
     label: 'Costi della pulizia di manutenzione',
     title: 'Pulizia di manutenzione: quanto costa?',
-    description: 'Da che cosa dipende il prezzo di una pulizia di manutenzione: superficie, cadenza, utilizzo e orari d’intervento. Con consigli per confrontare le offerte.',
+    description: 'Da che cosa dipendono i costi della pulizia di manutenzione: ore, cadenza, orari e salari. Verifichi le Sue offerte con il calcolo dell’importo mensile.',
+  },
+  '/blog/hauswartung-aufgaben': {
+    label: 'Compiti della custodia',
+    title: 'Compiti della custodia di stabili: il capitolato',
+    description: 'I compiti della custodia nel capitolato: cadenza, limite di spesa, segnalazioni e spese accessorie, con un esempio compilato. Verifichi il Suo capitolato.',
+  },
+  '/blog/wohnungsabgabe-protokoll': {
+    label: 'Riconsegna dell’appartamento',
+    title: 'Riconsegna dell’appartamento: verbale e difetti',
+    description: 'Riconsegna dell’appartamento per amministrazioni: quanto deve essere pulito e come descrivere e notificare i difetti in tempo. Stampi gli esempi di verbale.',
+  },
+  '/blog/bodenbelaege-reinigen': {
+    label: 'Pulire bene i pavimenti',
+    title: 'Pulire i pavimenti: pH, fughe e cura',
+    description: 'Quali prodotti sopportano pietra naturale, piastrelle, linoleum, vinile e parquet. Stampi la tabella per il locale delle pulizie ed eviti i danni.',
   },
   '/ueber-uns': {
     label: 'Chi siamo',

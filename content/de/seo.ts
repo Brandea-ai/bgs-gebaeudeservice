@@ -108,17 +108,32 @@ export const pages = {
   '/blog': {
     label: 'Ratgeber',
     title: 'Ratgeber Gebäudereinigung',
-    description: `Ratgeber von ${company.brand}: worauf Sie bei der Wahl einer Reinigungsfirma achten sollten und wovon die Kosten einer Unterhaltsreinigung abhängen.`,
+    description: 'Ratgeber für Verwaltungen und Unternehmen: Aufgaben der Hauswartung, Wohnungsabgabe, Bodenbeläge, Vergabe und Kosten. Vorlagen gleich ausdrucken.',
   },
   '/blog/richtige-reinigungsfirma-finden': {
     label: 'Reinigungsfirma finden',
     title: 'Die richtige Reinigungsfirma finden',
-    description: 'Reinigungsfirma beauftragen: Leistungsumfang, Versicherung, Qualitätskontrolle, Referenzen und Offerte vorher klären. Mit Ablauf bis zum Vertrag.',
+    description: 'Reinigungsfirma beauftragen: Umfang, Versicherung, Arbeitsbedingungen und Offerte klären. Drucken Sie das Vergleichsraster aus und vergleichen Sie Offerten.',
   },
   '/blog/reinigungskosten-schweiz': {
     label: 'Kosten der Unterhaltsreinigung',
     title: 'Was kostet eine Unterhaltsreinigung?',
-    description: 'Wovon der Preis einer Unterhaltsreinigung abhängt: Fläche, Rhythmus, Nutzung und Einsatzzeiten. Mit Hinweisen zum Vergleich von Offerten.',
+    description: 'Wovon die Kosten einer Unterhaltsreinigung abhängen: Stunden, Rhythmus, Einsatzzeiten und Löhne. Rechnen Sie Ihre Offerten mit dem Rechenweg nach.',
+  },
+  '/blog/hauswartung-aufgaben': {
+    label: 'Aufgaben der Hauswartung',
+    title: 'Aufgaben der Hauswartung festlegen und abrechnen',
+    description: 'Aufgaben der Hauswartung im Pflichtenheft: Rhythmus, Kostengrenze, Meldewege und Nebenkosten, mit ausgefülltem Beispiel. Prüfen Sie damit Ihr Pflichtenheft.',
+  },
+  '/blog/wohnungsabgabe-protokoll': {
+    label: 'Wohnungsabgabe',
+    title: 'Wohnungsabgabe: Protokoll und Mängelrüge',
+    description: 'Wohnungsabgabe für Verwaltungen: wie sauber die Wohnung sein muss und wie Sie Mängel genau festhalten und rügen. Protokollbeispiele gleich ausdrucken.',
+  },
+  '/blog/bodenbelaege-reinigen': {
+    label: 'Bodenbeläge richtig reinigen',
+    title: 'Bodenbeläge reinigen: pH-Wert, Fugen, Pflege',
+    description: 'Welche Reinigungsmittel Naturstein, Plättli, Linoleum, Vinyl und Parkett vertragen. Drucken Sie die Tabelle für Ihren Putzraum aus und vermeiden Sie Schäden.',
   },
   '/ueber-uns': {
     label: 'Über uns',

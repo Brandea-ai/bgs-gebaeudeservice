@@ -1,9 +1,11 @@
+import { Fragment } from "react";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, CaretDown, Phone } from "@phosphor-icons/react/dist/ssr";
 import RichText from "@/components/RichText";
 import TocNav from "@/components/TocNav";
 import { Button } from "@/components/ui/button";
 import { company } from "../../../../shared/company";
+import Werkzeug from "@/seiten/leistung/werkzeug";
 import Abschnitt from "./abschnitt";
 import { formatDate } from "./datum";
 import { artikelKontext, type ArtikelProps } from "./kontext";
@@ -12,10 +14,12 @@ import { artikelKontext, type ArtikelProps } from "./kontext";
  * Lesebereich (E80): links das klebende Verzeichnis mit Scrollspy und einer
  * kleinen Offerte-Karte, rechts der Text in lesbarer Zeilenlänge. Auf dem Handy
  * ein aufklappbares Verzeichnis über dem Text. Im Lesefluss keine Bewegung.
+ * Werkzeuge (Tabelle, Checkliste, Zeitplan) stehen direkt nach ihrem Abschnitt,
+ * in derselben Gestaltung wie auf den Leistungsseiten, mit «Drucken» (E85).
  */
 export default function ArtikelInhalt(props: ArtikelProps) {
   const { article, lang } = props;
-  const { ui, t, toc, sectionId, href } = artikelKontext(props);
+  const { ui, t, full, toc, sectionId, href } = artikelKontext(props);
   return (
     <div className="container grid gap-10 py-14 lg:grid-cols-12 lg:gap-10 lg:py-20">
       {/* div statt aside: das Verzeichnis (nav) ist die Landmarke */}
@@ -24,9 +28,9 @@ export default function ArtikelInhalt(props: ArtikelProps) {
           <TocNav label={ui.onThisPage} items={toc} />
           <div className="on-dark rounded-[3px] bg-ink p-6 text-white">
             <p className="font-display text-lg font-semibold leading-snug">{article.cta.title}</p>
-            <Button asChild size="lg" className="arrow-link btn-lift mt-5 w-full">
+            <Button asChild size="lg" className="arrow-link btn-lift mt-5 w-full whitespace-nowrap">
               <a href="#kontakt-formular" data-cta="aside">
-                {ui.offerCta}
+                {t.offerShort}
                 <ArrowRight weight="duotone" aria-hidden="true" />
               </a>
             </Button>
@@ -62,7 +66,7 @@ export default function ArtikelInhalt(props: ArtikelProps) {
         </details>
 
         {article.intro && (
-          <div className="max-w-[62ch] space-y-6 font-display text-[1.25rem] font-medium leading-[1.6] text-ink md:text-[1.375rem]">
+          <div className="max-w-[36em] space-y-6 font-display text-[1.25rem] font-medium leading-[1.6] text-ink md:text-[1.375rem]">
             {article.intro.map(paragraph => (
               <p key={paragraph}>
                 <RichText text={paragraph} lang={lang} />
@@ -71,8 +75,11 @@ export default function ArtikelInhalt(props: ArtikelProps) {
           </div>
         )}
 
-        {article.sections.map((section, index) => (
-          <Abschnitt key={section.title} section={section} id={sectionId(index)} lang={lang} />
+        {full.sections.map((section, index) => (
+          <Fragment key={section.title}>
+            <Abschnitt section={section} id={sectionId(index)} lang={lang} />
+            {section.tool && <Werkzeug tool={section.tool} lang={lang} premium={false} pageTitle={article.h1} />}
+          </Fragment>
         ))}
 
         {/* Ende des Artikels: Herkunft, Stand und der Weg zurück zur Übersicht */}

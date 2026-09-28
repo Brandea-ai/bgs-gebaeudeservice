@@ -124,6 +124,23 @@ const slugs = {
     fr: 'guide/cout-du-nettoyage-d-entretien',
     it: 'guida/costi-della-pulizia-di-manutenzione',
   },
+  // Ratgeber-Ausbau E85 (25-AUDIT/inhalt.md 10.1), informative Adressen ohne die Hauptbegriffe der
+  // Leistungsseiten (24-SEO-KEYWORDS.md, Prüferbefund R1)
+  '/blog/hauswartung-aufgaben': {
+    en: 'guide/caretaking-duties',
+    fr: 'guide/taches-de-la-conciergerie',
+    it: 'guida/compiti-della-custodia',
+  },
+  '/blog/wohnungsabgabe-protokoll': {
+    en: 'guide/flat-handover-report',
+    fr: 'guide/etat-des-lieux-de-sortie',
+    it: 'guida/riconsegna-dell-appartamento-verbale',
+  },
+  '/blog/bodenbelaege-reinigen': {
+    en: 'guide/cleaning-floor-coverings',
+    fr: 'guide/nettoyer-les-revetements-de-sol',
+    it: 'guida/pulire-i-pavimenti',
+  },
   '/ueber-uns': { en: 'about-us', fr: 'a-propos', it: 'chi-siamo' },
   '/kontakt': { en: 'contact', fr: 'contact', it: 'contatto' },
   '/impressum': { en: 'legal-notice', fr: 'mentions-legales', it: 'note-legali' },
