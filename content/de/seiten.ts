@@ -1,7 +1,7 @@
 import { cantonList, company, listDe, premiumLabel, premiumLine } from '../../shared/company'
 import type { PagePath } from '../../shared/seo'
 import type { Step, Tool } from '../types'
-import { answers, steps } from './common'
+import { answers, steps, ui } from './common'
 
 /**
  * Texte der Startseite, von Über uns, Kontakt, Einzugsgebiet und den beiden
@@ -16,11 +16,12 @@ type PromiseKey = 'diskret' | 'teams' | 'personal' | 'schluessel' | 'zeiten' | '
 type LinkCard = Card & { path: PagePath }
 type AudienceKey = 'verwaltungen' | 'unternehmen' | 'privat' | 'premium'
 type PromiseItemKey = 'persoenlich' | 'offerte' | 'gebiet' | 'versichert' | 'sprachen' | 'umwelt'
-type ValueKey = 'ehrlich' | 'klar' | 'nachbessern' | 'versichert' | 'diskret' | 'umwelt'
 type BriefKey = 'objekt' | 'ort' | 'groesse' | 'leistung' | 'rhythmus' | 'start' | 'zugang'
 // Schlüssel wählen Symbol und Bild in der Darstellung; die Übersetzungen tragen dieselben Schlüssel
 type Audience = Card & { key: AudienceKey; points: string[]; link: { path: PagePath; text: string } }
 type KeyedCard<K> = Card & { key: K }
+/** Werkzeug-Tabelle (E85), hier für die Firmenangaben zum Nachprüfen */
+type TableTool = Extract<Tool, { kind: 'table' }>
 
 /** Belegte Kennzahlen (E18, Stand September 2026) */
 export const proof = [
@@ -238,10 +239,26 @@ export const home = {
   },
 }
 
+/**
+ * Über uns (E85, Audit 25 Abschnitt 8): nur Belegtes (E18, E58). «2006» steht
+ * im Hauptinhalt nur in H1 und Steckbrief, als Erfahrung und nie im selben Satz
+ * oder Band wie die eingetragene Firma: Zefix nennt für die GmbH eine frühere
+ * Firma ohne Bezug zur Reinigung, der jüngste SHAB-Eintrag stammt vom 20.11.2012
+ * (gelesen 28.09.2026). Worauf sich 2006 bezieht, ist als Rückfrage an Brandea
+ * offen (Befund UU-01).
+ * Der Name des Geschäftsführers steht nicht hier (offene Frage F6), nur im Impressum.
+ */
+const uidRegister = `https://www.uid.admin.ch/Detail.aspx?uid_id=${company.uid.replace(/[-.]/g, '')}&lang=de`
+// Im Fliesstext bricht der Firmenname nicht am Bindestrich um (Audit visuell, 390 px). Geschützte Leerzeichen allein
+// genügen nicht, nach «-» darf der Browser trotzdem umbrechen (UAX #14, LB12a); der Wortverbinder U+2060 verhindert das.
+// Die Tabelle zeigt den Registerwert unverändert.
+const legalNameText = company.legalName.replace(' - ', '\u00a0-\u2060\u00a0')
+
 export const about = {
-  h1: `Reinigung und Hauswartung aus ${company.address.city}, seit 2006`,
-  lead: `Seit 2006 sind wir in der Reinigung und Hauswartung tätig. Heute betreuen über 50 Mitarbeitende mehr als 120 Kunden in den Kantonen ${cantonList}, auf ${listDe(company.languages)}.`,
-  // Zusagen mit Schlüssel für das Symbol (E18, M47). Die Startseite zeigt sie.
+  h1: 'Über uns: Reinigung und Hauswartung seit 2006',
+  // Gebiet mit den fünf Kantonen (E30). Marke und eingetragene Firma nennt erst «Firmenangaben zum Nachprüfen» (check.intro)
+  lead: `Wir reinigen und betreuen Liegenschaften, Büros, Praxen und Hallen in den Kantonen ${cantonList}.`,
+  // Zusagen mit Schlüssel für das Symbol (E18, M47). Nur die Startseite zeigt sie (06-zusagen.tsx).
   promises: {
     title: 'Worauf Sie sich verlassen können',
     items: [
@@ -253,90 +270,123 @@ export const about = {
       { key: 'umwelt', title: 'Umweltfreundliche Mittel', text: 'Auf Wunsch reinigen wir mit umweltfreundlichen Mitteln.' },
     ] satisfies KeyedCard<PromiseItemKey>[] as KeyedCard<PromiseItemKey>[],
   },
-  // Arbeitsweise (E80): nur, was auf den Leistungsseiten bestätigt steht (E18, E56)
+  // Steckbrief statt Kennzahlen-Kacheln und Zeitleiste (Audit visuell: «2006» sechsmal)
+  profile: {
+    title: 'Steckbrief',
+    items: [
+      { value: 'Seit 2006', label: 'Erfahrung' },
+      { value: 'Über 50', label: 'Mitarbeitende' },
+      { value: 'Über 120', label: 'Kunden' },
+      // Zahl und Einheit bleiben zusammen; umbrechen darf nur nach «CHF» (gemessen bei 360, 390 und 1024 px)
+      { value: 'CHF 10\u00a0Mio.', label: 'Deckung der Betriebshaftpflicht' },
+    ],
+    note: 'Stand September 2026',
+  },
+  // Baustein 8.2: filtert Anfragen, die nicht passen (E28, E29, E34, R10c, GARTEN)
+  fit: {
+    title: 'Wann wir passen, und wann nicht',
+    intro: 'Das sagen wir lieber vor dem ersten Termin. So verliert niemand Zeit mit einer Anfrage, die nicht zu uns passt.',
+    yesTitle: 'Gut passen wir, wenn Sie',
+    yes: [
+      'als Verwaltung, Eigentümerschaft oder Stockwerkeigentümerschaft ein Haus reinigen oder betreuen lassen, mit [Hauswartung](/leistungen/hauswartung) und [Unterhaltsreinigung](/leistungen/unterhaltsreinigung)',
+      'Büros, Praxen, Gewerbeflächen oder Hallen mehrmals pro Woche reinigen lassen: [Büro- und Praxisreinigung](/leistungen/bueroreinigung), [Industrie- und Hallenreinigung](/leistungen/industrie-und-hallenreinigung)',
+      'Reinigung, Hauswartung und Umgebung in einem Vertrag bündeln möchten, als [Facility Services](/leistungen/facility-services)',
+      'einen einzelnen Einsatz planen, etwa eine [Grundreinigung](/leistungen/sonderreinigungen), die [Baureinigung](/leistungen/baureinigung) vor der Übergabe oder die [Umzugsreinigung](/leistungen/umzugsreinigung) zwischen zwei Mietverhältnissen',
+      `privat eine Villa, eine Zweitwohnung oder eine Yacht pflegen oder die Kabine Ihres Privatjets reinigen lassen: dafür gibt es [${premiumLabel}](/premium)`,
+    ],
+    noTitle: 'Nicht passen wir für',
+    no: [
+      'Winterdienst und Schneeräumung',
+      'Pikett rund um die Uhr',
+      'die Endreinigung einer einzelnen Mietwohnung im Auftrag der Mieterin oder des Mieters',
+      'die Reinigung normaler Privathaushalte',
+      'Gartenbau und Neuanlagen',
+    ],
+    // Nur die Seiten unter /leistungen haben diesen Abschnitt (die Privatjet-Seite nicht)
+    note: `Was eine Leistung nicht umfasst, nennt ihre Seite unter [Leistungen](/leistungen) im Abschnitt «${ui.notIncluded}».`,
+  },
+  // Arbeitsweise (E80): Werte als Handlungen, nur bestätigte Punkte (E18, E56, E41). Nichts zu
+  // Schlüsseln, Alarm oder festem Team im B2B (offene Fragen F2, F7), die Premium-Regeln stehen auf /premium
   work: {
     title: 'So arbeiten wir',
-    intro: 'Vier Grundsätze, die bei jedem Auftrag gelten, von der Büroreinigung bis zur Hauswartung.',
+    intro: 'Vier Grundsätze, nach denen wir Aufträge angehen.',
     items: [
       {
-        title: 'Erst ansehen, dann offerieren',
+        title: 'Erst das Objekt, dann der Preis',
         paragraphs: [
-          'Bodenbeläge, Glasflächen, Nutzung und Zugang bestimmen den Aufwand. Darum sehen wir uns Ihr Objekt zuerst vor Ort an und klären mit Ihnen Umfang, Rhythmus und Zeiten.',
-          'Einen Preis nennen wir erst danach, schriftlich in der Offerte, kostenlos und unverbindlich.',
+          'Wie viel Arbeit eine Reinigung macht, zeigt sich erst vor Ort: an Bodenbelägen und Glasflächen, an der Nutzung, an Wegen und Zugängen.',
+          'Einen Preis am Telefon nennen wir deshalb nicht. Ohne Besichtigung würde er oft nicht stimmen.',
+          'Die Offerte folgt nach diesem Termin, schriftlich und ohne Kosten für Sie.',
         ],
       },
       {
-        title: 'Klar vereinbart',
+        title: 'Umfang und Grenzen schriftlich',
         paragraphs: [
-          'Mit Ihrer Zusage steht fest, welche Räume und Aufgaben dazugehören, wie oft wir kommen und zu welchen Zeiten. Den Zugang regeln wir vorher, etwa mit Schlüssel oder Badge.',
-          'Was nicht dazugehört, sagen wir offen und nennen die passende Leistung.',
+          'Die Offerte nennt Räume und Aufgaben, den Rhythmus und die Einsatzzeiten. Mit Ihrer Zusage wird daraus die Vereinbarung, samt der Regel, wie wir ins Gebäude kommen, etwa mit Schlüssel oder Badge.',
+          'Was nicht dazugehört, nennen wir ebenso deutlich, zusammen mit der Leistung, die dafür passt.',
+          // Garantiesatz im bestätigten Wortlaut der Umzugsseite (E56), dazu der Vorbehalt der Offerte
+          'Bei der [Umzugsreinigung](/leistungen/umzugsreinigung) gilt unsere Abnahmegarantie: Beanstandet die Verwaltung bei der Abnahme etwas an unserer Reinigung, reinigen wir kostenlos nach. Was die Garantie im Einzelnen umfasst, regelt die Offerte.',
         ],
       },
       {
         title: 'Kurze Wege',
         paragraphs: [
-          `Ihre Anfrage bearbeitet der Geschäftsführer persönlich, Sie hören ${company.responseTime} von uns.`,
-          'Wer mehrere Leistungen braucht, bündelt sie als [Facility Services](/leistungen/facility-services) in einem Vertrag, mit einer Ansprechperson für alles.',
+          // Bestandsformulierung (R5d); ganz zutreffend erst nach der Umstellung der Adresse (E15, E31, M58).
+          // Die Antwortzeit nennt der Kontaktbereich unten schon zweimal.
+          'Ihre Anfrage bearbeitet der Geschäftsführer persönlich.',
+          'Beziehen Sie mehrere Leistungen als [Facility Services](/leistungen/facility-services), haben Sie dafür eine Ansprechperson bei uns.',
         ],
       },
       {
-        title: 'Material und Mittel',
+        title: 'Passend zum Material',
         paragraphs: [
-          'Bei der Unterhaltsreinigung füllen wir Verbrauchsmaterial wie Papier und Seife nach. Auf Wunsch reinigen wir mit umweltfreundlichen Mitteln.',
-          'Naturstein, Parkett und Hochglanzflächen reinigen wir materialgerecht, mit Rücksicht auf empfindliche Oberflächen.',
+          'Marmor und Kalkstein vertragen keine sauren Reiniger, geöltes Parkett nur wenig Wasser. Mittel und Geräte richten sich deshalb nach dem Belag, nicht nach der Gewohnheit.',
+          'Papier, Seife und anderes Verbrauchsmaterial füllen wir bei der laufenden Reinigung nach. Wer das Material beschafft, Sie oder wir, steht in der Vereinbarung.',
+          'Umweltfreundliche Mittel setzen wir ein, wenn Sie das wünschen.',
         ],
       },
     ] satisfies { title: string; paragraphs: string[] }[],
   },
-  // Geschichte: nur belegte Eckdaten (E18, E58), keine erfundene Gründungsgeschichte
-  history: {
-    title: 'Seit 2006 in der Region',
-    items: [
-      { label: '2006', title: 'Der Anfang', text: 'Seit 2006 sind wir in der Reinigung und Hauswartung tätig.' },
-      {
-        label: 'Heute',
-        title: 'Über 50 Mitarbeitende, über 120 Kunden',
-        text: 'Stand September 2026. Wir arbeiten für Unternehmen, Verwaltungen, Eigentümer und Privatkunden mit besonderen Ansprüchen.',
-      },
-      {
-        label: 'Sitz',
-        title: company.address.city,
-        text: `Die ${company.legalName} ist im ${company.register} eingetragen.`,
-      },
+  // Baustein 8.1: Registerdaten zum Nachprüfen, gelesen am 28.09.2026 (UID-Register in allen vier Sprachen, Fedlex).
+  // Zefix und den Handelsregisterauszug Luzern erst wieder verlinken, wenn Brandea geklärt hat, worauf sich 2006
+  // bezieht (Befund UU-01): Beide zeigen die frühere Firma. Das UID-Register führt alle fünf Angaben selbst.
+  check: {
+    kind: 'table',
+    id: 'firmenangaben',
+    title: 'Firmenangaben zum Nachprüfen',
+    intro: `${company.premiumBrand ? `${company.brand} ist die Marke der ${legalNameText}. ` : ''}Für Ihre Lieferantenakte: Jede Angabe unten finden Sie im [UID-Register](${uidRegister}) des Bundesamts für Statistik, jeweils mit dem Feld, in dem sie dort steht.`,
+    columns: ['Angabe', 'Eintrag', 'Feld im UID-Register'],
+    rows: [
+      ['Firma', company.legalName, '«Name»'],
+      // Sitz ist die Gemeinde, Emmenbrücke der Ort der Postadresse (Befund UU-05, zweite Prüfung)
+      ['Sitz und Adresse', `Sitz ${company.seat} LU. Die Adresse ${company.address.street}, ${company.address.postalCode} ${company.address.city} liegt in der Gemeinde ${company.seat}.`, '«Gemeinde» und Sitzadresse'],
+      ['Firmennummer', `${company.registerNumber}, ${company.register}`, '«Referenznummer» unter Handelsregisterdaten'],
+      ['UID', company.uid, '«UID» unter Kernmerkmale'],
+      ['Mehrwertsteuernummer', company.vat, '«MWST-Nummer» unter Mehrwertsteuerdaten'],
     ],
-  },
+    note: 'Zum Abgleich von Offerte und Rechnung: Das OR sieht vor, dass die im Handelsregister eingetragene Firma in der Korrespondenz und auf Rechnungen vollständig und unverändert steht (Art. 954a OR). Kurzbezeichnungen, Logos und Geschäftsbezeichnungen dürfen zusätzlich erscheinen. Nach dem Mehrwertsteuergesetz nennt eine Rechnung in der Regel auch die Nummer, unter der die Firma im MWST-Register eingetragen ist (Art. 26 MWSTG).',
+    sources: [
+      { label: `UID-Register, ${company.uid}`, href: uidRegister },
+      { label: 'Art. 954a Obligationenrecht (OR)', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_954_a' },
+      { label: 'Art. 26 Mehrwertsteuergesetz (MWSTG)', href: 'https://www.fedlex.admin.ch/eli/cc/2009/615/de#art_26' },
+    ],
+    printable: true,
+    updated: '2026-09-28',
+  } satisfies TableTool as TableTool,
   languages: {
     title: 'Vier Sprachen',
-    text: `Unsere Mitarbeitenden sprechen ${listDe(company.languages)}. Das erleichtert Absprachen mit internationalen Teams, mit Mieterinnen und Mietern und mit Kundinnen und Kunden, die lieber in ihrer Sprache sprechen. Diese Website gibt es in denselben vier Sprachen.`,
+    text: 'Rückfragen und Absprachen führen wir auf Deutsch, Englisch, Französisch oder Italienisch. Das hilft internationalen Firmen, Eigentümern mit Wohnsitz im Ausland und Mieterinnen und Mietern, die ihre Frage lieber in der eigenen Sprache stellen.',
+    switchLabel: 'Diese Seite auf',
   },
   region: {
     title: 'Fünf Kantone, gleiche Bedingungen',
-    text: `Von ${company.address.city} aus arbeiten wir in den Kantonen ${cantonList}. Alle Leistungen bieten wir im ganzen Gebiet an, und für die Anfahrt gelten überall dieselben Bedingungen.`,
-    link: 'Zum Einzugsgebiet',
+    text: `Von ${company.address.city} aus bieten wir jede Leistung im ganzen Gebiet an, zu denselben Anfahrtsbedingungen.`,
+    listLabel: 'Die Kantone im Einzelnen',
+    link: 'Zum Einzugsgebiet mit Karte',
   },
-  // Werte als Handlungen (E80): jede Zeile sagt, was wir tun, nicht was wir sind
-  values: {
-    title: 'Unsere Werte im Alltag',
-    intro: 'Werte zeigen sich in dem, was man tut. Darum steht hier, was wir konkret machen.',
-    items: [
-      { key: 'ehrlich', title: 'Ehrlich beim Preis', text: 'Preise nennen wir erst in der schriftlichen Offerte, nachdem wir das Objekt gesehen haben. Ein Preis ohne Besichtigung würde später oft nicht stimmen.' },
-      { key: 'klar', title: 'Klar im Umfang', text: 'Auf jeder Leistungsseite steht auch, was nicht dazugehört, mit einem Verweis auf die passende Leistung.' },
-      { key: 'nachbessern', title: 'Wir stehen dafür ein', text: 'Beanstandet die Verwaltung nach einer Umzugsreinigung etwas an unserer Arbeit, reinigen wir kostenlos nach. Die Einzelheiten stehen in der Offerte.' },
-      { key: 'versichert', title: 'Verantwortung', text: 'Für Schäden bei der Arbeit haben wir eine Betriebshaftpflichtversicherung mit einer Deckung von CHF 10 Mio.' },
-      { key: 'diskret', title: 'Diskret', text: 'Im Premium-Bereich unterzeichnen wir auf Wunsch eine Geheimhaltungsvereinbarung. Schlüssel und Alarm handhaben wir nach festen Regeln.' },
-      { key: 'umwelt', title: 'Rücksicht auf die Umwelt', text: 'Auf Wunsch reinigen wir mit umweltfreundlichen Mitteln. Sagen Sie es uns bei der Besichtigung.' },
-    ] satisfies KeyedCard<ValueKey>[] as KeyedCard<ValueKey>[],
-  },
-  contact: {
-    title: 'Ihre Ansprechperson',
-    text: `Ihre Anfrage geht direkt an den Geschäftsführer. Er meldet sich ${company.responseTime}.`,
-  },
-  register: { title: 'Registerdaten', court: company.register as string, uid: 'UID' },
-  statsLabel: 'In Zahlen',
-  faq: [faq.kosten, faq.gebiet, faq.kurzfristig],
   cta: {
     title: 'Besichtigung vereinbaren',
-    text: 'Bei der Besichtigung sehen wir uns Ihr Objekt an und klären Umfang und Zeiten. Danach erhalten Sie eine schriftliche Offerte.',
+    text: 'Nennen Sie uns Objekt, Ort und die gewünschte Leistung. Besichtigung und Offerte sind kostenlos und unverbindlich.',
   },
 }
 

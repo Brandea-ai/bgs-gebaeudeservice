@@ -2,7 +2,7 @@ import { company, premiumLabel } from '../../shared/company'
 import type { PagePath } from '../../shared/seo'
 import type { Dictionary } from '../de'
 import type { Step } from '../types'
-import { answers, cantonListIt, languagesIt, premiumLine, registerIt, responseTime, steps } from './common'
+import { answers, cantonListIt, languagesIt, premiumLine, registerIt, responseTime, steps, ui } from './common'
 
 /**
  * Testi della pagina iniziale, di Chi siamo, Contatto, Zona d’intervento e delle
@@ -197,9 +197,12 @@ export const home: Seiten['home'] = {
   },
 }
 
+const uidRegister = `https://www.uid.admin.ch/Detail.aspx?uid_id=${company.uid.replace(/[-.]/g, '')}&lang=it`
+const legalNameText = company.legalName.replace(' - ', '\u00a0-\u2060\u00a0')
+
 export const about = {
-  h1: `Pulizia e custodia di stabili da ${company.address.city}, dal 2006`,
-  lead: `Dal 2006 operiamo nella pulizia e nella custodia di stabili. Oggi oltre 50 collaboratrici e collaboratori seguono più di 120 clienti nei Cantoni di ${cantonListIt}, in ${languagesIt}.`,
+  h1: 'Chi siamo: pulizia e custodia di stabili dal 2006',
+  lead: `Puliamo e curiamo stabili abitativi, uffici, studi e capannoni nei Cantoni di ${cantonListIt}.`,
   promises: {
     title: 'Su che cosa può contare',
     items: [
@@ -211,87 +214,112 @@ export const about = {
       { key: 'umwelt' as const, title: 'Prodotti ecologici', text: 'Su richiesta puliamo con prodotti ecologici.' },
     ],
   },
+  profile: {
+    title: 'Profilo aziendale',
+    items: [
+      { value: 'Dal 2006', label: 'Esperienza' },
+      { value: 'Oltre 50', label: 'Collaboratrici e collaboratori' },
+      { value: 'Oltre 120', label: 'Clienti' },
+      // L’importo resta unito alla sua unità (misurato a 360, 390 e 1024 px)
+      { value: 'CHF 10\u00a0mio.', label: 'Copertura della responsabilità civile aziendale' },
+    ],
+    note: 'Stato: settembre 2026',
+  },
+  fit: {
+    title: 'Quando facciamo al caso Suo, e quando no',
+    intro: 'Preferiamo dirlo prima del primo appuntamento. Così nessuno perde tempo con una richiesta che non fa per noi.',
+    yesTitle: 'Facciamo al caso Suo se',
+    yes: [
+      'come amministrazione immobiliare, proprietà o comunione dei proprietari per piani desidera far pulire o curare uno stabile, con la [custodia di stabili](/leistungen/hauswartung) e la [pulizia di manutenzione](/leistungen/unterhaltsreinigung)',
+      'desidera far pulire più volte alla settimana uffici, studi, superfici commerciali o capannoni: [pulizia di uffici e studi](/leistungen/bueroreinigung), [pulizia industriale e di capannoni](/leistungen/industrie-und-hallenreinigung)',
+      'vuole riunire pulizia, custodia e cura degli esterni in un unico contratto, come [facility services](/leistungen/facility-services)',
+      'pianifica un intervento unico, ad esempio una [pulizia a fondo](/leistungen/sonderreinigungen), la [pulizia di fine cantiere](/leistungen/baureinigung) prima della consegna o la [pulizia di fine locazione](/leistungen/umzugsreinigung) tra due locazioni',
+      `come cliente privato desidera la cura di una villa, di una residenza secondaria o di uno yacht, oppure la pulizia della cabina del Suo jet privato: a questo serve [${premiumLabel}](/premium)`,
+    ],
+    noTitle: 'Non facciamo al caso Suo per',
+    no: [
+      'il servizio invernale e lo sgombero della neve',
+      'un servizio di picchetto 24 ore su 24',
+      'la pulizia di fine locazione di un singolo appartamento su incarico dell’inquilina o dell’inquilino',
+      'la pulizia di normali economie domestiche',
+      'la costruzione di giardini e le nuove sistemazioni a verde',
+    ],
+    note: `Ciò che un servizio non comprende è indicato sulla sua pagina, sotto [Servizi](/leistungen), alla voce «${ui.notIncluded}».`,
+  },
   work: {
     title: 'Come lavoriamo',
-    intro: 'Quattro principi validi per ogni incarico, dalla pulizia di uffici alla custodia di stabili.',
+    intro: 'Quattro principi con cui affrontiamo un incarico.',
     items: [
       {
-        title: 'Prima vedere, poi offrire',
+        title: 'Prima l’immobile, poi il prezzo',
         paragraphs: [
-          'Pavimenti, superfici vetrate, utilizzo e accesso determinano l’impegno. Per questo visitiamo prima il Suo immobile sul posto e chiariamo con Lei entità, cadenza e orari.',
-          'Solo dopo indichiamo un prezzo, per iscritto nell’offerta, gratuita e senza impegno.',
+          'Quanto lavoro richieda una pulizia si vede solo sul posto: pavimenti e superfici vetrate, utilizzo dei locali, percorsi e accessi.',
+          'Per questo non indichiamo prezzi al telefono. Senza sopralluogo sarebbero spesso sbagliati.',
+          'L’offerta segue questo appuntamento, per iscritto e senza costi per Lei.',
         ],
       },
       {
-        title: 'Accordi chiari',
+        title: 'Entità e limiti per iscritto',
         paragraphs: [
-          'Con la Sua conferma è stabilito quali locali e compiti sono compresi, con quale frequenza veniamo e in quali orari. L’accesso lo regoliamo prima, ad esempio con chiave o badge.',
-          'Ciò che non è compreso lo diciamo apertamente e indichiamo il servizio adatto.',
+          'L’offerta indica locali e compiti, cadenza e orari d’intervento. Con la Sua conferma diventa l’accordo, compreso il modo in cui accediamo all’edificio, ad esempio con chiave o badge.',
+          'Ciò che non è compreso lo diciamo con la stessa chiarezza, insieme al servizio adatto.',
+          'Per la [pulizia di fine locazione](/leistungen/umzugsreinigung) vale la nostra garanzia di consegna: se in occasione della riconsegna l’amministrazione contesta qualcosa della nostra pulizia, ripuliamo gratuitamente. L’offerta precisa che cosa copre la garanzia.',
         ],
       },
       {
-        title: 'Vie brevi',
+        title: 'Contatti diretti',
         paragraphs: [
-          `La Sua richiesta è trattata personalmente dal gerente; riceverà nostre notizie ${responseTime}.`,
-          'Chi ha bisogno di più servizi può riunirli come [facility services](/leistungen/facility-services) in un unico contratto, con un solo interlocutore per tutto.',
+          'La Sua richiesta è trattata personalmente dal gerente.',
+          'Se riunisce più servizi come [facility services](/leistungen/facility-services), presso di noi ha un solo interlocutore per tutti.',
         ],
       },
       {
-        title: 'Materiale e prodotti',
+        title: 'Adatto al materiale',
         paragraphs: [
-          'Nella pulizia di manutenzione riforniamo il materiale di consumo come carta e sapone. Su richiesta puliamo con prodotti ecologici.',
-          'Pietra naturale, parquet e superfici lucide li puliamo nel rispetto dei materiali, con riguardo per le superfici delicate.',
+          'Marmo e calcare non sopportano detergenti acidi, il parquet oliato solo poca acqua. Prodotti e apparecchi dipendono quindi dal rivestimento, non dall’abitudine.',
+          'Durante la pulizia regolare riforniamo carta, sapone e altro materiale di consumo. Chi acquista il materiale, Lei o noi, è stabilito nell’accordo.',
+          'Usiamo prodotti ecologici se lo desidera.',
         ],
       },
     ],
   },
-  history: {
-    title: 'Nella regione dal 2006',
-    items: [
-      { label: '2006', title: 'L’inizio', text: 'Dal 2006 operiamo nella pulizia e nella custodia di stabili.' },
-      {
-        label: 'Oggi',
-        title: 'Oltre 50 collaboratori, oltre 120 clienti',
-        text: 'Stato a settembre 2026. Lavoriamo per aziende, amministrazioni immobiliari, proprietari e clienti privati con esigenze particolari.',
-      },
-      {
-        label: 'Sede',
-        title: company.address.city,
-        text: `La ${company.legalName} è iscritta nel ${registerIt}.`,
-      },
+  check: {
+    kind: 'table' as const,
+    id: 'firmenangaben',
+    title: 'Dati aziendali da verificare',
+    intro: `${company.premiumBrand ? `${company.brand} è il marchio della ${legalNameText}. ` : ''}Per il Suo dossier fornitori: trova ogni dato qui sotto nel [registro IDI](${uidRegister}) dell’Ufficio federale di statistica, con il campo in cui figura.`,
+    columns: ['Dato', 'Iscrizione', 'Campo nel registro IDI'],
+    rows: [
+      ['Ditta', company.legalName, '«Nome»'],
+      ['Sede e indirizzo', `Sede ${company.seat} LU. L’indirizzo ${company.address.street}, ${company.address.postalCode} ${company.address.city} si trova nel Comune di ${company.seat}.`, '«Comune» e indirizzo della sede'],
+      ['Numero di registro di commercio', `${company.registerNumber}, ${registerIt}`, '«Numero di riferimento» sotto Dati del registro di commercio'],
+      ['IDI (numero d’identificazione delle imprese)', company.uid, '«IDI» sotto Caratteristiche di base'],
+      // Suffisso IVA come nel registro IDI in italiano e nelle note legali (AFC: MWST, TVA o IVA)
+      ['Numero IVA', `${company.uid} IVA`, '«Numero IVA» sotto Dati dell’IVA'],
     ],
+    note: 'Per controllare offerte e fatture: il CO prevede che la ditta iscritta nel registro di commercio figuri in modo completo e senza modifiche nella corrispondenza e sulle fatture (art. 954a CO). Abbreviazioni, simboli e nomi commerciali possono essere usati in aggiunta. Secondo la legge sull’IVA, di regola una fattura indica anche il numero con cui l’impresa è iscritta nel registro dei contribuenti (art. 26 LIVA).',
+    sources: [
+      { label: `Registro IDI, ${company.uid}`, href: uidRegister },
+      { label: 'Art. 954a Codice delle obbligazioni (CO)', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/it#art_954_a' },
+      { label: 'Art. 26 Legge sull’IVA (LIVA)', href: 'https://www.fedlex.admin.ch/eli/cc/2009/615/it#art_26' },
+    ],
+    printable: true,
+    updated: '2026-09-28',
   },
   languages: {
     title: 'Quattro lingue',
-    text: `Le nostre collaboratrici e i nostri collaboratori parlano ${languagesIt}. Questo facilita gli accordi con team internazionali, con inquiline e inquilini e con clienti che preferiscono esprimersi nella propria lingua. Questo sito è disponibile nelle stesse quattro lingue.`,
+    text: 'Da noi può porre domande e prendere accordi in tedesco, inglese, francese o italiano. Questo aiuta le aziende internazionali, i proprietari domiciliati all’estero e le inquiline e gli inquilini che preferiscono porre la loro domanda nella propria lingua.',
+    switchLabel: 'Questa pagina in',
   },
   region: {
-    title: 'Cinque Cantoni, stesse condizioni',
-    text: `Da ${company.address.city} operiamo nei Cantoni di ${cantonListIt}. Offriamo tutti i servizi nell’intera zona, e per la trasferta valgono ovunque le stesse condizioni.`,
-    link: 'Alla zona d’intervento',
+    title: 'Cinque cantoni, le stesse condizioni',
+    text: `Da ${company.address.city} offriamo ogni servizio in tutta la zona, alle stesse condizioni di trasferta.`,
+    listLabel: 'I cantoni in dettaglio',
+    link: 'Zona d’intervento con carta',
   },
-  values: {
-    title: 'I nostri valori nella pratica',
-    intro: 'I valori si vedono in ciò che si fa. Per questo qui trova che cosa facciamo in concreto.',
-    items: [
-      { key: 'ehrlich' as const, title: 'Onesti sul prezzo', text: 'Indichiamo i prezzi solo nell’offerta scritta, dopo aver visto l’immobile. Un prezzo senza sopralluogo spesso non sarebbe corretto in seguito.' },
-      { key: 'klar' as const, title: 'Chiari sull’entità', text: 'Ogni pagina di servizio indica anche ciò che non è compreso, con un rimando al servizio adatto.' },
-      { key: 'nachbessern' as const, title: 'Rispondiamo del nostro lavoro', text: 'Se alla consegna l’amministrazione contesta qualcosa nella nostra pulizia di fine locazione, puliamo di nuovo gratuitamente. I dettagli figurano nell’offerta.' },
-      { key: 'versichert' as const, title: 'Responsabilità', text: 'Per i danni durante il lavoro abbiamo un’assicurazione di responsabilità civile aziendale con una copertura di CHF 10 mio.' },
-      { key: 'diskret' as const, title: 'Discrezione', text: 'Nel settore Premium sottoscriviamo su richiesta un accordo di riservatezza. Chiavi e allarme li gestiamo secondo regole fisse.' },
-      { key: 'umwelt' as const, title: 'Rispetto per l’ambiente', text: 'Su richiesta puliamo con prodotti ecologici. Ce lo dica durante il sopralluogo.' },
-    ],
-  },
-  contact: {
-    title: 'Il Suo interlocutore',
-    text: `La Sua richiesta arriva direttamente al gerente. La contatta ${responseTime}.`,
-  },
-  register: { title: 'Dati del registro', court: registerIt, uid: 'IDI' },
-  statsLabel: 'In cifre',
-  faq: [faq.kosten, faq.gebiet, faq.kurzfristig],
   cta: {
-    title: 'Fissare un sopralluogo',
-    text: 'Durante il sopralluogo esaminiamo il Suo immobile e chiariamo l’entità del lavoro e gli orari. In seguito riceve un’offerta scritta.',
+    title: 'Concordare un sopralluogo',
+    text: 'Ci indichi l’immobile, il luogo e il servizio desiderato. Sopralluogo e offerta sono gratuiti e senza impegno.',
   },
 }
 

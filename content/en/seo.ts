@@ -122,8 +122,8 @@ export const pages: Dictionary['pages'] = {
   },
   '/ueber-uns': {
     label: 'About us',
-    title: 'About us',
-    description: `${company.legalName} from ${company.address.city}: experience since 2006, over 50 employees, over 120 clients, advice in German, English, French and Italian.`,
+    title: 'About us: cleaning and caretaking since 2006',
+    description: 'How we work, who we work for and company details you can check in the UID register. Free quote after a site visit.',
   },
   '/kontakt': {
     label: 'Contact',
