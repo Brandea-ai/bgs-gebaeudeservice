@@ -286,7 +286,7 @@ export const contact: Seiten['contact'] = {
 
 export const area: Seiten['area'] = {
   h1: 'Service area: Central Switzerland and Aargau',
-  lead: `From our base in ${company.address.city}, we work in the cantons of ${cantons}. We offer all our services throughout the area, for businesses and discerning private clients alike.`,
+  lead: `Our service area covers all of the cantons of ${cantons}. Every service is available throughout, for property managers and businesses as well as through our premium services.`,
   cantonsTitle: 'Cantons',
   cantonLabels: ['Canton of Lucerne', 'Canton of Zug', 'Canton of Aargau', 'Canton of Nidwalden', 'Canton of Obwalden'],
   // Places by canton (S06): same places as places.groups, regrouped; keys as in company.cantons
@@ -298,20 +298,37 @@ export const area: Seiten['area'] = {
     Obwalden: ['Engelberg'],
   },
   seatTitle: 'Head office and contact',
+  seatText: 'Travel from Emmenbrücke is on the same terms everywhere, whether to Sursee, Baar, Muri or Engelberg.',
+  // Building block 6.1: only facts that appear with a source on the canton pages
+  vergleich: {
+    nav: 'Comparison',
+    title: 'The five cantons compared',
+    intro: 'Services and terms are the same everywhere, including travel. The differences lie in notice dates, public holidays and second homes, and they matter for the cleaning schedule.',
+    columns: ['Canton', 'Focus', 'Default notice dates', 'Holidays: what is special', 'Second homes over 20%'],
+    rows: [
+      ['[Lucerne](/einzugsgebiet/luzern)', 'Housing, offices, practices', 'As in the tenancy agreement, otherwise local custom (Art. 266c CO)', 'St Stephen’s Day a holiday, St Joseph’s by municipality', 'Flühli, Vitznau, Weggis'],
+      ['[Zug](/einzugsgebiet/zug)', 'Offices and headquarters', '31/3, 30/6, 30/9', 'Four customary days off', 'None'],
+      ['[Aargau](/einzugsgebiet/aargau)', 'Halls, warehouses, housing', 'As in the tenancy agreement, otherwise local custom (Art. 266c CO)', 'Six district arrangements', 'None'],
+      ['[Nidwalden](/einzugsgebiet/nidwalden)', 'Lakeside properties, condominiums', 'As in the tenancy agreement, otherwise local custom (Art. 266c CO)', 'St Joseph’s Day (19/3)', 'Emmetten'],
+      ['[Obwalden](/einzugsgebiet/obwalden)', 'Sarneraatal, hotels in Engelberg', '31/3, 30/6, 30/9', 'Nicholas of Flüe (25/9)', 'Engelberg'],
+    ],
+    note: 'Municipalities do not have to record second homes as such in the buildings register. According to ARE, the shares can therefore not be compared between municipalities.',
+    sources: ['zgMietrecht', 'owSchlichtung', 'orMiete', 'luRuhetage', 'zgFeiertagsaehnlich', 'agFeiertage', 'nwRuhetage', 'owRuhetage', 'are'] as const,
+  },
   places: {
     title: 'Lakeside areas and holiday resorts',
-    text: 'We also work in lakeside areas and holiday resorts across the region, for example for villas, second homes and hotels. For exacting standards, see our [premium services](/premium).',
+    text: 'According to the housing inventory, more than half of the flats in Flühli with Sörenberg and in Engelberg are not primary residences, and almost one in three in Emmetten and Vitznau. What counts there is less a fixed weekly routine than cleaning before arrival and after departure, plus inspection rounds in between. For these properties, see our [premium services](/premium).',
+    sources: ['are'] as const,
     groups: [
       { title: 'On Lake Lucerne', items: ['Lucerne', 'Horw', 'Meggen', 'Weggis', 'Vitznau', 'Hergiswil', 'Stansstad', 'Ennetbürgen'] },
       { title: 'On Lake Zug and Lake Ägeri', items: ['Zug', 'Cham', 'Risch', 'Hünenberg', 'Walchwil', 'Baar', 'Oberägeri'] },
       { title: 'On Lake Sempach and Lake Hallwil', items: ['Eich', 'Meisterschwanden'] },
-      { title: 'Baden and Mutschellen region', items: ['Ennetbaden', 'Bergdietikon', 'Oberwil-Lieli'] },
-      { title: 'In the mountains', items: ['Engelberg'] },
+      { title: 'Holiday resorts in the mountains', items: ['Sörenberg', 'Emmetten', 'Engelberg'] },
     ],
   },
   cta: {
     title: 'Is your property in our area?',
-    text: `Tell us about the property and its location. We will get back to you ${responseTime} and visit you for the site visit, free of charge and without obligation.`,
+    text: `Tell us the address and type of property. If it is in one of the five cantons, we will get back to you ${responseTime} and arrange the site visit, free of charge and without obligation.`,
   },
 }
 

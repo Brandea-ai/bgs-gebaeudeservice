@@ -288,10 +288,10 @@ export const contact = {
 
 export const area = {
   h1: 'Zone d’intervention : Suisse centrale et Argovie',
-  lead: `Depuis notre siège à ${company.address.city}, nous intervenons dans les cantons de ${cantonList}. Nous proposons toutes nos prestations dans toute la zone, aux entreprises comme à une clientèle privée exigeante.`,
+  lead: `Notre zone d’intervention couvre l’ensemble des cantons de ${cantonList}. Toutes nos prestations sont proposées partout, pour les gérances et les entreprises comme dans notre offre Premium.`,
   cantonsTitle: 'Cantons',
   cantonLabels: ['Canton de Lucerne', 'Canton de Zoug', 'Canton d’Argovie', 'Canton de Nidwald', 'Canton d’Obwald'],
-  // Localités par canton (S06) : mêmes localités que places.groups, regroupées ; clés comme company.cantons
+  // Localités par canton (S06) : mêmes localités que places.groups, regroupées ; clés comme company.cantons
   cantonPlaces: {
     Luzern: ['Lucerne', 'Horw', 'Meggen', 'Weggis', 'Vitznau', 'Eich'],
     Zug: ['Zoug', 'Cham', 'Risch', 'Hünenberg', 'Walchwil', 'Baar', 'Oberägeri'],
@@ -300,20 +300,37 @@ export const area = {
     Obwalden: ['Engelberg'],
   },
   seatTitle: 'Siège et contact',
+  seatText: 'Le déplacement depuis Emmenbrücke se fait partout aux mêmes conditions, que ce soit vers Sursee, Baar, Muri ou Engelberg.',
+  // Élément 6.1 : uniquement des données qui figurent avec leur source sur les pages cantonales
+  vergleich: {
+    nav: 'Comparaison',
+    title: 'Les cinq cantons en comparaison',
+    intro: 'Prestations et conditions sont les mêmes partout, déplacement compris. Les différences portent sur les termes de résiliation sans autre accord dans le bail, les jours fériés et les résidences secondaires, et elles comptent pour le plan de nettoyage.',
+    columns: ['Canton', 'Priorité', 'Termes de résiliation', 'Jours fériés : particularité', 'Résidences secondaires > 20 %'],
+    rows: [
+      ['[Lucerne](/einzugsgebiet/luzern)', 'Habitat, bureaux, cabinets', 'Selon le bail, sinon usage local (art. 266c CO)', 'Saint-Étienne fériée, Saint-Joseph selon commune', 'Flühli, Vitznau, Weggis'],
+      ['[Zoug](/einzugsgebiet/zug)', 'Bureaux et sièges', '31.3, 30.6, 30.9', 'Quatre jours assimilés', 'Aucune'],
+      ['[Argovie](/einzugsgebiet/aargau)', 'Halles, entrepôts, habitat', 'Selon le bail, sinon usage local (art. 266c CO)', 'Six régimes (districts)', 'Aucune'],
+      ['[Nidwald](/einzugsgebiet/nidwalden)', 'Biens au bord du lac, PPE', 'Selon le bail, sinon usage local (art. 266c CO)', 'Saint-Joseph, 19 mars', 'Emmetten'],
+      ['[Obwald](/einzugsgebiet/obwalden)', 'Sarneraatal, hôtels à Engelberg', '31.3, 30.6, 30.9', 'Nicolas de Flüe (25.9)', 'Engelberg'],
+    ],
+    note: 'Les communes n’ont pas l’obligation de déclarer les résidences secondaires comme telles dans le registre des bâtiments. Selon l’ARE, les proportions ne peuvent donc pas être comparées entre communes.',
+    sources: ['zgMietrecht', 'owSchlichtung', 'orMiete', 'luRuhetage', 'zgFeiertagsaehnlich', 'agFeiertage', 'nwRuhetage', 'owRuhetage', 'are'] as const,
+  },
   places: {
     title: 'Rives des lacs et lieux de villégiature',
-    text: 'Nous sommes aussi à votre service sur les rives des lacs et dans les lieux de villégiature de la région, par exemple pour des villas, des résidences secondaires et des hôtels. Pour des exigences particulières, nous proposons notre [offre Premium](/premium).',
+    text: 'Selon l’inventaire des logements, plus de la moitié des logements de Flühli avec Sörenberg et d’Engelberg ne sont pas des résidences principales, et près d’un sur trois à Emmetten et à Vitznau. Ce qui compte là-bas, c’est moins un rythme hebdomadaire fixe que le nettoyage avant l’arrivée et après le départ, avec des rondes de contrôle entre-temps. Ces biens relèvent de notre [offre Premium](/premium).',
+    sources: ['are'] as const,
     groups: [
-      { title: 'Au bord du lac des Quatre-Cantons', items: ['Lucerne', 'Horw', 'Meggen', 'Weggis', 'Vitznau', 'Hergiswil', 'Stansstad', 'Ennetbürgen'] },
+      { title: 'Lac des Quatre-Cantons', items: ['Lucerne', 'Horw', 'Meggen', 'Weggis', 'Vitznau', 'Hergiswil', 'Stansstad', 'Ennetbürgen'] },
       { title: 'Au bord des lacs de Zoug et d’Ägeri', items: ['Zoug', 'Cham', 'Risch', 'Hünenberg', 'Walchwil', 'Baar', 'Oberägeri'] },
       { title: 'Au bord des lacs de Sempach et de Hallwil', items: ['Eich', 'Meisterschwanden'] },
-      { title: 'Région de Baden et du Mutschellen', items: ['Ennetbaden', 'Bergdietikon', 'Oberwil-Lieli'] },
-      { title: 'À la montagne', items: ['Engelberg'] },
+      { title: 'Stations de montagne', items: ['Sörenberg', 'Emmetten', 'Engelberg'] },
     ],
   },
   cta: {
     title: 'Votre bien se trouve-t-il dans notre zone ?',
-    text: `Décrivez-nous le bien et le lieu. Nous vous répondons ${responseTime} et passons pour la visite, gratuitement et sans engagement.`,
+    text: `Indiquez-nous l’adresse et le type de bien. S’il se trouve dans l’un des cinq cantons, nous vous répondons ${responseTime} et convenons de la visite, gratuitement et sans engagement.`,
   },
 }
 

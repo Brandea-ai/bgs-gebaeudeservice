@@ -1,39 +1,95 @@
 import { company } from '../../shared/company'
 import type { Dictionary } from '../de'
 import type { KantonPage } from '../de/kantone'
-import { answers, responseTime } from './common'
+import type { Source } from '../types'
+import { responseTime } from './common'
 import { nav } from './navigation'
 
 /**
- * Testi delle cinque pagine cantonali in italiano (E80, M60). Traduzione fedele
- * di content/de/kantone.ts, stesse chiavi, nessuna affermazione nuova (E18).
- * Nomi di Cantoni, laghi e città in italiano dove esistono (Lucerna, Zugo, lago
- * dei Quattro Cantoni), altrimenti il nome ufficiale. Titoli senza marchio,
- * metaFor() in shared/seo.ts lo aggiunge.
+ * Testi delle cinque pagine cantonali in italiano (E80, E85, M60). Traduzione
+ * fedele di content/de/kantone.ts, stesse chiavi, nessuna nuova affermazione
+ * (E18). Forma di cortesia Lei. Nomi di Cantoni, laghi e città in italiano
+ * quando esistono (Lucerna, Zugo, lago dei Quattro Cantoni), altrimenti il nome
+ * ufficiale. Stesse fonti primarie della versione tedesca, per lo più solo in
+ * tedesco. Titoli senza marchio, metaFor() in shared/seo.ts lo aggiunge.
  */
 
-const sameTerms = 'Tutti, alle stesse condizioni in tutta la zona'
-const seat = `${company.address.street}, ${company.address.postalCode} ${company.address.city}`
 const menu = nav.areaMenu.cantons
+
+/** Fonti primarie, lette il 28 settembre 2026 (stessi link della pagina tedesca) */
+const quelle = {
+  are: {
+    label: 'Ufficio federale dello sviluppo territoriale ARE, inventario delle abitazioni e quota di abitazioni secondarie, stato al 31.03.2026',
+    href: 'https://map.geo.admin.ch/?lang=it&layers=ch.are.wohnungsinventar-zweitwohnungsanteil',
+  },
+  luRuhetage: {
+    label: 'Cantone di Lucerna, legge sui giorni di riposo (SRL n. 855), §§ 1a e 5 (in tedesco)',
+    href: 'https://srl.lu.ch/app/de/texts_of_law/855',
+  },
+  luMeldung: {
+    label: 'Città di Lucerna, cambio d’inquilino e obbligo di notifica dei proprietari (in tedesco)',
+    href: 'https://www.stadtluzern.ch/dienstleistungeninformation/28997',
+  },
+  vogelwarte: {
+    label: 'Stazione ornitologica svizzera, taglio di arbusti e siepi nelle zone abitate (in tedesco)',
+    href: 'https://www.vogelwarte.ch/de/ratgeber/schnitt-von-straeuchern-und-hecken-in-siedlungen-wann-und-wie/',
+  },
+  zgMietrecht: {
+    label: 'Cantone di Zugo, domande frequenti sul diritto di locazione (in tedesco)',
+    href: 'https://zg.ch/de/recht-justiz/zivilverfahren/schlichtung/faq-zum-mietrecht',
+  },
+  zgFeiertage: {
+    label: 'Cantone di Zugo, orari di lavoro e di riposo, giorni festivi (in tedesco)',
+    href: 'https://zg.ch/de/wirtschaft-arbeit/arbeitsbedingungen/arbeits-und-ruhezeiten',
+  },
+  zgFeiertagsaehnlich: {
+    label: 'Ufficio dell’economia e del lavoro di Zugo, giorni festivi 2026 e 2027 (PDF, in tedesco)',
+    href: 'https://cdn.zg.ch/dam/jcr:d241f3f6-4c0c-4bb2-9096-b53dd371501c/Feiertage_2026_2027_Kt-ZG_Daten.pdf',
+  },
+  agFeiertage: {
+    label: 'Cantone di Argovia, Ufficio dell’economia e del lavoro, promemoria sui giorni festivi legali (PDF, in tedesco)',
+    href: 'https://www.ag.ch/media/kanton-aargau/dvi/dokumente/awa/awa/arbeitnehmerschutz-im-betrieb/feiertage.pdf',
+  },
+  nwRuhetage: {
+    label: 'Cantone di Nidvaldo, legge sui giorni di riposo (NG 921.1), art. 2 (in tedesco)',
+    href: 'https://gesetze.nw.ch/app/de/texts_of_law/921.1',
+  },
+  owSchlichtung: {
+    label: 'Cantone di Obvaldo, autorità di conciliazione, domande sulla disdetta (in tedesco)',
+    href: 'https://www.ow.ch/fachbereiche/2131',
+  },
+  owRuhetage: {
+    label: 'Cantone di Obvaldo, legge sui giorni di riposo (GDB 975.2), art. 2, 3 e 5 (in tedesco)',
+    href: 'https://gdb.ow.ch/app/de/texts_of_law/975.2',
+  },
+  orMiete: {
+    label: 'Codice delle obbligazioni (RS 220), art. 266c e 266d, disdetta di abitazioni e locali commerciali',
+    href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/it#art_266_c',
+  },
+  arg: {
+    label: 'Legge sul lavoro (RS 822.11), art. 20a, festa nazionale e giorni festivi cantonali',
+    href: 'https://www.fedlex.admin.ch/eli/cc/1966/57_57_57/it#art_20_a',
+  },
+} satisfies Record<string, Source>
 
 const luzern: KantonPage = {
   name: 'Lucerna',
   kuerzel: 'LU',
   seo: {
-    title: 'Impresa di pulizie Lucerna e custodia',
+    title: 'Impresa di pulizie nel Cantone di Lucerna',
     description:
-      'Pulizia e custodia di stabili nel Cantone di Lucerna, dalla sede a Emmenbrücke: città, agglomerato, rive del lago, Sursee e Seetal. Offerta sul posto.',
+      'Impresa di pulizie a Lucerna con sede a Emmenbrücke: custodia di stabili, pulizia di manutenzione e di uffici fino all’Entlebuch. Offerta gratuita.',
   },
-  h1: 'La Sua impresa di pulizie nel Cantone di Lucerna',
+  h1: 'Impresa di pulizie a Lucerna, con sede a Emmenbrücke',
   lead: [
-    'La nostra sede si trova a Emmenbrücke, nel cuore dell’agglomerato di Lucerna. Da qui puliamo e curiamo immobili, uffici e superfici commerciali in tutto il Cantone, dalla città di Lucerna al lago di Sempach fino all’Entlebuch.',
-    'Dal 2006 lavoriamo nella pulizia e nella custodia di stabili. Prima di ricevere un’offerta, esaminiamo il Suo immobile sul posto. Sopralluogo e offerta sono gratuiti e senza impegno.',
+    'La nostra sede si trova a Emmenbrücke, nel Comune di Emmen, al confine con la città di Lucerna. Kriens, Horw ed Ebikon sono vicinissimi, Sursee e Hochdorf solo poco più lontani.',
+    'Per le amministrazioni immobiliari e le comunioni di proprietari per piani significa tragitti brevi, soprattutto per gli stabili curati ogni settimana.',
   ],
   facts: [
     { label: 'La nostra sede', value: `${company.address.city}, Comune di Emmen` },
-    { label: 'Capoluogo', value: 'Lucerna' },
-    { label: 'Laghi', value: 'Lago dei Quattro Cantoni, lago di Sempach, lago di Baldegg' },
-    { label: 'Servizi', value: sameTerms },
+    { label: 'Priorità', value: 'Condomini, proprietà per piani, uffici e studi' },
+    { label: 'Giorni di riposo', value: 'Dieci in tutto il Cantone, San Giuseppe secondo il Comune' },
+    { label: 'Abitazioni secondarie', value: 'Flühli, Vitznau e Weggis oltre il 20 %' },
   ],
   regionen: [
     { title: 'Città e agglomerato', orte: ['Lucerna', 'Emmen', 'Kriens', 'Horw', 'Ebikon', 'Adligenswil'] },
@@ -49,43 +105,78 @@ const luzern: KantonPage = {
     },
     {
       title: 'Uffici e studi',
-      text: 'Nella città di Lucerna e in centri come Sursee puliamo uffici e studi in orari che concordiamo con Lei in base alla Sua attività.',
+      text: 'Nella città di Lucerna e in centri come Sursee puliamo uffici e studi in orari che si accordano con le Sue ore di consultazione e d’ufficio.',
     },
     {
-      title: 'Cambio d’inquilino',
-      text: 'A un cambio d’inquilino puliamo l’appartamento prima della riconsegna, con garanzia di consegna. Il servizio di custodia partecipa alla riconsegna.',
+      title: 'Cambio d’inquilino per l’amministrazione',
+      text: 'Quando un inquilino se ne va, puliamo l’appartamento prima della consegna al successivo, con garanzia di consegna. Il servizio di custodia partecipa alla consegna.',
     },
     {
-      title: 'Immobili sul lago',
-      text: 'Per ville e residenze sul lago dei Quattro Cantoni, ad esempio a Meggen, Weggis o Vitznau, è a disposizione il nostro settore Premium: sempre la stessa squadra, su richiesta con accordo di riservatezza.',
+      title: 'Abitazioni secondarie e ville sul lago',
+      text: 'Intorno a Weggis, a Vitznau e a Sörenberg molte abitazioni sono abitate solo per una parte dell’anno. Ville e abitazioni secondarie in riva al lago, da Meggen a Vitznau, le segue il nostro [settore Premium](/premium).',
+      premium: true,
     },
   ],
   leistungen: [
-    { path: '/leistungen/hauswartung', title: 'Custodia di stabili', text: 'Per amministrazioni immobiliari e comunioni dei proprietari per piani che affidano la cura del proprio stabile.' },
-    { path: '/leistungen/unterhaltsreinigung', title: 'Pulizia di manutenzione', text: 'Vani scala, ingressi e locali comuni con un ritmo fisso.' },
-    { path: '/leistungen/umzugsreinigung', title: 'Pulizia di fine locazione', text: 'Pulizia prima della riconsegna dell’appartamento, con garanzia di consegna.' },
-    { path: '/leistungen/bueroreinigung', title: 'Pulizia di uffici e studi', text: 'Per uffici e studi, in base ai Suoi orari di lavoro e di apertura.' },
+    { path: '/leistungen/hauswartung', text: 'Per amministrazioni immobiliari e comunioni di proprietari per piani che affidano la cura del proprio stabile.' },
+    { path: '/leistungen/unterhaltsreinigung', text: 'Vano scala, ingresso e locali comuni, ad esempio a Emmen, Kriens o Horw.' },
+    { path: '/leistungen/umzugsreinigung', text: 'Pulizia finale prima della riconsegna dell’appartamento, con garanzia di consegna.' },
+    { path: '/leistungen/bueroreinigung', text: 'Per studi e uffici in città, a Kriens o a Sursee.' },
     { path: '/premium/luxusimmobilien', title: 'Ville e residenze', text: 'Pulizia e cura discrete di case sul lago.' },
   ],
   planung: {
-    title: 'Trasferta e pianificazione',
+    title: 'Tragitti da Emmenbrücke',
     paragraphs: [
-      'Poiché la nostra sede si trova nel Cantone, i tragitti verso la città e l’agglomerato sono brevi. Per immobili nel Seetal, a Willisau o nell’Entlebuch fissiamo ritmo e orari d’intervento durante il sopralluogo.',
-      'Prima del primo intervento chiarisca con noi dove la nostra squadra può parcheggiare e come accede alle chiavi e ai locali. Soprattutto in centro città è utile un posto fisso per veicolo e materiale.',
+      'Poiché la nostra sede si trova nel Cantone, i tragitti verso la città e l’agglomerato sono brevi. Verso il Seetal, Willisau o l’Entlebuch la strada è più lunga. Lì conviene riunire più lavori in un solo intervento, ad esempio vano scala e aree esterne nello stesso giorno.',
+      'In centro città è utile un posto fisso per veicolo e materiale. Prima del primo intervento stabilisca dove la nostra squadra può parcheggiare e come accede a chiavi e locali.',
+      'La Stazione ornitologica svizzera ha sede a Sempach. Consiglia di tagliare siepi e arbusti al di fuori del periodo di nidificazione, idealmente tra novembre e marzo. Per la [manutenzione delle aree esterne](/leistungen/aussen-und-gruenflaechenpflege) di uno stabile lucernese significa: prevedere il taglio delle siepi in inverno.',
     ],
+    sources: ['vogelwarte'],
   },
+  daten: [
+    {
+      label: 'Giorni di riposo pubblici in tutto il Cantone',
+      items: ['Capodanno', 'Venerdì santo', 'Ascensione', 'Corpus Domini', '1° agosto', 'Assunzione', 'Ognissanti', 'Immacolata Concezione', 'Natale', 'Santo Stefano'],
+      text: 'Nel Cantone di Lucerna il lunedì di Pasqua e il lunedì di Pentecoste non ne fanno parte. Ogni Comune decide da sé se San Giuseppe (19 marzo) e la festa patronale della parrocchia sono giorni di riposo.',
+      source: 'luRuhetage',
+    },
+    {
+      label: 'Termini di disdetta senza accordo',
+      text: 'Conta anzitutto il contratto di locazione. Se non indica un termine, l’art. 266c CO prevede per le abitazioni la scadenza determinata dall’uso locale e, in mancanza, la fine di un trimestre di locazione. Il preavviso è di almeno tre mesi.',
+      source: 'orMiete',
+    },
+    {
+      label: 'Cambio d’inquilino nella città di Lucerna',
+      text: 'Proprietari e locatori notificano all’ufficio controllo abitanti arrivi e partenze dei loro inquilini, con numero dell’appartamento e data.',
+      source: 'luMeldung',
+    },
+    {
+      label: 'Abitazioni secondarie',
+      text: 'Flühli con Sörenberg 58,31 %, Vitznau 32,71 % e Weggis 24,95 %. In questi tre Comuni valgono le norme edilizie della legge sulle abitazioni secondarie.',
+      source: 'are',
+    },
+  ],
   faq: [
-    { question: 'Dove si trova la vostra sede?', answer: `All’indirizzo ${seat}, nell’agglomerato di Lucerna.` },
     {
-      question: 'Lavorate anche fuori dalla città di Lucerna?',
-      answer: 'Sì, in tutto il Cantone, dal Seetal all’Entlebuch, con tutti i servizi e alle stesse condizioni.',
+      question: 'San Giuseppe è un giorno di riposo nel nostro Comune?',
+      answer: 'Nel Cantone di Lucerna lo decide ogni Comune, come per la festa patronale della parrocchia. Dove un tale giorno vale, il lavoro nelle aziende artigianali e commerciali vi è in linea di principio vietato come negli altri giorni di riposo (§ 5 della legge sui giorni di riposo). Si informi presso la cancelleria comunale prima di fissare un intervento il 19 marzo.',
     },
-    { question: 'Quanto costa un’impresa di pulizie nel Cantone di Lucerna?', answer: answers.kostenFaktoren },
     {
-      question: 'Vi occupate della pulizia a un cambio d’inquilino?',
-      answer: 'Sì. La pulizia di fine locazione con garanzia di consegna è un servizio a sé: [pulizia di fine locazione](/leistungen/umzugsreinigung).',
+      question: 'Lavorate anche nell’Entlebuch o nel Seetal?',
+      answer: 'Sì, in tutto il Cantone, da Hochdorf e Hitzkirch fino a Schüpfheim ed Escholzmatt-Marbach. Lì valgono gli stessi servizi e le stesse condizioni della città di Lucerna.',
     },
-    { question: 'Accettate anche interventi a breve termine?', answer: 'Ci telefoni. Chiariamo con Lei che cosa è possibile a breve termine.' },
+    {
+      question: 'Amministriamo appartamenti nella città di Lucerna. Quando pianificare la pulizia finale al cambio d’inquilino?',
+      answer: 'Con la data di partenza che notifica comunque all’ufficio controllo abitanti. Richieda la [pulizia di fine locazione con garanzia di consegna](/leistungen/umzugsreinigung) appena arriva la disdetta, così la pulizia avviene prima della consegna al nuovo inquilino.',
+    },
+    {
+      question: 'Vi occupate di abitazioni secondarie a Weggis, Vitznau o Sörenberg?',
+      answer: 'Sì. Tra due soggiorni puliamo l’abitazione e controlliamo che tutto sia in ordine, così al Suo arrivo è tutto pronto. La pagina del [settore Premium](/premium) spiega come funziona.',
+    },
+    {
+      question: 'Quanto costa un’impresa di pulizie nel Cantone di Lucerna?',
+      answer: 'Il prezzo dipende da superficie, frequenza, orari d’intervento, accesso e stato dell’immobile. La guida [costi della pulizia di manutenzione](/blog/reinigungskosten-schweiz) spiega come si compone un’offerta.',
+    },
   ],
   menuText: menu.luzern.text,
 }
@@ -94,20 +185,20 @@ const zug: KantonPage = {
   name: 'Zugo',
   kuerzel: 'ZG',
   seo: {
-    title: 'Impresa di pulizie Zugo per uffici',
+    title: 'Impresa di pulizie nel Cantone di Zugo',
     description:
-      'Pulizia di uffici, vetri e custodia di stabili a Zugo: sedi aziendali, studi e immobili da Zugo e Baar alla valle di Ägeri. Consulenza in quattro lingue.',
+      'Impresa di pulizie a Zugo per uffici e stabili: pulizia di uffici, vetri e custodia di stabili da Baar alla valle di Ägeri, anche in inglese. Offerta gratuita.',
   },
-  h1: 'La Sua impresa di pulizie per uffici e immobili nel Cantone di Zugo',
+  h1: 'Impresa di pulizie a Zugo per uffici e sedi aziendali',
   lead: [
-    'Nel Cantone di Zugo hanno sede molte aziende, anche internazionali. Serve una pulizia che si adatti all’attività aziendale e non disturbi la giornata di lavoro.',
-    'Le nostre collaboratrici e i nostri collaboratori parlano tedesco, inglese, francese e italiano. Questo facilita il coordinamento con squadre la cui lingua di lavoro non è il tedesco.',
+    'Molte aziende, anche internazionali, hanno la loro sede nel Cantone di Zugo. I loro uffici si trovano spesso in stabili in cui reception, accesso e allarme vanno regolati prima che arrivi la squadra di pulizia.',
+    'Per gli stabili abitativi sul lago di Zugo e sul lago di Ägeri ci occupiamo di custodia e manutenzione.',
   ],
   facts: [
-    { label: 'Capoluogo', value: 'Zugo' },
-    { label: 'Laghi', value: 'Lago di Zugo, lago di Ägeri' },
-    { label: 'Comuni', value: 'Tutti gli undici Comuni del Cantone' },
-    { label: 'Lingue', value: 'Tedesco, inglese, francese, italiano' },
+    { label: 'Accesso', value: 'Con l’autostrada A14' },
+    { label: 'Priorità', value: 'Stabili per uffici con molto vetro' },
+    { label: 'Termini di disdetta', value: '31 marzo, 30 giugno, 30 settembre' },
+    { label: 'Giorni festivi', value: 'Nove equiparati alla domenica, più quattro giorni semifestivi' },
   ],
   regionen: [
     { title: 'Zugo, Baar e Steinhausen', orte: ['Zugo', 'Baar', 'Steinhausen'] },
@@ -117,50 +208,83 @@ const zug: KantonPage = {
   objekte: [
     {
       title: 'Uffici e sedi aziendali',
-      text: 'Dal piccolo ufficio alla sede su più piani: postazioni di lavoro, sale riunioni, reception, angoli cottura e servizi igienici, in orari che fissiamo con Lei.',
-    },
-    {
-      title: 'Family office e locali riservati',
-      text: 'Dove si trovano documenti riservati, da Lei lavora sempre la stessa squadra, anche fuori dai Suoi orari di lavoro. Su richiesta sottoscriviamo un accordo di riservatezza.',
+      text: 'Dal piccolo ufficio alla sede su più piani: postazioni di lavoro, sale riunioni, reception, cucinini e servizi igienici, in orari che non disturbano la Sua giornata di lavoro.',
     },
     {
       title: 'Vetri e facciate',
-      text: 'Gli edifici per uffici hanno spesso grandi superfici vetrate. Puliamo finestre, porte a vetri e facciate singolarmente o in aggiunta alla pulizia degli uffici.',
+      text: 'Gli edifici per uffici hanno spesso grandi superfici vetrate. Puliamo finestre, porte in vetro e facciate singolarmente o in aggiunta alla pulizia degli uffici.',
     },
     {
-      title: 'Abitare sul lago di Zugo e sul lago di Ägeri',
-      text: 'Per ville e residenze sul lago, ad esempio a Walchwil o a Oberägeri, è a disposizione il nostro settore Premium. Puliamo anche barche e yacht sul lago di Zugo.',
+      title: 'Family office e locali riservati',
+      text: 'Dove si trovano documenti riservati lavora da Lei sempre la stessa squadra, anche al di fuori del Suo orario di lavoro. Come garantiamo la discrezione è descritto nel [settore Premium](/premium).',
+      premium: true,
+    },
+    {
+      title: 'Ville e barche sul lago',
+      text: 'Per ville e residenze a Walchwil, Oberägeri o Cham c’è il settore [ville e immobili di pregio](/premium/luxusimmobilien), per le barche sul lago di Zugo la [pulizia di yacht](/premium/yacht).',
+      premium: true,
     },
   ],
   leistungen: [
-    { path: '/leistungen/bueroreinigung', title: 'Pulizia di uffici e studi', text: 'Per uffici, amministrazioni e studi, in base ai Suoi orari di lavoro.' },
-    { path: '/leistungen/fenster-und-fassadenreinigung', title: 'Pulizia di vetri e facciate', text: 'Per finestre, superfici vetrate e facciate di edifici commerciali.' },
-    { path: '/leistungen/facility-services', title: 'Facility services', text: 'Pulizia, custodia e aree esterne in un unico contratto con un’unica persona di riferimento.' },
-    { path: '/leistungen/sonderreinigungen', title: 'Pulizie a fondo e speciali', text: 'Pulizia a fondo al cambio d’ufficio, contro calcare, grasso e vecchi strati.' },
+    { path: '/leistungen/bueroreinigung', text: 'Per piani uffici, reception e sale riunioni, al di fuori del Suo orario d’ufficio.' },
+    { path: '/leistungen/fenster-und-fassadenreinigung', text: 'Per finestre, superfici vetrate e facciate di stabili commerciali.' },
+    { path: '/leistungen/facility-services', text: 'Quando per lo stabile per uffici si aggiungono custodia e cura delle aree esterne.' },
+    { path: '/leistungen/sonderreinigungen', text: 'Pulizia a fondo al cambio d’ufficio, contro calcare, grasso e vecchi strati.' },
     { path: '/premium/yacht', title: 'Yacht', text: 'Interni, imbottiture, teak e gelcoat, sul lago di Zugo e sul lago dei Quattro Cantoni.' },
   ],
   planung: {
-    title: 'Trasferta e pianificazione',
+    title: 'Accesso e orari nello stabile per uffici',
     paragraphs: [
-      'Da Emmenbrücke raggiungiamo il Cantone di Zugo tramite l’autostrada A14. Pianifichiamo gli interventi negli uffici in modo da non disturbare la Sua attività, ad esempio fuori dall’orario d’ufficio.',
-      'Negli edifici commerciali con reception, badge d’accesso o impianto d’allarme chiariamo l’accesso prima del primo intervento. Se ha più sedi nella nostra zona, ce le indichi tutte nella richiesta.',
+      'Da Emmenbrücke raggiungiamo il Cantone di Zugo con l’autostrada A14. Si pulisce quando non disturba la Sua attività, ad esempio al di fuori dell’orario d’ufficio.',
+      'Negli stabili con reception, badge d’accesso o impianto d’allarme il primo intervento imposta tutto il resto. Questi punti andrebbero chiariti prima:',
     ],
+    list: {
+      title: 'Prima del primo intervento nello stabile per uffici',
+      items: [
+        'se la squadra entra dalla reception, con un badge o con una chiave',
+        'quali piani e locali sono compresi e quali restano chiusi',
+        'come sono regolati allarme, luci e chiusura',
+        'in quale lingua si prendono gli accordi con il Suo team: tedesco, inglese, francese o italiano',
+        'chi è la Sua persona di contatto se si nota qualcosa',
+      ],
+    },
   },
+  daten: [
+    {
+      label: 'Termini di disdetta',
+      text: 'Salvo altro accordo nel contratto di locazione valgono il 31 marzo, il 30 giugno e il 30 settembre. Il preavviso è di almeno tre mesi per gli appartamenti e di sei mesi per i locali commerciali.',
+      source: 'zgMietrecht',
+    },
+    {
+      label: 'Festivi equiparati alla domenica',
+      items: ['Capodanno', 'Venerdì santo', 'Ascensione', 'Corpus Domini', '1° agosto', 'Assunzione', 'Ognissanti', 'Immacolata Concezione', 'Natale'],
+      text: 'In questi giorni per i dipendenti vale un divieto di lavoro come la domenica, dalle 23 della vigilia alle 23 del giorno festivo.',
+      source: 'zgFeiertage',
+    },
+    {
+      label: 'Giorni semifestivi',
+      items: ['San Bertoldo', 'Lunedì di Pasqua', 'Lunedì di Pentecoste', 'Santo Stefano'],
+      text: 'La maggior parte delle aziende zughesi chiude volontariamente, si può lavorare senza permesso e senza supplemento. Eccezione: il 2 gennaio o il 26 dicembre cade di domenica.',
+      source: 'zgFeiertagsaehnlich',
+    },
+  ],
   faq: [
     {
-      question: 'Possiamo comunicare in inglese?',
-      answer: `${answers.sprachen} Ci indichi nella richiesta quale lingua preferisce.`,
+      question: 'Vi occupate anche di più sedi, ad esempio a Zugo e a Lucerna?',
+      answer: 'Sì, tutti e cinque i Cantoni fanno parte della nostra zona d’intervento. Ci indichi tutti gli indirizzi nella richiesta, così pianifichiamo i sopralluoghi insieme. Se a un indirizzo oltre alla pulizia serve anche la custodia, i [facility services](/leistungen/facility-services) riuniscono i servizi di quell’immobile.',
     },
     {
-      question: 'Pulite fuori dall’orario d’ufficio?',
-      answer: 'Fissiamo con Lei gli orari d’intervento, in base ai Suoi orari di lavoro e di apertura.',
+      question: 'Lasciamo il nostro ufficio a Zugo. Quando richiedere la pulizia finale?',
+      answer: 'Appena la disdetta è definita. Per i locali commerciali il preavviso è di almeno sei mesi: il tempo basta ampiamente per la [pulizia finale prima della riconsegna](/leistungen/umzugsreinigung).',
     },
-    { question: 'Quanto costa un’impresa di pulizie nel Cantone di Zugo?', answer: answers.kostenFaktoren },
     {
-      question: 'Lavorate anche a Baar, a Cham o nella valle di Ägeri?',
-      answer: 'Sì, in tutti i Comuni del Cantone di Zugo, con tutti i servizi e alle stesse condizioni.',
+      question: 'Lavorate anche a Baar, Cham o nella valle di Ägeri?',
+      answer: 'Sì, in tutti gli undici Comuni zughesi, da Risch (Rotkreuz) fino a Menzingen e Neuheim, con tutti i servizi e alle stesse condizioni.',
     },
-    { question: 'Siete assicurati?', answer: answers.versicherung },
+    {
+      question: 'Si può pulire nei giorni semifestivi?',
+      answer: 'Sì. A San Bertoldo, lunedì di Pasqua, lunedì di Pentecoste e Santo Stefano nel Cantone di Zugo si può lavorare senza permesso, salvo che il 2 gennaio o il 26 dicembre cada di domenica. In questi giorni la maggior parte delle aziende è chiusa. Se prevede una [pulizia a fondo dei pavimenti](/leistungen/sonderreinigungen) senza attività in corso, indichi uno di questi giorni come data desiderata nella richiesta.',
+    },
   ],
   menuText: menu.zug.text,
 }
@@ -169,75 +293,107 @@ const aargau: KantonPage = {
   name: 'Argovia',
   kuerzel: 'AG',
   seo: {
-    title: 'Impresa di pulizie Argovia e custodia',
+    title: 'Impresa di pulizie nel Cantone di Argovia',
     description:
-      'Pulizia industriale, di capannoni e di cantiere, custodia in Argovia: dal Freiamt e dal Seetal ad Aarau e Baden, alle stesse condizioni di Lucerna.',
+      'Impresa di pulizie in Argovia per capannoni e stabili: pulizia industriale, di cantiere e di manutenzione da Aarau al Freiamt. Offerta gratuita.',
   },
-  h1: 'La Sua impresa di pulizie per industria e artigianato nel Cantone di Argovia',
+  h1: 'Impresa di pulizie in Argovia per industria, aziende e stabili',
   lead: [
-    'In Argovia ci sono molte aziende industriali e artigianali. Capannoni di produzione e di stoccaggio, officine ed edifici commerciali hanno bisogno di una pulizia che segua turni e processi.',
-    'Dal Freiamt e dal Seetal, al confine con Lucerna, fino alle regioni di Aarau e Baden lavoriamo in tutto il Cantone, con tutti i servizi e alle stesse condizioni di Lucerna.',
+    'In Argovia ci sono molte aziende industriali e artigianali. Per capannoni di produzione e di deposito, officine ed edifici commerciali c’è la nostra pulizia industriale e di capannoni, per i condomini la pulizia di manutenzione e la custodia.',
+    'Lavoriamo in tutto il Cantone, dal Freiamt e dal Seetal al confine lucernese fino ad Aarau, Baden, Brugg e al Fricktal.',
   ],
   facts: [
-    { label: 'Capoluogo', value: 'Aarau' },
-    { label: 'Laghi e fiumi', value: 'Lago di Hallwil, Aar, Reuss, Limmat e Reno' },
-    { label: 'Specialità', value: 'Capannoni, magazzini, officine e immobili abitativi' },
-    { label: 'Servizi', value: sameTerms },
+    { label: 'Accesso', value: 'Alle stesse condizioni, come a Lucerna' },
+    { label: 'Priorità', value: 'Industria e artigianato, più abitazioni' },
+    { label: 'Giorni festivi', value: 'Sei regimi secondo il distretto' },
+    { label: 'Non festivo', value: 'Il 1° maggio, in tutto il Cantone' },
   ],
   regionen: [
     { title: 'Freiamt', orte: ['Muri', 'Wohlen', 'Bremgarten', 'Sins'] },
     { title: 'Seetal e lago di Hallwil', orte: ['Meisterschwanden', 'Seengen', 'Beinwil am See'] },
     { title: 'Aarau, Lenzburg e Zofingen', orte: ['Aarau', 'Lenzburg', 'Zofingen', 'Oftringen'] },
-    { title: 'Regione di Baden e del Mutschellen', orte: ['Baden', 'Wettingen', 'Ennetbaden', 'Bergdietikon', 'Oberwil-Lieli'] },
+    { title: 'Baden, Wettingen e Mutschellen', orte: ['Baden', 'Wettingen', 'Ennetbaden', 'Bergdietikon', 'Oberwil-Lieli'] },
     { title: 'Brugg e Fricktal', orte: ['Brugg', 'Windisch', 'Rheinfelden', 'Frick'] },
   ],
   objekte: [
     {
-      title: 'Capannoni di produzione e di stoccaggio',
-      text: 'Puliamo pavimenti dei capannoni, aree di stoccaggio, scaffalature e vie di circolazione una tantum o regolarmente, in orari coordinati con la produzione e il lavoro a turni.',
+      title: 'Capannoni di produzione e di deposito',
+      text: 'Puliamo pavimenti dei capannoni, zone di stoccaggio, scaffalature e vie di circolazione, una volta o regolarmente, negli orari che produzione e lavoro a turni consentono.',
     },
     {
       title: 'Macchine e impianti',
-      text: 'Puliamo le macchine secondo le Sue indicazioni e d’intesa con il Suo servizio di manutenzione. Quando un impianto è fermo e quali prodotti sono adatti lo stabiliamo prima dell’intervento.',
+      text: 'Pulizia di macchine nel lavoro a turni, durante le pause, tra un turno e l’altro o nei fermi pianificati. Il coordinamento con la Sua manutenzione è spiegato alla voce [pulizia industriale e di capannoni](/leistungen/industrie-und-hallenreinigung).',
     },
     {
-      title: 'Nuove costruzioni e ristrutturazioni',
-      text: 'Dopo la costruzione di un capannone o la ristrutturazione di un edificio commerciale puliamo fino alla consegna, affinché l’attività possa partire.',
+      title: 'Nuove costruzioni e trasformazioni',
+      text: 'Dopo la costruzione di un capannone o la trasformazione di un edificio commerciale puliamo fino alla consegna, perché l’attività possa partire.',
     },
     {
-      title: 'Immobili abitativi',
-      text: 'Per condomini e proprietà per piani ci occupiamo di pulizia di manutenzione e custodia di stabili. Le ville sul lago di Hallwil o nella regione di Baden sono seguite dal nostro settore Premium.',
+      title: 'Stabili abitativi',
+      text: 'Per condomini e proprietà per piani ci occupiamo di pulizia di manutenzione e custodia. Le ville sul lago di Hallwil o nella regione di Baden sono seguite dal nostro settore Premium.',
     },
   ],
   leistungen: [
-    { path: '/leistungen/industrie-und-hallenreinigung', title: 'Pulizia industriale e di capannoni', text: 'Capannoni di produzione e di stoccaggio, officine, macchine e impianti.' },
-    { path: '/leistungen/baureinigung', title: 'Pulizia di cantiere e di fine cantiere', text: 'Durante e dopo lavori di costruzione e ristrutturazione, fino alla consegna.' },
-    { path: '/leistungen/bueroreinigung', title: 'Pulizia di uffici e studi', text: 'Per uffici, locali del personale e spogliatoi in azienda.' },
-    { path: '/leistungen/hauswartung', title: 'Custodia di stabili', text: 'Giri di controllo, lavanderia, piccole riparazioni e smaltimento per immobili abitativi.' },
-    { path: '/leistungen/facility-services', title: 'Facility services', text: 'Pulizia, custodia e aree esterne per il Suo sito aziendale da un unico fornitore.' },
+    { path: '/leistungen/industrie-und-hallenreinigung', text: 'Pavimenti dei capannoni, zone di stoccaggio e impianti, pianificati attorno a turni e fermi.' },
+    { path: '/leistungen/baureinigung', text: 'Durante e dopo lavori di costruzione e trasformazione, fino alla consegna.' },
+    { path: '/leistungen/bueroreinigung', text: 'Per uffici, locali di pausa e spogliatoi in azienda.' },
+    { path: '/leistungen/hauswartung', text: 'Giri di controllo, lavanderia, piccole riparazioni e smaltimento per stabili abitativi.' },
+    { path: '/leistungen/facility-services', text: 'Pulizia, custodia e aree esterne per il Suo sito aziendale da un unico fornitore.' },
   ],
   planung: {
-    title: 'Trasferta e pianificazione',
+    title: 'Pianificazione per le aziende argoviesi',
     paragraphs: [
-      'I tragitti da Emmenbrücke in Argovia variano a seconda della regione. Per questo fissiamo ritmo, orari d’intervento e fermi degli impianti durante il sopralluogo e li riportiamo nell’offerta.',
-      'Prima dell’offerta esaminiamo capannoni, impianti e processi durante un giro del sito. Le Sue regole di sicurezza e d’esercizio valgono anche per la nostra squadra, le chiariamo con Lei prima del primo intervento.',
+      'I tragitti da Emmenbrücke verso l’Argovia variano secondo la regione, le condizioni per la trasferta restano le stesse. Per i capannoni con lavoro a turni contano tre cose: quando un impianto è fermo, quali zone sono accessibili durante la produzione e quali regole di sicurezza valgono per il personale esterno.',
+      'Ciò che nel Suo stabilimento vale per le ditte esterne vale anche per la squadra di pulizia. Metta per iscritto zone vietate, dispositivi di protezione e persona di contatto per le emergenze prima dell’inizio del primo intervento.',
     ],
   },
+  daten: [
+    {
+      label: 'Festivi in tutti i distretti',
+      items: ['Capodanno', 'Venerdì santo', 'Ascensione', '1° agosto', 'Natale'],
+      text: 'Solo questi cinque giorni sono equiparati alla domenica in tutta l’Argovia. Altri quattro li fissa il Consiglio di Stato per distretto, il promemoria cantonale elenca sei regimi.',
+      source: 'agFeiertage',
+    },
+    {
+      label: 'Altri quattro festivi per distretto',
+      groups: [
+        { title: 'Aarau, Brugg, Kulm, Lenzburg, Zofingen e Bergdietikon', items: ['San Bertoldo', 'Lunedì di Pasqua', 'Lunedì di Pentecoste', 'Santo Stefano'] },
+        { title: 'Baden senza Bergdietikon', items: ['Lunedì di Pasqua', 'Lunedì di Pentecoste', 'Corpus Domini', 'Santo Stefano'] },
+        { title: 'Bremgarten', items: ['Corpus Domini', 'Assunzione', 'Ognissanti', 'Santo Stefano'] },
+        {
+          title: 'Laufenburg, Muri e, nel distretto di Rheinfelden, Hellikon, Mumpf, Obermumpf, Schupfart, Stein, Wegenstetten',
+          items: ['Corpus Domini', 'Assunzione', 'Ognissanti', 'Immacolata Concezione'],
+        },
+        {
+          title: 'Resto del distretto di Rheinfelden: Kaiseraugst, Magden, Möhlin, Olsberg, Rheinfelden, Wallbach, Zeiningen, Zuzgen',
+          items: ['Lunedì di Pasqua', 'Lunedì di Pentecoste', 'Ognissanti', 'Santo Stefano'],
+        },
+        { title: 'Zurzach', items: ['San Bertoldo', 'Corpus Domini', 'Ognissanti', 'Santo Stefano'] },
+      ],
+      source: 'agFeiertage',
+    },
+  ],
   faq: [
     {
-      question: 'In Argovia valgono le stesse condizioni di Lucerna?',
-      answer: 'Sì. Offriamo tutti i servizi in tutta la zona d’intervento alle stesse condizioni.',
+      question: 'Lavorate anche ad Aarau, Baden o Lenzburg?',
+      answer: 'Sì, in tutto il Cantone: ad Aarau, Lenzburg e Zofingen, a Baden e Wettingen, a Brugg e nel Fricktal, nel Freiamt e sul lago di Hallwil. Ovunque valgono le stesse condizioni, come a Lucerna, anche per la trasferta.',
     },
     {
       question: 'Pulite anche durante il lavoro a turni?',
-      answer: 'Coordiniamo con Lei gli orari d’intervento con produzione e turni, affinché la pulizia non rallenti l’attività.',
+      answer: 'Sì. Si pulisce durante le pause, tra un turno e l’altro o durante fermi pianificati, secondo le zone libere in quel momento.',
     },
     {
-      question: 'La manutenzione delle macchine è compresa?',
-      answer: 'No. Puliamo macchine e impianti secondo le Sue indicazioni, manutenzione e riparazioni restano di competenza del Suo servizio di manutenzione.',
+      question: 'Si possono pulire insieme anche locali di pausa e uffici dell’azienda?',
+      answer: 'Sì. Spogliatoi, locali di pausa e uffici si pianificano insieme al capannone con un unico ritmo, come descritto alla voce [pulizia di uffici e studi](/leistungen/bueroreinigung).',
     },
-    { question: 'Quanto costa un’impresa di pulizie nel Cantone di Argovia?', answer: answers.kostenFaktoren },
-    { question: 'Pulite con prodotti ecologici?', answer: answers.mittel },
+    {
+      question: 'Quali documenti aiutano prima del giro nel capannone?',
+      answer: 'Una pianta del capannone con le zone, gli orari dei fermi e le Sue regole di sicurezza per le ditte esterne. Invii questi documenti per e-mail, così il giro si può preparare in modo mirato.',
+    },
+    {
+      question: 'Abbiamo sedi in più distretti. Che cosa significa per i giorni festivi?',
+      answer: 'Il piano di pulizia segue il distretto di ogni sede. Il lunedì di Pasqua, ad esempio, ad Aarau è festivo, a Muri è un normale giorno lavorativo; all’Assunzione è il contrario. I festivi per distretto sono elencati più in alto nel riquadro.',
+    },
   ],
   menuText: menu.aargau.text,
 }
@@ -246,20 +402,20 @@ const nidwalden: KantonPage = {
   name: 'Nidvaldo',
   kuerzel: 'NW',
   seo: {
-    title: 'Impresa di pulizie Nidvaldo e custodia',
+    title: 'Impresa di pulizie nel Cantone di Nidvaldo',
     description:
-      'Pulizia e custodia di stabili a Nidvaldo: immobili sul lago dei Quattro Cantoni, seconde case e ville da Hergiswil a Beckenried. Offerta sul posto.',
+      'Impresa di pulizie a Nidvaldo per proprietà per piani e abitazioni secondarie sul lago, da Hergiswil a Emmetten, con custodia. Offerta gratuita.',
   },
-  h1: 'La Sua impresa di pulizie nel Cantone di Nidvaldo',
+  h1: 'Impresa di pulizie a Nidvaldo per immobili sul lago',
   lead: [
-    'Nidvaldo si estende dalla riva del lago dei Quattro Cantoni presso Hergiswil ed Ennetbürgen fino alla valle di Engelberg. Molti immobili si trovano vicino al lago, alcuni sono abitati solo in certi periodi.',
-    'Puliamo e curiamo stabili abitativi e commerciali, abitazioni secondarie e ville in tutto il Cantone. Allestiamo l’offerta dopo un sopralluogo, gratuitamente e senza impegno.',
+    'Molti immobili nidvaldesi si trovano vicino al lago dei Quattro Cantoni, da Hergiswil a Beckenried. Non tutti i proprietari vi abitano, alcuni vengono solo poche settimane all’anno.',
+    'Per le comunioni di proprietari per piani e le amministrazioni ci occupiamo di pulizia e custodia, anche quando i proprietari abitano lontano.',
   ],
   facts: [
-    { label: 'Capoluogo', value: 'Stans' },
-    { label: 'Lago', value: 'Lago dei Quattro Cantoni' },
-    { label: 'Comuni', value: 'Tutti gli undici Comuni del Cantone' },
-    { label: 'Servizi', value: sameTerms },
+    { label: 'Accesso', value: 'A2 via Lucerna' },
+    { label: 'Priorità', value: 'Proprietà per piani e immobili sul lago' },
+    { label: 'Abitazioni secondarie', value: 'Emmetten, quasi una su tre' },
+    { label: 'Festivo proprio', value: '19 marzo, San Giuseppe' },
   ],
   regionen: [
     { title: 'Sul lago dei Quattro Cantoni', orte: ['Hergiswil', 'Stansstad', 'Ennetbürgen', 'Buochs', 'Beckenried'] },
@@ -268,51 +424,68 @@ const nidwalden: KantonPage = {
   ],
   objekte: [
     {
+      title: 'Proprietà per piani con proprietari non residenti',
+      text: 'Se non tutti i proprietari abitano sul posto, la [custodia di stabili](/leistungen/hauswartung) si occupa dei passaggi regolari nello stabile e delle consegne degli appartamenti.',
+    },
+    {
       title: 'Abitazioni secondarie',
-      text: 'Secondo l’inventario delle abitazioni della Confederazione, a Emmetten circa un terzo delle abitazioni è un’abitazione secondaria. Puliamo prima del Suo arrivo e dopo la Sua partenza e controlliamo che tutto sia in ordine durante la Sua assenza.',
+      text: 'Soprattutto a Emmetten molte abitazioni sono usate solo per una parte dell’anno. Le curiamo prima del Suo arrivo e dopo la Sua partenza, e tra un soggiorno e l’altro passiamo a controllare.',
     },
     {
       title: 'Ville e residenze sul lago',
-      text: 'Nelle case con pietra naturale, parquet e grandi superfici vetrate puliamo nel rispetto dei materiali. Da Lei lavora sempre la stessa squadra, su richiesta con accordo di riservatezza.',
+      text: 'Per case con pietra naturale, parquet e grandi superfici vetrate sulla riva da Hergiswil a Beckenried c’è il settore [ville e immobili di pregio](/premium/luxusimmobilien).',
+      premium: true,
     },
     {
-      title: 'Proprietà per piani',
-      text: 'Se non tutti i proprietari vivono sul posto, il servizio di custodia si occupa di giri di controllo, lavanderia, smaltimento e consegne degli appartamenti e segnala i difetti all’interlocutore concordato.',
-    },
-    {
-      title: 'Barche sul lago dei Quattro Cantoni',
-      text: 'Puliamo yacht e motoscafi all’interno e all’esterno, nel rispetto di teak, gelcoat e imbottiture.',
+      title: 'Barche e yacht a Nidvaldo',
+      text: 'Motoscafi e yacht agli ormeggi di Stansstad, Buochs o Beckenried sono curati dalla nostra [pulizia di yacht](/premium/yacht).',
+      premium: true,
     },
   ],
   leistungen: [
-    { path: '/leistungen/hauswartung', title: 'Custodia di stabili', text: 'Per comunioni dei proprietari per piani e amministrazioni immobiliari, concordata per iscritto.' },
-    { path: '/premium/luxusimmobilien', title: 'Ville e abitazioni secondarie', text: 'Pulizia prima del Suo arrivo e dopo la Sua partenza, giri di controllo durante la Sua assenza.' },
-    { path: '/leistungen/fenster-und-fassadenreinigung', title: 'Pulizia di vetri e facciate', text: 'Per grandi vetrate e superfici vetrate.' },
-    { path: '/leistungen/aussen-und-gruenflaechenpflege', title: 'Manutenzione delle aree esterne e verdi', text: 'Per giardino e aree esterne del Suo immobile.' },
+    { path: '/leistungen/hauswartung', text: 'Per comunioni di proprietari per piani e amministrazioni, concordata per iscritto.' },
+    { path: '/premium/luxusimmobilien', title: 'Ville sul lago', text: 'Cura di immobili sul lago, anche quando Lei non è sul posto.' },
+    { path: '/leistungen/fenster-und-fassadenreinigung', text: 'Per grandi vetrate con vista sul lago e superfici vetrate.' },
+    { path: '/leistungen/aussen-und-gruenflaechenpflege', text: 'Per giardino, vialetti e dintorni del Suo stabile.' },
     { path: '/premium/yacht', title: 'Yacht', text: 'Per barche e yacht sul lago dei Quattro Cantoni.' },
   ],
   planung: {
-    title: 'Trasferta e pianificazione',
+    title: 'Pianificazione per Comuni sul lago e abitazioni secondarie',
     paragraphs: [
-      'Da Emmenbrücke il tragitto passa per Lucerna e l’autostrada A2 fino a Nidvaldo. Le pulizie prima del Suo arrivo si pianificano meglio con un certo anticipo, ci comunichi quindi le Sue date il prima possibile.',
-      'Per le abitazioni secondarie concordiamo regole fisse per chiavi e allarme e stabiliamo a chi segnaliamo ciò che notiamo durante i giri di controllo.',
+      'Da Emmenbrücke la strada porta a Nidvaldo via Lucerna e l’autostrada A2. Una pulizia prima del Suo arrivo richiede un po’ di anticipo, perciò ci comunichi le date il prima possibile.',
+      'Le abitazioni secondarie richiedono regole fisse per chiavi e allarme. Decida in anticipo chi viene informato se durante un giro di controllo si nota qualcosa: Lei stesso, l’amministrazione o una persona di fiducia nelle vicinanze.',
     ],
   },
+  daten: [
+    {
+      label: 'Giorni di riposo',
+      items: ['Capodanno', 'San Giuseppe (19 marzo)', 'Ascensione', 'Corpus Domini', '1° agosto', 'Assunzione', 'Ognissanti', 'Immacolata Concezione', 'Venerdì santo', 'Domenica di Pasqua', 'Domenica di Pentecoste', 'Digiuno federale', 'Natale'],
+      text: 'Venerdì santo, domenica di Pasqua, domenica di Pentecoste, Digiuno federale e Natale sono alte festività. Tranne San Giuseppe, tutti i giorni dell’elenco sono equiparati alla domenica: otto secondo la legge sui giorni di riposo, il 1° agosto secondo il diritto federale (art. 20a LL), gli altri cadono comunque di domenica. I Comuni possono stabilire altri festivi con un regolamento.',
+      source: ['nwRuhetage', 'arg'],
+    },
+    {
+      label: 'Abitazioni secondarie',
+      text: 'Emmetten 32,51 %. È l’unico Comune di Nidvaldo oltre il 20 per cento e sottostà quindi alle norme edilizie della legge sulle abitazioni secondarie.',
+      source: 'are',
+    },
+  ],
   faq: [
     {
-      question: 'Vi occupate delle abitazioni secondarie durante la nostra assenza?',
-      answer: 'Sì. Puliamo prima del Suo arrivo e dopo la Sua partenza ed effettuiamo giri di controllo. Maggiori informazioni in [Immobili di pregio](/premium/luxusimmobilien).',
+      question: 'Vi occupate di abitazioni secondarie durante la nostra assenza?',
+      answer: 'Sì. Puliamo prima del Suo arrivo e dopo la Sua partenza ed effettuiamo giri di controllo. Maggiori informazioni alla voce [immobili di pregio](/premium/luxusimmobilien).',
     },
     {
-      question: 'Pulite anche le barche?',
-      answer: 'Sì, yacht e motoscafi sul lago dei Quattro Cantoni: interni, imbottiture, teak e gelcoat. Maggiori informazioni in [Yacht](/premium/yacht).',
+      question: 'Chi controlla lo stabile se i proprietari non abitano sul posto?',
+      answer: 'Nei Comuni sul lago molte abitazioni appartengono a proprietari presenti solo a tratti. Spesso manca allora qualcuno che passi regolarmente. La [custodia di stabili](/leistungen/hauswartung) si occupa di giri di controllo, lavanderia, smaltimento e consegne degli appartamenti e segnala i difetti all’organo designato dalla comunione dei proprietari, ad esempio l’amministrazione.',
     },
-    { question: 'Quanto costa un’impresa di pulizie nel Cantone di Nidvaldo?', answer: answers.kostenFaktoren },
     {
-      question: 'Come otteniamo un’offerta?',
-      answer: `Ci telefoni o ci scriva. La contattiamo ${responseTime}, esaminiamo l’immobile e Le inviamo l’offerta per iscritto.`,
+      question: 'Lavorate anche a Emmetten e nella valle di Engelberg?',
+      answer: 'Sì, in tutti gli undici Comuni di Nidvaldo, da Hergiswil e Stansstad fino a Wolfenschiessen ed Emmetten, con tutti i servizi e alle stesse condizioni.',
     },
-    { question: 'Siete assicurati?', answer: answers.versicherung },
+    {
+      question: 'Curate anche barche agli ormeggi di Nidvaldo?',
+      answer: 'Sì, yacht e motoscafi sul lago dei Quattro Cantoni, ad esempio a Stansstad, Buochs o Beckenried: interni, imbottiture, teak e gelcoat. Maggiori informazioni alla voce [yacht](/premium/yacht).',
+    },
   ],
   menuText: menu.nidwalden.text,
 }
@@ -321,70 +494,95 @@ const obwalden: KantonPage = {
   name: 'Obvaldo',
   kuerzel: 'OW',
   seo: {
-    title: 'Impresa di pulizie Obvaldo ed Engelberg',
+    title: 'Impresa di pulizie a Obvaldo ed Engelberg',
     description:
-      'Pulizia e custodia di stabili a Obvaldo: immobili nel Sarneraatal, abitazioni secondarie e alberghi a Engelberg. Offerta gratuita dopo il sopralluogo.',
+      'Impresa di pulizie a Obvaldo per il Sarneraatal ed Engelberg: custodia di stabili, pulizie a fondo per alberghi e abitazioni. Offerta gratuita.',
   },
-  h1: 'La Sua impresa di pulizie nel Cantone di Obvaldo',
+  h1: 'Impresa di pulizie a Obvaldo, dal Sarneraatal a Engelberg',
   lead: [
-    'Obvaldo è composto da due parti: il Sarneraatal con il capoluogo Sarnen e l’alta valle di Engelberg, che si raggiunge passando per Nidvaldo.',
-    'Nel Sarneraatal puliamo e curiamo stabili abitativi e commerciali e aziende artigianali. Engelberg è caratterizzata da abitazioni secondarie e alberghi, per entrambi offriamo pulizia e assistenza.',
+    'Obvaldo si compone di due parti: il Sarneraatal con il capoluogo Sarnen e l’alta valle di Engelberg, che si raggiunge passando da Nidvaldo.',
+    'Le due parti richiedono una pianificazione diversa: nel Sarneraatal conta il ritmo fisso negli stabili abitativi e commerciali, a Engelberg gli interventi seguono stagione, arrivi e partenze.',
   ],
   facts: [
-    { label: 'Capoluogo', value: 'Sarnen' },
-    { label: 'Laghi', value: 'Lago di Sarnen, lago di Lungern' },
-    { label: 'Comuni', value: 'Tutti i sette Comuni, Engelberg compresa' },
+    { label: 'Accesso', value: 'A8, Engelberg per la sua valle' },
+    { label: 'Termini di disdetta', value: 'Fine marzo, fine giugno, fine settembre' },
+    { label: 'Festivo proprio', value: 'Festa di San Nicolao della Flüe, 25 settembre' },
     { label: 'Non offerto', value: 'Servizio invernale' },
   ],
   regionen: [
     { title: 'Sarneraatal', orte: ['Sarnen', 'Kerns', 'Sachseln', 'Alpnach'] },
-    { title: 'Verso il passo del Brünig', orte: ['Giswil', 'Lungern'] },
+    { title: 'Verso il Brünig', orte: ['Giswil', 'Lungern'] },
     { title: 'Alta valle', orte: ['Engelberg'] },
   ],
   objekte: [
     {
       title: 'Abitazioni secondarie a Engelberg',
-      text: 'Secondo l’inventario delle abitazioni della Confederazione, a Engelberg più della metà delle abitazioni è un’abitazione secondaria. Puliamo prima del Suo arrivo e dopo la Sua partenza e controlliamo che tutto sia in ordine durante la Sua assenza.',
+      text: 'Molte abitazioni del villaggio abbaziale restano vuote tra un soggiorno e l’altro. Qui conta la pulizia tra due soggiorni più di un ritmo settimanale fisso, ed è ciò che prevede il nostro [settore Premium](/premium).',
+      premium: true,
     },
     {
       title: 'Alberghi',
       text: 'Per gli alberghi ci occupiamo di pulizie a fondo e speciali, ad esempio prima di un’apertura, prima dell’inizio della stagione o dopo una ristrutturazione.',
     },
     {
-      title: 'Immobili nel Sarneraatal',
+      title: 'Stabili nel Sarneraatal',
       text: 'A Sarnen, Kerns, Sachseln e Alpnach puliamo vani scala, uffici e superfici commerciali e ci occupiamo della custodia di stabili abitativi e commerciali.',
     },
     {
-      title: 'Trasloco e riconsegna',
-      text: 'Quando un appartamento cambia proprietario o inquilini, lo puliamo prima della riconsegna, con garanzia di consegna.',
+      title: 'Cambio d’inquilino',
+      text: 'Quando cambiano gli inquilini, puliamo prima della consegna su incarico dell’amministrazione o dei proprietari, con garanzia di consegna.',
     },
   ],
   leistungen: [
-    { path: '/premium/luxusimmobilien', title: 'Ville e abitazioni secondarie', text: 'Pulizia prima del Suo arrivo e dopo la Sua partenza, giri di controllo durante la Sua assenza.' },
-    { path: '/leistungen/sonderreinigungen', title: 'Pulizie a fondo e speciali', text: 'Pulizia a fondo per alberghi e appartamenti, per esempio prima della stagione.' },
-    { path: '/leistungen/baureinigung', title: 'Pulizia di cantiere e di fine cantiere', text: 'Dopo ristrutturazione e rinnovo, fino alla consegna.' },
-    { path: '/leistungen/hauswartung', title: 'Custodia di stabili', text: 'Giri di controllo, lavanderia, smaltimento e consegne degli appartamenti.' },
-    { path: '/leistungen/unterhaltsreinigung', title: 'Pulizia di manutenzione', text: 'Vani scala e superfici commerciali con un ritmo fisso.' },
+    { path: '/premium/luxusimmobilien', title: 'Case di vacanza', text: 'Pulizia tra due soggiorni a Engelberg e sul lago di Sarnen.' },
+    { path: '/leistungen/sonderreinigungen', text: 'Pulizia a fondo per alberghi e appartamenti, ad esempio prima della stagione.' },
+    { path: '/leistungen/baureinigung', text: 'Dopo trasformazioni e ristrutturazioni, fino alla consegna.' },
+    { path: '/leistungen/hauswartung', text: 'Giri di controllo, lavanderia, smaltimento e consegne degli appartamenti.' },
+    { path: '/leistungen/umzugsreinigung', text: 'Pulizia finale al cambio d’inquilino nel Sarneraatal, con garanzia di consegna.' },
   ],
   planung: {
-    title: 'Trasferta e pianificazione',
+    title: 'Stagione, accesso ed Engelberg',
     paragraphs: [
-      'Nel Sarneraatal arriviamo da Emmenbrücke passando per Lucerna e l’autostrada A8. Per Engelberg il tragitto passa per Nidvaldo e la valle di Engelberg.',
-      'A Engelberg adattiamo gli interventi ad arrivi, partenze e stagione. Chiarisca durante il sopralluogo accesso, parcheggio e consegna delle chiavi.',
-      'Non offriamo il servizio invernale. Lo sgombero della neve attorno all’immobile va quindi affidato separatamente.',
+      'Nel Sarneraatal arriviamo da Emmenbrücke via Lucerna e l’autostrada A8. La strada per Engelberg passa per Nidvaldo e la valle di Engelberg.',
+      'A Engelberg stabilisca accesso, parcheggio e consegna delle chiavi prima del primo intervento, soprattutto se Lei non è sul posto.',
+      'Il servizio invernale non lo assumiamo, nemmeno a Engelberg. Affidi quindi lo sgombero della neve per accessi e piazzali separatamente, possibilmente prima dell’inizio della stagione.',
     ],
   },
+  daten: [
+    {
+      label: 'Termini di disdetta',
+      text: 'Salvo altro accordo nel contratto di locazione, un appartamento si può disdire per fine marzo, fine giugno o fine settembre. La disdetta deve poter essere recapitata al più tardi entro fine dicembre, fine marzo o fine giugno.',
+      source: 'owSchlichtung',
+    },
+    {
+      label: 'Giorni di riposo',
+      items: ['Capodanno', 'Ascensione', 'Corpus Domini', '1° agosto', 'Assunzione', 'Festa di San Nicolao della Flüe (25 settembre)', 'Ognissanti', 'Immacolata Concezione', 'Venerdì santo', 'Domenica di Pasqua', 'Domenica di Pentecoste', 'Digiuno federale', 'Natale'],
+      text: 'La festa di San Nicolao della Flüe non è equiparata alla domenica ai sensi della legge sul lavoro. Come giorno di riposo pubblico, però, anche in questo giorno il lavoro nelle aziende artigianali e commerciali è in linea di principio vietato (art. 3), le eccezioni sono all’art. 5. Ogni Comune può inoltre stabilire un festivo locale equiparato alla domenica.',
+      source: 'owRuhetage',
+    },
+    {
+      label: 'Abitazioni secondarie',
+      text: 'Engelberg 55,87 %, unico Comune di Obvaldo oltre il 20 per cento. Lungern resta al di sotto con il 18,92 %.',
+      source: 'are',
+    },
+  ],
   faq: [
     {
       question: 'Venite anche a Engelberg?',
-      answer: 'Sì. Engelberg fa parte del Cantone di Obvaldo e quindi della nostra zona d’intervento, con tutti i servizi e alle stesse condizioni.',
+      answer: 'Sì. Engelberg appartiene al Cantone di Obvaldo e quindi alla nostra zona d’intervento, con tutti i servizi e alle stesse condizioni.',
     },
     {
-      question: 'Pulite prima del nostro arrivo?',
-      answer: 'Sì. Puliamo prima del Suo arrivo e dopo la Sua partenza. Ci comunichi le Sue date il prima possibile.',
+      question: 'Pulite il nostro appartamento di vacanza tra due soggiorni?',
+      answer: 'Sì. Ci comunichi arrivo e partenza il prima possibile, così la pulizia cade tra i Suoi soggiorni e non nel primo giorno di vacanza.',
     },
-    { question: 'Vi occupate del servizio invernale?', answer: 'No, non offriamo il servizio invernale.' },
-    { question: 'Quanto costa un’impresa di pulizie nel Cantone di Obvaldo?', answer: answers.kostenFaktoren },
+    {
+      question: 'Qual è il momento migliore per una pulizia a fondo in albergo?',
+      answer: 'Quando in casa ci sono pochi ospiti: in bassa stagione, prima di un’apertura o dopo una ristrutturazione. Pianifichi la data per tempo, perché in quel periodo spesso lavorano anche gli artigiani. La pulizia viene per ultima, così non si forma nuova polvere. Maggiori informazioni alle voci [pulizie a fondo e speciali](/leistungen/sonderreinigungen) e [pulizia di cantiere](/leistungen/baureinigung).',
+    },
+    {
+      question: 'Vi occupate della pulizia finale al cambio d’inquilino?',
+      answer: 'Sì, su incarico dell’amministrazione o dei proprietari e con garanzia di consegna. Poiché a Obvaldo, salvo altro accordo, si disdice per fine marzo, giugno o settembre, le consegne si concentrano in queste date, vedi [pulizia di fine locazione](/leistungen/umzugsreinigung).',
+    },
   ],
   menuText: menu.obwalden.text,
 }
@@ -395,10 +593,22 @@ export const kantonUi: Dictionary['kantone']['ui'] = {
   regionen: 'Regioni e località',
   objekte: 'Immobili tipici',
   leistungen: 'Servizi richiesti',
+  planung: 'Pianificazione',
   weitere: 'Altri Cantoni',
   overview: 'Tutta la zona d’intervento',
   toCanton: 'Vai alla pagina del Cantone',
   seat: 'La nostra sede',
+  daten: {
+    title: 'Dati cantonali per la pianificazione',
+    nav: 'Dati cantonali',
+    intro: 'Regole cantonali e cifre ufficiali che contano per i piani di pulizia e i cambi d’inquilino, ciascuna con la sua fonte. Nel singolo caso fa fede il testo della fonte.',
+    source: 'Fonte:',
+    stand: 'Stato delle informazioni:',
+  },
+  datenStand: '2026-09-28',
+  /** Quellen der Kantonsdaten, einmal je Sprache; Seiten verweisen per Schlüssel */
+  quellen: quelle,
+  gebiet: 'In tutta la nostra zona d’intervento, alle stesse condizioni',
   cta: {
     title: 'Sopralluogo e offerta',
     text: `Ci descriva l’immobile e la località. La contattiamo ${responseTime} e veniamo da Lei per il sopralluogo, gratuitamente e senza impegno.`,
@@ -406,6 +616,6 @@ export const kantonUi: Dictionary['kantone']['ui'] = {
 }
 
 export const kantoneUebersicht: Dictionary['kantone']['uebersicht'] = {
-  title: 'Il Suo Cantone in dettaglio',
-  text: 'Per ogni Cantone c’è una pagina dedicata: quali regioni e località ne fanno parte, quali immobili vi sono tipici e a che cosa badiamo nella pianificazione.',
+  title: 'Il Suo Cantone nel dettaglio',
+  text: 'Ogni Cantone ha una propria pagina: regioni e località, immobili tipici, pianificazione e dati cantonali con fonte, ad esempio su giorni festivi, termini di disdetta o abitazioni secondarie.',
 }

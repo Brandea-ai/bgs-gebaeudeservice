@@ -96,7 +96,7 @@ export const pages: Dictionary['pages'] = {
   '/einzugsgebiet': {
     label: 'Service area',
     title: 'Service area: Lucerne, Zug and Aargau',
-    description: `From ${company.address.city} across the cantons of ${region}, including lakeside areas and Engelberg. All services everywhere.`,
+    description: `Cleaning and caretaking from ${company.address.city} in ${region}, including lakeside areas and Engelberg. Free quote after a site visit.`,
   },
   // Canton pages (E80): title and description live with the content in kantone.ts
   '/einzugsgebiet/luzern': { label: 'Canton of Lucerne', ...kantone.luzern.seo },

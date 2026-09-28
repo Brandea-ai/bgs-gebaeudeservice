@@ -96,7 +96,7 @@ export const pages = {
   '/einzugsgebiet': {
     label: 'Zone d’intervention',
     title: 'Zone d’intervention : Suisse centrale',
-    description: `Cantons de ${region} depuis ${company.address.city}, y compris au bord des lacs et à Engelberg. Toutes les prestations partout.`,
+    description: `Nettoyage et conciergerie depuis ${company.address.city} dans les cantons de ${region}, Engelberg compris. Devis gratuit après une visite.`,
   },
   '/einzugsgebiet/luzern': { label: 'Canton de Lucerne', ...kantone.luzern.seo },
   '/einzugsgebiet/zug': { label: 'Canton de Zoug', ...kantone.zug.seo },
