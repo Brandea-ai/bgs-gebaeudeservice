@@ -15,18 +15,22 @@ import PremiumOrte from "./08-orte";
 /**
  * Premium-Übersicht /premium (Factory-Strukturnorm, E80): eigene Welt mit
  * Serifenschrift, nie Signalrot. Nur der Kopf ist dunkel mit Bild, alles
- * darunter hell in Elfenbein und Weiss mit Champagner (Premium hell). Nur Reihenfolge.
- * Der Abschluss «Diskret anfragen» beschriftet den Formularabschnitt.
+ * darunter hell in Elfenbein und Weiss mit Champagner (Premium hell). Eigene
+ * Wege, Fragen, Ablauf und der Kasten zur Geheimhaltung (Audit 25, Abschnitt 5).
+ * Nur Reihenfolge. Der Abschluss «Diskret anfragen» beschriftet den Formularabschnitt.
  */
 export default function PremiumUebersicht(props: PremiumProps) {
   const { lang } = props;
-  const { dict, ui, content } = premiumKontext(props);
+  const { ui, content } = premiumKontext(props);
+  // Kurze Beschriftungen, damit die Leiste in allen Sprachen einzeilig bleibt (Befund PU-7)
+  const { nav } = content;
   const navItems = [
-    { id: "bereiche", title: dict.seiten.servicesOverview.premium.title },
-    { id: "diskretion", title: content.discretion.title },
-    { id: "zusagen", title: content.promisesTitle },
-    { id: "ablauf", title: ui.steps },
-    { id: "orte", title: dict.misc.map.areaLabel },
+    { id: "bereiche", title: nav.bereiche },
+    { id: "diskretion", title: nav.diskretion },
+    { id: "zusagen", title: nav.zusagen },
+    { id: "ablauf", title: nav.ablauf },
+    { id: "fragen", title: nav.fragen },
+    { id: "orte", title: nav.orte },
   ];
   return (
     <PageFrame lang={lang} path="/premium" mainClassName="bg-white" contact={content.cta}>

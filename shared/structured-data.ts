@@ -55,13 +55,16 @@ export const organizationJsonLd = (lang: Locale = 'de') => ({
 
 /** Eine Leistung auf ihrer eigenen Seite. Premium-Leistungen tragen die Premium-Linie als Marke (E47). */
 export function serviceJsonLd(path: PagePath, lang: Locale = 'de') {
-  const { label, description } = getDict(lang).pages[path]
+  const dict = getDict(lang)
+  const { label, description } = dict.pages[path]
+  // Premium-Seiten tragen im Markup den ausgeschriebenen Leistungsnamen statt des kurzen Menünamens (N8)
+  const premiumName = dict.seiten.premiumOverview.offers.find((offer) => offer.path === path)?.name
   const url = localizePath(path, lang)
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
     '@id': `${absolute(url)}#leistung`,
-    name: label,
+    name: premiumName ?? label,
     serviceType: label,
     description,
     url: absolute(url),

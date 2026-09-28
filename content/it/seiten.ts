@@ -609,58 +609,171 @@ export const servicesOverview: Seiten['servicesOverview'] = {
   },
 }
 
-// Stesse chiavi e stesso ordine della lista tedesca (simboli in app/premium/page.tsx)
+// Stesse chiavi e stesso ordine della lista tedesca (i sei modi di lavorare confermati, E41)
 const promises: Seiten['premiumOverview']['promises'] = [
-  { key: 'persoenlich', title: 'Contatto personale', text: 'La Sua richiesta è trattata personalmente dal gerente.' },
-  { key: 'diskret', title: 'Discrezione', text: 'Su richiesta sottoscriviamo un accordo di riservatezza.' },
-  { key: 'teams', title: 'Team fissi', text: 'Da Lei lavora sempre lo stesso team.' },
-  { key: 'personal', title: 'Personale verificato', text: 'Chi lavora da Lei è stato verificato da noi.' },
-  { key: 'schluessel', title: 'Chiavi e allarme', text: 'Secondo regole fisse che concordiamo con Lei.' },
-  { key: 'zeiten', title: 'Nei Suoi orari', text: 'Anche la sera, nel fine settimana e durante la Sua assenza.' },
+  { key: 'diskret', title: 'Discrezione', text: 'Su Sua richiesta firmiamo un accordo di riservatezza.' },
+  { key: 'teams', title: 'Team fissi', text: 'Della Sua casa, barca o cabina si occupa sempre lo stesso team.' },
+  { key: 'personal', title: 'Personale verificato', text: 'Da Lei non lavora nessuno che non abbiamo verificato.' },
+  { key: 'schluessel', title: 'Chiavi e allarme', text: 'Consegna, custodia e impianto d’allarme secondo regole che concorda con noi.' },
+  { key: 'zeiten', title: 'Nei Suoi orari', text: 'Interventi anche la sera, nel fine settimana o mentre Lei è in viaggio.' },
   { key: 'material', title: 'Conoscenza dei materiali', text: 'Pietra naturale, parquet e superfici lucide; per le imbarcazioni teak, gelcoat e imbottiture.' },
-  { key: 'sprachen', title: 'Quattro lingue', text: 'Tedesco, inglese, francese e italiano.' },
-  { key: 'versichert', title: 'Assicurazione', text: 'Responsabilità civile aziendale con una copertura di CHF 10 milioni.' },
-  { key: 'offerte', title: 'Offerta sul posto', text: 'Gratuita e senza impegno, dopo un sopralluogo.' },
 ]
 
 export const premiumOverview: Seiten['premiumOverview'] = {
   line: premiumLine,
-  h1: 'Pulizie per esigenze particolari',
-  lead: 'Per ville e residenze, abitazioni secondarie, alberghi con esigenze particolari, family office, jet privati e yacht. Sempre lo stesso team, con discrezione, con la conoscenza dei materiali delicati e nella Sua lingua.',
+  h1: 'Pulizie premium per esigenze particolari',
+  lead: 'Chi fa pulire una casa, uno yacht o la cabina di un jet privato affida ad altri chiavi, orari e vita privata. Per questo da Lei lavoriamo secondo regole che Lei contribuisce a stabilire.',
   // Significato del nome solo con il nuovo nome (E38)
   nameMeaning: company.premiumBrand
     ? `Il nome ${company.premiumBrand} deriva dal latino «clavis», la chiave. Lei ci affida la Sua casa, e noi ce ne prendiamo cura come se fosse la nostra.`
     : null,
-  offers: [
-    { title: 'Immobili di pregio', path: '/premium/luxusimmobilien', text: 'Ville, loft e residenze, regolarmente o prima di occasioni particolari, con cura dei materiali delicati.' },
-    { title: 'Jet privato', path: '/premium/privatjet', text: 'Pulizia della cabina con riguardo per i materiali di pregio, previo accordo con Lei.' },
-    { title: 'Yacht', path: '/premium/yacht', text: 'Pulizia di imbarcazioni e yacht sul lago dei Quattro Cantoni e sul lago di Zugo.' },
-  ] satisfies LinkCard[],
-  moreTitle: 'Inoltre per',
-  more: [
-    { title: 'Abitazioni secondarie e residence', text: 'Pulizia prima del Suo arrivo e dopo la Sua partenza, giri di controllo durante la Sua assenza.' },
-    { title: 'Alberghi', text: 'Pulizie speciali e a fondo, interventi prima di aperture e dopo rinnovi.' },
-    { title: 'Uffici e family office', text: 'In modo confidenziale, al di fuori dei Suoi orari di lavoro, con team fissi.' },
-    { title: 'Locali con opere d’arte e oggetti d’antiquariato', text: 'Pulizia accurata dei locali, opere d’arte solo con la Sua autorizzazione.' },
-    { title: 'Eventi privati', text: 'Pulizia prima e dopo l’evento, anche nel fine settimana.' },
-    { title: 'Agenti immobiliari e amministrazioni', text: 'Pulizia con breve preavviso prima di vendita, servizio fotografico e consegna.' },
-  ] satisfies Card[],
-  discretion: {
-    title: 'Discrezione fin dal primo messaggio',
-    paragraphs: [
-      'La Sua richiesta è trattata personalmente dal gerente. Su richiesta sottoscriviamo un accordo di riservatezza.',
-      'Da Lei lavora sempre lo stesso team, verificato da noi. Conosce la Sua casa, i Suoi desideri e le regole per chiavi e impianto d’allarme che concordiamo con Lei.',
-      'Le opere d’arte le puliamo solo con la Sua autorizzazione. Gli orari si adeguano a Lei, anche la sera, nel fine settimana o durante la Sua assenza.',
+  firstMessage: {
+    title: 'Basta questo per un primo messaggio',
+    items: [
+      'Casa, barca o cabina, con il luogo o l’ormeggio',
+      'L’occasione o il ritmo desiderato',
+      'Da quando ha bisogno di noi',
+      'Materiali delicati e opere d’arte che dobbiamo conoscere',
     ],
   },
-  promisesTitle: 'Su che cosa può contare',
+  nav: {
+    bereiche: 'Servizi',
+    diskretion: 'Discrezione',
+    zusagen: 'Metodo',
+    ablauf: 'Svolgimento',
+    fragen: 'Domande',
+    orte: 'Luoghi',
+  },
+  offersTitle: 'Casa, cabina o barca',
+  offers: [
+    {
+      title: 'Ville e residenze',
+      name: 'Pulizia di ville e immobili di pregio',
+      link: 'Vai alla pulizia di ville',
+      path: '/premium/luxusimmobilien',
+      text: 'Ville, loft, residenze e abitazioni secondarie, regolarmente o prima di un evento.',
+      detail: 'Per dimore con pietra naturale, parquet, superfici lucide e opere d’arte. Puliamo regolarmente o prima di una festa o di una vendita.',
+      notIncluded: 'Non inclusi: i restauri, ad esempio di quadri o mobili antichi.',
+    },
+    {
+      title: 'Cabine di jet privati',
+      name: 'Pulizia di jet privati',
+      link: 'Vai alla pulizia di jet privati',
+      path: '/premium/privatjet',
+      text: 'La cabina tra due voli, pianificata con il Suo operatore aereo.',
+      detail: 'Pelle, legno laccato, superfici lucide e tessuti pregiati si trovano in pochi metri quadrati, e spesso resta solo il tempo tra due voli. Quali prodotti sono ammessi a bordo lo decide Lei con il Suo operatore aereo.',
+      notIncluded: 'Non inclusa: la pulizia esterna dell’aereo.',
+    },
+    {
+      title: 'Yacht e motoscafi',
+      name: 'Pulizia di yacht e imbarcazioni',
+      link: 'Vai alla pulizia di yacht',
+      path: '/premium/yacht',
+      text: 'Interni e ponte, all’ormeggio sui laghi dei Quattro Cantoni e di Zugo.',
+      detail: 'Acqua dolce, polline ed escrementi di uccelli mettono alla prova una barca sul lago in modo diverso dal sale in mare. Puliamo teak, gelcoat e imbottiture all’ormeggio, ogni materiale con il proprio metodo.',
+      notIncluded: 'Non inclusi: i lavori sull’opera viva e sul motore.',
+    },
+  ],
+  moreTitle: 'Inoltre per',
+  more: [
+    { title: 'Abitazioni secondarie e residence', text: 'Pulite prima del Suo arrivo, rimesse in ordine dopo la Sua partenza, con giri di controllo nel frattempo al ritmo concordato.' },
+    { title: 'Alberghi', text: 'Pulizie speciali e a fondo prima di un’apertura e dopo un rinnovo. Maggiori informazioni sulle [pulizie a fondo e speciali](/leistungen/sonderreinigungen).' },
+    { title: 'Uffici e family office', text: 'Locali riservati, puliti al di fuori dei Suoi orari di lavoro. Maggiori informazioni sulla [pulizia di uffici e studi](/leistungen/bueroreinigung).' },
+    { title: 'Locali con opere d’arte e oggetti d’antiquariato', text: 'Puliamo i locali con cura, quadri, sculture e altre opere d’arte solo con la Sua espressa autorizzazione.' },
+    { title: 'Eventi privati', text: 'Tutto pronto prima dell’evento e di nuovo in ordine dopo, anche se cade in un fine settimana.' },
+    { title: 'Agenti immobiliari e amministrazioni', text: 'Pulizia con breve preavviso prima di vendita, servizio fotografico e consegna.' },
+  ],
+  discretion: {
+    title: 'La discrezione, nero su bianco',
+    paragraphs: [
+      'Chi pulisce da Lei viene a sapere più di quanto dica un’offerta. Che cosa resta riservato, e per quanto tempo, si può fissare in un accordo di riservatezza.',
+    ],
+  },
+  // Che cosa regola di solito un tale accordo, non il contenuto di un nostro modello; senza pena convenzionale (non confermata).
+  // Art. 11 CO letto il 28.09.2026 su fedlex.admin.ch, nessuna consulenza legale.
+  nda: {
+    kind: 'checklist',
+    id: 'geheimhaltung',
+    title: 'Che cosa dovrebbe regolare un accordo di riservatezza',
+    intro: 'L’elenco mostra che cosa regola di solito un tale accordo e La aiuta a verificare un testo.',
+    groups: [
+      {
+        title: 'Chi e che cosa',
+        items: [
+          'Chi è vincolato: l’azienda e tutte le persone che lavorano da Lei',
+          'Che cosa è riservato: indirizzo, assenze, ospiti, locali, arredamento e documenti',
+          'Nessuna foto in casa, a bordo o in cabina e nessuna informazione sui social media',
+        ],
+      },
+      {
+        title: 'Durata e fine',
+        items: [
+          'Per quanto tempo vale l’obbligo, anche oltre la fine dell’incarico',
+          'Come vengono restituiti chiavi e badge e cambiati i codici',
+          'Che cosa succede alla fine con documenti come planimetrie o schemi d’allarme: restituzione o distruzione',
+        ],
+      },
+    ],
+    note: 'Il CO non richiede alcuna forma speciale per un tale accordo (art. 11 CO), ma una versione firmata ne facilita la prova. Chiarisca i dettagli del Suo caso con la Sua consulenza legale.',
+    sources: [
+      { label: 'Codice delle obbligazioni, art. 11: forma dei contratti', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/it#art_11' },
+    ],
+    printable: true,
+    updated: '2026-09-28',
+  },
+  promisesTitle: 'Che cosa vale per ogni incarico premium',
   promises,
+  stepsTitle: 'Come si svolge una richiesta premium',
+  steps: [
+    {
+      title: 'La Sua richiesta',
+      text: 'Dopo la Sua telefonata o il Suo messaggio concordiamo con Lei una data per la visita.',
+    },
+    {
+      title: 'Visita e offerta',
+      text: 'In casa, all’ormeggio o in cabina esaminiamo con Lei locali, materiali e accessi, per un jet privato d’intesa con il Suo operatore aereo. Su questa base redigiamo la Sua offerta scritta.',
+    },
+    {
+      title: 'Regole fissate prima di iniziare',
+      text: 'Prima di iniziare è stabilito quando veniamo, come vengono gestiti chiavi e impianto d’allarme e quali opere d’arte o oggetti tocchiamo solo con la Sua autorizzazione.',
+    },
+    {
+      title: 'Il Suo team fisso',
+      text: 'Da Lei viene sempre lo stesso team, che conosce le regole stabilite prima del primo intervento.',
+    },
+  ],
+  faq: [
+    {
+      question: 'Come rimane riservata la mia richiesta?',
+      answer: 'Delle richieste premium si occupa personalmente il gerente. Se desidera un accordo di riservatezza, lo indichi possibilmente già nel Suo primo messaggio.',
+    },
+    {
+      question: 'Un agente immobiliare o un’amministrazione può fare la richiesta per il proprietario?',
+      answer: 'Sì. Ci indichi nella richiesta chi accompagnerà la visita e chi deve ricevere l’offerta.',
+    },
+    {
+      question: 'Devo affidare un incarico regolare?',
+      answer: 'No. Può affidarci anche un singolo intervento, ad esempio prima di un evento privato.',
+    },
+    {
+      question: 'Lavorate anche quando non c’è nessuno in casa?',
+      answer: 'Sì, anche mentre Lei è in viaggio. Come entriamo in casa e come usiamo l’impianto d’allarme è concordato prima.',
+    },
+    {
+      question: 'Da che cosa dipende il prezzo di una pulizia premium?',
+      answer: 'Per una casa da superficie, materiali e opere d’arte, per una barca da dimensioni, ponte e ormeggio, per un jet da cabina e fascia oraria. A ciò si aggiungono il ritmo e gli interventi la sera o nel fine settimana. Per questo solo l’offerta dopo la visita indica un prezzo.',
+    },
+    {
+      question: 'Possiamo fare la richiesta in inglese, francese o italiano?',
+      answer: 'Sì. Comunichiamo con Lei in tedesco, inglese, francese o italiano. Ci scriva nella lingua che preferisce.',
+    },
+  ],
   places: {
     title: 'Dove siamo a Sua disposizione',
     text: `Sul lago dei Quattro Cantoni da Lucerna e Meggen fino a Weggis, Vitznau, Hergiswil ed Ennetbürgen, sul lago di Zugo e sul lago di Ägeri da Zugo e Walchwil fino a Oberägeri, a Engelberg e nell’intero territorio dei Cantoni di ${cantonListIt}.`,
   },
   cta: {
     title: 'Richiesta discreta',
-    text: 'Ci telefoni o ci scriva. La Sua richiesta è trattata personalmente dal gerente, su richiesta con vincolo di riservatezza.',
+    text: 'Una telefonata o poche righe tramite il modulo bastano per iniziare.',
   },
 }

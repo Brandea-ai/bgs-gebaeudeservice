@@ -609,58 +609,170 @@ export const servicesOverview: Seiten['servicesOverview'] = {
   },
 }
 
+// Same keys and order as the German list (the six confirmed ways of working, E41)
 const promises: Seiten['premiumOverview']['promises'] = [
-  { key: 'persoenlich', title: 'Personal', text: 'Your enquiry is handled personally by our managing director.' },
-  { key: 'diskret', title: 'Discreet', text: 'On request, we sign a non-disclosure agreement.' },
-  { key: 'teams', title: 'Dedicated teams', text: 'The same team always works for you.' },
-  { key: 'personal', title: 'Vetted staff', text: 'Everyone who works for you has been vetted by us.' },
-  { key: 'schluessel', title: 'Keys and alarm', text: 'According to fixed rules that we agree with you.' },
-  { key: 'zeiten', title: 'At your convenience', text: 'Including evenings, weekends and while you are away.' },
+  { key: 'diskret', title: 'Discreet', text: 'We sign a non-disclosure agreement at your request.' },
+  { key: 'teams', title: 'Dedicated teams', text: 'Your house, boat or cabin is always looked after by the same team.' },
+  { key: 'personal', title: 'Vetted staff', text: 'No one works for you whom we have not vetted.' },
+  { key: 'schluessel', title: 'Keys and alarm', text: 'Handover, safekeeping and the alarm system follow rules you agree with us.' },
+  { key: 'zeiten', title: 'At your convenience', text: 'Assignments also in the evening, at weekends or while you are travelling.' },
   { key: 'material', title: 'Knowledge of materials', text: 'Natural stone, parquet and high-gloss surfaces, and on boats teak, gelcoat and upholstery.' },
-  { key: 'sprachen', title: 'Four languages', text: `${languages}.` },
-  { key: 'versichert', title: 'Insured', text: 'Business liability insurance with CHF 10 million cover.' },
-  { key: 'offerte', title: 'On-site quote', text: 'Free of charge and non-binding, after a site visit.' },
 ]
 
 export const premiumOverview: Seiten['premiumOverview'] = {
   line: premiumLine,
-  h1: 'Cleaning for exacting standards',
-  lead: 'For villas and residences, second homes, hotels with special requirements, family offices, private jets and yachts. Always the same team, discreet, familiar with delicate materials and in your language.',
+  h1: 'Premium cleaning for exacting standards',
+  lead: 'Having a house, a yacht or the cabin of a private jet cleaned means handing over keys, schedules and private matters. That is why we work for you by rules you help to set.',
   nameMeaning: company.premiumBrand
     ? `The name ${company.premiumBrand} comes from the Latin ‘clavis’, meaning key. You entrust us with your home, and we treat it as if it were our own.`
     : null,
-  offers: [
-    { title: 'Luxury properties', path: '/premium/luxusimmobilien', text: 'Villas, lofts and residences, regularly or ahead of special occasions, with care for delicate materials.' },
-    { title: 'Private jet', path: '/premium/privatjet', text: 'Cabin cleaning with care for high-quality materials, by arrangement with you.' },
-    { title: 'Yacht', path: '/premium/yacht', text: 'Cleaning of boats and yachts on Lake Lucerne and Lake Zug.' },
-  ] satisfies LinkCard[],
-  moreTitle: 'Also for',
-  more: [
-    { title: 'Second homes and residences', text: 'Cleaning before your arrival and after your departure, inspection rounds while you are away.' },
-    { title: 'Hotels', text: 'Special and deep cleaning, assignments before openings and after renovations.' },
-    { title: 'Offices and family offices', text: 'Confidential, outside your working hours, with dedicated teams.' },
-    { title: 'Rooms with art and antiques', text: 'Careful cleaning of the rooms, works of art only with your approval.' },
-    { title: 'Private events', text: 'Cleaning before and after the event, including at weekends.' },
-    { title: 'Estate agents and property managers', text: 'Cleaning at short notice before a sale, photo shoot or handover.' },
-  ] satisfies Card[],
-  discretion: {
-    title: 'Discretion from the first message',
-    paragraphs: [
-      'Your enquiry is handled personally by our managing director. On request, we sign a non-disclosure agreement.',
-      'The same team always works for you, vetted by us. It knows your home, your wishes and the rules for keys and the alarm system that we agree with you.',
-      'We only clean works of art with your approval. Times are set around you, including evenings, weekends or while you are away.',
+  firstMessage: {
+    title: 'Enough for a first message',
+    items: [
+      'House, boat or cabin, with its location or mooring',
+      'The occasion or the frequency you have in mind',
+      'When you need us from',
+      'Delicate materials and works of art we should know about',
     ],
   },
-  promisesTitle: 'What you can rely on',
-  // Same keys and order as the German list (symbols in app/premium/page.tsx). The
-  // types; the assertion bridges that without changing content/de.
+  nav: {
+    bereiche: 'Services',
+    diskretion: 'Discretion',
+    zusagen: 'How we work',
+    ablauf: 'Process',
+    fragen: 'Questions',
+    orte: 'Locations',
+  },
+  offersTitle: 'House, cabin or boat',
+  offers: [
+    {
+      title: 'Villas and residences',
+      name: 'Villa and luxury property cleaning',
+      link: 'More on villa cleaning',
+      path: '/premium/luxusimmobilien',
+      text: 'Villas, lofts, residences and second homes, on a regular basis or ahead of an occasion.',
+      detail: 'For homes with natural stone, parquet, high-gloss surfaces and art. We clean regularly or before a celebration or a sale.',
+      notIncluded: 'Not included: restoration work, for example on paintings or antique furniture.',
+    },
+    {
+      title: 'Private jet cabins',
+      name: 'Private jet cabin cleaning',
+      link: 'More on private jet cleaning',
+      path: '/premium/privatjet',
+      text: 'The cabin between two flights, planned with your aircraft operator.',
+      detail: 'Leather, lacquered wood, high-gloss surfaces and fine textiles share a few square metres, and often there is only the time between two flights. You decide with your aircraft operator which products are permitted on board.',
+      notIncluded: 'Not included: cleaning the exterior of the aircraft.',
+    },
+    {
+      title: 'Yachts and motorboats',
+      name: 'Yacht and boat cleaning',
+      link: 'More on yacht cleaning',
+      path: '/premium/yacht',
+      text: 'Interior and deck, on Lake Lucerne and Lake Zug.',
+      detail: 'Fresh water, pollen and bird droppings affect a boat on a lake differently from salt at sea. We clean teak, gelcoat and upholstery at the mooring, each material with its own method.',
+      notIncluded: 'Not included: work below the waterline or on the engine.',
+    },
+  ],
+  moreTitle: 'Also for',
+  more: [
+    { title: 'Second homes and residences', text: 'Cleaned before you arrive, put back in order after you leave, with inspection rounds in between at the agreed frequency.' },
+    { title: 'Hotels', text: 'Special and deep cleaning before an opening and after a renovation. More on [deep and special cleaning](/leistungen/sonderreinigungen).' },
+    { title: 'Offices and family offices', text: 'Confidential rooms, cleaned outside your working hours. More on [office and practice cleaning](/leistungen/bueroreinigung).' },
+    { title: 'Rooms with art and antiques', text: 'We clean the rooms with care, and paintings, sculptures and other works of art only with your express approval.' },
+    { title: 'Private events', text: 'Ready before the event and back in order afterwards, even if it falls on a weekend.' },
+    { title: 'Estate agents and property managers', text: 'Cleaning at short notice before a sale, photo shoot or handover.' },
+  ],
+  discretion: {
+    title: 'Discretion in writing',
+    paragraphs: [
+      'Whoever cleans for you learns more than any quote shows. What stays confidential, and for how long, can be set out in a non-disclosure agreement.',
+    ],
+  },
+  // What such an agreement typically covers, not the content of a template of our own; no contractual penalty (not confirmed).
+  // CO Art. 11 read on 28.09.2026 on fedlex.admin.ch; English is an unofficial translation.
+  nda: {
+    kind: 'checklist',
+    id: 'geheimhaltung',
+    title: 'What a non-disclosure agreement should cover',
+    intro: 'The list shows what such an agreement typically covers and helps you check a draft.',
+    groups: [
+      {
+        title: 'Who and what',
+        items: [
+          'Who is bound: the company and everyone who works for you',
+          'What is confidential: address, absences, guests, rooms, furnishings and documents',
+          'No photos in the house, on board or in the cabin, and nothing shared on social media',
+        ],
+      },
+      {
+        title: 'Duration and end',
+        items: [
+          'How long the obligation applies, including after the assignment ends',
+          'How keys and badges are returned and codes changed',
+          'What happens to documents such as floor plans or alarm plans at the end: return or destruction',
+        ],
+      },
+    ],
+    note: 'The Swiss Code of Obligations (CO) does not require any particular form for such an agreement (Art. 11 CO), but a signed version makes it easier to prove. Discuss the details of your case with your legal adviser.',
+    sources: [
+      { label: 'Swiss Code of Obligations, Art. 11: form of contracts', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/en#art_11' },
+    ],
+    printable: true,
+    updated: '2026-09-28',
+  },
+  promisesTitle: 'What applies to every premium assignment',
   promises,
+  stepsTitle: 'How a premium enquiry works',
+  steps: [
+    {
+      title: 'Your enquiry',
+      text: 'After your call or message, we arrange a date for the walk-through with you.',
+    },
+    {
+      title: 'Walk-through and quote',
+      text: 'At the house, the mooring or in the cabin we look at rooms, materials and access with you, for a private jet in coordination with your aircraft operator. On this basis we prepare your written quote.',
+    },
+    {
+      title: 'Rules before the first assignment',
+      text: 'Before we start, we agree with you when we will come, how keys and the alarm system are handled and which works of art or objects we touch only with your approval.',
+    },
+    {
+      title: 'Your dedicated team',
+      text: 'The same team always comes to you, and it knows the rules you set before the first assignment.',
+    },
+  ],
+  faq: [
+    {
+      question: 'How does my enquiry stay confidential?',
+      answer: 'Our managing director deals with premium enquiries in person. If you would like a non-disclosure agreement, it is best to mention it in your first message.',
+    },
+    {
+      question: 'Can estate agents or property managers enquire on behalf of owners?',
+      answer: 'Yes. Tell us in your enquiry who will accompany the walk-through and who should receive the quote.',
+    },
+    {
+      question: 'Do I have to commit to regular cleaning?',
+      answer: 'No. You can also book us for a single assignment, for example before a private event.',
+    },
+    {
+      question: 'Do you also work when nobody is at home?',
+      answer: 'Yes, including while you are travelling. How we get into the house and operate the alarm system is agreed beforehand.',
+    },
+    {
+      question: 'What does the price of premium cleaning depend on?',
+      answer: 'For a house, on the floor area, materials and works of art; for a boat, on its size, deck and mooring; for a jet, on the cabin and the time slot. Added to this are the frequency and assignments in the evening or at weekends. That is why only the quote after the walk-through states a price.',
+    },
+    {
+      question: 'Can we enquire in English, French or Italian?',
+      answer: 'Yes. We can communicate with you in German, English, French or Italian. Write to us in whichever language you prefer.',
+    },
+  ],
   places: {
     title: 'Where we work',
     text: `On Lake Lucerne from Lucerne and Meggen to Weggis, Vitznau, Hergiswil and Ennetbürgen, on Lake Zug and Lake Ägeri from Zug and Walchwil to Oberägeri, in Engelberg and throughout the cantons of ${cantons}.`,
   },
   cta: {
     title: 'Enquire discreetly',
-    text: 'Call us or write to us. Your enquiry is handled personally by our managing director, under confidentiality if you wish.',
+    text: 'A phone call or a few lines via the form are enough to get started.',
   },
 }

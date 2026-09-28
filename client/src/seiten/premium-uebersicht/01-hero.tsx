@@ -1,21 +1,21 @@
-import { ArrowRight, Phone } from "@phosphor-icons/react/dist/ssr";
+import { ArrowRight, CheckCircle, Phone } from "@phosphor-icons/react/dist/ssr";
 import IntroBand from "@/components/IntroBand";
 import PageHero from "@/components/PageHero";
 import { Button } from "@/components/ui/button";
 import { company } from "../../../../shared/company";
-import { premiumKontext, promiseIcons, type PremiumProps } from "./kontext";
+import { premiumKontext, type PremiumProps } from "./kontext";
 
 /**
  * Kopf der Premium-Welt: Hintergrundbild in Anthrazit, Titel in Serifenschrift,
  * ein Satz, diskrete Anfrage und Telefon (P03, E84). Darunter im IntroBand in
- * Elfenbein die Einleitung und drei belegte Zusagen. Statisch, ohne Einblendung.
+ * Elfenbein die Einleitung und rechts, was in die erste Nachricht gehört. Die
+ * drei Bereiche stehen erst im Zickzack darunter, damit Hero-Zeile, Band und
+ * Zickzack nicht dreimal dieselbe Aufzählung zeigen (Befund PU-3). Statisch,
+ * ohne Einblendung.
  */
 export default function PremiumHero(props: PremiumProps) {
   const { lang } = props;
-  const { dict, ui, content, promise, eyebrow } = premiumKontext(props);
-  const highlights = (["persoenlich", "diskret", "teams"] as const)
-    .map(key => ({ key, item: promise(key) }))
-    .filter(entry => entry.item);
+  const { dict, ui, content, eyebrow } = premiumKontext(props);
   return (
     <>
       <PageHero
@@ -54,28 +54,29 @@ export default function PremiumHero(props: PremiumProps) {
         lang={lang}
         tone="premium"
         aside={
-          <ul className="divide-y divide-brass/30 border-y border-brass/30">
-            {highlights.map(({ key, item }) => {
-              const Glyph = promiseIcons[key];
-              return (
-                <li key={key} className="flex items-start gap-4 py-5">
-                  <Glyph
+          <div>
+            <h3
+              id="erste-nachricht"
+              className="font-premium text-[1.625rem] font-bold leading-snug text-anthracite"
+            >
+              {content.firstMessage.title}
+            </h3>
+            <ul
+              aria-labelledby="erste-nachricht"
+              className="mt-5 divide-y divide-brass/30 border-y border-brass/30"
+            >
+              {content.firstMessage.items.map(item => (
+                <li key={item} className="flex items-start gap-3 py-4 font-semibold leading-snug text-ink">
+                  <CheckCircle
                     weight="duotone"
-                    className="mt-0.5 size-7 shrink-0 text-brass-dark"
+                    className="mt-0.5 size-6 shrink-0 text-brass-dark"
                     aria-hidden="true"
                   />
-                  <span className="min-w-0">
-                    <span className="block font-premium text-[1.5rem] font-medium leading-tight text-ink">
-                      {item!.title}
-                    </span>
-                    <span className="mt-1 block font-medium leading-snug text-ink">
-                      {item!.text}
-                    </span>
-                  </span>
+                  <span className="min-w-0">{item}</span>
                 </li>
-              );
-            })}
-          </ul>
+              ))}
+            </ul>
+          </div>
         }
       />
     </>
