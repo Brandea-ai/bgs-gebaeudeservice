@@ -25,7 +25,8 @@ module.exports = {
         line: { DEFAULT: "#E2DFD8", dark: "rgba(255,255,255,0.12)" },
         mute: { DEFAULT: "#3F454E", light: "#C4C9D0" },
         signal: { DEFAULT: "#B8121B", dark: "#8F0E15", light: "#F2D6D7" },
-        brass: { DEFAULT: "#C8A96E", dark: "#8C6F3A", light: "#E6D5B0" },
+        // dark: Champagner als Text auf Hell, 5,1:1 auf Elfenbein, 5,7:1 auf Weiss (Premium hell)
+        brass: { DEFAULT: "#C8A96E", dark: "#7D6231", light: "#E6D5B0" },
         anthracite: { DEFAULT: "#16181C", 800: "#1D2025", 700: "#26292F" },
         ivory: { DEFAULT: "#F7F2E9", 200: "#EFE7D8" },
         border: "hsl(var(--border))",

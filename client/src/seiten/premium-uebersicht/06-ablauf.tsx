@@ -2,24 +2,26 @@ import ProcessScrolly from "@/components/ProcessScrolly";
 import PremiumTitel from "./titel";
 import { premiumKontext, type PremiumProps } from "./kontext";
 
-/** Ablauf aus den Schritten der Luxusimmobilien-Seite, vertikal ohne Pinning (P04) */
+/**
+ * Ablauf aus den Schritten der Luxusimmobilien-Seite wie auf den
+ * Leistungsseiten: Titel oben, links die gepinnte Video-Bühne in Anthrazit mit
+ * Champagner-Ring, rechts die Schritte (P04, Premium hell).
+ */
 export default function PremiumAblauf(props: PremiumProps) {
   const { lang } = props;
   const { dict, ui } = premiumKontext(props);
   return (
-    <section id="ablauf" aria-labelledby="ablauf-titel" className="on-dark section bg-anthracite text-white">
-      <div className="container grid gap-10 lg:grid-cols-12 lg:gap-x-16">
-        <PremiumTitel id="ablauf-titel" title={ui.steps} className="lg:col-span-4" />
-        <div className="lg:col-span-7 lg:col-start-6">
-          <ProcessScrolly
-            steps={dict.premium.luxusimmobilien.steps}
-            lang={lang}
-            tone="dark"
-            variant="vertical"
-            figureKeys={["anfrage", "besichtigung", "offerte", "start"]}
-            idPrefix="ablauf-schritt"
-          />
-        </div>
+    <section id="ablauf" aria-labelledby="ablauf-titel" className="section border-t border-brass/25 bg-white text-anthracite">
+      <div className="container">
+        <PremiumTitel id="ablauf-titel" title={ui.steps} className="mb-12 lg:mb-16" />
+        <ProcessScrolly
+          steps={dict.premium.luxusimmobilien.steps}
+          lang={lang}
+          tone="premium"
+          variant="wide"
+          figureKeys={["anfrage", "besichtigung", "offerte", "start"]}
+          idPrefix="ablauf-schritt"
+        />
       </div>
     </section>
   );

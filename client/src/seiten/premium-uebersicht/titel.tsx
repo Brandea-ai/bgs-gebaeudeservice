@@ -1,6 +1,10 @@
 import type { ReactNode } from "react";
+import { premiumHeading } from "@/components/premiumStyles";
 
-/** Abschnittstitel der Premium-Welt: Serifenschrift, Champagner-Haarlinie, optional Einleitung */
+/**
+ * Abschnittstitel der hellen Premium-Welt: Serifenschrift halbfett in Anthrazit,
+ * feine Champagner-Linie, optional Kennzeile und Einleitung.
+ */
 export default function PremiumTitel({
   id,
   title,
@@ -16,12 +20,12 @@ export default function PremiumTitel({
 }) {
   return (
     <div className={className}>
-      {eyebrow && <p className="t-eyebrow mb-5 text-brass">{eyebrow}</p>}
-      <h2 id={id} className="font-premium text-[clamp(2.1rem,1.4rem+2.4vw,3.75rem)] font-medium leading-[1.06] text-white">
+      {eyebrow && <p className="t-eyebrow mb-5 text-brass-dark">{eyebrow}</p>}
+      <h2 id={id} className={premiumHeading}>
         {title}
       </h2>
-      <div className="premium-rule mt-6 max-w-[12rem]" />
-      {intro && <div className="t-lead mt-6 max-w-[46ch] text-white/90">{intro}</div>}
+      <div className="premium-rule-light mt-7 max-w-[12rem]" aria-hidden="true" />
+      {intro && <div className="t-lead mt-7 max-w-[46ch] text-ink-600">{intro}</div>}
     </div>
   );
 }

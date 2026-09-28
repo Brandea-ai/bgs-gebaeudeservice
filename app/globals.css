@@ -421,6 +421,17 @@
   .process--dark[data-active='4'] [data-step='4'] .process-dot {
     color: #c8a96e;
   }
+  /* Helle Premium-Welt: aktiver Schritt in Champagner für Hell (Kontrast 5:1) */
+  .process--premium[data-active='1'] [data-step='1'] .process-num,
+  .process--premium[data-active='2'] [data-step='2'] .process-num,
+  .process--premium[data-active='3'] [data-step='3'] .process-num,
+  .process--premium[data-active='4'] [data-step='4'] .process-num,
+  .process--premium[data-active='1'] [data-step='1'] .process-dot,
+  .process--premium[data-active='2'] [data-step='2'] .process-dot,
+  .process--premium[data-active='3'] [data-step='3'] .process-dot,
+  .process--premium[data-active='4'] [data-step='4'] .process-dot {
+    color: #7d6231;
+  }
   .process[data-active='1'] [data-step='1'] .process-dot,
   .process[data-active='2'] [data-step='2'] .process-dot,
   .process[data-active='3'] [data-step='3'] .process-dot,
@@ -817,6 +828,42 @@
   .premium-rule {
     height: 1px;
     background: linear-gradient(90deg, rgba(200, 169, 110, 0.7), rgba(200, 169, 110, 0));
+  }
+  /*
+   * Helle Premium-Welt: Karte auf Weiss oder Elfenbein mit Champagner-Kontur.
+   * Ist die ganze Karte ein Link, hebt sie sich beim Überfahren und unten
+   * zieht eine Champagner-Linie auf (mit card-lift kombinieren).
+   */
+  .premium-card {
+    position: relative;
+    background: #fff;
+    border: 1px solid rgba(140, 111, 58, 0.22);
+    box-shadow: 0 1px 0 rgba(22, 24, 28, 0.03), 0 28px 56px -40px rgba(22, 24, 28, 0.35);
+  }
+  .premium-card::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    bottom: -1px;
+    height: 2px;
+    background: linear-gradient(90deg, #c8a96e, #7d6231);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--dur-state) var(--ease-out);
+  }
+  .premium-card:hover::after,
+  .premium-card:focus-within::after {
+    transform: scaleX(1);
+  }
+  @media (hover: hover) {
+    .premium-card.card-lift:hover {
+      box-shadow: 0 1px 0 rgba(22, 24, 28, 0.04), 0 36px 60px -34px rgba(22, 24, 28, 0.42);
+    }
+  }
+  /* Feine Champagner-Linie auf Hell: von Messing zu transparent */
+  .premium-rule-light {
+    height: 1px;
+    background: linear-gradient(90deg, rgba(125, 98, 49, 0.55), rgba(200, 169, 110, 0));
   }
   /* Heros laufen unter der schwebenden Kopfzeile durch */
   .hero-top {

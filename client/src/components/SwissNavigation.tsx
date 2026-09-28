@@ -18,6 +18,7 @@ import type { PagePath } from "../../../shared/seo";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { iconFor } from "./serviceIcons";
 import { AreaMegaPanel, AreaMobileGroup } from "./AreaMenu";
+import { FeatureMegaCard, PremiumMegaCard } from "./MegaCards";
 
 type MegaMenu = "leistungen" | "einzugsgebiet";
 
@@ -28,8 +29,9 @@ type MegaMenu = "leistungen" | "einzugsgebiet";
  * html-Element, ein einziger Scroll-Beobachter). Offene Menüs und Tastaturfokus
  * halten sie sichtbar. Ab xl steht darüber ganz oben eine schmale Infozeile auf
  * dem dunklen Hero. Leistungen als Mega-Menü mit eigener Premium-Welt in
- * Anthrazit und Champagner, daneben das Einzugsgebiet mit den Kantonsseiten
- * (AreaMenu.tsx). Immer nur ein Mega-Menü offen. Escape schliesst, das
+ * Anthrazit und Champagner (Karte mit klickbarem Kopf) und einer Bildkarte
+ * unter «Hauswartung und Pflege» (MegaCards.tsx), daneben das Einzugsgebiet
+ * mit den Kantonsseiten (AreaMenu.tsx). Immer nur ein Mega-Menü offen. Escape schliesst, das
  * Mobilmenü macht den Inhalt dahinter inert.
  */
 export default function SwissNavigation({
@@ -142,7 +144,7 @@ export default function SwissNavigation({
           prefetch={false}
           onClick={() => setMegaOpen(false)}
           aria-current={link.path === path ? "page" : undefined}
-          className="group flex min-h-12 items-center gap-3.5 rounded-[3px] px-3 py-2.5 text-[0.96875rem] font-medium text-ink/90 transition-colors hover:bg-ink/[0.045] hover:text-ink aria-[current=page]:text-signal"
+          className="group flex min-h-12 items-center gap-3.5 rounded-[3px] px-3 py-2.5 text-[0.96875rem] font-semibold text-ink transition-colors hover:bg-ink/[0.045] hover:text-ink aria-[current=page]:text-signal"
         >
           <Glyph
             weight="duotone"
@@ -291,57 +293,30 @@ export default function SwissNavigation({
                   >
                     <div className="glass-strong overflow-hidden rounded-[3px]">
                       <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,1.05fr)] gap-6 p-6">
-                        {[cleaning, care].map(group => (
-                          <div key={group.title}>
-                            <p className="t-eyebrow mb-3 px-3 text-mute">
-                              {group.title}
-                            </p>
-                            <ul className="space-y-0.5">
-                              {group.links.map(serviceLink)}
-                            </ul>
-                          </div>
-                        ))}
-
-                        {/* Premium als eigene Welt: Anthrazit, Champagner, Serifenschrift */}
-                        <div className="premium-surface on-dark relative flex flex-col overflow-hidden rounded-[3px] p-7 text-white">
-                          <p className="t-eyebrow text-brass">
-                            {premium.title}
+                        <div>
+                          <p className="t-eyebrow mb-3 px-3 text-mute">
+                            {cleaning.title}
                           </p>
-                          <p className="mt-3 font-premium text-[1.75rem] leading-[1.1] text-white">
-                            {chrome.premiumTeaser}
-                          </p>
-                          <div className="premium-rule my-6" />
-                          <ul className="space-y-1">
-                            {premium.links.map(link => {
-                              const Glyph = iconFor(link.path);
-                              return (
-                                <li key={link.path}>
-                                  <Link
-                                    href={href(link.path)}
-                                    prefetch={false}
-                                    onClick={() => setMegaOpen(false)}
-                                    aria-current={
-                                      link.path === path ? "page" : undefined
-                                    }
-                                    className="group flex min-h-11 items-center gap-3 py-2 text-[0.96875rem] text-white/90 transition-colors hover:text-brass-light aria-[current=page]:text-brass-light"
-                                  >
-                                    <Glyph
-                                      weight="duotone"
-                                      className="size-5 shrink-0 text-brass"
-                                      aria-hidden="true"
-                                    />
-                                    <span className="flex-1">{link.label}</span>
-                                    <ArrowRight
-                                      weight="duotone"
-                                      className="size-4 shrink-0 text-brass opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100"
-                                      aria-hidden="true"
-                                    />
-                                  </Link>
-                                </li>
-                              );
-                            })}
+                          <ul className="space-y-0.5">
+                            {cleaning.links.map(serviceLink)}
                           </ul>
                         </div>
+
+                        {/* Hauswartung und Pflege, darunter eine Bildkarte statt leerer Fläche */}
+                        <div className="flex flex-col">
+                          <p className="t-eyebrow mb-3 px-3 text-mute">
+                            {care.title}
+                          </p>
+                          <ul className="space-y-0.5">
+                            {care.links.map(serviceLink)}
+                          </ul>
+                          <div className="mt-auto pt-5">
+                            <FeatureMegaCard lang={lang} path={path} onNavigate={() => setMegaOpen(false)} />
+                          </div>
+                        </div>
+
+                        {/* Premium als eigene Welt, der Kopf der Karte führt auf /premium (MegaCards.tsx) */}
+                        <PremiumMegaCard lang={lang} path={path} onNavigate={() => setMegaOpen(false)} />
                       </div>
 
                       {/* Offerte als ruhige Leiste unter dem Menü */}
@@ -553,28 +528,7 @@ export default function SwissNavigation({
                         <ul className="pb-3">{group.links.map(serviceLink)}</ul>
                       </details>
                     ))}
-                    <div className="premium-surface on-dark rounded-[3px] p-5 text-white">
-                      <p className="t-eyebrow text-brass">{premium.title}</p>
-                      <p className="mt-2 font-premium text-xl leading-snug">
-                        {chrome.premiumTeaser}
-                      </p>
-                      <ul className="mt-4 border-t border-brass/25 pt-2">
-                        {premium.links.map(link => (
-                          <li key={link.path}>
-                            <Link
-                              href={href(link.path)}
-                              prefetch={false}
-                              onClick={() => setIsOpen(false)}
-                              aria-current={link.path === path ? "page" : undefined}
-                              className="flex min-h-11 items-center justify-between py-2.5 text-[1.0625rem] text-white/90 aria-[current=page]:text-brass-light"
-                            >
-                              {link.label}
-                              <ArrowRight weight="duotone" className="size-4 text-brass" aria-hidden="true" />
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    <PremiumMegaCard lang={lang} path={path} onNavigate={() => setIsOpen(false)} compact />
                   </div>
                 </div>
               </div>

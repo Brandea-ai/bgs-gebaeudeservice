@@ -25,7 +25,8 @@ export default function CantonMap({
   mobilePins = "all",
 }: {
   lang?: Locale;
-  tone?: "light" | "dark";
+  /** premium: helle Premium-Welt, Kantone in Champagner statt Signalrot */
+  tone?: "light" | "dark" | "premium";
   className?: string;
   /** Weitere Orte als Pins, Kartenkoordinaten wie seatPoint */
   pins?: { x: number; y: number; label: string }[];
@@ -38,6 +39,7 @@ export default function CantonMap({
     company.cantons.map(name => [cantonInfo[name]?.bfs, name])
   );
   const dark = tone === "dark";
+  const lux = tone === "premium";
   const names = company.cantons.map(name => cantonName(name, lang)).join(", ");
   const active = cantonShapes.filter(shape => served.has(shape.id));
   const inactive = cantonShapes.filter(shape => !served.has(shape.id));
@@ -64,7 +66,7 @@ export default function CantonMap({
               d={shape.d}
               fillRule="evenodd"
               className={
-                dark ? "fill-ink-700 stroke-ink" : "fill-stone-200 stroke-white"
+                dark ? "fill-ink-700 stroke-ink" : lux ? "fill-ivory-200 stroke-white" : "fill-stone-200 stroke-white"
               }
               strokeWidth={2}
             />
@@ -74,7 +76,7 @@ export default function CantonMap({
               key={shape.id}
               d={shape.d}
               fillRule="evenodd"
-              className={`map-canton ${dark ? "fill-signal stroke-ink" : "fill-signal stroke-white"}`}
+              className={`map-canton ${dark ? "fill-signal stroke-ink" : lux ? "fill-brass stroke-white" : "fill-signal stroke-white"}`}
               style={{ "--i": index } as React.CSSProperties}
               strokeWidth={2.5}
             />
@@ -87,7 +89,7 @@ export default function CantonMap({
               x={shape.label[0]}
               y={shape.label[1]}
               textAnchor="middle"
-              className="map-canton map-code fill-white"
+              className={`map-canton map-code ${lux ? "fill-anthracite" : "fill-white"}`}
               style={{ "--i": index } as React.CSSProperties}
               fontWeight="600"
             >
@@ -169,7 +171,7 @@ export default function CantonMap({
       >
         <span className="flex flex-wrap items-center gap-2">
           <span
-            className="inline-block h-2.5 w-2.5 bg-signal"
+            className={`inline-block h-2.5 w-2.5 ${lux ? "bg-brass" : "bg-signal"}`}
             aria-hidden="true"
           />
           {texts.areaLabel}
