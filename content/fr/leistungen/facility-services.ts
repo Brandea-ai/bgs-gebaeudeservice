@@ -1,7 +1,9 @@
 import type { ServicePageContent } from '../../types'
 
 // Même structure et mêmes sources que content/de/leistungen/facility-services.ts (E85).
-// Textes légaux lus sur fedlex.admin.ch le 28.09.2026 (CO, CC, OPA en français).
+// Textes légaux lus sur fedlex.admin.ch le 28.09.2026 (CO art. 58, 257a, 257b, 335c, 336c ;
+// CC art. 712h, 712m, 712s ; OPA art. 6, 9, en français). Constats des relecteurs FS-R1 à FS-08
+// intégrés le 28.09.2026.
 const co = 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr'
 const cc = 'https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr'
 const opa = 'https://www.fedlex.admin.ch/eli/cc/1983/1968_1968_1968/fr'
@@ -12,8 +14,8 @@ export const facilityServices: ServicePageContent = {
   eyebrow: 'Suivi d’immeubles',
   h1: 'Facility services : nettoyage, conciergerie et abords d’un seul prestataire',
   lead: [
-    'Confier le nettoyage, la conciergerie et l’entretien des abords à trois entreprises, c’est gérer trois contrats, chacun avec son propre délai de résiliation. S’y ajoutent les questions entre les deux : qui balaie les feuilles dans l’entrée, qui remplace la lampe du local à vélos, qui remet du savon dans les toilettes ?',
-    'Avec les facility services, nous fournissons ces prestations nous-mêmes, dans un seul contrat. Le chauffage, les ascenseurs et la protection incendie restent entretenus par vos entreprises spécialisées. Les pannes que nous y remarquons, nous vous les signalons.',
+    'Confier le nettoyage, la conciergerie et l’entretien des abords à trois entreprises, c’est gérer trois contrats, chacun avec son propre délai de résiliation. S’y ajoutent les questions aux frontières entre les mandats : qui balaie les feuilles dans l’entrée, qui remplace l’ampoule du local à vélos, qui remet du savon dans les toilettes ?',
+    'Avec les facility services, nous fournissons ces prestations nous-mêmes, dans un seul contrat. Vos entreprises spécialisées continuent d’entretenir le chauffage, les ascenseurs et la protection incendie. Nous vous signalons les pannes que nous y remarquons.',
   ],
   facts: [
     { label: 'Étendue', value: 'Nettoyage, conciergerie, abords et vitres, uniquement ce que nous fournissons nous-mêmes' },
@@ -54,7 +56,7 @@ export const facilityServices: ServicePageContent = {
       title: 'À l’entrée, trois mandats se rencontrent',
       paragraphs: [
         'Des feuilles sur le parvis, des traces de doigts sur la porte vitrée, une lampe qui clignote au-dessus de l’entrée. Avec des contrats séparés, chacun de ces endroits relève d’une autre entreprise. Chaque limite doit alors figurer dans un contrat, sinon quelque chose reste en plan ou se fait deux fois.',
-        'Dans un contrat commun, chaque prestation figure avec son étendue et sa fréquence, et toutes les interventions viennent de la même entreprise. Celui qui entretient le parvis voit aussi la lampe et la signale.',
+        'Avec un contrat commun, toutes les interventions viennent de la même entreprise. Celui qui entretient le parvis remarque aussi la lampe qui clignote, et la conciergerie remplace l’ampoule dans le cadre du même contrat.',
       ],
     },
   ],
@@ -64,15 +66,13 @@ export const facilityServices: ServicePageContent = {
       id: 'schnittstellen',
       title: 'Les interfaces qu’un contrat devrait régler',
       intro:
-        'À ces endroits, nettoyage, conciergerie et entretien des abords se touchent. Que vous mandatiez une ou plusieurs entreprises : la colonne de droite a sa place dans le contrat ou le cahier des charges.',
+        'À ces endroits, nettoyage, conciergerie et entretien des abords se touchent. Que vous mandatiez une ou plusieurs entreprises, réglez les points « À fixer dans le contrat » avant la première intervention, idéalement dans le cahier des charges.',
       columns: ['Endroit', 'Ce qui s’y rencontre', 'À fixer dans le contrat'],
       rows: [
         ['Entrée et parvis', 'Feuilles et saleté venant de l’extérieur, paillassons, vitre de la porte d’entrée, boîtes aux lettres', 'Qui balaie le parvis, qui nettoie paillassons et vitres, à quelle fréquence'],
-        ['Cage d’escalier et ascenseur', 'Sols, mains courantes, cabine d’ascenseur, éclairage', 'Si la cabine est nettoyée avec la cage d’escalier, à qui signaler les pannes d’ascenseur'],
-        ['Cave, buanderie, séchoir', 'Nettoyage, ordre, appareils utilisés par les locataires', 'Qui signale une machine à laver en panne, et à qui'],
-        ['Local à poubelles et emplacement des conteneurs', 'Nettoyage, conteneurs le jour de ramassage, matières recyclables', 'Qui sort les conteneurs et les rentre, qui nettoie l’emplacement'],
-        ['Parking souterrain et local à vélos', 'Balayage, éclairage, portes et portails', 'Fréquence du nettoyage, qui signale un portail qui ne ferme plus'],
-        ['Toilettes et cuisinettes en entreprise', 'Nettoyage et consommables', 'Qui fournit savon, papier et sacs poubelle, qui les réapprovisionne'],
+        ['Cage d’escalier et ascenseur', 'Sols, mains courantes, fenêtres, cabine d’ascenseur', 'Si la cabine, avec miroir et rails de porte, fait partie du nettoyage de la cage d’escalier, qui nettoie les fenêtres de la cage à l’intérieur et à l’extérieur'],
+        ['Buanderie et séchoir', 'Nettoyage du local, appareils communs, règlement de maison', 'Ce que couvre le nettoyage et ce qui reste aux locataires selon le règlement de maison, par exemple le filtre à peluches'],
+        ['Parking souterrain et local à vélos', 'Sol, éclairage, portes et portails', 'Fréquence du balayage, si un nettoyage humide est compris, si portes et éclairage font partie des rondes de contrôle'],
         ['Après des travaux d’artisans', 'Poussière et saleté dans la cage d’escalier et l’ascenseur', 'Qui nettoie ensuite, et sur quel budget'],
       ],
       printable: true,
@@ -83,19 +83,19 @@ export const facilityServices: ServicePageContent = {
       id: 'zustaendigkeiten',
       title: 'Qui fait quoi dans un contrat commun',
       intro:
-        'Un seul contrat pour tout ne signifie pas que tout repose sur nous. Le tableau montre ce que nous exécutons et ce qui reste à la gérance ou aux propriétaires.',
+        'Un seul contrat pour tout ne signifie pas que tout repose sur nous.',
       columns: ['Tâche', 'Nous', 'Gérance ou propriétaires'],
       rows: [
-        ['Nettoyage intérieur et vitres', 'nettoyer selon le contrat, au rythme convenu', 'définir l’étendue, annoncer l’accès aux logements ou aux bureaux'],
-        ['Rondes de contrôle', 'contrôler parties communes, caves et abords, signaler les défauts', 'recevoir les signalements, décider, passer les commandes'],
-        ['Petites réparations, par exemple ampoules', 'les faire nous-mêmes jusqu’à la limite convenue', 'fixer la limite, confier les grosses réparations à des artisans'],
-        ['Chauffage, ventilation, ascenseurs, protection incendie', 'signaler les pannes que nous remarquons', 'tenir les contrats d’entretien avec les entreprises spécialisées et les mandater'],
-        ['Abords et espaces verts', 'entretenir selon le plan d’entretien', 'approuver le plan d’entretien'],
-        ['Consommables', 'réapprovisionner là où le service est convenu', 'décider qui fournit le matériel'],
-        ['Élimination des déchets', 'organiser déchets et matières recyclables, tenir propre l’emplacement', 'fixer l’emplacement et le nombre de conteneurs'],
+        ['Nettoyage intérieur et vitres', 'nettoyer au rythme convenu', 'régler l’étendue et l’accès aux logements ou bureaux'],
+        ['Rondes de contrôle', 'contrôler parties communes et abords, signaler les défauts', 'recevoir les signalements, décider, passer les commandes'],
+        ['Petites réparations, par exemple ampoules', 'les faire jusqu’à la limite convenue', 'fixer la limite, confier les grosses réparations'],
+        ['Chauffage, ventilation, ascenseurs, protection incendie', 'signaler les pannes remarquées', 'en confier l’entretien et les réparations à des entreprises spécialisées'],
+        ['Entretien des abords', 'd’après le plan d’entretien', 'approuver le plan d’entretien'],
+        ['Consommables', 'réapprovisionner si convenu', 'décider qui les fournit'],
+        ['Élimination des déchets', 'l’organiser, tenir propre l’emplacement', 'fixer l’emplacement et le nombre de conteneurs'],
       ],
       note:
-        'Selon l’art. 58 CO, le propriétaire d’un bâtiment répond du dommage causé par le défaut d’entretien, même s’il a confié des tâches à d’autres. C’est pourquoi le contrat doit préciser à qui les défauts sont signalés et qui décide.',
+        'Le CO prévoit que le propriétaire d’un bâtiment répond du dommage causé par le défaut d’entretien, sous réserve de son recours contre les personnes responsables envers lui de ce chef (art. 58 CO). C’est pourquoi le contrat devrait préciser qui assume quelle tâche, à qui les défauts sont signalés et qui décide.',
       sources: [{ label: 'Code des obligations, art. 58 (responsabilité du propriétaire d’un ouvrage)', href: `${co}#art_58` }],
       printable: true,
       updated: '2026-09-28',
@@ -108,12 +108,11 @@ export const facilityServices: ServicePageContent = {
         'Le changement se fait le plus simplement étape par étape, en suivant les délais des contrats en cours. Les points à cocher :',
       groups: [
         {
-          title: 'Contrats en cours et décision',
+          title: 'Contrats en cours',
           items: [
-            'Rassembler tous les contrats de nettoyage, de conciergerie, d’abords et de vitres',
-            'Noter pour chaque contrat le délai de résiliation et la prochaine échéance possible',
-            'Si le concierge est votre employé, le droit du travail s’applique : sauf disposition contraire du contrat de travail, d’un contrat-type ou d’une convention collective, un mois pendant la première année de service, deux mois de la deuxième à la neuvième, trois mois ensuite, chaque fois pour la fin d’un mois (art. 335c CO)',
-            'Propriété par étages : vérifier si l’administrateur peut conclure le contrat ou si l’assemblée des copropriétaires décide. Le règlement, le contrat d’administration et les décisions font foi (art. 712m et 712s CC)',
+            'Rassembler les contrats de nettoyage, de conciergerie, d’abords et de vitres',
+            'Noter pour chaque contrat le délai, la prochaine échéance et une éventuelle reconduction tacite',
+            'Concierge employé : délai de congé d’un mois pendant la première année de service, de deux mois de la deuxième à la neuvième, de trois mois ensuite, chaque fois pour la fin d’un mois. D’autres délais ne valent que par accord écrit, contrat-type ou convention collective (art. 335c CO). Les périodes de protection, par exemple en cas de maladie ou d’accident, peuvent prolonger le délai (art. 336c CO)',
           ],
         },
         {
@@ -121,34 +120,37 @@ export const facilityServices: ServicePageContent = {
           items: [
             'Demander à chaque prestataire les coûts par immeuble et par prestation, pour pouvoir les imputer correctement ensuite',
             'Biens loués : les frais accessoires ne sont à la charge des locataires que si le bail le prévoit spécialement, et seulement à hauteur des dépenses effectives (art. 257a et 257b CO)',
-            'Propriété par étages : faire indiquer séparément les coûts des parties qui ne servent pas à toutes les unités, par exemple un parking souterrain. Le CC exige d’en tenir compte dans la répartition des frais (art. 712h al. 3 CC)',
+            'Propriété par étages : faire indiquer séparément les coûts des parties qui ne servent que très peu ou pas du tout à certaines unités, par exemple un parking souterrain. Selon le CC, il en est tenu compte dans la répartition des frais (art. 712h al. 3 CC)',
           ],
         },
         {
           title: 'Avant le démarrage',
           items: [
-            'Faire démarrer chaque prestation à l’échéance du contrat actuel correspondant',
+            'Propriété par étages : vérifier si l’administrateur peut conclure le contrat. Il agit selon la loi, le règlement et les décisions de l’assemblée, qui règle les autres affaires administratives (art. 712s al. 1 et 712m al. 1 ch. 1 CC). Vérifier aussi le contrat d’administration',
             'Récupérer et lister clés, badges et codes des entreprises précédentes',
             'Confirmer aux entreprises précédentes la dernière intervention et la restitution',
-            'Entreprises : informer le nouveau prestataire des risques sur place et des mesures de protection. Lorsque plusieurs entreprises travaillent au même endroit, les employeurs se concertent (art. 6 et 9 OPA)',
           ],
         },
         {
           title: 'Signalements et information',
           items: [
-            'Fixer la voie de signalement : qui reçoit les signalements et jusqu’à quel montant on répare sans demander',
+            'Fixer qui reçoit les signalements et jusqu’à quel montant on répare sans demander',
             'Informer locataires ou collaborateurs de qui est responsable à partir de quelle date',
             'Mettre à jour l’affichage dans l’entrée et les coordonnées pour les signalements',
+            'Entreprises : avant la première intervention, passer en revue avec le nouveau prestataire les risques sur place et les mesures de sécurité (art. 6 et 9 OPA)',
           ],
         },
       ],
       note: 'Ces indications ne remplacent pas un conseil juridique. Vérifiez délais et compétences au cas par cas, sur la base de vos contrats et du règlement.',
       sources: [
         { label: 'Code des obligations, art. 335c (délais de congé dans le contrat de travail)', href: `${co}#art_335_c` },
+        { label: 'Code des obligations, art. 336c (résiliation en temps inopportun par l’employeur)', href: `${co}#art_336_c` },
         { label: 'Code des obligations, art. 257a et 257b (frais accessoires)', href: `${co}#art_257_a` },
         { label: 'Code civil, art. 712h (frais dans la propriété par étages)', href: `${cc}#art_712_h` },
-        { label: 'Code civil, art. 712m et 712s (assemblée et administrateur)', href: `${cc}#art_712_m` },
-        { label: 'Ordonnance sur la prévention des accidents (OPA), art. 6 et 9', href: `${opa}#art_9` },
+        { label: 'Code civil, art. 712m (attributions de l’assemblée)', href: `${cc}#art_712_m` },
+        { label: 'Code civil, art. 712s (tâches de l’administrateur)', href: `${cc}#art_712_s` },
+        { label: 'Ordonnance sur la prévention des accidents (OPA), art. 6 (information des travailleurs)', href: `${opa}#art_6` },
+        { label: 'Ordonnance sur la prévention des accidents (OPA), art. 9 (coopération de plusieurs entreprises)', href: `${opa}#art_9` },
       ],
       printable: true,
       updated: '2026-09-28',
@@ -157,23 +159,15 @@ export const facilityServices: ServicePageContent = {
   steps: [
     {
       title: 'Un contrat pour toutes les prestations',
-      text: 'Le contrat indique chaque prestation avec son étendue, sa fréquence et ses horaires d’intervention, ainsi que la personne à qui nous signalons défauts et pannes.',
-      figure: 'offerte',
+      text: 'Le contrat indique chaque prestation avec son étendue, sa fréquence et ses horaires d’intervention.',
     },
     {
-      title: 'Remise sur place',
-      text: 'Au démarrage, nous recevons clés, badges et codes pour les locaux convenus. Vous nous montrez le local de matériel, l’emplacement des déchets et les locaux techniques pour les rondes de contrôle.',
-      figure: 'besichtigung',
-    },
-    {
-      title: 'Démarrage prestation par prestation',
-      text: 'Chaque prestation démarre à l’échéance du contrat précédent. Si un contrat court plus longtemps, cette prestation reste jusque-là chez l’entreprise actuelle.',
-      figure: 'start',
+      title: 'Remise au démarrage',
+      text: 'Au démarrage, vous nous remettez clés, badges et codes et nous montrez le local de matériel, l’emplacement des déchets et les locaux techniques. Si un contrat actuel court plus longtemps, cette prestation reste chez l’entreprise actuelle jusqu’à son échéance.',
     },
     {
       title: 'Modifications à un seul endroit',
-      text: 'Un immeuble s’ajoute, un rythme change ou une prestation disparaît : signalez-le à votre interlocuteur chez nous. Seul le contrat unique est adapté.',
-      figure: 'anfrage',
+      text: 'Un immeuble s’ajoute, un rythme change ou une prestation disparaît : signalez-le à votre interlocuteur chez nous. C’est ce seul contrat qui est modifié.',
     },
   ],
   faq: [
@@ -185,17 +179,12 @@ export const facilityServices: ServicePageContent = {
     {
       question: 'Comment passer de plusieurs entreprises à une seule ?',
       answer:
-        'Étape par étape. Chaque prestation passe chez nous à l’échéance du contrat précédent. Vous pouvez donc commencer par une prestation et ajouter les autres plus tard. Les délais applicables et ce qu’il faut régler avant le démarrage figurent dans la liste de contrôle de cette page.',
+        'Attribuez d’abord le nouveau contrat, puis résiliez. Résilier les contrats actuels avant, c’est risquer un vide si la conclusion du nouveau contrat prend du retard. La liste de contrôle ci-dessus reprend délais, coûts et remise point par point.',
     },
     {
       question: 'De quoi dépend le coût des facility services ?',
       answer:
         'Le prix se compose des différentes prestations. Il dépend du nombre et de la taille des immeubles ou des sites, des surfaces par prestation, de la fréquence du nettoyage et des rondes de contrôle, de l’étendue des abords, des horaires d’intervention, de qui fournit les consommables et des trajets entre les biens. Il n’existe donc pas de prix standard. Vous recevez le prix pour vos biens par écrit après le tour des lieux.',
-    },
-    {
-      question: 'Que reste-t-il chez nous, en tant que gérance ou propriétaires ?',
-      answer:
-        'Les décisions : quelles prestations, quel budget, quelle entreprise spécialisée pour le chauffage, l’ascenseur ou les réparations. La responsabilité pour l’entretien du bâtiment reste elle aussi chez le propriétaire. Nos signalements aident à repérer tôt les défauts. La suite, c’est vous qui la décidez.',
     },
     {
       question: 'Une conciergerie ne suffirait-elle pas ?',
@@ -205,12 +194,12 @@ export const facilityServices: ServicePageContent = {
     {
       question: 'Plusieurs immeubles ou sites peuvent-ils figurer dans un seul contrat ?',
       answer:
-        'Oui. Il est utile de préciser pour chaque immeuble quelles prestations en font partie, à quelle fréquence, et qui reçoit les signalements sur place. Les coûts peuvent ainsi être imputés à chaque immeuble, ce qui compte pour les frais accessoires et la propriété par étages.',
+        'Oui. Prestations, fréquence et horaires d’intervention peuvent être fixés pour chaque immeuble ou site. Un immeuble d’habitation n’a pas les mêmes besoins qu’un immeuble de bureaux ou un entrepôt, par exemple le nettoyage de la cage d’escalier le matin et celui des bureaux le soir après la fermeture.',
     },
     {
       question: 'Que devons-nous régler en matière de sécurité au travail en tant qu’entreprise ?',
       answer:
-        'Si des travailleurs d’une autre entreprise interviennent chez vous, vous devez les informer des risques et des mesures de protection sur place. Lorsque plusieurs entreprises travaillent au même endroit, les employeurs se concertent. C’est ce qu’exige l’ordonnance sur la prévention des accidents (art. 6 et 9 OPA). Avec un seul prestataire pour le nettoyage, la conciergerie et les abords, cette concertation a lieu une fois au lieu de trois.',
+        'L’ordonnance sur la prévention des accidents prévoit que vous informiez et instruisiez aussi les travailleurs d’une autre entreprise occupés chez vous sur les risques et les mesures de sécurité au travail (art. 6 OPA). Lorsque des travailleurs de plusieurs entreprises sont occupés sur un même lieu de travail, leurs employeurs conviennent des arrangements nécessaires (art. 9 OPA). Avec un seul prestataire pour le nettoyage, la conciergerie et les abords, cette concertation a lieu une fois au lieu de trois.',
     },
   ],
   related: [

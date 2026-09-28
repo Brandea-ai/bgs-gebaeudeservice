@@ -2,9 +2,10 @@ import type { ServicePageContent } from '../../types'
 
 // Grundlage: 03 Abschnitt 2a (ein Vertrag, eine Ansprechperson, nur eigene Leistungen), K02, E17, E29, E53,
 // Umbau nach 25-AUDIT/inhalt.md 3.10 (Bausteine 3.10.1 und 3.10.2) und E85.
-// Rechtsquellen am 28.09.2026 auf fedlex.admin.ch im Wortlaut gelesen: OR Art. 58, 257a, 257b, 335c;
-// ZGB Art. 712h, 712m, 712s; VUV Art. 6, 9. Keine Aussagen zu F1 bis F7 (Qualitätskontrolle,
-// Vertretung, Schlüsselregeln im B2B).
+// Rechtsquellen am 28.09.2026 auf fedlex.admin.ch im Wortlaut gelesen: OR Art. 58 (beide Absätze),
+// 257a, 257b, 335c, 336c; ZGB Art. 712h, 712m, 712s; VUV Art. 6, 9. Keine Aussagen zu F1 bis F7
+// (Qualitätskontrolle, Vertretung, Schlüsselregeln im B2B). Befunde der Prüfer (FS-R1 bis FS-08)
+// am 28.09.2026 eingearbeitet: jede Aussage steht einmal, Werkzeuge ohne Überschneidung.
 const or = 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de'
 const zgb = 'https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de'
 const vuv = 'https://www.fedlex.admin.ch/eli/cc/1983/1968_1968_1968/de'
@@ -15,7 +16,7 @@ export const facilityServices: ServicePageContent = {
   eyebrow: 'Betreuung von Liegenschaften',
   h1: 'Facility Services: Reinigung, Hauswartung und Umgebung aus einer Hand',
   lead: [
-    'Wer Reinigung, Hauswartung und Umgebungspflege an drei Firmen vergibt, führt drei Verträge mit eigenen Kündigungsfristen. Dazu kommen die Fragen dazwischen: Wer kehrt das Laub aus dem Eingang, wer ersetzt die Leuchte im Veloraum, wer füllt im WC die Seife nach?',
+    'Wer Reinigung, Hauswartung und Umgebungspflege an drei Firmen vergibt, führt drei Verträge mit eigenen Kündigungsfristen. Dazu kommen die Fragen dazwischen: Wer kehrt das Laub aus dem Eingang, wer ersetzt das Leuchtmittel im Veloraum, wer füllt im WC die Seife nach?',
     'Bei Facility Services erbringen wir diese Leistungen selbst, in einem Vertrag. Heizung, Lift und Brandschutz warten weiterhin Ihre Fachbetriebe. Störungen, die uns dort auffallen, melden wir Ihnen.',
   ],
   facts: [
@@ -57,7 +58,7 @@ export const facilityServices: ServicePageContent = {
       title: 'Am Eingang treffen sich drei Aufträge',
       paragraphs: [
         'Auf dem Vorplatz liegt Laub, an der Glastür sind Fingerabdrücke, über dem Eingang flackert eine Leuchte. Bei getrennten Verträgen gehört jede dieser Stellen einer anderen Firma. Jede Grenze muss dann im Vertrag stehen, sonst bleibt etwas liegen oder wird zweimal gemacht.',
-        'In einem gemeinsamen Vertrag steht jede Leistung mit Umfang und Rhythmus, und alle Einsätze kommen vom selben Betrieb. Wer den Vorplatz pflegt, sieht auch die Leuchte und meldet sie weiter.',
+        'Mit einem gemeinsamen Vertrag kommen alle Einsätze vom selben Betrieb. Wer den Vorplatz pflegt, bemerkt auch die flackernde Leuchte, und das Leuchtmittel ersetzt die Hauswartung im selben Vertrag.',
       ],
     },
   ],
@@ -67,16 +68,14 @@ export const facilityServices: ServicePageContent = {
       id: 'schnittstellen',
       title: 'Schnittstellen, die ein Vertrag regeln sollte',
       intro:
-        'An diesen Stellen berühren sich Reinigung, Hauswartung und Umgebungspflege. Ob Sie eine Firma beauftragen oder mehrere: Die rechte Spalte gehört in den Vertrag oder ins Pflichtenheft.',
+        'An diesen Stellen berühren sich Reinigung, Hauswartung und Umgebungspflege. Ob Sie eine Firma beauftragen oder mehrere, klären Sie die Punkte unter «Im Vertrag festhalten» vor dem ersten Einsatz, am besten im Pflichtenheft.',
       columns: ['Stelle', 'Was dort zusammenkommt', 'Im Vertrag festhalten'],
       rows: [
         ['Eingang und Vorplatz', 'Laub und Schmutz von draussen, Fussmatten, Glas der Eingangstür, Briefkästen', 'Wer kehrt den Vorplatz, wer reinigt Matten und Glas, wie oft'],
-        ['Treppenhaus und Lift', 'Böden, Geländer, Liftkabine, Beleuchtung', 'Ob die Kabine mit dem Treppenhaus gereinigt wird, wohin Störungen am Lift gehen'],
-        ['Keller, Waschküche, Trockenraum', 'Reinigung, Ordnung, Geräte der Mieterschaft', 'Wer meldet eine defekte Waschmaschine, und an welche Stelle'],
-        ['Abfallraum und Containerplatz', 'Reinigung, Container am Abfuhrtag, Wertstoffe', 'Wer stellt die Container bereit und holt sie zurück, wer reinigt den Platz'],
-        ['Einstellhalle und Veloraum', 'Kehren, Beleuchtung, Tore', 'Rhythmus der Reinigung, wer meldet ein Tor, das nicht mehr schliesst'],
-        ['WC und Teeküche im Betrieb', 'Reinigung und Verbrauchsmaterial', 'Wer stellt Seife, Papier und Abfallsäcke, wer füllt nach'],
-        ['Nach Arbeiten von Handwerkern', 'Staub und Schmutz in Treppenhaus und Lift', 'Wer reinigt danach, und über welches Budget es abgerechnet wird'],
+        ['Treppenhaus und Lift', 'Böden, Geländer, Fenster, Liftkabine', 'Ob die Kabine mit Spiegel und Türschienen zur Treppenhausreinigung gehört, wer die Fenster im Treppenhaus innen und aussen reinigt'],
+        ['Waschküche und Trockenraum', 'Reinigung des Raums, gemeinsam genutzte Geräte, Hausordnung', 'Was die Reinigung übernimmt und was nach Hausordnung bei der Mieterschaft bleibt, etwa das Flusensieb'],
+        ['Einstellhalle und Veloraum', 'Boden, Beleuchtung, Tore', 'Wie oft gekehrt wird, ob eine Nassreinigung dazugehört, ob Tore und Beleuchtung Teil der Kontrollgänge sind'],
+        ['Nach Arbeiten von Handwerkern', 'Staub und Schmutz in Treppenhaus und Lift', 'Wer danach reinigt und über welches Budget es abgerechnet wird'],
       ],
       printable: true,
       updated: '2026-09-28',
@@ -86,19 +85,19 @@ export const facilityServices: ServicePageContent = {
       id: 'zustaendigkeiten',
       title: 'Wer macht was im gemeinsamen Vertrag',
       intro:
-        'Ein Vertrag für alles heisst nicht, dass alles bei uns liegt. Die Tabelle zeigt, was wir ausführen und was bei der Verwaltung oder Eigentümerschaft bleibt.',
+        'Ein Vertrag für alles heisst nicht, dass alles bei uns liegt.',
       columns: ['Aufgabe', 'Wir', 'Verwaltung oder Eigentümerschaft'],
       rows: [
-        ['Reinigung innen und Glas', 'reinigen nach Vertrag, im vereinbarten Rhythmus', 'Umfang bestimmen, Zugang zu Wohnungen oder Büros ankündigen'],
-        ['Kontrollgänge', 'Allgemeinflächen, Keller und Umgebung ansehen, Mängel melden', 'Meldungen entgegennehmen, entscheiden, Aufträge erteilen'],
-        ['Kleinreparaturen, etwa Leuchtmittel', 'bis zur vereinbarten Grenze selbst erledigen', 'die Grenze bestimmen, grössere Reparaturen an Handwerksbetriebe vergeben'],
-        ['Heizung, Lüftung, Lift, Brandschutz', 'Störungen melden, die uns auffallen', 'Wartungsverträge mit Fachbetrieben führen und sie beauftragen'],
-        ['Umgebung und Grünflächen', 'pflegen nach Pflegeplan', 'den Pflegeplan freigeben'],
-        ['Verbrauchsmaterial', 'nachfüllen, wo der Nachfüllservice vereinbart ist', 'bestimmen, wer das Material stellt'],
-        ['Entsorgung', 'Abfall und Wertstoffe organisieren, Abfallplatz sauber halten', 'Standort des Abfallplatzes und Zahl der Container bestimmen'],
+        ['Reinigung innen und Glas', 'im vereinbarten Rhythmus reinigen', 'Umfang und Zutritt zu Wohnungen oder Büros regeln'],
+        ['Kontrollgänge', 'Allgemeinflächen und Umgebung prüfen, Mängel melden', 'Meldungen entgegennehmen, entscheiden, Aufträge erteilen'],
+        ['Kleinreparaturen, etwa Leuchtmittel', 'bis zur vereinbarten Grenze selbst erledigen', 'Grenze festlegen, grössere Reparaturen vergeben'],
+        ['Heizung, Lüftung, Lift, Brandschutz', 'Störungen melden, die uns auffallen', 'Fachbetriebe mit Wartung und Reparatur beauftragen'],
+        ['Umgebungspflege', 'nach Pflegeplan pflegen', 'Pflegeplan freigeben'],
+        ['Verbrauchsmaterial', 'nachfüllen, wo vereinbart', 'festlegen, wer es stellt'],
+        ['Entsorgung', 'organisieren, Abfallplatz sauber halten', 'Standort und Zahl der Container bestimmen'],
       ],
       note:
-        'Für Schäden aus mangelhaftem Unterhalt eines Gebäudes haftet nach Art. 58 OR die Eigentümerin, auch wenn sie Aufgaben vergeben hat. Deshalb gehört in den Vertrag, an wen Mängel gemeldet werden und wer entscheidet.',
+        'Das OR sieht vor, dass die Eigentümerin eines Gebäudes für Schäden aus mangelhaftem Unterhalt haftet. Vorbehalten bleibt ihr der Rückgriff auf andere, die ihr dafür verantwortlich sind (Art. 58 OR). Deshalb sollte im Vertrag stehen, wer welche Aufgabe übernimmt, an wen Mängel gemeldet werden und wer entscheidet.',
       sources: [{ label: 'Obligationenrecht, Art. 58 (Haftung des Werkeigentümers)', href: `${or}#art_58` }],
       printable: true,
       updated: '2026-09-28',
@@ -111,29 +110,27 @@ export const facilityServices: ServicePageContent = {
         'Der Wechsel gelingt am einfachsten Schritt für Schritt, entlang der Fristen der bisherigen Verträge. Die Punkte zum Abhaken:',
       groups: [
         {
-          title: 'Laufende Verträge und Entscheid',
+          title: 'Laufende Verträge',
           items: [
             'Alle Verträge für Reinigung, Hauswartung, Umgebung und Glas zusammentragen',
-            'Je Vertrag die Kündigungsfrist und den nächsten möglichen Termin notieren',
-            'Ist der Hauswart bei Ihnen angestellt, gelten die Fristen des Arbeitsrechts: sofern Arbeitsvertrag, Normal- oder Gesamtarbeitsvertrag nichts anderes regeln, im ersten Dienstjahr ein Monat, im zweiten bis neunten zwei Monate, danach drei Monate, jeweils auf Ende eines Monats (Art. 335c OR)',
-            'Stockwerkeigentum: prüfen, ob die Verwaltung den Vertrag abschliessen darf oder die Versammlung entscheidet. Massgebend sind Reglement, Verwaltervertrag und Beschlüsse (Art. 712m und 712s ZGB)',
+            'Je Vertrag Kündigungsfrist, Endtermin und Verlängerungsklausel notieren',
+            'Angestellter Hauswart: Kündigungsfrist im ersten Dienstjahr ein Monat, im zweiten bis neunten zwei, danach drei Monate, jeweils auf Ende eines Monats. Andere Fristen gelten nur mit schriftlicher Abrede, Normal- oder Gesamtarbeitsvertrag (Art. 335c OR). Sperrfristen, etwa bei Krankheit oder Unfall, können die Frist verlängern (Art. 336c OR)',
           ],
         },
         {
           title: 'Kosten richtig zuordnen',
           items: [
-            'Von jedem Anbieter die Kosten je Liegenschaft und je Leistung verlangen, damit sie sich später richtig zuordnen lassen',
+            'Von jedem Anbieter die Kosten je Liegenschaft und je Leistung verlangen',
             'Vermietete Objekte: Nebenkosten trägt die Mieterschaft nur, wenn es im Mietvertrag besonders vereinbart ist, und nur in der Höhe der tatsächlichen Aufwendungen (Art. 257a und 257b OR)',
-            'Stockwerkeigentum: Kosten für Teile, die nicht allen Einheiten dienen, etwa eine Einstellhalle, getrennt ausweisen lassen. Das ZGB verlangt, dies bei der Verteilung zu berücksichtigen (Art. 712h Abs. 3 ZGB)',
+            'Stockwerkeigentum: Kosten für Teile, die einzelnen Einheiten nicht oder kaum dienen, etwa eine Einstellhalle, getrennt ausweisen lassen. Nach dem ZGB ist das bei der Verteilung zu berücksichtigen (Art. 712h Abs. 3 ZGB)',
           ],
         },
         {
           title: 'Vor dem Start',
           items: [
-            'Den Start jeder Leistung auf das Ende des jeweiligen bisherigen Vertrags legen',
+            'Stockwerkeigentum: klären, ob die Verwaltung den Vertrag abschliessen darf. Sie handelt nach Gesetz, Reglement und Beschlüssen der Versammlung, die übrigen Verwaltungsfragen entscheidet die Versammlung (Art. 712s Abs. 1 und 712m Abs. 1 Ziff. 1 ZGB). Den Verwaltervertrag ebenfalls prüfen',
             'Schlüssel, Badges und Codes der bisherigen Firmen zurücknehmen und auflisten',
             'Den bisherigen Firmen den letzten Einsatz und die Rückgabe bestätigen',
-            'Unternehmen: den neuen Dienstleister über Gefahren im Betrieb und die Schutzmassnahmen informieren. Arbeiten mehrere Betriebe am selben Ort, sprechen sich die Arbeitgeber ab (Art. 6 und 9 VUV)',
           ],
         },
         {
@@ -142,16 +139,20 @@ export const facilityServices: ServicePageContent = {
             'Meldeweg festlegen: wer Meldungen empfängt und bis zu welchem Betrag ohne Rückfrage repariert wird',
             'Mieterschaft oder Mitarbeitende informieren, wer ab welchem Datum zuständig ist',
             'Aushang im Eingang und Kontaktangaben für Meldungen erneuern',
+            'Unternehmen: vor dem ersten Einsatz Gefahren und Schutzmassnahmen im Betrieb mit dem neuen Dienstleister besprechen (Art. 6 und 9 VUV)',
           ],
         },
       ],
       note: 'Diese Hinweise ersetzen keine Rechtsberatung. Klären Sie Fristen und Zuständigkeiten im Einzelfall anhand Ihrer Verträge und des Reglements.',
       sources: [
         { label: 'Obligationenrecht, Art. 335c (Kündigungsfristen im Arbeitsverhältnis)', href: `${or}#art_335_c` },
+        { label: 'Obligationenrecht, Art. 336c (Kündigung zur Unzeit, Sperrfristen)', href: `${or}#art_336_c` },
         { label: 'Obligationenrecht, Art. 257a und 257b (Nebenkosten)', href: `${or}#art_257_a` },
         { label: 'Zivilgesetzbuch, Art. 712h (Kosten im Stockwerkeigentum)', href: `${zgb}#art_712_h` },
-        { label: 'Zivilgesetzbuch, Art. 712m und 712s (Versammlung und Verwalter)', href: `${zgb}#art_712_m` },
-        { label: 'Verordnung über die Unfallverhütung (VUV), Art. 6 und 9', href: `${vuv}#art_9` },
+        { label: 'Zivilgesetzbuch, Art. 712m (Befugnisse der Versammlung)', href: `${zgb}#art_712_m` },
+        { label: 'Zivilgesetzbuch, Art. 712s (Aufgaben des Verwalters)', href: `${zgb}#art_712_s` },
+        { label: 'Verordnung über die Unfallverhütung (VUV), Art. 6 (Information der Arbeitnehmer)', href: `${vuv}#art_6` },
+        { label: 'Verordnung über die Unfallverhütung (VUV), Art. 9 (Zusammenwirken mehrerer Betriebe)', href: `${vuv}#art_9` },
       ],
       printable: true,
       updated: '2026-09-28',
@@ -160,23 +161,15 @@ export const facilityServices: ServicePageContent = {
   steps: [
     {
       title: 'Ein Vertrag für alle Leistungen',
-      text: 'Im Vertrag steht jede Leistung mit Umfang, Rhythmus und Einsatzzeiten. Dazu kommt, an wen wir Mängel und Störungen melden.',
-      figure: 'offerte',
+      text: 'Im Vertrag steht jede Leistung mit Umfang, Rhythmus und Einsatzzeiten.',
     },
     {
-      title: 'Übergabe vor Ort',
-      text: 'Zum Start erhalten wir Schlüssel, Badges und Codes für die vereinbarten Räume. Sie zeigen uns Materialraum, Abfallplatz und die Technikräume für die Kontrollgänge.',
-      figure: 'besichtigung',
-    },
-    {
-      title: 'Start je Leistung',
-      text: 'Jede Leistung beginnt auf das Ende des bisherigen Vertrags. Läuft ein Vertrag noch länger, bleibt diese Leistung bis dahin bei der bisherigen Firma.',
-      figure: 'start',
+      title: 'Übergabe zum Start',
+      text: 'Zum Start übergeben Sie uns Schlüssel, Badges und Codes und zeigen uns Materialraum, Abfallplatz und Technikräume. Läuft ein bisheriger Vertrag länger, bleibt diese Leistung bis zu seinem Ende bei der bisherigen Firma.',
     },
     {
       title: 'Änderungen an einer Stelle',
       text: 'Kommt eine Liegenschaft dazu, ändert sich ein Rhythmus oder fällt eine Leistung weg, melden Sie es Ihrer Ansprechperson bei uns. Angepasst wird der eine Vertrag.',
-      figure: 'anfrage',
     },
   ],
   faq: [
@@ -188,17 +181,12 @@ export const facilityServices: ServicePageContent = {
     {
       question: 'Wie wechseln wir von mehreren Firmen zu einer?',
       answer:
-        'Schrittweise. Jede Leistung wechselt zu uns, wenn der bisherige Vertrag dafür endet. Sie können also mit einer Leistung beginnen und die übrigen später dazunehmen. Welche Fristen gelten und was vor dem Start erledigt sein sollte, steht in der Checkliste auf dieser Seite.',
+        'Zuerst neu vergeben, dann kündigen. Wer die bisherigen Verträge vorher kündigt, riskiert eine Lücke, falls sich der neue Abschluss verzögert. Fristen, Kosten und Übergabe führt die Checkliste oben Punkt für Punkt auf.',
     },
     {
       question: 'Wovon hängen die Kosten für Facility Services ab?',
       answer:
         'Der Preis setzt sich aus den einzelnen Leistungen zusammen. Massgebend sind die Zahl und Grösse der Liegenschaften oder Standorte, die Flächen je Leistung, der Rhythmus von Reinigung und Kontrollgängen, der Umfang der Umgebung, die Einsatzzeiten, wer das Verbrauchsmaterial stellt und die Wege zwischen den Objekten. Einen Preis von der Stange gibt es deshalb nicht. Den Preis für Ihre Objekte erhalten Sie nach dem Rundgang schriftlich.',
-    },
-    {
-      question: 'Was bleibt bei uns als Verwaltung oder Eigentümerschaft?',
-      answer:
-        'Die Entscheide: welche Leistungen, welches Budget, welcher Fachbetrieb für Heizung, Lift oder Reparaturen. Auch die Haftung für den Unterhalt des Gebäudes bleibt bei der Eigentümerin. Unsere Meldungen helfen, Mängel früh zu sehen. Was daraufhin geschieht, bestimmen Sie.',
     },
     {
       question: 'Reicht nicht auch eine Hauswartung?',
@@ -208,12 +196,12 @@ export const facilityServices: ServicePageContent = {
     {
       question: 'Lassen sich mehrere Liegenschaften oder Standorte in einem Vertrag regeln?',
       answer:
-        'Ja. Sinnvoll ist, je Liegenschaft festzuhalten, welche Leistungen in welchem Rhythmus dazugehören und wer vor Ort Meldungen entgegennimmt. So lassen sich die Kosten jeder Liegenschaft zuordnen, was für Nebenkosten und Stockwerkeigentum wichtig ist.',
+        'Ja. Leistungen, Rhythmus und Einsatzzeiten lassen sich je Liegenschaft oder Standort festlegen. Ein Wohnhaus braucht anderes als ein Bürogebäude oder eine Lagerhalle, etwa die Reinigung des Treppenhauses am Vormittag und die der Büros am Abend nach Arbeitsschluss.',
     },
     {
       question: 'Was müssen wir als Unternehmen zur Arbeitssicherheit regeln?',
       answer:
-        'Wer Mitarbeitende eines anderen Betriebs bei sich arbeiten lässt, muss sie über die Gefahren und Schutzmassnahmen im Betrieb informieren. Arbeiten mehrere Betriebe am selben Ort, sprechen sich die Arbeitgeber ab. So verlangt es die Verordnung über die Unfallverhütung (Art. 6 und 9 VUV). Mit einem Dienstleister für Reinigung, Hauswartung und Umgebung braucht es diese Absprache einmal statt dreimal.',
+        'Die Verordnung über die Unfallverhütung sieht vor, dass Sie auch Mitarbeitende eines anderen Betriebs, die bei Ihnen arbeiten, über die Gefahren und die Massnahmen der Arbeitssicherheit informieren und anleiten (Art. 6 VUV). Sind Mitarbeitende mehrerer Betriebe am selben Arbeitsplatz tätig, treffen deren Arbeitgeber die nötigen Absprachen (Art. 9 VUV). Mit einem Dienstleister für Reinigung, Hauswartung und Umgebung braucht es diese Absprache einmal statt dreimal.',
     },
   ],
   related: [
