@@ -5,7 +5,8 @@ Aufruf im Repo: python3 Webseite-Analyse/werkzeuge/og_bilder.py
 Nach jedem Bildtausch in public/bilder erneut ausführen. Ohne Schrift und Logo,
 damit das Bild für alle Sprachen und beide Marken-Modi gilt (E19, E38).
 Am Ende übernimmt jedes Vorschaubild die IPTC-Kennzeichnung seines Quellbilds (N9,
-bilder_kennzeichnen.py), weil der Zuschnitt die Metadaten nicht mitnimmt.
+bilder_kennzeichnen.py, Herkunft laut bilder_herkunft.json), weil der Zuschnitt die
+Metadaten nicht mitnimmt.
 """
 import pathlib
 import shutil
