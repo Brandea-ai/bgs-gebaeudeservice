@@ -1,0 +1,76 @@
+/*
+ * Bewegung im Rebranding (E80), nur natives CSS, kein JavaScript.
+ * Alles nur ohne «weniger Bewegung». Der erste Bildschirm bleibt lesbar:
+ * nur das Hintergrundbild setzt sich, Text und Knöpfe stehen sofort.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  /* Hero: Bild setzt sich beim Laden langsam */
+  .hero-media img {
+    animation: hero-settle 2.4s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    transform-origin: 70% 50%;
+  }
+  @keyframes hero-settle {
+    from {
+      transform: scale(1.06);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+  /* Zickzack: Bild öffnet sich beim Scrollen mit einer Maske */
+  @supports (animation-timeline: view()) {
+    .zz-media {
+      animation: zz-open linear both;
+      animation-timeline: view();
+      animation-range: entry 5% cover 35%;
+    }
+    @keyframes zz-open {
+      from {
+        clip-path: inset(10% 6% 10% 6% round 3px);
+        opacity: 0.4;
+      }
+      to {
+        clip-path: inset(0 0 0 0 round 3px);
+        opacity: 1;
+      }
+    }
+  }
+
+  /* Mega- und Mobilmenü gleiten weich herein */
+  #leistungen-menu > div,
+  #gebiet-menu > div,
+  #mobil-menu {
+    transition:
+      opacity 280ms cubic-bezier(0.2, 0.7, 0.2, 1),
+      transform 280ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  @starting-style {
+    #leistungen-menu > div,
+    #gebiet-menu > div,
+    #mobil-menu {
+      opacity: 0;
+      transform: translateY(-6px);
+    }
+  }
+
+  /* Hauptknöpfe: feiner Lichtstreif beim Überfahren */
+  .btn-lift {
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-lift::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg, transparent 35%, rgba(255, 255, 255, 0.28) 50%, transparent 65%);
+    transform: translateX(-120%);
+    transition: transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1);
+    pointer-events: none;
+  }
+  @media (hover: hover) {
+    .btn-lift:hover::after {
+      transform: translateX(120%);
+    }
+  }
+}

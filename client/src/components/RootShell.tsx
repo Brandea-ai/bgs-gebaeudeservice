@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Geist, Geist_Mono } from "next/font/google";
 import "../../../app/globals.css";
+import "../styles/bewegung.css";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { ChatbotProvider } from "@/contexts/ChatbotContext";
 import { LazyChatbot } from "@/components/LazyChat";

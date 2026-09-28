@@ -47,7 +47,7 @@ export default function Zigzag({
             className="grid items-center gap-8 lg:grid-cols-12 lg:gap-14"
           >
             <div
-              className={`relative aspect-[4/3] overflow-hidden rounded-[3px] lg:col-span-7 ${
+              className={`zz-media relative aspect-[4/3] overflow-hidden rounded-[3px] lg:col-span-7 ${
                 flip ? "lg:order-2 lg:col-start-6" : ""
               }`}
             >
