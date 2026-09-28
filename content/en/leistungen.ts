@@ -207,6 +207,37 @@ const bueroreinigung: ServicePageContent = {
       ],
     },
     {
+      title: 'What determines the effort',
+      paragraphs: [
+        'How long a visit takes and how often we come depends less on the floor area alone than on how the rooms are used. We clarify these points during the site visit:',
+      ],
+      items: [
+        'Floor area and type of rooms, such as single offices, open-plan areas, meeting rooms and reception',
+        'Number of workstations and how intensively the rooms are used',
+        'Kitchenettes and sanitary facilities, which take more time than office space',
+        'Floor coverings such as carpet, parquet, stone or vinyl',
+        'Glass doors, glass walls and other glass surfaces',
+        'Schedule and cleaning times',
+        'Access via key, badge or alarm system',
+        'Whether consumables such as soap, paper and bin bags are included',
+      ],
+    },
+    {
+      title: 'What information to include in your quote request',
+      paragraphs: [
+        'The more precise your request, the better we can prepare the site visit. This information helps:',
+      ],
+      items: [
+        'Address and type of business, such as office, administration or practice',
+        'Approximate floor area and number of floors',
+        'Number of workstations, meeting rooms, kitchenettes and sanitary facilities',
+        'Preferred schedule and the times when cleaning should take place',
+        'Special features such as practice rooms with a hygiene plan, confidential areas or large glass surfaces',
+        'Whether you would like environmentally friendly cleaning products',
+        'Preferred start date and contact person for the site visit',
+      ],
+    },
+    {
       title: 'How to recognise good office cleaning',
       items: [
         'Bins are emptied and fitted with new bags',
@@ -246,10 +277,25 @@ const bueroreinigung: ServicePageContent = {
         'We clean clear surfaces. The less there is on the desks, the more thoroughly they can be cleaned. How you would like us to handle documents, screens and keyboards is clarified during the site visit.',
     },
     {
+      question: 'How does the key handover work, and how does your team get into the building?',
+      answer:
+        'Before the first visit, we agree with you which keys, badges or codes our team receives and what rules apply to the alarm system, lights and locking up.',
+    },
+    {
       question: 'Do your staff also speak English?',
       answer: `${answers.sprachen} This is practical if several languages are spoken in your office.`,
     },
-    { question: 'Are you insured?', answer: answers.versicherung },
+    {
+      question: 'Who is liable if something is damaged during cleaning?',
+      answer:
+        'We hold business liability insurance with cover of CHF 10 million. If you notice any damage after a visit, please let us know straight away.',
+    },
+    {
+      question: 'How long does the contract run, and how can it be terminated?',
+      answer:
+        'The term and notice are agreed in the quote. Raise your wishes on this during the site visit.',
+    },
+    { question: 'Do you also clean with environmentally friendly products?', answer: answers.mittel },
     {
       question: 'How much does office cleaning cost?',
       answer: `${answers.kosten} More in our guide: [What the cost of maintenance cleaning depends on](/blog/reinigungskosten-schweiz).`,
@@ -966,6 +1012,22 @@ const hauswartung: ServicePageContent = {
         'Tenants should also know whom to contact. We agree with you who that contact person is.',
       ],
     },
+    {
+      title: 'Caretaking specification: what it should include',
+      paragraphs: [
+        'A specification sets out what the caretaker does in a property, how often and who is responsible for what. It creates clarity for property management, owners, tenants and caretaker, and makes quotes comparable.',
+        'With us, this list is drawn up after the walk-through: we put in writing which tasks we take on, how often we are on site and to whom we report defects. These points belong in a specification:',
+      ],
+      items: [
+        'Tasks and frequency for each area: stairwell, entrance, laundry and drying rooms, cellar and waste area, each with the activity and how often',
+        'Inspection rounds: how often, which rooms and installations are included and how findings are recorded',
+        'Grounds: which areas are maintained, such as lawns, hedges, flower beds, paths and forecourts',
+        'Responsibilities and reporting lines: who receives reports from the caretaker, which small jobs may be done without asking and whom tenants should contact',
+        'Keys and access: which keys, badges and codes the caretaker receives and how they are kept',
+        'Materials: who provides cleaning products, consumables and equipment and where they are stored',
+        'Boundary with tradespeople: which work specialist firms take on, such as major repairs and the servicing of heating, lifts and fire protection, and who commissions them',
+      ],
+    },
   ],
   steps: [
     steps.anfrage,
@@ -983,6 +1045,11 @@ const hauswartung: ServicePageContent = {
     },
   ],
   faq: [
+    {
+      question: 'What tasks does a caretaker take on?',
+      answer:
+        'Typical tasks are inspection rounds, cleaning the stairwell, laundry and drying rooms, minor repairs, keeping an eye on building services, waste disposal, helping with flat handovers and looking after the grounds. Which tasks we take on in your property and how often is agreed with you in writing, as in a specification.',
+    },
     {
       question: 'How does it differ from maintenance cleaning?',
       answer:

@@ -59,6 +59,9 @@ export const steps = {
 export const answers = {
   kosten:
     'Cela dépend du bien et de la charge de travail. C’est pourquoi nous n’indiquons un prix que dans le devis, après avoir vu le bien. La visite et le devis sont gratuits et sans engagement.',
+  // Kosten pro Stunde oder Fläche: Einflussfaktoren ohne Preise und Zahlen (E18)
+  kostenFaktoren:
+    'Un prix à l’heure ou au mètre carré ne dit pas grand-chose à lui seul, car la charge de travail dépend du bien : la surface et le type de locaux, leur état, le rythme, les horaires d’intervention, l’accès et qui fournit le matériel de consommation et les produits de nettoyage. C’est pourquoi nous n’indiquons les prix que dans le devis. Nous visitons le bien gratuitement, puis nous vous envoyons le devis par écrit. Plus d’informations dans notre guide : [Ce qui détermine le coût d’un nettoyage d’entretien](/blog/reinigungskosten-schweiz).',
   gebiet: `Dans l’ensemble des cantons de ${cantonList}, avec toutes nos prestations et partout aux mêmes conditions. Plus d’informations sous [Zone d’intervention](/einzugsgebiet).`,
   versicherung: 'Oui. Nous disposons d’une assurance responsabilité civile d’entreprise avec une couverture de CHF 10 millions.',
   mittel: 'Oui, sur demande, nous nettoyons avec des produits respectueux de l’environnement. Indiquez-le-nous lors de la visite.',

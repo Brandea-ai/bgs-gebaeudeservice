@@ -19,11 +19,11 @@ const luzern: KantonPage = {
   name: 'Lucerne',
   kuerzel: 'LU',
   seo: {
-    title: 'Cleaning company Lucerne: cleaning, caretaking',
+    title: 'Cleaning company Lucerne and caretaking',
     description:
-      'Building cleaning and caretaking in the canton of Lucerne from our base in Emmenbrücke: city, suburbs, lakeshore, Sursee and Seetal. Quote after a site visit.',
+      'Building cleaning and caretaking in the canton of Lucerne from our base in Emmenbrücke: city, suburbs, lakeshore, Sursee and Seetal. Quote after a visit.',
   },
-  h1: 'Cleaning and caretaking in the canton of Lucerne',
+  h1: 'Your cleaning company in the canton of Lucerne',
   lead: [
     'Our head office is in Emmenbrücke, in the heart of the Lucerne agglomeration. From here we clean and look after properties, offices and commercial premises throughout the canton, from the city of Lucerne to Lake Sempach and the Entlebuch.',
     'We have been working in cleaning and caretaking since 2006. Before you receive a quote, we look at your property on site. The visit and the quote are free of charge and without obligation.',
@@ -37,7 +37,7 @@ const luzern: KantonPage = {
   regionen: [
     { title: 'City and agglomeration', orte: ['Lucerne', 'Emmen', 'Kriens', 'Horw', 'Ebikon', 'Adligenswil'] },
     { title: 'On Lake Lucerne', orte: ['Meggen', 'Weggis', 'Vitznau', 'Greppen'] },
-    { title: 'Sursee and Lake Sempach', orte: ['Sursee', 'Sempach', 'Nottwil', 'Eich'] },
+    { title: 'Sursee and Lake Sempach', orte: ['Sursee', 'Sempach', 'Nottwil', 'Eich', 'Triengen', 'Ruswil'] },
     { title: 'Seetal', orte: ['Hochdorf', 'Hitzkirch'] },
     { title: 'Willisau and Entlebuch', orte: ['Willisau', 'Entlebuch', 'Schüpfheim', 'Escholzmatt-Marbach'] },
   ],
@@ -79,6 +79,7 @@ const luzern: KantonPage = {
       question: 'Do you also work outside the city of Lucerne?',
       answer: 'Yes, throughout the canton, from the Seetal to the Entlebuch, with all services and on the same terms.',
     },
+    { question: 'How much does a cleaning company cost in the canton of Lucerne?', answer: answers.kostenFaktoren },
     {
       question: 'Do you take care of the cleaning when tenants change?',
       answer: 'Yes. Move-out and end-of-tenancy cleaning with a handover guarantee is part of our [special cleaning](/leistungen/sonderreinigungen).',
@@ -92,11 +93,11 @@ const zug: KantonPage = {
   name: 'Zug',
   kuerzel: 'ZG',
   seo: {
-    title: 'Cleaning company Zug: office, building cleaning',
+    title: 'Cleaning company Zug, office cleaning',
     description:
       'Office cleaning, glass and caretaking in Zug: headquarters, practices and properties from Zug and Baar to the Ägeri valley. Advice in four languages.',
   },
-  h1: 'Cleaning for offices and properties in the canton of Zug',
+  h1: 'Your cleaning company for offices and properties in the canton of Zug',
   lead: [
     'Many companies, including international ones, have their registered office in the canton of Zug. What they need is cleaning that follows the business day and does not disrupt it.',
     'Our staff speak German, English, French and Italian. This makes it easier to coordinate with teams whose working language is not German.',
@@ -153,6 +154,7 @@ const zug: KantonPage = {
       question: 'Do you clean outside office hours?',
       answer: 'We set the working times with you, to suit your working and opening hours.',
     },
+    { question: 'How much does a cleaning company cost in the canton of Zug?', answer: answers.kostenFaktoren },
     {
       question: 'Do you also work in Baar, Cham or the Ägeri valley?',
       answer: 'Yes, in all municipalities of the canton of Zug, with all services and on the same terms.',
@@ -166,11 +168,11 @@ const aargau: KantonPage = {
   name: 'Aargau',
   kuerzel: 'AG',
   seo: {
-    title: 'Cleaning company Aargau: industry, caretaking',
+    title: 'Cleaning company Aargau and caretaking',
     description:
       'Industrial, warehouse and construction cleaning and caretaking in Aargau: from the Freiamt and Seetal to Aarau and Baden, on the same terms as in Lucerne.',
   },
-  h1: 'Cleaning for industry, businesses and properties in Aargau',
+  h1: 'Your cleaning company for industry and businesses in the canton of Aargau',
   lead: [
     'Aargau has many industrial and commercial businesses. Production and storage halls, workshops and commercial buildings need cleaning that follows shifts and processes.',
     'From the Freiamt and the Seetal on the Lucerne border to the Aarau and Baden regions, we work throughout the canton, with all services and on the same terms as in Lucerne.',
@@ -233,6 +235,7 @@ const aargau: KantonPage = {
       question: 'Does machine maintenance come with it?',
       answer: 'No. We clean machines and equipment to your specifications, maintenance and repairs remain with your maintenance team.',
     },
+    { question: 'How much does a cleaning company cost in the canton of Aargau?', answer: answers.kostenFaktoren },
     { question: 'Do you clean with environmentally friendly products?', answer: answers.mittel },
   ],
   menuText: menu.aargau.text,
@@ -242,11 +245,11 @@ const nidwalden: KantonPage = {
   name: 'Nidwalden',
   kuerzel: 'NW',
   seo: {
-    title: 'Cleaning company and caretaking, Nidwalden',
+    title: 'Cleaning company Nidwalden, caretaking',
     description:
       'Cleaning and caretaking in Nidwalden: properties on Lake Lucerne, second homes and villas from Hergiswil to Beckenried. Quote after a site visit.',
   },
-  h1: 'Cleaning and caretaking in Nidwalden',
+  h1: 'Your cleaning company in the canton of Nidwalden',
   lead: [
     'Nidwalden stretches from the shore of Lake Lucerne at Hergiswil and Ennetbürgen to the Engelberg valley. Many properties are close to the lake, and some are only lived in part of the time.',
     'We clean and look after residential and commercial buildings, second homes and villas throughout the canton. We prepare the quote after a site visit, free of charge and without obligation.',
@@ -303,6 +306,7 @@ const nidwalden: KantonPage = {
       question: 'Do you also clean boats?',
       answer: 'Yes, yachts and motorboats on Lake Lucerne: interior, upholstery, teak and gelcoat. More under [Yacht](/premium/yacht).',
     },
+    { question: 'How much does a cleaning company cost in the canton of Nidwalden?', answer: answers.kostenFaktoren },
     {
       question: 'How do we get a quote?',
       answer: `Call us or write to us. We will get back to you ${responseTime}, look at the property and send you the quote in writing.`,
@@ -316,11 +320,11 @@ const obwalden: KantonPage = {
   name: 'Obwalden',
   kuerzel: 'OW',
   seo: {
-    title: 'Cleaning company Obwalden: Sarnen, Engelberg',
+    title: 'Cleaning company Obwalden and Engelberg',
     description:
       'Cleaning and caretaking in Obwalden: properties in the Sarneraatal, second homes and hotels in Engelberg. Free quote after a site visit.',
   },
-  h1: 'Cleaning and caretaking in Obwalden',
+  h1: 'Your cleaning company in the canton of Obwalden',
   lead: [
     'Obwalden consists of two parts: the Sarneraatal with the capital Sarnen, and the high valley of Engelberg, which is reached via Nidwalden.',
     'In the Sarneraatal we clean and look after residential and commercial buildings and businesses. Engelberg is shaped by second homes and hotels, and we offer cleaning and care for both.',
@@ -379,7 +383,7 @@ const obwalden: KantonPage = {
       answer: 'Yes. We clean before you arrive and after you leave. Let us know your dates as early as possible.',
     },
     { question: 'Do you offer winter maintenance?', answer: 'No, we do not offer winter maintenance.' },
-    { question: 'What does the cleaning cost?', answer: answers.kosten },
+    { question: 'How much does a cleaning company cost in the canton of Obwalden?', answer: answers.kostenFaktoren },
   ],
   menuText: menu.obwalden.text,
 }

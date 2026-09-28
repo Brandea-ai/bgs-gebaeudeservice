@@ -56,6 +56,9 @@ export const steps = {
 export const answers = {
   kosten:
     'Dipende da ciò che va pulito e dall’impegno richiesto. Per questo indichiamo i prezzi solo nell’offerta, dopo aver visto tutto sul posto. Sopralluogo e offerta sono gratuiti e senza impegno.',
+  // Kosten pro Stunde oder Fläche: Einflussfaktoren ohne Preise und Zahlen (E18)
+  kostenFaktoren:
+    'Un prezzo all’ora o al metro quadrato da solo dice poco, perché l’impegno dipende dall’immobile: superficie e tipo dei locali, il loro stato, il ritmo, gli orari d’intervento, l’accesso e chi fornisce il materiale di consumo e i prodotti di pulizia. Per questo indichiamo i prezzi solo nell’offerta. Facciamo il sopralluogo gratuitamente e poi Le inviamo l’offerta per iscritto. Maggiori informazioni nella guida: [Da che cosa dipendono i costi di una pulizia di manutenzione](/blog/reinigungskosten-schweiz).',
   gebiet: `Nell’intero territorio dei Cantoni di ${cantonListIt}, con tutti i servizi e ovunque alle stesse condizioni. Maggiori informazioni alla pagina [Zona d’intervento](/einzugsgebiet).`,
   versicherung: 'Sì. Disponiamo di un’assicurazione di responsabilità civile aziendale con una copertura di CHF 10 milioni.',
   mittel: 'Sì, su richiesta puliamo con prodotti ecologici. Ce lo dica in occasione del sopralluogo.',

@@ -129,7 +129,7 @@ export const home: Seiten['home'] = {
     link: 'View service area',
   },
   faq: [
-    faq.kosten,
+    { question: 'How much does a cleaning company cost per hour?', answer: answers.kostenFaktoren },
     faq.schnell,
     {
       question: 'Do I need maintenance cleaning or caretaking?',
