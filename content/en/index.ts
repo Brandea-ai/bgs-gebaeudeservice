@@ -9,6 +9,7 @@ import { datenschutz, impressum } from './recht'
 import { about, area, contact, home, premiumOverview, proof, servicesOverview } from './seiten'
 import { pages } from './seo'
 import { bilder } from './bilder'
+import { heroLines } from './hero'
 
 /**
  * All English texts in one place (M60), same shape as content/de (type
@@ -17,6 +18,7 @@ import { bilder } from './bilder'
  */
 export const en: Dictionary = {
   pages,
+  heroLines,
   ui,
   steps,
   answers,

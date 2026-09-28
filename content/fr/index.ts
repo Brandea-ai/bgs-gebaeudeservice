@@ -9,6 +9,7 @@ import { datenschutz, impressum } from './recht'
 import { about, area, contact, home, premiumOverview, proof, servicesOverview } from './seiten'
 import { pages } from './seo'
 import { bilder } from './bilder'
+import { heroLines } from './hero'
 
 /**
  * Tous les textes français (M60), même forme que l’objet allemand (type
@@ -17,6 +18,7 @@ import { bilder } from './bilder'
  */
 export const fr: Dictionary = {
   pages,
+  heroLines,
   ui,
   steps,
   answers,

@@ -9,6 +9,7 @@ import { datenschutz, impressum } from './recht'
 import { about, area, contact, home, premiumOverview, proof, servicesOverview } from './seiten'
 import { pages } from './seo'
 import { bilder } from './bilder'
+import { heroLines } from './hero'
 
 /**
  * Tutti i testi italiani in un unico punto (M60), stessa forma dell’oggetto
@@ -17,6 +18,7 @@ import { bilder } from './bilder'
  */
 export const it: Dictionary = {
   pages,
+  heroLines,
   ui,
   steps,
   answers,

@@ -86,7 +86,7 @@ export default function AreaView({ lang }: { lang: Locale }) {
         lang={lang}
         tone="dark"
         title={area.h1}
-        lead={area.lead}
+        lead={<p>{dict.heroLines["/einzugsgebiet"]}</p>}
         aside={
           <CantonMap
             lang={lang}

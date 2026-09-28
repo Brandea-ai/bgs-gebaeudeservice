@@ -8,7 +8,13 @@ import { kontaktKontext, type KontaktProps } from "./kontext";
 export default function KontaktHero(props: KontaktProps) {
   const { ui, contact } = kontaktKontext(props);
   return (
-    <PageHero path="/kontakt" lang={props.lang} title={contact.h1} lead={contact.lead} size="compact">
+    <PageHero
+      path="/kontakt"
+      lang={props.lang}
+      title={contact.h1}
+      lead={contact.lead}
+      size="compact"
+    >
       <div className="flex flex-col gap-3 sm:flex-row">
         <Button asChild size="xl" className="arrow-link btn-lift">
           <a href="#kontakt-formular" data-cta="hero">

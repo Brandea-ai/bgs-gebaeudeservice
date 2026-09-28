@@ -1,6 +1,7 @@
 import { company, premiumLine, premiumTitleBrand } from '../../shared/company'
 import { answers, steps, ui } from './common'
 import { bilder } from './bilder'
+import { heroLines } from './hero'
 import { kantone, kantonUi, kantoneUebersicht } from './kantone'
 import { leistungen } from './leistungen'
 import { nav } from './navigation'
@@ -18,6 +19,7 @@ import { pages } from './seo'
  */
 export const de = {
   pages,
+  heroLines,
   ui,
   steps,
   answers,
