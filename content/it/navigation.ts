@@ -179,6 +179,7 @@ export const nav: NavDictionary = {
     megaText: 'Visitiamo il vostro immobile e allestiamo un’offerta scritta, gratuita e senza impegno.',
     premiumTeaser: 'Pulizia e cura discrete per ville, jet privati e yacht.',
     heroLanguages: 'Consulenza nella Sua lingua',
+    faqMore: 'La Sua domanda non c’è? Ci chiami o ci scriva, rispondiamo entro 24 ore nei giorni feriali.',
     phone: 'Telefono',
     email: 'E-mail',
     address: 'Indirizzo',

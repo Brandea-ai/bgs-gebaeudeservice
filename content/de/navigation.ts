@@ -192,6 +192,7 @@ export const nav = {
     megaText: 'Wir sehen uns Ihr Objekt an und erstellen eine schriftliche Offerte, kostenlos und unverbindlich.',
     premiumTeaser: 'Diskrete Reinigung und Pflege für Villen, Privatjets und Yachten.',
     heroLanguages: 'Beratung in Ihrer Sprache',
+    faqMore: 'Ihre Frage ist nicht dabei? Rufen Sie uns an oder schreiben Sie uns, wir antworten innerhalb von 24 Stunden an Werktagen.',
     phone: 'Telefon',
     email: 'E-Mail',
     address: 'Adresse',

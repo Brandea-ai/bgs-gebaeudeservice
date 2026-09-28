@@ -168,6 +168,7 @@ export const nav: NavDictionary = {
     megaText: 'Nous visitons votre bien et établissons un devis écrit, gratuit et sans engagement.',
     premiumTeaser: 'Nettoyage et entretien discrets pour villas, jets privés et yachts.',
     heroLanguages: 'Conseil dans votre langue',
+    faqMore: 'Votre question n’y figure pas ? Appelez-nous ou écrivez-nous, nous répondons dans les 24 heures les jours ouvrables.',
     phone: 'Téléphone',
     email: 'E-mail',
     address: 'Adresse',

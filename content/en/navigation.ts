@@ -167,6 +167,7 @@ export const nav: NavDictionary = {
     megaText: 'We visit your property and prepare a written quote, free of charge and without obligation.',
     premiumTeaser: 'Discreet cleaning and care for villas, private jets and yachts.',
     heroLanguages: 'Advice in your language',
+    faqMore: 'Your question is not listed? Call us or write to us, we reply within 24 hours on working days.',
     phone: 'Phone',
     email: 'Email',
     address: 'Address',

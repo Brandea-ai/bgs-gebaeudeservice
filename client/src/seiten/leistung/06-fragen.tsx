@@ -1,17 +1,18 @@
-import Faq from "@/components/Faq";
+import FaqBlock from "@/components/FaqBlock";
+import { detailImage, heroImage } from "../../../../shared/hero-images";
 import { leistungKontext, type LeistungProps } from "./kontext";
 
-/** Einwände: Antworten im HTML, ohne JavaScript lesbar (M22) */
+/** Einwände mit Bild und Kontakt, Fragen öffnen sich beim Überfahren (E82) */
 export default function LeistungFragen(props: LeistungProps) {
-  const { ui } = leistungKontext(props);
+  const { ui, premium } = leistungKontext(props);
+  const path = props.content.path;
   return (
-    <section id="fragen" aria-labelledby="fragen-titel" className="section">
-      <div className="container grid gap-10 lg:grid-cols-12">
-        <h2 id="fragen-titel" className="t-h2 text-ink lg:col-span-4">{ui.faq}</h2>
-        <div className="lg:col-span-8">
-          <Faq items={props.content.faq} lang={props.lang} />
-        </div>
-      </div>
-    </section>
+    <FaqBlock
+      title={ui.faq}
+      items={props.content.faq}
+      image={detailImage[path] ?? heroImage[path]}
+      lang={props.lang}
+      tone={premium ? "premium" : "light"}
+    />
   );
 }

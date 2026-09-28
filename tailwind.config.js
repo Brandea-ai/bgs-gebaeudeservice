@@ -27,6 +27,7 @@ module.exports = {
         signal: { DEFAULT: "#B8121B", dark: "#8F0E15", light: "#F2D6D7" },
         brass: { DEFAULT: "#C8A96E", dark: "#8C6F3A", light: "#E6D5B0" },
         anthracite: { DEFAULT: "#16181C", 800: "#1D2025", 700: "#26292F" },
+        ivory: { DEFAULT: "#F7F2E9", 200: "#EFE7D8" },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
