@@ -7,6 +7,7 @@ import {
 import type { Icon } from "@phosphor-icons/react";
 import ProcessSection from "./ProcessSection";
 import RichText from "./RichText";
+import { premiumLightLink } from "./premiumStyles";
 import type { Step } from "../../../content/types";
 import type { Locale } from "../../../shared/i18n";
 
@@ -24,10 +25,17 @@ const glyphs: Record<FigureKey, Icon> = {
  * (sprachneutral), gestapelt; sichtbar ist das Video des aktiven Schritts
  * (CSS über data-active), abgespielt wird nur dieses (ProcessSection). Ohne
  * JavaScript oder mit reduced motion steht das Standbild des ersten Schritts.
+ * lux: Bühne der Premium-Welt in Anthrazit mit Champagner-Ring und warmem Schatten.
  */
-function Stage({ keys }: { keys: FigureKey[] }) {
+function Stage({ keys, lux = false }: { keys: FigureKey[]; lux?: boolean }) {
   return (
-    <div className="relative aspect-[4/3] overflow-hidden rounded-[3px] bg-stone shadow-[0_1px_0_rgba(14,17,22,0.04),0_28px_60px_-36px_rgba(14,17,22,0.45)] ring-1 ring-ink/10">
+    <div
+      className={`relative aspect-[4/3] overflow-hidden rounded-[3px] ${
+        lux
+          ? "bg-anthracite shadow-[0_1px_0_rgba(125,98,49,0.12),0_36px_70px_-38px_rgba(90,68,30,0.55)] ring-1 ring-brass/45"
+          : "bg-stone shadow-[0_1px_0_rgba(14,17,22,0.04),0_28px_60px_-36px_rgba(14,17,22,0.45)] ring-1 ring-ink/10"
+      }`}
+    >
       {keys.map((key, i) => (
         <video
           key={key}
@@ -67,7 +75,8 @@ export default function ProcessScrolly({
 }: {
   steps: Step[];
   lang?: Locale;
-  tone?: "light" | "dark";
+  /** premium: helle Premium-Welt, Champagner statt Signalrot */
+  tone?: "light" | "dark" | "premium";
   variant?: "wide" | "narrow" | "vertical";
   figureKeys: FigureKey[];
   /** id der Überschrift über der Sektion */
@@ -75,6 +84,10 @@ export default function ProcessScrolly({
   idPrefix?: string;
 }) {
   const dark = tone === "dark";
+  const lux = tone === "premium";
+  // Akzent: Signalrot, auf Anthrazit Champagner, in der hellen Premium-Welt Champagner für Hell
+  const accent = dark ? "text-brass" : lux ? "text-brass-dark" : "text-signal";
+  const toneClass = dark ? "process--dark" : lux ? "process--premium" : "";
   const keys = steps.map((_, i) => figureKeys[i] ?? "start");
   const n = steps.length;
   const pinned = variant !== "vertical";
@@ -94,11 +107,11 @@ export default function ProcessScrolly({
       style={{ "--step-h": n <= 3 ? "44vh" : "38vh" } as React.CSSProperties}
     >
       <span
-        className={`process-line ${dark ? "bg-white/20" : "bg-ink/15"}`}
+        className={`process-line ${dark ? "bg-white/20" : lux ? "bg-brass/40" : "bg-ink/15"}`}
         aria-hidden="true"
       >
         <span
-          className={`process-line-fill block h-full w-full ${dark ? "bg-brass" : "bg-signal"}`}
+          className={`process-line-fill block h-full w-full ${dark ? "bg-brass" : lux ? "bg-brass-dark" : "bg-signal"}`}
         />
       </span>
       {steps.map((step, i) => {
@@ -111,16 +124,22 @@ export default function ProcessScrolly({
             className={`process-step pb-10 last:pb-0 ${pinned ? "lg:pb-0" : ""}`}
           >
             <span
-              className={`process-num ${dark ? "text-brass" : "text-signal"}`}
+              className={`process-num ${accent}`}
               aria-hidden="true"
             >
               <Glyph weight="duotone" className="size-6" />
             </span>
             <span
-              className={`process-dot ${dark ? "text-brass" : "text-signal"}`}
+              className={`process-dot ${accent}`}
               aria-hidden="true"
             />
-            <h3 className={`t-h3 ${dark ? "text-white" : "text-ink"}`}>
+            <h3
+              className={
+                lux
+                  ? "font-premium text-[clamp(1.5rem,1.2rem+0.8vw,2rem)] font-bold leading-tight text-anthracite"
+                  : `t-h3 ${dark ? "text-white" : "text-ink"}`
+              }
+            >
               {step.title}
             </h3>
             <p
@@ -132,7 +151,9 @@ export default function ProcessScrolly({
                 linkClassName={
                   dark
                     ? "font-semibold text-white underline underline-offset-4"
-                    : undefined
+                    : lux
+                      ? premiumLightLink
+                      : undefined
                 }
               />
             </p>
@@ -147,7 +168,7 @@ export default function ProcessScrolly({
       <ProcessSection
         n={n}
         labelledBy={labelledBy}
-        className={dark ? "process--dark" : ""}
+        className={toneClass}
       >
         {list}
       </ProcessSection>
@@ -158,13 +179,13 @@ export default function ProcessScrolly({
     <ProcessSection
       n={n}
       labelledBy={labelledBy}
-      className={`grid gap-10 ${cols} lg:gap-12 ${dark ? "process--dark" : ""}`}
+      className={`grid gap-10 ${cols} lg:gap-12 ${toneClass}`}
     >
       <figure
         className={`process-figure hidden ${figureCol} lg:block`}
         aria-hidden="true"
       >
-        <Stage keys={keys} />
+        <Stage keys={keys} lux={lux} />
       </figure>
       <div className={stepsCol}>{list}</div>
     </ProcessSection>

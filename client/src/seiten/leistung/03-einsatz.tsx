@@ -1,11 +1,13 @@
 import RichText from "@/components/RichText";
 import Zigzag from "@/components/Zigzag";
+import { premiumLightLink } from "@/components/premiumStyles";
 import { detailImage, heroImage } from "../../../../shared/hero-images";
 import { leistungKontext, type LeistungProps } from "./kontext";
 
 /**
  * Einsatz im Zickzack (E80): die ersten Abschnitte der Seite mit Bild, im
  * Wechsel links und rechts. Weitere Abschnitte folgen im Inhalt darunter.
+ * Premium in der hellen Welt auf Weiss, Punkte in Champagner.
  */
 export default function LeistungEinsatz(props: LeistungProps) {
   const { content, lang } = props;
@@ -17,7 +19,7 @@ export default function LeistungEinsatz(props: LeistungProps) {
   return (
     <section
       aria-label={sections[0].title}
-      className={`section ${premium ? "on-dark bg-anthracite text-white" : "bg-stone"}`}
+      className={`section ${premium ? "bg-white text-anthracite" : "bg-stone"}`}
     >
       <div className="container">
         <Zigzag
@@ -31,15 +33,15 @@ export default function LeistungEinsatz(props: LeistungProps) {
               <div id={sectionId(index)} className="space-y-4">
                 {section.paragraphs?.map(paragraph => (
                   <p key={paragraph}>
-                    <RichText text={paragraph} lang={lang} />
+                    <RichText text={paragraph} lang={lang} linkClassName={premium ? premiumLightLink : undefined} />
                   </p>
                 ))}
                 {section.items && (
                   <ul className="space-y-2">
                     {section.items.map(item => (
                       <li key={item} className="flex gap-3">
-                        <span className={`mt-[0.6em] h-1.5 w-1.5 shrink-0 rounded-full ${premium ? "bg-brass" : "bg-signal"}`} aria-hidden="true" />
-                        <span><RichText text={item} lang={lang} /></span>
+                        <span className={`mt-[0.6em] h-1.5 w-1.5 shrink-0 rounded-full ${premium ? "bg-brass-dark" : "bg-signal"}`} aria-hidden="true" />
+                        <span><RichText text={item} lang={lang} linkClassName={premium ? premiumLightLink : undefined} /></span>
                       </li>
                     ))}
                   </ul>

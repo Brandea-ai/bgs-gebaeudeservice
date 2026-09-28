@@ -33,13 +33,13 @@ export default function FaqBlock({
     <section
       id={id}
       aria-labelledby={`${id}-titel`}
-      className={`section ${premium ? "bg-ivory" : "bg-white"}`}
+      className={`section ${premium ? "border-t border-brass/25 bg-ivory" : "bg-white"}`}
     >
       <div className="container grid gap-12 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-5 lg:self-start lg:sticky lg:top-[calc(var(--header-offset)+2rem)]">
           <h2
             id={`${id}-titel`}
-            className={premium ? "font-premium text-[clamp(2rem,1.4rem+1.8vw,3.25rem)] font-medium leading-[1.05] text-anthracite" : "t-h2 text-ink"}
+            className={premium ? "font-premium text-[clamp(2.1rem,1.4rem+2vw,3.5rem)] font-semibold leading-[1.05] text-anthracite" : "t-h2 text-ink"}
           >
             {title}
           </h2>
@@ -55,7 +55,7 @@ export default function FaqBlock({
           <div className="mt-5 grid gap-3 sm:grid-cols-2">
             <a
               href={company.phone.href}
-              className="group flex min-h-14 items-center gap-3 rounded-[3px] border-2 border-ink/15 bg-white px-4 py-3 transition-colors hover:border-ink hover:bg-ink hover:text-white"
+              className={`group flex min-h-14 items-center gap-3 rounded-[3px] border-2 bg-white px-4 py-3 transition-colors ${premium ? "border-brass-dark/30 text-anthracite hover:border-anthracite hover:bg-anthracite" : "border-ink/15 hover:border-ink hover:bg-ink"} hover:text-white`}
             >
               <Phone weight="duotone" className={`size-6 shrink-0 ${premium ? "text-brass-dark" : "text-signal"} group-hover:text-white`} aria-hidden="true" />
               <span className="font-bold tabular-nums">{company.phone.display}</span>
@@ -70,7 +70,7 @@ export default function FaqBlock({
         </div>
         <div className="min-w-0 lg:col-span-7">
           <FaqHover>
-            <Faq items={items} lang={lang} />
+            <Faq items={items} lang={lang} tone={premium ? "premium" : "light"} />
           </FaqHover>
         </div>
       </div>

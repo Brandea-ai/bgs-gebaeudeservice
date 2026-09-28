@@ -13,8 +13,9 @@ import PremiumFragen from "./07-fragen";
 import PremiumOrte from "./08-orte";
 
 /**
- * Premium-Übersicht /premium (Factory-Strukturnorm, E80): eigene Welt in
- * Anthrazit und Champagner mit Serifenschrift, nie Signalrot. Nur Reihenfolge.
+ * Premium-Übersicht /premium (Factory-Strukturnorm, E80): eigene Welt mit
+ * Serifenschrift, nie Signalrot. Nur der Kopf ist dunkel mit Bild, alles
+ * darunter hell in Elfenbein und Weiss mit Champagner (Premium hell). Nur Reihenfolge.
  * Der Abschluss «Diskret anfragen» beschriftet den Formularabschnitt.
  */
 export default function PremiumUebersicht(props: PremiumProps) {
@@ -28,11 +29,11 @@ export default function PremiumUebersicht(props: PremiumProps) {
     { id: "orte", title: dict.misc.map.areaLabel },
   ];
   return (
-    <PageFrame lang={lang} path="/premium" mainClassName="bg-anthracite" contact={content.cta}>
+    <PageFrame lang={lang} path="/premium" mainClassName="bg-white" contact={content.cta}>
       {/* Hub zu den drei Premium-Seiten als ItemList */}
       <JsonLd data={itemListJsonLd("/premium", content.offers.map(offer => offer.path), lang)} />
       <PremiumHero {...props} />
-      <SectionNav label={ui.onThisPage} items={navItems} tone="dark" />
+      <SectionNav label={ui.onThisPage} items={navItems} tone="premium" />
       <PremiumBereiche {...props} />
       <PremiumAusserdem {...props} />
       <PremiumDiskretion {...props} />

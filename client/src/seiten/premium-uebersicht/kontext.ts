@@ -1,16 +1,18 @@
 import {
-  Clock,
-  Diamond,
   FileText,
   Key,
-  LockKey,
   SealCheck,
   ShieldCheck,
   Translate,
-  UserCheck,
   UsersThree,
 } from "@phosphor-icons/react/dist/ssr";
-import type { Icon } from "@phosphor-icons/react";
+import {
+  AppointmentIcon,
+  DiscretionIcon,
+  MaterialsIcon,
+  PersonalIcon,
+  type AnyGlyph,
+} from "@/components/PremiumIcons";
 import { getDict } from "../../../../content";
 import { company } from "../../../../shared/company";
 import type { Locale } from "../../../../shared/i18n";
@@ -20,23 +22,25 @@ export type PremiumProps = { lang: Locale };
 
 type PromiseKey = ReturnType<typeof getDict>["seiten"]["premiumOverview"]["promises"][number]["key"];
 
-/** Ein Objekt-Symbol je Zusage (P05): duotone, Champagner, ohne Fläche */
-export const promiseIcons: Record<PromiseKey, Icon> = {
-  persoenlich: UserCheck,
-  diskret: LockKey,
+/**
+ * Ein Objekt-Symbol je Zusage (P05): Champagner, ohne Fläche. Wo ein eigenes
+ * Premium-Symbol passt, steht es statt Phosphor Duotone (PremiumIcons.tsx).
+ */
+export const promiseIcons: Record<PromiseKey, AnyGlyph> = {
+  persoenlich: PersonalIcon,
+  diskret: DiscretionIcon,
   teams: UsersThree,
   personal: SealCheck,
   schluessel: Key,
-  zeiten: Clock,
-  material: Diamond,
+  zeiten: AppointmentIcon,
+  material: MaterialsIcon,
   sprachen: Translate,
   versichert: ShieldCheck,
   offerte: FileText,
 };
 
-/** Links auf Anthrazit: Weiss mit Champagner-Unterstrich, nie Signalrot */
-export const darkLink =
-  "font-semibold text-white underline decoration-brass underline-offset-4 hover:decoration-white";
+/** Links in der hellen Premium-Welt: Anthrazit mit Champagner-Unterstrich, nie Signalrot */
+export { premiumLightLink as lightLink } from "@/components/premiumStyles";
 
 export function premiumKontext({ lang }: PremiumProps) {
   const dict = getDict(lang);

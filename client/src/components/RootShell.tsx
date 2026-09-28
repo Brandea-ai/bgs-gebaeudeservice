@@ -29,7 +29,8 @@ const mono = Geist_Mono({
 });
 const premium = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  // 700 für kleine Serifentitel in der hellen Premium-Welt (kräftig statt dünn)
+  weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
   variable: "--font-premium",
   display: "swap",

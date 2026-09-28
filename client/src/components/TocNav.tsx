@@ -14,16 +14,17 @@ export default function TocNav({
 }: {
   label: string;
   items: { id: string; title: string }[];
-  tone?: "light" | "dark";
+  tone?: "light" | "dark" | "premium";
 }) {
   const active = useScrollSpy(items.map(item => item.id));
   const dark = tone === "dark";
+  const lux = tone === "premium";
   return (
     <nav aria-label={label}>
       <p className={`t-eyebrow mb-4 ${dark ? "text-white/90" : "text-mute"}`}>
         {label}
       </p>
-      <ol className={`border-l ${dark ? "border-white/15" : "border-line"}`}>
+      <ol className={`border-l ${dark ? "border-white/15" : lux ? "border-brass/35" : "border-line"}`}>
         {items.map(item => {
           const isActive = active === item.id;
           return (
@@ -35,7 +36,9 @@ export default function TocNav({
                   isActive
                     ? dark
                       ? "border-brass text-white"
-                      : "border-signal text-ink"
+                      : lux
+                        ? "border-brass-dark font-semibold text-anthracite"
+                        : "border-signal text-ink"
                     : `border-transparent ${dark ? "text-white/90 hover:text-white" : "text-mute hover:text-ink"}`
                 }`}
               >

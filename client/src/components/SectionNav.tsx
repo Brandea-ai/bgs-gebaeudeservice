@@ -18,13 +18,15 @@ export default function SectionNav({
 }: {
   label: string;
   items: { id: string; title: string }[];
-  tone?: "light" | "dark";
+  /** premium: helle Premium-Welt, Linie in Champagner statt Signalrot */
+  tone?: "light" | "dark" | "premium";
   sticky?: boolean;
   className?: string;
 }) {
   const active = useScrollSpy(items.map(item => item.id));
   const ref = useRef<HTMLElement>(null);
   const dark = tone === "dark";
+  const lux = tone === "premium";
 
   useEffect(() => {
     if (!sticky) return;
@@ -68,7 +70,7 @@ export default function SectionNav({
     <nav
       ref={ref}
       aria-label={label}
-      className={`subnav ${sticky ? "subnav--sticky" : ""} border-b ${dark ? "border-white/10 bg-ink text-white" : "border-line bg-white text-ink"} ${className}`}
+      className={`subnav ${sticky ? "subnav--sticky" : ""} border-b ${dark ? "border-white/10 bg-ink text-white" : lux ? "border-brass/30 bg-white text-anthracite" : "border-line bg-white text-ink"} ${className}`}
     >
       <div className="container">
         <ol className="subnav -mx-1 flex gap-1 overflow-x-auto py-1 lg:mx-0 lg:gap-2">
@@ -79,10 +81,10 @@ export default function SectionNav({
                 <a
                   href={`#${item.id}`}
                   aria-current={isActive ? "location" : undefined}
-                  className={`relative inline-flex min-h-11 items-center whitespace-nowrap px-3 py-2 text-[0.9375rem] font-medium transition-colors after:absolute after:inset-x-3 after:bottom-1 after:h-0.5 after:origin-left after:bg-signal after:transition-transform after:duration-300 ${
+                  className={`relative inline-flex min-h-11 items-center whitespace-nowrap px-3 py-2 text-[0.9375rem] font-medium transition-colors after:absolute after:inset-x-3 after:bottom-1 after:h-0.5 after:origin-left ${lux ? "after:bg-brass-dark" : "after:bg-signal"} after:transition-transform after:duration-300 ${
                     isActive
-                      ? `${dark ? "text-white" : "text-ink"} after:scale-x-100`
-                      : `${dark ? "text-white/90 hover:text-white" : "text-mute hover:text-ink"} after:scale-x-0`
+                      ? `${dark ? "text-white" : lux ? "font-semibold text-anthracite" : "text-ink"} after:scale-x-100`
+                      : `${dark ? "text-white/90 hover:text-white" : lux ? "text-ink-600 hover:text-anthracite" : "text-mute hover:text-ink"} after:scale-x-0`
                   }`}
                 >
                   {item.title}
