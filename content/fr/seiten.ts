@@ -2,7 +2,7 @@ import { company, premiumLabel } from '../../shared/company'
 import type { PagePath } from '../../shared/seo'
 import type { Step } from '../types'
 import type { Dictionary } from '../de'
-import { answers, cantonList, languageList, premiumLine, register, responseTime, steps } from './common'
+import { answers, cantonList, premiumLine, register, responseTime, steps, ui } from './common'
 
 /**
  * Textes de la page d’accueil, de « À propos », du contact, de la zone
@@ -151,8 +151,10 @@ export const home = {
 }
 
 export const about = {
-  h1: `Nettoyage et conciergerie depuis ${company.address.city}, depuis 2006`,
-  lead: `Depuis 2006, nous sommes actifs dans le nettoyage et la conciergerie. Aujourd’hui, plus de 50 collaboratrices et collaborateurs s’occupent de plus de 120 clients dans les cantons de ${cantonList}, en ${languageList}.`,
+  h1: 'À propos : nettoyage et conciergerie d’immeubles depuis 2006',
+  lead: company.premiumBrand
+    ? `${company.brand} est la marque de ${company.legalName}, établie à ${company.address.city}. Nous nettoyons et entretenons des immeubles, des bureaux, des cabinets et des halles en Suisse centrale et en Argovie.`
+    : `${company.legalName}, établie à ${company.address.city}, nettoie et entretient des immeubles, des bureaux, des cabinets et des halles en Suisse centrale et en Argovie.`,
   promises: {
     title: 'Ce sur quoi vous pouvez compter',
     items: [
@@ -164,88 +166,111 @@ export const about = {
       { key: 'umwelt' as const, title: 'Produits respectueux de l’environnement', text: 'Sur demande, nous nettoyons avec des produits respectueux de l’environnement.' },
     ],
   },
+  profile: {
+    title: 'Profil de l’entreprise',
+    items: [
+      { value: 'Depuis 2006', label: 'Expérience' },
+      { value: 'Plus de 50', label: 'Collaboratrices et collaborateurs' },
+      { value: 'Plus de 120', label: 'Clients' },
+      { value: 'CHF 10 millions', label: 'Couverture de la responsabilité civile d’entreprise' },
+    ],
+    note: 'État : septembre 2026',
+  },
+  fit: {
+    title: 'Quand nous convenons, et quand ce n’est pas le cas',
+    intro: 'Nous préférons le dire avant le premier rendez-vous. Ainsi, personne ne perd de temps avec une demande qui ne nous correspond pas.',
+    yesTitle: 'Nous convenons si vous',
+    yes: [
+      'faites nettoyer ou entretenir un immeuble en tant que gérance, propriétaire ou communauté de PPE, avec la [conciergerie](/leistungen/hauswartung) et le [nettoyage d’entretien](/leistungen/unterhaltsreinigung)',
+      'faites nettoyer des bureaux, des cabinets, des surfaces commerciales ou des halles plusieurs fois par semaine : [nettoyage de bureaux et de cabinets](/leistungen/bueroreinigung), [nettoyage industriel et de halles](/leistungen/industrie-und-hallenreinigung)',
+      'souhaitez regrouper nettoyage, conciergerie et entretien des extérieurs dans un seul contrat, sous forme de [facility services](/leistungen/facility-services)',
+      'prévoyez une intervention unique, par exemple un [nettoyage en profondeur](/leistungen/sonderreinigungen), le [nettoyage de fin de chantier](/leistungen/baureinigung) avant la remise ou le [nettoyage de fin de bail](/leistungen/umzugsreinigung) entre deux locations',
+      `faites entretenir à titre privé une villa, une résidence secondaire, un jet privé ou un yacht : c’est le rôle de [${premiumLabel}](/premium)`,
+    ],
+    noTitle: 'Nous ne convenons pas pour',
+    no: [
+      'le service hivernal et le déneigement',
+      'un service de piquet 24 heures sur 24',
+      'le nettoyage de fin de bail d’un seul appartement sur mandat de la locataire ou du locataire',
+      'le nettoyage de ménages privés ordinaires',
+      'l’aménagement paysager et les nouveaux jardins',
+    ],
+    note: `Ce qu’une prestation ne comprend pas figure sur sa page, sous « ${ui.notIncluded} ».`,
+  },
   work: {
     title: 'Notre façon de travailler',
-    intro: 'Quatre principes valables pour chaque mandat, du nettoyage de bureaux à la conciergerie.',
+    intro: 'Quatre règles pour chaque mandat, qu’il s’agisse d’une cage d’escalier, d’un bureau ou d’une halle.',
     items: [
       {
-        title: 'D’abord voir, ensuite chiffrer',
+        title: 'D’abord le bien, ensuite le prix',
         paragraphs: [
-          'Revêtements de sol, surfaces vitrées, utilisation et accès déterminent le travail nécessaire. C’est pourquoi nous examinons d’abord votre bien sur place et définissons avec vous l’étendue, la fréquence et les horaires.',
-          'Nous n’indiquons un prix qu’ensuite, par écrit dans le devis, gratuit et sans engagement.',
+          'Le travail qu’exige un nettoyage ne se voit que sur place : revêtements de sol et surfaces vitrées, utilisation des locaux, trajets et accès.',
+          'Un prix donné au téléphone serait donc souvent inexact, faute de visite. Nous n’en donnons pas.',
+          'Le devis suit ce rendez-vous, par écrit et sans frais pour vous.',
         ],
       },
       {
-        title: 'Clairement convenu',
+        title: 'Étendue et limites par écrit',
         paragraphs: [
-          'Avec votre accord, il est établi quelles pièces et quelles tâches sont comprises, à quelle fréquence nous passons et à quels horaires. Nous réglons l’accès au préalable, par exemple avec une clé ou un badge.',
-          'Ce qui n’est pas compris, nous le disons ouvertement et indiquons la prestation qui convient.',
+          'Le devis indique les pièces et les tâches, la fréquence et les horaires d’intervention. Avec votre accord, il devient la convention, y compris la manière dont nous accédons au bâtiment, par exemple avec une clé ou un badge.',
+          'Ce qui n’est pas compris, nous le disons tout aussi clairement, avec la prestation qui convient.',
+          'Le [nettoyage de fin de bail](/leistungen/umzugsreinigung) est assorti de notre garantie de remise : si la gérance trouve à redire à notre nettoyage lors de la remise, nous nettoyons à nouveau gratuitement.',
         ],
       },
       {
-        title: 'Des échanges directs',
+        title: 'Des échanges directs, des règles fixes',
         paragraphs: [
-          `Notre directeur traite personnellement votre demande, vous recevez une réponse ${responseTime}.`,
-          'Si vous avez besoin de plusieurs prestations, vous pouvez les regrouper en [facility services](/leistungen/facility-services) dans un seul contrat, avec un seul interlocuteur pour tout.',
+          `Les demandes parviennent directement au directeur, sans intermédiaire. La réponse vous parvient ${responseTime}.`,
+          'Pour la clientèle Premium, c’est toujours la même équipe. Nous y gérons les clés et l’alarme selon des règles fixes et signons sur demande un accord de confidentialité.',
         ],
       },
       {
-        title: 'Matériel et produits',
+        title: 'Adapté au matériau',
         paragraphs: [
-          'Dans le cadre du nettoyage d’entretien, nous réapprovisionnons les consommables comme le papier et le savon. Sur demande, nous nettoyons avec des produits respectueux de l’environnement.',
-          'Nous nettoyons la pierre naturelle, le parquet et les surfaces laquées brillantes dans le respect des matériaux, avec égard pour les surfaces délicates.',
+          'Le marbre et le calcaire ne supportent pas les nettoyants acides, le parquet huilé seulement peu d’eau. Les produits et les appareils dépendent donc du revêtement, pas de l’habitude.',
+          'Lors du nettoyage courant, nous réapprovisionnons le papier, le savon et les autres consommables. Qui achète le matériel, vous ou nous, est fixé dans la convention.',
+          'Nous utilisons des produits respectueux de l’environnement si vous le souhaitez.',
         ],
       },
     ],
   },
-  history: {
-    title: 'Dans la région depuis 2006',
-    items: [
-      { label: '2006', title: 'Le début', text: 'Depuis 2006, nous sommes actifs dans le nettoyage et la conciergerie.' },
-      {
-        label: 'Aujourd’hui',
-        title: 'Plus de 50 collaborateurs, plus de 120 clients',
-        text: 'État septembre 2026. Nous travaillons pour des entreprises, des gérances, des propriétaires et une clientèle privée aux exigences particulières.',
-      },
-      {
-        label: 'Siège',
-        title: company.address.city,
-        text: `${company.legalName} est inscrite au ${register}.`,
-      },
+  check: {
+    kind: 'table' as const,
+    id: 'firmenangaben',
+    title: 'Données de l’entreprise à vérifier',
+    intro: 'Pour votre dossier fournisseur : nos données, et le registre public où vous pouvez vérifier chacune d’elles.',
+    columns: ['Donnée', 'Inscription', 'Où vérifier'],
+    rows: [
+      ['Raison de commerce', company.legalName, '[Zefix](https://www.zefix.admin.ch/fr/search/entity/list/firm/412716), l’index central des raisons de commerce de la Confédération'],
+      ['Siège et adresse', `Siège ${company.seat} LU, ${company.address.street}, ${company.address.postalCode} ${company.address.city}`, '[Registre IDE](https://www.uid.admin.ch/Detail.aspx?uid_id=CHE108687458) de l’Office fédéral de la statistique'],
+      ['Numéro du registre du commerce', `${company.registerNumber}, ${register}`, '[Extrait du registre du commerce](https://lu.chregister.ch/cr-portal/auszug/auszug.xhtml?uid=CHE-108.687.458) du canton de Lucerne'],
+      ['IDE (numéro d’identification des entreprises)', company.uid, 'Registre IDE, caractéristiques principales'],
+      ['Numéro TVA', company.vat, 'Registre IDE, données TVA'],
     ],
+    note: 'Pour contrôler devis et factures : le CO prévoit que la raison de commerce inscrite au registre du commerce figure de manière complète et inchangée dans la correspondance et sur les factures (art. 954a CO). Des abréviations, des logos et des noms commerciaux peuvent s’y ajouter. Selon la loi sur la TVA, une facture mentionne en règle générale aussi le numéro sous lequel l’entreprise est inscrite au registre des assujettis (art. 26 LTVA).',
+    sources: [
+      { label: 'Zefix, inscription de BGS - Gebäudeservice GmbH', href: 'https://www.zefix.admin.ch/fr/search/entity/list/firm/412716' },
+      { label: 'Registre IDE, CHE-108.687.458', href: 'https://www.uid.admin.ch/Detail.aspx?uid_id=CHE108687458' },
+      { label: 'Art. 954a Code des obligations (CO)', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_954_a' },
+      { label: 'Art. 26 Loi sur la TVA (LTVA)', href: 'https://www.fedlex.admin.ch/eli/cc/2009/615/fr#art_26' },
+    ],
+    printable: true,
+    updated: '2026-09-28',
   },
   languages: {
     title: 'Quatre langues',
-    text: `Nos collaboratrices et collaborateurs parlent ${languageList}. Cela facilite les échanges avec des équipes internationales, avec les locataires et avec les clients qui préfèrent s’exprimer dans leur langue. Ce site existe dans les mêmes quatre langues.`,
+    text: 'Questions et arrangements sont possibles chez nous en quatre langues : allemand, anglais, français, italien. Cela aide les entreprises internationales, les propriétaires domiciliés à l’étranger et les locataires qui préfèrent poser leur question dans leur langue.',
+    switchLabel: 'Cette page en',
   },
   region: {
     title: 'Cinq cantons, les mêmes conditions',
-    text: `Depuis ${company.address.city}, nous intervenons dans les cantons de ${cantonList}. Nous proposons toutes nos prestations dans toute la zone, et les mêmes conditions de déplacement s’appliquent partout.`,
-    link: 'Vers la zone d’intervention',
+    text: `Depuis ${company.address.city}, nous intervenons dans cinq cantons entiers, avec toutes nos prestations. Les conditions de déplacement sont les mêmes dans chacun d’eux.`,
+    listLabel: 'Les cantons en détail',
+    link: 'Zone d’intervention avec carte',
   },
-  values: {
-    title: 'Nos valeurs au quotidien',
-    intro: 'Les valeurs se voient dans ce que l’on fait. Voici donc ce que nous faisons concrètement.',
-    items: [
-      { key: 'ehrlich' as const, title: 'Honnêtes sur le prix', text: 'Nous n’indiquons les prix que dans le devis écrit, après avoir vu le bien. Un prix sans visite serait souvent inexact par la suite.' },
-      { key: 'klar' as const, title: 'Clairs sur l’étendue', text: 'Chaque page de prestation indique aussi ce qui n’est pas compris, avec un renvoi vers la prestation qui convient.' },
-      { key: 'nachbessern' as const, title: 'Nous répondons de notre travail', text: 'Si la gérance conteste quelque chose à notre nettoyage de fin de bail lors de la remise, nous nettoyons à nouveau gratuitement. Les détails figurent dans le devis.' },
-      { key: 'versichert' as const, title: 'Responsabilité', text: 'Pour les dommages causés pendant le travail, nous avons une assurance responsabilité civile d’entreprise avec une couverture de CHF 10 millions.' },
-      { key: 'diskret' as const, title: 'Discrétion', text: 'Dans l’offre Premium, nous signons sur demande un accord de confidentialité. Nous gérons les clés et l’alarme selon des règles fixes.' },
-      { key: 'umwelt' as const, title: 'Respect de l’environnement', text: 'Sur demande, nous nettoyons avec des produits respectueux de l’environnement. Dites-le-nous lors de la visite.' },
-    ],
-  },
-  contact: {
-    title: 'Votre interlocuteur',
-    text: `Votre demande parvient directement à notre directeur. Il vous répond ${responseTime}.`,
-  },
-  // Le type allemand reprend la valeur littérale de company.register, le texte français la remplace
-  register: { title: 'Données du registre', court: register, uid: 'IDE' },
-  statsLabel: 'En chiffres',
-  faq: [faq.kosten, faq.gebiet, faq.kurzfristig],
   cta: {
     title: 'Convenir d’une visite',
-    text: 'Lors de la visite, nous examinons votre bien et clarifions l’étendue des prestations et les horaires. Vous recevez ensuite un devis écrit.',
+    text: 'Indiquez-nous le bien, le lieu et la prestation souhaitée. La visite et le devis sont gratuits et sans engagement.',
   },
 }
 

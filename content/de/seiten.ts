@@ -1,7 +1,7 @@
 import { cantonList, company, listDe, premiumLabel, premiumLine } from '../../shared/company'
 import type { PagePath } from '../../shared/seo'
-import type { Step } from '../types'
-import { answers, steps } from './common'
+import type { Step, Tool } from '../types'
+import { answers, steps, ui } from './common'
 
 /**
  * Texte der Startseite, von Über uns, Kontakt, Einzugsgebiet und den beiden
@@ -25,11 +25,12 @@ type PromiseKey =
 type LinkCard = Card & { path: PagePath }
 type AudienceKey = 'verwaltungen' | 'unternehmen' | 'privat' | 'premium'
 type PromiseItemKey = 'persoenlich' | 'offerte' | 'gebiet' | 'versichert' | 'sprachen' | 'umwelt'
-type ValueKey = 'ehrlich' | 'klar' | 'nachbessern' | 'versichert' | 'diskret' | 'umwelt'
 type BriefKey = 'objekt' | 'ort' | 'groesse' | 'leistung' | 'rhythmus' | 'start' | 'zugang'
 // Schlüssel wählen Symbol und Bild in der Darstellung; die Übersetzungen tragen dieselben Schlüssel
 type Audience = Card & { key: AudienceKey; points: string[]; link: { path: PagePath; text: string } }
 type KeyedCard<K> = Card & { key: K }
+/** Werkzeug-Tabelle (E85), hier für die Firmenangaben zum Nachprüfen */
+type TableTool = Extract<Tool, { kind: 'table' }>
 
 /** Belegte Kennzahlen (E18, Stand September 2026) */
 export const proof = [
@@ -172,10 +173,18 @@ export const home = {
   },
 }
 
+/**
+ * Über uns (E85, Audit 25 Abschnitt 8): nur Belegtes (E18, E58), jede Aussage
+ * nur einmal auf der Seite, «2006» höchstens zweimal. Der Name des
+ * Geschäftsführers steht nicht hier (offene Frage F6), nur im Impressum.
+ */
 export const about = {
-  h1: `Reinigung und Hauswartung aus ${company.address.city}, seit 2006`,
-  lead: `Seit 2006 sind wir in der Reinigung und Hauswartung tätig. Heute betreuen über 50 Mitarbeitende mehr als 120 Kunden in den Kantonen ${cantonList}, auf ${listDe(company.languages)}.`,
-  // Zusagen mit Schlüssel für das Symbol (E18, M47). Die Startseite zeigt sie.
+  h1: 'Über uns: Reinigung und Hauswartung seit 2006',
+  // Mit NEW_BRAND nennt der erste Satz Marke und eingetragene Firma (Audit SEO, T5)
+  lead: company.premiumBrand
+    ? `${company.brand} ist die Marke der ${company.legalName} aus ${company.address.city}. Wir reinigen und betreuen Liegenschaften, Büros, Praxen und Hallen in der Zentralschweiz und im Aargau.`
+    : `Die ${company.legalName} aus ${company.address.city} reinigt und betreut Liegenschaften, Büros, Praxen und Hallen in der Zentralschweiz und im Aargau.`,
+  // Zusagen mit Schlüssel für das Symbol (E18, M47). Nur die Startseite zeigt sie (06-zusagen.tsx).
   promises: {
     title: 'Worauf Sie sich verlassen können',
     items: [
@@ -187,90 +196,115 @@ export const about = {
       { key: 'umwelt', title: 'Umweltfreundliche Mittel', text: 'Auf Wunsch reinigen wir mit umweltfreundlichen Mitteln.' },
     ] satisfies KeyedCard<PromiseItemKey>[] as KeyedCard<PromiseItemKey>[],
   },
-  // Arbeitsweise (E80): nur, was auf den Leistungsseiten bestätigt steht (E18, E56)
+  // Steckbrief statt Kennzahlen-Kacheln und Zeitleiste (Audit visuell: «2006» sechsmal)
+  profile: {
+    title: 'Steckbrief',
+    items: [
+      { value: 'Seit 2006', label: 'Erfahrung' },
+      { value: 'Über 50', label: 'Mitarbeitende' },
+      { value: 'Über 120', label: 'Kunden' },
+      { value: 'CHF 10 Mio.', label: 'Deckung der Betriebshaftpflicht' },
+    ],
+    note: 'Stand September 2026',
+  },
+  // Baustein 8.2: filtert Anfragen, die nicht passen (E28, E29, E34, R10c, GARTEN)
+  fit: {
+    title: 'Wann wir passen, und wann nicht',
+    intro: 'Das sagen wir lieber vor dem ersten Termin. So verliert niemand Zeit mit einer Anfrage, die nicht zu uns passt.',
+    yesTitle: 'Gut passen wir, wenn Sie',
+    yes: [
+      'als Verwaltung, Eigentümerschaft oder Stockwerkeigentümerschaft ein Haus reinigen oder betreuen lassen, mit [Hauswartung](/leistungen/hauswartung) und [Unterhaltsreinigung](/leistungen/unterhaltsreinigung)',
+      'Büros, Praxen, Gewerbeflächen oder Hallen mehrmals pro Woche reinigen lassen: [Büro- und Praxisreinigung](/leistungen/bueroreinigung), [Industrie- und Hallenreinigung](/leistungen/industrie-und-hallenreinigung)',
+      'Reinigung, Hauswartung und Umgebung in einem Vertrag bündeln möchten, als [Facility Services](/leistungen/facility-services)',
+      'einen einzelnen Einsatz planen, etwa eine [Grundreinigung](/leistungen/sonderreinigungen), die [Baureinigung](/leistungen/baureinigung) vor der Übergabe oder die [Umzugsreinigung](/leistungen/umzugsreinigung) zwischen zwei Mietverhältnissen',
+      `privat eine Villa, eine Zweitwohnung, einen Privatjet oder eine Yacht pflegen lassen: dafür gibt es [${premiumLabel}](/premium)`,
+    ],
+    noTitle: 'Nicht passen wir für',
+    no: [
+      'Winterdienst und Schneeräumung',
+      'Pikett rund um die Uhr',
+      'die Endreinigung einer einzelnen Mietwohnung im Auftrag der Mieterin oder des Mieters',
+      'die Reinigung normaler Privathaushalte',
+      'Gartenbau und Neuanlagen',
+    ],
+    note: `Was eine einzelne Leistung nicht umfasst, steht auf ihrer Seite unter «${ui.notIncluded}».`,
+  },
+  // Arbeitsweise (E80): Werte als Handlungen, nur bestätigte Punkte (E18, E56, E41)
   work: {
     title: 'So arbeiten wir',
-    intro: 'Vier Grundsätze, die bei jedem Auftrag gelten, von der Büroreinigung bis zur Hauswartung.',
+    intro: 'Vier Regeln für jeden Auftrag, ob Treppenhaus, Büro oder Halle.',
     items: [
       {
-        title: 'Erst ansehen, dann offerieren',
+        title: 'Erst das Objekt, dann der Preis',
         paragraphs: [
-          'Bodenbeläge, Glasflächen, Nutzung und Zugang bestimmen den Aufwand. Darum sehen wir uns Ihr Objekt zuerst vor Ort an und klären mit Ihnen Umfang, Rhythmus und Zeiten.',
-          'Einen Preis nennen wir erst danach, schriftlich in der Offerte, kostenlos und unverbindlich.',
+          'Wie viel Arbeit eine Reinigung macht, zeigt sich erst vor Ort: an Bodenbelägen und Glasflächen, an der Nutzung, an Wegen und Zugängen.',
+          'Einen Preis am Telefon nennen wir deshalb nicht. Ohne Besichtigung würde er oft nicht stimmen.',
+          'Die Offerte folgt nach diesem Termin, schriftlich und ohne Kosten für Sie.',
         ],
       },
       {
-        title: 'Klar vereinbart',
+        title: 'Umfang und Grenzen schriftlich',
         paragraphs: [
-          'Mit Ihrer Zusage steht fest, welche Räume und Aufgaben dazugehören, wie oft wir kommen und zu welchen Zeiten. Den Zugang regeln wir vorher, etwa mit Schlüssel oder Badge.',
-          'Was nicht dazugehört, sagen wir offen und nennen die passende Leistung.',
+          'Die Offerte nennt Räume und Aufgaben, den Rhythmus und die Einsatzzeiten. Mit Ihrer Zusage wird daraus die Vereinbarung, samt der Regel, wie wir ins Gebäude kommen, etwa mit Schlüssel oder Badge.',
+          'Was nicht dazugehört, nennen wir ebenso deutlich, zusammen mit der Leistung, die dafür passt.',
+          'Bei der [Umzugsreinigung](/leistungen/umzugsreinigung) gilt unsere Abnahmegarantie: Hat die Verwaltung bei der Abnahme etwas an unserer Reinigung auszusetzen, reinigen wir kostenlos nach.',
         ],
       },
       {
-        title: 'Kurze Wege',
+        title: 'Kurze Wege, feste Regeln',
         paragraphs: [
-          `Ihre Anfrage bearbeitet der Geschäftsführer persönlich, Sie hören ${company.responseTime} von uns.`,
-          'Wer mehrere Leistungen braucht, bündelt sie als [Facility Services](/leistungen/facility-services) in einem Vertrag, mit einer Ansprechperson für alles.',
+          `Anfragen gehen ohne Umweg an den Geschäftsführer. Eine Antwort erhalten Sie ${company.responseTime}.`,
+          'Im Premium-Bereich kommt immer dasselbe Team. Schlüssel und Alarm handhaben wir dort nach festen Regeln, eine Geheimhaltungsvereinbarung unterzeichnen wir auf Wunsch.',
         ],
       },
       {
-        title: 'Material und Mittel',
+        title: 'Passend zum Material',
         paragraphs: [
-          'Bei der Unterhaltsreinigung füllen wir Verbrauchsmaterial wie Papier und Seife nach. Auf Wunsch reinigen wir mit umweltfreundlichen Mitteln.',
-          'Naturstein, Parkett und Hochglanzflächen reinigen wir materialgerecht, mit Rücksicht auf empfindliche Oberflächen.',
+          'Marmor und Kalkstein vertragen keine sauren Reiniger, geöltes Parkett nur wenig Wasser. Mittel und Geräte richten sich deshalb nach dem Belag, nicht nach der Gewohnheit.',
+          'Papier, Seife und anderes Verbrauchsmaterial füllen wir bei der laufenden Reinigung nach. Wer das Material beschafft, Sie oder wir, steht in der Vereinbarung.',
+          'Umweltfreundliche Mittel setzen wir ein, wenn Sie das wünschen.',
         ],
       },
     ] satisfies { title: string; paragraphs: string[] }[],
   },
-  // Geschichte: nur belegte Eckdaten (E18, E58), keine erfundene Gründungsgeschichte
-  history: {
-    title: 'Seit 2006 in der Region',
-    items: [
-      { label: '2006', title: 'Der Anfang', text: 'Seit 2006 sind wir in der Reinigung und Hauswartung tätig.' },
-      {
-        label: 'Heute',
-        title: 'Über 50 Mitarbeitende, über 120 Kunden',
-        text: 'Stand September 2026. Wir arbeiten für Unternehmen, Verwaltungen, Eigentümer und Privatkunden mit besonderen Ansprüchen.',
-      },
-      {
-        label: 'Sitz',
-        title: company.address.city,
-        text: `Die ${company.legalName} ist im ${company.register} eingetragen.`,
-      },
+  // Baustein 8.1: Registerdaten zum Nachprüfen, gelesen am 28.09.2026 (UID-Register, Zefix, Fedlex)
+  check: {
+    kind: 'table',
+    id: 'firmenangaben',
+    title: 'Firmenangaben zum Nachprüfen',
+    intro: 'Für Ihre Lieferantenakte: unsere Angaben, und wo Sie jede davon in einem öffentlichen Register selbst prüfen.',
+    columns: ['Angabe', 'Eintrag', 'Nachprüfen'],
+    rows: [
+      ['Firma', company.legalName, '[Zefix](https://www.zefix.admin.ch/de/search/entity/list/firm/412716), der Firmenindex des Bundes'],
+      ['Sitz und Adresse', `Sitz ${company.seat} LU, ${company.address.street}, ${company.address.postalCode} ${company.address.city}`, '[UID-Register](https://www.uid.admin.ch/Detail.aspx?uid_id=CHE108687458) des Bundesamts für Statistik'],
+      ['Firmennummer', `${company.registerNumber}, ${company.register}`, '[Handelsregisterauszug](https://lu.chregister.ch/cr-portal/auszug/auszug.xhtml?uid=CHE-108.687.458) des Kantons Luzern'],
+      ['UID', company.uid, 'UID-Register, Kernmerkmale'],
+      ['Mehrwertsteuernummer', company.vat, 'UID-Register, Mehrwertsteuerdaten'],
     ],
-  },
+    note: 'Zum Abgleich von Offerte und Rechnung: Das OR sieht vor, dass die im Handelsregister eingetragene Firma in der Korrespondenz und auf Rechnungen vollständig und unverändert steht (Art. 954a OR). Kurzbezeichnungen, Logos und Geschäftsbezeichnungen dürfen zusätzlich erscheinen. Nach dem Mehrwertsteuergesetz nennt eine Rechnung in der Regel auch die Nummer, unter der die Firma im MWST-Register eingetragen ist (Art. 26 MWSTG).',
+    sources: [
+      { label: 'Zefix, Eintrag BGS - Gebäudeservice GmbH', href: 'https://www.zefix.admin.ch/de/search/entity/list/firm/412716' },
+      { label: 'UID-Register, CHE-108.687.458', href: 'https://www.uid.admin.ch/Detail.aspx?uid_id=CHE108687458' },
+      { label: 'Art. 954a Obligationenrecht (OR)', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_954_a' },
+      { label: 'Art. 26 Mehrwertsteuergesetz (MWSTG)', href: 'https://www.fedlex.admin.ch/eli/cc/2009/615/de#art_26' },
+    ],
+    printable: true,
+    updated: '2026-09-28',
+  } satisfies TableTool as TableTool,
   languages: {
     title: 'Vier Sprachen',
-    text: `Unsere Mitarbeitenden sprechen ${listDe(company.languages)}. Das erleichtert Absprachen mit internationalen Teams, mit Mieterinnen und Mietern und mit Kundinnen und Kunden, die lieber in ihrer Sprache sprechen. Diese Website gibt es in denselben vier Sprachen.`,
+    text: 'Rückfragen und Absprachen sind bei uns in vier Sprachen möglich: Deutsch, Englisch, Französisch, Italienisch. Das hilft internationalen Firmen, Eigentümern mit Wohnsitz im Ausland und Mieterinnen und Mietern, die ihre Frage lieber in der eigenen Sprache stellen.',
+    switchLabel: 'Diese Seite auf',
   },
   region: {
     title: 'Fünf Kantone, gleiche Bedingungen',
-    text: `Von ${company.address.city} aus arbeiten wir in den Kantonen ${cantonList}. Alle Leistungen bieten wir im ganzen Gebiet an, und für die Anfahrt gelten überall dieselben Bedingungen.`,
-    link: 'Zum Einzugsgebiet',
+    text: `Von ${company.address.city} aus arbeiten wir in fünf ganzen Kantonen, mit allen Leistungen. Die Bedingungen der Anfahrt sind in jedem dieser Kantone dieselben.`,
+    listLabel: 'Die Kantone im Einzelnen',
+    link: 'Zum Einzugsgebiet mit Karte',
   },
-  // Werte als Handlungen (E80): jede Zeile sagt, was wir tun, nicht was wir sind
-  values: {
-    title: 'Unsere Werte im Alltag',
-    intro: 'Werte zeigen sich in dem, was man tut. Darum steht hier, was wir konkret machen.',
-    items: [
-      { key: 'ehrlich', title: 'Ehrlich beim Preis', text: 'Preise nennen wir erst in der schriftlichen Offerte, nachdem wir das Objekt gesehen haben. Ein Preis ohne Besichtigung würde später oft nicht stimmen.' },
-      { key: 'klar', title: 'Klar im Umfang', text: 'Auf jeder Leistungsseite steht auch, was nicht dazugehört, mit einem Verweis auf die passende Leistung.' },
-      { key: 'nachbessern', title: 'Wir stehen dafür ein', text: 'Beanstandet die Verwaltung nach einer Umzugsreinigung etwas an unserer Arbeit, reinigen wir kostenlos nach. Die Einzelheiten stehen in der Offerte.' },
-      { key: 'versichert', title: 'Verantwortung', text: 'Für Schäden bei der Arbeit haben wir eine Betriebshaftpflichtversicherung mit einer Deckung von CHF 10 Mio.' },
-      { key: 'diskret', title: 'Diskret', text: 'Im Premium-Bereich unterzeichnen wir auf Wunsch eine Geheimhaltungsvereinbarung. Schlüssel und Alarm handhaben wir nach festen Regeln.' },
-      { key: 'umwelt', title: 'Rücksicht auf die Umwelt', text: 'Auf Wunsch reinigen wir mit umweltfreundlichen Mitteln. Sagen Sie es uns bei der Besichtigung.' },
-    ] satisfies KeyedCard<ValueKey>[] as KeyedCard<ValueKey>[],
-  },
-  contact: {
-    title: 'Ihre Ansprechperson',
-    text: `Ihre Anfrage geht direkt an den Geschäftsführer. Er meldet sich ${company.responseTime}.`,
-  },
-  register: { title: 'Registerdaten', court: company.register as string, uid: 'UID' },
-  statsLabel: 'In Zahlen',
-  faq: [faq.kosten, faq.gebiet, faq.kurzfristig],
   cta: {
     title: 'Besichtigung vereinbaren',
-    text: 'Bei der Besichtigung sehen wir uns Ihr Objekt an und klären Umfang und Zeiten. Danach erhalten Sie eine schriftliche Offerte.',
+    text: 'Nennen Sie uns Objekt, Ort und die gewünschte Leistung. Besichtigung und Offerte sind kostenlos und unverbindlich.',
   },
 }
 

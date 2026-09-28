@@ -120,8 +120,8 @@ export const pages = {
   },
   '/ueber-uns': {
     label: 'Chi siamo',
-    title: 'Chi siamo',
-    description: `${company.legalName} di ${company.address.city}: dal 2006, oltre 50 collaboratori, oltre 120 clienti, consulenza in tedesco, inglese, francese e italiano.`,
+    title: 'Chi siamo: pulizia e custodia di stabili dal 2006',
+    description: `${company.legalName} di ${company.address.city}: come lavoriamo, per chi siamo adatti e dati del registro da verificare. Offerta gratuita dopo il sopralluogo.`,
   },
   '/kontakt': {
     label: 'Contatto',

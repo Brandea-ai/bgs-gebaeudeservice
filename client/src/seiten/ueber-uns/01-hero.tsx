@@ -6,12 +6,14 @@ import { company } from "../../../../shared/company";
 import { ueberUnsKontext, type UeberUnsProps } from "./kontext";
 
 /**
- * Kopf (E84): Bild, «seit 2006» als Titel, ein Satz, Aktionen. Die belegten
- * Kennzahlen (E18, E58) stehen im IntroBand darunter, statisch und ohne Zähler.
+ * Kopf (E84): Bild, Titel, ein Satz, Aktionen. Darunter der Steckbrief: links
+ * wer hinter der Marke steht, rechts die belegten Kennzahlen (E18, E58) mit
+ * Stichtag, statisch und ohne Zähler. Die Zeitleiste und die zweite
+ * Kennzahlenreihe sind entfallen (Audit visuell: «2006» sechsmal).
  */
 export default function UeberUnsHero(props: UeberUnsProps) {
   const { lang } = props;
-  const { dict, ui, seiten, about } = ueberUnsKontext(props);
+  const { dict, ui, about } = ueberUnsKontext(props);
   return (
     <>
       <PageHero
@@ -36,12 +38,15 @@ export default function UeberUnsHero(props: UeberUnsProps) {
         </div>
       </PageHero>
       <IntroBand
-        id="kennzahlen-titel"
-        title={about.statsLabel}
+        id="steckbrief-titel"
+        title={about.profile.title}
         paragraphs={[about.lead]}
         lang={lang}
         aside={
-          <FigureGrid items={seiten.proof} labelledBy="kennzahlen-titel" />
+          <>
+            <FigureGrid items={about.profile.items} labelledBy="steckbrief-titel" />
+            <p className="mt-3 text-sm font-semibold text-ink-600">{about.profile.note}</p>
+          </>
         }
       />
     </>

@@ -121,8 +121,8 @@ export const pages = {
   },
   '/ueber-uns': {
     label: 'Über uns',
-    title: 'Über uns',
-    description: `${company.legalName} aus ${company.address.city}: seit 2006, über 50 Mitarbeitende, über 120 Kunden, Beratung auf Deutsch, Englisch, Französisch und Italienisch.`,
+    title: 'Über uns: Reinigung und Hauswartung seit 2006',
+    description: `${company.legalName} aus ${company.address.city}: wie wir arbeiten, für wen wir passen und Registerdaten zum Nachprüfen. Kostenlose Offerte nach Besichtigung.`,
   },
   '/kontakt': {
     label: 'Kontakt',

@@ -120,8 +120,8 @@ export const pages = {
   },
   '/ueber-uns': {
     label: 'À propos',
-    title: 'À propos de nous',
-    description: `${company.legalName}, ${company.address.city} : depuis 2006, plus de 50 collaborateurs, plus de 120 clients, conseil en allemand, anglais, français et italien.`,
+    title: 'À propos : nettoyage et conciergerie depuis 2006',
+    description: `${company.legalName}, ${company.address.city} : notre façon de travailler, pour qui nous convenons et données du registre à vérifier. Devis gratuit après une visite.`,
   },
   '/kontakt': {
     label: 'Contact',

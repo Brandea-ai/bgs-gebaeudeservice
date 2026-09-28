@@ -5,17 +5,17 @@ import { pageJsonLd } from "../../../../shared/structured-data";
 import type { UeberUnsProps } from "./kontext";
 import UeberUnsHero from "./01-hero";
 import UeberUnsArbeitsweise from "./02-arbeitsweise";
-import UeberUnsGeschichte from "./03-geschichte";
+import UeberUnsPassen from "./03-passen";
 import UeberUnsSprachenGebiet from "./04-sprachen-gebiet";
-import UeberUnsWerte from "./05-werte";
-import UeberUnsAnsprechperson from "./06-ansprechperson";
-import UeberUnsFragen from "./07-fragen";
+import UeberUnsNachpruefen from "./05-nachpruefen";
 
 /**
- * Über uns (Factory-Strukturnorm, E80): nur Reihenfolge. Kopf mit Kennzahlen,
- * Arbeitsweise, Geschichte, Sprachen und Gebiet, Werte, Ansprechperson mit
- * Registerdaten, Einwände; den Abschluss mit dem Formular trägt PageFrame.
- * Keine Personenbilder als «Team» (E19).
+ * Über uns (Factory-Strukturnorm, E80; Umbau E85 nach Audit 25, Abschnitt 8):
+ * nur Reihenfolge. Kopf mit Steckbrief, Arbeitsweise, für wen wir passen,
+ * Sprachen und Gebiet mit echten Links, Firmenangaben zum Nachprüfen; den
+ * Abschluss mit dem Formular trägt PageFrame. Jede Aussage steht nur einmal
+ * auf der Seite, «2006» höchstens zweimal. Keine Personenbilder als «Team»
+ * (E19), kein Name des Geschäftsführers (offene Frage F6).
  */
 export default function UeberUns(props: UeberUnsProps) {
   const { about } = getDict(props.lang).seiten;
@@ -24,11 +24,9 @@ export default function UeberUns(props: UeberUnsProps) {
       <JsonLd data={pageJsonLd("/ueber-uns", "AboutPage", props.lang)} />
       <UeberUnsHero {...props} />
       <UeberUnsArbeitsweise {...props} />
-      <UeberUnsGeschichte {...props} />
+      <UeberUnsPassen {...props} />
       <UeberUnsSprachenGebiet {...props} />
-      <UeberUnsWerte {...props} />
-      <UeberUnsAnsprechperson {...props} />
-      <UeberUnsFragen {...props} />
+      <UeberUnsNachpruefen {...props} />
     </PageFrame>
   );
 }

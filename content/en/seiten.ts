@@ -2,7 +2,7 @@ import { company, premiumLabel } from '../../shared/company'
 import type { PagePath } from '../../shared/seo'
 import type { Dictionary } from '../de'
 import type { Step } from '../types'
-import { answers, cantons, languages, premiumLine, register, responseTime, steps } from './common'
+import { answers, cantons, languages, premiumLine, register, responseTime, steps, ui } from './common'
 
 /**
  * English texts of the home page, About us, Contact, Service area and the two
@@ -150,8 +150,10 @@ export const home: Seiten['home'] = {
 }
 
 export const about: Seiten['about'] = {
-  h1: `Cleaning and caretaking from ${company.address.city}, since 2006`,
-  lead: `We have been working in cleaning and caretaking since 2006. Today, over 50 employees look after more than 120 clients in the cantons of ${cantons}, in ${languages}.`,
+  h1: 'About us: cleaning and caretaking since 2006',
+  lead: company.premiumBrand
+    ? `${company.brand} is the brand of ${company.legalName}, based in ${company.address.city}. We clean and look after residential buildings, offices, practices and halls in Central Switzerland and in Aargau.`
+    : `${company.legalName}, based in ${company.address.city}, cleans and looks after residential buildings, offices, practices and halls in Central Switzerland and in Aargau.`,
   promises: {
     title: 'What you can rely on',
     items: [
@@ -163,87 +165,111 @@ export const about: Seiten['about'] = {
       { key: 'umwelt', title: 'Environmentally friendly products', text: 'On request, we clean with environmentally friendly products.' },
     ],
   },
+  profile: {
+    title: 'Company profile',
+    items: [
+      { value: 'Since 2006', label: 'Experience' },
+      { value: 'Over 50', label: 'Employees' },
+      { value: 'Over 120', label: 'Clients' },
+      { value: 'CHF 10m', label: 'Business liability cover' },
+    ],
+    note: 'As of September 2026',
+  },
+  fit: {
+    title: 'When we are the right choice, and when we are not',
+    intro: 'We would rather say so before the first appointment. That way nobody spends time on an enquiry that does not suit us.',
+    yesTitle: 'We are a good fit if you',
+    yes: [
+      'are a property manager, owner or condominium owners’ association and want a building cleaned or looked after, with [caretaking](/leistungen/hauswartung) and [maintenance cleaning](/leistungen/unterhaltsreinigung)',
+      'need offices, practices, commercial premises or halls cleaned several times a week: [office and practice cleaning](/leistungen/bueroreinigung), [industrial and warehouse cleaning](/leistungen/industrie-und-hallenreinigung)',
+      'want cleaning, caretaking and grounds maintenance combined in one contract, as [facility services](/leistungen/facility-services)',
+      'are planning a one-off job, such as a [deep clean](/leistungen/sonderreinigungen), [construction cleaning](/leistungen/baureinigung) before handover or [end-of-tenancy cleaning](/leistungen/umzugsreinigung) between two tenancies',
+      `are a private client with a villa, a second home, a private jet or a yacht to be cared for: that is what [${premiumLabel}](/premium) is for`,
+    ],
+    noTitle: 'We are not the right choice for',
+    no: [
+      'winter services and snow clearing',
+      'an on-call service around the clock',
+      'the end-of-tenancy cleaning of a single rented flat on behalf of the tenant',
+      'the regular cleaning of ordinary private homes',
+      'landscaping and new gardens',
+    ],
+    note: `What a particular service does not cover is listed on its page under “${ui.notIncluded}”.`,
+  },
   work: {
     title: 'How we work',
-    intro: 'Four principles that apply to every assignment, from office cleaning to caretaking.',
+    intro: 'Four rules for every assignment, whether a stairwell, an office or a hall.',
     items: [
       {
-        title: 'Look first, then quote',
+        title: 'The property first, then the price',
         paragraphs: [
-          'Floor coverings, glass surfaces, use and access determine the effort involved. That is why we first look at your property on site and clarify the scope, schedule and times with you.',
-          'Only then do we name a price, in writing in the quote, free of charge and non-binding.',
+          'How much work a cleaning job involves only becomes clear on site: floor coverings and glass surfaces, how the premises are used, routes and access.',
+          'That is why we do not give prices over the phone. Without a site visit, they would often be wrong.',
+          'The quote follows after this appointment, in writing and at no cost to you.',
         ],
       },
       {
-        title: 'Clearly agreed',
+        title: 'Scope and limits in writing',
         paragraphs: [
-          'Once you accept, it is settled which rooms and tasks are included, how often we come and at what times. We arrange access beforehand, for example with a key or badge.',
-          'We say openly what is not included and name the service that fits.',
+          'The quote lists the rooms and tasks, the frequency and the working hours. Once you accept, it becomes the agreement, including how we get into the building, for example with a key or badge.',
+          'We state just as clearly what is not included, together with the service that covers it.',
+          '[End-of-tenancy cleaning](/leistungen/umzugsreinigung) comes with our handover guarantee: if the property management finds fault with our cleaning at the handover, we clean again free of charge.',
         ],
       },
       {
-        title: 'Short lines of communication',
+        title: 'Short lines, fixed rules',
         paragraphs: [
-          `Your enquiry is handled personally by our managing director, and you will hear from us ${responseTime}.`,
-          'If you need several services, you can combine them as [facility services](/leistungen/facility-services) in one contract, with one contact person for everything.',
+          `Enquiries go straight to the managing director, with no one in between. The answer reaches you ${responseTime}.`,
+          'For premium clients, it is always the same team. There, we handle keys and alarms according to fixed rules, and we sign a non-disclosure agreement on request.',
         ],
       },
       {
-        title: 'Materials and products',
+        title: 'Suited to the material',
         paragraphs: [
-          'With maintenance cleaning, we restock consumables such as paper and soap. On request, we clean with environmentally friendly products.',
-          'We clean natural stone, parquet and high-gloss surfaces to suit the material, with care for sensitive surfaces.',
+          'Marble and limestone do not tolerate acidic cleaners, and oiled parquet only a little water. Products and equipment therefore depend on the surface, not on habit.',
+          'We restock paper, soap and other consumables as part of regular cleaning. Who buys the supplies, you or us, is set out in the agreement.',
+          'We use environmentally friendly products if you would like us to.',
         ],
       },
     ],
   },
-  history: {
-    title: 'In the region since 2006',
-    items: [
-      { label: '2006', title: 'The beginning', text: 'We have been working in cleaning and caretaking since 2006.' },
-      {
-        label: 'Today',
-        title: 'Over 50 employees, over 120 clients',
-        text: 'As of September 2026. We work for businesses, property managers, owners and private clients with exacting standards.',
-      },
-      {
-        label: 'Head office',
-        title: company.address.city,
-        text: `${company.legalName} is entered in the ${register}.`,
-      },
+  check: {
+    kind: 'table',
+    id: 'firmenangaben',
+    title: 'Company details you can check',
+    intro: 'For your supplier records: our details, and the public register in which you can check each of them yourself.',
+    columns: ['Detail', 'Entry', 'Where to check'],
+    rows: [
+      ['Company name', company.legalName, '[Zefix](https://www.zefix.admin.ch/en/search/entity/list/firm/412716), the federal index of companies'],
+      ['Registered office and address', `Registered office ${company.seat} LU, ${company.address.street}, ${company.address.postalCode} ${company.address.city}`, '[UID register](https://www.uid.admin.ch/Detail.aspx?uid_id=CHE108687458) of the Federal Statistical Office'],
+      ['Company number', `${company.registerNumber}, ${register}`, '[Commercial register extract](https://lu.chregister.ch/cr-portal/auszug/auszug.xhtml?uid=CHE-108.687.458) of the canton of Lucerne'],
+      ['UID (business identification number)', company.uid, 'UID register, core data'],
+      ['VAT number', company.vat, 'UID register, VAT data'],
     ],
+    note: 'For checking quotes and invoices: the Code of Obligations provides that the name entered in the commercial register appears in full and unamended in correspondence and on invoices (Art. 954a CO). Shortened names, logos and trade names may also be used. Under the VAT Act, an invoice as a rule also states the number under which the company is entered in the VAT register (Art. 26 VAT Act).',
+    sources: [
+      { label: 'Zefix, entry for BGS - Gebäudeservice GmbH', href: 'https://www.zefix.admin.ch/en/search/entity/list/firm/412716' },
+      { label: 'UID register, CHE-108.687.458', href: 'https://www.uid.admin.ch/Detail.aspx?uid_id=CHE108687458' },
+      { label: 'Art. 954a Code of Obligations (CO)', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/en#art_954_a' },
+      { label: 'Art. 26 Value Added Tax Act (VAT Act)', href: 'https://www.fedlex.admin.ch/eli/cc/2009/615/en#art_26' },
+    ],
+    printable: true,
+    updated: '2026-09-28',
   },
   languages: {
     title: 'Four languages',
-    text: `Our employees speak ${languages}. This makes it easier to agree things with international teams, with tenants and with clients who prefer to speak their own language. This website is available in the same four languages.`,
+    text: 'Questions and arrangements are possible in four languages: German, English, French, Italian. That helps international companies, owners who live abroad and tenants who would rather ask their question in their own language.',
+    switchLabel: 'This page in',
   },
   region: {
     title: 'Five cantons, the same terms',
-    text: `From ${company.address.city}, we work in the cantons of ${cantons}. We offer all our services throughout the area, and the same travel terms apply everywhere.`,
-    link: 'View service area',
+    text: `From ${company.address.city}, we work throughout five cantons, with all our services. The travel terms are the same in each of them.`,
+    listLabel: 'The cantons in detail',
+    link: 'Service area with map',
   },
-  values: {
-    title: 'Our values in everyday work',
-    intro: 'Values show in what you do. That is why this lists what we actually do.',
-    items: [
-      { key: 'ehrlich', title: 'Honest about prices', text: 'We only name prices in the written quote, after we have seen the property. A price without a site visit would often turn out to be wrong later.' },
-      { key: 'klar', title: 'Clear about scope', text: 'Every service page also states what is not included, with a link to the service that fits.' },
-      { key: 'nachbessern', title: 'We stand by our work', text: 'If the property manager finds fault with our move-out cleaning at the handover, we clean again free of charge. The details are set out in the quote.' },
-      { key: 'versichert', title: 'Responsibility', text: 'For damage during our work, we have business liability insurance with cover of CHF 10 million.' },
-      { key: 'diskret', title: 'Discreet', text: 'In our premium services, we sign a non-disclosure agreement on request. We handle keys and alarms according to fixed rules.' },
-      { key: 'umwelt', title: 'Care for the environment', text: 'On request, we clean with environmentally friendly products. Just let us know during the site visit.' },
-    ],
-  },
-  contact: {
-    title: 'Your contact person',
-    text: `Your enquiry goes directly to our managing director. He will get back to you ${responseTime}.`,
-  },
-  register: { title: 'Registration details', court: register, uid: 'UID' },
-  statsLabel: 'In figures',
-  faq: [faq.kosten, faq.gebiet, faq.kurzfristig],
   cta: {
     title: 'Arrange a site visit',
-    text: 'During the site visit, we look at your property and clarify the scope and times. You then receive a written quote.',
+    text: 'Tell us about the property, its location and the service you need. The site visit and the quote are free of charge and non-binding.',
   },
 }
 
