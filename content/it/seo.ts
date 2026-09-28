@@ -90,8 +90,8 @@ export const pages = {
   },
   '/leistungen/facility-services': {
     label: 'Facility services',
-    title: 'Facility services da un solo fornitore',
-    description: 'Pulizia, custodia e cura delle aree esterne in un unico contratto con un solo interlocutore. Per amministrazioni immobiliari e aziende a Lucerna e Zugo.',
+    title: 'Facility services a Lucerna e Zugo, un solo contratto',
+    description: 'Facility services a Lucerna, Zugo e dintorni: pulizia, custodia e cura delle aree esterne in un unico contratto. Offerta gratuita dopo il sopralluogo.',
   },
   '/einzugsgebiet': {
     label: 'Zona d’intervento',
