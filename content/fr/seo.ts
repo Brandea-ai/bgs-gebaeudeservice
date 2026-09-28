@@ -30,8 +30,8 @@ export const pages = {
   },
   '/premium/privatjet': {
     label: 'Jet privé',
-    title: 'Nettoyage de jets privés',
-    description: 'Nettoyage de cabine pour jets privés, dans le respect des matériaux haut de gamme. Discret, selon entente et avec des équipes fixes.',
+    title: 'Nettoyage de jet privé : cabine et office de bord',
+    description: 'Nettoyage de jet privé pour la cabine, l’office de bord et les toilettes, avec les produits approuvés pour votre appareil. Devis gratuit après une visite.',
   },
   '/premium/yacht': {
     label: 'Yacht',
