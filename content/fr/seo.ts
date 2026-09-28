@@ -70,8 +70,8 @@ export const pages = {
   },
   '/leistungen/fenster-und-fassadenreinigung': {
     label: 'Nettoyage de vitres et de façades',
-    title: 'Nettoyage de vitres et de façades',
-    description: `Nettoyage de fenêtres, vitrages et façades, aussi à haute pression, pour entreprises et immeubles. Cantons de ${region}.`,
+    title: 'Nettoyage de vitres et de façades à Lucerne',
+    description: 'Nettoyage de vitres et de façades pour immeubles et entreprises à Lucerne, Zoug et environs, avec check-lists à imprimer. Devis gratuit après une visite.',
   },
   '/leistungen/industrie-und-hallenreinigung': {
     label: 'Nettoyage industriel et de halles',
