@@ -8,17 +8,17 @@ export const industrieUndHallen: ServicePageContent = {
   eyebrow: 'Production, entrepôt et atelier',
   h1: 'Nettoyage industriel et de halles pour la production et l’entreposage',
   lead: [
-    'Sur les sols de halles restent des copeaux, de l’abrasion de pneus et des films d’huile, tandis que la poussière et le lubrifiant réfrigérant s’accumulent sur les machines. Une halle peut rarement s’arrêter pour le nettoyage.',
+    'Sur les sols de halles restent des copeaux, des traces de pneus et des films d’huile, tandis que la poussière et le lubrifiant réfrigérant s’accumulent sur les machines. Une halle peut rarement s’arrêter pour le nettoyage.',
     'C’est pourquoi chaque zone a son propre rythme : les allées entre deux équipes, les locaux du personnel en dehors des pauses, les machines pendant les arrêts planifiés. Sur une installation, le nettoyage ne commence qu’une fois qu’elle est arrêtée et protégée contre toute remise en marche.',
   ],
   facts: [
     { label: 'Pour', value: 'Entreprises de production, de logistique et artisanales avec halles et ateliers' },
     { label: 'Horaires d’intervention', value: 'Entre deux équipes, pendant les pauses, les jours d’arrêt et les vacances d’entreprise' },
-    { label: 'Avant la première intervention', value: 'Passation sécurité avec votre service de maintenance' },
+    { label: 'Avant la première intervention', value: 'Passation des consignes de sécurité avec votre service de maintenance' },
     { label: 'Non compris', value: 'Entretien et réparation des machines' },
   ],
   scope: {
-    title: 'Ce que comprend le nettoyage de halles',
+    title: 'Ce que comprend le nettoyage d’usine et de halles',
     intro: 'Typique pour une mission en production et en entrepôt :',
     items: [
       'Sols de halles et de production en béton, avec revêtement ou en parquet industriel',
@@ -41,21 +41,21 @@ export const industrieUndHallen: ServicePageContent = {
       ],
     },
     {
-      title: 'Copeaux, huile et lubrifiant réfrigérant sur les machines',
+      title: 'Nettoyage de machines : copeaux, huile et lubrifiant réfrigérant',
       paragraphs: [
         'Autour des machines-outils, les copeaux s’accumulent sur les capots, autour du socle et au sol, avec du lubrifiant réfrigérant et la poussière d’usinage. Les copeaux vont dans l’aspirateur industriel. Soufflés à l’air comprimé, ils finissent plus loin dans la machine ou dans l’allée voisine.',
         'C’est votre maintenance qui décide ce qui est nettoyé sur une installation : surfaces extérieures, bacs et capots, ou aussi des parties intérieures accessibles seulement à l’arrêt. Les produits qu’une surface supporte figurent en général dans la notice d’utilisation du fabricant.',
-        'L’ordonnance sur la prévention des accidents prévoit que les machines soient mises dans un état sans danger avant le nettoyage. La passation sécurité ci-dessous règle la manière de le faire dans votre entreprise.',
+        'Qui arrête une installation avant le nettoyage et la remet en service ensuite, vous le fixez lors de la passation des consignes de sécurité ci-dessous.',
       ],
     },
     {
       title: 'Occasions typiques en production et en entrepôt',
       items: [
-        'Audit, certification ou visite de client : nettoyage bien avant la date, voir la liste de contrôle ci-dessous',
+        'Audit, certification ou visite de client : nettoyage bien avant la date, voir la liste de contrôle ci-dessus',
         'Vacances d’entreprise et révisions : nettoyage en profondeur des sols, rayonnages et machines pendant que tout est à l’arrêt',
         'Changement de production ou nouvelle ligne : nettoyage avant l’installation de l’équipement',
         'Changement de locataire d’une halle commerciale : nettoyage avant la remise, sur mandat des propriétaires ou de la gérance',
-        'Des horaires de nettoyage fixes plutôt qu’un nettoyage fait à côté, lorsque le personnel s’en charge aujourd’hui lui-même',
+        'Des horaires de nettoyage fixes plutôt qu’un nettoyage fait entre deux tâches, lorsque le personnel s’en charge aujourd’hui lui-même',
       ],
     },
   ],
@@ -63,7 +63,7 @@ export const industrieUndHallen: ServicePageContent = {
     {
       kind: 'checklist',
       id: 'sicherheits-uebergabe',
-      title: 'Passation sécurité avant la première intervention',
+      title: 'Passation des consignes de sécurité',
       intro:
         'Lorsque des travailleurs de plusieurs entreprises sont occupés sur un même lieu de travail, leurs employeurs doivent convenir des mesures de sécurité et s’informer réciproquement des risques (OPA art. 9). Les machines doivent être mises dans un état sans danger avant le nettoyage (art. 43). Cette liste vous permet de passer les deux points en revue avec votre maintenance.',
       groups: [
@@ -90,7 +90,7 @@ export const industrieUndHallen: ServicePageContent = {
           title: 'Substances et eaux usées',
           items: [
             'Quelles substances dangereuses sont stockées ou utilisées dans la zone, et où se trouvent les fiches de données de sécurité ?',
-            'Où l’eau sale de l’autolaveuse peut-elle être vidée ? Une eau contenant de l’huile ne doit pas aller dans une grille qui mène à une infiltration ou à un cours d’eau (LEaux art. 6 et 7).',
+            'Où l’eau sale de l’autolaveuse peut-elle être vidée ? Une eau contenant de l’huile ne doit pas être déversée dans une grille raccordée à une infiltration, à un cours d’eau ou à un lac (LEaux art. 6 et 7).',
             'Où les absorbants et chiffons imbibés d’huile sont-ils collectés, et qui les élimine ?',
           ],
         },
@@ -105,7 +105,7 @@ export const industrieUndHallen: ServicePageContent = {
       ],
       note: 'Cette liste ne remplace ni l’identification des dangers de votre entreprise ni l’instruction sur place. Vérifiez au cas par cas quelles règles de votre branche s’appliquent en plus.',
       sources: [
-        { label: 'Ordonnance sur la prévention des accidents et des maladies professionnelles (OPA, RS 832.30), art. 9 et 43', href: 'https://www.fedlex.admin.ch/eli/cc/1983/1968_1968_1968/fr#art_9' },
+        { label: 'Ordonnance sur la prévention des accidents et des maladies professionnelles (OPA, RS 832.30), art. 6, 9 et 43', href: 'https://www.fedlex.admin.ch/eli/cc/1983/1968_1968_1968/fr#art_9' },
         { label: 'Suva : huit règles vitales pour la maintenance (règles 3 et 4)', href: 'https://www.suva.ch/fr-ch/prevention/regles-vitales-et-dispositions/les-regles-vitales-au-travail/videos-regles-vitales-pour-la-maintenance' },
         { label: 'Suva : liste de contrôle Mesures de protection contre les démarrages intempestifs (67075)', href: 'https://www.suva.ch/67075.F' },
         { label: 'Loi fédérale sur la protection des eaux (LEaux, RS 814.20), art. 6 et 7', href: 'https://www.fedlex.admin.ch/eli/cc/1992/1860_1860_1860/fr#art_6' },
@@ -118,16 +118,15 @@ export const industrieUndHallen: ServicePageContent = {
       id: 'zonenplan',
       title: 'Plan de nettoyage par zone (exemple)',
       intro:
-        'Une halle comporte des zones aux rythmes très différents. Voici à quoi peut ressembler le plan d’une halle de production ou d’entreposage. Chez vous, la fréquence et les créneaux dépendent des équipes, du trafic et de la vitesse à laquelle la salissure s’accumule.',
+        'Exemple pour une halle de production ou d’entreposage. Chez vous, fréquence et créneaux dépendent des équipes, du trafic et de l’encrassement.',
       columns: ['Zone', 'Salissure typique', 'Fréquence (exemple)', 'Créneau', 'Points d’attention'],
       rows: [
-        ['Allées et voies de circulation', 'Poussière, abrasion de pneus, copeaux égarés', 'de quotidienne à hebdomadaire, selon le trafic des chariots', 'entre deux équipes, par tronçons', 'garder le marquage au sol visible, baliser les tronçons mouillés'],
-        ['Production', 'Copeaux, films d’huile et de graisse, lubrifiant réfrigérant', 'selon l’encrassement', 'pauses, changements d’équipe, jours d’arrêt', 'reprendre d’abord les flaques d’huile avec un absorbant, puis nettoyer à l’eau'],
-        ['Entrepôt et rayonnages', 'Poussière sur le sol, les lisses et la marchandise', 'à intervalles plus longs, environ mensuelle à trimestrielle', 'périodes avec peu d’entrées et de sorties de marchandise', 'ne déplacer la marchandise qu’avec autorisation, en hauteur seulement avec des moyens adaptés'],
-        ['Locaux du personnel, vestiaires, sanitaires', 'Hygiène, consommables', 'chaque jour ouvrable', 'en dehors des pauses', 'recharger savon et papier, chiffons séparés pour WC et cuisine'],
-        ['Machines et installations', 'Dépôts, copeaux, poussière d’usinage', 'selon les consignes de la maintenance', 'arrêts planifiés, révisions, vacances d’entreprise', 'uniquement arrêtées et sécurisées, uniquement avec des produits autorisés'],
+        ['Allées et voies de circulation', 'Poussière, traces de pneus, copeaux', 'quotidienne à hebdomadaire', 'entre deux équipes, par tronçons', 'marquage visible, sols mouillés balisés'],
+        ['Production', 'Copeaux, films d’huile et de graisse, lubrifiant réfrigérant', 'selon l’encrassement', 'pauses, changements d’équipe, jours d’arrêt', 'absorber d’abord l’huile, puis nettoyer à l’eau'],
+        ['Entrepôt et rayonnages', 'Poussière sur le sol, les lisses et la marchandise', 'mensuelle à trimestrielle', 'périodes creuses', 'marchandise déplacée sur accord, jamais grimper aux rayonnages'],
+        ['Locaux du personnel et sanitaires', 'Hygiène, consommables', 'chaque jour ouvrable', 'en dehors des pauses', 'recharger savon et papier, chiffons séparés pour les WC'],
+        ['Machines et installations', 'Dépôts, copeaux, poussière d’usinage', 'selon la maintenance', 'arrêts planifiés, révisions, vacances d’entreprise', 'arrêtées et sécurisées, produits autorisés'],
       ],
-      note: 'Une combinaison est souvent judicieuse : un nettoyage courant selon ce plan et un nettoyage en profondeur des sols, rayonnages et machines pendant les vacances d’entreprise, quand tout est à l’arrêt.',
       printable: true,
       updated: '2026-09-28',
     },
@@ -136,14 +135,14 @@ export const industrieUndHallen: ServicePageContent = {
       id: 'vor-dem-audit',
       title: 'Avant un audit ou une visite de client',
       intro:
-        'Une visite passe en général par les voies de circulation, la production, l’entrepôt et les locaux du personnel. Planifiez le nettoyage en deux étapes pour que rien ne soit encore mouillé ou balisé le jour même.',
+        'Une visite passe en général par les allées, la production, l’entrepôt et les locaux du personnel. Planifiez le nettoyage en deux étapes, pour que rien ne soit mouillé le jour même.',
       groups: [
         {
           title: 'Une semaine avant',
           items: [
             'Définir le parcours de la visite : réception des marchandises, production, entrepôt, locaux du personnel',
-            'Choisir la date du nettoyage pour que les sols soient secs et dégagés avant la visite',
-            'Faire nettoyer les surfaces des machines lors du prochain arrêt planifié, pas le jour de l’audit',
+            'Fixer le nettoyage pour que les sols soient secs et dégagés avant la visite',
+            'Faire nettoyer les machines au prochain arrêt planifié, pas le jour de l’audit',
             'Dépoussiérer rayonnages, étagères et tablettes de fenêtre le long du parcours',
           ],
         },
@@ -172,13 +171,13 @@ export const industrieUndHallen: ServicePageContent = {
       figure: 'besichtigung',
     },
     {
-      title: 'Passation sécurité',
+      title: 'Passation des consignes de sécurité',
       text: 'Avant la première intervention, votre maintenance et notre équipe passent la liste de contrôle en revue : arrêt des machines, équipement de protection, voies de circulation, produits autorisés.',
       figure: 'offerte',
     },
     {
       title: 'Interventions au rythme de l’entreprise',
-      text: 'Le nettoyage a lieu dans les créneaux convenus. Si les équipes ou les lignes changent, le plan est adapté avant l’intervention suivante.',
+      text: 'Le nettoyage a lieu dans les créneaux convenus. Si les équipes ou les lignes changent, le plan est adapté avec vous.',
       figure: 'start',
     },
   ],
@@ -196,17 +195,17 @@ export const industrieUndHallen: ServicePageContent = {
     {
       question: 'Qui arrête les machines avant le nettoyage ?',
       answer:
-        'C’est la passation sécurité avant la première intervention qui le règle, installation par installation. L’ordonnance sur la prévention des accidents exige que les machines soient mises dans un état sans danger avant le nettoyage (OPA art. 43) et que les entreprises concernées se coordonnent (art. 9). Ensuite, pour chaque installation, il est clair qui l’arrête, la sécurise et la remet en service.',
+        'Idéalement une personne qui connaît l’installation, par exemple de votre service de maintenance. Elle sait quels interrupteurs, vannes et énergies résiduelles sont en jeu, et remet l’installation en service après le nettoyage. La liste de contrôle de la passation des consignes de sécurité, sur cette page, permet de le fixer pour chaque installation et indique la base légale.',
     },
     {
       question: 'Quelles règles s’appliquent à votre équipe dans notre halle ?',
       answer:
-        'Vos règles de sécurité et d’exploitation, des allées réservées aux chariots jusqu’aux lunettes de protection à la machine. Selon l’OPA art. 6, votre entreprise informe aussi les travailleurs d’autres entreprises des risques à leur poste de travail. Le moment le plus simple pour cela est la passation sécurité.',
+        'Vos règles de sécurité et d’exploitation, des allées réservées aux chariots jusqu’aux lunettes de protection à la machine. Selon l’OPA art. 6, votre entreprise informe aussi les travailleurs d’autres entreprises des risques à leur poste de travail. Le moment le plus simple pour cela est la passation des consignes de sécurité.',
     },
     {
       question: 'Comment nettoie-t-on un sol de halle souillé d’huile ?',
       answer:
-        'Les flaques d’huile sont d’abord reprises avec un absorbant. L’autolaveuse nettoie ensuite la surface avec un dégraissant adapté au revêtement. L’eau sale contient alors de l’huile et ne doit pas aller dans une grille qui mène à une infiltration ou à un cours d’eau (loi sur la protection des eaux, art. 6).',
+        'Une fois les flaques fraîches absorbées, un dégraissant agit brièvement, puis l’autolaveuse brosse et aspire. Dans le béton non imprégné, l’huile ancienne se loge dans les pores. Il faut alors souvent plusieurs passages, et des taches restent parfois visibles. La liste de contrôle de la passation des consignes de sécurité précise où l’eau sale huileuse peut être vidée ou non.',
     },
     {
       question: 'À quelle fréquence faut-il nettoyer une halle de production ?',
@@ -216,7 +215,7 @@ export const industrieUndHallen: ServicePageContent = {
     {
       question: 'Comment préparer la halle à un audit ?',
       answer:
-        'Avec suffisamment d’avance : les sols doivent être secs et dégagés avant la visite, les machines nettoyées lors du dernier arrêt planifié. La liste de contrôle pour les audits, sur cette page, répartit les points entre une semaine avant et la veille.',
+        'Avec suffisamment d’avance : les sols devraient être secs et dégagés avant la visite, les machines nettoyées lors du dernier arrêt planifié. La liste de contrôle pour les audits, sur cette page, répartit les points entre une semaine avant et la veille.',
     },
   ],
   related: [

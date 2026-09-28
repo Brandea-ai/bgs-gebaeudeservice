@@ -8,7 +8,7 @@ export const industrieUndHallen: ServicePageContent = {
   eyebrow: 'Produzione, magazzino e officina',
   h1: 'Pulizia industriale e di capannoni per produzione e magazzino',
   lead: [
-    'Sui pavimenti dei capannoni restano trucioli, abrasione di pneumatici e pellicole d’olio, mentre sulle macchine si depositano polvere e lubrorefrigerante. Raramente un capannone può fermarsi per la pulizia.',
+    'Sui pavimenti dei capannoni restano trucioli, tracce di pneumatici e pellicole d’olio, mentre sulle macchine si depositano polvere e lubrorefrigerante. Raramente un capannone può fermarsi per la pulizia.',
     'Per questo ogni zona ha il suo ritmo: le corsie tra un turno e l’altro, i locali del personale fuori dalle pause, le macchine durante i fermi programmati. Su un impianto la pulizia inizia solo quando è spento e protetto contro il riavvio.',
   ],
   facts: [
@@ -18,7 +18,7 @@ export const industrieUndHallen: ServicePageContent = {
     { label: 'Non compreso', value: 'Manutenzione e riparazione delle macchine' },
   ],
   scope: {
-    title: 'Che cosa comprende la pulizia di capannoni',
+    title: 'Che cosa comprendono le pulizie industriali',
     intro: 'Tipico per un incarico in produzione e magazzino:',
     items: [
       'Pavimenti di capannoni e di produzione in calcestruzzo, con rivestimento o in parquet industriale',
@@ -41,17 +41,17 @@ export const industrieUndHallen: ServicePageContent = {
       ],
     },
     {
-      title: 'Trucioli, olio e lubrorefrigerante sulle macchine',
+      title: 'Pulizia macchinari: trucioli, olio e lubrorefrigerante',
       paragraphs: [
         'Intorno alle macchine utensili i trucioli si accumulano sulle coperture, intorno al basamento e sul pavimento, insieme a lubrorefrigerante e polvere di lavorazione. I trucioli vanno nell’aspiratore industriale. Soffiati via con l’aria compressa, finiscono più in fondo nella macchina o nella corsia accanto.',
         'Che cosa si pulisce su un impianto lo decide la Sua manutenzione: superfici esterne, vasche e coperture o anche parti interne accessibili solo durante il fermo. Quali prodotti sopporta una superficie è di solito indicato nelle istruzioni per l’uso del fabbricante.',
-        'L’ordinanza sulla prevenzione degli infortuni prevede che le macchine siano poste in uno stato non pericoloso prima della pulizia. Come avviene nella Sua azienda lo stabilisce il passaggio di consegne sulla sicurezza qui sotto.',
+        'Chi spegne un impianto prima della pulizia e lo rimette in servizio dopo, lo stabilisce il passaggio di consegne sulla sicurezza qui sotto.',
       ],
     },
     {
       title: 'Occasioni tipiche in produzione e magazzino',
       items: [
-        'Audit, certificazione o visita di un cliente: pulizia con anticipo rispetto alla data, vedi la lista di controllo qui sotto',
+        'Audit, certificazione o visita di un cliente: pulizia con anticipo rispetto alla data, vedi la lista di controllo qui sopra',
         'Ferie aziendali e revisioni: pulizia a fondo di pavimenti, scaffalature e macchine mentre tutto è fermo',
         'Cambio di produzione o nuova linea: pulizia prima dell’installazione dell’impianto',
         'Cambio d’inquilino di un capannone commerciale: pulizia prima della riconsegna, su incarico della proprietà o dell’amministrazione',
@@ -63,7 +63,7 @@ export const industrieUndHallen: ServicePageContent = {
     {
       kind: 'checklist',
       id: 'sicherheits-uebergabe',
-      title: 'Passaggio di consegne sulla sicurezza prima del primo intervento',
+      title: 'Passaggio di consegne sulla sicurezza',
       intro:
         'Se su un posto di lavoro operano lavoratori di più aziende, i datori di lavoro devono concordare i provvedimenti di sicurezza e informarsi reciprocamente sui pericoli (OPI art. 9). Le macchine devono essere poste in uno stato non pericoloso prima della pulizia (art. 43). Con questa lista verifica entrambi i punti con la Sua manutenzione.',
       groups: [
@@ -90,7 +90,7 @@ export const industrieUndHallen: ServicePageContent = {
           title: 'Sostanze e acque di scarico',
           items: [
             'Quali sostanze pericolose sono stoccate o lavorate nella zona, e dove si trovano le schede di dati di sicurezza?',
-            'Dove si può svuotare l’acqua sporca della lavasciuga? L’acqua contenente olio non deve finire in un pozzetto che porta a un’infiltrazione o in un corso d’acqua (LPAc art. 6 e 7).',
+            'Dove si può svuotare l’acqua sporca della lavasciuga? L’acqua contenente olio non deve finire in un pozzetto collegato a un’infiltrazione, a un corso d’acqua o a un lago (LPAc art. 6 e 7).',
             'Dove si raccolgono assorbenti e stracci impregnati d’olio, e chi li smaltisce?',
           ],
         },
@@ -105,7 +105,7 @@ export const industrieUndHallen: ServicePageContent = {
       ],
       note: 'La lista non sostituisce né l’identificazione dei pericoli della Sua azienda né l’istruzione sul posto. Verifichi caso per caso quali regole del Suo settore si applicano in aggiunta.',
       sources: [
-        { label: 'Ordinanza sulla prevenzione degli infortuni e delle malattie professionali (OPI, RS 832.30), art. 9 e 43', href: 'https://www.fedlex.admin.ch/eli/cc/1983/1968_1968_1968/it#art_9' },
+        { label: 'Ordinanza sulla prevenzione degli infortuni e delle malattie professionali (OPI, RS 832.30), art. 6, 9 e 43', href: 'https://www.fedlex.admin.ch/eli/cc/1983/1968_1968_1968/it#art_9' },
         { label: 'Suva: otto regole vitali per la manutenzione (regole 3 e 4)', href: 'https://www.suva.ch/it-ch/prevenzione/regole-vitali-e-disposizioni/regole-vitali-sul-posto-di-lavoro/video-regole-vitali-manutenzione' },
         { label: 'Suva: lista di controllo Avviamento inatteso di macchine e impianti (67075)', href: 'https://www.suva.ch/67075.I' },
         { label: 'Legge federale sulla protezione delle acque (LPAc, RS 814.20), art. 6 e 7', href: 'https://www.fedlex.admin.ch/eli/cc/1992/1860_1860_1860/it#art_6' },
@@ -118,31 +118,30 @@ export const industrieUndHallen: ServicePageContent = {
       id: 'zonenplan',
       title: 'Piano di pulizia per zone (esempio)',
       intro:
-        'Un capannone ha zone con ritmi molto diversi. Ecco come può essere il piano per un capannone di produzione o di stoccaggio. Da Lei frequenza e fasce orarie dipendono da turni, traffico e dalla rapidità con cui si accumula lo sporco.',
+        'Ecco come può essere il piano per un capannone di produzione o di stoccaggio. Nella Sua azienda frequenza e fasce orarie dipendono da turni, traffico e accumulo di sporco.',
       columns: ['Zona', 'Sporco tipico', 'Frequenza (esempio)', 'Fascia oraria', 'A cosa fare attenzione'],
       rows: [
-        ['Corsie e vie di circolazione', 'Polvere, abrasione di pneumatici, trucioli dispersi', 'da giornaliera a settimanale, secondo il traffico dei carrelli', 'tra un turno e l’altro, a tratti', 'tenere visibile la segnaletica a pavimento, delimitare i tratti bagnati'],
-        ['Produzione', 'Trucioli, pellicole d’olio e di grasso, lubrorefrigerante', 'secondo l’accumulo', 'pause, cambi turno, giorni di fermo', 'raccogliere prima le chiazze d’olio con un assorbente, poi pulire a umido'],
-        ['Magazzino e scaffalature', 'Polvere su pavimento, correnti e merce', 'a intervalli più lunghi, circa da mensile a trimestrale', 'momenti con poche entrate e uscite di merce', 'spostare la merce solo con autorizzazione, in altezza solo con mezzi adeguati'],
-        ['Locali del personale, spogliatoi, servizi igienici', 'Igiene, materiale di consumo', 'ogni giorno lavorativo', 'fuori dalle pause', 'rifornire sapone e carta, panni separati per WC e cucina'],
+        ['Corsie e vie di circolazione', 'Polvere, tracce di pneumatici, trucioli', 'da giornaliera a settimanale', 'tra un turno e l’altro, a tratti', 'segnaletica visibile, tratti bagnati delimitati'],
+        ['Produzione', 'Trucioli, pellicole d’olio e di grasso, lubrorefrigerante', 'secondo l’accumulo', 'pause, cambi turno, giorni di fermo', 'prima assorbire l’olio, poi pulire a umido'],
+        ['Magazzino e scaffalature', 'Polvere su pavimento, correnti e merce', 'da mensile a trimestrale', 'momenti con pochi movimenti di merce', 'spostare la merce solo con autorizzazione, mai arrampicarsi sulle scaffalature'],
+        ['Locali del personale, spogliatoi, servizi igienici', 'Igiene, materiale di consumo', 'ogni giorno lavorativo', 'fuori dalle pause', 'rifornire sapone e carta, panni separati per i WC'],
         ['Macchinari e impianti', 'Depositi, trucioli, polvere di lavorazione', 'secondo le indicazioni della manutenzione', 'fermi programmati, revisioni, ferie aziendali', 'solo spenti e messi in sicurezza, solo prodotti ammessi'],
       ],
-      note: 'Spesso conviene una combinazione: pulizia corrente secondo questo piano e pulizia a fondo di pavimenti, scaffalature e macchine durante le ferie aziendali, quando tutto è fermo.',
       printable: true,
       updated: '2026-09-28',
     },
     {
       kind: 'checklist',
       id: 'vor-dem-audit',
-      title: 'Prima di un audit o della visita di un cliente',
+      title: 'Prima di un audit o di una visita cliente',
       intro:
-        'Una visita passa di solito lungo le vie di circolazione, attraverso produzione e magazzino e nei locali del personale. Pianifichi la pulizia in due tappe, così il giorno stesso nulla è ancora bagnato o delimitato.',
+        'Una visita passa di solito per le vie di circolazione, la produzione, il magazzino e i locali del personale. Pianifichi la pulizia in due tappe, così il giorno stesso nulla è bagnato.',
       groups: [
         {
           title: 'Una settimana prima',
           items: [
             'Stabilire il percorso della visita: ricezione merci, produzione, magazzino, locali del personale',
-            'Scegliere la data della pulizia in modo che i pavimenti siano asciutti e sgombri prima della visita',
+            'Fissare la pulizia in modo che i pavimenti siano asciutti e sgombri per la visita',
             'Far pulire le superfici delle macchine durante il prossimo fermo programmato, non il giorno dell’audit',
             'Spolverare scaffalature, ripiani e davanzali lungo il percorso',
           ],
@@ -178,7 +177,7 @@ export const industrieUndHallen: ServicePageContent = {
     },
     {
       title: 'Interventi al ritmo dell’azienda',
-      text: 'Si pulisce nelle fasce orarie concordate. Se cambiano turni o linee, il piano viene adeguato prima dell’intervento successivo.',
+      text: 'Si pulisce nelle fasce orarie concordate. Se cambiano turni o linee, il piano viene adeguato con Lei.',
       figure: 'start',
     },
   ],
@@ -196,7 +195,7 @@ export const industrieUndHallen: ServicePageContent = {
     {
       question: 'Chi spegne le macchine prima della pulizia?',
       answer:
-        'Lo regola il passaggio di consegne sulla sicurezza prima del primo intervento, impianto per impianto. L’ordinanza sulla prevenzione degli infortuni esige che le macchine siano poste in uno stato non pericoloso prima della pulizia (OPI art. 43) e che le aziende coinvolte si accordino (art. 9). In seguito per ogni impianto è chiaro chi lo spegne, lo mette in sicurezza e lo rimette in servizio.',
+        'Idealmente una persona che conosce l’impianto, per esempio della Sua manutenzione. Sa quali interruttori, valvole ed energie residue sono coinvolti e dopo la pulizia rimette in servizio l’impianto. Con la lista di controllo del passaggio di consegne sulla sicurezza, in questa pagina, lo stabilisce per ogni impianto; lì trova anche la base legale.',
     },
     {
       question: 'Quali regole valgono per la vostra squadra nel nostro capannone?',
@@ -206,7 +205,7 @@ export const industrieUndHallen: ServicePageContent = {
     {
       question: 'Come si pulisce un pavimento di capannone sporco d’olio?',
       answer:
-        'Le chiazze d’olio si raccolgono prima con un assorbente. Poi la lavasciuga pulisce la superficie con uno sgrassante adatto al rivestimento. L’acqua sporca contiene quindi olio e non deve finire in un pozzetto che porta a un’infiltrazione o in un corso d’acqua (legge sulla protezione delle acque, art. 6).',
+        'Dopo l’assorbente sulle chiazze fresche si lascia agire brevemente uno sgrassante, poi la lavasciuga spazzola e aspira. Nel calcestruzzo non trattato l’olio più vecchio resta nei pori. Lì servono spesso più passaggi, e a volte le macchie restano visibili. Dove può finire l’acqua sporca oleosa e dove no lo indica la lista di controllo del passaggio di consegne sulla sicurezza.',
     },
     {
       question: 'Ogni quanto va pulito un capannone di produzione?',
@@ -216,7 +215,7 @@ export const industrieUndHallen: ServicePageContent = {
     {
       question: 'Come prepariamo il capannone a un audit?',
       answer:
-        'Con sufficiente anticipo: i pavimenti devono essere asciutti e sgombri prima della visita, le macchine pulite durante l’ultimo fermo programmato. La lista di controllo per gli audit in questa pagina divide i punti tra una settimana prima e il giorno prima.',
+        'Con sufficiente anticipo: i pavimenti dovrebbero essere asciutti e sgombri prima della visita, le macchine pulite durante l’ultimo fermo programmato. La lista di controllo per gli audit in questa pagina divide i punti tra una settimana prima e il giorno prima.',
     },
   ],
   related: [

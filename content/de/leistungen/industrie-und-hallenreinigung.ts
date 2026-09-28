@@ -4,6 +4,7 @@ import type { ServicePageContent } from '../../types'
 // Umbau E85 (28.09.2026): 25-AUDIT/inhalt.md 3.7 (Bausteine 3.7.1 bis 3.7.3), seo.md T2/T4, keywords-mehrsprachig.md.
 // Rechtsaussagen geprüft am 28.09.2026 an der Primärquelle: VUV SR 832.30 (Stand 1. Mai 2018) Art. 6, 9, 19, 43;
 // GSchG SR 814.20 (Stand 1. August 2025) Art. 6, 7; Suva 84040 (Regeln 3 und 4) und 67075.
+// Prüferbefunde IND-1 bis IND-5 und IH-01 bis IH-09 am 28.09.2026 eingearbeitet (Rechtsaussage je einmal, Druck Zonenplan auf einer A4-Seite).
 export const industrieUndHallen: ServicePageContent = {
   path: '/leistungen/industrie-und-hallenreinigung',
   area: 'leistungen',
@@ -43,17 +44,17 @@ export const industrieUndHallen: ServicePageContent = {
       ],
     },
     {
-      title: 'Späne, Öl und Kühlschmierstoff an Maschinen',
+      title: 'Maschinenreinigung: Späne, Öl und Kühlschmierstoff',
       paragraphs: [
         'Rund um Werkzeugmaschinen sammeln sich Späne auf Abdeckungen, im Sockelbereich und am Boden, dazu Kühlschmierstoff und Staub aus der Bearbeitung. Späne gehören in den Industriesauger. Mit Druckluft weggeblasen, landen sie tiefer in der Maschine oder im nächsten Gang.',
         'Was an einer Anlage gereinigt wird, bestimmt Ihre Instandhaltung: Aussenflächen, Wannen und Abdeckungen oder auch Innenräume, die nur im Stillstand zugänglich sind. Welche Mittel eine Oberfläche verträgt, steht meist in der Betriebsanleitung des Herstellers.',
-        'Die Verordnung über die Unfallverhütung sieht vor, dass Maschinen vor dem Reinigen in einen nicht gefährdenden Zustand versetzt sind. Wie das in Ihrem Betrieb geschieht, klärt die Sicherheits-Übergabe unten.',
+        'Wer eine Anlage vor der Reinigung abschaltet und danach wieder freigibt, legen Sie in der Sicherheits-Übergabe unten fest.',
       ],
     },
     {
       title: 'Typische Anlässe in Produktion und Lager',
       items: [
-        'Audit, Zertifizierung oder Kundenbesuch: Reinigung mit Abstand zum Termin, siehe Checkliste unten',
+        'Audit, Zertifizierung oder Kundenbesuch: Reinigung mit Abstand zum Termin, siehe Checkliste oben',
         'Betriebsferien und Revisionen: Grundreinigung von Böden, Regalen und Maschinen, solange alles steht',
         'Umstellung der Produktion oder neue Linie: Reinigung, bevor die Anlage eingerichtet wird',
         'Mieterwechsel einer Gewerbehalle: Reinigung vor der Übergabe, im Auftrag der Eigentümerschaft oder Verwaltung',
@@ -65,7 +66,7 @@ export const industrieUndHallen: ServicePageContent = {
     {
       kind: 'checklist',
       id: 'sicherheits-uebergabe',
-      title: 'Sicherheits-Übergabe vor dem ersten Einsatz',
+      title: 'Sicherheits-Übergabe vor dem Einsatz',
       intro:
         'Arbeiten Mitarbeitende mehrerer Betriebe am selben Ort, müssen sich die Arbeitgeber über Gefahren und Schutzmassnahmen absprechen und gegenseitig informieren (VUV Art. 9). Maschinen müssen vor dem Reinigen in einen nicht gefährdenden Zustand versetzt sein (Art. 43). Mit dieser Liste gehen Sie beides mit Ihrer Instandhaltung durch.',
       groups: [
@@ -107,7 +108,7 @@ export const industrieUndHallen: ServicePageContent = {
       ],
       note: 'Die Liste ersetzt weder die Gefährdungsermittlung Ihres Betriebs noch die Instruktion vor Ort. Klären Sie im Einzelfall, welche Regeln Ihrer Branche zusätzlich gelten.',
       sources: [
-        { label: 'Verordnung über die Verhütung von Unfällen und Berufskrankheiten (VUV, SR 832.30), Art. 9 und 43', href: 'https://www.fedlex.admin.ch/eli/cc/1983/1968_1968_1968/de#art_9' },
+        { label: 'Verordnung über die Verhütung von Unfällen und Berufskrankheiten (VUV, SR 832.30), Art. 6, 9 und 43', href: 'https://www.fedlex.admin.ch/eli/cc/1983/1968_1968_1968/de#art_9' },
         { label: 'Suva: Acht lebenswichtige Regeln für die Instandhaltung (Regeln 3 und 4)', href: 'https://www.suva.ch/de-ch/praevention/lebenswichtige-regeln-und-bestimmungen/lebenswichtige-regeln-am-arbeitsplatz/filme-lebenswichtige-regeln-instandhaltung' },
         { label: 'Suva: Checkliste Unerwarteter Anlauf von Maschinen und Anlagen (67075)', href: 'https://www.suva.ch/67075.D' },
         { label: 'Gewässerschutzgesetz (GSchG, SR 814.20), Art. 6 und 7', href: 'https://www.fedlex.admin.ch/eli/cc/1992/1860_1860_1860/de#art_6' },
@@ -120,16 +121,15 @@ export const industrieUndHallen: ServicePageContent = {
       id: 'zonenplan',
       title: 'Reinigungsplan nach Zonen (Beispiel)',
       intro:
-        'Eine Halle hat Zonen mit ganz unterschiedlichem Takt. So kann der Plan für eine Produktions- oder Lagerhalle aussehen; Rhythmus und Zeitfenster richten sich bei Ihnen nach Schichten, Verkehr und Anfall.',
+        'So kann der Plan für eine Produktions- oder Lagerhalle aussehen. Rhythmus und Zeitfenster richten sich bei Ihnen nach Schichten, Verkehr und Anfall.',
       columns: ['Zone', 'Typische Verschmutzung', 'Rhythmus (Beispiel)', 'Zeitfenster', 'Worauf achten'],
       rows: [
-        ['Fahrgassen und Verkehrswege', 'Staub, Reifenabrieb, verlorene Späne', 'täglich bis wöchentlich, je nach Staplerverkehr', 'zwischen den Schichten, abschnittsweise', 'Bodenmarkierungen sichtbar halten, nasse Abschnitte absperren'],
-        ['Produktion', 'Späne, Öl- und Fettfilme, Kühlschmierstoff', 'nach Anfall', 'Pausen, Schichtwechsel, Stillstandstage', 'Öllachen zuerst binden, erst dann nass reinigen'],
-        ['Lager und Regale', 'Staub auf Boden, Traversen und Ware', 'in grösseren Abständen, etwa monatlich bis vierteljährlich', 'Zeiten mit wenig Ein- und Auslagerung', 'Ware nur mit Freigabe verschieben, in der Höhe nur mit geeigneten Hilfsmitteln'],
-        ['Sozialräume, Garderoben, Sanitär', 'Hygiene, Verbrauchsmaterial', 'an jedem Arbeitstag', 'ausserhalb der Pausen', 'Seife und Papier auffüllen, Tücher für WC und Küche getrennt'],
-        ['Maschinen und Anlagen', 'Ablagerungen, Späne, Staub aus der Bearbeitung', 'nach Vorgabe der Instandhaltung', 'geplante Stillstände, Revisionen, Betriebsferien', 'nur abgeschaltet und gesichert, nur freigegebene Mittel'],
+        ['Fahrgassen und Verkehrswege', 'Staub, Reifenabrieb, Späne', 'täglich bis wöchentlich', 'zwischen den Schichten, abschnittsweise', 'Markierungen sichtbar halten, Nassflächen absperren'],
+        ['Produktion', 'Späne, Öl- und Fettfilme, Kühlschmierstoff', 'nach Anfall', 'Pausen, Schichtwechsel, Stillstandstage', 'Öllachen zuerst binden, dann nass reinigen'],
+        ['Lager und Regale', 'Staub auf Boden, Traversen und Ware', 'monatlich bis vierteljährlich', 'Zeiten mit wenig Ein- und Auslagerung', 'Ware nur mit Freigabe bewegen, nie auf Regale klettern'],
+        ['Sozialräume, Garderoben, Sanitär', 'Hygiene, Verbrauchsmaterial', 'an jedem Arbeitstag', 'ausserhalb der Pausen', 'Seife und Papier auffüllen, eigene Tücher für WC'],
+        ['Maschinen und Anlagen', 'Ablagerungen, Späne, Bearbeitungsstaub', 'nach Vorgabe der Instandhaltung', 'geplante Stillstände, Revisionen, Betriebsferien', 'nur abgeschaltet und gesichert, nur freigegebene Mittel'],
       ],
-      note: 'Oft sinnvoll ist eine Kombination: laufende Reinigung nach diesem Plan und eine Grundreinigung von Böden, Regalen und Maschinen in den Betriebsferien, wenn alles steht.',
       printable: true,
       updated: '2026-09-28',
     },
@@ -180,7 +180,7 @@ export const industrieUndHallen: ServicePageContent = {
     },
     {
       title: 'Einsätze im Takt des Betriebs',
-      text: 'Gereinigt wird in den vereinbarten Zeitfenstern. Ändern sich Schichten oder Linien, wird der Plan vor dem nächsten Einsatz angepasst.',
+      text: 'Gereinigt wird in den vereinbarten Zeitfenstern. Ändern sich Schichten oder Linien, wird der Plan mit Ihnen angepasst.',
       figure: 'start',
     },
   ],
@@ -198,7 +198,7 @@ export const industrieUndHallen: ServicePageContent = {
     {
       question: 'Wer schaltet die Maschinen vor der Reinigung ab?',
       answer:
-        'Das regelt die Sicherheits-Übergabe vor dem ersten Einsatz, Anlage für Anlage. Die Verordnung über die Unfallverhütung verlangt, dass Maschinen vor dem Reinigen in einen nicht gefährdenden Zustand versetzt sind (VUV Art. 43) und dass sich die beteiligten Betriebe absprechen (Art. 9). Wer abschaltet, sichert und wieder freigibt, steht danach für jede Anlage fest.',
+        'Am besten jemand, der die Anlage kennt, etwa aus Ihrer Instandhaltung. Diese Person weiss, welche Schalter, Ventile und Restenergien dazugehören, und gibt die Anlage nach der Reinigung wieder frei. Mit der Checkliste zur Sicherheits-Übergabe auf dieser Seite legen Sie das für jede Anlage fest, dort steht auch die Rechtsgrundlage.',
     },
     {
       question: 'Welche Regeln gelten für Ihr Team in unserer Halle?',
@@ -208,7 +208,7 @@ export const industrieUndHallen: ServicePageContent = {
     {
       question: 'Wie wird ein ölverschmutzter Hallenboden gereinigt?',
       answer:
-        'Öllachen werden zuerst mit Bindemittel aufgenommen. Danach reinigt die Scheuersaugmaschine die Fläche mit einem fettlösenden Mittel, das zum Belag passt. Das Schmutzwasser enthält dann Öl und darf nicht in einen Schacht, der in die Versickerung oder in ein Gewässer führt (Gewässerschutzgesetz Art. 6).',
+        'Nach dem Bindemittel für frische Lachen wirkt ein fettlösendes Mittel kurz ein, dann schrubbt und saugt die Scheuersaugmaschine. In unversiegeltem Beton sitzt älteres Öl in den Poren. Dort braucht es oft mehrere Durchgänge, und Flecken bleiben manchmal sichtbar. Wohin das ölhaltige Schmutzwasser darf und wohin nicht, steht in der Checkliste zur Sicherheits-Übergabe.',
     },
     {
       question: 'Wie oft sollte eine Produktionshalle gereinigt werden?',

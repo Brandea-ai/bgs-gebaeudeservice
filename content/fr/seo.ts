@@ -76,7 +76,7 @@ export const pages = {
   '/leistungen/industrie-und-hallenreinigung': {
     label: 'Nettoyage industriel et de halles',
     title: 'Nettoyage industriel et de halles',
-    description: 'Nettoyage industriel et de halles pour production et entrepôt, planifié par zone et par équipe, avec listes de contrôle. Devis gratuit après une visite.',
+    description: 'Nettoyage industriel et de halles pour la production et l’entrepôt, planifié par zone et par équipe, avec des listes de contrôle. Devis gratuit après visite.',
   },
   '/leistungen/hauswartung': {
     label: 'Conciergerie',

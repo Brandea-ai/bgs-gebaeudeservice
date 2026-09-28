@@ -8,7 +8,7 @@ export const industrieUndHallen: ServicePageContent = {
   eyebrow: 'Production, storage and workshops',
   h1: 'Industrial cleaning and warehouse cleaning for production and storage',
   lead: [
-    'Shavings, tyre abrasion and oil films stay on hall floors, while dust and coolant build up on machinery. A hall can rarely stand still for cleaning.',
+    'Swarf, tyre marks and oil films stay on hall floors, while dust and coolant build up on machinery. A hall can rarely stand still for cleaning.',
     'That is why each zone gets its own rhythm: aisles between shifts, staff rooms outside break times, machinery during planned shutdowns. Cleaning on a machine only starts once it has been switched off and secured against being switched back on.',
   ],
   facts: [
@@ -18,7 +18,7 @@ export const industrieUndHallen: ServicePageContent = {
     { label: 'Not included', value: 'Maintenance and repair of machinery' },
   ],
   scope: {
-    title: 'Scope in hall and workshop',
+    title: 'What factory and warehouse cleaning covers',
     intro: 'Typical for a job in production and storage:',
     items: [
       'Hall and production floors in concrete, with a coating or in industrial parquet',
@@ -41,21 +41,21 @@ export const industrieUndHallen: ServicePageContent = {
       ],
     },
     {
-      title: 'Shavings, oil and coolant on machinery',
+      title: 'Machine cleaning: swarf, oil and coolant',
       paragraphs: [
-        'Around machine tools, shavings collect on covers, around the base and on the floor, together with coolant and dust from machining. Shavings belong in an industrial vacuum cleaner. Blown away with compressed air, they end up deeper in the machine or in the next aisle.',
+        'Around machine tools, swarf collects on covers, around the base and on the floor, together with coolant and dust from machining. Swarf belongs in an industrial vacuum cleaner. Blown away with compressed air, it ends up deeper in the machine or in the next aisle.',
         'Your maintenance team decides what is cleaned on a machine: outer surfaces, trays and covers, or internal areas that are only accessible during a shutdown. Which agents a surface tolerates is usually stated in the manufacturer’s operating manual.',
-        'The Swiss accident prevention ordinance requires machinery to be put into a non-hazardous state before it is cleaned. How this is done on your premises is settled in the safety handover below.',
+        'Who switches a machine off before cleaning and releases it again afterwards is agreed in the safety handover below.',
       ],
     },
     {
       title: 'Typical occasions in production and storage',
       items: [
-        'Audit, certification or customer visit: cleaning well ahead of the date, see the checklist below',
+        'Audit, certification or customer visit: cleaning well ahead of the date, see the checklist above',
         'Company holidays and overhauls: deep cleaning of floors, racking and machinery while everything is at a standstill',
         'Production changeover or a new line: cleaning before the equipment is installed',
         'Change of tenant in a commercial hall: cleaning before the handover, on behalf of the owners or the property management',
-        'Fixed cleaning times instead of cleaning on the side, when your own staff currently do it',
+        'Fixed cleaning times instead of fitting cleaning in around other work, if your own staff do it today',
       ],
     },
   ],
@@ -90,7 +90,7 @@ export const industrieUndHallen: ServicePageContent = {
           title: 'Substances and dirty water',
           items: [
             'Which hazardous substances are stored or processed in the area, and where are the safety data sheets?',
-            'Where may the dirty water from the scrubber dryer be emptied? Water containing oil must not go into a drain that leads to a soakaway or to a watercourse (Waters Protection Act, Art. 6 and 7).',
+            'Where may the dirty water from the scrubber dryer be emptied? Water containing oil must not go into a drain that leads to a soakaway or to a body of water such as a stream or lake (Waters Protection Act, Art. 6 and 7).',
             'Where are oil-soaked absorbents and cleaning rags collected, and who disposes of them?',
           ],
         },
@@ -105,7 +105,7 @@ export const industrieUndHallen: ServicePageContent = {
       ],
       note: 'The list does not replace your company’s hazard assessment or the instruction on site. Check in each case which additional rules apply in your industry.',
       sources: [
-        { label: 'Ordinance on the Prevention of Accidents and Occupational Diseases (VUV, SR 832.30), Art. 9 and 43, German text', href: 'https://www.fedlex.admin.ch/eli/cc/1983/1968_1968_1968/de#art_9' },
+        { label: 'Ordinance on the Prevention of Accidents and Occupational Diseases (VUV, SR 832.30), Art. 6, 9 and 43, German text', href: 'https://www.fedlex.admin.ch/eli/cc/1983/1968_1968_1968/de#art_9' },
         { label: 'Suva: eight life-saving rules for maintenance, rules 3 and 4 (German)', href: 'https://www.suva.ch/de-ch/praevention/lebenswichtige-regeln-und-bestimmungen/lebenswichtige-regeln-am-arbeitsplatz/filme-lebenswichtige-regeln-instandhaltung' },
         { label: 'Suva: checklist on unexpected start-up of machinery and equipment (67075, German)', href: 'https://www.suva.ch/67075.D' },
         { label: 'Waters Protection Act (WPA, SR 814.20), Art. 6 and 7', href: 'https://www.fedlex.admin.ch/eli/cc/1992/1860_1860_1860/en#art_6' },
@@ -118,16 +118,15 @@ export const industrieUndHallen: ServicePageContent = {
       id: 'zonenplan',
       title: 'Cleaning plan by zone (example)',
       intro:
-        'A hall has zones with very different rhythms. This is what a plan for a production or storage hall can look like; on your premises, frequency and time slots depend on shifts, traffic and how quickly dirt builds up.',
+        'This is what a plan for a production or storage hall can look like. On your premises, frequency and time slots depend on shifts, traffic and how quickly dirt builds up.',
       columns: ['Zone', 'Typical soiling', 'Frequency (example)', 'Time slot', 'Points to watch'],
       rows: [
-        ['Aisles and traffic routes', 'Dust, tyre abrasion, stray shavings', 'daily to weekly, depending on forklift traffic', 'between shifts, section by section', 'keep floor markings visible, cordon off wet sections'],
-        ['Production', 'Shavings, oil and grease films, coolant', 'as it builds up', 'breaks, shift changes, shutdown days', 'take up oil puddles with absorbent first, then clean wet'],
-        ['Storage and racking', 'Dust on the floor, beams and goods', 'at longer intervals, roughly monthly to quarterly', 'times with little goods in and out', 'move goods only with approval, work at height only with suitable equipment'],
-        ['Staff rooms, changing rooms, sanitary', 'Hygiene, consumables', 'every working day', 'outside break times', 'refill soap and paper, separate cloths for toilets and kitchen'],
-        ['Machinery and equipment', 'Deposits, shavings, dust from machining', 'as specified by maintenance', 'planned shutdowns, overhauls, company holidays', 'only when switched off and secured, only approved agents'],
+        ['Aisles and traffic routes', 'Dust, tyre marks, swarf', 'daily to weekly', 'between shifts, section by section', 'keep markings visible, cordon off wet areas'],
+        ['Production', 'Swarf, oil and grease films, coolant', 'as it builds up', 'breaks, shift changes, shutdown days', 'bind oil puddles first, then clean wet'],
+        ['Storage and racking', 'Dust on the floor, beams and goods', 'monthly to quarterly', 'times with little goods in and out', 'move goods only with approval, never climb racking'],
+        ['Staff rooms, changing rooms, sanitary', 'Hygiene, consumables', 'every working day', 'outside break times', 'refill soap and paper, separate cloths for toilets'],
+        ['Machinery and equipment', 'Deposits, swarf, machining dust', 'as specified by maintenance', 'planned shutdowns, overhauls, company holidays', 'only when switched off and secured, only approved agents'],
       ],
-      note: 'A combination often makes sense: ongoing cleaning to this plan and a deep clean of floors, racking and machinery during company holidays, when everything is at a standstill.',
       printable: true,
       updated: '2026-09-28',
     },
@@ -173,12 +172,12 @@ export const industrieUndHallen: ServicePageContent = {
     },
     {
       title: 'Safety handover',
-      text: 'Before the first job, your maintenance team and ours go through the checklist: shutdown, protective equipment, traffic routes, approved agents.',
+      text: 'Before the first job, your maintenance team and our cleaning team go through the checklist: shutdown, protective equipment, traffic routes, approved agents.',
       figure: 'offerte',
     },
     {
       title: 'Cleaning in step with operations',
-      text: 'Cleaning takes place in the agreed time slots. If shifts or lines change, the plan is adjusted before the next job.',
+      text: 'Cleaning takes place in the agreed time slots. If shifts or lines change, the plan is adjusted with you.',
       figure: 'start',
     },
   ],
@@ -196,7 +195,7 @@ export const industrieUndHallen: ServicePageContent = {
     {
       question: 'Who switches off the machines before cleaning?',
       answer:
-        'This is settled in the safety handover before the first job, machine by machine. The Swiss accident prevention ordinance requires machinery to be put into a non-hazardous state before cleaning (VUV Art. 43) and the companies involved to coordinate (Art. 9). Afterwards it is clear for each machine who switches it off, secures it and releases it again.',
+        'Ideally someone who knows the machine, for example from your maintenance team. They know which switches, valves and residual energy are involved, and they release the machine again after cleaning. The safety handover checklist on this page lets you settle this for each machine and gives the legal basis.',
     },
     {
       question: 'Which rules apply to your team in our hall?',
@@ -206,7 +205,7 @@ export const industrieUndHallen: ServicePageContent = {
     {
       question: 'How is an oily hall floor cleaned?',
       answer:
-        'Oil puddles are first taken up with absorbent. The scrubber dryer then cleans the area with a degreasing agent that suits the surface. The dirty water now contains oil and must not go into a drain that leads to a soakaway or to a watercourse (Waters Protection Act, Art. 6).',
+        'After absorbent has dealt with fresh puddles, a degreasing agent is left to act briefly, then the scrubber dryer scrubs and picks up. In unsealed concrete, older oil sits in the pores. There it often takes several passes, and stains sometimes remain visible. Where the oily dirty water may and may not go is set out in the safety handover checklist.',
     },
     {
       question: 'How often should a production hall be cleaned?',
