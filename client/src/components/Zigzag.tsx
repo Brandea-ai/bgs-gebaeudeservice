@@ -75,7 +75,7 @@ export default function Zigzag({
                 {item.title}
               </Heading>
               <div
-                className={`mt-6 space-y-4 text-[1.0625rem] leading-relaxed ${dark ? "text-white/85" : "text-ink-600"}`}
+                className={`mt-6 space-y-4 text-[1.0625rem] leading-relaxed ${dark ? "text-white/90" : "text-ink-600"}`}
               >
                 {item.body}
               </div>

@@ -34,7 +34,7 @@ export default function StartHero(props: StartseiteProps) {
           <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-[3px]">
             {proof.map(item => (
               <div key={item.label} className="flex min-w-0 flex-col gap-2 bg-white/[0.05] px-4 py-5 sm:p-6">
-                <dt className="order-2 text-sm font-medium leading-snug text-white/85">{item.label}</dt>
+                <dt className="order-2 text-sm font-medium leading-snug text-white/90">{item.label}</dt>
                 <dd className="t-figure order-1 text-[1.5rem] text-white sm:text-[1.875rem] xl:text-[2.125rem]">
                   {item.value}
                 </dd>
@@ -64,7 +64,7 @@ export default function StartHero(props: StartseiteProps) {
       </div>
       {/* Sprachwahl im Hero (E80): die Seite gibt es in vier Sprachen, beraten wird in allen vier (E18) */}
       <div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-3">
-        <span className="text-sm font-medium text-white/80">{nav.chrome.heroLanguages}</span>
+        <span className="text-sm font-medium text-white/90">{nav.chrome.heroLanguages}</span>
         <LanguageSwitcher lang={lang} path="/" label={nav.chrome.heroLanguages} tone="dark" as="div" />
       </div>
       {chatEnabled && (

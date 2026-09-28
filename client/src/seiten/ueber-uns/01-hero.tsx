@@ -28,7 +28,7 @@ export default function UeberUnsHero(props: UeberUnsProps) {
           >
             {seiten.proof.map(item => (
               <div key={item.label} className="flex min-w-0 flex-col gap-1.5 px-5 py-4 lg:px-6 lg:py-5">
-                <dt className="order-2 text-sm font-medium leading-snug text-white/80">{item.label}</dt>
+                <dt className="order-2 text-sm font-medium leading-snug text-white/90">{item.label}</dt>
                 <dd className="t-figure order-1 text-[1.5rem] text-white xl:text-[1.875rem]">{item.value}</dd>
               </div>
             ))}

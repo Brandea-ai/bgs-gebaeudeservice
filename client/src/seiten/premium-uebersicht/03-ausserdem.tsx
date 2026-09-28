@@ -16,7 +16,7 @@ export default function PremiumAusserdem(props: PremiumProps) {
               <SealCheck weight="duotone" className="mt-0.5 size-6 text-brass" aria-hidden="true" />
               <div className="min-w-0">
                 <h3 className="hyphens font-premium text-[1.5rem] leading-snug text-white">{item.title}</h3>
-                <p className="mt-2 font-medium leading-relaxed text-white/80">{item.text}</p>
+                <p className="mt-2 font-medium leading-relaxed text-white/90">{item.text}</p>
               </div>
             </li>
           ))}

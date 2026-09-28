@@ -31,7 +31,7 @@ export default function KantonPlanung(props: KantonProps) {
           aria-labelledby="sitz-titel"
           className="on-dark min-w-0 self-start rounded-[3px] bg-ink p-7 text-white lg:col-span-5 lg:p-9 xl:col-span-4 xl:col-start-9"
         >
-          <p id="sitz-titel" className="t-eyebrow flex items-center gap-2 text-white/70">
+          <p id="sitz-titel" className="t-eyebrow flex items-center gap-2 text-white/90">
             <MapPin weight="duotone" className="size-5 text-brass" aria-hidden="true" />
             {kui.seat}
           </p>

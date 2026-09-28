@@ -22,7 +22,7 @@ export default function Breadcrumbs({
   lang?: Locale;
 }) {
   const trail = trailFor(path, lang);
-  const muted = tone === "dark" ? "text-white/70" : "text-mute";
+  const muted = tone === "dark" ? "text-white/90" : "text-mute";
   const current = tone === "dark" ? "text-white" : "text-ink";
 
   return (

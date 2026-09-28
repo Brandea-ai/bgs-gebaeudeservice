@@ -49,7 +49,7 @@ export default function StackPanels({
                 {eyebrow}
               </p>
               <h3 className="t-h2 mt-4 text-white">{item.label}</h3>
-              <p className="t-lead mt-5 max-w-[44ch] text-white/85">{item.text}</p>
+              <p className="t-lead mt-5 max-w-[44ch] text-white/90">{item.text}</p>
               <Link
                 href={localizePath(item.path, lang)}
                 className="arrow-link on-dark mt-8 inline-flex min-h-11 items-center gap-2 font-semibold text-white"

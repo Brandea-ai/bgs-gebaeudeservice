@@ -542,7 +542,7 @@ export function SiteFooter({
   const href = (target: PagePath) => localizePath(target, lang);
   const currentYear = new Date().getFullYear();
   const footLink =
-    "inline-flex min-h-8 items-center py-1 text-[0.9375rem] text-white/80 transition-colors hover:text-white";
+    "inline-flex min-h-8 items-center py-1 text-[0.9375rem] text-white/90 transition-colors hover:text-white";
   return (
     <footer className="on-dark bg-ink text-white">
       <div className="container pb-12 pt-16 lg:pt-20">
@@ -554,9 +554,9 @@ export function SiteFooter({
               {company.brand}
             </p>
             {newBrandActive && (
-              <p className="mt-2 text-sm text-white/60">{texts.newBrandLine}</p>
+              <p className="mt-2 text-sm text-white/90">{texts.newBrandLine}</p>
             )}
-            <p className="mt-6 max-w-[38ch] leading-relaxed text-white/70">
+            <p className="mt-6 max-w-[38ch] leading-relaxed text-white/90">
               {texts.about}
             </p>
             <div className="mt-6 text-[0.9875rem]">
@@ -569,11 +569,11 @@ export function SiteFooter({
               <br />
               <a
                 href={`mailto:${company.email}`}
-                className="inline-flex min-h-11 items-center text-white/80 underline decoration-white/40 underline-offset-4 transition-colors hover:text-white hover:decoration-white"
+                className="inline-flex min-h-11 items-center text-white/90 underline decoration-white/40 underline-offset-4 transition-colors hover:text-white hover:decoration-white"
               >
                 {company.email}
               </a>
-              <p className="mt-2 text-white/60">
+              <p className="mt-2 text-white/90">
                 {company.address.street}, {company.address.postalCode}{" "}
                 {company.address.city}
               </p>
@@ -583,7 +583,7 @@ export function SiteFooter({
           <div className="grid gap-10 sm:grid-cols-2 lg:col-span-8 lg:grid-cols-4">
             {serviceGroups.map(group => (
               <div key={group.title}>
-                <h3 className="t-eyebrow mb-4 text-white/60">{group.title}</h3>
+                <h3 className="t-eyebrow mb-4 text-white/90">{group.title}</h3>
                 <ul>
                   {group.links.map(link => (
                     <li key={link.path}>
@@ -596,7 +596,7 @@ export function SiteFooter({
               </div>
             ))}
             <div>
-              <h3 className="t-eyebrow mb-4 text-white/60">{texts.areaTitle}</h3>
+              <h3 className="t-eyebrow mb-4 text-white/90">{texts.areaTitle}</h3>
               <ul>
                 {texts.companyLinks.map(link => (
                   <li key={link.path}>
@@ -621,7 +621,7 @@ export function SiteFooter({
       </div>
 
       <div className="border-t border-white/10">
-        <div className="container flex flex-col gap-4 py-6 text-sm text-white/60 md:flex-row md:items-center md:justify-between">
+        <div className="container flex flex-col gap-4 py-6 text-sm text-white/90 md:flex-row md:items-center md:justify-between">
           <p>
             {/* Jahr wird beim Build eingesetzt, im Browser ggf. aktualisiert (M24, React-Fehler #418) */}
             © <span suppressHydrationWarning>{currentYear}</span>{" "}

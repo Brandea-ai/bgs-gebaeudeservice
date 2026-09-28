@@ -17,7 +17,7 @@ export default function LeistungVerwandt(props: LeistungProps) {
       className={`section-tight ${premium ? "on-dark bg-anthracite text-white" : "border-t border-line bg-white"}`}
     >
       <div className="container">
-        <h2 id="verwandt-titel" className={`t-h2 mb-10 ${premium ? "font-premium font-normal text-white" : "text-ink"}`}>
+        <h2 id="verwandt-titel" className={`t-h2 mb-10 ${premium ? "font-premium font-medium text-white" : "text-ink"}`}>
           {ui.related}
         </h2>
         <RevealGroup as="ul" className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -41,7 +41,7 @@ export default function LeistungVerwandt(props: LeistungProps) {
                   <span className={`t-h3 min-w-0 transition-colors ${premium ? "text-white group-hover:text-brass" : "text-ink group-hover:text-signal"}`}>
                     {dict.pages[item.path].label}
                   </span>
-                  <span className={`mt-3 block font-medium leading-relaxed ${premium ? "text-white/80" : "text-ink-600"}`}>
+                  <span className={`mt-3 block font-medium leading-relaxed ${premium ? "text-white/90" : "text-ink-600"}`}>
                     {item.text}
                   </span>
                   <span className={`mt-auto inline-flex items-center gap-2 pt-6 font-semibold ${premium ? "text-brass" : "text-signal"}`}>

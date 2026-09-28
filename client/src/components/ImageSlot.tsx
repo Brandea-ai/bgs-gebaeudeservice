@@ -94,7 +94,7 @@ export default function ImageSlot({
           />
         </div>
         <span
-          className={`absolute bottom-4 left-4 font-mono text-xs font-medium uppercase tracking-[0.14em] ${dark ? "text-white/75" : "text-ink/75"}`}
+          className={`absolute bottom-4 left-4 font-mono text-xs font-medium uppercase tracking-[0.14em] ${dark ? "text-white/90" : "text-ink/90"}`}
         >
           {label ?? misc.imagePlaceholder}
         </span>

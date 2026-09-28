@@ -48,7 +48,7 @@ export function AreaMegaPanel({ lang, path, onNavigate }: Props) {
                   prefetch={false}
                   onClick={onNavigate}
                   aria-current={target === path ? "page" : undefined}
-                  className="group flex min-h-12 items-start gap-3.5 rounded-[3px] px-3 py-3 text-ink/85 transition-colors hover:bg-ink/[0.045] hover:text-ink aria-[current=page]:text-signal"
+                  className="group flex min-h-12 items-start gap-3.5 rounded-[3px] px-3 py-3 text-ink/90 transition-colors hover:bg-ink/[0.045] hover:text-ink aria-[current=page]:text-signal"
                 >
                   <Glyph weight="duotone" className="mt-0.5 size-[1.375rem] shrink-0 text-signal" aria-hidden="true" />
                   <span className="min-w-0 flex-1">
@@ -84,7 +84,7 @@ export function AreaMegaPanel({ lang, path, onNavigate }: Props) {
               {company.address.street}, {company.address.postalCode}
             </p>
           </div>
-          <p className="relative mt-5 text-[0.9375rem] leading-relaxed text-ink/80">{area.seatText}</p>
+          <p className="relative mt-5 text-[0.9375rem] leading-relaxed text-ink/90">{area.seatText}</p>
           <div className="relative mt-auto border-t border-ink/[0.08] pt-4">
             <a
               href={company.phone.href}
@@ -99,7 +99,7 @@ export function AreaMegaPanel({ lang, path, onNavigate }: Props) {
 
       {/* Offerte als ruhige Leiste unter dem Menü, wie beim Leistungsmenü */}
       <div className="flex flex-wrap items-center justify-between gap-4 border-t border-ink/[0.08] bg-white/50 px-9 py-4">
-        <p className="text-[0.9375rem] text-ink/80">
+        <p className="text-[0.9375rem] text-ink/90">
           <span className="font-semibold text-ink">{chrome.megaTitle}</span>
           <span className="mx-2 text-ink/30" aria-hidden="true">
             ·
@@ -141,7 +141,7 @@ export function AreaMobileGroup({ lang, path, onNavigate, open }: Props & { open
               prefetch={false}
               onClick={onNavigate}
               aria-current={link.path === path ? "page" : undefined}
-              className="flex min-h-12 items-start gap-3.5 rounded-[3px] px-3 py-2.5 text-ink/85 transition-colors hover:bg-ink/[0.045] aria-[current=page]:text-signal"
+              className="flex min-h-12 items-start gap-3.5 rounded-[3px] px-3 py-2.5 text-ink/90 transition-colors hover:bg-ink/[0.045] aria-[current=page]:text-signal"
             >
               <MapPin weight="duotone" className="mt-0.5 size-5 shrink-0 text-signal" aria-hidden="true" />
               <span className="min-w-0">

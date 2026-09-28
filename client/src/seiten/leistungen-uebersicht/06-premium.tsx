@@ -36,14 +36,14 @@ export default function UebersichtPremium(props: UebersichtProps) {
         <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-7">
             {company.premiumBrand && <p className="t-eyebrow mb-5 text-brass">{ui.premiumLine}</p>}
-            <h2 id="premium-titel" className="font-premium text-[clamp(2.25rem,1.4rem+2.8vw,4rem)] font-normal leading-[1.05] text-white">
+            <h2 id="premium-titel" className="font-premium text-[clamp(2.25rem,1.4rem+2.8vw,4rem)] font-medium leading-[1.05] text-white">
               {servicesOverview.premium.title}
             </h2>
             <div className="premium-rule mt-7 max-w-xs" />
           </div>
           <div className="lg:col-span-5">
             <p className="t-lead text-white/90">{servicesOverview.premium.text}</p>
-            <p className="mt-4 font-medium leading-relaxed text-white/75">{servicesOverview.premium.detail}</p>
+            <p className="mt-4 font-medium leading-relaxed text-white/90">{servicesOverview.premium.detail}</p>
           </div>
         </div>
 
@@ -64,7 +64,7 @@ export default function UebersichtPremium(props: UebersichtProps) {
                   <span className="font-premium text-[1.75rem] leading-tight text-white transition-colors group-hover:text-brass-light">
                     {pages[offer.path].label}
                   </span>
-                  <span className="mt-3 block font-medium leading-relaxed text-white/80">{offer.text}</span>
+                  <span className="mt-3 block font-medium leading-relaxed text-white/90">{offer.text}</span>
                   <span className="mt-auto inline-flex items-center gap-2 pt-6 font-semibold text-brass">
                     {ui.toService}
                     <ArrowRight weight="duotone" className="size-4 shrink-0" aria-hidden="true" />
@@ -85,7 +85,7 @@ export default function UebersichtPremium(props: UebersichtProps) {
                   <Glyph weight="duotone" className="mt-0.5 size-7 shrink-0 text-brass" aria-hidden="true" />
                   <span className="min-w-0">
                     <span className="block font-display text-[1.0625rem] font-semibold text-white">{item.title}</span>
-                    <span className="mt-1 block text-[0.9375rem] font-medium leading-snug text-white/75">{item.text}</span>
+                    <span className="mt-1 block text-[0.9375rem] font-medium leading-snug text-white/90">{item.text}</span>
                   </span>
                 </li>
               );

@@ -128,7 +128,7 @@ export function ParallaxImage({
             aria-label={alt}
             className="w-full h-full bg-gradient-to-br from-slate-600 to-slate-800 flex items-center justify-center"
           >
-            <span className="text-xs sm:text-sm text-white/60">Bild folgt</span>
+            <span className="text-xs sm:text-sm text-white/90">Bild folgt</span>
           </div>
         ) : (
           <motion.img

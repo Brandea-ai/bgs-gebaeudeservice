@@ -165,7 +165,7 @@ export default function CantonMap({
         </g>
       </svg>
       <figcaption
-        className={`mt-3 flex flex-wrap items-center justify-between gap-x-6 gap-y-1 text-xs font-medium ${dark ? "text-white/75" : "text-ink-600"}`}
+        className={`mt-3 flex flex-wrap items-center justify-between gap-x-6 gap-y-1 text-xs font-medium ${dark ? "text-white/90" : "text-ink-600"}`}
       >
         <span className="flex flex-wrap items-center gap-2">
           <span

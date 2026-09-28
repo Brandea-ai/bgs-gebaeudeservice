@@ -20,7 +20,7 @@ export default function TocNav({
   const dark = tone === "dark";
   return (
     <nav aria-label={label}>
-      <p className={`t-eyebrow mb-4 ${dark ? "text-white/60" : "text-mute"}`}>
+      <p className={`t-eyebrow mb-4 ${dark ? "text-white/90" : "text-mute"}`}>
         {label}
       </p>
       <ol className={`border-l ${dark ? "border-white/15" : "border-line"}`}>
@@ -36,7 +36,7 @@ export default function TocNav({
                     ? dark
                       ? "border-brass text-white"
                       : "border-signal text-ink"
-                    : `border-transparent ${dark ? "text-white/70 hover:text-white" : "text-mute hover:text-ink"}`
+                    : `border-transparent ${dark ? "text-white/90 hover:text-white" : "text-mute hover:text-ink"}`
                 }`}
               >
                 {item.title}

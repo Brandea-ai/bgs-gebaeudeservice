@@ -17,11 +17,11 @@ export default function PremiumTitel({
   return (
     <div className={className}>
       {eyebrow && <p className="t-eyebrow mb-5 text-brass">{eyebrow}</p>}
-      <h2 id={id} className="font-premium text-[clamp(2.1rem,1.4rem+2.4vw,3.75rem)] font-normal leading-[1.06] text-white">
+      <h2 id={id} className="font-premium text-[clamp(2.1rem,1.4rem+2.4vw,3.75rem)] font-medium leading-[1.06] text-white">
         {title}
       </h2>
       <div className="premium-rule mt-6 max-w-[12rem]" />
-      {intro && <div className="t-lead mt-6 max-w-[46ch] text-white/85">{intro}</div>}
+      {intro && <div className="t-lead mt-6 max-w-[46ch] text-white/90">{intro}</div>}
     </div>
   );
 }

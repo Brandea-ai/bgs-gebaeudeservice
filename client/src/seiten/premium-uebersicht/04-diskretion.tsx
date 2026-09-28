@@ -12,7 +12,7 @@ export default function PremiumDiskretion(props: PremiumProps) {
       <div className="container grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-6">
           <PremiumTitel id="diskretion-titel" title={discretion.title} />
-          <div className="mt-8 space-y-5 text-[1.0625rem] leading-relaxed text-white/85">
+          <div className="mt-8 space-y-5 text-[1.0625rem] leading-relaxed text-white/90">
             {discretion.paragraphs.map(paragraph => (
               <p key={paragraph}>{paragraph}</p>
             ))}

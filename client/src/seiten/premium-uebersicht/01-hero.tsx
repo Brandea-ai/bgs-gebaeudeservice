@@ -25,7 +25,7 @@ export default function PremiumHero(props: PremiumProps) {
         <>
           <p>{content.lead}</p>
           {content.nameMeaning && (
-            <p className="mt-4 text-base font-normal leading-relaxed text-white/80">{content.nameMeaning}</p>
+            <p className="mt-4 text-base font-medium leading-relaxed text-white/90">{content.nameMeaning}</p>
           )}
         </>
       }
@@ -38,7 +38,7 @@ export default function PremiumHero(props: PremiumProps) {
                 <Glyph weight="duotone" className="mt-0.5 size-7 shrink-0 text-brass" aria-hidden="true" />
                 <span className="min-w-0">
                   <span className="block font-premium text-[1.375rem] leading-tight text-white">{item!.title}</span>
-                  <span className="mt-1 block text-[0.9375rem] font-medium leading-snug text-white/80">{item!.text}</span>
+                  <span className="mt-1 block text-[0.9375rem] font-medium leading-snug text-white/90">{item!.text}</span>
                 </span>
               </li>
             );

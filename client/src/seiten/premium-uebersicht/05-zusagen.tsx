@@ -16,7 +16,7 @@ export default function PremiumZusagen(props: PremiumProps) {
               <li key={item.key} className="bg-anthracite-800 p-6 lg:p-7">
                 <Glyph weight="duotone" className="mb-5 size-7 text-brass" aria-hidden="true" />
                 <h3 className="hyphens font-display text-lg font-semibold leading-snug text-white">{item.title}</h3>
-                <p className="hyphens mt-2 font-medium leading-relaxed text-white/80 [overflow-wrap:anywhere]">{item.text}</p>
+                <p className="hyphens mt-2 font-medium leading-relaxed text-white/90 [overflow-wrap:anywhere]">{item.text}</p>
               </li>
             );
           })}

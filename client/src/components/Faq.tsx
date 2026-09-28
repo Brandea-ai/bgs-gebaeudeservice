@@ -32,12 +32,12 @@ export default function Faq({
             </h3>
             <Plus
               weight="duotone"
-              className={`mt-0.5 size-5 shrink-0 transition-transform duration-300 group-open:rotate-45 ${dark ? "text-white/60 group-open:text-white" : "text-mute group-open:text-ink"}`}
+              className={`mt-0.5 size-5 shrink-0 transition-transform duration-300 group-open:rotate-45 ${dark ? "text-white/90 group-open:text-white" : "text-mute group-open:text-ink"}`}
               aria-hidden="true"
             />
           </summary>
           <p
-            className={`max-w-[68ch] pb-7 pr-12 font-medium leading-relaxed ${dark ? "text-white/85" : "text-ink-600"}`}
+            className={`max-w-[68ch] pb-7 pr-12 font-medium leading-relaxed ${dark ? "text-white/90" : "text-ink-600"}`}
           >
             <RichText
               text={item.answer}

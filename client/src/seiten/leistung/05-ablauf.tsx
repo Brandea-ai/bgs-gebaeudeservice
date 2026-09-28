@@ -12,7 +12,7 @@ export default function LeistungAblauf(props: LeistungProps) {
       className={`section ${premium ? "on-dark bg-anthracite text-white" : "border-y border-line bg-stone"}`}
     >
       <div className="container">
-        <h2 id="ablauf-titel" className={`t-h2 mb-10 ${premium ? "font-premium font-normal text-white" : "text-ink"}`}>
+        <h2 id="ablauf-titel" className={`t-h2 mb-10 ${premium ? "font-premium font-medium text-white" : "text-ink"}`}>
           {ui.steps}
         </h2>
         <ProcessScrolly

@@ -124,7 +124,7 @@ export default function ProcessScrolly({
               {step.title}
             </h3>
             <p
-              className={`mt-3 max-w-[46ch] font-medium leading-relaxed ${dark ? "text-white/85" : "text-ink-600"}`}
+              className={`mt-3 max-w-[46ch] font-medium leading-relaxed ${dark ? "text-white/90" : "text-ink-600"}`}
             >
               <RichText
                 text={step.text}

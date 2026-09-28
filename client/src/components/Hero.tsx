@@ -94,7 +94,7 @@ export default function Hero({
             id={titleId}
             className={
               premium
-                ? "max-w-[20ch] font-premium text-[clamp(2.4rem,1.2rem+4vw,5.25rem)] font-normal leading-[1.02] tracking-[-0.01em] text-white"
+                ? "max-w-[20ch] font-premium text-[clamp(2.4rem,1.2rem+4vw,5.25rem)] font-medium leading-[1.02] tracking-[-0.01em] text-white"
                 : `${size === "home" ? "t-display max-w-[18ch]" : "t-h1 max-w-[22ch]"} text-white`
             }
           >

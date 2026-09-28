@@ -84,7 +84,8 @@
     @apply bg-background text-foreground antialiased;
     font-size: 1.0625rem;
     line-height: 1.6;
-    font-weight: 400;
+    /* Kräftiger Grundtext (E82): nichts Dünnes */
+    font-weight: 500;
     font-feature-settings: 'kern', 'liga', 'ss01';
     text-rendering: optimizeLegibility;
   }
@@ -207,15 +208,15 @@
   .t-lead {
     font-size: clamp(1.125rem, 1rem + 0.4vw, 1.4375rem);
     line-height: 1.5;
-    font-weight: 500;
+    font-weight: 600;
   }
 
   /* Kennzeile: eine Mono-Zeile ohne Fläche, kein Badge (F14) */
   .t-eyebrow {
     @apply font-mono uppercase;
-    font-size: 0.75rem;
-    letter-spacing: 0.14em;
-    font-weight: 500;
+    font-size: 0.8125rem;
+    letter-spacing: 0.12em;
+    font-weight: 600;
   }
 
   .t-figure {
@@ -229,9 +230,9 @@
 
   /* Fliesstext mit Links im Inhalt */
   .prose-body {
-    @apply text-ink-700;
+    @apply text-ink;
     max-width: 68ch;
-    font-weight: 400;
+    font-weight: 500;
   }
 
   .prose-body a,

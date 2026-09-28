@@ -98,7 +98,7 @@ export default function LegalPage({
                   />
                 </p>
               )}
-              <p className="mt-6 font-mono text-xs font-semibold uppercase tracking-[0.12em] text-white/75">
+              <p className="mt-6 font-mono text-xs font-semibold uppercase tracking-[0.12em] text-white/90">
                 {ratgeber.overview.updatedLabel}{" "}
                 <time dateTime={content.updated}>{formatDate(content.updated, lang)}</time>
               </p>

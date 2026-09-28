@@ -130,7 +130,7 @@ export default function SwissNavigation({
     `relative inline-flex min-h-11 items-center px-1 py-2 text-[0.9375rem] font-medium transition-colors after:absolute after:inset-x-1 after:bottom-1.5 after:h-px after:origin-left after:bg-signal after:transition-transform after:duration-300 ${
       on
         ? "text-ink after:scale-x-100"
-        : "text-ink/70 hover:text-ink after:scale-x-0 hover:after:scale-x-100"
+        : "text-ink/90 hover:text-ink after:scale-x-0 hover:after:scale-x-100"
     }`;
 
   const serviceLink = (link: { path: PagePath; label: string }) => {
@@ -142,7 +142,7 @@ export default function SwissNavigation({
           prefetch={false}
           onClick={() => setMegaOpen(false)}
           aria-current={link.path === path ? "page" : undefined}
-          className="group flex min-h-12 items-center gap-3.5 rounded-[3px] px-3 py-2.5 text-[0.96875rem] font-medium text-ink/85 transition-colors hover:bg-ink/[0.045] hover:text-ink aria-[current=page]:text-signal"
+          className="group flex min-h-12 items-center gap-3.5 rounded-[3px] px-3 py-2.5 text-[0.96875rem] font-medium text-ink/90 transition-colors hover:bg-ink/[0.045] hover:text-ink aria-[current=page]:text-signal"
         >
           <Glyph
             weight="duotone"
@@ -167,7 +167,7 @@ export default function SwissNavigation({
       </a>
       <header className="site-header">
         {/* Infozeile ab xl, nur ganz oben auf dem dunklen Hero */}
-        <div className="util-row on-dark hidden text-[0.8125rem] text-white/80 xl:block">
+        <div className="util-row on-dark hidden text-[0.8125rem] text-white/90 xl:block">
           <div className="container flex h-[var(--util-h)] items-center justify-between gap-6">
             <p className="flex items-center gap-2">
               <span
@@ -189,7 +189,7 @@ export default function SwissNavigation({
               >
                 {company.email}
               </a>
-              <span className="text-white/70">{chrome.seat}</span>
+              <span className="text-white/90">{chrome.seat}</span>
               <LanguageSwitcher
                 lang={lang}
                 path={current}
@@ -323,7 +323,7 @@ export default function SwissNavigation({
                                     aria-current={
                                       link.path === path ? "page" : undefined
                                     }
-                                    className="group flex min-h-11 items-center gap-3 py-2 text-[0.96875rem] text-white/85 transition-colors hover:text-brass-light aria-[current=page]:text-brass-light"
+                                    className="group flex min-h-11 items-center gap-3 py-2 text-[0.96875rem] text-white/90 transition-colors hover:text-brass-light aria-[current=page]:text-brass-light"
                                   >
                                     <Glyph
                                       weight="duotone"
@@ -346,7 +346,7 @@ export default function SwissNavigation({
 
                       {/* Offerte als ruhige Leiste unter dem Menü */}
                       <div className="flex flex-wrap items-center justify-between gap-4 border-t border-ink/[0.08] bg-white/50 px-9 py-4">
-                        <p className="text-[0.9375rem] text-ink/80">
+                        <p className="text-[0.9375rem] text-ink/90">
                           <span className="font-semibold text-ink">
                             {chrome.megaTitle}
                           </span>

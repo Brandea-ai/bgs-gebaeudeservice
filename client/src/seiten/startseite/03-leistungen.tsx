@@ -84,11 +84,11 @@ export default function StartLeistungen(props: StartseiteProps) {
             className="aspect-[16/10] w-full md:aspect-auto md:h-full md:min-h-[24rem] [&_img]:object-[80%_50%]"
           />
           <div className="flex min-w-0 flex-col justify-center p-7 md:p-10 xl:p-14">
-            <h3 className="font-premium text-[clamp(1.9rem,1.2rem+1.8vw,3rem)] font-normal leading-[1.08] text-white">
+            <h3 className="font-premium text-[clamp(1.9rem,1.2rem+1.8vw,3rem)] font-medium leading-[1.08] text-white">
               {home.services.premium.title}
             </h3>
             <div className="premium-rule mt-6 max-w-[10rem]" />
-            <p className="mt-6 max-w-[52ch] text-[1.0625rem] font-medium leading-relaxed text-white/85">
+            <p className="mt-6 max-w-[52ch] text-[1.0625rem] font-medium leading-relaxed text-white/90">
               {home.services.premium.text}
             </p>
             <ul className="mt-7 divide-y divide-white/15 border-y border-white/15">

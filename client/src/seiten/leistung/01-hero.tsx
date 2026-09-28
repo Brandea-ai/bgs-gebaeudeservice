@@ -32,7 +32,7 @@ export default function LeistungHero(props: LeistungProps) {
             <RichText text={lead} lang={lang} linkClassName="font-semibold text-white underline decoration-white/50 underline-offset-4" />
           </p>
           {more.map(paragraph => (
-            <p key={paragraph} className="mt-4 text-base font-normal leading-relaxed text-white/80">
+            <p key={paragraph} className="mt-4 text-base font-medium leading-relaxed text-white/90">
               <RichText text={paragraph} lang={lang} linkClassName="font-semibold text-white underline decoration-white/50 underline-offset-4" />
             </p>
           ))}
@@ -49,7 +49,7 @@ export default function LeistungHero(props: LeistungProps) {
           >
             {facts.map(fact => (
               <div key={fact.label} className="min-w-0 px-5 py-4 lg:px-6 lg:py-5">
-                <dt className={`t-eyebrow ${premium ? "text-brass" : "text-white/70"}`}>
+                <dt className={`t-eyebrow ${premium ? "text-brass" : "text-white/90"}`}>
                   {fact.label}
                 </dt>
                 <dd className="hyphens mt-1.5 font-medium leading-snug text-white [overflow-wrap:anywhere]">

@@ -72,7 +72,7 @@ export default function TrustStrip({
                 {item.label}
               </span>
               <span
-                className={`mt-1 block text-[0.8125rem] font-medium leading-snug ${dark ? "text-white/80" : "text-ink-600"}`}
+                className={`mt-1 block text-[0.8125rem] font-medium leading-snug ${dark ? "text-white/90" : "text-ink-600"}`}
               >
                 {item.text}
               </span>

@@ -44,7 +44,7 @@ export default function SectionHead({
       </Tag>
       {intro && (
         <p
-          className={`t-lead mt-5 max-w-[46ch] ${align === "center" ? "mx-auto" : ""} ${dark ? "text-white/85" : "text-ink-600"}`}
+          className={`t-lead mt-5 max-w-[46ch] ${align === "center" ? "mx-auto" : ""} ${dark ? "text-white/90" : "text-ink-600"}`}
         >
           {intro}
         </p>

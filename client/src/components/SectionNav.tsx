@@ -82,7 +82,7 @@ export default function SectionNav({
                   className={`relative inline-flex min-h-11 items-center whitespace-nowrap px-3 py-2 text-[0.9375rem] font-medium transition-colors after:absolute after:inset-x-3 after:bottom-1 after:h-0.5 after:origin-left after:bg-signal after:transition-transform after:duration-300 ${
                     isActive
                       ? `${dark ? "text-white" : "text-ink"} after:scale-x-100`
-                      : `${dark ? "text-white/70 hover:text-white" : "text-mute hover:text-ink"} after:scale-x-0`
+                      : `${dark ? "text-white/90 hover:text-white" : "text-mute hover:text-ink"} after:scale-x-0`
                   }`}
                 >
                   {item.title}

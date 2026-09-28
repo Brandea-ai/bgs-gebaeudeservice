@@ -23,7 +23,7 @@ export default function ArtikelKopf(props: ArtikelProps) {
       lead={
         <>
           <p className="max-w-[56ch]">{article.subtitle}</p>
-          <p className="t-eyebrow mt-8 flex flex-wrap items-center gap-x-3 gap-y-1 text-white/75">
+          <p className="t-eyebrow mt-8 flex flex-wrap items-center gap-x-3 gap-y-1 text-white/90">
             <span>{t.byline}</span>
             <span aria-hidden="true">·</span>
             <span>

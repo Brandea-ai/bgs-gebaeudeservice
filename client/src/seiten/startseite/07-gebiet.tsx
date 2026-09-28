@@ -26,7 +26,7 @@ export default function StartGebiet(props: StartseiteProps) {
             {company.cantons.map((canton, index) => (
               <div key={canton} className="grid gap-1 py-3 sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-4">
                 <dt className="font-display font-bold text-white">{area.cantonLabels[index]}</dt>
-                <dd className="min-w-0 text-[0.9375rem] font-medium leading-relaxed text-white/80">
+                <dd className="min-w-0 text-[0.9375rem] font-medium leading-relaxed text-white/90">
                   {area.cantonPlaces[canton].join(", ")}
                 </dd>
               </div>

@@ -27,7 +27,7 @@ export default function KantonHero(props: KantonProps) {
             <RichText text={lead} lang={lang} linkClassName={leadLink} />
           </p>
           {more.map(paragraph => (
-            <p key={paragraph} className="mt-4 text-base font-normal leading-relaxed text-white/80">
+            <p key={paragraph} className="mt-4 text-base font-medium leading-relaxed text-white/90">
               <RichText text={paragraph} lang={lang} linkClassName={leadLink} />
             </p>
           ))}
@@ -44,7 +44,7 @@ export default function KantonHero(props: KantonProps) {
           >
             {page.facts.map(fact => (
               <div key={fact.label} className="min-w-0 px-5 py-4 lg:px-6 lg:py-5">
-                <dt className="t-eyebrow text-white/70">{fact.label}</dt>
+                <dt className="t-eyebrow text-white/90">{fact.label}</dt>
                 <dd className="hyphens mt-1.5 font-medium leading-snug text-white [overflow-wrap:anywhere]">
                   {fact.value}
                 </dd>

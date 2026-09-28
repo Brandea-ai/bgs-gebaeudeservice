@@ -54,7 +54,7 @@ export default function StartFuerWen(props: StartseiteProps) {
                 <div className="flex flex-1 flex-col p-6 lg:p-7">
                   <Glyph weight="duotone" className={`size-8 ${premium ? "text-brass" : "text-signal"}`} aria-hidden="true" />
                   <h3 className={`t-h3 mt-5 hyphens ${premium ? "text-white" : "text-ink"}`}>{item.title}</h3>
-                  <p className={`mt-3 font-medium leading-relaxed ${premium ? "text-white/85" : "text-ink-600"}`}>{item.text}</p>
+                  <p className={`mt-3 font-medium leading-relaxed ${premium ? "text-white/90" : "text-ink-600"}`}>{item.text}</p>
                   <ul className={`mt-6 space-y-3 border-t pt-6 ${premium ? "border-white/15" : "border-line"}`}>
                     {item.points.map(point => (
                       <li

@@ -16,7 +16,7 @@ export default function UeberUnsAnsprechperson(props: UeberUnsProps) {
           <h2 id="ansprechperson-titel" className="t-h2 text-white">
             {about.contact.title}
           </h2>
-          <p className="t-lead mt-5 max-w-[46ch] text-white/85">{about.contact.text}</p>
+          <p className="t-lead mt-5 max-w-[46ch] text-white/90">{about.contact.text}</p>
           <ul className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:gap-x-10">
             <li>
               <a
@@ -41,12 +41,12 @@ export default function UeberUnsAnsprechperson(props: UeberUnsProps) {
         <div className="min-w-0 md:pl-12 lg:pl-16">
           <h3 className="t-eyebrow text-brass">{about.register.title}</h3>
           <p className="mt-4 font-display text-xl font-bold leading-snug text-white">{company.legalName}</p>
-          <p className="mt-1 font-medium leading-relaxed text-white/85">
+          <p className="mt-1 font-medium leading-relaxed text-white/90">
             {company.address.street}, {company.address.postalCode} {company.address.city}
           </p>
-          <p className="mt-6 font-mono text-sm leading-6 text-white/85">{about.register.court}</p>
+          <p className="mt-6 font-mono text-sm leading-6 text-white/90">{about.register.court}</p>
           <dl className="mt-1 flex gap-3 font-mono text-sm leading-6">
-            <dt className="text-white/70">{about.register.uid}</dt>
+            <dt className="text-white/90">{about.register.uid}</dt>
             <dd className="text-white">{company.uid}</dd>
           </dl>
         </div>
