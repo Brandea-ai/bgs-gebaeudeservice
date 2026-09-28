@@ -17,14 +17,14 @@ export const luxusimmobilien: ServicePageContent = {
   area: 'premium',
   h1: 'Villenreinigung mit Materialkenntnis und festem Team',
   lead: [
-    'Ein Waschtisch aus Marmor, daneben eine Armatur aus Messing, im Wohnraum geöltes Eichenparkett: In einer Villa verlangt fast jede Fläche ein anderes Mittel. Was die Armatur vom Kalk befreit, kann den Stein daneben matt ätzen.',
-    'Wir reinigen Villen, Lofts und Residenzen mit einem festen Team, das Ihre Materialien und Ihre Regeln kennt. Es kommt regelmässig, rund um Ihre Anlässe oder dann, wenn Sie verreist sind. Die Materialtabelle und die Liste für den ersten Rundgang auf dieser Seite können Sie ausdrucken.',
+    'Ein Waschtisch aus Marmor, daneben eine Armatur aus Messing, im Wohnraum geöltes Eichenparkett: In einer Villa verlangt fast jede Fläche ein anderes Mittel.',
+    'Wir reinigen Villen, Lofts und Residenzen in Luzern, Zug und Umgebung mit einem festen Team, das Ihre Materialien und Ihre Regeln kennt. Es kommt regelmässig, rund um Ihre Anlässe oder dann, wenn Sie verreist sind.',
   ],
   facts: [
     { label: 'Für', value: 'Eigentümer, ihre Verwaltungen und Makler' },
     { label: 'Einsatzzeiten', value: 'Werktags, abends, am Wochenende oder während Ihrer Reise' },
     { label: 'Team', value: 'Fest zugeteilt und von uns überprüft' },
-    { label: 'Nicht enthalten', value: 'Restaurierung von Kunst und Antiquitäten' },
+    { label: 'Zum Ausdrucken', value: 'Materialtabelle und Liste für den ersten Rundgang' },
   ],
   scope: {
     title: 'Was die Pflege Ihres Hauses umfasst',
@@ -36,7 +36,7 @@ export const luxusimmobilien: ServicePageContent = {
       'Hochglanzflächen, Glas und Spiegel',
       'Reinigung vor Ihrer Ankunft, nach Ihrer Abreise und Kontrollgänge in der Zeit dazwischen',
       'Einsätze vor und nach Empfängen oder Familienfesten, auch am Wochenende',
-      'Räume mit Kunst und Antiquitäten, die Werke selbst nur mit Ihrer Freigabe',
+      'Wohnräume, in denen Kunst hängt und Antiquitäten stehen',
       'Kurzfristige Einsätze vor Verkauf, Fototermin oder Übergabe, auch im Auftrag von Makler oder Verwaltung',
     ],
     notIncluded: [
@@ -46,16 +46,16 @@ export const luxusimmobilien: ServicePageContent = {
   },
   sections: [
     {
-      title: 'Ein Bad, drei Materialien',
+      title: 'Was der Armatur hilft, schadet dem Marmor',
       paragraphs: [
-        'Im Bad zeigt sich, warum Materialkenntnis mehr ist als Vorsicht. Gegen Kalk an der Armatur empfiehlt ein grosser Armaturenhersteller Zitronensäure. Auf dem Marmorwaschtisch daneben greift genau diese Säure die Politur an, und der Küchenschwamm mit dem grünen Pad zerkratzt sie.',
-        'Deshalb gibt es bei uns kein Mittel für alles. Beim ersten Rundgang gehen wir Raum für Raum durch, welcher Stein, welches Holz und welche Oberfläche verbaut sind. Liegen Pflegeanleitungen von Hersteller, Schreinerei oder Innenarchitektur vor, gelten sie vor jeder Faustregel.',
+        'Im Bad zeigt sich, warum Materialkenntnis mehr ist als Vorsicht. Gegen Kalk an der Armatur empfiehlt ein grosser Armaturenhersteller Zitronensäure. Auf dem Marmorwaschtisch daneben greift genau diese Säure die Politur an, und der Küchenschwamm mit dem grünen Pad kann sie zerkratzen.',
+        'Deshalb gibt es bei uns kein Mittel für alles. Beim ersten Rundgang gehen wir Raum für Raum durch, welcher Stein, welches Holz und welche Oberfläche verbaut sind. Was welchem Material hilft und was ihm schadet, fasst die Tabelle weiter unten zusammen.',
       ],
     },
     {
       title: 'Zweitwohnung und Reisen: bereit bei Ihrer Ankunft',
       paragraphs: [
-        'Ein Haus am See oder eine Wohnung in den Bergen steht oft wochenlang leer. Vor Ihrer Ankunft reinigen wir, damit Sie ankommen und nichts mehr tun müssen. Nach Ihrer Abreise bringen wir das Haus wieder in Ordnung.',
+        'Ein Haus am Vierwaldstättersee oder am Zugersee steht oft wochenlang leer. Vor Ihrer Ankunft reinigen wir, damit Sie ankommen und nichts mehr tun müssen. Nach Ihrer Abreise bringen wir das Haus wieder in Ordnung.',
         'Dazwischen sehen wir so oft nach dem Rechten, wie Sie es wünschen. Sie bestimmen, worauf wir achten, etwa ob Fenster und Türen geschlossen sind oder ob irgendwo Wasser austritt. Was uns auffällt, erfährt die Person, die Sie benennen: Sie selbst, Ihre Verwaltung oder eine Vertrauensperson.',
       ],
     },
@@ -79,7 +79,7 @@ export const luxusimmobilien: ServicePageContent = {
         [
           'Marmor, Kalkstein, Travertin',
           'Sand und Staub zuerst trocken entfernen. Danach neutraler Reiniger oder Steinseife, mit klarem Wasser nachwischen und polierte Flächen trocknen, sonst bleiben Wasserflecken.',
-          'Jede Säure, auch Essig, Zitrone und Kalklöser: Sie ätzt die Oberfläche matt. Scheuermittel sowie Schwämme mit grünem oder blauem Pad zerkratzen die Politur.',
+          'Jede Säure, auch Essig, Zitrone und Kalklöser: Sie ätzt die Oberfläche matt. Scheuermittel sowie Schwämme mit grünem oder blauem Pad können die Politur zerkratzen.',
         ],
         [
           'Granit, Gneis, Quarzit',
@@ -92,19 +92,14 @@ export const luxusimmobilien: ServicePageContent = {
           'Nassreinigung, Reinigungsautomaten und Dampfgeräte',
         ],
         [
-          'Hochglanzlack, etwa an Küchenfronten',
-          'Fensterleder oder weiche Lederlappen, warmes Wasser mit mildem Haushaltsreiniger, immer ohne Druck wischen',
-          'Mikrofasertücher, verhärtete Lappen und scharfe Mittel: Sie hinterlassen bleibende Kratzer.',
+          'Lackierte Fronten, matt bis hochglänzend',
+          'Milder Haushaltsreiniger in warmem Wasser, dazu weiche Lederlappen oder Schwammtücher. Danach mit einem weichen, fusselfreien Tuch trocken wischen, immer ohne Druck. Bei Hochglanz genügen meist Fensterleder und warmes Wasser.',
+          'Mikrofasertücher, verhärtete Lappen und scharfe Mittel: Sie können bleibende Kratzer hinterlassen.',
         ],
         [
           'Armaturen',
-          'Mittel auf ein weiches Baumwolltuch geben, nicht direkt aufsprühen. Gegen Kalk empfiehlt ein Hersteller Zitronensäure, nie aber auf den Naturstein daneben.',
+          'Mittel auf ein weiches Baumwolltuch geben, nicht direkt aufsprühen. Gegen Kalk empfiehlt ein Hersteller Zitronensäure.',
           'Essig, Essig-, Ameisen-, Phosphor- und Salzsäure, Chlorbleichlauge, Kratzschwämme, Bürsten und Mikrofasertücher',
-        ],
-        [
-          'Polster, Vorhänge, Teppiche',
-          'Pflegeetikett und Angaben des Herstellers',
-          'Jede Behandlung, deren Pflegesymbol auf dem Etikett durchgestrichen ist',
         ],
       ],
       note:
@@ -115,7 +110,6 @@ export const luxusimmobilien: ServicePageContent = {
         { label: 'Interessengemeinschaft Schweizer Parkettmarkt ISP: Parkett ABC und Pflegeanleitungen', href: 'https://www.parkett-verband.ch/de/Parkett/Parkett-ABC-und-Pflegeanleitungen' },
         { label: 'Kurt Keller AG: Pflegehinweise für Fronten, Oberflächen und Schränke', href: 'https://www.kkag.ch/de/reinigung-und-pflege/pflegehinweise-fur-fronten-oberflachen-und-schranke/' },
         { label: 'hansgrohe: Armaturen entkalken und reinigen', href: 'https://www.hansgrohe.de/bad/ratgeber/pflege-wartung/armaturen-entkalken' },
-        { label: 'GINETEX Germany: Pflegesymbole', href: 'https://ginetex.de/pflegekennzeichnung/pflegesymbole/' },
       ],
       printable: true,
       updated: '2026-09-28',
@@ -134,7 +128,7 @@ export const luxusimmobilien: ServicePageContent = {
         'Für den Standort raten die Fachleute: nicht über dem Cheminée, nie in direkter Sonne und bei möglichst gleichmässiger Luftfeuchtigkeit zwischen 40 und 60 Prozent.',
       ],
       note:
-        'Die Restaurierung gehört nicht zu unserer Leistung. Fachpersonen in der Schweiz führt der Schweizerische Verband für Konservierung und Restaurierung SKR in seinem Verzeichnis.',
+        'Fachpersonen in der Schweiz finden Sie im Verzeichnis des Schweizerischen Verbands für Konservierung und Restaurierung SKR.',
       sources: [
         { label: 'Smithsonian Museum Conservation Institute: Caring for Your Paintings', href: 'https://mci.si.edu/caring-your-paintings' },
         { label: 'Canadian Conservation Institute: Basic care, Paintings', href: 'https://www.canada.ca/en/conservation-institute/services/care-objects/fine-art/basic-care-paintings.html' },
@@ -160,7 +154,7 @@ export const luxusimmobilien: ServicePageContent = {
         {
           title: 'Kunst und Wertgegenstände',
           items: [
-            'Welche Kunstwerke und Antiquitäten nur mit Ihrer Freigabe berührt werden',
+            'Ob Sie einzelne Kunstwerke oder Antiquitäten zur Reinigung freigeben',
             'Vitrinen, Sammlungen und Schränke, die geschlossen bleiben',
             'Wo empfindliche Stücke stehen, damit beim Reinigen der Räume niemand anstösst',
             'Pflegehinweise von Galerie, Restauratorin oder Restaurator, falls vorhanden',
@@ -215,19 +209,14 @@ export const luxusimmobilien: ServicePageContent = {
         'Den Zugang zum Haus, die Regeln für die Alarmanlage, vorhandene Pflegeanleitungen für Böden, Stein und Küche und eine Person, die erfährt, was uns auffällt. Die Liste zum Ausdrucken finden Sie weiter oben unter «Vor dem ersten Einsatz».',
     },
     {
-      question: 'Kommen immer dieselben Personen?',
+      question: 'Wer kommt zu uns ins Haus?',
       answer:
-        'Ja. Ihr Haus betreut ein festes Team, das Ihre Räume, Ihre Materialien und Ihre Regeln für Schlüssel und Alarm kennt. Alle im Team sind von uns überprüft.',
-    },
-    {
-      question: 'Reinigen Sie auch unsere Gemälde und Skulpturen?',
-      answer:
-        'Nur mit Ihrer ausdrücklichen Freigabe. Die Räume mit Kunst reinigen wir sorgfältig, die Werke selbst bleiben sonst unberührt. Die Oberflächenreinigung eines Gemäldes und jede Restaurierung gehören nach den Konservierungsfachstellen in die Hände einer Fachperson.',
+        'Ein festes Team, das Ihrem Haus zugeteilt ist und die mit Ihnen vereinbarten Regeln für Schlüssel und Alarm kennt. Alle im Team sind von uns überprüft.',
     },
     {
       question: 'Dürfen wir die Pflegemittel vorgeben?',
       answer:
-        'Ja. Empfiehlt der Hersteller Ihrer Böden, Ihrer Küche oder Ihrer Armaturen bestimmte Mittel, arbeiten wir damit. Bei Marmor, Kalkstein und Travertin raten wir von Produkten mit Säure ab, auch wenn sie als mild gelten.',
+        'Ja. Empfiehlt der Hersteller Ihrer Böden, Ihrer Küche oder Ihrer Armaturen bestimmte Mittel, arbeiten wir damit. Auf der Liste für den ersten Rundgang können Sie auch Mittel notieren, die Sie bevorzugen oder ausschliessen.',
     },
     {
       question: 'Übernehmen Sie auch die Reinigung vor und nach einem Empfang?',
@@ -238,6 +227,11 @@ export const luxusimmobilien: ServicePageContent = {
       question: 'Wie finden wir heraus, welcher Stein in unserem Haus verbaut ist?',
       answer:
         'Am zuverlässigsten aus den Bauunterlagen oder beim Steinlieferanten, der nach dem Naturstein-Verband Schweiz auch das passende Reinigungsverfahren nennen kann. Fehlen die Angaben, zeigt eine Probe an versteckter Stelle, ob der Stein säureempfindlich ist. Weil die Probe die Stelle aufraut, gehört sie in die Hand einer Fachperson.',
+    },
+    {
+      question: 'Warum ist der Steinboden unter dem Teppich heller als im Durchgang?',
+      answer:
+        'Das gehört zur Gebrauchspatina, die der Naturstein-Verband Schweiz beschreibt: Feinste Poren füllen sich mit Staub, manche Farbteilchen im Stein bleichen aus. Unter Möbeln und Teppichen kommen weniger Staub und Licht hin, deshalb bleibt der Stein dort heller, und viel begangene Stellen werden dunkler. Auch eine Grundreinigung entfernt diese Patina im Allgemeinen nicht vollständig. Wird nur ein Teil des Bodens intensiv gereinigt, können sogar neue Helligkeitsunterschiede entstehen.',
     },
   ],
   related: [

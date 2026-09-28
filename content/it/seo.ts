@@ -25,8 +25,8 @@ export const pages = {
   },
   '/premium/luxusimmobilien': {
     label: 'Immobili di pregio',
-    title: 'Pulizia di ville e immobili di pregio a Lucerna',
-    description: 'Pulizia di ville con un team fisso: pietra naturale, parquet e superfici lucide ben curati, anche in Sua assenza. Offerta gratuita dopo il sopralluogo.',
+    title: 'Pulizia di ville e cura di immobili di pregio',
+    description: 'Pulizia di ville a Lucerna, Zugo e dintorni: pietra naturale, parquet e lacca ben curati, anche in Sua assenza. Offerta gratuita dopo il sopralluogo.',
   },
   '/premium/privatjet': {
     label: 'Jet privato',

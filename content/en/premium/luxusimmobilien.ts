@@ -12,14 +12,14 @@ export const luxusimmobilien: ServicePageContent = {
   area: 'premium',
   h1: 'Villa cleaning with material expertise and a dedicated team',
   lead: [
-    'A marble washbasin, a brass tap beside it, oiled oak parquet in the living room: in a villa, almost every surface calls for a different product. What frees the tap of limescale can etch a dull mark into the stone next to it.',
-    'We clean villas, lofts and residences with a dedicated team that knows your materials and your rules. It comes on a regular basis, around your events or while you are travelling. You can print the materials table and the list for the first walk-through on this page.',
+    'A marble washbasin, a brass tap beside it, oiled oak parquet in the living room: in a villa, almost every surface calls for a different product.',
+    'We clean villas, lofts and residences in Lucerne, Zug and beyond with a dedicated team that knows your materials and your rules. It comes on a regular basis, around your events or while you are travelling.',
   ],
   facts: [
     { label: 'For', value: 'Owners, their property managers and estate agents' },
     { label: 'Working hours', value: 'Weekdays, evenings, weekends or while you travel' },
     { label: 'Team', value: 'Permanently assigned and vetted by us' },
-    { label: 'Not included', value: 'Restoration of art and antiques' },
+    { label: 'To print', value: 'Materials table and list for the first walk-through' },
   ],
   scope: {
     title: 'What caring for your home covers',
@@ -31,7 +31,7 @@ export const luxusimmobilien: ServicePageContent = {
       'High-gloss surfaces, glass and mirrors',
       'Cleaning before you arrive, after you leave and checks in between',
       'Visits before and after receptions or family celebrations, weekends included',
-      'Rooms with art and antiques, the works themselves only with your approval',
+      'Living spaces where art hangs and antiques stand',
       'Short-notice visits before a sale, a photo shoot or a handover, also on behalf of an estate agent or property manager',
     ],
     notIncluded: [
@@ -41,16 +41,16 @@ export const luxusimmobilien: ServicePageContent = {
   },
   sections: [
     {
-      title: 'One bathroom, three materials',
+      title: 'What helps the tap harms the marble',
       paragraphs: [
-        'The bathroom shows why knowing your materials is more than caution. A major tap manufacturer recommends citric acid against limescale on the tap. On the marble washbasin next to it, that very acid attacks the polish, and the kitchen sponge with the green scouring pad scratches it.',
-        'That is why we never use one product for everything. On the first walk-through we go room by room through the stone, wood and finishes in your home. Where there are care instructions from the manufacturer, the joiner or the interior designer, they take precedence over any rule of thumb.',
+        'The bathroom shows why knowing your materials is more than caution. A major tap manufacturer recommends citric acid against limescale on the tap. On the marble washbasin next to it, that very acid attacks the polish, and the kitchen sponge with the green scouring pad can scratch it.',
+        'That is why we never use one product for everything. On the first walk-through we go room by room through the stone, wood and finishes in your home. The table further down sums up what helps each material and what damages it.',
       ],
     },
     {
       title: 'Second homes and travel: ready when you arrive',
       paragraphs: [
-        'A house by the lake or a flat in the mountains often stands empty for weeks. Before you arrive, we clean so that you can walk in with nothing left to do. After you leave, we put the house back in order.',
+        'A house on Lake Lucerne or Lake Zug often stands empty for weeks. Before you arrive, we clean so that you can walk in with nothing left to do. After you leave, we put the house back in order.',
         'In between, we look in as often as you wish. You decide what we pay attention to, for example whether windows and doors are shut or water is leaking anywhere. Anything we notice goes to the person you name: you, your property manager or someone you trust.',
       ],
     },
@@ -58,7 +58,7 @@ export const luxusimmobilien: ServicePageContent = {
       title: 'Before a sale, a photo shoot or a handover',
       paragraphs: [
         'Estate agents and property managers can instruct us on the owner’s behalf, at short notice too. For photos, what counts is what the camera sees: glass, mirrors, polished floors and kitchen fronts show every streak in raking light.',
-        'Tell us the date of the photographer or the first viewing, the rooms that will be shown and how we get into the house. Once the house is cleared, the final clean before handover to the new owners follows as [end-of-tenancy cleaning](/leistungen/umzugsreinigung).',
+        'Tell us the date of the photo shoot or the first viewing, the rooms that will be shown and how we get into the house. Once the house is cleared, the final clean before handover to the new owners is covered by our [move-out cleaning](/leistungen/umzugsreinigung).',
       ],
     },
   ],
@@ -74,7 +74,7 @@ export const luxusimmobilien: ServicePageContent = {
         [
           'Marble, limestone, travertine',
           'Remove sand and dust dry first. Then a neutral cleaner or stone soap, wipe with clear water and dry polished surfaces, otherwise water marks remain.',
-          'Any acid, including vinegar, lemon and limescale removers: it etches the surface dull. Scouring agents and sponges with a green or blue pad scratch the polish.',
+          'Any acid, including vinegar, lemon and limescale removers: it etches the surface dull. Scouring agents and sponges with a green or blue pad can scratch the polish.',
         ],
         [
           'Granite, gneiss, quartzite',
@@ -87,19 +87,14 @@ export const luxusimmobilien: ServicePageContent = {
           'Wet cleaning, scrubber-dryer machines and steam cleaners',
         ],
         [
-          'High-gloss lacquer, for example on kitchen fronts',
-          'A chamois or soft leather cloth, warm water with a mild household cleaner, always wiped without pressure',
-          'Microfibre cloths, hardened rags and harsh products: they leave permanent scratches.',
+          'Lacquered fronts, matt to high-gloss',
+          'A mild household cleaner in warm water, with soft leather cloths or sponge cloths. Then wipe dry with a soft, lint-free cloth, always without pressure. On high-gloss fronts, a chamois and warm water are usually enough.',
+          'Microfibre cloths, hardened rags and harsh products: they can leave permanent scratches.',
         ],
         [
           'Taps',
-          'Put the product on a soft cotton cloth rather than spraying it on. One manufacturer recommends citric acid against limescale, but never on the natural stone next to the tap.',
+          'Put the product on a soft cotton cloth rather than spraying it on. One manufacturer recommends citric acid against limescale.',
           'Vinegar, acetic, formic, phosphoric and hydrochloric acid, chlorine bleach, scouring sponges, brushes and microfibre cloths',
-        ],
-        [
-          'Upholstery, curtains, rugs',
-          'The care label and the manufacturer’s instructions',
-          'Any treatment whose care symbol is crossed out on the label',
         ],
       ],
       note:
@@ -110,7 +105,6 @@ export const luxusimmobilien: ServicePageContent = {
         { label: 'Swiss parquet association ISP: parquet basics and care instructions (in German)', href: 'https://www.parkett-verband.ch/de/Parkett/Parkett-ABC-und-Pflegeanleitungen' },
         { label: 'Kurt Keller AG: care instructions for fronts, surfaces and cabinets (in German)', href: 'https://www.kkag.ch/de/reinigung-und-pflege/pflegehinweise-fur-fronten-oberflachen-und-schranke/' },
         { label: 'hansgrohe: descaling and cleaning taps (in German)', href: 'https://www.hansgrohe.de/bad/ratgeber/pflege-wartung/armaturen-entkalken' },
-        { label: 'GINETEX Germany: care symbols (in German)', href: 'https://ginetex.de/pflegekennzeichnung/pflegesymbole/' },
       ],
       printable: true,
       updated: '2026-09-28',
@@ -129,7 +123,7 @@ export const luxusimmobilien: ServicePageContent = {
         'For where to hang works, the experts advise: not above the fireplace, never in direct sunlight, and at relative humidity kept as steady as possible between 40 and 60 per cent.',
       ],
       note:
-        'Restoration is not part of our service. The Swiss Association for Conservation and Restoration SKR lists specialists in Switzerland in its directory.',
+        'You will find specialists in Switzerland in the directory of the Swiss Association for Conservation and Restoration SKR.',
       sources: [
         { label: 'Smithsonian Museum Conservation Institute: Caring for Your Paintings', href: 'https://mci.si.edu/caring-your-paintings' },
         { label: 'Canadian Conservation Institute: Basic care, Paintings', href: 'https://www.canada.ca/en/conservation-institute/services/care-objects/fine-art/basic-care-paintings.html' },
@@ -155,7 +149,7 @@ export const luxusimmobilien: ServicePageContent = {
         {
           title: 'Art and valuables',
           items: [
-            'Which artworks and antiques are only touched with your approval',
+            'Whether you approve individual artworks or antiques for cleaning',
             'Display cabinets, collections and cupboards that stay closed',
             'Where delicate pieces stand, so that nobody knocks into them while cleaning the room',
             'Care notes from a gallery or conservator, if there are any',
@@ -202,7 +196,7 @@ export const luxusimmobilien: ServicePageContent = {
     {
       question: 'What does the price for looking after a villa depend on?',
       answer:
-        'There is no flat rate, because houses differ greatly. The effort depends mainly on the living space and the number of rooms, the share of delicate surfaces such as natural stone, high gloss and oiled parquet, and the frequency: weekly, monthly or only before events. Extras such as checks while you are away come on top. We give you the price after the walk-through, for your house specifically.',
+        'There is no flat rate, because houses differ greatly. The work involved depends mainly on the living space and the number of rooms, the share of delicate surfaces such as natural stone, high-gloss finishes and oiled parquet, and the frequency: weekly, monthly or only before events. Extras such as checks while you are away come on top. We give you the price after the walk-through, for your house specifically.',
     },
     {
       question: 'What do you need from us before the first visit?',
@@ -210,19 +204,14 @@ export const luxusimmobilien: ServicePageContent = {
         'Access to the house, the rules for the alarm system, any care instructions for floors, stone and kitchen, and a person who hears about anything we notice. You will find the printable list further up under «Before the first visit».',
     },
     {
-      question: 'Do the same people always come?',
+      question: 'Who comes into our house?',
       answer:
-        'Yes. Your home is looked after by a dedicated team that knows your rooms, your materials and your rules for keys and alarm. Everyone on the team has been vetted by us.',
-    },
-    {
-      question: 'Do you also clean our paintings and sculptures?',
-      answer:
-        'Only with your express approval. We clean the rooms with art carefully; otherwise the works themselves remain untouched. According to conservation bodies, cleaning the surface of a painting and any restoration belong in the hands of a specialist.',
+        'A dedicated team assigned to your home, which knows the rules for keys and alarm agreed with you. Everyone on the team has been vetted by us.',
     },
     {
       question: 'Can we specify the care products?',
       answer:
-        'Yes. If the manufacturer of your floors, kitchen or taps recommends particular products, we work with them. On marble, limestone and travertine we advise against products containing acid, even those considered mild.',
+        'Yes. If the manufacturer of your floors, kitchen or taps recommends particular products, we work with them. On the list for the first walk-through you can also note products you prefer or rule out.',
     },
     {
       question: 'Do you also clean before and after a reception?',
@@ -234,10 +223,15 @@ export const luxusimmobilien: ServicePageContent = {
       answer:
         'Most reliably from the construction documents or the stone supplier, who according to the Swiss natural stone association can also name the right cleaning method. If the information is missing, a test in a hidden spot shows whether the stone is sensitive to acid. Because the test roughens the spot, it should be done by a specialist.',
     },
+    {
+      question: 'Why is the stone floor lighter under the rug than in the walkway?',
+      answer:
+        'This is part of the patina of use described by the Swiss natural stone association: the finest pores fill with dust and some colour particles in the stone fade. Less dust and light reach the stone under furniture and rugs, so it stays lighter there, while heavily used areas turn darker. Even a deep clean generally does not remove this patina completely. If only part of the floor is cleaned intensively, new differences in brightness can even appear.',
+    },
   ],
   related: [
     { path: '/premium/yacht', text: 'If a boat comes with the house by the lake: teak, gelcoat and upholstery at the mooring.' },
-    { path: '/leistungen/umzugsreinigung', text: 'When moving out or selling: the final clean before handover, for villas also for private owners.' },
+    { path: '/leistungen/umzugsreinigung', text: 'When moving out or selling: the final clean before handover, for villas also for private individuals.' },
     { path: '/premium', text: 'All premium services, from second homes to family offices, on one page.' },
   ],
   cta: {

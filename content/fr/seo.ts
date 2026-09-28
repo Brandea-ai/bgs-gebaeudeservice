@@ -25,8 +25,8 @@ export const pages = {
   },
   '/premium/luxusimmobilien': {
     label: 'Biens de prestige',
-    title: 'Nettoyage de villas de prestige à Lucerne',
-    description: 'Nettoyage de villas avec une équipe fixe : pierre naturelle, parquet et laque bien entretenus, même en votre absence. Devis gratuit après une visite.',
+    title: 'Nettoyage de villas et de biens de prestige',
+    description: 'Nettoyage de villas à Lucerne, Zoug et environs : pierre naturelle, parquet et laque bien entretenus, même en votre absence. Devis gratuit après une visite.',
   },
   '/premium/privatjet': {
     label: 'Jet privé',

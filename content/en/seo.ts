@@ -25,8 +25,8 @@ export const pages: Dictionary['pages'] = {
   },
   '/premium/luxusimmobilien': {
     label: 'Luxury properties',
-    title: 'Villa cleaning for luxury homes in Lucerne',
-    description: 'Villa cleaning with a dedicated team: natural stone, parquet and high gloss properly cared for, even while you are away. Free quote after a site visit.',
+    title: 'Villa cleaning and care for luxury homes',
+    description: 'Villa cleaning in Lucerne, Zug and beyond: natural stone, parquet and lacquer properly cared for, even while you are away. Free quote after a site visit.',
   },
   '/premium/privatjet': {
     label: 'Private jet',

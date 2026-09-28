@@ -12,14 +12,14 @@ export const luxusimmobilien: ServicePageContent = {
   area: 'premium',
   h1: 'Pulizia di ville con un team fisso che conosce i materiali',
   lead: [
-    'Un lavabo in marmo, accanto una rubinetteria in ottone, nel soggiorno un parquet di rovere oliato: in una villa quasi ogni superficie richiede un prodotto diverso. Ciò che libera il rubinetto dal calcare può lasciare una macchia opaca sulla pietra accanto.',
-    'Puliamo ville, loft e residenze con un team fisso che conosce i Suoi materiali e le Sue regole. Viene con regolarità, in occasione dei Suoi ricevimenti o mentre è in viaggio. La tabella dei materiali e la lista per il primo giro della casa si trovano su questa pagina, pronte da stampare.',
+    'Un lavabo in marmo, accanto un rubinetto in ottone, nel soggiorno un parquet di rovere oliato: in una villa quasi ogni superficie richiede un prodotto diverso.',
+    'Puliamo ville, loft e residenze a Lucerna, Zugo e dintorni con un team fisso che conosce i Suoi materiali e le Sue regole. Viene con regolarità, in occasione dei Suoi ricevimenti o mentre è in viaggio.',
   ],
   facts: [
     { label: 'Per', value: 'Proprietari, le loro amministrazioni e agenti immobiliari' },
     { label: 'Orari', value: 'Nei giorni feriali, la sera, nel fine settimana o durante i Suoi viaggi' },
     { label: 'Team', value: 'Assegnato in modo fisso e verificato da noi' },
-    { label: 'Non compreso', value: 'Restauro di opere d’arte e oggetti d’antiquariato' },
+    { label: 'Da stampare', value: 'Tabella dei materiali e lista per il primo giro' },
   ],
   scope: {
     title: 'Che cosa comprende la cura della Sua casa',
@@ -31,26 +31,26 @@ export const luxusimmobilien: ServicePageContent = {
       'Superfici laccate lucide, vetro e specchi',
       'Pulizia prima del Suo arrivo, dopo la Sua partenza e giri di controllo nel periodo intermedio',
       'Interventi prima e dopo ricevimenti o feste di famiglia, anche nel fine settimana',
-      'Locali con opere d’arte e oggetti d’antiquariato, le opere stesse solo con la Sua autorizzazione',
+      'Spazi abitativi in cui si trovano opere d’arte e pezzi d’antiquariato',
       'Interventi con breve preavviso prima di una vendita, di un servizio fotografico o di una consegna, anche su incarico di un agente immobiliare o di un’amministrazione',
     ],
     notIncluded: [
-      'Restauro di opere d’arte e oggetti d’antiquariato.',
+      'Il restauro di opere d’arte e di pezzi antichi.',
       'La pulizia delle opere d’arte stesse, finché Lei non la autorizza espressamente.',
     ],
   },
   sections: [
     {
-      title: 'Un bagno, tre materiali',
+      title: 'Ciò che aiuta il rubinetto danneggia il marmo',
       paragraphs: [
-        'Il bagno mostra perché conoscere i materiali è più che semplice prudenza. Contro il calcare sulla rubinetteria un grande produttore raccomanda l’acido citrico. Sul lavabo in marmo accanto, proprio questo acido intacca la lucidatura, e la spugna da cucina con il lato verde abrasivo la graffia.',
-        'Per questo da noi non esiste un prodotto buono per tutto. Durante il primo giro esaminiamo locale per locale quale pietra, quale legno e quali finiture sono presenti. Se esistono istruzioni di cura del produttore, della falegnameria o dell’architettura d’interni, valgono prima di qualsiasi regola generale.',
+        'Il bagno mostra perché conoscere i materiali è più che semplice prudenza. Contro il calcare sul rubinetto un grande produttore di rubinetteria raccomanda l’acido citrico. Sul lavabo in marmo accanto, proprio questo acido intacca la lucidatura, e la spugna da cucina con il lato verde abrasivo può graffiarla.',
+        'Per questo da noi non esiste un prodotto buono per tutto. Durante il primo giro esaminiamo locale per locale quale pietra, quale legno e quali finiture sono presenti. La tabella più in basso riassume che cosa giova a ogni materiale e che cosa lo danneggia.',
       ],
     },
     {
       title: 'Abitazione secondaria e viaggi: tutto pronto al Suo arrivo',
       paragraphs: [
-        'Una casa sul lago o un appartamento in montagna resta spesso vuoto per settimane. Prima del Suo arrivo puliamo, affinché arrivando non debba fare più nulla. Dopo la Sua partenza rimettiamo in ordine la casa.',
+        'Una casa sul lago dei Quattro Cantoni o sul lago di Zugo resta spesso vuota per settimane. Prima del Suo arrivo puliamo, affinché arrivando non debba fare più nulla. Dopo la Sua partenza rimettiamo in ordine la casa.',
         'Nel frattempo passiamo a controllare con la frequenza che desidera. Decide Lei a che cosa prestiamo attenzione, per esempio se finestre e porte sono chiuse o se da qualche parte esce acqua. Ciò che notiamo viene comunicato alla persona che Lei indica: a Lei, alla Sua amministrazione o a una persona di fiducia.',
       ],
     },
@@ -58,7 +58,7 @@ export const luxusimmobilien: ServicePageContent = {
       title: 'Prima di una vendita, di un servizio fotografico o di una consegna',
       paragraphs: [
         'Agenti immobiliari e amministrazioni possono incaricarci a nome dei proprietari, anche con breve preavviso. Per le foto conta ciò che vede l’obiettivo: vetro, specchi, pavimenti lucidati e frontali della cucina mostrano ogni alone nella luce radente.',
-        'Ci indichi la data del fotografo o della prima visita, i locali che verranno mostrati e come accediamo alla casa. Quando la casa è sgomberata, la pulizia finale prima della consegna ai nuovi proprietari avviene con la [pulizia di fine locazione](/leistungen/umzugsreinigung).',
+        'Ci indichi la data del servizio fotografico o della prima visita, i locali che verranno mostrati e come accediamo alla casa. Quando la casa è sgomberata, la pulizia finale prima della consegna ai nuovi proprietari rientra nella nostra [pulizia di trasloco](/leistungen/umzugsreinigung).',
       ],
     },
   ],
@@ -69,17 +69,17 @@ export const luxusimmobilien: ServicePageContent = {
       title: 'Quale cura richiede ogni materiale',
       intro:
         'Le regole di base di associazioni di categoria e produttori per le superfici più frequenti nelle ville. Da stampare per tutte le persone che puliscono in casa Sua.',
-      columns: ['Materiale', 'Come resta bello', 'Che cosa lo danneggia'],
+      columns: ['Materiale', 'Come mantenerlo bello', 'Che cosa lo danneggia'],
       rows: [
         [
           'Marmo, calcare, travertino',
           'Prima togliere a secco sabbia e polvere. Poi un detergente neutro o un sapone per pietra, ripassare con acqua pulita e asciugare le superfici lucidate, altrimenti restano macchie d’acqua.',
-          'Qualsiasi acido, anche aceto, limone e anticalcare: rende opaca la superficie. Prodotti abrasivi e spugne con lato verde o blu graffiano la lucidatura.',
+          'Qualsiasi acido, anche aceto, limone e anticalcare: rende opaca la superficie. Prodotti abrasivi e spugne con lato verde o blu possono graffiare la lucidatura.',
         ],
         [
           'Granito, gneiss, quarzite',
           'Resistenti agli acidi. Secondo l’associazione svizzera della pietra naturale, qui si possono usare tutti i metodi di pulizia usuali.',
-          'Lo scambio: se non è chiaro quale pietra sia stata posata, una prova in un punto nascosto mostra se è sensibile agli acidi.',
+          'Confondere le pietre: se non è chiaro quale pietra sia stata posata, una prova in un punto nascosto mostra se è sensibile agli acidi.',
         ],
         [
           'Parquet verniciato o oliato',
@@ -87,19 +87,14 @@ export const luxusimmobilien: ServicePageContent = {
           'Pulizia con molta acqua, lavasciuga e apparecchi a vapore',
         ],
         [
-          'Lacca lucida, per esempio sui frontali della cucina',
-          'Pelle di daino o panno morbido in pelle, acqua calda con un detergente domestico delicato, passare sempre senza premere',
-          'Panni in microfibra, stracci induriti e prodotti aggressivi: lasciano graffi permanenti.',
+          'Frontali laccati, da opachi a lucidi',
+          'Un detergente domestico delicato sciolto in acqua calda, con panni morbidi in pelle o panni spugna. Poi asciugare con un panno morbido che non lascia pelucchi, sempre senza premere. Sulla lacca lucida bastano di solito pelle di daino e acqua calda.',
+          'Panni in microfibra, stracci induriti e prodotti aggressivi: possono lasciare graffi permanenti.',
         ],
         [
           'Rubinetteria',
-          'Mettere il prodotto su un panno morbido di cotone, non spruzzarlo direttamente. Un produttore raccomanda l’acido citrico contro il calcare, ma mai sulla pietra naturale accanto.',
+          'Mettere il prodotto su un panno morbido di cotone, non spruzzarlo direttamente. Un produttore raccomanda l’acido citrico contro il calcare.',
           'Aceto, acido acetico, formico, fosforico e cloridrico, candeggina al cloro, spugne abrasive, spazzole e microfibra',
-        ],
-        [
-          'Imbottiture, tende, tappeti',
-          'L’etichetta di manutenzione e le indicazioni del produttore',
-          'Qualsiasi trattamento il cui simbolo è barrato sull’etichetta',
         ],
       ],
       note:
@@ -110,7 +105,6 @@ export const luxusimmobilien: ServicePageContent = {
         { label: 'Associazione svizzera del parquet ISP: nozioni di base e istruzioni di cura (in tedesco)', href: 'https://www.parkett-verband.ch/de/Parkett/Parkett-ABC-und-Pflegeanleitungen' },
         { label: 'Kurt Keller AG: indicazioni di cura per frontali, superfici e armadi (in tedesco)', href: 'https://www.kkag.ch/de/reinigung-und-pflege/pflegehinweise-fur-fronten-oberflachen-und-schranke/' },
         { label: 'hansgrohe: decalcificare e pulire la rubinetteria (in tedesco)', href: 'https://www.hansgrohe.de/bad/ratgeber/pflege-wartung/armaturen-entkalken' },
-        { label: 'GINETEX Germany: simboli di manutenzione (in tedesco)', href: 'https://ginetex.de/pflegekennzeichnung/pflegesymbole/' },
       ],
       printable: true,
       updated: '2026-09-28',
@@ -129,11 +123,11 @@ export const luxusimmobilien: ServicePageContent = {
         'Per la collocazione gli esperti consigliano: non sopra il camino, mai alla luce diretta del sole e con un’umidità relativa il più possibile costante tra il 40 e il 60 per cento.',
       ],
       note:
-        'Il restauro non fa parte del nostro servizio. L’Associazione svizzera di conservazione e restauro SKR elenca gli specialisti in Svizzera nel suo registro.',
+        'Trova specialisti in Svizzera nell’elenco dell’Associazione svizzera per la conservazione ed il restauro SCR.',
       sources: [
         { label: 'Smithsonian Museum Conservation Institute: Caring for Your Paintings (in inglese)', href: 'https://mci.si.edu/caring-your-paintings' },
         { label: 'Istituto canadese di conservazione: Basic care, Paintings (in inglese)', href: 'https://www.canada.ca/en/conservation-institute/services/care-objects/fine-art/basic-care-paintings.html' },
-        { label: 'Associazione svizzera di conservazione e restauro SKR', href: 'https://restaurierung.swiss/it' },
+        { label: 'Associazione svizzera per la conservazione ed il restauro SCR', href: 'https://restaurierung.swiss/it' },
       ],
     },
     {
@@ -155,9 +149,9 @@ export const luxusimmobilien: ServicePageContent = {
         {
           title: 'Arte e oggetti di valore',
           items: [
-            'Quali opere d’arte e oggetti d’antiquariato si toccano solo con la Sua autorizzazione',
+            'Se autorizza la pulizia di singole opere d’arte o oggetti d’antiquariato',
             'Vetrine, collezioni e armadi che restano chiusi',
-            'Dove si trovano i pezzi delicati, perché nessuno li urti pulendo il locale',
+            'Dove si trovano gli oggetti delicati, perché nessuno li urti durante la pulizia',
             'Indicazioni di cura di una galleria o di un restauratore, se disponibili',
           ],
         },
@@ -202,7 +196,7 @@ export const luxusimmobilien: ServicePageContent = {
     {
       question: 'Da che cosa dipende il prezzo per la cura di una villa?',
       answer:
-        'Non esiste un forfait, perché le case sono molto diverse tra loro. L’impegno dipende soprattutto dalla superficie abitabile e dal numero di locali, dalla quota di superfici delicate come pietra naturale, lacca lucida e parquet oliato, e dal ritmo: ogni settimana, ogni mese o solo prima dei ricevimenti. A ciò si aggiungono prestazioni come i giri di controllo durante la Sua assenza. Il prezzo glielo indichiamo dopo il giro della casa, per la Sua casa in particolare.',
+        'Non esiste un forfait, perché le case sono molto diverse tra loro. Il lavoro necessario dipende soprattutto dalla superficie abitabile e dal numero di locali, dalla quota di superfici delicate come pietra naturale, lacca lucida e parquet oliato, e dal ritmo: ogni settimana, ogni mese o solo prima dei ricevimenti. A ciò si aggiungono prestazioni come i giri di controllo durante la Sua assenza. Il prezzo glielo indichiamo dopo il giro della casa, per la Sua casa in particolare.',
     },
     {
       question: 'Di che cosa avete bisogno da noi prima del primo intervento?',
@@ -210,19 +204,14 @@ export const luxusimmobilien: ServicePageContent = {
         'L’accesso alla casa, le regole per l’impianto d’allarme, le istruzioni di cura disponibili per pavimenti, pietra e cucina e una persona che viene informata di ciò che notiamo. La lista da stampare si trova più in alto, sotto «Prima del primo intervento».',
     },
     {
-      question: 'Vengono sempre le stesse persone?',
+      question: 'Chi entra in casa nostra?',
       answer:
-        'Sì. La Sua casa è affidata a un team fisso che conosce i Suoi locali, i Suoi materiali e le Sue regole per chiavi e allarme. Tutte le persone del team sono state verificate da noi.',
-    },
-    {
-      question: 'Pulite anche i nostri dipinti e le nostre sculture?',
-      answer:
-        'Solo con la Sua autorizzazione esplicita. I locali con opere d’arte li puliamo con cura, altrimenti le opere stesse restano intatte. Secondo gli istituti di conservazione, la pulizia della superficie di un dipinto e ogni restauro spettano a una persona specializzata.',
+        'Un team fisso assegnato alla Sua casa, che conosce le regole per chiavi e allarme concordate con Lei. Tutte le persone del team sono state verificate da noi.',
     },
     {
       question: 'Possiamo indicare noi i prodotti di cura?',
       answer:
-        'Sì. Se il produttore dei Suoi pavimenti, della Sua cucina o della Sua rubinetteria raccomanda determinati prodotti, lavoriamo con quelli. Su marmo, calcare e travertino sconsigliamo i prodotti contenenti acidi, anche quelli ritenuti delicati.',
+        'Sì. Se il produttore dei Suoi pavimenti, della Sua cucina o della Sua rubinetteria raccomanda determinati prodotti, lavoriamo con quelli. Sulla lista per il primo giro può annotare anche i prodotti che preferisce o esclude.',
     },
     {
       question: 'Pulite anche prima e dopo un ricevimento?',
@@ -233,6 +222,11 @@ export const luxusimmobilien: ServicePageContent = {
       question: 'Come scopriamo quale pietra è stata posata nella nostra casa?',
       answer:
         'Nel modo più affidabile dai documenti di costruzione o dal fornitore della pietra che, secondo l’associazione svizzera della pietra naturale, sa indicare anche il metodo di pulizia adatto. Se mancano le indicazioni, una prova in un punto nascosto mostra se la pietra è sensibile agli acidi. Poiché la prova rende ruvido il punto, va affidata a una persona specializzata.',
+    },
+    {
+      question: 'Perché il pavimento in pietra è più chiaro sotto il tappeto che nei punti di passaggio?',
+      answer:
+        'Fa parte della patina d’uso descritta dall’associazione svizzera della pietra naturale: i pori più fini si riempiono di polvere e alcune particelle di colore della pietra sbiadiscono. Sotto mobili e tappeti arrivano meno polvere e meno luce, perciò lì la pietra resta più chiara, mentre le zone molto calpestate diventano più scure. Nemmeno una pulizia a fondo elimina in genere del tutto questa patina. Se si pulisce a fondo solo una parte del pavimento, possono persino nascere nuove differenze di tonalità.',
     },
   ],
   related: [

@@ -26,7 +26,7 @@ export const pages = {
   '/premium/luxusimmobilien': {
     label: 'Luxusimmobilien',
     title: 'Villenreinigung und Pflege von Luxusimmobilien',
-    description: 'Villenreinigung mit festem Team: Naturstein, Parkett und Hochglanz richtig gepflegt, auch während Ihrer Abwesenheit. Kostenlose Offerte nach Besichtigung.',
+    description: 'Villenreinigung in Luzern, Zug und Umgebung: Naturstein, Parkett und Lack richtig gepflegt, auch in Ihrer Abwesenheit. Kostenlose Offerte nach Besichtigung.',
   },
   '/premium/privatjet': {
     label: 'Privatjet',
