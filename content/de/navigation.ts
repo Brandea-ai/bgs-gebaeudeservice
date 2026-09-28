@@ -163,6 +163,8 @@ export const nav = {
     seat: `Sitz in ${company.address.city}`,
     megaTitle: 'Offerte vor Ort',
     megaText: 'Wir sehen uns Ihr Objekt an und erstellen eine schriftliche Offerte, kostenlos und unverbindlich.',
+    premiumTeaser: 'Diskrete Reinigung und Pflege für Villen, Privatjets und Yachten.',
+    heroLanguages: 'Beratung in Ihrer Sprache',
     phone: 'Telefon',
     email: 'E-Mail',
     address: 'Adresse',

@@ -61,7 +61,7 @@ export default function BlogOverviewView({ lang }: { lang: Locale }) {
               className="flex items-start gap-3 text-[0.9375rem] font-medium leading-relaxed text-ink-700"
             >
               <Check
-                weight="regular"
+                weight="duotone"
                 className="mt-[0.2em] size-5 shrink-0 text-signal"
                 aria-hidden="true"
               />
@@ -81,7 +81,7 @@ export default function BlogOverviewView({ lang }: { lang: Locale }) {
           >
             {t.readMore}
             <ArrowRight
-              weight="regular"
+              weight="duotone"
               className="size-4 shrink-0"
               aria-hidden="true"
             />
@@ -107,10 +107,14 @@ export default function BlogOverviewView({ lang }: { lang: Locale }) {
         )}
       />
 
-      {/* Kopf ohne Bildfläche (F04, F14): Titel, Einleitung und der Satz zu den Leistungen */}
+      {/* Kopf mit Bild (E80): Titel, Einleitung und der Satz zu den Leistungen */}
       <PageHero path="/blog" lang={lang} title={t.h1} lead={t.intro}>
-        <p className="max-w-[56ch] font-medium leading-relaxed text-ink-700">
-          <RichText text={t.services} lang={lang} />
+        <p className="max-w-[56ch] font-medium leading-relaxed text-white/85">
+          <RichText
+            text={t.services}
+            lang={lang}
+            linkClassName="font-semibold text-white underline decoration-white/50 underline-offset-4"
+          />
         </p>
       </PageHero>
 

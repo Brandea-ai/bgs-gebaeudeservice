@@ -107,14 +107,14 @@ export default function AreaView({ lang }: { lang: Locale }) {
           <Button asChild size="xl" className="arrow-link">
             <a href="#kontakt-formular" data-cta="kopf-seite">
               {ui.offerCta}
-              <ArrowRight weight="regular" aria-hidden="true" />
+              <ArrowRight weight="duotone" aria-hidden="true" />
             </a>
           </Button>
           {/* Echter Pfeil nach unten, ohne arrow-link: der Hover würde sonst diagonal schieben (EG-14) */}
           <Button asChild size="xl" variant="inverse">
             <a href="#kantone">
               {area.cantonsTitle}
-              <ArrowDown weight="regular" aria-hidden="true" />
+              <ArrowDown weight="duotone" aria-hidden="true" />
             </a>
           </Button>
         </div>
@@ -133,7 +133,7 @@ export default function AreaView({ lang }: { lang: Locale }) {
              * Seite. Unter lg steht die Karte im Kopf direkt darüber, darum
              * hier ausgeblendet.
              */}
-            <div className="hidden lg:col-span-5 lg:block lg:self-start lg:sticky lg:top-[calc(var(--header-h)+var(--subnav-h,0px)+2rem)]">
+            <div className="hidden lg:col-span-5 lg:block lg:self-start lg:sticky lg:top-[calc(var(--header-offset)+var(--subnav-h,0px)+2rem)]">
               <CantonMap lang={lang} texts={mapTexts} pins={pins} />
             </div>
             <RevealGroup
@@ -226,7 +226,7 @@ export default function AreaView({ lang }: { lang: Locale }) {
                 <div key={label} className="relative py-5 pl-9">
                   <dt className="t-eyebrow text-ink-600">
                     <Glyph
-                      weight="regular"
+                      weight="duotone"
                       className="absolute left-0 top-5 size-5 text-signal"
                       aria-hidden="true"
                     />

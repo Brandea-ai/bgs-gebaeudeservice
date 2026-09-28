@@ -14,4 +14,5 @@ export const chatEnabled = process.env.NEXT_PUBLIC_CHAT_ENABLED === 'true'
  * Bis die neuen Bilder freigegeben sind, zeigen alle Bildflächen einen
  * neutralen Platzhalter. Mit NEXT_PUBLIC_REAL_IMAGES=true wieder Bilder.
  */
-export const imagesArePlaceholders = process.env.NEXT_PUBLIC_REAL_IMAGES !== 'true'
+// Seit E80 zeigen alle Flächen Bilder; NEXT_PUBLIC_REAL_IMAGES=false schaltet zurück auf Platzhalter
+export const imagesArePlaceholders = process.env.NEXT_PUBLIC_REAL_IMAGES === 'false'

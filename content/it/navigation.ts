@@ -159,6 +159,8 @@ export const nav: NavDictionary = {
     seat: `Sede a ${company.address.city}`,
     megaTitle: 'Offerta sul posto',
     megaText: 'Visitiamo il vostro immobile e allestiamo un’offerta scritta, gratuita e senza impegno.',
+    premiumTeaser: 'Pulizia e cura discrete per ville, jet privati e yacht.',
+    heroLanguages: 'Consulenza nella Sua lingua',
     phone: 'Telefono',
     email: 'E-mail',
     address: 'Indirizzo',

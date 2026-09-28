@@ -7,8 +7,9 @@ import { navDicts } from "../../../content/navigation";
 import type { Locale } from "../../../shared/i18n";
 
 /**
- * Feste Leiste am unteren Rand auf dem Handy (F7, F14, M31): Offerte und
- * Telefon immer erreichbar. Verschwindet, sobald Formular oder Footer im Bild
+ * Schwebende Leiste aus Milchglas am unteren Rand auf dem Handy (F7, M31, E80):
+ * Offerte und Telefon. Beim Runterscrollen fährt sie hinaus, beim Hochscrollen
+ * wieder hinein (CSS über data-nav, gesetzt in SwissNavigation). Verschwindet, sobald Formular oder Footer im Bild
  * sind. Der Footer klebt nur ab 1024 px (globals.css), unter 768 px steht er
  * im Fluss; darum ist er hier wieder ein verlässliches Mass (T01).
  */
@@ -42,27 +43,27 @@ export default function MobileCta({ lang = "de" }: { lang?: Locale }) {
     <nav
       aria-label={chrome.mobileCta}
       id="mobil-cta"
-      className={`fixed inset-x-0 bottom-0 z-40 grid grid-cols-[1fr_auto] gap-2 border-t border-line bg-white p-3 pb-[calc(0.75rem+env(safe-area-inset-bottom,0px))] shadow-[0_-8px_24px_-16px_rgba(14,17,22,0.25)] transition-transform duration-300 md:hidden ${
-        hidden ? "translate-y-full" : "translate-y-0"
+      className={`glass fixed inset-x-3 bottom-[calc(0.75rem+env(safe-area-inset-bottom,0px))] z-40 grid grid-cols-[1fr_auto] gap-2 rounded-[3px] p-2 md:hidden ${
+        hidden ? "!translate-y-[calc(100%+2rem)]" : ""
       }`}
       aria-hidden={hidden}
     >
       <a
         href={menu.cta.href}
-        className="press arrow-link inline-flex h-12 items-center justify-center gap-2 rounded-[0.25rem] bg-signal px-5 text-[0.9375rem] font-semibold text-white"
+        className="press arrow-link btn-lift inline-flex h-12 items-center justify-center gap-2 rounded-[3px] bg-signal px-5 text-[0.9375rem] font-semibold text-white"
         tabIndex={hidden ? -1 : undefined}
         data-cta="mobil"
       >
         {chrome.mobileCta}
-        <ArrowRight weight="regular" className="size-4" aria-hidden="true" />
+        <ArrowRight weight="duotone" className="size-4" aria-hidden="true" />
       </a>
       <a
         href={company.phone.href}
-        className="press inline-flex h-12 w-12 items-center justify-center rounded-[0.25rem] border border-ink text-ink"
+        className="press inline-flex h-12 w-12 items-center justify-center rounded-[3px] border border-ink/15 bg-white/60 text-ink"
         aria-label={`${chrome.phone}: ${company.phone.display}`}
         tabIndex={hidden ? -1 : undefined}
       >
-        <Phone weight="regular" className="size-5" aria-hidden="true" />
+        <Phone weight="duotone" className="size-5 text-signal" aria-hidden="true" />
       </a>
     </nav>
   );

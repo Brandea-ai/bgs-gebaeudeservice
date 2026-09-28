@@ -46,7 +46,6 @@ export default function StackPanels({
             </div>
             <div className="lg:col-span-5 lg:col-start-8">
               <p className="t-eyebrow text-brass">
-                <span className="mr-3 tabular-nums">{String(index + 1).padStart(2, "0")}</span>
                 {eyebrow}
               </p>
               <h3 className="t-h2 mt-4 text-white">{item.label}</h3>
@@ -56,7 +55,7 @@ export default function StackPanels({
                 className="arrow-link on-dark mt-8 inline-flex min-h-11 items-center gap-2 font-semibold text-white"
               >
                 {linkLabel}
-                <ArrowRight weight="regular" className="size-4 text-brass" aria-hidden="true" />
+                <ArrowRight weight="duotone" className="size-4 text-brass" aria-hidden="true" />
               </Link>
             </div>
           </div>

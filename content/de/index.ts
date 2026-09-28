@@ -1,5 +1,6 @@
 import { company, premiumLine, premiumTitleBrand } from '../../shared/company'
 import { answers, steps, ui } from './common'
+import { bilder } from './bilder'
 import { leistungen } from './leistungen'
 import { nav } from './navigation'
 import { premium } from './premium'
@@ -25,6 +26,7 @@ export const de = {
   seiten: { proof, home, about, contact, area, servicesOverview, premiumOverview },
   recht: { impressum, datenschutz },
   nav,
+  bilder,
   misc: {
     /** Sprache für Datumsangaben */
     dateLocale: 'de-CH',

@@ -22,7 +22,7 @@ export default function NotFoundView({ lang }: { lang: Locale }) {
           className="container grid-lines pointer-events-none absolute inset-0 max-md:hidden"
           aria-hidden="true"
         />
-        <div className="container relative grid gap-12 py-16 md:py-20 lg:grid-cols-12 lg:gap-10 lg:py-28">
+        <div className="container hero-top relative grid gap-12 pb-16 md:pb-20 lg:grid-cols-12 lg:gap-10 lg:pb-28">
           <div className="min-w-0 lg:col-span-7">
             {/* Grosse Ziffer als Dekor, für Vorleser unsichtbar */}
             <p
@@ -50,7 +50,7 @@ export default function NotFoundView({ lang }: { lang: Locale }) {
                 >
                   <span className="min-w-0">{link.label}</span>
                   <ArrowRight
-                    weight="regular"
+                    weight="duotone"
                     className="size-5 shrink-0 text-brass"
                     aria-hidden="true"
                   />

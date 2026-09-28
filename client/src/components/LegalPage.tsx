@@ -1,5 +1,6 @@
 import PageFrame from "@/components/PageFrame";
-import Breadcrumbs from "./Breadcrumbs";
+import Hero from "./Hero";
+import { heroImage } from "../../../shared/hero-images";
 import RichText from "./RichText";
 import TocNav from "./TocNav";
 import { formatDate } from "./ArticlePage";
@@ -79,31 +80,35 @@ export default function LegalPage({
 
   return (
     <PageFrame lang={lang} path={path} contact={seiten.home.cta}>
-      <div className="border-b border-line bg-stone print:border-0 print:bg-transparent">
-        <div className="container pt-6 pb-12 md:pt-10 lg:pb-16">
-          <Breadcrumbs path={path} lang={lang} />
-          <div className="grid gap-8 lg:grid-cols-12 lg:items-end lg:gap-10">
-            <div className="min-w-0 lg:col-span-8">
-              <h1 className="t-h1 max-w-[22ch] text-ink">{content.h1}</h1>
+      {/* Kopf mit ruhigem Bild (E80), kompakt; im Druck schwarz auf weiss (globals.css) */}
+      <Hero
+          image={heroImage[path]}
+          path={path}
+          lang={lang}
+          size="compact"
+          title={content.h1}
+          lead={
+            <>
               {content.intro && (
-                <p className="t-lead mt-6 max-w-[56ch] text-ink-600">
-                  <RichText text={withEmailLink(content.intro)} lang={lang} />
+                <p className="max-w-[56ch]">
+                  <RichText
+                    text={withEmailLink(content.intro)}
+                    lang={lang}
+                    linkClassName="font-semibold text-white underline decoration-white/50 underline-offset-4"
+                  />
                 </p>
               )}
-            </div>
-            <p className="font-mono text-xs font-semibold uppercase tracking-[0.12em] text-ink-600 lg:col-span-4 lg:col-start-9 lg:text-right">
-              {ratgeber.overview.updatedLabel}{" "}
-              <time dateTime={content.updated}>
-                {formatDate(content.updated, lang)}
-              </time>
-            </p>
-          </div>
-        </div>
-      </div>
+              <p className="mt-6 font-mono text-xs font-semibold uppercase tracking-[0.12em] text-white/75">
+                {ratgeber.overview.updatedLabel}{" "}
+                <time dateTime={content.updated}>{formatDate(content.updated, lang)}</time>
+              </p>
+            </>
+          }
+        />
 
       <div className="container grid gap-12 py-14 lg:grid-cols-12 lg:gap-10 lg:py-20">
         <aside className="no-print hidden lg:col-span-3 lg:block">
-          <div className="sticky top-[calc(var(--header-h)+2.5rem)]">
+          <div className="sticky top-[calc(var(--header-offset)+2.5rem)]">
             <TocNav
               label={ui.onThisPage}
               items={content.sections.map((section, index) => ({
@@ -120,14 +125,8 @@ export default function LegalPage({
               key={section.title}
               id={sectionId(index)}
               aria-labelledby={headingId(index)}
-              className="grid gap-3 border-b border-line py-10 md:grid-cols-[3rem_minmax(0,1fr)] md:gap-x-6"
+              className="border-b border-line py-10"
             >
-              <span
-                className="font-mono text-sm font-medium text-signal tabular-nums md:pt-1"
-                aria-hidden="true"
-              >
-                {String(index + 1).padStart(2, "0")}
-              </span>
               <div className="min-w-0">
                 <h2
                   id={headingId(index)}

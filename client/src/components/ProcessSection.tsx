@@ -33,7 +33,18 @@ export default function ProcessSection({
         const hit = entries
           .filter(entry => entry.isIntersecting)
           .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
-        if (hit) el.dataset.active = (hit.target as HTMLElement).dataset.step;
+        if (!hit) return;
+        const step = (hit.target as HTMLElement).dataset.step;
+        el.dataset.active = step;
+        // Nur das Video des aktiven Schritts spielt (E80)
+        el.querySelectorAll<HTMLVideoElement>("video[data-step-video]").forEach(video => {
+          if (video.dataset.stepVideo === step) {
+            if (video.preload !== "auto") video.preload = "auto";
+            void video.play().catch(() => undefined);
+          } else if (!video.paused) {
+            video.pause();
+          }
+        });
       },
       { rootMargin: "-40% 0px -45% 0px", threshold: 0 }
     );

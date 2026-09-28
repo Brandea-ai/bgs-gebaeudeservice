@@ -147,6 +147,8 @@ export const nav: NavDictionary = {
     seat: `Based in ${company.address.city}`,
     megaTitle: 'On-site quote',
     megaText: 'We visit your property and prepare a written quote, free of charge and without obligation.',
+    premiumTeaser: 'Discreet cleaning and care for villas, private jets and yachts.',
+    heroLanguages: 'Advice in your language',
     phone: 'Phone',
     email: 'Email',
     address: 'Address',

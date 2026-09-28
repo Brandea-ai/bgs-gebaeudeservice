@@ -31,7 +31,7 @@ export default function Faq({
               {item.question}
             </h3>
             <Plus
-              weight="regular"
+              weight="duotone"
               className={`mt-0.5 size-5 shrink-0 transition-transform duration-300 group-open:rotate-45 ${dark ? "text-white/60 group-open:text-white" : "text-mute group-open:text-ink"}`}
               aria-hidden="true"
             />

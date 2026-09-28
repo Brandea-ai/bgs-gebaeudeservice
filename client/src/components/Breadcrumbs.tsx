@@ -52,7 +52,7 @@ export default function Breadcrumbs({
                       {crumb.label}
                     </Link>
                     <CaretRight
-                      weight="regular"
+                      weight="duotone"
                       className="size-3.5 shrink-0"
                       aria-hidden="true"
                     />

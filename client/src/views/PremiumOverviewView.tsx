@@ -154,12 +154,12 @@ export default function PremiumOverviewView({ lang }: { lang: Locale }) {
           <Button asChild size="xl" className="arrow-link">
             <a href="#kontakt-formular" data-cta="kopf-seite">
               {content.cta.title}
-              <ArrowRight weight="regular" aria-hidden="true" />
+              <ArrowRight weight="duotone" aria-hidden="true" />
             </a>
           </Button>
           <Button asChild size="xl" variant="inverse">
             <a href={company.phone.href} className="tabular-nums">
-              <Phone weight="regular" aria-hidden="true" />
+              <Phone weight="duotone" aria-hidden="true" />
               {company.phone.display}
             </a>
           </Button>
@@ -218,12 +218,11 @@ export default function PremiumOverviewView({ lang }: { lang: Locale }) {
                 key={item.title}
                 className="grid grid-cols-[2.5rem_minmax(0,1fr)] gap-x-4 border-b border-white/15 py-6"
               >
-                <span
-                  className="t-eyebrow pt-1.5 tabular-nums text-brass"
+                <SealCheck
+                  weight="duotone"
+                  className="mt-0.5 size-6 text-brass"
                   aria-hidden="true"
-                >
-                  {String(index + 1).padStart(2, "0")}
-                </span>
+                />
                 <div className="min-w-0">
                   <h3 className="hyphens font-display text-[1.125rem] font-bold leading-snug text-white">
                     {item.title}
@@ -350,7 +349,7 @@ export default function PremiumOverviewView({ lang }: { lang: Locale }) {
             >
               <Link href={localizePath("/einzugsgebiet", lang)}>
                 {home.area.link}
-                <ArrowRight weight="regular" aria-hidden="true" />
+                <ArrowRight weight="duotone" aria-hidden="true" />
               </Link>
             </Button>
           </div>

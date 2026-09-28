@@ -110,12 +110,12 @@ export default function ContactView({ lang }: { lang: Locale }) {
           <Button asChild size="xl" className="arrow-link">
             <a href="#kontakt-formular" data-cta="hero">
               {ui.offerCta}
-              <ArrowRight weight="regular" aria-hidden="true" />
+              <ArrowRight weight="duotone" aria-hidden="true" />
             </a>
           </Button>
           <Button asChild size="xl" variant="outline">
             <a href={company.phone.href} className="tabular-nums">
-              <Phone weight="regular" aria-hidden="true" />
+              <Phone weight="duotone" aria-hidden="true" />
               {company.phone.display}
             </a>
           </Button>
@@ -144,12 +144,12 @@ export default function ContactView({ lang }: { lang: Locale }) {
       >
         <div className="container grid gap-10 lg:grid-cols-12 lg:gap-x-16">
           <div className="lg:col-span-4">
-            <div className="lg:sticky lg:top-[calc(var(--header-h)+2rem)]">
+            <div className="lg:sticky lg:top-[calc(var(--header-offset)+2rem)]">
               <SectionHead id="ablauf-titel" title={contact.steps.title} />
               <Button asChild size="lg" className="arrow-link mt-8">
                 <a href="#kontakt-formular" data-cta="ablauf">
                   {ui.offerCta}
-                  <ArrowRight weight="regular" aria-hidden="true" />
+                  <ArrowRight weight="duotone" aria-hidden="true" />
                 </a>
               </Button>
             </div>
@@ -196,7 +196,7 @@ export default function ContactView({ lang }: { lang: Locale }) {
             <SectionHead
               id="fragen-titel"
               title={ui.faq}
-              className="lg:sticky lg:top-[calc(var(--header-h)+2rem)]"
+              className="lg:sticky lg:top-[calc(var(--header-offset)+2rem)]"
             />
           </div>
           <div className="min-w-0 lg:col-span-7 lg:col-start-6">

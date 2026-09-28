@@ -14,8 +14,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-body)", "ui-sans-serif", "system-ui", "sans-serif"],
-        display: ["var(--font-display)", "var(--font-body)", "ui-sans-serif", "sans-serif"],
+        sans: ["var(--font-display)", "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "ui-sans-serif", "sans-serif"],
+        premium: ["var(--font-premium)", "Georgia", "serif"],
         mono: ["var(--font-mono)", "ui-monospace", "SFMono-Regular", "monospace"],
       },
       colors: {
@@ -24,7 +25,8 @@ module.exports = {
         line: { DEFAULT: "#E2DFD8", dark: "rgba(255,255,255,0.12)" },
         mute: { DEFAULT: "#3F454E", light: "#C4C9D0" },
         signal: { DEFAULT: "#B8121B", dark: "#8F0E15", light: "#F2D6D7" },
-        brass: { DEFAULT: "#C8A96E", dark: "#8C6F3A" },
+        brass: { DEFAULT: "#C8A96E", dark: "#8C6F3A", light: "#E6D5B0" },
+        anthracite: { DEFAULT: "#16181C", 800: "#1D2025", 700: "#26292F" },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

@@ -7,6 +7,7 @@ import { ratgeber, ratgeberUebersicht } from './ratgeber'
 import { datenschutz, impressum } from './recht'
 import { about, area, contact, home, premiumOverview, proof, servicesOverview } from './seiten'
 import { pages } from './seo'
+import { bilder } from './bilder'
 
 /**
  * All English texts in one place (M60), same shape as content/de (type
@@ -24,6 +25,7 @@ export const en: Dictionary = {
   seiten: { proof, home, about, contact, area, servicesOverview, premiumOverview },
   recht: { impressum, datenschutz },
   nav,
+  bilder,
   misc: {
     dateLocale: 'en-GB',
     breadcrumbs: 'Breadcrumb',

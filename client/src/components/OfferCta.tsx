@@ -39,12 +39,12 @@ export default function OfferCta({
           <Button asChild size="xl" variant="ink" className="arrow-link">
             <a href="#kontakt-formular" data-cta="band">
               {ui.offerCta}
-              <ArrowRight weight="regular" aria-hidden="true" />
+              <ArrowRight weight="duotone" aria-hidden="true" />
             </a>
           </Button>
           <Button asChild size="xl" variant="inverse">
             <a href={company.phone.href} className="tabular-nums">
-              <Phone weight="regular" aria-hidden="true" />
+              <Phone weight="duotone" aria-hidden="true" />
               {company.phone.display}
             </a>
           </Button>

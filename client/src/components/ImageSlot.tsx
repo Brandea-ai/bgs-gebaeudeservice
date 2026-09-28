@@ -1,4 +1,6 @@
+import Image from "next/image";
 import { Image as ImageGlyph } from "@phosphor-icons/react/dist/ssr";
+import { images, type ImageKey } from "../../../shared/images";
 import { imagesArePlaceholders } from "../../../shared/features";
 import { getDict } from "../../../content";
 import type { Locale } from "../../../shared/i18n";
@@ -11,6 +13,8 @@ import type { Locale } from "../../../shared/i18n";
  * steht in globals.css und läuft nur mit Unterstützung und ohne reduced motion.
  */
 export default function ImageSlot({
+  image,
+  sizes = "(min-width: 1024px) 50vw, 100vw",
   src,
   alt = "",
   className = "",
@@ -21,6 +25,9 @@ export default function ImageSlot({
   decorative = false,
   parallax,
 }: {
+  /** Bild aus dem Register (E80); geht vor src */
+  image?: ImageKey;
+  sizes?: string;
   src?: string;
   alt?: string;
   className?: string;
@@ -34,7 +41,7 @@ export default function ImageSlot({
   decorative?: boolean;
   parallax?: "drift" | "depth-slow" | "depth-fast";
 }) {
-  const { misc } = getDict(lang);
+  const { misc, bilder } = getDict(lang);
   const dark = tone === "dark";
   const px =
     parallax === "drift"
@@ -44,6 +51,24 @@ export default function ImageSlot({
         : parallax === "depth-fast"
           ? "px-depth-fast"
           : "";
+  // Bild aus dem Register, optimiert über next/image (AVIF/WebP, passende Breite)
+  if (image && !imagesArePlaceholders) {
+    const img = images[image];
+    return (
+      <div
+        className={`relative overflow-hidden ${hover ? "img-zoom" : ""} ${className}`}
+        aria-hidden={decorative ? "true" : undefined}
+      >
+        <Image
+          src={img.src}
+          alt={decorative ? "" : bilder[image]}
+          fill
+          sizes={sizes}
+          className={`object-cover ${px} ${parallax ? "min-h-[112%]" : ""}`}
+        />
+      </div>
+    );
+  }
   // Ohne freigegebenes Bild (src) bleibt die Fläche ein Platzhalter
   if (imagesArePlaceholders || !src) {
     return (
@@ -63,7 +88,7 @@ export default function ImageSlot({
         />
         <div className="absolute inset-0 flex items-center justify-center">
           <ImageGlyph
-            weight="light"
+            weight="duotone"
             className={`size-8 ${dark ? "text-white/25" : "text-ink/15"}`}
             aria-hidden="true"
           />

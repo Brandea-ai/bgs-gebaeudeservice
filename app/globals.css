@@ -24,12 +24,20 @@
     --border: 43 13% 86%;
     --input: 43 10% 78%;
     --ring: 216 22% 7%;
-    --radius: 0.25rem;
+    /* Radius überall 3 px (Rebranding E80) */
+    --radius: 3px;
 
     /* Seitenrand: wächst mit der Breite, nie unter 20 px (F1) */
     --gutter: clamp(1.25rem, 4.2vw, 5rem);
     /* Höhe der Kopfzeile, für Sprungziele und klebende Spalten */
-    --header-h: 4.75rem;
+    --header-h: 4rem;
+    /* Schwebende Kopfzeile (E80): Abstand zum oberen Rand, Infozeile ab xl nur ganz oben */
+    --nav-top: 0.75rem;
+    --util-h: 0px;
+    /* Unterkante der Kopfzeile für klebende Elemente, 0 wenn sie beim Scrollen verschwindet */
+    --header-offset: calc(var(--nav-top) + var(--header-h));
+    /* Innenabstand oben in Heros, die unter der Kopfzeile durchlaufen */
+    --hero-top: calc(var(--nav-top) + var(--header-h) + var(--util-h) + clamp(2rem, 1rem + 3vw, 4rem));
     /* Höhe einer klebenden Abschnittsleiste (SectionNav), setzt die Seite selbst */
     --subnav-h: 0px;
 
@@ -57,7 +65,7 @@
 
   html {
     /* Sprungziele landen unter Kopfzeile und Abschnittsleiste (WCAG 2.4.11) */
-    scroll-padding-top: calc(var(--header-h) + var(--subnav-h, 0px) + 1.5rem);
+    scroll-padding-top: calc(var(--header-offset) + var(--subnav-h, 0px) + 1.5rem);
     -webkit-text-size-adjust: 100%;
   }
 
@@ -76,8 +84,8 @@
     @apply bg-background text-foreground antialiased;
     font-size: 1.0625rem;
     line-height: 1.6;
-    font-weight: 450;
-    font-feature-settings: 'kern', 'liga';
+    font-weight: 400;
+    font-feature-settings: 'kern', 'liga', 'ss01';
     text-rendering: optimizeLegibility;
   }
 
@@ -223,7 +231,7 @@
   .prose-body {
     @apply text-ink-700;
     max-width: 68ch;
-    font-weight: 450;
+    font-weight: 400;
   }
 
   .prose-body a,
@@ -298,7 +306,7 @@
   @media (min-width: 1024px) {
     .subnav--sticky {
       position: sticky;
-      top: var(--header-h);
+      top: var(--header-offset);
       z-index: 30;
     }
   }
@@ -362,7 +370,7 @@
   @media (min-width: 1024px) {
     .process-figure {
       position: sticky;
-      top: calc(var(--header-h) + 2rem);
+      top: calc(var(--header-offset) + 2rem);
       align-self: start;
     }
     .process-step {
@@ -454,7 +462,7 @@
   @media (min-width: 1024px) and (min-height: 700px) and (prefers-reduced-motion: no-preference) {
     .stack-panel {
       position: sticky;
-      top: calc(var(--header-h) + 1rem);
+      top: calc(var(--header-offset) + 1rem);
       min-height: calc(100vh - var(--header-h) - 2rem);
     }
     .stack-panel:focus-within {
@@ -760,5 +768,176 @@
   }
   to {
     transform: translateY(4%);
+  }
+}
+
+/*
+ * Rebranding E80: Milchglas, schwebende Kopfzeile, Ein- und Ausblenden beim Scrollen.
+ * Glas nur auf Bedienelementen und Karten über Bildern, nie hinter Fliesstext.
+ * Ohne backdrop-filter oder bei Wunsch nach weniger Transparenz eine deckende Fläche.
+ */
+@layer components {
+  .glass {
+    background: rgba(255, 255, 255, 0.74);
+    -webkit-backdrop-filter: saturate(180%) blur(22px);
+    backdrop-filter: saturate(180%) blur(22px);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.75),
+      0 1px 0 rgba(14, 17, 22, 0.04),
+      0 18px 44px -24px rgba(14, 17, 22, 0.38);
+  }
+  /* Dichteres Glas für Menüs über Inhalt: Text dahinter darf nicht durchscheinen */
+  .glass-strong {
+    background: rgba(250, 250, 248, 0.94);
+    -webkit-backdrop-filter: saturate(180%) blur(28px);
+    backdrop-filter: saturate(180%) blur(28px);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.8),
+      0 32px 64px -32px rgba(14, 17, 22, 0.45);
+  }
+  .glass-dark {
+    background: rgba(22, 24, 28, 0.58);
+    -webkit-backdrop-filter: saturate(160%) blur(20px);
+    backdrop-filter: saturate(160%) blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      0 24px 48px -28px rgba(0, 0, 0, 0.65);
+  }
+  /* Premium-Welt: Anthrazit mit Champagner-Haarlinie */
+  .premium-surface {
+    background:
+      radial-gradient(120% 80% at 100% 0%, rgba(200, 169, 110, 0.16), transparent 55%),
+      linear-gradient(180deg, #1d2025 0%, #16181c 100%);
+    border: 1px solid rgba(200, 169, 110, 0.28);
+    box-shadow: inset 0 1px 0 rgba(230, 213, 176, 0.12);
+  }
+  .premium-rule {
+    height: 1px;
+    background: linear-gradient(90deg, rgba(200, 169, 110, 0.7), rgba(200, 169, 110, 0));
+  }
+  /* Heros laufen unter der schwebenden Kopfzeile durch */
+  .hero-top {
+    padding-top: var(--hero-top);
+  }
+  /* Knöpfe: feine Lichtkante und weicher Schatten */
+  .btn-lift {
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.18),
+      0 1px 2px rgba(14, 17, 22, 0.18),
+      0 8px 20px -12px rgba(184, 18, 27, 0.55);
+  }
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass {
+    background: rgba(255, 255, 255, 0.97);
+  }
+  .glass-dark {
+    background: rgba(22, 24, 28, 0.95);
+  }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .glass {
+    background: #fff;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .glass-dark {
+    background: #16181c;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --util-h: 2.25rem;
+  }
+}
+
+/* Kopfzeile schwebt fest oben; beim Runterscrollen raus, beim Hochscrollen wieder rein */
+.site-header {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 50;
+  pointer-events: none;
+  transition: transform var(--dur-state) var(--ease-out);
+}
+.site-header > * {
+  pointer-events: auto;
+}
+.util-row {
+  height: var(--util-h);
+  overflow: hidden;
+  transition:
+    height var(--dur-state) var(--ease-out),
+    opacity var(--dur-state) var(--ease-out);
+}
+html[data-nav-top="0"] .util-row {
+  height: 0;
+  opacity: 0;
+}
+html[data-nav="hidden"] {
+  --header-offset: 0px;
+}
+html[data-nav="hidden"] .site-header:not(:focus-within) {
+  transform: translateY(calc(-100% - 1rem));
+}
+/* Mobil-Leiste unten verschwindet beim Runterscrollen ebenso */
+#mobil-cta {
+  transition: transform var(--dur-state) var(--ease-out);
+}
+html[data-nav="hidden"] #mobil-cta:not(:focus-within) {
+  transform: translateY(calc(100% + 1.5rem));
+}
+/* Klebende Spalten folgen der Kopfzeile weich */
+[class*="sticky"],
+.subnav--sticky {
+  transition: top var(--dur-state) var(--ease-out);
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-header,
+  .util-row,
+  #mobil-cta,
+  [class*="sticky"] {
+    transition: none;
+  }
+}
+
+/* Ablauf-Bühne (E80): sichtbar ist das Video des aktiven Schritts, ohne data-active das erste */
+.process .pv {
+  opacity: 0;
+  transition: opacity var(--dur-reveal) var(--ease-out);
+}
+.process:not([data-active]) .pv-1,
+.process[data-active="1"] .pv-1,
+.process[data-active="2"] .pv-2,
+.process[data-active="3"] .pv-3,
+.process[data-active="4"] .pv-4 {
+  opacity: 1;
+}
+
+/* Druck: Kopfbereiche ohne Bild, Schrift schwarz (E80) */
+@media print {
+  .site-header,
+  #mobil-cta,
+  .hero-media {
+    display: none !important;
+  }
+  section.on-dark {
+    background: none !important;
+    color: #000 !important;
+    min-height: 0 !important;
+    padding-top: 0 !important;
+  }
+  section.on-dark * {
+    color: #000 !important;
+  }
+  section.on-dark .absolute {
+    display: none !important;
   }
 }

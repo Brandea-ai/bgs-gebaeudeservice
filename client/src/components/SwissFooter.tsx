@@ -232,7 +232,7 @@ export function ContactSection({
                 className="flex items-start gap-4 border-l-2 border-emerald-700 bg-white p-6 shadow-[0_1px_0_rgba(14,17,22,0.04),0_40px_80px_-48px_rgba(14,17,22,0.35)] sm:p-10 focus:outline-none"
               >
                 <CheckCircle
-                  weight="regular"
+                  weight="duotone"
                   className="mt-0.5 size-6 shrink-0 text-emerald-800"
                   aria-hidden="true"
                 />
@@ -455,7 +455,7 @@ export function ContactSection({
                     {isSubmitting ? (
                       <>
                         <CircleNotch
-                          weight="regular"
+                          weight="duotone"
                           className="motion-keep size-4 animate-spin"
                           aria-hidden="true"
                         />
@@ -464,7 +464,7 @@ export function ContactSection({
                     ) : (
                       <>
                         {form.submit}
-                        <ArrowRight weight="regular" className="size-4" aria-hidden="true" />
+                        <ArrowRight weight="duotone" className="size-4" aria-hidden="true" />
                       </>
                     )}
                   </button>
@@ -502,7 +502,7 @@ export function ContactSection({
               <div key={label} className="relative py-4 pl-9">
                 <dt className="t-eyebrow mb-1 text-mute">
                   <Icon
-                    weight="regular"
+                    weight="duotone"
                     className="absolute left-0 top-5 size-5 text-signal"
                     aria-hidden="true"
                   />

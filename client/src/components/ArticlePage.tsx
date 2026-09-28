@@ -1,7 +1,12 @@
 import Link from "next/link";
-import { ArrowRight, Check } from "@phosphor-icons/react/dist/ssr";
+import {
+  ArrowRight,
+  Check,
+  CheckCircle,
+} from "@phosphor-icons/react/dist/ssr";
 import PageFrame from "@/components/PageFrame";
-import Breadcrumbs from "./Breadcrumbs";
+import Hero from "./Hero";
+import { heroImage } from "../../../shared/hero-images";
 import JsonLd from "./JsonLd";
 import RichText from "./RichText";
 import TocNav from "./TocNav";
@@ -56,17 +61,17 @@ export default function ArticlePage({
       <JsonLd data={articleJsonLd(article.path, article, lang)} />
       <article>
         {/* Kopf: statisch, der Titel bleibt das grösste Element beim Laden (F01) */}
-        <header className="border-b border-line bg-stone">
-          <div className="container pt-6 pb-12 md:pt-10 lg:pb-16">
-            <Breadcrumbs path={article.path} lang={lang} />
-            <div className="grid gap-10 lg:grid-cols-12 lg:items-center lg:gap-x-10">
-              <div className="min-w-0 lg:col-span-7">
-                <h1 className="t-h1 max-w-[22ch] text-ink">{article.h1}</h1>
-                <p className="t-lead mt-6 max-w-[56ch] text-ink-600">
-                  {article.subtitle}
-                </p>
-                {/* Kennzeile einmal: Herausgeber und Stand (F14) */}
-                <p className="t-eyebrow mt-8 flex flex-wrap items-center gap-x-3 gap-y-1 text-ink-600">
+        {/* Kopf mit Bild (E80), statisch; der Titel bleibt das grösste Element beim Laden */}
+        <Hero
+          image={heroImage[article.path]}
+          path={article.path}
+          lang={lang}
+          title={article.h1}
+          titleId="artikel-titel"
+          lead={
+            <>
+              <p className="max-w-[56ch]">{article.subtitle}</p>
+                <p className="t-eyebrow mt-8 flex flex-wrap items-center gap-x-3 gap-y-1 text-white/75">
                   <span>{t.byline}</span>
                   <span aria-hidden="true">·</span>
                   <span>
@@ -87,14 +92,13 @@ export default function ArticlePage({
                     </>
                   )}
                 </p>
-              </div>
-
-              {/* Kurz gesagt statt Bildplatzhalter (F03, F12): auf dem Handy
-                  direkt unter der Kennzeile, ab lg rechts neben dem Titel */}
+            </>
+          }
+          aside={
               <section
                 id="kurz-gesagt"
                 aria-labelledby="kurz-gesagt-titel"
-                className="on-dark min-w-0 bg-ink p-6 text-white md:p-8 lg:col-span-5"
+                className="glass-dark on-dark min-w-0 rounded-[3px] p-6 text-white md:p-8"
               >
                 <h2
                   id="kurz-gesagt-titel"
@@ -111,21 +115,20 @@ export default function ArticlePage({
                 >
                   {ui.offerCta}
                   <ArrowRight
-                    weight="regular"
+                    weight="duotone"
                     className="size-4 shrink-0"
                     aria-hidden="true"
                   />
                 </a>
               </section>
-            </div>
-          </div>
-        </header>
+          }
+        />
 
         {/* Inhalt: Verzeichnis klebt links, der Text rechts in lesbarer Zeilenlänge */}
         <div className="container grid gap-12 py-14 lg:grid-cols-12 lg:gap-10 lg:py-20">
           {/* div statt aside: das Verzeichnis (nav) ist die Landmarke, ein aside in einer Region wäre eine verschachtelte */}
           <div className="hidden lg:col-span-3 lg:block">
-            <div className="sticky top-[calc(var(--header-h)+2rem)]">
+            <div className="sticky top-[calc(var(--header-offset)+2rem)]">
               <TocNav label={ui.onThisPage} items={toc} />
             </div>
           </div>
@@ -196,7 +199,7 @@ export default function ArticlePage({
                   >
                     {t.readMore}
                     <ArrowRight
-                      weight="regular"
+                      weight="duotone"
                       className="size-4 shrink-0"
                       aria-hidden="true"
                     />
@@ -289,7 +292,7 @@ function ArticleSectionView({
               {section.items.map((item, index) => (
                 <li key={item} className="process-step pb-7 last:pb-0">
                   <span className="process-num text-signal" aria-hidden="true">
-                    {String(index + 1).padStart(2, "0")}
+                    <CheckCircle weight="duotone" className="size-6" />
                   </span>
                   <span
                     className="process-dot text-signal"
@@ -315,7 +318,7 @@ function ArticleSectionView({
                     />
                   ) : (
                     <Check
-                      weight="regular"
+                      weight="duotone"
                       className="mt-[0.2em] size-5 shrink-0 text-signal"
                       aria-hidden="true"
                     />
@@ -348,7 +351,7 @@ function SummaryList({ items, lang }: { items: string[]; lang: Locale }) {
           className="flex items-start gap-3 font-medium leading-relaxed text-white/90"
         >
           <Check
-            weight="regular"
+            weight="duotone"
             className="mt-[0.2em] size-5 shrink-0 text-brass"
             aria-hidden="true"
           />

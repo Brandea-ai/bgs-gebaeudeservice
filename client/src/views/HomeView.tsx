@@ -1,9 +1,14 @@
 import Link from "next/link";
-import { ArrowRight, Phone } from "@phosphor-icons/react/dist/ssr";
+import {
+  ArrowRight,
+  CheckCircle,
+  Phone,
+} from "@phosphor-icons/react/dist/ssr";
 import PageFrame from "@/components/PageFrame";
 import AppointmentButton from "@/components/AppointmentButton";
 import { LazyIndustryAdvisor } from "@/components/LazyChat";
-import HeroBackground from "@/components/HeroBackground";
+import Hero from "@/components/Hero";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 import SectionHead from "@/components/SectionHead";
 import CantonMap from "@/components/CantonMap";
 import ImageSlot from "@/components/ImageSlot";
@@ -40,7 +45,7 @@ function ProofCells({
   return items.map(item => (
     <div
       key={item.label}
-      className={`flex min-w-0 flex-col gap-2 bg-ink-800 ${cell}`}
+      className={`flex min-w-0 flex-col gap-2 bg-white/[0.05] ${cell}`}
     >
       <dt className="order-2 text-sm font-medium leading-snug text-white/85">
         {item.label}
@@ -76,107 +81,67 @@ export default function HomeView({ lang }: { lang: Locale }) {
 
   return (
     <PageFrame lang={lang} path="/" contact={home.cta}>
-      {/* Aussage: statisch, ohne Einblendung, damit die H1 sofort steht (H07) */}
-      <section
-        id="start"
-        aria-labelledby="start-titel"
-        className="on-dark relative isolate overflow-hidden bg-ink text-white"
-      >
-        <HeroBackground />
-        <div className="container relative grid gap-8 pt-10 pb-12 md:pt-16 lg:grid-cols-12 lg:items-center lg:gap-8 lg:py-20 xl:pt-24">
-          <div className="min-w-0 lg:col-span-7 xl:col-span-6">
-            <h1 id="start-titel" className="t-display max-w-[20ch] text-white">
-              {home.h1}
-            </h1>
-            <p className="t-lead mt-7 max-w-[46ch] text-white/90">
-              {home.lead}
-            </p>
-            <div className="mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row">
-              <Button asChild size="xl" className="arrow-link">
-                <a href="#kontakt-formular" data-cta="hero">
-                  {ui.offerCta}
-                  <ArrowRight weight="regular" aria-hidden="true" />
-                </a>
-              </Button>
-              {chatEnabled ? (
-                <AppointmentButton size="xl" variant="inverse" />
-              ) : (
-                <Button asChild size="xl" variant="inverse">
-                  <a href={company.phone.href} className="tabular-nums">
-                    <Phone weight="regular" aria-hidden="true" />
-                    {company.phone.display}
-                  </a>
-                </Button>
-              )}
-            </div>
-            {/* Antwortzeile nur auf Handy und Tablet; ab lg steht sie in der Vertrauensleiste darunter (S13, H12, S-05) */}
-            <p className="mt-6 flex items-center gap-2 text-sm font-medium text-white/80 sm:mt-8 lg:hidden">
-              <span
-                className="inline-block h-1.5 w-1.5 rounded-full bg-brass"
-                aria-hidden="true"
-              />
-              {chrome.answer} · {chrome.seat}
-            </p>
-
-            {/* KI-Berater erst mit Modell und Zugang (E35), bis dahin keine Handlungsaufforderung dorthin (M31) */}
-            {chatEnabled && (
-              <div className="mt-12 max-w-3xl">
-                <LazyIndustryAdvisor />
-              </div>
-            )}
-          </div>
-
-          <div className="min-w-0 lg:col-span-5 lg:col-start-8 xl:col-span-6 xl:col-start-7">
-            {imagesArePlaceholders ? (
-              /* Bis zur Freigabe der Fotos (E19) tragen die Kennzahlen die rechte
-                 Hälfte des ersten Bildschirms (H06): «warum wir» ohne Scrollen,
-                 kein Platzhalter vor dem ersten Beleg. Statisch, weil im ersten
-                 Bildschirm. Ab lg eine Spalte, ab xl zwei mal zwei. */
-              <>
-                <h2 id="kennzahlen-titel" className="sr-only">
-                  {home.proofTitle}
-                </h2>
-                <dl className="grid grid-cols-2 gap-px bg-white/10 lg:grid-cols-1 xl:grid-cols-2">
-                  <ProofCells
-                    items={proof}
-                    cell="px-4 py-5 sm:p-7 lg:px-6 lg:py-5 xl:p-7"
-                    figure="text-[1.5rem] sm:text-[2rem] lg:text-[2.25rem] xl:text-[1.875rem] 2xl:text-[2.25rem]"
-                  />
-                </dl>
-              </>
-            ) : (
-              /* Mit Foto (E19): Bildfläche mit leichtem Drift beim Wegscrollen */
-              <ImageSlot
-                src="/swiss-hero-main.jpg"
-                alt={home.eyebrow}
-                lang={lang}
-                tone="dark"
-                parallax="drift"
-                className="aspect-[4/3] w-full lg:aspect-[5/4] xl:aspect-[4/3]"
-              />
-            )}
-          </div>
-        </div>
-
-        {/* Mit Foto stehen die Kennzahlen als Reihe unter dem Raster (H06) */}
-        {!imagesArePlaceholders && (
-          <div className="container relative pb-12 lg:pb-16">
+      {/* Aussage: statisch, ohne Einblendung, damit die H1 sofort steht (H07). Rebranding E80:
+          volles Bild unter der schwebenden Kopfzeile, Kennzahlen als Glas-Karte, Sprachwahl im Hero */}
+      <Hero
+        image="hero-start"
+        lang={lang}
+        size="home"
+        title={home.h1}
+        titleId="start-titel"
+        lead={<p className="max-w-[46ch]">{home.lead}</p>}
+        aside={
+          <div className="glass-dark rounded-[3px] p-2">
             <h2 id="kennzahlen-titel" className="sr-only">
               {home.proofTitle}
             </h2>
-            <RevealGroup
-              as="dl"
-              className="grid grid-cols-2 gap-px bg-white/10 lg:grid-cols-4"
-            >
+            <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-[3px]">
               <ProofCells
                 items={proof}
-                cell="px-4 py-5 sm:px-7 sm:py-8"
-                figure="text-[1.5rem] sm:text-[2rem] lg:text-[1.75rem] xl:text-[2.25rem] 2xl:text-[2.5rem]"
+                cell="px-4 py-5 sm:p-6"
+                figure="text-[1.5rem] sm:text-[1.875rem] xl:text-[2.125rem]"
               />
-            </RevealGroup>
+            </dl>
+          </div>
+        }
+      >
+        <div className="flex flex-col gap-3 sm:flex-row">
+          <Button asChild size="xl" className="arrow-link btn-lift">
+            <a href="#kontakt-formular" data-cta="hero">
+              {ui.offerCta}
+              <ArrowRight weight="duotone" aria-hidden="true" />
+            </a>
+          </Button>
+          {chatEnabled ? (
+            <AppointmentButton size="xl" variant="inverse" />
+          ) : (
+            <Button asChild size="xl" variant="inverse" className="glass-dark">
+              <a href={company.phone.href} className="tabular-nums">
+                <Phone weight="duotone" aria-hidden="true" />
+                {company.phone.display}
+              </a>
+            </Button>
+          )}
+        </div>
+        {/* Sprachwahl im Hero (E80): die Seite gibt es in vier Sprachen, beraten wird in allen vier (E18) */}
+        <div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-3">
+          <span className="text-sm font-medium text-white/80">
+            {chrome.heroLanguages}
+          </span>
+          <LanguageSwitcher
+            lang={lang}
+            path="/"
+            label={chrome.heroLanguages}
+            tone="dark"
+            as="div"
+          />
+        </div>
+        {chatEnabled && (
+          <div className="mt-12 max-w-3xl">
+            <LazyIndustryAdvisor />
           </div>
         )}
-      </section>
+      </Hero>
 
       {/* Vertrauensleiste (H03, S07, E18): nur, was die Kennzahlen nicht schon
           sagen. Ohne eigenen Abschnittsnamen, die Liste genügt. */}
@@ -270,7 +235,7 @@ export default function HomeView({ lang }: { lang: Locale }) {
                             {link.label}
                             {/* Pfeil erst beim Überfahren oder Fokus, auf Touch immer (H13) */}
                             <ArrowRight
-                              weight="regular"
+                              weight="duotone"
                               className={`size-4 shrink-0 opacity-0 transition-opacity group-hover/item:opacity-100 group-focus-visible/item:opacity-100 [@media(hover:none)]:opacity-100 ${premium ? "text-brass" : "text-signal"}`}
                               aria-hidden="true"
                             />
@@ -284,7 +249,7 @@ export default function HomeView({ lang }: { lang: Locale }) {
                     >
                       {group.link.text}
                       <ArrowRight
-                        weight="regular"
+                        weight="duotone"
                         className="size-4"
                         aria-hidden="true"
                       />
@@ -315,7 +280,7 @@ export default function HomeView({ lang }: { lang: Locale }) {
               <Button asChild size="lg" className="arrow-link">
                 <a href="#kontakt-formular" data-cta="ablauf">
                   {ui.offerCta}
-                  <ArrowRight weight="regular" aria-hidden="true" />
+                  <ArrowRight weight="duotone" aria-hidden="true" />
                 </a>
               </Button>
             </div>
@@ -349,12 +314,11 @@ export default function HomeView({ lang }: { lang: Locale }) {
               .filter((_, index) => index !== 1 && index !== 2)
               .map((item, index) => (
               <li key={item.title} className="min-w-0 border-t border-ink pt-6">
-                <span
-                  className="font-display text-2xl font-bold leading-none tabular-nums text-signal"
+                <CheckCircle
+                  weight="duotone"
+                  className="size-8 text-signal"
                   aria-hidden="true"
-                >
-                  {String(index + 1).padStart(2, "0")}
-                </span>
+                />
                 <h3 className="t-h3 mt-5 text-ink">{item.title}</h3>
                 <p className="mt-3 max-w-[42ch] font-medium leading-relaxed text-ink-600">
                   {item.text}
@@ -409,7 +373,7 @@ export default function HomeView({ lang }: { lang: Locale }) {
             >
               <Link href={href("/einzugsgebiet")}>
                 {home.area.link}
-                <ArrowRight weight="regular" aria-hidden="true" />
+                <ArrowRight weight="duotone" aria-hidden="true" />
               </Link>
             </Button>
           </div>

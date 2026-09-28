@@ -56,7 +56,7 @@ export default function ConsentMap({ texts }: { texts: MapTexts }) {
           className="press inline-flex h-12 items-center gap-2 rounded-[0.25rem] border border-ink/20 bg-white px-6 font-medium text-ink hover:border-ink"
         >
           {texts.open}
-          <ArrowSquareOut weight="regular" className="size-4" aria-hidden="true" />
+          <ArrowSquareOut weight="duotone" className="size-4" aria-hidden="true" />
         </a>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import {
+  ArrowCircleDown,
   ArrowRight,
   BuildingOffice,
   Factory,
@@ -91,7 +92,7 @@ function CardBody({
       </p>
       <span className="arrow-link mt-6 inline-flex items-center gap-2 font-semibold text-signal">
         {toService}
-        <ArrowRight weight="regular" className="size-4" aria-hidden="true" />
+        <ArrowRight weight="duotone" className="size-4" aria-hidden="true" />
       </span>
     </div>
   );
@@ -164,7 +165,7 @@ function CompactList({ items, groupId, lang, toService }: GroupProps) {
               <span className="arrow-link col-start-2 inline-flex items-center gap-2 font-semibold text-signal sm:col-start-3 sm:self-center">
                 {toService}
                 <ArrowRight
-                  weight="regular"
+                  weight="duotone"
                   className="size-4"
                   aria-hidden="true"
                 />
@@ -275,9 +276,11 @@ export default function ServicesOverviewView({ lang }: { lang: Locale }) {
                     href={`#${groupId(index)}`}
                     className="arrow-link group flex items-center gap-4 py-4 text-ink transition-colors hover:text-signal"
                   >
-                    <span className="font-display text-2xl font-bold tabular-nums text-signal">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
+                    <ArrowCircleDown
+                      weight="duotone"
+                      className="size-7 shrink-0 text-signal"
+                      aria-hidden="true"
+                    />
                     <span className="min-w-0 flex-1">
                       <span className="hyphens block font-display text-lg font-bold leading-tight">
                         {group.title}
@@ -287,7 +290,7 @@ export default function ServicesOverviewView({ lang }: { lang: Locale }) {
                       </span>
                     </span>
                     <ArrowRight
-                      weight="regular"
+                      weight="duotone"
                       className="size-5 shrink-0 text-signal"
                       aria-hidden="true"
                     />
@@ -310,12 +313,12 @@ export default function ServicesOverviewView({ lang }: { lang: Locale }) {
           <Button asChild size="xl" className="arrow-link">
             <a href="#kontakt-formular" data-cta="kopf-seite">
               {ui.offerCta}
-              <ArrowRight weight="regular" aria-hidden="true" />
+              <ArrowRight weight="duotone" aria-hidden="true" />
             </a>
           </Button>
           <Button asChild size="xl" variant="outline">
             <a href={company.phone.href} className="tabular-nums">
-              <Phone weight="regular" aria-hidden="true" />
+              <Phone weight="duotone" aria-hidden="true" />
               {company.phone.display}
             </a>
           </Button>
@@ -340,7 +343,6 @@ export default function ServicesOverviewView({ lang }: { lang: Locale }) {
             <div className="container">
               <SectionHead
                 id={`${id}-titel`}
-                eyebrow={String(index + 1).padStart(2, "0")}
                 title={group.title}
               />
               <Layout
@@ -384,7 +386,7 @@ export default function ServicesOverviewView({ lang }: { lang: Locale }) {
             >
               <Link href={localizePath("/premium", lang)}>
                 {servicesOverview.premium.link}
-                <ArrowRight weight="regular" aria-hidden="true" />
+                <ArrowRight weight="duotone" aria-hidden="true" />
               </Link>
             </Button>
           </div>

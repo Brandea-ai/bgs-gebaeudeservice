@@ -148,6 +148,8 @@ export const nav: NavDictionary = {
     seat: `Siège à ${company.address.city}`,
     megaTitle: 'Devis sur place',
     megaText: 'Nous visitons votre bien et établissons un devis écrit, gratuit et sans engagement.',
+    premiumTeaser: 'Nettoyage et entretien discrets pour villas, jets privés et yachts.',
+    heroLanguages: 'Conseil dans votre langue',
     phone: 'Téléphone',
     email: 'E-mail',
     address: 'Adresse',

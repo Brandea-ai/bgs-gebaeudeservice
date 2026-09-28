@@ -7,6 +7,7 @@ import { ratgeber, ratgeberUebersicht } from './ratgeber'
 import { datenschutz, impressum } from './recht'
 import { about, area, contact, home, premiumOverview, proof, servicesOverview } from './seiten'
 import { pages } from './seo'
+import { bilder } from './bilder'
 
 /**
  * Tutti i testi italiani in un unico punto (M60), stessa forma dell’oggetto
@@ -24,6 +25,7 @@ export const it: Dictionary = {
   seiten: { proof, home, about, contact, area, servicesOverview, premiumOverview },
   recht: { impressum, datenschutz },
   nav,
+  bilder,
   misc: {
     /** Lingua per le date */
     dateLocale: 'it-CH',

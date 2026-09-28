@@ -54,7 +54,7 @@ export default function LanguageSwitcher({
                 lang={hreflang[locale]}
                 aria-current={isCurrent ? "true" : undefined}
                 title={languageNames[locale]}
-                className={`inline-flex min-h-11 items-center gap-2 rounded-full border font-mono font-semibold uppercase tracking-wider transition-colors sm:min-h-0 ${
+                className={`inline-flex min-h-11 items-center gap-2 rounded-[3px] border font-mono font-semibold uppercase tracking-wider transition-colors sm:min-h-0 ${
                   compact ? "sm:h-7 px-2 text-[0.6875rem]" : "sm:h-9 px-3 text-xs"
                 } ${
                   isCurrent

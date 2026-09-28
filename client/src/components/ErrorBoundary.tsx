@@ -33,7 +33,7 @@ class ErrorBoundary extends Component<Props, State> {
         <div className="flex min-h-screen items-center justify-center bg-stone p-8">
           <div className="flex w-full max-w-2xl flex-col items-start p-8">
             <Warning
-              weight="regular"
+              weight="duotone"
               className="mb-6 size-8 shrink-0 text-signal"
               aria-hidden="true"
             />
@@ -52,7 +52,7 @@ class ErrorBoundary extends Component<Props, State> {
               onClick={() => window.location.reload()}
               className="press inline-flex h-12 items-center gap-2 rounded-[0.25rem] bg-signal px-6 font-medium text-white hover:bg-signal-dark"
             >
-              <ArrowCounterClockwise weight="regular" className="size-4" aria-hidden="true" />
+              <ArrowCounterClockwise weight="duotone" className="size-4" aria-hidden="true" />
               {texts.reload}
             </button>
           </div>

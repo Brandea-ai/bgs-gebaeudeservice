@@ -7,6 +7,7 @@ import { ratgeber, ratgeberUebersicht } from './ratgeber'
 import { datenschutz, impressum } from './recht'
 import { about, area, contact, home, premiumOverview, proof, servicesOverview } from './seiten'
 import { pages } from './seo'
+import { bilder } from './bilder'
 
 /**
  * Tous les textes français (M60), même forme que l’objet allemand (type
@@ -24,6 +25,7 @@ export const fr: Dictionary = {
   seiten: { proof, home, about, contact, area, servicesOverview, premiumOverview },
   recht: { impressum, datenschutz },
   nav,
+  bilder,
   misc: {
     dateLocale: 'fr-CH',
     breadcrumbs: 'Fil d’Ariane',

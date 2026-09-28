@@ -1,4 +1,9 @@
-import { ArrowRight, Envelope, Phone } from "@phosphor-icons/react/dist/ssr";
+import {
+  ArrowRight,
+  CheckCircle,
+  Envelope,
+  Phone,
+} from "@phosphor-icons/react/dist/ssr";
 import PageFrame from "@/components/PageFrame";
 import PageHero from "@/components/PageHero";
 import SectionHead from "@/components/SectionHead";
@@ -35,7 +40,7 @@ export default function AboutView({ lang }: { lang: Locale }) {
     .filter((item): item is (typeof contact.faq)[number] => Boolean(item));
   // Überschrift bleibt ab lg in der linken Spalte stehen, während die Liste durchläuft
   const stickyHead =
-    "lg:col-span-4 lg:sticky lg:top-[calc(var(--header-h)+2rem)] lg:self-start";
+    "lg:col-span-4 lg:sticky lg:top-[calc(var(--header-offset)+2rem)] lg:self-start";
 
   return (
     <PageFrame lang={lang} path="/ueber-uns" contact={about.cta}>
@@ -57,12 +62,12 @@ export default function AboutView({ lang }: { lang: Locale }) {
           <Button asChild size="xl" className="arrow-link">
             <a href="#kontakt-formular" data-cta="hero">
               {ui.offerCta}
-              <ArrowRight weight="regular" aria-hidden="true" />
+              <ArrowRight weight="duotone" aria-hidden="true" />
             </a>
           </Button>
           <Button asChild size="xl" variant="outline">
             <a href={company.phone.href} className="tabular-nums">
-              <Phone weight="regular" aria-hidden="true" />
+              <Phone weight="duotone" aria-hidden="true" />
               {company.phone.display}
             </a>
           </Button>
@@ -121,12 +126,11 @@ export default function AboutView({ lang }: { lang: Locale }) {
                 key={item.title}
                 className="grid grid-cols-[2.5rem_minmax(0,1fr)] items-baseline gap-x-4 gap-y-2 py-6 md:grid-cols-[3rem_minmax(0,2fr)_minmax(0,3fr)] md:gap-x-8 md:py-7"
               >
-                <span
-                  className="font-display text-xl font-bold leading-none tabular-nums text-signal md:text-2xl"
+                <CheckCircle
+                  weight="duotone"
+                  className="size-7 self-start text-signal"
                   aria-hidden="true"
-                >
-                  {String(index + 1).padStart(2, "0")}
-                </span>
+                />
                 <h3 className="t-h3 min-w-0 text-ink">{item.title}</h3>
                 <p className="col-start-2 min-w-0 font-medium leading-relaxed text-ink-600 md:col-start-3">
                   <RichText text={item.text} lang={lang} />
@@ -204,7 +208,7 @@ export default function AboutView({ lang }: { lang: Locale }) {
                   className="inline-flex min-h-6 items-center gap-3 font-display text-lg font-bold text-white tabular-nums transition-colors hover:text-brass"
                 >
                   <Phone
-                    weight="regular"
+                    weight="duotone"
                     className="size-5 shrink-0 text-brass"
                     aria-hidden="true"
                   />
@@ -217,7 +221,7 @@ export default function AboutView({ lang }: { lang: Locale }) {
                   className="inline-flex min-h-6 max-w-full items-center gap-3 font-display text-lg font-bold text-white transition-colors hover:text-brass"
                 >
                   <Envelope
-                    weight="regular"
+                    weight="duotone"
                     className="size-5 shrink-0 text-brass"
                     aria-hidden="true"
                   />

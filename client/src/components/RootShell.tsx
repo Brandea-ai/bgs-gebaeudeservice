@@ -1,39 +1,36 @@
 import type { Metadata } from "next";
-import {
-  IBM_Plex_Mono,
-  IBM_Plex_Sans,
-  Schibsted_Grotesk,
-} from "next/font/google";
+import { Cormorant_Garamond, Geist, Geist_Mono } from "next/font/google";
 import "../../../app/globals.css";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { ChatbotProvider } from "@/contexts/ChatbotContext";
 import { LazyChatbot } from "@/components/LazyChat";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import JsonLd from "@/components/JsonLd";
-import { company } from "../../../shared/company";
+import { company, newBrandActive } from "../../../shared/company";
 import { siteUrl } from "../../../shared/seo";
 import { organizationJsonLd } from "../../../shared/structured-data";
 import { hreflang, ogLocale, type Locale } from "../../../shared/i18n";
 import { getDict } from "../../../content";
 
-// Schriften (F1): Schibsted Grotesk für Titel, IBM Plex Sans für Text, Plex Mono für Kennzeichnungen.
-// next/font lädt sie vom eigenen Server, ohne Anfrage an Google im Browser.
-const display = Schibsted_Grotesk({
+// Schriften (Rebranding E80): Geist für Titel und Text, Geist Mono für Kennzeichnungen,
+// Cormorant Garamond nur für die Premium-Linie (wie die Wortmarke Clavea). next/font lädt sie vom eigenen Server.
+const display = Geist({
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-display",
   display: "swap",
 });
-const body = IBM_Plex_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-body",
-  display: "swap",
-});
-const mono = IBM_Plex_Mono({
+const mono = Geist_Mono({
   subsets: ["latin"],
   weight: ["500"],
   variable: "--font-mono",
+  display: "swap",
+});
+const premium = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-premium",
   display: "swap",
 });
 
@@ -96,12 +93,22 @@ export default function RootShell({
   return (
     <html
       lang={hreflang[lang]}
-      className={`${display.variable} ${body.variable} ${mono.variable}`}
+      className={`${display.variable} ${mono.variable} ${premium.variable}`}
       suppressHydrationWarning
     >
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        {/* Mit der neuen Marke Zeichen und App-Symbol von Mantena (E80) */}
+        {newBrandActive ? (
+          <>
+            <link rel="icon" href="/marke/favicon.svg" type="image/svg+xml" />
+            <link rel="apple-touch-icon" href="/marke/apple-touch-icon.png" />
+          </>
+        ) : (
+          <>
+            <link rel="icon" href="/favicon.ico" sizes="any" />
+            <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+          </>
+        )}
         {/* Kennzeichnet JavaScript vor dem ersten Bild, damit Einblendungen nur damit greifen (F7) */}
         <script
           dangerouslySetInnerHTML={{

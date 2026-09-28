@@ -11,21 +11,22 @@ import {
   X,
 } from "@phosphor-icons/react/dist/ssr";
 import { Button } from "@/components/ui/button";
-import { company } from "../../../shared/company";
+import { company, newBrandActive } from "../../../shared/company";
 import { navDicts } from "../../../content/navigation";
 import { localizePath, type Locale } from "../../../shared/i18n";
 import type { PagePath } from "../../../shared/seo";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { iconFor } from "./serviceIcons";
 
 /**
- * Kopfzeile (F2, F14): Ab xl eine schmale Zeile mit Antwortzeit, Telefon,
- * E-Mail und Sprachen, darunter die Hauptzeile. Die ganze Kopfzeile klebt oben,
- * die schmale Zeile rollt dabei weg (negativer top-Wert, ohne JavaScript).
- * Solides Weiss mit Linie, kein Glas; der Schatten kommt über einen Beobachter
- * auf einer 1-px-Marke, nicht über einen Scroll-Listener. Leistungen als
- * breites Menü mit kurzer Verzögerung beim Überfahren. Mobilmenü: Offerte,
- * Telefon und Sprachen zuerst, Leistungsgruppen zusammenklappbar, Escape
- * schliesst, der Inhalt dahinter ist inert.
+ * Kopfzeile (Rebranding E80): eine schwebende Leiste aus Milchglas mit 3 px
+ * Radius, fest oben. Beim Runterscrollen fährt sie aus dem Bild, beim
+ * Hochscrollen wieder hinein, ebenso die Mobil-Leiste (CSS über data-nav am
+ * html-Element, ein einziger Scroll-Beobachter). Offene Menüs und Tastaturfokus
+ * halten sie sichtbar. Ab xl steht darüber ganz oben eine schmale Infozeile auf
+ * dem dunklen Hero. Leistungen als Mega-Menü mit eigener Premium-Welt in
+ * Anthrazit und Champagner. Escape schliesst, das Mobilmenü macht den Inhalt
+ * dahinter inert.
  */
 export default function SwissNavigation({
   lang = "de",
@@ -39,26 +40,50 @@ export default function SwissNavigation({
   const active = (target: string) =>
     path !== undefined && (path === target || path.startsWith(`${target}/`));
   const { menu, serviceGroups, languageSwitch, chrome } = navDicts[lang];
+  const [cleaning, care, premium] = serviceGroups;
   const href = (target: PagePath) => localizePath(target, lang);
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const [megaOpen, setMegaOpen] = useState(false);
-  const sentinel = useRef<HTMLDivElement>(null);
   const toggle = useRef<HTMLButtonElement>(null);
   const hoverTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const pathname = usePathname();
 
-  // Schatten, sobald die Marke über der Kopfzeile aus dem Bild ist
+  // Scrollrichtung: ein Beobachter setzt data-nav und data-nav-top am html-Element
   useEffect(() => {
-    const el = sentinel.current;
-    if (!el || !("IntersectionObserver" in window)) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => setScrolled(!entry.isIntersecting),
-      { threshold: 0 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
+    const root = document.documentElement;
+    let last = window.scrollY;
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      const y = window.scrollY;
+      root.dataset.navTop = y < 24 ? "1" : "0";
+      if (root.dataset.navLock === "1" || y < 96) {
+        root.dataset.nav = "shown";
+        last = y;
+        return;
+      }
+      const delta = y - last;
+      if (Math.abs(delta) < 8) return;
+      root.dataset.nav = delta > 0 ? "hidden" : "shown";
+      last = y;
+    };
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Offene Menüs halten die Kopfzeile sichtbar
+  useEffect(() => {
+    const root = document.documentElement;
+    const locked = isOpen || megaOpen;
+    root.dataset.navLock = locked ? "1" : "0";
+    if (locked) root.dataset.nav = "shown";
+  }, [isOpen, megaOpen]);
 
   // Offenes Mobilmenü sperrt das Scrollen und macht den Inhalt dahinter inert
   useEffect(() => {
@@ -83,29 +108,53 @@ export default function SwissNavigation({
 
   const hover = (open: boolean) => {
     if (hoverTimer.current) clearTimeout(hoverTimer.current);
-    hoverTimer.current = setTimeout(() => setMegaOpen(open), open ? 120 : 160);
+    hoverTimer.current = setTimeout(() => setMegaOpen(open), open ? 120 : 180);
   };
 
   const isServices = active("/leistungen") || active("/premium");
-  const navLink = (active: boolean) =>
-    `relative inline-flex min-h-11 items-center py-2 text-[0.9375rem] font-medium transition-colors after:absolute after:inset-x-0 after:bottom-1.5 after:h-px after:origin-left after:bg-signal after:transition-transform after:duration-300 ${
-      active
+  const navLink = (on: boolean) =>
+    `relative inline-flex min-h-11 items-center px-1 py-2 text-[0.9375rem] font-medium transition-colors after:absolute after:inset-x-1 after:bottom-1.5 after:h-px after:origin-left after:bg-signal after:transition-transform after:duration-300 ${
+      on
         ? "text-ink after:scale-x-100"
-        : "text-ink/75 hover:text-ink after:scale-x-0 hover:after:scale-x-100"
+        : "text-ink/70 hover:text-ink after:scale-x-0 hover:after:scale-x-100"
     }`;
-  const mobileLink =
-    "flex min-h-11 items-center justify-between gap-4 py-3 text-[1.0625rem] font-medium text-ink aria-[current=page]:text-signal";
+
+  const serviceLink = (link: { path: PagePath; label: string }) => {
+    const Glyph = iconFor(link.path);
+    return (
+      <li key={link.path}>
+        <Link
+          href={href(link.path)}
+          prefetch={false}
+          onClick={() => setMegaOpen(false)}
+          aria-current={link.path === path ? "page" : undefined}
+          className="group flex min-h-12 items-center gap-3.5 rounded-[3px] px-3 py-2.5 text-[0.96875rem] font-medium text-ink/85 transition-colors hover:bg-ink/[0.045] hover:text-ink aria-[current=page]:text-signal"
+        >
+          <Glyph
+            weight="duotone"
+            className="size-[1.375rem] shrink-0 text-signal"
+            aria-hidden="true"
+          />
+          <span className="flex-1">{link.label}</span>
+          <ArrowRight
+            weight="duotone"
+            className="size-4 shrink-0 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 group-focus-visible:opacity-100"
+            aria-hidden="true"
+          />
+        </Link>
+      </li>
+    );
+  };
 
   return (
     <>
       <a href="#inhalt" className="skip-link">
         {chrome.skip}
       </a>
-      <div ref={sentinel} aria-hidden="true" className="h-px w-full bg-ink" />
-      <header className="sticky top-0 z-50 -mt-px xl:-top-10">
-        {/* Schmale Zeile, nur auf breiten Bildschirmen */}
-        <div className="on-dark hidden h-10 bg-ink text-[0.8125rem] text-white/75 xl:block">
-          <div className="container flex h-full items-center justify-between gap-6">
+      <header className="site-header">
+        {/* Infozeile ab xl, nur ganz oben auf dem dunklen Hero */}
+        <div className="util-row on-dark hidden text-[0.8125rem] text-white/80 xl:block">
+          <div className="container flex h-[var(--util-h)] items-center justify-between gap-6">
             <p className="flex items-center gap-2">
               <span
                 className="inline-block h-1.5 w-1.5 rounded-full bg-signal"
@@ -126,7 +175,7 @@ export default function SwissNavigation({
               >
                 {company.email}
               </a>
-              <span className="text-white/60">{chrome.seat}</span>
+              <span className="text-white/70">{chrome.seat}</span>
               <LanguageSwitcher
                 lang={lang}
                 path={current}
@@ -138,300 +187,335 @@ export default function SwissNavigation({
           </div>
         </div>
 
-        <nav
-          aria-label={menu.label}
-          className={`relative border-b border-line bg-white transition-shadow duration-300 ${
-            scrolled || isOpen || megaOpen
-              ? "shadow-[0_1px_0_rgba(14,17,22,0.04),0_12px_32px_-18px_rgba(14,17,22,0.25)]"
-              : ""
-          }`}
-          onKeyDown={e => {
-            if (e.key !== "Escape") return;
-            if (megaOpen) {
-              setMegaOpen(false);
-              (
-                document.getElementById(
-                  "leistungen-knopf"
-                ) as HTMLButtonElement | null
-              )?.focus();
-            }
-            if (isOpen) {
-              setIsOpen(false);
-              toggle.current?.focus();
-            }
-          }}
-        >
-          <div className="container flex h-[var(--header-h)] items-center justify-between gap-6">
-            <Link
-              href={href("/")}
-              prefetch={false}
-              className="group flex min-h-11 items-center gap-3"
-              onClick={() => setIsOpen(false)}
-            >
-              {/* Schriftzug bis zum Logo von Brandea (R2d, E26, E49) */}
-              <span className="font-display text-[1.375rem] font-semibold tracking-[-0.02em] text-ink">
-                {company.brand}
-              </span>
-            </Link>
-
-            <div className="hidden items-center gap-8 self-stretch xl:flex">
+        <div className="container pt-[var(--nav-top)]">
+          <nav
+            aria-label={menu.label}
+            className="glass relative rounded-[3px]"
+            onKeyDown={e => {
+              if (e.key !== "Escape") return;
+              if (megaOpen) {
+                setMegaOpen(false);
+                (
+                  document.getElementById(
+                    "leistungen-knopf"
+                  ) as HTMLButtonElement | null
+                )?.focus();
+              }
+              if (isOpen) {
+                setIsOpen(false);
+                toggle.current?.focus();
+              }
+            }}
+          >
+            <div className="flex h-[var(--header-h)] items-center justify-between gap-6 pl-5 pr-2.5 lg:pl-6">
               <Link
-                href={href(menu.home.path)}
+                href={href("/")}
                 prefetch={false}
-                className={navLink(path === "/")}
+                className="flex min-h-11 items-center"
+                onClick={() => setIsOpen(false)}
               >
-                {menu.home.label}
+                {/* Logo der Dachmarke (E49, E80), mit der Arbeitsmarke weiter als Schriftzug */}
+                {newBrandActive ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src="/marke/mantena-logo.svg"
+                    alt={company.brand}
+                    width={177}
+                    height={36}
+                    className="h-7 w-auto sm:h-8"
+                  />
+                ) : (
+                  <span className="font-display text-[1.3125rem] font-semibold tracking-[-0.025em] text-ink">
+                    {company.brand}
+                  </span>
+                )}
               </Link>
 
-              {/* Per Maus und Tastatur bedienbar: Enter/Leertaste schaltet um, Escape schliesst (M40) */}
-              <div
-                className="flex items-center self-stretch"
-                onMouseEnter={() => hover(true)}
-                onMouseLeave={() => hover(false)}
-                onBlur={e => {
-                  if (!e.currentTarget.contains(e.relatedTarget as Node | null))
-                    setMegaOpen(false);
-                }}
-              >
-                <button
-                  id="leistungen-knopf"
-                  type="button"
-                  className={`${navLink(isServices)} gap-1.5`}
-                  aria-expanded={megaOpen}
-                  aria-controls="leistungen-menu"
-                  onClick={e => {
-                    // Tastatur (detail 0) schaltet um, ein Mausklick lässt das per Hover geöffnete Menü offen
-                    if (e.detail === 0) setMegaOpen(!megaOpen);
-                    else setMegaOpen(true);
+              <div className="hidden items-center gap-7 self-stretch xl:flex">
+                <Link
+                  href={href(menu.home.path)}
+                  prefetch={false}
+                  className={navLink(path === "/")}
+                >
+                  {menu.home.label}
+                </Link>
+
+                {/* Per Maus und Tastatur bedienbar: Enter/Leertaste schaltet um, Escape schliesst (M40) */}
+                <div
+                  className="flex items-center self-stretch"
+                  onMouseEnter={() => hover(true)}
+                  onMouseLeave={() => hover(false)}
+                  onBlur={e => {
+                    if (!e.currentTarget.contains(e.relatedTarget as Node | null))
+                      setMegaOpen(false);
                   }}
                 >
-                  {menu.services}
-                  <CaretDown
-                    weight="regular"
-                    className={`size-4 motion-safe:transition-transform motion-safe:duration-300 ${megaOpen ? "rotate-180" : ""}`}
-                    aria-hidden="true"
-                  />
-                </button>
+                  <button
+                    id="leistungen-knopf"
+                    type="button"
+                    className={`${navLink(isServices)} gap-1.5`}
+                    aria-expanded={megaOpen}
+                    aria-controls="leistungen-menu"
+                    onClick={e => {
+                      // Tastatur (detail 0) schaltet um, ein Mausklick lässt das per Hover geöffnete Menü offen
+                      if (e.detail === 0) setMegaOpen(!megaOpen);
+                      else setMegaOpen(true);
+                    }}
+                  >
+                    {menu.services}
+                    <CaretDown
+                      weight="duotone"
+                      className={`size-4 motion-safe:transition-transform motion-safe:duration-300 ${megaOpen ? "rotate-180" : ""}`}
+                      aria-hidden="true"
+                    />
+                  </button>
 
-                <div
-                  id="leistungen-menu"
-                  hidden={!megaOpen}
-                  className="absolute inset-x-0 top-full border-t border-line bg-white shadow-[0_32px_64px_-32px_rgba(14,17,22,0.35)]"
-                >
-                  <div className="container grid grid-cols-[repeat(3,minmax(0,1fr))_minmax(0,1.15fr)] gap-12 py-12">
-                    {serviceGroups.map(group => (
-                      <div key={group.title}>
-                        <p className="t-eyebrow mb-5 border-b border-line pb-3 text-mute">
-                          {group.title}
-                        </p>
-                        <ul className="space-y-0.5">
-                          {group.links.map(link => (
-                            <li key={link.path}>
-                              <Link
-                                href={href(link.path)}
-                                prefetch={false}
-                                onClick={() => setMegaOpen(false)}
-                                aria-current={
-                                  link.path === path ? "page" : undefined
-                                }
-                                className="arrow-link group flex min-h-11 items-center justify-between gap-4 py-2 text-[0.9875rem] text-ink/85 transition-colors hover:text-signal aria-[current=page]:text-signal"
-                              >
-                                {link.label}
-                                <ArrowRight
-                                  weight="regular"
-                                  className="size-4 shrink-0 opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100"
-                                  aria-hidden="true"
-                                />
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
+                  <div
+                    id="leistungen-menu"
+                    hidden={!megaOpen}
+                    className="absolute inset-x-0 top-full pt-2.5"
+                  >
+                    <div className="glass-strong overflow-hidden rounded-[3px]">
+                      <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,1.05fr)] gap-6 p-6">
+                        {[cleaning, care].map(group => (
+                          <div key={group.title}>
+                            <p className="t-eyebrow mb-3 px-3 text-mute">
+                              {group.title}
+                            </p>
+                            <ul className="space-y-0.5">
+                              {group.links.map(serviceLink)}
+                            </ul>
+                          </div>
+                        ))}
+
+                        {/* Premium als eigene Welt: Anthrazit, Champagner, Serifenschrift */}
+                        <div className="premium-surface on-dark relative flex flex-col overflow-hidden rounded-[3px] p-7 text-white">
+                          <p className="t-eyebrow text-brass">
+                            {premium.title}
+                          </p>
+                          <p className="mt-3 font-premium text-[1.75rem] leading-[1.1] text-white">
+                            {chrome.premiumTeaser}
+                          </p>
+                          <div className="premium-rule my-6" />
+                          <ul className="space-y-1">
+                            {premium.links.map(link => {
+                              const Glyph = iconFor(link.path);
+                              return (
+                                <li key={link.path}>
+                                  <Link
+                                    href={href(link.path)}
+                                    prefetch={false}
+                                    onClick={() => setMegaOpen(false)}
+                                    aria-current={
+                                      link.path === path ? "page" : undefined
+                                    }
+                                    className="group flex min-h-11 items-center gap-3 py-2 text-[0.96875rem] text-white/85 transition-colors hover:text-brass-light aria-[current=page]:text-brass-light"
+                                  >
+                                    <Glyph
+                                      weight="duotone"
+                                      className="size-5 shrink-0 text-brass"
+                                      aria-hidden="true"
+                                    />
+                                    <span className="flex-1">{link.label}</span>
+                                    <ArrowRight
+                                      weight="duotone"
+                                      className="size-4 shrink-0 text-brass opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100"
+                                      aria-hidden="true"
+                                    />
+                                  </Link>
+                                </li>
+                              );
+                            })}
+                          </ul>
+                        </div>
                       </div>
-                    ))}
-                    <div className="on-dark bg-ink p-8 text-white">
-                      <p className="t-eyebrow mb-4 text-brass">
-                        {chrome.megaTitle}
-                      </p>
-                      <p className="mb-6 leading-relaxed text-white/80">
-                        {chrome.megaText}
-                      </p>
-                      <div className="flex flex-col gap-3">
-                        <Button asChild size="lg" className="arrow-link">
+
+                      {/* Offerte als ruhige Leiste unter dem Menü */}
+                      <div className="flex flex-wrap items-center justify-between gap-4 border-t border-ink/[0.08] bg-white/50 px-9 py-4">
+                        <p className="text-[0.9375rem] text-ink/80">
+                          <span className="font-semibold text-ink">
+                            {chrome.megaTitle}
+                          </span>
+                          <span className="mx-2 text-ink/30" aria-hidden="true">
+                            ·
+                          </span>
+                          {chrome.megaText}
+                        </p>
+                        <div className="flex items-center gap-5">
                           <a
-                            href={menu.cta.href}
-                            onClick={() => setMegaOpen(false)}
-                            data-cta="menu"
+                            href={company.phone.href}
+                            className="inline-flex min-h-11 items-center gap-2 text-[0.9375rem] font-medium tabular-nums text-ink transition-colors hover:text-signal"
                           >
-                            {menu.cta.label}
-                            <ArrowRight weight="regular" aria-hidden="true" />
+                            <Phone weight="duotone" className="size-5 text-signal" aria-hidden="true" />
+                            {company.phone.display}
                           </a>
-                        </Button>
-                        <a
-                          href={company.phone.href}
-                          className="inline-flex min-h-11 items-center gap-2 py-2 tabular-nums text-white/85 hover:text-white"
-                        >
-                          <Phone weight="regular" className="size-4" aria-hidden="true" />
-                          {company.phone.display}
-                        </a>
+                          <Button asChild className="arrow-link btn-lift">
+                            <a
+                              href={menu.cta.href}
+                              onClick={() => setMegaOpen(false)}
+                              data-cta="menu"
+                            >
+                              {menu.cta.label}
+                              <ArrowRight weight="duotone" aria-hidden="true" />
+                            </a>
+                          </Button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
+
+                {menu.after.map(link => (
+                  <Link
+                    key={link.path}
+                    href={href(link.path)}
+                    prefetch={false}
+                    className={navLink(active(link.path))}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
               </div>
 
-              {menu.after.map(link => (
-                <Link
-                  key={link.path}
-                  href={href(link.path)}
-                  prefetch={false}
-                  className={navLink(active(link.path))}
+              <div className="flex items-center gap-2 sm:gap-3">
+                {/* Sprachen auf Tablets in der Leiste, auf dem Handy als erste Zeile im Menü */}
+                <LanguageSwitcher
+                  lang={lang}
+                  path={current}
+                  label={languageSwitch}
+                  compact
+                  as="div"
+                  flags={false}
+                  className="hidden md:block xl:hidden"
+                />
+                <a
+                  href={company.phone.href}
+                  className="hidden items-center gap-2 px-3 py-2 text-[0.9375rem] font-medium tabular-nums text-ink transition-colors hover:text-signal 2xl:inline-flex"
                 >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-
-            <div className="flex items-center gap-2 sm:gap-3">
-              {/* Sprachen auf Tablets in der Hauptzeile, auf dem Handy als erste Zeile im Menü */}
-              <LanguageSwitcher
-                lang={lang}
-                path={current}
-                label={languageSwitch}
-                compact
-                as="div"
-                flags={false}
-                className="hidden md:block xl:hidden"
-              />
-              <a
-                href={company.phone.href}
-                className="hidden items-center gap-2 px-3 py-2 text-[0.9375rem] font-medium tabular-nums text-ink transition-colors hover:text-signal 2xl:inline-flex"
-              >
-                <Phone weight="regular" className="size-4" aria-hidden="true" />
-                {company.phone.display}
-              </a>
-              <Button asChild className="hidden sm:inline-flex">
-                <a href={menu.cta.href} data-cta="kopf">
-                  {menu.cta.label}
-                  <ArrowRight weight="regular" aria-hidden="true" />
+                  <Phone weight="duotone" className="size-5 text-signal" aria-hidden="true" />
+                  {company.phone.display}
                 </a>
-              </Button>
-              <button
-                ref={toggle}
-                type="button"
-                onClick={() => setIsOpen(!isOpen)}
-                className="press -mr-2 inline-flex h-11 w-11 items-center justify-center text-ink xl:hidden"
-                aria-label={isOpen ? menu.close : menu.open}
-                aria-expanded={isOpen}
-                aria-controls="mobil-menu"
-              >
-                {isOpen ? (
-                  <X weight="regular" className="size-6" aria-hidden="true" />
-                ) : (
-                  <List weight="regular" className="size-6" aria-hidden="true" />
-                )}
-              </button>
+                <Button asChild className="arrow-link btn-lift hidden sm:inline-flex">
+                  <a href={menu.cta.href} data-cta="kopf">
+                    {menu.cta.label}
+                    <ArrowRight weight="duotone" aria-hidden="true" />
+                  </a>
+                </Button>
+                <button
+                  ref={toggle}
+                  type="button"
+                  onClick={() => setIsOpen(!isOpen)}
+                  className="press inline-flex h-11 w-11 items-center justify-center rounded-[3px] text-ink transition-colors hover:bg-ink/[0.05] xl:hidden"
+                  aria-label={isOpen ? menu.close : menu.open}
+                  aria-expanded={isOpen}
+                  aria-controls="mobil-menu"
+                >
+                  {isOpen ? (
+                    <X weight="duotone" className="size-6" aria-hidden="true" />
+                  ) : (
+                    <List weight="duotone" className="size-6" aria-hidden="true" />
+                  )}
+                </button>
+              </div>
             </div>
-          </div>
 
-          {isOpen && (
-            <div
-              id="mobil-menu"
-              className="absolute inset-x-0 top-full h-[calc(100dvh-var(--header-h))] overflow-y-auto border-t border-line bg-white xl:hidden"
-            >
-              <div className="container grid gap-8 py-6 md:grid-cols-2 md:gap-12 md:py-8">
-                <div className="space-y-6">
-                  <LanguageSwitcher
-                    lang={lang}
-                    path={current}
-                    label={languageSwitch}
-                    as="div"
-                    className="md:hidden"
-                  />
-                  <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-1">
-                    <Button asChild size="lg" className="arrow-link w-full">
-                      <a
-                        href={menu.cta.href}
-                        onClick={() => setIsOpen(false)}
-                        data-cta="mobilmenu"
-                      >
-                        {menu.cta.label}
-                        <ArrowRight weight="regular" aria-hidden="true" />
-                      </a>
-                    </Button>
-                    <Button
-                      asChild
-                      size="lg"
-                      variant="outline"
-                      className="w-full"
-                    >
-                      <a href={company.phone.href} className="tabular-nums">
-                        <Phone weight="regular" aria-hidden="true" />
-                        {company.phone.display}
-                      </a>
-                    </Button>
-                  </div>
-                  <p className="text-sm text-mute">{chrome.answer}</p>
-                  <ul className="border-t border-line">
-                    {[menu.home, ...menu.after].map(link => (
-                      <li key={link.path} className="border-b border-line">
-                        <Link
-                          href={href(link.path)}
-                          prefetch={false}
+            {isOpen && (
+              <div
+                id="mobil-menu"
+                className="glass-strong absolute inset-x-0 top-full mt-2.5 max-h-[calc(100dvh-var(--header-h)-var(--nav-top)*3)] overflow-y-auto rounded-[3px] xl:hidden"
+              >
+                <div className="grid gap-7 p-5 md:grid-cols-2 md:gap-10 md:p-8">
+                  <div className="space-y-6">
+                    <LanguageSwitcher
+                      lang={lang}
+                      path={current}
+                      label={languageSwitch}
+                      as="div"
+                      className="md:hidden"
+                    />
+                    <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-1">
+                      <Button asChild size="lg" className="arrow-link btn-lift w-full">
+                        <a
+                          href={menu.cta.href}
                           onClick={() => setIsOpen(false)}
-                          aria-current={link.path === path ? "page" : undefined}
-                          className={`${mobileLink} font-display text-xl font-semibold`}
+                          data-cta="mobilmenu"
                         >
-                          {link.label}
-                          <ArrowRight
-                            weight="regular"
-                            className="size-5 text-mute"
+                          {menu.cta.label}
+                          <ArrowRight weight="duotone" aria-hidden="true" />
+                        </a>
+                      </Button>
+                      <Button asChild size="lg" variant="outline" className="w-full">
+                        <a href={company.phone.href} className="tabular-nums">
+                          <Phone weight="duotone" aria-hidden="true" />
+                          {company.phone.display}
+                        </a>
+                      </Button>
+                    </div>
+                    <p className="text-sm text-mute">{chrome.answer}</p>
+                    <ul className="border-t border-ink/10">
+                      {[menu.home, ...menu.after].map(link => (
+                        <li key={link.path} className="border-b border-ink/10">
+                          <Link
+                            href={href(link.path)}
+                            prefetch={false}
+                            onClick={() => setIsOpen(false)}
+                            aria-current={link.path === path ? "page" : undefined}
+                            className="flex min-h-12 items-center justify-between gap-4 py-3 font-display text-xl font-semibold text-ink aria-[current=page]:text-signal"
+                          >
+                            {link.label}
+                            <ArrowRight weight="duotone" className="size-5 text-mute" aria-hidden="true" />
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="space-y-4">
+                    <p className="t-eyebrow text-mute">{menu.services}</p>
+                    {[cleaning, care].map((group, index) => (
+                      <details
+                        key={group.title}
+                        className="group border-b border-ink/10"
+                        open={index === 0 || group.links.some(link => active(link.path))}
+                      >
+                        <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-4 py-3 font-display text-lg font-semibold text-ink [&::-webkit-details-marker]:hidden">
+                          {group.title}
+                          <CaretDown
+                            weight="duotone"
+                            className="size-5 text-mute motion-safe:transition-transform group-open:rotate-180"
                             aria-hidden="true"
                           />
-                        </Link>
-                      </li>
+                        </summary>
+                        <ul className="pb-3">{group.links.map(serviceLink)}</ul>
+                      </details>
                     ))}
-                  </ul>
-                </div>
-                <div>
-                  <p className="t-eyebrow mb-2 text-mute">{menu.services}</p>
-                  {serviceGroups.map((group, index) => (
-                    <details
-                      key={group.title}
-                      className="group border-b border-line"
-                      open={index === 0 || group.links.some(link => active(link.path))}
-                    >
-                      <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-4 py-3 font-display text-lg font-semibold text-ink [&::-webkit-details-marker]:hidden">
-                        {group.title}
-                        <CaretDown
-                          weight="regular"
-                          className="size-5 text-mute motion-safe:transition-transform group-open:rotate-180"
-                          aria-hidden="true"
-                        />
-                      </summary>
-                      <ul className="pb-3">
-                        {group.links.map(link => (
+                    <div className="premium-surface on-dark rounded-[3px] p-5 text-white">
+                      <p className="t-eyebrow text-brass">{premium.title}</p>
+                      <p className="mt-2 font-premium text-xl leading-snug">
+                        {chrome.premiumTeaser}
+                      </p>
+                      <ul className="mt-4 border-t border-brass/25 pt-2">
+                        {premium.links.map(link => (
                           <li key={link.path}>
                             <Link
                               href={href(link.path)}
                               prefetch={false}
                               onClick={() => setIsOpen(false)}
-                              aria-current={
-                                link.path === path ? "page" : undefined
-                              }
-                              className="block min-h-11 py-2.5 text-[1.0625rem] text-ink aria-[current=page]:text-signal"
+                              aria-current={link.path === path ? "page" : undefined}
+                              className="flex min-h-11 items-center justify-between py-2.5 text-[1.0625rem] text-white/90 aria-[current=page]:text-brass-light"
                             >
                               {link.label}
+                              <ArrowRight weight="duotone" className="size-4 text-brass" aria-hidden="true" />
                             </Link>
                           </li>
                         ))}
                       </ul>
-                    </details>
-                  ))}
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          )}
-        </nav>
+            )}
+          </nav>
+        </div>
       </header>
     </>
   );
