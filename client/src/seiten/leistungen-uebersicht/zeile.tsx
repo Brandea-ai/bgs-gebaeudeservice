@@ -4,67 +4,67 @@ import ImageSlot from "@/components/ImageSlot";
 import RichText from "@/components/RichText";
 import { iconFor } from "@/components/serviceIcons";
 import type { ServicePageContent } from "../../../../content/types";
-import { heroImage } from "../../../../shared/hero-images";
+import type { ImageKey } from "../../../../shared/images";
 import { localizePath, type Locale } from "../../../../shared/i18n";
 import type { PagePath } from "../../../../shared/seo";
 
 /**
- * Eine Leistung als Zickzack-Zeile (E80): Bild wechselt die Seite, daneben
- * Symbol, Name, kurzer Nutzen, für wen sie gedacht ist, drei typische Arbeiten
- * aus dem Umfang der Leistungsseite und der Link. Auf dem Handy Bild oben.
+ * Eine Leistung als Textzeile im Kapitel (visuell.md Umbau 5 und 7): ab lg nur
+ * Text mit Haarlinie, das Bild steht klebend daneben (kapitel-buehne.tsx).
+ * Darunter ein 88 px grosses Vorschaubild links neben Name und Nutzen; die
+ * Zeile «Für» und die drei typischen Arbeiten erst ab sm, sie stehen
+ * vollständig auf der Leistungsseite. Die id ist das Ziel des Scrollspys.
  */
 export default function LeistungZeile({
+  id,
   path,
   label,
   text,
+  image,
   content,
-  flip,
   lang,
   toService,
 }: {
+  id: string;
   path: PagePath;
   label: string;
   text: string;
+  image: ImageKey;
   content?: ServicePageContent;
-  flip: boolean;
   lang: Locale;
   toService: string;
 }) {
   const Glyph = iconFor(path);
-  const titleId = `zeile-${path.split("/").pop()}`;
+  const titleId = `${id}-titel`;
   const audience = content?.facts[0];
   const typical = content?.scope.items.slice(0, 3) ?? [];
+  const href = localizePath(path, lang);
   return (
-    <article aria-labelledby={titleId} className="grid items-center gap-8 lg:grid-cols-12 lg:gap-14">
-      <Link
-        href={localizePath(path, lang)}
-        tabIndex={-1}
-        aria-hidden="true"
-        className={`group block overflow-hidden rounded-[3px] lg:col-span-6 ${flip ? "lg:order-2 lg:col-start-7" : ""}`}
-      >
-        <ImageSlot
-          image={heroImage[path]}
-          lang={lang}
-          hover
-          decorative
-          sizes="(min-width: 1024px) 50vw, 100vw"
-          className="aspect-[16/10] w-full"
-        />
+    <article
+      id={id}
+      aria-labelledby={titleId}
+      className="grid grid-cols-[5.5rem_minmax(0,1fr)] gap-x-4 border-t border-line py-7 sm:py-9 lg:block lg:py-12"
+    >
+      <Link href={href} tabIndex={-1} aria-hidden="true" className="group block self-start overflow-hidden rounded-[3px] lg:hidden">
+        <ImageSlot image={image} lang={lang} hover decorative sizes="88px" className="aspect-square w-full" />
       </Link>
-      <div className={`min-w-0 lg:col-span-6 ${flip ? "lg:order-1 lg:col-start-1" : ""}`}>
-        <Glyph weight="duotone" className="size-8 text-signal" aria-hidden="true" />
-        <h3 id={titleId} className="hyphens mt-5 font-display text-[clamp(1.5rem,1.15rem+1vw,2.25rem)] font-bold leading-[1.12] tracking-[-0.02em] text-ink">
-          {label}
+      <div className="min-w-0">
+        <h3
+          id={titleId}
+          className="flex items-start gap-3 font-display text-[clamp(1.25rem,1.05rem+0.9vw,2rem)] font-bold leading-[1.15] tracking-[-0.02em] text-ink"
+        >
+          <Glyph weight="duotone" className="mt-[0.1em] size-7 shrink-0 text-signal max-sm:hidden lg:size-8" aria-hidden="true" />
+          <span className="min-w-0 lg:text-balance">{label}</span>
         </h3>
-        <p className="t-lead mt-4 max-w-[52ch] text-ink-600">{text}</p>
+        <p className="mt-2 max-w-[56ch] text-[0.9375rem] font-medium leading-relaxed text-ink-600 sm:mt-4 sm:text-[1.0625rem]">{text}</p>
         {audience && (
-          <p className="mt-5 text-[0.9375rem] leading-relaxed text-ink-600">
+          <p className="mt-4 text-[0.9375rem] leading-relaxed text-ink-600 max-sm:hidden">
             <span className="font-semibold text-ink">{audience.label}: </span>
             {audience.value}
           </p>
         )}
         {typical.length > 0 && (
-          <ul className="mt-5 space-y-2 border-t border-line pt-5">
+          <ul className="mt-4 space-y-2 max-sm:hidden">
             {typical.map(item => (
               <li key={item} className="flex items-start gap-3 font-medium leading-relaxed text-ink">
                 <Check weight="duotone" className="mt-[0.2em] size-5 shrink-0 text-signal" aria-hidden="true" />
@@ -76,8 +76,8 @@ export default function LeistungZeile({
           </ul>
         )}
         <Link
-          href={localizePath(path, lang)}
-          className="arrow-link mt-7 inline-flex min-h-11 items-center gap-2 font-semibold text-ink transition-colors hover:text-signal"
+          href={href}
+          className="arrow-link mt-3 inline-flex min-h-11 items-center gap-2 font-semibold text-ink transition-colors hover:text-signal sm:mt-5"
         >
           {toService}
           <span className="sr-only">: {label}</span>

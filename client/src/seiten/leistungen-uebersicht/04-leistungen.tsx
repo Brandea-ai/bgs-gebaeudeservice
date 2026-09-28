@@ -1,20 +1,24 @@
+import ImageSlot from "@/components/ImageSlot";
 import SectionHead from "@/components/SectionHead";
+import KapitelBuehne from "./kapitel-buehne";
 import LeistungZeile from "./zeile";
-import { groupId, uebersichtKontext, type UebersichtProps } from "./kontext";
+import { groupId, rowId, rowImage, uebersichtKontext, type UebersichtProps } from "./kontext";
 
 /**
- * Alle Leistungen nach Anlass: je Gruppe eine Sektion mit Titel und Satz,
- * darin die Leistungen als Zickzack-Zeilen. Der Wechsel links und rechts läuft
- * über alle Gruppen weiter. Sprungziel auf der Sektion selbst (L06).
+ * Leistungen als drei Kapitel (visuell.md Umbau 5): je Gruppe Titel und Satz,
+ * links ab lg ein klebendes Bild, das beim Lesen zur jeweiligen Leistung
+ * wechselt, rechts die Leistungen als Textzeilen mit Haarlinie. Kein überhoher
+ * Scrollweg, die Höhe ergibt sich aus dem Text (era-residence Dossier 06, §8).
+ * Mobil ohne Bühne, jede Zeile mit kleinem Vorschaubild (Umbau 7).
  */
 export default function UebersichtLeistungen(props: UebersichtProps) {
   const { lang } = props;
   const { ui, servicesOverview, serviceFor } = uebersichtKontext(props);
-  let row = 0;
   return (
     <>
       {servicesOverview.groups.map((group, index) => {
         const id = groupId(index);
+        const ids = group.items.map(item => rowId(item.path));
         return (
           <section
             key={group.title}
@@ -23,20 +27,39 @@ export default function UebersichtLeistungen(props: UebersichtProps) {
             className={`section border-t border-line ${index % 2 === 0 ? "bg-stone" : "bg-white"}`}
           >
             <div className="container">
-              <SectionHead id={`${id}-titel`} title={group.title} intro={group.text} className="mb-14 max-w-3xl lg:mb-20" />
-              <div className="grid gap-16 lg:gap-24">
-                {group.items.map(item => (
-                  <LeistungZeile
-                    key={item.path}
-                    path={item.path}
-                    label={item.title}
-                    text={item.text}
-                    content={serviceFor(item.path)}
-                    flip={row++ % 2 === 1}
-                    lang={lang}
-                    toService={ui.toService}
+              <SectionHead id={`${id}-titel`} title={group.title} intro={group.text} className="max-w-3xl" />
+              <div className="mt-8 lg:mt-14 lg:grid lg:grid-cols-12 lg:gap-x-14">
+                <div className="hidden lg:sticky lg:top-[calc(var(--header-offset)+var(--subnav-h,0px)+2rem)] lg:col-span-5 lg:block lg:self-start">
+                  <KapitelBuehne
+                    ids={ids}
+                    className="aspect-[4/5] max-h-[calc(100svh-var(--header-offset)-var(--subnav-h,0px)-4rem)] w-full"
+                    images={group.items.map(item => (
+                      <ImageSlot
+                        key={item.path}
+                        image={rowImage[item.path]}
+                        lang={lang}
+                        decorative
+                        sizes="(min-width: 1024px) 40vw, 1px"
+                        className="h-full w-full"
+                      />
+                    ))}
                   />
-                ))}
+                </div>
+                <div className="min-w-0 border-b border-line lg:col-span-7">
+                  {group.items.map(item => (
+                    <LeistungZeile
+                      key={item.path}
+                      id={rowId(item.path)}
+                      path={item.path}
+                      label={item.title}
+                      text={item.text}
+                      image={rowImage[item.path]}
+                      content={serviceFor(item.path)}
+                      lang={lang}
+                      toService={ui.toService}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </section>

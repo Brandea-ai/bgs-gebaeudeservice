@@ -13,8 +13,8 @@ const region = cantonList
 export const pages = {
   '/': {
     label: 'Accueil',
-    title: `${company.brand} | Nettoyage et conciergerie à Lucerne`,
-    description: `Nettoyage, conciergerie et facility services pour entreprises et immeubles, et nettoyage premium. Cantons de ${region}.`,
+    title: `${company.brand} | Entreprise de nettoyage et conciergerie à Lucerne`,
+    description: 'Entreprise de nettoyage pour gérances et entreprises : nettoyage et conciergerie d’immeubles à Lucerne, Zoug et environs. Devis gratuit après une visite.',
   },
   '/premium': {
     label: premiumLabel,
@@ -40,8 +40,8 @@ export const pages = {
   },
   '/leistungen': {
     label: 'Prestations',
-    title: 'Prestations : nettoyage, conciergerie',
-    description: 'Nettoyage d’entretien, de bureaux, spécial, de chantier, de vitres et industriel, conciergerie et facility services à Lucerne, Zoug et environs.',
+    title: 'Services de nettoyage et de conciergerie',
+    description: 'Services de nettoyage et de conciergerie : dix prestations, un comparatif et un calendrier annuel. À Lucerne, Zoug et environs. Devis gratuit après une visite.',
   },
   '/leistungen/unterhaltsreinigung': {
     label: 'Nettoyage d’entretien',

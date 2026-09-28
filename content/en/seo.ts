@@ -13,8 +13,8 @@ const region = cantons
 export const pages: Dictionary['pages'] = {
   '/': {
     label: 'Home',
-    title: `${company.brand} | Cleaning and caretaking, Lucerne & Zug`,
-    description: `Building cleaning, caretaking and facility services for businesses and properties in ${region}, plus premium cleaning.`,
+    title: `${company.brand} | Cleaning services and caretaking in Lucerne, Zug`,
+    description: 'Cleaning services, caretaking and facility services for property managers and businesses in Lucerne, Zug and beyond. Free quote after a site visit.',
   },
   '/premium': {
     label: premiumLabel,
@@ -40,8 +40,8 @@ export const pages: Dictionary['pages'] = {
   },
   '/leistungen': {
     label: 'Services',
-    title: 'Services: cleaning and caretaking',
-    description: `Maintenance, office, special, construction, window and industrial cleaning, caretaking and facility services in Lucerne, Zug and beyond.`,
+    title: 'Commercial cleaning services and caretaking',
+    description: 'Commercial cleaning services and caretaking: ten services, a comparison and an annual plan. In Lucerne, Zug and beyond. Free quote after a site visit.',
   },
   '/leistungen/unterhaltsreinigung': {
     label: 'Maintenance cleaning',

@@ -14,7 +14,7 @@ export const pages = {
   '/': {
     label: 'Startseite',
     title: `${company.brand} | Reinigung und Hauswartung Luzern, Zug`,
-    description: `Gebäudereinigung, Hauswartung, Facility Services und Premium-Reinigung für Unternehmen und Liegenschaften in ${region}.`,
+    description: 'Reinigungsfirma für Verwaltungen und Unternehmen: Gebäudereinigung und Hauswartung in Luzern, Zug und Umgebung. Kostenlose Offerte nach Besichtigung.',
   },
   '/premium': {
     label: premiumLabel,
@@ -41,7 +41,7 @@ export const pages = {
   '/leistungen': {
     label: 'Leistungen',
     title: 'Leistungen: Reinigung und Hauswartung',
-    description: `Unterhalts-, Büro-, Sonder-, Bau-, Fenster- und Industriereinigung, Hauswartung und Facility Services von ${company.brand} in Luzern, Zug und Umgebung.`,
+    description: 'Reinigung und Hauswartung im Überblick: zehn Leistungen, Vergleich und Jahresplan. In Luzern, Zug und Umgebung. Kostenlose Offerte nach Besichtigung.',
   },
   '/leistungen/unterhaltsreinigung': {
     label: 'Unterhaltsreinigung',

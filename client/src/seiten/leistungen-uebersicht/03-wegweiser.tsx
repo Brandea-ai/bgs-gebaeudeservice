@@ -9,7 +9,8 @@ import { uebersichtKontext, type UebersichtProps } from "./kontext";
 /**
  * Wegweiser «Welche Leistung passt?»: häufige Situationen, je eine Zeile mit
  * der passenden Leistung. Die ganze Zeile ist der Link, Symbole duotone ohne
- * Fläche, Haarlinien statt Karten.
+ * Fläche, Haarlinien statt Karten. Der Titel klebt ab lg neben der Liste,
+ * damit die linke Spalte keine Leerfläche lässt (visuell.md, /leistungen).
  */
 export default function UebersichtWegweiser(props: UebersichtProps) {
   const { lang } = props;
@@ -18,7 +19,12 @@ export default function UebersichtWegweiser(props: UebersichtProps) {
   return (
     <section id="wegweiser" aria-labelledby="wegweiser-titel" className="section bg-white">
       <div className="container grid gap-10 lg:grid-cols-12 lg:gap-x-16">
-        <SectionHead id="wegweiser-titel" title={guide.title} intro={guide.intro} className="lg:col-span-4" />
+        <SectionHead
+          id="wegweiser-titel"
+          title={guide.title}
+          intro={guide.intro}
+          className="lg:sticky lg:top-[calc(var(--header-offset)+var(--subnav-h,0px)+2rem)] lg:col-span-4 lg:self-start"
+        />
         <RevealGroup as="ul" className="border-t border-line md:grid md:grid-cols-2 md:gap-x-10 lg:col-span-8">
           {guide.items.map(item => {
             const Glyph = iconFor(item.path);
@@ -26,11 +32,11 @@ export default function UebersichtWegweiser(props: UebersichtProps) {
               <li key={item.situation} className="border-b border-line">
                 <Link
                   href={localizePath(item.path, lang)}
-                  className="arrow-link group grid h-full grid-cols-[1.75rem_minmax(0,1fr)] gap-x-4 py-5"
+                  className="arrow-link group grid h-full grid-cols-[1.75rem_minmax(0,1fr)] gap-x-4 py-4 sm:py-5"
                 >
                   <Glyph weight="duotone" className="mt-0.5 size-7 text-signal" aria-hidden="true" />
                   <span className="min-w-0">
-                    <span className="block font-medium leading-relaxed text-ink-600">{item.situation}</span>
+                    <span className="block text-[0.9375rem] font-medium leading-relaxed text-ink-600 sm:text-base">{item.situation}</span>
                     <span className="mt-2 inline-flex items-center gap-2 font-semibold text-ink transition-colors group-hover:text-signal">
                       {pages[item.path].label}
                       <ArrowRight weight="duotone" className="size-4 shrink-0 text-signal" aria-hidden="true" />

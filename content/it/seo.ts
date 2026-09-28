@@ -13,8 +13,8 @@ const region = cantonListIt
 export const pages = {
   '/': {
     label: 'Home',
-    title: `${company.brand} | Pulizie e custodia a Lucerna e Zugo`,
-    description: `Pulizie, custodia di stabili e facility services per aziende e immobili nei Cantoni di ${region}, con linea premium.`,
+    title: `${company.brand} | Impresa di pulizie e custodia a Lucerna e Zugo`,
+    description: 'Impresa di pulizie per amministrazioni e aziende: pulizie e custodia di stabili a Lucerna, Zugo e dintorni. Offerta gratuita dopo il sopralluogo.',
   },
   '/premium': {
     label: premiumLabel,
@@ -40,8 +40,8 @@ export const pages = {
   },
   '/leistungen': {
     label: 'Servizi',
-    title: 'Servizi: pulizia e custodia di stabili',
-    description: `Pulizia di manutenzione, uffici, cantiere, vetri e industriale, pulizie speciali, custodia e facility services di ${company.brand} a Lucerna e Zugo.`,
+    title: 'Servizi di pulizia e custodia di stabili',
+    description: 'Servizi di pulizia e custodia di stabili: dieci servizi, un confronto e un calendario annuale. A Lucerna, Zugo e dintorni. Offerta gratuita dopo il sopralluogo.',
   },
   '/leistungen/unterhaltsreinigung': {
     label: 'Pulizia di manutenzione',

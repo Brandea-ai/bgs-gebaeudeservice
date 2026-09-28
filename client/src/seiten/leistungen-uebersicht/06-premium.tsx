@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Clock, LockKey, UsersThree } from "@phosphor-icons/react/dist/ssr";
+import { ArrowRight, Clock, HandSwipeRight, LockKey, UsersThree } from "@phosphor-icons/react/dist/ssr";
 import type { Icon } from "@phosphor-icons/react";
 import ImageSlot from "@/components/ImageSlot";
 import { RevealGroup } from "@/components/Reveal";
@@ -47,9 +47,20 @@ export default function UebersichtPremium(props: UebersichtProps) {
           </div>
         </div>
 
-        <RevealGroup as="ul" className="mt-14 grid gap-6 md:grid-cols-3">
+        {/* Mobil eine wischbare Schiene mit CSS-Scroll-Snap (visuell.md Umbau 7), die nächste Karte ragt herein */}
+        <p className="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-white/90 md:hidden" aria-hidden="true">
+          <HandSwipeRight weight="duotone" className="size-5 text-brass" />
+          {dict.seiten.home.services.swipe}
+        </p>
+        <RevealGroup
+          as="ul"
+          className="mt-4 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-3 [scrollbar-width:none] max-md:-mx-[var(--gutter)] max-md:scroll-px-[var(--gutter)] max-md:px-[var(--gutter)] md:mt-14 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:pb-0 [&::-webkit-scrollbar]:hidden"
+        >
           {premiumOverview.offers.map(offer => (
-            <li key={offer.path} className="premium-surface card-lift group min-w-0 overflow-hidden rounded-[3px]">
+            <li
+              key={offer.path}
+              className="premium-surface card-lift group min-w-0 shrink-0 basis-[82%] snap-start overflow-hidden rounded-[3px] md:basis-auto"
+            >
               <Link href={localizePath(offer.path, lang)} className="arrow-link flex h-full flex-col">
                 <ImageSlot
                   image={heroImage[offer.path]}
@@ -76,7 +87,8 @@ export default function UebersichtPremium(props: UebersichtProps) {
         </RevealGroup>
 
         <div className="mt-14 grid gap-10 border-t border-white/15 pt-10 lg:grid-cols-12 lg:items-center">
-          <ul className="grid gap-6 sm:grid-cols-3 lg:col-span-9">
+          {/* Die drei Zusagen stehen auf /premium; mobil nur der Weg dorthin (Umbau 7) */}
+          <ul className="grid gap-6 max-sm:hidden sm:grid-cols-3 lg:col-span-9">
             {preview.map(({ key, icon: Glyph }) => {
               const item = promise(key);
               if (!item) return null;
