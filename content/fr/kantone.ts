@@ -20,11 +20,11 @@ const luzern: KantonPage = {
   name: 'Lucerne',
   kuerzel: 'LU',
   seo: {
-    title: 'Entreprise de nettoyage Lucerne : conciergerie',
+    title: 'Entreprise de nettoyage à Lucerne',
     description:
-      'Nettoyage et conciergerie dans le canton de Lucerne, depuis notre siège d’Emmenbrücke : ville, agglomération, rives du lac, Sursee et Seetal. Devis sur place.',
+      'Nettoyage et conciergerie dans le canton de Lucerne, depuis Emmenbrücke : ville, agglomération, rives du lac, Sursee et Seetal. Devis sur place.',
   },
-  h1: 'Nettoyage et conciergerie dans le canton de Lucerne',
+  h1: 'Votre entreprise de nettoyage dans le canton de Lucerne',
   lead: [
     'Notre siège se trouve à Emmenbrücke, au cœur de l’agglomération lucernoise. D’ici, nous nettoyons et entretenons des immeubles, des bureaux et des surfaces commerciales dans tout le canton, de la ville de Lucerne au lac de Sempach et jusque dans l’Entlebuch.',
     'Nous travaillons dans le nettoyage et la conciergerie depuis 2006. Avant de vous remettre un devis, nous visitons votre bien sur place. La visite et le devis sont gratuits et sans engagement.',
@@ -38,7 +38,7 @@ const luzern: KantonPage = {
   regionen: [
     { title: 'Ville et agglomération', orte: ['Lucerne', 'Emmen', 'Kriens', 'Horw', 'Ebikon', 'Adligenswil'] },
     { title: 'Au bord du lac des Quatre-Cantons', orte: ['Meggen', 'Weggis', 'Vitznau', 'Greppen'] },
-    { title: 'Sursee et lac de Sempach', orte: ['Sursee', 'Sempach', 'Nottwil', 'Eich'] },
+    { title: 'Sursee et lac de Sempach', orte: ['Sursee', 'Sempach', 'Nottwil', 'Eich', 'Triengen', 'Ruswil'] },
     { title: 'Seetal', orte: ['Hochdorf', 'Hitzkirch'] },
     { title: 'Willisau et Entlebuch', orte: ['Willisau', 'Entlebuch', 'Schüpfheim', 'Escholzmatt-Marbach'] },
   ],
@@ -80,6 +80,7 @@ const luzern: KantonPage = {
       question: 'Travaillez-vous aussi en dehors de la ville de Lucerne ?',
       answer: 'Oui, dans tout le canton, du Seetal à l’Entlebuch, avec toutes nos prestations et aux mêmes conditions.',
     },
+    { question: 'Combien coûte une entreprise de nettoyage dans le canton de Lucerne ?', answer: answers.kostenFaktoren },
     {
       question: 'Vous chargez-vous du nettoyage lors d’un changement de locataire ?',
       answer: 'Oui. Le nettoyage de déménagement et de fin de bail avec garantie de remise fait partie de nos [nettoyages spéciaux](/leistungen/sonderreinigungen).',
@@ -93,11 +94,11 @@ const zug: KantonPage = {
   name: 'Zoug',
   kuerzel: 'ZG',
   seo: {
-    title: 'Entreprise de nettoyage Zoug : bureaux, immeubles',
+    title: 'Entreprise de nettoyage à Zoug',
     description:
       'Nettoyage de bureaux, vitres et conciergerie à Zoug : sièges d’entreprise, cabinets et immeubles de Zoug et Baar à la vallée d’Ägeri. En quatre langues.',
   },
-  h1: 'Nettoyage de bureaux et d’immeubles dans le canton de Zoug',
+  h1: 'Votre entreprise de nettoyage pour bureaux et immeubles dans le canton de Zoug',
   lead: [
     'De nombreuses entreprises, y compris internationales, ont leur siège dans le canton de Zoug. Elles ont besoin d’un nettoyage qui suit le rythme de l’activité et ne perturbe pas la journée de travail.',
     'Nos collaboratrices et collaborateurs parlent allemand, anglais, français et italien. Cela facilite la coordination avec des équipes dont la langue de travail n’est pas l’allemand.',
@@ -154,6 +155,7 @@ const zug: KantonPage = {
       question: 'Nettoyez-vous en dehors des heures de bureau ?',
       answer: 'Nous fixons les horaires d’intervention avec vous, en fonction de vos heures de travail et d’ouverture.',
     },
+    { question: 'Combien coûte une entreprise de nettoyage dans le canton de Zoug ?', answer: answers.kostenFaktoren },
     {
       question: 'Intervenez-vous aussi à Baar, à Cham ou dans la vallée d’Ägeri ?',
       answer: 'Oui, dans toutes les communes du canton de Zoug, avec toutes nos prestations et aux mêmes conditions.',
@@ -167,11 +169,11 @@ const aargau: KantonPage = {
   name: 'Argovie',
   kuerzel: 'AG',
   seo: {
-    title: 'Nettoyage en Argovie : industrie et conciergerie',
+    title: 'Entreprise de nettoyage en Argovie',
     description:
       'Nettoyage industriel, de halles et de chantier, conciergerie en Argovie : du Freiamt et du Seetal à Aarau et Baden, aux mêmes conditions qu’à Lucerne.',
   },
-  h1: 'Nettoyage pour l’industrie, l’artisanat et les immeubles en Argovie',
+  h1: 'Votre entreprise de nettoyage pour l’industrie et l’artisanat dans le canton d’Argovie',
   lead: [
     'L’Argovie compte de nombreuses entreprises industrielles et artisanales. Halles de production et de stockage, ateliers et bâtiments commerciaux ont besoin d’un nettoyage qui suit les équipes et les processus.',
     'Du Freiamt et du Seetal, à la frontière lucernoise, jusqu’aux régions d’Aarau et de Baden, nous intervenons dans tout le canton, avec toutes nos prestations et aux mêmes conditions qu’à Lucerne.',
@@ -234,6 +236,7 @@ const aargau: KantonPage = {
       question: 'La maintenance des machines est-elle comprise ?',
       answer: 'Non. Nous nettoyons machines et installations selon vos consignes, la maintenance et les réparations restent l’affaire de votre service de maintenance.',
     },
+    { question: 'Combien coûte une entreprise de nettoyage dans le canton d’Argovie ?', answer: answers.kostenFaktoren },
     { question: 'Nettoyez-vous avec des produits respectueux de l’environnement ?', answer: answers.mittel },
   ],
   menuText: menu.aargau.text,
@@ -243,11 +246,11 @@ const nidwalden: KantonPage = {
   name: 'Nidwald',
   kuerzel: 'NW',
   seo: {
-    title: 'Entreprise de nettoyage et conciergerie, Nidwald',
+    title: 'Entreprise de nettoyage à Nidwald',
     description:
       'Nettoyage et conciergerie à Nidwald : biens au bord du lac des Quatre-Cantons, résidences secondaires et villas de Hergiswil à Beckenried. Devis sur place.',
   },
-  h1: 'Nettoyage et conciergerie à Nidwald',
+  h1: 'Votre entreprise de nettoyage dans le canton de Nidwald',
   lead: [
     'Nidwald s’étend de la rive du lac des Quatre-Cantons, à Hergiswil et Ennetbürgen, jusqu’à la vallée d’Engelberg. De nombreux biens se trouvent près du lac, certains ne sont habités qu’une partie de l’année.',
     'Nous nettoyons et entretenons immeubles d’habitation et commerciaux, résidences secondaires et villas dans tout le canton. Nous établissons le devis après une visite, gratuitement et sans engagement.',
@@ -304,6 +307,7 @@ const nidwalden: KantonPage = {
       question: 'Nettoyez-vous aussi les bateaux ?',
       answer: 'Oui, yachts et bateaux à moteur sur le lac des Quatre-Cantons : intérieur, sellerie, teck et gelcoat. Plus d’informations sous [Yacht](/premium/yacht).',
     },
+    { question: 'Combien coûte une entreprise de nettoyage dans le canton de Nidwald ?', answer: answers.kostenFaktoren },
     {
       question: 'Comment obtenir un devis ?',
       answer: `Appelez-nous ou écrivez-nous. Nous vous répondons ${responseTime}, visitons le bien et vous envoyons le devis par écrit.`,
@@ -317,11 +321,11 @@ const obwalden: KantonPage = {
   name: 'Obwald',
   kuerzel: 'OW',
   seo: {
-    title: 'Nettoyage à Obwald : Sarnen et Engelberg',
+    title: 'Entreprise de nettoyage à Obwald',
     description:
       'Nettoyage et conciergerie à Obwald : immeubles dans le Sarneraatal, résidences secondaires et hôtels à Engelberg. Devis gratuit après une visite.',
   },
-  h1: 'Nettoyage et conciergerie à Obwald',
+  h1: 'Votre entreprise de nettoyage dans le canton d’Obwald',
   lead: [
     'Obwald se compose de deux parties : le Sarneraatal avec le chef-lieu Sarnen, et la haute vallée d’Engelberg, que l’on rejoint en passant par Nidwald.',
     'Dans le Sarneraatal, nous nettoyons et entretenons immeubles d’habitation et commerciaux ainsi que des locaux artisanaux. Engelberg est marqué par les résidences secondaires et les hôtels, nous proposons pour les deux nettoyage et suivi.',
@@ -380,7 +384,7 @@ const obwalden: KantonPage = {
       answer: 'Oui. Nous nettoyons avant votre arrivée et après votre départ. Communiquez-nous vos dates le plus tôt possible.',
     },
     { question: 'Assurez-vous le service hivernal ?', answer: 'Non, nous ne proposons pas de service hivernal.' },
-    { question: 'Combien coûte le nettoyage ?', answer: answers.kosten },
+    { question: 'Combien coûte une entreprise de nettoyage dans le canton d’Obwald ?', answer: answers.kostenFaktoren },
   ],
   menuText: menu.obwalden.text,
 }

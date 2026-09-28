@@ -62,6 +62,9 @@ export const steps = {
 export const answers = {
   kosten:
     'That depends on what needs cleaning and how much work is involved. We therefore only give prices in our quote, once we have seen everything on site. The site visit and the quote are free of charge and non-binding.',
+  // Kosten pro Stunde oder Fläche: Einflussfaktoren ohne Preise und Zahlen (E18)
+  kostenFaktoren:
+    'A price per hour or per square metre says little on its own, because the effort depends on the property: the size and type of rooms, their condition, the cleaning schedule, the working hours, access, and who provides consumables and cleaning products. That is why we only give prices in our quote. We view the property free of charge and then send you the quote in writing. More in our guide: [What the cost of maintenance cleaning depends on](/blog/reinigungskosten-schweiz).',
   gebiet: `Throughout the cantons of ${cantons}, with all services and on the same terms everywhere. Find out more about our [service area](/einzugsgebiet).`,
   versicherung: 'Yes. We hold business liability insurance with cover of CHF 10 million.',
   mittel: 'Yes, on request we clean with environmentally friendly products. Just let us know during the site visit.',

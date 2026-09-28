@@ -208,6 +208,37 @@ const bueroreinigung: ServicePageContent = {
       ],
     },
     {
+      title: 'Was den Aufwand bestimmt',
+      paragraphs: [
+        'Wie lange ein Einsatz dauert und wie oft wir kommen, hängt weniger von der Fläche allein ab als davon, wie die Räume genutzt werden. Diese Punkte klären wir bei der Besichtigung:',
+      ],
+      items: [
+        'Fläche und Art der Räume, etwa Einzelbüros, Grossraum, Sitzungszimmer und Empfang',
+        'Anzahl Arbeitsplätze und wie stark die Räume genutzt werden',
+        'Teeküchen und Sanitärräume, sie brauchen mehr Zeit als Büroflächen',
+        'Bodenbeläge wie Teppich, Parkett, Stein oder Kunststoff',
+        'Glastüren, Glaswände und andere Glasflächen',
+        'Rhythmus und Einsatzzeiten',
+        'Zugang über Schlüssel, Badge oder Alarmanlage',
+        'Ob Verbrauchsmaterial wie Seife, Papier und Abfallsäcke dazugehört',
+      ],
+    },
+    {
+      title: 'Welche Angaben in Ihre Offertanfrage gehören',
+      paragraphs: [
+        'Je genauer Ihre Anfrage ist, desto gezielter können wir die Besichtigung vorbereiten. Hilfreich sind diese Angaben:',
+      ],
+      items: [
+        'Adresse und Art des Betriebs, etwa Büro, Verwaltung oder Praxis',
+        'Ungefähre Fläche und Anzahl Etagen',
+        'Anzahl Arbeitsplätze, Sitzungszimmer, Teeküchen und Sanitärräume',
+        'Gewünschter Rhythmus und Zeiten, zu denen gereinigt werden soll',
+        'Besonderheiten wie Praxisräume mit Hygieneplan, vertrauliche Bereiche oder grosse Glasflächen',
+        'Ob Sie umweltfreundliche Reinigungsmittel wünschen',
+        'Gewünschter Start und Ansprechperson für die Besichtigung',
+      ],
+    },
+    {
       title: 'Woran Sie eine gute Büroreinigung erkennen',
       items: [
         'Papierkörbe sind geleert und mit neuen Säcken versehen',
@@ -247,10 +278,24 @@ const bueroreinigung: ServicePageContent = {
         'Wir reinigen freie Oberflächen. Je weniger auf den Tischen liegt, desto gründlicher lässt sich reinigen. Wie Sie es mit Unterlagen, Bildschirmen und Tastaturen halten möchten, klären wir bei der Besichtigung.',
     },
     {
+      question: 'Wie läuft die Schlüsselübergabe, und wie kommt Ihr Team ins Gebäude?',
+      answer:
+        'Vor dem ersten Einsatz legen wir mit Ihnen fest, welche Schlüssel, Badges oder Codes unser Team erhält und welche Regeln für Alarmanlage, Licht und Abschliessen gelten.',
+    },
+    {
       question: 'Sprechen Ihre Mitarbeitenden auch Englisch?',
       answer: `${answers.sprachen} Das ist praktisch, wenn in Ihrem Büro mehrere Sprachen gesprochen werden.`,
     },
-    { question: 'Sind Sie versichert?', answer: answers.versicherung },
+    {
+      question: 'Wer haftet, wenn bei der Reinigung etwas beschädigt wird?',
+      answer:
+        'Wir haben eine Betriebshaftpflichtversicherung mit einer Deckung von CHF 10 Mio. Fällt Ihnen nach einem Einsatz ein Schaden auf, melden Sie ihn uns bitte gleich.',
+    },
+    {
+      question: 'Wie lange läuft der Vertrag, und wie kann man kündigen?',
+      answer: 'Laufzeit und Kündigung werden in der Offerte vereinbart. Sprechen Sie Ihre Wünsche dazu bei der Besichtigung an.',
+    },
+    { question: 'Reinigen Sie auch mit umweltfreundlichen Mitteln?', answer: answers.mittel },
     { question: 'Was kostet die Büroreinigung?', answer: `${answers.kosten} Mehr dazu im Ratgeber: [Wovon die Kosten einer Unterhaltsreinigung abhängen](/blog/reinigungskosten-schweiz).` },
     { question: 'In welchen Regionen sind Sie tätig?', answer: answers.gebiet },
   ],
@@ -972,6 +1017,23 @@ const hauswartung: ServicePageContent = {
         'Auch die Mieterschaft sollte wissen, an wen sie sich wendet. Wer dafür Ansprechperson ist, legen wir gemeinsam mit Ihnen fest.',
       ],
     },
+    {
+      // Suchbegriff «Pflichtenheft Hauswartung» (SEO 28.09.2026), Zielgruppe Verwaltungen, ohne Winterdienst (E29)
+      title: 'Pflichtenheft für die Hauswartung: was hineingehört',
+      paragraphs: [
+        'Ein Pflichtenheft hält fest, was die Hauswartung in einer Liegenschaft übernimmt, wie oft und wer wofür zuständig ist. Es schafft Klarheit für Verwaltung, Eigentümerschaft, Mieterschaft und Hauswartung und macht Offerten vergleichbar.',
+        'Bei uns entsteht diese Aufstellung nach dem Rundgang: Welche Aufgaben wir übernehmen, wie oft wir vor Ort sind und wem wir Mängel melden, halten wir schriftlich fest. Diese Punkte gehören in ein Pflichtenheft:',
+      ],
+      items: [
+        'Aufgaben und Rhythmus je Bereich: Treppenhaus, Eingang, Waschküche und Trockenräume, Keller und Abfallplatz, jeweils mit Tätigkeit und Häufigkeit',
+        'Kontrollgänge: wie oft, welche Räume und Anlagen dazugehören und wie festgehalten wird, was auffällt',
+        'Umgebung: welche Flächen gepflegt werden, etwa Rasen, Hecken, Beete, Wege und Plätze',
+        'Zuständigkeiten und Meldewege: wer Meldungen der Hauswartung empfängt, welche kleinen Arbeiten ohne Rückfrage erledigt werden und an wen sich die Mieterschaft wendet',
+        'Schlüssel und Zugang: welche Schlüssel, Badges und Codes die Hauswartung erhält und wie sie aufbewahrt werden',
+        'Material: wer Reinigungsmittel, Verbrauchsmaterial und Geräte stellt und wo sie gelagert werden',
+        'Abgrenzung zu Handwerkern: welche Arbeiten Fachbetriebe übernehmen, etwa grössere Reparaturen und die Wartung von Heizung, Lift und Brandschutz, und wer sie beauftragt',
+      ],
+    },
   ],
   steps: [
     steps.anfrage,
@@ -989,6 +1051,11 @@ const hauswartung: ServicePageContent = {
     },
   ],
   faq: [
+    {
+      question: 'Welche Aufgaben übernimmt eine Hauswartung?',
+      answer:
+        'Typisch sind Kontrollgänge, die Reinigung von Treppenhaus, Waschküche und Trockenräumen, Kleinreparaturen, der Blick auf die Haustechnik, die Entsorgung, die Mitwirkung bei Wohnungsübergaben und die Umgebungspflege. Welche Aufgaben wir in Ihrer Liegenschaft übernehmen und wie oft, halten wir mit Ihnen schriftlich fest, wie in einem Pflichtenheft.',
+    },
     {
       question: 'Was ist der Unterschied zur Unterhaltsreinigung?',
       answer:

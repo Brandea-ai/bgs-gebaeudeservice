@@ -130,7 +130,7 @@ export const home = {
     link: 'Vers la zone d’intervention',
   },
   faq: [
-    faq.kosten,
+    { question: 'Combien coûte une entreprise de nettoyage à l’heure ?', answer: answers.kostenFaktoren },
     faq.schnell,
     {
       question: 'Ai-je besoin d’un nettoyage d’entretien ou d’une conciergerie ?',

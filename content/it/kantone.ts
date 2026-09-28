@@ -20,11 +20,11 @@ const luzern: KantonPage = {
   name: 'Lucerna',
   kuerzel: 'LU',
   seo: {
-    title: 'Impresa di pulizie Lucerna: pulizia e custodia',
+    title: 'Impresa di pulizie Lucerna e custodia',
     description:
       'Pulizia e custodia di stabili nel Cantone di Lucerna, dalla sede a Emmenbrücke: città, agglomerato, rive del lago, Sursee e Seetal. Offerta sul posto.',
   },
-  h1: 'Pulizia e custodia di stabili nel Cantone di Lucerna',
+  h1: 'La Sua impresa di pulizie nel Cantone di Lucerna',
   lead: [
     'La nostra sede si trova a Emmenbrücke, nel cuore dell’agglomerato di Lucerna. Da qui puliamo e curiamo immobili, uffici e superfici commerciali in tutto il Cantone, dalla città di Lucerna al lago di Sempach fino all’Entlebuch.',
     'Dal 2006 lavoriamo nella pulizia e nella custodia di stabili. Prima di ricevere un’offerta, esaminiamo il Suo immobile sul posto. Sopralluogo e offerta sono gratuiti e senza impegno.',
@@ -38,7 +38,7 @@ const luzern: KantonPage = {
   regionen: [
     { title: 'Città e agglomerato', orte: ['Lucerna', 'Emmen', 'Kriens', 'Horw', 'Ebikon', 'Adligenswil'] },
     { title: 'Sul lago dei Quattro Cantoni', orte: ['Meggen', 'Weggis', 'Vitznau', 'Greppen'] },
-    { title: 'Sursee e lago di Sempach', orte: ['Sursee', 'Sempach', 'Nottwil', 'Eich'] },
+    { title: 'Sursee e lago di Sempach', orte: ['Sursee', 'Sempach', 'Nottwil', 'Eich', 'Triengen', 'Ruswil'] },
     { title: 'Seetal', orte: ['Hochdorf', 'Hitzkirch'] },
     { title: 'Willisau ed Entlebuch', orte: ['Willisau', 'Entlebuch', 'Schüpfheim', 'Escholzmatt-Marbach'] },
   ],
@@ -80,6 +80,7 @@ const luzern: KantonPage = {
       question: 'Lavorate anche fuori dalla città di Lucerna?',
       answer: 'Sì, in tutto il Cantone, dal Seetal all’Entlebuch, con tutti i servizi e alle stesse condizioni.',
     },
+    { question: 'Quanto costa un’impresa di pulizie nel Cantone di Lucerna?', answer: answers.kostenFaktoren },
     {
       question: 'Vi occupate della pulizia a un cambio d’inquilino?',
       answer: 'Sì. La pulizia di fine locazione con garanzia di consegna fa parte delle nostre [pulizie speciali](/leistungen/sonderreinigungen).',
@@ -93,11 +94,11 @@ const zug: KantonPage = {
   name: 'Zugo',
   kuerzel: 'ZG',
   seo: {
-    title: 'Impresa di pulizie Zugo: uffici e stabili',
+    title: 'Impresa di pulizie Zugo per uffici',
     description:
       'Pulizia di uffici, vetri e custodia di stabili a Zugo: sedi aziendali, studi e immobili da Zugo e Baar alla valle di Ägeri. Consulenza in quattro lingue.',
   },
-  h1: 'Pulizia di uffici e immobili nel Cantone di Zugo',
+  h1: 'La Sua impresa di pulizie per uffici e immobili nel Cantone di Zugo',
   lead: [
     'Nel Cantone di Zugo hanno sede molte aziende, anche internazionali. Serve una pulizia che si adatti all’attività aziendale e non disturbi la giornata di lavoro.',
     'Le nostre collaboratrici e i nostri collaboratori parlano tedesco, inglese, francese e italiano. Questo facilita il coordinamento con squadre la cui lingua di lavoro non è il tedesco.',
@@ -154,6 +155,7 @@ const zug: KantonPage = {
       question: 'Pulite fuori dall’orario d’ufficio?',
       answer: 'Fissiamo con Lei gli orari d’intervento, in base ai Suoi orari di lavoro e di apertura.',
     },
+    { question: 'Quanto costa un’impresa di pulizie nel Cantone di Zugo?', answer: answers.kostenFaktoren },
     {
       question: 'Lavorate anche a Baar, a Cham o nella valle di Ägeri?',
       answer: 'Sì, in tutti i Comuni del Cantone di Zugo, con tutti i servizi e alle stesse condizioni.',
@@ -167,11 +169,11 @@ const aargau: KantonPage = {
   name: 'Argovia',
   kuerzel: 'AG',
   seo: {
-    title: 'Impresa di pulizie Argovia: industria e custodia',
+    title: 'Impresa di pulizie Argovia e custodia',
     description:
-      'Pulizia industriale, di capannoni e di cantiere, custodia di stabili in Argovia: dal Freiamt e dal Seetal ad Aarau e Baden, alle stesse condizioni di Lucerna.',
+      'Pulizia industriale, di capannoni e di cantiere, custodia in Argovia: dal Freiamt e dal Seetal ad Aarau e Baden, alle stesse condizioni di Lucerna.',
   },
-  h1: 'Pulizia per industria, artigianato e immobili in Argovia',
+  h1: 'La Sua impresa di pulizie per industria e artigianato nel Cantone di Argovia',
   lead: [
     'In Argovia ci sono molte aziende industriali e artigianali. Capannoni di produzione e di stoccaggio, officine ed edifici commerciali hanno bisogno di una pulizia che segua turni e processi.',
     'Dal Freiamt e dal Seetal, al confine con Lucerna, fino alle regioni di Aarau e Baden lavoriamo in tutto il Cantone, con tutti i servizi e alle stesse condizioni di Lucerna.',
@@ -234,6 +236,7 @@ const aargau: KantonPage = {
       question: 'La manutenzione delle macchine è compresa?',
       answer: 'No. Puliamo macchine e impianti secondo le Sue indicazioni, manutenzione e riparazioni restano di competenza del Suo servizio di manutenzione.',
     },
+    { question: 'Quanto costa un’impresa di pulizie nel Cantone di Argovia?', answer: answers.kostenFaktoren },
     { question: 'Pulite con prodotti ecologici?', answer: answers.mittel },
   ],
   menuText: menu.aargau.text,
@@ -243,11 +246,11 @@ const nidwalden: KantonPage = {
   name: 'Nidvaldo',
   kuerzel: 'NW',
   seo: {
-    title: 'Impresa di pulizie e custodia stabili, Nidvaldo',
+    title: 'Impresa di pulizie Nidvaldo e custodia',
     description:
-      'Pulizia e custodia di stabili a Nidvaldo: immobili sul lago dei Quattro Cantoni, abitazioni secondarie e ville da Hergiswil a Beckenried. Offerta sul posto.',
+      'Pulizia e custodia di stabili a Nidvaldo: immobili sul lago dei Quattro Cantoni, seconde case e ville da Hergiswil a Beckenried. Offerta sul posto.',
   },
-  h1: 'Pulizia e custodia di stabili a Nidvaldo',
+  h1: 'La Sua impresa di pulizie nel Cantone di Nidvaldo',
   lead: [
     'Nidvaldo si estende dalla riva del lago dei Quattro Cantoni presso Hergiswil ed Ennetbürgen fino alla valle di Engelberg. Molti immobili si trovano vicino al lago, alcuni sono abitati solo in certi periodi.',
     'Puliamo e curiamo stabili abitativi e commerciali, abitazioni secondarie e ville in tutto il Cantone. Allestiamo l’offerta dopo un sopralluogo, gratuitamente e senza impegno.',
@@ -304,6 +307,7 @@ const nidwalden: KantonPage = {
       question: 'Pulite anche le barche?',
       answer: 'Sì, yacht e motoscafi sul lago dei Quattro Cantoni: interni, imbottiture, teak e gelcoat. Maggiori informazioni in [Yacht](/premium/yacht).',
     },
+    { question: 'Quanto costa un’impresa di pulizie nel Cantone di Nidvaldo?', answer: answers.kostenFaktoren },
     {
       question: 'Come otteniamo un’offerta?',
       answer: `Ci telefoni o ci scriva. La contattiamo ${responseTime}, esaminiamo l’immobile e Le inviamo l’offerta per iscritto.`,
@@ -317,11 +321,11 @@ const obwalden: KantonPage = {
   name: 'Obvaldo',
   kuerzel: 'OW',
   seo: {
-    title: 'Impresa di pulizie Obvaldo: Sarnen ed Engelberg',
+    title: 'Impresa di pulizie Obvaldo ed Engelberg',
     description:
       'Pulizia e custodia di stabili a Obvaldo: immobili nel Sarneraatal, abitazioni secondarie e alberghi a Engelberg. Offerta gratuita dopo il sopralluogo.',
   },
-  h1: 'Pulizia e custodia di stabili a Obvaldo',
+  h1: 'La Sua impresa di pulizie nel Cantone di Obvaldo',
   lead: [
     'Obvaldo è composto da due parti: il Sarneraatal con il capoluogo Sarnen e l’alta valle di Engelberg, che si raggiunge passando per Nidvaldo.',
     'Nel Sarneraatal puliamo e curiamo stabili abitativi e commerciali e aziende artigianali. Engelberg è caratterizzata da abitazioni secondarie e alberghi, per entrambi offriamo pulizia e assistenza.',
@@ -380,7 +384,7 @@ const obwalden: KantonPage = {
       answer: 'Sì. Puliamo prima del Suo arrivo e dopo la Sua partenza. Ci comunichi le Sue date il prima possibile.',
     },
     { question: 'Vi occupate del servizio invernale?', answer: 'No, non offriamo il servizio invernale.' },
-    { question: 'Quanto costa la pulizia?', answer: answers.kosten },
+    { question: 'Quanto costa un’impresa di pulizie nel Cantone di Obvaldo?', answer: answers.kostenFaktoren },
   ],
   menuText: menu.obwalden.text,
 }

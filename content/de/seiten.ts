@@ -152,7 +152,7 @@ export const home = {
     link: 'Zum Einzugsgebiet',
   },
   faq: [
-    faq.kosten,
+    { question: 'Was kostet eine Reinigungsfirma pro Stunde?', answer: answers.kostenFaktoren },
     faq.schnell,
     {
       question: 'Brauche ich eine Unterhaltsreinigung oder eine Hauswartung?',

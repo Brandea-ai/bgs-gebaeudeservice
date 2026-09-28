@@ -42,6 +42,9 @@ export const steps = {
 export const answers = {
   kosten:
     'Das hängt vom Objekt und vom Aufwand ab. Preise nennen wir deshalb erst in der Offerte, nachdem wir das Objekt gesehen haben. Besichtigung und Offerte sind kostenlos und unverbindlich.',
+  // Häufigste Nutzerfrage bei Google (Kosten pro Stunde, pro Fläche): Einflussfaktoren ohne Preise und Zahlen (E18)
+  kostenFaktoren:
+    'Ein Preis pro Stunde oder pro Quadratmeter allein sagt wenig, denn der Aufwand hängt vom Objekt ab: von Fläche und Art der Räume, ihrem Zustand, dem Rhythmus, den Einsatzzeiten, dem Zugang und davon, wer Verbrauchsmaterial und Reinigungsmittel stellt. Deshalb nennen wir Preise erst in der Offerte. Wir sehen uns das Objekt kostenlos an und schicken Ihnen danach die Offerte schriftlich. Mehr dazu im Ratgeber: [Wovon die Kosten einer Unterhaltsreinigung abhängen](/blog/reinigungskosten-schweiz).',
   gebiet: `In den ganzen Kantonen ${cantonList}, mit allen Leistungen und überall zu denselben Bedingungen. Mehr dazu unter [Einzugsgebiet](/einzugsgebiet).`,
   versicherung: 'Ja. Wir haben eine Betriebshaftpflichtversicherung mit einer Deckung von CHF 10 Mio.',
   mittel: 'Ja, auf Wunsch reinigen wir mit umweltfreundlichen Mitteln. Sagen Sie es uns bei der Besichtigung.',

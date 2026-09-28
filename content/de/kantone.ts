@@ -14,7 +14,7 @@ import { kantonMenu } from './navigation'
  * Leistungen im ganzen Gebiet zu denselben Bedingungen (E30), kein Winterdienst,
  * keine Privathaushalte ausser über den Premium-Bereich (E28). Geografische
  * Angaben nur, wenn sicher; Quellen im Bericht kantone-bericht.md. Titel ohne
- * Marke (höchstens 49 Zeichen, mit der Arbeitsmarke höchstens 70),
+ * Marke (höchstens 39 Zeichen, mit « | BGS Gebäudeservice» höchstens 60, SEO 28.09.2026),
  * shared/seo.ts hängt sie an.
  */
 
@@ -44,11 +44,11 @@ const luzern: KantonPage = {
   name: 'Luzern',
   kuerzel: 'LU',
   seo: {
-    title: 'Reinigungsfirma Luzern: Reinigung und Hauswartung',
+    title: 'Reinigungsfirma Luzern und Hauswartung',
     description:
       'Gebäudereinigung und Hauswartung im Kanton Luzern, vom Sitz in Emmenbrücke aus: Stadt, Agglomeration, Seeufer, Sursee und Seetal. Offerte vor Ort.',
   },
-  h1: 'Reinigung und Hauswartung im Kanton Luzern',
+  h1: 'Ihre Reinigungsfirma im Kanton Luzern',
   lead: [
     'Unser Sitz liegt in Emmenbrücke, mitten in der Agglomeration Luzern. Von hier aus reinigen und betreuen wir Liegenschaften, Büros und Gewerbeflächen im ganzen Kanton, von der Stadt Luzern über den Sempachersee bis ins Entlebuch.',
     'Seit 2006 arbeiten wir in Reinigung und Hauswartung. Bevor Sie eine Offerte erhalten, sehen wir uns Ihr Objekt vor Ort an. Besichtigung und Offerte sind kostenlos und unverbindlich.',
@@ -62,7 +62,7 @@ const luzern: KantonPage = {
   regionen: [
     { title: 'Stadt und Agglomeration', orte: ['Luzern', 'Emmen', 'Kriens', 'Horw', 'Ebikon', 'Adligenswil'] },
     { title: 'Am Vierwaldstättersee', orte: ['Meggen', 'Weggis', 'Vitznau', 'Greppen'] },
-    { title: 'Sursee und Sempachersee', orte: ['Sursee', 'Sempach', 'Nottwil', 'Eich'] },
+    { title: 'Sursee und Sempachersee', orte: ['Sursee', 'Sempach', 'Nottwil', 'Eich', 'Triengen', 'Ruswil'] },
     { title: 'Seetal', orte: ['Hochdorf', 'Hitzkirch'] },
     { title: 'Willisau und Entlebuch', orte: ['Willisau', 'Entlebuch', 'Schüpfheim', 'Escholzmatt-Marbach'] },
   ],
@@ -104,6 +104,7 @@ const luzern: KantonPage = {
       question: 'Arbeiten Sie auch ausserhalb der Stadt Luzern?',
       answer: 'Ja, im ganzen Kanton, vom Seetal bis ins Entlebuch, mit allen Leistungen und zu denselben Bedingungen.',
     },
+    { question: 'Was kostet eine Reinigungsfirma im Kanton Luzern?', answer: answers.kostenFaktoren },
     {
       question: 'Übernehmen Sie die Reinigung bei einem Mieterwechsel?',
       answer: 'Ja. Die Umzugs- und Wohnungsendreinigung mit Abnahmegarantie gehört zu unseren [Sonderreinigungen](/leistungen/sonderreinigungen).',
@@ -118,11 +119,11 @@ const zug: KantonPage = {
   name: 'Zug',
   kuerzel: 'ZG',
   seo: {
-    title: 'Reinigungsfirma Zug: Büro- und Gebäudereinigung',
+    title: 'Reinigungsfirma Zug und Büroreinigung',
     description:
       'Büroreinigung, Glas und Hauswartung im Kanton Zug: für Firmensitze, Praxen und Liegenschaften von Zug und Baar bis ins Ägerital. Beratung in vier Sprachen.',
   },
-  h1: 'Reinigung für Büros und Liegenschaften im Kanton Zug',
+  h1: 'Ihre Reinigungsfirma für Büros und Liegenschaften im Kanton Zug',
   lead: [
     'Im Kanton Zug haben viele Unternehmen ihren Sitz, auch internationale. Gefragt ist eine Reinigung, die sich nach dem Geschäftsbetrieb richtet und den Arbeitstag nicht stört.',
     'Unsere Mitarbeitenden sprechen Deutsch, Englisch, Französisch und Italienisch. Das erleichtert die Abstimmung mit Teams, deren Arbeitssprache nicht Deutsch ist.',
@@ -179,6 +180,7 @@ const zug: KantonPage = {
       question: 'Reinigen Sie ausserhalb der Bürozeiten?',
       answer: 'Die Einsatzzeiten legen wir mit Ihnen fest, passend zu Ihren Arbeits- und Öffnungszeiten.',
     },
+    { question: 'Was kostet eine Reinigungsfirma im Kanton Zug?', answer: answers.kostenFaktoren },
     {
       question: 'Sind Sie auch in Baar, Cham oder im Ägerital tätig?',
       answer: 'Ja, in allen Gemeinden des Kantons Zug, mit allen Leistungen und zu denselben Bedingungen.',
@@ -193,11 +195,11 @@ const aargau: KantonPage = {
   name: 'Aargau',
   kuerzel: 'AG',
   seo: {
-    title: 'Reinigungsfirma Aargau: Industrie und Hauswartung',
+    title: 'Reinigungsfirma Aargau und Hauswartung',
     description:
       'Industrie- und Hallenreinigung, Baureinigung und Hauswartung im Aargau: vom Freiamt und Seetal bis Aarau und Baden, zu denselben Bedingungen wie in Luzern.',
   },
-  h1: 'Reinigung für Industrie, Gewerbe und Liegenschaften im Aargau',
+  h1: 'Ihre Reinigungsfirma für Industrie und Gewerbe im Kanton Aargau',
   lead: [
     'Im Aargau gibt es viele Industrie- und Gewerbebetriebe. Produktions- und Lagerhallen, Werkstätten und Gewerbebauten brauchen eine Reinigung, die sich nach Schichten und Abläufen richtet.',
     'Vom Freiamt und dem Seetal an der Luzerner Grenze bis in die Regionen Aarau und Baden arbeiten wir im ganzen Kanton, mit allen Leistungen und zu denselben Bedingungen wie in Luzern.',
@@ -260,6 +262,7 @@ const aargau: KantonPage = {
       question: 'Gehört die Wartung von Maschinen dazu?',
       answer: 'Nein. Wir reinigen Maschinen und Anlagen nach Ihren Vorgaben, Wartung und Reparatur bleiben bei Ihrer Instandhaltung.',
     },
+    { question: 'Was kostet eine Reinigungsfirma im Kanton Aargau?', answer: answers.kostenFaktoren },
     { question: 'Reinigen Sie mit umweltfreundlichen Mitteln?', answer: answers.mittel },
   ],
   menuText: kantonMenu.aargau.text,
@@ -270,11 +273,11 @@ const nidwalden: KantonPage = {
   name: 'Nidwalden',
   kuerzel: 'NW',
   seo: {
-    title: 'Reinigungsfirma und Hauswartung Nidwalden',
+    title: 'Reinigungsfirma Nidwalden: Hauswartung',
     description:
       'Reinigung und Hauswartung in Nidwalden: Liegenschaften am Vierwaldstättersee, Zweitwohnungen und Villen von Hergiswil bis Beckenried. Offerte vor Ort.',
   },
-  h1: 'Reinigung und Hauswartung in Nidwalden',
+  h1: 'Ihre Reinigungsfirma im Kanton Nidwalden',
   lead: [
     'Nidwalden reicht vom Ufer des Vierwaldstättersees bei Hergiswil und Ennetbürgen bis ins Engelbergertal. Viele Liegenschaften liegen nahe am See, manche werden nur zeitweise bewohnt.',
     'Wir reinigen und betreuen Wohn- und Geschäftshäuser, Zweitwohnungen und Villen im ganzen Kanton. Die Offerte erstellen wir nach einer Besichtigung, kostenlos und unverbindlich.',
@@ -331,6 +334,7 @@ const nidwalden: KantonPage = {
       question: 'Reinigen Sie auch Boote?',
       answer: 'Ja, Yachten und Motorboote am Vierwaldstättersee: Innenraum, Polster, Teak und Gelcoat. Mehr unter [Yacht](/premium/yacht).',
     },
+    { question: 'Was kostet eine Reinigungsfirma im Kanton Nidwalden?', answer: answers.kostenFaktoren },
     {
       question: 'Wie kommen wir zu einer Offerte?',
       answer: `Rufen Sie uns an oder schreiben Sie uns. Wir melden uns ${company.responseTime}, sehen uns das Objekt an und schicken Ihnen die Offerte schriftlich.`,
@@ -345,11 +349,11 @@ const obwalden: KantonPage = {
   name: 'Obwalden',
   kuerzel: 'OW',
   seo: {
-    title: 'Reinigungsfirma Obwalden: Sarnen und Engelberg',
+    title: 'Reinigungsfirma Obwalden und Engelberg',
     description:
       'Reinigung und Hauswartung in Obwalden: Liegenschaften im Sarneraatal, Zweitwohnungen und Hotels in Engelberg. Kostenlose Offerte nach Besichtigung.',
   },
-  h1: 'Reinigung und Hauswartung in Obwalden',
+  h1: 'Ihre Reinigungsfirma im Kanton Obwalden',
   lead: [
     'Obwalden besteht aus zwei Teilen: dem Sarneraatal mit dem Hauptort Sarnen und dem Hochtal von Engelberg, das man über Nidwalden erreicht.',
     'Im Sarneraatal reinigen und betreuen wir Wohn- und Geschäftshäuser und Gewerbe. Engelberg prägen Zweitwohnungen und Hotels, für beide bieten wir Reinigung und Betreuung an.',
@@ -408,7 +412,7 @@ const obwalden: KantonPage = {
       answer: 'Ja. Wir reinigen vor Ihrer Ankunft und nach Ihrer Abreise. Sagen Sie uns Ihre Daten möglichst früh.',
     },
     { question: 'Übernehmen Sie Winterdienst?', answer: 'Nein, Winterdienst bieten wir nicht an.' },
-    { question: 'Was kostet die Reinigung?', answer: answers.kosten },
+    { question: 'Was kostet eine Reinigungsfirma im Kanton Obwalden?', answer: answers.kostenFaktoren },
   ],
   menuText: kantonMenu.obwalden.text,
 }

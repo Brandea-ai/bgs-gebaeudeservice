@@ -204,6 +204,37 @@ const bueroreinigung: ServicePageContent = {
       ],
     },
     {
+      title: 'Che cosa determina l’impegno',
+      paragraphs: [
+        'Quanto dura un intervento e quanto spesso passiamo dipende meno dalla sola superficie che dall’uso dei locali. Chiariamo questi punti durante il sopralluogo:',
+      ],
+      items: [
+        'Superficie e tipo di locali, ad esempio uffici singoli, open space, sale riunioni e ricezione',
+        'Numero di postazioni di lavoro e intensità d’uso dei locali',
+        'Angoli cucina e servizi igienici, che richiedono più tempo delle superfici d’ufficio',
+        'Pavimenti come moquette, parquet, pietra o vinile',
+        'Porte a vetri, pareti vetrate e altre superfici in vetro',
+        'Ritmo e orari d’intervento',
+        'Accesso con chiave, badge o impianto d’allarme',
+        'Se il materiale di consumo come sapone, carta e sacchi per i rifiuti è compreso',
+      ],
+    },
+    {
+      title: 'Quali informazioni inserire nella richiesta d’offerta',
+      paragraphs: [
+        'Più la Sua richiesta è precisa, meglio possiamo preparare il sopralluogo. Sono utili queste informazioni:',
+      ],
+      items: [
+        'Indirizzo e tipo di azienda, ad esempio ufficio, amministrazione o studio',
+        'Superficie approssimativa e numero di piani',
+        'Numero di postazioni di lavoro, sale riunioni, angoli cucina e servizi igienici',
+        'Ritmo desiderato e orari in cui deve avvenire la pulizia',
+        'Particolarità come studi medici con piano d’igiene, zone riservate o grandi superfici vetrate',
+        'Se desidera prodotti di pulizia ecologici',
+        'Data d’inizio desiderata e persona di riferimento per il sopralluogo',
+      ],
+    },
+    {
       title: 'Come riconoscere una buona pulizia di uffici',
       items: [
         'I cestini sono svuotati e dotati di sacchi nuovi',
@@ -243,10 +274,25 @@ const bueroreinigung: ServicePageContent = {
         'Puliamo le superfici libere. Meno oggetti ci sono sulle scrivanie, più accuratamente si può pulire. Come desidera regolarsi con documenti, schermi e tastiere lo chiariamo durante il sopralluogo.',
     },
     {
+      question: 'Come avviene la consegna delle chiavi e come entra il vostro team nell’edificio?',
+      answer:
+        'Prima del primo intervento stabiliamo con Lei quali chiavi, badge o codici riceve il nostro team e quali regole valgono per allarme, luci e chiusura.',
+    },
+    {
       question: 'Le vostre collaboratrici e i vostri collaboratori parlano anche inglese?',
       answer: `${answers.sprachen} È un vantaggio pratico se nel Suo ufficio si parlano più lingue.`,
     },
-    { question: 'Siete assicurati?', answer: answers.versicherung },
+    {
+      question: 'Chi risponde se durante la pulizia si danneggia qualcosa?',
+      answer:
+        'Disponiamo di un’assicurazione di responsabilità civile aziendale con una copertura di CHF 10 milioni. Se dopo un intervento nota un danno, ce lo segnali subito.',
+    },
+    {
+      question: 'Quanto dura il contratto e come si può disdire?',
+      answer:
+        'Durata e disdetta vengono concordate nell’offerta. Ci comunichi i Suoi desideri in merito durante il sopralluogo.',
+    },
+    { question: 'Pulite anche con prodotti ecologici?', answer: answers.mittel },
     { question: 'Quanto costa la pulizia di uffici?', answer: `${answers.kosten} Maggiori informazioni nella guida: [Da che cosa dipendono i costi di una pulizia di manutenzione](/blog/reinigungskosten-schweiz).` },
     { question: 'In quali regioni operate?', answer: answers.gebiet },
   ],
@@ -960,6 +1006,22 @@ const hauswartung: ServicePageContent = {
         'Anche gli inquilini dovrebbero sapere a chi rivolgersi. Chi è l’interlocutore per loro lo stabiliamo insieme a Lei.',
       ],
     },
+    {
+      title: 'Capitolato per la custodia di stabili: che cosa deve contenere',
+      paragraphs: [
+        'Un capitolato stabilisce che cosa svolge il servizio di custodia in uno stabile, con quale frequenza e chi è responsabile di che cosa. Crea chiarezza per amministrazione, proprietà, inquilini e custode e rende confrontabili le offerte.',
+        'Da noi questo elenco nasce dopo la visita dello stabile: mettiamo per iscritto quali compiti assumiamo, quanto spesso siamo sul posto e a chi segnaliamo i difetti. Questi punti vanno inseriti in un capitolato:',
+      ],
+      items: [
+        'Compiti e ritmo per ogni area: vano scala, ingresso, lavanderia e locali di asciugatura, cantina e area rifiuti, ciascuno con attività e frequenza',
+        'Giri di controllo: con quale frequenza, quali locali e impianti comprendono e come si annota ciò che si nota',
+        'Aree esterne: quali superfici vengono curate, ad esempio prati, siepi, aiuole, vialetti e piazzali',
+        'Responsabilità e canali di segnalazione: chi riceve le segnalazioni del custode, quali piccoli lavori si possono svolgere senza chiedere e a chi si rivolgono gli inquilini',
+        'Chiavi e accesso: quali chiavi, badge e codici riceve il custode e come vengono custoditi',
+        'Materiale: chi fornisce prodotti di pulizia, materiale di consumo e attrezzature e dove vengono depositati',
+        'Limiti rispetto agli artigiani: quali lavori spettano a ditte specializzate, ad esempio riparazioni più importanti e la manutenzione di riscaldamento, ascensore e protezione antincendio, e chi le incarica',
+      ],
+    },
   ],
   steps: [
     steps.anfrage,
@@ -977,6 +1039,11 @@ const hauswartung: ServicePageContent = {
     },
   ],
   faq: [
+    {
+      question: 'Quali compiti svolge un servizio di custodia?',
+      answer:
+        'Di solito giri di controllo, la pulizia di vano scala, lavanderia e locali di asciugatura, piccole riparazioni, uno sguardo sull’impiantistica, lo smaltimento dei rifiuti, la collaborazione alle consegne degli appartamenti e la cura delle aree esterne. Quali compiti assumiamo nel Suo stabile e con quale frequenza lo stabiliamo con Lei per iscritto, come in un capitolato.',
+    },
     {
       question: 'Qual è la differenza rispetto alla pulizia di manutenzione?',
       answer:

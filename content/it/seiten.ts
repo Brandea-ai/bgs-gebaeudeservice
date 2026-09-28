@@ -129,7 +129,7 @@ export const home = {
     link: 'Alla zona d’intervento',
   },
   faq: [
-    faq.kosten,
+    { question: 'Quanto costa un’impresa di pulizie all’ora?', answer: answers.kostenFaktoren },
     faq.schnell,
     {
       question: 'Mi serve una pulizia di manutenzione o un servizio di custodia?',
