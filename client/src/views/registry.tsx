@@ -9,6 +9,7 @@ import AreaView from "./AreaView";
 import ServicesOverviewView from "./ServicesOverviewView";
 import PremiumOverviewView from "./PremiumOverviewView";
 import BlogOverviewView from "./BlogOverviewView";
+import Kanton from "@/seiten/kanton";
 import { getDict } from "../../../content";
 import { metaFor, type PagePath } from "../../../shared/seo";
 import {
@@ -17,6 +18,7 @@ import {
   segmentsFor,
   type Locale,
 } from "../../../shared/i18n";
+import { kantonKeys, kantonPath } from "../../../shared/cantons";
 
 /**
  * Eine Stelle für alle Seiten (M60): Zu jeder deutschen Adresse die Darstellung
@@ -31,6 +33,13 @@ const views: Partial<Record<PagePath, (lang: Locale) => React.ReactNode>> = {
   "/leistungen": lang => <ServicesOverviewView lang={lang} />,
   "/premium": lang => <PremiumOverviewView lang={lang} />,
   "/blog": lang => <BlogOverviewView lang={lang} />,
+  // Kantonsseiten /einzugsgebiet/<kanton> (E80)
+  ...Object.fromEntries(
+    kantonKeys.map(key => [
+      kantonPath(key),
+      (lang: Locale) => <Kanton kanton={key} lang={lang} />,
+    ])
+  ),
   "/impressum": lang => (
     <LegalPage
       content={getDict(lang).recht.impressum}

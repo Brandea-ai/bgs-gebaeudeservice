@@ -10,6 +10,7 @@ import PageFrame from "@/components/PageFrame";
 import PageHero from "@/components/PageHero";
 import CantonMap from "@/components/CantonMap";
 import ConsentMap from "@/components/ConsentMap";
+import KantonKarte from "@/components/KantonKarte";
 import { RevealGroup } from "@/components/Reveal";
 import RichText from "@/components/RichText";
 import SectionHead from "@/components/SectionHead";
@@ -17,7 +18,7 @@ import SectionNav from "@/components/SectionNav";
 import TrustStrip from "@/components/TrustStrip";
 import { Button } from "@/components/ui/button";
 import { company } from "../../../shared/company";
-import { cantonInfo, cantonTitle } from "../../../shared/cantons";
+import { kantonGerman, kantonKeys } from "../../../shared/cantons";
 import { placePins } from "../../../shared/canton-map";
 import { getDict } from "../../../content";
 import { navDicts } from "../../../content/navigation";
@@ -27,14 +28,16 @@ import type { Locale } from "../../../shared/i18n";
  * Einzugsgebiet (F5, F10, F15): ein Sitz, fünf Kantone, alle Leistungen im
  * ganzen Gebiet (R4b, W04, R4d). Statischer dunkler Kopf mit der Karte aus den
  * Kantonsgrenzen von swisstopo (S85), darunter Belege und die Abschnittsleiste
- * (Kantone, Orte, Sitz). Die Kantone stehen als Abfolge neben der stehenden
- * Karte statt als Bildkarten (EG-01, S06), die Orte als Gruppen an Seen und in
- * den Bergen, der Sitz mit Adresse und Karte nach Klick (E20). Texte aus
- * content/<sprache>/seiten.ts, keine eigenen Ortsseiten (M48).
+ * (Kantone, Orte, Sitz). Die Kantone stehen als Karten mit Bild neben der
+ * stehenden Karte und führen auf die Kantonsseiten (E80, ersetzt E42 für
+ * Kantone), die Orte als Gruppen an Seen und in den Bergen, der Sitz mit
+ * Adresse und Karte nach Klick (E20). Texte aus content/<sprache>/seiten.ts und
+ * kantone.ts, keine eigenen Ortsseiten (M48).
  */
 export default function AreaView({ lang }: { lang: Locale }) {
   const dict = getDict(lang);
   const { area } = dict.seiten;
+  const kantoneUebersicht = dict.kantone.uebersicht;
   const { ui, misc } = dict;
   const { chrome } = navDicts[lang];
   const mapTexts = { ...misc.map, seat: chrome.seat };
@@ -123,10 +126,18 @@ export default function AreaView({ lang }: { lang: Locale }) {
       {/* Abschnittsleiste mit Scrollspy: Kantone, Orte, Sitz (motion.md) */}
       <SectionNav label={ui.onThisPage} items={navItems} />
 
-      {/* Kantone (EG-01, S06): Sprungziel auf der Sektion, nicht auf einem bewegten Element (EG-06) */}
+      {/*
+       * Kantone (EG-01, S06, E80): je Kanton eine Karte mit Bild, Kurztext und
+       * Orten, verlinkt auf die eigene Kantonsseite. Sprungziel auf der Sektion,
+       * nicht auf einem bewegten Element (EG-06).
+       */}
       <section id="kantone" aria-labelledby="kantone-titel" className="section">
         <div className="container">
-          <SectionHead id="kantone-titel" title={area.cantonsTitle} />
+          <SectionHead
+            id="kantone-titel"
+            title={kantoneUebersicht.title}
+            intro={kantoneUebersicht.text}
+          />
           <div className="mt-10 grid gap-10 lg:mt-12 lg:grid-cols-12 lg:gap-x-12">
             {/*
              * Die Karte bleibt beim Lesen stehen: einzige gepinnte Sektion der
@@ -136,25 +147,15 @@ export default function AreaView({ lang }: { lang: Locale }) {
             <div className="hidden lg:col-span-5 lg:block lg:self-start lg:sticky lg:top-[calc(var(--header-offset)+var(--subnav-h,0px)+2rem)]">
               <CantonMap lang={lang} texts={mapTexts} pins={pins} />
             </div>
-            <RevealGroup
-              as="ul"
-              className="divide-y divide-line border-y border-line lg:col-span-7"
-            >
-              {company.cantons.map(name => (
-                <li
-                  key={name}
-                  className="grid grid-cols-[4rem_minmax(0,1fr)] gap-x-5 py-7 sm:grid-cols-[5.5rem_minmax(0,1fr)] sm:gap-x-8 md:py-9"
-                >
-                  {/* Kürzel wie auf der Karte; der Titel daneben nennt den Kanton */}
-                  <span className="t-figure text-signal" aria-hidden="true">
-                    {cantonInfo[name]?.code}
-                  </span>
-                  <div className="min-w-0">
-                    <h3 className="t-h3 text-ink">{cantonTitle(name, lang)}</h3>
-                    <p className="mt-3 font-medium leading-relaxed text-ink-600">
-                      {area.cantonPlaces[name].join(", ")}
-                    </p>
-                  </div>
+            <RevealGroup as="ul" className="grid gap-5 lg:col-span-7">
+              {kantonKeys.map(key => (
+                <li key={key} className="min-w-0">
+                  <KantonKarte
+                    kanton={key}
+                    lang={lang}
+                    layout="row"
+                    places={area.cantonPlaces[kantonGerman[key]]}
+                  />
                 </li>
               ))}
             </RevealGroup>
@@ -203,7 +204,7 @@ export default function AreaView({ lang }: { lang: Locale }) {
                     {group.items.map(place => (
                       <li
                         key={place}
-                        className="inline-flex min-h-9 items-center rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-semibold text-ink"
+                        className="inline-flex min-h-9 items-center rounded-[3px] border border-line bg-white px-3.5 py-1.5 text-sm font-semibold text-ink"
                       >
                         {place}
                       </li>

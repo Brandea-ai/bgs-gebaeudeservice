@@ -1,5 +1,7 @@
+import type { KantonKey } from '../../shared/cantons'
 import { company } from '../../shared/company'
 import { answers } from './common'
+import { kantonMenu } from './navigation'
 
 /**
  * Texte der fünf Kantonsseiten unter /einzugsgebiet/<kanton> (Entscheid Brandea
@@ -12,10 +14,11 @@ import { answers } from './common'
  * Leistungen im ganzen Gebiet zu denselben Bedingungen (E30), kein Winterdienst,
  * keine Privathaushalte ausser über den Premium-Bereich (E28). Geografische
  * Angaben nur, wenn sicher; Quellen im Bericht kantone-bericht.md. Titel ohne
- * Marke (höchstens 50 Zeichen), shared/seo.ts hängt sie an.
+ * Marke (höchstens 49 Zeichen, mit der Arbeitsmarke höchstens 70),
+ * shared/seo.ts hängt sie an.
  */
 
-export type KantonKey = 'luzern' | 'zug' | 'aargau' | 'nidwalden' | 'obwalden'
+export type { KantonKey }
 
 export type KantonPage = {
   name: string
@@ -29,8 +32,7 @@ export type KantonPage = {
   leistungen: { path: string; title: string; text: string }[]
   planung: { title: string; paragraphs: string[] }
   faq: { question: string; answer: string }[]
-  imageAlt: string
-  /** Kurzer Satz für das Mega-Menü, höchstens 60 Zeichen */
+  /** Kurzer Satz für Mega-Menü und Übersicht, steht in navigation.ts (kantonMenu) */
   menuText: string
 }
 
@@ -108,8 +110,7 @@ const luzern: KantonPage = {
     },
     { question: 'Übernehmen Sie auch kurzfristige Einsätze?', answer: 'Rufen Sie uns an. Wir klären mit Ihnen, was kurzfristig möglich ist.' },
   ],
-  imageAlt: 'Symbolbild: Wohn- und Geschäftshäuser in der Agglomeration Luzern',
-  menuText: 'Unser Sitz: Stadt, Agglomeration und Seeufer',
+  menuText: kantonMenu.luzern.text,
 }
 
 // Grundlage: Sprachen (E18), Büroreinigung, Family Offices und Geheimhaltung (/premium), Orte aus seiten.ts
@@ -184,8 +185,7 @@ const zug: KantonPage = {
     },
     { question: 'Sind Sie versichert?', answer: answers.versicherung },
   ],
-  imageAlt: 'Symbolbild: Bürogebäude mit Glasfassade in Zug',
-  menuText: 'Büros, Firmensitze und Wohnen am See',
+  menuText: kantonMenu.zug.text,
 }
 
 // Grundlage: Industrie- und Hallenreinigung (leistungen.ts), Orte aus seiten.ts, E30 (gleiche Bedingungen)
@@ -262,8 +262,7 @@ const aargau: KantonPage = {
     },
     { question: 'Reinigen Sie mit umweltfreundlichen Mitteln?', answer: answers.mittel },
   ],
-  imageAlt: 'Symbolbild: Produktionshalle mit sauberem Hallenboden',
-  menuText: 'Industrie, Hallen, Lager und Liegenschaften',
+  menuText: kantonMenu.aargau.text,
 }
 
 // Grundlage: Zweitwohnungen und Kontrollgänge (/premium), Yacht (/premium/yacht), Orte aus seiten.ts, ARE-Wohnungsinventar (S59)
@@ -338,8 +337,7 @@ const nidwalden: KantonPage = {
     },
     { question: 'Sind Sie versichert?', answer: answers.versicherung },
   ],
-  imageAlt: 'Symbolbild: Wohnhaus am Ufer des Vierwaldstättersees',
-  menuText: 'Seeufer, Zweitwohnungen und Hauswartung',
+  menuText: kantonMenu.nidwalden.text,
 }
 
 // Grundlage: Zweitwohnungen und Hotels (/premium), kein Winterdienst (leistungen.ts), ARE-Wohnungsinventar (S59)
@@ -412,11 +410,25 @@ const obwalden: KantonPage = {
     { question: 'Übernehmen Sie Winterdienst?', answer: 'Nein, Winterdienst bieten wir nicht an.' },
     { question: 'Was kostet die Reinigung?', answer: answers.kosten },
   ],
-  imageAlt: 'Symbolbild: Chalets und Ferienwohnungen in einem Bergtal',
-  menuText: 'Sarnen, Engelberg, Zweitwohnungen und Hotels',
+  menuText: kantonMenu.obwalden.text,
 }
 
 export const kantone: Record<KantonKey, KantonPage> = { luzern, zug, aargau, nidwalden, obwalden }
+
+/** Überschriften und Abschluss der Kantonsseiten (seiten/kanton) */
+export const kantonUi = {
+  regionen: 'Regionen und Orte',
+  objekte: 'Typische Objekte',
+  leistungen: 'Gefragte Leistungen',
+  weitere: 'Weitere Kantone',
+  overview: 'Das ganze Einzugsgebiet',
+  toCanton: 'Zur Kantonsseite',
+  seat: 'Unser Sitz',
+  cta: {
+    title: 'Besichtigung und Offerte',
+    text: `Beschreiben Sie uns Objekt und Ort. Wir melden uns ${company.responseTime} und kommen für die Besichtigung vorbei, kostenlos und unverbindlich.`,
+  },
+}
 
 /** Überleitung auf /einzugsgebiet zu den Kantonsseiten */
 export const kantoneUebersicht = {

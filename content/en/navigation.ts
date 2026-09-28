@@ -6,6 +6,22 @@ import { cantons } from './common'
 
 const responseTime = 'within 24 hours on working days'
 
+const areaMenu: NavDictionary['areaMenu'] = {
+  label: 'Service area',
+  cantonsTitle: 'Cantons',
+  cantons: {
+    luzern: { label: 'Lucerne', text: 'Our head office: city, suburbs and lakeshore' },
+    zug: { label: 'Zug', text: 'Offices, headquarters and lakeside living' },
+    aargau: { label: 'Aargau', text: 'Industry, halls, warehouses and properties' },
+    nidwalden: { label: 'Nidwalden', text: 'Lakeshore, second homes and caretaking' },
+    obwalden: { label: 'Obwalden', text: 'Sarnen, Engelberg, second homes and hotels' },
+  },
+  overview: { path: '/einzugsgebiet', label: 'The whole service area' },
+  overviewText: 'Map, lakeside places and all cantons at a glance',
+  seatTitle: 'Our head office',
+  seatText: 'From here we work in five cantons, with all services and on the same terms everywhere.',
+}
+
 export const nav: NavDictionary = {
   serviceGroups: [
     {
@@ -42,7 +58,6 @@ export const nav: NavDictionary = {
     home: { path: '/', label: 'Home' },
     services: 'Services',
     after: [
-      { path: '/einzugsgebiet', label: 'Service area' },
       { path: '/ueber-uns', label: 'About us' },
       { path: '/blog', label: 'Guides' },
     ],
@@ -51,6 +66,7 @@ export const nav: NavDictionary = {
     close: 'Close menu',
     label: 'Main menu',
   },
+  areaMenu,
   footer: {
     newBrandLine: `A brand of ${company.legalName}`,
     about: `Cleaning and caretaking for businesses and discerning private clients. Based in ${company.address.city}, working in the cantons of ${cantons}.`,

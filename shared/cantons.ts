@@ -24,3 +24,19 @@ export const cantonName = (german: string, lang: Locale) => cantonInfo[german]?.
 
 /** «Kanton Luzern», «Canton of Lucerne», «Canton d’Argovie» … */
 export const cantonTitle = (german: string, lang: Locale) => cantonPrefix[lang](cantonName(german, lang))
+
+/** Kantonsseiten unter /einzugsgebiet/<Schlüssel> (E80), Reihenfolge wie company.cantons */
+export const kantonKeys = ['luzern', 'zug', 'aargau', 'nidwalden', 'obwalden'] as const
+export type KantonKey = (typeof kantonKeys)[number]
+
+/** Deutsche Adresse einer Kantonsseite, zugleich Schlüssel in pages und heroImage */
+export const kantonPath = <K extends KantonKey>(key: K) => `/einzugsgebiet/${key}` as const
+
+/** Deutscher Name wie in company.cantons, für Kürzel (cantonInfo) und Orte (area.cantonPlaces) */
+export const kantonGerman = {
+  luzern: 'Luzern',
+  zug: 'Zug',
+  aargau: 'Aargau',
+  nidwalden: 'Nidwalden',
+  obwalden: 'Obwalden',
+} as const satisfies Record<KantonKey, string>

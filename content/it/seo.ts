@@ -1,5 +1,6 @@
 import { company, premiumLabel } from '../../shared/company'
 import { cantonListIt } from './common'
+import { kantone } from './kantone'
 
 /**
  * Nome, titolo e descrizione di ogni pagina in italiano (M16, M60). Stesse chiavi
@@ -92,6 +93,11 @@ export const pages = {
     title: 'Attivi in Svizzera centrale e Argovia',
     description: `Da ${company.address.city} operiamo nei Cantoni di ${region}, anche sulle rive dei laghi e a Engelberg, con tutti i servizi.`,
   },
+  '/einzugsgebiet/luzern': { label: 'Cantone di Lucerna', ...kantone.luzern.seo },
+  '/einzugsgebiet/zug': { label: 'Cantone di Zugo', ...kantone.zug.seo },
+  '/einzugsgebiet/aargau': { label: 'Cantone di Argovia', ...kantone.aargau.seo },
+  '/einzugsgebiet/nidwalden': { label: 'Cantone di Nidvaldo', ...kantone.nidwalden.seo },
+  '/einzugsgebiet/obwalden': { label: 'Cantone di Obvaldo', ...kantone.obwalden.seo },
   '/blog': {
     label: 'Guida',
     title: 'Guida alla pulizia di edifici',

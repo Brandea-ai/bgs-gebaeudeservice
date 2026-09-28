@@ -1,6 +1,7 @@
 import { company, premiumLabel } from '../../shared/company'
 import type { Dictionary } from '../de'
 import { cantons, responseTime } from './common'
+import { kantone } from './kantone'
 
 /**
  * Name, title and description per page in English (M16, M60). Same keys as
@@ -92,6 +93,12 @@ export const pages: Dictionary['pages'] = {
     title: 'Service area: Lucerne, Zug and Aargau',
     description: `From ${company.address.city} across the cantons of ${region}, including lakeside areas and Engelberg. All services everywhere.`,
   },
+  // Canton pages (E80): title and description live with the content in kantone.ts
+  '/einzugsgebiet/luzern': { label: 'Canton of Lucerne', ...kantone.luzern.seo },
+  '/einzugsgebiet/zug': { label: 'Canton of Zug', ...kantone.zug.seo },
+  '/einzugsgebiet/aargau': { label: 'Canton of Aargau', ...kantone.aargau.seo },
+  '/einzugsgebiet/nidwalden': { label: 'Canton of Nidwalden', ...kantone.nidwalden.seo },
+  '/einzugsgebiet/obwalden': { label: 'Canton of Obwalden', ...kantone.obwalden.seo },
   '/blog': {
     label: 'Guides',
     title: 'Guides to building cleaning',

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -17,6 +17,9 @@ import { localizePath, type Locale } from "../../../shared/i18n";
 import type { PagePath } from "../../../shared/seo";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { iconFor } from "./serviceIcons";
+import { AreaMegaPanel, AreaMobileGroup } from "./AreaMenu";
+
+type MegaMenu = "leistungen" | "einzugsgebiet";
 
 /**
  * Kopfzeile (Rebranding E80): eine schwebende Leiste aus Milchglas mit 3 px
@@ -25,8 +28,9 @@ import { iconFor } from "./serviceIcons";
  * html-Element, ein einziger Scroll-Beobachter). Offene Menüs und Tastaturfokus
  * halten sie sichtbar. Ab xl steht darüber ganz oben eine schmale Infozeile auf
  * dem dunklen Hero. Leistungen als Mega-Menü mit eigener Premium-Welt in
- * Anthrazit und Champagner. Escape schliesst, das Mobilmenü macht den Inhalt
- * dahinter inert.
+ * Anthrazit und Champagner, daneben das Einzugsgebiet mit den Kantonsseiten
+ * (AreaMenu.tsx). Immer nur ein Mega-Menü offen. Escape schliesst, das
+ * Mobilmenü macht den Inhalt dahinter inert.
  */
 export default function SwissNavigation({
   lang = "de",
@@ -39,11 +43,16 @@ export default function SwissNavigation({
   const current = path ?? "/";
   const active = (target: string) =>
     path !== undefined && (path === target || path.startsWith(`${target}/`));
-  const { menu, serviceGroups, languageSwitch, chrome } = navDicts[lang];
+  const { menu, areaMenu, serviceGroups, languageSwitch, chrome } = navDicts[lang];
   const [cleaning, care, premium] = serviceGroups;
   const href = (target: PagePath) => localizePath(target, lang);
   const [isOpen, setIsOpen] = useState(false);
-  const [megaOpen, setMegaOpen] = useState(false);
+  // Offenes Mega-Menü: Leistungen oder Einzugsgebiet, nie beide
+  const [openMenu, setOpenMenu] = useState<MegaMenu | null>(null);
+  const megaOpen = openMenu === "leistungen";
+  const areaOpen = openMenu === "einzugsgebiet";
+  const setMegaOpen = (open: boolean) => setOpenMenu(open ? "leistungen" : null);
+  const setAreaOpen = (open: boolean) => setOpenMenu(open ? "einzugsgebiet" : null);
   const toggle = useRef<HTMLButtonElement>(null);
   const hoverTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const pathname = usePathname();
@@ -80,10 +89,10 @@ export default function SwissNavigation({
   // Offene Menüs halten die Kopfzeile sichtbar
   useEffect(() => {
     const root = document.documentElement;
-    const locked = isOpen || megaOpen;
+    const locked = isOpen || openMenu !== null;
     root.dataset.navLock = locked ? "1" : "0";
     if (locked) root.dataset.nav = "shown";
-  }, [isOpen, megaOpen]);
+  }, [isOpen, openMenu]);
 
   // Offenes Mobilmenü sperrt das Scrollen und macht den Inhalt dahinter inert
   useEffect(() => {
@@ -103,15 +112,20 @@ export default function SwissNavigation({
   // Bei Seitenwechsel beide Menüs schliessen
   useEffect(() => {
     setIsOpen(false);
-    setMegaOpen(false);
+    setOpenMenu(null);
   }, [pathname]);
 
-  const hover = (open: boolean) => {
+  // Ein Zeitgeber für beide Menüs: Der Wechsel von einem zum anderen öffnet das neue
+  const hover = (target: MegaMenu, open: boolean) => {
     if (hoverTimer.current) clearTimeout(hoverTimer.current);
-    hoverTimer.current = setTimeout(() => setMegaOpen(open), open ? 120 : 180);
+    hoverTimer.current = setTimeout(
+      () => setOpenMenu(current => (open ? target : current === target ? null : current)),
+      open ? 120 : 180
+    );
   };
 
   const isServices = active("/leistungen") || active("/premium");
+  const isArea = active("/einzugsgebiet");
   const navLink = (on: boolean) =>
     `relative inline-flex min-h-11 items-center px-1 py-2 text-[0.9375rem] font-medium transition-colors after:absolute after:inset-x-1 after:bottom-1.5 after:h-px after:origin-left after:bg-signal after:transition-transform after:duration-300 ${
       on
@@ -193,11 +207,11 @@ export default function SwissNavigation({
             className="glass relative rounded-[3px]"
             onKeyDown={e => {
               if (e.key !== "Escape") return;
-              if (megaOpen) {
-                setMegaOpen(false);
+              if (openMenu) {
+                setOpenMenu(null);
                 (
                   document.getElementById(
-                    "leistungen-knopf"
+                    `${openMenu}-knopf`
                   ) as HTMLButtonElement | null
                 )?.focus();
               }
@@ -243,11 +257,11 @@ export default function SwissNavigation({
                 {/* Per Maus und Tastatur bedienbar: Enter/Leertaste schaltet um, Escape schliesst (M40) */}
                 <div
                   className="flex items-center self-stretch"
-                  onMouseEnter={() => hover(true)}
-                  onMouseLeave={() => hover(false)}
+                  onMouseEnter={() => hover("leistungen", true)}
+                  onMouseLeave={() => hover("leistungen", false)}
                   onBlur={e => {
                     if (!e.currentTarget.contains(e.relatedTarget as Node | null))
-                      setMegaOpen(false);
+                      setOpenMenu(current => (current === "leistungen" ? null : current));
                   }}
                 >
                   <button
@@ -365,6 +379,44 @@ export default function SwissNavigation({
                   </div>
                 </div>
 
+                {/* Einzugsgebiet: gleiche Bedienung wie Leistungen, eigene id (E80) */}
+                <div
+                  className="flex items-center self-stretch"
+                  onMouseEnter={() => hover("einzugsgebiet", true)}
+                  onMouseLeave={() => hover("einzugsgebiet", false)}
+                  onBlur={e => {
+                    if (!e.currentTarget.contains(e.relatedTarget as Node | null))
+                      setOpenMenu(current => (current === "einzugsgebiet" ? null : current));
+                  }}
+                >
+                  <button
+                    id="einzugsgebiet-knopf"
+                    type="button"
+                    className={`${navLink(isArea)} gap-1.5`}
+                    aria-expanded={areaOpen}
+                    aria-controls="einzugsgebiet-menu"
+                    onClick={e => {
+                      if (e.detail === 0) setAreaOpen(!areaOpen);
+                      else setAreaOpen(true);
+                    }}
+                  >
+                    {areaMenu.label}
+                    <CaretDown
+                      weight="duotone"
+                      className={`size-4 motion-safe:transition-transform motion-safe:duration-300 ${areaOpen ? "rotate-180" : ""}`}
+                      aria-hidden="true"
+                    />
+                  </button>
+
+                  <div
+                    id="einzugsgebiet-menu"
+                    hidden={!areaOpen}
+                    className="absolute inset-x-0 top-full pt-2.5"
+                  >
+                    <AreaMegaPanel lang={lang} path={path} onNavigate={() => setAreaOpen(false)} />
+                  </div>
+                </div>
+
                 {menu.after.map(link => (
                   <Link
                     key={link.path}
@@ -453,19 +505,32 @@ export default function SwissNavigation({
                     </div>
                     <p className="text-sm text-mute">{chrome.answer}</p>
                     <ul className="border-t border-ink/10">
-                      {[menu.home, ...menu.after].map(link => (
-                        <li key={link.path} className="border-b border-ink/10">
-                          <Link
-                            href={href(link.path)}
-                            prefetch={false}
-                            onClick={() => setIsOpen(false)}
-                            aria-current={link.path === path ? "page" : undefined}
-                            className="flex min-h-12 items-center justify-between gap-4 py-3 font-display text-xl font-semibold text-ink aria-[current=page]:text-signal"
-                          >
-                            {link.label}
-                            <ArrowRight weight="duotone" className="size-5 text-mute" aria-hidden="true" />
-                          </Link>
-                        </li>
+                      {[menu.home, ...menu.after].map((link, index) => (
+                        <Fragment key={link.path}>
+                          <li className="border-b border-ink/10">
+                            <Link
+                              href={href(link.path)}
+                              prefetch={false}
+                              onClick={() => setIsOpen(false)}
+                              aria-current={link.path === path ? "page" : undefined}
+                              className="flex min-h-12 items-center justify-between gap-4 py-3 font-display text-xl font-semibold text-ink aria-[current=page]:text-signal"
+                            >
+                              {link.label}
+                              <ArrowRight weight="duotone" className="size-5 text-mute" aria-hidden="true" />
+                            </Link>
+                          </li>
+                          {/* Einzugsgebiet direkt nach Home als aufklappbare Gruppe mit den Kantonen */}
+                          {index === 0 && (
+                            <li className="border-b border-ink/10">
+                              <AreaMobileGroup
+                                lang={lang}
+                                path={path}
+                                open={isArea}
+                                onNavigate={() => setIsOpen(false)}
+                              />
+                            </li>
+                          )}
+                        </Fragment>
                       ))}
                     </ul>
                   </div>

@@ -7,6 +7,22 @@ import { cantonList, responseTime } from './common'
  * en français (M60). Les adresses (path) et les valeurs du formulaire restent
  * en allemand, seuls les libellés sont traduits.
  */
+const areaMenu: NavDictionary['areaMenu'] = {
+  label: 'Zone d’intervention',
+  cantonsTitle: 'Cantons',
+  cantons: {
+    luzern: { label: 'Lucerne', text: 'Notre siège : ville, agglomération et rives du lac' },
+    zug: { label: 'Zoug', text: 'Bureaux, sièges d’entreprise et habitat au bord du lac' },
+    aargau: { label: 'Argovie', text: 'Industrie, halles, entrepôts et immeubles' },
+    nidwalden: { label: 'Nidwald', text: 'Rives du lac, résidences secondaires et conciergerie' },
+    obwalden: { label: 'Obwald', text: 'Sarnen, Engelberg, résidences secondaires et hôtels' },
+  },
+  overview: { path: '/einzugsgebiet', label: 'Toute la zone d’intervention' },
+  overviewText: 'Carte, localités au bord des lacs et tous les cantons en bref',
+  seatTitle: 'Notre siège',
+  seatText: 'D’ici, nous intervenons dans cinq cantons, avec toutes nos prestations et partout aux mêmes conditions.',
+}
+
 export const nav: NavDictionary = {
   serviceGroups: [
     {
@@ -43,7 +59,6 @@ export const nav: NavDictionary = {
     home: { path: '/', label: 'Accueil' },
     services: 'Prestations',
     after: [
-      { path: '/einzugsgebiet', label: 'Zone d’intervention' },
       { path: '/ueber-uns', label: 'À propos' },
       { path: '/blog', label: 'Guide' },
     ],
@@ -52,6 +67,7 @@ export const nav: NavDictionary = {
     close: 'Fermer le menu',
     label: 'Menu principal',
   },
+  areaMenu,
   footer: {
     newBrandLine: `Une marque de ${company.legalName}`,
     about: `Nettoyage et conciergerie pour les entreprises et une clientèle privée exigeante. Siège à ${company.address.city}, actifs dans les cantons de ${cantonList}.`,

@@ -1,5 +1,6 @@
 import { company, premiumLabel } from '../../shared/company'
 import { cantonList } from './common'
+import { kantone } from './kantone'
 
 /**
  * Nom, titre et description de chaque page en français (M16, M60). Mêmes clés
@@ -92,6 +93,11 @@ export const pages = {
     title: 'Zone d’intervention : Suisse centrale',
     description: `Cantons de ${region} depuis ${company.address.city}, y compris au bord des lacs et à Engelberg. Toutes les prestations partout.`,
   },
+  '/einzugsgebiet/luzern': { label: 'Canton de Lucerne', ...kantone.luzern.seo },
+  '/einzugsgebiet/zug': { label: 'Canton de Zoug', ...kantone.zug.seo },
+  '/einzugsgebiet/aargau': { label: 'Canton d’Argovie', ...kantone.aargau.seo },
+  '/einzugsgebiet/nidwalden': { label: 'Canton de Nidwald', ...kantone.nidwalden.seo },
+  '/einzugsgebiet/obwalden': { label: 'Canton d’Obwald', ...kantone.obwalden.seo },
   '/blog': {
     label: 'Guide',
     title: 'Guide du nettoyage de bâtiments',
