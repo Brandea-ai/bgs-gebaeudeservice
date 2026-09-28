@@ -8,14 +8,14 @@ export const fensterUndFassade: ServicePageContent = {
   h1: 'Nettoyage de vitres et de façades pour entreprises et immeubles',
   lead: [
     'Des traces à contre-jour, des cadres gris et une façade verdie, tout le monde les voit en entrant dans le bâtiment. Nous nettoyons fenêtres, façades vitrées, vitrines et façades pour gérances, propriétaires et entreprises, de manière ponctuelle ou selon un rythme fixe.',
-    'Vous trouverez ici ce qu’il faut régler avant le mandat : quel accès convient à quelle hauteur, où l’eau d’un nettoyage de façade peut s’écouler et comment informer les locataires. La check-list et l’avis aux locataires s’impriment directement.',
+    'Vous trouverez ici ce qu’il faut régler avant le mandat : quel accès convient à quelle hauteur, où l’eau d’un nettoyage de façade peut s’écouler et comment informer les locataires. La check-list et le tableau des eaux usées s’impriment directement, l’avis aux locataires est à reprendre sur votre papier à en-tête.',
   ],
   facts: [
     { label: 'Surfaces', value: 'Fenêtres, façades vitrées, vitrines, cadres et façades' },
     { label: 'Façade', value: 'Haute pression si le matériau la supporte' },
     { label: 'Météo', value: 'Pas de travaux extérieurs par gel, tempête ou forte pluie' },
     { label: 'Non compris', value: 'Locaux intérieurs, peinture et réparations de la façade' },
-    { label: 'À imprimer', value: 'Check-list, avis aux locataires, tableau des eaux usées' },
+    { label: 'À imprimer', value: 'Check-list et tableau des eaux usées' },
   ],
   scope: {
     title: 'Les surfaces que nous nettoyons',
@@ -79,7 +79,7 @@ export const fensterUndFassade: ServicePageContent = {
             'Surface totale des façades à nettoyer, en m²',
             'Ce qui gêne : voile gris, dépôt vert, taches',
             'Sol sous la façade : gazon, gravier, plates-bandes ou surface imperméabilisée',
-            'Où s’écoulent les grilles et regards autour du bâtiment, la commune renseigne',
+            'Où mènent les grilles et regards autour du bâtiment : la commune vous renseigne',
             'Si l’immeuble se trouve dans une zone de protection des eaux souterraines ou près d’un ruisseau, d’une rivière ou d’un lac',
           ],
         },
@@ -111,7 +111,7 @@ export const fensterUndFassade: ServicePageContent = {
       kind: 'table',
       id: 'aushang-mieterschaft',
       title: 'Avis aux locataires : modèle à adapter',
-      intro: 'Les fenêtres qui ne se nettoient que de l’intérieur exigent l’accès aux logements ou aux bureaux. Remplacez les indications entre crochets et affichez l’avis dans l’entrée.',
+      intro: 'Les fenêtres qui ne se nettoient que de l’intérieur exigent l’accès aux logements ou aux bureaux. Reprenez le texte sur votre papier à en-tête, remplacez les indications entre crochets et affichez l’avis dans l’entrée.',
       columns: ['Élément', 'Texte de l’avis'],
       rows: [
         ['Titre', 'Nettoyage des fenêtres de votre logement le [date]'],
@@ -121,12 +121,6 @@ export const fensterUndFassade: ServicePageContent = {
         ['Empêchement', 'Si la date ne vous convient pas, merci de contacter [nom, téléphone] d’ici au [date].'],
         ['Expéditeur', '[Gérance], [lieu et date de l’avis]'],
       ],
-      note: 'Qui paie les fenêtres du logement ? Le Code des obligations prévoit que le locataire se charge lui-même, conformément à l’usage local, des menus travaux de nettoyage indispensables à l’entretien normal (art. 259 CO). Les frais accessoires ne sont à sa charge que s’ils ont été convenus spécialement dans le bail (art. 257a CO). Vérifiez chaque cas avant de refacturer le nettoyage des fenêtres des logements.',
-      sources: [
-        { label: 'Code des obligations, art. 257a et 259', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_259' },
-      ],
-      printable: true,
-      updated: '2026-09-28',
     },
     {
       kind: 'table',
@@ -136,7 +130,7 @@ export const fensterUndFassade: ServicePageContent = {
       columns: ['Accès', 'Convient pour', 'Conditions et limites'],
       rows: [
         ['Perche télescopique', 'Surfaces lisses, depuis le sol ou un autre point sûr, jusqu’à 10 m de hauteur', 'Aucune échelle nécessaire, divers outils peuvent être fixés.'],
-        ['Échelle, échelle à plateforme', 'Travaux légers qui ne s’étendent pas sur de grandes surfaces', 'En principe le mauvais moyen de travail au-delà de 2 m de hauteur de chute. Seulement si aucun moyen plus sûr ne convient.'],
+        ['Échelle', 'Travaux légers qui ne s’étendent pas sur de grandes surfaces, et seulement si aucun moyen plus sûr n’est envisageable', 'En principe le mauvais moyen de travail au-delà de 2 m de hauteur de chute. Si l’échelle doit malgré tout être utilisée, une protection contre les chutes est nécessaire. Selon les fabricants, les échelles mobiles à plateforme peuvent aussi être utilisées au-delà de 2 m de hauteur de chute.'],
         ['Échafaudage roulant', 'Nettoyage à des hauteurs faibles à moyennes', 'Hauteur de travail au plus 8 m à l’extérieur et 12 m à l’intérieur. Le sol doit être plan, stable et dégagé, la zone dangereuse sécurisée.'],
         ['Plateforme élévatrice mobile de personnel', 'Petits bâtiments ou travaux de faible ampleur sur de grands bâtiments', 'La place pour la plateforme doit être disponible et rester libre. Sur le trottoir ou la route, une autorisation de la commune est en règle générale nécessaire.'],
         ['Dispositif de sécurité dans le châssis', 'Travail depuis l’appui de fenêtre, posé depuis l’intérieur', 'Un spécialiste vérifie d’abord si les châssis conviennent. Accès aux locaux nécessaire.'],
@@ -158,10 +152,10 @@ export const fensterUndFassade: ServicePageContent = {
       columns: ['Situation', 'Ce que deviennent les eaux usées', 'À vérifier avant'],
       rows: [
         ['Sans produit de nettoyage, sol meuble, moins de 300 m²', 'Haute pression à l’eau froide, sans installation particulière', 'Surface totale des façades à nettoyer'],
-        ['Sans produit de nettoyage, sol meuble, plus de 300 m²', 'Récupérer avec des rigoles, couvrir les grilles d’un filet ou d’un non-tissé, évacuer par les eaux usées jusqu’à la station d’épuration', 'Auprès de la commune : les grilles et regards sont-ils raccordés aux eaux usées ?'],
-        ['Sans produit de nettoyage, sol imperméabilisé avec grilles', 'Couvrir grilles et rigoles, évacuer par les eaux usées jusqu’à la station d’épuration', 'Comme ci-dessus. Si les grilles mènent aux eaux pluviales, les eaux usées ne doivent pas y aller.'],
+        ['Sans produit de nettoyage, sol meuble, plus de 300 m²', 'Récupérer avec des rigoles, couvrir les grilles d’un filet ou d’un non-tissé, évacuer par la canalisation des eaux usées jusqu’à la station d’épuration', 'Auprès de la commune : les grilles et regards sont-ils raccordés à la canalisation des eaux usées ?'],
+        ['Sans produit de nettoyage, sol imperméabilisé avec grilles', 'Couvrir grilles et rigoles, évacuer par la canalisation des eaux usées jusqu’à la station d’épuration', 'Comme ci-dessus. Si les grilles mènent aux eaux pluviales, l’eau de nettoyage ne doit pas y aller.'],
         ['Avec produits de nettoyage ou traitements anti-algues', 'Ni infiltration, ni déversement dans une eau ou dans les égouts : recueillir dans des rigoles et des récipients, traiter dans une installation de séparation', 'Quels produits sont utilisés. Pour les traitements anti-algues, si possible des substances actives dégradables. Informer l’autorité au moins trois jours ouvrables avant.'],
-        ['Zone de protection des eaux souterraines S ou près d’un ruisseau, d’une rivière ou d’un lac', 'Aucun produit de nettoyage. Récupérer toute l’eau, couvrir les sols meubles, tout évacuer par les eaux usées', 'Si l’immeuble se trouve dans une zone de protection. Informer l’autorité au moins trois jours ouvrables avant.'],
+        ['Zone de protection des eaux souterraines S ou près d’un ruisseau, d’une rivière ou d’un lac', 'Aucun produit de nettoyage. Récupérer toute l’eau, couvrir les sols meubles, tout évacuer par la canalisation des eaux usées', 'Si l’immeuble se trouve dans une zone de protection. Informer l’autorité au moins trois jours ouvrables avant.'],
       ],
       note: 'Le devoir de diligence de la loi s’applique à chacun (art. 3 LEaux). Demandez donc pour chaque devis de nettoyage de façade : comment les eaux usées sont-elles récupérées, et où sont-elles évacuées ? La lettre des services de Suisse centrale ne vaut pas pour l’Argovie, où le service cantonal renseigne.',
       sources: [
@@ -206,17 +200,17 @@ export const fensterUndFassade: ServicePageContent = {
     {
       question: 'Qui s’occupe des fenêtres dans les logements loués ?',
       answer:
-        'Selon le Code des obligations, le locataire se charge lui-même des menus travaux de nettoyage indispensables à l’entretien normal, conformément à l’usage local (art. 259 CO). Les fenêtres de la cage d’escalier et des locaux communs n’appartiennent à aucun logement en particulier. Si la gérance fait aussi nettoyer les fenêtres des logements, elle ne peut facturer ces frais comme frais accessoires que s’ils ont été convenus spécialement dans le bail (art. 257a CO).',
+        'Le Code des obligations prévoit que le locataire remédie à ses frais, conformément à l’usage local, aux défauts qui peuvent être éliminés par les menus travaux de nettoyage indispensables à l’entretien normal ([art. 259 CO](https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_259)). Le bail et l’usage local déterminent si le nettoyage des fenêtres du logement en fait partie. Les fenêtres de la cage d’escalier et des locaux communs n’appartiennent à aucun logement en particulier. Si la gérance fait aussi nettoyer les fenêtres des logements, elle ne peut facturer ces frais comme frais accessoires que s’ils ont été convenus spécialement dans le bail ([art. 257a CO](https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_257_a)). Vérifiez chaque cas avant de refacturer des frais.',
     },
     {
       question: 'Nettoyez-vous les façades à haute pression ?',
       answer:
-        'Oui, si le matériau la supporte. Les cas délicats sont surtout le crépi fragile, le bois et la pierre naturelle ancienne. Selon la surface et les produits, l’eau doit être récupérée, le tableau des eaux usées indique à partir de quand.',
+        'Oui, si le matériau la supporte. Les cas délicats sont surtout le crépi fragile, le bois et la pierre naturelle ancienne. Selon la surface et les produits, l’eau doit être récupérée, le tableau des eaux usées indique dans quels cas.',
     },
     {
       question: 'Faut-il une autorisation si la plateforme élévatrice se trouve sur le trottoir ?',
       answer:
-        'En règle générale, oui. La Ville de Lucerne demande pour l’utilisation du domaine public une demande avec un plan coté de la surface, suivie de l’autorisation ou d’une visite sur place. En Ville de Zoug, la demande se fait en ligne, par exemple pour un échafaudage de façade, et la taxe dépend du type et de la durée d’utilisation. Dans les autres communes, l’administration des constructions renseigne. Déposez la demande tôt pour que la date tienne.',
+        'En règle générale, oui. Pour utiliser le domaine public, la Ville de Lucerne exige une demande avec un plan coté de la surface, suivie de l’autorisation ou d’une visite sur place. La Ville de Zoug reçoit en ligne les demandes pour le domaine public lors de travaux de construction, par exemple pour un échafaudage de façade. Pour une plateforme élévatrice utilisée lors d’un nettoyage, renseignez-vous auprès du département des constructions de la Ville. Dans les autres communes, l’administration des constructions renseigne. Déposez la demande tôt pour que la date tienne.',
     },
     {
       question: 'Qu’est-ce que l’eau pure ?',
@@ -231,6 +225,6 @@ export const fensterUndFassade: ServicePageContent = {
   ],
   cta: {
     title: 'Un devis pour vos vitres et votre façade',
-    text: 'Envoyez-nous l’adresse, le nombre d’étages, le nombre approximatif de fenêtres et quelques photos de la façade et de l’entrée. Précisez si l’intérieur, l’extérieur ou les deux doivent être nettoyés, et pour quand. Après la visite, vous recevez le devis, gratuit et sans engagement.',
+    text: 'Envoyez-nous l’adresse, le nombre d’étages, le nombre approximatif de fenêtres et quelques photos. Après la visite, vous recevez le devis, gratuit et sans engagement.',
   },
 }

@@ -3,7 +3,7 @@ import type { ServicePageContent } from '../../types'
 // Grundlage: R3b (Fenster und Glas, Fassade und Hochdruck), E17, K05 (keine Höhen- oder Gerätezusagen ohne Beleg),
 // Umbau E85 nach 25-AUDIT/inhalt.md 3.6 (Bausteine Abwasser, Mieterinformation, Planung). Offene Kundenfrage F4
 // (eigenes Vorgehen beim Abwasser) bleibt unbeantwortet: Die Werkzeuge sind Käuferinformation mit Quelle.
-// Quellen gelesen am 28.09.2026: GSchG Art. 3, 6, 7 (Fassung 01.08.2025), OR Art. 257a, 259 (Fassung 01.01.2026),
+// Quellen gelesen am 28.09.2026: GSchG Art. 3, 6, 7 (Fassung 01.08.2025), OR Art. 257a, 259 (Fassung 01.01.2026, als Link in der Mietfrage),
 // Merkblatt Fassadenreinigung BS/BL (Stand 18.09.2024), Schreiben Umwelt Zentralschweiz vom 26.03.2025,
 // Suva 44033.d (Ausgabe Dezember 2025), Stadt Luzern und Stadt Zug zur Benützung öffentlichen Grundes.
 export const fensterUndFassade: ServicePageContent = {
@@ -13,14 +13,14 @@ export const fensterUndFassade: ServicePageContent = {
   h1: 'Fensterreinigung und Fassadenreinigung für Unternehmen und Liegenschaften',
   lead: [
     'Schlieren im Gegenlicht, graue Rahmen und Grünbelag an der Fassade sieht jeder, der das Haus betritt. Wir reinigen Fenster, Glasfassaden, Schaufenster und Fassaden für Verwaltungen, Eigentümer und Unternehmen, einmalig oder im festen Rhythmus.',
-    'Hier finden Sie, was vor dem Auftrag zu klären ist: welcher Zugang zu welcher Höhe passt, wohin das Wasser einer Fassadenreinigung fliessen darf und wie Sie die Mieterschaft informieren. Checkliste und Aushang können Sie direkt ausdrucken.',
+    'Hier finden Sie, was vor dem Auftrag zu klären ist: welcher Zugang zu welcher Höhe passt, wohin das Wasser einer Fassadenreinigung fliessen darf und wie Sie die Mieterschaft informieren. Checkliste und Abwasser-Tabelle können Sie direkt ausdrucken, den Aushang übernehmen Sie in Ihr Briefpapier.',
   ],
   facts: [
     { label: 'Flächen', value: 'Fenster, Glasfassaden, Schaufenster, Rahmen und Fassaden' },
     { label: 'Fassade', value: 'Hochdruck, wenn das Material es verträgt' },
     { label: 'Wetter', value: 'Aussen nicht bei Frost, Sturm oder starkem Regen' },
     { label: 'Nicht enthalten', value: 'Innenräume, Anstrich und Reparaturen an der Fassade' },
-    { label: 'Zum Ausdrucken', value: 'Checkliste, Aushang für die Mieterschaft, Abwasser-Tabelle' },
+    { label: 'Zum Ausdrucken', value: 'Checkliste und Abwasser-Tabelle' },
   ],
   scope: {
     title: 'Welche Flächen wir reinigen',
@@ -116,22 +116,16 @@ export const fensterUndFassade: ServicePageContent = {
       kind: 'table',
       id: 'aushang-mieterschaft',
       title: 'Aushang für die Mieterschaft: Vorlage zum Anpassen',
-      intro: 'Fenster, die sich nur von innen reinigen lassen, brauchen Zutritt zu Wohnungen oder Büros. Ersetzen Sie die Angaben in eckigen Klammern und hängen Sie den Text im Eingang aus.',
+      intro: 'Fenster, die sich nur von innen reinigen lassen, brauchen Zutritt zu Wohnungen oder Büros. Übernehmen Sie den Text in Ihr Briefpapier, ersetzen Sie die Angaben in eckigen Klammern und hängen Sie ihn im Eingang aus.',
       columns: ['Baustein', 'Text für den Aushang'],
       rows: [
         ['Titel', 'Fensterreinigung in Ihrer Wohnung am [Datum]'],
         ['Termin', 'Am [Datum] zwischen [Uhrzeit] und [Uhrzeit] werden die Fenster der Liegenschaft [Adresse] gereinigt. Einige Fenster lassen sich nur von innen reinigen.'],
-        ['Zutritt', 'Bitte sind Sie zu Hause oder hinterlegen Sie den Schlüssel bis [Datum] bei [Verwaltung oder Hauswartung].'],
+        ['Zutritt', 'Bitte seien Sie zu Hause oder hinterlegen Sie den Schlüssel bis [Datum] bei [Verwaltung oder Hauswartung].'],
         ['Vorbereitung', 'Bitte räumen Sie Pflanzen und Gegenstände von den Fensterbänken und ziehen Sie die Storen hoch.'],
         ['Verhindert', 'Passt Ihnen der Termin nicht, melden Sie sich bis [Datum] bei [Name, Telefon].'],
         ['Absender', '[Verwaltung], [Ort und Datum des Aushangs]'],
       ],
-      note: 'Wer bezahlt die Fenster in der Wohnung? Das OR sieht vor, dass die Mieterschaft kleine Reinigungen für den gewöhnlichen Unterhalt nach Ortsgebrauch selbst trägt (Art. 259 OR). Nebenkosten schuldet sie nur, wenn sie im Mietvertrag besonders vereinbart sind (Art. 257a OR). Klären Sie im Einzelfall, bevor Sie die Reinigung der Wohnungsfenster weiterverrechnen.',
-      sources: [
-        { label: 'Obligationenrecht, Art. 257a und 259', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_259' },
-      ],
-      printable: true,
-      updated: '2026-09-28',
     },
     {
       kind: 'table',
@@ -141,7 +135,7 @@ export const fensterUndFassade: ServicePageContent = {
       columns: ['Zugang', 'Geeignet für', 'Voraussetzungen und Grenzen'],
       rows: [
         ['Teleskopstange', 'Glatte Flächen, vom Boden oder einem sicheren Stand aus bis zu 10 m Höhe', 'Kommt ohne Leiter aus, verschiedene Werkzeuge lassen sich aufstecken.'],
-        ['Leiter, Podestleiter', 'Leichte Arbeiten, die sich nicht über grössere Flächen erstrecken', 'Bei einer Absturzhöhe über 2 m grundsätzlich das falsche Arbeitsmittel. Nur, wenn kein sichereres Mittel geeignet ist.'],
+        ['Leiter', 'Leichte Arbeiten, die sich nicht über grössere Flächen erstrecken, und nur, wenn kein sichereres Arbeitsmittel in Frage kommt', 'Bei einer Absturzhöhe über 2 m grundsätzlich das falsche Arbeitsmittel. Muss die Leiter trotzdem eingesetzt werden, braucht es eine Absturzsicherung. Mobile Podestleitern lassen sich nach Herstellerangaben auch mit mehr als 2 m Standhöhe verwenden.'],
         ['Rollgerüst', 'Reinigung in geringen bis mittleren Höhen', 'Arbeitshöhe höchstens 8 m im Freien und 12 m in Innenräumen. Der Boden muss eben, stabil und frei sein, der Gefahrenbereich abgesichert.'],
         ['Hubarbeitsbühne', 'Kleinere Gebäude oder Arbeiten von geringem Umfang an grösseren Gebäuden', 'Der Platz für die Bühne muss bereitstehen und frei bleiben. Auf Trottoir oder Strasse braucht es in der Regel eine Bewilligung der Gemeinde.'],
         ['Sicherung im Fensterrahmen', 'Arbeiten vom Fenstersims aus, von innen eingesetzt', 'Eine Fachperson prüft vorher, ob die Rahmen geeignet sind. Zutritt zu den Räumen nötig.'],
@@ -211,7 +205,7 @@ export const fensterUndFassade: ServicePageContent = {
     {
       question: 'Wer ist für die Fenster in Mietwohnungen zuständig?',
       answer:
-        'Kleine Reinigungen für den gewöhnlichen Unterhalt übernimmt nach dem OR die Mieterschaft selbst, nach Ortsgebrauch (Art. 259 OR). Fenster im Treppenhaus und in Allgemeinräumen gehören zu keiner einzelnen Wohnung. Lässt die Verwaltung auch die Wohnungsfenster reinigen, kann sie die Kosten nur als Nebenkosten verrechnen, wenn das im Mietvertrag besonders vereinbart ist (Art. 257a OR).',
+        'Das OR sieht vor, dass die Mieterschaft Mängel, die sich durch kleine, für den gewöhnlichen Unterhalt nötige Reinigungen beheben lassen, nach Ortsgebrauch auf eigene Kosten beseitigt ([Art. 259 OR](https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_259)). Ob die Reinigung der Wohnungsfenster darunter fällt, hängt von Mietvertrag und Ortsgebrauch ab. Fenster im Treppenhaus und in Allgemeinräumen gehören zu keiner einzelnen Wohnung. Lässt die Verwaltung auch die Wohnungsfenster reinigen, kann sie die Kosten nur als Nebenkosten verrechnen, wenn das im Mietvertrag besonders vereinbart ist ([Art. 257a OR](https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_257_a)). Klären Sie das im Einzelfall, bevor Sie Kosten weiterverrechnen.',
     },
     {
       question: 'Reinigen Sie Fassaden mit Hochdruck?',
@@ -221,7 +215,7 @@ export const fensterUndFassade: ServicePageContent = {
     {
       question: 'Braucht es eine Bewilligung, wenn die Hubarbeitsbühne auf dem Trottoir steht?',
       answer:
-        'In der Regel ja. Die Stadt Luzern verlangt für die Benutzung öffentlichen Grundes ein Gesuch mit einem vermassten Plan der Fläche, danach folgt die Bewilligung oder eine Begehung. In der Stadt Zug geht das Gesuch digital ein, etwa für ein Fassadengerüst, die Gebühr richtet sich nach Art und Dauer. In anderen Gemeinden gibt die Bauverwaltung Auskunft. Reichen Sie das Gesuch früh ein, damit der Termin hält.',
+        'In der Regel ja. Die Stadt Luzern verlangt für die Benutzung öffentlichen Grundes ein Gesuch mit einem vermassten Plan der Fläche, danach folgt die Bewilligung oder eine Begehung. Die Stadt Zug nimmt Gesuche für öffentlichen Grund bei Bauarbeiten digital entgegen, etwa für ein Fassadengerüst. Für eine Hubarbeitsbühne bei einer Reinigung fragen Sie dort beim Baudepartement nach. In anderen Gemeinden gibt die Bauverwaltung Auskunft. Reichen Sie das Gesuch früh ein, damit der Termin hält.',
     },
     {
       question: 'Was ist Reinwasser?',
@@ -236,6 +230,6 @@ export const fensterUndFassade: ServicePageContent = {
   ],
   cta: {
     title: 'Offerte für Fenster und Fassade',
-    text: 'Schicken Sie uns Adresse, Anzahl Geschosse, die ungefähre Zahl der Fenster und ein paar Fotos von Fassade und Eingang. Schreiben Sie dazu, ob innen, aussen oder beides gereinigt werden soll und bis wann. Nach der Besichtigung erhalten Sie die Offerte, kostenlos und unverbindlich.',
+    text: 'Schicken Sie uns Adresse, Anzahl Geschosse, ungefähre Zahl der Fenster und ein paar Fotos. Nach der Besichtigung erhalten Sie die Offerte, kostenlos und unverbindlich.',
   },
 }

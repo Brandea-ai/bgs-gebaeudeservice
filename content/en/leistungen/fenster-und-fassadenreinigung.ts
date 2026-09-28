@@ -8,14 +8,14 @@ export const fensterUndFassade: ServicePageContent = {
   h1: 'Window cleaning and facade cleaning for businesses and properties',
   lead: [
     'Streaks against the light, grey frames and green growth on the facade are seen by everyone who enters the building. We clean windows, glass facades, shop windows and facades for property managers, owners and businesses, as a one-off or on a fixed schedule.',
-    'This page sets out what needs to be settled before the job: which access suits which height, where the water from facade cleaning may go and how to inform tenants. You can print the checklist and the tenant notice straight away.',
+    'This page sets out what needs to be settled before the job: which access suits which height, where the water from facade cleaning may go and how to inform tenants. You can print the checklist and the wastewater table straight away, and copy the tenant notice onto your own letterhead.',
   ],
   facts: [
     { label: 'Surfaces', value: 'Windows, glass facades, shop windows, frames and facades' },
     { label: 'Facade', value: 'High-pressure cleaning where the material allows it' },
     { label: 'Weather', value: 'No exterior work in frost, storms or heavy rain' },
     { label: 'Not included', value: 'Interiors, painting and repairs to the facade' },
-    { label: 'Printable', value: 'Checklist, tenant notice, wastewater table' },
+    { label: 'Printable', value: 'Checklist and wastewater table' },
   ],
   scope: {
     title: 'Which surfaces we clean',
@@ -48,7 +48,7 @@ export const fensterUndFassade: ServicePageContent = {
       ],
     },
     {
-      title: 'Pure water, squeegee, high pressure: what suits where',
+      title: 'Pure water, squeegee, high pressure: what goes where',
       paragraphs: [
         'Glass within reach is cleaned with water, a mild cleaning product and a squeegee, then frames and rebates are wiped down. For high panes there are water-fed telescopic poles with pure water: it is demineralised and therefore dries without limescale marks.',
         'For facades, the material decides. Smooth, hard surfaces often tolerate high pressure, while delicate render, wood or old natural stone need less pressure or a different method. Whether cleaning agents are needed also determines what has to happen to the wastewater.',
@@ -77,7 +77,7 @@ export const fensterUndFassade: ServicePageContent = {
           title: 'In addition for the facade',
           items: [
             'Total area of the facades to be cleaned, in m²',
-            'What bothers you: grey film, green growth, stains',
+            'What needs removing: grey film, green growth, stains',
             'Ground below the facade: lawn, gravel, beds or a sealed surface',
             'Where the drains and manholes around the building lead; the municipality can tell you',
             'Whether the property lies in a groundwater protection zone or near a stream, river or lake',
@@ -111,7 +111,7 @@ export const fensterUndFassade: ServicePageContent = {
       kind: 'table',
       id: 'aushang-mieterschaft',
       title: 'Notice for tenants: template to adapt',
-      intro: 'Windows that can only be cleaned from inside require access to flats or offices. Replace the details in square brackets and put the notice up in the entrance.',
+      intro: 'Windows that can only be cleaned from inside require access to flats or offices. Copy the text onto your letterhead, replace the details in square brackets and put the notice up in the entrance.',
       columns: ['Section', 'Text for the notice'],
       rows: [
         ['Heading', 'Window cleaning in your flat on [date]'],
@@ -121,22 +121,16 @@ export const fensterUndFassade: ServicePageContent = {
         ['If you cannot make it', 'If the date does not suit you, please contact [name, telephone] by [date].'],
         ['Sender', '[Property management], [place and date of the notice]'],
       ],
-      note: 'Who pays for the windows in the flat? The Code of Obligations provides that tenants carry out minor cleaning needed for regular maintenance themselves, depending on local custom (Art. 259 CO). Accessory charges are payable only if they have been specifically agreed in the tenancy agreement (Art. 257a CO). Check the individual case before passing on the cost of cleaning the windows of flats.',
-      sources: [
-        { label: 'Code of Obligations, Art. 257a and 259', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/en#art_259' },
-      ],
-      printable: true,
-      updated: '2026-09-28',
     },
     {
       kind: 'table',
       id: 'zugang-hoehe',
-      title: 'High windows and facades: which access suits',
+      title: 'High windows and facades: which access is suitable',
       intro: 'Suva, the Swiss accident insurer, prefers technical protective measures to personal protective equipment. Windows that open inwards make it possible to clean the outside safely from inside as well. For all other surfaces, the table summarises the Suva publication, together with the permit for public land.',
       columns: ['Access', 'Suitable for', 'Requirements and limits'],
       rows: [
         ['Telescopic pole', 'Smooth surfaces, from the ground or another safe standing point, up to 10 m high', 'Needs no ladder, and various tools can be attached.'],
-        ['Ladder, podium ladder', 'Light work that does not extend over larger areas', 'Generally the wrong equipment where the fall height exceeds 2 m. Only if no safer equipment is suitable.'],
+        ['Ladder', 'Light work that does not extend over larger areas, and only where no safer equipment is an option', 'Generally the wrong equipment where the fall height exceeds 2 m. If a ladder has to be used anyway, fall protection is required. According to the manufacturer’s instructions, mobile podium ladders can also be used at a standing height of more than 2 m.'],
         ['Mobile scaffold tower', 'Cleaning at low to medium heights', 'Working height at most 8 m outdoors and 12 m indoors. The ground must be level, stable and clear, and the danger zone secured.'],
         ['Mobile elevating work platform', 'Smaller buildings or minor work on larger buildings', 'Space for the platform must be provided and kept free. On the pavement or road, a municipal permit is normally required.'],
         ['Safety device in the window frame', 'Work from the window ledge, fitted from inside', 'A specialist first checks whether the frames are suitable. Access to the rooms is needed.'],
@@ -206,17 +200,17 @@ export const fensterUndFassade: ServicePageContent = {
     {
       question: 'Who is responsible for the windows in rented flats?',
       answer:
-        'Under the Code of Obligations, tenants carry out minor cleaning needed for regular maintenance themselves, depending on local custom (Art. 259 CO). Windows in the stairwell and common areas do not belong to any single flat. If the property management also has the windows of the flats cleaned, it can only pass the cost on as accessory charges if this is specifically agreed in the tenancy agreement (Art. 257a CO).',
+        'The Code of Obligations provides that tenants must remedy, at their own expense and depending on local custom, defects that can be dealt with by minor cleaning as part of regular maintenance ([Art. 259 CO](https://www.fedlex.admin.ch/eli/cc/27/317_321_377/en#art_259)). Whether cleaning the windows of a flat falls under this depends on the tenancy agreement and local custom. Windows in the stairwell and common areas do not belong to any single flat. If the property management also has the windows of the flats cleaned, it can only pass the cost on as accessory charges if this is specifically agreed in the tenancy agreement ([Art. 257a CO](https://www.fedlex.admin.ch/eli/cc/27/317_321_377/en#art_257_a)). Check the individual case before passing on any costs.',
     },
     {
       question: 'Do you use high-pressure cleaning on facades?',
       answer:
-        'Yes, where the material allows it. Delicate render, wood and old natural stone are the sensitive cases. Depending on area and products, the water must be collected; the wastewater table shows from when.',
+        'Yes, where the material allows it. Delicate render, wood and old natural stone are the sensitive cases. Depending on area and products, the water must be collected; the wastewater table shows when this applies.',
     },
     {
       question: 'Is a permit needed if the work platform stands on the pavement?',
       answer:
-        'Normally yes. The City of Lucerne requires an application with a dimensioned plan of the area for using public land, followed by approval or a site inspection. In the City of Zug the application is submitted online, for example for facade scaffolding, and the fee depends on the type and duration of use. In other municipalities, the building authority can advise. Submit the application early so that the date holds.',
+        'Normally yes. The City of Lucerne requires an application with a dimensioned plan of the area for using public land, followed by approval or a site inspection. The City of Zug takes applications for using public land during building work online, for example for facade scaffolding. For a work platform used for cleaning, ask the building department there. In other municipalities, the building authority can advise. Submit the application early so that the date holds.',
     },
     {
       question: 'What is pure water?',
@@ -231,6 +225,6 @@ export const fensterUndFassade: ServicePageContent = {
   ],
   cta: {
     title: 'A quote for your windows and facade',
-    text: 'Send us the address, the number of storeys, the approximate number of windows and a few photos of the facade and entrance. Let us know whether inside, outside or both should be cleaned, and by when. After the site visit you receive the quote, free of charge and without obligation.',
+    text: 'Send us the address, the number of storeys, the approximate number of windows and a few photos. After the site visit, you receive the quote, free of charge and without obligation.',
   },
 }

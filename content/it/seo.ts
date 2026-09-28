@@ -71,7 +71,7 @@ export const pages = {
   '/leistungen/fenster-und-fassadenreinigung': {
     label: 'Pulizia di vetri e facciate',
     title: 'Pulizia di vetri e facciate a Lucerna e Zugo',
-    description: 'Pulizia di vetri e facciate per stabili e aziende a Lucerna, Zugo e dintorni, con checklist da stampare. Offerta gratuita dopo il sopralluogo.',
+    description: 'Pulizia di vetri e facciate con checklist e modello di avviso agli inquilini, a Lucerna, Zugo e dintorni. Offerta gratuita dopo il sopralluogo.',
   },
   '/leistungen/industrie-und-hallenreinigung': {
     label: 'Pulizia industriale e di capannoni',

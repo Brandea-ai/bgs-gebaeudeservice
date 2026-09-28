@@ -8,14 +8,14 @@ export const fensterUndFassade: ServicePageContent = {
   h1: 'Pulizia di vetri e facciate per aziende e stabili',
   lead: [
     'Aloni in controluce, telai grigi e una facciata con patina verde li vede chiunque entri nell’edificio. Puliamo finestre, facciate in vetro, vetrine e facciate per amministrazioni immobiliari, proprietari e aziende, una tantum o con una cadenza fissa.',
-    'Qui trova che cosa chiarire prima dell’incarico: quale accesso si addice a quale altezza, dove può defluire l’acqua della pulizia di una facciata e come informare gli inquilini. La checklist e l’avviso agli inquilini si stampano direttamente.',
+    'Qui trova che cosa chiarire prima dell’incarico: quale accesso si addice a quale altezza, dove può defluire l’acqua della pulizia di una facciata e come informare gli inquilini. La checklist e la tabella delle acque di scarico si stampano direttamente, l’avviso agli inquilini va riportato sulla Sua carta intestata.',
   ],
   facts: [
     { label: 'Superfici', value: 'Finestre, facciate in vetro, vetrine, telai e facciate' },
     { label: 'Facciata', value: 'Alta pressione se il materiale la sopporta' },
     { label: 'Meteo', value: 'Nessun lavoro all’esterno con gelo, tempesta o pioggia forte' },
     { label: 'Non compreso', value: 'Spazi interni, tinteggiatura e riparazioni della facciata' },
-    { label: 'Da stampare', value: 'Checklist, avviso agli inquilini, tabella delle acque di scarico' },
+    { label: 'Da stampare', value: 'Checklist e tabella delle acque di scarico' },
   ],
   scope: {
     title: 'Le superfici che puliamo',
@@ -51,7 +51,7 @@ export const fensterUndFassade: ServicePageContent = {
       title: 'Acqua pura, tergivetro, alta pressione: che cosa va dove',
       paragraphs: [
         'Il vetro raggiungibile si pulisce con acqua, un detergente delicato e il tergivetro, poi si ripassano telai e battute. Per i vetri in alto esistono aste telescopiche alimentate con acqua pura: è demineralizzata e perciò asciuga senza macchie di calcare.',
-        'Per le facciate decide il materiale. Superfici lisce e resistenti sopportano spesso l’alta pressione, intonaco delicato, legno o vecchia pietra naturale richiedono meno pressione o un altro metodo. Se servono detergenti determina anche che cosa si deve fare con le acque di scarico.',
+        'Per le facciate decide il materiale. Superfici lisce e resistenti sopportano spesso l’alta pressione, intonaco delicato, legno o vecchia pietra naturale richiedono meno pressione o un altro metodo. L’eventuale uso di detergenti determina anche che cosa fare con le acque di scarico.',
       ],
     },
   ],
@@ -111,7 +111,7 @@ export const fensterUndFassade: ServicePageContent = {
       kind: 'table',
       id: 'aushang-mieterschaft',
       title: 'Avviso agli inquilini: modello da adattare',
-      intro: 'Le finestre che si puliscono solo dall’interno richiedono l’accesso ad appartamenti o uffici. Sostituisca i dati tra parentesi quadre e affigga l’avviso all’ingresso.',
+      intro: 'Le finestre che si puliscono solo dall’interno richiedono l’accesso ad appartamenti o uffici. Riporti il testo sulla Sua carta intestata, sostituisca i dati tra parentesi quadre e affigga l’avviso all’ingresso.',
       columns: ['Parte', 'Testo dell’avviso'],
       rows: [
         ['Titolo', 'Pulizia delle finestre nel Suo appartamento il [data]'],
@@ -121,12 +121,6 @@ export const fensterUndFassade: ServicePageContent = {
         ['Impedimento', 'Se la data non Le va bene, contatti [nome, telefono] entro il [data].'],
         ['Mittente', '[Amministrazione], [luogo e data dell’avviso]'],
       ],
-      note: 'Chi paga le finestre dell’appartamento? Il Codice delle obbligazioni prevede che il conduttore elimini a proprie spese, secondo gli usi locali, i difetti rimediabili con piccoli lavori di pulitura necessari all’ordinaria manutenzione (art. 259 CO). Le spese accessorie sono a suo carico soltanto se pattuite specialmente nel contratto (art. 257a CO). Verifichi il singolo caso prima di riaddebitare la pulizia delle finestre degli appartamenti.',
-      sources: [
-        { label: 'Codice delle obbligazioni, art. 257a e 259', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/it#art_259' },
-      ],
-      printable: true,
-      updated: '2026-09-28',
     },
     {
       kind: 'table',
@@ -136,7 +130,7 @@ export const fensterUndFassade: ServicePageContent = {
       columns: ['Accesso', 'Adatto per', 'Presupposti e limiti'],
       rows: [
         ['Asta telescopica', 'Superfici lisce, dal suolo o da un altro punto sicuro, fino a 10 m di altezza', 'Non serve una scala, si possono applicare diversi attrezzi.'],
-        ['Scala, scala con piattaforma', 'Lavori leggeri che non si estendono su superfici grandi', 'Con un’altezza di caduta superiore a 2 m in generale non è il mezzo giusto. Solo se nessun mezzo più sicuro è adatto.'],
+        ['Scala', 'Lavori leggeri che non si estendono su superfici grandi, e solo se non si può impiegare un mezzo più sicuro', 'Con un’altezza di caduta superiore a 2 m in generale non è il mezzo giusto. Se la scala deve comunque essere usata, serve una protezione contro le cadute dall’alto. Secondo le indicazioni del fabbricante, le scale movibili con piattaforma si possono usare anche con una superficie di appoggio oltre i 2 m.'],
         ['Ponteggio mobile su ruote', 'Pulizia ad altezze basse o medie', 'Altezza di lavoro al massimo 8 m all’esterno e 12 m all’interno. Il suolo deve essere piano, stabile e libero, la zona di pericolo messa in sicurezza.'],
         ['Piattaforma di lavoro elevabile', 'Edifici piccoli o lavori di poca entità su edifici grandi', 'Lo spazio per la piattaforma deve essere disponibile e restare libero. Su marciapiede o strada serve di regola un’autorizzazione del Comune.'],
         ['Dispositivo di sicurezza nel telaio', 'Lavori dal davanzale esterno, applicato dall’interno', 'Uno specialista verifica prima se i telai sono adatti. Serve l’accesso ai locali.'],
@@ -184,7 +178,7 @@ export const fensterUndFassade: ServicePageContent = {
     },
     {
       title: 'Controllo e data successiva',
-      text: 'Controlla il risultato in controluce, al meglio con la checklist qui sopra. Con una cadenza fissa pianifica subito anche la data successiva.',
+      text: 'Controlla il risultato in controluce, idealmente con la checklist qui sopra. Con una cadenza fissa pianifica subito anche la data successiva.',
     },
   ],
   faq: [
@@ -206,17 +200,17 @@ export const fensterUndFassade: ServicePageContent = {
     {
       question: 'Chi si occupa delle finestre negli appartamenti in affitto?',
       answer:
-        'Secondo il Codice delle obbligazioni, i piccoli lavori di pulitura necessari all’ordinaria manutenzione spettano al conduttore, secondo gli usi locali (art. 259 CO). Le finestre del vano scale e dei locali comuni non appartengono a nessun appartamento. Se l’amministrazione fa pulire anche le finestre degli appartamenti, può addebitare i costi come spese accessorie solo se pattuite specialmente nel contratto (art. 257a CO).',
+        'Il Codice delle obbligazioni prevede che il conduttore elimini a proprie spese, secondo gli usi locali, i difetti rimediabili con piccoli lavori di pulitura necessari all’ordinaria manutenzione ([art. 259 CO](https://www.fedlex.admin.ch/eli/cc/27/317_321_377/it#art_259)). Dipende dal contratto e dagli usi locali se vi rientra anche la pulizia delle finestre dell’appartamento. Le finestre del vano scale e dei locali comuni non appartengono a nessun appartamento. Se l’amministrazione fa pulire anche le finestre degli appartamenti, può addebitare i costi come spese accessorie solo se pattuite specialmente nel contratto ([art. 257a CO](https://www.fedlex.admin.ch/eli/cc/27/317_321_377/it#art_257_a)). Verifichi il singolo caso prima di riaddebitare dei costi.',
     },
     {
       question: 'Pulite le facciate ad alta pressione?',
       answer:
-        'Sì, se il materiale la sopporta. Casi delicati sono soprattutto l’intonaco fragile, il legno e la vecchia pietra naturale. A seconda della superficie e dei prodotti l’acqua va raccolta, la tabella delle acque di scarico indica da quando.',
+        'Sì, se il materiale la sopporta. Casi delicati sono soprattutto l’intonaco fragile, il legno e la vecchia pietra naturale. A seconda della superficie e dei prodotti l’acqua va raccolta, la tabella delle acque di scarico indica in quali casi.',
     },
     {
       question: 'Serve un’autorizzazione se la piattaforma elevabile sta sul marciapiede?',
       answer:
-        'Di regola sì. La Città di Lucerna chiede per l’utilizzo del suolo pubblico una domanda con un piano quotato della superficie, seguita dall’autorizzazione o da un sopralluogo. Nella Città di Zugo la domanda si inoltra online, per esempio per un ponteggio di facciata, e la tassa dipende da tipo e durata dell’utilizzo. Negli altri Comuni informa l’ufficio tecnico. Inoltri la domanda per tempo, affinché la data regga.',
+        'Di regola sì. La Città di Lucerna chiede per l’utilizzo del suolo pubblico una domanda con un piano quotato della superficie, seguita dall’autorizzazione o da un sopralluogo. La Città di Zugo riceve online le domande per il suolo pubblico durante lavori edili, per esempio per un ponteggio di facciata. Per una piattaforma elevabile usata per una pulizia si informi presso il Dipartimento delle costruzioni della Città. Negli altri Comuni informa l’ufficio tecnico. Inoltri la domanda per tempo, affinché la data regga.',
     },
     {
       question: 'Che cos’è l’acqua pura?',
@@ -231,6 +225,6 @@ export const fensterUndFassade: ServicePageContent = {
   ],
   cta: {
     title: 'Offerta per finestre e facciata',
-    text: 'Ci invii indirizzo, numero di piani, numero approssimativo di finestre e qualche foto della facciata e dell’ingresso. Ci scriva se pulire all’interno, all’esterno o entrambi, ed entro quando. Dopo il sopralluogo riceve l’offerta, gratuita e senza impegno.',
+    text: 'Ci invii indirizzo, numero di piani, numero approssimativo di finestre e qualche foto. Dopo il sopralluogo riceve l’offerta, gratuita e senza impegno.',
   },
 }

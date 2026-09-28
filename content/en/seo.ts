@@ -71,7 +71,7 @@ export const pages: Dictionary['pages'] = {
   '/leistungen/fenster-und-fassadenreinigung': {
     label: 'Window and facade cleaning',
     title: 'Window cleaning and facade cleaning in Lucerne',
-    description: 'Window cleaning and facade cleaning for properties and businesses in Lucerne, Zug and beyond, with printable checklists. Free quote after a site visit.',
+    description: 'Window cleaning and facade cleaning with a checklist and a tenant notice template, in Lucerne, Zug and beyond. Free quote after a site visit.',
   },
   '/leistungen/industrie-und-hallenreinigung': {
     label: 'Industrial and warehouse cleaning',
