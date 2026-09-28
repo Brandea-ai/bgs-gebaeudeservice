@@ -80,8 +80,8 @@ export const pages = {
   },
   '/leistungen/hauswartung': {
     label: 'Hauswartung',
-    title: 'Hauswartung in Luzern und Zug',
-    description: 'Hauswartung für Ihre Liegenschaft: Kontrollgänge, Treppenhaus, Waschküche, Kleinreparaturen, Haustechnik, Wohnungsübergaben, Entsorgung und Umgebung.',
+    title: 'Hauswartung Luzern, Zug: Pflichtenheft-Vorlage',
+    description: 'Hauswartung in Luzern, Zug und Umgebung: Kontrollgänge, Treppenhaus, Waschküche, mit Pflichtenheft zum Ausdrucken. Kostenlose Offerte nach Besichtigung.',
   },
   '/leistungen/aussen-und-gruenflaechenpflege': {
     label: 'Aussen- und Grünflächenpflege',

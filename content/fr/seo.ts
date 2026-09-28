@@ -80,8 +80,8 @@ export const pages = {
   },
   '/leistungen/hauswartung': {
     label: 'Conciergerie',
-    title: 'Conciergerie à Lucerne et Zoug',
-    description: 'Conciergerie d’immeuble : rondes de contrôle, cage d’escalier, buanderie, petites réparations, technique du bâtiment, états des lieux, déchets et abords.',
+    title: 'Conciergerie d’immeubles à Lucerne et Zoug',
+    description: 'Conciergerie d’immeubles à Lucerne, Zoug et environs : rondes de contrôle, cage d’escalier, cahier des charges à imprimer. Devis gratuit après une visite.',
   },
   '/leistungen/aussen-und-gruenflaechenpflege': {
     label: 'Entretien des extérieurs et des espaces verts',

@@ -1,26 +1,29 @@
 import type { ServicePageContent } from '../../types'
-import { answers } from '../common'
 
+// Same keys as content/de/leistungen/hauswartung.ts (E85). Legal terms follow the English fedlex
+// translation of the Code of Obligations (CO) and the Civil Code (CC), read on 28.09.2026.
+// German-only sources are marked as such in the label.
 export const hauswartung: ServicePageContent = {
   path: '/leistungen/hauswartung',
   area: 'leistungen',
   eyebrow: 'Property care',
-  h1: 'Caretaking for residential and commercial buildings',
+  h1: 'Caretaking services for residential and commercial buildings',
   lead: [
-    'A property needs more than cleaning: someone has to check on things regularly, fix minor damage, organise waste disposal and be present when flats are handed over. That is what caretaking covers.',
-    'For property managers, owners and communities of condominium owners who cannot or do not want to check on things themselves. We set out in writing which tasks we take on, how often we are on site and to whom we report defects.',
+    'We take on caretaking based on a written specification: which tasks, how often, up to what amount without asking first and who receives our reports.',
+    'That way property management, owners and tenants know what to expect, and nobody has to guess who deals with the damp patch in the cellar. The specification and the inspection round checklist are below, ready to print. The specification also lets you compare several quotes line by line.',
   ],
   facts: [
-    { label: 'For', value: 'Property managers, owners and communities of condominium owners' },
-    { label: 'Properties', value: 'Residential and commercial properties' },
-    { label: 'Scope', value: 'Tasks as required, set out in writing' },
+    { label: 'Properties', value: 'Apartment buildings, condominiums, residential and commercial buildings' },
+    { label: 'Basis', value: 'Specification with tasks, frequency and reporting lines' },
+    { label: 'Minor repairs', value: 'Up to the cost limit you set in the specification' },
+    { label: 'Not included', value: 'Winter maintenance, on-call service, servicing of installations' },
   ],
   scope: {
     title: 'What caretaking covers',
-    intro: 'We put together the caretaking for your property from these tasks:',
+    intro: 'The specification for your property is drawn up from these tasks. You choose what to hand over, individually if you wish.',
     items: [
-      'Inspection rounds: checking on things regularly and reporting defects',
-      'Stairwell: cleaning and keeping it in order',
+      'Inspection rounds at the agreed frequency: checking on things and reporting defects',
+      'Cleaning the stairwell and entrance and keeping them in order',
       'Keeping the laundry room and drying rooms clean',
       'Minor repairs, such as replacing light bulbs',
       'Keeping an eye on building services and reporting faults',
@@ -29,119 +32,217 @@ export const hauswartung: ServicePageContent = {
       'Grounds maintenance, see [grounds and green space maintenance](/leistungen/aussen-und-gruenflaechenpflege)',
     ],
     notIncluded: [
-      'We do not offer winter maintenance.',
+      'Winter maintenance and snow clearing.',
       'Round-the-clock on-call and emergency service.',
-      'Major repairs and work by tradespeople.',
+      'Major repairs and work by tradespeople: the property management commissions a specialist firm.',
+      'Servicing of heating, ventilation, lifts and fire protection systems, which requires specialist firms.',
     ],
   },
   sections: [
     {
-      title: 'Typical properties and situations',
+      title: 'When to contract out caretaking',
       paragraphs: [
-        'Apartment buildings and residential complexes, condominiums, mixed-use buildings with shops or offices on the ground floor. Wherever that is, someone is needed who comes by regularly, keeps the laundry room in order and notices when something is wrong.',
-        'Enquiries often come when the previous caretaker stops, when a property management firm takes over a property or when nobody in a community of condominium owners wants to take on the tasks any more.',
+        'There is often a specific trigger. The long-standing caretaker retires, a property management firm takes over a building without caretaking, or nobody in the community of condominium owners wants to keep an eye on the waste area and the laundry room any more.',
+        'You can hand over tasks, not decisions. Repair orders, the choice of specialist firms and the acceptance of flats stay with the property management or the owners. Caretaking provides the basis for those decisions: it notices what is wrong in the building and reports it to the right place.',
       ],
     },
     {
-      title: 'What happens during an inspection round',
+      title: 'Inspection round: see, fix, report',
       paragraphs: [
-        'During the inspection round, we check on things as often as agreed with you. What we can fix ourselves, such as replacing a light bulb, we take care of. Everything else we report to the contact we have agreed with you.',
-      ],
-      items: [
-        'Lighting in the stairwell, the cellar and the grounds',
-        'Doors, locks and letterboxes',
-        'Laundry room, drying rooms and cellar',
-        'Boiler room and building services for visible faults',
-        'Waste collection point and grounds',
+        'On an inspection round the caretaker walks through the common areas, from the entrance via the cellar and laundry room to the waste area. Small things such as a failed light bulb are fixed on the spot. Everything else goes to the contact named in the specification.',
+        'For owners there is a legal side to this: the owner of a building is liable for damage it causes through inadequate maintenance (Art. 58 CO). Regular inspection rounds help to spot a loose stair nosing or a dark cellar staircase before someone falls.',
       ],
     },
     {
-      title: 'Keeping an eye on building services',
+      title: 'Building services: watching, not servicing',
       paragraphs: [
-        'Caretaking does not mean servicing the installations. Heating, ventilation, lifts and fire protection are serviced by specialist firms. The caretaker looks regularly, notices faults early and reports them, such as an error message on the heating, a dripping tap in the laundry room or a lift that does not stop properly.',
+        'Heating, ventilation, lifts and fire protection are serviced by specialist firms. The caretaker looks at them on every inspection round and reports what stands out: a fault message on the heating display, a dripping tap in the laundry room, a lift that does not stop level with the floor. The property management can then call in the specialist while the fault is still small.',
       ],
     },
     {
       title: 'Flat handovers',
       paragraphs: [
-        'How we assist with flat handovers is agreed with the property management, for example whether we open the flat, hand over keys or note meter readings. The acceptance inspection and the report remain with the property management.',
-        'If the flat needs a final clean before the handover, there is our [end-of-tenancy cleaning with a handover guarantee](/leistungen/umzugsreinigung).',
+        'When tenants change, the caretaker can open the flat, hand over keys and note meter readings. The acceptance inspection and the report stay with the property management. Because the Swiss Tenants’ Association does not count these visits as service charges, it pays to record them separately from cleaning and inspection rounds.',
+        'If the flat needs a final clean before the handover, our [end-of-tenancy cleaning with a handover guarantee](/leistungen/umzugsreinigung) takes care of it.',
       ],
     },
+  ],
+  tools: [
     {
-      title: 'Working with property management and owners',
-      paragraphs: [
-        'Good caretaking depends on clear agreements: which tasks, how often, who receives reports and which small jobs may be done without asking first. We set this out in writing.',
-        'Tenants should also know whom to contact. We agree with you who that contact person is.',
+      kind: 'table',
+      id: 'pflichtenheft',
+      title: 'Caretaking specification to fill in',
+      intro:
+        'Enter for each area how often and who is responsible. A verbal arrangement then becomes an assignment that property management, owners and caretaker all read the same way.',
+      columns: ['Area', 'Tasks', 'How often', 'Responsible or report to'],
+      rows: [
+        ['Inspection round', 'Check lighting, doors, letterboxes, laundry room, cellar, boiler room and waste area for visible defects, record findings', '__________', '__________'],
+        ['Stairwell, entrance and laundry room', 'Clean floors, banisters and handrails, keep the laundry and drying rooms clean; report items left in the escape route and faults on machines', '__________', '__________'],
+        ['Minor repairs', 'For example replace light bulbs, oil locks; without asking first up to CHF ______ per case', 'as needed', '__________'],
+        ['Building services', 'Look at heating, ventilation, lifts and fire protection equipment for faults; servicing is done by the specialist firm', 'on every round', '__________'],
+        ['Waste disposal', 'Organise waste and recyclables, keep the collection point clean', '__________', '__________'],
+        ['Grounds', 'Lawns, hedges, flower beds, paths and forecourts', 'as per care plan', '__________'],
+        ['Flat handovers', 'Open the flat, hand over keys, note meter readings; the property management does the acceptance and the report', 'as needed', 'Property management'],
+        ['Keys and materials', 'Which keys, badges and codes, where they are kept, who signs for the handover; who provides cleaning products, light bulbs and equipment and where they are stored', 'set once', '__________'],
+        ['Specialist firms', 'Heating, lifts, fire protection and major repairs: who commissions them, who pays', 'set once', 'Property management'],
+        ['Tenants', 'Whom tenants contact, notice at the entrance', 'set once', '__________'],
+        ['Expressly not included', 'For example winter maintenance, on-call and emergency service', 'not applicable', 'not applicable'],
       ],
+      note:
+        'With us, this list becomes the specification for your property after the walk-through. In a condominium, the assembly of owners approves the budget, the accounts and the division of costs every year (Art. 712m CC). A specification shows them what they are paying for.',
+      sources: [
+        { label: 'Art. 712m CC, rights of the assembly of condominium owners', href: 'https://www.fedlex.admin.ch/eli/cc/24/233_245_233/en#art_712_m' },
+      ],
+      printable: true,
+      updated: '2026-09-28',
     },
     {
-      title: 'Caretaking specification: what it should include',
-      paragraphs: [
-        'A specification sets out what the caretaker does in a property, how often and who is responsible for what. It creates clarity for property management, owners, tenants and caretaker, and makes quotes comparable.',
-        'With us, this list is drawn up after the walk-through: we put in writing which tasks we take on, how often we are on site and to whom we report defects. These points belong in a specification:',
+      kind: 'checklist',
+      id: 'kontrollgang',
+      title: 'Inspection round: checklist to tick off',
+      intro:
+        'The owner of a building is liable for any damage caused by inadequate maintenance (Art. 58 CO). The Swiss Council for Accident Prevention (BFU) therefore advises owners to inspect regularly, document the inspections and carry out the necessary repairs. This list covers the common areas of an apartment building.',
+      groups: [
+        {
+          title: 'Entrance and stairwell',
+          items: [
+            'Lights in the entrance, stairwell and corridors work, timers and motion sensors respond',
+            'Steps, stair nosings and floor coverings free of trip hazards, handrails secure',
+            'Escape route clear: no bicycles, furniture or combustible items in the stairwell (VKF 16-15, section 2.2)',
+            'Front door closes and opens in the direction of escape without a key (VKF 16-15, section 2.5.5)',
+            'Letterboxes and bell panel intact',
+          ],
+        },
+        {
+          title: 'Cellar, laundry room and building services',
+          items: [
+            'Washing machines and tumble dryers without error messages, drains clear',
+            'No water stains, damp or dripping taps',
+            'Heating without fault messages, boiler room tidy and locked',
+            'Lift stops level, fire extinguishers in place and sealed',
+          ],
+        },
+        {
+          title: 'Grounds and waste area',
+          items: [
+            'Outdoor lighting works, paths and steps free of trip hazards',
+            'Railings, gates and fences secure',
+            'Waste area clean, containers complete and closed',
+            'Play equipment without visible damage, where present',
+          ],
+        },
+        {
+          title: 'Record',
+          items: [
+            'Date and name',
+            'Finding with location, with a photo if useful',
+            'Reported to whom and when',
+            'Done on, by whom',
+          ],
+        },
       ],
-      items: [
-        'Tasks and frequency for each area: stairwell, entrance, laundry and drying rooms, cellar and waste area, each with the activity and how often',
-        'Inspection rounds: how often, which rooms and installations are included and how findings are recorded',
-        'Grounds: which areas are maintained, such as lawns, hedges, flower beds, paths and forecourts',
-        'Responsibilities and reporting lines: who receives reports from the caretaker, which small jobs may be done without asking and whom tenants should contact',
-        'Keys and access: which keys, badges and codes the caretaker receives and how they are kept',
-        'Materials: who provides cleaning products, consumables and equipment and where they are stored',
-        'Boundary with tradespeople: which work specialist firms take on, such as major repairs and the servicing of heating, lifts and fire protection, and who commissions them',
+      note:
+        'This list is not legal advice. Which inspections and what frequency your property needs should be clarified case by case, for example with your insurer.',
+      sources: [
+        { label: 'Art. 58 CO, liability of owners of buildings', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/en#art_58' },
+        { label: 'BFU: What does owner’s liability mean? (in German)', href: 'https://www.bfu.ch/de/services/rechtsfragen/was-bedeutet-werkeigentuemerhaftung' },
+        { label: 'VKF fire protection directive 16-15, escape and rescue routes (PDF, in German)', href: 'https://services.vkg.ch/rest/public/georg/bs/publikation/documents/BSPUB-1394520214-85.pdf/content' },
       ],
+      printable: true,
+      updated: '2026-09-28',
+    },
+    {
+      kind: 'table',
+      id: 'wer-bezahlt',
+      title: 'Minor maintenance and service charges: who does it, who pays',
+      intro:
+        'Two questions matter for every task: who does it, and whether the cost may go through the service charges. Tenants owe service charges (accessory charges in the Code of Obligations) only if the lease specifically provides for them (Art. 257a CO), and only for services connected with the use of the property (Art. 257b CO).',
+      columns: ['Task', 'Who does it', 'Who pays'],
+      rows: [
+        ['Replace a light bulb in one’s own flat, unblock the sink trap', 'Tenant', 'Tenant, as minor maintenance according to local custom (Art. 259 CO)'],
+        ['Clean the stairwell, laundry room and grounds', 'Caretaker', 'Through the service charges if the lease names caretaking as an item, otherwise covered by the rent'],
+        ['Replace light bulbs in the stairwell and cellar, oil locks', 'Caretaker', 'As for cleaning, as long as no specialist knowledge is needed'],
+        ['Open a flat for a handover or viewing', 'Caretaker, on behalf of the property management', 'Owner: the Swiss Tenants’ Association does not count this work as service charges'],
+        ['Repair that needs a specialist, such as unblocking the main drain', 'Specialist firm, commissioned by the property management', 'Owner, who must keep the rented property in a condition fit for use (Art. 256 CO)'],
+      ],
+      note:
+        'The law does not say where minor maintenance ends. A common rule of thumb is around CHF 150 per case; courts now mainly ask whether a specialist is needed. The Swiss Tenants’ Association advises tenants to ask for details of the caretaker’s activities and the hours spent. A specification that separates operation from repairs makes your statement verifiable. This note is not legal advice.',
+      sources: [
+        { label: 'Art. 256, 257a, 257b and 259 CO', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/en#art_256' },
+        { label: 'Swiss Tenants’ Association: minor maintenance (in German)', href: 'https://www.mieterverband.ch/mietrecht/waehrend-der-miete/kleiner-unterhalt/' },
+        { label: 'Swiss Tenants’ Association: leaflet on inadmissible service charges, 2026 (PDF, in German)', href: 'https://www.mieterverband.ch/upd_fm_media/ratgeber-mietrecht/topthemen/heiz-und-nebenkosten/2026_merkblatt_unzulaessige_nebenkosten.pdf/' },
+        { label: 'HEV Schweiz: minor maintenance (in German)', href: 'https://www.hev-schweiz.ch/vermieten/mietrecht/mietvertrag/kleiner-unterhalt' },
+        { label: 'HEV Schweiz: service charge statements (in German)', href: 'https://www.hev-schweiz.ch/vermieten/nebenkostenabrechnungen' },
+      ],
+      updated: '2026-09-28',
     },
   ],
   steps: [
     {
-      title: 'Defining the tasks',
-      text: 'We record which tasks we take on, how often we are on site and to whom we report defects.',
+      title: 'Finalising the specification',
+      text: 'The basis is the written list drawn up after the walk-through. You delete or add tasks, set the cost limit for minor repairs and name the contact who receives reports.',
+      figure: 'offerte',
     },
     {
-      title: 'Start',
-      text: 'We start on the agreed date. If the property later needs more or less, we adjust the tasks with you.',
+      title: 'Starting in the building',
+      text: 'On the start date the caretaker receives the keys and access listed in the specification. A notice at the entrance tells tenants whom to contact from now on.',
+      figure: 'start',
+    },
+    {
+      title: 'Inspection rounds at a set frequency',
+      text: 'The caretaker walks through the building at the frequency in the specification, from the entrance to the boiler room, and fixes small things straight away.',
+      figure: 'besichtigung',
+    },
+    {
+      title: 'Reporting and updating',
+      text: 'Anything that needs a specialist firm goes to the agreed contact. If the property later needs more or less, the specification is adjusted.',
+      figure: 'anfrage',
     },
   ],
   faq: [
     {
-      question: 'What tasks does a caretaker take on?',
+      question: 'What does caretaking include?',
       answer:
-        'Typical tasks are inspection rounds, cleaning the stairwell, laundry and drying rooms, minor repairs, keeping an eye on building services, waste disposal, helping with flat handovers and looking after the grounds. Which tasks we take on in your property and how often is agreed with you in writing, as in a specification.',
+        'At its core, three things: keeping the common areas clean, checking regularly and fixing small things, and reporting faults to the right place. Depending on the property, waste disposal, grounds and flat handovers are added. Which of these you hand over is set out in the specification.',
     },
     {
-      question: 'How does it differ from maintenance cleaning?',
+      question: 'What determines the cost of caretaking?',
       answer:
-        'Maintenance cleaning covers cleaning on a fixed schedule. Caretaking goes further: inspection rounds, minor repairs, building services, waste disposal, flat handovers and grounds maintenance. If you only need cleaning, [maintenance cleaning](/leistungen/unterhaltsreinigung) is the right choice.',
+        'Mainly the number of flats and stairwells, how often inspection rounds and cleaning take place, the size of the grounds, the number of tenant changes per year and who provides the materials. We calculate the amount once we have seen the property. For the service charge statement, it pays to show cleaning and inspections separately from flat handovers and repairs.',
     },
     {
-      question: 'Do you also carry out major repairs?',
+      question: 'Isn’t maintenance cleaning enough for the stairwell?',
       answer:
-        'No, we only carry out minor repairs. Major work requires a specialist firm. We report to you any damage we notice during inspection rounds.',
+        'If the stairwell only needs cleaning, yes: [maintenance cleaning](/leistungen/unterhaltsreinigung) covers that. You need caretaking as soon as someone should spot defects, fix small things and pass on faults.',
     },
     {
-      question: 'Do you offer winter maintenance or an on-call service?',
-      answer: 'No. Winter maintenance and on-call service are not part of what we offer.',
-    },
-    {
-      question: 'Can we choose individual tasks?',
-      answer: 'Yes. We put together the caretaking from the tasks your property needs.',
-    },
-    {
-      question: 'How often does the caretaker come by?',
+      question: 'How often should the caretaker come by?',
       answer:
-        'That depends on the size, age and use of the property. We set out in writing how often we are on site, together with the other tasks.',
+        'Art. 58 CO sets no frequency. It depends on size, age and use: a building with a lift, a shared laundry room and many tenant changes needs more presence than a small condominium. The frequency is set in the specification and can be adjusted.',
     },
-    { question: 'Are you insured?', answer: answers.versicherung },
-    { question: 'How much does caretaking cost?', answer: answers.kosten },
-    { question: 'Which regions do you cover?', answer: answers.gebiet },
+    {
+      question: 'What must tenants fix themselves?',
+      answer:
+        'Minor cleaning and repairs in their own flat that can be done without a specialist, such as replacing a light bulb or unblocking the sink trap (Art. 259 CO). Anything that needs a specialist is the landlord’s responsibility. The table above shows where caretaking fits in.',
+    },
+    {
+      question: 'How should inspection rounds be documented?',
+      answer:
+        'In a way that shows later what was checked and reported, and when: date, finding with location, reported to whom, done on. The BFU advises building owners to document their inspections. The checklist above contains these fields, ready to print.',
+    },
+    {
+      question: 'Who decides on caretaking in a condominium?',
+      answer:
+        'The assembly of owners decides on all administrative matters outside the administrator’s remit and approves the budget and accounts every year (Art. 712m CC). The administrator carries out its resolutions (Art. 712s CC). The owners bear the costs in proportion to the value of their shares (Art. 712h CC). Which majority is needed to award the contract is set out in your regulations.',
+    },
   ],
   related: [
-    { path: '/leistungen/aussen-und-gruenflaechenpflege', text: 'For the grounds and green spaces of the property.' },
-    { path: '/leistungen/unterhaltsreinigung', text: 'If only the cleaning is to be contracted out.' },
-    { path: '/leistungen/facility-services', text: 'If cleaning, caretaking and grounds maintenance belong in one contract.' },
+    { path: '/leistungen/aussen-und-gruenflaechenpflege', text: 'When lawns, hedges and flower beds need a care plan of their own.' },
+    { path: '/leistungen/unterhaltsreinigung', text: 'When the building only needs cleaning, without inspection rounds or minor repairs.' },
+    { path: '/leistungen/facility-services', text: 'When you would rather not contract out cleaning, caretaking and grounds separately.' },
   ],
   cta: {
-    title: 'A quote for your property',
-    text: 'Tell us about the property, the number of flats or the floor area, and the tasks you would like to hand over. We will do a walk-through and prepare a quote for you, free of charge and non-binding.',
+    title: 'Specification and quote for your property',
+    text: 'For the quote we need the address, the number of flats and stairwells, and the tasks you would like to hand over. If you already have a specification, mention it in your message. The walk-through and the quote are free of charge and non-binding.',
   },
 }
