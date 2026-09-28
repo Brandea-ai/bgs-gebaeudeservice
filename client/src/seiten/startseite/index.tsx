@@ -1,4 +1,6 @@
+import JsonLd from "@/components/JsonLd";
 import PageFrame from "@/components/PageFrame";
+import { websiteJsonLd } from "../../../../shared/structured-data";
 import { getDict } from "../../../../content";
 import type { StartseiteProps } from "./kontext";
 import StartHero from "./01-hero";
@@ -19,6 +21,7 @@ export default function Startseite(props: StartseiteProps) {
   const { home } = getDict(props.lang).seiten;
   return (
     <PageFrame lang={props.lang} path="/" contact={home.cta}>
+      <JsonLd data={websiteJsonLd(props.lang)} />
       <StartHero {...props} />
       <StartVertrauen {...props} />
       <StartLeistungen {...props} />

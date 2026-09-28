@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { company } from './company'
 import { pages } from '../content/de/seo'
 import { getDict } from '../content'
-import { alternatesFor, localizePath, ogLocale, type Locale } from './i18n'
+import { activeLocales, alternatesFor, localizePath, ogLocale, type Locale } from './i18n'
 import { heroImage } from './hero-images'
 import { images } from './images'
 
@@ -43,6 +43,7 @@ export function metaFor(path: PagePath, lang: Locale = 'de'): Metadata {
     openGraph: {
       type: path.startsWith('/blog/') ? 'article' : 'website',
       locale: ogLocale[lang],
+      alternateLocale: activeLocales.filter((other) => other !== lang).map((other) => ogLocale[other]),
       siteName: company.brand,
       url,
       title,

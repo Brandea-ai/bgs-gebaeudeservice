@@ -1130,9 +1130,9 @@ const aussenUndGruen: ServicePageContent = {
       ],
       items: [
         'Spring: clearing paths and paved areas of winter dirt, tending flower beds, first lawn mowing',
-        'Summer: mowing lawns regularly, cutting hedges, removing weeds from paved areas and joints',
-        'Autumn: clearing leaves, cutting back shrubs, preparing flower beds for winter',
-        'Winter: we do not offer winter maintenance, snow clearing and gritting need a different solution',
+        'Summer: mowing lawns regularly, removing weeds from paved areas and joints, lightly trimming passages where needed',
+        'Autumn: clearing leaves, preparing flower beds for winter',
+        'Winter: cutting hedges and shrubs, outside the bird breeding season. We do not offer winter maintenance, snow clearing and gritting need a different solution',
       ],
     },
     {
@@ -1173,7 +1173,7 @@ const aussenUndGruen: ServicePageContent = {
     {
       question: 'When is the best time to cut hedges?',
       answer:
-        'Usually in early summer and, if needed, again in late summer. During the bird breeding season, care must be taken with nests. We record the right time for your hedges in the maintenance plan.',
+        'Outside the breeding season, which for many species runs from spring into late summer. The Swiss Ornithological Institute in Sempach recommends cutting woody plants in winter, from November to March. If passages or sight lines grow over in summer, a light shaping cut with an eye on nests is usually enough. We record the timing for your hedges in the maintenance plan.',
     },
     {
       question: 'Do you also create new gardens?',

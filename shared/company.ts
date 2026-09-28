@@ -35,6 +35,8 @@ export const company = {
     region: 'LU',
     country: 'CH',
   },
+  // Koordinaten aus dem Gebäuderegister (GWR, EGID 190101700, api3.geo.admin.ch, abgerufen 28.09.2026)
+  geo: { latitude: 47.085689, longitude: 8.262233 },
   phone: { display: '041 320 56 10', href: 'tel:+41413205610' },
   mobile: { display: '079 711 39 40', href: 'tel:+41797113940' },
   // Vorläufige Adresse bis zur Adresse des Kunden (E15, W05)

@@ -1137,9 +1137,9 @@ const aussenUndGruen: ServicePageContent = {
       ],
       items: [
         'Frühling: Wege und Plätze vom Winterschmutz befreien, Beete pflegen, erster Rasenschnitt',
-        'Sommer: Rasen regelmässig mähen, Hecken schneiden, Unkraut auf Plätzen und in Fugen entfernen',
-        'Herbst: Laub entfernen, Sträucher zurückschneiden, Beete für den Winter vorbereiten',
-        'Winter: Winterdienst bieten wir nicht an, Schneeräumung und Salzen braucht eine andere Lösung',
+        'Sommer: Rasen regelmässig mähen, Unkraut auf Plätzen und in Fugen entfernen, Durchgänge bei Bedarf leicht freischneiden',
+        'Herbst: Laub entfernen, Beete für den Winter vorbereiten',
+        'Winter: Hecken und Sträucher schneiden, ausserhalb der Brutzeit der Vögel. Winterdienst bieten wir nicht an, Schneeräumung und Salzen braucht eine andere Lösung',
       ],
     },
     {
@@ -1180,7 +1180,7 @@ const aussenUndGruen: ServicePageContent = {
     {
       question: 'Wann werden Hecken am besten geschnitten?',
       answer:
-        'Meist im Frühsommer und bei Bedarf nochmals im Spätsommer. Während der Brutzeit der Vögel ist Rücksicht auf Nester nötig. Den passenden Zeitpunkt für Ihre Hecken halten wir im Pflegeplan fest.',
+        'Ausserhalb der Brutzeit, die bei vielen Arten vom Frühling bis in den Spätsommer reicht. Die Schweizerische Vogelwarte in Sempach empfiehlt den Gehölzschnitt im Winter, von November bis März. Wachsen Durchgänge oder Sichtfelder im Sommer zu, genügt meist ein leichter Formschnitt mit Blick auf Nester. Den Zeitpunkt für Ihre Hecken halten wir im Pflegeplan fest.',
     },
     {
       question: 'Legen Sie auch neue Gärten an?',

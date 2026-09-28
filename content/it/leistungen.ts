@@ -1124,9 +1124,9 @@ const aussenUndGruen: ServicePageContent = {
       ],
       items: [
         'Primavera: liberare vialetti e piazzali dallo sporco dell’inverno, curare le aiuole, primo taglio dell’erba',
-        'Estate: tagliare regolarmente l’erba, potare le siepi, rimuovere le erbacce da piazzali e fughe',
-        'Autunno: rimuovere il fogliame, potare gli arbusti, preparare le aiuole per l’inverno',
-        'Inverno: non offriamo il servizio invernale, sgombero della neve e spargimento di sale richiedono un’altra soluzione',
+        'Estate: tagliare regolarmente l’erba, rimuovere le erbacce da piazzali e fughe, liberare leggermente i passaggi se necessario',
+        'Autunno: rimuovere il fogliame, preparare le aiuole per l’inverno',
+        'Inverno: potare siepi e arbusti, fuori dal periodo di nidificazione. Non offriamo il servizio invernale, sgombero della neve e spargimento di sale richiedono un’altra soluzione',
       ],
     },
     {
@@ -1167,7 +1167,7 @@ const aussenUndGruen: ServicePageContent = {
     {
       question: 'Quando è meglio potare le siepi?',
       answer:
-        'Perlopiù all’inizio dell’estate e, se necessario, di nuovo a fine estate. Durante il periodo di nidificazione degli uccelli occorre riguardo per i nidi. Il momento adatto per le Sue siepi lo fissiamo nel piano di manutenzione.',
+        'Fuori dal periodo di nidificazione, che per molte specie va dalla primavera alla fine dell’estate. La Stazione ornitologica svizzera di Sempach raccomanda di potare gli arbusti in inverno, da novembre a marzo. Se in estate passaggi o visuali si chiudono, di solito basta una leggera potatura di forma con attenzione ai nidi. Il momento adatto per le Sue siepi lo fissiamo nel piano di manutenzione.',
     },
     {
       question: 'Realizzate anche nuovi giardini?',

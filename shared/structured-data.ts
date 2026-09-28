@@ -1,5 +1,5 @@
 import { company } from './company'
-import { siteUrl, trailFor, type PagePath } from './seo'
+import { previewImage, siteUrl, trailFor, type PagePath } from './seo'
 import { getDict } from '../content'
 import { hreflang, localizePath, type Locale } from './i18n'
 import { cantonTitle } from './cantons'
@@ -24,9 +24,14 @@ export const organizationJsonLd = (lang: Locale = 'de') => ({
   '@type': 'LocalBusiness',
   '@id': organizationId,
   name: company.brand,
+  // Brücke zur bisherigen Marke, die alle Fremdquellen (sameAs) führen, nur mit NEW_BRAND (E76)
+  ...(company.premiumBrand ? { alternateName: 'BGS Gebäudeservice' } : {}),
   legalName: company.legalName,
+  description: getDict(lang).pages['/'].description,
   url: absolute('/'),
+  image: absolute(previewImage('/', lang).url),
   telephone: company.phone.href.replace('tel:', ''),
+  vatID: company.vat,
   address: {
     '@type': 'PostalAddress',
     streetAddress: company.address.street,
@@ -35,6 +40,7 @@ export const organizationJsonLd = (lang: Locale = 'de') => ({
     addressRegion: company.address.region,
     addressCountry: company.address.country,
   },
+  geo: { '@type': 'GeoCoordinates', latitude: company.geo.latitude, longitude: company.geo.longitude },
   openingHoursSpecification: company.openingHours.map(({ days, opens, closes }) => ({
     '@type': 'OpeningHoursSpecification',
     dayOfWeek: days.map((day) => `https://schema.org/${day}`),
@@ -59,7 +65,6 @@ export function serviceJsonLd(path: PagePath, lang: Locale = 'de') {
     serviceType: label,
     description,
     url: absolute(url),
-    inLanguage: hreflang[lang],
     provider: { '@id': organizationId },
     areaServed: areaServed(lang),
     ...(path.startsWith('/premium/') && company.premiumBrand ? { brand: { '@type': 'Brand', name: company.premiumBrand } } : {}),
@@ -92,7 +97,8 @@ export function articleJsonLd(path: PagePath, article: { h1: string; updated: st
     // Veröffentlichungsdatum erst ab dem Launch (M19)
     ...(article.published ? { datePublished: article.published } : {}),
     dateModified: article.updated,
-    author: { '@id': organizationId },
+    image: absolute(previewImage(path, lang).url),
+    author: { '@type': 'Organization', '@id': organizationId, name: company.brand, url: absolute('/') },
     publisher: { '@id': organizationId },
     mainEntityOfPage: absolute(url),
     url: absolute(url),
@@ -133,3 +139,15 @@ export function pageJsonLd(path: PagePath, type: 'AboutPage' | 'ContactPage', la
     mainEntity: { '@id': organizationId },
   }
 }
+
+/** Seitenname für die Suche (Google Site Names), nur auf der Startseite je Sprache */
+export const websiteJsonLd = (lang: Locale = 'de') => ({
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${siteUrl}/#website`,
+  name: company.brand,
+  ...(company.premiumBrand ? { alternateName: 'BGS Gebäudeservice' } : {}),
+  url: absolute(localizePath('/', lang)),
+  inLanguage: hreflang[lang],
+  publisher: { '@id': organizationId },
+})

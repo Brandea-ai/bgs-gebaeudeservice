@@ -87,7 +87,7 @@ const luzern: KantonPage = {
   leistungen: [
     { path: '/leistungen/hauswartung', title: 'Hauswartung', text: 'Für Verwaltungen und Stockwerkeigentümerschaften, die ihre Liegenschaft betreuen lassen.' },
     { path: '/leistungen/unterhaltsreinigung', title: 'Unterhaltsreinigung', text: 'Treppenhäuser, Eingänge und Gemeinschaftsräume in einem festen Rhythmus.' },
-    { path: '/leistungen/sonderreinigungen', title: 'Sonderreinigungen', text: 'Umzugs- und Wohnungsendreinigung mit Abnahmegarantie, dazu Grundreinigungen.' },
+    { path: '/leistungen/umzugsreinigung', title: 'Umzugsreinigung', text: 'Endreinigung vor der Wohnungsabgabe, mit Abnahmegarantie.' },
     { path: '/leistungen/bueroreinigung', title: 'Büro- und Praxisreinigung', text: 'Für Büros und Praxen, abgestimmt auf Ihre Arbeits- und Öffnungszeiten.' },
     { path: '/premium/luxusimmobilien', title: 'Villen und Residenzen', text: 'Diskrete Reinigung und Pflege von Häusern am See.' },
   ],
@@ -107,7 +107,7 @@ const luzern: KantonPage = {
     { question: 'Was kostet eine Reinigungsfirma im Kanton Luzern?', answer: answers.kostenFaktoren },
     {
       question: 'Übernehmen Sie die Reinigung bei einem Mieterwechsel?',
-      answer: 'Ja. Die Umzugs- und Wohnungsendreinigung mit Abnahmegarantie gehört zu unseren [Sonderreinigungen](/leistungen/sonderreinigungen).',
+      answer: 'Ja. Die Umzugs- und Wohnungsendreinigung mit Abnahmegarantie bieten wir als eigene Leistung an: [Umzugsreinigung](/leistungen/umzugsreinigung).',
     },
     { question: 'Übernehmen Sie auch kurzfristige Einsätze?', answer: 'Rufen Sie uns an. Wir klären mit Ihnen, was kurzfristig möglich ist.' },
   ],
@@ -161,7 +161,7 @@ const zug: KantonPage = {
     { path: '/leistungen/bueroreinigung', title: 'Büro- und Praxisreinigung', text: 'Für Büros, Verwaltungen und Praxen, abgestimmt auf Ihre Arbeitszeiten.' },
     { path: '/leistungen/fenster-und-fassadenreinigung', title: 'Fenster- und Fassadenreinigung', text: 'Für Fenster, Glasflächen und Fassaden von Geschäftshäusern.' },
     { path: '/leistungen/facility-services', title: 'Facility Services', text: 'Reinigung, Hauswartung und Umgebung in einem Vertrag mit einer Ansprechperson.' },
-    { path: '/leistungen/sonderreinigungen', title: 'Sonderreinigungen', text: 'Grundreinigung beim Bürowechsel, Umzugsreinigung mit Abnahmegarantie.' },
+    { path: '/leistungen/sonderreinigungen', title: 'Grund- und Sonderreinigung', text: 'Grundreinigung beim Bürowechsel, gegen Kalk, Fett und alte Schichten.' },
     { path: '/premium/yacht', title: 'Yacht', text: 'Innenraum, Polster, Teak und Gelcoat, am Zugersee und am Vierwaldstättersee.' },
   ],
   planung: {
@@ -389,7 +389,7 @@ const obwalden: KantonPage = {
   ],
   leistungen: [
     { path: '/premium/luxusimmobilien', title: 'Villen und Zweitwohnungen', text: 'Reinigung vor Ankunft und nach Abreise, Kontrollgänge während Ihrer Abwesenheit.' },
-    { path: '/leistungen/sonderreinigungen', title: 'Sonderreinigungen', text: 'Grundreinigung für Hotels und Wohnungen, Umzugsreinigung mit Abnahmegarantie.' },
+    { path: '/leistungen/sonderreinigungen', title: 'Grund- und Sonderreinigung', text: 'Grundreinigung für Hotels und Wohnungen, etwa vor der Saison.' },
     { path: '/leistungen/baureinigung', title: 'Bau- und Bauendreinigung', text: 'Nach Umbau und Renovation, bis zur Übergabe.' },
     { path: '/leistungen/hauswartung', title: 'Hauswartung', text: 'Kontrollgänge, Waschküche, Entsorgung und Wohnungsübergaben.' },
     { path: '/leistungen/unterhaltsreinigung', title: 'Unterhaltsreinigung', text: 'Treppenhäuser und Gewerbeflächen in einem festen Rhythmus.' },

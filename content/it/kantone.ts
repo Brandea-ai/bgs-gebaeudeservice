@@ -63,7 +63,7 @@ const luzern: KantonPage = {
   leistungen: [
     { path: '/leistungen/hauswartung', title: 'Custodia di stabili', text: 'Per amministrazioni immobiliari e comunioni dei proprietari per piani che affidano la cura del proprio stabile.' },
     { path: '/leistungen/unterhaltsreinigung', title: 'Pulizia di manutenzione', text: 'Vani scala, ingressi e locali comuni con un ritmo fisso.' },
-    { path: '/leistungen/sonderreinigungen', title: 'Pulizie speciali', text: 'Pulizia di fine locazione con garanzia di consegna, oltre a pulizie a fondo.' },
+    { path: '/leistungen/umzugsreinigung', title: 'Pulizia di fine locazione', text: 'Pulizia prima della riconsegna dell’appartamento, con garanzia di consegna.' },
     { path: '/leistungen/bueroreinigung', title: 'Pulizia di uffici e studi', text: 'Per uffici e studi, in base ai Suoi orari di lavoro e di apertura.' },
     { path: '/premium/luxusimmobilien', title: 'Ville e residenze', text: 'Pulizia e cura discrete di case sul lago.' },
   ],
@@ -83,7 +83,7 @@ const luzern: KantonPage = {
     { question: 'Quanto costa un’impresa di pulizie nel Cantone di Lucerna?', answer: answers.kostenFaktoren },
     {
       question: 'Vi occupate della pulizia a un cambio d’inquilino?',
-      answer: 'Sì. La pulizia di fine locazione con garanzia di consegna fa parte delle nostre [pulizie speciali](/leistungen/sonderreinigungen).',
+      answer: 'Sì. La pulizia di fine locazione con garanzia di consegna è un servizio a sé: [pulizia di fine locazione](/leistungen/umzugsreinigung).',
     },
     { question: 'Accettate anche interventi a breve termine?', answer: 'Ci telefoni. Chiariamo con Lei che cosa è possibile a breve termine.' },
   ],
@@ -136,7 +136,7 @@ const zug: KantonPage = {
     { path: '/leistungen/bueroreinigung', title: 'Pulizia di uffici e studi', text: 'Per uffici, amministrazioni e studi, in base ai Suoi orari di lavoro.' },
     { path: '/leistungen/fenster-und-fassadenreinigung', title: 'Pulizia di vetri e facciate', text: 'Per finestre, superfici vetrate e facciate di edifici commerciali.' },
     { path: '/leistungen/facility-services', title: 'Facility services', text: 'Pulizia, custodia e aree esterne in un unico contratto con un’unica persona di riferimento.' },
-    { path: '/leistungen/sonderreinigungen', title: 'Pulizie speciali', text: 'Pulizia a fondo al cambio d’ufficio, pulizia di fine locazione con garanzia di consegna.' },
+    { path: '/leistungen/sonderreinigungen', title: 'Pulizie a fondo e speciali', text: 'Pulizia a fondo al cambio d’ufficio, contro calcare, grasso e vecchi strati.' },
     { path: '/premium/yacht', title: 'Yacht', text: 'Interni, imbottiture, teak e gelcoat, sul lago di Zugo e sul lago dei Quattro Cantoni.' },
   ],
   planung: {
@@ -361,7 +361,7 @@ const obwalden: KantonPage = {
   ],
   leistungen: [
     { path: '/premium/luxusimmobilien', title: 'Ville e abitazioni secondarie', text: 'Pulizia prima del Suo arrivo e dopo la Sua partenza, giri di controllo durante la Sua assenza.' },
-    { path: '/leistungen/sonderreinigungen', title: 'Pulizie speciali', text: 'Pulizia a fondo per alberghi e appartamenti, pulizia di fine locazione con garanzia di consegna.' },
+    { path: '/leistungen/sonderreinigungen', title: 'Pulizie a fondo e speciali', text: 'Pulizia a fondo per alberghi e appartamenti, per esempio prima della stagione.' },
     { path: '/leistungen/baureinigung', title: 'Pulizia di cantiere e di fine cantiere', text: 'Dopo ristrutturazione e rinnovo, fino alla consegna.' },
     { path: '/leistungen/hauswartung', title: 'Custodia di stabili', text: 'Giri di controllo, lavanderia, smaltimento e consegne degli appartamenti.' },
     { path: '/leistungen/unterhaltsreinigung', title: 'Pulizia di manutenzione', text: 'Vani scala e superfici commerciali con un ritmo fisso.' },

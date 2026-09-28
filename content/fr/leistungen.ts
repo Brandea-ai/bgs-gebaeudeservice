@@ -1125,9 +1125,9 @@ const aussenUndGruen: ServicePageContent = {
       ],
       items: [
         'Printemps : débarrasser chemins et places des salissures de l’hiver, entretenir les plates-bandes, première tonte',
-        'Été : tondre régulièrement le gazon, tailler les haies, désherber les places et les joints',
-        'Automne : ramasser les feuilles mortes, rabattre les arbustes, préparer les plates-bandes pour l’hiver',
-        'Hiver : nous ne proposons pas de service hivernal, le déneigement et le salage nécessitent une autre solution',
+        'Été : tondre régulièrement le gazon, désherber les places et les joints, dégager légèrement les passages si nécessaire',
+        'Automne : ramasser les feuilles mortes, préparer les plates-bandes pour l’hiver',
+        'Hiver : tailler les haies et les arbustes, en dehors de la période de nidification. Nous ne proposons pas de service hivernal, le déneigement et le salage nécessitent une autre solution',
       ],
     },
     {
@@ -1168,7 +1168,7 @@ const aussenUndGruen: ServicePageContent = {
     {
       question: 'Quand vaut-il mieux tailler les haies ?',
       answer:
-        'Le plus souvent au début de l’été et, si nécessaire, une nouvelle fois à la fin de l’été. Pendant la période de nidification des oiseaux, il faut faire attention aux nids. Nous fixons le moment adapté à vos haies dans le plan d’entretien.',
+        'En dehors de la période de nidification, qui s’étend chez de nombreuses espèces du printemps à la fin de l’été. La Station ornithologique suisse de Sempach recommande de tailler les arbustes en hiver, de novembre à mars. Si des passages ou des champs de vision se referment en été, une légère taille de forme, attentive aux nids, suffit le plus souvent. Nous fixons le moment adapté à vos haies dans le plan d’entretien.',
     },
     {
       question: 'Aménagez-vous aussi de nouveaux jardins ?',

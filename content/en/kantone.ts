@@ -62,7 +62,7 @@ const luzern: KantonPage = {
   leistungen: [
     { path: '/leistungen/hauswartung', title: 'Caretaking', text: 'For property managers and communities of condominium owners who want their property looked after.' },
     { path: '/leistungen/unterhaltsreinigung', title: 'Maintenance cleaning', text: 'Stairwells, entrances and shared areas on a fixed schedule.' },
-    { path: '/leistungen/sonderreinigungen', title: 'Special cleaning', text: 'Move-out and end-of-tenancy cleaning with a handover guarantee, plus deep cleaning.' },
+    { path: '/leistungen/umzugsreinigung', title: 'End-of-tenancy cleaning', text: 'Cleaning before the flat handover, with a handover guarantee.' },
     { path: '/leistungen/bueroreinigung', title: 'Office and practice cleaning', text: 'For offices and practices, scheduled around your working and opening hours.' },
     { path: '/premium/luxusimmobilien', title: 'Villas and residences', text: 'Discreet cleaning and care of lakeside homes.' },
   ],
@@ -82,7 +82,7 @@ const luzern: KantonPage = {
     { question: 'How much does a cleaning company cost in the canton of Lucerne?', answer: answers.kostenFaktoren },
     {
       question: 'Do you take care of the cleaning when tenants change?',
-      answer: 'Yes. Move-out and end-of-tenancy cleaning with a handover guarantee is part of our [special cleaning](/leistungen/sonderreinigungen).',
+      answer: 'Yes. We offer move-out and end-of-tenancy cleaning with a handover guarantee as a separate service: [end-of-tenancy cleaning](/leistungen/umzugsreinigung).',
     },
     { question: 'Do you also take on short-notice assignments?', answer: 'Give us a call. We will clarify with you what is possible at short notice.' },
   ],
@@ -135,7 +135,7 @@ const zug: KantonPage = {
     { path: '/leistungen/bueroreinigung', title: 'Office and practice cleaning', text: 'For offices, administrations and practices, scheduled around your working hours.' },
     { path: '/leistungen/fenster-und-fassadenreinigung', title: 'Window and facade cleaning', text: 'For windows, glass surfaces and facades of commercial buildings.' },
     { path: '/leistungen/facility-services', title: 'Facility services', text: 'Cleaning, caretaking and grounds in one contract with one contact person.' },
-    { path: '/leistungen/sonderreinigungen', title: 'Special cleaning', text: 'Deep cleaning when you move offices, move-out cleaning with a handover guarantee.' },
+    { path: '/leistungen/sonderreinigungen', title: 'Deep and special cleaning', text: 'Deep cleaning when you move offices, against limescale, grease and old layers.' },
     { path: '/premium/yacht', title: 'Yacht', text: 'Interior, upholstery, teak and gelcoat, on Lake Zug and Lake Lucerne.' },
   ],
   planung: {
@@ -360,7 +360,7 @@ const obwalden: KantonPage = {
   ],
   leistungen: [
     { path: '/premium/luxusimmobilien', title: 'Villas and second homes', text: 'Cleaning before your arrival and after your departure, inspection rounds while you are away.' },
-    { path: '/leistungen/sonderreinigungen', title: 'Special cleaning', text: 'Deep cleaning for hotels and flats, move-out cleaning with a handover guarantee.' },
+    { path: '/leistungen/sonderreinigungen', title: 'Deep and special cleaning', text: 'Deep cleaning for hotels and flats, for example before the season.' },
     { path: '/leistungen/baureinigung', title: 'Construction cleaning', text: 'After conversion and renovation, up to the handover.' },
     { path: '/leistungen/hauswartung', title: 'Caretaking', text: 'Inspection rounds, laundry room, waste disposal and flat handovers.' },
     { path: '/leistungen/unterhaltsreinigung', title: 'Maintenance cleaning', text: 'Stairwells and commercial premises on a fixed schedule.' },

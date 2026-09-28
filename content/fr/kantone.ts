@@ -63,7 +63,7 @@ const luzern: KantonPage = {
   leistungen: [
     { path: '/leistungen/hauswartung', title: 'Conciergerie', text: 'Pour les gérances et les communautés de PPE qui confient l’entretien de leur immeuble.' },
     { path: '/leistungen/unterhaltsreinigung', title: 'Nettoyage d’entretien', text: 'Cages d’escalier, entrées et locaux communs à un rythme fixe.' },
-    { path: '/leistungen/sonderreinigungen', title: 'Nettoyages spéciaux', text: 'Nettoyage de déménagement et de fin de bail avec garantie de remise, et nettoyages en profondeur.' },
+    { path: '/leistungen/umzugsreinigung', title: 'Nettoyage de fin de bail', text: 'Nettoyage avant la remise du logement, avec garantie de remise.' },
     { path: '/leistungen/bueroreinigung', title: 'Nettoyage de bureaux et de cabinets', text: 'Pour bureaux et cabinets, adapté à vos horaires de travail et d’ouverture.' },
     { path: '/premium/luxusimmobilien', title: 'Villas et résidences', text: 'Nettoyage et entretien discrets de maisons au bord du lac.' },
   ],
@@ -83,7 +83,7 @@ const luzern: KantonPage = {
     { question: 'Combien coûte une entreprise de nettoyage dans le canton de Lucerne ?', answer: answers.kostenFaktoren },
     {
       question: 'Vous chargez-vous du nettoyage lors d’un changement de locataire ?',
-      answer: 'Oui. Le nettoyage de déménagement et de fin de bail avec garantie de remise fait partie de nos [nettoyages spéciaux](/leistungen/sonderreinigungen).',
+      answer: 'Oui. Le nettoyage de déménagement et de fin de bail avec garantie de remise est une prestation à part entière : [nettoyage de fin de bail](/leistungen/umzugsreinigung).',
     },
     { question: 'Intervenez-vous aussi à court terme ?', answer: 'Appelez-nous. Nous voyons avec vous ce qui est possible à court terme.' },
   ],
@@ -136,7 +136,7 @@ const zug: KantonPage = {
     { path: '/leistungen/bueroreinigung', title: 'Nettoyage de bureaux et de cabinets', text: 'Pour bureaux, administrations et cabinets, adapté à vos horaires de travail.' },
     { path: '/leistungen/fenster-und-fassadenreinigung', title: 'Nettoyage de vitres et de façades', text: 'Pour fenêtres, surfaces vitrées et façades d’immeubles commerciaux.' },
     { path: '/leistungen/facility-services', title: 'Facility services', text: 'Nettoyage, conciergerie et extérieurs dans un seul contrat, avec un seul interlocuteur.' },
-    { path: '/leistungen/sonderreinigungen', title: 'Nettoyages spéciaux', text: 'Nettoyage en profondeur lors d’un changement de bureaux, nettoyage de déménagement avec garantie de remise.' },
+    { path: '/leistungen/sonderreinigungen', title: 'Nettoyages en profondeur et spéciaux', text: 'Nettoyage en profondeur lors d’un changement de bureaux, contre le calcaire, la graisse et les anciennes couches.' },
     { path: '/premium/yacht', title: 'Yacht', text: 'Intérieur, sellerie, teck et gelcoat, sur le lac de Zoug et le lac des Quatre-Cantons.' },
   ],
   planung: {
@@ -361,7 +361,7 @@ const obwalden: KantonPage = {
   ],
   leistungen: [
     { path: '/premium/luxusimmobilien', title: 'Villas et résidences secondaires', text: 'Nettoyage avant votre arrivée et après votre départ, rondes de contrôle pendant votre absence.' },
-    { path: '/leistungen/sonderreinigungen', title: 'Nettoyages spéciaux', text: 'Nettoyage en profondeur pour hôtels et appartements, nettoyage de déménagement avec garantie de remise.' },
+    { path: '/leistungen/sonderreinigungen', title: 'Nettoyages en profondeur et spéciaux', text: 'Nettoyage en profondeur pour hôtels et appartements, par exemple avant la saison.' },
     { path: '/leistungen/baureinigung', title: 'Nettoyage de chantier et de fin de chantier', text: 'Après transformation et rénovation, jusqu’à la remise.' },
     { path: '/leistungen/hauswartung', title: 'Conciergerie', text: 'Rondes de contrôle, buanderie, élimination des déchets et remises d’appartements.' },
     { path: '/leistungen/unterhaltsreinigung', title: 'Nettoyage d’entretien', text: 'Cages d’escalier et surfaces commerciales à un rythme fixe.' },
