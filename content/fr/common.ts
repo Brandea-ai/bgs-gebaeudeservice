@@ -69,15 +69,6 @@ export const steps = {
     title: 'Visite et devis',
     text: 'Nous examinons le bien sur place et définissons avec vous l’étendue des travaux et les horaires. Vous recevez ensuite un devis écrit, gratuit et sans engagement.',
   },
-  /** Premium : demande discrète et visite, pour le déroulement de la vue d’ensemble premium (jusqu’à E85 dans premium.ts) */
-  premiumAnfrage: {
-    title: 'Demande discrète',
-    text: `Appelez-nous ou écrivez-nous. Notre directeur traite personnellement votre demande, vous recevez une réponse ${responseTime}.`,
-  },
-  premiumRundgang: {
-    title: 'Tour des lieux et devis',
-    text: 'Nous visitons votre maison et clarifions les matériaux, les horaires et l’accès. Vous recevez ensuite un devis, gratuit et sans engagement.',
-  },
 } satisfies Record<string, Step>
 
 /** Réponses identiques sur plusieurs pages */

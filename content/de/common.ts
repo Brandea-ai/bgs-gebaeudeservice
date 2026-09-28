@@ -57,15 +57,6 @@ export const steps = {
     title: 'Besichtigung und Offerte',
     text: 'Wir sehen uns das Objekt vor Ort an und klären mit Ihnen Umfang und Zeiten. Danach erhalten Sie eine schriftliche Offerte, kostenlos und unverbindlich.',
   },
-  /** Premium: diskrete Anfrage und Rundgang, für den Ablauf der Premium-Übersicht (bis E85 in premium.ts) */
-  premiumAnfrage: {
-    title: 'Diskrete Anfrage',
-    text: `Rufen Sie uns an oder schreiben Sie uns. Ihre Anfrage bearbeitet der Geschäftsführer persönlich, Sie hören ${company.responseTime} von uns.`,
-  },
-  premiumRundgang: {
-    title: 'Rundgang und Offerte',
-    text: 'Wir sehen uns Ihr Haus an und klären Materialien, Zeiten und Zugang. Danach erhalten Sie eine Offerte, kostenlos und unverbindlich.',
-  },
 } satisfies Record<string, Step>
 
 /** Antworten, die auf mehreren Seiten gleich lauten (E18, R3e, E30, E44) */

@@ -66,15 +66,6 @@ export const steps = {
     title: 'Sopralluogo e offerta',
     text: 'Visitiamo l’immobile e chiariamo con Lei l’entità del lavoro e gli orari. In seguito riceve un’offerta scritta, gratuita e senza impegno.',
   },
-  /** Premium: richiesta discreta e sopralluogo, per lo svolgimento della panoramica premium (fino a E85 in premium.ts) */
-  premiumAnfrage: {
-    title: 'Richiesta discreta',
-    text: `Ci telefoni o ci scriva. La Sua richiesta è trattata personalmente dal gerente; riceverà nostre notizie ${responseTime}.`,
-  },
-  premiumRundgang: {
-    title: 'Visita e offerta',
-    text: 'Visitiamo la Sua casa e chiariamo materiali, orari e accesso. In seguito riceve un’offerta, gratuita e senza impegno.',
-  },
 } satisfies Record<string, Step>
 
 /** Risposte uguali su più pagine (E18, R3e, E30, E44) */

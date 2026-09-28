@@ -72,15 +72,6 @@ export const steps = {
     title: 'Site visit and quote',
     text: 'We look at the property on site and agree the scope and times with you. You then receive a written quote, free of charge and non-binding.',
   },
-  /** Premium: discreet enquiry and walk-through, for the process on the premium overview (until E85 in premium.ts) */
-  premiumAnfrage: {
-    title: 'Discreet enquiry',
-    text: `Call us or write to us. Your enquiry is handled personally by our managing director, and you will hear from us ${responseTime}.`,
-  },
-  premiumRundgang: {
-    title: 'Walk-through and quote',
-    text: 'We look at your home and clarify materials, times and access. You then receive a quote, free of charge and non-binding.',
-  },
 } satisfies Record<string, Step>
 
 /** Answers that are the same on several pages */
