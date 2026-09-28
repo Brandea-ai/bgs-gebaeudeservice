@@ -4,8 +4,13 @@
 Aufruf im Repo: python3 Webseite-Analyse/werkzeuge/og_bilder.py
 Nach jedem Bildtausch in public/bilder erneut ausführen. Ohne Schrift und Logo,
 damit das Bild für alle Sprachen und beide Marken-Modi gilt (E19, E38).
+Am Ende übernimmt jedes Vorschaubild die IPTC-Kennzeichnung seines Quellbilds (N9,
+bilder_kennzeichnen.py), weil der Zuschnitt die Metadaten nicht mitnimmt.
 """
 import pathlib
+import shutil
+import subprocess
+import sys
 
 from PIL import Image
 
@@ -29,3 +34,8 @@ for f in sorted(source.glob("hero-*.jpg")):
         target / f.name, "JPEG", quality=82, optimize=True, progressive=True
     )
     print(f.name)
+
+if shutil.which("exiftool"):
+    subprocess.run([sys.executable, str(pathlib.Path(__file__).with_name("bilder_kennzeichnen.py")), "--nur-og"], check=True)
+else:
+    print("Hinweis: exiftool fehlt, Vorschaubilder ohne IPTC-Kennzeichnung (brew install exiftool)")
