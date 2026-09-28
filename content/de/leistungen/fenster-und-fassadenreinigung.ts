@@ -1,120 +1,235 @@
 import type { ServicePageContent } from '../../types'
-import { answers } from '../common'
 
-// Grundlage: R3b (Fenster und Glas, Fassade und Hochdruck), E17, K05 (keine Höhen- oder Gerätezusagen ohne Beleg)
+// Grundlage: R3b (Fenster und Glas, Fassade und Hochdruck), E17, K05 (keine Höhen- oder Gerätezusagen ohne Beleg),
+// Umbau E85 nach 25-AUDIT/inhalt.md 3.6 (Bausteine Abwasser, Mieterinformation, Planung). Offene Kundenfrage F4
+// (eigenes Vorgehen beim Abwasser) bleibt unbeantwortet: Die Werkzeuge sind Käuferinformation mit Quelle.
+// Quellen gelesen am 28.09.2026: GSchG Art. 3, 6, 7 (Fassung 01.08.2025), OR Art. 257a, 259 (Fassung 01.01.2026, als Link in der Mietfrage),
+// Merkblatt Fassadenreinigung BS/BL (Stand 18.09.2024), Schreiben Umwelt Zentralschweiz vom 26.03.2025,
+// Suva 44033.d (Ausgabe Dezember 2025), Stadt Luzern und Stadt Zug zur Benützung öffentlichen Grundes.
 export const fensterUndFassade: ServicePageContent = {
   path: '/leistungen/fenster-und-fassadenreinigung',
   area: 'leistungen',
-  eyebrow: 'Einmalige und besondere Reinigung',
-  h1: 'Fenster- und Fassadenreinigung für Unternehmen und Liegenschaften',
+  eyebrow: 'Glas und Fassade',
+  h1: 'Fensterreinigung und Fassadenreinigung für Unternehmen und Liegenschaften',
   lead: [
-    'Verschmutzte Fenster und graue Fassaden fallen auf, bei Geschäftshäusern ebenso wie bei Wohnliegenschaften. Wir reinigen Glas und Fassaden einmalig oder in regelmässigen Abständen.',
-    'Für Fassaden setzen wir auch Hochdruck ein. Welche Methode zum Material passt, klären wir bei der Besichtigung am Objekt.',
+    'Schlieren im Gegenlicht, graue Rahmen und Grünbelag an der Fassade sieht jeder, der das Haus betritt. Wir reinigen Fenster, Glasfassaden, Schaufenster und Fassaden für Verwaltungen, Eigentümer und Unternehmen, einmalig oder im festen Rhythmus.',
+    'Hier finden Sie, was vor dem Auftrag zu klären ist: welcher Zugang zu welcher Höhe passt, wohin das Wasser einer Fassadenreinigung fliessen darf und wie Sie die Mieterschaft informieren. Checkliste und Abwasser-Tabelle können Sie direkt ausdrucken, den Aushang übernehmen Sie in Ihr Briefpapier.',
   ],
   facts: [
-    { label: 'Für', value: 'Unternehmen, Verwaltungen und Eigentümer' },
-    { label: 'Flächen', value: 'Fenster, Glasflächen, Rahmen und Fassaden' },
-    { label: 'Rhythmus', value: 'Einmalig oder in regelmässigen Abständen' },
+    { label: 'Flächen', value: 'Fenster, Glasfassaden, Schaufenster, Rahmen und Fassaden' },
+    { label: 'Fassade', value: 'Hochdruck, wenn das Material es verträgt' },
+    { label: 'Wetter', value: 'Aussen nicht bei Frost, Sturm oder starkem Regen' },
+    { label: 'Nicht enthalten', value: 'Innenräume, Anstrich und Reparaturen an der Fassade' },
+    { label: 'Zum Ausdrucken', value: 'Checkliste und Abwasser-Tabelle' },
   ],
   scope: {
-    title: 'Was dazugehört',
-    intro: 'Den Umfang halten wir nach der Besichtigung fest. Typisch sind:',
+    title: 'Welche Flächen wir reinigen',
+    intro: 'Sie wählen aus, welche Flächen gereinigt werden. Häufig sind es diese:',
     items: [
       'Fenster innen und aussen, mit Rahmen und Falzen',
+      'Fenster im Treppenhaus und in Allgemeinräumen von Wohnliegenschaften',
       'Glasfassaden, Glastüren und Glaswände',
-      'Schaufenster und Eingangsbereiche',
-      'Fensterbänke und Storen nach Absprache',
-      'Fassadenreinigung, auch mit Hochdruck',
+      'Schaufenster und Eingangsbereiche aus Glas',
+      'Fensterbänke und Storen auf Wunsch',
+      'Fassaden, mit Hochdruck, wenn das Material es verträgt',
     ],
     notIncluded: [
       'Reinigung der Innenräume: siehe [Unterhaltsreinigung](/leistungen/unterhaltsreinigung) oder [Büro- und Praxisreinigung](/leistungen/bueroreinigung).',
+      'Glas mit Mörtel, Farbspritzern oder Etiketten nach Bauarbeiten: siehe [Baureinigung](/leistungen/baureinigung).',
       'Renovation, Anstrich und Reparaturen an der Fassade.',
     ],
   },
   sections: [
     {
-      title: 'Typische Objekte und Situationen',
+      title: 'Der richtige Zeitpunkt im Jahr',
       paragraphs: [
-        'Bürogebäude mit Glasfassaden, Ladenlokale mit Schaufenstern, Wohnliegenschaften mit vielen Fenstern im Treppenhaus, Gewerbebauten mit grauer oder grüner Fassade. Überall dort prägt Glas den ersten Eindruck, und Schmutz fällt im Gegenlicht sofort auf.',
-        'Häufig steht die Reinigung im Frühling nach dem Winter an, wenn Blütenstaub dazukommt, oder vor einem Anlass, einer Vermietung oder einem Verkauf.',
-      ],
-    },
-    {
-      title: 'Wie Glas und Fassade gereinigt werden',
-      paragraphs: [
-        'Glas wird meist mit Wasser, einem milden Reinigungsmittel und einem Abzieher gereinigt, danach werden Rahmen und Falze nachgewischt. Für grosse und hohe Glasflächen gibt es Teleskopstangen mit aufbereitetem Reinwasser, das ohne Rückstände trocknet.',
-        'Bei Fassaden entscheidet das Material. Glatte, feste Oberflächen vertragen oft Hochdruck, empfindlicher Putz, Holz oder alter Naturstein brauchen ein schonenderes Vorgehen. Welche Methode passt, klären wir bei der Besichtigung am Objekt.',
-      ],
-    },
-    {
-      title: 'Planung und Rhythmus',
-      paragraphs: [
-        'Wie oft Glas gereinigt werden sollte, hängt von Lage, Nutzung und Anspruch ab. Schaufenster und Eingänge sieht jeder, die Fenster eines Lagers kaum jemand.',
+        'Schmutz auf Glas fällt vor allem im Gegenlicht auf: an Eingängen, Schaufenstern und Glasfassaden, die Kundschaft und Mieterschaft jeden Tag sehen. Neben dem festen Rhythmus sind eine Neuvermietung, ein Verkauf oder ein Anlass im Haus typische Gründe für einen Termin.',
       ],
       items: [
-        'Eingänge, Schaufenster und Glastüren: häufiger, weil sie jeder sieht und berührt',
-        'Fenster in Büros und Treppenhäusern: in regelmässigen Abständen, oft nach Jahreszeit',
-        'Fassaden: seltener, wenn Verschmutzung, Algen oder ein Grauschleier sichtbar werden',
-        'Bei Frost, Sturm oder starkem Regen lässt sich aussen nicht sauber arbeiten, planen Sie deshalb etwas Spielraum ein',
+        'Frühling: nach der Hauptblüte der Bäume, sonst liegt Blütenstaub nach wenigen Tagen wieder auf dem Glas',
+        'Herbst: nach dem Laubfall und vor der dunklen Jahreszeit, wenn die tief stehende Sonne jede Schliere zeigt',
+        'Frost, Sturm und starker Regen: Aussenarbeiten verschieben sich, planen Sie deshalb einen Ausweichtag ein',
+        'Vor Vermietung oder Verkauf: erst reinigen, wenn im Haus keine staubigen Arbeiten mehr anstehen',
       ],
     },
     {
-      title: 'Was wir bei der Besichtigung klären',
-      items: [
-        'Wie hoch die Flächen sind und wie man sie sicher erreicht',
-        'Ob sich die Fenster öffnen lassen oder nur von aussen erreichbar sind',
-        'Aus welchem Material Rahmen und Fassade sind',
-        'Zugang, Parkplatz und Absperrungen, etwa auf dem Trottoir vor dem Gebäude',
-        'Ob Mieterinnen und Mieter informiert werden müssen, weil Fenster von innen gereinigt werden',
+      title: 'Reinwasser, Abzieher, Hochdruck: was wohin passt',
+      paragraphs: [
+        'Erreichbares Glas wird mit Wasser, einem milden Mittel und dem Abzieher gereinigt, danach werden Rahmen und Falze nachgewischt. Für hohe Scheiben gibt es wasserführende Teleskopstangen mit Reinwasser: Es ist entmineralisiert und trocknet deshalb ohne Kalkflecken.',
+        'Bei Fassaden entscheidet das Material. Glatte, feste Oberflächen vertragen oft Hochdruck, empfindlicher Putz, Holz oder alter Naturstein brauchen weniger Druck oder eine andere Methode. Ob Reinigungsmittel nötig sind, bestimmt auch, was mit dem Abwasser geschehen muss.',
+      ],
+    },
+  ],
+  tools: [
+    {
+      kind: 'checklist',
+      id: 'checkliste-fenster',
+      title: 'Checkliste von der Anfrage bis zur Abnahme',
+      intro: 'Mit diesen Angaben lässt sich eine Offerte für Fenster und Fassade genau rechnen. Die letzte Gruppe hilft Ihnen, das Ergebnis zu prüfen.',
+      groups: [
+        {
+          title: 'Für die Anfrage bereitlegen',
+          items: [
+            'Adresse, Gebäudeart und Anzahl Geschosse',
+            'Ungefähre Zahl der Fenster oder Glasfläche, dazu Fotos von Fassade und Eingang',
+            'Welche Fenster sich öffnen lassen und wohin: nach innen, nur kippen oder fest verglast',
+            'Material von Rahmen und Fassade, soweit bekannt: Holz, Metall, Kunststoff, Putz, Naturstein',
+            'Gewünschte Flächen: aussen, innen oder beides, dazu Rahmen, Fensterbänke, Storen',
+            'Wunschtermin oder Rhythmus und Zeiten, in denen niemand im Haus gestört werden darf',
+          ],
+        },
+        {
+          title: 'Zusätzlich bei der Fassade',
+          items: [
+            'Gesamtfläche der Fassaden, die gereinigt werden sollen, in m²',
+            'Was stört: Grauschleier, Grünbelag, Flecken',
+            'Boden unter der Fassade: Rasen, Kies, Beete oder versiegelter Platz',
+            'Wohin Dolen und Schächte rund ums Haus entwässern, Auskunft gibt die Gemeinde',
+            'Ob die Liegenschaft in einer Grundwasserschutzzone oder nahe an Bach, Fluss oder See liegt',
+          ],
+        },
+        {
+          title: 'Vor dem Termin',
+          items: [
+            'Mieterschaft oder Mitarbeitende informieren, mit Datum, Zeitfenster und Schlüsselregelung',
+            'Fensterbänke innen freiräumen lassen, Storen hochziehen',
+            'Platz für Fahrzeug, Hubarbeitsbühne oder Gerüst freihalten',
+            'Auf Trottoir oder Strasse: Bewilligung der Gemeinde für öffentlichen Grund einholen',
+            'Zugang zu Dach, Innenhof oder Technikraum sicherstellen, falls er gebraucht wird',
+          ],
+        },
+        {
+          title: 'Abnahme nach der Reinigung',
+          items: [
+            'Im Gegenlicht sind keine Schlieren zu sehen',
+            'Das Glas ist bis in die Ecken sauber, auch am Rand zum Rahmen',
+            'Rahmen, Falze und Fensterbänke sind gereinigt, soweit vereinbart',
+            'Innen bleiben keine Tropfen und Wasserflecken auf Böden und Fensterbänken',
+            'Vorplatz und Beete unter der Fassade sind frei von Rückständen',
+          ],
+        },
+      ],
+      printable: true,
+      updated: '2026-09-28',
+    },
+    {
+      kind: 'table',
+      id: 'aushang-mieterschaft',
+      title: 'Aushang für die Mieterschaft: Vorlage zum Anpassen',
+      intro: 'Fenster, die sich nur von innen reinigen lassen, brauchen Zutritt zu Wohnungen oder Büros. Übernehmen Sie den Text in Ihr Briefpapier, ersetzen Sie die Angaben in eckigen Klammern und hängen Sie ihn im Eingang aus.',
+      columns: ['Baustein', 'Text für den Aushang'],
+      rows: [
+        ['Titel', 'Fensterreinigung in Ihrer Wohnung am [Datum]'],
+        ['Termin', 'Am [Datum] zwischen [Uhrzeit] und [Uhrzeit] werden die Fenster der Liegenschaft [Adresse] gereinigt. Einige Fenster lassen sich nur von innen reinigen.'],
+        ['Zutritt', 'Bitte seien Sie zu Hause oder hinterlegen Sie den Schlüssel bis [Datum] bei [Verwaltung oder Hauswartung].'],
+        ['Vorbereitung', 'Bitte räumen Sie Pflanzen und Gegenstände von den Fensterbänken und ziehen Sie die Storen hoch.'],
+        ['Verhindert', 'Passt Ihnen der Termin nicht, melden Sie sich bis [Datum] bei [Name, Telefon].'],
+        ['Absender', '[Verwaltung], [Ort und Datum des Aushangs]'],
       ],
     },
     {
-      title: 'Woran Sie eine gute Fensterreinigung erkennen',
-      items: [
-        'Im Gegenlicht sind keine Schlieren zu sehen',
-        'Das Glas ist bis in die Ecken sauber, auch am Rand zum Rahmen',
-        'Rahmen, Falze und Fensterbänke sind mitgereinigt, soweit vereinbart',
-        'Innen bleiben keine Tropfen und Wasserflecken auf Böden und Fensterbänken',
+      kind: 'table',
+      id: 'zugang-hoehe',
+      title: 'Hohe Fenster und Fassaden: welcher Zugang passt',
+      intro: 'Die Suva zieht technische Schutzmassnahmen der persönlichen Schutzausrüstung vor. Fenster, die sich nach innen öffnen lassen, erlauben es, auch die Aussenseite sicher von innen zu reinigen. Für alle übrigen Flächen fasst die Tabelle die Suva-Publikation zusammen, ergänzt um die Bewilligung für öffentlichen Grund.',
+      columns: ['Zugang', 'Geeignet für', 'Voraussetzungen und Grenzen'],
+      rows: [
+        ['Teleskopstange', 'Glatte Flächen, vom Boden oder einem sicheren Stand aus bis zu 10 m Höhe', 'Kommt ohne Leiter aus, verschiedene Werkzeuge lassen sich aufstecken.'],
+        ['Leiter', 'Leichte Arbeiten, die sich nicht über grössere Flächen erstrecken, und nur, wenn kein sichereres Arbeitsmittel in Frage kommt', 'Bei einer Absturzhöhe über 2 m grundsätzlich das falsche Arbeitsmittel. Muss die Leiter trotzdem eingesetzt werden, braucht es eine Absturzsicherung. Mobile Podestleitern lassen sich nach Herstellerangaben auch mit mehr als 2 m Standhöhe verwenden.'],
+        ['Rollgerüst', 'Reinigung in geringen bis mittleren Höhen', 'Arbeitshöhe höchstens 8 m im Freien und 12 m in Innenräumen. Der Boden muss eben, stabil und frei sein, der Gefahrenbereich abgesichert.'],
+        ['Hubarbeitsbühne', 'Kleinere Gebäude oder Arbeiten von geringem Umfang an grösseren Gebäuden', 'Der Platz für die Bühne muss bereitstehen und frei bleiben. Auf Trottoir oder Strasse braucht es in der Regel eine Bewilligung der Gemeinde.'],
+        ['Sicherung im Fensterrahmen', 'Arbeiten vom Fenstersims aus, von innen eingesetzt', 'Eine Fachperson prüft vorher, ob die Rahmen geeignet sind. Zutritt zu den Räumen nötig.'],
+        ['Fest installierte Anlage', 'Feste Verglasungen und Fassaden grosser Gebäude, ohne Fenster zu öffnen und ohne den Betrieb zu stören', 'Laut Suva die beste und auf Dauer günstigste Lösung. Nachträglich einzubauen ist aufwendig, oft unmöglich.'],
+        ['Arbeit am hängenden Seil', 'Ausnahmen, wenn andere Einrichtungen nicht möglich sind', 'Zwei getrennt befestigte Seile, Überwachung durch eine zweite Person, Rettung sichergestellt.'],
       ],
+      note: 'Planen Sie Neubau, Umbau oder Sanierung, denken Sie die Reinigung von Glas und Fassade gleich mit. Und fragen Sie bei jeder Offerte nach, mit welchem Zugang gearbeitet wird.',
+      sources: [
+        { label: 'Suva 44033: Fenster, Fassaden und Dächer sicher reinigen und instand halten (Dezember 2025)', href: 'https://www.suva.ch/44033.d' },
+        { label: 'Stadt Luzern: Gesuch Benutzung öffentlicher Grund', href: 'https://www.stadtluzern.ch/politikverwaltung/stadtverwaltung/formularabisz/13472/detail' },
+        { label: 'Stadt Zug: Benützung von öffentlichem Grund bei Bauarbeiten', href: 'https://stadtzug.ch/de/bauen/bauvorhaben/benuetzung-oeffentlicher-grund' },
+      ],
+    },
+    {
+      kind: 'table',
+      id: 'abwasser-fassade',
+      title: 'Fassadenreinigung: wohin das Abwasser darf',
+      intro: 'Stoffe, die Wasser verunreinigen können, dürfen weder direkt noch indirekt in ein Gewässer gelangen oder versickern (Art. 6 GSchG). Das betrifft auch Dolen, die ins Regenwasser führen. Bis eine interkantonale Vollzugshilfe vorliegt, orientieren sich die Fachstellen von Luzern, Zug, Nidwalden und Obwalden am Merkblatt der Kantone Basel-Stadt und Basel-Landschaft (Schreiben vom 26.03.2025).',
+      columns: ['Situation', 'Was mit dem Abwasser geschieht', 'Vorher klären'],
+      rows: [
+        ['Ohne Reinigungsmittel, lockerer Boden, unter 300 m² Fläche', 'Hochdruck mit kaltem Wasser ohne besondere Installation', 'Gesamtfläche der Fassaden, die gereinigt werden'],
+        ['Ohne Reinigungsmittel, lockerer Boden, über 300 m² Fläche', 'Mit Rinnen auffangen, Dolen mit Netz oder Vlies abdecken, über die Schmutzwasserkanalisation in die Kläranlage leiten', 'Bei der Gemeinde: Führen Dolen und Schächte in die Schmutzwasserkanalisation?'],
+        ['Ohne Reinigungsmittel, versiegelter Boden mit Dolen', 'Dolen und Rinnen abdecken, Abwasser über die Schmutzwasserkanalisation in die Kläranlage leiten', 'Wie oben. Führen die Dolen ins Regenwasser, darf das Abwasser nicht hinein.'],
+        ['Mit Reinigungsmitteln oder Mitteln gegen Algen', 'Weder versickern noch in Gewässer oder Kanalisation: in Rinnen und Behältern sammeln, in einer Spaltanlage reinigen', 'Welche Mittel eingesetzt werden. Bei Mitteln gegen Algen möglichst abbaubare Wirkstoffe. Behörde mindestens drei Arbeitstage vorher informieren.'],
+        ['Grundwasserschutzzone S oder im Bereich von Bach, Fluss oder See', 'Keine Reinigungsmittel. Wasser vollständig auffangen, lose Bodenflächen abdecken, alles über die Schmutzwasserkanalisation ableiten', 'Ob die Liegenschaft in einer Schutzzone liegt. Behörde mindestens drei Arbeitstage vorher informieren.'],
+      ],
+      note: 'Die Sorgfaltspflicht des Gesetzes gilt für jedermann (Art. 3 GSchG). Fragen Sie deshalb bei jeder Offerte für eine Fassadenreinigung: Wie wird das Abwasser aufgefangen, und wohin wird es geleitet? Für den Aargau gilt das Schreiben der Zentralschweizer Fachstellen nicht, dort gibt die kantonale Fachstelle Auskunft.',
+      sources: [
+        { label: 'Gewässerschutzgesetz, Art. 3 und 6', href: 'https://www.fedlex.admin.ch/eli/cc/1992/1860_1860_1860/de#art_6' },
+        { label: 'Merkblatt Fassadenreinigung der Kantone Basel-Stadt und Basel-Landschaft', href: 'https://www.bs.ch/publikationen/merkblatt-fassadenreinigung' },
+        { label: 'Umwelt Zentralschweiz: Umwelt- und Gewässerschutz bei der Fassadenreinigung, 26.03.2025', href: 'https://www.azimv.ch/wp-content/uploads/2026/02/Merkblatt_Fassadenreinigung_1_Bestaetigung_Zentralschweiz.pdf' },
+      ],
+      printable: true,
+      updated: '2026-09-28',
     },
   ],
   steps: [
     {
-      title: 'Einsatz',
-      text: 'Wir reinigen zum vereinbarten Termin, auf Wunsch in festen Abständen.',
+      title: 'Termin und Ankündigung',
+      text: 'Steht der Termin, informieren Sie Mieterschaft oder Mitarbeitende, am einfachsten mit dem Aushang von dieser Seite. Braucht es öffentlichen Grund, muss vorher die Bewilligung der Gemeinde vorliegen.',
+    },
+    {
+      title: 'Reinigung vor Ort',
+      text: 'Glas, Rahmen und die vereinbarten Fassadenflächen werden am geplanten Tag gereinigt. Bei Frost, Sturm oder starkem Regen verschiebt sich der Aussenteil auf den Ausweichtag.',
+    },
+    {
+      title: 'Kontrolle und nächster Termin',
+      text: 'Sie prüfen das Ergebnis im Gegenlicht, am besten mit der Checkliste oben. Bei einem festen Rhythmus planen Sie den nächsten Termin gleich mit.',
     },
   ],
   faq: [
     {
-      question: 'Wie oft sollten Fenster gereinigt werden?',
+      question: 'Was kostet es, Fenster und Fassade reinigen zu lassen?',
       answer:
-        'Das hängt von Lage und Nutzung ab. An einer stark befahrenen Strasse verschmutzt Glas schneller als im Grünen. Nach der Besichtigung schlagen wir Ihnen einen Rhythmus vor.',
+        'Einen Preis pro Fenster nennen wir nicht, weil der Aufwand stark schwankt. Er hängt ab von Zahl und Grösse der Scheiben, von Sprossen und Rahmen und davon, ob die Fenster nach innen öffnen oder nur von aussen erreichbar sind. Dazu kommen der Zugang (Teleskopstange, Hubarbeitsbühne oder Gerüst), eine allfällige Bewilligung für öffentlichen Grund, der Grad der Verschmutzung und ob innen, aussen oder beides gereinigt wird. Bei Fassaden zählen Fläche, Material, Methode und der Aufwand für das Abwasser.',
+    },
+    {
+      question: 'In welchem Rhythmus sollten Fenster und Glastüren gereinigt werden?',
+      answer:
+        'Das richtet sich nach Lage und Nutzung. Eingänge, Glastüren und Schaufenster sieht und berührt jeder, sie brauchen kürzere Abstände als die Fenster im Treppenhaus oder im Lager. An einer stark befahrenen Strasse, unter Bäumen oder neben einer Baustelle verschmutzt Glas schneller als in ruhiger Lage.',
+    },
+    {
+      question: 'Müssen Mieterinnen und Mieter beim Termin zu Hause sein?',
+      answer:
+        'Nur, wenn Fenster von innen gereinigt werden. Das gilt für jede Innenseite und für Fenster, deren Aussenseite nur von innen erreichbar ist, etwa weil sie nach innen öffnen. Glas, das von aussen erreichbar ist, lässt sich ohne Zutritt reinigen. Wer nicht da ist, kann den Schlüssel hinterlegen, der Aushang oben regelt das.',
+    },
+    {
+      question: 'Wer ist für die Fenster in Mietwohnungen zuständig?',
+      answer:
+        'Das OR sieht vor, dass die Mieterschaft Mängel, die sich durch kleine, für den gewöhnlichen Unterhalt nötige Reinigungen beheben lassen, nach Ortsgebrauch auf eigene Kosten beseitigt ([Art. 259 OR](https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_259)). Ob die Reinigung der Wohnungsfenster darunter fällt, hängt von Mietvertrag und Ortsgebrauch ab. Fenster im Treppenhaus und in Allgemeinräumen gehören zu keiner einzelnen Wohnung. Lässt die Verwaltung auch die Wohnungsfenster reinigen, kann sie die Kosten nur als Nebenkosten verrechnen, wenn das im Mietvertrag besonders vereinbart ist ([Art. 257a OR](https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_257_a)). Klären Sie das im Einzelfall, bevor Sie Kosten weiterverrechnen.',
     },
     {
       question: 'Reinigen Sie Fassaden mit Hochdruck?',
-      answer: 'Ja, wenn das Material es zulässt. Welche Methode zu Ihrer Fassade passt, klären wir bei der Besichtigung am Objekt.',
+      answer:
+        'Ja, wenn das Material es verträgt. Heikel sind vor allem empfindlicher Putz, Holz und alter Naturstein. Je nach Fläche und Mittel muss das Wasser aufgefangen werden, die Tabelle zum Abwasser zeigt, ab wann.',
     },
     {
-      question: 'Wie reinigen Sie hohe Fenster und Fassaden?',
+      question: 'Braucht es eine Bewilligung, wenn die Hubarbeitsbühne auf dem Trottoir steht?',
       answer:
-        'Das hängt vom Gebäude und vom Zugang ab. Wir klären es bei der Besichtigung und halten in der Offerte fest, wie wir die Flächen erreichen.',
+        'In der Regel ja. Die Stadt Luzern verlangt für die Benutzung öffentlichen Grundes ein Gesuch mit einem vermassten Plan der Fläche, danach folgt die Bewilligung oder eine Begehung. Die Stadt Zug nimmt Gesuche für öffentlichen Grund bei Bauarbeiten digital entgegen, etwa für ein Fassadengerüst. Für eine Hubarbeitsbühne bei einer Reinigung fragen Sie dort beim Baudepartement nach. In anderen Gemeinden gibt die Bauverwaltung Auskunft. Reichen Sie das Gesuch früh ein, damit der Termin hält.',
     },
     {
-      question: 'Müssen die Mieterinnen und Mieter zu Hause sein?',
+      question: 'Was ist Reinwasser?',
       answer:
-        'Für Fenster, die sich nur von innen reinigen lassen, braucht es Zugang zur Wohnung oder zum Büro. Das klären wir bei der Besichtigung, damit Sie die Mieterschaft rechtzeitig informieren können.',
+        'Aufbereitetes Wasser, dem die gelösten Mineralien entzogen sind. Weil nichts zurückbleibt, trocknet es auf dem Glas ohne Kalkflecken. Es fliesst durch wasserführende Teleskopstangen, mit denen sich Scheiben vom Boden aus bis in rund 10 m Höhe reinigen lassen.',
     },
-    { question: 'Was kostet die Reinigung?', answer: answers.kosten },
-    { question: 'In welchen Regionen sind Sie tätig?', answer: answers.gebiet },
-    { question: 'Sind Sie versichert?', answer: answers.versicherung },
   ],
   related: [
-    { path: '/leistungen/unterhaltsreinigung', text: 'Für die regelmässige Reinigung von Liegenschaften und Gewerbeflächen.' },
-    { path: '/leistungen/bueroreinigung', text: 'Für Büros und Praxen, abgestimmt auf Ihre Arbeitszeiten.' },
-    { path: '/leistungen/baureinigung', text: 'Für Glas und Rahmen nach Bau- und Umbauarbeiten.' },
+    { path: '/leistungen/unterhaltsreinigung', text: 'Wenn neben dem Glas auch Treppenhaus und Allgemeinflächen regelmässig gereinigt werden sollen.' },
+    { path: '/leistungen/baureinigung', text: 'Wenn nach Bau oder Umbau Mörtel, Farbe und Etiketten auf Glas und Rahmen haften.' },
+    { path: '/leistungen/bueroreinigung', text: 'Wenn in Büros und Praxen auch Arbeitsplätze, Böden und Sanitärräume gereinigt werden sollen.' },
   ],
   cta: {
     title: 'Offerte für Fenster und Fassade',
-    text: 'Nennen Sie uns Gebäude, Flächen und gewünschten Termin. Wir sehen uns alles vor Ort an und erstellen Ihnen eine Offerte, kostenlos und unverbindlich.',
+    text: 'Schicken Sie uns Adresse, Anzahl Geschosse, ungefähre Zahl der Fenster und ein paar Fotos. Nach der Besichtigung erhalten Sie die Offerte, kostenlos und unverbindlich.',
   },
 }

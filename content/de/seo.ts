@@ -70,8 +70,8 @@ export const pages = {
   },
   '/leistungen/fenster-und-fassadenreinigung': {
     label: 'Fenster- und Fassadenreinigung',
-    title: 'Fenster- und Fassadenreinigung',
-    description: `Reinigung von Fenstern, Glasflächen und Fassaden, auch mit Hochdruck, für Unternehmen und Liegenschaften in ${region}.`,
+    title: 'Fensterreinigung und Fassadenreinigung Luzern',
+    description: 'Fensterreinigung und Fassadenreinigung mit Checkliste und Aushang-Vorlage für Verwaltungen, in Luzern, Zug und Umgebung. Kostenlose Offerte nach Besichtigung.',
   },
   '/leistungen/industrie-und-hallenreinigung': {
     label: 'Industrie- und Hallenreinigung',

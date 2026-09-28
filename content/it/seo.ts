@@ -70,8 +70,8 @@ export const pages = {
   },
   '/leistungen/fenster-und-fassadenreinigung': {
     label: 'Pulizia di vetri e facciate',
-    title: 'Pulizia di vetri e facciate',
-    description: `Pulizia di finestre, vetrate e facciate, anche ad alta pressione, per aziende e stabili nei Cantoni di ${region}.`,
+    title: 'Pulizia di vetri e facciate a Lucerna e Zugo',
+    description: 'Pulizia di vetri e facciate con checklist e modello di avviso agli inquilini, a Lucerna, Zugo e dintorni. Offerta gratuita dopo il sopralluogo.',
   },
   '/leistungen/industrie-und-hallenreinigung': {
     label: 'Pulizia industriale e di capannoni',

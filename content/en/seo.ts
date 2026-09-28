@@ -70,8 +70,8 @@ export const pages: Dictionary['pages'] = {
   },
   '/leistungen/fenster-und-fassadenreinigung': {
     label: 'Window and facade cleaning',
-    title: 'Window and facade cleaning',
-    description: `Cleaning of windows, glass and facades, including high-pressure cleaning, for businesses and properties in ${region}.`,
+    title: 'Window cleaning and facade cleaning in Lucerne',
+    description: 'Window cleaning and facade cleaning with a checklist and a tenant notice template, in Lucerne, Zug and beyond. Free quote after a site visit.',
   },
   '/leistungen/industrie-und-hallenreinigung': {
     label: 'Industrial and warehouse cleaning',
