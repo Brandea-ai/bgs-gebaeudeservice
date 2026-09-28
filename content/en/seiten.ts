@@ -260,7 +260,7 @@ export const contact: Seiten['contact'] = {
   brief: {
     title: 'What to include in your enquiry',
     items: [
-      { key: 'rolle' as const, title: 'Who is asking', text: 'property management, condominium owners’ association, owner, company or private client with a villa or second home.' },
+      { key: 'rolle' as const, title: 'Who is asking', text: 'property management, condominium owners’ association, owner, company or private client with a villa, second home, yacht or jet.' },
       { key: 'objekt' as const, title: 'Property', text: 'office, practice, apartment building, hall or villa.' },
       { key: 'ort' as const, title: 'Location', text: 'address or postcode.' },
       { key: 'groesse' as const, title: 'Size', text: 'area in m², number of flats, floors or properties.' },
@@ -271,12 +271,12 @@ export const contact: Seiten['contact'] = {
     ],
   },
   steps: {
-    title: 'What happens after you send it',
+    title: 'What happens after you send your enquiry',
     items: [
       { title: 'Reply', text: 'Our managing director reads your enquiry personally and proposes a date for the site visit.' },
-      { title: 'Site visit', text: 'We walk through all the rooms and areas concerned with you or your contact person. This shows us their condition, materials and access.' },
-      { title: 'Quote', text: 'The quote comes in writing. It lists the rooms and tasks, how often we carry them out and at what times.' },
-      { title: 'Start', text: 'Once you accept, the first working day is fixed. Times and access to the property are then agreed with you.' },
+      { title: 'Site visit', text: 'We walk through all the rooms and areas concerned with you or your contact person. That way we see the condition of each area, the materials and how to get in.' },
+      { title: 'Quote', text: 'We send you the quote in writing. It lists the rooms and tasks, how often we carry them out and at what times.' },
+      { title: 'Start', text: 'Once you accept, we set the date of the first job. By then, times and access to the property have been agreed with you.' },
     ] satisfies Step[] as Step[],
   },
   visit: {
@@ -289,25 +289,23 @@ export const contact: Seiten['contact'] = {
       'The times you want and the start date',
       'A contact person who can answer questions about use and access',
     ],
-    note: 'The site visit is free of charge, and the quote follows in writing.',
   },
   map: {
     title: 'How to find us',
     text: `Our head office is in ${company.address.city}. From here we travel to your property anywhere in our service area.`,
   },
   faq: [
-    { question: 'How quickly will I receive the quote?', answer: 'First we arrange the date for the site visit with you. We then write the quote based on what we have seen on site. If plans or a list of areas are ready at the appointment, we need to ask fewer questions afterwards.' },
+    { question: 'How is the quote prepared?', answer: 'First we arrange the date for the site visit with you. We then write the quote based on what we have seen on site.' },
     { question: 'What does the site visit cost me?', answer: 'Nothing. You pay neither for the site visit nor for the quote, and the quote does not commit you to anything.' },
-    { question: 'Can I send plans or photos?', answer: `Yes, by email to ${company.email}. The form does not accept files. Simply mention in your enquiry that documents will follow by email.` },
     { question: 'Do you also work outside Lucerne?', answer: `Yes. Our area covers five entire cantons: ${cantons}. All services are available there on the same terms. You will find places and the map on the [Service area](/einzugsgebiet) page.` },
-    { question: 'Is damage during the work insured?', answer: 'Yes, through our business liability insurance. The sum insured is CHF 10 million.' },
+    { question: 'Do you have business liability insurance?', answer: 'Yes, with a sum insured of CHF 10 million.' },
     { question: 'Do you use environmentally friendly products?', answer: 'On request, yes. It is best to mention it in your enquiry under ‘Property and request’.' },
     { question: 'In which language can I make an enquiry?', answer: 'In German, English, French or Italian. We advise you in your language.' },
-    { question: 'Is short notice possible?', answer: 'In that case, call us rather than writing. On the phone you find out fastest whether and when a job is possible.' },
+    { question: 'Is short notice possible?', answer: 'In that case, call us rather than writing. By phone you will find out fastest whether and when we can do the job.' },
   ],
   cta: {
     title: 'Request a cleaning quote',
-    text: 'The quote needs these details. Leave open anything you do not know yet.',
+    text: 'We need these details for the quote. Leave blank anything you do not know yet.',
   },
 }
 

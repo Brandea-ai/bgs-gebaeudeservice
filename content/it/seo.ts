@@ -126,7 +126,7 @@ export const pages = {
   '/kontakt': {
     label: 'Contatto',
     title: 'Contatto e offerta',
-    description: `Offerta per le pulizie del Suo immobile a Lucerna, Zugo e dintorni: risposta entro 24 ore nei giorni feriali, sopralluogo gratuito. Tel. ${company.phone.display}.`,
+    description: `Offerta per le pulizie a Lucerna, Zugo e dintorni: risposta entro 24 ore nei giorni feriali, sopralluogo gratuito. Ci chiami al numero ${company.phone.display}.`,
   },
   '/impressum': {
     label: 'Note legali',

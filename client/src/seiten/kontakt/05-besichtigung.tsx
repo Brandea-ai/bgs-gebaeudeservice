@@ -9,8 +9,9 @@ import { kontaktKontext, type KontaktProps } from "./kontext";
  *
  * Daneben das Bildband, das früher im Kontaktbereich jeder Seite stand und es
  * nur noch hier gibt (Audit visuell, Umbau 3): Hände haken im Materiallager
- * eine Checkliste ab. Auf dem Glas der Schlusssatz des Bausteins statt der
- * Antwortzeit, die der Kopf dieser Seite schon nennt.
+ * eine Checkliste ab. Ohne Glas mit Text: Dass Besichtigung und Offerte nichts
+ * kosten und die Offerte schriftlich kommt, sagen Ablauf und Fragen schon
+ * (Prüfbefund K8).
  */
 export default function KontaktBesichtigung(props: KontaktProps) {
   const { contact } = kontaktKontext(props);
@@ -29,17 +30,13 @@ export default function KontaktBesichtigung(props: KontaktProps) {
             ))}
           </ul>
         </div>
-        <div className="relative min-w-0 overflow-hidden rounded-[3px] lg:col-span-5 lg:col-start-8">
+        <div className="min-w-0 overflow-hidden rounded-[3px] lg:col-span-5 lg:col-start-8">
           <ImageSlot
             image="detail-facility-services"
             lang={props.lang}
             sizes="(min-width: 1024px) 36vw, 100vw"
             className="aspect-[16/10] w-full lg:aspect-[4/5]"
           />
-          <p className="glass-dark on-dark absolute bottom-4 left-4 right-4 flex items-center gap-3 rounded-[3px] px-4 py-3 text-[0.9375rem] font-semibold text-white">
-            <CheckCircle weight="duotone" className="size-6 shrink-0 text-white" aria-hidden="true" />
-            {visit.note}
-          </p>
         </div>
       </div>
     </section>

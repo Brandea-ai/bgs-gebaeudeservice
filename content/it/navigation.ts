@@ -111,7 +111,7 @@ const contactForm: NavDictionary['contactForm'] = {
     Stockwerkeigentümerschaft: 'Comunione dei proprietari per piani',
     Eigentümer: 'Proprietaria o proprietario',
     Unternehmen: 'Azienda',
-    'Premium-Privatkunde': 'Cliente privato con villa, residenza o residenza secondaria',
+    'Premium-Privatkunde': 'Cliente privato (villa, residenza secondaria, yacht o jet)',
   },
   premiumPlaceholders: {
     '/premium': {
@@ -123,7 +123,7 @@ const contactForm: NavDictionary['contactForm'] = {
       message: 'Ad esempio: villa sul lago di Zugo, parquet e pietra naturale, ogni settimana durante la Sua assenza',
     },
     '/premium/privatjet': {
-      size: 'ad es. modello di aereo',
+      size: 'ad es. modello, lunghezza cabina',
       message: 'Ad esempio: cabina e galley dopo ogni volo, luogo di stazionamento dell’aereo, orari desiderati',
     },
     '/premium/yacht': {

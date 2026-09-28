@@ -296,7 +296,7 @@ export const contact = {
   brief: {
     title: 'Was in die Anfrage gehört',
     items: [
-      { key: 'rolle', title: 'Wer anfragt', text: 'Verwaltung, Stockwerkeigentümerschaft, Eigentümer, Unternehmen oder Privatkunde mit Villa oder Zweitwohnung.' },
+      { key: 'rolle', title: 'Wer anfragt', text: 'Verwaltung, Stockwerkeigentümerschaft, Eigentümer, Unternehmen oder Privatkunde mit Villa, Zweitwohnung, Yacht oder Jet.' },
       { key: 'objekt', title: 'Objekt', text: 'Büro, Praxis, Mehrfamilienhaus, Halle oder Villa.' },
       { key: 'ort', title: 'Ort', text: 'Adresse oder Postleitzahl.' },
       { key: 'groesse', title: 'Grösse', text: 'Fläche in m², Anzahl Wohnungen, Stockwerke oder Liegenschaften.' },
@@ -339,7 +339,6 @@ export const contact = {
       'Die gewünschten Zeiten und den Starttermin',
       'Eine Ansprechperson, die Fragen zu Nutzung und Zugang beantworten kann',
     ],
-    note: 'Die Besichtigung ist kostenlos, die Offerte folgt schriftlich.',
   },
   map: {
     title: 'So finden Sie uns',
@@ -347,24 +346,21 @@ export const contact = {
   },
   faq: [
     {
-      question: 'Wie schnell erhalte ich die Offerte?',
-      answer: 'Zuerst vereinbaren wir mit Ihnen den Termin für die Besichtigung. Die Offerte schreiben wir danach, auf Grundlage dessen, was wir vor Ort gesehen haben. Liegen Pläne oder eine Flächenliste schon beim Termin bereit, müssen wir danach weniger nachfragen.',
+      question: 'Wie entsteht die Offerte?',
+      answer: 'Zuerst vereinbaren wir mit Ihnen den Termin für die Besichtigung. Die Offerte schreiben wir danach, auf Grundlage dessen, was wir vor Ort gesehen haben.',
     },
     {
       question: 'Was kostet mich die Besichtigung?',
       answer: 'Nichts. Sie zahlen weder für die Besichtigung noch für die Offerte, und die Offerte verpflichtet Sie zu nichts.',
     },
     {
-      question: 'Kann ich Pläne oder Fotos mitschicken?',
-      answer: `Ja, per E-Mail an ${company.email}. Das Formular nimmt keine Dateien an. Schreiben Sie in Ihrer Anfrage einfach dazu, dass Unterlagen per E-Mail folgen.`,
-    },
-    {
       question: 'Kommen Sie auch zu Objekten ausserhalb von Luzern?',
       answer: `Ja. Zu unserem Gebiet gehören fünf ganze Kantone: ${cantonList}. Alle Leistungen gibt es dort zu denselben Bedingungen. Orte und Karte finden Sie auf der Seite [Einzugsgebiet](/einzugsgebiet).`,
     },
+    // Nur die belegte Deckungssumme (E18). Welche Schäden die Police deckt (etwa Bearbeitungsschäden), ist offen: Prüfbefund K-E18-1
     {
-      question: 'Sind Schäden bei der Arbeit versichert?',
-      answer: 'Ja, über unsere Betriebshaftpflichtversicherung. Die Deckungssumme beträgt CHF 10 Mio.',
+      question: 'Haben Sie eine Betriebshaftpflichtversicherung?',
+      answer: 'Ja, mit einer Deckungssumme von CHF 10 Mio.',
     },
     {
       question: 'Arbeiten Sie mit umweltfreundlichen Mitteln?',

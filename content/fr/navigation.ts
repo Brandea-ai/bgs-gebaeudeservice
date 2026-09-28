@@ -109,7 +109,7 @@ export const nav: NavDictionary = {
       Stockwerkeigentümerschaft: 'Communauté de PPE',
       Eigentümer: 'Propriétaire',
       Unternehmen: 'Entreprise',
-      'Premium-Privatkunde': 'Particulier avec villa, résidence ou résidence secondaire',
+      'Premium-Privatkunde': 'Particulier (villa, résidence secondaire, yacht ou jet)',
     },
     premiumPlaceholders: {
       '/premium': {
@@ -121,7 +121,7 @@ export const nav: NavDictionary = {
         message: 'Par exemple : villa au bord du lac de Zoug, parquet et pierre naturelle, chaque semaine pendant votre absence',
       },
       '/premium/privatjet': {
-        size: 'p. ex. modèle d’avion',
+        size: 'p. ex. modèle, longueur de cabine',
         message: 'Par exemple : cabine et galley après chaque vol, lieu de stationnement de l’avion, horaires souhaités',
       },
       '/premium/yacht': {

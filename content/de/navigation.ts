@@ -129,7 +129,7 @@ export const contactForm = {
     Stockwerkeigentümerschaft: 'Stockwerkeigentümerschaft',
     Eigentümer: 'Eigentümerin oder Eigentümer',
     Unternehmen: 'Unternehmen',
-    'Premium-Privatkunde': 'Privatkunde mit Villa, Residenz oder Zweitwohnung',
+    'Premium-Privatkunde': 'Privatkunde (Villa, Zweitwohnung, Yacht oder Jet)',
   } satisfies Record<ContactRole, string>,
   /** Premium-Seiten: eigene Beispiele statt Wohnungen und Büros (Audit visuell, Umbau 2) */
   premiumPlaceholders: {

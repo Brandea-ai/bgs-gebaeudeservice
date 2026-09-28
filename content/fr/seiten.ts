@@ -260,9 +260,9 @@ export const contact = {
     address: { title: 'Adresse', hint: 'C’est notre siège. La visite a lieu chez vous, sur place.', action: 'Vers la carte' },
   },
   brief: {
-    title: 'Ce que contient la demande',
+    title: 'Ce qu’il faut indiquer dans la demande',
     items: [
-      { key: 'rolle' as const, title: 'Qui demande', text: 'gérance, communauté de PPE, propriétaire, entreprise ou particulier avec villa ou résidence secondaire.' },
+      { key: 'rolle' as const, title: 'Qui demande', text: 'gérance, communauté de PPE, propriétaire, entreprise ou particulier avec villa, résidence secondaire, yacht ou jet.' },
       { key: 'objekt' as const, title: 'Bien', text: 'bureau, cabinet, immeuble locatif, halle ou villa.' },
       { key: 'ort' as const, title: 'Lieu', text: 'adresse ou NPA.' },
       { key: 'groesse' as const, title: 'Taille', text: 'surface en m², nombre d’appartements, d’étages ou d’immeubles.' },
@@ -277,13 +277,13 @@ export const contact = {
     items: [
       { title: 'Réponse', text: 'Notre directeur lit lui-même votre demande et vous propose une date pour la visite.' },
       { title: 'Visite', text: 'Avec vous ou votre personne de contact, nous parcourons toutes les pièces et surfaces concernées. Nous voyons ainsi leur état, les matériaux et l’accès.' },
-      { title: 'Devis', text: 'Le devis arrive par écrit. Il indique les pièces et les tâches, à quelle fréquence nous les effectuons et à quels horaires.' },
+      { title: 'Devis', text: 'Nous vous envoyons le devis par écrit. Il indique les pièces et les tâches, à quelle fréquence nous les effectuons et à quels horaires.' },
       { title: 'Début', text: 'Dès votre accord, la date de la première intervention est fixée. Les horaires et l’accès au bien sont alors convenus avec vous.' },
     ] satisfies Step[] as Step[],
   },
   visit: {
     title: 'Préparer la visite',
-    intro: 'Ce que vous tenez prêt pour le rendez-vous sur place :',
+    intro: 'À préparer pour le rendez-vous sur place :',
     items: [
       'L’accès à toutes les pièces à nettoyer ou à entretenir, y compris cave, galetas, buanderie et locaux techniques',
       'Des plans ou une liste des surfaces, s’il y en a',
@@ -291,25 +291,23 @@ export const contact = {
       'Les horaires souhaités et la date de début',
       'Une personne de contact qui peut répondre aux questions sur l’utilisation et l’accès',
     ],
-    note: 'La visite est gratuite, le devis suit par écrit.',
   },
   map: {
     title: 'Comment nous trouver',
     text: `Notre siège se trouve à ${company.address.city}. De là, nous nous rendons à votre bien, dans toute notre zone d’intervention.`,
   },
   faq: [
-    { question: 'En combien de temps reçois-je le devis ?', answer: 'Nous convenons d’abord avec vous de la date de la visite. Nous rédigeons ensuite le devis sur la base de ce que nous avons vu sur place. Si des plans ou une liste des surfaces sont prêts lors du rendez-vous, nous aurons moins de questions à poser ensuite.' },
+    { question: 'Comment le devis est-il établi ?', answer: 'Nous convenons d’abord avec vous de la date de la visite. Nous rédigeons ensuite le devis sur la base de ce que nous avons vu sur place.' },
     { question: 'Combien me coûte la visite ?', answer: 'Rien. Vous ne payez ni la visite ni le devis, et le devis ne vous engage à rien.' },
-    { question: 'Puis-je joindre des plans ou des photos ?', answer: `Oui, par e-mail à ${company.email}. Le formulaire n’accepte pas de fichiers. Indiquez simplement dans votre demande que des documents suivront par e-mail.` },
     { question: 'Intervenez-vous aussi hors de Lucerne ?', answer: `Oui. Notre zone comprend cinq cantons entiers : ${cantonList}. Toutes les prestations y sont proposées aux mêmes conditions. Les lieux et la carte figurent sur la page [Zone d’intervention](/einzugsgebiet).` },
-    { question: 'Les dommages pendant le travail sont-ils assurés ?', answer: 'Oui, par notre assurance responsabilité civile d’entreprise. La somme d’assurance s’élève à CHF 10 millions.' },
+    { question: 'Avez-vous une assurance responsabilité civile d’entreprise ?', answer: 'Oui, avec une somme d’assurance de CHF 10 millions.' },
     { question: 'Travaillez-vous avec des produits écologiques ?', answer: 'Sur demande, oui. Le mieux est de l’indiquer dès votre demande, sous « Bien et demande ».' },
     { question: 'Dans quelle langue puis-je faire ma demande ?', answer: 'En allemand, anglais, français ou italien. Nous vous conseillons dans votre langue.' },
-    { question: 'Est-ce possible à court terme ?', answer: 'Dans ce cas, appelez-nous plutôt que d’écrire. Au téléphone, vous savez le plus vite si et quand une intervention est possible.' },
+    { question: 'Est-ce possible à court terme ?', answer: 'Dans ce cas, appelez-nous plutôt que d’écrire. C’est par téléphone que vous saurez le plus vite si une intervention est possible, et quand.' },
   ],
   cta: {
     title: 'Demander un devis de nettoyage',
-    text: 'Le devis a besoin de ces indications. Ce que vous ne savez pas encore, laissez-le ouvert.',
+    text: 'Ces indications nous servent à établir le devis. Laissez vide ce que vous ne savez pas encore.',
   },
 }
 

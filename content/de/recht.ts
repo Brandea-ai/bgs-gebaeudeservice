@@ -71,7 +71,7 @@ export const datenschutz: LegalContent = {
     {
       title: 'Kontaktformular und E-Mail',
       paragraphs: [
-        'Wenn Sie uns über das Formular schreiben, bearbeiten wir Ihre Angaben: Name, E-Mail-Adresse und Nachricht, freiwillig auch Telefonnummer, gewünschte Leistung, Ort des Objekts und Rhythmus. Wir verwenden sie, um Ihre Anfrage zu beantworten und Ihnen eine Offerte zu erstellen.',
+        'Wenn Sie uns über das Formular schreiben, bearbeiten wir Ihre Angaben: Name, E-Mail-Adresse, wer anfragt (etwa Verwaltung, Unternehmen oder Privatkunde) und Nachricht, freiwillig auch Telefonnummer, gewünschte Leistung, Grösse und Ort des Objekts sowie Rhythmus. Wir verwenden sie, um Ihre Anfrage zu beantworten und Ihnen eine Offerte zu erstellen.',
         `Das Formular wird über den E-Mail-Dienst Resend, Inc., USA, an unser Postfach gesendet. Bis unsere eigene Adresse eingerichtet ist, ist das ${company.email}, das Postfach der Brandea GbR in Deutschland, die diese Website für uns betreibt und die Anfragen an uns weitergibt.`,
         'Zum Schutz vor Missbrauch hält der Server Ihre IP-Adresse kurz im Arbeitsspeicher, um zu viele Anfragen in kurzer Zeit zu erkennen. Sie wird dabei nicht dauerhaft gespeichert.',
         'Wir bewahren Ihre Anfrage auf, solange wir sie für die Bearbeitung und mögliche Rückfragen brauchen. Kommt ein Auftrag zustande, gelten die gesetzlichen Aufbewahrungsfristen.',

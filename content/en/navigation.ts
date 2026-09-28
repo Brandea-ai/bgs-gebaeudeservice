@@ -108,7 +108,7 @@ export const nav: NavDictionary = {
       Stockwerkeigentümerschaft: 'Condominium owners’ association',
       Eigentümer: 'Owner',
       Unternehmen: 'Company',
-      'Premium-Privatkunde': 'Private client with a villa, residence or second home',
+      'Premium-Privatkunde': 'Private client (villa, second home, yacht or jet)',
     },
     premiumPlaceholders: {
       '/premium': {

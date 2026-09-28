@@ -73,7 +73,7 @@ export const datenschutz: LegalContent = {
     {
       title: 'Formulaire de contact et e-mail',
       paragraphs: [
-        'Lorsque vous nous écrivez au moyen du formulaire, nous traitons vos indications : nom, adresse e-mail et message, ainsi que, de manière facultative, numéro de téléphone, prestation souhaitée, lieu du bien et fréquence. Nous les utilisons pour répondre à votre demande et établir votre devis.',
+        'Lorsque vous nous écrivez au moyen du formulaire, nous traitons vos indications : nom, adresse e-mail, qui fait la demande (par exemple gérance, entreprise ou particulier) et message, ainsi que, de manière facultative, numéro de téléphone, prestation souhaitée, taille et lieu du bien et fréquence. Nous les utilisons pour répondre à votre demande et établir votre devis.',
         `Le formulaire est envoyé à notre boîte de réception au moyen du service d’e-mail Resend, Inc., États-Unis. Jusqu’à la mise en place de notre propre adresse, il s’agit de ${company.email}, la boîte de réception de Brandea GbR, en Allemagne. Brandea GbR exploite ce site web pour nous et nous transmet les demandes.`,
         'Pour prévenir les abus, le serveur conserve brièvement votre adresse IP en mémoire vive afin de détecter un nombre excessif de demandes en peu de temps. Elle n’est pas enregistrée durablement.',
         'Nous conservons votre demande aussi longtemps que nous en avons besoin pour la traiter et pour d’éventuelles questions complémentaires. Si un mandat est conclu, les délais légaux de conservation s’appliquent.',

@@ -189,9 +189,10 @@ export default function ContactForm({
         premium ? "border-brass-dark/25" : "border-line"
       }`}
     >
-      <div className="grid gap-x-6 gap-y-6 md:grid-cols-2">
+      {/* Von 1024 bis 1279 px steht die Karte in der schmalen Spalte neben der Randspalte: eine Spalte, sonst passen die Beispiele nicht ins Feld */}
+      <div className="grid gap-x-6 gap-y-6 md:grid-cols-2 lg:max-xl:grid-cols-1">
         {/* Sie sind: Pflicht, ordnet die Anfrage ein (E33, E34) */}
-        <fieldset className="min-w-0 md:col-span-2">
+        <fieldset className="min-w-0 md:col-span-2 lg:max-xl:col-span-1">
           <legend className={labelClass}>{form.fields.role.label}</legend>
           <div className="flex flex-wrap gap-2.5">
             {CONTACT_ROLES.map(value => (
@@ -290,7 +291,7 @@ export default function ContactForm({
             ))}
           </select>
         </div>
-        <div className="md:col-span-2">
+        <div className="md:col-span-2 lg:max-xl:col-span-1">
           <label htmlFor="message" className={labelClass}>
             {form.fields.message.label}
           </label>
@@ -318,7 +319,7 @@ export default function ContactForm({
         </div>
       </div>
 
-      <div className="mt-6 grid gap-x-6 gap-y-6 border-t border-line pt-6 md:grid-cols-2 xl:grid-cols-3">
+      <div className="mt-6 grid gap-x-6 gap-y-6 border-t border-line pt-6 md:grid-cols-2 lg:max-xl:grid-cols-1 xl:grid-cols-3">
         <div>
           <label htmlFor="name" className={labelClass}>
             {form.fields.name.label}

@@ -1,15 +1,19 @@
-import { ArrowRight, DeviceMobile, Envelope, MapPin, Phone } from "@phosphor-icons/react/dist/ssr";
+import { ArrowRight, Clock, DeviceMobile, Envelope, MapPin, Phone } from "@phosphor-icons/react/dist/ssr";
 import type { Icon } from "@phosphor-icons/react";
 import SectionHead from "@/components/SectionHead";
+import { navDicts } from "../../../../content/navigation";
 import { company } from "../../../../shared/company";
 import { kontaktKontext, type KontaktProps } from "./kontext";
 
-type Line = { icon: Icon; label: string; value: string; href: string };
+/** Zeile ohne href ist reine Angabe (Erreichbarkeit): kein Link, kein Pfeil */
+type Line = { icon: Icon; label: string; value: string; href?: string };
 type Channel = { key: string; icon: Icon; title: string; hint: string; action: string; lines: Line[] };
 
 /**
- * Kontaktwege (E80, Audit visuell /kontakt und Umbau 7): Telefon mit Festnetz
- * und Mobil in einer Karte, E-Mail, Adresse. Das Formular steht direkt darunter
+ * Kontaktwege (E80, Audit visuell /kontakt und Umbau 7): Telefon mit Festnetz,
+ * Mobil und den Zeiten, zu denen wir erreichbar sind, in einer Karte, E-Mail,
+ * Adresse. Die Zeiten stehen hier, weil die Randspalte des Formulars auf
+ * /kontakt keine Kontaktwege zeigt (Prüfbefund K2). Das Formular steht direkt darunter
  * und braucht hier keine eigene Karte mehr.
  *
  * Ab 640 px drei gleich hohe Karten mit Haarlinie statt Schatten, mit Hinweis,
@@ -19,6 +23,7 @@ type Channel = { key: string; icon: Icon; title: string; hint: string; action: s
  */
 export default function KontaktKanaele(props: KontaktProps) {
   const { contact } = kontaktKontext(props);
+  const { chrome } = navDicts[props.lang];
   const c = contact.channels;
   const address = `${company.address.street}, ${company.address.postalCode} ${company.address.city}`;
   const channels: Channel[] = [
@@ -29,6 +34,7 @@ export default function KontaktKanaele(props: KontaktProps) {
       lines: [
         { icon: Phone, label: c.phone.title, value: company.phone.display, href: company.phone.href },
         { icon: DeviceMobile, label: c.phone.mobile, value: company.mobile.display, href: company.mobile.href },
+        { icon: Clock, label: chrome.hours, value: chrome.hoursValue },
       ],
     },
     {
@@ -50,7 +56,7 @@ export default function KontaktKanaele(props: KontaktProps) {
         <SectionHead id="kontaktwege-titel" title={c.title} />
         <ul className="mt-8 border-t border-line sm:mt-12 sm:grid sm:grid-cols-3 sm:gap-6 sm:border-t-0">
           {channels.map(({ key, icon: Glyph, title, hint, action, lines }) => {
-            const single = lines.length === 1;
+            const single = lines.filter(line => line.href).length === 1;
             return (
               <li
                 key={key}
@@ -59,31 +65,45 @@ export default function KontaktKanaele(props: KontaktProps) {
                 <Glyph weight="duotone" className="hidden size-9 text-signal sm:block" aria-hidden="true" />
                 <h3 className="t-eyebrow mt-6 hidden text-ink-600 sm:block">{title}</h3>
                 <div className="sm:mt-2">
-                  {lines.map((line, index) => (
-                    <a
-                      key={line.href}
-                      href={line.href}
-                      className={`group flex min-h-16 items-center gap-4 border-b border-line py-3 sm:min-h-11 sm:border-0 sm:py-1 ${
-                        single ? "sm:after:absolute sm:after:inset-0" : ""
-                      }`}
-                    >
-                      <line.icon weight="duotone" className="size-6 shrink-0 text-signal sm:hidden" aria-hidden="true" />
-                      <span className="min-w-0 flex-1">
-                        {/* Mobil trägt jede Zeile ihre Bezeichnung; in der Karte nennt die Kennzeile den Weg */}
-                        <span className={`block text-sm font-semibold text-mute ${index === 0 ? "sm:hidden" : "sm:mt-2"}`}>
-                          {line.label}
+                  {lines.map((line, index) => {
+                    const text = (
+                      <>
+                        <line.icon weight="duotone" className="size-6 shrink-0 text-signal sm:hidden" aria-hidden="true" />
+                        <span className="min-w-0 flex-1">
+                          {/* Mobil trägt jede Zeile ihre Bezeichnung; in der Karte nennt die Kennzeile den Weg */}
+                          <span className={`block text-sm font-semibold text-mute ${index === 0 ? "sm:hidden" : "sm:mt-2"}`}>
+                            {line.label}
+                          </span>
+                          <span
+                            className={`block break-words text-[1.0625rem] font-bold leading-snug tabular-nums text-ink ${
+                              !line.href
+                                ? "sm:text-base"
+                                : `transition-colors group-hover:text-signal sm:font-display ${
+                                    index === 0 ? "sm:text-[1.375rem] md:text-[1.5rem]" : "sm:text-[1.125rem]"
+                                  } ${single ? "sm:group-hover/karte:text-signal" : ""}`
+                            }`}
+                          >
+                            {line.value}
+                          </span>
                         </span>
-                        <span
-                          className={`block break-words text-[1.0625rem] font-bold leading-snug tabular-nums text-ink transition-colors group-hover:text-signal sm:font-display ${
-                            index === 0 ? "sm:text-[1.375rem] md:text-[1.5rem]" : "sm:text-[1.125rem]"
-                          } ${single ? "sm:group-hover/karte:text-signal" : ""}`}
-                        >
-                          {line.value}
-                        </span>
-                      </span>
-                      <ArrowRight weight="duotone" className="size-5 shrink-0 text-signal sm:hidden" aria-hidden="true" />
-                    </a>
-                  ))}
+                      </>
+                    );
+                    const row = "flex min-h-16 items-center gap-4 border-b border-line py-3 sm:min-h-11 sm:border-0 sm:py-1";
+                    return line.href ? (
+                      <a
+                        key={line.label}
+                        href={line.href}
+                        className={`group ${row} ${single ? "sm:after:absolute sm:after:inset-0" : ""}`}
+                      >
+                        {text}
+                        <ArrowRight weight="duotone" className="size-5 shrink-0 text-signal sm:hidden" aria-hidden="true" />
+                      </a>
+                    ) : (
+                      <p key={line.label} className={row}>
+                        {text}
+                      </p>
+                    );
+                  })}
                 </div>
                 <p className="mt-3 hidden max-w-[46ch] font-medium leading-relaxed text-ink-600 sm:block">{hint}</p>
                 {single && (

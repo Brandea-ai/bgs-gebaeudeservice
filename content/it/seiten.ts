@@ -260,7 +260,7 @@ export const contact = {
   brief: {
     title: 'Che cosa mettere nella richiesta',
     items: [
-      { key: 'rolle' as const, title: 'Chi chiede', text: 'amministrazione immobiliare, comunione dei proprietari per piani, proprietario, azienda o cliente privato con villa o residenza secondaria.' },
+      { key: 'rolle' as const, title: 'Chi fa la richiesta', text: 'amministrazione immobiliare, comunione dei proprietari per piani, proprietario, azienda o cliente privato con villa, residenza secondaria, yacht o jet.' },
       { key: 'objekt' as const, title: 'Immobile', text: 'ufficio, studio, casa plurifamiliare, capannone o villa.' },
       { key: 'ort' as const, title: 'Luogo', text: 'indirizzo o NPA.' },
       { key: 'groesse' as const, title: 'Dimensioni', text: 'superficie in m², numero di appartamenti, piani o stabili.' },
@@ -275,7 +275,7 @@ export const contact = {
     items: [
       { title: 'Risposta', text: 'Il gerente legge personalmente la Sua richiesta e Le propone una data per il sopralluogo.' },
       { title: 'Sopralluogo', text: 'Con Lei o con la Sua persona di contatto percorriamo tutti i locali e le superfici interessati. Così vediamo stato, materiali e accesso.' },
-      { title: 'Offerta', text: 'L’offerta arriva per iscritto. Indica locali e compiti, con quale frequenza li svolgiamo e in quali orari.' },
+      { title: 'Offerta', text: 'Le inviamo l’offerta per iscritto. Indica locali e compiti, con quale frequenza li svolgiamo e in quali orari.' },
       { title: 'Inizio', text: 'Con la Sua conferma è fissato il primo giorno d’intervento. Orari e accesso all’immobile sono allora concordati con Lei.' },
     ] satisfies Step[] as Step[],
   },
@@ -289,25 +289,23 @@ export const contact = {
       'Gli orari desiderati e la data di inizio',
       'Una persona di contatto che possa rispondere a domande su utilizzo e accesso',
     ],
-    note: 'Il sopralluogo è gratuito, l’offerta segue per iscritto.',
   },
   map: {
     title: 'Come trovarci',
     text: `La nostra sede è a ${company.address.city}. Da qui raggiungiamo il Suo immobile in tutta la nostra zona d’intervento.`,
   },
   faq: [
-    { question: 'Quanto tempo ci vuole per ricevere l’offerta?', answer: 'Prima fissiamo con Lei la data del sopralluogo. Poi redigiamo l’offerta sulla base di ciò che abbiamo visto sul posto. Se piante o un elenco delle superfici sono pronti già all’appuntamento, dopo dobbiamo fare meno domande.' },
+    { question: 'Come viene allestita l’offerta?', answer: 'Prima fissiamo con Lei la data del sopralluogo. Poi redigiamo l’offerta sulla base di ciò che abbiamo visto sul posto.' },
     { question: 'Quanto mi costa il sopralluogo?', answer: 'Niente. Non paga né il sopralluogo né l’offerta, e l’offerta non La impegna a nulla.' },
-    { question: 'Posso inviare piante o foto?', answer: `Sì, per e-mail a ${company.email}. Il modulo non accetta file. Scriva semplicemente nella richiesta che i documenti seguiranno per e-mail.` },
     { question: 'Venite anche fuori da Lucerna?', answer: `Sì. La nostra zona comprende cinque Cantoni interi: ${cantonListIt}. Tutti i servizi vi sono offerti alle stesse condizioni. Località e cartina si trovano alla pagina [Zona d’intervento](/einzugsgebiet).` },
-    { question: 'I danni durante il lavoro sono assicurati?', answer: 'Sì, tramite la nostra assicurazione di responsabilità civile aziendale. La somma assicurata è di CHF 10 milioni.' },
+    { question: 'Avete un’assicurazione di responsabilità civile aziendale?', answer: 'Sì, con una somma assicurata di CHF 10 milioni.' },
     { question: 'Lavorate con prodotti ecologici?', answer: 'Su richiesta sì. Lo indichi preferibilmente già nella richiesta, alla voce «Immobile e richiesta».' },
     { question: 'In quale lingua posso fare la richiesta?', answer: 'In tedesco, inglese, francese o italiano. La consigliamo nella Sua lingua.' },
-    { question: 'È possibile anche a breve termine?', answer: 'In questo caso ci telefoni invece di scrivere. Al telefono sa più rapidamente se e quando è possibile un intervento.' },
+    { question: 'È possibile anche a breve termine?', answer: 'In questo caso ci telefoni invece di scrivere. Al telefono saprà prima se e quando possiamo intervenire.' },
   ],
   cta: {
     title: 'Richiedere un’offerta per le pulizie',
-    text: 'L’offerta ha bisogno di queste indicazioni. Ciò che ancora non sa, lo lasci aperto.',
+    text: 'Queste indicazioni ci servono per l’offerta. Lasci vuoto ciò che non sa ancora.',
   },
 }
 
