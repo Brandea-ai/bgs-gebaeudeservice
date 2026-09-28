@@ -87,16 +87,47 @@ export const nav: NavDictionary = {
   },
   contactForm: {
     title: 'Demander un devis',
-    intro: `Décrivez-nous le bien et votre demande. Nous vous répondons ${responseTime} et convenons de la visite, gratuitement et sans engagement.`,
+    intro: 'Décrivez-nous le bien et votre demande. Ces indications nous permettent de préparer la visite.',
     choose: 'Veuillez choisir…',
     fields: {
+      role: { label: 'Vous êtes *' },
       name: { label: 'Nom *', placeholder: 'Vos prénom et nom' },
       email: { label: 'E-mail *', placeholder: 'nom@entreprise.ch' },
       phone: { label: 'Téléphone', placeholder: 'Votre numéro de téléphone' },
       service: { label: 'Prestation souhaitée' },
+      size: { label: 'Taille du bien', placeholder: 'p. ex. 12 appartements ou 800 m²' },
       location: { label: 'Lieu ou NPA du bien', placeholder: 'p. ex. 6300 Zoug' },
       frequency: { label: 'Fréquence souhaitée' },
-      message: { label: 'Bien et demande *', placeholder: 'Par exemple : type de bien, surface approximative ou nombre d’appartements, fréquence souhaitée et date de début' },
+      message: {
+        label: 'Bien et demande *',
+        placeholder: 'Par exemple : cage d’escalier et buanderie de deux immeubles locatifs, chaque semaine, dès janvier',
+        hint: 'Le plus simple pour les plans, listes de surfaces ou photos est de nous les envoyer par e-mail à',
+      },
+    },
+    roleOptions: {
+      Verwaltung: 'Gérance',
+      Stockwerkeigentümerschaft: 'Communauté de PPE',
+      Eigentümer: 'Propriétaire',
+      Unternehmen: 'Entreprise',
+      'Premium-Privatkunde': 'Particulier avec villa, résidence ou résidence secondaire',
+    },
+    premiumPlaceholders: {
+      '/premium': {
+        size: 'p. ex. villa, 400 m² habitables',
+        message: 'Par exemple : résidence secondaire au bord du lac, entretien pendant votre absence, premier rendez-vous au printemps',
+      },
+      '/premium/luxusimmobilien': {
+        size: 'p. ex. villa, 400 m² sur 3 niveaux',
+        message: 'Par exemple : villa au bord du lac de Zoug, parquet et pierre naturelle, chaque semaine pendant votre absence',
+      },
+      '/premium/privatjet': {
+        size: 'p. ex. modèle d’avion',
+        message: 'Par exemple : cabine et galley après chaque vol, lieu de stationnement de l’avion, horaires souhaités',
+      },
+      '/premium/yacht': {
+        size: 'p. ex. yacht à moteur de 14 m',
+        message: 'Par exemple : place d’amarrage sur le lac des Quatre-Cantons, nettoyage avant le début de la saison et après des événements à bord',
+      },
     },
     serviceOptions: [
       {
@@ -141,10 +172,18 @@ export const nav: NavDictionary = {
     sending: 'Envoi en cours…',
     success: `Merci, nous avons bien reçu votre demande. Nous vous répondons ${responseTime} et convenons avec vous d’une date pour la visite. En cas d’urgence, vous nous joignez au ${company.phone.display}.`,
     nextTitle: "La suite",
-    nextSteps: ["Nous vous répondons sous 24 heures les jours ouvrables.", "Nous visitons l'objet sur place, gratuitement.", "Vous recevez une offre écrite."],
+    nextSteps: [`Nous vous répondons ${responseTime}.`, 'Nous visitons le bien sur place, gratuitement.', 'Vous recevez un devis écrit.'],
+    nextStepPlain: 'Nous vous répondons et convenons du rendez-vous.',
+    band: {
+      title: 'Des questions ou un devis ?',
+      text: 'Appelez-nous, écrivez-nous ou utilisez le formulaire de la page de contact.',
+      action: 'Vers le formulaire',
+    },
+    mapLink: 'Vers la carte',
     successTitle: 'Demande reçue',
     errors: {
       required: 'Veuillez remplir ce champ.',
+      role: 'Veuillez indiquer qui fait la demande.',
       email: 'Veuillez saisir une adresse e-mail valable.',
       consent: 'Veuillez confirmer la déclaration de protection des données afin que nous puissions traiter votre demande.',
       summary: 'Veuillez vérifier les champs signalés.',
@@ -170,7 +209,7 @@ export const nav: NavDictionary = {
     megaText: 'Nous visitons votre bien et établissons un devis écrit, gratuit et sans engagement.',
     premiumTeaser: 'Nettoyage et entretien discrets pour villas, jets privés et yachts.',
     heroLanguages: 'Conseil dans votre langue',
-    faqMore: 'Votre question n’y figure pas ? Appelez-nous ou écrivez-nous, nous répondons dans les 24 heures les jours ouvrables.',
+    faqMore: 'Votre question n’y figure pas ? Appelez-nous ou écrivez-nous.',
     phone: 'Téléphone',
     email: 'E-mail',
     address: 'Adresse',

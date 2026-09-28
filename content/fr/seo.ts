@@ -126,7 +126,7 @@ export const pages = {
   '/kontakt': {
     label: 'Contact',
     title: 'Contact et devis',
-    description: `Appelez-nous au ${company.phone.display} ou écrivez-nous. Devis gratuit et sans engagement sur place, réponse dans les 24 heures les jours ouvrables.`,
+    description: `Devis de nettoyage pour votre bien à Lucerne, Zoug et environs : réponse dans les 24 heures les jours ouvrables, visite gratuite. Tél. ${company.phone.display}.`,
   },
   '/impressum': {
     label: 'Mentions légales',

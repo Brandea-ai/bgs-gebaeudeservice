@@ -89,16 +89,47 @@ const footer: NavDictionary['footer'] = {
 /** Modulo di contatto nel piè di pagina. I valori (value) restano in tedesco per l’e-mail. */
 const contactForm: NavDictionary['contactForm'] = {
   title: 'Richiedere un’offerta',
-  intro: `Ci descriva l’immobile e la Sua richiesta. La contattiamo ${responseTime} e fissiamo il sopralluogo, gratuitamente e senza impegno.`,
+  intro: 'Ci descriva l’immobile e la Sua richiesta. Con queste indicazioni prepariamo il sopralluogo.',
   choose: 'Selezioni...',
   fields: {
+    role: { label: 'Lei è *' },
     name: { label: 'Nome *', placeholder: 'Nome e cognome' },
     email: { label: 'E-mail *', placeholder: 'nome@azienda.ch' },
     phone: { label: 'Telefono', placeholder: 'Il Suo numero di telefono' },
     service: { label: 'Servizio desiderato' },
+    size: { label: 'Dimensioni dell’immobile', placeholder: 'ad es. 12 appartamenti o 800 m²' },
     location: { label: 'Luogo dell’intervento (località o NPA)', placeholder: 'ad es. 6300 Zugo' },
     frequency: { label: 'Cadenza desiderata' },
-    message: { label: 'Immobile e richiesta *', placeholder: 'Ad esempio: tipo di immobile, superficie approssimativa o numero di appartamenti, cadenza desiderata e data di inizio' },
+    message: {
+      label: 'Immobile e richiesta *',
+      placeholder: 'Ad esempio: vano scala e lavanderia di due case plurifamiliari, ogni settimana, da gennaio',
+      hint: 'Piante, elenchi delle superfici o foto ce li invii preferibilmente per e-mail a',
+    },
+  },
+  roleOptions: {
+    Verwaltung: 'Amministrazione immobiliare',
+    Stockwerkeigentümerschaft: 'Comunione dei proprietari per piani',
+    Eigentümer: 'Proprietaria o proprietario',
+    Unternehmen: 'Azienda',
+    'Premium-Privatkunde': 'Cliente privato con villa, residenza o residenza secondaria',
+  },
+  premiumPlaceholders: {
+    '/premium': {
+      size: 'ad es. villa, 400 m² abitabili',
+      message: 'Ad esempio: residenza secondaria sul lago, cura durante la Sua assenza, primo appuntamento in primavera',
+    },
+    '/premium/luxusimmobilien': {
+      size: 'ad es. villa, 400 m² su 3 piani',
+      message: 'Ad esempio: villa sul lago di Zugo, parquet e pietra naturale, ogni settimana durante la Sua assenza',
+    },
+    '/premium/privatjet': {
+      size: 'ad es. modello di aereo',
+      message: 'Ad esempio: cabina e galley dopo ogni volo, luogo di stazionamento dell’aereo, orari desiderati',
+    },
+    '/premium/yacht': {
+      size: 'ad es. yacht a motore di 14 m',
+      message: 'Ad esempio: ormeggio sul lago dei Quattro Cantoni, pulizia prima dell’inizio della stagione e dopo eventi a bordo',
+    },
   },
   serviceOptions: [
     {
@@ -143,10 +174,18 @@ const contactForm: NavDictionary['contactForm'] = {
   sending: 'Invio in corso...',
   success: `Grazie, la Sua richiesta ci è pervenuta. La contattiamo ${responseTime} e fissiamo con Lei una data per il sopralluogo. Se ha urgenza, ci raggiunge al numero ${company.phone.display}.`,
   nextTitle: "Come procediamo",
-  nextSteps: ["Rispondiamo entro 24 ore nei giorni lavorativi.", "Visitiamo l'immobile sul posto, gratuitamente.", "Riceve un'offerta scritta."],
+  nextSteps: [`La contattiamo ${responseTime}.`, 'Visitiamo l’immobile sul posto, gratuitamente.', 'Riceve un’offerta scritta.'],
+  nextStepPlain: 'La contattiamo e fissiamo l’appuntamento.',
+  band: {
+    title: 'Domande o un’offerta?',
+    text: 'Ci telefoni, ci scriva o usi il modulo nella pagina dei contatti.',
+    action: 'Al modulo',
+  },
+  mapLink: 'Alla cartina',
   successTitle: 'Richiesta ricevuta',
   errors: {
     required: 'Compili questo campo.',
+    role: 'Indichi chi presenta la richiesta.',
     email: 'Inserisca un indirizzo e-mail valido.',
     consent: 'Confermi l’informativa sulla protezione dei dati affinché possiamo trattare la Sua richiesta.',
     summary: 'Verifichi i campi evidenziati.',
@@ -181,7 +220,7 @@ export const nav: NavDictionary = {
     megaText: 'Visitiamo il vostro immobile e allestiamo un’offerta scritta, gratuita e senza impegno.',
     premiumTeaser: 'Pulizia e cura discrete per ville, jet privati e yacht.',
     heroLanguages: 'Consulenza nella Sua lingua',
-    faqMore: 'La Sua domanda non c’è? Ci chiami o ci scriva, rispondiamo entro 24 ore nei giorni feriali.',
+    faqMore: 'La Sua domanda non c’è? Ci chiami o ci scriva.',
     phone: 'Telefono',
     email: 'E-mail',
     address: 'Indirizzo',

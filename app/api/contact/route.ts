@@ -1,22 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { sendContactEmail } from '@/server/email'
 import { company } from '../../../shared/company'
+import { CONTACT_LIMITS, EMAIL_REGEX, isContactRole } from '../../../shared/contact-form'
 
-// Längengrenzen je Feld (M07)
-const LIMITS = {
-  name: 100,
-  email: 254,
-  phone: 40,
-  service: 100,
-  location: 100,
-  frequency: 40,
-  language: 2,
-  message: 5000,
-} as const
+// Längengrenzen je Feld (M07), gemeinsam mit dem Formular im Browser
+const LIMITS = CONTACT_LIMITS
 
 type Field = keyof typeof LIMITS
-
-const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 const SUCCESS_MESSAGE = `Vielen Dank für Ihre Nachricht! Wir melden uns ${company.responseTime}.`
 const FALLBACK_CONTACT = `Bitte rufen Sie uns an (${company.phone.display}) oder schreiben Sie an ${company.email}.`
@@ -74,6 +64,9 @@ export async function POST(request: NextRequest) {
   const name = readField(fields, 'name')
   const email = readField(fields, 'email')
   const phone = readField(fields, 'phone')
+  // «Sie sind» (Pflicht, feste Auswahl) und «Grösse» (freiwillig), Audit Inhalt Massnahme 3
+  const role = readField(fields, 'role')
+  const size = readField(fields, 'size')
   const service = readField(fields, 'service')
   const location = readField(fields, 'location')
   const frequency = readField(fields, 'frequency')
@@ -81,11 +74,15 @@ export async function POST(request: NextRequest) {
   const language = readField(fields, 'language')
   const message = readField(fields, 'message')
 
-  if (name === null || email === null || phone === null || service === null || location === null || frequency === null || message === null) {
+  if (name === null || email === null || phone === null || role === null || size === null || service === null || location === null || frequency === null || message === null) {
     return fail(400, 'Eine Eingabe ist zu lang oder ungültig. Bitte kürzen Sie Ihre Nachricht.')
   }
-  if (!name || !email || !message) {
+  if (!name || !email || !message || !role) {
     return fail(400, 'Bitte füllen Sie alle Pflichtfelder aus.')
+  }
+  // Nur die Werte aus der Auswahl, damit die Anfrage sich eindeutig einordnen lässt (E33, E34)
+  if (!isContactRole(role)) {
+    return fail(400, 'Bitte wählen Sie aus, wer die Anfrage stellt.')
   }
   // Einwilligung zur Datenschutzerklärung ist Pflicht (M14); der Browser prüft sie, der Server auch
   if (fields.acceptPrivacy !== true) {
@@ -94,6 +91,10 @@ export async function POST(request: NextRequest) {
   if (!EMAIL_REGEX.test(email)) {
     return fail(400, 'Bitte geben Sie eine gültige E-Mail-Adresse ein.')
   }
+
+  // Rolle und Grösse stehen am Anfang der Nachricht, so sieht der Betrieb sofort,
+  // wer anfragt und wie gross das Objekt ist. Der Versand in server/email.ts bleibt gleich.
+  const details = `Sie sind: ${role}\nGrösse: ${size || 'Nicht angegeben'}`
 
   // Erfolg nur nach bestätigtem Versand (M04)
   const sent = await sendContactEmail({
@@ -104,7 +105,7 @@ export async function POST(request: NextRequest) {
     location: location || undefined,
     frequency: frequency || undefined,
     language: language && ['en', 'fr', 'it'].includes(language) ? language : undefined,
-    message,
+    message: `${details}\n\n${message}`,
   })
 
   if (!sent) {

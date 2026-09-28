@@ -4,7 +4,7 @@ import SectionHead from "@/components/SectionHead";
 import { company } from "../../../../shared/company";
 import { kontaktKontext, type KontaktProps } from "./kontext";
 
-/** Anfahrt: Karte lädt erst nach Klick (E20), Ziel der Adresskarte oben */
+/** Anfahrt: Karte lädt erst nach Klick (E20), Ziel der Adresse in den Kontaktwegen */
 export default function KontaktKarte(props: KontaktProps) {
   const { dict, contact } = kontaktKontext(props);
   return (
@@ -31,7 +31,7 @@ export default function KontaktKarte(props: KontaktProps) {
             </p>
           </address>
         </div>
-        <div className="min-w-0 overflow-hidden rounded-[3px] bg-white shadow-[0_1px_0_rgba(14,17,22,0.04),0_28px_56px_-32px_rgba(14,17,22,0.35)] lg:col-span-8">
+        <div className="min-w-0 overflow-hidden rounded-[3px] border border-line bg-white lg:col-span-8">
           <ConsentMap texts={dict.misc.map} />
         </div>
       </div>

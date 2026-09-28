@@ -85,7 +85,7 @@ export const datenschutz: LegalContent = {
     {
       title: 'Mappa',
       paragraphs: [
-        'Sulla pagina dei contatti mostriamo una mappa di Google Maps solo quando clicca su «Carica la mappa». Solo allora Google riceve il Suo indirizzo IP e dati tecnici sul Suo browser. Il fornitore è Google Ireland Limited; i dati possono essere trattati anche negli USA. Maggiori informazioni nelle norme sulla privacy di Google all’indirizzo policies.google.com/privacy.',
+        'Sulle pagine Contatto e Zona d’intervento mostriamo una mappa di Google Maps solo quando clicca su «Carica la mappa». Solo allora Google riceve il Suo indirizzo IP e dati tecnici sul Suo browser. Il fornitore è Google Ireland Limited; i dati possono essere trattati anche negli USA. Maggiori informazioni nelle norme sulla privacy di Google all’indirizzo policies.google.com/privacy.',
       ],
     },
     {
@@ -130,5 +130,5 @@ export const datenschutz: LegalContent = {
       paragraphs: ['Questo testo è una traduzione della versione tedesca. In caso di divergenze fa fede unicamente la versione tedesca.'],
     },
   ],
-  updated: '2026-09-27',
+  updated: '2026-09-28',
 }

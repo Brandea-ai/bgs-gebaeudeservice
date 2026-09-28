@@ -86,16 +86,47 @@ export const nav: NavDictionary = {
   },
   contactForm: {
     title: 'Request a quote',
-    intro: `Describe your property and what you need. We will get back to you ${responseTime} and arrange the site visit, free of charge and without obligation.`,
+    intro: 'Describe your property and what you need. We use these details to prepare the site visit.',
     choose: 'Please select...',
     fields: {
+      role: { label: 'You are *' },
       name: { label: 'Name *', placeholder: 'Your full name' },
       email: { label: 'Email *', placeholder: 'name@company.ch' },
       phone: { label: 'Phone', placeholder: 'Your phone number' },
       service: { label: 'Service required' },
+      size: { label: 'Size of the property', placeholder: 'e.g. 12 flats or 800 m²' },
       location: { label: 'Location or postcode of the property', placeholder: 'e.g. 6300 Zug' },
       frequency: { label: 'Desired frequency' },
-      message: { label: 'Property and request *', placeholder: 'For example: type of property, approximate area or number of flats, desired frequency and start date' },
+      message: {
+        label: 'Property and request *',
+        placeholder: 'For example: stairwell and laundry room in two apartment buildings, every week, from January',
+        hint: 'The easiest way to send us floor plans, area lists or photos is by email to',
+      },
+    },
+    roleOptions: {
+      Verwaltung: 'Property management',
+      Stockwerkeigentümerschaft: 'Condominium owners’ association',
+      Eigentümer: 'Owner',
+      Unternehmen: 'Company',
+      'Premium-Privatkunde': 'Private client with a villa, residence or second home',
+    },
+    premiumPlaceholders: {
+      '/premium': {
+        size: 'e.g. villa, 400 m² living space',
+        message: 'For example: second home by the lake, care while you are away, first appointment in spring',
+      },
+      '/premium/luxusimmobilien': {
+        size: 'e.g. villa, 400 m² on 3 floors',
+        message: 'For example: villa on Lake Zug, parquet and natural stone, every week while you are away',
+      },
+      '/premium/privatjet': {
+        size: 'e.g. aircraft type, cabin length',
+        message: 'For example: cabin and galley after every flight, location of the aircraft, preferred times',
+      },
+      '/premium/yacht': {
+        size: 'e.g. motor yacht, 14 m long',
+        message: 'For example: mooring on Lake Lucerne, cleaning before the season starts and after events on board',
+      },
     },
     serviceOptions: [
       {
@@ -140,10 +171,18 @@ export const nav: NavDictionary = {
     sending: 'Sending...',
     success: `Thank you, we have received your request. We will get back to you ${responseTime} and arrange a date for the site visit with you. If it is urgent, you can reach us on ${company.phone.display}.`,
     nextTitle: "What happens next",
-    nextSteps: ["We reply within 24 hours on working days.", "We visit the property on site, free of charge.", "You receive a written quote."],
+    nextSteps: [`We will get back to you ${responseTime}.`, 'We visit the property on site, free of charge.', 'You receive a written quote.'],
+    nextStepPlain: 'We get back to you and arrange the appointment.',
+    band: {
+      title: 'Questions or a quote?',
+      text: 'Call us, write to us or use the form on the contact page.',
+      action: 'Go to the form',
+    },
+    mapLink: 'Go to the map',
     successTitle: 'Request received',
     errors: {
       required: 'Please fill in this field.',
+      role: 'Please select who is making the request.',
       email: 'Please enter a valid email address.',
       consent: 'Please confirm the privacy policy so that we may process your request.',
       summary: 'Please check the highlighted fields.',
@@ -169,7 +208,7 @@ export const nav: NavDictionary = {
     megaText: 'We visit your property and prepare a written quote, free of charge and without obligation.',
     premiumTeaser: 'Discreet cleaning and care for villas, private jets and yachts.',
     heroLanguages: 'Advice in your language',
-    faqMore: 'Your question is not listed? Call us or write to us, we reply within 24 hours on working days.',
+    faqMore: 'Your question is not listed? Call us or write to us.',
     phone: 'Phone',
     email: 'Email',
     address: 'Address',

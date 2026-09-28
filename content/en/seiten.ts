@@ -247,40 +247,67 @@ export const about: Seiten['about'] = {
   },
 }
 
+/** Kontakt (E80, Audit Inhalt 9, Audit visuell /kontakt), Übersetzung von content/de/seiten.ts */
 export const contact: Seiten['contact'] = {
   h1: 'Contact and quote',
-  lead: `Call us or write to us. We will get back to you ${responseTime}.`,
+  lead: `By phone, email or form. You will get a reply ${responseTime}.`,
   channels: {
     title: 'How to reach us',
-    phone: { title: 'Phone', hint: 'For questions and to arrange an appointment for the site visit.', action: 'Call' },
-    mobile: { title: 'Mobile', hint: 'Our mobile number, in addition to the landline.', action: 'Call' },
-    email: { title: 'Email', hint: 'For enquiries with documents, such as floor plans, area lists or photos.', action: 'Write an email' },
-    form: { title: 'Form', value: 'Request a quote', hint: 'The key details in a few fields, and you choose the service from a list.', action: 'Go to the form' },
-    address: { title: 'Address', hint: 'Our head office. The site visit takes place at your property.', action: 'Go to the map' },
+    phone: { title: 'Phone', mobile: 'Mobile', hint: 'For questions and to arrange the appointment for the site visit.', action: 'Call' },
+    email: { title: 'Email', hint: 'For enquiries with documents such as floor plans, area lists or photos.', action: 'Write an email' },
+    address: { title: 'Address', hint: 'This is our head office. The site visit takes place at your property.', action: 'Go to the map' },
   },
   brief: {
-    title: 'What your enquiry should include',
-    intro: 'The more precise your details, the better we can prepare the site visit. If anything is missing, we clarify it in conversation.',
+    title: 'What to include in your enquiry',
     items: [
-      { key: 'objekt', title: 'Property', text: 'Type of property, for example office, practice, apartment building, hall or villa.' },
-      { key: 'ort', title: 'Location', text: 'Address or postcode of the property.' },
-      { key: 'groesse', title: 'Size', text: 'Approximate area, number of rooms, flats or floors.' },
-      { key: 'leistung', title: 'Service', text: 'What needs doing, for example maintenance cleaning, caretaking or a one-off cleaning.' },
-      { key: 'rhythmus', title: 'Schedule and times', text: 'How often and when, for example before work starts, in the evening or at the weekend.' },
-      { key: 'start', title: 'Start', text: 'From when you need the service, and for construction and move-out cleaning the handover date.' },
-      { key: 'zugang', title: 'Access and special features', text: 'Key or badge, sensitive floors and materials, large glass surfaces.' },
+      { key: 'rolle' as const, title: 'Who is asking', text: 'property management, condominium owners’ association, owner, company or private client with a villa or second home.' },
+      { key: 'objekt' as const, title: 'Property', text: 'office, practice, apartment building, hall or villa.' },
+      { key: 'ort' as const, title: 'Location', text: 'address or postcode.' },
+      { key: 'groesse' as const, title: 'Size', text: 'area in m², number of flats, floors or properties.' },
+      { key: 'leistung' as const, title: 'Service', text: 'for example maintenance cleaning, caretaking or a one-off cleaning.' },
+      { key: 'rhythmus' as const, title: 'Frequency and times', text: 'how often and when, for example before work starts, in the evening or on Saturdays.' },
+      { key: 'start' as const, title: 'Start', text: 'from when, and for construction and move-out cleaning the handover date.' },
+      { key: 'zugang' as const, title: 'Access and special features', text: 'key or badge, sensitive floors, large glass surfaces.' },
     ],
-    note: 'You can send us floor plans, area lists or photos by email.',
   },
-  steps: { title: 'From enquiry to first assignment', items: offerSteps },
+  steps: {
+    title: 'What happens after you send it',
+    items: [
+      { title: 'Reply', text: 'Our managing director reads your enquiry personally and proposes a date for the site visit.' },
+      { title: 'Site visit', text: 'We walk through all the rooms and areas concerned with you or your contact person. This shows us their condition, materials and access.' },
+      { title: 'Quote', text: 'The quote comes in writing. It lists the rooms and tasks, how often we carry them out and at what times.' },
+      { title: 'Start', text: 'Once you accept, the first working day is fixed. Times and access to the property are then agreed with you.' },
+    ] satisfies Step[] as Step[],
+  },
+  visit: {
+    title: 'Preparing for the site visit',
+    intro: 'What to have ready for the on-site appointment:',
+    items: [
+      'Access to all rooms that are to be cleaned or looked after, including cellar, attic, laundry room and plant rooms',
+      'Plans or a list of areas, if available',
+      'The current specification or service schedule, if a company already works for you',
+      'The times you want and the start date',
+      'A contact person who can answer questions about use and access',
+    ],
+    note: 'The site visit is free of charge, and the quote follows in writing.',
+  },
   map: {
     title: 'How to find us',
-    text: `Based in ${company.address.city}. We work in the cantons of ${cantons}.`,
+    text: `Our head office is in ${company.address.city}. From here we travel to your property anywhere in our service area.`,
   },
-  faq: [faq.schnell, faq.kosten, faq.gebiet, faq.versichert, faq.kurzfristig],
+  faq: [
+    { question: 'How quickly will I receive the quote?', answer: 'First we arrange the date for the site visit with you. We then write the quote based on what we have seen on site. If plans or a list of areas are ready at the appointment, we need to ask fewer questions afterwards.' },
+    { question: 'What does the site visit cost me?', answer: 'Nothing. You pay neither for the site visit nor for the quote, and the quote does not commit you to anything.' },
+    { question: 'Can I send plans or photos?', answer: `Yes, by email to ${company.email}. The form does not accept files. Simply mention in your enquiry that documents will follow by email.` },
+    { question: 'Do you also work outside Lucerne?', answer: `Yes. Our area covers five entire cantons: ${cantons}. All services are available there on the same terms. You will find places and the map on the [Service area](/einzugsgebiet) page.` },
+    { question: 'Is damage during the work insured?', answer: 'Yes, through our business liability insurance. The sum insured is CHF 10 million.' },
+    { question: 'Do you use environmentally friendly products?', answer: 'On request, yes. It is best to mention it in your enquiry under ‘Property and request’.' },
+    { question: 'In which language can I make an enquiry?', answer: 'In German, English, French or Italian. We advise you in your language.' },
+    { question: 'Is short notice possible?', answer: 'In that case, call us rather than writing. On the phone you find out fastest whether and when a job is possible.' },
+  ],
   cta: {
-    title: 'Describe your property to us',
-    text: `Your property and what you need, in the form just below, are enough. We will get back to you ${responseTime} and arrange the site visit.`,
+    title: 'Request a cleaning quote',
+    text: 'The quote needs these details. Leave open anything you do not know yet.',
   },
 }
 

@@ -2,7 +2,12 @@ import ProcessScrolly from "@/components/ProcessScrolly";
 import SectionHead from "@/components/SectionHead";
 import { kontaktKontext, type KontaktProps } from "./kontext";
 
-/** Nach der Anfrage (E80): Prozess-Sektion mit einem Video je Schritt, wie auf der Startseite */
+/**
+ * Was nach dem Absenden passiert (Audit visuell /kontakt): direkt unter dem
+ * Formular, eigene Schritte statt des Ablaufs der Startseite. Die vier Videos
+ * passen zu den Schritten: Rückmeldung (Brief), Besichtigung (Ort), Offerte
+ * (Dokument), Start (Kalender). «So geht es weiter» entfällt auf dieser Seite.
+ */
 export default function KontaktAblauf(props: KontaktProps) {
   const { contact } = kontaktKontext(props);
   return (

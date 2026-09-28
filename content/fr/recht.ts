@@ -82,7 +82,7 @@ export const datenschutz: LegalContent = {
     {
       title: 'Carte',
       paragraphs: [
-        'Sur la page de contact, nous n’affichons une carte Google Maps que lorsque vous cliquez sur « Charger la carte ». Ce n’est qu’à ce moment que Google reçoit votre adresse IP et des informations techniques sur votre navigateur. Le prestataire est Google Ireland Limited. Les données peuvent aussi être traitées aux États-Unis. Plus d’informations dans les règles de confidentialité de Google, à l’adresse policies.google.com/privacy.',
+        'Sur les pages Contact et Zone d’intervention, nous n’affichons une carte Google Maps que lorsque vous cliquez sur « Charger la carte ». Ce n’est qu’à ce moment que Google reçoit votre adresse IP et des informations techniques sur votre navigateur. Le prestataire est Google Ireland Limited. Les données peuvent aussi être traitées aux États-Unis. Plus d’informations dans les règles de confidentialité de Google, à l’adresse policies.google.com/privacy.',
       ],
     },
     {
@@ -127,5 +127,5 @@ export const datenschutz: LegalContent = {
       paragraphs: ['Ce texte est une traduction de la version allemande. En cas de divergence, seule la version allemande fait foi.'],
     },
   ],
-  updated: '2026-09-27',
+  updated: '2026-09-28',
 }

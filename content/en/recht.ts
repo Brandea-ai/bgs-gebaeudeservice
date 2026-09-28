@@ -81,7 +81,7 @@ export const datenschutz: LegalContent = {
     {
       title: 'Map',
       paragraphs: [
-        'On the contact page, we only show a Google Maps map once you click ‘Load map’. Only then does Google receive your IP address and technical information about your browser. The provider is Google Ireland Limited; the data may also be processed in the USA. For more information, see the Google privacy policy at policies.google.com/privacy.',
+        'On the Contact and Service area pages, we only show a Google Maps map once you click ‘Load map’. Only then does Google receive your IP address and technical information about your browser. The provider is Google Ireland Limited; the data may also be processed in the USA. For more information, see the Google privacy policy at policies.google.com/privacy.',
       ],
     },
     {
@@ -126,5 +126,5 @@ export const datenschutz: LegalContent = {
       paragraphs: ['This English version is a translation provided for your convenience. In the event of any discrepancy between the English and the German version, the German version shall prevail.'],
     },
   ],
-  updated: '2026-09-27',
+  updated: '2026-09-28',
 }

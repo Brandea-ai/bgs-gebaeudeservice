@@ -80,7 +80,7 @@ export const datenschutz: LegalContent = {
     {
       title: 'Karte',
       paragraphs: [
-        'Auf der Kontaktseite zeigen wir eine Karte von Google Maps erst, wenn Sie auf «Karte laden» klicken. Erst dann erhält Google Ihre IP-Adresse und technische Angaben zu Ihrem Browser. Anbieterin ist Google Ireland Limited, die Daten können auch in den USA bearbeitet werden. Mehr dazu in der Datenschutzerklärung von Google unter policies.google.com/privacy.',
+        'Auf den Seiten Kontakt und Einzugsgebiet zeigen wir eine Karte von Google Maps erst, wenn Sie auf «Karte laden» klicken. Erst dann erhält Google Ihre IP-Adresse und technische Angaben zu Ihrem Browser. Anbieterin ist Google Ireland Limited, die Daten können auch in den USA bearbeitet werden. Mehr dazu in der Datenschutzerklärung von Google unter policies.google.com/privacy.',
       ],
     },
     {
@@ -121,5 +121,5 @@ export const datenschutz: LegalContent = {
       paragraphs: ['Wir passen diese Erklärung an, wenn sich die Website oder die Rechtslage ändert. Es gilt die hier veröffentlichte Fassung.'],
     },
   ],
-  updated: '2026-09-26',
+  updated: '2026-09-28',
 }
