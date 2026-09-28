@@ -3,6 +3,7 @@ import type { PagePath } from '../../shared/seo'
 import type { Dictionary } from '../de'
 import type { Step } from '../types'
 import { answers, cantonListIt, languagesIt, premiumLine, registerIt, responseTime, steps } from './common'
+import { q } from '../de/kantone'
 
 /**
  * Testi della pagina iniziale, di Chi siamo, Contatto, Zona d’intervento e delle
@@ -286,7 +287,7 @@ export const contact = {
 
 export const area = {
   h1: 'Zona d’intervento: Svizzera centrale e Argovia',
-  lead: `Dalla nostra sede di ${company.address.city} operiamo nei Cantoni di ${cantonListIt}. Offriamo tutti i servizi nell’intera zona, per aziende come per clienti privati esigenti.`,
+  lead: `La nostra zona d’intervento comprende gli interi Cantoni di ${cantonListIt}. Ogni servizio vale ovunque, per amministrazioni e aziende come nel settore Premium.`,
   cantonsTitle: 'Cantoni',
   cantonLabels: ['Cantone di Lucerna', 'Cantone di Zugo', 'Cantone di Argovia', 'Cantone di Nidvaldo', 'Cantone di Obvaldo'],
   // Località per Cantone (S06): le stesse località di places.groups, raggruppate; chiavi come company.cantons
@@ -298,9 +299,26 @@ export const area = {
     Obwalden: ['Engelberg'],
   },
   seatTitle: 'Sede e contatto',
+  // Elemento 6.1: solo dati che figurano con fonte sulle pagine cantonali
+  vergleich: {
+    nav: 'Confronto',
+    title: 'I cinque Cantoni a confronto',
+    intro: 'Servizi e condizioni sono gli stessi ovunque. Le differenze riguardano accesso, giorni festivi e abitazioni secondarie, e contano per il piano di pulizia.',
+    columns: ['Cantone', 'Priorità', 'Accesso', 'Festivi: particolarità', 'Abitazioni secondarie > 20 %'],
+    rows: [
+      ['[Lucerna](/einzugsgebiet/luzern)', 'Abitazioni, uffici, studi', 'Sede nel Cantone', 'Santo Stefano festivo, San Giuseppe secondo Comune', 'Flühli, Vitznau, Weggis'],
+      ['[Zugo](/einzugsgebiet/zug)', 'Uffici e sedi aziendali', 'A14', 'Quattro giorni simili ai festivi', 'Nessuno'],
+      ['[Argovia](/einzugsgebiet/aargau)', 'Capannoni, magazzini, abitazioni', 'Secondo la regione', 'Sei regimi per distretto', 'Nessuno'],
+      ['[Nidvaldo](/einzugsgebiet/nidwalden)', 'Immobili sul lago, proprietà per piani', 'A2', 'San Giuseppe, 19 marzo', 'Emmetten'],
+      ['[Obvaldo](/einzugsgebiet/obwalden)', 'Sarneraatal, alberghi a Engelberg', 'A8', 'Fratel Nicolao, 25 settembre', 'Engelberg'],
+    ],
+    note: 'I Comuni tengono essi stessi l’inventario delle abitazioni. Secondo l’ARE, le quote di abitazioni secondarie non si possono quindi confrontare direttamente tra Comuni.',
+    sources: q('luRuhetage', 'zgFeiertagsaehnlich', 'agFeiertage', 'nwRuhetage', 'owRuhetage', 'are'),
+  },
   places: {
     title: 'Rive dei laghi e località di villeggiatura',
-    text: 'Siamo a Sua disposizione anche sulle rive dei laghi e nelle località di villeggiatura della regione, ad esempio per ville, abitazioni secondarie e alberghi. Per esigenze particolari è a disposizione il nostro [settore Premium](/premium).',
+    text: 'Nelle località di villeggiatura una parte delle abitazioni è abitata solo a tratti. Secondo l’inventario federale delle abitazioni ciò vale per più della metà delle abitazioni a Engelberg e per quasi una su tre a Emmetten e a Vitznau. Lì conta meno un ritmo settimanale fisso che la pulizia prima dell’arrivo e dopo la partenza, con giri di controllo nel frattempo. Per questi immobili c’è il nostro [settore Premium](/premium).',
+    sources: q('are'),
     groups: [
       { title: 'Sul lago dei Quattro Cantoni', items: ['Lucerna', 'Horw', 'Meggen', 'Weggis', 'Vitznau', 'Hergiswil', 'Stansstad', 'Ennetbürgen'] },
       { title: 'Sul lago di Zugo e sul lago di Ägeri', items: ['Zugo', 'Cham', 'Risch', 'Hünenberg', 'Walchwil', 'Baar', 'Oberägeri'] },
@@ -311,7 +329,7 @@ export const area = {
   },
   cta: {
     title: 'Il Suo immobile si trova nella nostra zona?',
-    text: `Ci descriva l’immobile e la località. La contattiamo ${responseTime} e veniamo da Lei per il sopralluogo, gratuitamente e senza impegno.`,
+    text: `Ci indichi indirizzo e tipo di immobile. Se si trova in uno dei cinque Cantoni, La contattiamo ${responseTime} e concordiamo il sopralluogo, gratuitamente e senza impegno.`,
   },
 }
 

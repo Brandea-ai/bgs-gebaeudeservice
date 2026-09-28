@@ -3,6 +3,7 @@ import type { PagePath } from '../../shared/seo'
 import type { Step } from '../types'
 import type { Dictionary } from '../de'
 import { answers, cantonList, languageList, premiumLine, register, responseTime, steps } from './common'
+import { q } from '../de/kantone'
 
 /**
  * Textes de la page d’accueil, de « À propos », du contact, de la zone
@@ -288,10 +289,10 @@ export const contact = {
 
 export const area = {
   h1: 'Zone d’intervention : Suisse centrale et Argovie',
-  lead: `Depuis notre siège à ${company.address.city}, nous intervenons dans les cantons de ${cantonList}. Nous proposons toutes nos prestations dans toute la zone, aux entreprises comme à une clientèle privée exigeante.`,
+  lead: `Notre zone d’intervention couvre l’ensemble des cantons de ${cantonList}. Chaque prestation vaut partout, pour les gérances et les entreprises comme dans notre offre Premium.`,
   cantonsTitle: 'Cantons',
   cantonLabels: ['Canton de Lucerne', 'Canton de Zoug', 'Canton d’Argovie', 'Canton de Nidwald', 'Canton d’Obwald'],
-  // Localités par canton (S06) : mêmes localités que places.groups, regroupées ; clés comme company.cantons
+  // Localités par canton (S06) : mêmes localités que places.groups, regroupées ; clés comme company.cantons
   cantonPlaces: {
     Luzern: ['Lucerne', 'Horw', 'Meggen', 'Weggis', 'Vitznau', 'Eich'],
     Zug: ['Zoug', 'Cham', 'Risch', 'Hünenberg', 'Walchwil', 'Baar', 'Oberägeri'],
@@ -300,9 +301,26 @@ export const area = {
     Obwalden: ['Engelberg'],
   },
   seatTitle: 'Siège et contact',
+  // Élément 6.1 : uniquement des données qui figurent avec leur source sur les pages cantonales
+  vergleich: {
+    nav: 'Comparaison',
+    title: 'Les cinq cantons en comparaison',
+    intro: 'Prestations et conditions sont les mêmes partout. Les différences portent sur l’accès, les jours fériés et les résidences secondaires, et elles comptent pour le plan de nettoyage.',
+    columns: ['Canton', 'Priorité', 'Accès', 'Jours fériés : particularité', 'Résidences secondaires > 20 %'],
+    rows: [
+      ['[Lucerne](/einzugsgebiet/luzern)', 'Habitat, bureaux, cabinets', 'Siège sur place', 'Saint-Étienne chômée, Saint-Joseph selon commune', 'Flühli, Vitznau, Weggis'],
+      ['[Zoug](/einzugsgebiet/zug)', 'Bureaux et sièges', 'A14', 'Quatre jours assimilés', 'Aucune'],
+      ['[Argovie](/einzugsgebiet/aargau)', 'Halles, entrepôts, habitat', 'Selon la région', 'Six régimes par district', 'Aucune'],
+      ['[Nidwald](/einzugsgebiet/nidwalden)', 'Biens au bord du lac, PPE', 'A2', 'Saint-Joseph, 19 mars', 'Emmetten'],
+      ['[Obwald](/einzugsgebiet/obwalden)', 'Sarneraatal, hôtels à Engelberg', 'A8', 'Frère Nicolas, 25 septembre', 'Engelberg'],
+    ],
+    note: 'Les communes tiennent elles-mêmes leur inventaire des logements. Selon l’ARE, les proportions de résidences secondaires ne peuvent donc pas être comparées directement entre communes.',
+    sources: q('luRuhetage', 'zgFeiertagsaehnlich', 'agFeiertage', 'nwRuhetage', 'owRuhetage', 'are'),
+  },
   places: {
     title: 'Rives des lacs et lieux de villégiature',
-    text: 'Nous sommes aussi à votre service sur les rives des lacs et dans les lieux de villégiature de la région, par exemple pour des villas, des résidences secondaires et des hôtels. Pour des exigences particulières, nous proposons notre [offre Premium](/premium).',
+    text: 'Dans les lieux de villégiature, une partie des logements n’est habitée que par moments. Selon l’inventaire fédéral des logements, c’est le cas de plus de la moitié des logements à Engelberg et de près d’un sur trois à Emmetten et à Vitznau. Ce qui compte là-bas, c’est moins un rythme hebdomadaire fixe que le nettoyage avant l’arrivée et après le départ, avec des rondes de contrôle entre-temps. Pour ces biens, nous proposons notre [offre Premium](/premium).',
+    sources: q('are'),
     groups: [
       { title: 'Au bord du lac des Quatre-Cantons', items: ['Lucerne', 'Horw', 'Meggen', 'Weggis', 'Vitznau', 'Hergiswil', 'Stansstad', 'Ennetbürgen'] },
       { title: 'Au bord des lacs de Zoug et d’Ägeri', items: ['Zoug', 'Cham', 'Risch', 'Hünenberg', 'Walchwil', 'Baar', 'Oberägeri'] },
@@ -313,7 +331,7 @@ export const area = {
   },
   cta: {
     title: 'Votre bien se trouve-t-il dans notre zone ?',
-    text: `Décrivez-nous le bien et le lieu. Nous vous répondons ${responseTime} et passons pour la visite, gratuitement et sans engagement.`,
+    text: `Indiquez-nous l’adresse et le type de bien. S’il se trouve dans l’un des cinq cantons, nous vous répondons ${responseTime} et convenons de la visite, gratuitement et sans engagement.`,
   },
 }
 

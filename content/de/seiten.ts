@@ -2,6 +2,7 @@ import { cantonList, company, listDe, premiumLabel, premiumLine } from '../../sh
 import type { PagePath } from '../../shared/seo'
 import type { Step } from '../types'
 import { answers, steps } from './common'
+import { q } from './kantone'
 
 /**
  * Texte der Startseite, von Über uns, Kontakt, Einzugsgebiet und den beiden
@@ -315,7 +316,7 @@ export const contact = {
 
 export const area = {
   h1: 'Einzugsgebiet: Zentralschweiz und Aargau',
-  lead: `Von unserem Sitz in ${company.address.city} aus arbeiten wir in den Kantonen ${cantonList}. Alle Leistungen bieten wir im ganzen Gebiet an, für Unternehmen ebenso wie für anspruchsvolle Privatkunden.`,
+  lead: `Das Einzugsgebiet umfasst die ganzen Kantone ${cantonList}. Jede Leistung gilt überall, für Verwaltungen und Unternehmen ebenso wie im Premium-Bereich.`,
   cantonsTitle: 'Kantone',
   cantonLabels: company.cantons.map((canton) => `Kanton ${canton}`),
   // Orte je Kanton (S06, EG-01): nur Umgruppierung der Orte aus places.groups, keine neuen Orte. Schlüssel wie company.cantons.
@@ -327,9 +328,31 @@ export const area = {
     Obwalden: ['Engelberg'],
   } satisfies Record<(typeof company.cantons)[number], string[]>,
   seatTitle: 'Sitz und Kontakt',
+  /**
+   * Baustein 6.1 (25-AUDIT/inhalt.md): was sich zwischen den Kantonen für die
+   * Planung unterscheidet. Nur Angaben, die auf den Kantonsseiten mit Quelle
+   * stehen (content/de/kantone.ts › daten), Anfahrt aus kantone.ts › planung.
+   */
+  vergleich: {
+    nav: 'Vergleich',
+    title: 'Die fünf Kantone im Vergleich',
+    intro: 'Leistungen und Bedingungen sind überall dieselben. Unterschiede gibt es bei Anfahrt, Feiertagen und Zweitwohnungen, und die zählen für den Reinigungsplan.',
+    columns: ['Kanton', 'Schwerpunkt', 'Anfahrt', 'Feiertage: Besonderheit', 'Zweitwohnungen über 20 %'],
+    rows: [
+      ['[Luzern](/einzugsgebiet/luzern)', 'Wohnbau, Büros, Praxen', 'Sitz im Kanton', 'Stefanstag frei, Josefstag je Gemeinde', 'Flühli, Vitznau, Weggis'],
+      ['[Zug](/einzugsgebiet/zug)', 'Büros und Firmensitze', 'A14', 'Vier feiertagsähnliche Tage', 'Keine Gemeinde'],
+      ['[Aargau](/einzugsgebiet/aargau)', 'Hallen, Lager, Wohnbau', 'Je nach Region', 'Sechs Regelungen je Bezirk', 'Keine Gemeinde'],
+      ['[Nidwalden](/einzugsgebiet/nidwalden)', 'Seeliegenschaften, Stockwerkeigentum', 'A2', 'Josefstag, 19. März', 'Emmetten'],
+      ['[Obwalden](/einzugsgebiet/obwalden)', 'Sarneraatal, Hotels in Engelberg', 'A8', 'Bruderklausenfest, 25. September', 'Engelberg'],
+    ],
+    note: 'Die Wohnungsinventare führen die Gemeinden selbst. Laut ARE lassen sich die Zweitwohnungsanteile deshalb zwischen Gemeinden nicht direkt vergleichen.',
+    sources: q('luRuhetage', 'zgFeiertagsaehnlich', 'agFeiertage', 'nwRuhetage', 'owRuhetage', 'are'),
+  },
   places: {
     title: 'Seeufer und Ferienorte',
-    text: 'Auch an den Seeufern und in den Ferienorten der Region sind wir für Sie da, etwa für Villen, Zweitwohnungen und Hotels. Für besondere Ansprüche gibt es unseren [Premium-Bereich](/premium).',
+    // Baustein 6.2: Anteile aus dem ARE-Wohnungsinventar (Datenstand 31.03.2026), gerundet
+    text: 'In Ferienorten wird ein Teil der Wohnungen nur zeitweise bewohnt. In Engelberg trifft das laut Wohnungsinventar des Bundes auf mehr als die Hälfte der Wohnungen zu, in Emmetten und Vitznau auf fast jede dritte. Dort zählt weniger der feste Wochenrhythmus als die Reinigung vor der Ankunft und nach der Abreise, dazu Kontrollgänge in der Zwischenzeit. Für diese Objekte gibt es unseren [Premium-Bereich](/premium).',
+    sources: q('are'),
     // Orte aus 13, Abschnitt 3, alle im Gebiet. Nur als Text, keine eigenen Ortsseiten (M48, K09).
     groups: [
       { title: 'Am Vierwaldstättersee', items: ['Luzern', 'Horw', 'Meggen', 'Weggis', 'Vitznau', 'Hergiswil', 'Stansstad', 'Ennetbürgen'] },
@@ -341,7 +364,7 @@ export const area = {
   },
   cta: {
     title: 'Liegt Ihr Objekt im Gebiet?',
-    text: `Beschreiben Sie uns Objekt und Ort. Wir melden uns ${company.responseTime} und kommen für die Besichtigung vorbei, kostenlos und unverbindlich.`,
+    text: `Nennen Sie uns Adresse und Art des Objekts. Liegt es in einem der fünf Kantone, melden wir uns ${company.responseTime} und vereinbaren die Besichtigung, kostenlos und unverbindlich.`,
   },
 }
 

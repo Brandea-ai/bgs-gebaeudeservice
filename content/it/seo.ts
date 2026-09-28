@@ -95,8 +95,8 @@ export const pages = {
   },
   '/einzugsgebiet': {
     label: 'Zona d’intervento',
-    title: 'Attivi in Svizzera centrale e Argovia',
-    description: `Da ${company.address.city} operiamo nei Cantoni di ${region}, anche sulle rive dei laghi e a Engelberg, con tutti i servizi.`,
+    title: 'Zona d’intervento: Svizzera centrale e Argovia',
+    description: `Pulizia e custodia da ${company.address.city} nei Cantoni di ${region}, Engelberg compresa. Offerta gratuita dopo il sopralluogo.`,
   },
   '/einzugsgebiet/luzern': { label: 'Cantone di Lucerna', ...kantone.luzern.seo },
   '/einzugsgebiet/zug': { label: 'Cantone di Zugo', ...kantone.zug.seo },

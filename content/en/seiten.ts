@@ -3,6 +3,7 @@ import type { PagePath } from '../../shared/seo'
 import type { Dictionary } from '../de'
 import type { Step } from '../types'
 import { answers, cantons, languages, premiumLine, register, responseTime, steps } from './common'
+import { q } from '../de/kantone'
 
 /**
  * English texts of the home page, About us, Contact, Service area and the two
@@ -286,7 +287,7 @@ export const contact: Seiten['contact'] = {
 
 export const area: Seiten['area'] = {
   h1: 'Service area: Central Switzerland and Aargau',
-  lead: `From our base in ${company.address.city}, we work in the cantons of ${cantons}. We offer all our services throughout the area, for businesses and discerning private clients alike.`,
+  lead: `Our service area covers the whole cantons of ${cantons}. Every service applies everywhere, for property managers and businesses as well as in our premium services.`,
   cantonsTitle: 'Cantons',
   cantonLabels: ['Canton of Lucerne', 'Canton of Zug', 'Canton of Aargau', 'Canton of Nidwalden', 'Canton of Obwalden'],
   // Places by canton (S06): same places as places.groups, regrouped; keys as in company.cantons
@@ -298,9 +299,26 @@ export const area: Seiten['area'] = {
     Obwalden: ['Engelberg'],
   },
   seatTitle: 'Head office and contact',
+  // Building block 6.1: only facts that appear with a source on the canton pages
+  vergleich: {
+    nav: 'Comparison',
+    title: 'The five cantons compared',
+    intro: 'Services and terms are the same everywhere. The differences lie in travel, public holidays and second homes, and they matter for the cleaning schedule.',
+    columns: ['Canton', 'Focus', 'Access', 'Holidays: what is special', 'Second homes over 20%'],
+    rows: [
+      ['[Lucerne](/einzugsgebiet/luzern)', 'Housing, offices, practices', 'Head office here', 'St Stephen’s off, St Joseph’s by municipality', 'Flühli, Vitznau, Weggis'],
+      ['[Zug](/einzugsgebiet/zug)', 'Offices and headquarters', 'A14', 'Four holiday-like days', 'None'],
+      ['[Aargau](/einzugsgebiet/aargau)', 'Halls, warehouses, housing', 'Varies by region', 'Six district arrangements', 'None'],
+      ['[Nidwalden](/einzugsgebiet/nidwalden)', 'Lakeside properties, condominiums', 'A2', 'St Joseph’s, 19 March', 'Emmetten'],
+      ['[Obwalden](/einzugsgebiet/obwalden)', 'Sarneraatal, hotels in Engelberg', 'A8', 'Brother Klaus, 25 September', 'Engelberg'],
+    ],
+    note: 'Municipalities keep their housing inventories themselves. According to ARE, the shares of second homes can therefore not be compared directly between municipalities.',
+    sources: q('luRuhetage', 'zgFeiertagsaehnlich', 'agFeiertage', 'nwRuhetage', 'owRuhetage', 'are'),
+  },
   places: {
     title: 'Lakeside areas and holiday resorts',
-    text: 'We also work in lakeside areas and holiday resorts across the region, for example for villas, second homes and hotels. For exacting standards, see our [premium services](/premium).',
+    text: 'In holiday resorts, part of the flats are only lived in some of the time. According to the federal housing inventory, this applies to more than half of the flats in Engelberg and to almost one in three in Emmetten and Vitznau. What counts there is less a fixed weekly routine than cleaning before arrival and after departure, plus inspection rounds in between. For these properties, see our [premium services](/premium).',
+    sources: q('are'),
     groups: [
       { title: 'On Lake Lucerne', items: ['Lucerne', 'Horw', 'Meggen', 'Weggis', 'Vitznau', 'Hergiswil', 'Stansstad', 'Ennetbürgen'] },
       { title: 'On Lake Zug and Lake Ägeri', items: ['Zug', 'Cham', 'Risch', 'Hünenberg', 'Walchwil', 'Baar', 'Oberägeri'] },
@@ -311,7 +329,7 @@ export const area: Seiten['area'] = {
   },
   cta: {
     title: 'Is your property in our area?',
-    text: `Tell us about the property and its location. We will get back to you ${responseTime} and visit you for the site visit, free of charge and without obligation.`,
+    text: `Tell us the address and type of property. If it is in one of the five cantons, we will get back to you ${responseTime} and arrange the site visit, free of charge and without obligation.`,
   },
 }
 

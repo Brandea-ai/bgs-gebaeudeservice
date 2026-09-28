@@ -6,6 +6,7 @@ import { premiumHeading } from "@/components/premiumStyles";
 import { RevealGroup } from "@/components/Reveal";
 import { heroImage } from "../../../../shared/hero-images";
 import { localizePath } from "../../../../shared/i18n";
+import LeistungGebiet from "./gebiet";
 import { leistungKontext, type LeistungProps } from "./kontext";
 
 /**
@@ -69,6 +70,7 @@ export default function LeistungVerwandt(props: LeistungProps) {
             );
           })}
         </RevealGroup>
+        <LeistungGebiet lang={lang} premium={premium} />
       </div>
     </section>
   );

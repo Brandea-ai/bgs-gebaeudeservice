@@ -8,8 +8,9 @@ import KantonRegionen from "./03-regionen";
 import KantonObjekte from "./04-objekte";
 import KantonLeistungen from "./05-leistungen";
 import KantonPlanung from "./06-planung";
-import KantonFragen from "./07-fragen";
-import KantonWeitere from "./08-weitere";
+import KantonDaten from "./07-daten";
+import KantonFragen from "./08-fragen";
+import KantonWeitere from "./09-weitere";
 
 /**
  * Kantonsseiten /einzugsgebiet/<kanton> (E80, Factory-Strukturnorm): nur
@@ -30,6 +31,7 @@ export default function Kanton(props: KantonProps) {
       <KantonObjekte {...props} />
       <KantonLeistungen {...props} />
       <KantonPlanung {...props} />
+      <KantonDaten {...props} />
       <KantonFragen {...props} />
       <KantonWeitere {...props} />
     </PageFrame>

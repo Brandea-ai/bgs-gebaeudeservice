@@ -96,7 +96,7 @@ export const pages = {
   '/einzugsgebiet': {
     label: 'Einzugsgebiet',
     title: 'Einzugsgebiet: Zentralschweiz, Aargau',
-    description: `Von ${company.address.city} aus in den Kantonen ${region}, auch an den Seeufern und in Engelberg. Alle Leistungen im ganzen Gebiet.`,
+    description: `Reinigung und Hauswartung ab ${company.address.city} in ${region}, auch am See und in Engelberg. Kostenlose Offerte nach Besichtigung.`,
   },
   // Kantonsseiten (E80): Titel und Beschreibung stehen bei den Inhalten in kantone.ts
   '/einzugsgebiet/luzern': { label: 'Kanton Luzern', ...kantone.luzern.seo },

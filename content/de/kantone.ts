@@ -1,24 +1,38 @@
 import type { KantonKey } from '../../shared/cantons'
 import { company } from '../../shared/company'
-import { answers } from './common'
+import type { Source } from '../types'
 import { kantonMenu } from './navigation'
 
 /**
- * Texte der fünf Kantonsseiten unter /einzugsgebiet/<kanton> (Entscheid Brandea
- * zu E78, Runde 11/12). Jede Seite hat eigenen Inhalt: Regionen und Orte, typische
- * Objekte, gefragte Leistungen, Planung und Fragen des Kantons. So bleiben die
- * Seiten nützlich und keine austauschbaren Ortsvarianten (Google Spam-Richtlinien,
- * Doorway abuse, S33; K09).
+ * Texte der fünf Kantonsseiten unter /einzugsgebiet/<kanton> (E80, Umbau E85).
+ * Jede Seite trägt Information, die es nur für diesen Kanton gibt: Regionen und
+ * Orte, typische Objekte, Planung und den Kasten «Kantonsdaten für die Planung»
+ * mit Angaben, die an der Primärquelle geprüft sind (Quelle je Angabe, Stand in
+ * kantonUi.datenStand). So bleiben die Seiten keine austauschbaren Ortsvarianten
+ * (Google Spam-Richtlinien, Doorway abuse; 25-AUDIT/inhalt.md Abschnitt 7).
  *
- * Regeln wie in content/types.ts: über das Unternehmen nur Belegtes (E18), alle
- * Leistungen im ganzen Gebiet zu denselben Bedingungen (E30), kein Winterdienst,
- * keine Privathaushalte ausser über den Premium-Bereich (E28). Geografische
- * Angaben nur, wenn sicher; Quellen im Bericht kantone-bericht.md. Titel ohne
- * Marke (höchstens 39 Zeichen, mit « | BGS Gebäudeservice» höchstens 60, SEO 28.09.2026),
- * shared/seo.ts hängt sie an.
+ * Regeln: über das Unternehmen nur Belegtes (E18), alle Leistungen im ganzen
+ * Gebiet zu denselben Bedingungen, auch bei der Anfahrt (E30, E44), kein
+ * Winterdienst (E29), keine Privathaushalte ausser über den Premium-Bereich
+ * (E28), keine Preise. Keine Standardantworten (Versicherung, Mittel, Sprachen):
+ * die stehen auf Kontakt. Die Kostenfrage steht nur bei Luzern, kurz und mit
+ * Link auf den Ratgeber. Zweitwohnungsanteile ohne Rangfolge zwischen
+ * Gemeinden: laut ARE sind sie nicht direkt vergleichbar. Titel ohne Marke,
+ * shared/seo.ts hängt sie an (Titel nach 25-AUDIT/seo.md T6, H1 mit dem
+ * Hauptbegriff nach T2).
  */
 
 export type { KantonKey }
+
+/** Typisches Objekt; premium zeigt die Karte in der Premium-Welt (Elfenbein, Champagner) */
+export type KantonObjekt = { title: string; text: string; premium?: boolean }
+
+/**
+ * Angabe im Kasten «Kantonsdaten für die Planung»: nur mit gelesener
+ * Primärquelle (Schlüssel in kantonUi.quellen). items für Aufzählungen wie
+ * Feiertage, als Liste statt als langer Satz; text für Regel und Einordnung.
+ */
+export type KantonDatum = { label: string; text?: string; items?: string[]; source: QuelleKey }
 
 export type KantonPage = {
   name: string
@@ -28,36 +42,104 @@ export type KantonPage = {
   lead: string[]
   facts: { label: string; value: string }[]
   regionen: { title: string; orte: string[] }[]
-  objekte: { title: string; text: string }[]
-  leistungen: { path: string; title: string; text: string }[]
-  planung: { title: string; paragraphs: string[] }
+  objekte: KantonObjekt[]
+  /** Gefragte Leistungen; ohne title steht der Seitenname aus seo.ts (Ankertext nennt das Ziel) */
+  leistungen: { path: string; title?: string; text: string }[]
+  planung: {
+    title: string
+    paragraphs: string[]
+    /** Punkte nach dem Text, etwa was vor dem ersten Einsatz geregelt sein sollte */
+    list?: { title: string; items: string[] }
+    /** Gelesene Quellen zu Aussagen im Text (etwa Vogelwarte), Schlüssel in kantonUi.quellen */
+    sources?: QuelleKey[]
+  }
+  /** Kasten «Kantonsdaten für die Planung», 3 bis 4 Angaben mit Quelle */
+  daten: KantonDatum[]
   faq: { question: string; answer: string }[]
   /** Kurzer Satz für Mega-Menü und Übersicht, steht in navigation.ts (kantonMenu) */
   menuText: string
 }
 
-const sameTerms = 'Alle, zu denselben Bedingungen wie im ganzen Gebiet'
 const seat = `${company.address.street}, ${company.address.postalCode} ${company.address.city}`
 
-// Grundlage: Sitz Emmenbrücke (company.ts), Orte aus seiten.ts (area), E30, E42
+/**
+ * Primärquellen, gelesen am 28.09.2026 (Bericht kantone, Welle 2). Gesetze in der
+ * geltenden Fassung der kantonalen Sammlung, ARE live über geo.admin.ch geprüft.
+ * Ein Register je Sprache (kantonUi.quellen): dieselbe Quelle steht so nur
+ * einmal im Inhalt, Kantonsseiten und Übersicht verweisen per Schlüssel.
+ */
+const quelle = {
+  are: {
+    label: 'Bundesamt für Raumentwicklung ARE, Wohnungsinventar und Zweitwohnungsanteil, Datenstand 31.03.2026',
+    href: 'https://map.geo.admin.ch/?lang=de&layers=ch.are.wohnungsinventar-zweitwohnungsanteil',
+  },
+  luRuhetage: {
+    label: 'Kanton Luzern, Gesetz über die Ruhetage (SRL Nr. 855), § 1a',
+    href: 'https://srl.lu.ch/app/de/texts_of_law/855',
+  },
+  luMeldung: {
+    label: 'Stadt Luzern, Mieterwechsel und Meldepflicht für Hauseigentümer',
+    href: 'https://www.stadtluzern.ch/dienstleistungeninformation/28997',
+  },
+  vogelwarte: {
+    label: 'Schweizerische Vogelwarte, Schnitt von Sträuchern und Hecken in Siedlungen',
+    href: 'https://www.vogelwarte.ch/de/ratgeber/schnitt-von-straeuchern-und-hecken-in-siedlungen-wann-und-wie/',
+  },
+  zgMietrecht: {
+    label: 'Kanton Zug, Häufige Fragen zum Mietrecht',
+    href: 'https://zg.ch/de/recht-justiz/zivilverfahren/schlichtung/faq-zum-mietrecht',
+  },
+  zgFeiertage: {
+    label: 'Kanton Zug, Arbeits- und Ruhezeiten, Feiertage',
+    href: 'https://zg.ch/de/wirtschaft-arbeit/arbeitsbedingungen/arbeits-und-ruhezeiten',
+  },
+  zgFeiertagsaehnlich: {
+    label: 'Amt für Wirtschaft und Arbeit Zug, Feiertage im Kanton Zug 2026 und 2027 (PDF)',
+    href: 'https://cdn.zg.ch/dam/jcr:d241f3f6-4c0c-4bb2-9096-b53dd371501c/Feiertage_2026_2027_Kt-ZG_Daten.pdf',
+  },
+  agFeiertage: {
+    label: 'Kanton Aargau, Amt für Wirtschaft und Arbeit, Merkblatt Gesetzliche Feiertage (PDF)',
+    href: 'https://www.ag.ch/media/kanton-aargau/dvi/dokumente/awa/awa/arbeitnehmerschutz-im-betrieb/feiertage.pdf',
+  },
+  nwRuhetage: {
+    label: 'Kanton Nidwalden, Ruhetagsgesetz (NG 921.1), Art. 2',
+    href: 'https://gesetze.nw.ch/app/de/texts_of_law/921.1',
+  },
+  owSchlichtung: {
+    label: 'Kanton Obwalden, Schlichtungsbehörde, Fragen zur Kündigung',
+    href: 'https://www.ow.ch/fachbereiche/2131',
+  },
+  owRuhetage: {
+    label: 'Kanton Obwalden, Ruhetagsgesetz (GDB 975.2), Art. 2',
+    href: 'https://gdb.ow.ch/app/de/texts_of_law/975.2',
+  },
+} satisfies Record<string, Source>
+
+/** Schlüssel einer Quelle; die Texte je Sprache stehen in kantonUi.quellen */
+export type QuelleKey = keyof typeof quelle
+
+/** Quellen per Schlüssel angeben, etwa q('are', 'agFeiertage') (auch in seiten.ts › area) */
+export const q = (...keys: QuelleKey[]) => keys
+
+// Sitz Emmenbrücke (company.ts), Orte aus seiten.ts (area), Ruhetage SRL 855, Stadt Luzern, ARE, Vogelwarte
 const luzern: KantonPage = {
   name: 'Luzern',
   kuerzel: 'LU',
   seo: {
     title: 'Reinigungsfirma Luzern und Hauswartung',
     description:
-      'Gebäudereinigung und Hauswartung im Kanton Luzern, vom Sitz in Emmenbrücke aus: Stadt, Agglomeration, Seeufer, Sursee und Seetal. Offerte vor Ort.',
+      'Reinigungsfirma Luzern mit Sitz in Emmenbrücke: Hauswartung, Unterhalts- und Büroreinigung bis ins Entlebuch. Kostenlose Offerte nach Besichtigung.',
   },
-  h1: 'Ihre Reinigungsfirma im Kanton Luzern',
+  h1: 'Reinigungsfirma Luzern mit Sitz in Emmenbrücke',
   lead: [
     'Unser Sitz liegt in Emmenbrücke, mitten in der Agglomeration Luzern. Von hier aus reinigen und betreuen wir Liegenschaften, Büros und Gewerbeflächen im ganzen Kanton, von der Stadt Luzern über den Sempachersee bis ins Entlebuch.',
-    'Seit 2006 arbeiten wir in Reinigung und Hauswartung. Bevor Sie eine Offerte erhalten, sehen wir uns Ihr Objekt vor Ort an. Besichtigung und Offerte sind kostenlos und unverbindlich.',
+    'Für Verwaltungen und Stockwerkeigentümerschaften heisst das kurze Wege: Kriens, Horw, Ebikon und die Stadt liegen gleich nebenan, Sursee und Hochdorf nur wenig weiter.',
   ],
   facts: [
     { label: 'Unser Sitz', value: `${company.address.city}, Gemeinde Emmen` },
-    { label: 'Hauptort', value: 'Luzern' },
-    { label: 'Seen', value: 'Vierwaldstättersee, Sempachersee, Baldeggersee' },
-    { label: 'Leistungen', value: sameTerms },
+    { label: 'Schwerpunkt', value: 'Mehrfamilienhäuser, Stockwerkeigentum, Büros und Praxen' },
+    { label: 'Öffentliche Ruhetage', value: 'Zehn im ganzen Kanton, der Josefstag je nach Gemeinde' },
+    { label: 'Viele Zweitwohnungen', value: 'Flühli, Vitznau und Weggis' },
   ],
   regionen: [
     { title: 'Stadt und Agglomeration', orte: ['Luzern', 'Emmen', 'Kriens', 'Horw', 'Ebikon', 'Adligenswil'] },
@@ -73,66 +155,98 @@ const luzern: KantonPage = {
     },
     {
       title: 'Büros und Praxen',
-      text: 'In der Stadt Luzern und in Zentren wie Sursee reinigen wir Büros und Praxen zu Zeiten, die wir mit Ihnen auf Ihren Betrieb abstimmen.',
+      text: 'In der Stadt Luzern und in Zentren wie Sursee reinigen wir Büros und Praxen zu Zeiten, die zu Ihren Sprechstunden und Bürozeiten passen.',
     },
     {
-      title: 'Wohnungswechsel',
-      text: 'Bei einem Mieterwechsel reinigen wir die Wohnung vor der Übergabe, mit Abnahmegarantie. Die Hauswartung wirkt bei der Übergabe mit.',
+      title: 'Mieterwechsel im Auftrag der Verwaltung',
+      text: 'Zieht eine Mietpartei aus, reinigen wir die Wohnung vor der Übergabe an die nächste, mit Abnahmegarantie. Die Hauswartung wirkt bei der Übergabe mit.',
     },
     {
-      title: 'Liegenschaften am See',
-      text: 'Für Villen und Residenzen am Vierwaldstättersee, etwa in Meggen, Weggis oder Vitznau, gibt es unseren Premium-Bereich: immer dasselbe Team, auf Wunsch mit Geheimhaltungsvereinbarung.',
+      title: 'Zweitwohnungen und Villen am See',
+      text: 'Rund um Weggis, Vitznau und in Sörenberg werden viele Wohnungen nur zeitweise bewohnt. Villen und Zweitwohnungen am Ufer von Meggen bis Vitznau betreut unser [Premium-Bereich](/premium).',
+      premium: true,
     },
   ],
   leistungen: [
-    { path: '/leistungen/hauswartung', title: 'Hauswartung', text: 'Für Verwaltungen und Stockwerkeigentümerschaften, die ihre Liegenschaft betreuen lassen.' },
-    { path: '/leistungen/unterhaltsreinigung', title: 'Unterhaltsreinigung', text: 'Treppenhäuser, Eingänge und Gemeinschaftsräume in einem festen Rhythmus.' },
-    { path: '/leistungen/umzugsreinigung', title: 'Umzugsreinigung', text: 'Endreinigung vor der Wohnungsabgabe, mit Abnahmegarantie.' },
-    { path: '/leistungen/bueroreinigung', title: 'Büro- und Praxisreinigung', text: 'Für Büros und Praxen, abgestimmt auf Ihre Arbeits- und Öffnungszeiten.' },
+    { path: '/leistungen/hauswartung', text: 'Für Verwaltungen und Stockwerkeigentümerschaften, die ihre Liegenschaft betreuen lassen.' },
+    { path: '/leistungen/unterhaltsreinigung', text: 'Treppenhaus, Eingang und Gemeinschaftsräume, etwa in Emmen, Kriens oder Horw.' },
+    { path: '/leistungen/umzugsreinigung', text: 'Endreinigung vor der Wohnungsabgabe, mit Abnahmegarantie.' },
+    { path: '/leistungen/bueroreinigung', text: 'Für Praxen und Büros in der Stadt, in Kriens oder in Sursee.' },
     { path: '/premium/luxusimmobilien', title: 'Villen und Residenzen', text: 'Diskrete Reinigung und Pflege von Häusern am See.' },
   ],
   planung: {
-    title: 'Anreise und Planung',
+    title: 'Wege ab Emmenbrücke',
     paragraphs: [
-      'Weil unser Sitz im Kanton liegt, sind die Wege in die Stadt und die Agglomeration kurz. Für Objekte im Seetal, in Willisau oder im Entlebuch legen wir Rhythmus und Einsatzzeiten bei der Besichtigung fest.',
-      'Klären Sie mit uns vor dem ersten Einsatz, wo unser Team parkieren kann und wie es zu Schlüssel und Räumen kommt. Gerade in der Innenstadt hilft ein fester Platz für Fahrzeug und Material.',
+      'Weil unser Sitz im Kanton liegt, sind die Wege in die Stadt und die Agglomeration kurz. Ins Seetal, nach Willisau oder ins Entlebuch fahren wir länger. Dort lohnt es sich, mehrere Arbeiten auf einen Einsatz zu legen, etwa Treppenhaus und Umgebung am selben Tag.',
+      'In der Innenstadt hilft ein fester Platz für Fahrzeug und Material. Regeln Sie vor dem ersten Einsatz, wo unser Team parkieren kann und wie es zu Schlüssel und Räumen kommt.',
+      'Die Schweizerische Vogelwarte hat ihren Sitz in Sempach. Sie rät, Hecken und Sträucher ausserhalb der Brutzeit zu schneiden, am besten zwischen November und März. Für die [Aussen- und Grünflächenpflege](/leistungen/aussen-und-gruenflaechenpflege) einer Luzerner Liegenschaft heisst das: den Heckenschnitt in den Winter legen.',
     ],
+    sources: ['vogelwarte'],
   },
+  daten: [
+    {
+      label: 'Öffentliche Ruhetage im ganzen Kanton',
+      items: ['Neujahr', 'Karfreitag', 'Auffahrt', 'Fronleichnam', '1. August', 'Mariä Himmelfahrt', 'Allerheiligen', 'Mariä Empfängnis', 'Weihnachten', 'Stefanstag'],
+      text: 'Ostermontag und Pfingstmontag gehören im Kanton Luzern nicht dazu.',
+      source: 'luRuhetage',
+    },
+    {
+      label: 'Josefstag und Patrozinium',
+      text: 'Der 19. März und das Patrozinium der Kirchgemeinde sind nur dort Ruhetag, wo die Einwohnergemeinde sie dazu erklärt. Ob das für Ihre Liegenschaft gilt, weiss die Gemeindekanzlei.',
+      source: 'luRuhetage',
+    },
+    {
+      label: 'Mieterwechsel in der Stadt Luzern',
+      text: 'Eigentümer und Vermieter melden Ein- und Auszüge ihrer Mieterinnen und Mieter den Einwohnerdiensten, mit Wohnungsnummer und Datum. Mit demselben Datum lässt sich die Endreinigung planen.',
+      source: 'luMeldung',
+    },
+    {
+      label: 'Zweitwohnungen über 20 %',
+      text: 'Flühli mit Sörenberg 58,31 %, Vitznau 32,71 % und Weggis 24,95 %. In diesen drei Gemeinden gelten die Bauvorschriften des Zweitwohnungsgesetzes.',
+      source: 'are',
+    },
+  ],
   faq: [
     { question: 'Wo ist Ihr Sitz?', answer: `An der Adresse ${seat}, in der Agglomeration Luzern.` },
     {
-      question: 'Arbeiten Sie auch ausserhalb der Stadt Luzern?',
-      answer: 'Ja, im ganzen Kanton, vom Seetal bis ins Entlebuch, mit allen Leistungen und zu denselben Bedingungen.',
+      question: 'Arbeiten Sie auch im Entlebuch oder im Seetal?',
+      answer: 'Ja, im ganzen Kanton, von Hochdorf und Hitzkirch bis Schüpfheim und Escholzmatt-Marbach. Dort gelten dieselben Leistungen und Bedingungen wie in der Stadt Luzern.',
     },
-    { question: 'Was kostet eine Reinigungsfirma im Kanton Luzern?', answer: answers.kostenFaktoren },
     {
-      question: 'Übernehmen Sie die Reinigung bei einem Mieterwechsel?',
-      answer: 'Ja. Die Umzugs- und Wohnungsendreinigung mit Abnahmegarantie bieten wir als eigene Leistung an: [Umzugsreinigung](/leistungen/umzugsreinigung).',
+      question: 'Auf welche Termine werden Wohnungen im Kanton Luzern gekündigt?',
+      answer: 'Massgebend ist zuerst der Mietvertrag. Nennt er keinen Termin, sieht Art. 266c OR einen ortsüblichen Termin vor und, wo es keinen gibt, das Ende einer dreimonatigen Mietdauer. Für Verwaltungen heisst das: die [Umzugsreinigung mit Abnahmegarantie](/leistungen/umzugsreinigung) anfragen, sobald die Kündigung eingeht.',
     },
-    { question: 'Übernehmen Sie auch kurzfristige Einsätze?', answer: 'Rufen Sie uns an. Wir klären mit Ihnen, was kurzfristig möglich ist.' },
+    {
+      question: 'Betreuen Sie Zweitwohnungen in Weggis, Vitznau oder Sörenberg?',
+      answer: 'Ja. Zwischen zwei Aufenthalten reinigen wir die Wohnung und sehen nach dem Rechten, damit bei Ihrer Ankunft alles bereit ist. Mehr dazu im [Premium-Bereich](/premium).',
+    },
+    {
+      question: 'Was kostet eine Reinigungsfirma im Kanton Luzern?',
+      answer: 'Der Preis ergibt sich aus Fläche, Rhythmus, Einsatzzeiten, Zugang und Zustand des Objekts. Wie sich eine Offerte zusammensetzt, erklärt der Ratgeber [Reinigungskosten in der Schweiz](/blog/reinigungskosten-schweiz).',
+    },
   ],
   menuText: kantonMenu.luzern.text,
 }
 
-// Grundlage: Sprachen (E18), Büroreinigung, Family Offices und Geheimhaltung (/premium), Orte aus seiten.ts
+// Sprachen (E18), Büroreinigung, Family Offices und Geheimhaltung (/premium), Kündigungstermine und Feiertage (zg.ch)
 const zug: KantonPage = {
   name: 'Zug',
   kuerzel: 'ZG',
   seo: {
     title: 'Reinigungsfirma Zug und Büroreinigung',
     description:
-      'Büroreinigung, Glas und Hauswartung im Kanton Zug: für Firmensitze, Praxen und Liegenschaften von Zug und Baar bis ins Ägerital. Beratung in vier Sprachen.',
+      'Reinigungsfirma Zug für Firmensitze: Büroreinigung, Glas und Hauswartung von Baar bis ins Ägerital, auch auf Englisch. Kostenlose Offerte nach Besichtigung.',
   },
-  h1: 'Ihre Reinigungsfirma für Büros und Liegenschaften im Kanton Zug',
+  h1: 'Reinigungsfirma Zug für Büros und Firmensitze',
   lead: [
     'Im Kanton Zug haben viele Unternehmen ihren Sitz, auch internationale. Gefragt ist eine Reinigung, die sich nach dem Geschäftsbetrieb richtet und den Arbeitstag nicht stört.',
-    'Unsere Mitarbeitenden sprechen Deutsch, Englisch, Französisch und Italienisch. Das erleichtert die Abstimmung mit Teams, deren Arbeitssprache nicht Deutsch ist.',
+    'Wo im Büro Englisch gesprochen wird, laufen Absprachen auch auf Englisch. Für Wohnliegenschaften am Zuger- und Ägerisee übernehmen wir Hauswartung und Unterhalt.',
   ],
   facts: [
-    { label: 'Hauptort', value: 'Zug' },
-    { label: 'Seen', value: 'Zugersee, Ägerisee' },
-    { label: 'Gemeinden', value: 'Alle elf Gemeinden des Kantons' },
-    { label: 'Sprachen', value: 'Deutsch, Englisch, Französisch, Italienisch' },
+    { label: 'Anfahrt', value: 'Über die Autobahn A14' },
+    { label: 'Schwerpunkt', value: 'Büros, Firmensitze und Glasfassaden' },
+    { label: 'Kündigungstermine', value: '31. März, 30. Juni, 30. September' },
+    { label: 'Absprachen', value: 'Auch auf Englisch' },
   ],
   regionen: [
     { title: 'Zug, Baar und Steinhausen', orte: ['Zug', 'Baar', 'Steinhausen'] },
@@ -142,89 +256,126 @@ const zug: KantonPage = {
   objekte: [
     {
       title: 'Büros und Firmensitze',
-      text: 'Vom kleinen Büro bis zum Firmensitz über mehrere Etagen: Arbeitsplätze, Sitzungszimmer, Empfang, Teeküchen und Sanitärräume, zu Zeiten, die wir mit Ihnen festlegen.',
-    },
-    {
-      title: 'Family Offices und vertrauliche Räume',
-      text: 'Wo vertrauliche Unterlagen liegen, arbeitet bei Ihnen immer dasselbe Team, auch ausserhalb Ihrer Arbeitszeiten. Auf Wunsch unterzeichnen wir eine Geheimhaltungsvereinbarung.',
+      text: 'Vom kleinen Büro bis zum Firmensitz über mehrere Etagen: Arbeitsplätze, Sitzungszimmer, Empfang, Teeküchen und Sanitärräume, zu Zeiten, die Ihren Arbeitstag nicht stören.',
     },
     {
       title: 'Glas und Fassaden',
       text: 'Bürobauten haben oft grosse Glasflächen. Fenster, Glastüren und Fassaden reinigen wir einzeln oder zusätzlich zur Büroreinigung.',
     },
     {
-      title: 'Wohnen am Zuger- und Ägerisee',
-      text: 'Für Villen und Residenzen am See, etwa in Walchwil oder Oberägeri, gibt es unseren Premium-Bereich. Boote und Yachten auf dem Zugersee reinigen wir ebenfalls.',
+      title: 'Family Offices und vertrauliche Räume',
+      text: 'Wo vertrauliche Unterlagen liegen, arbeitet bei Ihnen immer dasselbe Team, auch ausserhalb Ihrer Arbeitszeiten. Wie wir Diskretion regeln, steht im [Premium-Bereich](/premium).',
+      premium: true,
+    },
+    {
+      title: 'Villen und Boote am See',
+      text: 'Für Villen und Residenzen in Walchwil, Oberägeri oder Cham gibt es unseren Bereich [Villen und Luxusimmobilien](/premium/luxusimmobilien), für Boote auf dem Zugersee die [Yachtreinigung](/premium/yacht).',
+      premium: true,
     },
   ],
   leistungen: [
-    { path: '/leistungen/bueroreinigung', title: 'Büro- und Praxisreinigung', text: 'Für Büros, Verwaltungen und Praxen, abgestimmt auf Ihre Arbeitszeiten.' },
-    { path: '/leistungen/fenster-und-fassadenreinigung', title: 'Fenster- und Fassadenreinigung', text: 'Für Fenster, Glasflächen und Fassaden von Geschäftshäusern.' },
-    { path: '/leistungen/facility-services', title: 'Facility Services', text: 'Reinigung, Hauswartung und Umgebung in einem Vertrag mit einer Ansprechperson.' },
-    { path: '/leistungen/sonderreinigungen', title: 'Grund- und Sonderreinigung', text: 'Grundreinigung beim Bürowechsel, gegen Kalk, Fett und alte Schichten.' },
+    { path: '/leistungen/bueroreinigung', text: 'Für Büroetagen, Empfang und Sitzungszimmer, ausserhalb Ihrer Bürozeiten.' },
+    { path: '/leistungen/fenster-und-fassadenreinigung', text: 'Für Fenster, Glasflächen und Fassaden von Geschäftshäusern.' },
+    { path: '/leistungen/facility-services', text: 'Ein Vertrag für mehrere Standorte, etwa in Zug, Baar und Luzern.' },
+    { path: '/leistungen/sonderreinigungen', text: 'Grundreinigung beim Bürowechsel, gegen Kalk, Fett und alte Schichten.' },
     { path: '/premium/yacht', title: 'Yacht', text: 'Innenraum, Polster, Teak und Gelcoat, am Zugersee und am Vierwaldstättersee.' },
   ],
   planung: {
-    title: 'Anreise und Planung',
+    title: 'Zutritt und Einsatzzeiten im Geschäftshaus',
     paragraphs: [
-      'Von Emmenbrücke erreichen wir den Kanton Zug über die Autobahn A14. Die Einsätze in Büros legen wir so, dass sie Ihren Betrieb nicht stören, zum Beispiel ausserhalb Ihrer Bürozeiten.',
-      'In Geschäftshäusern mit Empfang, Zutrittskarten oder Alarmanlage klären wir den Zutritt vor dem ersten Einsatz. Haben Sie mehrere Standorte im Einzugsgebiet, nennen Sie uns alle bei der Anfrage.',
+      'Von Emmenbrücke erreichen wir den Kanton Zug über die Autobahn A14. Gereinigt wird dann, wenn es Ihren Betrieb nicht stört, zum Beispiel ausserhalb Ihrer Bürozeiten.',
+      'In Geschäftshäusern mit Empfang, Zutrittskarten oder Alarmanlage entscheidet der erste Einsatz über den Rest. Diese Punkte sollten vorher geregelt sein:',
     ],
+    list: {
+      title: 'Vor dem ersten Einsatz im Geschäftshaus',
+      items: [
+        'ob das Team über den Empfang, eine Zutrittskarte oder einen Schlüssel ins Gebäude kommt',
+        'welche Etagen und Räume dazugehören und welche gesperrt bleiben',
+        'wie Alarmanlage, Licht und Abschliessen geregelt sind',
+        'in welcher Sprache Absprachen mit Ihrem Team laufen: Deutsch, Englisch, Französisch oder Italienisch',
+        'wer bei Ihnen Ansprechperson ist, wenn etwas auffällt',
+      ],
+    },
   },
+  daten: [
+    {
+      label: 'Kündigungstermine',
+      text: 'Ohne andere Abmachung im Mietvertrag gelten der 31. März, der 30. Juni und der 30. September. Die Frist beträgt für Wohnungen drei, für Geschäftsräume sechs Monate.',
+      source: 'zgMietrecht',
+    },
+    {
+      label: 'Feiertage wie Sonntage',
+      items: ['Neujahr', 'Karfreitag', 'Auffahrt', 'Fronleichnam', '1. August', 'Maria Himmelfahrt', 'Allerheiligen', 'Maria Empfängnis', 'Weihnachten'],
+      text: 'Für Angestellte gilt an diesen Tagen ein Arbeitsverbot wie am Sonntag, vom Vorabend 23 Uhr bis 23 Uhr am Feiertag.',
+      source: 'zgFeiertage',
+    },
+    {
+      label: 'Feiertagsähnliche Tage',
+      items: ['Berchtoldstag', 'Ostermontag', 'Pfingstmontag', 'Stefanstag'],
+      text: 'Die meisten Zuger Betriebe haben freiwillig geschlossen, gearbeitet werden darf ohne Bewilligung und ohne Zuschlag. Ausnahme: Der 2. Januar oder der 26. Dezember fällt auf einen Sonntag.',
+      source: 'zgFeiertagsaehnlich',
+    },
+  ],
   faq: [
     {
       question: 'Können wir uns auf Englisch verständigen?',
-      answer: `${answers.sprachen} Sagen Sie uns bei der Anfrage, welche Sprache Ihnen am liebsten ist.`,
+      answer: 'Ja. Absprachen sind auf Englisch möglich, ebenso auf Französisch und Italienisch. Geben Sie im Formular an, welche Sprache Ihr Team am liebsten nutzt.',
     },
     {
-      question: 'Reinigen Sie ausserhalb der Bürozeiten?',
-      answer: 'Die Einsatzzeiten legen wir mit Ihnen fest, passend zu Ihren Arbeits- und Öffnungszeiten.',
+      question: 'Betreuen Sie auch mehrere Standorte, etwa in Zug und Luzern?',
+      answer: 'Ja. Ein Firmensitz in Zug, eine Filiale in Luzern, ein Lager im Aargau: Mit [Facility Services](/leistungen/facility-services) laufen alle Standorte über einen Vertrag und eine Ansprechperson bei uns. Nennen Sie uns bei der Anfrage alle Adressen, dann planen wir die Besichtigungen zusammen.',
     },
-    { question: 'Was kostet eine Reinigungsfirma im Kanton Zug?', answer: answers.kostenFaktoren },
+    {
+      question: 'Wir geben unser Büro in Zug ab. Wann fragen wir die Endreinigung an?',
+      answer: 'Sobald die Kündigung feststeht. Geschäftsräume werden im Kanton Zug ohne andere Abmachung mit sechs Monaten Frist gekündigt, der Vorlauf reicht also gut für die [Endreinigung vor der Übergabe](/leistungen/umzugsreinigung).',
+    },
     {
       question: 'Sind Sie auch in Baar, Cham oder im Ägerital tätig?',
-      answer: 'Ja, in allen Gemeinden des Kantons Zug, mit allen Leistungen und zu denselben Bedingungen.',
+      answer: 'Ja, in allen elf Zuger Gemeinden, von Risch mit Rotkreuz bis Menzingen und Neuheim, mit allen Leistungen und zu denselben Bedingungen.',
     },
-    { question: 'Sind Sie versichert?', answer: answers.versicherung },
+    {
+      question: 'Eignen sich die feiertagsähnlichen Tage für eine Grundreinigung?',
+      answer: 'Oft ja. Laut Amt für Wirtschaft und Arbeit haben an Berchtoldstag, Ostermontag, Pfingstmontag und Stefanstag die meisten Zuger Betriebe geschlossen. Leere Büros sind ideal für Arbeiten, die im Alltag stören, etwa die [Grundreinigung von Böden](/leistungen/sonderreinigungen).',
+    },
   ],
   menuText: kantonMenu.zug.text,
 }
 
-// Grundlage: Industrie- und Hallenreinigung (leistungen.ts), Orte aus seiten.ts, E30 (gleiche Bedingungen)
+// Industrie- und Hallenreinigung (Link statt Kopie, K5), Orte aus seiten.ts, E44, Feiertage je Bezirk (Merkblatt ag.ch, spaltengenau gelesen)
 const aargau: KantonPage = {
   name: 'Aargau',
   kuerzel: 'AG',
   seo: {
     title: 'Reinigungsfirma Aargau und Hauswartung',
     description:
-      'Industrie- und Hallenreinigung, Baureinigung und Hauswartung im Aargau: vom Freiamt und Seetal bis Aarau und Baden, zu denselben Bedingungen wie in Luzern.',
+      'Reinigungsfirma Aargau für Hallen und Liegenschaften: Industrie-, Bau- und Unterhaltsreinigung von Aarau bis ins Freiamt. Kostenlose Offerte nach Besichtigung.',
   },
-  h1: 'Ihre Reinigungsfirma für Industrie und Gewerbe im Kanton Aargau',
+  h1: 'Reinigungsfirma Aargau für Industrie, Gewerbe und Liegenschaften',
   lead: [
     'Im Aargau gibt es viele Industrie- und Gewerbebetriebe. Produktions- und Lagerhallen, Werkstätten und Gewerbebauten brauchen eine Reinigung, die sich nach Schichten und Abläufen richtet.',
-    'Vom Freiamt und dem Seetal an der Luzerner Grenze bis in die Regionen Aarau und Baden arbeiten wir im ganzen Kanton, mit allen Leistungen und zu denselben Bedingungen wie in Luzern.',
+    'Wir arbeiten im ganzen Kanton, vom Freiamt und dem Seetal an der Luzerner Grenze bis nach Aarau, Baden, Brugg und ins Fricktal.',
   ],
   facts: [
-    { label: 'Hauptort', value: 'Aarau' },
-    { label: 'Gewässer', value: 'Hallwilersee, Aare, Reuss, Limmat und Rhein' },
-    { label: 'Schwerpunkt', value: 'Hallen, Lager, Werkstätten und Wohnliegenschaften' },
-    { label: 'Leistungen', value: sameTerms },
+    { label: 'Anfahrt', value: 'Zu denselben Bedingungen wie in Luzern' },
+    { label: 'Schwerpunkt', value: 'Industrie und Gewerbe, dazu Wohnbau' },
+    { label: 'Feiertage', value: 'Sechs Regelungen je nach Bezirk' },
+    { label: 'Kein Feiertag', value: 'Der 1. Mai, im ganzen Kanton' },
   ],
   regionen: [
     { title: 'Freiamt', orte: ['Muri', 'Wohlen', 'Bremgarten', 'Sins'] },
     { title: 'Seetal und Hallwilersee', orte: ['Meisterschwanden', 'Seengen', 'Beinwil am See'] },
     { title: 'Aarau, Lenzburg und Zofingen', orte: ['Aarau', 'Lenzburg', 'Zofingen', 'Oftringen'] },
-    { title: 'Region Baden und Mutschellen', orte: ['Baden', 'Wettingen', 'Ennetbaden', 'Bergdietikon', 'Oberwil-Lieli'] },
+    { title: 'Baden, Wettingen und Mutschellen', orte: ['Baden', 'Wettingen', 'Ennetbaden', 'Bergdietikon', 'Oberwil-Lieli'] },
     { title: 'Brugg und Fricktal', orte: ['Brugg', 'Windisch', 'Rheinfelden', 'Frick'] },
   ],
   objekte: [
     {
       title: 'Produktions- und Lagerhallen',
-      text: 'Hallenböden, Lagerbereiche, Regale und Verkehrswege reinigen wir einmalig oder regelmässig, zu Zeiten, die wir auf Produktion und Schichtbetrieb abstimmen.',
+      text: 'Hallenböden, Lagerbereiche, Regale und Verkehrswege reinigen wir einmalig oder regelmässig, zu Zeiten, die Produktion und Schichtbetrieb zulassen.',
     },
     {
       title: 'Maschinen und Anlagen',
-      text: 'Maschinen reinigen wir nach Ihren Vorgaben und in Absprache mit Ihrer Instandhaltung. Wann eine Anlage stillsteht und welche Mittel geeignet sind, legen wir vor dem Einsatz fest.',
+      text: 'Reinigung von Maschinen im Schichtbetrieb, in Pausen, zwischen Schichten oder bei geplanten Stillständen. Wie das mit Ihrer Instandhaltung zusammenspielt, steht unter [Industrie- und Hallenreinigung](/leistungen/industrie-und-hallenreinigung).',
     },
     {
       title: 'Neu- und Umbauten',
@@ -236,57 +387,86 @@ const aargau: KantonPage = {
     },
   ],
   leistungen: [
-    { path: '/leistungen/industrie-und-hallenreinigung', title: 'Industrie- und Hallenreinigung', text: 'Produktions- und Lagerhallen, Werkstätten, Maschinen und Anlagen.' },
-    { path: '/leistungen/baureinigung', title: 'Bau- und Bauendreinigung', text: 'Während und nach Bau- und Umbauarbeiten, bis zur Übergabe.' },
-    { path: '/leistungen/bueroreinigung', title: 'Büro- und Praxisreinigung', text: 'Für Büros, Sozialräume und Garderoben im Betrieb.' },
-    { path: '/leistungen/hauswartung', title: 'Hauswartung', text: 'Kontrollgänge, Waschküche, Kleinreparaturen und Entsorgung für Wohnliegenschaften.' },
-    { path: '/leistungen/facility-services', title: 'Facility Services', text: 'Reinigung, Hauswartung und Umgebung für Ihr Betriebsareal aus einer Hand.' },
+    { path: '/leistungen/industrie-und-hallenreinigung', text: 'Hallenböden, Lagerzonen und Anlagen, geplant um Schichten und Stillstände.' },
+    { path: '/leistungen/baureinigung', text: 'Während und nach Bau- und Umbauarbeiten, bis zur Übergabe.' },
+    { path: '/leistungen/bueroreinigung', text: 'Für Büros, Sozialräume und Garderoben im Betrieb.' },
+    { path: '/leistungen/hauswartung', text: 'Kontrollgänge, Waschküche, Kleinreparaturen und Entsorgung für Wohnliegenschaften.' },
+    { path: '/leistungen/facility-services', text: 'Reinigung, Hauswartung und Umgebung für Ihr Betriebsareal aus einer Hand.' },
   ],
   planung: {
-    title: 'Anreise und Planung',
+    title: 'Planung für Betriebe im Aargau',
     paragraphs: [
-      'Die Wege von Emmenbrücke in den Aargau sind je nach Region unterschiedlich lang. Deshalb legen wir Rhythmus, Einsatzzeiten und Stillstände der Anlagen bei der Besichtigung fest und halten sie in der Offerte fest.',
-      'Vor der Offerte sehen wir uns Hallen, Anlagen und Abläufe bei einem Rundgang an. Ihre Sicherheits- und Betriebsregeln gelten auch für unser Team, wir klären sie vor dem ersten Einsatz mit Ihnen.',
+      'Die Wege von Emmenbrücke in den Aargau sind je nach Region unterschiedlich lang, die Bedingungen für die Anfahrt bleiben dieselben. Für Hallen mit Schichtbetrieb zählen drei Dinge: wann eine Anlage stillsteht, welche Zonen während der Produktion zugänglich sind und welche Sicherheitsregeln für Fremdpersonal gelten.',
+      'Was in Ihrem Betrieb für Fremdfirmen gilt, gilt auch für das Reinigungsteam. Halten Sie Sperrzonen, Schutzausrüstung und die Ansprechperson für Notfälle schriftlich fest, bevor der erste Einsatz beginnt.',
     ],
   },
+  daten: [
+    {
+      label: 'Feiertage in allen Bezirken',
+      items: ['Neujahr', 'Karfreitag', 'Auffahrt', '1. August', 'Weihnachten'],
+      text: 'Nur diese fünf Tage sind im ganzen Aargau dem Sonntag gleichgestellt. Die übrigen Feiertage legt der Regierungsrat je Bezirk fest, das Merkblatt nennt dafür sechs Regelungen.',
+      source: 'agFeiertage',
+    },
+    {
+      label: 'Ostermontag und Pfingstmontag',
+      text: 'Feiertag in den Bezirken Aarau, Baden, Brugg, Kulm, Lenzburg und Zofingen und in acht Gemeinden des Bezirks Rheinfelden, darunter Rheinfelden, Möhlin und Kaiseraugst. In Bremgarten, Laufenburg, Muri und Zurzach gelten beide Tage nicht als Feiertag.',
+      source: 'agFeiertage',
+    },
+    {
+      label: 'Fronleichnam und Allerheiligen',
+      text: 'Fronleichnam ist Feiertag in den Bezirken Baden ohne Bergdietikon, Bremgarten, Laufenburg, Muri und Zurzach sowie in sechs Gemeinden des Bezirks Rheinfelden. Allerheiligen gilt in Bremgarten, Laufenburg, Muri, Rheinfelden und Zurzach. In Aarau, Brugg, Kulm, Lenzburg und Zofingen ist keiner der beiden Tage ein Feiertag.',
+      source: 'agFeiertage',
+    },
+    {
+      label: 'Stephanstag und Berchtoldstag',
+      text: 'Der Stephanstag ist Feiertag ausser in Laufenburg, Muri und sechs Gemeinden des Bezirks Rheinfelden. Den Berchtoldstag kennen nur Aarau, Brugg, Kulm, Lenzburg, Zofingen, Zurzach und Bergdietikon.',
+      source: 'agFeiertage',
+    },
+  ],
   faq: [
     {
-      question: 'Gelten im Aargau dieselben Bedingungen wie in Luzern?',
-      answer: 'Ja. Alle Leistungen bieten wir im ganzen Einzugsgebiet zu denselben Bedingungen an.',
+      question: 'Arbeiten Sie auch in Aarau, Baden oder Lenzburg?',
+      answer: 'Ja, im ganzen Kanton: in Aarau, Lenzburg und Zofingen, in Baden und Wettingen, in Brugg und im Fricktal, im Freiamt und am Hallwilersee. Überall gelten dieselben Bedingungen wie in Luzern, auch für die Anfahrt.',
     },
     {
       question: 'Reinigen Sie auch während des Schichtbetriebs?',
-      answer: 'Die Einsatzzeiten stimmen wir mit Ihnen auf Produktion und Schichten ab, damit die Reinigung den Betrieb nicht aufhält.',
+      answer: 'Ja. Gereinigt wird in Pausen, zwischen den Schichten oder während geplanter Stillstände, je nachdem, welche Zonen gerade frei sind.',
     },
     {
-      question: 'Gehört die Wartung von Maschinen dazu?',
-      answer: 'Nein. Wir reinigen Maschinen und Anlagen nach Ihren Vorgaben, Wartung und Reparatur bleiben bei Ihrer Instandhaltung.',
+      question: 'Können Sozialräume und Büros im Betrieb mitgereinigt werden?',
+      answer: 'Ja. Garderoben, Sozialräume und Büros lassen sich zusammen mit der Halle in einem Rhythmus planen. Mehr dazu unter [Büro- und Praxisreinigung](/leistungen/bueroreinigung).',
     },
-    { question: 'Was kostet eine Reinigungsfirma im Kanton Aargau?', answer: answers.kostenFaktoren },
-    { question: 'Reinigen Sie mit umweltfreundlichen Mitteln?', answer: answers.mittel },
+    {
+      question: 'Welche Unterlagen helfen vor dem Rundgang durch die Halle?',
+      answer: 'Ein Hallenplan mit den Zonen, die Zeiten der Stillstände und Ihre Sicherheitsregeln für Fremdfirmen. Schicken Sie diese Unterlagen per E-Mail, dann lässt sich der Rundgang gezielt vorbereiten.',
+    },
+    {
+      question: 'Wir haben Standorte in mehreren Bezirken. Was heisst das für die Feiertage?',
+      answer: 'Der Reinigungsplan richtet sich nach dem Bezirk jedes Standorts. Am Ostermontag ist zum Beispiel in Aarau Feiertag, in Muri ein gewöhnlicher Arbeitstag. Die Regeln je Bezirk stehen oben im Kasten.',
+    },
   ],
   menuText: kantonMenu.aargau.text,
 }
 
-// Grundlage: Zweitwohnungen und Kontrollgänge (/premium), Yacht (/premium/yacht), Orte aus seiten.ts, ARE-Wohnungsinventar (S59)
+// Zweitwohnungen (/premium, ARE), Hauswartung (7.4.1), Ruhetage NG 921.1, Orte aus seiten.ts
 const nidwalden: KantonPage = {
   name: 'Nidwalden',
   kuerzel: 'NW',
   seo: {
-    title: 'Reinigungsfirma Nidwalden: Hauswartung',
+    title: 'Reinigungsfirma Nidwalden und Hauswartung',
     description:
-      'Reinigung und Hauswartung in Nidwalden: Liegenschaften am Vierwaldstättersee, Zweitwohnungen und Villen von Hergiswil bis Beckenried. Offerte vor Ort.',
+      'Reinigungsfirma Nidwalden für Stockwerkeigentum und Zweitwohnungen am See, von Hergiswil bis Emmetten, mit Hauswartung. Kostenlose Offerte nach Besichtigung.',
   },
-  h1: 'Ihre Reinigungsfirma im Kanton Nidwalden',
+  h1: 'Reinigungsfirma Nidwalden für Liegenschaften am See',
   lead: [
     'Nidwalden reicht vom Ufer des Vierwaldstättersees bei Hergiswil und Ennetbürgen bis ins Engelbergertal. Viele Liegenschaften liegen nahe am See, manche werden nur zeitweise bewohnt.',
-    'Wir reinigen und betreuen Wohn- und Geschäftshäuser, Zweitwohnungen und Villen im ganzen Kanton. Die Offerte erstellen wir nach einer Besichtigung, kostenlos und unverbindlich.',
+    'Für Stockwerkeigentümerschaften und Verwaltungen übernehmen wir Reinigung und Hauswartung. Bei Zweitwohnungen und Villen kommt die Betreuung während Ihrer Abwesenheit dazu.',
   ],
   facts: [
-    { label: 'Hauptort', value: 'Stans' },
-    { label: 'See', value: 'Vierwaldstättersee' },
-    { label: 'Gemeinden', value: 'Alle elf Gemeinden des Kantons' },
-    { label: 'Leistungen', value: sameTerms },
+    { label: 'Anfahrt', value: 'A2 über Luzern' },
+    { label: 'Schwerpunkt', value: 'Stockwerkeigentum und Liegenschaften am See' },
+    { label: 'Viele Zweitwohnungen', value: 'Emmetten, fast jede dritte Wohnung' },
+    { label: 'Eigener Feiertag', value: 'Josefstag, 19. März' },
   ],
   regionen: [
     { title: 'Am Vierwaldstättersee', orte: ['Hergiswil', 'Stansstad', 'Ennetbürgen', 'Buochs', 'Beckenried'] },
@@ -295,73 +475,96 @@ const nidwalden: KantonPage = {
   ],
   objekte: [
     {
+      title: 'Stockwerkeigentum mit auswärtigen Eigentümern',
+      text: 'Wohnen die Eigentümer nicht alle vor Ort, übernimmt die [Hauswartung](/leistungen/hauswartung) die regelmässigen Gänge durchs Haus und die Wohnungsübergaben.',
+    },
+    {
       title: 'Zweitwohnungen',
-      text: 'In Emmetten ist laut Wohnungsinventar des Bundes rund ein Drittel der Wohnungen eine Zweitwohnung. Wir reinigen vor Ihrer Ankunft und nach Ihrer Abreise und sehen während Ihrer Abwesenheit nach dem Rechten.',
+      text: 'Besonders in Emmetten werden viele Wohnungen nur zeitweise genutzt. Betreut wird vor Ihrer Ankunft, nach Ihrer Abreise und mit Kontrollgängen dazwischen.',
     },
     {
       title: 'Villen und Residenzen am See',
-      text: 'In Häusern mit Naturstein, Parkett und grossen Glasflächen reinigen wir materialgerecht. Bei Ihnen arbeitet immer dasselbe Team, auf Wunsch mit Geheimhaltungsvereinbarung.',
-    },
-    {
-      title: 'Stockwerkeigentum',
-      text: 'Wohnen die Eigentümer nicht alle vor Ort, übernimmt die Hauswartung Kontrollgänge, Waschküche, Entsorgung und Wohnungsübergaben und meldet Mängel an die vereinbarte Stelle.',
+      text: 'Für Häuser mit Naturstein, Parkett und grossen Glasflächen am Ufer von Hergiswil bis Beckenried gibt es unseren Bereich [Villen und Luxusimmobilien](/premium/luxusimmobilien).',
+      premium: true,
     },
     {
       title: 'Boote am Vierwaldstättersee',
-      text: 'Yachten und Motorboote reinigen wir innen und aussen, mit Rücksicht auf Teak, Gelcoat und Polster.',
+      text: 'Motorboote und Yachten an den Liegeplätzen in Stansstad, Buochs oder Beckenried pflegt unsere [Yachtreinigung](/premium/yacht).',
+      premium: true,
     },
   ],
   leistungen: [
-    { path: '/leistungen/hauswartung', title: 'Hauswartung', text: 'Für Stockwerkeigentümerschaften und Verwaltungen, schriftlich vereinbart.' },
-    { path: '/premium/luxusimmobilien', title: 'Villen und Zweitwohnungen', text: 'Reinigung vor Ankunft und nach Abreise, Kontrollgänge während Ihrer Abwesenheit.' },
-    { path: '/leistungen/fenster-und-fassadenreinigung', title: 'Fenster- und Fassadenreinigung', text: 'Für grosse Fensterfronten und Glasflächen.' },
-    { path: '/leistungen/aussen-und-gruenflaechenpflege', title: 'Aussen- und Grünflächenpflege', text: 'Für Garten und Umgebung Ihrer Liegenschaft.' },
+    { path: '/leistungen/hauswartung', text: 'Für Stockwerkeigentümerschaften und Verwaltungen, schriftlich vereinbart.' },
+    { path: '/premium/luxusimmobilien', title: 'Villen und Zweitwohnungen', text: 'Betreuung von Seeliegenschaften, auch wenn Sie nicht vor Ort sind.' },
+    { path: '/leistungen/fenster-und-fassadenreinigung', text: 'Für grosse Fensterfronten mit Seesicht und Glasflächen.' },
+    { path: '/leistungen/aussen-und-gruenflaechenpflege', text: 'Für Garten, Wege und Umgebung Ihrer Liegenschaft.' },
     { path: '/premium/yacht', title: 'Yacht', text: 'Für Boote und Yachten am Vierwaldstättersee.' },
   ],
   planung: {
-    title: 'Anreise und Planung',
+    title: 'Planung für Seegemeinden und Zweitwohnungen',
     paragraphs: [
-      'Von Emmenbrücke führt der Weg über Luzern und die Autobahn A2 nach Nidwalden. Reinigungen vor Ihrer Ankunft planen wir am besten mit etwas Vorlauf, sagen Sie uns Ihre Daten deshalb möglichst früh.',
-      'Bei Zweitwohnungen vereinbaren wir feste Regeln für Schlüssel und Alarm und legen fest, wem wir melden, was uns bei Kontrollgängen auffällt.',
+      'Von Emmenbrücke führt der Weg über Luzern und die Autobahn A2 nach Nidwalden. Reinigungen vor Ihrer Ankunft brauchen etwas Vorlauf, nennen Sie uns Ihre Daten deshalb möglichst früh.',
+      'Bei Zweitwohnungen gelten feste Regeln für Schlüssel und Alarm. Bestimmen Sie vorab, wer informiert wird, wenn bei einem Kontrollgang etwas auffällt: Sie selbst, die Verwaltung oder eine Vertrauensperson in der Nähe.',
     ],
   },
+  daten: [
+    {
+      label: 'Öffentliche Ruhetage',
+      items: ['Neujahr', 'Josefstag (19. März)', 'Auffahrt', 'Fronleichnam', '1. August', 'Maria Himmelfahrt', 'Allerheiligen', 'Maria Empfängnis', 'Karfreitag', 'Ostersonntag', 'Pfingstsonntag', 'Bettag', 'Weihnachtstag'],
+      text: 'Die letzten fünf sind hohe Feiertage. Weitere Feiertage können die Nidwaldner Gemeinden in einem Reglement bestimmen.',
+      source: 'nwRuhetage',
+    },
+    {
+      label: 'Dem Sonntag gleichgestellt',
+      items: ['Neujahr', 'Karfreitag', 'Auffahrt', 'Fronleichnam', 'Maria Himmelfahrt', 'Allerheiligen', 'Maria Empfängnis', 'Weihnachtstag'],
+      text: 'So regelt es das Ruhetagsgesetz im Sinn des Arbeitsgesetzes. Der Josefstag ist öffentlicher Ruhetag, gehört aber nicht zu diesen Tagen.',
+      source: 'nwRuhetage',
+    },
+    {
+      label: 'Zweitwohnungsanteil',
+      text: 'Emmetten 32,51 %. Die Gemeinde liegt als einzige in Nidwalden über 20 Prozent und untersteht damit den Bauvorschriften des Zweitwohnungsgesetzes.',
+      source: 'are',
+    },
+  ],
   faq: [
     {
       question: 'Betreuen Sie Zweitwohnungen während unserer Abwesenheit?',
       answer: 'Ja. Wir reinigen vor Ihrer Ankunft und nach Ihrer Abreise und machen Kontrollgänge. Mehr dazu unter [Luxusimmobilien](/premium/luxusimmobilien).',
     },
     {
-      question: 'Reinigen Sie auch Boote?',
-      answer: 'Ja, Yachten und Motorboote am Vierwaldstättersee: Innenraum, Polster, Teak und Gelcoat. Mehr unter [Yacht](/premium/yacht).',
+      question: 'Wer schaut nach der Liegenschaft, wenn die Eigentümer nicht vor Ort wohnen?',
+      answer: 'In Seegemeinden gehören viele Wohnungen Eigentümern, die nur zeitweise da sind. Dann fehlt oft jemand, der regelmässig vorbeikommt. Die [Hauswartung](/leistungen/hauswartung) übernimmt Kontrollgänge, Waschküche, Entsorgung und Wohnungsübergaben und meldet Mängel an die Stelle, die die Stockwerkeigentümerschaft bestimmt, etwa an die Verwaltung.',
     },
-    { question: 'Was kostet eine Reinigungsfirma im Kanton Nidwalden?', answer: answers.kostenFaktoren },
     {
-      question: 'Wie kommen wir zu einer Offerte?',
-      answer: `Rufen Sie uns an oder schreiben Sie uns. Wir melden uns ${company.responseTime}, sehen uns das Objekt an und schicken Ihnen die Offerte schriftlich.`,
+      question: 'Arbeiten Sie auch in Emmetten und im Engelbergertal?',
+      answer: 'Ja, in allen elf Nidwaldner Gemeinden, von Hergiswil und Stansstad bis Wolfenschiessen und Emmetten, mit allen Leistungen und zu denselben Bedingungen.',
     },
-    { question: 'Sind Sie versichert?', answer: answers.versicherung },
+    {
+      question: 'Pflegen Sie auch Boote an den Liegeplätzen in Nidwalden?',
+      answer: 'Ja, Yachten und Motorboote am Vierwaldstättersee, etwa in Stansstad, Buochs oder Beckenried: Innenraum, Polster, Teak und Gelcoat. Mehr unter [Yacht](/premium/yacht).',
+    },
   ],
   menuText: kantonMenu.nidwalden.text,
 }
 
-// Grundlage: Zweitwohnungen und Hotels (/premium), kein Winterdienst (leistungen.ts), ARE-Wohnungsinventar (S59)
+// Zweitwohnungen und Hotels (/premium, ARE), kein Winterdienst (E29), Kündigungstermine (ow.ch), Ruhetage GDB 975.2
 const obwalden: KantonPage = {
   name: 'Obwalden',
   kuerzel: 'OW',
   seo: {
     title: 'Reinigungsfirma Obwalden und Engelberg',
     description:
-      'Reinigung und Hauswartung in Obwalden: Liegenschaften im Sarneraatal, Zweitwohnungen und Hotels in Engelberg. Kostenlose Offerte nach Besichtigung.',
+      'Reinigungsfirma Obwalden für das Sarneraatal und Engelberg: Hauswartung, Grundreinigung für Hotels und Zweitwohnungen. Kostenlose Offerte nach Besichtigung.',
   },
-  h1: 'Ihre Reinigungsfirma im Kanton Obwalden',
+  h1: 'Reinigungsfirma Obwalden, vom Sarneraatal bis Engelberg',
   lead: [
     'Obwalden besteht aus zwei Teilen: dem Sarneraatal mit dem Hauptort Sarnen und dem Hochtal von Engelberg, das man über Nidwalden erreicht.',
     'Im Sarneraatal reinigen und betreuen wir Wohn- und Geschäftshäuser und Gewerbe. Engelberg prägen Zweitwohnungen und Hotels, für beide bieten wir Reinigung und Betreuung an.',
   ],
   facts: [
-    { label: 'Hauptort', value: 'Sarnen' },
-    { label: 'Seen', value: 'Sarnersee, Lungerersee' },
-    { label: 'Gemeinden', value: 'Alle sieben Gemeinden, auch Engelberg' },
+    { label: 'Anfahrt', value: 'A8, nach Engelberg durchs Engelbergertal' },
+    { label: 'Kündigungstermine', value: 'Ende März, Ende Juni, Ende September' },
+    { label: 'Eigener Feiertag', value: 'Bruderklausenfest, 25. September' },
     { label: 'Nicht im Angebot', value: 'Winterdienst' },
   ],
   regionen: [
@@ -372,7 +575,8 @@ const obwalden: KantonPage = {
   objekte: [
     {
       title: 'Zweitwohnungen in Engelberg',
-      text: 'In Engelberg ist laut Wohnungsinventar des Bundes mehr als die Hälfte der Wohnungen eine Zweitwohnung. Wir reinigen vor Ihrer Ankunft und nach Ihrer Abreise und sehen während Ihrer Abwesenheit nach dem Rechten.',
+      text: 'Viele Wohnungen im Klosterdorf stehen zwischen den Aufenthalten leer. Hier zählt die Reinigung zwischen zwei Aufenthalten mehr als ein fester Wochenrhythmus. Mehr im [Premium-Bereich](/premium).',
+      premium: true,
     },
     {
       title: 'Hotels',
@@ -383,36 +587,60 @@ const obwalden: KantonPage = {
       text: 'In Sarnen, Kerns, Sachseln und Alpnach reinigen wir Treppenhäuser, Büros und Gewerbeflächen und übernehmen die Hauswartung von Wohn- und Geschäftshäusern.',
     },
     {
-      title: 'Umzug und Übergabe',
-      text: 'Wechselt eine Wohnung den Besitzer oder die Mieterschaft, reinigen wir vor der Übergabe, mit Abnahmegarantie.',
+      title: 'Wohnungswechsel',
+      text: 'Wechselt die Mieterschaft, reinigen wir im Auftrag der Verwaltung oder der Eigentümerschaft vor der Übergabe, mit Abnahmegarantie.',
     },
   ],
   leistungen: [
-    { path: '/premium/luxusimmobilien', title: 'Villen und Zweitwohnungen', text: 'Reinigung vor Ankunft und nach Abreise, Kontrollgänge während Ihrer Abwesenheit.' },
-    { path: '/leistungen/sonderreinigungen', title: 'Grund- und Sonderreinigung', text: 'Grundreinigung für Hotels und Wohnungen, etwa vor der Saison.' },
-    { path: '/leistungen/baureinigung', title: 'Bau- und Bauendreinigung', text: 'Nach Umbau und Renovation, bis zur Übergabe.' },
-    { path: '/leistungen/hauswartung', title: 'Hauswartung', text: 'Kontrollgänge, Waschküche, Entsorgung und Wohnungsübergaben.' },
-    { path: '/leistungen/unterhaltsreinigung', title: 'Unterhaltsreinigung', text: 'Treppenhäuser und Gewerbeflächen in einem festen Rhythmus.' },
+    { path: '/premium/luxusimmobilien', title: 'Villen und Zweitwohnungen', text: 'Reinigung zwischen zwei Aufenthalten in Engelberg und am Sarnersee.' },
+    { path: '/leistungen/sonderreinigungen', text: 'Grundreinigung für Hotels und Wohnungen, etwa vor der Saison.' },
+    { path: '/leistungen/baureinigung', text: 'Nach Umbau und Renovation, bis zur Übergabe.' },
+    { path: '/leistungen/hauswartung', text: 'Kontrollgänge, Waschküche, Entsorgung und Wohnungsübergaben.' },
+    { path: '/leistungen/umzugsreinigung', text: 'Endreinigung beim Mieterwechsel im Sarneraatal, mit Abnahmegarantie.' },
   ],
   planung: {
-    title: 'Anreise und Planung',
+    title: 'Saison, Zufahrt und Engelberg',
     paragraphs: [
       'Ins Sarneraatal fahren wir von Emmenbrücke über Luzern und die Autobahn A8. Nach Engelberg führt der Weg durch Nidwalden und das Engelbergertal.',
-      'In Engelberg stimmen wir die Einsätze auf Ankunft, Abreise und Saison ab. Klären Sie bei der Besichtigung Zufahrt, Parkplatz und Schlüsselübergabe.',
-      'Winterdienst bieten wir nicht an. Die Schneeräumung rund um die Liegenschaft vergeben Sie deshalb separat.',
+      'In Engelberg richten sich die Einsätze nach Ankunft, Abreise und Saison. Regeln Sie Zufahrt, Parkplatz und Schlüsselübergabe vor dem ersten Einsatz, besonders wenn Sie selbst nicht vor Ort sind.',
+      'Den Winterdienst übernehmen wir nicht, auch nicht in Engelberg. Vergeben Sie die Schneeräumung für Zufahrt und Plätze deshalb separat, am besten vor Saisonbeginn.',
     ],
   },
+  daten: [
+    {
+      label: 'Kündigungstermine',
+      text: 'Ist im Mietvertrag nichts anderes abgemacht, lässt sich eine Wohnung auf Ende März, Ende Juni oder Ende September kündigen. Die Kündigung muss spätestens Ende Dezember, Ende März oder Ende Juni zugestellt werden können.',
+      source: 'owSchlichtung',
+    },
+    {
+      label: 'Öffentliche Ruhetage',
+      items: ['Neujahr', 'Auffahrt', 'Fronleichnam', '1. August', 'Mariä Himmelfahrt', 'Bruderklausenfest (25. September)', 'Allerheiligen', 'Mariä Empfängnis', 'Karfreitag', 'Ostersonntag', 'Pfingstsonntag', 'Bettag', 'Weihnachten'],
+      text: 'Das Bruderklausenfest ist den Sonntagen im Sinn des Arbeitsgesetzes nicht gleichgestellt. Jede Einwohnergemeinde kann zudem einen Lokalfeiertag festlegen, der einem Sonntag gleichkommt.',
+      source: 'owRuhetage',
+    },
+    {
+      label: 'Zweitwohnungsanteil',
+      text: 'Engelberg 55,87 %, als einzige Obwaldner Gemeinde über 20 Prozent. Lungern liegt mit 18,92 % darunter.',
+      source: 'are',
+    },
+  ],
   faq: [
     {
       question: 'Kommen Sie auch nach Engelberg?',
       answer: 'Ja. Engelberg gehört zum Kanton Obwalden und damit zu unserem Einzugsgebiet, mit allen Leistungen und zu denselben Bedingungen.',
     },
     {
-      question: 'Reinigen Sie vor unserer Ankunft?',
-      answer: 'Ja. Wir reinigen vor Ihrer Ankunft und nach Ihrer Abreise. Sagen Sie uns Ihre Daten möglichst früh.',
+      question: 'Reinigen Sie zwischen zwei Aufenthalten in unserer Ferienwohnung?',
+      answer: 'Ja. Nennen Sie uns An- und Abreise möglichst früh, dann liegt die Reinigung zwischen Ihren Aufenthalten und nicht an Ihrem ersten Ferientag.',
     },
-    { question: 'Übernehmen Sie Winterdienst?', answer: 'Nein, Winterdienst bieten wir nicht an.' },
-    { question: 'Was kostet eine Reinigungsfirma im Kanton Obwalden?', answer: answers.kostenFaktoren },
+    {
+      question: 'Wann ist der beste Zeitpunkt für eine Grundreinigung im Hotel?',
+      answer: 'Dann, wenn wenige Gäste im Haus sind: in der Zwischensaison, vor einer Eröffnung oder nach einer Renovation. Planen Sie den Termin früh, denn in dieser Zeit laufen oft auch Handwerksarbeiten. Die Reinigung gehört ans Ende, damit kein neuer Staub entsteht. Mehr unter [Grund- und Sonderreinigung](/leistungen/sonderreinigungen) und [Bau- und Bauendreinigung](/leistungen/baureinigung).',
+    },
+    {
+      question: 'Übernehmen Sie die Endreinigung bei einem Mieterwechsel?',
+      answer: 'Ja, im Auftrag der Verwaltung oder der Eigentümerschaft und mit Abnahmegarantie. Weil in Obwalden ohne andere Abmachung auf Ende März, Juni oder September gekündigt wird, häufen sich die Übergaben an diesen Terminen. Mehr zur [Umzugsreinigung](/leistungen/umzugsreinigung).',
+    },
   ],
   menuText: kantonMenu.obwalden.text,
 }
@@ -424,10 +652,26 @@ export const kantonUi = {
   regionen: 'Regionen und Orte',
   objekte: 'Typische Objekte',
   leistungen: 'Gefragte Leistungen',
+  /** Kurzname des Planungsabschnitts in der Abschnittsleiste, der Titel steht je Kanton in planung.title */
+  planung: 'Planung',
   weitere: 'Weitere Kantone',
   overview: 'Das ganze Einzugsgebiet',
   toCanton: 'Zur Kantonsseite',
   seat: 'Unser Sitz',
+  /** Kasten mit geprüften Angaben je Kanton, Stand = Tag der Prüfung an der Quelle */
+  daten: {
+    title: 'Kantonsdaten für die Planung',
+    nav: 'Kantonsdaten',
+    intro: 'Kantonale Regeln und amtliche Zahlen, die für Reinigungspläne und Wohnungswechsel zählen, je mit Quelle. Im Einzelfall gilt der Wortlaut der Quelle.',
+    /** Mit Satzzeichen, Französisch mit geschütztem Leerzeichen vor dem Doppelpunkt */
+    source: 'Quelle:',
+    stand: 'Stand der Angaben:',
+  },
+  datenStand: '2026-09-28',
+  /** Quellen der Kantonsdaten, einmal je Sprache; Seiten verweisen per Schlüssel */
+  quellen: quelle,
+  /** Leistungs- und Premiumseiten (N6): die fünf Kantone als Links unter «Passt auch dazu» */
+  gebiet: 'Im ganzen Einzugsgebiet, zu denselben Bedingungen',
   cta: {
     title: 'Besichtigung und Offerte',
     text: `Beschreiben Sie uns Objekt und Ort. Wir melden uns ${company.responseTime} und kommen für die Besichtigung vorbei, kostenlos und unverbindlich.`,
@@ -437,5 +681,5 @@ export const kantonUi = {
 /** Überleitung auf /einzugsgebiet zu den Kantonsseiten */
 export const kantoneUebersicht = {
   title: 'Ihr Kanton im Detail',
-  text: 'Für jeden Kanton gibt es eine eigene Seite: welche Regionen und Orte dazugehören, welche Objekte dort typisch sind und worauf wir bei der Planung achten.',
+  text: 'Jeder Kanton hat eine eigene Seite: Regionen und Orte, typische Objekte, Planung und die Kantonsdaten zu Ruhetagen, Kündigungsterminen und Zweitwohnungen.',
 }

@@ -6,7 +6,11 @@ import { kantonKeys } from "../../../../shared/cantons";
 import { localizePath } from "../../../../shared/i18n";
 import { kantonKontext, type KantonProps } from "./kontext";
 
-/** Die anderen Kantone als Bildkarten und der Weg zurück zur Übersicht (interne Verlinkung) */
+/**
+ * Die anderen Kantone als kompakte Verweiszeilen ohne Foto (Audit visuell,
+ * /einzugsgebiet/zug: die Seebilder wiederholten die Übersicht) und der Weg
+ * zurück zur Übersicht (interne Verlinkung, Hierarchie für Google).
+ */
 export default function KantonWeitere(props: KantonProps) {
   const { kanton, lang } = props;
   const { kui } = kantonKontext(props);
@@ -26,10 +30,10 @@ export default function KantonWeitere(props: KantonProps) {
             <ArrowRight weight="duotone" className="size-5 text-signal" aria-hidden="true" />
           </Link>
         </div>
-        <RevealGroup as="ul" className="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+        <RevealGroup as="ul" className="mt-8 grid gap-x-10 border-b border-line sm:grid-cols-2">
           {others.map(key => (
             <li key={key} className="min-w-0">
-              <KantonKarte kanton={key} lang={lang} />
+              <KantonKarte kanton={key} lang={lang} layout="compact" />
             </li>
           ))}
         </RevealGroup>
