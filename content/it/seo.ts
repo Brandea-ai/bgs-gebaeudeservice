@@ -81,7 +81,7 @@ export const pages = {
   '/leistungen/hauswartung': {
     label: 'Custodia di stabili',
     title: 'Custodia di stabili a Lucerna e Zugo',
-    description: 'Custodia del Suo stabile: giri di controllo, vano scale, lavanderia, piccole riparazioni, impianti, consegne di appartamenti, smaltimento e aree esterne.',
+    description: 'Custodia di stabili a Lucerna, Zugo e dintorni: giri di controllo, vano scale, lavanderia, capitolato da stampare. Offerta gratuita dopo il sopralluogo.',
   },
   '/leistungen/aussen-und-gruenflaechenpflege': {
     label: 'Manutenzione delle aree esterne e verdi',

@@ -81,7 +81,7 @@ export const pages: Dictionary['pages'] = {
   '/leistungen/hauswartung': {
     label: 'Caretaking',
     title: 'Caretaking services in Lucerne and Zug',
-    description: 'Caretaking for your property: inspection rounds, stairwell, laundry room, minor repairs, building services, flat handovers, waste disposal and grounds.',
+    description: 'Caretaking services in Lucerne, Zug and beyond: inspection rounds, stairwell and laundry room, plus a printable specification. Free quote after a site visit.',
   },
   '/leistungen/aussen-und-gruenflaechenpflege': {
     label: 'Grounds and green spaces',
