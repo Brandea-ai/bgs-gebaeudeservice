@@ -1,112 +1,233 @@
 import type { ServicePageContent } from '../../types'
-import { answers } from '../common'
 
-// Grundlage: R3a (Industrie, Hallen, Maschinen), R10b, E17 (Abschnitt Maschinen), K04, keine Normzusagen ohne Beleg
+// Grundlage: R3a (Industrie, Hallen, Maschinen), R10b, E17 (Abschnitt Maschinen), K04, keine Normzusagen ohne Beleg.
+// Umbau E85 (28.09.2026): 25-AUDIT/inhalt.md 3.7 (Bausteine 3.7.1 bis 3.7.3), seo.md T2/T4, keywords-mehrsprachig.md.
+// Rechtsaussagen geprüft am 28.09.2026 an der Primärquelle: VUV SR 832.30 (Stand 1. Mai 2018) Art. 6, 9, 19, 43;
+// GSchG SR 814.20 (Stand 1. August 2025) Art. 6, 7; Suva 84040 (Regeln 3 und 4) und 67075.
+// Prüferbefunde IND-1 bis IND-5 und IH-01 bis IH-09 am 28.09.2026 eingearbeitet (Rechtsaussage je einmal, Druck Zonenplan auf einer A4-Seite).
 export const industrieUndHallen: ServicePageContent = {
   path: '/leistungen/industrie-und-hallenreinigung',
   area: 'leistungen',
-  eyebrow: 'Einmalige und besondere Reinigung',
-  h1: 'Industrie- und Hallenreinigung für Produktion und Lager',
+  eyebrow: 'Produktion, Lager und Werkstatt',
+  h1: 'Industriereinigung und Hallenreinigung für Produktion und Lager',
   lead: [
-    'In Produktion und Lager entstehen Staub, Späne, Öl- und Fettfilme. Sie machen Böden rutschig und setzen sich in Anlagen fest. Gleichzeitig darf die Reinigung den Betrieb nicht aufhalten.',
-    'Wir reinigen Hallen, Böden, Maschinen und Anlagen, einmalig oder regelmässig, zu Zeiten, die wir mit Ihnen auf Produktion und Schichten abstimmen.',
+    'Auf Hallenböden bleiben Späne, Reifenabrieb und Ölfilme liegen, an Maschinen setzen sich Staub und Kühlschmierstoff fest. Stillstehen kann die Halle für die Reinigung selten.',
+    'Deshalb bekommt jede Zone ihren eigenen Takt: Fahrgassen zwischen den Schichten, Sozialräume ausserhalb der Pausen, Maschinen im geplanten Stillstand. An einer Anlage beginnt die Reinigung erst, wenn sie abgeschaltet und gegen Wiedereinschalten gesichert ist.',
   ],
   facts: [
-    { label: 'Für', value: 'Industrie- und Gewerbebetriebe, Logistik und Lager' },
-    { label: 'Flächen', value: 'Produktions- und Lagerhallen, Werkstätten, Maschinen und Anlagen' },
-    { label: 'Zeiten', value: 'Abgestimmt auf Produktion und Schichtbetrieb' },
+    { label: 'Für', value: 'Produktions-, Logistik- und Gewerbebetriebe mit Hallen und Werkstätten' },
+    { label: 'Einsatzzeiten', value: 'Zwischen Schichten, in Pausen, an Stillstandstagen und in Betriebsferien' },
+    { label: 'Vor dem ersten Einsatz', value: 'Sicherheits-Übergabe mit Ihrer Instandhaltung' },
+    { label: 'Nicht enthalten', value: 'Wartung und Reparatur von Maschinen' },
   ],
   scope: {
-    title: 'Was dazugehört',
-    intro: 'Den Umfang halten wir nach einem Rundgang durch Ihren Betrieb fest. Typisch sind:',
+    title: 'Umfang in Halle und Werkstatt',
+    intro: 'Typisch für einen Auftrag in Produktion und Lager:',
     items: [
-      'Hallen- und Produktionsböden',
-      'Lagerbereiche, Regale und Verkehrswege',
-      'Werkstätten und Nebenräume',
-      'Maschinen und Anlagen nach Ihren Vorgaben',
-      'Sozialräume, Garderoben und Sanitärräume',
+      'Hallen- und Produktionsböden aus Beton, mit Beschichtung oder aus Industrieparkett',
+      'Lagerbereiche, Regale und Fahrgassen',
+      'Maschinen und Anlagen, gesichert und nach Vorgabe Ihrer Instandhaltung',
+      'Werkstätten und Nebenräume, Sozialräume, Garderoben und Sanitärräume',
     ],
     notIncluded: [
-      'Wartung und Reparatur von Maschinen.',
-      'Büros im Betrieb: siehe [Büro- und Praxisreinigung](/leistungen/bueroreinigung).',
+      'Wartung und Reparatur von Maschinen: Das bleibt Sache Ihrer Instandhaltung oder des Herstellers.',
+      'Büros, Empfang und Sitzungszimmer im selben Gebäude: dafür gibt es die [Büroreinigung](/leistungen/bueroreinigung).',
+      'Plätze, Grünflächen und Zufahrten rund um die Halle: siehe [Aussen- und Grünflächenpflege](/leistungen/aussen-und-gruenflaechenpflege).',
     ],
   },
   sections: [
     {
-      title: 'Maschinen und Anlagen',
+      title: 'Hallenböden und Fahrgassen',
       paragraphs: [
-        'Maschinen reinigen wir nach Ihren Vorgaben und in Absprache mit Ihrer Instandhaltung. Wann eine Anlage stillsteht, was gereinigt wird und welche Mittel geeignet sind, legen wir vor dem Einsatz fest.',
-        'Ihre Sicherheits- und Betriebsregeln gelten auch für unser Team. Wir klären sie vor dem ersten Einsatz mit Ihnen.',
+        'Grosse Hallenflächen reinigt eine Scheuersaugmaschine. Sie schrubbt und nimmt das Schmutzwasser im selben Zug wieder auf, der Boden ist nach kurzer Zeit wieder begehbar und befahrbar. In schmalen Gängen zwischen Palettenregalen braucht es ein kleineres Gerät oder Handarbeit.',
+        'Das Mittel richtet sich nach Belag und Schmutz. Unversiegelter Beton saugt Öl auf, Beschichtungen aus Epoxid- oder Polyurethanharz sind dicht, können mit zu groben Pads aber stumpf werden. Industrieparkett verträgt nur wenig Wasser. Öllachen werden zuerst mit Bindemittel aufgenommen, sonst verteilt die Maschine den Film über die ganze Fahrgasse.',
       ],
     },
     {
-      title: 'Hallenböden und Verkehrswege',
+      title: 'Maschinenreinigung: Späne, Öl und Kühlschmierstoff',
       paragraphs: [
-        'Hallenböden tragen Staub, Späne, Reifenabrieb und Öl- oder Fettfilme. Grosse Flächen werden meist mit Scheuersaugmaschinen gereinigt, die in einem Durchgang schrubben und das Schmutzwasser aufnehmen. Der Boden ist danach schnell wieder begehbar und befahrbar.',
-        'Welches Vorgehen und welches Mittel passen, hängt vom Belag ab, etwa Beton, Beschichtung oder Industrieparkett, und von der Art der Verschmutzung. Das klären wir beim Rundgang.',
+        'Rund um Werkzeugmaschinen sammeln sich Späne auf Abdeckungen, im Sockelbereich und am Boden, dazu Kühlschmierstoff und Staub aus der Bearbeitung. Späne gehören in den Industriesauger. Mit Druckluft weggeblasen, landen sie tiefer in der Maschine oder im nächsten Gang.',
+        'Was an einer Anlage gereinigt wird, bestimmt Ihre Instandhaltung: Aussenflächen, Wannen und Abdeckungen oder auch Innenräume, die nur im Stillstand zugänglich sind. Welche Mittel eine Oberfläche verträgt, steht meist in der Betriebsanleitung des Herstellers.',
+        'Wer eine Anlage vor der Reinigung abschaltet und danach wieder freigibt, legen Sie in der Sicherheits-Übergabe unten fest.',
       ],
     },
     {
-      title: 'Typische Objekte und Situationen',
-      paragraphs: [
-        'Produktionsbetriebe, Werkstätten, Lager- und Logistikhallen, Gewerbebetriebe mit Werkstatt und Büro unter einem Dach. Anlässe sind etwa ein Audit oder ein Kundenbesuch, eine Umstellung der Produktion, Betriebsferien oder der Wunsch nach festen Reinigungszeiten statt Reinigung nebenbei.',
+      title: 'Typische Anlässe in Produktion und Lager',
+      items: [
+        'Audit, Zertifizierung oder Kundenbesuch: Reinigung mit Abstand zum Termin, siehe Checkliste oben',
+        'Betriebsferien und Revisionen: Grundreinigung von Böden, Regalen und Maschinen, solange alles steht',
+        'Umstellung der Produktion oder neue Linie: Reinigung, bevor die Anlage eingerichtet wird',
+        'Mieterwechsel einer Gewerbehalle: Reinigung vor der Übergabe, im Auftrag der Eigentümerschaft oder Verwaltung',
+        'Feste Reinigungszeiten statt Putzen nebenbei, wenn heute die Belegschaft selbst reinigt',
       ],
     },
+  ],
+  tools: [
     {
-      title: 'Sicherheit im Betrieb',
-      paragraphs: [
-        'In Produktion und Lager gelten eigene Regeln: Schutzausrüstung, Fahrwege von Staplern, abgesperrte Bereiche, Umgang mit Gefahrstoffen. Diese Regeln klären wir vor dem ersten Einsatz mit Ihnen.',
-        'Bei Maschinen gehört dazu, wer sie abschaltet und sichert und wer sie nach der Reinigung wieder freigibt. Das legen wir vor dem Einsatz mit Ihrer Instandhaltung fest.',
+      kind: 'checklist',
+      id: 'sicherheits-uebergabe',
+      title: 'Sicherheits-Übergabe vor dem Einsatz',
+      intro:
+        'Arbeiten Mitarbeitende mehrerer Betriebe am selben Ort, müssen sich die Arbeitgeber über Gefahren und Schutzmassnahmen absprechen und gegenseitig informieren (VUV Art. 9). Maschinen müssen vor dem Reinigen in einen nicht gefährdenden Zustand versetzt sein (Art. 43). Mit dieser Liste gehen Sie beides mit Ihrer Instandhaltung durch.',
+      groups: [
+        {
+          title: 'Maschinen und Anlagen',
+          items: [
+            'Wer schaltet die Anlage ab und sichert sie gegen Wiedereinschalten, etwa mit einem Vorhängeschloss am Revisionsschalter?',
+            'Sind Restenergien abgebaut: Druck in Pneumatik und Hydraulik, Wärme, nachlaufende oder angehobene Teile?',
+            'Welche Teile darf das Reinigungsteam berühren, welche bleiben der Instandhaltung vorbehalten?',
+            'Welche Mittel und Verfahren sind für die Oberflächen freigegeben: Wasser, Hochdruck, Lösemittel?',
+            'Wer prüft die Anlage nach der Reinigung und gibt sie wieder frei?',
+          ],
+        },
+        {
+          title: 'Halle und Verkehr',
+          items: [
+            'Welche Schutzausrüstung ist in welchem Bereich Pflicht, etwa Sicherheitsschuhe, Gehörschutz oder Warnweste?',
+            'Wo und wann fahren Stapler, und welche Wege bleiben während der Reinigung offen?',
+            'Welche Bereiche sind gesperrt oder nur in Begleitung zugänglich?',
+            'Wie werden nasse Flächen abgesperrt, bis sie trocken sind?',
+          ],
+        },
+        {
+          title: 'Stoffe und Schmutzwasser',
+          items: [
+            'Welche Gefahrstoffe werden im Bereich gelagert oder verarbeitet, und wo liegen die Sicherheitsdatenblätter?',
+            'Wo darf das Schmutzwasser der Scheuersaugmaschine ausgeleert werden? Ölhaltiges Wasser gehört nicht in einen Schacht, der in die Versickerung oder in ein Gewässer führt (GSchG Art. 6 und 7).',
+            'Wo werden ölgetränkte Bindemittel und Putzlappen gesammelt, und wer entsorgt sie?',
+          ],
+        },
+        {
+          title: 'Ansprechpersonen und Notfall',
+          items: [
+            'Wer ist während des Einsatzes im Betrieb erreichbar, auch ausserhalb der Bürozeiten?',
+            'Wo liegen Notausgänge, Feuerlöscher, Erste-Hilfe-Material und Augendusche?',
+            'Wem wird ein Schaden, eine Störung oder ein Beinaheunfall gemeldet?',
+          ],
+        },
       ],
+      note: 'Die Liste ersetzt weder die Gefährdungsermittlung Ihres Betriebs noch die Instruktion vor Ort. Klären Sie im Einzelfall, welche Regeln Ihrer Branche zusätzlich gelten.',
+      sources: [
+        { label: 'Verordnung über die Verhütung von Unfällen und Berufskrankheiten (VUV, SR 832.30), Art. 6, 9 und 43', href: 'https://www.fedlex.admin.ch/eli/cc/1983/1968_1968_1968/de#art_9' },
+        { label: 'Suva: Acht lebenswichtige Regeln für die Instandhaltung (Regeln 3 und 4)', href: 'https://www.suva.ch/de-ch/praevention/lebenswichtige-regeln-und-bestimmungen/lebenswichtige-regeln-am-arbeitsplatz/filme-lebenswichtige-regeln-instandhaltung' },
+        { label: 'Suva: Checkliste Unerwarteter Anlauf von Maschinen und Anlagen (67075)', href: 'https://www.suva.ch/67075.D' },
+        { label: 'Gewässerschutzgesetz (GSchG, SR 814.20), Art. 6 und 7', href: 'https://www.fedlex.admin.ch/eli/cc/1992/1860_1860_1860/de#art_6' },
+      ],
+      printable: true,
+      updated: '2026-09-28',
     },
     {
-      title: 'Planung und Rhythmus',
-      paragraphs: [
-        'Nicht jeder Bereich braucht denselben Rhythmus. Sozial- und Sanitärräume brauchen häufige Pflege. Hallenböden, Regale und Maschinen brauchen eine gründliche Reinigung in grösseren Abständen.',
-        'Oft ist eine Kombination sinnvoll: regelmässige Reinigung im laufenden Betrieb und eine Grundreinigung in den Betriebsferien oder bei geplanten Stillständen.',
+      kind: 'table',
+      id: 'zonenplan',
+      title: 'Reinigungsplan nach Zonen (Beispiel)',
+      intro:
+        'So kann der Plan für eine Produktions- oder Lagerhalle aussehen. Rhythmus und Zeitfenster richten sich bei Ihnen nach Schichten, Verkehr und Anfall.',
+      columns: ['Zone', 'Typische Verschmutzung', 'Rhythmus (Beispiel)', 'Zeitfenster', 'Worauf achten'],
+      rows: [
+        ['Fahrgassen und Verkehrswege', 'Staub, Reifenabrieb, Späne', 'täglich bis wöchentlich', 'zwischen den Schichten, abschnittsweise', 'Markierungen sichtbar halten, Nassflächen absperren'],
+        ['Produktion', 'Späne, Öl- und Fettfilme, Kühlschmierstoff', 'nach Anfall', 'Pausen, Schichtwechsel, Stillstandstage', 'Öllachen zuerst binden, dann nass reinigen'],
+        ['Lager und Regale', 'Staub auf Boden, Traversen und Ware', 'monatlich bis vierteljährlich', 'Zeiten mit wenig Ein- und Auslagerung', 'Ware nur mit Freigabe bewegen, nie auf Regale klettern'],
+        ['Sozialräume, Garderoben, Sanitär', 'Hygiene, Verbrauchsmaterial', 'an jedem Arbeitstag', 'ausserhalb der Pausen', 'Seife und Papier auffüllen, eigene Tücher für WC'],
+        ['Maschinen und Anlagen', 'Ablagerungen, Späne, Bearbeitungsstaub', 'nach Vorgabe der Instandhaltung', 'geplante Stillstände, Revisionen, Betriebsferien', 'nur abgeschaltet und gesichert, nur freigegebene Mittel'],
       ],
+      printable: true,
+      updated: '2026-09-28',
+    },
+    {
+      kind: 'checklist',
+      id: 'vor-dem-audit',
+      title: 'Vor einem Audit oder Kundenbesuch',
+      intro:
+        'Ein Rundgang führt meist über die Fahrwege, durch Produktion und Lager und in die Sozialräume. Planen Sie die Reinigung in zwei Etappen, damit am Tag selbst nichts mehr nass oder abgesperrt ist.',
+      groups: [
+        {
+          title: 'Eine Woche vorher',
+          items: [
+            'Route des Rundgangs bestimmen: Anlieferung, Produktion, Lager, Sozialräume',
+            'Reinigungstermin so wählen, dass die Böden vor dem Rundgang trocken und frei sind',
+            'Maschinenoberflächen im nächsten geplanten Stillstand reinigen lassen, nicht am Audittag',
+            'Regale, Ablagen und Fenstersimse entlang der Route abstauben',
+          ],
+        },
+        {
+          title: 'Am Tag davor',
+          items: [
+            'Verkehrswege frei und Bodenmarkierungen gut sichtbar; die VUV verlangt, dass Verkehrswege wenn nötig bezeichnet sind (Art. 19)',
+            'Keine Öl- oder Fettfilme auf Böden, auf denen Personen gehen',
+            'Notausgänge und Fluchtwege frei, nichts davor abgestellt',
+            'Sozial- und Sanitärräume gereinigt, Seife und Papier aufgefüllt',
+            'Abfall- und Wertstoffbehälter geleert, Umgebung der Mulden sauber',
+          ],
+        },
+      ],
+      sources: [
+        { label: 'Verordnung über die Verhütung von Unfällen und Berufskrankheiten (VUV, SR 832.30), Art. 19', href: 'https://www.fedlex.admin.ch/eli/cc/1983/1968_1968_1968/de#art_19' },
+      ],
+      printable: true,
+      updated: '2026-09-28',
     },
   ],
   steps: [
     {
-      title: 'Einsatzplanung',
-      text: 'Wir legen Zeiten, Bereiche und Reihenfolge fest, abgestimmt auf Produktion, Schichten und Stillstände.',
+      title: 'Plan nach Zonen',
+      text: 'Jede Zone erhält Rhythmus und Zeitfenster, passend zu Schichten, Staplerverkehr und Stillständen. Der Beispielplan oben zeigt, wie das aussehen kann.',
+      figure: 'besichtigung',
     },
     {
-      title: 'Einsatz',
-      text: 'Wir reinigen nach Plan. Ändert sich Ihr Betrieb, passen wir den Plan mit Ihnen an.',
+      title: 'Sicherheits-Übergabe',
+      text: 'Vor dem ersten Einsatz gehen Ihre Instandhaltung und unser Team die Checkliste durch: Abschaltung, Schutzausrüstung, Fahrwege, freigegebene Mittel.',
+      figure: 'offerte',
+    },
+    {
+      title: 'Einsätze im Takt des Betriebs',
+      text: 'Gereinigt wird in den vereinbarten Zeitfenstern. Ändern sich Schichten oder Linien, wird der Plan mit Ihnen angepasst.',
+      figure: 'start',
     },
   ],
   faq: [
     {
+      question: 'Was kostet eine Industriereinigung?',
+      answer:
+        'Den Preis bestimmen vor allem die Fläche und die Zahl der Zonen, die Art des Schmutzes (Staub ist schneller entfernt als Öl oder festgesetzter Kühlschmierstoff), der Bodenbelag und ob eine Scheuersaugmaschine durchkommt. Dazu kommen die Zeitfenster, etwa Einsätze ausserhalb der üblichen Arbeitszeiten oder in kurzen Stillständen, sowie Zahl und Zugänglichkeit der Maschinen. Eine Zahl nennen wir nach dem Rundgang durch die Halle.',
+    },
+    {
       question: 'Können Sie während des laufenden Betriebs reinigen?',
       answer:
-        'Das klären wir beim Rundgang. Manche Bereiche lassen sich im Betrieb reinigen, andere nur in Pausen, zwischen Schichten oder bei Stillständen. Die Zeiten legen wir mit Ihnen fest.',
+        'In vielen Zonen ja. Fahrgassen, Lager und Sozialräume lassen sich meist im Betrieb reinigen, abschnittsweise und mit abgesperrten Nassflächen. Bereiche direkt an laufenden Anlagen kommen in Pausen, zwischen Schichten oder bei Stillständen an die Reihe.',
     },
     {
-      question: 'Reinigen Sie auch Maschinen?',
-      answer: 'Ja. Was an einer Maschine gereinigt wird und wann sie dafür stillsteht, legen wir mit Ihnen und Ihrer Instandhaltung fest.',
-    },
-    {
-      question: 'Welche Regeln gelten für Ihr Team in unserem Betrieb?',
-      answer: 'Ihre Sicherheits- und Betriebsregeln. Wir klären sie vor dem ersten Einsatz mit Ihnen.',
-    },
-    {
-      question: 'Wie wird ein Hallenboden gereinigt?',
+      question: 'Wer schaltet die Maschinen vor der Reinigung ab?',
       answer:
-        'Meist mit einer Scheuersaugmaschine, die schrubbt und das Schmutzwasser gleich aufnimmt. Welches Mittel passt, hängt vom Belag und von der Verschmutzung ab, etwa Staub, Öl oder Abrieb. Das klären wir beim Rundgang.',
+        'Am besten jemand, der die Anlage kennt, etwa aus Ihrer Instandhaltung. Diese Person weiss, welche Schalter, Ventile und Restenergien dazugehören, und gibt die Anlage nach der Reinigung wieder frei. Mit der Checkliste zur Sicherheits-Übergabe auf dieser Seite legen Sie das für jede Anlage fest, dort steht auch die Rechtsgrundlage.',
     },
-    { question: 'Was kostet eine Industriereinigung?', answer: answers.kosten },
-    { question: 'In welchen Regionen sind Sie tätig?', answer: answers.gebiet },
-    { question: 'Sind Sie versichert?', answer: answers.versicherung },
+    {
+      question: 'Welche Regeln gelten für Ihr Team in unserer Halle?',
+      answer:
+        'Ihre Sicherheits- und Betriebsregeln, von den Staplergassen bis zur Schutzbrille an der Maschine. Nach VUV Art. 6 informiert Ihr Betrieb auch Mitarbeitende anderer Firmen über die Gefahren am Arbeitsplatz. Am einfachsten geschieht das bei der Sicherheits-Übergabe.',
+    },
+    {
+      question: 'Wie wird ein ölverschmutzter Hallenboden gereinigt?',
+      answer:
+        'Nach dem Bindemittel für frische Lachen wirkt ein fettlösendes Mittel kurz ein, dann schrubbt und saugt die Scheuersaugmaschine. In unversiegeltem Beton sitzt älteres Öl in den Poren. Dort braucht es oft mehrere Durchgänge, und Flecken bleiben manchmal sichtbar. Wohin das ölhaltige Schmutzwasser darf und wohin nicht, steht in der Checkliste zur Sicherheits-Übergabe.',
+    },
+    {
+      question: 'Wie oft sollte eine Produktionshalle gereinigt werden?',
+      answer:
+        'Nicht die Halle, sondern jede Zone hat ihren Rhythmus. Sozial- und Sanitärräume brauchen Pflege an jedem Arbeitstag, Fahrgassen je nach Verkehr täglich bis wöchentlich, Regale und Maschinen in grösseren Abständen oder im Stillstand. Der Beispielplan auf dieser Seite zeigt eine typische Aufteilung.',
+    },
+    {
+      question: 'Wie bereiten wir die Halle auf ein Audit vor?',
+      answer:
+        'Mit genügend Abstand: Böden sollten vor dem Rundgang trocken und frei sein, Maschinen im letzten geplanten Stillstand davor gereinigt. Die Checkliste «Vor einem Audit oder Kundenbesuch» auf dieser Seite teilt die Punkte in eine Woche vorher und den Tag davor.',
+    },
   ],
   related: [
-    { path: '/leistungen/sonderreinigungen', text: 'Für eine einmalige, gründliche Grundreinigung.' },
-    { path: '/leistungen/bueroreinigung', text: 'Für Büros und Sozialräume im Betrieb.' },
-    { path: '/leistungen/facility-services', text: 'Wenn Reinigung, Hauswartung und Umgebung aus einer Hand kommen sollen.' },
+    { path: '/leistungen/baureinigung', text: 'Nach dem Bau oder Umbau einer Halle, bevor Regale und Anlagen einziehen.' },
+    { path: '/leistungen/bueroreinigung', text: 'Für Büros, Empfang und Sitzungszimmer im selben Gebäude, mit eigenem Rhythmus.' },
+    { path: '/leistungen/facility-services', text: 'Wenn neben der Halle auch Hauswartung und Umgebung des Areals bei einem Anbieter liegen sollen.' },
   ],
   cta: {
-    title: 'Offerte für Ihren Betrieb',
-    text: 'Nennen Sie uns Flächen, Maschinen und Betriebszeiten. Wir machen einen Rundgang und erstellen Ihnen eine Offerte, kostenlos und unverbindlich.',
+    title: 'Offerte für Ihre Halle',
+    text: 'Für die Offerte helfen uns die Hallenfläche in Quadratmetern, die Bodenbeläge, Schichtzeiten und geplante Stillstände sowie eine Liste der Maschinen, die gereinigt werden sollen. Ein Grundriss mit den Zonen spart Zeit beim Rundgang. Besichtigung und Offerte sind kostenlos und unverbindlich.',
   },
 }

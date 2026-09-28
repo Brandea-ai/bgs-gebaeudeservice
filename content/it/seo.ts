@@ -76,7 +76,7 @@ export const pages = {
   '/leistungen/industrie-und-hallenreinigung': {
     label: 'Pulizia industriale e di capannoni',
     title: 'Pulizia industriale e di capannoni',
-    description: `Pulizia di capannoni e magazzini, macchinari e impianti, adeguata alla Sua attività. Nei Cantoni di ${region}.`,
+    description: 'Pulizia industriale e di capannoni per produzione e magazzino, per zone e turni, con liste di controllo da stampare. Offerta gratuita dopo il sopralluogo.',
   },
   '/leistungen/hauswartung': {
     label: 'Custodia di stabili',

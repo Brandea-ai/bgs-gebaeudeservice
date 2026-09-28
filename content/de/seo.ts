@@ -75,8 +75,8 @@ export const pages = {
   },
   '/leistungen/industrie-und-hallenreinigung': {
     label: 'Industrie- und Hallenreinigung',
-    title: 'Industrie- und Hallenreinigung',
-    description: `Reinigung von Produktions- und Lagerhallen, Maschinen und Anlagen, abgestimmt auf Ihren Betrieb. In ${region}.`,
+    title: 'Industriereinigung und Hallenreinigung',
+    description: 'Industriereinigung und Hallenreinigung für Produktion und Lager, geplant nach Zonen und Schichten, mit Checklisten. Kostenlose Offerte nach Besichtigung.',
   },
   '/leistungen/hauswartung': {
     label: 'Hauswartung',

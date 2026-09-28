@@ -75,8 +75,8 @@ export const pages: Dictionary['pages'] = {
   },
   '/leistungen/industrie-und-hallenreinigung': {
     label: 'Industrial and warehouse cleaning',
-    title: 'Industrial and warehouse cleaning',
-    description: `Cleaning of production halls, warehouses, machinery and equipment, planned around your operations. In ${region}.`,
+    title: 'Industrial cleaning and warehouse cleaning',
+    description: 'Industrial cleaning and warehouse cleaning for production and storage, planned by zone and shift, with printable checklists. Free quote after a site visit.',
   },
   '/leistungen/hauswartung': {
     label: 'Caretaking',
