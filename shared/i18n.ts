@@ -124,21 +124,22 @@ const slugs = {
     fr: 'guide/cout-du-nettoyage-d-entretien',
     it: 'guida/costi-della-pulizia-di-manutenzione',
   },
-  // Ratgeber-Ausbau E85 (25-AUDIT/inhalt.md 10.1)
-  '/blog/pflichtenheft-hauswartung': {
-    en: 'guide/caretaking-specification',
-    fr: 'guide/cahier-des-charges-du-concierge',
-    it: 'guida/capitolato-custodia-di-stabili',
+  // Ratgeber-Ausbau E85 (25-AUDIT/inhalt.md 10.1), informative Adressen ohne die Hauptbegriffe der
+  // Leistungsseiten (24-SEO-KEYWORDS.md, Prüferbefund R1)
+  '/blog/hauswartung-aufgaben': {
+    en: 'guide/caretaking-duties',
+    fr: 'guide/taches-de-la-conciergerie',
+    it: 'guida/compiti-della-custodia',
   },
-  '/blog/wohnungsabgabe-reinigung': {
-    en: 'guide/flat-handover-and-final-cleaning',
-    fr: 'guide/etat-des-lieux-de-sortie-et-nettoyage',
-    it: 'guida/riconsegna-dell-appartamento-e-pulizia',
+  '/blog/wohnungsabgabe-protokoll': {
+    en: 'guide/flat-handover-report',
+    fr: 'guide/etat-des-lieux-de-sortie',
+    it: 'guida/riconsegna-dell-appartamento-verbale',
   },
-  '/blog/bodenbelaege-grundreinigung': {
-    en: 'guide/deep-cleaning-by-floor-type',
-    fr: 'guide/nettoyage-en-profondeur-selon-le-sol',
-    it: 'guida/pulizia-a-fondo-secondo-il-pavimento',
+  '/blog/bodenbelaege-reinigen': {
+    en: 'guide/cleaning-floor-coverings',
+    fr: 'guide/nettoyer-les-revetements-de-sol',
+    it: 'guida/pulire-i-pavimenti',
   },
   '/ueber-uns': { en: 'about-us', fr: 'a-propos', it: 'chi-siamo' },
   '/kontakt': { en: 'contact', fr: 'contact', it: 'contatto' },

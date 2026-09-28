@@ -16,8 +16,9 @@ const paths: PagePath[] = [
 
 /**
  * Direkt zu den Leistungen: Bildkarten mit dem Satz aus der Übersicht
- * /leistungen. Bild 4:3 oben in der Bildspalte statt über die ganze
- * Kartenhöhe, sizes nach der echten Deckfläche (visuell.md).
+ * /leistungen. Mobil steht das Bild 4:3 über dem Text, ab sm füllt es die
+ * Bildspalte über die ganze Kartenhöhe, ohne Weissfläche darunter
+ * (Prüferbefund R12); sizes nach der echten Deckfläche (visuell.md).
  */
 export default function RatgeberLeistungen(props: RatgeberProps) {
   const { lang } = props;
@@ -47,7 +48,7 @@ export default function RatgeberLeistungen(props: RatgeberProps) {
             return (
               <li
                 key={path}
-                className="card-lift group relative grid min-w-0 items-start overflow-hidden rounded-[3px] border border-line bg-white sm:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]"
+                className="card-lift group relative grid min-w-0 overflow-hidden rounded-[3px] border border-line bg-white sm:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]"
               >
                 <ImageSlot
                   image={detailImage[path] ?? heroImage[path]}
@@ -55,7 +56,7 @@ export default function RatgeberLeistungen(props: RatgeberProps) {
                   lang={lang}
                   hover
                   decorative
-                  className="aspect-[4/3] w-full"
+                  className="aspect-[4/3] w-full sm:aspect-auto sm:h-full sm:min-h-[13rem]"
                 />
                 <div className="flex h-full min-w-0 flex-col p-6 md:p-7">
                   <Glyph weight="duotone" className="size-7 text-signal" aria-hidden="true" />

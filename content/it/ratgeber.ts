@@ -13,8 +13,8 @@ import { cantonListIt, languagesIt, responseTime } from './common'
 export const ratgeberUebersicht = {
   h1: 'Guida alla pulizia di edifici',
   intro:
-    'Conoscenze utili per amministrazioni immobiliari, comunioni di proprietari per piani e aziende: capitolato della custodia, riconsegna dell’appartamento, pavimenti, scelta dell’impresa e costi della pulizia di edifici.',
-  note: `Ogni articolo indica le fonti e la data dell’ultima verifica. A cura di ${company.brand}, per stabili e aziende nei Cantoni di ${cantonListIt}.`,
+    'Conoscenze utili per amministrazioni immobiliari, comunioni di proprietari per piani e aziende: compiti della custodia, riconsegna dell’appartamento, pavimenti, scelta dell’impresa e costi della pulizia di edifici.',
+  note: `Ogni articolo indica le fonti e la data del testo. A cura di ${company.brand}, per stabili e aziende nei Cantoni di ${cantonListIt}.`,
   byline: `Una guida di ${company.brand}`,
   updatedLabel: 'Aggiornato al',
   readMore: 'Leggi l’articolo',
@@ -26,7 +26,7 @@ export const ratgeberUebersicht = {
   // Eckdaten rechts im IntroBand der Übersicht (E85)
   facts: [
     { label: 'Per', value: 'Amministrazioni, proprietà per piani, proprietari e aziende' },
-    { label: 'Da stampare', value: 'Capitolato, verbale, tabella dei pavimenti, griglia di confronto e calcolo' },
+    { label: 'Da stampare', value: 'Verbale, prodotti secondo il pH, griglia di confronto e calcolo' },
     { label: 'Fonti', value: 'Diritto federale su Fedlex, UPI, UFSP, associazioni e fabbricanti' },
   ],
   serviceLabel: 'Servizio corrispondente',
@@ -39,8 +39,12 @@ const co = (art: string, label: string): Source => ({
   href: `https://www.fedlex.admin.ch/eli/cc/27/317_321_377/it#art_${art}`,
 })
 const cc: Source = {
-  label: 'Codice civile, art. 712h, 712m e 712s (proprietà per piani)',
-  href: 'https://www.fedlex.admin.ch/eli/cc/24/233_245_233/it#art_712_m',
+  label: 'Codice civile, art. 712g, 712h, 712m e 712s (proprietà per piani)',
+  href: 'https://www.fedlex.admin.ch/eli/cc/24/233_245_233/it#art_712_g',
+}
+const ccComproprieta: Source = {
+  label: 'Codice civile, art. 647a e 647b (amministrazione della comproprietà)',
+  href: 'https://www.fedlex.admin.ch/eli/cc/24/233_245_233/it#art_647_a',
 }
 const upiResponsabilita: Source = {
   label: 'UPI: Che cosa significa responsabilità del proprietario di un’opera?',
@@ -48,17 +52,21 @@ const upiResponsabilita: Source = {
 }
 const upiPavimento: Source = { label: 'UPI: Pavimento', href: 'https://www.bfu.ch/it/consigli/pavimento' }
 const mvSpese: Source = {
-  label: 'Associazione svizzera inquilini (MV): spese accessorie non ammesse 2026 (PDF, in tedesco)',
+  label: 'Associazione inquilini della Svizzera tedesca (Mieterverband): spese accessorie non ammesse 2026 (PDF, in tedesco)',
   href: 'https://www.mieterverband.ch/upd_fm_media/ratgeber-mietrecht/topthemen/heiz-und-nebenkosten/2026_merkblatt_unzulaessige_nebenkosten.pdf/',
 }
 const hevRiconsegna: Source = { label: 'HEV Schweiz: riconsegna dell’appartamento (in tedesco)', href: 'https://www.hev-schweiz.ch/vermieten/verwalten/wohnungsabgabe' }
 const mvDurata: Source = {
-  label: 'Associazione svizzera inquilini (MV): tabella della durata di vita (in tedesco)',
+  label: 'Associazione inquilini della Svizzera tedesca (Mieterverband): tabella della durata di vita (in tedesco)',
   href: 'https://www.mieterverband.ch/mietrecht/unterlagen-und-tools/lebensdauertabelle/',
 }
 const mvDomande: Source = {
-  label: 'Associazione svizzera inquilini (MV): riconsegna e verbale, domande e risposte (in tedesco)',
+  label: 'Associazione inquilini della Svizzera tedesca (Mieterverband): riconsegna e verbale, domande e risposte (in tedesco)',
   href: 'https://www.mieterverband.ch/mietrecht/ende-der-miete/wohnungsabgabe-protokoll/tipps/',
+}
+const mvConteggio: Source = {
+  label: 'Associazione inquilini della Svizzera tedesca (Mieterverband): conteggio finale e restituzione della garanzia (in tedesco)',
+  href: 'https://www.mieterverband.ch/mietrecht/ende-der-miete/schlussrechnung-depotrueckgabe/',
 }
 const zhNotifica: Source = {
   label: 'Tribunali zurighesi: notifica dei difetti alla riconsegna (in tedesco)',
@@ -71,6 +79,10 @@ const nvs: Source = {
 const ceruniqCeramica: Source = {
   label: 'Ceruniq: pulizia e cura dei rivestimenti in ceramica (PDF, in tedesco)',
   href: 'https://www.ceruniq.ch/wp-content/uploads/2025/03/reinigungs-und-pflegeanleitung-fuer-keramische-belaege.pdf',
+}
+const ceruniqPietra: Source = {
+  label: 'Ceruniq: pulizia e cura dei pavimenti in pietra naturale (PDF, in tedesco)',
+  href: 'https://www.ceruniq.ch/wp-content/uploads/2025/03/reinigungs-und-pflegeanleitung-fuer-natursteinbelaege.pdf',
 }
 const ceruniqPrima: Source = {
   label: 'Ceruniq: prima pulizia dei rivestimenti in ceramica (PDF, in tedesco)',
@@ -96,13 +108,17 @@ const ufspMuffa: Source = { label: 'UFSP: Attenzione alla muffa (PDF, in tedesco
 const ufspJavel: Source = { label: 'UFSP: Acqua di Javel (in tedesco)', href: 'https://www.bag.admin.ch/de/javelwasser' }
 const zpkCcl: Source = { label: 'ZPK: contratto collettivo di lavoro delle pulizie, campo d’applicazione (in tedesco)', href: 'https://zpk-reinigung.ch/recht-lohn/gav' }
 const zpkContenuto: Source = { label: 'ZPK: contenuti del contratto collettivo (in tedesco)', href: 'https://zpk-reinigung.ch/recht-lohn/gav-inhalte' }
+const gavPiccole: Source = {
+  label: 'Servizio CCL di Unia: CCL delle pulizie nella Svizzera tedesca per le imprese con meno di 6 dipendenti',
+  href: 'https://www.gav-service.ch/gav/185006',
+}
 const ll: Source = { label: 'Legge sul lavoro, art. 17b (supplemento per lavoro notturno)', href: 'https://www.fedlex.admin.ch/eli/cc/1966/57_57_57/it#art_17_b' }
 const liva: Source = { label: 'Legge sull’IVA, art. 25 (aliquote d’imposta)', href: 'https://www.fedlex.admin.ch/eli/cc/2009/615/it#art_25' }
 
 const pflichtenheft: RatgeberArtikel = {
-  path: '/blog/pflichtenheft-hauswartung',
-  h1: 'Capitolato per la custodia di stabili: modello e spiegazioni',
-  subtitle: 'Che cosa deve contenere il capitolato della custodia, come fissare cadenza e limite di spesa e perché il conteggio delle spese accessorie ne trae vantaggio.',
+  path: '/blog/hauswartung-aufgaben',
+  h1: 'Compiti della custodia di stabili: che cosa mettere nel capitolato',
+  subtitle: 'Quali compiti annotare, come fissare cadenza e limite di spesa e perché il conteggio delle spese accessorie ne trae vantaggio.',
   teaser: 'Struttura, esempio compilato e lacune tipiche: come redigere un capitolato che amministrazione, proprietà e custode leggono allo stesso modo.',
   updated: '2026-09-28',
   intro: [
@@ -126,7 +142,7 @@ const pflichtenheft: RatgeberArtikel = {
       definitions: [
         {
           term: 'L’incarico',
-          text: 'Ciò che non è scritto resta soggetto a interpretazione. Se il custode oli la porta del locale biciclette o porti i contenitori in strada il giorno della raccolta, sta nel capitolato oppure prima o poi diventa motivo di discussione.',
+          text: 'Ciò che non è scritto resta soggetto a interpretazione. Che il custode oli la porta del locale biciclette o porti i contenitori in strada il giorno della raccolta, sta nel capitolato oppure prima o poi diventa motivo di discussione.',
         },
         {
           term: 'Il confronto',
@@ -160,34 +176,34 @@ const pflichtenheft: RatgeberArtikel = {
     {
       title: 'Esempio: dodici appartamenti, un ascensore, una lavanderia',
       paragraphs: [
-        'Il modello qui sotto è compilato per una casa plurifamiliare di dodici appartamenti con un vano scala e ascensore, una lavanderia comune e circa 600 m² di area esterna. I valori sono un esempio, non un riferimento. Nella colonna «La Sua voce» va ciò che vale per il Suo stabile.',
+        'La tabella qui sotto mostra un capitolato compilato per una casa plurifamiliare di dodici appartamenti con un vano scala e ascensore, una lavanderia comune e circa 600 m² di area esterna. I valori sono un esempio, non un riferimento.',
+        'Un modello vuoto da stampare, con colonne per cadenza e responsabilità, si trova alla pagina [custodia di stabili](/leistungen/hauswartung#pflichtenheft).',
       ],
       tool: {
         kind: 'table',
-        id: 'vorlage-pflichtenheft',
-        title: 'Modello: capitolato con esempio',
+        id: 'beispiel-pflichtenheft',
+        title: 'Esempio con la classificazione delle spese accessorie',
         intro:
-          'L’ultima colonna mostra come l’Associazione svizzera inquilini classifica il compito rispetto alle spese accessorie. In ogni caso il contratto di locazione deve indicare la custodia tra le spese accessorie (art. 257a cpv. 2 CO).',
-        columns: ['Compito', 'Esempio', 'La Sua voce', 'Spese accessorie secondo l’associazione inquilini'],
+          'L’ultima colonna mostra come l’associazione inquilini classifica il compito rispetto alle spese accessorie. In ogni caso il contratto di locazione deve indicare la custodia tra le spese accessorie (art. 257a cpv. 2 CO).',
+        columns: ['Compito', 'Esempio', 'Spese accessorie secondo l’associazione inquilini'],
         rows: [
-          ['Vano scala e ingresso', 'Pulizia a umido ogni settimana, corrimano e porta a vetri compresi', '__________', 'ammesso'],
-          ['Ascensore', 'Cabina e porte ogni settimana, soglie ogni mese', '__________', 'ammesso'],
-          ['Lavanderia e locale asciugatura', 'Pavimento, lavabo e scarico due volte al mese', '__________', 'ammesso'],
-          ['Servizio del riscaldamento', 'A ogni giro leggere pressione e indicazione guasti, annotare il risultato', '__________', 'ammesso'],
-          ['Piccola manutenzione', 'Sostituire lampadine, oliare serrature; senza consultazione fino a CHF ______ per caso', '__________', 'ammesso se non servono conoscenze specialistiche'],
-          ['Area esterna', 'Prato ogni due settimane da aprile a ottobre, foglie in autunno, siepi secondo il piano di cura', '__________', 'ammesso'],
-          ['Giro di controllo delle parti comuni', 'Ogni settimana, constatazioni sulla scheda di controllo', '__________', 'non menzionato, da chiarire nel contratto'],
-          ['Rifiuti e materiali riciclabili', 'Esporre i contenitori il giorno della raccolta, tenere pulito il punto di raccolta', '__________', 'non menzionato'],
-          ['Riconsegne di appartamenti', 'Aprire l’appartamento, rilevare i contatori, su incarico dell’amministrazione', '__________', 'non ammesso'],
-          ['Accompagnare gli artigiani', 'Dare accesso, sorvegliare i lavori', '__________', 'non ammesso'],
-          ['Segnalazioni all’amministrazione', 'Difetti per e-mail in giornata, casi urgenti per telefono', '__________', 'non ammesso'],
-          ['Espressamente escluso', 'Servizio invernale, picchetto, manutenzione di riscaldamento e ascensore da parte di ditte specializzate', '__________', 'non applicabile'],
+          ['Vano scala e ingresso', 'Pulizia a umido ogni settimana, corrimano e porta a vetri compresi', 'ammesso (pulizia nello stabile)'],
+          ['Ascensore', 'Cabina e porte ogni settimana, soglie ogni mese', 'ammesso (pulizia nello stabile)'],
+          ['Lavanderia e locale asciugatura', 'Pavimento, lavabo e scarico due volte al mese', 'ammesso (pulizia nello stabile)'],
+          ['Punto di raccolta dei rifiuti', 'Pulire il piazzale e lo spazio dei contenitori dopo ogni raccolta', 'ammesso (pulizia attorno allo stabile)'],
+          ['Servizio del riscaldamento', 'Leggere pressione e indicazione guasti una volta alla settimana, annotare il valore', 'ammesso (servizio del riscaldamento)'],
+          ['Piccola manutenzione', 'Sostituire le lampade guaste nel vano scala, oliare le serrature che si inceppano, fino al limite concordato per caso', 'ammesso se non servono conoscenze specialistiche'],
+          ['Area esterna', 'Prato ogni due settimane da aprile a ottobre, foglie in autunno, siepi secondo il piano di cura', 'ammesso'],
+          ['Esporre i contenitori', 'Portarli in strada il giorno della raccolta e ritirarli', 'non menzionato nel promemoria'],
+          ['Giro di controllo dei difetti', 'Percorrere le parti comuni ogni settimana, constatazioni sulla scheda di controllo', 'non ammesso (giri di controllo per riparazioni)'],
+          ['Segnalazioni all’amministrazione', 'Difetti per e-mail in giornata, casi urgenti per telefono', 'non ammesso'],
+          ['Riconsegne di appartamenti', 'Aprire l’appartamento, rilevare i contatori, su incarico dell’amministrazione', 'non ammesso'],
+          ['Accompagnare gli artigiani', 'Dare accesso, sorvegliare i lavori', 'non ammesso'],
+          ['Espressamente escluso', 'Servizio invernale, picchetto, manutenzione di riscaldamento e ascensore da parte di ditte specializzate', 'non applicabile'],
         ],
         note:
-          'La classificazione segue il promemoria dell’associazione inquilini sulle spese accessorie non ammesse (2026). La valutazione del singolo caso dipende dal contratto di locazione. La tabella descrive la situazione giuridica in generale e non costituisce una consulenza legale.',
+          'La classificazione segue il promemoria dell’associazione inquilini sulle spese accessorie non ammesse (2026). Secondo il promemoria, amministrazione e riparazioni, tra cui i giri di controllo per riparazioni e le segnalazioni all’amministrazione, non rientrano nelle spese accessorie nemmeno se il contratto di locazione le elenca. La tabella riflette questo punto di vista e non costituisce una consulenza legale.',
         sources: [mvSpese, co('257_a', 'art. 257a')],
-        printable: true,
-        updated: '2026-09-28',
       },
     },
     {
@@ -220,16 +236,16 @@ const pflichtenheft: RatgeberArtikel = {
         'L’associazione inquilini consiglia ai conduttori di chiedere quali compiti svolge la custodia e con quante ore, e scrive che il capitolato deve essere reso noto. Un’amministrazione che registra le ore secondo le righe del capitolato risponde a queste domande con documenti invece che con stime.',
         'Se viene incaricata una ditta esterna, l’associazione inquilini richiama il principio di economicità. Verifichi quindi le prestazioni supplementari rispetto al contratto di locazione prima dell’affidamento. Le regole generali su spese accessorie e conteggio sono spiegate alla pagina [pulizia di manutenzione](/leistungen/unterhaltsreinigung).',
       ],
-      sources: [co('257_b', 'art. 257a e 257b')],
+      sources: [co('257_b', 'art. 257a e 257b'), mvSpese],
     },
     {
       title: 'Nella proprietà per piani: due lettori',
       paragraphs: [
         'Nella proprietà per piani il capitolato ha due lettori: l’amministratore che lo applica e l’assemblea che stanzia i soldi. La legge attribuisce all’assemblea l’approvazione annuale di preventivo, conto e ripartizione delle spese (art. 712m CC). L’amministratore deve poi metterlo in pratica (art. 712s CC).',
         'Alleghi quindi il capitolato al preventivo quando la custodia viene affidata di nuovo o ampliata. Se la comunione ha eletto un comitato, questo può esaminare in anticipo capitolato e offerte e presentare una proposta all’assemblea.',
-        'Le spese si ripartiscono secondo le quote di valore. Se un’unità non usa o usa pochissimo un impianto, ad esempio un negozio al pianterreno l’ascensore, se ne deve tenere conto nella ripartizione (art. 712h cpv. 3 CC). La maggioranza necessaria per l’affidamento è stabilita dal Suo regolamento.',
+        'Le spese si ripartiscono secondo le quote di valore. Se un’unità non usa o usa pochissimo un impianto, ad esempio un negozio al pianterreno l’ascensore, se ne deve tenere conto nella ripartizione (art. 712h cpv. 3 CC). La maggioranza necessaria per l’affidamento risulta dall’art. 712g CC e dalle norme sulla comproprietà (art. 647a e 647b CC). Un ordinamento diverso vale solo se è stabilito nell’atto costitutivo o è stato deciso all’unanimità. Verifichi caso per caso che cosa vale per la Sua comunione.',
       ],
-      sources: [cc],
+      sources: [cc, ccComproprieta],
     },
     {
       title: 'Sette lacune che creano problemi più tardi',
@@ -252,7 +268,7 @@ const pflichtenheft: RatgeberArtikel = {
     },
   ],
   service: '/leistungen/hauswartung',
-  related: ['/blog/wohnungsabgabe-reinigung', '/blog/reinigungskosten-schweiz'],
+  related: ['/blog/wohnungsabgabe-protokoll', '/blog/reinigungskosten-schweiz'],
   cta: {
     title: 'Custodia secondo il Suo capitolato',
     text: 'Ci invii il Suo capitolato o i dati principali: indirizzo, appartamenti, vani scala, ascensore, lavanderia e area esterna. Percorriamo lo stabile e calcoliamo l’offerta su questa base. Sopralluogo e offerta non Le costano nulla e non La impegnano.',
@@ -260,8 +276,8 @@ const pflichtenheft: RatgeberArtikel = {
 }
 
 const wohnungsabgabe: RatgeberArtikel = {
-  path: '/blog/wohnungsabgabe-reinigung',
-  h1: 'Riconsegna dell’appartamento: che cosa devono sapere le amministrazioni su verbale e pulizia finale',
+  path: '/blog/wohnungsabgabe-protokoll',
+  h1: 'Riconsegna dell’appartamento: che cosa devono sapere le amministrazioni su verbale e notifica dei difetti',
   subtitle: 'Quanto pulito deve essere l’appartamento, come annotare i difetti perché valgano e quando è il momento della pulizia finale.',
   teaser: 'Stato, verbale, notifica dei difetti e pulizia: la riconsegna dell’appartamento dal punto di vista dell’amministrazione, con esempi di annotazioni precise.',
   updated: '2026-09-28',
@@ -272,7 +288,7 @@ const wohnungsabgabe: RatgeberArtikel = {
     title: 'In breve',
     items: [
       'L’appartamento si restituisce nello stato risultante da un uso conforme al contratto (art. 267 CO). La normale usura è coperta dalla pigione.',
-      'I difetti vanno verificati alla riconsegna e notificati subito, uno per uno e con precisione (art. 267a CO).',
+      'I difetti vanno verificati alla riconsegna e notificati subito (art. 267a CO). Secondo i tribunali zurighesi devono essere designati concretamente.',
       'Il verbale prima della pulizia: solo così lo stato alla riconsegna resta dimostrabile.',
       'Il conduttore successivo può prendere visione del verbale di riconsegna (art. 256a CO). Un verbale preciso serve quindi due volte.',
     ],
@@ -290,7 +306,7 @@ const wohnungsabgabe: RatgeberArtikel = {
         'i residui di colla sul parquet',
         'i locali accessori come cantina, solaio e garage, completamente sgomberati',
       ],
-      note: 'L’associazione inquilini aggiunge dal punto di vista del conduttore: una pulizia accurata comprende lo shampoo della moquette, ma non lavori pericolosi o che richiedono conoscenze specialistiche, come staccare e oliare le persiane. Se dopo il trasloco l’appartamento viene ristrutturato completamente, secondo l’associazione basta una riconsegna scopata.',
+      note: 'L’associazione inquilini aggiunge dal punto di vista del conduttore: una pulizia accurata comprende lo shampoo della moquette, ma non lavori pericolosi o che richiedono conoscenze specialistiche, come staccare e oliare le persiane. Se dopo il trasloco l’appartamento viene ristrutturato completamente, secondo l’associazione basta restituirlo spazzato.',
       sources: [co('267', 'art. 267'), hevRiconsegna, mvDomande],
     },
     {
@@ -311,7 +327,7 @@ const wohnungsabgabe: RatgeberArtikel = {
         },
       ],
       note: 'Il valore residuo si calcola con la tabella paritetica della durata di vita delle associazioni dei proprietari e degli inquilini. Un esempio dell’associazione inquilini: una moquette di qualità media dura dieci anni. Se deve essere sostituita dopo sei anni a causa di bruciature, il conduttore sostiene il 40 per cento dei costi. Scaduta la durata di vita, non sostiene più nulla.',
-      sources: [mvDurata],
+      sources: [mvDomande, hevRiconsegna, mvDurata],
     },
     {
       title: 'Il verbale: abbastanza preciso da valere',
@@ -328,7 +344,7 @@ const wohnungsabgabe: RatgeberArtikel = {
         rows: [
           ['Cucina', '«Cucina sporca»', 'Forno con crosta di grasso su parete posteriore, teglia e griglia; filtro della cappa intasato', 'Pulizia'],
           ['Bagno e WC', '«Bagno non pulito»', 'Vetro della doccia e miscelatore con bordo di calcare; incrostazioni di urina sotto il bordo del WC', 'Pulizia'],
-          ['Soggiorno', '«Parquet danneggiato»', 'Davanti alla porta del balcone tre graffi di circa 20 cm, vernice consumata; parquet posato nel 2016', 'Danno o usura, secondo l’età'],
+          ['Soggiorno', '«Parquet danneggiato»', 'Davanti alla porta del balcone tre graffi nel parquet, ciascuno di circa 20 cm; parquet posato nel 2016', 'Danno (usura eccessiva), quota dei costi secondo il valore residuo'],
           ['Camera', '«Pareti sporche»', 'Tracce grigie su 1 m dietro il letto; soffitto ingiallito, bordo più chiaro dietro i quadri', 'Tracce: usura; ingiallimento da fumo: danno'],
           ['Finestre', '«Finestre non pulite»', 'Finestra della cucina con sporco nelle battute e nel telaio, vetro striato all’esterno; lamelle del soggiorno impolverate', 'Pulizia'],
           ['Cantina', '«Cantina non sgomberata»', 'Nel compartimento 4 ci sono un armadio e cinque scatoloni', 'Sgombero'],
@@ -343,11 +359,11 @@ const wohnungsabgabe: RatgeberArtikel = {
     {
       title: 'La notifica dei difetti: subito, e più tardi per i difetti nascosti',
       paragraphs: [
-        'L’art. 267a CO non fissa un termine in giorni, solo la parola «subito». L’associazione inquilini considera una settimana come limite estremo, se il conduttore non ha già firmato i difetti nel verbale. Più sicuro è notificare il giorno della riconsegna, con una copia del verbale per il conduttore.',
+        'L’art. 267a CO non fissa un termine in giorni, solo la parola «subito». Se il conduttore non ha già firmato i difetti nel verbale, l’associazione inquilini parla di due o tre giorni feriali, altrove di una settimana al massimo. Chi lascia scadere il termine perde le sue pretese. Sicura è solo la notifica il giorno della riconsegna, con una copia del verbale per il conduttore.',
         'Se il conduttore rifiuta di collaborare alla riconsegna, la notifica parte subito per iscritto secondo i tribunali zurighesi, per raccomandata a scopo di prova. I tribunali mettono a disposizione una lettera modello.',
         'I difetti non riconoscibili mediante l’ordinaria verifica vanno notificati subito dopo la loro scoperta (art. 267a cpv. 3 CO). Chi fa riparare prima e manda la fattura dopo, secondo l’associazione inquilini, è in ritardo.',
       ],
-      sources: [co('267_a', 'art. 267a')],
+      sources: [co('267_a', 'art. 267a'), zhNotifica, mvConteggio, mvDomande],
     },
     {
       title: 'Lo svolgimento attorno al giorno della riconsegna',
@@ -394,6 +410,7 @@ const wohnungsabgabe: RatgeberArtikel = {
         'Nel secondo caso l’ordine è decisivo: verbale, notifica, breve termine per ripulire, poi pulizia. Così resta documentato di che cosa risponde il conduttore, e si pulisce in un appartamento vuoto, dove si può lavorare anche dietro gli elementi incassati.',
         'Per amministrazioni, proprietari e aziende eseguiamo la pulizia finale con garanzia di consegna, descritta alla pagina [pulizia di fine locazione](/leistungen/umzugsreinigung). L’incarico lo dà l’amministrazione o la proprietà, non il conduttore uscente.',
       ],
+      sources: [hevRiconsegna],
     },
     {
       title: 'Errori frequenti alla riconsegna',
@@ -410,7 +427,7 @@ const wohnungsabgabe: RatgeberArtikel = {
     },
   ],
   service: '/leistungen/umzugsreinigung',
-  related: ['/blog/pflichtenheft-hauswartung', '/blog/bodenbelaege-grundreinigung'],
+  related: ['/blog/hauswartung-aufgaben', '/blog/bodenbelaege-reinigen'],
   cta: {
     title: 'Pulizia finale per la Sua prossima riconsegna',
     text: 'Per pianificare ci servono indirizzo, data di riconsegna e dimensione dell’appartamento. Se sono previsti più cambi, ad esempio alla fine di un trimestre, li pianifichiamo insieme. Vediamo prima l’appartamento, poi riceve l’offerta scritta, gratuita e senza impegno.',
@@ -418,8 +435,8 @@ const wohnungsabgabe: RatgeberArtikel = {
 }
 
 const bodenarten: RatgeberArtikel = {
-  path: '/blog/bodenbelaege-grundreinigung',
-  h1: 'Pulizia a fondo secondo il pavimento: che cosa sopportano pietra, piastrelle, linoleum e parquet',
+  path: '/blog/bodenbelaege-reinigen',
+  h1: 'Pulire bene i pavimenti: quali prodotti sopportano pietra, piastrelle, linoleum e parquet',
   subtitle: 'Perché lo stesso prodotto salva un pavimento e ne intacca un altro, come riconoscere il rivestimento e che cosa chiarire prima dei lavori.',
   teaser: 'pH, fughe, film di cura e rischio di scivolare: conoscenze sui pavimenti per amministrazioni e aziende che pianificano o affidano una pulizia a fondo.',
   updated: '2026-09-28',
@@ -454,7 +471,7 @@ const bodenarten: RatgeberArtikel = {
         },
         {
           term: 'Risanamento',
-          text: 'Levigare, lucidare, verniciare o oliare di nuovo. È lavoro per un marmista, un parchettista o un posatore, non per la pulizia. La pietra si può levigare solo di pochi millimetri.',
+          text: 'Levigare, lucidare, verniciare o oliare di nuovo. È lavoro per un marmista, un parchettista o un posatore. La pietra si può levigare solo di pochi millimetri.',
         },
       ],
       sources: [nvs, forboLinoleum, forboVinile],
@@ -467,81 +484,47 @@ const bodenarten: RatgeberArtikel = {
         'Anche i prodotti alcalini hanno limiti. Per il linoleum il fabbricante Forbo indica detergenti con pH inferiore a 9 ed esclude le soluzioni fortemente alcaline.',
       ],
       note: 'Prima di una pulizia a fondo chieda quale prodotto, con quale pH, è previsto per quale rivestimento. La risposta va nel capitolato delle prestazioni.',
+      sources: [nvs, ceruniqPietra, forboLinoleum],
+      tool: {
+        kind: 'table',
+        id: 'mittel-nach-ph',
+        title: 'Quale prodotto dove: acido, neutro, alcalino',
+        intro: 'Da appendere nel locale delle pulizie: tre gruppi di prodotti, che cosa sciolgono e dove non vanno usati. Le istruzioni di cura del Suo pavimento hanno la precedenza.',
+        columns: ['Prodotto', 'Scioglie', 'Da non usare', 'A cosa fare attenzione'],
+        rows: [
+          [
+            'Acido, pH inferiore a 7, ad esempio anticalcare, detergenti sanitari, prodotti contro il velo di cemento',
+            'calcare, velo di cemento, residui di malta per fughe',
+            'su marmo, calcare e travertino, su fughe cementizie asciutte, su linoleum e vinile',
+            'Bagnare prima pavimento e fughe con acqua, lasciare agire brevemente, risciacquare più volte con acqua pulita. Niente acido cloridrico o solforico sulla pietra naturale: ne altera il colore.',
+          ],
+          [
+            'Neutro, pH intorno a 7, ad esempio detergenti per la manutenzione',
+            'lo sporco libero o poco aderente',
+            'bagnato sul parquet: lì passare solo un panno appena umido',
+            'Dosare con parsimonia: troppo prodotto con additivi di cura macchia in modo permanente le piastrelle in ceramica. Non è pensato per film di cura e calcare.',
+          ],
+          [
+            'Alcalino, pH superiore a 7, ad esempio detergenti di fondo',
+            'grasso, olio, vecchi film di cura',
+            'come soluzione fortemente alcalina sul linoleum, dove solo sotto pH 9; sul parquet oliato, salvo con i prodotti del sistema a olio',
+            'Raccogliere completamente l’acqua sporca e risciacquare con acqua pulita. Su marmo, calcare e travertino solo prodotti neutri o leggermente alcalini.',
+          ],
+        ],
+        note: 'Sul parquet i piedi metallici bagnati dei mobili lasciano macchie di ossidazione; li tenga asciutti durante la pulizia a umido. E non mescoli i sistemi: i fabbricanti raccomandano prodotti concepiti per funzionare insieme.',
+        sources: [nvs, ceruniqCeramica, ceruniqPietra, forboLinoleum, forboVinile, ispVerniciato, ispOliato],
+        printable: true,
+        updated: '2026-09-28',
+      },
     },
     {
       title: 'Riconoscere il rivestimento',
       paragraphs: [
         'La fonte più sicura sono i documenti della costruzione: istruzioni di cura dei fabbricanti, verbali di collaudo, fatture dei posatori. Le istruzioni dell’associazione svizzera delle piastrelle Ceruniq prevedono la firma del committente e precisano che una pulizia inadeguata fa decadere la garanzia.',
         'Senza documenti, nessuna supposizione sostituisce una prova. L’associazione della pietra naturale descrive come gli specialisti testano la pietra: un punto grande come un’unghia, in un luogo nascosto, viene levigato e bagnato con qualche goccia di acido. Se fa effervescenza, la pietra è sensibile agli acidi.',
-        'Finché la pietra non è identificata, nessun acido va sul pavimento. Ogni nuovo metodo si prova prima in un punto poco visibile.',
+        'Finché la pietra non è identificata, nessun acido va sul pavimento. Ogni nuovo metodo si prova prima in un punto poco visibile. Che cosa sopporta ogni rivestimento durante una pulizia a fondo, e come distinguere un danno dallo sporco, lo riassumono le tabelle alla pagina [pulizie a fondo e speciali](/leistungen/sonderreinigungen#bodenbelaege).',
       ],
-      sources: [ceruniqCeramica],
-    },
-    {
-      title: 'I rivestimenti in sintesi',
-      paragraphs: [
-        'La tabella riassume ciò che i promemoria delle associazioni professionali svizzere e le istruzioni dei fabbricanti prevedono per la pulizia a fondo. Non sostituisce le istruzioni del Suo pavimento.',
-      ],
-      tool: {
-        kind: 'table',
-        id: 'belaege-grundreinigung',
-        title: 'Pulizia a fondo e cura secondo il pavimento',
-        columns: ['Pavimento', 'Pulizia a fondo', 'Dopo', 'Serve uno specialista se'],
-        rows: [
-          [
-            'Marmo, calcare, travertino',
-            'Nessun trattamento acido. Sciogliere grasso e residui di cura con un prodotto neutro o leggermente alcalino, aspirare l’acqua sporca, risciacquare due volte con acqua pulita.',
-            'A umido con un prodotto neutro. Niente pad sulle superfici lucidate.',
-            'restano punti opachi e ruvidi: la superficie è intaccata e va levigata.',
-          ],
-          [
-            'Granito, gneiss, quarzite, porfido',
-            'Tutti i metodi sono possibili, anche prodotti acidi contro il calcare. L’acido cloridrico e l’acido solforico lasciano alterazioni di colore.',
-            'A umido con un prodotto neutro.',
-            'olio o ruggine sono penetrati in profondità nella pietra.',
-          ],
-          [
-            'Piastrelle e gres porcellanato con fughe cementizie',
-            'Bagnare prima, lasciare agire brevemente, spazzolare, raccogliere l’acqua sporca, risciacquare due o tre volte con acqua pulita. Spegnere prima completamente il riscaldamento a pavimento.',
-            'Poco prodotto neutro o leggermente alcalino, nessun detergente acido per il bagno nella pulizia corrente.',
-            'le fughe si sgretolano, si sfaldano o mancano.',
-          ],
-          [
-            'Piastrelle con fughe epossidiche',
-            'Le fughe resistono a molti prodotti chimici e ai detergenti acidi. Fa stato la scheda tecnica del fabbricante delle fughe.',
-            'Come le piastrelle con fughe cementizie.',
-            'sulle piastrelle resta un velo epossidico: lo rimuove il posatore.',
-          ],
-          [
-            'Linoleum',
-            'A macchina con un detergente con pH inferiore a 9, raccogliere l’acqua sporca, risciacquare con acqua pulita. Il trattamento di fabbrica non deve subire danni.',
-            'Lavaggio a umido, togliere le tracce di passaggio con il metodo spray, lucidare regolarmente.',
-            'la superficie è distrutta: risanamento con un film di cura secondo il fabbricante.',
-          ],
-          [
-            'Vinile e PVC',
-            'Decerante per vinile, strofinare a macchina, risciacquare con acqua pulita. Prima di un nuovo rivestimento protettivo il pavimento deve essere privo di residui e completamente asciutto.',
-            'Lavaggio a umido con un detergente che il fabbricante ammette per la superficie.',
-            'serve un nuovo rivestimento protettivo: due strati secondo il fabbricante.',
-          ],
-          [
-            'Parquet verniciato',
-            'Nessuna pulizia a fondo con acqua. Scopa morbida, aspirapolvere o panno appena umido, se necessario con un prodotto neutro. Macchine solo dopo aver consultato il fabbricante.',
-            'Curare regolarmente con polish per parquet.',
-            'la vernice è consumata: levigare e verniciare di nuovo.',
-          ],
-          [
-            'Parquet oliato',
-            'Con i prodotti del sistema d’olio usato, mai a vapore. Panni solo se il fabbricante li ammette per il parquet.',
-            'Oliare di nuovo secondo necessità.',
-            'le zone di passaggio sono grigie e aperte.',
-          ],
-        ],
-        note: 'Sul parquet i piedi metallici bagnati dei mobili lasciano macchie di ossidazione; li tenga asciutti durante la pulizia a umido. E non mescoli i sistemi: i fabbricanti raccomandano prodotti concepiti per funzionare insieme.',
-        sources: [nvs, ceruniqCeramica, ceruniqPrima, forboLinoleum, forboVinile, ispVerniciato, ispOliato],
-        printable: true,
-        updated: '2026-09-28',
-      },
+      sources: [ceruniqCeramica, nvs],
     },
     {
       title: 'Le fughe: il punto più delicato',
@@ -550,7 +533,7 @@ const bodenarten: RatgeberArtikel = {
         'Le fughe cementizie nere, antracite o colorate sono particolarmente delicate; Ceruniq avverte espressamente dei danni dovuti a una pulizia inadeguata. Le fughe epossidiche invece resistono ampiamente ai detergenti acidi.',
         'Le fughe in silicone di doccia, vasca e cucina contengono antimuffa. Ceruniq raccomanda di pulirle ogni settimana con un prodotto neutro o leggermente alcalino e un panno morbido, e poi di asciugarle. Se la muffa è penetrata nel silicone, l’UFSP consiglia di rimuovere il sigillante e farlo rinnovare da uno specialista.',
       ],
-      sources: [ufspMuffa],
+      sources: [ceruniqCeramica, ceruniqPrima, ufspMuffa],
     },
     {
       title: 'Risciacquare, asciugare, rischio di scivolare',
@@ -559,7 +542,7 @@ const bodenarten: RatgeberArtikel = {
         'I residui hanno un secondo effetto. Forbo afferma che lo sporco portato all’interno, la frequenza di pulizia e i prodotti usati influiscono in modo determinante sulla resistenza allo scivolamento. Secondo Ceruniq, troppo detergente con additivi di cura può perfino macchiare in modo permanente le piastrelle in ceramica.',
         'Durante i lavori i pavimenti bagnati sono un pericolo di caduta. L’UPI raccomanda cartelli di avvertimento e nastri di sbarramento e di asciugare rapidamente il pavimento. Nel vano scala di uno stabile in locazione significa lavorare a tratti e lasciare sempre libero un passaggio asciutto.',
       ],
-      sources: [upiPavimento],
+      sources: [nvs, forboLinoleum, ceruniqCeramica, upiPavimento],
     },
     {
       title: 'Non mescolare mai i prodotti',
@@ -574,6 +557,7 @@ const bodenarten: RatgeberArtikel = {
         'La maggior parte dello sporco entra con le scarpe. Per gli ingressi l’UPI raccomanda barriere antisporco il cui tappeto misuri almeno sei passi. Forbo indica per zone tessili di pulizia di 4 a 6 metri una riduzione dello sporco portato all’interno fino all’80 per cento.',
         'A questo si aggiungono semplici misure tratte dalle istruzioni di cura: feltrini sotto le sedie, rotelle morbide sulle sedie da ufficio, sottovasi sotto le piante. Per il parquet l’associazione del parquet raccomanda un clima di 20 a 22 °C con il 35 a 45 per cento di umidità relativa.',
       ],
+      sources: [upiPavimento, forboLinoleum, ispVerniciato],
     },
     {
       title: 'Errori tipici',
@@ -588,10 +572,11 @@ const bodenarten: RatgeberArtikel = {
         'Superfici bagnate senza cartelli di avvertimento.',
       ],
       note: 'La pulizia a fondo come servizio, con una lista di controllo per preparazione e collaudo, è descritta alla pagina [pulizie a fondo e speciali](/leistungen/sonderreinigungen).',
+      sources: [nvs, ceruniqPrima, ispOliato],
     },
   ],
   service: '/leistungen/sonderreinigungen',
-  related: ['/blog/wohnungsabgabe-reinigung', '/blog/reinigungskosten-schweiz'],
+  related: ['/blog/wohnungsabgabe-protokoll', '/blog/reinigungskosten-schweiz'],
   cta: {
     title: 'Pulizia a fondo per i Suoi pavimenti',
     text: 'Ci scriva quali rivestimenti ci sono e dove, e quanto sono grandi le superfici all’incirca. Istruzioni di cura e foto aiutano nella pianificazione. Dopo un appuntamento sul posto calcoliamo i Suoi pavimenti uno per uno, gratuitamente e senza impegno.',
@@ -627,11 +612,11 @@ const reinigungsfirmaFinden: RatgeberArtikel = {
         },
         {
           term: 'Pulizia a fondo',
-          text: 'Una pulizia approfondita a intervalli più lunghi, contro calcare, grasso e vecchi strati di cura. Quali prodotti sopporta ogni pavimento lo spiega la guida [Pulizia a fondo secondo il pavimento](/blog/bodenbelaege-grundreinigung). Il servizio: [Pulizie a fondo e speciali](/leistungen/sonderreinigungen).',
+          text: 'Una pulizia approfondita a intervalli più lunghi, contro calcare, grasso e vecchi strati di cura. Quali prodotti sopporta ogni pavimento lo spiega la guida [Pulire bene i pavimenti](/blog/bodenbelaege-reinigen). Il servizio: [Pulizie a fondo e speciali](/leistungen/sonderreinigungen).',
         },
         {
           term: 'Custodia di stabili',
-          text: 'La cura di uno stabile al di là della pulizia, ad esempio con giri di controllo, piccole riparazioni e smaltimento. Che cosa comprende lo stabilisce un [capitolato](/blog/pflichtenheft-hauswartung). Maggiori informazioni alla pagina [Custodia di stabili](/leistungen/hauswartung).',
+          text: 'La cura di uno stabile al di là della pulizia, ad esempio con giri di controllo, piccole riparazioni e smaltimento. Che cosa comprende lo stabilisce un capitolato, vedi [compiti della custodia](/blog/hauswartung-aufgaben). Maggiori informazioni alla pagina [Custodia di stabili](/leistungen/hauswartung).',
         },
       ],
       note: 'Stabilisca inoltre con quale frequenza e in quali orari si deve pulire, ad esempio prima dell’inizio del lavoro o dopo la chiusura del negozio. Tutti i fornitori hanno bisogno di queste indicazioni, affinché le offerte siano confrontabili.',
@@ -653,7 +638,7 @@ const reinigungsfirmaFinden: RatgeberArtikel = {
         },
         {
           title: 'Condizioni di lavoro',
-          text: 'Nella Svizzera tedesca le imprese di pulizia con almeno sei dipendenti sono soggette a un contratto collettivo di lavoro di obbligatorietà generale con salari minimi. La commissione paritetica del settore (ZPK) tiene un elenco delle imprese assoggettate. Lo chieda, soprattutto se un’offerta è sorprendentemente bassa.',
+          text: 'Nella Svizzera tedesca il contratto collettivo di lavoro del settore delle pulizie, di obbligatorietà generale, vale interamente per le imprese con almeno sei dipendenti. Con una dichiarazione di obbligatorietà generale agevolata, i suoi salari minimi valgono anche per le imprese di pulizia più piccole che hanno dipendenti. Chieda dei salari, soprattutto se un’offerta è sorprendentemente bassa.',
         },
         {
           title: 'Valutare correttamente i certificati',
@@ -676,7 +661,7 @@ const reinigungsfirmaFinden: RatgeberArtikel = {
           text: 'Chieda quanto rapidamente qualcuno è sul posto in caso di difetto e come può raggiungere il Suo interlocutore.',
         },
       ],
-      sources: [zpkCcl],
+      sources: [zpkCcl, gavPiccole],
     },
     {
       title: 'Sette errori che più tardi costano cari',
@@ -691,19 +676,6 @@ const reinigungsfirmaFinden: RatgeberArtikel = {
       ],
     },
     {
-      title: 'Passo dopo passo verso l’impresa di pulizie',
-      ordered: true,
-      items: [
-        'Chiarire le esigenze: annotare servizio, cadenza, orari e superfici.',
-        'Scegliere da tre a cinque fornitori che operano nella Sua regione.',
-        'Fissare i sopralluoghi. Senza sopralluogo non c’è un’offerta confrontabile.',
-        'Confrontare le offerte nella griglia qui sotto: entità, ore, costi accessori e durata.',
-        'Chiarire le questioni aperte, preferibilmente per iscritto.',
-        'Chiedere se è possibile una pulizia di prova o un inizio con un periodo di prova.',
-        'Concludere il contratto e indicarvi l’interlocutore.',
-      ],
-    },
-    {
       title: 'Domande per il sopralluogo',
       items: [
         'Che cosa è compreso esattamente, e che cosa no?',
@@ -712,7 +684,7 @@ const reinigungsfirmaFinden: RatgeberArtikel = {
         'Chi è il mio interlocutore, e come lo raggiungo?',
         'Chi controlla il lavoro sul posto, e con quale frequenza?',
         'Come è regolata la sostituzione in caso di vacanze o malattia?',
-        'La Sua impresa è soggetta al contratto collettivo del settore delle pulizie?',
+        'Paga almeno i salari del contratto collettivo del settore delle pulizie?',
         'Quale assicurazione esiste, con quale copertura?',
         'Come si fattura, e che cosa costa in più?',
       ],
@@ -732,7 +704,7 @@ const reinigungsfirmaFinden: RatgeberArtikel = {
           ['Controllo sul posto: chi e con quale frequenza', '__________', '__________', '__________'],
           ['Sostituzione durante vacanze e malattia', '__________', '__________', '__________'],
           ['Responsabilità civile con somma assicurata', '__________', '__________', '__________'],
-          ['Soggetta al contratto collettivo', '__________', '__________', '__________'],
+          ['Salari minimi del contratto collettivo rispettati', '__________', '__________', '__________'],
           ['Durata e termine di disdetta', '__________', '__________', '__________'],
         ],
         note: 'Per ogni colonna moltiplichi le ore per intervento per gli interventi al mese. Il risultato mostra quanto lavoro ogni impresa prevede davvero per il Suo immobile.',
@@ -741,7 +713,20 @@ const reinigungsfirmaFinden: RatgeberArtikel = {
       },
     },
     {
-      title: `Come ${company.brand} risponde a queste domande`,
+      title: 'Passo dopo passo verso l’impresa di pulizie',
+      ordered: true,
+      items: [
+        'Chiarire le esigenze: annotare servizio, cadenza, orari e superfici.',
+        'Scegliere da tre a cinque fornitori che operano nella Sua regione.',
+        'Fissare i sopralluoghi. Senza sopralluogo non c’è un’offerta confrontabile.',
+        'Mettere a confronto le offerte nella griglia qui sopra: entità, ore, costi accessori e durata.',
+        'Chiarire le questioni aperte, preferibilmente per iscritto.',
+        'Chiedere se è possibile una pulizia di prova o un inizio con un periodo di prova.',
+        'Concludere il contratto e indicarvi l’interlocutore.',
+      ],
+    },
+    {
+      title: `Se contatta ${company.brand}`,
       items: [
         'Offerta: per iscritto, dopo aver visto il Suo immobile sul posto.',
         `Risposta alla Sua richiesta: ${responseTime}.`,
@@ -753,7 +738,7 @@ const reinigungsfirmaFinden: RatgeberArtikel = {
     },
   ],
   service: '/leistungen/unterhaltsreinigung',
-  related: ['/blog/reinigungskosten-schweiz', '/blog/pflichtenheft-hauswartung'],
+  related: ['/blog/reinigungskosten-schweiz', '/blog/hauswartung-aufgaben'],
   cta: {
     title: 'Offerta sul posto',
     text: 'Metta la nostra offerta accanto alle altre. Ci indichi immobile, superficie, cadenza e orari, passiamo da Lei e calcoliamo per il Suo immobile. Per questo non chiediamo nulla, e Lei non assume alcun impegno.',
@@ -806,11 +791,11 @@ const kosten: RatgeberArtikel = {
     {
       title: 'I salari come soglia minima',
       paragraphs: [
-        'Nei Cantoni di Lucerna, Zugo, Argovia, Nidvaldo e Obvaldo le imprese di pulizia con almeno sei dipendenti sono soggette al contratto collettivo di lavoro del settore delle pulizie della Svizzera tedesca, dichiarato di obbligatorietà generale. Fissa salari minimi per ogni categoria e vale fino alla fine del 2029. Alcune disposizioni valgono anche per le imprese più piccole.',
+        'Nei Cantoni di Lucerna, Zugo, Argovia, Nidvaldo e Obvaldo le imprese di pulizia con almeno sei dipendenti sono soggette al contratto collettivo di lavoro del settore delle pulizie della Svizzera tedesca, dichiarato di obbligatorietà generale. Fissa salari minimi per ogni categoria e vale fino alla fine del 2029. Alcune disposizioni, tra cui i salari minimi, valgono anche per le imprese di pulizia più piccole che hanno dipendenti.',
         'Al salario si aggiungono assicurazioni sociali, vacanze, trasferta, materiale, apparecchi e la direzione degli interventi. Un’offerta la cui tariffa oraria supera appena il salario minimo non può coprire questi costi. In tal caso chieda come è stata calcolata.',
         'Il rispetto del contratto è controllato dalla commissione paritetica del settore (ZPK), ad esempio con controlli dei libri paga. Sul suo sito pubblica i salari minimi e i supplementi nel testo del contratto.',
       ],
-      sources: [zpkCcl, zpkContenuto],
+      sources: [zpkCcl, zpkContenuto, gavPiccole],
     },
     {
       title: 'Come si calcola un’offerta',
@@ -833,7 +818,7 @@ const kosten: RatgeberArtikel = {
           ['+ IVA', 'Aliquota normale dell’8,1 per cento (art. 25 LIVA)', 'sul totale'],
           ['= importo mensile', 'La cifra che confronta', 'somma delle righe'],
         ],
-        note: 'Due volte alla settimana danno 104 interventi all’anno, divisi per dodici mesi poco più di 8,7 interventi. Chi calcola con quattro settimane al mese arriva a 8 interventi e sottostima le ore di circa l’8 per cento.',
+        note: 'Due volte alla settimana danno 104 interventi all’anno, divisi per dodici mesi poco meno di 8,7 interventi. Chi calcola con quattro settimane al mese arriva a 8 interventi e sottostima le ore di circa l’8 per cento.',
         sources: [liva],
         printable: true,
         updated: '2026-09-28',
@@ -877,7 +862,7 @@ const kosten: RatgeberArtikel = {
     },
   ],
   service: '/leistungen/unterhaltsreinigung',
-  related: ['/blog/richtige-reinigungsfirma-finden', '/blog/bodenbelaege-grundreinigung'],
+  related: ['/blog/richtige-reinigungsfirma-finden', '/blog/bodenbelaege-reinigen'],
   cta: {
     title: 'Un’offerta per la Sua pulizia di manutenzione',
     text: 'Ci indichi indirizzo, superficie, utilizzo e cadenza desiderata, per gli stabili anche il numero dei vani scala. Dopo il sopralluogo calcoliamo con i Suoi dati, gratuitamente e senza impegno.',

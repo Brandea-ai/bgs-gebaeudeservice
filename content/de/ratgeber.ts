@@ -13,10 +13,19 @@ import type { ArticleContent, ArticleSection, Source, Tool } from '../types'
  * Anbieter. Byline ohne Namen und ohne «fachlich geprüft», solange F6 offen ist.
  *
  * Quellen am 28.09.2026 gelesen: Fedlex (OR Art. 58, 256a, 257a, 257b, 257e,
- * 259, 264, 266c, 267, 267a; ZGB Art. 712h, 712m, 712s; ArG Art. 17b; MWSTG
- * Art. 25; VMWG Art. 4, Wortlaut über den Browser), BFU, BAG, HEV Schweiz,
- * Mieterinnen- und Mieterverband, Zürcher Gerichte, ZPK Reinigung, NVS,
- * Ceruniq, Forbo, ISP. Abschriften unter scratchpad/welle2/ratgeber/quellen.
+ * 259, 264, 266c, 267, 267a; ZGB Art. 647a, 647b, 712g, 712h, 712m, 712s; ArG
+ * Art. 17b; MWSTG Art. 25; VMWG Art. 4, Wortlaut über den Browser), BFU, BAG,
+ * HEV Schweiz, Mieterinnen- und Mieterverband, Zürcher Gerichte, ZPK Reinigung,
+ * GAV-Service der Unia, NVS, Ceruniq, Forbo, ISP. Abschriften unter
+ * scratchpad/welle2/ratgeber/quellen und quellen2.
+ *
+ * Zweiter Durchgang nach den Prüfern (28.09.2026): Rollen gegenüber den
+ * Leistungsseiten getrennt. Die druckbare Pflichtenheft-Vorlage führt
+ * /leistungen/hauswartung (#pflichtenheft), die Tabelle nach Belag
+ * /leistungen/sonderreinigungen (#bodenbelaege); die Artikel erklären,
+ * zeigen ein ausgefülltes Beispiel und die Mittel nach pH-Wert. Titel und
+ * Adressen der drei neuen Artikel zielen auf die informative Suchabsicht,
+ * die Hauptbegriffe der Leistungsseiten (24-SEO-KEYWORDS.md) bleiben dort.
  *
  * Datum: «Stand» ist der Stand des Textes. Das Veröffentlichungsdatum wird
  * erst zum Launch eingetragen (M19, GLOBAL-031).
@@ -42,8 +51,8 @@ export type RatgeberArtikel = Omit<ArticleContent, 'sections'> & {
 export const ratgeberUebersicht = {
   h1: 'Ratgeber Gebäudereinigung',
   intro:
-    'Fachwissen für Verwaltungen, Stockwerkeigentümerschaften und Unternehmen: Pflichtenheft der Hauswartung, Wohnungsabgabe, Böden, Vergabe und Kosten einer Gebäudereinigung.',
-  note: `Jeder Artikel nennt seine Quellen und den Stand der letzten Prüfung. Von ${company.brand}, für Liegenschaften und Betriebe in den Kantonen ${cantonList}.`,
+    'Fachwissen für Verwaltungen, Stockwerkeigentümerschaften und Unternehmen: Aufgaben der Hauswartung, Wohnungsabgabe, Bodenbeläge, Vergabe und Kosten einer Gebäudereinigung.',
+  note: `Jeder Artikel nennt seine Quellen und den Stand des Textes. Von ${company.brand}, für Liegenschaften und Betriebe in den Kantonen ${cantonList}.`,
   byline: `Ein Ratgeber von ${company.brand}`,
   // Mit Satzzeichen, weil es je Sprache anders steht (fr: Leerschlag vor dem Doppelpunkt, it: ohne)
   updatedLabel: 'Stand:',
@@ -57,7 +66,7 @@ export const ratgeberUebersicht = {
   // Eckdaten rechts im IntroBand der Übersicht (E85)
   facts: [
     { label: 'Für', value: 'Verwaltungen, Stockwerkeigentümerschaften, Eigentümer und Unternehmen' },
-    { label: 'Zum Ausdrucken', value: 'Pflichtenheft, Protokolleinträge, Tabelle der Beläge, Vergleichsraster und Rechenweg' },
+    { label: 'Zum Ausdrucken', value: 'Protokolleinträge, Mittel nach pH-Wert, Vergleichsraster und Rechenweg' },
     { label: 'Quellen', value: 'Bundesrecht auf Fedlex, BFU, BAG, Verbände und Hersteller' },
   ],
   serviceLabel: 'Passende Leistung',
@@ -70,8 +79,12 @@ const or = (art: string, label: string): Source => ({
   href: `https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_${art}`,
 })
 const zgb: Source = {
-  label: 'Zivilgesetzbuch, Art. 712h, 712m und 712s (Stockwerkeigentum)',
-  href: 'https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_712_m',
+  label: 'Zivilgesetzbuch, Art. 712g, 712h, 712m und 712s (Stockwerkeigentum)',
+  href: 'https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_712_g',
+}
+const zgbMiteigentum: Source = {
+  label: 'Zivilgesetzbuch, Art. 647a und 647b (Verwaltung im Miteigentum)',
+  href: 'https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_647_a',
 }
 const bfuHaftung: Source = {
   label: 'BFU: Was bedeutet Werkeigentümerhaftung?',
@@ -91,6 +104,10 @@ const mvTipps: Source = {
   label: 'Mieterinnen- und Mieterverband: Wohnungsabgabe und Protokoll, Fragen und Antworten',
   href: 'https://www.mieterverband.ch/mietrecht/ende-der-miete/wohnungsabgabe-protokoll/tipps/',
 }
+const mvSchluss: Source = {
+  label: 'Mieterinnen- und Mieterverband: Schlussrechnung und Depotrückgabe',
+  href: 'https://www.mieterverband.ch/mietrecht/ende-der-miete/schlussrechnung-depotrueckgabe/',
+}
 const zhRuege: Source = {
   label: 'Zürcher Gerichte: Mängelrüge bei der Rückgabe',
   href: 'https://www.gerichte-zh.ch/de/themen/miete/kuendigung-rueckgabe/rueckgabe-und-ausweisung/maengelruege',
@@ -102,6 +119,10 @@ const nvs: Source = {
 const ceruniqKeramik: Source = {
   label: 'Ceruniq: Reinigungs- und Pflegeanleitung für keramische Beläge (PDF)',
   href: 'https://www.ceruniq.ch/wp-content/uploads/2025/03/reinigungs-und-pflegeanleitung-fuer-keramische-belaege.pdf',
+}
+const ceruniqStein: Source = {
+  label: 'Ceruniq: Reinigungs- und Pflegeanleitung für Natursteinbeläge (PDF)',
+  href: 'https://www.ceruniq.ch/wp-content/uploads/2025/03/reinigungs-und-pflegeanleitung-fuer-natursteinbelaege.pdf',
 }
 const ceruniqErst: Source = {
   label: 'Ceruniq: Erstreinigung für keramische Beläge (PDF)',
@@ -127,14 +148,19 @@ const bagSchimmel: Source = { label: 'BAG: Vorsicht Schimmel (PDF)', href: 'http
 const bagJavel: Source = { label: 'BAG: Javelwasser', href: 'https://www.bag.admin.ch/de/javelwasser' }
 const zpkGav: Source = { label: 'ZPK Reinigung: Gesamtarbeitsvertrag, Geltungsbereich', href: 'https://zpk-reinigung.ch/recht-lohn/gav' }
 const zpkInhalte: Source = { label: 'ZPK Reinigung: Inhalte des GAV', href: 'https://zpk-reinigung.ch/recht-lohn/gav-inhalte' }
+const gavKlein: Source = {
+  label: 'GAV-Service der Unia: GAV Reinigungsbranche Deutschschweiz für Unternehmen mit weniger als 6 Mitarbeitenden',
+  href: 'https://www.gav-service.ch/gav/185006',
+}
 const arg: Source = { label: 'Arbeitsgesetz, Art. 17b (Lohnzuschlag für Nachtarbeit)', href: 'https://www.fedlex.admin.ch/eli/cc/1966/57_57_57/de#art_17_b' }
 const mwstg: Source = { label: 'Mehrwertsteuergesetz, Art. 25 (Steuersätze)', href: 'https://www.fedlex.admin.ch/eli/cc/2009/615/de#art_25' }
 
-// Neu (E85): Baustein 10.1, Suchfrage «pflichtenheft hauswartung» (24), Kern aus 3.8.1 bis 3.8.3
+// Neu (E85): Baustein 10.1, Kern aus 3.8.1 bis 3.8.3. Suchfrage «hauswartung aufgaben» (24, informativ);
+// «pflichtenheft hauswartung» und die Vorlage führt /leistungen/hauswartung (Prüferbefund R1, R2)
 const pflichtenheft: RatgeberArtikel = {
-  path: '/blog/pflichtenheft-hauswartung',
-  h1: 'Pflichtenheft Hauswartung: Vorlage und Erklärung',
-  subtitle: 'Was in ein Pflichtenheft gehört, wie Sie Rhythmus und Kostengrenze bestimmen und warum die Nebenkostenabrechnung davon profitiert.',
+  path: '/blog/hauswartung-aufgaben',
+  h1: 'Aufgaben der Hauswartung: was ins Pflichtenheft gehört',
+  subtitle: 'Welche Aufgaben Sie festhalten, wie Sie Rhythmus und Kostengrenze bestimmen und warum die Nebenkostenabrechnung davon profitiert.',
   teaser: 'Aufbau, ausgefülltes Beispiel und typische Lücken: So entsteht ein Pflichtenheft, das Verwaltung, Eigentümerschaft und Hauswartung gleich verstehen.',
   updated: '2026-09-28',
   intro: [
@@ -192,34 +218,34 @@ const pflichtenheft: RatgeberArtikel = {
     {
       title: 'Beispiel: zwölf Wohnungen, ein Lift, eine Waschküche',
       paragraphs: [
-        'Die Vorlage unten ist für ein Mehrfamilienhaus mit zwölf Wohnungen, einem Treppenhaus mit Lift, einer Gemeinschaftswaschküche und rund 600 m² Umgebung ausgefüllt. Die Werte sind ein Beispiel und kein Richtwert. In die Spalte «Ihr Eintrag» gehört, was für Ihre Liegenschaft gilt.',
+        'Die Tabelle unten zeigt ein ausgefülltes Pflichtenheft für ein Mehrfamilienhaus mit zwölf Wohnungen, einem Treppenhaus mit Lift, einer Gemeinschaftswaschküche und rund 600 m² Umgebung. Die Werte sind ein Beispiel und kein Richtwert.',
+        'Eine leere Vorlage zum Ausdrucken, mit Spalten für Rhythmus und Zuständigkeit, finden Sie auf der Seite [Hauswartung](/leistungen/hauswartung#pflichtenheft).',
       ],
       tool: {
         kind: 'table',
-        id: 'vorlage-pflichtenheft',
-        title: 'Vorlage: Pflichtenheft mit Beispiel',
+        id: 'beispiel-pflichtenheft',
+        title: 'Beispiel mit Einordnung der Nebenkosten',
         intro:
           'Die letzte Spalte zeigt, wie der Mieterverband die Tätigkeit bei den Nebenkosten einordnet. Voraussetzung ist immer, dass der Mietvertrag die Hauswartung als Nebenkosten nennt (Art. 257a Abs. 2 OR).',
-        columns: ['Aufgabe', 'Beispiel', 'Ihr Eintrag', 'Nebenkosten laut Mieterverband'],
+        columns: ['Aufgabe', 'Beispiel', 'Nebenkosten laut Mieterverband'],
         rows: [
-          ['Treppenhaus und Eingang', 'Wöchentlich feucht reinigen, Handläufe und Glastüre inbegriffen', '__________', 'zulässig'],
-          ['Lift', 'Kabine und Türen wöchentlich, Türschwellen monatlich', '__________', 'zulässig'],
-          ['Waschküche und Trockenraum', 'Boden, Lavabo und Ablauf zweimal im Monat', '__________', 'zulässig'],
-          ['Heizung bedienen', 'Beim Kontrollgang Druck und Störanzeige ablesen, Befund notieren', '__________', 'zulässig'],
-          ['Kleinere Instandhaltung', 'Leuchtmittel ersetzen, Schlösser ölen; ohne Rückfrage bis CHF ______ je Fall', '__________', 'zulässig, solange keine Fachkenntnisse nötig sind'],
-          ['Umgebung', 'Rasen von April bis Oktober alle zwei Wochen, Laub im Herbst, Hecken nach Pflegeplan', '__________', 'zulässig'],
-          ['Kontrollgang Allgemeinflächen', 'Jede Woche, Befund auf dem Kontrollblatt', '__________', 'nicht aufgeführt, im Mietvertrag klären'],
-          ['Abfall und Wertstoffe', 'Container am Abfuhrtag bereitstellen, Sammelstelle sauber halten', '__________', 'nicht aufgeführt'],
-          ['Wohnungsübergaben', 'Wohnung öffnen, Zählerstände notieren, im Auftrag der Verwaltung', '__________', 'nicht zulässig'],
-          ['Handwerker begleiten', 'Zutritt geben, Arbeiten beaufsichtigen', '__________', 'nicht zulässig'],
-          ['Meldungen an die Verwaltung', 'Mängel am selben Tag per E-Mail, dringende Fälle telefonisch', '__________', 'nicht zulässig'],
-          ['Ausdrücklich nicht enthalten', 'Winterdienst, Pikett, Wartung von Heizung und Lift durch Fachfirmen', '__________', 'entfällt'],
+          ['Treppenhaus und Eingang', 'Wöchentlich feucht reinigen, Handläufe und Glastüre inbegriffen', 'zulässig (Reinigung im Haus)'],
+          ['Lift', 'Kabine und Türen wöchentlich, Türschwellen monatlich', 'zulässig (Reinigung im Haus)'],
+          ['Waschküche und Trockenraum', 'Boden, Lavabo und Ablauf zweimal im Monat', 'zulässig (Reinigung im Haus)'],
+          ['Sammelstelle für Abfall', 'Platz und Containerstandplatz nach jeder Abfuhr reinigen', 'zulässig (Reinigung ums Haus)'],
+          ['Heizung bedienen', 'Einmal pro Woche Druck und Störanzeige ablesen, Wert notieren', 'zulässig (Bedienung der Heizung)'],
+          ['Kleinere Instandhaltung', 'Defekte Leuchten im Treppenhaus auswechseln, klemmende Schlösser ölen, bis zur vereinbarten Grenze je Fall', 'zulässig, wenn es dafür keine Fachkenntnisse braucht'],
+          ['Umgebung', 'Rasen von April bis Oktober alle zwei Wochen, Laub im Herbst, Hecken nach Pflegeplan', 'zulässig'],
+          ['Container bereitstellen', 'Am Abfuhrtag an die Strasse stellen und zurückholen', 'im Merkblatt nicht aufgeführt'],
+          ['Kontrollgang auf Mängel', 'Jede Woche die Allgemeinflächen abgehen, Befund auf dem Kontrollblatt', 'nicht zulässig (Kontrollgänge für Reparaturen)'],
+          ['Meldungen an die Verwaltung', 'Mängel am selben Tag per E-Mail, dringende Fälle telefonisch', 'nicht zulässig'],
+          ['Wohnungsübergaben', 'Wohnung öffnen, Zählerstände notieren, im Auftrag der Verwaltung', 'nicht zulässig'],
+          ['Handwerker begleiten', 'Zutritt geben, Arbeiten beaufsichtigen', 'nicht zulässig'],
+          ['Ausdrücklich nicht enthalten', 'Winterdienst, Pikett, Wartung von Heizung und Lift durch Fachfirmen', 'entfällt'],
         ],
         note:
-          'Die Einordnung folgt dem Merkblatt des Mieterverbands zu unzulässigen Nebenkosten (Stand 2026). Wie ein Einzelfall zu beurteilen ist, hängt vom Mietvertrag ab. Die Tabelle beschreibt die Rechtslage allgemein und ist keine Rechtsberatung.',
+          'Die Einordnung folgt dem Merkblatt des Mieterverbands zu unzulässigen Nebenkosten (Stand 2026). Verwaltungsarbeit und Reparaturen, dazu zählt er Kontrollgänge für Reparaturen und Meldungen an die Verwaltung, gehören nach dem Merkblatt auch dann nicht in die Nebenkosten, wenn der Mietvertrag sie aufführt. Die Tabelle gibt diese Sicht wieder und ist keine Rechtsberatung.',
         sources: [mvNebenkosten, or('257_a', 'Art. 257a')],
-        printable: true,
-        updated: '2026-09-28',
       },
     },
     {
@@ -241,27 +267,27 @@ const pflichtenheft: RatgeberArtikel = {
       paragraphs: [
         'Die Kostengrenze bestimmt, bis zu welchem Betrag die Hauswartung eine Kleinigkeit ohne Rückfrage erledigt. Ohne Grenze wird jedes Leuchtmittel zur E-Mail an die Verwaltung. Ist sie zu hoch angesetzt, verliert die Verwaltung den Überblick über die Ausgaben.',
         'Praktisch ist eine Grenze je Fall und eine Summe pro Jahr, beide im Pflichtenheft. Was darüber liegt, geht als Meldung an die Verwaltung, und diese beauftragt den Fachbetrieb.',
-        'Davon zu unterscheiden ist der kleine Unterhalt der Mieterschaft. Mängel in der eigenen Wohnung, die sich mit kleinen Reinigungen oder Ausbesserungen beheben lassen, beseitigt die Mieterschaft nach Ortsgebrauch auf eigene Kosten (Art. 259 OR). Die Hauswartung ist für die Allgemeinflächen da. Schreiben Sie ins Pflichtenheft, ob sie überhaupt in Wohnungen tätig wird und auf wessen Rechnung.',
+        'Davon zu unterscheiden ist der kleine Unterhalt der Mieterschaft. Was sich in der eigenen Wohnung mit einer kleinen Reinigung oder Ausbesserung beheben lässt, erledigt die Mieterschaft nach Ortsgebrauch selbst und bezahlt es auch (Art. 259 OR). Die Hauswartung ist für die Allgemeinflächen da. Schreiben Sie ins Pflichtenheft, ob sie überhaupt in Wohnungen tätig wird und auf wessen Rechnung.',
       ],
       sources: [or('259', 'Art. 259')],
     },
     {
       title: 'Hauswartung in der Nebenkostenabrechnung',
       paragraphs: [
-        'Nebenkosten schuldet die Mieterschaft nur, wenn sie besonders vereinbart sind (Art. 257a Abs. 2 OR), und nur für Leistungen, die mit dem Gebrauch der Sache zusammenhängen (Art. 257b Abs. 1 OR). Für die Hauswartung heisst das: Reinigung, Bedienung der Heizung und kleinere Instandhaltung können dazugehören. Verwaltungsarbeit und Reparaturen trägt die Eigentümerschaft.',
+        'Für jede Position der Nebenkosten gelten zwei Bedingungen: Der Mietvertrag muss sie besonders vereinbaren (Art. 257a Abs. 2 OR), und sie muss eine Leistung betreffen, die mit dem Gebrauch der Sache zusammenhängt (Art. 257b Abs. 1 OR). Für die Hauswartung heisst das: Reinigung, Bedienung der Heizung und kleinere Instandhaltung können dazugehören. Verwaltungsarbeit und Reparaturen trägt die Eigentümerschaft.',
         'Der Mieterverband rät Mieterinnen und Mietern, die Tätigkeiten der Hauswartung samt Aufwand in Stunden zu erfragen, und schreibt, das Pflichtenheft müsse offengelegt werden. Eine Verwaltung, die Stunden nach den Zeilen des Pflichtenhefts erfasst, beantwortet solche Fragen mit Belegen statt mit Schätzungen.',
         'Wird eine externe Firma beauftragt, verweist der Mieterverband auf das Gebot der Wirtschaftlichkeit. Gleichen Sie zusätzliche Leistungen deshalb vor der Vergabe mit dem Mietvertrag ab. Allgemeine Regeln zu Nebenkosten und Abrechnung finden Sie auf der Seite [Unterhaltsreinigung](/leistungen/unterhaltsreinigung).',
       ],
-      sources: [or('257_b', 'Art. 257a und 257b')],
+      sources: [or('257_b', 'Art. 257a und 257b'), mvNebenkosten],
     },
     {
       title: 'Im Stockwerkeigentum: zwei Leser',
       paragraphs: [
         'Im Stockwerkeigentum hat das Pflichtenheft zwei Leser: die Verwaltung, die es umsetzt, und die Versammlung, die das Geld freigibt. Das Gesetz weist der Versammlung die jährliche Genehmigung von Kostenvoranschlag, Rechnung und Kostenverteilung zu (Art. 712m ZGB). Umsetzen muss es der Verwalter (Art. 712s ZGB).',
         'Legen Sie das Pflichtenheft deshalb dem Budget bei, wenn die Hauswartung neu vergeben oder erweitert wird. Hat die Gemeinschaft einen Ausschuss gewählt, kann er Pflichtenheft und Offerten vorab prüfen und der Versammlung Antrag stellen.',
-        'Verteilt werden die Kosten nach Wertquoten. Nutzt eine Einheit eine Anlage nicht oder kaum, etwa ein Ladenlokal im Erdgeschoss den Lift, ist das bei der Verteilung zu berücksichtigen (Art. 712h Abs. 3 ZGB). Welche Mehrheit die Vergabe braucht, regelt Ihr Reglement.',
+        'Verteilt werden die Kosten nach Wertquoten. Nutzt eine Einheit eine Anlage nicht oder kaum, etwa ein Ladenlokal im Erdgeschoss den Lift, ist das bei der Verteilung zu berücksichtigen (Art. 712h Abs. 3 ZGB). Welche Mehrheit die Vergabe braucht, richtet sich nach Art. 712g ZGB und den Regeln zum Miteigentum (Art. 647a und 647b ZGB). Anders regeln lässt sich das nur im Begründungsakt oder mit einem einstimmigen Beschluss aller Stockwerkeigentümer (Art. 712g Abs. 2 ZGB). Was davon bei Ihnen gilt, prüfen Sie am besten vor der Versammlung.',
       ],
-      sources: [zgb],
+      sources: [zgb, zgbMiteigentum],
     },
     {
       title: 'Sieben Lücken, die später Ärger machen',
@@ -284,17 +310,18 @@ const pflichtenheft: RatgeberArtikel = {
     },
   ],
   service: '/leistungen/hauswartung',
-  related: ['/blog/wohnungsabgabe-reinigung', '/blog/reinigungskosten-schweiz'],
+  related: ['/blog/wohnungsabgabe-protokoll', '/blog/reinigungskosten-schweiz'],
   cta: {
     title: 'Hauswartung nach Ihrem Pflichtenheft',
-    text: 'Schicken Sie uns Ihr Pflichtenheft oder die Eckdaten: Adresse, Wohnungen, Treppenhäuser, Lift, Waschküche und Umgebung. Wir gehen durch die Liegenschaft und rechnen die Offerte auf dieser Grundlage. Rundgang und Offerte sind für Sie ohne Kosten und ohne Verpflichtung.',
+    text: 'Schicken Sie uns Ihr Pflichtenheft oder die Eckdaten: Adresse, Wohnungen, Treppenhäuser, Lift, Waschküche und Umgebung. Wir gehen durch die Liegenschaft und rechnen die Offerte auf dieser Grundlage. Der Rundgang und die Offerte kosten Sie nichts und verpflichten Sie zu nichts.',
   },
 }
 
-// Neu (E85): Baustein 10.1, Suchfragen «wohnungsabgabe reinigung», «wie sauber muss eine Wohnung bei der Übergabe sein» (24), Kern aus 3.4.1 bis 3.4.3
+// Neu (E85): Baustein 10.1, Kern aus 3.4.1 bis 3.4.3. Informative Absicht: Abnahme, Protokoll, Mängelrüge;
+// «wohnungsabgabe reinigung» und «endreinigung» führt /leistungen/umzugsreinigung (24, Prüferbefund R1)
 const wohnungsabgabe: RatgeberArtikel = {
-  path: '/blog/wohnungsabgabe-reinigung',
-  h1: 'Wohnungsabgabe: Was Verwaltungen bei Abnahme und Endreinigung beachten',
+  path: '/blog/wohnungsabgabe-protokoll',
+  h1: 'Wohnungsabgabe: was Verwaltungen bei Abnahme, Protokoll und Mängelrüge beachten',
   subtitle: 'Wie sauber die Wohnung sein muss, wie Sie Mängel so festhalten, dass sie gelten, und wann die Endreinigung an der Reihe ist.',
   teaser: 'Zustand, Protokoll, Mängelrüge und Reinigung: die Wohnungsabgabe aus Sicht der Verwaltung, mit Beispielen für genaue Protokolleinträge.',
   updated: '2026-09-28',
@@ -305,7 +332,7 @@ const wohnungsabgabe: RatgeberArtikel = {
     title: 'Kurz gesagt',
     items: [
       'Zurückzugeben ist die Wohnung so, wie sie nach vertragsgemässem Gebrauch aussieht (Art. 267 OR). Normale Abnutzung ist mit dem Mietzins abgegolten.',
-      'Mängel sind bei der Rückgabe zu prüfen und sofort zu melden, einzeln und genau (Art. 267a OR).',
+      'Mängel sind bei der Rückgabe zu prüfen und sofort zu melden (Art. 267a OR). Nach den Zürcher Gerichten müssen sie konkret bezeichnet sein.',
       'Protokoll vor Reinigung: Nur so bleibt der Zustand bei der Rückgabe belegbar.',
       'Die nächste Mieterschaft darf das Rückgabeprotokoll einsehen (Art. 256a OR). Ein genaues Protokoll hilft also zweimal.',
     ],
@@ -344,7 +371,7 @@ const wohnungsabgabe: RatgeberArtikel = {
         },
       ],
       note: 'Den Restwert bestimmt die paritätische Lebensdauertabelle von Hauseigentümer- und Mieterverband. Ein Beispiel des Mieterverbands: Ein Spannteppich mittlerer Qualität hält zehn Jahre. Muss er nach sechs Jahren wegen Brandspuren ersetzt werden, trägt die Mieterschaft 40 Prozent der Kosten. Ist die Lebensdauer abgelaufen, trägt sie nichts mehr.',
-      sources: [mvLebensdauer],
+      sources: [mvTipps, hevAbgabe, mvLebensdauer],
     },
     {
       title: 'Das Protokoll: genau genug, um zu gelten',
@@ -361,7 +388,7 @@ const wohnungsabgabe: RatgeberArtikel = {
         rows: [
           ['Küche', '«Küche schmutzig»', 'Backofen mit Fettkruste an Rückwand, Blech und Gitter; Fettfilter im Dampfabzug verklebt', 'Reinigung'],
           ['Bad und WC', '«Bad nicht sauber»', 'Duschglas und Mischbatterie mit Kalkrand; Urinstein unter dem Rand der WC-Schüssel', 'Reinigung'],
-          ['Wohnzimmer', '«Parkett beschädigt»', 'Vor der Balkontüre drei Kratzer von rund 20 cm, Versiegelung durchgerieben; Parkett verlegt 2016', 'Schaden oder Abnutzung, je nach Alter'],
+          ['Wohnzimmer', '«Parkett beschädigt»', 'Vor der Balkontüre drei Kratzer im Parkett, je rund 20 cm lang; Parkett verlegt 2016', 'Schaden (übermässige Abnutzung), Kostenanteil nach Restwert'],
           ['Schlafzimmer', '«Wände schmutzig»', 'Graue Streifen auf 1 m Breite hinter dem Bett; Decke gelblich verfärbt, heller Rand hinter Bildern', 'Streifen: Abnutzung; Verfärbung durch Rauch: Schaden'],
           ['Fenster', '«Fenster nicht geputzt»', 'Küchenfenster mit Schmutzrändern in Falzen und Rahmen, Glas aussen streifig; Lamellenstoren im Wohnzimmer verstaubt', 'Reinigung'],
           ['Keller', '«Keller nicht geräumt»', 'Im Kellerabteil 4 stehen ein Schrank und fünf Kartons', 'Räumung'],
@@ -376,11 +403,11 @@ const wohnungsabgabe: RatgeberArtikel = {
     {
       title: 'Die Mängelrüge: sofort, und bei versteckten Mängeln später',
       paragraphs: [
-        'Art. 267a OR nennt keine Frist in Tagen, nur das Wort «sofort». Der Mieterverband sieht eine Woche als äusserste Grenze, wenn die Mieterschaft die Mängel nicht schon im Protokoll unterschrieben hat. Sicherer ist die Rüge am Abgabetag, mit einer Kopie des Protokolls für die Mieterschaft.',
+        'Art. 267a OR nennt keine Frist in Tagen, nur das Wort «sofort». Hat die Mieterschaft die Mängel nicht schon im Protokoll unterschrieben, nennt der Mieterverband zwei bis drei Werktage, an anderer Stelle höchstens eine Woche. Wer die Frist verpasst, verliert seine Ansprüche. Sicher ist nur die Rüge am Abgabetag, mit einer Kopie des Protokolls für die Mieterschaft.',
         'Weigert sich die Mieterschaft, bei der Rückgabe mitzuwirken, geht die Rüge nach den Zürcher Gerichten sofort schriftlich hinaus, aus Beweisgründen eingeschrieben. Die Gerichte stellen dafür einen Musterbrief bereit.',
         'Mängel, die bei übungsgemässer Prüfung nicht zu erkennen waren, sind sofort nach ihrer Entdeckung zu melden (Art. 267a Abs. 3 OR). Wer zuerst reparieren lässt und dann die Rechnung schickt, ist nach dem Mieterverband zu spät.',
       ],
-      sources: [or('267_a', 'Art. 267a')],
+      sources: [or('267_a', 'Art. 267a'), zhRuege, mvSchluss, mvTipps],
     },
     {
       title: 'Der Ablauf rund um den Abgabetag',
@@ -427,6 +454,7 @@ const wohnungsabgabe: RatgeberArtikel = {
         'Im zweiten Fall ist die Reihenfolge entscheidend: Protokoll, Rüge, Nachfrist, dann Reinigung. So bleibt belegt, was die Mieterschaft zu vertreten hat, und gereinigt wird in einer leeren Wohnung, in der sich auch hinter Einbauten arbeiten lässt.',
         'Für Verwaltungen, Eigentümer und Unternehmen übernehmen wir die Endreinigung mit Abnahmegarantie, beschrieben auf der Seite [Umzugsreinigung](/leistungen/umzugsreinigung). Den Auftrag erteilt dabei die Verwaltung oder die Eigentümerschaft, nicht die ausziehende Mieterschaft.',
       ],
+      sources: [hevAbgabe],
     },
     {
       title: 'Häufige Fehler bei der Abgabe',
@@ -443,22 +471,23 @@ const wohnungsabgabe: RatgeberArtikel = {
     },
   ],
   service: '/leistungen/umzugsreinigung',
-  related: ['/blog/pflichtenheft-hauswartung', '/blog/bodenbelaege-grundreinigung'],
+  related: ['/blog/hauswartung-aufgaben', '/blog/bodenbelaege-reinigen'],
   cta: {
     title: 'Endreinigung für Ihre nächste Abgabe',
     text: 'Für die Planung brauchen wir Adresse, Abgabetag und Grösse der Wohnung. Stehen mehrere Wechsel an, etwa zum Ende eines Quartals, planen wir sie gemeinsam. Wir sehen uns die Wohnung an, danach kommt die schriftliche Offerte, kostenlos und unverbindlich.',
   },
 }
 
-// Neu (E85): Baustein 10.1, Suchfrage «grundreinigung» (24), Kern aus 3.3.1 und 3.3.3
+// Neu (E85): Baustein 10.1, Kern aus 3.3.1 und 3.3.3. «grundreinigung» und die Tabelle nach Belag führt
+// /leistungen/sonderreinigungen (24, Prüferbefund R1, R2); hier Mittel nach pH-Wert, Fugen, Nachspülen, Vorbeugen
 const bodenarten: RatgeberArtikel = {
-  path: '/blog/bodenbelaege-grundreinigung',
-  h1: 'Grundreinigung nach Bodenbelag: was Stein, Plättli, Linoleum und Parkett vertragen',
+  path: '/blog/bodenbelaege-reinigen',
+  h1: 'Bodenbeläge richtig reinigen: welche Mittel Stein, Plättli, Linoleum und Parkett vertragen',
   subtitle: 'Warum dasselbe Mittel den einen Boden rettet und den anderen verätzt, wie Sie den Belag erkennen und was Sie vor der Arbeit klären.',
   teaser: 'pH-Wert, Fugen, Pflegefilme und Rutschgefahr: Materialkunde für Verwaltungen und Betriebe, die eine Grundreinigung planen oder vergeben.',
   updated: '2026-09-28',
   intro: [
-    'Eine Grundreinigung ist mehr als kräftiger putzen. Sie löst Schichten, die sich über Monate aufgebaut haben, mit stärkeren Mitteln und mit Maschinen. Genau deshalb kann sie einem Boden schaden, wenn Mittel und Belag nicht zusammenpassen. Dieser Ratgeber erklärt die Grundlagen, damit Sie eine Grundreinigung sicher planen und das Ergebnis beurteilen können.',
+    'Eine Grundreinigung ist mehr als kräftigeres Putzen. Sie löst Schichten, die sich über Monate aufgebaut haben, mit stärkeren Mitteln und mit Maschinen. Genau deshalb kann sie einem Boden schaden, wenn Mittel und Belag nicht zusammenpassen. Dieser Ratgeber erklärt die Grundlagen, damit Sie eine Grundreinigung sicher planen und das Ergebnis beurteilen können.',
   ],
   summary: {
     title: 'Kurz gesagt',
@@ -501,81 +530,47 @@ const bodenarten: RatgeberArtikel = {
         'Auch alkalische Mittel haben Grenzen. Für Linoleum nennt der Hersteller Forbo Reiniger unter pH 9 und schliesst hochalkalische Laugen aus.',
       ],
       note: 'Fragen Sie vor einer Grundreinigung, welches Mittel mit welchem pH-Wert auf welchem Belag vorgesehen ist. Die Antwort gehört ins Leistungsverzeichnis.',
+      sources: [nvs, ceruniqStein, forboLinoleum],
+      tool: {
+        kind: 'table',
+        id: 'mittel-nach-ph',
+        title: 'Welches Mittel wohin: sauer, neutral, alkalisch',
+        intro: 'Zum Aufhängen im Putzraum: drei Gruppen von Reinigungsmitteln, was sie lösen und wo sie nicht hingehören. Die Pflegeanleitung Ihres Belags geht vor.',
+        columns: ['Mittel', 'Löst', 'Nicht verwenden', 'Worauf achten'],
+        rows: [
+          [
+            'Sauer, unter pH 7, etwa Kalklöser, Sanitärreiniger, Zementschleierentferner',
+            'Kalk, Zementschleier, Reste von Fugenmörtel',
+            'auf Marmor, Kalkstein und Travertin, auf trockenen Zementfugen, auf Linoleum und Vinyl',
+            'Belag und Fugen vorher mit Wasser vornässen, kurz einwirken lassen, mehrmals klar nachspülen. Keine Salz- oder Schwefelsäure auf Naturstein: Sie verfärbt ihn.',
+          ],
+          [
+            'Neutral, um pH 7, etwa Unterhaltsreiniger',
+            'losen und leicht haftenden Schmutz',
+            'nass auf Parkett: dort nur nebelfeucht wischen',
+            'Wenig dosieren: Zu viel Mittel mit Pflegezusätzen macht keramische Platten bleibend fleckig. Für Pflegefilme und Kalk ist es nicht gedacht.',
+          ],
+          [
+            'Alkalisch, über pH 7, etwa Grundreiniger',
+            'Fett, Öl, alte Pflegefilme',
+            'als hochalkalische Lauge auf Linoleum, dort nur unter pH 9; auf geöltem Parkett, ausser mit den Mitteln des Ölsystems',
+            'Schmutzflotte vollständig aufnehmen und klar nachspülen. Säureempfindlicher Stein wie Marmor verträgt höchstens schwach alkalische Mittel.',
+          ],
+        ],
+        note: 'Auf Parkett hinterlassen nasse Metallfüsse von Möbeln Oxidationsflecken, halten Sie sie beim feuchten Wischen trocken. Und mischen Sie keine Systeme: Die Hersteller empfehlen Mittel, die aufeinander abgestimmt sind.',
+        sources: [nvs, ceruniqKeramik, ceruniqStein, forboLinoleum, forboVinyl, ispVersiegelt, ispGeoelt],
+        printable: true,
+        updated: '2026-09-28',
+      },
     },
     {
       title: 'Den Belag erkennen',
       paragraphs: [
         'Am sichersten sind die Unterlagen aus dem Bau: Pflegeanleitungen der Hersteller, Protokolle der Bauabnahme, Rechnungen der Bodenleger. Die Anleitungen des Plattenverbands Ceruniq sehen eine Unterschrift der Bauherrschaft vor und halten fest, dass unsachgemässe Reinigung zum Erlöschen der Gewährleistung führt.',
         'Fehlen Unterlagen, ersetzt keine Vermutung eine Probe. Der Naturstein-Verband beschreibt, wie Fachleute Stein prüfen: Eine fingernagelgrosse Stelle an verstecktem Ort wird angeschliffen und mit Säure beträufelt. Braust sie, ist der Stein säureempfindlich.',
-        'Solange der Stein nicht bestimmt ist, kommt keine Säure auf den Boden. Jede neue Methode wird zuerst an einer unauffälligen Stelle versucht.',
+        'Solange der Stein nicht bestimmt ist, kommt keine Säure auf den Boden. Jede neue Methode wird zuerst an einer unauffälligen Stelle versucht. Was jeder Belag bei der Grundreinigung verträgt und woran Sie einen Schaden erkennen, fassen die Tabellen auf der Seite [Grund- und Sonderreinigung](/leistungen/sonderreinigungen#bodenbelaege) zusammen.',
       ],
-      sources: [ceruniqKeramik],
-    },
-    {
-      title: 'Die Beläge im Überblick',
-      paragraphs: [
-        'Die Tabelle fasst zusammen, was die Merkblätter der Schweizer Fachverbände und die Pflegeanleitungen der Hersteller für die Grundreinigung vorsehen. Sie ersetzt nicht die Anleitung Ihres Belags.',
-      ],
-      tool: {
-        kind: 'table',
-        id: 'belaege-grundreinigung',
-        title: 'Grundreinigung und Pflege nach Belag',
-        columns: ['Belag', 'Grundreinigung', 'Danach', 'Fachbetrieb nötig'],
-        rows: [
-          [
-            'Marmor, Kalkstein, Travertin',
-            'Kein Absäuern. Fett und Pflegereste mit neutralem oder leicht alkalischem Mittel lösen, Schmutzwasser absaugen, zweimal klar nachwaschen.',
-            'Feucht mit neutralem Mittel. Keine Pads auf polierten Flächen.',
-            'Matte, raue Stellen bleiben: Die Oberfläche ist angeätzt und muss geschliffen werden.',
-          ],
-          [
-            'Granit, Gneis, Quarzit, Porphyr',
-            'Alle Verfahren möglich, auch saure Mittel gegen Kalk. Salzsäure und Schwefelsäure hinterlassen Verfärbungen.',
-            'Feucht mit neutralem Mittel.',
-            'Öl oder Rost sitzt tief im Stein.',
-          ],
-          [
-            'Plättli und Feinsteinzeug mit Zementfugen',
-            'Vornässen, Mittel kurz einwirken lassen, bürsten, Schmutzflotte aufnehmen, zwei- bis dreimal klar nachspülen. Bodenheizung vorher ganz ausschalten.',
-            'Wenig pH-neutrales oder leicht alkalisches Mittel, kein saurer Badreiniger im Unterhalt.',
-            'Fugen sanden, bröckeln oder fehlen.',
-          ],
-          [
-            'Plättli mit Epoxidfugen',
-            'Die Fugen sind gegen viele Chemikalien und saure Reiniger beständig. Verbindlich ist das Datenblatt des Fugenherstellers.',
-            'Wie Plättli mit Zementfugen.',
-            'Ein Epoxidschleier liegt auf den Platten; ihn entfernt der Verleger.',
-          ],
-          [
-            'Linoleum',
-            'Maschinell mit Reiniger unter pH 9, Schmutzflotte aufnehmen, klar nachspülen. Die werkseitige Vergütung darf dabei keinen Schaden nehmen.',
-            'Feucht wischen, Gehspuren mit der Sprühmethode entfernen, regelmässig polieren.',
-            'Die Oberfläche ist zerstört: Sanierung mit Pflegefilm nach Hersteller.',
-          ],
-          [
-            'Vinyl und PVC',
-            'Grundreiniger für Vinyl, maschinell schrubben, klar nachspülen. Vor einer neuen Beschichtung muss der Boden frei von Rückständen und ganz trocken sein.',
-            'Feucht wischen mit einem Reiniger, den der Hersteller für die Oberfläche freigibt.',
-            'Eine neue Beschichtung ist nötig: zwei Schichten nach Herstellerangaben.',
-          ],
-          [
-            'Parkett, versiegelt',
-            'Keine nasse Grundreinigung. Haarbesen, Staubsauger oder nebelfeuchter Lappen, bei Bedarf mit neutralem Mittel. Maschinen nur nach Rücksprache mit dem Hersteller.',
-            'Regelmässig mit Parkett-Polish pflegen.',
-            'Die Versiegelung ist durchgelaufen: schleifen und neu versiegeln.',
-          ],
-          [
-            'Parkett, geölt',
-            'Mit den Mitteln des jeweiligen Ölsystems, nie mit Dampf. Tücher nur, wenn der Hersteller sie für Parkett freigibt.',
-            'Nachölen nach Bedarf.',
-            'Die Laufzonen sind grau und offen.',
-          ],
-        ],
-        note: 'Auf Parkett hinterlassen nasse Metallfüsse von Möbeln Oxidationsflecken, halten Sie sie beim feuchten Wischen trocken. Und mischen Sie keine Systeme: Die Hersteller empfehlen Mittel, die aufeinander abgestimmt sind.',
-        sources: [nvs, ceruniqKeramik, ceruniqErst, forboLinoleum, forboVinyl, ispVersiegelt, ispGeoelt],
-        printable: true,
-        updated: '2026-09-28',
-      },
+      sources: [ceruniqKeramik, nvs],
     },
     {
       title: 'Fugen: die empfindlichste Stelle',
@@ -584,7 +579,7 @@ const bodenarten: RatgeberArtikel = {
         'Schwarze, anthrazitfarbene oder bunte Zementfugen sind besonders heikel, Ceruniq warnt ausdrücklich vor Schäden durch unsachgemässe Reinigung. Epoxidfugen dagegen sind gegenüber sauren Reinigern weitgehend beständig.',
         'Silikonfugen an Dusche, Wanne und Küche enthalten pilzhemmende Mittel. Ceruniq empfiehlt, sie wöchentlich mit einem neutralen oder leicht alkalischen Mittel und einem weichen Lappen zu reinigen und danach trocken zu reiben. Ist Schimmel ins Silikon gewachsen, rät das BAG, die Fugenmasse zu entfernen und durch eine Fachperson erneuern zu lassen.',
       ],
-      sources: [bagSchimmel],
+      sources: [ceruniqKeramik, ceruniqErst, bagSchimmel],
     },
     {
       title: 'Nachspülen, trocknen, Rutschgefahr',
@@ -593,7 +588,7 @@ const bodenarten: RatgeberArtikel = {
         'Rückstände haben eine zweite Folge. Forbo hält fest, dass Schmutzeintrag, Reinigungshäufigkeit und die verwendeten Mittel die Rutschhemmung massgeblich beeinflussen. Zu viel Reiniger mit Pflegezusätzen kann keramische Platten laut Ceruniq sogar bleibend fleckig machen.',
         'Während der Arbeit sind nasse Böden eine Sturzgefahr. Die BFU rät zu Warnständern und Absperrbändern und dazu, den Boden rasch zu trocknen. Im Treppenhaus einer Mietliegenschaft heisst das: abschnittsweise arbeiten und immer einen trockenen Weg offen lassen.',
       ],
-      sources: [bfuBoden],
+      sources: [nvs, forboLinoleum, ceruniqKeramik, bfuBoden],
     },
     {
       title: 'Mittel nie mischen',
@@ -608,6 +603,7 @@ const bodenarten: RatgeberArtikel = {
         'Der meiste Schmutz kommt an den Schuhen ins Haus. Die BFU empfiehlt für Eingänge Schmutzschleusen, deren Matte mindestens sechs Schritte lang ist. Forbo nennt für textile Sauberlaufzonen von 4 bis 6 Metern eine Verringerung des Schmutzeintrags um bis zu 80 Prozent.',
         'Dazu kommen einfache Massnahmen aus den Pflegeanleitungen: Filzgleiter unter Stühlen, weiche Rollen an Bürostühlen, Untersätze unter Pflanzen. Für Parkett empfiehlt der Parkettverband ein Raumklima von 20 bis 22 °C bei 35 bis 45 Prozent relativer Luftfeuchtigkeit.',
       ],
+      sources: [bfuBoden, forboLinoleum, ispVersiegelt],
     },
     {
       title: 'Typische Fehler',
@@ -622,10 +618,11 @@ const bodenarten: RatgeberArtikel = {
         'Nasse Flächen ohne Warnständer.',
       ],
       note: 'Die Grundreinigung als Leistung, mit Checkliste für Vorbereitung und Abnahme, finden Sie unter [Grund- und Sonderreinigung](/leistungen/sonderreinigungen).',
+      sources: [nvs, ceruniqErst, ispGeoelt],
     },
   ],
   service: '/leistungen/sonderreinigungen',
-  related: ['/blog/wohnungsabgabe-reinigung', '/blog/reinigungskosten-schweiz'],
+  related: ['/blog/wohnungsabgabe-protokoll', '/blog/reinigungskosten-schweiz'],
   cta: {
     title: 'Grundreinigung für Ihre Böden',
     text: 'Schreiben Sie uns, welche Beläge wo liegen und wie gross die Flächen ungefähr sind. Pflegeanleitungen und Fotos helfen bei der Planung. Nach einem Termin vor Ort rechnen wir Ihre Böden einzeln, die Offerte ist kostenlos und unverbindlich.',
@@ -662,11 +659,11 @@ const reinigungsfirmaFinden: RatgeberArtikel = {
         },
         {
           term: 'Grundreinigung',
-          text: 'Eine gründliche Reinigung in grösseren Abständen, gegen Kalk, Fett und alte Pflegeschichten. Welche Mittel welcher Boden verträgt, erklärt der Ratgeber [Grundreinigung nach Bodenbelag](/blog/bodenbelaege-grundreinigung). Zur Leistung: [Grund- und Sonderreinigung](/leistungen/sonderreinigungen).',
+          text: 'Eine gründliche Reinigung in grösseren Abständen, gegen Kalk, Fett und alte Pflegeschichten. Welche Mittel welcher Boden verträgt, erklärt der Ratgeber [Bodenbeläge richtig reinigen](/blog/bodenbelaege-reinigen). Zur Leistung: [Grund- und Sonderreinigung](/leistungen/sonderreinigungen).',
         },
         {
           term: 'Hauswartung',
-          text: 'Die Betreuung einer Liegenschaft über die Reinigung hinaus, etwa mit Kontrollgängen, Kleinreparaturen und Entsorgung. Was dazugehört, hält ein [Pflichtenheft](/blog/pflichtenheft-hauswartung) fest. Mehr unter [Hauswartung](/leistungen/hauswartung).',
+          text: 'Die Betreuung einer Liegenschaft über die Reinigung hinaus, etwa mit Kontrollgängen, Kleinreparaturen und Entsorgung. Was dazugehört, hält ein Pflichtenheft fest, siehe [Aufgaben der Hauswartung](/blog/hauswartung-aufgaben). Mehr unter [Hauswartung](/leistungen/hauswartung).',
         },
       ],
       note: 'Legen Sie ausserdem fest, wie oft und zu welchen Zeiten gereinigt werden soll, zum Beispiel vor Arbeitsbeginn oder nach Ladenschluss. Diese Angaben brauchen alle Anbieter, damit die Offerten vergleichbar sind.',
@@ -688,7 +685,7 @@ const reinigungsfirmaFinden: RatgeberArtikel = {
         },
         {
           title: 'Arbeitsbedingungen',
-          text: 'Für Reinigungsbetriebe mit mindestens sechs Angestellten gilt in der Deutschschweiz ein allgemeinverbindlicher Gesamtarbeitsvertrag mit Mindestlöhnen. Die paritätische Kommission ZPK Reinigung führt eine Liste der unterstellten Firmen. Fragen Sie danach, besonders bei auffallend günstigen Offerten.',
+          text: 'In der Deutschschweiz gilt der allgemeinverbindlich erklärte Gesamtarbeitsvertrag der Reinigungsbranche für Betriebe ab sechs Angestellten vollständig. Seine Mindestlöhne gelten über eine erleichterte Allgemeinverbindlicherklärung auch für kleinere Reinigungsbetriebe mit Angestellten. Fragen Sie nach den Löhnen, besonders bei auffallend günstigen Offerten.',
         },
         {
           title: 'Zertifikate richtig einordnen',
@@ -711,7 +708,7 @@ const reinigungsfirmaFinden: RatgeberArtikel = {
           text: 'Fragen Sie, wie schnell bei einem Mangel jemand vor Ort ist und wie Sie Ihre Ansprechperson erreichen.',
         },
       ],
-      sources: [zpkGav],
+      sources: [zpkGav, gavKlein],
     },
     {
       title: 'Sieben Fehler, die später teuer werden',
@@ -726,19 +723,6 @@ const reinigungsfirmaFinden: RatgeberArtikel = {
       ],
     },
     {
-      title: 'Schritt für Schritt zur Reinigungsfirma',
-      ordered: true,
-      items: [
-        'Bedarf klären: Leistung, Rhythmus, Zeiten und Flächen notieren.',
-        'Drei bis fünf Anbieter auswählen, die in Ihrer Region arbeiten.',
-        'Besichtigungen vereinbaren. Ohne Besichtigung gibt es keine vergleichbare Offerte.',
-        'Offerten im Raster unten vergleichen: Umfang, Stunden, Nebenkosten und Laufzeit.',
-        'Offene Fragen klären, am besten schriftlich.',
-        'Fragen, ob eine Probereinigung oder ein Start mit einer Probezeit möglich ist.',
-        'Vertrag abschliessen und die Ansprechperson festhalten.',
-      ],
-    },
-    {
       title: 'Fragen für die Besichtigung',
       items: [
         'Was genau ist enthalten, und was nicht?',
@@ -747,7 +731,7 @@ const reinigungsfirmaFinden: RatgeberArtikel = {
         'Wer ist meine Ansprechperson, und wie erreiche ich sie?',
         'Wer kontrolliert die Arbeit vor Ort, und wie oft?',
         'Wie ist die Vertretung bei Ferien oder Krankheit geregelt?',
-        'Untersteht Ihre Firma dem Gesamtarbeitsvertrag der Reinigungsbranche?',
+        'Zahlen Sie mindestens die Löhne des Gesamtarbeitsvertrags der Reinigungsbranche?',
         'Welche Versicherung besteht, mit welcher Deckung?',
         'Wie wird abgerechnet, und was kostet extra?',
       ],
@@ -767,7 +751,7 @@ const reinigungsfirmaFinden: RatgeberArtikel = {
           ['Kontrolle vor Ort: wer und wie oft', '__________', '__________', '__________'],
           ['Vertretung bei Ferien und Krankheit', '__________', '__________', '__________'],
           ['Haftpflicht mit Deckungssumme', '__________', '__________', '__________'],
-          ['Unterstellt dem Gesamtarbeitsvertrag', '__________', '__________', '__________'],
+          ['Mindestlöhne nach Gesamtarbeitsvertrag eingehalten', '__________', '__________', '__________'],
           ['Laufzeit und Kündigungsfrist', '__________', '__________', '__________'],
         ],
         note: 'Multiplizieren Sie je Spalte die Stunden pro Einsatz mit den Einsätzen pro Monat. Das Produkt zeigt, wie viel Arbeit jede Firma für Ihr Objekt tatsächlich einplant.',
@@ -776,7 +760,20 @@ const reinigungsfirmaFinden: RatgeberArtikel = {
       },
     },
     {
-      title: `So beantwortet ${company.brand} diese Fragen`,
+      title: 'Schritt für Schritt zur Reinigungsfirma',
+      ordered: true,
+      items: [
+        'Bedarf klären: Leistung, Rhythmus, Zeiten und Flächen notieren.',
+        'Drei bis fünf Anbieter auswählen, die in Ihrer Region arbeiten.',
+        'Besichtigungen vereinbaren. Ohne Besichtigung gibt es keine vergleichbare Offerte.',
+        'Offerten im Vergleichsraster oben gegenüberstellen: Umfang, Stunden, Nebenkosten und Laufzeit.',
+        'Offene Fragen klären, am besten schriftlich.',
+        'Fragen, ob eine Probereinigung oder ein Start mit einer Probezeit möglich ist.',
+        'Vertrag abschliessen und die Ansprechperson festhalten.',
+      ],
+    },
+    {
+      title: `Wenn Sie ${company.brand} anfragen`,
       items: [
         'Offerte: schriftlich, nachdem wir Ihr Objekt vor Ort gesehen haben.',
         `Antwort auf Ihre Anfrage: ${company.responseTime}.`,
@@ -788,7 +785,7 @@ const reinigungsfirmaFinden: RatgeberArtikel = {
     },
   ],
   service: '/leistungen/unterhaltsreinigung',
-  related: ['/blog/reinigungskosten-schweiz', '/blog/pflichtenheft-hauswartung'],
+  related: ['/blog/reinigungskosten-schweiz', '/blog/hauswartung-aufgaben'],
   cta: {
     title: 'Offerte vor Ort',
     text: 'Legen Sie unsere Offerte neben die anderen. Nennen Sie uns Objekt, Fläche, Rhythmus und Einsatzzeiten, dann kommen wir vorbei und rechnen für Ihr Objekt. Dafür verlangen wir nichts, und Sie gehen keine Verpflichtung ein.',
@@ -843,11 +840,11 @@ const kosten: RatgeberArtikel = {
     {
       title: 'Löhne als Untergrenze',
       paragraphs: [
-        'In den Kantonen Luzern, Zug, Aargau, Nidwalden und Obwalden gilt für Reinigungsbetriebe ab sechs Angestellten der allgemeinverbindlich erklärte Gesamtarbeitsvertrag der Reinigungsbranche Deutschschweiz. Er legt Mindestlöhne je Lohnkategorie fest und läuft bis Ende 2029. Einzelne Bestimmungen gelten auch für kleinere Betriebe.',
+        'In den Kantonen Luzern, Zug, Aargau, Nidwalden und Obwalden gilt für Reinigungsbetriebe ab sechs Angestellten der allgemeinverbindlich erklärte Gesamtarbeitsvertrag der Reinigungsbranche Deutschschweiz. Er legt Mindestlöhne je Lohnkategorie fest und läuft bis Ende 2029. Für kleinere Reinigungsbetriebe mit Angestellten gelten einzelne Bestimmungen ebenfalls, darunter die Mindestlöhne.',
         'Zum Lohn kommen Sozialversicherungen, Ferien, Anfahrt, Material, Geräte und die Leitung der Einsätze. Eine Offerte, deren Stundenansatz kaum über dem Mindestlohn liegt, kann diese Kosten nicht decken. Fragen Sie in diesem Fall nach, wie sie zustande kommt.',
         'Die Einhaltung kontrolliert die paritätische Kommission ZPK Reinigung, etwa mit Lohnbuchkontrollen. Auf ihrer Website stehen die Mindestlöhne und die Zuschläge im Wortlaut des Vertrags.',
       ],
-      sources: [zpkGav, zpkInhalte],
+      sources: [zpkGav, zpkInhalte, gavKlein],
     },
     {
       title: 'Der Rechenweg einer Offerte',
@@ -870,7 +867,7 @@ const kosten: RatgeberArtikel = {
           ['+ Mehrwertsteuer', 'Normalsatz 8,1 Prozent (Art. 25 MWSTG)', 'auf die Summe'],
           ['= Betrag pro Monat', 'Die Zahl, die Sie vergleichen', 'Summe der Zeilen'],
         ],
-        note: 'Zweimal pro Woche ergibt 104 Einsätze im Jahr, geteilt durch zwölf Monate gut 8,7 Einsätze. Wer mit vier Wochen pro Monat rechnet, kommt auf 8 Einsätze und unterschätzt die Stunden um rund 8 Prozent.',
+        note: 'Zweimal pro Woche ergibt 104 Einsätze im Jahr, geteilt durch zwölf Monate knapp 8,7 Einsätze. Wer mit vier Wochen pro Monat rechnet, kommt auf 8 Einsätze und unterschätzt die Stunden um rund 8 Prozent.',
         sources: [mwstg],
         printable: true,
         updated: '2026-09-28',
@@ -914,7 +911,7 @@ const kosten: RatgeberArtikel = {
     },
   ],
   service: '/leistungen/unterhaltsreinigung',
-  related: ['/blog/richtige-reinigungsfirma-finden', '/blog/bodenbelaege-grundreinigung'],
+  related: ['/blog/richtige-reinigungsfirma-finden', '/blog/bodenbelaege-reinigen'],
   cta: {
     title: 'Offerte für Ihre Unterhaltsreinigung',
     text: 'Nennen Sie uns Adresse, Fläche, Nutzung und den gewünschten Rhythmus, bei Liegenschaften auch die Zahl der Treppenhäuser. Nach dem Rundgang rechnen wir mit Ihren Zahlen, für Sie kostenlos und unverbindlich.',

@@ -106,32 +106,32 @@ export const pages = {
   '/blog': {
     label: 'Guida',
     title: 'Guida alla pulizia di edifici',
-    description: 'Guida per amministrazioni e aziende: capitolato della custodia, riconsegna dell’appartamento, pulizia a fondo dei pavimenti, scelta dell’impresa e costi.',
+    description: 'Guida per amministrazioni e aziende: compiti della custodia, riconsegna dell’appartamento, pavimenti, scelta dell’impresa e costi. Stampi i modelli.',
   },
   '/blog/richtige-reinigungsfirma-finden': {
     label: 'Scegliere l’impresa di pulizie',
     title: 'Come scegliere l’impresa di pulizie',
-    description: 'Incaricare un’impresa di pulizie: prestazioni, assicurazione, condizioni di lavoro, qualità e offerta. Con una griglia per confrontare le offerte.',
+    description: 'Incaricare un’impresa di pulizie: prestazioni, assicurazione, condizioni di lavoro e offerta. Stampi la griglia e confronti le offerte fianco a fianco.',
   },
   '/blog/reinigungskosten-schweiz': {
     label: 'Costi della pulizia di manutenzione',
     title: 'Pulizia di manutenzione: quanto costa?',
-    description: 'Da che cosa dipendono i costi della pulizia di manutenzione: ore, cadenza, orari e salari. Con il calcolo dell’importo mensile.',
+    description: 'Da che cosa dipendono i costi della pulizia di manutenzione: ore, cadenza, orari e salari. Verifichi le Sue offerte con il calcolo dell’importo mensile.',
   },
-  '/blog/pflichtenheft-hauswartung': {
-    label: 'Capitolato della custodia',
-    title: 'Capitolato per la custodia di stabili: modello',
-    description: 'Come redigere il capitolato della custodia: compiti, cadenza, limite di spesa e canali di segnalazione, con modello da stampare e note sulle spese accessorie.',
+  '/blog/hauswartung-aufgaben': {
+    label: 'Compiti della custodia',
+    title: 'Compiti della custodia di stabili: il capitolato',
+    description: 'I compiti della custodia nel capitolato: cadenza, limite di spesa, segnalazioni e spese accessorie, con un esempio compilato. Verifichi il Suo capitolato.',
   },
-  '/blog/wohnungsabgabe-reinigung': {
+  '/blog/wohnungsabgabe-protokoll': {
     label: 'Riconsegna dell’appartamento',
-    title: 'Riconsegna dell’appartamento: verbale e pulizia',
-    description: 'Riconsegna dell’appartamento per amministrazioni: quanto deve essere pulito, come descrivere i difetti nel verbale e quando fare la pulizia finale.',
+    title: 'Riconsegna dell’appartamento: verbale e difetti',
+    description: 'Riconsegna dell’appartamento per amministrazioni: quanto deve essere pulito e come descrivere e notificare i difetti in tempo. Stampi gli esempi di verbale.',
   },
-  '/blog/bodenbelaege-grundreinigung': {
-    label: 'Pulizia a fondo dei pavimenti',
-    title: 'Pulizia a fondo: cosa sopporta ogni pavimento',
-    description: 'Pulizia a fondo secondo il pavimento: cosa sopportano pietra naturale, piastrelle, linoleum, vinile e parquet, come riconoscerli ed evitare errori.',
+  '/blog/bodenbelaege-reinigen': {
+    label: 'Pulire bene i pavimenti',
+    title: 'Pulire i pavimenti: pH, fughe e cura',
+    description: 'Quali prodotti sopportano pietra naturale, piastrelle, linoleum, vinile e parquet. Stampi la tabella per il locale delle pulizie ed eviti i danni.',
   },
   '/ueber-uns': {
     label: 'Chi siamo',

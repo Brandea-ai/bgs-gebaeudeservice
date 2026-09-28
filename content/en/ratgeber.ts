@@ -12,8 +12,8 @@ import { cantons, languages, responseTime } from './common'
 export const ratgeberUebersicht = {
   h1: 'Guides to building cleaning',
   intro:
-    'Know-how for property managers, condominium owners’ associations and businesses: caretaking specifications, flat handovers, floors, choosing a cleaning company and what it costs.',
-  note: `Each guide lists its sources and the date it was last checked. By ${company.brand}, for properties and businesses in the cantons of ${cantons}.`,
+    'Know-how for property managers, condominium owners’ associations and businesses: caretaking duties, flat handovers, floor coverings, choosing a cleaning company and what it costs.',
+  note: `Each guide lists its sources and the date of its current version. By ${company.brand}, for properties and businesses in the cantons of ${cantons}.`,
   byline: `A guide by ${company.brand}`,
   updatedLabel: 'Last updated:',
   readMore: 'Read the article',
@@ -25,7 +25,7 @@ export const ratgeberUebersicht = {
   // Eckdaten rechts im IntroBand der Übersicht (E85)
   facts: [
     { label: 'For', value: 'Property managers, condominium owners, owners and businesses' },
-    { label: 'To print', value: 'Specification, report entries, floor table, comparison grid and calculation' },
+    { label: 'To print', value: 'Report entries, products by pH value, comparison grid and calculation' },
     { label: 'Sources', value: 'Federal law on Fedlex, BFU, FOPH, associations and manufacturers' },
   ],
   serviceLabel: 'Matching service',
@@ -38,8 +38,12 @@ const co = (art: string, label: string): Source => ({
   href: `https://www.fedlex.admin.ch/eli/cc/27/317_321_377/en#art_${art}`,
 })
 const cc: Source = {
-  label: 'Swiss Civil Code, Art. 712h, 712m and 712s (condominium ownership)',
-  href: 'https://www.fedlex.admin.ch/eli/cc/24/233_245_233/en#art_712_m',
+  label: 'Swiss Civil Code, Art. 712g, 712h, 712m and 712s (condominium ownership)',
+  href: 'https://www.fedlex.admin.ch/eli/cc/24/233_245_233/en#art_712_g',
+}
+const ccCoOwnership: Source = {
+  label: 'Swiss Civil Code, Art. 647a and 647b (administration in co-ownership)',
+  href: 'https://www.fedlex.admin.ch/eli/cc/24/233_245_233/en#art_647_a',
 }
 const bfuLiability: Source = {
   label: 'BFU: What does owner’s liability mean? (in German)',
@@ -59,6 +63,10 @@ const mvTips: Source = {
   label: 'Swiss Tenants’ Association: Flat handover and report, questions and answers (in German)',
   href: 'https://www.mieterverband.ch/mietrecht/ende-der-miete/wohnungsabgabe-protokoll/tipps/',
 }
+const mvFinal: Source = {
+  label: 'Swiss Tenants’ Association: final statement and return of the deposit (in German)',
+  href: 'https://www.mieterverband.ch/mietrecht/ende-der-miete/schlussrechnung-depotrueckgabe/',
+}
 const zhNotice: Source = {
   label: 'Zurich courts: notice of defects on return (in German)',
   href: 'https://www.gerichte-zh.ch/de/themen/miete/kuendigung-rueckgabe/rueckgabe-und-ausweisung/maengelruege',
@@ -70,6 +78,10 @@ const nvs: Source = {
 const ceruniqCeramic: Source = {
   label: 'Ceruniq: cleaning and care instructions for ceramic floors (PDF, in German)',
   href: 'https://www.ceruniq.ch/wp-content/uploads/2025/03/reinigungs-und-pflegeanleitung-fuer-keramische-belaege.pdf',
+}
+const ceruniqStone: Source = {
+  label: 'Ceruniq: cleaning and care instructions for natural stone floors (PDF, in German)',
+  href: 'https://www.ceruniq.ch/wp-content/uploads/2025/03/reinigungs-und-pflegeanleitung-fuer-natursteinbelaege.pdf',
 }
 const ceruniqFirst: Source = {
   label: 'Ceruniq: first cleaning of ceramic floors (PDF, in German)',
@@ -95,13 +107,17 @@ const bagMould: Source = { label: 'FOPH: Beware of mould (PDF, in German)', href
 const bagBleach: Source = { label: 'FOPH: Bleach (in German)', href: 'https://www.bag.admin.ch/de/javelwasser' }
 const zpkGav: Source = { label: 'ZPK: collective labour agreement for the cleaning sector, scope (in German)', href: 'https://zpk-reinigung.ch/recht-lohn/gav' }
 const zpkContent: Source = { label: 'ZPK: content of the collective labour agreement (in German)', href: 'https://zpk-reinigung.ch/recht-lohn/gav-inhalte' }
+const gavSmall: Source = {
+  label: 'Unia GAV service: collective labour agreement for cleaning companies with fewer than 6 employees (in German)',
+  href: 'https://www.gav-service.ch/gav/185006',
+}
 const arg: Source = { label: 'Employment Act, Art. 17b, pay supplement for night work (in German)', href: 'https://www.fedlex.admin.ch/eli/cc/1966/57_57_57/de#art_17_b' }
 const vat: Source = { label: 'Value Added Tax Act, Art. 25 (tax rates)', href: 'https://www.fedlex.admin.ch/eli/cc/2009/615/en#art_25' }
 
 const pflichtenheft: RatgeberArtikel = {
-  path: '/blog/pflichtenheft-hauswartung',
-  h1: 'Caretaking specification: template and guide',
-  subtitle: 'What belongs in a caretaking specification, how to set frequency and cost limit, and why the service charge statement benefits.',
+  path: '/blog/hauswartung-aufgaben',
+  h1: 'Caretaking duties: what belongs in the specification',
+  subtitle: 'Which tasks to record, how to set frequency and cost limit, and why the service charge statement benefits.',
   teaser: 'Structure, a completed example and typical gaps: how to write a specification that property management, owners and caretaker all read the same way.',
   updated: '2026-09-28',
   intro: [
@@ -159,34 +175,34 @@ const pflichtenheft: RatgeberArtikel = {
     {
       title: 'Example: twelve flats, one lift, one laundry room',
       paragraphs: [
-        'The template below has been filled in for a block of twelve flats with one stairwell and lift, a shared laundry room and around 600 m² of grounds. The values are an example, not a benchmark. The “Your entry” column is for what applies to your property.',
+        'The table below shows a completed specification for a block of twelve flats with one stairwell and lift, a shared laundry room and around 600 m² of grounds. The values are an example, not a benchmark.',
+        'A blank template to print, with columns for frequency and responsibility, is on the [caretaking](/leistungen/hauswartung#pflichtenheft) page.',
       ],
       tool: {
         kind: 'table',
-        id: 'vorlage-pflichtenheft',
-        title: 'Template: specification with example',
+        id: 'beispiel-pflichtenheft',
+        title: 'Example with service charge classification',
         intro:
           'The last column shows how the Swiss Tenants’ Association classifies the task for service charges. In every case the tenancy agreement must list caretaking as a service charge (Art. 257a para. 2 CO).',
-        columns: ['Task', 'Example', 'Your entry', 'Service charge according to the Tenants’ Association'],
+        columns: ['Task', 'Example', 'Service charge according to the Tenants’ Association'],
         rows: [
-          ['Stairwell and entrance', 'Damp-clean weekly, including handrails and glass door', '__________', 'admissible'],
-          ['Lift', 'Car and doors weekly, door sills monthly', '__________', 'admissible'],
-          ['Laundry and drying room', 'Floor, basin and drain twice a month', '__________', 'admissible'],
-          ['Operating the heating', 'Read pressure and fault display on each round, note the result', '__________', 'admissible'],
-          ['Minor upkeep', 'Replace bulbs, oil locks; without prior approval up to CHF ______ per case', '__________', 'admissible as long as no specialist knowledge is needed'],
-          ['Grounds', 'Lawn every two weeks from April to October, leaves in autumn, hedges according to the care plan', '__________', 'admissible'],
-          ['Inspection round of common areas', 'Every week, findings on the inspection sheet', '__________', 'not listed, clarify in the tenancy agreement'],
-          ['Waste and recycling', 'Put out containers on collection day, keep the collection point clean', '__________', 'not listed'],
-          ['Flat handovers', 'Open the flat, note meter readings, on behalf of the management', '__________', 'inadmissible'],
-          ['Accompanying tradespeople', 'Provide access, supervise the work', '__________', 'inadmissible'],
-          ['Reports to the management', 'Defects by email the same day, urgent cases by phone', '__________', 'inadmissible'],
-          ['Expressly excluded', 'Winter maintenance, on-call service, servicing of heating and lift by specialist firms', '__________', 'not applicable'],
+          ['Stairwell and entrance', 'Damp-clean weekly, including handrails and glass door', 'admissible (cleaning inside the building)'],
+          ['Lift', 'Car and doors weekly, door sills monthly', 'admissible (cleaning inside the building)'],
+          ['Laundry and drying room', 'Floor, basin and drain twice a month', 'admissible (cleaning inside the building)'],
+          ['Waste collection point', 'Clean the area and the container space after each collection', 'admissible (cleaning around the building)'],
+          ['Operating the heating', 'Read pressure and fault display once a week, note the value', 'admissible (operating the heating)'],
+          ['Minor upkeep', 'Replace faulty lights in the stairwell, oil sticking locks, up to the agreed limit per case', 'admissible as long as no specialist knowledge is needed'],
+          ['Grounds', 'Lawn every two weeks from April to October, leaves in autumn, hedges according to the care plan', 'admissible'],
+          ['Putting out containers', 'Put them out on collection day and bring them back', 'not listed in the leaflet'],
+          ['Inspection round for defects', 'Walk the common areas every week, findings on the inspection sheet', 'inadmissible (inspection rounds for repairs)'],
+          ['Reports to the management', 'Defects by email the same day, urgent cases by phone', 'inadmissible'],
+          ['Flat handovers', 'Open the flat, note meter readings, on behalf of the management', 'inadmissible'],
+          ['Accompanying tradespeople', 'Provide access, supervise the work', 'inadmissible'],
+          ['Expressly excluded', 'Winter maintenance, on-call service, servicing of heating and lift by specialist firms', 'not applicable'],
         ],
         note:
-          'The classification follows the Tenants’ Association leaflet on inadmissible service charges (2026). How an individual case is assessed depends on the tenancy agreement. The table describes the legal position in general terms and is not legal advice.',
+          'The classification follows the Tenants’ Association leaflet on inadmissible service charges (2026). According to the leaflet, administration and repairs, which include inspection rounds for repairs and reports to the management, do not belong in the service charges even if the tenancy agreement lists them. The table reflects this view and is not legal advice.',
         sources: [mvServiceCharges, co('257_a', 'Art. 257a')],
-        printable: true,
-        updated: '2026-09-28',
       },
     },
     {
@@ -219,16 +235,16 @@ const pflichtenheft: RatgeberArtikel = {
         'The Tenants’ Association advises tenants to ask what the caretaker does and how many hours it takes, and writes that the specification must be disclosed. A management that records hours along the lines of the specification can answer such questions with evidence instead of estimates.',
         'Where an external firm is hired, the Tenants’ Association points to the principle of cost efficiency. Check additional services against the tenancy agreement before awarding the contract. General rules on service charges and statements are explained on the [maintenance cleaning](/leistungen/unterhaltsreinigung) page.',
       ],
-      sources: [co('257_b', 'Art. 257a and 257b')],
+      sources: [co('257_b', 'Art. 257a and 257b'), mvServiceCharges],
     },
     {
       title: 'In condominium ownership: two readers',
       paragraphs: [
         'In a condominium the specification has two readers: the management that implements it and the owners’ meeting that releases the money. The law gives the owners’ meeting the annual approval of the budget, the accounts and the allocation of costs (Art. 712m CC). The administrator has to put it into practice (Art. 712s CC).',
         'Attach the specification to the budget whenever caretaking is newly awarded or extended. If the owners have elected a committee, it can review the specification and the quotes in advance and submit a proposal to the meeting.',
-        'Costs are divided according to value quotas. If a unit does not use a facility, or hardly uses it, such as a shop on the ground floor and the lift, this must be taken into account when costs are divided (Art. 712h para. 3 CC). Which majority the award requires is set out in your regulations.',
+        'Costs are divided according to value quotas. If a unit does not use a facility, or hardly uses it, such as a shop on the ground floor and the lift, this must be taken into account when costs are divided (Art. 712h para. 3 CC). Which majority the award requires follows from Art. 712g CC and the rules on co-ownership (Art. 647a and 647b CC). A different arrangement applies only if it is set out in the deed of constitution or was adopted unanimously. Clarify in each case what applies to your community.',
       ],
-      sources: [cc],
+      sources: [cc, ccCoOwnership],
     },
     {
       title: 'Seven gaps that cause trouble later',
@@ -251,7 +267,7 @@ const pflichtenheft: RatgeberArtikel = {
     },
   ],
   service: '/leistungen/hauswartung',
-  related: ['/blog/wohnungsabgabe-reinigung', '/blog/reinigungskosten-schweiz'],
+  related: ['/blog/wohnungsabgabe-protokoll', '/blog/reinigungskosten-schweiz'],
   cta: {
     title: 'Caretaking based on your specification',
     text: 'Send us your specification or the key data: address, flats, stairwells, lift, laundry room and grounds. We walk through the property and base our quote on it. The walk-through and the quote cost you nothing and commit you to nothing.',
@@ -259,8 +275,8 @@ const pflichtenheft: RatgeberArtikel = {
 }
 
 const wohnungsabgabe: RatgeberArtikel = {
-  path: '/blog/wohnungsabgabe-reinigung',
-  h1: 'Flat handover: what property managers need to know about inspection and final cleaning',
+  path: '/blog/wohnungsabgabe-protokoll',
+  h1: 'Flat handover: what property managers need to know about inspection, report and notice of defects',
   subtitle: 'How clean the flat must be, how to record defects so that they count, and when the final cleaning comes in.',
   teaser: 'Condition, report, notice of defects and cleaning: the handover of a flat from the management’s point of view, with examples of precise report entries.',
   updated: '2026-09-28',
@@ -271,7 +287,7 @@ const wohnungsabgabe: RatgeberArtikel = {
     title: 'In brief',
     items: [
       'The flat is to be returned in the condition that results from use in accordance with the contract (Art. 267 CO). Normal wear and tear is covered by the rent.',
-      'Defects must be checked on return and reported immediately, one by one and precisely (Art. 267a CO).',
+      'Defects must be checked on return and reported immediately (Art. 267a CO). According to the Zurich courts, they must be described specifically.',
       'Report before cleaning: only then can the condition at handover still be proven.',
       'The next tenants may inspect the handover report (Art. 256a CO). A precise report therefore pays off twice.',
     ],
@@ -302,7 +318,7 @@ const wohnungsabgabe: RatgeberArtikel = {
         },
         {
           term: 'Normal wear and tear',
-          text: 'Worn carpets, faded wallpaper, light marks on the walls next to beds and pictures, a normal number of dowel holes. This is paid for by the rent.',
+          text: 'Worn carpets, faded wallpaper, light marks on the walls next to beds and pictures, a normal number of nail and screw holes. This is paid for by the rent.',
         },
         {
           term: 'Excessive wear',
@@ -310,7 +326,7 @@ const wohnungsabgabe: RatgeberArtikel = {
         },
       ],
       note: 'The residual value is set by the joint lifespan table of the homeowners’ and tenants’ associations. An example from the Tenants’ Association: a medium-quality fitted carpet lasts ten years. If it has to be replaced after six years because of burn marks, the tenants bear 40 per cent of the cost. Once the lifespan has run out, they bear nothing.',
-      sources: [mvLifespan],
+      sources: [mvTips, hevHandover, mvLifespan],
     },
     {
       title: 'The report: precise enough to count',
@@ -327,7 +343,7 @@ const wohnungsabgabe: RatgeberArtikel = {
         rows: [
           ['Kitchen', '“Kitchen dirty”', 'Oven with burnt-on grease on back wall, tray and rack; grease filter in extractor hood clogged', 'Cleaning'],
           ['Bathroom and toilet', '“Bathroom not clean”', 'Shower glass and mixer tap with limescale edge; urine scale under the rim of the toilet bowl', 'Cleaning'],
-          ['Living room', '“Parquet damaged”', 'In front of the balcony door three scratches of about 20 cm, sealant worn through; parquet laid in 2016', 'Damage or wear, depending on age'],
+          ['Living room', '“Parquet damaged”', 'In front of the balcony door three scratches in the parquet, each about 20 cm long; parquet laid in 2016', 'Damage (excessive wear), share of cost by residual value'],
           ['Bedroom', '“Walls dirty”', 'Grey marks over 1 m behind the bed; ceiling yellowed, lighter edge behind pictures', 'Marks: wear; discolouration from smoke: damage'],
           ['Windows', '“Windows not cleaned”', 'Kitchen window with dirt in rebates and frame, glass streaky outside; living room blinds dusty', 'Cleaning'],
           ['Cellar', '“Cellar not cleared”', 'Cellar compartment 4 contains a cupboard and five boxes', 'Clearance'],
@@ -342,11 +358,11 @@ const wohnungsabgabe: RatgeberArtikel = {
     {
       title: 'Notice of defects: immediately, and later for hidden defects',
       paragraphs: [
-        'Art. 267a CO does not set a deadline in days, only the word “immediately”. The Tenants’ Association sees one week as the outer limit if the tenants have not already signed the defects in the report. It is safer to give notice on the day of the handover, with a copy of the report for the tenants.',
+        'Art. 267a CO does not set a deadline in days, only the word “immediately”. If the tenants have not already signed the defects in the report, the Tenants’ Association names two to three working days, and elsewhere one week at most. Anyone who misses the deadline loses their claims. Only notice on the day of the handover is safe, with a copy of the report for the tenants.',
         'If the tenants refuse to cooperate at the handover, notice is to be given in writing straight away according to the Zurich courts, by registered letter for evidence. The courts provide a template letter for this.',
         'Defects that could not be detected by a customary inspection must be reported immediately after they are discovered (Art. 267a para. 3 CO). Anyone who has the repair done first and then sends the invoice is too late, according to the Tenants’ Association.',
       ],
-      sources: [co('267_a', 'Art. 267a')],
+      sources: [co('267_a', 'Art. 267a'), zhNotice, mvFinal, mvTips],
     },
     {
       title: 'The timeline around the handover day',
@@ -393,6 +409,7 @@ const wohnungsabgabe: RatgeberArtikel = {
         'In the second case the order is decisive: report, notice, a short period to clean again, then cleaning. This keeps a record of what the tenants are responsible for, and the cleaning takes place in an empty flat where work behind fitted units is possible too.',
         'For property managers, owners and businesses we carry out the final cleaning with a handover guarantee, described on the [end-of-tenancy cleaning](/leistungen/umzugsreinigung) page. The order is placed by the management or the owner, not by the outgoing tenants.',
       ],
+      sources: [hevHandover],
     },
     {
       title: 'Common mistakes at handover',
@@ -409,7 +426,7 @@ const wohnungsabgabe: RatgeberArtikel = {
     },
   ],
   service: '/leistungen/umzugsreinigung',
-  related: ['/blog/pflichtenheft-hauswartung', '/blog/bodenbelaege-grundreinigung'],
+  related: ['/blog/hauswartung-aufgaben', '/blog/bodenbelaege-reinigen'],
   cta: {
     title: 'Final cleaning for your next handover',
     text: 'To plan, we need the address, the handover date and the size of the flat. If several changes are coming up, for example at the end of a quarter, we plan them together. We look at the flat first, then you receive the written quote, free of charge and non-binding.',
@@ -417,13 +434,13 @@ const wohnungsabgabe: RatgeberArtikel = {
 }
 
 const bodenarten: RatgeberArtikel = {
-  path: '/blog/bodenbelaege-grundreinigung',
-  h1: 'Deep cleaning by floor type: what stone, tiles, linoleum and parquet can take',
+  path: '/blog/bodenbelaege-reinigen',
+  h1: 'Cleaning floor coverings properly: which products stone, tiles, linoleum and parquet can take',
   subtitle: 'Why the same product rescues one floor and etches another, how to identify the floor, and what to clarify before the work starts.',
   teaser: 'pH value, joints, care films and slip risk: floor knowledge for property managers and businesses planning or commissioning a deep clean.',
   updated: '2026-09-28',
   intro: [
-    'A deep clean is more than cleaning harder. It removes layers that have built up over months, using stronger products and machines. That is exactly why it can damage a floor if product and floor covering do not match. This guide explains the basics so that you can plan a deep clean safely and judge the result.',
+    'A deep clean is more than just scrubbing harder. It removes layers that have built up over months, using stronger products and machines. That is exactly why it can damage a floor if product and floor covering do not match. This guide explains the basics so that you can plan a deep clean safely and judge the result.',
   ],
   summary: {
     title: 'In brief',
@@ -453,7 +470,7 @@ const bodenarten: RatgeberArtikel = {
         },
         {
           term: 'Restoration',
-          text: 'Grinding, polishing, resealing or re-oiling. This is work for a stone specialist, parquet or floor layer, not for cleaners. Stone can only be ground down by a few millimetres.',
+          text: 'Grinding, polishing, resealing or re-oiling. This is work for a stone specialist, parquet or floor layer. Stone can only be ground down by a few millimetres.',
         },
       ],
       sources: [nvs, forboLinoleum, forboVinyl],
@@ -466,81 +483,47 @@ const bodenarten: RatgeberArtikel = {
         'Alkaline products have limits too. For linoleum, the manufacturer Forbo specifies cleaners below pH 9 and rules out highly alkaline solutions.',
       ],
       note: 'Before a deep clean, ask which product with which pH value is planned for which floor. The answer belongs in the specification of services.',
+      sources: [nvs, ceruniqStone, forboLinoleum],
+      tool: {
+        kind: 'table',
+        id: 'mittel-nach-ph',
+        title: 'Which product where: acidic, neutral, alkaline',
+        intro: 'For the wall of the cleaning cupboard: three groups of cleaning products, what they dissolve and where they do not belong. The care instructions for your floor take precedence.',
+        columns: ['Product', 'Dissolves', 'Do not use', 'Watch out for'],
+        rows: [
+          [
+            'Acidic, below pH 7, such as descalers, sanitary cleaners, cement film removers',
+            'limescale, cement film, grout residue',
+            'on marble, limestone and travertine, on dry cement joints, on linoleum and vinyl',
+            'Pre-wet the floor and joints with water, let the product act briefly, rinse several times with clear water. No hydrochloric or sulphuric acid on natural stone: it discolours it.',
+          ],
+          [
+            'Neutral, around pH 7, such as maintenance cleaners',
+            'loose and lightly adhering dirt',
+            'wet on parquet: there, only wipe with a barely damp cloth',
+            'Dose sparingly: too much product with care additives leaves ceramic tiles permanently patchy. It is not intended for care films or limescale.',
+          ],
+          [
+            'Alkaline, above pH 7, such as deep cleaners',
+            'grease, oil, old care films',
+            'as a highly alkaline solution on linoleum, where only below pH 9; on oiled parquet, except for the products of the oil system',
+            'Pick up the dirty water completely and rinse with clear water. On marble, limestone and travertine only pH-neutral or mildly alkaline.',
+          ],
+        ],
+        note: 'On parquet, wet metal furniture feet leave oxidation stains, so keep them dry when mopping. And do not mix systems: manufacturers recommend products that are designed to work together.',
+        sources: [nvs, ceruniqCeramic, ceruniqStone, forboLinoleum, forboVinyl, ispSealed, ispOiled],
+        printable: true,
+        updated: '2026-09-28',
+      },
     },
     {
       title: 'Identifying the floor',
       paragraphs: [
         'The safest source is the construction documents: manufacturers’ care instructions, acceptance records, invoices from the floor layers. The instructions of the Swiss tiling association Ceruniq provide for the client’s signature and state that improper cleaning voids the warranty.',
         'If there are no documents, no guess can replace a test. The natural stone association describes how specialists test stone: a fingernail-sized spot in a hidden place is roughened and a few drops of acid are applied. If it fizzes, the stone is acid-sensitive.',
-        'As long as the stone has not been identified, no acid goes on the floor. Every new method is tried first in an inconspicuous spot.',
+        'As long as the stone has not been identified, no acid goes on the floor. Every new method is tried first in an inconspicuous spot. What each floor covering can take during a deep clean, and how to tell damage from dirt, is summarised in the tables on the [deep and special cleaning](/leistungen/sonderreinigungen#bodenbelaege) page.',
       ],
-      sources: [ceruniqCeramic],
-    },
-    {
-      title: 'Floor coverings at a glance',
-      paragraphs: [
-        'The table summarises what the leaflets of the Swiss trade associations and the manufacturers’ care instructions specify for deep cleaning. It does not replace the instructions for your floor.',
-      ],
-      tool: {
-        kind: 'table',
-        id: 'belaege-grundreinigung',
-        title: 'Deep cleaning and care by floor type',
-        columns: ['Floor', 'Deep cleaning', 'Afterwards', 'Specialist needed if'],
-        rows: [
-          [
-            'Marble, limestone, travertine',
-            'No acid treatment. Loosen grease and care residues with a neutral or mildly alkaline product, vacuum up the dirty water, rinse twice with clear water.',
-            'Damp with a neutral product. No pads on polished surfaces.',
-            'dull, rough spots remain: the surface is etched and must be ground.',
-          ],
-          [
-            'Granite, gneiss, quartzite, porphyry',
-            'All methods possible, including acidic products against limescale. Hydrochloric and sulphuric acid cause discolouration.',
-            'Damp with a neutral product.',
-            'oil or rust has penetrated deep into the stone.',
-          ],
-          [
-            'Tiles and porcelain stoneware with cement joints',
-            'Pre-wet, let the product act briefly, brush, pick up the dirty water, rinse two or three times with clear water. Switch underfloor heating off completely beforehand.',
-            'A little pH-neutral or mildly alkaline product, no acidic bathroom cleaner for routine cleaning.',
-            'joints are sandy, crumbling or missing.',
-          ],
-          [
-            'Tiles with epoxy joints',
-            'The joints resist many chemicals and acidic cleaners. The joint manufacturer’s data sheet is binding.',
-            'As for tiles with cement joints.',
-            'an epoxy film remains on the tiles: the installer removes it.',
-          ],
-          [
-            'Linoleum',
-            'By machine with a cleaner below pH 9, pick up the dirty water, rinse with clear water. The factory finish must not be damaged.',
-            'Damp mopping, remove scuff marks with the spray method, polish regularly.',
-            'the surface is destroyed: restoration with a care film as specified by the manufacturer.',
-          ],
-          [
-            'Vinyl and PVC',
-            'Deep cleaner for vinyl, scrub by machine, rinse with clear water. Before a new coating the floor must be free of residues and completely dry.',
-            'Damp mopping with a cleaner the manufacturer approves for the surface.',
-            'a new coating is needed: two layers as specified by the manufacturer.',
-          ],
-          [
-            'Parquet, sealed',
-            'No wet deep cleaning. Soft broom, vacuum cleaner or a barely damp cloth, with a neutral product if needed. Machines only after consulting the manufacturer.',
-            'Care with parquet polish regularly.',
-            'the seal is worn through: sand and reseal.',
-          ],
-          [
-            'Parquet, oiled',
-            'With the products of the oil system used, never with steam. Cloths only if the manufacturer approves them for parquet.',
-            'Re-oil as needed.',
-            'traffic lanes are grey and open.',
-          ],
-        ],
-        note: 'On parquet, wet metal furniture feet leave oxidation stains, so keep them dry when mopping. And do not mix systems: manufacturers recommend products that are designed to work together.',
-        sources: [nvs, ceruniqCeramic, ceruniqFirst, forboLinoleum, forboVinyl, ispSealed, ispOiled],
-        printable: true,
-        updated: '2026-09-28',
-      },
+      sources: [ceruniqCeramic, nvs],
     },
     {
       title: 'Joints: the most sensitive spot',
@@ -549,7 +532,7 @@ const bodenarten: RatgeberArtikel = {
         'Black, anthracite or coloured cement joints are especially delicate; Ceruniq explicitly warns of damage from improper cleaning. Epoxy joints, by contrast, are largely resistant to acidic cleaners.',
         'Silicone joints at showers, baths and kitchens contain fungicides. Ceruniq recommends cleaning them weekly with a neutral or mildly alkaline product and a soft cloth and then rubbing them dry. If mould has grown into the silicone, the FOPH advises removing the sealant and having it renewed by a specialist.',
       ],
-      sources: [bagMould],
+      sources: [ceruniqCeramic, ceruniqFirst, bagMould],
     },
     {
       title: 'Rinsing, drying, slip risk',
@@ -558,7 +541,7 @@ const bodenarten: RatgeberArtikel = {
         'Residues have a second effect. Forbo states that dirt brought in, cleaning frequency and the products used have a major influence on slip resistance. According to Ceruniq, too much cleaner with care additives can even leave ceramic tiles permanently patchy.',
         'While the work is going on, wet floors are a fall hazard. The BFU recommends warning stands and barrier tape and drying the floor quickly. In the stairwell of a rented building this means working section by section and always leaving a dry route open.',
       ],
-      sources: [bfuFloor],
+      sources: [nvs, forboLinoleum, ceruniqCeramic, bfuFloor],
     },
     {
       title: 'Never mix products',
@@ -573,6 +556,7 @@ const bodenarten: RatgeberArtikel = {
         'Most dirt comes into the building on people’s shoes. For entrances the BFU recommends dirt-trapping zones whose mat is at least six steps long. Forbo cites a reduction in dirt brought in of up to 80 per cent for textile entrance zones of 4 to 6 metres.',
         'Add simple measures from the care instructions: felt pads under chairs, soft castors on office chairs, saucers under plants. For parquet the parquet association recommends a room climate of 20 to 22 °C with 35 to 45 per cent relative humidity.',
       ],
+      sources: [bfuFloor, forboLinoleum, ispSealed],
     },
     {
       title: 'Typical mistakes',
@@ -587,10 +571,11 @@ const bodenarten: RatgeberArtikel = {
         'Wet areas without warning stands.',
       ],
       note: 'Deep cleaning as a service, with a checklist for preparation and acceptance, is described under [deep and special cleaning](/leistungen/sonderreinigungen).',
+      sources: [nvs, ceruniqFirst, ispOiled],
     },
   ],
   service: '/leistungen/sonderreinigungen',
-  related: ['/blog/wohnungsabgabe-reinigung', '/blog/reinigungskosten-schweiz'],
+  related: ['/blog/wohnungsabgabe-protokoll', '/blog/reinigungskosten-schweiz'],
   cta: {
     title: 'Deep cleaning for your floors',
     text: 'Tell us which floor coverings are laid where and roughly how large the areas are. Care instructions and photos help with planning. After an appointment on site we price your floors individually, free of charge and non-binding.',
@@ -626,11 +611,11 @@ const reinigungsfirmaFinden: RatgeberArtikel = {
         },
         {
           term: 'Deep cleaning',
-          text: 'A thorough clean at longer intervals, against limescale, grease and old layers of care products. Which products each floor can take is explained in the guide [deep cleaning by floor type](/blog/bodenbelaege-grundreinigung). The service: [deep and special cleaning](/leistungen/sonderreinigungen).',
+          text: 'A thorough clean at longer intervals, against limescale, grease and old layers of care products. Which products each floor can take is explained in the guide [cleaning floor coverings properly](/blog/bodenbelaege-reinigen). The service: [deep and special cleaning](/leistungen/sonderreinigungen).',
         },
         {
           term: 'Caretaking',
-          text: 'Looking after a property beyond cleaning, for example with inspection rounds, minor repairs and waste disposal. What it includes is set out in a [specification](/blog/pflichtenheft-hauswartung). Find out more about [caretaking](/leistungen/hauswartung).',
+          text: 'Looking after a property beyond cleaning, for example with inspection rounds, minor repairs and waste disposal. What it includes is set out in a specification, see [caretaking duties](/blog/hauswartung-aufgaben). Find out more about [caretaking](/leistungen/hauswartung).',
         },
       ],
       note: 'Also decide how often and at what times cleaning should take place, for example before work starts or after the shop closes. All providers need this information so that their quotes are comparable.',
@@ -652,7 +637,7 @@ const reinigungsfirmaFinden: RatgeberArtikel = {
         },
         {
           title: 'Working conditions',
-          text: 'In German-speaking Switzerland, cleaning companies with at least six employees are bound by a generally applicable collective labour agreement with minimum wages. The joint commission for the sector (ZPK) keeps a list of the companies covered. Ask about it, especially if a quote is strikingly low.',
+          text: 'In German-speaking Switzerland, the generally applicable collective labour agreement for the cleaning sector applies in full to companies with six or more employees. Through a simplified declaration of general applicability, its minimum wages also apply to smaller cleaning companies with employees. Ask about wages, especially if a quote is strikingly low.',
         },
         {
           title: 'Putting certificates in context',
@@ -675,7 +660,7 @@ const reinigungsfirmaFinden: RatgeberArtikel = {
           text: 'Ask how quickly someone can be on site if there is a problem and how you can reach your contact person.',
         },
       ],
-      sources: [zpkGav],
+      sources: [zpkGav, gavSmall],
     },
     {
       title: 'Seven mistakes that become expensive later',
@@ -690,19 +675,6 @@ const reinigungsfirmaFinden: RatgeberArtikel = {
       ],
     },
     {
-      title: 'Step by step to the right cleaning company',
-      ordered: true,
-      items: [
-        'Clarify your needs: note down the service, frequency, times and areas.',
-        'Select three to five providers who work in your region.',
-        'Arrange site visits. Without a site visit, there is no comparable quote.',
-        'Compare the quotes in the grid below: scope, hours, additional costs and term.',
-        'Clarify any open questions, ideally in writing.',
-        'Ask whether a trial clean or a start with a trial period is possible.',
-        'Sign the contract and record who your contact person is.',
-      ],
-    },
-    {
       title: 'Questions for the site visit',
       items: [
         'What exactly is included, and what is not?',
@@ -711,7 +683,7 @@ const reinigungsfirmaFinden: RatgeberArtikel = {
         'Who is my contact person, and how do I reach them?',
         'Who checks the work on site, and how often?',
         'How is cover arranged during holidays or illness?',
-        'Is your company covered by the collective labour agreement for the cleaning sector?',
+        'Do you pay at least the wages set by the collective labour agreement for the cleaning sector?',
         'What insurance is in place, and with what cover?',
         'How is billing done, and what costs extra?',
       ],
@@ -731,7 +703,7 @@ const reinigungsfirmaFinden: RatgeberArtikel = {
           ['On-site checks: who and how often', '__________', '__________', '__________'],
           ['Cover during holidays and illness', '__________', '__________', '__________'],
           ['Liability insurance with amount of cover', '__________', '__________', '__________'],
-          ['Covered by the collective labour agreement', '__________', '__________', '__________'],
+          ['Minimum wages under the collective labour agreement met', '__________', '__________', '__________'],
           ['Term and notice period', '__________', '__________', '__________'],
         ],
         note: 'For each column, multiply the hours per visit by the visits per month. The result shows how much work each company actually plans for your property.',
@@ -740,7 +712,20 @@ const reinigungsfirmaFinden: RatgeberArtikel = {
       },
     },
     {
-      title: `How ${company.brand} answers these questions`,
+      title: 'Step by step to the right cleaning company',
+      ordered: true,
+      items: [
+        'Clarify your needs: note down the service, frequency, times and areas.',
+        'Select three to five providers who work in your region.',
+        'Arrange site visits. Without a site visit, there is no comparable quote.',
+        'Set the quotes side by side in the comparison grid above: scope, hours, additional costs and term.',
+        'Clarify any open questions, ideally in writing.',
+        'Ask whether a trial clean or a start with a trial period is possible.',
+        'Sign the contract and record who your contact person is.',
+      ],
+    },
+    {
+      title: `When you contact ${company.brand}`,
       items: [
         'Quote: in writing, after we have seen your property on site.',
         `Reply to your enquiry: ${responseTime}.`,
@@ -752,7 +737,7 @@ const reinigungsfirmaFinden: RatgeberArtikel = {
     },
   ],
   service: '/leistungen/unterhaltsreinigung',
-  related: ['/blog/reinigungskosten-schweiz', '/blog/pflichtenheft-hauswartung'],
+  related: ['/blog/reinigungskosten-schweiz', '/blog/hauswartung-aufgaben'],
   cta: {
     title: 'On-site quote',
     text: 'Put our quote next to the others. Tell us about the property, floor area, frequency and cleaning times, and we will come by and calculate for your property. We charge nothing for this, and you enter into no obligation.',
@@ -761,7 +746,7 @@ const reinigungsfirmaFinden: RatgeberArtikel = {
 
 const kosten: RatgeberArtikel = {
   path: '/blog/reinigungskosten-schweiz',
-  h1: 'The cost of maintenance cleaning: how the price comes about',
+  h1: 'The cost of maintenance cleaning: how the price is calculated',
   subtitle: 'What the monthly amount depends on, how a quote is calculated and what property managers should note about service charges.',
   teaser: 'Cost factors, the calculation and wages as the lower limit: how to read and compare quotes for maintenance cleaning.',
   updated: '2026-09-28',
@@ -805,11 +790,11 @@ const kosten: RatgeberArtikel = {
     {
       title: 'Wages as the lower limit',
       paragraphs: [
-        'In the cantons of Lucerne, Zug, Aargau, Nidwalden and Obwalden, cleaning companies with six or more employees are bound by the generally applicable collective labour agreement for the cleaning sector in German-speaking Switzerland. It sets minimum wages for each wage category and runs until the end of 2029. Some provisions also apply to smaller companies.',
+        'In the cantons of Lucerne, Zug, Aargau, Nidwalden and Obwalden, cleaning companies with six or more employees are bound by the generally applicable collective labour agreement for the cleaning sector in German-speaking Switzerland. It sets minimum wages for each wage category and runs until the end of 2029. Some provisions, including the minimum wages, also apply to smaller cleaning companies with employees.',
         'On top of wages come social security, holidays, travel, materials, equipment and the management of the work. A quote whose hourly rate is barely above the minimum wage cannot cover these costs. In that case, ask how it has been calculated.',
         'Compliance is monitored by the sector’s joint commission (ZPK), for example through payroll audits. Its website publishes the minimum wages and surcharges in the wording of the agreement.',
       ],
-      sources: [zpkGav, zpkContent],
+      sources: [zpkGav, zpkContent, gavSmall],
     },
     {
       title: 'How a quote is calculated',
@@ -832,7 +817,7 @@ const kosten: RatgeberArtikel = {
           ['+ VAT', 'Standard rate 8.1 per cent (Art. 25 VAT Act)', 'on the total'],
           ['= amount per month', 'The figure you compare', 'sum of the rows'],
         ],
-        note: 'Twice a week makes 104 visits a year, divided by twelve months a good 8.7 visits. Anyone who calculates with four weeks a month arrives at 8 visits and underestimates the hours by around 8 per cent.',
+        note: 'Twice a week makes 104 visits a year, divided by twelve months just under 8.7 visits. Anyone who calculates with four weeks a month arrives at 8 visits and underestimates the hours by around 8 per cent.',
         sources: [vat],
         printable: true,
         updated: '2026-09-28',
@@ -876,7 +861,7 @@ const kosten: RatgeberArtikel = {
     },
   ],
   service: '/leistungen/unterhaltsreinigung',
-  related: ['/blog/richtige-reinigungsfirma-finden', '/blog/bodenbelaege-grundreinigung'],
+  related: ['/blog/richtige-reinigungsfirma-finden', '/blog/bodenbelaege-reinigen'],
   cta: {
     title: 'A quote for your maintenance cleaning',
     text: 'Tell us the address, floor area, use and the frequency you would like, and for residential buildings the number of stairwells. After the walk-through we calculate with your figures, free of charge and non-binding.',

@@ -106,32 +106,32 @@ export const pages = {
   '/blog': {
     label: 'Guide',
     title: 'Guide du nettoyage de bâtiments',
-    description: 'Guide pour gérances et entreprises : cahier des charges du concierge, état des lieux de sortie, nettoyage en profondeur, choix du prestataire et coûts.',
+    description: 'Guide pour gérances et entreprises : tâches de la conciergerie, état des lieux de sortie, sols, choix du prestataire et coûts. Imprimez les modèles.',
   },
   '/blog/richtige-reinigungsfirma-finden': {
     label: 'Choisir une entreprise de nettoyage',
     title: 'Choisir une entreprise de nettoyage',
-    description: 'Mandater une entreprise de nettoyage : prestations, assurance, conditions de travail, contrôle de la qualité et devis. Avec une grille de comparaison.',
+    description: 'Mandater une entreprise de nettoyage : prestations, assurance, conditions de travail et devis. Imprimez la grille et comparez les devis côte à côte.',
   },
   '/blog/reinigungskosten-schweiz': {
     label: 'Coût du nettoyage d’entretien',
-    title: 'Que coûte un nettoyage d’entretien ?',
-    description: 'Ce qui détermine le coût d’un nettoyage d’entretien : heures, fréquence, horaires et salaires. Avec le calcul du montant mensuel et des conseils pour comparer.',
+    title: 'Que coûte un nettoyage d’entretien ?',
+    description: 'Ce qui détermine le coût d’un nettoyage d’entretien : heures, fréquence, horaires et salaires. Vérifiez vos devis avec le calcul du montant mensuel.',
   },
-  '/blog/pflichtenheft-hauswartung': {
-    label: 'Cahier des charges du concierge',
-    title: 'Cahier des charges du concierge : modèle',
-    description: 'Rédiger le cahier des charges de la conciergerie : tâches, fréquence, plafond et voies de signalement, avec un modèle à imprimer et les frais accessoires.',
+  '/blog/hauswartung-aufgaben': {
+    label: 'Tâches de la conciergerie',
+    title: 'Tâches de la conciergerie et cahier des charges',
+    description: 'Les tâches de la conciergerie dans le cahier des charges : fréquence, plafond, signalements et frais accessoires, avec un exemple rempli. Vérifiez le vôtre.',
   },
-  '/blog/wohnungsabgabe-reinigung': {
+  '/blog/wohnungsabgabe-protokoll': {
     label: 'État des lieux de sortie',
-    title: 'Fin de bail : état des lieux et nettoyage',
-    description: 'Fin de bail pour les gérances : quel niveau de propreté exiger, comment consigner les défauts avec précision et quand placer le nettoyage final.',
+    title: 'État des lieux de sortie et avis des défauts',
+    description: 'Restitution d’un logement pour les gérances : quel niveau de propreté exiger, comment consigner et signaler les défauts à temps. Imprimez les exemples.',
   },
-  '/blog/bodenbelaege-grundreinigung': {
-    label: 'Nettoyage en profondeur selon le sol',
-    title: 'Nettoyage en profondeur selon le revêtement',
-    description: 'Nettoyage en profondeur selon le sol : ce que supportent pierre naturelle, carrelage, linoléum, vinyle et parquet, et comment éviter les erreurs courantes.',
+  '/blog/bodenbelaege-reinigen': {
+    label: 'Nettoyer les revêtements de sol',
+    title: 'Nettoyer les sols : pH, joints et entretien',
+    description: 'Quels produits supportent pierre naturelle, carrelage, linoléum, vinyle et parquet. Imprimez le tableau pour votre local de nettoyage et évitez les dégâts.',
   },
   '/ueber-uns': {
     label: 'À propos',

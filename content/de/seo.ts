@@ -107,32 +107,32 @@ export const pages = {
   '/blog': {
     label: 'Ratgeber',
     title: 'Ratgeber Gebäudereinigung',
-    description: 'Ratgeber für Verwaltungen und Unternehmen: Pflichtenheft Hauswartung, Wohnungsabgabe, Grundreinigung nach Bodenbelag, Wahl der Reinigungsfirma und Kosten.',
+    description: 'Ratgeber für Verwaltungen und Unternehmen: Aufgaben der Hauswartung, Wohnungsabgabe, Bodenbeläge, Vergabe und Kosten. Vorlagen gleich ausdrucken.',
   },
   '/blog/richtige-reinigungsfirma-finden': {
     label: 'Reinigungsfirma finden',
     title: 'Die richtige Reinigungsfirma finden',
-    description: 'Reinigungsfirma beauftragen: Leistungsumfang, Versicherung, Arbeitsbedingungen, Qualitätskontrolle und Offerte klären. Mit Vergleichsraster zum Ausdrucken.',
+    description: 'Reinigungsfirma beauftragen: Umfang, Versicherung, Arbeitsbedingungen und Offerte klären. Drucken Sie das Vergleichsraster aus und vergleichen Sie Offerten.',
   },
   '/blog/reinigungskosten-schweiz': {
     label: 'Kosten der Unterhaltsreinigung',
     title: 'Was kostet eine Unterhaltsreinigung?',
-    description: 'Wovon die Kosten einer Unterhaltsreinigung abhängen: Stunden, Rhythmus, Einsatzzeiten und Löhne. Mit Rechenweg für den Monatsbetrag und Offertvergleich.',
+    description: 'Wovon die Kosten einer Unterhaltsreinigung abhängen: Stunden, Rhythmus, Einsatzzeiten und Löhne. Rechnen Sie Ihre Offerten mit dem Rechenweg nach.',
   },
-  '/blog/pflichtenheft-hauswartung': {
-    label: 'Pflichtenheft Hauswartung',
-    title: 'Pflichtenheft Hauswartung: Vorlage und Erklärung',
-    description: 'Pflichtenheft für die Hauswartung: Aufgaben, Rhythmus, Kostengrenze und Meldewege, mit Vorlage zum Ausdrucken und Hinweisen zur Nebenkostenabrechnung.',
+  '/blog/hauswartung-aufgaben': {
+    label: 'Aufgaben der Hauswartung',
+    title: 'Aufgaben der Hauswartung festlegen und abrechnen',
+    description: 'Aufgaben der Hauswartung im Pflichtenheft: Rhythmus, Kostengrenze, Meldewege und Nebenkosten, mit ausgefülltem Beispiel. Prüfen Sie damit Ihr Pflichtenheft.',
   },
-  '/blog/wohnungsabgabe-reinigung': {
+  '/blog/wohnungsabgabe-protokoll': {
     label: 'Wohnungsabgabe',
-    title: 'Wohnungsabgabe: Abnahme, Protokoll und Reinigung',
-    description: 'Wohnungsabgabe für Verwaltungen: wie sauber die Wohnung sein muss, wie Sie Mängel im Protokoll genau festhalten und wann die Endreinigung kommt.',
+    title: 'Wohnungsabgabe: Protokoll und Mängelrüge',
+    description: 'Wohnungsabgabe für Verwaltungen: wie sauber die Wohnung sein muss und wie Sie Mängel genau festhalten und rügen. Protokollbeispiele gleich ausdrucken.',
   },
-  '/blog/bodenbelaege-grundreinigung': {
-    label: 'Grundreinigung nach Bodenbelag',
-    title: 'Grundreinigung: Was welcher Boden verträgt',
-    description: 'Grundreinigung nach Bodenbelag: was Naturstein, Plättli, Linoleum, Vinyl und Parkett vertragen, wie Sie den Belag erkennen und Fehler vermeiden.',
+  '/blog/bodenbelaege-reinigen': {
+    label: 'Bodenbeläge richtig reinigen',
+    title: 'Bodenbeläge reinigen: pH-Wert, Fugen, Pflege',
+    description: 'Welche Reinigungsmittel Naturstein, Plättli, Linoleum, Vinyl und Parkett vertragen. Drucken Sie die Tabelle für Ihren Putzraum aus und vermeiden Sie Schäden.',
   },
   '/ueber-uns': {
     label: 'Über uns',
