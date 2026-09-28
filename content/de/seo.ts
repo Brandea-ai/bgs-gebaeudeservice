@@ -90,8 +90,8 @@ export const pages = {
   },
   '/leistungen/facility-services': {
     label: 'Facility Services',
-    title: 'Facility Services aus einer Hand',
-    description: 'Reinigung, Hauswartung und Umgebungspflege in einem Vertrag mit einer Ansprechperson. Für Verwaltungen und Unternehmen in Luzern, Zug und Umgebung.',
+    title: 'Facility Services in Luzern und Zug aus einer Hand',
+    description: 'Facility Services in Luzern, Zug und Umgebung: Reinigung, Hauswartung und Umgebungspflege in einem Vertrag. Kostenlose Offerte nach Besichtigung.',
   },
   '/einzugsgebiet': {
     label: 'Einzugsgebiet',

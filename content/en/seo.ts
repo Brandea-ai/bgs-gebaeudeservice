@@ -90,8 +90,8 @@ export const pages: Dictionary['pages'] = {
   },
   '/leistungen/facility-services': {
     label: 'Facility services',
-    title: 'Facility services from one provider',
-    description: 'Cleaning, caretaking and grounds maintenance under one contract with one contact person. For property managers and businesses in Lucerne, Zug and beyond.',
+    title: 'Facility services in Lucerne and Zug, one contract',
+    description: 'Facility services in Lucerne, Zug and beyond: cleaning, caretaking and grounds maintenance under one contract. Free quote after a site visit.',
   },
   '/einzugsgebiet': {
     label: 'Service area',

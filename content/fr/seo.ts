@@ -90,8 +90,8 @@ export const pages = {
   },
   '/leistungen/facility-services': {
     label: 'Facility services',
-    title: 'Facility services, un seul prestataire',
-    description: 'Nettoyage, conciergerie et entretien des abords dans un seul contrat, avec un seul interlocuteur. Pour gérances et entreprises à Lucerne, Zoug et environs.',
+    title: 'Facility services à Lucerne et Zoug, un seul contrat',
+    description: 'Facility services à Lucerne, Zoug et environs : nettoyage, conciergerie et entretien des abords dans un seul contrat. Devis gratuit après une visite.',
   },
   '/einzugsgebiet': {
     label: 'Zone d’intervention',
