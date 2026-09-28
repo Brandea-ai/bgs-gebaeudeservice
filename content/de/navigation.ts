@@ -1,5 +1,6 @@
 import { cantonList, company, premiumLabel } from '../../shared/company'
 import type { PagePath } from '../../shared/seo'
+import type { KantonKey } from '../../shared/cantons'
 
 /**
  * Texte von Menü, Footer, Kontaktformular und 404-Seite (M54, E61). Menü und
@@ -41,11 +42,34 @@ export const serviceGroups: { title: string; links: NavLink[] }[] = [
   },
 ]
 
+/**
+ * Kantone im Mega-Menü «Einzugsgebiet» und auf der Übersicht (E80). Reihenfolge
+ * wie company.cantons, Adresse /einzugsgebiet/<Schlüssel>. Kurztext höchstens 60 Zeichen.
+ */
+export const kantonMenu: Record<KantonKey, { label: string; text: string }> = {
+  luzern: { label: 'Luzern', text: 'Unser Sitz: Stadt, Agglomeration und Seeufer' },
+  zug: { label: 'Zug', text: 'Büros, Firmensitze und Wohnen am See' },
+  aargau: { label: 'Aargau', text: 'Industrie, Hallen, Lager und Liegenschaften' },
+  nidwalden: { label: 'Nidwalden', text: 'Seeufer, Zweitwohnungen und Hauswartung' },
+  obwalden: { label: 'Obwalden', text: 'Sarnen, Engelberg, Zweitwohnungen und Hotels' },
+}
+
+/** Mega-Menü «Einzugsgebiet»: Kantone, Übersicht und Sitz */
+export const areaMenu = {
+  label: 'Einzugsgebiet',
+  cantonsTitle: 'Kantone',
+  cantons: kantonMenu,
+  overview: { path: '/einzugsgebiet', label: 'Das ganze Einzugsgebiet' } satisfies NavLink,
+  overviewText: 'Karte, Orte an den Seen und alle Kantone im Überblick',
+  seatTitle: 'Unser Sitz',
+  seatText: 'Von hier aus arbeiten wir in fünf Kantonen, mit allen Leistungen und überall zu denselben Bedingungen.',
+}
+
 export const menu = {
   home: { path: '/', label: 'Home' } satisfies NavLink,
   services: 'Leistungen',
+  // Einzugsgebiet steht als eigenes Mega-Menü zwischen Leistungen und diesen Links (areaMenu)
   after: [
-    { path: '/einzugsgebiet', label: 'Einzugsgebiet' },
     { path: '/ueber-uns', label: 'Über uns' },
     { path: '/blog', label: 'Ratgeber' },
   ] satisfies NavLink[],
@@ -152,6 +176,7 @@ export const notFound = {
 export const nav = {
   serviceGroups,
   menu,
+  areaMenu,
   footer,
   contactForm,
   notFound,

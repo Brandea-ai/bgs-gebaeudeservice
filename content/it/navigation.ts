@@ -39,11 +39,26 @@ const serviceGroups: NavDictionary['serviceGroups'] = [
   },
 ]
 
+const areaMenu: NavDictionary['areaMenu'] = {
+  label: 'Zona d’intervento',
+  cantonsTitle: 'Cantoni',
+  cantons: {
+    luzern: { label: 'Lucerna', text: 'La nostra sede: città, agglomerato e rive del lago' },
+    zug: { label: 'Zugo', text: 'Uffici, sedi aziendali e abitare sul lago' },
+    aargau: { label: 'Argovia', text: 'Industria, capannoni, magazzini e immobili' },
+    nidwalden: { label: 'Nidvaldo', text: 'Rive del lago, abitazioni secondarie e custodia' },
+    obwalden: { label: 'Obvaldo', text: 'Sarnen, Engelberg, abitazioni secondarie e alberghi' },
+  },
+  overview: { path: '/einzugsgebiet', label: 'Tutta la zona d’intervento' },
+  overviewText: 'Cartina, località sui laghi e tutti i Cantoni in sintesi',
+  seatTitle: 'La nostra sede',
+  seatText: 'Da qui operiamo in cinque Cantoni, con tutti i servizi e ovunque alle stesse condizioni.',
+}
+
 const menu: NavDictionary['menu'] = {
   home: { path: '/', label: 'Home' } satisfies NavLink,
   services: 'Servizi',
   after: [
-    { path: '/einzugsgebiet', label: 'Zona d’intervento' },
     { path: '/ueber-uns', label: 'Chi siamo' },
     { path: '/blog', label: 'Guida' },
   ],
@@ -148,6 +163,7 @@ const notFound: NavDictionary['notFound'] = {
 export const nav: NavDictionary = {
   serviceGroups,
   menu,
+  areaMenu,
   footer,
   contactForm,
   notFound,

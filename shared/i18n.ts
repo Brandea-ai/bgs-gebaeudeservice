@@ -87,6 +87,27 @@ const slugs = {
   '/premium/privatjet': { en: 'premium/private-jet', fr: 'premium/jet-prive', it: 'premium/jet-privato' },
   '/premium/yacht': { en: 'premium/yacht', fr: 'premium/yacht', it: 'premium/yacht' },
   '/einzugsgebiet': { en: 'service-area', fr: 'zone-d-intervention', it: 'zona-d-intervento' },
+  '/einzugsgebiet/luzern': {
+    en: 'service-area/lucerne',
+    fr: 'zone-d-intervention/lucerne',
+    it: 'zona-d-intervento/lucerna',
+  },
+  '/einzugsgebiet/zug': { en: 'service-area/zug', fr: 'zone-d-intervention/zoug', it: 'zona-d-intervento/zugo' },
+  '/einzugsgebiet/aargau': {
+    en: 'service-area/aargau',
+    fr: 'zone-d-intervention/argovie',
+    it: 'zona-d-intervento/argovia',
+  },
+  '/einzugsgebiet/nidwalden': {
+    en: 'service-area/nidwalden',
+    fr: 'zone-d-intervention/nidwald',
+    it: 'zona-d-intervento/nidvaldo',
+  },
+  '/einzugsgebiet/obwalden': {
+    en: 'service-area/obwalden',
+    fr: 'zone-d-intervention/obwald',
+    it: 'zona-d-intervento/obvaldo',
+  },
   '/blog': { en: 'guide', fr: 'guide', it: 'guida' },
   '/blog/richtige-reinigungsfirma-finden': {
     en: 'guide/choosing-a-cleaning-company',

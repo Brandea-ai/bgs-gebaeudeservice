@@ -1,4 +1,5 @@
 import { cantonList, company, premiumLabel } from '../../shared/company'
+import { kantone } from './kantone'
 
 /**
  * Name, Titel und Beschreibung je Seite (M16). Der Name (label) steht in
@@ -92,6 +93,12 @@ export const pages = {
     title: 'Einzugsgebiet: Zentralschweiz, Aargau',
     description: `Von ${company.address.city} aus in den Kantonen ${region}, auch an den Seeufern und in Engelberg. Alle Leistungen im ganzen Gebiet.`,
   },
+  // Kantonsseiten (E80): Titel und Beschreibung stehen bei den Inhalten in kantone.ts
+  '/einzugsgebiet/luzern': { label: 'Kanton Luzern', ...kantone.luzern.seo },
+  '/einzugsgebiet/zug': { label: 'Kanton Zug', ...kantone.zug.seo },
+  '/einzugsgebiet/aargau': { label: 'Kanton Aargau', ...kantone.aargau.seo },
+  '/einzugsgebiet/nidwalden': { label: 'Kanton Nidwalden', ...kantone.nidwalden.seo },
+  '/einzugsgebiet/obwalden': { label: 'Kanton Obwalden', ...kantone.obwalden.seo },
   '/blog': {
     label: 'Ratgeber',
     title: 'Ratgeber Gebäudereinigung',

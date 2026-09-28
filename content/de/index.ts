@@ -1,6 +1,7 @@
 import { company, premiumLine, premiumTitleBrand } from '../../shared/company'
 import { answers, steps, ui } from './common'
 import { bilder } from './bilder'
+import { kantone, kantonUi, kantoneUebersicht } from './kantone'
 import { leistungen } from './leistungen'
 import { nav } from './navigation'
 import { premium } from './premium'
@@ -24,6 +25,7 @@ export const de = {
   premium,
   ratgeber: { overview: ratgeberUebersicht, articles: ratgeber },
   seiten: { proof, home, about, contact, area, servicesOverview, premiumOverview },
+  kantone: { seiten: kantone, uebersicht: kantoneUebersicht, ui: kantonUi },
   recht: { impressum, datenschutz },
   nav,
   bilder,

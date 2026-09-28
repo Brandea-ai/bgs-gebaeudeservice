@@ -1,5 +1,6 @@
 import type { Dictionary } from '../de'
 import { answers, premiumLine, premiumTitleBrand, registerIt, steps, ui } from './common'
+import { kantone, kantonUi, kantoneUebersicht } from './kantone'
 import { leistungen } from './leistungen'
 import { nav } from './navigation'
 import { premium } from './premium'
@@ -23,6 +24,7 @@ export const it: Dictionary = {
   premium,
   ratgeber: { overview: ratgeberUebersicht, articles: ratgeber },
   seiten: { proof, home, about, contact, area, servicesOverview, premiumOverview },
+  kantone: { seiten: kantone, uebersicht: kantoneUebersicht, ui: kantonUi },
   recht: { impressum, datenschutz },
   nav,
   bilder,
