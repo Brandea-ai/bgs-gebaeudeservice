@@ -1,0 +1,533 @@
+seite,sprache,begriff,volumen,min_monat,max_monat,spitzenmonat,wettbewerb,cpc_usd,aufgabe_id,abruf_utc
+/,en,cleaning company,140,90,390,2025-10,MEDIUM,6.38,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/,en,cleaning company switzerland,10,10,10,2026-08,MEDIUM,6.44,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/,en,cleaning services switzerland,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/,en,building cleaning,10,0,10,2026-08,HIGH,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/,en,cleaning and caretaking,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/premium,en,premium cleaning,30,20,50,2026-03,LOW,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/premium,en,luxury cleaning,10,0,10,2026-08,LOW,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/premium,en,luxury cleaning services,10,10,10,2026-08,LOW,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/premium,en,high end cleaning,10,0,10,2026-02,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/premium/luxusimmobilien,en,villa cleaning,10,0,10,2026-07,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/premium/luxusimmobilien,en,luxury home cleaning,10,0,10,2026-08,MEDIUM,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/premium/luxusimmobilien,en,housekeeping services,20,10,170,2025-10,HIGH,1.36,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/premium/luxusimmobilien,en,housekeeping zug,10,0,10,2026-08,MEDIUM,1.68,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/premium/luxusimmobilien,en,housekeeping lucerne,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/premium/privatjet,en,private jet cleaning,10,0,10,2026-07,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/premium/privatjet,en,aircraft cleaning,10,0,10,2026-08,LOW,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/premium/privatjet,en,aircraft interior cleaning,10,0,10,2026-07,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/premium/privatjet,en,jet cleaning,20,10,30,2026-04,MEDIUM,1.17,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/premium/yacht,en,yacht cleaning,10,0,10,2026-08,LOW,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/premium/yacht,en,boat cleaning,10,0,10,2026-08,HIGH,0.45,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/premium/yacht,en,boat cleaning lucerne,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/premium/yacht,en,yacht detailing,10,0,10,2026-08,LOW,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/premium/yacht,en,teak cleaning,10,0,10,2026-06,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen,en,cleaning services,1000,720,1600,2026-04,MEDIUM,4.1,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen,en,commercial cleaning services,30,10,110,2025-12,LOW,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen,en,building cleaning services,10,0,50,2025-12,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen,en,professional cleaning services,40,10,260,2025-10,MEDIUM,9.88,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/unterhaltsreinigung,en,maintenance cleaning,20,10,50,2026-02,LOW,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/unterhaltsreinigung,en,regular cleaning,10,0,10,2026-08,LOW,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/unterhaltsreinigung,en,commercial cleaning,20,10,70,2025-12,LOW,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/unterhaltsreinigung,en,contract cleaning,10,0,30,2025-12,LOW,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/unterhaltsreinigung,en,stairwell cleaning,10,0,10,2026-08,LOW,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/unterhaltsreinigung,en,communal area cleaning,10,0,10,2026-06,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/bueroreinigung,en,office cleaning,30,10,50,2025-12,MEDIUM,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/bueroreinigung,en,office cleaning services,40,10,110,2025-10,LOW,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/bueroreinigung,en,office cleaning zurich,10,0,10,2026-07,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/bueroreinigung,en,office cleaning lucerne,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/bueroreinigung,en,office cleaning zug,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/bueroreinigung,en,medical practice cleaning,0,0,0,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/bueroreinigung,en,surgery cleaning,10,0,10,2026-04,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/sonderreinigungen,en,deep cleaning,320,170,720,2025-09,HIGH,1.07,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/sonderreinigungen,en,deep clean,320,170,720,2025-09,HIGH,1.07,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/sonderreinigungen,en,specialist cleaning,10,0,10,2025-09,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/sonderreinigungen,en,special cleaning,10,0,20,2026-04,LOW,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/sonderreinigungen,en,one off deep clean,0,0,0,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/umzugsreinigung,en,end of tenancy cleaning,30,20,40,2026-08,MEDIUM,14.66,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/umzugsreinigung,en,move out cleaning,50,10,390,2025-10,HIGH,12.9,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/umzugsreinigung,en,moving out cleaning,50,10,390,2025-10,HIGH,12.9,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/umzugsreinigung,en,end of lease cleaning,10,10,20,2025-09,MEDIUM,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/umzugsreinigung,en,final cleaning,10,10,10,2026-08,LOW,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/umzugsreinigung,en,move out cleaning switzerland,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/umzugsreinigung,en,move out cleaning zurich,10,10,20,2025-09,HIGH,38.54,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/umzugsreinigung,en,move out cleaning lucerne,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/umzugsreinigung,en,end of tenancy cleaning lucerne,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/umzugsreinigung,en,cleaning with handover guarantee,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/umzugsreinigung,en,umzugsreinigung,720,480,1000,2026-03,HIGH,18.85,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/baureinigung,en,construction cleaning,10,10,40,2026-01,LOW,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/baureinigung,en,post construction cleaning,10,10,50,2025-11,LOW,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/baureinigung,en,builders cleaning,10,0,20,2026-02,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/baureinigung,en,after builders cleaning,10,0,20,2026-02,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/baureinigung,en,construction site cleaning,10,0,10,2026-03,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/fenster-und-fassadenreinigung,en,window cleaning,70,20,260,2025-10,HIGH,1.47,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/fenster-und-fassadenreinigung,en,window cleaners,70,20,260,2025-10,HIGH,1.47,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/fenster-und-fassadenreinigung,en,window cleaning services,30,10,210,2025-10,LOW,3.82,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/fenster-und-fassadenreinigung,en,window cleaning lucerne,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/fenster-und-fassadenreinigung,en,window cleaning zug,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/fenster-und-fassadenreinigung,en,facade cleaning,90,50,170,2026-03,MEDIUM,2.53,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/fenster-und-fassadenreinigung,en,window and facade cleaning,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/industrie-und-hallenreinigung,en,industrial cleaning,20,10,70,2025-11,HIGH,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/industrie-und-hallenreinigung,en,warehouse cleaning,10,0,30,2025-11,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/industrie-und-hallenreinigung,en,factory cleaning,10,0,10,2026-08,MEDIUM,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/industrie-und-hallenreinigung,en,industrial cleaning services,20,0,110,2025-12,HIGH,3.08,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/industrie-und-hallenreinigung,en,machine cleaning,10,10,20,2026-04,HIGH,0.19,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/hauswartung,en,caretaker,170,170,210,2026-03,LOW,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/hauswartung,en,caretaking services,10,0,10,2026-06,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/hauswartung,en,caretaker services,10,0,10,2026-06,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/hauswartung,en,building caretaker,10,0,10,2026-08,LOW,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/hauswartung,en,janitorial services,30,10,50,2025-11,LOW,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/hauswartung,en,janitor,1600,880,2900,2026-08,LOW,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/hauswartung,en,property maintenance,20,10,110,2026-02,LOW,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/hauswartung,en,building maintenance,10,10,10,2026-08,LOW,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/hauswartung,en,caretaker lucerne,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/hauswartung,en,caretaker zug,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/hauswartung,en,hauswart,2400,1600,2900,2026-01,LOW,3.99,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/hauswartung,en,hauswartung,2400,1600,2900,2026-01,LOW,3.99,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/aussen-und-gruenflaechenpflege,en,grounds maintenance,10,0,110,2026-03,LOW,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/aussen-und-gruenflaechenpflege,en,garden maintenance,20,10,40,2025-12,LOW,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/aussen-und-gruenflaechenpflege,en,green space maintenance,10,0,10,2026-07,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/aussen-und-gruenflaechenpflege,en,landscaping,140,90,170,2026-05,LOW,2.35,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/aussen-und-gruenflaechenpflege,en,gardening services,10,10,20,2026-01,LOW,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/aussen-und-gruenflaechenpflege,en,garden maintenance lucerne,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/facility-services,en,facility services,720,590,1000,2025-09,MEDIUM,3.91,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/facility-services,en,facility management,2400,1600,3600,2025-09,MEDIUM,3.54,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/facility-services,en,facility management services,20,10,40,2026-03,HIGH,5.41,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/facility-services,en,integrated facility management,10,10,50,2026-02,LOW,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/leistungen/facility-services,en,facility management switzerland,10,0,10,2026-07,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/einzugsgebiet,en,cleaning company central switzerland,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/einzugsgebiet,en,cleaning services central switzerland,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/einzugsgebiet/luzern,en,cleaning company lucerne,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/einzugsgebiet/luzern,en,cleaning company luzern,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/einzugsgebiet/luzern,en,cleaning services lucerne,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/einzugsgebiet/luzern,en,cleaning lucerne,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/einzugsgebiet/luzern,en,cleaners lucerne,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/einzugsgebiet/zug,en,cleaning company zug,10,10,10,2026-08,HIGH,11.17,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/einzugsgebiet/zug,en,cleaning services zug,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/einzugsgebiet/zug,en,cleaning zug,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/einzugsgebiet/zug,en,cleaners zug,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/einzugsgebiet/zug,en,commercial cleaning zug,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/einzugsgebiet/aargau,en,cleaning company aargau,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/einzugsgebiet/aargau,en,cleaning company aarau,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/einzugsgebiet/aargau,en,cleaning company baden,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/einzugsgebiet/aargau,en,cleaning services aargau,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/einzugsgebiet/nidwalden,en,cleaning company nidwalden,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/einzugsgebiet/nidwalden,en,cleaning company stans,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/einzugsgebiet/nidwalden,en,cleaning services nidwalden,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/einzugsgebiet/obwalden,en,cleaning company obwalden,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/einzugsgebiet/obwalden,en,cleaning company engelberg,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/einzugsgebiet/obwalden,en,cleaning engelberg,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/einzugsgebiet/obwalden,en,cleaning company sarnen,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/blog,en,cleaning guide,10,0,10,2026-08,LOW,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/blog,en,building cleaning guide,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/blog,en,cleaning tips,10,10,20,2026-03,HIGH,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/blog/richtige-reinigungsfirma-finden,en,how to choose a cleaning company,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/blog/richtige-reinigungsfirma-finden,en,choosing a cleaning company,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/blog/richtige-reinigungsfirma-finden,en,find a cleaning company,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/blog/richtige-reinigungsfirma-finden,en,hire a cleaning company,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/blog/reinigungskosten-schweiz,en,office cleaning cost,0,0,0,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/blog/reinigungskosten-schweiz,en,office cleaning prices,0,0,0,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/blog/reinigungskosten-schweiz,en,commercial cleaning cost,0,0,0,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/blog/reinigungskosten-schweiz,en,cleaning prices switzerland,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/blog/reinigungskosten-schweiz,en,cleaning company prices,10,0,10,2026-08,HIGH,1.52,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/blog/reinigungskosten-schweiz,en,cleaning costs switzerland,,,,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/blog/reinigungskosten-schweiz,en,how much does office cleaning cost,0,0,0,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/kontakt,en,cleaning quote,10,10,10,2026-08,LOW,42.05,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/kontakt,en,free cleaning quote,0,0,0,,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/kontakt,en,cleaning company quote,10,0,10,2026-03,,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/impressum,en,legal notice,20,10,30,2025-09,LOW,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/impressum,en,imprint,320,260,590,2026-01,LOW,1.42,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+_kontrolle,en,entreprise de nettoyage,1600,1000,2400,2025-09,HIGH,3.44,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+_kontrolle,en,impresa di pulizie,170,90,260,2025-10,MEDIUM,3.26,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/datenschutz,en,privacy policy,210,140,320,2025-09,LOW,5.63,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/datenschutz,en,privacy notice,40,10,170,2025-09,LOW,,09281035-1996-0367-0000-931b0f917071,2026-09-28 10:35 UTC
+/,fr,entreprise de nettoyage,1600,1000,2400,2025-09,HIGH,3.44,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/,fr,société de nettoyage,110,70,260,2025-09,MEDIUM,5.36,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/,fr,entreprise nettoyage,480,320,880,2025-09,MEDIUM,3.22,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/,fr,entreprise de nettoyage suisse,50,10,140,2025-09,MEDIUM,0.9,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/,fr,nettoyage et conciergerie,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/,fr,nettoyage de bâtiments,10,0,10,2026-05,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/premium,fr,nettoyage premium,10,0,10,2026-08,LOW,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/premium,fr,nettoyage de luxe,10,0,10,2026-06,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/premium,fr,nettoyage haut de gamme,10,0,10,2026-08,LOW,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/premium,fr,ménage de luxe,10,0,10,2025-09,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/premium/luxusimmobilien,fr,nettoyage villa,10,0,10,2026-08,HIGH,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/premium/luxusimmobilien,fr,nettoyage de villas,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/premium/luxusimmobilien,fr,entretien villa,10,0,10,2026-03,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/premium/luxusimmobilien,fr,nettoyage maison de luxe,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/premium/luxusimmobilien,fr,gouvernante de maison,30,10,70,2025-11,LOW,1.96,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/premium/privatjet,fr,nettoyage jet privé,10,0,10,2026-08,LOW,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/premium/privatjet,fr,nettoyage avion,10,0,10,2026-08,LOW,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/premium/privatjet,fr,nettoyage d'avion,10,0,10,2026-07,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/premium/privatjet,fr,nettoyage intérieur avion,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/premium/yacht,fr,nettoyage bateau,10,10,30,2026-08,HIGH,2.86,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/premium/yacht,fr,nettoyage de bateau,10,0,10,2026-08,LOW,0.86,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/premium/yacht,fr,nettoyage yacht,10,0,10,2025-11,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/premium/yacht,fr,nettoyage teck,10,0,10,2026-08,HIGH,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/premium/yacht,fr,nettoyage bateau lucerne,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen,fr,services de nettoyage,140,70,480,2025-09,MEDIUM,4.01,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen,fr,prestations de nettoyage,10,0,20,2026-08,LOW,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen,fr,nettoyage professionnel,70,40,140,2025-09,HIGH,2.21,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen,fr,service de nettoyage,140,70,480,2025-09,MEDIUM,4.01,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/unterhaltsreinigung,fr,nettoyage d'entretien,10,0,10,2026-08,HIGH,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/unterhaltsreinigung,fr,nettoyage entretien,40,10,260,2025-09,MEDIUM,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/unterhaltsreinigung,fr,nettoyage régulier,10,0,10,2026-07,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/unterhaltsreinigung,fr,nettoyage immeuble,10,10,10,2026-08,MEDIUM,1.73,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/unterhaltsreinigung,fr,nettoyage d'immeubles,10,0,10,2026-08,HIGH,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/unterhaltsreinigung,fr,nettoyage cage d'escalier,10,0,10,2026-08,MEDIUM,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/unterhaltsreinigung,fr,nettoyage escaliers immeuble,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/bueroreinigung,fr,nettoyage de bureaux,70,30,140,2026-08,LOW,2.14,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/bueroreinigung,fr,nettoyage bureau,110,30,260,2025-09,HIGH,3.05,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/bueroreinigung,fr,nettoyage bureaux lucerne,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/bueroreinigung,fr,nettoyage bureaux zoug,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/bueroreinigung,fr,nettoyage cabinet médical,10,0,10,2026-08,HIGH,5.71,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/bueroreinigung,fr,entreprise nettoyage bureaux,10,0,50,2025-09,LOW,17.46,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/sonderreinigungen,fr,nettoyage en profondeur,10,10,10,2026-08,LOW,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/sonderreinigungen,fr,nettoyage à fond,20,10,70,2026-01,LOW,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/sonderreinigungen,fr,grand nettoyage,10,10,20,2026-04,LOW,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/sonderreinigungen,fr,nettoyage spécial,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/sonderreinigungen,fr,remise en état,30,20,40,2026-07,LOW,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/sonderreinigungen,fr,nettoyage de remise en état,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/umzugsreinigung,fr,nettoyage de fin de bail,320,170,720,2025-09,HIGH,11.48,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/umzugsreinigung,fr,nettoyage fin de bail,320,170,720,2025-09,HIGH,11.48,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/umzugsreinigung,fr,nettoyage de fin de bail avec garantie,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/umzugsreinigung,fr,nettoyage fin de bail avec garantie,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/umzugsreinigung,fr,nettoyage de déménagement,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/umzugsreinigung,fr,nettoyage déménagement,70,40,260,2025-09,HIGH,8.74,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/umzugsreinigung,fr,nettoyage avec garantie,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/umzugsreinigung,fr,nettoyage fin de bail lucerne,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/umzugsreinigung,fr,nettoyage fin de bail genève,70,40,140,2026-07,MEDIUM,15.42,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/umzugsreinigung,fr,nettoyage fin de bail lausanne,90,50,170,2026-04,HIGH,9.33,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/umzugsreinigung,fr,nettoyage état des lieux,40,10,50,2025-10,HIGH,10.47,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/baureinigung,fr,nettoyage de chantier,20,10,40,2026-03,MEDIUM,3.38,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/baureinigung,fr,nettoyage chantier,30,10,70,2025-09,MEDIUM,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/baureinigung,fr,nettoyage fin de chantier,70,50,110,2026-07,MEDIUM,5.53,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/baureinigung,fr,nettoyage de fin de chantier,70,50,110,2026-07,MEDIUM,5.53,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/baureinigung,fr,nettoyage après travaux,10,10,30,2026-08,LOW,1.75,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/fenster-und-fassadenreinigung,fr,nettoyage de vitres,140,70,320,2025-09,HIGH,0.77,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/fenster-und-fassadenreinigung,fr,nettoyage vitres,590,480,880,2026-04,HIGH,1.32,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/fenster-und-fassadenreinigung,fr,laveur de vitres,20,10,50,2026-08,HIGH,3.11,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/fenster-und-fassadenreinigung,fr,nettoyage de fenêtres,10,10,10,2026-08,HIGH,2.3,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/fenster-und-fassadenreinigung,fr,nettoyage fenêtres,70,20,110,2026-04,HIGH,2.97,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/fenster-und-fassadenreinigung,fr,nettoyage façade,70,30,170,2025-09,HIGH,6,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/fenster-und-fassadenreinigung,fr,nettoyage de façades,20,10,40,2026-02,HIGH,9.64,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/fenster-und-fassadenreinigung,fr,nettoyage vitres et façades,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/industrie-und-hallenreinigung,fr,nettoyage industriel,30,20,50,2025-11,MEDIUM,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/industrie-und-hallenreinigung,fr,nettoyage de halles,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/industrie-und-hallenreinigung,fr,nettoyage entrepôt,0,0,0,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/industrie-und-hallenreinigung,fr,nettoyage usine,10,0,10,2026-07,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/industrie-und-hallenreinigung,fr,nettoyage de machines,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/hauswartung,fr,conciergerie,880,720,1000,2026-04,HIGH,1.02,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/hauswartung,fr,conciergerie immeuble,20,10,30,2026-03,LOW,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/hauswartung,fr,concierge immeuble,20,10,30,2026-03,LOW,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/hauswartung,fr,service de conciergerie,40,20,140,2025-09,LOW,3.18,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/hauswartung,fr,entreprise de conciergerie,30,10,50,2026-08,MEDIUM,2.52,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/hauswartung,fr,conciergerie lucerne,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/hauswartung,fr,conciergerie zoug,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/hauswartung,fr,concierge,2400,1600,4400,2025-09,LOW,2.21,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/hauswartung,fr,cahier des charges concierge,10,10,10,2026-08,LOW,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/aussen-und-gruenflaechenpflege,fr,entretien des espaces verts,20,10,50,2026-07,LOW,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/aussen-und-gruenflaechenpflege,fr,entretien espaces verts,20,10,50,2026-07,LOW,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/aussen-und-gruenflaechenpflege,fr,entretien jardin,50,10,140,2025-09,HIGH,4.79,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/aussen-und-gruenflaechenpflege,fr,entretien des extérieurs,10,0,10,2026-08,LOW,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/aussen-und-gruenflaechenpflege,fr,entretien des abords,0,0,0,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/aussen-und-gruenflaechenpflege,fr,jardinier,390,260,720,2026-05,LOW,3.29,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/facility-services,fr,facility services,720,590,1000,2025-09,MEDIUM,3.91,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/facility-services,fr,facility management,2400,1600,3600,2025-09,MEDIUM,3.54,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/facility-services,fr,gestion technique de bâtiments,0,0,0,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/facility-services,fr,services aux immeubles,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/leistungen/facility-services,fr,entretien d'immeubles,10,10,10,2026-08,LOW,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/einzugsgebiet,fr,entreprise de nettoyage suisse centrale,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/einzugsgebiet,fr,nettoyage suisse centrale,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/einzugsgebiet/luzern,fr,entreprise de nettoyage lucerne,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/einzugsgebiet/luzern,fr,société de nettoyage lucerne,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/einzugsgebiet/luzern,fr,nettoyage lucerne,10,0,10,2026-04,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/einzugsgebiet/luzern,fr,entreprise de nettoyage luzern,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/einzugsgebiet/zug,fr,entreprise de nettoyage zoug,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/einzugsgebiet/zug,fr,nettoyage zoug,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/einzugsgebiet/zug,fr,société de nettoyage zoug,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/einzugsgebiet/aargau,fr,entreprise de nettoyage argovie,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/einzugsgebiet/aargau,fr,entreprise de nettoyage aarau,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/einzugsgebiet/aargau,fr,nettoyage argovie,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/einzugsgebiet/aargau,fr,entreprise de nettoyage baden,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/einzugsgebiet/nidwalden,fr,entreprise de nettoyage nidwald,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/einzugsgebiet/nidwalden,fr,entreprise de nettoyage stans,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/einzugsgebiet/nidwalden,fr,nettoyage nidwald,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/einzugsgebiet/obwalden,fr,entreprise de nettoyage obwald,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/einzugsgebiet/obwalden,fr,nettoyage engelberg,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/einzugsgebiet/obwalden,fr,entreprise de nettoyage sarnen,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/einzugsgebiet/obwalden,fr,conciergerie engelberg,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/blog,fr,guide nettoyage,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/blog,fr,conseils nettoyage,10,0,10,2026-02,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/blog,fr,guide du nettoyage,10,0,10,2026-08,LOW,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/blog/richtige-reinigungsfirma-finden,fr,comment choisir une entreprise de nettoyage,0,0,0,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/blog/richtige-reinigungsfirma-finden,fr,choisir une entreprise de nettoyage,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/blog/richtige-reinigungsfirma-finden,fr,choisir entreprise de nettoyage,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/blog/richtige-reinigungsfirma-finden,fr,trouver une entreprise de nettoyage,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/blog/reinigungskosten-schweiz,fr,prix nettoyage bureau,10,0,10,2026-07,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/blog/reinigungskosten-schweiz,fr,tarif nettoyage bureaux,10,0,10,2026-04,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/blog/reinigungskosten-schweiz,fr,prix nettoyage entretien,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/blog/reinigungskosten-schweiz,fr,prix entreprise de nettoyage,10,10,20,2026-07,MEDIUM,1.77,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/blog/reinigungskosten-schweiz,fr,tarif entreprise de nettoyage,10,10,10,2026-08,MEDIUM,1.45,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/blog/reinigungskosten-schweiz,fr,prix nettoyage immeuble,10,0,10,2026-02,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/blog/reinigungskosten-schweiz,fr,coût nettoyage bureau,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/blog/reinigungskosten-schweiz,fr,prix nettoyage m2,10,0,10,2026-08,LOW,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/blog/reinigungskosten-schweiz,fr,prix nettoyage suisse,,,,,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/kontakt,fr,devis nettoyage,20,10,50,2025-09,HIGH,5.31,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/kontakt,fr,devis gratuit nettoyage,10,0,10,2026-04,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/kontakt,fr,offre nettoyage,10,10,40,2026-03,LOW,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/kontakt,fr,devis entreprise de nettoyage,10,0,10,2026-07,,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/impressum,fr,mentions légales,30,10,40,2026-04,LOW,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/datenschutz,fr,politique de confidentialité,90,70,90,2026-08,LOW,8.02,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/datenschutz,fr,déclaration de protection des données,10,10,20,2026-01,LOW,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/datenschutz,fr,protection des données,170,110,260,2026-03,LOW,,09281033-1996-0367-0000-bfb88543723e,2026-09-28 10:33 UTC
+/,it,impresa di pulizie,170,90,260,2025-10,MEDIUM,3.26,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/,it,ditta di pulizie,140,90,170,2026-03,MEDIUM,3.45,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/,it,impresa pulizie,170,90,260,2025-10,MEDIUM,3.26,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/,it,ditta pulizie,140,90,170,2026-03,MEDIUM,3.45,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/,it,azienda di pulizie,10,10,20,2026-06,MEDIUM,3.09,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/,it,pulizie e custodia,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/premium,it,pulizie premium,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/premium,it,pulizie di lusso,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/premium,it,pulizie di alta gamma,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/premium/luxusimmobilien,it,pulizia ville,0,0,0,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/premium/luxusimmobilien,it,pulizia villa,0,0,0,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/premium/luxusimmobilien,it,pulizie ville di lusso,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/premium/luxusimmobilien,it,governante,30,20,40,2026-01,LOW,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/premium/privatjet,it,pulizia jet privato,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/premium/privatjet,it,pulizia aerei,10,0,10,2026-03,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/premium/privatjet,it,pulizia aereo,10,0,10,2026-03,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/premium/privatjet,it,pulizia interni aereo,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/premium/yacht,it,pulizia barche,10,0,10,2026-07,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/premium/yacht,it,pulizia barca,10,0,10,2026-07,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/premium/yacht,it,pulizia yacht,0,0,0,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/premium/yacht,it,pulizia teak,10,0,10,2026-05,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen,it,servizi di pulizia,10,10,30,2026-01,MEDIUM,1.87,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen,it,pulizie professionali,10,0,10,2026-08,HIGH,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen,it,pulizia edifici,10,0,10,2026-02,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen,it,servizio di pulizie,10,0,10,2026-07,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/unterhaltsreinigung,it,pulizia di manutenzione,10,0,10,2026-08,MEDIUM,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/unterhaltsreinigung,it,pulizie ordinarie,10,0,10,2026-07,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/unterhaltsreinigung,it,pulizie regolari,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/unterhaltsreinigung,it,pulizia condomini,10,0,10,2026-08,MEDIUM,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/unterhaltsreinigung,it,pulizia scale condominio,10,10,10,2026-08,LOW,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/unterhaltsreinigung,it,pulizia stabili,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/unterhaltsreinigung,it,pulizie stabili,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/bueroreinigung,it,pulizia uffici,10,10,20,2026-02,MEDIUM,2.31,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/bueroreinigung,it,pulizie uffici,10,10,20,2026-02,MEDIUM,2.31,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/bueroreinigung,it,pulizie uffici lucerna,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/bueroreinigung,it,pulizia studi medici,10,0,10,2026-05,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/bueroreinigung,it,impresa pulizie uffici,0,0,0,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/sonderreinigungen,it,pulizia a fondo,10,0,10,2026-05,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/sonderreinigungen,it,pulizie a fondo,10,0,10,2026-05,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/sonderreinigungen,it,pulizie straordinarie,10,0,10,2026-05,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/sonderreinigungen,it,pulizie speciali,10,0,10,2026-08,LOW,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/sonderreinigungen,it,pulizia profonda,10,0,10,2026-07,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/umzugsreinigung,it,pulizia di fine locazione,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/umzugsreinigung,it,pulizia fine locazione,10,0,10,2026-08,HIGH,4.09,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/umzugsreinigung,it,pulizie fine locazione,10,0,10,2026-08,HIGH,4.09,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/umzugsreinigung,it,pulizia trasloco,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/umzugsreinigung,it,pulizie trasloco,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/umzugsreinigung,it,pulizia con garanzia,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/umzugsreinigung,it,pulizie con garanzia,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/umzugsreinigung,it,pulizia finale,10,0,10,2026-08,LOW,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/umzugsreinigung,it,pulizia riconsegna appartamento,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/umzugsreinigung,it,pulizia trasloco lugano,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/umzugsreinigung,it,pulizia fine locazione lucerna,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/baureinigung,it,pulizia di cantiere,10,0,10,2026-07,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/baureinigung,it,pulizia cantiere,10,0,10,2026-07,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/baureinigung,it,pulizia fine cantiere,10,10,20,2026-03,HIGH,1.9,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/baureinigung,it,pulizie fine cantiere,10,10,20,2026-03,HIGH,1.9,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/baureinigung,it,pulizie post cantiere,10,10,20,2026-08,LOW,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/baureinigung,it,pulizia fine lavori,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/fenster-und-fassadenreinigung,it,pulizia vetri,20,10,30,2026-05,HIGH,0.45,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/fenster-und-fassadenreinigung,it,pulizia finestre,10,10,10,2026-08,HIGH,1.7,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/fenster-und-fassadenreinigung,it,lavaggio vetri,10,0,10,2026-07,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/fenster-und-fassadenreinigung,it,pulizia vetrate,10,0,10,2026-07,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/fenster-und-fassadenreinigung,it,pulizia facciate,10,10,40,2025-09,HIGH,4.24,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/fenster-und-fassadenreinigung,it,pulizia vetri e facciate,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/industrie-und-hallenreinigung,it,pulizie industriali,10,0,20,2026-08,LOW,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/industrie-und-hallenreinigung,it,pulizia industriale,10,0,20,2026-08,LOW,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/industrie-und-hallenreinigung,it,pulizia capannoni,10,0,10,2026-02,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/industrie-und-hallenreinigung,it,pulizia magazzini,10,0,10,2026-06,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/industrie-und-hallenreinigung,it,pulizia macchinari,10,0,10,2026-01,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/hauswartung,it,custodia stabili,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/hauswartung,it,custodia di stabili,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/hauswartung,it,custode,170,90,880,2026-06,LOW,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/hauswartung,it,custode stabile,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/hauswartung,it,custode condominio,10,0,10,2026-08,LOW,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/hauswartung,it,servizio di custodia,10,0,10,2026-08,LOW,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/hauswartung,it,portineria,20,10,20,2026-08,LOW,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/hauswartung,it,manutenzione stabili,10,0,30,2026-02,LOW,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/hauswartung,it,custode lucerna,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/aussen-und-gruenflaechenpflege,it,manutenzione aree verdi,10,0,10,2026-04,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/aussen-und-gruenflaechenpflege,it,manutenzione del verde,10,0,30,2026-04,LOW,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/aussen-und-gruenflaechenpflege,it,manutenzione giardini,40,10,110,2026-04,LOW,1.11,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/aussen-und-gruenflaechenpflege,it,cura del verde,10,0,20,2026-05,LOW,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/aussen-und-gruenflaechenpflege,it,giardiniere,320,210,480,2026-04,LOW,3.74,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/aussen-und-gruenflaechenpflege,it,manutenzione aree esterne,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/facility-services,it,facility services,720,590,1000,2025-09,MEDIUM,3.91,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/facility-services,it,facility management,2400,1600,3600,2025-09,MEDIUM,3.54,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/facility-services,it,gestione immobili,40,20,70,2026-08,LOW,0.02,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/leistungen/facility-services,it,servizi di facility management,10,0,10,2026-06,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/einzugsgebiet,it,impresa di pulizie svizzera centrale,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/einzugsgebiet,it,pulizie svizzera centrale,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/einzugsgebiet/luzern,it,impresa di pulizie lucerna,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/einzugsgebiet/luzern,it,ditta di pulizie lucerna,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/einzugsgebiet/luzern,it,pulizie lucerna,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/einzugsgebiet/luzern,it,impresa di pulizie luzern,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/einzugsgebiet/zug,it,impresa di pulizie zugo,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/einzugsgebiet/zug,it,pulizie zugo,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/einzugsgebiet/zug,it,ditta di pulizie zugo,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/einzugsgebiet/zug,it,impresa di pulizie zug,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/einzugsgebiet/aargau,it,impresa di pulizie argovia,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/einzugsgebiet/aargau,it,impresa di pulizie aarau,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/einzugsgebiet/aargau,it,pulizie argovia,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/einzugsgebiet/nidwalden,it,impresa di pulizie nidvaldo,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/einzugsgebiet/nidwalden,it,impresa di pulizie stans,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/einzugsgebiet/nidwalden,it,pulizie nidvaldo,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/einzugsgebiet/obwalden,it,impresa di pulizie obvaldo,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/einzugsgebiet/obwalden,it,pulizie engelberg,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/einzugsgebiet/obwalden,it,impresa di pulizie sarnen,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/blog,it,guida pulizie,0,0,0,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/blog,it,consigli pulizie,10,0,10,2025-10,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/blog,it,guida alle pulizie,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/blog/richtige-reinigungsfirma-finden,it,come scegliere un'impresa di pulizie,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/blog/richtige-reinigungsfirma-finden,it,come scegliere impresa di pulizie,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/blog/richtige-reinigungsfirma-finden,it,scegliere impresa di pulizie,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/blog/richtige-reinigungsfirma-finden,it,trovare impresa di pulizie,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/blog/reinigungskosten-schweiz,it,prezzi pulizie uffici,10,0,10,2025-09,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/blog/reinigungskosten-schweiz,it,costo pulizie uffici,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/blog/reinigungskosten-schweiz,it,tariffe impresa di pulizie,10,0,10,2026-05,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/blog/reinigungskosten-schweiz,it,prezzi impresa di pulizie,10,0,10,2026-08,MEDIUM,1.46,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/blog/reinigungskosten-schweiz,it,costo pulizie condominio,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/blog/reinigungskosten-schweiz,it,prezzo pulizie al metro quadro,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/blog/reinigungskosten-schweiz,it,quanto costa un'impresa di pulizie,10,0,10,2026-04,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/blog/reinigungskosten-schweiz,it,prezzi pulizie svizzera,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/kontakt,it,preventivo pulizie,10,0,10,2026-06,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/kontakt,it,preventivo gratuito pulizie,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/kontakt,it,offerta pulizie,10,0,10,2026-07,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/kontakt,it,preventivo impresa di pulizie,10,0,10,2026-03,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/impressum,it,note legali,10,10,20,2026-06,LOW,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/datenschutz,it,informativa sulla privacy,10,10,20,2026-05,LOW,3.05,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/datenschutz,it,protezione dei dati,30,20,40,2026-03,LOW,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/datenschutz,it,dichiarazione sulla protezione dei dati,,,,,,,09281034-1996-0367-0000-0e5a1634a0f5,2026-09-28 10:34 UTC
+/,de,reinigungsfirma,2400,1900,2900,2025-10,MEDIUM,4.43,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/,de,reinigungsunternehmen,260,140,390,2026-03,MEDIUM,4.12,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/,de,gebäudereinigung,590,390,720,2026-05,MEDIUM,2.39,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/,de,reinigung und hauswartung,,,,,,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/premium,de,premium reinigung,10,0,10,2026-08,LOW,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/premium,de,luxus reinigung,20,10,40,2025-12,LOW,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/premium/luxusimmobilien,de,villenreinigung,,,,,,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/premium/luxusimmobilien,de,villa reinigung,10,0,10,2026-08,LOW,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/premium/luxusimmobilien,de,luxusimmobilien reinigung,,,,,,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/premium/luxusimmobilien,de,housekeeping luzern,20,10,20,2026-06,MEDIUM,1.33,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/premium/privatjet,de,privatjet reinigung,10,10,40,2025-09,LOW,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/premium/privatjet,de,flugzeugreinigung,20,10,40,2026-01,LOW,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/premium/privatjet,de,jet reinigung,10,10,30,2025-09,LOW,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/premium/privatjet,de,flugzeug innenreinigung,,,,,,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/premium/yacht,de,yachtreinigung,10,0,10,2026-05,,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/premium/yacht,de,yacht reinigung,,,,,,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/premium/yacht,de,bootsreinigung,30,10,50,2026-06,MEDIUM,1.45,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/premium/yacht,de,boot reinigen lassen,,,,,,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/premium/yacht,de,bootsreinigung luzern,,,,,,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen,de,reinigungsdienstleistungen,10,10,30,2026-06,LOW,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen,de,reinigungsservice,140,90,170,2026-06,MEDIUM,6.2,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/unterhaltsreinigung,de,unterhaltsreinigung,390,260,720,2025-09,MEDIUM,3.64,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/unterhaltsreinigung,de,treppenhausreinigung,110,50,210,2026-08,MEDIUM,3.12,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/unterhaltsreinigung,de,unterhaltsreinigung luzern,20,10,70,2025-09,HIGH,1.68,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/unterhaltsreinigung,de,liegenschaftsreinigung,10,0,10,2026-08,HIGH,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/unterhaltsreinigung,de,treppenhausreinigung luzern,,,,,,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/bueroreinigung,de,büroreinigung,320,170,720,2026-03,MEDIUM,5.58,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/bueroreinigung,de,praxisreinigung,70,30,210,2026-03,LOW,2.4,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/bueroreinigung,de,büro und praxisreinigung,10,0,10,2026-08,LOW,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/bueroreinigung,de,büroreinigung luzern,40,20,50,2026-05,MEDIUM,2.63,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/bueroreinigung,de,büroreinigung zug,30,10,50,2026-07,LOW,4.55,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/bueroreinigung,de,arztpraxis reinigung,10,10,20,2026-04,HIGH,1.93,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/sonderreinigungen,de,grundreinigung,170,140,260,2025-09,MEDIUM,7.63,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/sonderreinigungen,de,sonderreinigung,10,10,20,2026-06,LOW,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/sonderreinigungen,de,grund und sonderreinigung,10,0,10,2026-05,,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/sonderreinigungen,de,sonderreinigungen,10,0,10,2026-07,,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/sonderreinigungen,de,grundreinigung luzern,,,,,,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/sonderreinigungen,de,grundreinigung büro,10,0,10,2026-08,LOW,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/umzugsreinigung,de,umzugsreinigung,720,480,1000,2026-03,HIGH,18.85,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/umzugsreinigung,de,endreinigung,390,260,720,2025-09,MEDIUM,19.95,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/umzugsreinigung,de,wohnungsendreinigung,110,70,260,2025-09,HIGH,18.35,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/umzugsreinigung,de,umzugsreinigung mit abnahmegarantie,170,110,320,2025-09,HIGH,14.13,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/umzugsreinigung,de,endreinigung mit abnahmegarantie,140,50,210,2026-06,HIGH,20.11,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/umzugsreinigung,de,umzugsreinigung luzern,140,40,320,2026-03,MEDIUM,11.77,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/umzugsreinigung,de,umzugsreinigung und endreinigung,,,,,,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/baureinigung,de,baureinigung,390,260,720,2025-09,MEDIUM,8.94,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/baureinigung,de,bauendreinigung,90,50,110,2025-10,HIGH,3.32,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/baureinigung,de,bau und bauendreinigung,,,,,,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/baureinigung,de,baureinigung luzern,30,20,50,2025-10,HIGH,1.47,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/baureinigung,de,bauschlussreinigung,10,0,10,2026-08,LOW,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/baureinigung,de,baufeinreinigung,10,0,20,2026-03,MEDIUM,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/fenster-und-fassadenreinigung,de,fensterreinigung,1600,1000,2400,2026-04,HIGH,2.13,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/fenster-und-fassadenreinigung,de,fassadenreinigung,1300,720,2400,2026-03,HIGH,8.41,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/fenster-und-fassadenreinigung,de,fenster und fassadenreinigung,10,0,10,2026-08,HIGH,7.6,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/fenster-und-fassadenreinigung,de,fensterreinigung luzern,70,50,140,2026-03,MEDIUM,5.28,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/fenster-und-fassadenreinigung,de,fassadenreinigung luzern,30,10,90,2026-05,HIGH,17.32,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/fenster-und-fassadenreinigung,de,glasreinigung,70,30,110,2026-02,HIGH,2.24,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/fenster-und-fassadenreinigung,de,fensterputzer,720,210,3600,2026-03,HIGH,1.45,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/fenster-und-fassadenreinigung,de,fenster reinigen lassen,140,50,320,2025-09,HIGH,4.6,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/industrie-und-hallenreinigung,de,industriereinigung,90,40,110,2026-05,HIGH,2.48,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/industrie-und-hallenreinigung,de,hallenreinigung,10,10,10,2026-08,LOW,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/industrie-und-hallenreinigung,de,industrie und hallenreinigung,,,,,,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/industrie-und-hallenreinigung,de,industriereinigung luzern,10,0,10,2026-02,,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/industrie-und-hallenreinigung,de,maschinenreinigung,20,10,40,2026-02,HIGH,0.21,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/industrie-und-hallenreinigung,de,produktionsreinigung,10,0,10,2026-03,,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/hauswartung,de,hauswartung,2400,1600,2900,2026-01,LOW,3.99,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/hauswartung,de,hauswart,2400,1600,2900,2026-01,LOW,3.99,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/hauswartung,de,hauswartung luzern,140,70,210,2026-02,MEDIUM,3.28,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/hauswartung,de,hauswartung zug,70,30,110,2026-05,HIGH,4.3,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/hauswartung,de,hauswartdienst,20,10,40,2026-03,LOW,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/hauswartung,de,hauswartungsfirma,110,20,210,2026-03,MEDIUM,2.43,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/aussen-und-gruenflaechenpflege,de,gartenpflege,390,210,1600,2025-09,MEDIUM,3.63,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/aussen-und-gruenflaechenpflege,de,gartenunterhalt,320,140,720,2025-09,LOW,4.11,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/aussen-und-gruenflaechenpflege,de,umgebungspflege,10,10,20,2025-10,LOW,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/aussen-und-gruenflaechenpflege,de,grünflächenpflege,20,10,90,2025-09,LOW,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/aussen-und-gruenflaechenpflege,de,aussen und grünflächenpflege,,,,,,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/aussen-und-gruenflaechenpflege,de,umgebungsarbeiten,140,90,390,2025-09,LOW,1.39,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/aussen-und-gruenflaechenpflege,de,umgebungsunterhalt,,,,,,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/aussen-und-gruenflaechenpflege,de,gartenpflege luzern,40,10,210,2025-09,MEDIUM,1.65,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/aussen-und-gruenflaechenpflege,de,gartenunterhalt luzern,10,0,10,2026-08,MEDIUM,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/aussen-und-gruenflaechenpflege,de,liegenschaftsunterhalt,90,70,110,2026-03,LOW,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/facility-services,de,facility services,720,590,1000,2025-09,MEDIUM,3.91,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/facility-services,de,facility management,2400,1600,3600,2025-09,MEDIUM,3.54,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/facility-services,de,facility management luzern,10,10,10,2026-08,HIGH,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/leistungen/facility-services,de,facility services luzern,,,,,,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/einzugsgebiet,de,reinigungsfirma zentralschweiz,10,10,40,2025-10,HIGH,1.28,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/einzugsgebiet/luzern,de,reinigungsfirma luzern,320,260,390,2025-11,HIGH,3.17,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/einzugsgebiet/luzern,de,reinigung luzern,390,260,480,2026-04,HIGH,4.56,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/einzugsgebiet/luzern,de,reinigungsunternehmen luzern,20,10,40,2026-02,HIGH,4.29,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/einzugsgebiet/zug,de,reinigungsfirma zug,170,110,210,2026-06,HIGH,3.4,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/einzugsgebiet/zug,de,reinigung zug,210,170,320,2026-05,HIGH,7.78,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/einzugsgebiet/aargau,de,reinigungsfirma aargau,260,140,480,2026-03,HIGH,3.72,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/einzugsgebiet/aargau,de,reinigungsfirma aarau,140,90,210,2026-03,HIGH,4.75,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/einzugsgebiet/aargau,de,reinigungsfirma baden,110,70,170,2026-03,HIGH,2.1,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/einzugsgebiet/nidwalden,de,reinigungsfirma nidwalden,30,10,40,2026-03,HIGH,4.41,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/einzugsgebiet/nidwalden,de,hauswartung nidwalden,,,,,,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/einzugsgebiet/nidwalden,de,reinigungsfirma stans,,,,,,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/einzugsgebiet/obwalden,de,reinigungsfirma obwalden,30,10,50,2026-08,MEDIUM,2.19,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/einzugsgebiet/obwalden,de,reinigungsfirma engelberg,,,,,,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/einzugsgebiet/obwalden,de,reinigungsfirma sarnen,,,,,,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/blog,de,ratgeber reinigung,,,,,,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/blog,de,ratgeber gebäudereinigung,,,,,,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/blog/richtige-reinigungsfirma-finden,de,reinigungsfirma finden,10,10,40,2025-09,HIGH,6.55,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/blog/richtige-reinigungsfirma-finden,de,reinigungsfirma wählen,,,,,,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/blog/richtige-reinigungsfirma-finden,de,gute reinigungsfirma finden,,,,,,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/blog/reinigungskosten-schweiz,de,unterhaltsreinigung kosten,10,0,10,2026-06,,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/blog/reinigungskosten-schweiz,de,büroreinigung kosten,10,0,10,2026-07,,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/blog/reinigungskosten-schweiz,de,büroreinigung preise,10,10,10,2026-08,MEDIUM,2.74,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/blog/reinigungskosten-schweiz,de,reinigungskosten,10,10,20,2026-04,LOW,2.11,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/blog/reinigungskosten-schweiz,de,reinigungsfirma kosten,10,10,20,2026-03,HIGH,3.45,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/blog/reinigungskosten-schweiz,de,reinigung kosten pro m2,,,,,,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/kontakt,de,offerte reinigung,40,20,140,2025-09,HIGH,10.89,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/kontakt,de,reinigungsofferte,50,10,210,2025-09,MEDIUM,12.19,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+/kontakt,de,reinigung offerte,70,20,320,2025-09,HIGH,7.89,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+_kontrolle,de,entreprise de nettoyage,1600,1000,2400,2025-09,HIGH,3.44,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+_kontrolle,de,cleaning company,140,90,390,2025-10,MEDIUM,6.38,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+_kontrolle,de,office cleaning,30,10,50,2025-12,MEDIUM,,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+_kontrolle,de,impresa di pulizie,170,90,260,2025-10,MEDIUM,3.26,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
+_kontrolle,de,conciergerie,880,720,1000,2026-04,HIGH,1.02,09281035-1996-0367-0000-30bcb90ffd0e,2026-09-28 10:35 UTC
