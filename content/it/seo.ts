@@ -106,17 +106,32 @@ export const pages = {
   '/blog': {
     label: 'Guida',
     title: 'Guida alla pulizia di edifici',
-    description: `Guida di ${company.brand}: come scegliere un’impresa di pulizie e da che cosa dipendono i costi della pulizia di manutenzione.`,
+    description: 'Guida per amministrazioni e aziende: capitolato della custodia, riconsegna dell’appartamento, pulizia a fondo dei pavimenti, scelta dell’impresa e costi.',
   },
   '/blog/richtige-reinigungsfirma-finden': {
     label: 'Scegliere l’impresa di pulizie',
     title: 'Come scegliere l’impresa di pulizie',
-    description: 'Entità del servizio, assicurazione, controllo della qualità, referenze e offerta: i punti da chiarire prima di incaricare un’impresa di pulizie.',
+    description: 'Incaricare un’impresa di pulizie: prestazioni, assicurazione, condizioni di lavoro, qualità e offerta. Con una griglia per confrontare le offerte.',
   },
   '/blog/reinigungskosten-schweiz': {
     label: 'Costi della pulizia di manutenzione',
     title: 'Pulizia di manutenzione: quanto costa?',
-    description: 'Da che cosa dipende il prezzo di una pulizia di manutenzione: superficie, cadenza, utilizzo e orari d’intervento. Con consigli per confrontare le offerte.',
+    description: 'Da che cosa dipendono i costi della pulizia di manutenzione: ore, cadenza, orari e salari. Con il calcolo dell’importo mensile.',
+  },
+  '/blog/pflichtenheft-hauswartung': {
+    label: 'Capitolato della custodia',
+    title: 'Capitolato per la custodia di stabili: modello',
+    description: 'Come redigere il capitolato della custodia: compiti, cadenza, limite di spesa e canali di segnalazione, con modello da stampare e note sulle spese accessorie.',
+  },
+  '/blog/wohnungsabgabe-reinigung': {
+    label: 'Riconsegna dell’appartamento',
+    title: 'Riconsegna dell’appartamento: verbale e pulizia',
+    description: 'Riconsegna dell’appartamento per amministrazioni: quanto deve essere pulito, come descrivere i difetti nel verbale e quando fare la pulizia finale.',
+  },
+  '/blog/bodenbelaege-grundreinigung': {
+    label: 'Pulizia a fondo dei pavimenti',
+    title: 'Pulizia a fondo: cosa sopporta ogni pavimento',
+    description: 'Pulizia a fondo secondo il pavimento: cosa sopportano pietra naturale, piastrelle, linoleum, vinile e parquet, come riconoscerli ed evitare errori.',
   },
   '/ueber-uns': {
     label: 'Chi siamo',

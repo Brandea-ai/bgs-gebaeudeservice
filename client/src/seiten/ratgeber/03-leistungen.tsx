@@ -6,10 +6,19 @@ import { detailImage, heroImage } from "../../../../shared/hero-images";
 import type { PagePath } from "../../../../shared/seo";
 import { ratgeberKontext, type RatgeberProps } from "./kontext";
 
-// Dieselben Leistungen wie im Satz unter dem Titel (ratgeber.overview.services)
-const paths: PagePath[] = ["/leistungen/unterhaltsreinigung", "/leistungen/hauswartung"];
+// Die Leistungen zu den Artikeln (E85): Hauswartung, Umzugsreinigung, Grundreinigung, Unterhaltsreinigung
+const paths: PagePath[] = [
+  "/leistungen/hauswartung",
+  "/leistungen/umzugsreinigung",
+  "/leistungen/sonderreinigungen",
+  "/leistungen/unterhaltsreinigung",
+];
 
-/** Direkt zu den Leistungen: Bildkarten mit dem Satz aus der Übersicht /leistungen */
+/**
+ * Direkt zu den Leistungen: Bildkarten mit dem Satz aus der Übersicht
+ * /leistungen. Bild 4:3 oben in der Bildspalte statt über die ganze
+ * Kartenhöhe, sizes nach der echten Deckfläche (visuell.md).
+ */
 export default function RatgeberLeistungen(props: RatgeberProps) {
   const { lang } = props;
   const { dict, t, href } = ratgeberKontext(props);
@@ -38,17 +47,17 @@ export default function RatgeberLeistungen(props: RatgeberProps) {
             return (
               <li
                 key={path}
-                className="card-lift group relative grid min-w-0 overflow-hidden rounded-[3px] border border-line bg-white sm:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]"
+                className="card-lift group relative grid min-w-0 items-start overflow-hidden rounded-[3px] border border-line bg-white sm:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]"
               >
                 <ImageSlot
                   image={detailImage[path] ?? heroImage[path]}
-                  sizes="(min-width: 768px) 20vw, 100vw"
+                  sizes="(min-width: 1024px) 24vw, (min-width: 640px) 40vw, 100vw"
                   lang={lang}
                   hover
                   decorative
-                  className="aspect-[16/10] w-full sm:aspect-auto sm:h-full"
+                  className="aspect-[4/3] w-full"
                 />
-                <div className="flex min-w-0 flex-col p-6 md:p-7">
+                <div className="flex h-full min-w-0 flex-col p-6 md:p-7">
                   <Glyph weight="duotone" className="size-7 text-signal" aria-hidden="true" />
                   <h3 className="t-h3 mt-4 text-ink">
                     <Link href={href(path)} className="transition-colors after:absolute after:inset-0 group-hover:text-signal">

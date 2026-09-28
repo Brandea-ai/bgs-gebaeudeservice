@@ -107,17 +107,32 @@ export const pages: Dictionary['pages'] = {
   '/blog': {
     label: 'Guides',
     title: 'Guides to building cleaning',
-    description: `Guides by ${company.brand}: what to look for when choosing a cleaning company and what the cost of maintenance cleaning depends on.`,
+    description: 'Guides for property managers and businesses: caretaking specifications, flat handovers, deep cleaning by floor type, choosing a cleaning company and costs.',
   },
   '/blog/richtige-reinigungsfirma-finden': {
     label: 'Choosing a cleaning company',
     title: 'How to choose a cleaning company',
-    description: 'Scope of services, insurance, quality control, references and quote: what to clarify before hiring a cleaning company, with the steps up to the contract.',
+    description: 'Hiring a cleaning company: scope, insurance, working conditions, quality control and quote to clarify first. With a printable comparison grid for quotes.',
   },
   '/blog/reinigungskosten-schweiz': {
     label: 'Cost of maintenance cleaning',
     title: 'What does maintenance cleaning cost?',
-    description: 'What the price of maintenance cleaning depends on: floor area, frequency, use and cleaning times. With tips on comparing quotes.',
+    description: 'What the cost of maintenance cleaning depends on: hours, frequency, cleaning times and wages. With the calculation behind the monthly amount.',
+  },
+  '/blog/pflichtenheft-hauswartung': {
+    label: 'Caretaking specification',
+    title: 'Caretaking specification: template and guide',
+    description: 'How to write a caretaking specification: tasks, frequency, cost limit and reporting lines, with a printable template and notes on service charges.',
+  },
+  '/blog/wohnungsabgabe-reinigung': {
+    label: 'Flat handover',
+    title: 'Flat handover: inspection and final cleaning',
+    description: 'Flat handover for property managers: how clean a flat must be, how to record defects precisely in the report and when the final cleaning comes in.',
+  },
+  '/blog/bodenbelaege-grundreinigung': {
+    label: 'Deep cleaning by floor type',
+    title: 'Deep cleaning: what each floor can take',
+    description: 'Deep cleaning by floor type: what natural stone, tiles, linoleum, vinyl and parquet can take, how to identify the floor and which mistakes to avoid.',
   },
   '/ueber-uns': {
     label: 'About us',

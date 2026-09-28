@@ -107,17 +107,32 @@ export const pages = {
   '/blog': {
     label: 'Ratgeber',
     title: 'Ratgeber Gebäudereinigung',
-    description: `Ratgeber von ${company.brand}: worauf Sie bei der Wahl einer Reinigungsfirma achten sollten und wovon die Kosten einer Unterhaltsreinigung abhängen.`,
+    description: 'Ratgeber für Verwaltungen und Unternehmen: Pflichtenheft Hauswartung, Wohnungsabgabe, Grundreinigung nach Bodenbelag, Wahl der Reinigungsfirma und Kosten.',
   },
   '/blog/richtige-reinigungsfirma-finden': {
     label: 'Reinigungsfirma finden',
     title: 'Die richtige Reinigungsfirma finden',
-    description: 'Reinigungsfirma beauftragen: Leistungsumfang, Versicherung, Qualitätskontrolle, Referenzen und Offerte vorher klären. Mit Ablauf bis zum Vertrag.',
+    description: 'Reinigungsfirma beauftragen: Leistungsumfang, Versicherung, Arbeitsbedingungen, Qualitätskontrolle und Offerte klären. Mit Vergleichsraster zum Ausdrucken.',
   },
   '/blog/reinigungskosten-schweiz': {
     label: 'Kosten der Unterhaltsreinigung',
     title: 'Was kostet eine Unterhaltsreinigung?',
-    description: 'Wovon der Preis einer Unterhaltsreinigung abhängt: Fläche, Rhythmus, Nutzung und Einsatzzeiten. Mit Hinweisen zum Vergleich von Offerten.',
+    description: 'Wovon die Kosten einer Unterhaltsreinigung abhängen: Stunden, Rhythmus, Einsatzzeiten und Löhne. Mit Rechenweg für den Monatsbetrag und Offertvergleich.',
+  },
+  '/blog/pflichtenheft-hauswartung': {
+    label: 'Pflichtenheft Hauswartung',
+    title: 'Pflichtenheft Hauswartung: Vorlage und Erklärung',
+    description: 'Pflichtenheft für die Hauswartung: Aufgaben, Rhythmus, Kostengrenze und Meldewege, mit Vorlage zum Ausdrucken und Hinweisen zur Nebenkostenabrechnung.',
+  },
+  '/blog/wohnungsabgabe-reinigung': {
+    label: 'Wohnungsabgabe',
+    title: 'Wohnungsabgabe: Abnahme, Protokoll und Reinigung',
+    description: 'Wohnungsabgabe für Verwaltungen: wie sauber die Wohnung sein muss, wie Sie Mängel im Protokoll genau festhalten und wann die Endreinigung kommt.',
+  },
+  '/blog/bodenbelaege-grundreinigung': {
+    label: 'Grundreinigung nach Bodenbelag',
+    title: 'Grundreinigung: Was welcher Boden verträgt',
+    description: 'Grundreinigung nach Bodenbelag: was Naturstein, Plättli, Linoleum, Vinyl und Parkett vertragen, wie Sie den Belag erkennen und Fehler vermeiden.',
   },
   '/ueber-uns': {
     label: 'Über uns',

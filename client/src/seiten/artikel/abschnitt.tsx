@@ -1,8 +1,10 @@
 import { Check, CheckCircle, Question } from "@phosphor-icons/react/dist/ssr";
 import RichText from "@/components/RichText";
-import type { ArticleSection } from "../../../../content/types";
+import { getDict } from "../../../../content";
+import type { RatgeberAbschnitt } from "../../../../content/de/ratgeber";
 import { company } from "../../../../shared/company";
 import type { Locale } from "../../../../shared/i18n";
+import Quellen from "./quellen";
 
 /** Überschrift eines Artikelabschnitts: eine Stufe ruhiger als t-h2, gut im Lesefluss */
 export const sectionTitle = "font-display text-[clamp(1.6rem,1.15rem+1.3vw,2.5rem)] font-bold leading-[1.12] tracking-[-0.02em] text-ink";
@@ -13,8 +15,10 @@ export const sectionTitle = "font-display text-[clamp(1.6rem,1.15rem+1.3vw,2.5re
  * im Titel nennen, sind dessen Antwort auf die neutrale Beratung und stehen
  * abgesetzt auf Stein (F06). Unterabschnitte als Tafeln, nummerierte Listen
  * als stehende Ablauflinie (F10), Fragenlisten mit Fragezeichen statt Häkchen.
+ * Quellen stehen klein am Ende (E85). Lesebreite 36em, rund 70 Zeichen (visuell.md).
  */
-export default function Abschnitt({ section, id, lang }: { section: ArticleSection; id: string; lang: Locale }) {
+export default function Abschnitt({ section, id, lang }: { section: RatgeberAbschnitt; id: string; lang: Locale }) {
+  const { ui } = getDict(lang);
   const answer = section.title.includes(company.brand);
   const questions = section.items?.every(item => item.trimEnd().endsWith("?")) ?? false;
   const odd = (section.subsections?.length ?? 0) % 2 === 1;
@@ -29,7 +33,7 @@ export default function Abschnitt({ section, id, lang }: { section: ArticleSecti
       </h2>
       <div className="mt-6 space-y-7 text-[1.0625rem] leading-[1.75] text-ink-700 md:text-[1.125rem]">
         {section.paragraphs && (
-          <div className="max-w-[68ch] space-y-5">
+          <div className="max-w-[36em] space-y-5">
             {section.paragraphs.map(paragraph => (
               <p key={paragraph}>
                 <RichText text={paragraph} lang={lang} />
@@ -69,7 +73,7 @@ export default function Abschnitt({ section, id, lang }: { section: ArticleSecti
 
         {section.items &&
           (section.ordered ? (
-            <ol className="max-w-[68ch]">
+            <ol className="max-w-[36em]">
               {section.items.map((item, index) => (
                 <li key={item} className="relative grid grid-cols-[2rem_minmax(0,1fr)] gap-4 pb-6 last:pb-0">
                   {/* Stehende Linie zwischen den Schritten, ohne Ziffern */}
@@ -84,7 +88,7 @@ export default function Abschnitt({ section, id, lang }: { section: ArticleSecti
               ))}
             </ol>
           ) : (
-            <ul className={`max-w-[68ch] ${questions ? "grid gap-3" : "border-t border-line"}`}>
+            <ul className={`max-w-[36em] ${questions ? "grid gap-3" : "border-t border-line"}`}>
               {section.items.map(item => (
                 <li
                   key={item}
@@ -108,9 +112,13 @@ export default function Abschnitt({ section, id, lang }: { section: ArticleSecti
           ))}
 
         {section.note && (
-          <p className="max-w-[68ch]">
+          <p className="max-w-[36em]">
             <RichText text={section.note} lang={lang} />
           </p>
+        )}
+
+        {section.sources && section.sources.length > 0 && (
+          <Quellen sources={section.sources} label={ui.tool.sources} external={ui.tool.external} />
         )}
       </div>
     </section>

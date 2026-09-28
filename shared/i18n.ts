@@ -124,6 +124,22 @@ const slugs = {
     fr: 'guide/cout-du-nettoyage-d-entretien',
     it: 'guida/costi-della-pulizia-di-manutenzione',
   },
+  // Ratgeber-Ausbau E85 (25-AUDIT/inhalt.md 10.1)
+  '/blog/pflichtenheft-hauswartung': {
+    en: 'guide/caretaking-specification',
+    fr: 'guide/cahier-des-charges-du-concierge',
+    it: 'guida/capitolato-custodia-di-stabili',
+  },
+  '/blog/wohnungsabgabe-reinigung': {
+    en: 'guide/flat-handover-and-final-cleaning',
+    fr: 'guide/etat-des-lieux-de-sortie-et-nettoyage',
+    it: 'guida/riconsegna-dell-appartamento-e-pulizia',
+  },
+  '/blog/bodenbelaege-grundreinigung': {
+    en: 'guide/deep-cleaning-by-floor-type',
+    fr: 'guide/nettoyage-en-profondeur-selon-le-sol',
+    it: 'guida/pulizia-a-fondo-secondo-il-pavimento',
+  },
   '/ueber-uns': { en: 'about-us', fr: 'a-propos', it: 'chi-siamo' },
   '/kontakt': { en: 'contact', fr: 'contact', it: 'contatto' },
   '/impressum': { en: 'legal-notice', fr: 'mentions-legales', it: 'note-legali' },

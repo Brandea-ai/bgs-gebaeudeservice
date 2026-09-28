@@ -106,17 +106,32 @@ export const pages = {
   '/blog': {
     label: 'Guide',
     title: 'Guide du nettoyage de bâtiments',
-    description: `Le guide de ${company.brand} : les points à vérifier pour choisir une entreprise de nettoyage et ce qui détermine le coût d’un nettoyage d’entretien.`,
+    description: 'Guide pour gérances et entreprises : cahier des charges du concierge, état des lieux de sortie, nettoyage en profondeur, choix du prestataire et coûts.',
   },
   '/blog/richtige-reinigungsfirma-finden': {
     label: 'Choisir une entreprise de nettoyage',
     title: 'Choisir une entreprise de nettoyage',
-    description: 'Prestations, assurance, contrôle de la qualité, références et devis : les points à clarifier avant de mandater une entreprise de nettoyage.',
+    description: 'Mandater une entreprise de nettoyage : prestations, assurance, conditions de travail, contrôle de la qualité et devis. Avec une grille de comparaison.',
   },
   '/blog/reinigungskosten-schweiz': {
     label: 'Coût du nettoyage d’entretien',
-    title: 'Que coûte un nettoyage d’entretien ?',
-    description: 'Ce qui détermine le prix d’un nettoyage d’entretien : surface, fréquence, utilisation et horaires. Avec des conseils pour comparer les devis.',
+    title: 'Que coûte un nettoyage d’entretien ?',
+    description: 'Ce qui détermine le coût d’un nettoyage d’entretien : heures, fréquence, horaires et salaires. Avec le calcul du montant mensuel et des conseils pour comparer.',
+  },
+  '/blog/pflichtenheft-hauswartung': {
+    label: 'Cahier des charges du concierge',
+    title: 'Cahier des charges du concierge : modèle',
+    description: 'Rédiger le cahier des charges de la conciergerie : tâches, fréquence, plafond et voies de signalement, avec un modèle à imprimer et les frais accessoires.',
+  },
+  '/blog/wohnungsabgabe-reinigung': {
+    label: 'État des lieux de sortie',
+    title: 'Fin de bail : état des lieux et nettoyage',
+    description: 'Fin de bail pour les gérances : quel niveau de propreté exiger, comment consigner les défauts avec précision et quand placer le nettoyage final.',
+  },
+  '/blog/bodenbelaege-grundreinigung': {
+    label: 'Nettoyage en profondeur selon le sol',
+    title: 'Nettoyage en profondeur selon le revêtement',
+    description: 'Nettoyage en profondeur selon le sol : ce que supportent pierre naturelle, carrelage, linoléum, vinyle et parquet, et comment éviter les erreurs courantes.',
   },
   '/ueber-uns': {
     label: 'À propos',
