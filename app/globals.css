@@ -109,6 +109,10 @@
   .hyphens {
     hyphens: auto;
     -webkit-hyphens: auto;
+    /* Nur lange Wörter trennen, mindestens 5 Zeichen vor und nach dem Strich (Audit E84) */
+    hyphenate-limit-chars: 12 5 5;
+    -webkit-hyphenate-limit-before: 5;
+    -webkit-hyphenate-limit-after: 5;
   }
   @media (max-width: 640px) {
     h1,

@@ -22,7 +22,7 @@ import ImageSlot from "./ImageSlot";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 const fieldClass =
-  "field block w-full rounded-[0.25rem] border border-input bg-white px-4 py-3 text-[1rem] text-ink placeholder:text-mute transition-colors hover:border-ink/40 focus:border-ink focus:outline-none focus:ring-2 focus:ring-ink/80 focus:ring-offset-1 aria-[invalid=true]:border-signal";
+  "field block w-full rounded-[3px] border border-input bg-white px-4 py-3 text-[1rem] text-ink placeholder:font-normal placeholder:text-[#6B717A] transition-colors hover:border-ink/40 focus:border-ink focus:outline-none focus:ring-2 focus:ring-ink/80 focus:ring-offset-1 aria-[invalid=true]:border-signal";
 const labelClass = "mb-2 block text-sm font-medium text-ink";
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -481,7 +481,7 @@ export function ContactSection({
                     type="submit"
                     aria-disabled={isSubmitting}
                     aria-busy={isSubmitting}
-                    className="press arrow-link inline-flex h-14 items-center justify-center gap-3 rounded-[0.25rem] bg-signal px-8 text-base font-medium text-white transition-colors hover:bg-signal-dark aria-disabled:opacity-70"
+                    className="press arrow-link inline-flex h-14 items-center justify-center gap-3 rounded-[3px] bg-signal px-8 text-base font-medium text-white transition-colors hover:bg-signal-dark aria-disabled:opacity-70"
                   >
                     {isSubmitting ? (
                       <>

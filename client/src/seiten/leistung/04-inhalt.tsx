@@ -21,9 +21,12 @@ export default function LeistungInhalt(props: LeistungProps) {
   const sections = content.sections ?? [];
   // Die ersten zwei Abschnitte stehen im Zickzack, sobald die Seite ein Detailbild hat
   const shown = detailImage[content.path] ? 2 : 0;
+  // Verzeichnis in der Reihenfolge der Seite: Zickzack-Abschnitte, Umfang, übrige Abschnitte
+  const entries = sections.map((section, index) => ({ id: sectionId(index), title: section.title }));
   const toc = [
-    ...sections.map((section, index) => ({ id: sectionId(index), title: section.title })),
+    ...entries.slice(0, shown),
     { id: "umfang", title: content.scope.title },
+    ...entries.slice(shown),
     { id: "ablauf", title: ui.steps },
     { id: "fragen", title: ui.faq },
     { id: "verwandt", title: ui.related },

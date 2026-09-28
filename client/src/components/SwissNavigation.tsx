@@ -73,6 +73,11 @@ export default function SwissNavigation({
         last = y;
         return;
       }
+      // Ausgleichs-Scroll (etwa FaqHover): Zustand der Kopfzeile beibehalten
+      if (root.dataset.navHold === "1") {
+        last = y;
+        return;
+      }
       const delta = y - last;
       if (Math.abs(delta) < 8) return;
       root.dataset.nav = delta > 0 ? "hidden" : "shown";

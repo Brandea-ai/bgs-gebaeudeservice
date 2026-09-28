@@ -45,7 +45,7 @@ export default function ConsentMap({ texts }: { texts: MapTexts }) {
         <button
           type="button"
           onClick={() => setLoaded(true)}
-          className="press h-12 rounded-[0.25rem] bg-signal px-6 font-medium text-white hover:bg-signal-dark"
+          className="press h-12 rounded-[3px] bg-signal px-6 font-medium text-white hover:bg-signal-dark"
         >
           {texts.load}
         </button>
@@ -53,7 +53,7 @@ export default function ConsentMap({ texts }: { texts: MapTexts }) {
           href={`https://www.google.com/maps/search/?api=1&query=${query}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="press inline-flex h-12 items-center gap-2 rounded-[0.25rem] border border-ink/20 bg-white px-6 font-medium text-ink hover:border-ink"
+          className="press inline-flex h-12 items-center gap-2 rounded-[3px] border border-ink/20 bg-white px-6 font-medium text-ink hover:border-ink"
         >
           {texts.open}
           <ArrowSquareOut weight="duotone" className="size-4" aria-hidden="true" />

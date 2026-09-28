@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
  * Kurzer Druckpunkt (.press), Übergänge nur auf Farben.
  */
 const buttonVariants = cva(
-  "press inline-flex items-center justify-center gap-2 rounded-[0.25rem] text-sm font-medium tracking-[0.005em] transition-colors duration-200 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 aria-invalid:border-destructive",
+  "press inline-flex items-center justify-center gap-2 rounded-[3px] text-sm font-medium tracking-[0.005em] transition-colors duration-200 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 aria-invalid:border-destructive",
   {
     variants: {
       variant: {
