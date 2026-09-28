@@ -46,7 +46,7 @@ export const pages = {
   '/leistungen/unterhaltsreinigung': {
     label: 'Pulizia di manutenzione',
     title: 'Pulizia di manutenzione, Lucerna e Zugo',
-    description: `Pulizia regolare di stabili, vani scale e superfici commerciali, con servizio di rifornimento. Nei Cantoni di ${region}.`,
+    description: 'Pulizia di manutenzione e delle scale per condomini, con rifornimento dei consumabili. A Lucerna, Zugo e dintorni. Offerta gratuita dopo il sopralluogo.',
   },
   '/leistungen/bueroreinigung': {
     label: 'Pulizia di uffici e studi',

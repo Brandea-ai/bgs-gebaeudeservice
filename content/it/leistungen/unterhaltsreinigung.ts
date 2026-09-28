@@ -1,136 +1,213 @@
 import type { ServicePageContent } from '../../types'
-import { answers } from '../common'
 
+// Stesse chiavi di content/de/leistungen/unterhaltsreinigung.ts. Fonti giuridiche lette il 28.09.2026
+// su fedlex.admin.ch (CO art. 257a, 257b, 269d, 270b; OLAL art. 4; CC art. 712h, 712m).
 export const unterhaltsreinigung: ServicePageContent = {
   path: '/leistungen/unterhaltsreinigung',
   area: 'leistungen',
   eyebrow: 'Pulizia regolare',
-  h1: 'Pulizia di manutenzione per stabili e superfici commerciali',
+  h1: 'Pulizia di manutenzione e pulizia delle scale per stabili',
   lead: [
-    'Vano scale, ingresso e locali comuni determinano l’impressione che uno stabile lascia, sia agli inquilini sia alla clientela e ai visitatori. Con una pulizia di manutenzione restano puliti, senza che Lei debba occuparsene personalmente.',
-    'Puliamo case plurifamiliari, stabili abitativi e commerciali e superfici commerciali con una cadenza fissa, che stabiliamo con Lei dopo il sopralluogo. Nel contempo riforniamo il materiale di consumo.',
+    'Tutti gli occupanti di uno stabile condividono vano scale, ascensore e lavanderia, e i reclami per lo sporco finiscono all’amministrazione. Puliamo queste parti comuni più volte alla settimana, secondo prestazioni concordate per iscritto.',
+    'Più in basso trova un modello di elenco delle prestazioni per confrontare le offerte, una panoramica su spese accessorie e proprietà per piani e un protocollo per il Suo giro di controllo.',
   ],
   facts: [
-    { label: 'Per', value: 'Case plurifamiliari, stabili abitativi e commerciali, superfici commerciali' },
-    { label: 'Cadenza', value: 'Più volte alla settimana, secondo superficie e utilizzo' },
-    { label: 'Compreso', value: 'Servizio di rifornimento del materiale di consumo' },
+    { label: 'Per', value: 'Case plurifamiliari, proprietà per piani, stabili a uso misto, superfici commerciali' },
+    { label: 'Cadenza', value: 'Più volte alla settimana, frequenza per zona' },
+    { label: 'Compreso', value: 'Rifornimento di sapone, carta e sacchi per i rifiuti' },
+    { label: 'Non compreso', value: 'Appartamenti, uffici, vetri esterni, pulizia a fondo' },
   ],
-  scope: {
-    title: 'Che cosa comprende',
-    intro: 'Che cosa puliamo e con quale frequenza lo stabiliamo dopo il sopralluogo. Di norma:',
-    items: [
-      'Vani scale, ingressi e ascensori',
-      'Pavimenti in tutti i locali concordati',
-      'Porte, corrimano, interruttori e vetri nella zona d’ingresso',
-      'Servizi igienici, cucine e locali pausa',
-      'Lavanderie, cantine e locali accessori',
-      'Svuotare i cestini e rifornire il materiale di consumo',
-    ],
-    notIncluded: [
-      'Uffici e studi: vedi [Pulizia di uffici e studi](/leistungen/bueroreinigung).',
-      'Pulizie a fondo una tantum: vedi [Pulizie a fondo e speciali](/leistungen/sonderreinigungen), pulizie finali prima della riconsegna alla pagina [Pulizia di fine locazione](/leistungen/umzugsreinigung).',
-      'Finestre all’esterno e facciate: vedi [Pulizia di vetri e facciate](/leistungen/fenster-und-fassadenreinigung).',
-      'Economie domestiche private. Per ville e residenze è a disposizione il nostro [settore Premium](/premium).',
-    ],
-  },
   sections: [
     {
-      title: 'Immobili e situazioni tipiche',
+      title: 'Quando affidare il vano scale a un’impresa',
       paragraphs: [
-        'Una pulizia di manutenzione conviene ovunque molte persone utilizzino le stesse superfici. Nelle case plurifamiliari si tratta di vano scale, ascensore e lavanderia. Negli stabili abitativi e commerciali si aggiungono ingressi frequentati dal pubblico, nelle superfici commerciali ricezione, corridoi e servizi igienici.',
-        'Spesso la richiesta arriva quando la soluzione adottata finora non regge più: la pulizia da parte degli inquilini non funziona, l’impresa precedente cessa l’attività o un’amministrazione immobiliare assume un nuovo stabile.',
+        'In molte case plurifamiliari sono gli inquilini a pulire il vano scale a turno, secondo un piano. Funziona finché tutti collaborano. Quando gli inquilini cambiano, i piani restano puliti in modo diverso o i reclami si accumulano, una pulizia regolare affidata a un’impresa è di solito la soluzione più tranquilla.',
+        'Altre situazioni tipiche: l’impresa o il custode attuale smette, un’amministrazione immobiliare assume uno stabile, oppure al pianterreno apre un negozio con clientela. Cambia allora anche la frequenza con cui ingresso e ascensore vanno puliti.',
+        'Chi sostiene i costi dopo il cambio dipende dal contratto di locazione e dalla legge.',
       ],
     },
     {
-      title: 'Servizio di rifornimento',
+      title: 'Rifornimento di sapone, carta e sacchi per i rifiuti',
       paragraphs: [
-        'Nell’ambito della pulizia di manutenzione riforniamo il materiale di consumo. Quali articoli ne fanno parte e chi li acquista lo stabiliamo nell’offerta.',
+        'Inquilini e clientela notano un dispenser di sapone vuoto prima di un pianerottolo impolverato. Per questo il rifornimento del materiale di consumo fa parte della pulizia di manutenzione.',
+        'Il materiale lo acquistiamo noi oppure Lei. L’offerta scritta stabilisce quali articoli ne fanno parte e chi li acquista.',
       ],
       items: [
-        'Carta igienica, asciugamani di carta e sapone',
-        'Sacchi per i rifiuti e panni per la pulizia',
-        'Altro materiale di consumo previo accordo',
-      ],
-    },
-    {
-      title: 'Pianificazione e cadenza',
-      paragraphs: [
-        'La frequenza delle pulizie dipende dall’utilizzo, non solo dalla superficie. Un ingresso molto frequentato dal pubblico richiede più cura di un corridoio in cantina percorso da poche persone. Conviene quindi una cadenza per ogni zona, anziché una sola per tutto l’edificio. La nostra proposta la discutiamo con Lei dopo il sopralluogo.',
-      ],
-      items: [
-        'Ingresso, ascensore e vano scale: più spesso, perché qui entra la maggior parte dello sporco dall’esterno',
-        'Servizi igienici e cucine: più spesso, per motivi di igiene',
-        'Cantine, solai e locali accessori: più di rado, secondo l’utilizzo',
-        'Vetri nella zona d’ingresso: secondo necessità, più spesso con la pioggia e in inverno',
-      ],
-    },
-    {
-      title: 'Come riconoscere una buona pulizia di manutenzione',
-      paragraphs: [
-        'Pulito significa più di un pavimento lavato. Durante un giro nello stabile questi punti Le mostrano rapidamente quanto accuratamente si pulisce:',
-      ],
-      items: [
-        'Corrimano, interruttori della luce e pulsanti dell’ascensore sono puliti, non solo i pavimenti',
-        'Negli angoli, sugli spigoli dei gradini e dietro le porte non resta sporco',
-        'I servizi igienici hanno un odore fresco, sapone e carta sono riforniti',
-        'Le porte a vetri all’ingresso sono senza aloni e impronte',
-        'L’entità concordata è fissata per iscritto, così entrambe le parti sanno che cosa vale',
-      ],
-    },
-    {
-      title: 'Collaborazione con amministrazione e proprietà',
-      paragraphs: [
-        'Prima dell’inizio chiariamo con Lei l’accesso allo stabile, ad esempio con chiave o badge, e dove possono stare attrezzi e prodotti per la pulizia. Un locale di pulizia chiudibile a chiave o un compartimento in cantina facilita il lavoro.',
-        'Per gli inquilini è utile un breve avviso che indichi in quali giorni si pulisce. Così in quei giorni scale e corridoi restano liberi da scarpe, biciclette e altri oggetti.',
+        'Carta igienica e asciugamani di carta per i servizi igienici',
+        'Sapone liquido per i dispenser ai lavabi',
+        'Sacchi per cestini e contenitori di raccolta',
+        'Altri articoli, se li indica nella Sua richiesta',
       ],
     },
   ],
-  steps: [
+  tools: [
     {
-      title: 'Accordo',
-      text: 'Con la Sua conferma è stabilito quali locali puliamo, con quale frequenza e che cosa riforniamo.',
+      kind: 'table',
+      id: 'leistungsverzeichnis',
+      title: 'Modello di elenco delle prestazioni per vano scale e parti comuni',
+      intro:
+        'Un elenco delle prestazioni rende le offerte confrontabili, perché ogni impresa calcola con le stesse zone, attività e frequenze. Il modello vale per uno stabile a uso misto con ascensore e un piano commerciale e non è un’offerta. Le superfici dei singoli inquilini vanno in posizioni separate, così si possono conteggiare a parte.',
+      columns: ['Zona', 'Attività', 'Frequenza (esempio)'],
+      rows: [
+        ['Ingresso e bussola', 'Lavare il pavimento, aspirare lo zerbino, pulire la porta a vetri su entrambi i lati', 'A ogni intervento'],
+        ['Scale, pianerottoli e corrimano', 'Scopare e lavare gradini, spigoli e angoli; passare un panno umido su corrimano, ringhiere e interruttori', 'A ogni intervento'],
+        ['Ascensore', 'Pulire pavimento, pareti, specchio, pulsantiera e porte della cabina', 'A ogni intervento'],
+        ['Cassette delle lettere, porte degli appartamenti e telai', 'Pulire, rimuovere le impronte', 'Ogni settimana'],
+        ['Lavanderia e stenditoio', 'Pulire il pavimento, il lavatoio e i ripiani', 'Ogni settimana'],
+        ['Corridoi di cantina e solaio, locale biciclette', 'Scopare, rimuovere le ragnatele', 'Ogni mese'],
+        ['Corridoi e WC comuni del piano commerciale', 'Pulire pavimenti, apparecchi sanitari e rubinetteria', 'A ogni intervento'],
+        ['Rifiuti e materiale di consumo', 'Svuotare i cestini, rifornire sapone, carta e sacchi', 'A ogni intervento, se concordato'],
+      ],
+      printable: true,
+      updated: '2026-09-28',
     },
     {
-      title: 'Inizio',
-      text: 'Iniziamo alla data concordata. Se l’utilizzo cambia, concordiamo con Lei un nuovo volume di lavoro o una nuova cadenza.',
+      kind: 'table',
+      id: 'nebenkosten',
+      title: 'Chi paga la pulizia: diritto di locazione e proprietà per piani',
+      intro:
+        'Se i costi della pulizia del vano scale restano alla proprietà o vengono ribaltati lo regolano il Codice delle obbligazioni, l’ordinanza concernente la locazione e l’affitto di locali d’abitazione o commerciali (OLAL) e il Codice civile. La panoramica riassume le disposizioni per i casi più frequenti.',
+      columns: ['Caso', 'Che cosa prevede la legge', 'Che cosa significa in pratica'],
+      rows: [
+        [
+          'Stabile locato, pulizia pattuita come spesa accessoria',
+          'Le spese accessorie sono la remunerazione per le prestazioni fornite dal locatore o da un terzo in relazione all’uso della cosa (art. 257a cpv. 1 CO). Si addebitano i costi effettivamente sostenuti (art. 257b cpv. 1 CO).',
+          'Idealmente la fattura indica la pulizia per ogni stabile. Gli inquilini possono visionare i documenti giustificativi (art. 257b cpv. 2 CO).',
+        ],
+        [
+          'Conteggio o forfait',
+          'Il conteggio delle spese accessorie va allestito e presentato almeno una volta all’anno. Un computo forfettario deve fondarsi sui valori medi di tre anni (art. 4 OLAL).',
+          'Archiviare i costi di pulizia per stabile e per anno, così in seguito si può giustificare anche un forfait.',
+        ],
+        [
+          'Stabile locato, pulizia non pattuita come spesa accessoria',
+          'Le spese accessorie sono a carico del conduttore soltanto se specialmente pattuito (art. 257a cpv. 2 CO).',
+          'I costi restano alla proprietà. Per ribaltarli serve una modifica del contratto (riga seguente).',
+        ],
+        [
+          'Finora puliscono gli inquilini, ora un’impresa',
+          'Se il locatore introduce unilateralmente nuove spese accessorie, valgono le regole dell’aumento della pigione: comunicazione motivata sul modulo approvato dal Cantone, almeno dieci giorni prima dell’inizio del termine di preavviso, e al più presto per la prossima scadenza di disdetta (art. 269d cpv. 1 e 3 CO). Gli inquilini possono contestare la modifica davanti all’autorità di conciliazione entro 30 giorni (art. 270b cpv. 2 CO).',
+          'Far coincidere il primo intervento della nuova impresa con la data delle nuove spese accessorie. Finché la modifica non è efficace, i costi restano alla proprietà.',
+        ],
+        [
+          'Proprietà per piani',
+          'I comproprietari contribuiscono alle spese per la manutenzione ordinaria delle parti comuni proporzionalmente al valore delle loro quote (art. 712h cpv. 1 e 2 CC). Se parti comuni non servono o servono minimamente a taluni comproprietari, se ne tiene conto nella ripartizione (art. 712h cpv. 3 CC).',
+          'L’assemblea approva ogni anno il preventivo, il resoconto e la ripartizione delle spese (art. 712m cpv. 1 n. 4 CC). I costi per zona mostrano ad esempio se l’ascensore va ripartito diversamente per il negozio al pianterreno.',
+        ],
+      ],
+      note: 'La panoramica riassume le disposizioni in modo semplificato e non sostituisce una consulenza legale. Verifichi il singolo caso in base al contratto di locazione e al regolamento, se necessario con uno specialista.',
+      sources: [
+        { label: 'Codice delle obbligazioni (CO), art. 257a, 257b, 269d e 270b', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/it#art_257_a' },
+        { label: 'Ordinanza concernente la locazione e l’affitto di locali d’abitazione o commerciali (OLAL), art. 4', href: 'https://www.fedlex.admin.ch/eli/cc/1990/835_835_835/it#art_4' },
+        { label: 'Codice civile svizzero (CC), art. 712h e 712m', href: 'https://www.fedlex.admin.ch/eli/cc/24/233_245_233/it#art_712_h' },
+      ],
+      printable: true,
+      updated: '2026-09-28',
+    },
+    {
+      kind: 'table',
+      id: 'rundgang',
+      title: 'Protocollo del giro di controllo dopo la pulizia',
+      intro:
+        'Percorra lo stabile il giorno della pulizia o il giorno dopo; più tardi giudica piuttosto l’uso che la pulizia. Se qualcosa non va, ci mandi il protocollo con la data e una foto.',
+      columns: ['Punto', 'In ordine', 'Osservazioni (piano, ora)'],
+      rows: [
+        ['Zerbino aspirato, niente sabbia nella bussola', '☐', ''],
+        ['Porta a vetri senza aloni e impronte', '☐', ''],
+        ['Spigoli, angoli e retro delle porte senza polvere', '☐', ''],
+        ['Corrimano, ringhiere e interruttori puliti', '☐', ''],
+        ['Ascensore: pavimento, specchio e pulsantiera puliti', '☐', ''],
+        ['Cassette delle lettere, porte e telai puliti', '☐', ''],
+        ['Lavanderia: pavimento asciutto, lavatoio pulito', '☐', ''],
+        ['Corridoi di cantina e solaio senza ragnatele', '☐', ''],
+        ['WC e lavabo puliti, il locale ha un odore fresco', '☐', ''],
+        ['Sapone, carta e sacchi riforniti, cestini svuotati', '☐', ''],
+        ['Giorni di pulizia affissi nel vano scale', '☐', ''],
+        ['Elenco delle prestazioni aggiornato disponibile', '☐', ''],
+      ],
+      printable: true,
+      updated: '2026-09-28',
+    },
+  ],
+  scope: {
+    title: 'Prestazioni comprese nella pulizia di manutenzione',
+    intro: 'Al centro c’è la pulizia del vano scale. Secondo lo stabile si aggiungono locali accessori e le parti comuni di un piano commerciale:',
+    items: [
+      'Pulizia del vano scale: gradini, pianerottoli, ringhiere e corrimano',
+      'Ingressi con bussola, zerbino e porta a vetri',
+      'Cabine dell’ascensore: pavimento, pareti, specchio e pulsantiera',
+      'Porte degli appartamenti e telai, interruttori, cassette delle lettere',
+      'Lavanderie, stenditoi, corridoi di cantina e solaio',
+      'Ricezione, corridoi, WC e cucine delle superfici commerciali',
+      'Pavimenti in tutti i locali concordati',
+      'Svuotare i cestini, rifornire sapone e carta',
+    ],
+    notIncluded: [
+      'La pulizia all’interno degli appartamenti. Non ci occupiamo di economie domestiche private ordinarie; ville, loft e residenze rientrano nel nostro [settore Premium](/premium).',
+      'Uffici e studi con postazioni di lavoro: vedi [Pulizia di uffici e studi](/leistungen/bueroreinigung).',
+      'Fughe e pavimenti in pietra che richiedono una pulizia a fondo una tantum: [Pulizie a fondo e speciali](/leistungen/sonderreinigungen). Pulizia finale prima della riconsegna di un appartamento: [Pulizia di fine locazione](/leistungen/umzugsreinigung).',
+      'Finestre all’esterno e facciate: [Pulizia di vetri e facciate](/leistungen/fenster-und-fassadenreinigung).',
+      'Giri di controllo, impiantistica e piccole riparazioni: [Custodia di stabili](/leistungen/hauswartung).',
+    ],
+  },
+  steps: [
+    {
+      title: 'Preparare l’inizio',
+      text: 'Prima del primo intervento servono l’accesso con chiave o badge e un posto nello stabile per attrezzi e prodotti.',
+    },
+    {
+      title: 'Pulire secondo l’elenco delle prestazioni',
+      text: 'Puliamo nei giorni concordati secondo l’elenco delle prestazioni, ogni zona con la frequenza lì stabilita.',
+    },
+    {
+      title: 'Adeguare a un nuovo uso',
+      text: 'Se apre un negozio o un piano resta vuoto, prestazioni e cadenza si possono ridefinire insieme a Lei.',
     },
   ],
   faq: [
     {
-      question: 'Con quale frequenza si dovrebbe pulire?',
+      question: 'Con quale frequenza pulire un vano scale?',
       answer:
-        'Dipende da quanto intensamente sono utilizzate le superfici. Dopo il sopralluogo Le proponiamo una cadenza. La pulizia di manutenzione è pensata per immobili che vengono puliti più volte alla settimana.',
+        'Dipende da quante economie domestiche lo utilizzano e da quanto sporco entra dall’esterno. La nostra pulizia di manutenzione è pensata per stabili puliti più volte alla settimana. Ingresso e ascensore richiedono di solito più cura dei corridoi di cantina e solaio.',
     },
     {
-      question: 'Qual è la differenza rispetto alla pulizia a fondo?',
+      question: 'Quanto costa una pulizia di manutenzione?',
       answer:
-        'La pulizia di manutenzione mantiene pulite le superfici con una cadenza fissa. Una pulizia a fondo è un intervento unico e approfondito, che rimuove anche lo sporco che la pulizia regolare non raggiunge. Maggiori informazioni alla pagina [Pulizie a fondo e speciali](/leistungen/sonderreinigungen).',
+        'Il tempo di lavoro dipende soprattutto dal numero di piani e di rampe di scale, dalla presenza di un ascensore, dai locali accessori, dalla cadenza e dall’utilizzo. Un ingresso con un negozio al pianterreno richiede più tempo di uno usato solo dagli inquilini. Conta anche chi acquista il materiale di consumo, noi o Lei. Il prezzo lo indichiamo dopo il sopralluogo nell’offerta scritta. La nostra [guida ai costi di pulizia](/blog/reinigungskosten-schweiz) spiega i fattori di costo e il confronto delle offerte.',
     },
     {
-      question: 'Possiamo modificare la cadenza in seguito?',
-      answer: 'Sì. Se l’utilizzo cambia, concordiamo con Lei un nuovo volume di lavoro o una nuova cadenza.',
+      question: 'Possiamo addebitare la pulizia nelle spese accessorie?',
+      answer:
+        'Il CO prevede che gli inquilini paghino le spese accessorie solo se specialmente pattuite (art. 257a cpv. 2 CO). Se la pulizia figura nel contratto come spesa accessoria, si addebitano i costi effettivi oppure un forfait fondato sui valori medi di tre anni (art. 257b CO, art. 4 OLAL). Se il locatore la introduce unilateralmente, valgono le regole dell’aumento della pigione con il modulo approvato dal Cantone (art. 269d CO), e gli inquilini possono contestare la modifica entro 30 giorni (art. 270b CO). Verifichi il singolo caso in base al Suo contratto di locazione.',
     },
     {
-      question: 'Le inquiline e gli inquilini devono preparare qualcosa?',
+      question: 'Nello stabile serve un locale per le pulizie?',
       answer:
-        'No. È utile che nei giorni di pulizia scale e corridoi siano liberi da scarpe, biciclette e altri oggetti. Di solito basta un breve avviso nel vano scale.',
+        'Facilita il lavoro. In un locale chiudibile a chiave o in un compartimento di cantina, attrezzi e prodotti restano nello stabile tra un intervento e l’altro. Un attacco d’acqua con scarico nelle vicinanze fa inoltre risparmiare tragitti.',
     },
-    { question: 'Pulite con prodotti ecologici?', answer: answers.mittel },
-    { question: 'Quanto costa una pulizia di manutenzione?', answer: `${answers.kosten} Maggiori informazioni nella guida: [Da che cosa dipendono i costi di una pulizia di manutenzione](/blog/reinigungskosten-schweiz).` },
     {
-      question: 'A che cosa prestare attenzione nella scelta di un’impresa di pulizie?',
+      question: 'Gli inquilini devono preparare qualcosa per la pulizia?',
       answer:
-        'A un’entità del servizio descritta chiaramente, a un’assicurazione comprovata, a un interlocutore fisso e a un’offerta allestita dopo un sopralluogo. Maggiori informazioni nella guida: [Come trovare l’impresa di pulizie giusta?](/blog/richtige-reinigungsfirma-finden)',
+        'No. È utile che nei giorni di pulizia scale e corridoi siano liberi da scarpe, biciclette e altri oggetti. Di solito basta un avviso con i giorni di pulizia nel vano scale.',
     },
-    { question: 'In quali regioni operate?', answer: answers.gebiet },
+    {
+      question: 'Basta la pulizia di manutenzione o serve anche una pulizia a fondo?',
+      answer:
+        'La pulizia di manutenzione rimuove lo sporco che si accumula tra due interventi. Con gli anni però si fissano residui nelle fughe e sui pavimenti in pietra, e gli strati protettivi si consumano. Allora aiuta una [pulizia a fondo](/leistungen/sonderreinigungen) una tantum, idealmente prima dell’inizio di una nuova pulizia di manutenzione.',
+    },
+    {
+      question: 'Cambiamo impresa di pulizie. A che cosa dobbiamo fare attenzione?',
+      answer:
+        'Pianifichi l’inizio in modo che non ci sia una lacuna tra l’ultimo intervento dell’impresa precedente e il primo di quella nuova. Il termine di disdetta figura nel contratto attuale. Presenti a tutti gli offerenti lo stesso elenco delle prestazioni, altrimenti confronta prestazioni diverse. Si faccia restituire chiavi e badge dall’impresa precedente contro ricevuta.',
+    },
   ],
   related: [
-    { path: '/leistungen/bueroreinigung', text: 'Se si tratta soprattutto di uffici o di uno studio.' },
-    { path: '/leistungen/hauswartung', text: 'Se oltre alla pulizia servono anche giri di controllo, piccole riparazioni e smaltimento.' },
-    { path: '/leistungen/sonderreinigungen', text: 'Per una pulizia a fondo, ad esempio prima dell’inizio o dopo un utilizzo intenso.' },
+    { path: '/leistungen/hauswartung', text: 'Se oltre al vano scale servono anche giri di controllo, impiantistica e consegne di appartamenti.' },
+    { path: '/leistungen/sonderreinigungen', text: 'Se nelle fughe e sui pavimenti in pietra si è fissato sporco vecchio, idealmente prima dell’inizio della pulizia di manutenzione.' },
+    { path: '/leistungen/bueroreinigung', text: 'Se la superficie commerciale è composta soprattutto da uffici o da uno studio con postazioni di lavoro.' },
   ],
   cta: {
-    title: 'Offerta per il Suo stabile',
-    text: 'Ci descriva l’immobile, la superficie e la cadenza desiderata. Veniamo da Lei per il sopralluogo e Le allestiamo un’offerta, gratuita e senza impegno.',
+    title: 'Offerta per vano scale e parti comuni',
+    text: 'Ci indichi l’indirizzo, il numero di piani e di appartamenti, se ci sono ascensore o attività commerciali e la cadenza desiderata. Se ha già un elenco delle prestazioni, ce lo invii. Dopo aver visto vano scale e locali accessori Le inviamo l’offerta, il tutto gratuito e senza impegno.',
   },
 }

@@ -46,7 +46,7 @@ export const pages = {
   '/leistungen/unterhaltsreinigung': {
     label: 'Unterhaltsreinigung',
     title: 'Unterhaltsreinigung in Luzern und Zug',
-    description: `Regelmässige Reinigung von Liegenschaften, Treppenhäusern und Gewerbeflächen, mit Nachfüllservice. In ${region}.`,
+    description: 'Unterhaltsreinigung und Treppenhausreinigung für Liegenschaften, mit Nachfüllservice. In Luzern, Zug und Umgebung. Kostenlose Offerte nach Besichtigung.',
   },
   '/leistungen/bueroreinigung': {
     label: 'Büro- und Praxisreinigung',
