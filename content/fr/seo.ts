@@ -56,7 +56,7 @@ export const pages = {
   '/leistungen/sonderreinigungen': {
     label: 'Nettoyages en profondeur et spéciaux',
     title: 'Nettoyage en profondeur, Lucerne et Zoug',
-    description: 'Nettoyage en profondeur pour immeubles, bureaux et commerces : sols, joints et sanitaires, selon le revêtement. Devis gratuit après une visite.',
+    description: 'Nettoyage en profondeur des sols, des joints et des sanitaires, selon le revêtement, à Lucerne, Zoug et environs. Devis gratuit après une visite.',
   },
   '/leistungen/umzugsreinigung': {
     label: 'Nettoyage de fin de bail',

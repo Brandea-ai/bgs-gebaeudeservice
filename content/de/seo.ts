@@ -56,7 +56,7 @@ export const pages = {
   '/leistungen/sonderreinigungen': {
     label: 'Grund- und Sonderreinigung',
     title: 'Grundreinigung und Sonderreinigung Luzern, Zug',
-    description: 'Grundreinigung und Sonderreinigung für Liegenschaften, Büros und Gewerbe: Böden, Fugen und Sanitär, passend zum Belag. Kostenlose Offerte nach Besichtigung.',
+    description: 'Grundreinigung und Sonderreinigung von Böden, Fugen und Sanitärräumen, passend zum Belag, in Luzern, Zug und Umgebung. Kostenlose Offerte nach Besichtigung.',
   },
   '/leistungen/umzugsreinigung': {
     label: 'Umzugsreinigung',

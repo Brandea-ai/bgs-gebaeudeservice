@@ -66,13 +66,14 @@ export const sonderreinigungen: ServicePageContent = {
         'Surface de bureau ou commerciale entre deux locations',
         'Après une longue période d’inoccupation ou une utilisation intensive',
         'Avant le début d’un nouveau [nettoyage d’entretien](/leistungen/unterhaltsreinigung), pour qu’il parte d’un état propre',
-        'Lorsque les sols restent ternes malgré l’entretien et que les joints sont plus foncés que les carreaux',
+        'Lorsque les sols restent ternes malgré l’entretien et que les joints sont plus foncés qu’aux endroits protégés',
       ],
     },
     {
       title: 'Sanitaires : calcaire, tartre urinaire et joints',
       paragraphs: [
-        'Le calcaire et le tartre urinaire s’enlèvent avec des produits acides. Or ce sont justement eux qui attaquent les joints de ciment et la pierre calcaire. C’est pourquoi le sol et les joints sont d’abord saturés d’eau, le produit n’agit que peu de temps, et l’on rince plusieurs fois à l’eau claire à la fin.',
+        'Les sanitaires demandent souvent un nettoyage spécial. Il s’attaque à des salissures tenaces bien localisées plutôt qu’à toute la surface, ici surtout au calcaire et au tartre urinaire.',
+        'Les deux s’enlèvent avec des produits acides, qui attaquent les joints de ciment. C’est pourquoi les carreaux et les joints sont d’abord saturés d’eau, le produit n’agit que peu de temps, et l’on rince plusieurs fois à l’eau claire à la fin. Sur le marbre, le calcaire et le travertin, aucun acide n’a sa place, même après avoir mouillé le sol.',
         'Les joints devant les WC et les urinoirs demandent un travail à la brosse, car une machine n’atteint pas les bords. Les points noirs dans les joints en silicone sont un autre cas : il s’agit de moisissure dans le matériau, et le joint doit être remplacé.',
       ],
     },
@@ -103,7 +104,7 @@ export const sonderreinigungen: ServicePageContent = {
         ],
         [
           'Linoléum',
-          'Nettoyants d’un pH inférieur à 9. Les sols récents ont une couche de protection d’usine qui doit rester intacte lors du nettoyage.',
+          'Nettoyants d’un pH inférieur à 9. Forbo livre son linoléum avec une couche de protection d’usine que le nettoyage ne doit ni enlever ni abîmer.',
           'Solutions fortement alcalines, acides, nettoyants sanitaires, poudres à récurer et solvants puissants.',
         ],
         [
@@ -123,7 +124,7 @@ export const sonderreinigungen: ServicePageContent = {
         ],
       ],
       note:
-        'Ce sont les instructions d’entretien du fabricant du revêtement qui font foi. Si le revêtement est inconnu, un essai à un endroit discret précède tout nettoyage en profondeur, et une pierre inconnue est traitée comme du marbre.',
+        'Ce sont les instructions d’entretien du fabricant du revêtement qui font foi. Si le revêtement est inconnu, un essai à un endroit discret précède tout nettoyage en profondeur. Pour la pierre naturelle, la NVS recommande en outre un test préalable pour savoir si la pierre supporte l’acide.',
       sources: [nvs, ceruniqStein, ceruniqKeramik, ceruniqErst, forboLinoleum, forboVinyl, isp],
       printable: true,
       updated: '2026-09-28',
@@ -149,7 +150,7 @@ export const sonderreinigungen: ServicePageContent = {
         [
           'Joints qui s’effritent, se désagrègent ou manquent par endroits',
           'Le mortier des joints est attaqué, par exemple par des produits acides utilisés sans mouiller d’abord.',
-          'Refaire les joints par un carreleur. Un nettoyage en profondeur peut aggraver le dommage.',
+          'Faire refaire les joints par un carreleur. Un nettoyage en profondeur peut aggraver le dommage.',
         ],
         [
           'Points noirs dans les joints en silicone de la douche, de la baignoire ou de la cuisine',
@@ -188,15 +189,13 @@ export const sonderreinigungen: ServicePageContent = {
             'Informer à temps les locataires ou le personnel, par exemple avec l’avis ci-dessous',
             'Faire couper entièrement le chauffage au sol dans les pièces concernées',
             'Régler l’accès pour le jour de l’intervention, garder l’eau, un évier et des prises accessibles',
-            'Grands meubles : décider s’ils seront déplacés ou resteront en place',
-            'La veille, dégager les sols : chaussures, vélos, poussettes, plantes, chaises, corbeilles à papier',
-            'Prévoir un passage sec vers les logements, les boîtes aux lettres et l’ascenseur',
+            'La veille, dégager les sols. Déplacer les grands meubles ou les laisser sciemment en place : la surface en dessous n’est alors pas nettoyée',
           ],
         },
         {
           title: 'Lors de la réception',
           items: [
-            'Les joints sont aussi clairs que les carreaux, pas seulement la surface des carreaux propre',
+            'Les joints ont retrouvé leur couleur d’origine : comparez avec un endroit protégé, par exemple sous un meuble',
             'Aucune trace de calcaire sur la robinetterie, les parois de douche et le carrelage mural',
             'Aucun voile en lumière rasante : éclairer le sol à plat avec une lampe de poche',
             'Aucune zone collante et aucun bord blanc de restes de produit dans les coins',
@@ -215,8 +214,8 @@ export const sonderreinigungen: ServicePageContent = {
       title: 'Modèle : avis aux locataires',
       paragraphs: [
         'Titre : Nettoyage en profondeur de la cage d’escalier',
-        'Le [date], entre [heure] et [heure], la cage d’escalier [et la buanderie] sera nettoyée à fond. Pendant ce temps, les sols seront mouillés et certains tronçons brièvement fermés.',
-        'Merci de rentrer vos chaussures, vélos, poussettes et plantes dans votre logement ou à la cave jusqu’à la veille au soir. Ce qui reste dans la cage d’escalier ne peut pas être nettoyé.',
+        'Le [date], entre [heure] et [heure], la cage d’escalier [et la buanderie] sera nettoyée à fond. Pendant ce temps, les sols seront mouillés et certains tronçons brièvement fermés. Pour accéder aux logements, aux boîtes aux lettres et à l’ascenseur, passez par [indiquer un passage sec].',
+        'Merci de rentrer vos chaussures, vélos, poussettes et plantes dans votre logement ou à la cave au plus tard la veille au soir. Ce qui reste dans la cage d’escalier ne peut pas être nettoyé.',
         'Pour toute question : [gérance, nom, téléphone].',
       ],
       note:
@@ -232,7 +231,7 @@ export const sonderreinigungen: ServicePageContent = {
       'Sols : saleté incrustée et résidus d’anciens produits d’entretien, méthode selon le revêtement',
       'Joints entre les carreaux de sol et de mur',
       'Sanitaires : calcaire et tartre urinaire sur les WC, urinoirs, lavabos, la robinetterie et le carrelage',
-      'Cuisines et cafétérias : graisse sur les façades d’armoires, les plans de travail et le carrelage mural',
+      'Cuisines et kitchenettes : graisse sur les façades d’armoires, les plans de travail et le carrelage mural',
       'Plinthes, portes et cadres de porte',
       'Cages d’escalier, entrées et buanderies dans les immeubles avec locataires',
     ],
@@ -246,7 +245,7 @@ export const sonderreinigungen: ServicePageContent = {
   steps: [
     {
       title: 'Préparer',
-      text: 'Vous informez les locataires ou le personnel, dégagez les sols et faites couper le chauffage au sol. La liste de contrôle ci-dessus vous guide.',
+      text: 'Vous suivez la liste de contrôle ci-dessus et affichez l’avis à temps.',
     },
     {
       title: 'Nettoyer',
@@ -254,7 +253,7 @@ export const sonderreinigungen: ServicePageContent = {
     },
     {
       title: 'Remise',
-      text: 'Une fois les sols secs, nous vous remettons les surfaces. Contrôlez-les avec la liste de contrôle avant de remettre en place meubles et matériel.',
+      text: 'Après l’intervention, nous vous remettons les surfaces. Contrôlez-les avec la liste de contrôle et ne remettez meubles et matériel en place qu’une fois le sol sec.',
     },
   ],
   faq: [
@@ -271,12 +270,12 @@ export const sonderreinigungen: ServicePageContent = {
     {
       question: 'Quels produits conviennent au marbre et aux autres pierres naturelles ?',
       answer:
-        'Pour le marbre, le calcaire et le travertin, des produits au pH neutre ou légèrement alcalins, jamais d’acide. Même du vinaigre ou un détartrant attaque la surface. Le granit, le gneiss et le quartzite supportent aussi les produits acides. Si personne ne sait quelle pierre a été posée, on la traite comme du marbre jusqu’à ce qu’un essai à un endroit caché lève le doute.',
+        'Pour le marbre, le calcaire et le travertin, des produits au pH neutre ou légèrement alcalins, jamais d’acide. Même du vinaigre ou un détartrant attaque la surface. Le granit, le gneiss et le quartzite supportent aussi les produits acides. Si personne ne sait quelle pierre a été posée, le test préalable décrit par l’Association suisse de la pierre naturelle aide : si une goutte d’acide fait effervescence sur un endroit caché et légèrement poncé, la pierre ne supporte pas l’acide.',
     },
     {
       question: 'Et si le sol est endommagé plutôt que sale ?',
       answer:
-        'Un nettoyage n’en rétablit alors qu’une partie. Un marbre attaqué par un acide doit être poncé et poli, un parquet usé demande un parqueteur, des joints lessivés un carreleur. Ce que nous constatons au préalable, nous vous le disons franchement, pour que vous confiiez le bon travail. Le tableau « Sale ou endommagé ? » aide pour une première estimation.',
+        'Un nettoyage n’en rétablit alors qu’une partie. Un marbre attaqué par un acide doit être poncé et poli, un parquet usé demande un parqueteur, des joints érodés un carreleur. Ce que nous constatons au préalable, nous vous le disons franchement, pour que vous puissiez confier le travail au bon corps de métier. Le tableau « Sale ou endommagé ? » aide pour une première estimation.',
     },
     {
       question: 'À quelle fréquence faut-il un nettoyage en profondeur ?',
@@ -289,9 +288,9 @@ export const sonderreinigungen: ServicePageContent = {
         'En général non, car les produits sont différents. Le nettoyage d’entretien travaille en douceur et souvent avec des additifs d’entretien, et des couches se forment en dessous avec le temps. Le nettoyage en profondeur retire ces couches avec des produits plus puissants et des machines. Ensuite, le [nettoyage d’entretien](/leistungen/unterhaltsreinigung) maintient cet état.',
     },
     {
-      question: 'Que faut-il enlever avant le nettoyage en profondeur ?',
+      question: 'Un mauvais nettoyage peut-il faire perdre la garantie ?',
       answer:
-        'Tout ce qui se trouve sur le sol et peut être porté : chaussures, vélos, poussettes, plantes, chaises, corbeilles à papier. Les grands meubles peuvent rester, mais la surface en dessous n’est alors pas nettoyée. Préparez aussi les instructions d’entretien du revêtement, s’il y en a.',
+        'C’est possible. Les instructions de nettoyage de l’association du carrelage Ceruniq précisent qu’un nettoyage inapproprié fait perdre la garantie. Ces instructions prévoient que le carreleur y inscrive les nettoyants recommandés et, pour le premier nettoyage, aussi le mortier de jointoiement utilisé. Si vous préparez les instructions remises à la fin du chantier avant le nettoyage en profondeur, vous voyez donc quels produits sont prévus pour le revêtement.',
     },
   ],
   related: [

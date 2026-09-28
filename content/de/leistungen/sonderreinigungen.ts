@@ -68,13 +68,14 @@ export const sonderreinigungen: ServicePageContent = {
         'Büro- oder Gewerbefläche zwischen zwei Mietverhältnissen',
         'Nach einem längeren Leerstand oder einer intensiven Nutzung',
         'Vor dem Start einer neuen [Unterhaltsreinigung](/leistungen/unterhaltsreinigung), damit sie bei einem sauberen Ausgangszustand beginnt',
-        'Wenn Böden trotz Pflege stumpf wirken und die Fugen dunkler sind als die Platten',
+        'Wenn Böden trotz Pflege stumpf wirken und die Fugen dunkler sind als an geschützten Stellen',
       ],
     },
     {
       title: 'Sanitärräume: Kalk, Urinstein und Fugen',
       paragraphs: [
-        'Kalk und Urinstein löst man mit sauren Mitteln. Genau diese greifen Zementfugen und kalkhaltigen Stein an. Deshalb werden Boden und Fugen vorher mit Wasser gesättigt, das Mittel wirkt nur kurz, und am Schluss wird mehrmals klar nachgespült.',
+        'Im Sanitärraum braucht es oft eine Sonderreinigung. Sie nimmt sich einzelne, hartnäckige Verschmutzungen vor statt der ganzen Fläche, hier vor allem Kalk und Urinstein.',
+        'Beide löst man mit sauren Mitteln, und die greifen Zementfugen an. Deshalb werden Plättli und Fugen vorher mit Wasser gesättigt, das Mittel wirkt nur kurz, und am Schluss wird mehrmals klar nachgespült. Auf Marmor, Kalkstein und Travertin gehört gar keine Säure, auch nicht nach dem Vornässen.',
         'Die Fugen vor WC-Anlagen und Urinalen brauchen Handarbeit mit der Bürste, weil eine Maschine die Ränder nicht erreicht. Schwarze Punkte in Silikonfugen sind ein anderer Fall: Das ist Schimmel im Material, die Fuge muss ersetzt werden.',
       ],
     },
@@ -105,7 +106,7 @@ export const sonderreinigungen: ServicePageContent = {
         ],
         [
           'Linoleum',
-          'Reiniger unter pH 9. Neuere Beläge tragen ab Werk eine Schutzschicht, die bei der Reinigung erhalten bleiben muss.',
+          'Reiniger unter pH 9. Forbo liefert sein Linoleum ab Werk mit einer Schutzschicht aus, die bei der Reinigung weder entfernt noch beschädigt werden darf.',
           'Hochalkalische Laugen, Säuren, Sanitärreiniger, Scheuerpulver und starke Lösungsmittel.',
         ],
         [
@@ -125,7 +126,7 @@ export const sonderreinigungen: ServicePageContent = {
         ],
       ],
       note:
-        'Massgebend ist die Pflegeanleitung des Belagsherstellers. Ist der Belag unbekannt, gehört vor jeder Grundreinigung eine Probe an einer unauffälligen Stelle dazu, und unbekannter Stein wird wie Marmor behandelt.',
+        'Massgebend ist die Pflegeanleitung des Belagsherstellers. Ist der Belag unbekannt, gehört vor jeder Grundreinigung ein Versuch an einer unauffälligen Stelle dazu. Bei Naturstein empfiehlt der NVS zusätzlich eine Vorprüfung, ob der Stein Säure verträgt.',
       sources: [nvs, ceruniqStein, ceruniqKeramik, ceruniqErst, forboLinoleum, forboVinyl, isp],
       printable: true,
       updated: '2026-09-28',
@@ -190,15 +191,13 @@ export const sonderreinigungen: ServicePageContent = {
             'Mieterschaft oder Mitarbeitende rechtzeitig informieren, etwa mit dem Aushang unten',
             'Bodenheizung in den betroffenen Räumen ganz ausschalten lassen',
             'Zutritt für den Einsatztag regeln, Wasser, Ausguss und Steckdosen zugänglich halten',
-            'Grosse Möbel: festlegen, ob sie verschoben werden oder stehen bleiben',
-            'Am Vortag die Böden frei räumen: Schuhe, Velos, Kinderwagen, Pflanzen, Stühle, Papierkörbe',
-            'Einen trockenen Weg zu Wohnungen, Briefkästen und Lift einplanen',
+            'Am Vortag die Böden frei räumen. Grosse Möbel verschieben oder bewusst stehen lassen: Die Fläche darunter bleibt dann ungereinigt',
           ],
         },
         {
           title: 'Bei der Abnahme',
           items: [
-            'Die Fugen sind so hell wie die Platten, nicht nur die Plattenflächen sauber',
+            'Die Fugen haben wieder ihre ursprüngliche Farbe: Vergleichen Sie mit einer geschützten Stelle, etwa unter einem Möbel',
             'Kein Kalkrand an Armaturen, Duschtrennwänden und Wandplatten',
             'Kein Schleier im Streiflicht: mit einer Taschenlampe flach über den Boden leuchten',
             'Keine klebrigen Stellen und keine weissen Ränder von Mittelresten in Ecken',
@@ -217,7 +216,7 @@ export const sonderreinigungen: ServicePageContent = {
       title: 'Vorlage: Aushang für die Mieterschaft',
       paragraphs: [
         'Titel: Grundreinigung im Treppenhaus',
-        'Am [Datum] zwischen [Uhrzeit] und [Uhrzeit] wird das Treppenhaus [und die Waschküche] gründlich gereinigt. In dieser Zeit sind die Böden nass und einzelne Abschnitte kurz gesperrt.',
+        'Am [Datum] zwischen [Uhrzeit] und [Uhrzeit] wird das Treppenhaus [und die Waschküche] gründlich gereinigt. In dieser Zeit sind die Böden nass und einzelne Abschnitte kurz gesperrt. Zu Wohnungen, Briefkästen und Lift gelangen Sie über [trockenen Weg angeben].',
         'Bitte stellen Sie Schuhe, Velos, Kinderwagen und Pflanzen bis am Vorabend in Ihre Wohnung oder in den Keller. Was im Treppenhaus stehen bleibt, kann nicht gereinigt werden.',
         'Fragen beantwortet [Verwaltung, Name, Telefon].',
       ],
@@ -248,7 +247,7 @@ export const sonderreinigungen: ServicePageContent = {
   steps: [
     {
       title: 'Vorbereiten',
-      text: 'Sie informieren Mieterschaft oder Mitarbeitende, räumen die Böden frei und lassen die Bodenheizung ausschalten. Die Checkliste oben führt Sie durch.',
+      text: 'Sie arbeiten die Checkliste oben ab und hängen den Aushang rechtzeitig auf.',
     },
     {
       title: 'Reinigen',
@@ -256,7 +255,7 @@ export const sonderreinigungen: ServicePageContent = {
     },
     {
       title: 'Übergabe',
-      text: 'Wenn die Böden trocken sind, übergeben wir die Flächen. Prüfen Sie sie mit der Checkliste, bevor Möbel und Material zurückkommen.',
+      text: 'Nach dem Einsatz übergeben wir die Flächen. Prüfen Sie sie mit der Checkliste und stellen Sie Möbel und Material erst zurück, wenn der Boden trocken ist.',
     },
   ],
   faq: [
@@ -273,7 +272,7 @@ export const sonderreinigungen: ServicePageContent = {
     {
       question: 'Welche Mittel eignen sich für Marmor und andere Natursteine?',
       answer:
-        'Für Marmor, Kalkstein und Travertin pH-neutrale oder leicht alkalische Mittel, nie Säure. Schon Essig oder ein Kalklöser ätzen die Oberfläche an. Granit, Gneis und Quarzit vertragen auch saure Mittel. Weiss niemand, welcher Stein verlegt ist, wird er wie Marmor behandelt, bis eine Probe an versteckter Stelle Klarheit bringt.',
+        'Für Marmor, Kalkstein und Travertin pH-neutrale oder leicht alkalische Mittel, nie Säure. Schon Essig oder ein Kalklöser ätzen die Oberfläche an. Granit, Gneis und Quarzit vertragen auch saure Mittel. Weiss niemand, welcher Stein verlegt ist, hilft die Vorprüfung, die der Naturstein-Verband Schweiz beschreibt: Braust an einer versteckten, leicht angerauten Stelle ein Tropfen Säure auf, verträgt der Stein keine Säure.',
     },
     {
       question: 'Was, wenn der Boden beschädigt statt verschmutzt ist?',
@@ -291,9 +290,9 @@ export const sonderreinigungen: ServicePageContent = {
         'Meist nicht, weil die Mittel verschieden sind. Die Unterhaltsreinigung arbeitet mild und oft mit Pflegezusätzen, darunter bauen sich über die Zeit Schichten auf. Die Grundreinigung trägt diese Schichten mit stärkeren Mitteln und Maschinen ab. Danach hält die [Unterhaltsreinigung](/leistungen/unterhaltsreinigung) den Zustand.',
     },
     {
-      question: 'Was muss vor der Grundreinigung aus dem Weg?',
+      question: 'Kann eine falsche Reinigung die Gewährleistung kosten?',
       answer:
-        'Alles, was auf dem Boden steht und sich tragen lässt: Schuhe, Velos, Kinderwagen, Pflanzen, Stühle, Papierkörbe. Grosse Möbel können stehen bleiben, die Fläche darunter bleibt dann aber ungereinigt. Legen Sie ausserdem die Pflegeanleitung des Belags bereit, falls es eine gibt.',
+        'Das ist möglich. Die Reinigungsanleitungen des Plattenverbands Ceruniq halten fest: Unsachgemässe Reinigung führt zum Erlöschen der Gewährleistung. Die Anleitungen sehen vor, dass der Plattenleger die empfohlenen Reiniger einträgt, bei der Erstreinigung auch das verwendete Fugenmaterial. Wer die Anleitung aus der Bauübergabe vor der Grundreinigung bereitlegt, sieht also, welche Mittel für den Belag vorgesehen sind.',
     },
   ],
   related: [

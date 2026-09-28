@@ -56,7 +56,7 @@ export const pages: Dictionary['pages'] = {
   '/leistungen/sonderreinigungen': {
     label: 'Deep and special cleaning',
     title: 'Deep cleaning and special cleaning in Lucerne',
-    description: 'Deep cleaning and special cleaning for properties, offices and businesses: floors, grout and washrooms, matched to the surface. Free quote after a site visit.',
+    description: 'Deep cleaning and special cleaning of floors, grout and washrooms, matched to the surface, in Lucerne, Zug and beyond. Free quote after a site visit.',
   },
   '/leistungen/umzugsreinigung': {
     label: 'End-of-tenancy cleaning',

@@ -50,7 +50,7 @@ export const sonderreinigungen: ServicePageContent = {
     'We carry it out for property managers, communities of condominium owners, owners and businesses. On this page you will find what each floor can take, how to tell dirt from damage, and templates for preparation, the notice to tenants and the final check.',
   ],
   facts: [
-    { label: 'Job', value: 'One-off or at longer intervals, often between two tenancies or uses' },
+    { label: 'When', value: 'One-off or at longer intervals, often between two tenancies or uses' },
     { label: 'While we work', value: 'Floors wet, areas closed off section by section' },
     { label: 'Your part', value: 'Clear the floors, switch off underfloor heating, inform tenants' },
     { label: 'Not included', value: 'Sanding, sealing, regrouting and repairs' },
@@ -66,13 +66,14 @@ export const sonderreinigungen: ServicePageContent = {
         'Office or commercial space between two tenancies',
         'After a long vacancy or a period of heavy use',
         'Before new [maintenance cleaning](/leistungen/unterhaltsreinigung) starts, so that it begins from a clean baseline',
-        'When floors look dull despite care and the grout is darker than the tiles',
+        'When floors look dull despite care and the grout is darker than in protected spots',
       ],
     },
     {
       title: 'Washrooms: limescale, urine scale and grout',
       paragraphs: [
-        'Limescale and urine scale are removed with acidic products. These are exactly what attack cement grout and limestone. That is why the floor and joints are soaked with water first, the product only acts briefly, and everything is rinsed several times with clean water at the end.',
+        'Washrooms often need special cleaning. It tackles specific, stubborn soiling rather than the whole surface, here mainly limescale and urine scale.',
+        'Both are removed with acidic products, and these attack cement grout. That is why tiles and joints are soaked with water first, the product only acts briefly, and everything is rinsed several times with clean water at the end. Marble, limestone and travertine must not come into contact with acid at all, not even after soaking.',
         'The joints in front of toilets and urinals need work by hand with a brush, because a machine cannot reach the edges. Black spots in silicone joints are a different matter: that is mould inside the material, and the joint has to be replaced.',
       ],
     },
@@ -103,7 +104,7 @@ export const sonderreinigungen: ServicePageContent = {
         ],
         [
           'Linoleum',
-          'Cleaners below pH 9. Newer floors come with a factory-applied protective finish that must not be removed during cleaning.',
+          'Cleaners below pH 9. Forbo supplies its linoleum with a factory-applied protective finish that must be neither removed nor damaged during cleaning.',
           'Strongly alkaline solutions, acids, sanitary cleaners, scouring powder and strong solvents.',
         ],
         [
@@ -123,7 +124,7 @@ export const sonderreinigungen: ServicePageContent = {
         ],
       ],
       note:
-        'The floor manufacturer’s care instructions are what count. If the floor is unknown, a test on an inconspicuous spot comes before any deep clean, and unknown stone is treated like marble.',
+        'The floor manufacturer’s care instructions are what count. If the floor is unknown, a trial on an inconspicuous spot comes before any deep clean. For natural stone, the NVS also recommends a preliminary test of whether the stone can take acid.',
       sources: [nvs, ceruniqStein, ceruniqKeramik, ceruniqErst, forboLinoleum, forboVinyl, isp],
       printable: true,
       updated: '2026-09-28',
@@ -188,15 +189,13 @@ export const sonderreinigungen: ServicePageContent = {
             'Inform tenants or staff in good time, for example with the notice below',
             'Have underfloor heating in the rooms concerned switched off completely',
             'Arrange access for the day, keep water, a sink and sockets accessible',
-            'Large furniture: decide whether it will be moved or stay in place',
-            'The day before, clear the floors: shoes, bicycles, prams, plants, chairs, bins',
-            'Plan a dry route to the flats, letterboxes and lift',
+            'Clear the floors the day before. Move large furniture or deliberately leave it in place: the area underneath then stays uncleaned',
           ],
         },
         {
           title: 'At the final check',
           items: [
-            'The grout is as light as the tiles, not only the tile surfaces clean',
+            'The grout has its original colour again: compare it with a protected spot, for example under a piece of furniture',
             'No limescale edges on taps, shower screens and wall tiles',
             'No haze under raking light: shine a torch flat across the floor',
             'No sticky patches and no white rims of product residue in corners',
@@ -215,7 +214,7 @@ export const sonderreinigungen: ServicePageContent = {
       title: 'Template: notice for tenants',
       paragraphs: [
         'Heading: Deep cleaning of the stairwell',
-        'On [date] between [time] and [time] the stairwell [and the laundry room] will be deep cleaned. During this time the floors will be wet and some sections briefly closed.',
+        'On [date] between [time] and [time] the stairwell [and the laundry room] will be deep cleaned. During this time the floors will be wet and some sections briefly closed. You can reach the flats, letterboxes and lift via [state a dry route].',
         'Please put shoes, bicycles, prams and plants in your flat or in the cellar by the evening before. Anything left in the stairwell cannot be cleaned.',
         'Questions: [property management, name, telephone].',
       ],
@@ -232,7 +231,7 @@ export const sonderreinigungen: ServicePageContent = {
       'Floors: ingrained dirt and residue of old care products, method according to the floor type',
       'Joints between floor and wall tiles',
       'Washrooms: limescale and urine scale on toilets, urinals, washbasins, taps and tiles',
-      'Kitchens and tea kitchens: grease on cabinet fronts, worktops and wall tiles',
+      'Kitchens and kitchenettes: grease on cabinet fronts, worktops and wall tiles',
       'Skirting boards, doors and door frames',
       'Stairwells, entrances and laundry rooms in properties with tenants',
     ],
@@ -246,7 +245,7 @@ export const sonderreinigungen: ServicePageContent = {
   steps: [
     {
       title: 'Prepare',
-      text: 'You inform tenants or staff, clear the floors and have the underfloor heating switched off. The checklist above takes you through it.',
+      text: 'You work through the checklist above and put up the notice in good time.',
     },
     {
       title: 'Clean',
@@ -254,7 +253,7 @@ export const sonderreinigungen: ServicePageContent = {
     },
     {
       title: 'Handover',
-      text: 'Once the floors are dry, we hand over the areas. Check them with the checklist before furniture and equipment go back in.',
+      text: 'After the work, we hand over the areas. Check them with the checklist and only put furniture and equipment back once the floor is dry.',
     },
   ],
   faq: [
@@ -271,12 +270,12 @@ export const sonderreinigungen: ServicePageContent = {
     {
       question: 'Which products are suitable for marble and other natural stone?',
       answer:
-        'For marble, limestone and travertine, pH-neutral or mildly alkaline products, never acid. Even vinegar or a descaler etches the surface. Granite, gneiss and quartzite can also take acidic products. If nobody knows which stone was laid, it is treated like marble until a test in a hidden spot makes it clear.',
+        'For marble, limestone and travertine, pH-neutral or mildly alkaline products, never acid. Even vinegar or a descaler etches the surface. Granite, gneiss and quartzite can also take acidic products. If nobody knows which stone was laid, the preliminary test described by the Swiss Natural Stone Association helps: if a drop of acid fizzes on a hidden, lightly roughened spot, the stone cannot take acid.',
     },
     {
       question: 'What if the floor is damaged rather than dirty?',
       answer:
-        'Then cleaning only brings part of it back. Etched marble needs grinding and polishing, worn parquet a parquet layer, washed-out grout a tiler. What we see beforehand, we tell you openly, so that you can award the right job. The table ‘Dirty or damaged?’ helps with a first assessment.',
+        'Then cleaning only brings part of it back. Etched marble needs grinding and polishing, worn parquet a parquet layer, washed-out grout a tiler. We tell you openly about anything we notice beforehand, so that you can hire the right trade. The table ‘Dirty or damaged?’ helps with a first assessment.',
     },
     {
       question: 'How often is a deep clean needed?',
@@ -289,9 +288,9 @@ export const sonderreinigungen: ServicePageContent = {
         'Usually not, because the products are different. Maintenance cleaning works gently and often with care additives, and layers build up underneath over time. A deep clean strips these layers with stronger products and machines. Afterwards, [maintenance cleaning](/leistungen/unterhaltsreinigung) keeps the condition.',
     },
     {
-      question: 'What has to be moved before a deep clean?',
+      question: 'Can the wrong cleaning void the warranty?',
       answer:
-        'Everything standing on the floor that can be carried: shoes, bicycles, prams, plants, chairs, bins. Large furniture can stay, but the area underneath then stays uncleaned. Also have the floor’s care instructions ready, if there are any.',
+        'It can. The cleaning instructions of the tiling association Ceruniq state that improper cleaning voids the warranty. The instructions provide for the tiler to enter the recommended cleaners, and for the first cleaning also the grout used. If you have the instructions from the building handover ready before the deep clean, you can see which products are intended for the floor.',
     },
   ],
   related: [

@@ -66,13 +66,14 @@ export const sonderreinigungen: ServicePageContent = {
         'Superficie per uffici o commerciale tra due locazioni',
         'Dopo un lungo periodo sfitto o un uso intenso',
         'Prima dell’inizio di una nuova [pulizia di manutenzione](/leistungen/unterhaltsreinigung), perché parta da uno stato pulito',
-        'Quando i pavimenti restano opachi nonostante la cura e le fughe sono più scure delle piastrelle',
+        'Quando i pavimenti restano opachi nonostante la cura e le fughe sono più scure che nei punti protetti',
       ],
     },
     {
       title: 'Servizi igienici: calcare, incrostazioni di urina e fughe',
       paragraphs: [
-        'Calcare e incrostazioni di urina si tolgono con prodotti acidi. Proprio questi però intaccano le fughe cementizie e la pietra calcarea. Per questo pavimento e fughe vengono prima saturati d’acqua, il prodotto agisce solo per poco e alla fine si risciacqua più volte con acqua pulita.',
+        'Nei servizi igienici serve spesso una pulizia speciale. Si concentra sullo sporco ostinato in punti precisi anziché sull’intera superficie, qui soprattutto su calcare e incrostazioni di urina.',
+        'Entrambi si tolgono con prodotti acidi, che però intaccano le fughe cementizie. Per questo piastrelle e fughe vengono prima saturate d’acqua, il prodotto agisce solo per poco e alla fine si risciacqua più volte con acqua pulita. Su marmo, pietra calcarea e travertino non va usato alcun acido, nemmeno dopo aver bagnato il pavimento.',
         'Le fughe davanti a WC e orinatoi richiedono lavoro a mano con la spazzola, perché una macchina non raggiunge i bordi. I punti neri nelle fughe in silicone sono un altro caso: si tratta di muffa nel materiale, e la fuga va sostituita.',
       ],
     },
@@ -103,7 +104,7 @@ export const sonderreinigungen: ServicePageContent = {
         ],
         [
           'Linoleum',
-          'Detergenti con pH inferiore a 9. I pavimenti più recenti hanno uno strato protettivo di fabbrica che deve restare intatto durante la pulizia.',
+          'Detergenti con pH inferiore a 9. Forbo fornisce il suo linoleum con uno strato protettivo di fabbrica che la pulizia non deve né rimuovere né danneggiare.',
           'Soluzioni fortemente alcaline, acidi, detergenti per sanitari, polveri abrasive e solventi forti.',
         ],
         [
@@ -123,7 +124,7 @@ export const sonderreinigungen: ServicePageContent = {
         ],
       ],
       note:
-        'Fanno stato le istruzioni di cura del produttore del pavimento. Se il pavimento è sconosciuto, prima di ogni pulizia a fondo si fa una prova in un punto poco visibile, e la pietra sconosciuta si tratta come il marmo.',
+        'Fanno stato le istruzioni di cura del produttore del pavimento. Se il pavimento è sconosciuto, prima di ogni pulizia a fondo si fa una prova in un punto poco visibile. Per la pietra naturale la NVS raccomanda inoltre una verifica preliminare per sapere se la pietra sopporta gli acidi.',
       sources: [nvs, ceruniqStein, ceruniqKeramik, ceruniqErst, forboLinoleum, forboVinyl, isp],
       printable: true,
       updated: '2026-09-28',
@@ -188,15 +189,13 @@ export const sonderreinigungen: ServicePageContent = {
             'Informare per tempo inquilini o personale, per esempio con l’avviso qui sotto',
             'Far spegnere del tutto il riscaldamento a pavimento nei locali interessati',
             'Regolare l’accesso per il giorno dell’intervento, lasciare accessibili acqua, uno scarico e prese elettriche',
-            'Mobili grandi: decidere se verranno spostati o resteranno al loro posto',
-            'Il giorno prima liberare i pavimenti: scarpe, biciclette, passeggini, piante, sedie, cestini',
-            'Prevedere un passaggio asciutto verso appartamenti, bucalettere e ascensore',
+            'Il giorno prima liberare i pavimenti. Spostare i mobili grandi o lasciarli di proposito al loro posto: la superficie sotto non viene allora pulita',
           ],
         },
         {
           title: 'Al collaudo',
           items: [
-            'Le fughe sono chiare come le piastrelle, non solo la superficie delle piastrelle è pulita',
+            'Le fughe hanno di nuovo il loro colore originale: le confronti con un punto protetto, per esempio sotto un mobile',
             'Nessun bordo di calcare su rubinetteria, pareti della doccia e piastrelle murali',
             'Nessun velo in luce radente: illuminare il pavimento di piatto con una torcia',
             'Nessuna zona appiccicosa e nessun bordo bianco di residui di prodotto negli angoli',
@@ -215,7 +214,7 @@ export const sonderreinigungen: ServicePageContent = {
       title: 'Modello: avviso agli inquilini',
       paragraphs: [
         'Titolo: Pulizia a fondo del vano scale',
-        'Il [data] tra le [ora] e le [ora] il vano scale [e la lavanderia] verrà pulito a fondo. In questo periodo i pavimenti saranno bagnati e alcuni tratti chiusi per breve tempo.',
+        'Il [data] tra le [ora] e le [ora] il vano scale [e la lavanderia] verrà pulito a fondo. In questo periodo i pavimenti saranno bagnati e alcuni tratti chiusi per breve tempo. Per raggiungere appartamenti, bucalettere e ascensore passate da [indicare un passaggio asciutto].',
         'Vi preghiamo di riporre scarpe, biciclette, passeggini e piante nel vostro appartamento o in cantina entro la sera prima. Ciò che resta nel vano scale non può essere pulito.',
         'Per domande: [amministrazione, nome, telefono].',
       ],
@@ -232,7 +231,7 @@ export const sonderreinigungen: ServicePageContent = {
       'Pavimenti: sporco incrostato e residui di vecchi prodotti di cura, metodo secondo il pavimento',
       'Fughe tra le piastrelle di pavimento e parete',
       'Servizi igienici: calcare e incrostazioni di urina su WC, orinatoi, lavabi, rubinetteria e piastrelle',
-      'Cucine e angoli caffè: grasso su frontali, piani di lavoro e piastrelle murali',
+      'Cucine e angoli cottura: grasso su frontali, piani di lavoro e piastrelle murali',
       'Zoccolini, porte e telai delle porte',
       'Vani scale, entrate e lavanderie negli stabili con inquilini',
     ],
@@ -246,7 +245,7 @@ export const sonderreinigungen: ServicePageContent = {
   steps: [
     {
       title: 'Preparare',
-      text: 'Lei informa inquilini o personale, libera i pavimenti e fa spegnere il riscaldamento a pavimento. La lista di controllo qui sopra La guida.',
+      text: 'Lei segue la lista di controllo qui sopra e affigge l’avviso per tempo.',
     },
     {
       title: 'Pulire',
@@ -254,7 +253,7 @@ export const sonderreinigungen: ServicePageContent = {
     },
     {
       title: 'Consegna',
-      text: 'Quando i pavimenti sono asciutti, Le consegniamo le superfici. Le verifichi con la lista di controllo prima di rimettere mobili e materiale.',
+      text: 'Dopo l’intervento Le consegniamo le superfici. Le verifichi con la lista di controllo e rimetta mobili e materiale solo quando il pavimento è asciutto.',
     },
   ],
   faq: [
@@ -266,12 +265,12 @@ export const sonderreinigungen: ServicePageContent = {
     {
       question: 'Per quanto tempo i locali non sono utilizzabili?',
       answer:
-        'Durante la pulizia e finché il pavimento è asciutto. Quanto dura dipende da superficie, pavimento e aerazione. Nei vani scale si può lavorare a tratti, così che un passaggio resti libero. Per uffici e studi medici sono adatti i fine settimana e le ferie aziendali.',
+        'Durante la pulizia e finché il pavimento non si è asciugato. Quanto dura dipende da superficie, pavimento e aerazione. Nei vani scale si può lavorare a tratti, così che un passaggio resti libero. Per uffici e studi medici sono adatti i fine settimana e le ferie aziendali.',
     },
     {
       question: 'Quali prodotti sono adatti al marmo e alle altre pietre naturali?',
       answer:
-        'Per marmo, pietra calcarea e travertino prodotti a pH neutro o leggermente alcalini, mai acidi. Già l’aceto o un anticalcare intaccano la superficie. Granito, gneiss e quarzite sopportano anche i prodotti acidi. Se nessuno sa quale pietra è stata posata, la si tratta come il marmo finché una prova in un punto nascosto non fa chiarezza.',
+        'Per marmo, pietra calcarea e travertino prodotti a pH neutro o leggermente alcalini, mai acidi. Già l’aceto o un anticalcare intaccano la superficie. Granito, gneiss e quarzite sopportano anche i prodotti acidi. Se nessuno sa quale pietra è stata posata, aiuta la verifica preliminare descritta dall’Associazione svizzera della pietra naturale: se una goccia di acido fa effervescenza in un punto nascosto e leggermente irruvidito, la pietra non sopporta gli acidi.',
     },
     {
       question: 'E se il pavimento è danneggiato anziché sporco?',
@@ -281,7 +280,7 @@ export const sonderreinigungen: ServicePageContent = {
     {
       question: 'Ogni quanto serve una pulizia a fondo?',
       answer:
-        'Non c’è un ritmo fisso. Per i pavimenti in pietra naturale l’associazione svizzera della pietra naturale indica una frequenza mensile, semestrale o annuale, secondo lo sporco e le esigenze igieniche. Da Lei lo mostra lo stato: fughe scure, zone di passaggio opache, segni sugli zoccolini. Una buona pulizia regolare e uno zerbino all’entrata che trattiene la sabbia allungano l’intervallo.',
+        'Non c’è un ritmo fisso. Per i pavimenti in pietra naturale l’associazione svizzera della pietra naturale indica una frequenza mensile, semestrale o annuale, secondo lo sporco e le esigenze igieniche. Nel Suo stabile è lo stato a indicarlo: fughe scure, zone di passaggio opache, segni sugli zoccolini. Una buona pulizia regolare e uno zerbino all’entrata che trattiene la sabbia allungano l’intervallo.',
     },
     {
       question: 'Non basta una pulizia di manutenzione più accurata?',
@@ -289,9 +288,9 @@ export const sonderreinigungen: ServicePageContent = {
         'Di solito no, perché i prodotti sono diversi. La pulizia di manutenzione lavora in modo delicato e spesso con additivi di cura, e sotto si formano strati con il tempo. La pulizia a fondo rimuove questi strati con prodotti più forti e macchine. Dopo, la [pulizia di manutenzione](/leistungen/unterhaltsreinigung) mantiene lo stato.',
     },
     {
-      question: 'Che cosa va tolto prima della pulizia a fondo?',
+      question: 'Una pulizia sbagliata può far decadere la garanzia?',
       answer:
-        'Tutto ciò che sta sul pavimento e si può portare via: scarpe, biciclette, passeggini, piante, sedie, cestini. I mobili grandi possono restare, ma la superficie sotto non viene pulita. Tenga pronte anche le istruzioni di cura del pavimento, se ci sono.',
+        'È possibile. Le istruzioni di pulizia dell’associazione delle piastrelle Ceruniq stabiliscono che una pulizia non appropriata fa decadere la garanzia. Le istruzioni prevedono che il piastrellista vi annoti i detergenti raccomandati e, per la prima pulizia, anche il materiale di fugatura usato. Se tiene pronte le istruzioni ricevute alla consegna dell’edificio prima della pulizia a fondo, vede quindi quali prodotti sono previsti per il pavimento.',
     },
   ],
   related: [
