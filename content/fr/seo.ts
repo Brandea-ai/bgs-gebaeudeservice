@@ -56,12 +56,12 @@ export const pages = {
   '/leistungen/sonderreinigungen': {
     label: 'Nettoyages en profondeur et spéciaux',
     title: 'Nettoyage en profondeur, Lucerne et Zoug',
-    description: 'Nettoyage en profondeur de logements, de bureaux et de surfaces commerciales, ponctuel ou à intervalles espacés. Pour gérances, propriétaires et entreprises à Lucerne, Zoug et environs.',
+    description: 'Nettoyage en profondeur de logements, bureaux et surfaces commerciales, ponctuel ou périodique. Pour gérances, propriétaires et entreprises à Lucerne et Zoug.',
   },
   '/leistungen/umzugsreinigung': {
     label: 'Nettoyage de fin de bail',
     title: 'Nettoyage de fin de bail, garantie de remise',
-    description: 'Nettoyage de déménagement et de fin de bail avant la remise du logement, avec garantie de remise. Pour gérances, propriétaires et entreprises à Lucerne, Zoug et environs.',
+    description: 'Nettoyage de fin de bail avant la remise du logement, avec garantie de remise. Pour gérances, propriétaires et entreprises à Lucerne et Zoug.',
   },
   '/leistungen/baureinigung': {
     label: 'Nettoyage de chantier et de fin de chantier',

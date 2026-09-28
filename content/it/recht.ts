@@ -24,7 +24,7 @@ export const impressum: LegalContent = {
       title: 'Dati del registro',
       lines: [
         `Iscritta nel ${registerIt}`,
-        `IDI ${company.uid}`,
+        `IDI ${company.uid}`, `Numero di registro ${company.registerNumber}`, `Sede ${company.seat}`,
         `Numero IVA ${company.uid} IVA`,
       ],
     },

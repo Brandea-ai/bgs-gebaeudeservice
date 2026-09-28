@@ -25,7 +25,7 @@ export const impressum: LegalContent = {
     },
     {
       title: 'Registerangaben',
-      lines: [`Eingetragen im ${company.register}`, `UID ${company.uid}`, `Mehrwertsteuernummer ${company.vat}`],
+      lines: [`Eingetragen im ${company.register}`, `UID ${company.uid}`, `Firmennummer ${company.registerNumber}`, `Sitz ${company.seat}`, `Mehrwertsteuernummer ${company.vat}`],
     },
     {
       title: 'Haftung für Inhalte',

@@ -3,6 +3,8 @@ import { company } from './company'
 import { pages } from '../content/de/seo'
 import { getDict } from '../content'
 import { alternatesFor, localizePath, ogLocale, type Locale } from './i18n'
+import { heroImage } from './hero-images'
+import { images } from './images'
 
 // Metadaten und Brotkrumen aus den Seitentexten in content/<sprache>/seo.ts (M16, M20, M60).
 export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://bgs-gebaeudeservice.vercel.app'
@@ -18,9 +20,19 @@ function brandFor(path: string, lang: Locale): string {
   return path.startsWith('/premium') ? getDict(lang).misc.premiumTitleBrand : company.brand
 }
 
+/**
+ * Vorschaubild für Open Graph und X: Hero-Bild der Seite in 1200 x 630
+ * (public/og, erzeugt von Webseite-Analyse/werkzeuge/og_bilder.py), Alt-Text in der Sprache der Seite.
+ */
+export function previewImage(path: PagePath, lang: Locale) {
+  const key = heroImage[path]
+  return { url: `/og/${key}.jpg?v=${images[key].version}`, width: 1200, height: 630, alt: getDict(lang).bilder[key] }
+}
+
 export function metaFor(path: PagePath, lang: Locale = 'de'): Metadata {
   const { title, description } = getDict(lang).pages[path]
   const url = localizePath(path, lang)
+  const image = previewImage(path, lang)
   return {
     // Vollständiger Titel statt Vorlage: Ein Layout mit eigenem Titel (etwa /blog)
     // hebt die Vorlage für seine Unterseiten sonst auf. Die Startseite trägt die Marke schon.
@@ -35,9 +47,10 @@ export function metaFor(path: PagePath, lang: Locale = 'de'): Metadata {
       url,
       title,
       description,
+      images: [image],
     },
     // Ohne eigene Angabe erben Unterseiten sonst Titel und Text der Startseite (T09)
-    twitter: { card: 'summary', title, description },
+    twitter: { card: 'summary_large_image', title, description, images: [image] },
   }
 }
 

@@ -23,7 +23,7 @@ export const impressum: LegalContent = {
     },
     {
       title: 'Inscription au registre',
-      lines: [`Inscrite au ${register}`, `IDE ${company.uid}`, `Numéro TVA ${company.uid} TVA`],
+      lines: [`Inscrite au ${register}`, `IDE ${company.uid}`, `Numéro de registre ${company.registerNumber}`, `Siège ${company.seat}`, `Numéro TVA ${company.uid} TVA`],
     },
     {
       title: 'Responsabilité quant aux contenus',

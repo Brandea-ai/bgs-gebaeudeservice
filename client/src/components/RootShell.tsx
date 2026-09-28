@@ -8,7 +8,7 @@ import { LazyChatbot } from "@/components/LazyChat";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import JsonLd from "@/components/JsonLd";
 import { company, newBrandActive } from "../../../shared/company";
-import { siteUrl } from "../../../shared/seo";
+import { previewImage, siteUrl } from "../../../shared/seo";
 import { organizationJsonLd } from "../../../shared/structured-data";
 import { hreflang, ogLocale, type Locale } from "../../../shared/i18n";
 import { getDict } from "../../../content";
@@ -42,7 +42,6 @@ export function rootMetadata(lang: Locale): Metadata {
   const home = getDict(lang).pages["/"];
   return {
     metadataBase: new URL(siteUrl),
-    // Kein Vorschaubild bis zum neuen Logo (M35)
     title: { default: home.title, template: `%s | ${company.brand}` },
     description: home.description,
     formatDetection: { email: false, address: false, telephone: false },
@@ -52,11 +51,13 @@ export function rootMetadata(lang: Locale): Metadata {
       siteName: company.brand,
       title: home.title,
       description: home.description,
+      images: [previewImage("/", lang)],
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title: home.title,
       description: home.description,
+      images: [previewImage("/", lang)],
     },
     // Bis zum Launch nicht indexierbar. Freischalten nur in der Vercel-Produktion
     // mit SITE_INDEXABLE=true (Entscheidung E12, Webseite-Analyse/11).

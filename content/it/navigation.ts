@@ -142,6 +142,8 @@ const contactForm: NavDictionary['contactForm'] = {
   submit: 'Invia richiesta',
   sending: 'Invio in corso...',
   success: `Grazie, la Sua richiesta ci è pervenuta. La contattiamo ${responseTime} e fissiamo con Lei una data per il sopralluogo. Se ha urgenza, ci raggiunge al numero ${company.phone.display}.`,
+  nextTitle: "Come procediamo",
+  nextSteps: ["Rispondiamo entro 24 ore nei giorni lavorativi.", "Visitiamo l'immobile sul posto, gratuitamente.", "Riceve un'offerta scritta."],
   successTitle: 'Richiesta ricevuta',
   errors: {
     required: 'Compili questo campo.',
@@ -183,6 +185,9 @@ export const nav: NavDictionary = {
     phone: 'Telefono',
     email: 'E-mail',
     address: 'Indirizzo',
+    mobile: 'Cellulare',
+    hours: 'Orari',
+    hoursValue: 'Lun a ven 8 alle 19, sab 9 alle 17',
     contactEyebrow: 'Contatto',
     trust: [
       { key: 'seit', label: 'Dal 2006', text: 'Pulizia e custodia di stabili' },

@@ -139,6 +139,8 @@ export const nav: NavDictionary = {
     submit: 'Send request',
     sending: 'Sending...',
     success: `Thank you, we have received your request. We will get back to you ${responseTime} and arrange a date for the site visit with you. If it is urgent, you can reach us on ${company.phone.display}.`,
+    nextTitle: "What happens next",
+    nextSteps: ["We reply within 24 hours on working days.", "We visit the property on site, free of charge.", "You receive a written quote."],
     successTitle: 'Request received',
     errors: {
       required: 'Please fill in this field.',
@@ -171,6 +173,9 @@ export const nav: NavDictionary = {
     phone: 'Phone',
     email: 'Email',
     address: 'Address',
+    mobile: 'Mobile',
+    hours: 'Opening hours',
+    hoursValue: 'Mon to Fri 8 am to 7 pm, Sat 9 am to 5 pm',
     contactEyebrow: 'Contact',
     trust: [
       { key: 'seit', label: 'Since 2006', text: 'Cleaning and caretaking' },

@@ -5,15 +5,20 @@ import {
   ArrowRight,
   CheckCircle,
   CircleNotch,
+  Clock,
+  DeviceMobile,
   Envelope,
+  FileText,
   MapPin,
   Phone,
+  PhoneCall,
 } from "@phosphor-icons/react/dist/ssr";
 import { useRef, useState } from "react";
 import { company, newBrandActive } from "../../../shared/company";
 import { navDicts } from "../../../content/navigation";
 import { localizePath, type Locale } from "../../../shared/i18n";
 import type { PagePath } from "../../../shared/seo";
+import ImageSlot from "./ImageSlot";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 const fieldClass =
@@ -192,6 +197,12 @@ export function ContactSection({
       href: company.phone.href,
     },
     {
+      icon: DeviceMobile,
+      label: chrome.mobile,
+      value: company.mobile.display,
+      href: company.mobile.href,
+    },
+    {
       icon: Envelope,
       label: chrome.email,
       value: company.email,
@@ -201,6 +212,11 @@ export function ContactSection({
       icon: MapPin,
       label: chrome.address,
       value: `${company.address.street}, ${company.address.postalCode} ${company.address.city}`,
+    },
+    {
+      icon: Clock,
+      label: chrome.hours,
+      value: chrome.hoursValue,
     },
   ];
 
@@ -221,7 +237,21 @@ export function ContactSection({
             <h2 id="kontakt-titel" className="t-h2 text-ink">
               {title}
             </h2>
-            <p className="t-lead mt-5 max-w-[36ch] text-ink-600">{intro}</p>
+            <p className="t-lead mt-5 max-w-[36ch] text-ink">{intro}</p>
+            {/* Bild mit Antwortzeit (E82): die Besichtigung ist der erste echte Kontakt */}
+            <div className="relative mt-8 overflow-hidden rounded-[3px]">
+              <ImageSlot
+                image="detail-facility-services"
+                lang={lang}
+                decorative
+                sizes="(min-width: 1024px) 34vw, 100vw"
+                className="aspect-[16/10] w-full"
+              />
+              <p className="glass-dark on-dark absolute bottom-4 left-4 right-4 flex items-center gap-3 rounded-[3px] px-4 py-3 text-[0.9375rem] font-semibold text-white">
+                <CheckCircle weight="duotone" className="size-6 shrink-0 text-white" aria-hidden="true" />
+                {chrome.answer}
+              </p>
+            </div>
           </div>
 
           <div className="lg:col-span-7 lg:col-start-6 lg:row-span-2 xl:col-span-8 xl:col-start-5">
@@ -230,7 +260,7 @@ export function ContactSection({
                 ref={statusRef}
                 tabIndex={-1}
                 role="status"
-                className="flex items-start gap-4 border-l-2 border-emerald-700 bg-white p-6 shadow-[0_1px_0_rgba(14,17,22,0.04),0_40px_80px_-48px_rgba(14,17,22,0.35)] sm:p-10 focus:outline-none"
+                className="flex items-start gap-4 rounded-[3px] border border-emerald-700/40 bg-white p-6 shadow-[0_1px_0_rgba(14,17,22,0.04),0_40px_80px_-48px_rgba(14,17,22,0.35)] sm:p-10 focus:outline-none"
               >
                 <CheckCircle
                   weight="duotone"
@@ -249,7 +279,7 @@ export function ContactSection({
                 ref={formRef}
                 onSubmit={handleSubmit}
                 noValidate
-                className="relative bg-white p-6 shadow-[0_1px_0_rgba(14,17,22,0.04),0_40px_80px_-48px_rgba(14,17,22,0.35)] sm:p-10 xl:p-14"
+                className="relative rounded-[3px] border border-line bg-white p-6 shadow-[0_1px_0_rgba(14,17,22,0.04),0_40px_80px_-48px_rgba(14,17,22,0.35)] sm:p-10 xl:p-14"
               >
                 <div className="grid gap-x-6 gap-y-6 md:grid-cols-2">
                   <div>
@@ -481,7 +511,7 @@ export function ContactSection({
                     ref={statusRef}
                     tabIndex={-1}
                     role="alert"
-                    className="mt-6 border-l-2 border-signal bg-signal-light/40 p-4 focus:outline-none"
+                    className="mt-6 rounded-[3px] border border-signal/40 bg-signal-light/40 p-4 focus:outline-none"
                   >
                     <p className="text-sm font-medium text-signal-dark">
                       {errorMessage || fallbackError}
@@ -498,32 +528,49 @@ export function ContactSection({
             )}
           </div>
 
-          <dl className="divide-y divide-line border-y border-line lg:col-span-5 lg:col-start-1 xl:col-span-4">
-            {channels.map(({ icon: Icon, label, value, href: link }) => (
-              <div key={label} className="relative py-4 pl-9">
-                <dt className="t-eyebrow mb-1 text-mute">
-                  <Icon
-                    weight="duotone"
-                    className="absolute left-0 top-5 size-5 text-signal"
-                    aria-hidden="true"
-                  />
-                  {label}
-                </dt>
-                <dd className="break-words text-[1.0625rem] text-ink">
-                  {link ? (
-                    <a
-                      href={link}
-                      className="inline-flex min-h-6 items-center font-medium tabular-nums transition-colors hover:text-signal"
-                    >
-                      {value}
-                    </a>
-                  ) : (
-                    value
-                  )}
-                </dd>
-              </div>
-            ))}
-          </dl>
+          <div className="grid content-start gap-8 lg:col-span-5 lg:col-start-1 xl:col-span-4">
+            {/* Kontaktwege als Kacheln, kräftig und gross (E82) */}
+            <dl className="grid gap-3 sm:grid-cols-2">
+              {channels.map(({ icon: Icon, label, value, href: link }) => (
+                <div
+                  key={label}
+                  className={`relative rounded-[3px] border border-line bg-white p-5 transition-shadow hover:shadow-[0_18px_40px_-28px_rgba(14,17,22,0.35)] ${link?.startsWith("tel:") ? "" : "sm:col-span-2"}`}
+                >
+                  <dt className="flex items-center gap-2.5 text-sm font-semibold text-mute">
+                    <Icon weight="duotone" className="size-6 text-signal" aria-hidden="true" />
+                    {label}
+                  </dt>
+                  <dd className="mt-2 break-words text-[1.125rem] font-bold text-ink">
+                    {link ? (
+                      <a
+                        href={link}
+                        className="tabular-nums transition-colors after:absolute after:inset-0 hover:text-signal"
+                      >
+                        {value}
+                      </a>
+                    ) : (
+                      value
+                    )}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+            {/* So geht es weiter: drei Schritte mit Symbolen, ohne Ziffern (E80) */}
+            <div>
+              <p className="font-display text-lg font-bold text-ink">{form.nextTitle}</p>
+              <ul className="mt-4 grid gap-3">
+                {form.nextSteps.map((step, index) => {
+                  const StepIcon = [PhoneCall, MapPin, FileText][index] ?? CheckCircle;
+                  return (
+                    <li key={step} className="flex items-start gap-3 font-semibold leading-relaxed text-ink">
+                      <StepIcon weight="duotone" className="mt-0.5 size-6 shrink-0 text-signal" aria-hidden="true" />
+                      {step}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
     </div>

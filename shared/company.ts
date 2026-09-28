@@ -23,18 +23,34 @@ export const company = {
   uid: 'CHE-108.687.458',
   vat: 'CHE-108.687.458 MWST',
   register: 'Handelsregister des Kantons Luzern',
+  // Aus dem HR-Auszug Luzern, geprüft 28.09.2026 (Webseite-Analyse, NAP-Prüfung)
+  registerNumber: 'CH-100.4.020.559-2',
+  seat: 'Emmen',
   // Vertretung laut Register, bestätigt in Runde 1 (R7a). Nur im Impressum.
   representative: 'Nezir Bozhdaraj',
   address: {
     street: 'Tannhof 10',
     postalCode: '6020',
     city: 'Emmenbrücke',
+    region: 'LU',
+    country: 'CH',
   },
   phone: { display: '041 320 56 10', href: 'tel:+41413205610' },
   mobile: { display: '079 711 39 40', href: 'tel:+41797113940' },
   // Vorläufige Adresse bis zur Adresse des Kunden (E15, W05)
   email: 'admin@brandea.de',
   responseTime: 'innerhalb von 24 Stunden an Werktagen',
+  // Erreichbarkeit, bestätigt in Runde 2 (KONTAKT), gleich bei Google, local.ch und search.ch
+  openingHours: [
+    { days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '08:00', closes: '19:00' },
+    { days: ['Saturday'], opens: '09:00', closes: '17:00' },
+  ],
+  // Profile mit richtiger NAP, geprüft 28.09.2026. Kein Instagram, keine LinkedIn-Firmenseite.
+  sameAs: [
+    'https://www.facebook.com/bgsservice/',
+    'https://www.local.ch/de/d/emmenbruecke/6020/reinigungsfirma/bgs-gebaeudeservice-gmbh-ftdJQLdGCQT63MlCdWFMnQ',
+    'https://search.ch/tel/emmenbruecke/tannhof-10/bgs-gebaeudeservice-gmbh',
+  ],
   // Einzugsgebiet: ganze Kantone, alle Leistungen überall (E30, R4d)
   cantons: ['Luzern', 'Zug', 'Aargau', 'Nidwalden', 'Obwalden'],
   // Sprachen der Mitarbeitenden (E18)

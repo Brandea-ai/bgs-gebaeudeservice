@@ -4,6 +4,7 @@
 Aufruf im Repo: python3 Webseite-Analyse/werkzeuge/bilder_register.py
 Echte Fotos ersetzen die Dateien später unter demselben Namen, danach erneut ausführen.
 """
+import hashlib
 import pathlib
 import struct
 
@@ -30,7 +31,10 @@ def jpeg_size(path: pathlib.Path) -> tuple[int, int]:
 rows = []
 for f in sorted(folder.glob("*.jpg")):
     w, h = jpeg_size(f)
-    rows.append(f"  '{f.stem}': {{ src: '/bilder/{f.name}', width: {w}, height: {h} }},")
+    # Inhalts-Hash in der Adresse: neue Bildfassung = neue URL, sonst liefern der
+    # Bild-Cache von Next.js und das CDN die alte Fassung weiter aus
+    v = hashlib.sha256(f.read_bytes()).hexdigest()[:8]
+    rows.append(f"  '{f.stem}': {{ src: '/bilder/{f.name}?v={v}', version: '{v}', width: {w}, height: {h} }},")
 
 out = root / "shared" / "images.ts"
 out.write_text(

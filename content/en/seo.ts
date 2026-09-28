@@ -56,12 +56,12 @@ export const pages: Dictionary['pages'] = {
   '/leistungen/sonderreinigungen': {
     label: 'Deep and special cleaning',
     title: 'Deep and special cleaning in Lucerne and Zug',
-    description: 'Deep cleaning of residential, office and commercial space, as a one-off or at longer intervals. For property managers, owners and businesses in Lucerne, Zug and beyond.',
+    description: 'Deep cleaning of homes, offices and commercial space, one-off or at intervals. For property managers, owners and businesses in Lucerne, Zug and beyond.',
   },
   '/leistungen/umzugsreinigung': {
     label: 'End-of-tenancy cleaning',
-    title: 'End-of-tenancy cleaning with handover guarantee',
-    description: 'Move-out and end-of-tenancy cleaning before the handover of a flat, with a handover guarantee. For property managers, owners and businesses in Lucerne, Zug and beyond.',
+    title: 'End-of-tenancy cleaning, handover guarantee',
+    description: 'End-of-tenancy cleaning before the flat handover, with a handover guarantee. For property managers, owners and businesses in Lucerne, Zug and beyond.',
   },
   '/leistungen/baureinigung': {
     label: 'Construction cleaning',

@@ -154,6 +154,8 @@ export const contactForm = {
   submit: 'Anfrage senden',
   sending: 'Wird gesendet...',
   success: `Vielen Dank, Ihre Anfrage ist bei uns eingegangen. Wir melden uns ${company.responseTime} und vereinbaren mit Ihnen einen Termin für die Besichtigung. Wenn es eilt, erreichen Sie uns unter ${company.phone.display}.`,
+  nextTitle: "So geht es weiter",
+  nextSteps: ["Wir melden uns an Werktagen innerhalb von 24 Stunden.", "Wir besichtigen das Objekt vor Ort, kostenlos.", "Sie erhalten eine schriftliche Offerte."],
   successTitle: 'Anfrage eingegangen',
   errors: {
     required: 'Bitte füllen Sie dieses Feld aus.',
@@ -196,6 +198,9 @@ export const nav = {
     phone: 'Telefon',
     email: 'E-Mail',
     address: 'Adresse',
+    mobile: 'Mobil',
+    hours: 'Erreichbar',
+    hoursValue: 'Mo bis Fr 8 bis 19 Uhr, Sa 9 bis 17 Uhr',
     contactEyebrow: 'Kontakt',
     trust: [
       { key: 'seit', label: 'Seit 2006', text: 'Reinigung und Hauswartung' },

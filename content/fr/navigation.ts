@@ -140,6 +140,8 @@ export const nav: NavDictionary = {
     submit: 'Envoyer la demande',
     sending: 'Envoi en cours…',
     success: `Merci, nous avons bien reçu votre demande. Nous vous répondons ${responseTime} et convenons avec vous d’une date pour la visite. En cas d’urgence, vous nous joignez au ${company.phone.display}.`,
+    nextTitle: "La suite",
+    nextSteps: ["Nous vous répondons sous 24 heures les jours ouvrables.", "Nous visitons l'objet sur place, gratuitement.", "Vous recevez une offre écrite."],
     successTitle: 'Demande reçue',
     errors: {
       required: 'Veuillez remplir ce champ.',
@@ -172,6 +174,9 @@ export const nav: NavDictionary = {
     phone: 'Téléphone',
     email: 'E-mail',
     address: 'Adresse',
+    mobile: 'Mobile',
+    hours: 'Horaires',
+    hoursValue: 'Lun au ven 8 h à 19 h, sam 9 h à 17 h',
     contactEyebrow: 'Contact',
     trust: [
       { key: 'seit', label: 'Depuis 2006', text: 'Nettoyage et conciergerie' },

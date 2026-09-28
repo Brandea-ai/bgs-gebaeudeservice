@@ -7,7 +7,7 @@ import { cantonTitle } from './cantons'
 /**
  * Strukturierte Daten (GLOBAL-010, Webseite-Analyse/01, Abschnitt G).
  * Nur Angaben, die sichtbar auf der Website stehen und belegt sind (E18):
- * keine Bewertungen, keine Preise, keine Öffnungszeiten ohne Anzeige.
+ * keine Bewertungen, keine Preise. Die Öffnungszeiten stehen sichtbar im Kontaktbereich.
  */
 
 const organizationId = `${siteUrl}/#organization`
@@ -32,9 +32,16 @@ export const organizationJsonLd = (lang: Locale = 'de') => ({
     streetAddress: company.address.street,
     postalCode: company.address.postalCode,
     addressLocality: company.address.city,
-    addressRegion: 'LU',
-    addressCountry: 'CH',
+    addressRegion: company.address.region,
+    addressCountry: company.address.country,
   },
+  openingHoursSpecification: company.openingHours.map(({ days, opens, closes }) => ({
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: days.map((day) => `https://schema.org/${day}`),
+    opens,
+    closes,
+  })),
+  sameAs: [...company.sameAs],
   areaServed: areaServed(lang),
   // Deutsch, Englisch, Französisch und Italienisch (company.languages)
   knowsLanguage: ['de', 'en', 'fr', 'it'],

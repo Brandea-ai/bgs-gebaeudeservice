@@ -56,12 +56,12 @@ export const pages = {
   '/leistungen/sonderreinigungen': {
     label: 'Pulizie a fondo e speciali',
     title: 'Pulizie a fondo e speciali, Lucerna e Zugo',
-    description: 'Pulizia a fondo di abitazioni, uffici e superfici commerciali, una tantum o a intervalli più lunghi. Per amministrazioni immobiliari, proprietari e aziende a Lucerna, Zugo e dintorni.',
+    description: 'Pulizia a fondo di abitazioni, uffici e superfici commerciali, una tantum o periodica. Per amministrazioni, proprietari e aziende a Lucerna e Zugo.',
   },
   '/leistungen/umzugsreinigung': {
     label: 'Pulizia di fine locazione',
-    title: 'Pulizia di fine locazione, garanzia di consegna',
-    description: 'Pulizia di trasloco e di fine locazione prima della riconsegna dell’appartamento, con garanzia di consegna. Per amministrazioni immobiliari, proprietari e aziende a Lucerna, Zugo e dintorni.',
+    title: 'Pulizia di fine locazione con garanzia',
+    description: 'Pulizia di fine locazione prima della riconsegna dell’appartamento, con garanzia di consegna. Per amministrazioni, proprietari e aziende a Lucerna e Zugo.',
   },
   '/leistungen/baureinigung': {
     label: 'Pulizia di cantiere e di fine cantiere',
