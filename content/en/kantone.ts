@@ -14,7 +14,6 @@ import { nav } from './navigation'
  * metaFor() in shared/seo.ts adds it (titles after 25-AUDIT/keywords-mehrsprachig.md).
  */
 
-const seat = `${company.address.street}, ${company.address.postalCode} ${company.address.city}`
 const menu = nav.areaMenu.cantons
 
 /** Primary sources, read on 28 September 2026 (same links as the German page) */
@@ -24,7 +23,7 @@ const quelle = {
     href: 'https://map.geo.admin.ch/?lang=en&layers=ch.are.wohnungsinventar-zweitwohnungsanteil',
   },
   luRuhetage: {
-    label: 'Canton of Lucerne, Rest Days Act (SRL No. 855), § 1a (in German)',
+    label: 'Canton of Lucerne, Rest Days Act (SRL No. 855), §§ 1a and 5 (in German)',
     href: 'https://srl.lu.ch/app/de/texts_of_law/855',
   },
   luMeldung: {
@@ -60,8 +59,16 @@ const quelle = {
     href: 'https://www.ow.ch/fachbereiche/2131',
   },
   owRuhetage: {
-    label: 'Canton of Obwalden, Rest Days Act (GDB 975.2), Art. 2 (in German)',
+    label: 'Canton of Obwalden, Rest Days Act (GDB 975.2), Art. 2, 3 and 5 (in German)',
     href: 'https://gdb.ow.ch/app/de/texts_of_law/975.2',
+  },
+  orMiete: {
+    label: 'Swiss Code of Obligations (SR 220), Art. 266c and 266d, notice for flats and business premises',
+    href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/en#art_266_c',
+  },
+  arg: {
+    label: 'Labour Act (SR 822.11), Art. 20a, national and cantonal public holidays (in German)',
+    href: 'https://www.fedlex.admin.ch/eli/cc/1966/57_57_57/de#art_20_a',
   },
 } satisfies Record<string, Source>
 
@@ -75,8 +82,8 @@ const luzern: KantonPage = {
   },
   h1: 'Cleaning company in Lucerne, based in Emmenbrücke',
   lead: [
-    'Our head office is in Emmenbrücke, in the heart of the Lucerne agglomeration. From here we clean and look after properties, offices and commercial premises throughout the canton, from the city of Lucerne to Lake Sempach and the Entlebuch.',
-    'For property managers and communities of condominium owners, that means short distances: Kriens, Horw, Ebikon and the city are right next door, Sursee and Hochdorf only a little further.',
+    'Our head office is in Emmenbrücke, in the municipality of Emmen on the city boundary of Lucerne. Kriens, Horw and Ebikon are right next door, Sursee and Hochdorf only a little further.',
+    'For property managers and communities of condominium owners, that means short distances, especially for buildings that are looked after every week.',
   ],
   facts: [
     { label: 'Our head office', value: `${company.address.city}, municipality of Emmen` },
@@ -102,11 +109,11 @@ const luzern: KantonPage = {
     },
     {
       title: 'Change of tenant for the property manager',
-      text: 'When tenants move out, we clean the flat before it is handed over to the next ones, with a handover guarantee. Caretaking takes part in the handover.',
+      text: 'When tenants move out, we clean the flat before it is handed over to the next ones, with a handover guarantee. Our caretaking team is involved in the handover.',
     },
     {
       title: 'Second homes and villas on the lake',
-      text: 'Around Weggis, Vitznau and in Sörenberg, many flats are only lived in part of the time. Villas and second homes on the shore from Meggen to Vitznau are looked after by our [premium services](/premium).',
+      text: 'Around Weggis, Vitznau and in Sörenberg, many flats are occupied only part of the year. Villas and second homes on the shore from Meggen to Vitznau are looked after by our [premium services](/premium).',
       premium: true,
     },
   ],
@@ -130,34 +137,37 @@ const luzern: KantonPage = {
     {
       label: 'Public rest days across the canton',
       items: ['New Year’s Day', 'Good Friday', 'Ascension', 'Corpus Christi', '1 August', 'Assumption', 'All Saints’ Day', 'Immaculate Conception', 'Christmas Day', 'St Stephen’s Day'],
-      text: 'In the canton of Lucerne, Easter Monday and Whit Monday are not among them.',
+      text: 'In the canton of Lucerne, Easter Monday and Whit Monday are not among them. Each municipality decides for itself whether St Joseph’s Day (19 March) and the patronal feast of the parish are rest days.',
       source: 'luRuhetage',
     },
     {
-      label: 'St Joseph’s Day and patronal feast',
-      text: '19 March and the patronal feast of the parish are rest days only where the municipality declares them so. The municipal office can tell you whether this applies to your property.',
-      source: 'luRuhetage',
+      label: 'Notice dates if none are agreed',
+      text: 'The tenancy agreement comes first. If it names no date, Art. 266c of the Code of Obligations provides for the customary local date for flats and, where there is no local custom, the end of a three-month tenancy period. The notice period is at least three months.',
+      source: 'orMiete',
     },
     {
       label: 'Change of tenant in the city of Lucerne',
-      text: 'Owners and landlords report their tenants’ moves in and out to the residents’ registration office, with flat number and date. The same date is the basis for planning the final cleaning.',
+      text: 'Owners and landlords report their tenants’ moves in and out to the residents’ registration office, with flat number and date.',
       source: 'luMeldung',
     },
     {
-      label: 'Many second homes',
+      label: 'Second homes',
       text: 'Flühli including Sörenberg 58.31%, Vitznau 32.71% and Weggis 24.95%. In these three municipalities, the building rules of the Second Homes Act apply.',
       source: 'are',
     },
   ],
   faq: [
-    { question: 'Where is your head office?', answer: `At ${seat}, in the Lucerne agglomeration.` },
+    {
+      question: 'Is St Joseph’s Day a rest day in our municipality?',
+      answer: 'In the canton of Lucerne each municipality decides this itself, as it does for the patronal feast of the parish. Where such a day applies, work in commercial businesses is in principle prohibited there, as on the other rest days (§ 5 Rest Days Act). Check with the municipal office before you schedule a job on 19 March.',
+    },
     {
       question: 'Do you also work in the Entlebuch or the Seetal?',
       answer: 'Yes, throughout the canton, from Hochdorf and Hitzkirch to Schüpfheim and Escholzmatt-Marbach. The same services and terms apply there as in the city of Lucerne.',
     },
     {
-      question: 'On which dates are flats in the canton of Lucerne given notice?',
-      answer: 'The tenancy agreement comes first. If it names no date, Art. 266c of the Swiss Code of Obligations provides for a customary local date and, where there is none, the end of a three-month rental period. For property managers, this means requesting [end-of-tenancy cleaning with a handover guarantee](/leistungen/umzugsreinigung) as soon as notice is received.',
+      question: 'We manage flats in the city of Lucerne. When should we plan the final clean for a change of tenant?',
+      answer: 'Use the move-out date that you report to the residents’ registration office anyway. Request [end-of-tenancy cleaning with a handover guarantee](/leistungen/umzugsreinigung) as soon as notice is received, so the cleaning takes place before the flat is handed over to the next tenants.',
     },
     {
       question: 'Do you look after second homes in Weggis, Vitznau or Sörenberg?',
@@ -177,18 +187,18 @@ const zug: KantonPage = {
   seo: {
     title: 'Office cleaning company in Zug',
     description:
-      'Office cleaning company in Zug for headquarters: office cleaning, glass and caretaking from Baar to the Ägeri valley, in English too. Free quote after a visit.',
+      'Office cleaning company in Zug for headquarters: offices, glass and caretaking from Baar to the Ägeri valley, in English too. Free quote after a site visit.',
   },
   h1: 'Office cleaning company in Zug for businesses and headquarters',
   lead: [
-    'Many companies, including international ones, have their registered office in the canton of Zug. What they need is cleaning that follows the business day and does not disrupt it.',
-    'Where English is spoken in the office, arrangements can be made in English too. For residential properties on Lake Zug and Lake Ägeri, we take on caretaking and upkeep.',
+    'Many companies, including international ones, have their registered office in the canton of Zug. Their offices are often in commercial buildings where reception, access and the alarm system need to be settled before the cleaning team arrives.',
+    'For residential properties on Lake Zug and Lake Ägeri, we take on caretaking and upkeep.',
   ],
   facts: [
     { label: 'Access', value: 'Via the A14 motorway' },
     { label: 'Focus', value: 'Office buildings with lots of glass' },
     { label: 'Notice dates', value: '31 March, 30 June, 30 September' },
-    { label: 'Arrangements', value: 'Also in English' },
+    { label: 'Public holidays', value: 'Nine treated like Sundays, plus four customary days off' },
   ],
   regionen: [
     { title: 'Zug, Baar and Steinhausen', orte: ['Zug', 'Baar', 'Steinhausen'] },
@@ -218,7 +228,7 @@ const zug: KantonPage = {
   leistungen: [
     { path: '/leistungen/bueroreinigung', text: 'For office floors, reception and meeting rooms, outside your office hours.' },
     { path: '/leistungen/fenster-und-fassadenreinigung', text: 'For windows, glass surfaces and facades of commercial buildings.' },
-    { path: '/leistungen/facility-services', text: 'One contract for several sites, for example in Zug, Baar and Lucerne.' },
+    { path: '/leistungen/facility-services', text: 'When caretaking and grounds maintenance are to be added for the office building.' },
     { path: '/leistungen/sonderreinigungen', text: 'Deep cleaning when you move offices, against limescale, grease and old layers.' },
     { path: '/premium/yacht', title: 'Yacht', text: 'Interior, upholstery, teak and gelcoat, on Lake Zug and Lake Lucerne.' },
   ],
@@ -242,7 +252,7 @@ const zug: KantonPage = {
   daten: [
     {
       label: 'Notice dates',
-      text: 'Unless the tenancy agreement says otherwise, 31 March, 30 June and 30 September apply. The notice period is three months for flats and six months for business premises.',
+      text: 'Unless the tenancy agreement says otherwise, 31 March, 30 June and 30 September apply. The notice period is at least three months for flats and six months for business premises.',
       source: 'zgMietrecht',
     },
     {
@@ -252,32 +262,28 @@ const zug: KantonPage = {
       source: 'zgFeiertage',
     },
     {
-      label: 'Holiday-like days',
-      items: ['St Berchtold’s Day', 'Easter Monday', 'Whit Monday', 'St Stephen’s Day'],
+      label: 'Customary days off',
+      items: ['Berchtold’s Day', 'Easter Monday', 'Whit Monday', 'St Stephen’s Day'],
       text: 'Most businesses in Zug close voluntarily; work is allowed without a permit and without a surcharge. Exception: 2 January or 26 December falls on a Sunday.',
       source: 'zgFeiertagsaehnlich',
     },
   ],
   faq: [
     {
-      question: 'Can we communicate in English?',
-      answer: 'Yes. Arrangements can be made in English, as well as in French and Italian. Let us know in the form which language your team prefers.',
-    },
-    {
       question: 'Do you also look after several sites, for example in Zug and Lucerne?',
-      answer: 'Yes. Headquarters in Zug, a branch in Lucerne, a warehouse in Aargau: with [facility services](/leistungen/facility-services), all sites run under one contract and one contact person on our side. Give us all addresses when you enquire, and we will plan the site visits together.',
+      answer: 'Yes, all five cantons are part of our service area. Give us all addresses when you enquire, and we will plan the site visits together. If caretaking is to be added to cleaning at one address, [facility services](/leistungen/facility-services) brings together the services for that property.',
     },
     {
       question: 'We are leaving our office in Zug. When should we book the final clean?',
-      answer: 'As soon as the notice is settled. Without another agreement, business premises in the canton of Zug are given notice with six months’ notice, which leaves ample time for the [final cleaning before handover](/leistungen/umzugsreinigung).',
+      answer: 'As soon as the notice is settled. The notice period for business premises is at least six months, which leaves ample time for the [final cleaning before handover](/leistungen/umzugsreinigung).',
     },
     {
       question: 'Do you also work in Baar, Cham or the Ägeri valley?',
       answer: 'Yes, in all eleven municipalities of Zug, from Risch (Rotkreuz) to Menzingen and Neuheim, with all services and on the same terms.',
     },
     {
-      question: 'Are the holiday-like days suitable for deep cleaning?',
-      answer: 'Often, yes. According to the Office for Economy and Labour, most businesses in Zug are closed on St Berchtold’s Day, Easter Monday, Whit Monday and St Stephen’s Day. Empty offices are ideal for work that would disturb everyday business, such as [deep cleaning of floors](/leistungen/sonderreinigungen).',
+      question: 'May cleaning take place on the customary days off?',
+      answer: 'Yes. On Berchtold’s Day, Easter Monday, Whit Monday and St Stephen’s Day, work in the canton of Zug is allowed without a permit, unless 2 January or 26 December falls on a Sunday. Most businesses are closed on these days. If you are planning [deep cleaning of floors](/leistungen/sonderreinigungen) without business going on, name one of these days as your preferred date when you enquire.',
     },
   ],
   menuText: menu.zug.text,
@@ -293,7 +299,7 @@ const aargau: KantonPage = {
   },
   h1: 'Cleaning company in Aargau for industry, business and properties',
   lead: [
-    'Aargau has many industrial and commercial businesses. Production and storage halls, workshops and commercial buildings need cleaning that follows shifts and workflows.',
+    'Aargau has many industrial and commercial businesses. For production and storage halls, workshops and commercial buildings there is our industrial and warehouse cleaning, for apartment buildings maintenance cleaning and caretaking.',
     'We work throughout the canton, from the Freiamt and the Seetal on the Lucerne border to Aarau, Baden, Brugg and the Fricktal.',
   ],
   facts: [
@@ -345,29 +351,32 @@ const aargau: KantonPage = {
     {
       label: 'Holidays in all districts',
       items: ['New Year’s Day', 'Good Friday', 'Ascension', '1 August', 'Christmas Day'],
-      text: 'Only these five days are treated like Sundays throughout Aargau. The cantonal government sets the other holidays by district; the fact sheet lists six different arrangements.',
+      text: 'Only these five days are treated like Sundays throughout Aargau. The cantonal government sets four more by district; the fact sheet lists six different arrangements.',
       source: 'agFeiertage',
     },
     {
-      label: 'Easter Monday and Whit Monday',
-      text: 'Public holidays in the districts of Aarau, Baden, Brugg, Kulm, Lenzburg and Zofingen and in eight municipalities of the Rheinfelden district, among them Rheinfelden, Möhlin and Kaiseraugst. In Bremgarten, Laufenburg, Muri and Zurzach, neither day is a public holiday.',
-      source: 'agFeiertage',
-    },
-    {
-      label: 'Corpus Christi and All Saints’ Day',
-      text: 'Corpus Christi is a public holiday in the districts of Baden (except Bergdietikon), Bremgarten, Laufenburg, Muri and Zurzach and in six municipalities of the Rheinfelden district. All Saints’ Day applies in Bremgarten, Laufenburg, Muri, Rheinfelden and Zurzach. In Aarau, Brugg, Kulm, Lenzburg and Zofingen, neither day is a public holiday.',
-      source: 'agFeiertage',
-    },
-    {
-      label: 'St Stephen’s Day and St Berchtold’s Day',
-      text: 'St Stephen’s Day is a public holiday except in Laufenburg, Muri and six municipalities of the Rheinfelden district. St Berchtold’s Day applies only in Aarau, Brugg, Kulm, Lenzburg, Zofingen, Zurzach and Bergdietikon.',
+      label: 'Four more holidays by district',
+      groups: [
+        { title: 'Aarau, Brugg, Kulm, Lenzburg, Zofingen and Bergdietikon', items: ['Berchtold’s Day', 'Easter Monday', 'Whit Monday', 'St Stephen’s Day'] },
+        { title: 'Baden except Bergdietikon', items: ['Easter Monday', 'Whit Monday', 'Corpus Christi', 'St Stephen’s Day'] },
+        { title: 'Bremgarten', items: ['Corpus Christi', 'Assumption', 'All Saints’ Day', 'St Stephen’s Day'] },
+        {
+          title: 'Laufenburg, Muri and, in the Rheinfelden district, Hellikon, Mumpf, Obermumpf, Schupfart, Stein, Wegenstetten',
+          items: ['Corpus Christi', 'Assumption', 'All Saints’ Day', 'Immaculate Conception'],
+        },
+        {
+          title: 'Rest of the Rheinfelden district: Kaiseraugst, Magden, Möhlin, Olsberg, Rheinfelden, Wallbach, Zeiningen, Zuzgen',
+          items: ['Easter Monday', 'Whit Monday', 'All Saints’ Day', 'St Stephen’s Day'],
+        },
+        { title: 'Zurzach', items: ['Berchtold’s Day', 'Corpus Christi', 'All Saints’ Day', 'St Stephen’s Day'] },
+      ],
       source: 'agFeiertage',
     },
   ],
   faq: [
     {
       question: 'Do you also work in Aarau, Baden or Lenzburg?',
-      answer: 'Yes, throughout the canton: in Aarau, Lenzburg and Zofingen, in Baden and Wettingen, in Brugg and the Fricktal, in the Freiamt and on Lake Hallwil. The same terms apply everywhere as in Lucerne, including for travel.',
+      answer: 'Yes, throughout the canton: in Aarau, Lenzburg and Zofingen, in Baden and Wettingen, in Brugg and the Fricktal, in the Freiamt and on Lake Hallwil. The terms are the same everywhere as in Lucerne, including travel.',
     },
     {
       question: 'Do you clean during shift operations?',
@@ -383,7 +392,7 @@ const aargau: KantonPage = {
     },
     {
       question: 'We have sites in several districts. What does that mean for public holidays?',
-      answer: 'The cleaning schedule follows the district of each site. On Easter Monday, for example, Aarau has a public holiday while Muri has an ordinary working day. The rules by district are listed in the box above.',
+      answer: 'The cleaning schedule follows the district of each site. On Easter Monday, for example, Aarau has a public holiday while Muri has an ordinary working day; on Assumption it is the other way round. The holidays by district are listed in the box above.',
     },
   ],
   menuText: menu.aargau.text,
@@ -399,8 +408,8 @@ const nidwalden: KantonPage = {
   },
   h1: 'Cleaning company in Nidwalden for lakeside properties',
   lead: [
-    'Nidwalden stretches from the shore of Lake Lucerne at Hergiswil and Ennetbürgen to the Engelberg valley. Many properties are close to the lake, and some are only lived in part of the time.',
-    'For communities of condominium owners and property managers, we take on cleaning and caretaking. For second homes and villas, looking after the property while you are away comes on top.',
+    'Many properties in Nidwalden are close to Lake Lucerne, from Hergiswil to Beckenried. Not all owners live there; some only come for a few weeks a year.',
+    'For communities of condominium owners and property managers, we take on cleaning and caretaking, even when the owners live far away.',
   ],
   facts: [
     { label: 'Access', value: 'A2 via Lucerne' },
@@ -451,17 +460,11 @@ const nidwalden: KantonPage = {
     {
       label: 'Public rest days',
       items: ['New Year’s Day', 'St Joseph’s Day (19 March)', 'Ascension', 'Corpus Christi', '1 August', 'Assumption', 'All Saints’ Day', 'Immaculate Conception', 'Good Friday', 'Easter Sunday', 'Whit Sunday', 'Federal Day of Thanksgiving', 'Christmas Day'],
-      text: 'The last five are high holidays. Municipalities in Nidwalden may set further holidays by regulation.',
-      source: 'nwRuhetage',
+      text: 'Good Friday, Easter Sunday, Whit Sunday, the Federal Day of Thanksgiving and Christmas Day are high holidays. Apart from St Joseph’s Day, every day on the list is treated like a Sunday: eight under the Rest Days Act, 1 August under federal law (Art. 20a Labour Act), and the rest fall on a Sunday anyway. Municipalities may set further holidays by regulation.',
+      source: ['nwRuhetage', 'arg'],
     },
     {
-      label: 'Treated like Sundays',
-      items: ['New Year’s Day', 'Good Friday', 'Ascension', 'Corpus Christi', 'Assumption', 'All Saints’ Day', 'Immaculate Conception', 'Christmas Day'],
-      text: 'This is how the Rest Days Act applies the Labour Act. St Joseph’s Day is a public rest day but not one of these days.',
-      source: 'nwRuhetage',
-    },
-    {
-      label: 'Second homes in Emmetten',
+      label: 'Second homes',
       text: 'Emmetten 32.51%. It is the only municipality in Nidwalden above 20 percent and is therefore subject to the building rules of the Second Homes Act.',
       source: 'are',
     },
@@ -498,12 +501,12 @@ const obwalden: KantonPage = {
   h1: 'Cleaning company in Obwalden, from the Sarneraatal to Engelberg',
   lead: [
     'Obwalden consists of two parts: the Sarneraatal with the capital Sarnen, and the high valley of Engelberg, which is reached via Nidwalden.',
-    'In the Sarneraatal we clean and look after residential and commercial buildings and businesses. Engelberg is shaped by second homes and hotels, and we offer cleaning and care for both.',
+    'The two parts need different planning: in the Sarneraatal a fixed routine in residential and commercial buildings matters, while in Engelberg jobs follow the season, arrivals and departures.',
   ],
   facts: [
     { label: 'Access', value: 'A8, Engelberg through its valley' },
     { label: 'Notice dates', value: 'End of March, June and September' },
-    { label: 'Own public holiday', value: '25 September, Brother Klaus' },
+    { label: 'Own public holiday', value: 'Feast of St Nicholas of Flüe, 25 September' },
     { label: 'Not offered', value: 'Winter maintenance' },
   ],
   regionen: [
@@ -541,24 +544,24 @@ const obwalden: KantonPage = {
     title: 'Season, access and Engelberg',
     paragraphs: [
       'We drive to the Sarneraatal from Emmenbrücke via Lucerne and the A8 motorway. The route to Engelberg runs through Nidwalden and the Engelberg valley.',
-      'In Engelberg, jobs follow arrivals, departures and the season. Settle access, parking and key handover before the first visit, especially if you are not on site yourself.',
-      'We do not take on winter maintenance, in Engelberg either. Award snow clearing for driveways and open spaces separately, ideally before the season starts.',
+      'In Engelberg, settle access, parking and key handover before the first visit, especially if you are not on site yourself.',
+      'We do not provide winter maintenance, including in Engelberg. Award snow clearing for driveways and open spaces separately, ideally before the season starts.',
     ],
   },
   daten: [
     {
       label: 'Notice dates',
-      text: 'Unless the tenancy agreement says otherwise, a flat can be given notice for the end of March, June or September. The notice must be deliverable by the end of December, March or June at the latest.',
+      text: 'Unless the tenancy agreement says otherwise, a tenancy can be terminated with effect from the end of March, June or September. The notice must be deliverable by the end of December, March or June at the latest.',
       source: 'owSchlichtung',
     },
     {
       label: 'Public rest days',
       items: ['New Year’s Day', 'Ascension', 'Corpus Christi', '1 August', 'Assumption', 'Feast of St Nicholas of Flüe (25 September)', 'All Saints’ Day', 'Immaculate Conception', 'Good Friday', 'Easter Sunday', 'Whit Sunday', 'Federal Day of Thanksgiving', 'Christmas Day'],
-      text: 'The Feast of St Nicholas of Flüe is not treated like a Sunday under the Labour Act. Each municipality may also set one local holiday that counts as a Sunday.',
+      text: 'The Feast of St Nicholas of Flüe is not treated like a Sunday under the Labour Act. As a public rest day, however, work in commercial businesses is in principle prohibited on this day too (Art. 3); exceptions are set out in Art. 5. Each municipality may also set one local holiday that counts as a Sunday.',
       source: 'owRuhetage',
     },
     {
-      label: 'Second homes in Engelberg',
+      label: 'Second homes',
       text: 'Engelberg 55.87%, the only municipality in Obwalden above 20 percent. Lungern is below it at 18.92%.',
       source: 'are',
     },
@@ -574,11 +577,11 @@ const obwalden: KantonPage = {
     },
     {
       question: 'When is the best time for deep cleaning in a hotel?',
-      answer: 'When there are few guests in the house: in the off-season, before an opening or after a renovation. Plan the date early, as craftsmen are often working at the same time. Cleaning comes last so that no new dust is created. More under [deep and special cleaning](/leistungen/sonderreinigungen) and [construction cleaning](/leistungen/baureinigung).',
+      answer: 'When the hotel has few guests: in the off-season, before an opening or after a renovation. Plan the date early, as craftsmen are often working at the same time. Cleaning comes last so that no new dust is created. More under [deep and special cleaning](/leistungen/sonderreinigungen) and [construction cleaning](/leistungen/baureinigung).',
     },
     {
       question: 'Do you take on the final cleaning when tenants change?',
-      answer: 'Yes, on behalf of the property manager or the owners, with a handover guarantee. Because notice in Obwalden is given for the end of March, June or September unless agreed otherwise, handovers cluster on these dates, see [end-of-tenancy cleaning](/leistungen/umzugsreinigung).',
+      answer: 'Yes, on behalf of the property manager or the owners, with a handover guarantee. Because tenancies in Obwalden end on the last day of March, June or September unless agreed otherwise, handovers cluster on these dates, see [end-of-tenancy cleaning](/leistungen/umzugsreinigung).',
     },
   ],
   menuText: menu.obwalden.text,
@@ -614,5 +617,5 @@ export const kantonUi: Dictionary['kantone']['ui'] = {
 
 export const kantoneUebersicht: Dictionary['kantone']['uebersicht'] = {
   title: 'Your canton in detail',
-  text: 'Each canton has its own page: regions and places, typical properties, planning and the cantonal facts on rest days, notice dates and second homes.',
+  text: 'Each canton has its own page: regions and places, typical properties, planning and cantonal facts with sources, for example on public holidays, notice dates or second homes.',
 }

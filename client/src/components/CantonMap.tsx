@@ -1,4 +1,6 @@
 import Reveal from "./Reveal";
+import MapLabels, { SSR_WIDTH, type MapCode, type MapPinLabel } from "./MapLabels";
+import { around, codeShift, DOT, estimate, placeLabels, preference, SEAT_DOT, type Rect } from "./map-labels";
 import {
   cantonShapes,
   mapViewBox,
@@ -60,7 +62,10 @@ function shapeBox(d: string) {
  * (Kantonsseiten). spy lässt ein umgebendes Element per data-map-active
  * bestimmen, welcher Kanton hervortritt (Scrollspy auf /einzugsgebiet); ohne
  * JavaScript bleiben alle fünf voll. Beschriftungen stehen als HTML über dem
- * SVG, damit sie bei jeder Kartengrösse mindestens 13 px gross sind.
+ * SVG, damit sie bei jeder Kartengrösse mindestens 13 px gross sind. Die Regel
+ * gegen Überdeckung steckt in der Karte selbst (map-labels.ts, MapLabels.tsx):
+ * Ortsnamen weichen Kürzeln, dem Sitz und einander aus, ein Kürzel unter
+ * einem Ortspunkt rückt zur Seite. Das gilt für jeden Aufrufer.
  */
 export default function CantonMap({
   lang = "de",
@@ -77,7 +82,7 @@ export default function CantonMap({
   /** premium: helle Premium-Welt, Kantone in Champagner statt Signalrot */
   tone?: "light" | "dark" | "premium";
   className?: string;
-  /** Weitere Orte als Pins, Kartenkoordinaten wie seatPoint; side «left» setzt den Namen links vom Punkt */
+  /** Weitere Orte als Pins, Kartenkoordinaten wie seatPoint; side ist die bevorzugte Seite des Namens, die Karte weicht bei Überdeckung aus */
   pins?: { x: number; y: number; label: string; side?: "left" | "right" }[];
   /** Texte aus dem Wörterbuch; activeLabel beschriftet den hervorgehobenen Kanton in der Legende */
   texts: { areaLabel: string; source: string; seat: string; activeLabel?: string };
@@ -116,7 +121,6 @@ export default function CantonMap({
   }
   const [bx, by, bw, bh] = box;
   const inBox = (x: number, y: number) => x >= bx && x <= bx + bw && y >= by && y <= by + bh;
-  const at = (x: number, y: number) => ({ left: `${((x - bx) / bw) * 100}%`, top: `${((y - by) / bh) * 100}%` });
   // transform-box view-box: Bezug ist der Ursprung des Koordinatensystems, nicht der Ausschnitt
   const origin = (x: number, y: number) =>
     ({ "--ox": `${(x / bw) * 100}%`, "--oy": `${(y / bh) * 100}%` }) as React.CSSProperties;
@@ -124,13 +128,12 @@ export default function CantonMap({
   const nearSeat = (x: number, y: number) => Math.hypot(x - seatPoint.x, y - seatPoint.y) < 45;
   const shownPins = pins.filter(pin => inBox(pin.x, pin.y));
   /*
-   * Namen, die rechts über die Karte hinausragen würden, stehen links vom Punkt.
-   * Geschätzt für die schmalste Karte (rund 340 px, Handy): 8,5 px je Zeichen
-   * plus Abstand und Innenrand, umgerechnet in Kartenkoordinaten.
+   * Der Sitz steht links vom Punkt, wenn sein Name rechts über die Karte
+   * hinausragen würde. Geschätzt für die schmalste Karte (rund 340 px, Handy):
+   * 8,5 px je Zeichen plus Abstand und Innenrand, umgerechnet in Kartenkoordinaten.
    */
   const fits = (x: number, label: string) => x + ((label.length * 8.5 + 28) * bw) / 340 <= bx + bw;
-  const leftOf = (x: number, label: string, side?: "left" | "right") =>
-    side === "left" || (side !== "right" && !fits(x, label));
+  const seatLeft = !fits(seatPoint.x, company.address.city);
   const pinClass = mobilePins === "seat" ? "max-sm:hidden" : "";
   const scale = bw / fullW; // Punkte und Linien wachsen im Ausschnitt nicht mit
 
@@ -146,6 +149,70 @@ export default function CantonMap({
     return !active || active === key || dark ? "text-white" : "text-ink";
   };
   const chip = dark ? "bg-ink/85 text-white" : lux ? "bg-white/90 text-anthracite" : "bg-white/90 text-ink";
+
+  // Beschriftungen für die schmalste Karte setzen (SSR_WIDTH); MapLabels misst im Browser nach
+  const k0 = SSR_WIDTH / bw;
+  const px0 = (x: number, y: number) => [(x - bx) * k0, (y - by) * k0] as const;
+  const [seatX0, seatY0] = px0(seatPoint.x, seatPoint.y);
+  const seatSize = estimate.seat(company.address.city);
+  const pinDots = shownPins.map(pin => {
+    const [x, y] = px0(pin.x, pin.y);
+    return { x, y, r: DOT };
+  });
+  const codes: MapCode[] = served.flatMap((shape, index) => {
+    const key = keyByBfs.get(shape.id) as KantonKey;
+    if (!inBox(shape.label[0], shape.label[1])) return [];
+    const text = cantonInfo[kantonGerman[key]].code;
+    const [x, y] = px0(shape.label[0], shape.label[1]);
+    const size = estimate.code(text);
+    return [
+      {
+        id: shape.id,
+        x: shape.label[0],
+        y: shape.label[1],
+        shift: codeShift({ x, y, ...size }, [...pinDots, { x: seatX0, y: seatY0, r: SEAT_DOT }]),
+        text,
+        className: `map-canton block font-mono text-[0.8125rem] font-semibold leading-none tracking-[0.12em] transition-colors ${codeOf(key)}`,
+        i: index,
+      },
+    ];
+  });
+  const obstacles: Rect[] = [
+    ...codes.map(code => {
+      const [x, y] = px0(code.x, code.y);
+      const size = estimate.code(code.text);
+      return around(x + code.shift, y, size.w, size.h);
+    }),
+    around(seatX0, seatY0, 2 * SEAT_DOT, 2 * SEAT_DOT),
+    seatLeft
+      ? [seatX0 - 14 - seatSize.w, seatY0 - seatSize.h / 2, seatX0 - 14, seatY0 + seatSize.h / 2]
+      : [seatX0 + 14, seatY0 - seatSize.h / 2, seatX0 + 14 + seatSize.w, seatY0 + seatSize.h / 2],
+    ...shownPins.filter(pin => nearSeat(pin.x, pin.y)).map(pin => {
+      const [x, y] = px0(pin.x, pin.y);
+      return around(x, y, 2 * DOT, 2 * DOT);
+    }),
+  ];
+  const namedPins = shownPins.filter(pin => !nearSeat(pin.x, pin.y));
+  const sides0 = placeLabels({
+    width: SSR_WIDTH,
+    height: bh * k0,
+    obstacles,
+    pins: namedPins.map(pin => {
+      const [x, y] = px0(pin.x, pin.y);
+      return { x, y, ...estimate.pin(pin.label), prefer: preference(pin.side) };
+    }),
+  });
+  const labelPins: MapPinLabel[] = namedPins.map((pin, index) => ({
+    key: pin.label,
+    x: pin.x,
+    y: pin.y,
+    label: pin.label,
+    prefer: preference(pin.side),
+    side: sides0[index],
+    className: pinClass,
+    chipClass: `map-canton block whitespace-nowrap rounded-[3px] px-1.5 py-0.5 text-[0.8125rem] font-semibold leading-tight ${chip}`,
+    i: index + 1,
+  }));
 
   return (
     <Reveal as="figure" className={className}>
@@ -211,45 +278,20 @@ export default function CantonMap({
           </g>
         </svg>
 
-        {/* Beschriftungen als HTML: Kürzel, Orte und Sitz, nie kleiner als 13 px (Umbau 9) */}
-        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-          {served.map((shape, index) => {
-            const key = keyByBfs.get(shape.id) as KantonKey;
-            if (!inBox(shape.label[0], shape.label[1])) return null;
-            return (
-              <span key={shape.id} className="absolute -translate-x-1/2 -translate-y-1/2" style={at(shape.label[0], shape.label[1])}>
-                <span
-                  className={`map-canton block font-mono text-[0.8125rem] font-semibold tracking-[0.12em] transition-colors ${codeOf(key)}`}
-                  style={{ "--i": index } as React.CSSProperties}
-                >
-                  {cantonInfo[kantonGerman[key]].code}
-                </span>
-              </span>
-            );
-          })}
-          {shownPins.filter(pin => !nearSeat(pin.x, pin.y)).map((pin, index) => (
-            <span
-              key={pin.label}
-              className={`absolute -translate-y-1/2 ${leftOf(pin.x, pin.label, pin.side) ? "-translate-x-full pr-2.5" : "pl-2.5"} ${pinClass}`}
-              style={at(pin.x, pin.y)}
-            >
-              <span
-                className={`map-canton block whitespace-nowrap rounded-[3px] px-1.5 py-0.5 text-[0.8125rem] font-semibold leading-tight ${chip}`}
-                style={{ "--i": index + 1 } as React.CSSProperties}
-              >
-                {pin.label}
-              </span>
-            </span>
-          ))}
-          <span
-            className={`absolute -translate-y-1/2 ${leftOf(seatPoint.x, company.address.city) ? "-translate-x-full pr-3.5" : "pl-3.5"}`}
-            style={at(seatPoint.x, seatPoint.y)}
-          >
-            <span className={`block whitespace-nowrap rounded-[3px] px-1.5 py-0.5 text-[0.9375rem] font-bold leading-tight ${chip}`}>
-              {company.address.city}
-            </span>
-          </span>
-        </div>
+        {/* Beschriftungen als HTML: Kürzel, Orte und Sitz, nie kleiner als 13 px (Umbau 9), ohne Überdeckung */}
+        <MapLabels
+          view={[bx, by, bw, bh]}
+          codes={codes}
+          pins={labelPins}
+          seat={{
+            x: seatPoint.x,
+            y: seatPoint.y,
+            left: seatLeft,
+            label: company.address.city,
+            chipClass: `block whitespace-nowrap rounded-[3px] px-1.5 py-0.5 text-[0.9375rem] font-bold leading-tight ${chip}`,
+          }}
+          dots={shownPins.filter(pin => nearSeat(pin.x, pin.y)).map(pin => ({ x: pin.x, y: pin.y }))}
+        />
       </div>
       <figcaption
         className={`mt-3 flex flex-wrap items-center justify-between gap-x-6 gap-y-1 text-[0.8125rem] font-medium ${dark ? "text-white/90" : "text-ink-600"}`}

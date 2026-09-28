@@ -9,7 +9,8 @@ import { abschnitte, gebietKontext, type GebietProps } from "./kontext";
  * Kopf der Übersicht (E84): Bild, Titel, ein Satz, Aktionen. Die Karte steht
  * nicht mehr im Kopf, sondern nur unten im Abschnitt «Kantone», dort mit
  * Funktion (Audit visuell, /einzugsgebiet: dieselbe Karte stand zweimal).
- * Darunter die Belege und die Abschnittsleiste mit Scrollspy.
+ * Darunter drei Belege wie auf Leistungs- und Kantonsseiten (V2) und die
+ * Abschnittsleiste mit Scrollspy.
  */
 export default function GebietKopf(props: GebietProps) {
   const { lang } = props;
@@ -30,7 +31,7 @@ export default function GebietKopf(props: GebietProps) {
         below={
           <div className="relative bg-white">
             <div className="container py-5 md:py-6">
-              <TrustStrip lang={lang} compact />
+              <TrustStrip lang={lang} compact only={["seit", "versichert", "offerte"]} />
             </div>
           </div>
         }

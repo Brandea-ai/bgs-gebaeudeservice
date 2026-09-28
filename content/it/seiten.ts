@@ -3,7 +3,6 @@ import type { PagePath } from '../../shared/seo'
 import type { Dictionary } from '../de'
 import type { Step } from '../types'
 import { answers, cantonListIt, languagesIt, premiumLine, registerIt, responseTime, steps } from './common'
-import { q } from '../de/kantone'
 
 /**
  * Testi della pagina iniziale, di Chi siamo, Contatto, Zona d’intervento e delle
@@ -287,7 +286,7 @@ export const contact = {
 
 export const area = {
   h1: 'Zona d’intervento: Svizzera centrale e Argovia',
-  lead: `La nostra zona d’intervento comprende gli interi Cantoni di ${cantonListIt}. Ogni servizio vale ovunque, per amministrazioni e aziende come nel settore Premium.`,
+  lead: `La nostra zona d’intervento comprende gli interi Cantoni di ${cantonListIt}. Offriamo ogni servizio in tutta la zona, per amministrazioni e aziende come nel settore Premium.`,
   cantonsTitle: 'Cantoni',
   cantonLabels: ['Cantone di Lucerna', 'Cantone di Zugo', 'Cantone di Argovia', 'Cantone di Nidvaldo', 'Cantone di Obvaldo'],
   // Località per Cantone (S06): le stesse località di places.groups, raggruppate; chiavi come company.cantons
@@ -299,32 +298,32 @@ export const area = {
     Obwalden: ['Engelberg'],
   },
   seatTitle: 'Sede e contatto',
+  seatText: 'La trasferta da Emmenbrücke avviene ovunque alle stesse condizioni, che sia verso Sursee, Baar, Muri o Engelberg.',
   // Elemento 6.1: solo dati che figurano con fonte sulle pagine cantonali
   vergleich: {
     nav: 'Confronto',
     title: 'I cinque Cantoni a confronto',
-    intro: 'Servizi e condizioni sono gli stessi ovunque. Le differenze riguardano accesso, giorni festivi e abitazioni secondarie, e contano per il piano di pulizia.',
-    columns: ['Cantone', 'Priorità', 'Accesso', 'Festivi: particolarità', 'Abitazioni secondarie > 20 %'],
+    intro: 'Servizi e condizioni sono gli stessi ovunque, trasferta compresa. Le differenze riguardano termini di disdetta senza altro accordo nel contratto, giorni festivi e abitazioni secondarie, e contano per il piano di pulizia.',
+    columns: ['Cantone', 'Priorità', 'Termini di disdetta', 'Festivi: particolarità', 'Abitazioni secondarie > 20 %'],
     rows: [
-      ['[Lucerna](/einzugsgebiet/luzern)', 'Abitazioni, uffici, studi', 'Sede nel Cantone', 'Santo Stefano festivo, San Giuseppe secondo Comune', 'Flühli, Vitznau, Weggis'],
-      ['[Zugo](/einzugsgebiet/zug)', 'Uffici e sedi aziendali', 'A14', 'Quattro giorni simili ai festivi', 'Nessuno'],
-      ['[Argovia](/einzugsgebiet/aargau)', 'Capannoni, magazzini, abitazioni', 'Secondo la regione', 'Sei regimi per distretto', 'Nessuno'],
-      ['[Nidvaldo](/einzugsgebiet/nidwalden)', 'Immobili sul lago, proprietà per piani', 'A2', 'San Giuseppe, 19 marzo', 'Emmetten'],
-      ['[Obvaldo](/einzugsgebiet/obwalden)', 'Sarneraatal, alberghi a Engelberg', 'A8', 'Fratel Nicolao, 25 settembre', 'Engelberg'],
+      ['[Lucerna](/einzugsgebiet/luzern)', 'Abitazioni, uffici, studi', 'Secondo il contratto, altrimenti uso locale (art. 266c CO)', 'Santo Stefano festivo, San Giuseppe secondo Comune', 'Flühli, Vitznau, Weggis'],
+      ['[Zugo](/einzugsgebiet/zug)', 'Uffici, sedi aziendali', '31.3, 30.6, 30.9', 'Quattro giorni semifestivi', 'Nessuno'],
+      ['[Argovia](/einzugsgebiet/aargau)', 'Capannoni, magazzini, abitazioni', 'Secondo il contratto, altrimenti uso locale (art. 266c CO)', 'Sei regimi distrettuali', 'Nessuno'],
+      ['[Nidvaldo](/einzugsgebiet/nidwalden)', 'Immobili sul lago, proprietà per piani', 'Secondo il contratto, altrimenti uso locale (art. 266c CO)', 'San Giuseppe (19.3)', 'Emmetten'],
+      ['[Obvaldo](/einzugsgebiet/obwalden)', 'Sarneraatal, alberghi a Engelberg', '31.3, 30.6, 30.9', 'Nicolao della Flüe (25.9)', 'Engelberg'],
     ],
-    note: 'I Comuni tengono essi stessi l’inventario delle abitazioni. Secondo l’ARE, le quote di abitazioni secondarie non si possono quindi confrontare direttamente tra Comuni.',
-    sources: q('luRuhetage', 'zgFeiertagsaehnlich', 'agFeiertage', 'nwRuhetage', 'owRuhetage', 'are'),
+    note: 'I Comuni non sono tenuti a dichiarare come tali le abitazioni secondarie nel registro degli edifici. Secondo l’ARE, le quote non si possono quindi confrontare tra Comuni.',
+    sources: ['zgMietrecht', 'owSchlichtung', 'orMiete', 'luRuhetage', 'zgFeiertagsaehnlich', 'agFeiertage', 'nwRuhetage', 'owRuhetage', 'are'] as const,
   },
   places: {
     title: 'Rive dei laghi e località di villeggiatura',
-    text: 'Nelle località di villeggiatura una parte delle abitazioni è abitata solo a tratti. Secondo l’inventario federale delle abitazioni ciò vale per più della metà delle abitazioni a Engelberg e per quasi una su tre a Emmetten e a Vitznau. Lì conta meno un ritmo settimanale fisso che la pulizia prima dell’arrivo e dopo la partenza, con giri di controllo nel frattempo. Per questi immobili c’è il nostro [settore Premium](/premium).',
-    sources: q('are'),
+    text: 'Secondo l’inventario delle abitazioni, a Flühli con Sörenberg e a Engelberg più della metà delle abitazioni non è un’abitazione primaria, a Emmetten e a Vitznau quasi una su tre. Lì conta meno un ritmo settimanale fisso che la pulizia prima dell’arrivo e dopo la partenza, con giri di controllo nel frattempo. Per questi immobili c’è il nostro [settore Premium](/premium).',
+    sources: ['are'] as const,
     groups: [
       { title: 'Sul lago dei Quattro Cantoni', items: ['Lucerna', 'Horw', 'Meggen', 'Weggis', 'Vitznau', 'Hergiswil', 'Stansstad', 'Ennetbürgen'] },
       { title: 'Sul lago di Zugo e sul lago di Ägeri', items: ['Zugo', 'Cham', 'Risch', 'Hünenberg', 'Walchwil', 'Baar', 'Oberägeri'] },
       { title: 'Sul lago di Sempach e sul lago di Hallwil', items: ['Eich', 'Meisterschwanden'] },
-      { title: 'Regione di Baden e del Mutschellen', items: ['Ennetbaden', 'Bergdietikon', 'Oberwil-Lieli'] },
-      { title: 'In montagna', items: ['Engelberg'] },
+      { title: 'Località di montagna', items: ['Sörenberg', 'Emmetten', 'Engelberg'] },
     ],
   },
   cta: {

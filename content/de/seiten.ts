@@ -2,7 +2,6 @@ import { cantonList, company, listDe, premiumLabel, premiumLine } from '../../sh
 import type { PagePath } from '../../shared/seo'
 import type { Step } from '../types'
 import { answers, steps } from './common'
-import { q } from './kantone'
 
 /**
  * Texte der Startseite, von Über uns, Kontakt, Einzugsgebiet und den beiden
@@ -316,10 +315,10 @@ export const contact = {
 
 export const area = {
   h1: 'Einzugsgebiet: Zentralschweiz und Aargau',
-  lead: `Das Einzugsgebiet umfasst die ganzen Kantone ${cantonList}. Jede Leistung gilt überall, für Verwaltungen und Unternehmen ebenso wie im Premium-Bereich.`,
+  lead: `Das Einzugsgebiet umfasst die ganzen Kantone ${cantonList}. Jede Leistung bieten wir überall an, für Verwaltungen und Unternehmen ebenso wie im Premium-Bereich.`,
   cantonsTitle: 'Kantone',
   cantonLabels: company.cantons.map((canton) => `Kanton ${canton}`),
-  // Orte je Kanton (S06, EG-01): nur Umgruppierung der Orte aus places.groups, keine neuen Orte. Schlüssel wie company.cantons.
+  // Orte je Kanton (S06, EG-01): Orte aus places.groups und den Kantonsseiten (kantone.ts › regionen), keine neuen Orte. Schlüssel wie company.cantons.
   cantonPlaces: {
     Luzern: ['Luzern', 'Horw', 'Meggen', 'Weggis', 'Vitznau', 'Eich'],
     Zug: ['Zug', 'Cham', 'Risch', 'Hünenberg', 'Walchwil', 'Baar', 'Oberägeri'],
@@ -328,38 +327,41 @@ export const area = {
     Obwalden: ['Engelberg'],
   } satisfies Record<(typeof company.cantons)[number], string[]>,
   seatTitle: 'Sitz und Kontakt',
+  /** Satz neben der Karte im Abschnitt Sitz; die Adresse steht im Kartenplatzhalter und im Kontaktblock (E44) */
+  seatText: 'Die Anfahrt ab Emmenbrücke gilt überall zu denselben Bedingungen, ob nach Sursee, Baar, Muri oder Engelberg.',
   /**
    * Baustein 6.1 (25-AUDIT/inhalt.md): was sich zwischen den Kantonen für die
    * Planung unterscheidet. Nur Angaben, die auf den Kantonsseiten mit Quelle
-   * stehen (content/de/kantone.ts › daten), Anfahrt aus kantone.ts › planung.
+   * stehen (content/de/kantone.ts › daten). Die Anfahrt fehlt bewusst, sie ist
+   * überall zu denselben Bedingungen (E44). sources sind Schlüssel aus
+   * kantonUi.quellen; ohne Import, damit der Kopf von seiten.ts unberührt bleibt.
    */
   vergleich: {
     nav: 'Vergleich',
     title: 'Die fünf Kantone im Vergleich',
-    intro: 'Leistungen und Bedingungen sind überall dieselben. Unterschiede gibt es bei Anfahrt, Feiertagen und Zweitwohnungen, und die zählen für den Reinigungsplan.',
-    columns: ['Kanton', 'Schwerpunkt', 'Anfahrt', 'Feiertage: Besonderheit', 'Zweitwohnungen über 20 %'],
+    intro: 'Leistungen und Bedingungen sind überall dieselben, auch bei der Anfahrt. Unterschiede gibt es bei Kündigungsterminen, Feiertagen und Zweitwohnungen, und die zählen für den Reinigungsplan.',
+    columns: ['Kanton', 'Schwerpunkt', 'Kündigungstermine ohne Abmachung', 'Feiertage: Besonderheit', 'Zweitwohnungen über 20 %'],
     rows: [
-      ['[Luzern](/einzugsgebiet/luzern)', 'Wohnbau, Büros, Praxen', 'Sitz im Kanton', 'Stefanstag frei, Josefstag je Gemeinde', 'Flühli, Vitznau, Weggis'],
-      ['[Zug](/einzugsgebiet/zug)', 'Büros und Firmensitze', 'A14', 'Vier feiertagsähnliche Tage', 'Keine Gemeinde'],
-      ['[Aargau](/einzugsgebiet/aargau)', 'Hallen, Lager, Wohnbau', 'Je nach Region', 'Sechs Regelungen je Bezirk', 'Keine Gemeinde'],
-      ['[Nidwalden](/einzugsgebiet/nidwalden)', 'Seeliegenschaften, Stockwerkeigentum', 'A2', 'Josefstag, 19. März', 'Emmetten'],
-      ['[Obwalden](/einzugsgebiet/obwalden)', 'Sarneraatal, Hotels in Engelberg', 'A8', 'Bruderklausenfest, 25. September', 'Engelberg'],
+      ['[Luzern](/einzugsgebiet/luzern)', 'Wohnbau, Büros, Praxen', 'Laut Mietvertrag, sonst ortsüblich (Art. 266c OR)', 'Stephanstag Feiertag, Josefstag je Gemeinde', 'Flühli, Vitznau, Weggis'],
+      ['[Zug](/einzugsgebiet/zug)', 'Büros und Firmensitze', '31.3., 30.6., 30.9.', 'Vier feiertagsähnliche Tage', 'Keine Gemeinde'],
+      ['[Aargau](/einzugsgebiet/aargau)', 'Hallen, Lager, Wohnbau', 'Laut Mietvertrag, sonst ortsüblich (Art. 266c OR)', 'Sechs Bezirksregelungen', 'Keine Gemeinde'],
+      ['[Nidwalden](/einzugsgebiet/nidwalden)', 'Seeliegenschaften, Stockwerkeigentum', 'Laut Mietvertrag, sonst ortsüblich (Art. 266c OR)', 'Josefstag, 19. März', 'Emmetten'],
+      ['[Obwalden](/einzugsgebiet/obwalden)', 'Sarneraatal, Hotels in Engelberg', '31.3., 30.6., 30.9.', 'Bruderklausenfest, 25. September', 'Engelberg'],
     ],
-    note: 'Die Wohnungsinventare führen die Gemeinden selbst. Laut ARE lassen sich die Zweitwohnungsanteile deshalb zwischen Gemeinden nicht direkt vergleichen.',
-    sources: q('luRuhetage', 'zgFeiertagsaehnlich', 'agFeiertage', 'nwRuhetage', 'owRuhetage', 'are'),
+    note: 'Die Gemeinden müssen Zweitwohnungen im Gebäuderegister nicht als solche ausweisen. Laut ARE lassen sich die Anteile deshalb zwischen Gemeinden nicht vergleichen.',
+    sources: ['zgMietrecht', 'owSchlichtung', 'orMiete', 'luRuhetage', 'zgFeiertagsaehnlich', 'agFeiertage', 'nwRuhetage', 'owRuhetage', 'are'] as const,
   },
   places: {
     title: 'Seeufer und Ferienorte',
     // Baustein 6.2: Anteile aus dem ARE-Wohnungsinventar (Datenstand 31.03.2026), gerundet
-    text: 'In Ferienorten wird ein Teil der Wohnungen nur zeitweise bewohnt. In Engelberg trifft das laut Wohnungsinventar des Bundes auf mehr als die Hälfte der Wohnungen zu, in Emmetten und Vitznau auf fast jede dritte. Dort zählt weniger der feste Wochenrhythmus als die Reinigung vor der Ankunft und nach der Abreise, dazu Kontrollgänge in der Zwischenzeit. Für diese Objekte gibt es unseren [Premium-Bereich](/premium).',
-    sources: q('are'),
-    // Orte aus 13, Abschnitt 3, alle im Gebiet. Nur als Text, keine eigenen Ortsseiten (M48, K09).
+    text: 'In Flühli mit Sörenberg und in Engelberg ist laut Wohnungsinventar mehr als die Hälfte der Wohnungen keine Erstwohnung, in Emmetten und Vitznau fast jede dritte. Dort zählt weniger der feste Wochenrhythmus als die Reinigung vor der Ankunft und nach der Abreise, dazu Kontrollgänge in der Zwischenzeit. Für diese Objekte gibt es unseren [Premium-Bereich](/premium).',
+    sources: ['are'] as const,
+    // Nur Seeufer und Ferienorte (Audit visuell), Orte aus 13, Abschnitt 3 und den Kantonsseiten. Nur als Text, keine eigenen Ortsseiten (M48, K09).
     groups: [
       { title: 'Am Vierwaldstättersee', items: ['Luzern', 'Horw', 'Meggen', 'Weggis', 'Vitznau', 'Hergiswil', 'Stansstad', 'Ennetbürgen'] },
       { title: 'Am Zuger- und Ägerisee', items: ['Zug', 'Cham', 'Risch', 'Hünenberg', 'Walchwil', 'Baar', 'Oberägeri'] },
       { title: 'Am Sempacher- und Hallwilersee', items: ['Eich', 'Meisterschwanden'] },
-      { title: 'Region Baden und Mutschellen', items: ['Ennetbaden', 'Bergdietikon', 'Oberwil-Lieli'] },
-      { title: 'In den Bergen', items: ['Engelberg'] },
+      { title: 'Ferienorte in den Bergen', items: ['Sörenberg', 'Emmetten', 'Engelberg'] },
     ],
   },
   cta: {

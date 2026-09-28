@@ -14,7 +14,6 @@ import { nav } from './navigation'
  * tedesco. Titoli senza marchio, metaFor() in shared/seo.ts lo aggiunge.
  */
 
-const seat = `${company.address.street}, ${company.address.postalCode} ${company.address.city}`
 const menu = nav.areaMenu.cantons
 
 /** Fonti primarie, lette il 28 settembre 2026 (stessi link della pagina tedesca) */
@@ -24,7 +23,7 @@ const quelle = {
     href: 'https://map.geo.admin.ch/?lang=it&layers=ch.are.wohnungsinventar-zweitwohnungsanteil',
   },
   luRuhetage: {
-    label: 'Cantone di Lucerna, legge sui giorni di riposo (SRL n. 855), § 1a (in tedesco)',
+    label: 'Cantone di Lucerna, legge sui giorni di riposo (SRL n. 855), §§ 1a e 5 (in tedesco)',
     href: 'https://srl.lu.ch/app/de/texts_of_law/855',
   },
   luMeldung: {
@@ -60,8 +59,16 @@ const quelle = {
     href: 'https://www.ow.ch/fachbereiche/2131',
   },
   owRuhetage: {
-    label: 'Cantone di Obvaldo, legge sui giorni di riposo (GDB 975.2), art. 2 (in tedesco)',
+    label: 'Cantone di Obvaldo, legge sui giorni di riposo (GDB 975.2), art. 2, 3 e 5 (in tedesco)',
     href: 'https://gdb.ow.ch/app/de/texts_of_law/975.2',
+  },
+  orMiete: {
+    label: 'Codice delle obbligazioni (RS 220), art. 266c e 266d, disdetta di abitazioni e locali commerciali',
+    href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/it#art_266_c',
+  },
+  arg: {
+    label: 'Legge sul lavoro (RS 822.11), art. 20a, festa nazionale e giorni festivi cantonali',
+    href: 'https://www.fedlex.admin.ch/eli/cc/1966/57_57_57/it#art_20_a',
   },
 } satisfies Record<string, Source>
 
@@ -75,13 +82,13 @@ const luzern: KantonPage = {
   },
   h1: 'Impresa di pulizie a Lucerna, con sede a Emmenbrücke',
   lead: [
-    'La nostra sede si trova a Emmenbrücke, nel cuore dell’agglomerato lucernese. Da qui puliamo e curiamo stabili, uffici e superfici commerciali in tutto il Cantone, dalla città di Lucerna al lago di Sempach fino all’Entlebuch.',
-    'Per le amministrazioni immobiliari e le comunioni di proprietari per piani significa tragitti brevi: Kriens, Horw, Ebikon e la città sono vicinissimi, Sursee e Hochdorf solo poco più lontani.',
+    'La nostra sede si trova a Emmenbrücke, nel Comune di Emmen, al confine con la città di Lucerna. Kriens, Horw ed Ebikon sono vicinissimi, Sursee e Hochdorf solo poco più lontani.',
+    'Per le amministrazioni immobiliari e le comunioni di proprietari per piani significa tragitti brevi, soprattutto per gli stabili curati ogni settimana.',
   ],
   facts: [
     { label: 'La nostra sede', value: `${company.address.city}, Comune di Emmen` },
     { label: 'Priorità', value: 'Condomini, proprietà per piani, uffici e studi' },
-    { label: 'Giorni di riposo pubblici', value: 'Dieci in tutto il Cantone, San Giuseppe secondo il Comune' },
+    { label: 'Giorni di riposo', value: 'Dieci in tutto il Cantone, San Giuseppe secondo il Comune' },
     { label: 'Abitazioni secondarie', value: 'Flühli, Vitznau e Weggis oltre il 20 %' },
   ],
   regionen: [
@@ -130,34 +137,37 @@ const luzern: KantonPage = {
     {
       label: 'Giorni di riposo pubblici in tutto il Cantone',
       items: ['Capodanno', 'Venerdì santo', 'Ascensione', 'Corpus Domini', '1° agosto', 'Assunzione', 'Ognissanti', 'Immacolata Concezione', 'Natale', 'Santo Stefano'],
-      text: 'Nel Cantone di Lucerna il lunedì di Pasqua e il lunedì di Pentecoste non ne fanno parte.',
+      text: 'Nel Cantone di Lucerna il lunedì di Pasqua e il lunedì di Pentecoste non ne fanno parte. Ogni Comune decide da sé se San Giuseppe (19 marzo) e la festa patronale della parrocchia sono giorni di riposo.',
       source: 'luRuhetage',
     },
     {
-      label: 'San Giuseppe e festa patronale',
-      text: 'Il 19 marzo e la festa patronale della parrocchia sono giorni di riposo solo dove il Comune li dichiara tali. La cancelleria comunale sa se ciò vale per il Suo stabile.',
-      source: 'luRuhetage',
+      label: 'Termini di disdetta senza accordo',
+      text: 'Conta anzitutto il contratto di locazione. Se non indica un termine, l’art. 266c CO prevede per le abitazioni la scadenza determinata dall’uso locale e, in mancanza, la fine di un trimestre di locazione. Il preavviso è di almeno tre mesi.',
+      source: 'orMiete',
     },
     {
       label: 'Cambio d’inquilino nella città di Lucerna',
-      text: 'Proprietari e locatori notificano all’ufficio controllo abitanti arrivi e partenze dei loro inquilini, con numero dell’appartamento e data. La stessa data serve a pianificare la pulizia finale.',
+      text: 'Proprietari e locatori notificano all’ufficio controllo abitanti arrivi e partenze dei loro inquilini, con numero dell’appartamento e data.',
       source: 'luMeldung',
     },
     {
-      label: 'Molte abitazioni secondarie',
+      label: 'Abitazioni secondarie',
       text: 'Flühli con Sörenberg 58,31 %, Vitznau 32,71 % e Weggis 24,95 %. In questi tre Comuni valgono le norme edilizie della legge sulle abitazioni secondarie.',
       source: 'are',
     },
   ],
   faq: [
-    { question: 'Dove si trova la vostra sede?', answer: `All’indirizzo ${seat}, nell’agglomerato di Lucerna.` },
     {
-      question: 'Lavorate anche nell’Entlebuch o nel Seetal?',
-      answer: 'Sì, in tutto il Cantone, da Hochdorf e Hitzkirch fino a Schüpfheim ed Escholzmatt-Marbach. Lì valgono gli stessi servizi e le stesse condizioni che nella città di Lucerna.',
+      question: 'San Giuseppe è un giorno di riposo nel nostro Comune?',
+      answer: 'Nel Cantone di Lucerna lo decide ogni Comune, come per la festa patronale della parrocchia. Dove un tale giorno vale, il lavoro nelle aziende artigianali e commerciali vi è in linea di principio vietato come negli altri giorni di riposo (§ 5 della legge sui giorni di riposo). Si informi presso la cancelleria comunale prima di fissare un intervento il 19 marzo.',
     },
     {
-      question: 'Per quali termini si disdicono gli appartamenti nel Cantone di Lucerna?',
-      answer: 'Conta anzitutto il contratto di locazione. Se non indica un termine, l’art. 266c CO prevede un termine d’uso locale e, in mancanza, la fine di una durata di locazione di tre mesi. Per le amministrazioni significa: richiedere la [pulizia di fine locazione con garanzia di consegna](/leistungen/umzugsreinigung) appena arriva la disdetta.',
+      question: 'Lavorate anche nell’Entlebuch o nel Seetal?',
+      answer: 'Sì, in tutto il Cantone, da Hochdorf e Hitzkirch fino a Schüpfheim ed Escholzmatt-Marbach. Lì valgono gli stessi servizi e le stesse condizioni della città di Lucerna.',
+    },
+    {
+      question: 'Amministriamo appartamenti nella città di Lucerna. Quando pianificare la pulizia finale al cambio d’inquilino?',
+      answer: 'Con la data di partenza che notifica comunque all’ufficio controllo abitanti. Richieda la [pulizia di fine locazione con garanzia di consegna](/leistungen/umzugsreinigung) appena arriva la disdetta, così la pulizia avviene prima della consegna al nuovo inquilino.',
     },
     {
       question: 'Vi occupate di abitazioni secondarie a Weggis, Vitznau o Sörenberg?',
@@ -181,14 +191,14 @@ const zug: KantonPage = {
   },
   h1: 'Impresa di pulizie a Zugo per uffici e sedi aziendali',
   lead: [
-    'Molte aziende, anche internazionali, hanno la loro sede nel Cantone di Zugo. Serve una pulizia che segua l’attività aziendale e non disturbi la giornata di lavoro.',
-    'Dove in ufficio si parla inglese, gli accordi si prendono anche in inglese. Per gli stabili abitativi sul lago di Zugo e sul lago di Ägeri ci occupiamo di custodia e manutenzione.',
+    'Molte aziende, anche internazionali, hanno la loro sede nel Cantone di Zugo. I loro uffici si trovano spesso in stabili in cui reception, accesso e allarme vanno regolati prima che arrivi la squadra di pulizia.',
+    'Per gli stabili abitativi sul lago di Zugo e sul lago di Ägeri ci occupiamo di custodia e manutenzione.',
   ],
   facts: [
     { label: 'Accesso', value: 'Con l’autostrada A14' },
     { label: 'Priorità', value: 'Stabili per uffici con molto vetro' },
     { label: 'Termini di disdetta', value: '31 marzo, 30 giugno, 30 settembre' },
-    { label: 'Accordi', value: 'Anche in inglese' },
+    { label: 'Giorni festivi', value: 'Nove equiparati alla domenica, più quattro giorni semifestivi' },
   ],
   regionen: [
     { title: 'Zugo, Baar e Steinhausen', orte: ['Zugo', 'Baar', 'Steinhausen'] },
@@ -218,7 +228,7 @@ const zug: KantonPage = {
   leistungen: [
     { path: '/leistungen/bueroreinigung', text: 'Per piani uffici, reception e sale riunioni, al di fuori del Suo orario d’ufficio.' },
     { path: '/leistungen/fenster-und-fassadenreinigung', text: 'Per finestre, superfici vetrate e facciate di stabili commerciali.' },
-    { path: '/leistungen/facility-services', text: 'Un contratto per più sedi, ad esempio a Zugo, Baar e Lucerna.' },
+    { path: '/leistungen/facility-services', text: 'Quando per lo stabile per uffici si aggiungono custodia e cura delle aree esterne.' },
     { path: '/leistungen/sonderreinigungen', text: 'Pulizia a fondo al cambio d’ufficio, contro calcare, grasso e vecchi strati.' },
     { path: '/premium/yacht', title: 'Yacht', text: 'Interni, imbottiture, teak e gelcoat, sul lago di Zugo e sul lago dei Quattro Cantoni.' },
   ],
@@ -242,7 +252,7 @@ const zug: KantonPage = {
   daten: [
     {
       label: 'Termini di disdetta',
-      text: 'Salvo altro accordo nel contratto di locazione valgono il 31 marzo, il 30 giugno e il 30 settembre. Il termine è di tre mesi per gli appartamenti e di sei mesi per i locali commerciali.',
+      text: 'Salvo altro accordo nel contratto di locazione valgono il 31 marzo, il 30 giugno e il 30 settembre. Il preavviso è di almeno tre mesi per gli appartamenti e di sei mesi per i locali commerciali.',
       source: 'zgMietrecht',
     },
     {
@@ -252,7 +262,7 @@ const zug: KantonPage = {
       source: 'zgFeiertage',
     },
     {
-      label: 'Giorni simili ai festivi',
+      label: 'Giorni semifestivi',
       items: ['San Bertoldo', 'Lunedì di Pasqua', 'Lunedì di Pentecoste', 'Santo Stefano'],
       text: 'La maggior parte delle aziende zughesi chiude volontariamente, si può lavorare senza permesso e senza supplemento. Eccezione: il 2 gennaio o il 26 dicembre cade di domenica.',
       source: 'zgFeiertagsaehnlich',
@@ -260,24 +270,20 @@ const zug: KantonPage = {
   ],
   faq: [
     {
-      question: 'Possiamo comunicare in inglese?',
-      answer: 'Sì. Gli accordi sono possibili in inglese, come pure in francese e in italiano. Indichi nel modulo la lingua che il Suo team preferisce.',
-    },
-    {
       question: 'Vi occupate anche di più sedi, ad esempio a Zugo e a Lucerna?',
-      answer: 'Sì. Sede principale a Zugo, filiale a Lucerna, magazzino in Argovia: con i [facility services](/leistungen/facility-services) tutte le sedi passano per un unico contratto e un’unica persona di contatto da noi. Ci indichi tutti gli indirizzi nella richiesta, così pianifichiamo i sopralluoghi insieme.',
+      answer: 'Sì, tutti e cinque i Cantoni fanno parte della nostra zona d’intervento. Ci indichi tutti gli indirizzi nella richiesta, così pianifichiamo i sopralluoghi insieme. Se a un indirizzo oltre alla pulizia serve anche la custodia, i [facility services](/leistungen/facility-services) riuniscono i servizi di quell’immobile.',
     },
     {
       question: 'Lasciamo il nostro ufficio a Zugo. Quando richiedere la pulizia finale?',
-      answer: 'Appena la disdetta è definita. Senza altro accordo, nel Cantone di Zugo i locali commerciali si disdicono con sei mesi di preavviso: il tempo basta ampiamente per la [pulizia finale prima della riconsegna](/leistungen/umzugsreinigung).',
+      answer: 'Appena la disdetta è definita. Per i locali commerciali il preavviso è di almeno sei mesi: il tempo basta ampiamente per la [pulizia finale prima della riconsegna](/leistungen/umzugsreinigung).',
     },
     {
       question: 'Lavorate anche a Baar, Cham o nella valle di Ägeri?',
       answer: 'Sì, in tutti gli undici Comuni zughesi, da Risch (Rotkreuz) fino a Menzingen e Neuheim, con tutti i servizi e alle stesse condizioni.',
     },
     {
-      question: 'I giorni simili ai festivi sono adatti a una pulizia a fondo?',
-      answer: 'Spesso sì. Secondo l’Ufficio dell’economia e del lavoro, a San Bertoldo, lunedì di Pasqua, lunedì di Pentecoste e Santo Stefano la maggior parte delle aziende zughesi è chiusa. Gli uffici vuoti sono ideali per lavori che nella quotidianità disturbano, come la [pulizia a fondo dei pavimenti](/leistungen/sonderreinigungen).',
+      question: 'Si può pulire nei giorni semifestivi?',
+      answer: 'Sì. A San Bertoldo, lunedì di Pasqua, lunedì di Pentecoste e Santo Stefano nel Cantone di Zugo si può lavorare senza permesso, salvo che il 2 gennaio o il 26 dicembre cada di domenica. In questi giorni la maggior parte delle aziende è chiusa. Se prevede una [pulizia a fondo dei pavimenti](/leistungen/sonderreinigungen) senza attività in corso, indichi uno di questi giorni come data desiderata nella richiesta.',
     },
   ],
   menuText: menu.zug.text,
@@ -293,11 +299,11 @@ const aargau: KantonPage = {
   },
   h1: 'Impresa di pulizie in Argovia per industria, aziende e stabili',
   lead: [
-    'In Argovia ci sono molte aziende industriali e artigianali. Capannoni di produzione e di deposito, officine ed edifici commerciali hanno bisogno di una pulizia che segua turni e processi.',
+    'In Argovia ci sono molte aziende industriali e artigianali. Per capannoni di produzione e di deposito, officine ed edifici commerciali c’è la nostra pulizia industriale e di capannoni, per i condomini la pulizia di manutenzione e la custodia.',
     'Lavoriamo in tutto il Cantone, dal Freiamt e dal Seetal al confine lucernese fino ad Aarau, Baden, Brugg e al Fricktal.',
   ],
   facts: [
-    { label: 'Accesso', value: 'Alle stesse condizioni che a Lucerna' },
+    { label: 'Accesso', value: 'Alle stesse condizioni, come a Lucerna' },
     { label: 'Priorità', value: 'Industria e artigianato, più abitazioni' },
     { label: 'Giorni festivi', value: 'Sei regimi secondo il distretto' },
     { label: 'Non festivo', value: 'Il 1° maggio, in tutto il Cantone' },
@@ -345,29 +351,32 @@ const aargau: KantonPage = {
     {
       label: 'Festivi in tutti i distretti',
       items: ['Capodanno', 'Venerdì santo', 'Ascensione', '1° agosto', 'Natale'],
-      text: 'Solo questi cinque giorni sono equiparati alla domenica in tutta l’Argovia. Gli altri festivi li fissa il Consiglio di Stato per distretto, il promemoria cantonale ne elenca sei regimi.',
+      text: 'Solo questi cinque giorni sono equiparati alla domenica in tutta l’Argovia. Altri quattro li fissa il Consiglio di Stato per distretto, il promemoria cantonale elenca sei regimi.',
       source: 'agFeiertage',
     },
     {
-      label: 'Lunedì di Pasqua e lunedì di Pentecoste',
-      text: 'Festivi nei distretti di Aarau, Baden, Brugg, Kulm, Lenzburg e Zofingen e in otto Comuni del distretto di Rheinfelden, tra cui Rheinfelden, Möhlin e Kaiseraugst. A Bremgarten, Laufenburg, Muri e Zurzach nessuno dei due è festivo.',
-      source: 'agFeiertage',
-    },
-    {
-      label: 'Corpus Domini e Ognissanti',
-      text: 'Il Corpus Domini è festivo nei distretti di Baden (tranne Bergdietikon), Bremgarten, Laufenburg, Muri e Zurzach e in sei Comuni del distretto di Rheinfelden. Ognissanti vale a Bremgarten, Laufenburg, Muri, Rheinfelden e Zurzach. Ad Aarau, Brugg, Kulm, Lenzburg e Zofingen nessuno dei due giorni è festivo.',
-      source: 'agFeiertage',
-    },
-    {
-      label: 'Santo Stefano e San Bertoldo',
-      text: 'Santo Stefano è festivo ovunque tranne a Laufenburg, Muri e in sei Comuni del distretto di Rheinfelden. San Bertoldo vale solo ad Aarau, Brugg, Kulm, Lenzburg, Zofingen, Zurzach e Bergdietikon.',
+      label: 'Altri quattro festivi per distretto',
+      groups: [
+        { title: 'Aarau, Brugg, Kulm, Lenzburg, Zofingen e Bergdietikon', items: ['San Bertoldo', 'Lunedì di Pasqua', 'Lunedì di Pentecoste', 'Santo Stefano'] },
+        { title: 'Baden senza Bergdietikon', items: ['Lunedì di Pasqua', 'Lunedì di Pentecoste', 'Corpus Domini', 'Santo Stefano'] },
+        { title: 'Bremgarten', items: ['Corpus Domini', 'Assunzione', 'Ognissanti', 'Santo Stefano'] },
+        {
+          title: 'Laufenburg, Muri e, nel distretto di Rheinfelden, Hellikon, Mumpf, Obermumpf, Schupfart, Stein, Wegenstetten',
+          items: ['Corpus Domini', 'Assunzione', 'Ognissanti', 'Immacolata Concezione'],
+        },
+        {
+          title: 'Resto del distretto di Rheinfelden: Kaiseraugst, Magden, Möhlin, Olsberg, Rheinfelden, Wallbach, Zeiningen, Zuzgen',
+          items: ['Lunedì di Pasqua', 'Lunedì di Pentecoste', 'Ognissanti', 'Santo Stefano'],
+        },
+        { title: 'Zurzach', items: ['San Bertoldo', 'Corpus Domini', 'Ognissanti', 'Santo Stefano'] },
+      ],
       source: 'agFeiertage',
     },
   ],
   faq: [
     {
       question: 'Lavorate anche ad Aarau, Baden o Lenzburg?',
-      answer: 'Sì, in tutto il Cantone: ad Aarau, Lenzburg e Zofingen, a Baden e Wettingen, a Brugg e nel Fricktal, nel Freiamt e sul lago di Hallwil. Ovunque valgono le stesse condizioni che a Lucerna, anche per la trasferta.',
+      answer: 'Sì, in tutto il Cantone: ad Aarau, Lenzburg e Zofingen, a Baden e Wettingen, a Brugg e nel Fricktal, nel Freiamt e sul lago di Hallwil. Ovunque valgono le stesse condizioni, come a Lucerna, anche per la trasferta.',
     },
     {
       question: 'Pulite anche durante il lavoro a turni?',
@@ -383,7 +392,7 @@ const aargau: KantonPage = {
     },
     {
       question: 'Abbiamo sedi in più distretti. Che cosa significa per i giorni festivi?',
-      answer: 'Il piano di pulizia segue il distretto di ogni sede. Il lunedì di Pasqua, ad esempio, ad Aarau è festivo, a Muri è un normale giorno lavorativo. Le regole per distretto sono elencate più in alto nel riquadro.',
+      answer: 'Il piano di pulizia segue il distretto di ogni sede. Il lunedì di Pasqua, ad esempio, ad Aarau è festivo, a Muri è un normale giorno lavorativo; all’Assunzione è il contrario. I festivi per distretto sono elencati più in alto nel riquadro.',
     },
   ],
   menuText: menu.aargau.text,
@@ -399,8 +408,8 @@ const nidwalden: KantonPage = {
   },
   h1: 'Impresa di pulizie a Nidvaldo per immobili sul lago',
   lead: [
-    'Nidvaldo va dalla riva del lago dei Quattro Cantoni a Hergiswil ed Ennetbürgen fino alla valle di Engelberg. Molti immobili si trovano vicino al lago, alcuni sono abitati solo per una parte dell’anno.',
-    'Per le comunioni di proprietari per piani e le amministrazioni ci occupiamo di pulizia e custodia. Per abitazioni secondarie e ville si aggiunge la cura durante la Sua assenza.',
+    'Molti immobili nidvaldesi si trovano vicino al lago dei Quattro Cantoni, da Hergiswil a Beckenried. Non tutti i proprietari vi abitano, alcuni vengono solo poche settimane all’anno.',
+    'Per le comunioni di proprietari per piani e le amministrazioni ci occupiamo di pulizia e custodia, anche quando i proprietari abitano lontano.',
   ],
   facts: [
     { label: 'Accesso', value: 'A2 via Lucerna' },
@@ -420,7 +429,7 @@ const nidwalden: KantonPage = {
     },
     {
       title: 'Abitazioni secondarie',
-      text: 'Soprattutto a Emmetten molte abitazioni sono usate solo per una parte dell’anno. Le curiamo prima del Suo arrivo, dopo la Sua partenza e con giri di controllo nel frattempo.',
+      text: 'Soprattutto a Emmetten molte abitazioni sono usate solo per una parte dell’anno. Le curiamo prima del Suo arrivo e dopo la Sua partenza, e tra un soggiorno e l’altro passiamo a controllare.',
     },
     {
       title: 'Ville e residenze sul lago',
@@ -428,7 +437,7 @@ const nidwalden: KantonPage = {
       premium: true,
     },
     {
-      title: 'Barche sul lago dei Quattro Cantoni',
+      title: 'Barche e yacht a Nidvaldo',
       text: 'Motoscafi e yacht agli ormeggi di Stansstad, Buochs o Beckenried sono curati dalla nostra [pulizia di yacht](/premium/yacht).',
       premium: true,
     },
@@ -449,19 +458,13 @@ const nidwalden: KantonPage = {
   },
   daten: [
     {
-      label: 'Giorni di riposo pubblici',
+      label: 'Giorni di riposo',
       items: ['Capodanno', 'San Giuseppe (19 marzo)', 'Ascensione', 'Corpus Domini', '1° agosto', 'Assunzione', 'Ognissanti', 'Immacolata Concezione', 'Venerdì santo', 'Domenica di Pasqua', 'Domenica di Pentecoste', 'Digiuno federale', 'Natale'],
-      text: 'Gli ultimi cinque sono alte festività. I Comuni nidvaldesi possono stabilire altri festivi con un regolamento.',
-      source: 'nwRuhetage',
+      text: 'Venerdì santo, domenica di Pasqua, domenica di Pentecoste, Digiuno federale e Natale sono alte festività. Tranne San Giuseppe, tutti i giorni dell’elenco sono equiparati alla domenica: otto secondo la legge sui giorni di riposo, il 1° agosto secondo il diritto federale (art. 20a LL), gli altri cadono comunque di domenica. I Comuni possono stabilire altri festivi con un regolamento.',
+      source: ['nwRuhetage', 'arg'],
     },
     {
-      label: 'Equiparati alla domenica',
-      items: ['Capodanno', 'Venerdì santo', 'Ascensione', 'Corpus Domini', 'Assunzione', 'Ognissanti', 'Immacolata Concezione', 'Natale'],
-      text: 'Così la legge sui giorni di riposo applica la legge sul lavoro. San Giuseppe è un giorno di riposo pubblico, ma non rientra tra questi.',
-      source: 'nwRuhetage',
-    },
-    {
-      label: 'Abitazioni secondarie a Emmetten',
+      label: 'Abitazioni secondarie',
       text: 'Emmetten 32,51 %. È l’unico Comune di Nidvaldo oltre il 20 per cento e sottostà quindi alle norme edilizie della legge sulle abitazioni secondarie.',
       source: 'are',
     },
@@ -498,12 +501,12 @@ const obwalden: KantonPage = {
   h1: 'Impresa di pulizie a Obvaldo, dal Sarneraatal a Engelberg',
   lead: [
     'Obvaldo si compone di due parti: il Sarneraatal con il capoluogo Sarnen e l’alta valle di Engelberg, che si raggiunge passando da Nidvaldo.',
-    'Nel Sarneraatal puliamo e curiamo stabili abitativi e commerciali e aziende. Engelberg è segnata da abitazioni secondarie e alberghi, per entrambi offriamo pulizia e assistenza.',
+    'Le due parti richiedono una pianificazione diversa: nel Sarneraatal conta il ritmo fisso negli stabili abitativi e commerciali, a Engelberg gli interventi seguono stagione, arrivi e partenze.',
   ],
   facts: [
     { label: 'Accesso', value: 'A8, Engelberg per la sua valle' },
     { label: 'Termini di disdetta', value: 'Fine marzo, fine giugno, fine settembre' },
-    { label: 'Festivo proprio', value: '25 settembre, Fratel Nicolao' },
+    { label: 'Festivo proprio', value: 'Festa di San Nicolao della Flüe, 25 settembre' },
     { label: 'Non offerto', value: 'Servizio invernale' },
   ],
   regionen: [
@@ -541,7 +544,7 @@ const obwalden: KantonPage = {
     title: 'Stagione, accesso ed Engelberg',
     paragraphs: [
       'Nel Sarneraatal arriviamo da Emmenbrücke via Lucerna e l’autostrada A8. La strada per Engelberg passa per Nidvaldo e la valle di Engelberg.',
-      'A Engelberg gli interventi seguono arrivi, partenze e stagione. Stabilisca accesso, parcheggio e consegna delle chiavi prima del primo intervento, soprattutto se Lei non è sul posto.',
+      'A Engelberg stabilisca accesso, parcheggio e consegna delle chiavi prima del primo intervento, soprattutto se Lei non è sul posto.',
       'Il servizio invernale non lo assumiamo, nemmeno a Engelberg. Affidi quindi lo sgombero della neve per accessi e piazzali separatamente, possibilmente prima dell’inizio della stagione.',
     ],
   },
@@ -552,13 +555,13 @@ const obwalden: KantonPage = {
       source: 'owSchlichtung',
     },
     {
-      label: 'Giorni di riposo pubblici',
+      label: 'Giorni di riposo',
       items: ['Capodanno', 'Ascensione', 'Corpus Domini', '1° agosto', 'Assunzione', 'Festa di San Nicolao della Flüe (25 settembre)', 'Ognissanti', 'Immacolata Concezione', 'Venerdì santo', 'Domenica di Pasqua', 'Domenica di Pentecoste', 'Digiuno federale', 'Natale'],
-      text: 'La festa di San Nicolao della Flüe non è equiparata alla domenica ai sensi della legge sul lavoro. Ogni Comune può inoltre stabilire un festivo locale equiparato alla domenica.',
+      text: 'La festa di San Nicolao della Flüe non è equiparata alla domenica ai sensi della legge sul lavoro. Come giorno di riposo pubblico, però, anche in questo giorno il lavoro nelle aziende artigianali e commerciali è in linea di principio vietato (art. 3), le eccezioni sono all’art. 5. Ogni Comune può inoltre stabilire un festivo locale equiparato alla domenica.',
       source: 'owRuhetage',
     },
     {
-      label: 'Abitazioni secondarie a Engelberg',
+      label: 'Abitazioni secondarie',
       text: 'Engelberg 55,87 %, unico Comune di Obvaldo oltre il 20 per cento. Lungern resta al di sotto con il 18,92 %.',
       source: 'are',
     },
@@ -614,5 +617,5 @@ export const kantonUi: Dictionary['kantone']['ui'] = {
 
 export const kantoneUebersicht: Dictionary['kantone']['uebersicht'] = {
   title: 'Il Suo Cantone nel dettaglio',
-  text: 'Ogni Cantone ha una propria pagina: regioni e località, immobili tipici, pianificazione e i dati cantonali su giorni di riposo, termini di disdetta e abitazioni secondarie.',
+  text: 'Ogni Cantone ha una propria pagina: regioni e località, immobili tipici, pianificazione e dati cantonali con fonte, ad esempio su giorni festivi, termini di disdetta o abitazioni secondarie.',
 }

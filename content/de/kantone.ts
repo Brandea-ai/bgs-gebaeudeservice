@@ -29,10 +29,19 @@ export type KantonObjekt = { title: string; text: string; premium?: boolean }
 
 /**
  * Angabe im Kasten «Kantonsdaten für die Planung»: nur mit gelesener
- * Primärquelle (Schlüssel in kantonUi.quellen). items für Aufzählungen wie
- * Feiertage, als Liste statt als langer Satz; text für Regel und Einordnung.
+ * Primärquelle (Schlüssel in kantonUi.quellen, mehrere als Liste). items für
+ * Aufzählungen wie Feiertage, als Liste statt als langer Satz; text für Regel
+ * und Einordnung; groups für Regeln je Bezirk (Titel und Liste je Zeile).
+ * Folgen Angaben mit derselben Quelle aufeinander, steht die Quelle nur
+ * einmal unter der letzten (seiten/kanton/07-daten.tsx).
  */
-export type KantonDatum = { label: string; text?: string; items?: string[]; source: QuelleKey }
+export type KantonDatum = {
+  label: string
+  text?: string
+  items?: string[]
+  groups?: { title: string; items: string[] }[]
+  source: QuelleKey | QuelleKey[]
+}
 
 export type KantonPage = {
   name: string
@@ -53,14 +62,12 @@ export type KantonPage = {
     /** Gelesene Quellen zu Aussagen im Text (etwa Vogelwarte), Schlüssel in kantonUi.quellen */
     sources?: QuelleKey[]
   }
-  /** Kasten «Kantonsdaten für die Planung», 3 bis 4 Angaben mit Quelle */
+  /** Kasten «Kantonsdaten für die Planung», 2 bis 4 Angaben mit Quelle */
   daten: KantonDatum[]
   faq: { question: string; answer: string }[]
   /** Kurzer Satz für Mega-Menü und Übersicht, steht in navigation.ts (kantonMenu) */
   menuText: string
 }
-
-const seat = `${company.address.street}, ${company.address.postalCode} ${company.address.city}`
 
 /**
  * Primärquellen, gelesen am 28.09.2026 (Bericht kantone, Welle 2). Gesetze in der
@@ -74,7 +81,7 @@ const quelle = {
     href: 'https://map.geo.admin.ch/?lang=de&layers=ch.are.wohnungsinventar-zweitwohnungsanteil',
   },
   luRuhetage: {
-    label: 'Kanton Luzern, Gesetz über die Ruhetage (SRL Nr. 855), § 1a',
+    label: 'Kanton Luzern, Gesetz über die Ruhetage (SRL Nr. 855), §§ 1a und 5',
     href: 'https://srl.lu.ch/app/de/texts_of_law/855',
   },
   luMeldung: {
@@ -110,15 +117,23 @@ const quelle = {
     href: 'https://www.ow.ch/fachbereiche/2131',
   },
   owRuhetage: {
-    label: 'Kanton Obwalden, Ruhetagsgesetz (GDB 975.2), Art. 2',
+    label: 'Kanton Obwalden, Ruhetagsgesetz (GDB 975.2), Art. 2, 3 und 5',
     href: 'https://gdb.ow.ch/app/de/texts_of_law/975.2',
+  },
+  orMiete: {
+    label: 'Obligationenrecht (SR 220), Art. 266c und 266d, Kündigung von Wohnungen und Geschäftsräumen',
+    href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_266_c',
+  },
+  arg: {
+    label: 'Arbeitsgesetz (SR 822.11), Art. 20a, Bundesfeiertag und kantonale Feiertage',
+    href: 'https://www.fedlex.admin.ch/eli/cc/1966/57_57_57/de#art_20_a',
   },
 } satisfies Record<string, Source>
 
 /** Schlüssel einer Quelle; die Texte je Sprache stehen in kantonUi.quellen */
 export type QuelleKey = keyof typeof quelle
 
-/** Quellen per Schlüssel angeben, etwa q('are', 'agFeiertage') (auch in seiten.ts › area) */
+/** Quellen per Schlüssel angeben, etwa q('are', 'agFeiertage') */
 export const q = (...keys: QuelleKey[]) => keys
 
 // Sitz Emmenbrücke (company.ts), Orte aus seiten.ts (area), Ruhetage SRL 855, Stadt Luzern, ARE, Vogelwarte
@@ -132,8 +147,8 @@ const luzern: KantonPage = {
   },
   h1: 'Reinigungsfirma Luzern mit Sitz in Emmenbrücke',
   lead: [
-    'Unser Sitz liegt in Emmenbrücke, mitten in der Agglomeration Luzern. Von hier aus reinigen und betreuen wir Liegenschaften, Büros und Gewerbeflächen im ganzen Kanton, von der Stadt Luzern über den Sempachersee bis ins Entlebuch.',
-    'Für Verwaltungen und Stockwerkeigentümerschaften heisst das kurze Wege: Kriens, Horw, Ebikon und die Stadt liegen gleich nebenan, Sursee und Hochdorf nur wenig weiter.',
+    'Unser Sitz liegt in Emmenbrücke, in der Gemeinde Emmen an der Stadtgrenze von Luzern. Kriens, Horw und Ebikon liegen gleich nebenan, Sursee und Hochdorf nur wenig weiter.',
+    'Für Verwaltungen und Stockwerkeigentümerschaften heisst das kurze Wege, gerade bei Liegenschaften, die jede Woche betreut werden.',
   ],
   facts: [
     { label: 'Unser Sitz', value: `${company.address.city}, Gemeinde Emmen` },
@@ -186,35 +201,38 @@ const luzern: KantonPage = {
   daten: [
     {
       label: 'Öffentliche Ruhetage im ganzen Kanton',
-      items: ['Neujahr', 'Karfreitag', 'Auffahrt', 'Fronleichnam', '1. August', 'Mariä Himmelfahrt', 'Allerheiligen', 'Mariä Empfängnis', 'Weihnachten', 'Stefanstag'],
-      text: 'Ostermontag und Pfingstmontag gehören im Kanton Luzern nicht dazu.',
+      items: ['Neujahr', 'Karfreitag', 'Auffahrt', 'Fronleichnam', '1. August', 'Mariä Himmelfahrt', 'Allerheiligen', 'Mariä Empfängnis', 'Weihnachten', 'Stephanstag'],
+      text: 'Ostermontag und Pfingstmontag gehören im Kanton Luzern nicht dazu. Den Josefstag (19. März) und das Patrozinium der Kirchgemeinde erklärt jede Einwohnergemeinde selbst zum Ruhetag oder nicht.',
       source: 'luRuhetage',
     },
     {
-      label: 'Josefstag und Patrozinium',
-      text: 'Der 19. März und das Patrozinium der Kirchgemeinde sind nur dort Ruhetag, wo die Einwohnergemeinde sie dazu erklärt. Ob das für Ihre Liegenschaft gilt, weiss die Gemeindekanzlei.',
-      source: 'luRuhetage',
+      label: 'Kündigungstermine ohne Abmachung',
+      text: 'Massgebend ist der Mietvertrag. Nennt er keinen Termin, gilt für Wohnungen nach Art. 266c OR der ortsübliche Termin und, wo es keinen Ortsgebrauch gibt, das Ende einer dreimonatigen Mietdauer. Die Frist beträgt mindestens drei Monate.',
+      source: 'orMiete',
     },
     {
       label: 'Mieterwechsel in der Stadt Luzern',
-      text: 'Eigentümer und Vermieter melden Ein- und Auszüge ihrer Mieterinnen und Mieter den Einwohnerdiensten, mit Wohnungsnummer und Datum. Mit demselben Datum lässt sich die Endreinigung planen.',
+      text: 'Eigentümer und Vermieter melden Ein- und Auszüge ihrer Mieterinnen und Mieter den Einwohnerdiensten, mit Wohnungsnummer und Datum.',
       source: 'luMeldung',
     },
     {
-      label: 'Zweitwohnungen über 20 %',
+      label: 'Zweitwohnungsanteil',
       text: 'Flühli mit Sörenberg 58,31 %, Vitznau 32,71 % und Weggis 24,95 %. In diesen drei Gemeinden gelten die Bauvorschriften des Zweitwohnungsgesetzes.',
       source: 'are',
     },
   ],
   faq: [
-    { question: 'Wo ist Ihr Sitz?', answer: `An der Adresse ${seat}, in der Agglomeration Luzern.` },
+    {
+      question: 'Ist der Josefstag in unserer Gemeinde ein Ruhetag?',
+      answer: 'Das bestimmt im Kanton Luzern jede Einwohnergemeinde selbst, ebenso beim Patrozinium der Kirchgemeinde. Wo ein solcher Tag gilt, ist dort die Arbeit in gewerblichen Betrieben grundsätzlich untersagt wie an den übrigen Ruhetagen (§ 5 Ruhetagsgesetz). Fragen Sie bei der Gemeindekanzlei nach, bevor Sie einen Einsatz auf den 19. März legen.',
+    },
     {
       question: 'Arbeiten Sie auch im Entlebuch oder im Seetal?',
       answer: 'Ja, im ganzen Kanton, von Hochdorf und Hitzkirch bis Schüpfheim und Escholzmatt-Marbach. Dort gelten dieselben Leistungen und Bedingungen wie in der Stadt Luzern.',
     },
     {
-      question: 'Auf welche Termine werden Wohnungen im Kanton Luzern gekündigt?',
-      answer: 'Massgebend ist zuerst der Mietvertrag. Nennt er keinen Termin, sieht Art. 266c OR einen ortsüblichen Termin vor und, wo es keinen gibt, das Ende einer dreimonatigen Mietdauer. Für Verwaltungen heisst das: die [Umzugsreinigung mit Abnahmegarantie](/leistungen/umzugsreinigung) anfragen, sobald die Kündigung eingeht.',
+      question: 'Wir verwalten Wohnungen in der Stadt Luzern. Wann planen wir die Endreinigung beim Mieterwechsel?',
+      answer: 'Mit dem Auszugsdatum, das Sie ohnehin den Einwohnerdiensten melden. Fragen Sie die [Umzugsreinigung mit Abnahmegarantie](/leistungen/umzugsreinigung) an, sobald die Kündigung eingeht, dann liegt die Reinigung vor der Übergabe an die nächste Mietpartei.',
     },
     {
       question: 'Betreuen Sie Zweitwohnungen in Weggis, Vitznau oder Sörenberg?',
@@ -228,7 +246,7 @@ const luzern: KantonPage = {
   menuText: kantonMenu.luzern.text,
 }
 
-// Sprachen (E18), Büroreinigung, Family Offices und Geheimhaltung (/premium), Kündigungstermine und Feiertage (zg.ch)
+// Büroreinigung, Family Offices und Geheimhaltung (/premium), Kündigungstermine und Feiertage (zg.ch); Sprachen nur in der Planungsliste
 const zug: KantonPage = {
   name: 'Zug',
   kuerzel: 'ZG',
@@ -239,14 +257,14 @@ const zug: KantonPage = {
   },
   h1: 'Reinigungsfirma Zug für Büros und Firmensitze',
   lead: [
-    'Im Kanton Zug haben viele Unternehmen ihren Sitz, auch internationale. Gefragt ist eine Reinigung, die sich nach dem Geschäftsbetrieb richtet und den Arbeitstag nicht stört.',
-    'Wo im Büro Englisch gesprochen wird, laufen Absprachen auch auf Englisch. Für Wohnliegenschaften am Zuger- und Ägerisee übernehmen wir Hauswartung und Unterhalt.',
+    'Im Kanton Zug haben viele Unternehmen ihren Sitz, auch internationale. Ihre Büros liegen oft in Geschäftshäusern, in denen Empfang, Zutritt und Alarm geregelt sein müssen, bevor das Reinigungsteam kommt.',
+    'Für Wohnliegenschaften am Zuger- und Ägerisee übernehmen wir Hauswartung und Unterhalt.',
   ],
   facts: [
     { label: 'Anfahrt', value: 'Über die Autobahn A14' },
     { label: 'Schwerpunkt', value: 'Büros, Firmensitze und Glasfassaden' },
     { label: 'Kündigungstermine', value: '31. März, 30. Juni, 30. September' },
-    { label: 'Absprachen', value: 'Auch auf Englisch' },
+    { label: 'Feiertage', value: 'Neun wie Sonntage, dazu vier feiertagsähnliche Tage' },
   ],
   regionen: [
     { title: 'Zug, Baar und Steinhausen', orte: ['Zug', 'Baar', 'Steinhausen'] },
@@ -276,7 +294,7 @@ const zug: KantonPage = {
   leistungen: [
     { path: '/leistungen/bueroreinigung', text: 'Für Büroetagen, Empfang und Sitzungszimmer, ausserhalb Ihrer Bürozeiten.' },
     { path: '/leistungen/fenster-und-fassadenreinigung', text: 'Für Fenster, Glasflächen und Fassaden von Geschäftshäusern.' },
-    { path: '/leistungen/facility-services', text: 'Ein Vertrag für mehrere Standorte, etwa in Zug, Baar und Luzern.' },
+    { path: '/leistungen/facility-services', text: 'Wenn im Geschäftshaus auch Hauswartung und Umgebungspflege dazukommen sollen.' },
     { path: '/leistungen/sonderreinigungen', text: 'Grundreinigung beim Bürowechsel, gegen Kalk, Fett und alte Schichten.' },
     { path: '/premium/yacht', title: 'Yacht', text: 'Innenraum, Polster, Teak und Gelcoat, am Zugersee und am Vierwaldstättersee.' },
   ],
@@ -300,42 +318,38 @@ const zug: KantonPage = {
   daten: [
     {
       label: 'Kündigungstermine',
-      text: 'Ohne andere Abmachung im Mietvertrag gelten der 31. März, der 30. Juni und der 30. September. Die Frist beträgt für Wohnungen drei, für Geschäftsräume sechs Monate.',
+      text: 'Ohne andere Abmachung im Mietvertrag gelten der 31. März, der 30. Juni und der 30. September. Die Frist beträgt mindestens drei Monate für Wohnungen und sechs Monate für Geschäftsräume.',
       source: 'zgMietrecht',
     },
     {
       label: 'Feiertage wie Sonntage',
-      items: ['Neujahr', 'Karfreitag', 'Auffahrt', 'Fronleichnam', '1. August', 'Maria Himmelfahrt', 'Allerheiligen', 'Maria Empfängnis', 'Weihnachten'],
+      items: ['Neujahr', 'Karfreitag', 'Auffahrt', 'Fronleichnam', '1. August', 'Mariä Himmelfahrt', 'Allerheiligen', 'Mariä Empfängnis', 'Weihnachten'],
       text: 'Für Angestellte gilt an diesen Tagen ein Arbeitsverbot wie am Sonntag, vom Vorabend 23 Uhr bis 23 Uhr am Feiertag.',
       source: 'zgFeiertage',
     },
     {
       label: 'Feiertagsähnliche Tage',
-      items: ['Berchtoldstag', 'Ostermontag', 'Pfingstmontag', 'Stefanstag'],
+      items: ['Berchtoldstag', 'Ostermontag', 'Pfingstmontag', 'Stephanstag'],
       text: 'Die meisten Zuger Betriebe haben freiwillig geschlossen, gearbeitet werden darf ohne Bewilligung und ohne Zuschlag. Ausnahme: Der 2. Januar oder der 26. Dezember fällt auf einen Sonntag.',
       source: 'zgFeiertagsaehnlich',
     },
   ],
   faq: [
     {
-      question: 'Können wir uns auf Englisch verständigen?',
-      answer: 'Ja. Absprachen sind auf Englisch möglich, ebenso auf Französisch und Italienisch. Geben Sie im Formular an, welche Sprache Ihr Team am liebsten nutzt.',
-    },
-    {
       question: 'Betreuen Sie auch mehrere Standorte, etwa in Zug und Luzern?',
-      answer: 'Ja. Ein Firmensitz in Zug, eine Filiale in Luzern, ein Lager im Aargau: Mit [Facility Services](/leistungen/facility-services) laufen alle Standorte über einen Vertrag und eine Ansprechperson bei uns. Nennen Sie uns bei der Anfrage alle Adressen, dann planen wir die Besichtigungen zusammen.',
+      answer: 'Ja, alle fünf Kantone gehören zu unserem Einzugsgebiet. Nennen Sie uns bei der Anfrage alle Adressen, dann planen wir die Besichtigungen zusammen. Soll an einer Adresse neben der Reinigung auch die Hauswartung dazukommen, fasst [Facility Services](/leistungen/facility-services) die Leistungen dieses Objekts zusammen.',
     },
     {
       question: 'Wir geben unser Büro in Zug ab. Wann fragen wir die Endreinigung an?',
-      answer: 'Sobald die Kündigung feststeht. Geschäftsräume werden im Kanton Zug ohne andere Abmachung mit sechs Monaten Frist gekündigt, der Vorlauf reicht also gut für die [Endreinigung vor der Übergabe](/leistungen/umzugsreinigung).',
+      answer: 'Sobald die Kündigung feststeht. Für Geschäftsräume gilt eine Kündigungsfrist von mindestens sechs Monaten, der Vorlauf reicht also gut für die [Endreinigung vor der Übergabe](/leistungen/umzugsreinigung).',
     },
     {
       question: 'Sind Sie auch in Baar, Cham oder im Ägerital tätig?',
       answer: 'Ja, in allen elf Zuger Gemeinden, von Risch mit Rotkreuz bis Menzingen und Neuheim, mit allen Leistungen und zu denselben Bedingungen.',
     },
     {
-      question: 'Eignen sich die feiertagsähnlichen Tage für eine Grundreinigung?',
-      answer: 'Oft ja. Laut Amt für Wirtschaft und Arbeit haben an Berchtoldstag, Ostermontag, Pfingstmontag und Stefanstag die meisten Zuger Betriebe geschlossen. Leere Büros sind ideal für Arbeiten, die im Alltag stören, etwa die [Grundreinigung von Böden](/leistungen/sonderreinigungen).',
+      question: 'Darf an den feiertagsähnlichen Tagen gereinigt werden?',
+      answer: 'Ja. An Berchtoldstag, Ostermontag, Pfingstmontag und Stephanstag darf im Kanton Zug ohne Bewilligung gearbeitet werden, ausser der 2. Januar oder der 26. Dezember fällt auf einen Sonntag. Die meisten Betriebe haben an diesen Tagen geschlossen. Planen Sie eine [Grundreinigung der Böden](/leistungen/sonderreinigungen) ohne laufenden Betrieb, nennen Sie einen dieser Tage bei der Anfrage als Wunschtermin.',
     },
   ],
   menuText: kantonMenu.zug.text,
@@ -352,7 +366,7 @@ const aargau: KantonPage = {
   },
   h1: 'Reinigungsfirma Aargau für Industrie, Gewerbe und Liegenschaften',
   lead: [
-    'Im Aargau gibt es viele Industrie- und Gewerbebetriebe. Produktions- und Lagerhallen, Werkstätten und Gewerbebauten brauchen eine Reinigung, die sich nach Schichten und Abläufen richtet.',
+    'Im Aargau gibt es viele Industrie- und Gewerbebetriebe. Für Produktions- und Lagerhallen, Werkstätten und Gewerbebauten gibt es unsere Industrie- und Hallenreinigung, für Mehrfamilienhäuser Unterhalt und Hauswartung.',
     'Wir arbeiten im ganzen Kanton, vom Freiamt und dem Seetal an der Luzerner Grenze bis nach Aarau, Baden, Brugg und ins Fricktal.',
   ],
   facts: [
@@ -400,26 +414,30 @@ const aargau: KantonPage = {
       'Was in Ihrem Betrieb für Fremdfirmen gilt, gilt auch für das Reinigungsteam. Halten Sie Sperrzonen, Schutzausrüstung und die Ansprechperson für Notfälle schriftlich fest, bevor der erste Einsatz beginnt.',
     ],
   },
+  // Alle 13 Zeilen des Merkblatts, je Spalte gelesen (pdftotext -bbox, 28.09.2026): jede Regelung hat 5 + 4 Feiertage
   daten: [
     {
       label: 'Feiertage in allen Bezirken',
       items: ['Neujahr', 'Karfreitag', 'Auffahrt', '1. August', 'Weihnachten'],
-      text: 'Nur diese fünf Tage sind im ganzen Aargau dem Sonntag gleichgestellt. Die übrigen Feiertage legt der Regierungsrat je Bezirk fest, das Merkblatt nennt dafür sechs Regelungen.',
+      text: 'Nur diese fünf Tage sind im ganzen Aargau dem Sonntag gleichgestellt. Vier weitere legt der Regierungsrat je Bezirk fest, das Merkblatt nennt dafür sechs Regelungen.',
       source: 'agFeiertage',
     },
     {
-      label: 'Ostermontag und Pfingstmontag',
-      text: 'Feiertag in den Bezirken Aarau, Baden, Brugg, Kulm, Lenzburg und Zofingen und in acht Gemeinden des Bezirks Rheinfelden, darunter Rheinfelden, Möhlin und Kaiseraugst. In Bremgarten, Laufenburg, Muri und Zurzach gelten beide Tage nicht als Feiertag.',
-      source: 'agFeiertage',
-    },
-    {
-      label: 'Fronleichnam und Allerheiligen',
-      text: 'Fronleichnam ist Feiertag in den Bezirken Baden ohne Bergdietikon, Bremgarten, Laufenburg, Muri und Zurzach sowie in sechs Gemeinden des Bezirks Rheinfelden. Allerheiligen gilt in Bremgarten, Laufenburg, Muri, Rheinfelden und Zurzach. In Aarau, Brugg, Kulm, Lenzburg und Zofingen ist keiner der beiden Tage ein Feiertag.',
-      source: 'agFeiertage',
-    },
-    {
-      label: 'Stephanstag und Berchtoldstag',
-      text: 'Der Stephanstag ist Feiertag ausser in Laufenburg, Muri und sechs Gemeinden des Bezirks Rheinfelden. Den Berchtoldstag kennen nur Aarau, Brugg, Kulm, Lenzburg, Zofingen, Zurzach und Bergdietikon.',
+      label: 'Vier weitere Feiertage je Bezirk',
+      groups: [
+        { title: 'Aarau, Brugg, Kulm, Lenzburg, Zofingen und Bergdietikon', items: ['Berchtoldstag', 'Ostermontag', 'Pfingstmontag', 'Stephanstag'] },
+        { title: 'Baden ohne Bergdietikon', items: ['Ostermontag', 'Pfingstmontag', 'Fronleichnam', 'Stephanstag'] },
+        { title: 'Bremgarten', items: ['Fronleichnam', 'Mariä Himmelfahrt', 'Allerheiligen', 'Stephanstag'] },
+        {
+          title: 'Laufenburg, Muri und im Bezirk Rheinfelden Hellikon, Mumpf, Obermumpf, Schupfart, Stein, Wegenstetten',
+          items: ['Fronleichnam', 'Mariä Himmelfahrt', 'Allerheiligen', 'Mariä Empfängnis'],
+        },
+        {
+          title: 'Übriger Bezirk Rheinfelden: Kaiseraugst, Magden, Möhlin, Olsberg, Rheinfelden, Wallbach, Zeiningen, Zuzgen',
+          items: ['Ostermontag', 'Pfingstmontag', 'Allerheiligen', 'Stephanstag'],
+        },
+        { title: 'Zurzach', items: ['Berchtoldstag', 'Fronleichnam', 'Allerheiligen', 'Stephanstag'] },
+      ],
       source: 'agFeiertage',
     },
   ],
@@ -442,7 +460,7 @@ const aargau: KantonPage = {
     },
     {
       question: 'Wir haben Standorte in mehreren Bezirken. Was heisst das für die Feiertage?',
-      answer: 'Der Reinigungsplan richtet sich nach dem Bezirk jedes Standorts. Am Ostermontag ist zum Beispiel in Aarau Feiertag, in Muri ein gewöhnlicher Arbeitstag. Die Regeln je Bezirk stehen oben im Kasten.',
+      answer: 'Der Reinigungsplan richtet sich nach dem Bezirk jedes Standorts. Am Ostermontag ist zum Beispiel in Aarau Feiertag, in Muri ein gewöhnlicher Arbeitstag, an Mariä Himmelfahrt ist es umgekehrt. Die Feiertage je Bezirk stehen oben im Kasten.',
     },
   ],
   menuText: kantonMenu.aargau.text,
@@ -459,8 +477,8 @@ const nidwalden: KantonPage = {
   },
   h1: 'Reinigungsfirma Nidwalden für Liegenschaften am See',
   lead: [
-    'Nidwalden reicht vom Ufer des Vierwaldstättersees bei Hergiswil und Ennetbürgen bis ins Engelbergertal. Viele Liegenschaften liegen nahe am See, manche werden nur zeitweise bewohnt.',
-    'Für Stockwerkeigentümerschaften und Verwaltungen übernehmen wir Reinigung und Hauswartung. Bei Zweitwohnungen und Villen kommt die Betreuung während Ihrer Abwesenheit dazu.',
+    'Viele Nidwaldner Liegenschaften liegen nahe am Vierwaldstättersee, von Hergiswil bis Beckenried. Nicht alle Eigentümer wohnen dort, manche kommen nur einige Wochen im Jahr.',
+    'Für Stockwerkeigentümerschaften und Verwaltungen übernehmen wir Reinigung und Hauswartung, auch wenn die Eigentümer weit weg wohnen.',
   ],
   facts: [
     { label: 'Anfahrt', value: 'A2 über Luzern' },
@@ -510,15 +528,9 @@ const nidwalden: KantonPage = {
   daten: [
     {
       label: 'Öffentliche Ruhetage',
-      items: ['Neujahr', 'Josefstag (19. März)', 'Auffahrt', 'Fronleichnam', '1. August', 'Maria Himmelfahrt', 'Allerheiligen', 'Maria Empfängnis', 'Karfreitag', 'Ostersonntag', 'Pfingstsonntag', 'Bettag', 'Weihnachtstag'],
-      text: 'Die letzten fünf sind hohe Feiertage. Weitere Feiertage können die Nidwaldner Gemeinden in einem Reglement bestimmen.',
-      source: 'nwRuhetage',
-    },
-    {
-      label: 'Dem Sonntag gleichgestellt',
-      items: ['Neujahr', 'Karfreitag', 'Auffahrt', 'Fronleichnam', 'Maria Himmelfahrt', 'Allerheiligen', 'Maria Empfängnis', 'Weihnachtstag'],
-      text: 'So regelt es das Ruhetagsgesetz im Sinn des Arbeitsgesetzes. Der Josefstag ist öffentlicher Ruhetag, gehört aber nicht zu diesen Tagen.',
-      source: 'nwRuhetage',
+      items: ['Neujahr', 'Josefstag (19. März)', 'Auffahrt', 'Fronleichnam', '1. August', 'Mariä Himmelfahrt', 'Allerheiligen', 'Mariä Empfängnis', 'Karfreitag', 'Ostersonntag', 'Pfingstsonntag', 'Bettag', 'Weihnachten'],
+      text: 'Karfreitag, Ostersonntag, Pfingstsonntag, Bettag und Weihnachten sind hohe Feiertage. Ausser dem Josefstag sind alle Tage der Liste dem Sonntag gleichgestellt: acht nach dem Ruhetagsgesetz, der 1. August nach Bundesrecht (Art. 20a ArG), die übrigen sind ohnehin Sonntage. Weitere Feiertage können die Gemeinden in einem Reglement bestimmen.',
+      source: ['nwRuhetage', 'arg'],
     },
     {
       label: 'Zweitwohnungsanteil',
@@ -559,7 +571,7 @@ const obwalden: KantonPage = {
   h1: 'Reinigungsfirma Obwalden, vom Sarneraatal bis Engelberg',
   lead: [
     'Obwalden besteht aus zwei Teilen: dem Sarneraatal mit dem Hauptort Sarnen und dem Hochtal von Engelberg, das man über Nidwalden erreicht.',
-    'Im Sarneraatal reinigen und betreuen wir Wohn- und Geschäftshäuser und Gewerbe. Engelberg prägen Zweitwohnungen und Hotels, für beide bieten wir Reinigung und Betreuung an.',
+    'Die beiden Teile verlangen eine unterschiedliche Planung: Im Sarneraatal zählt der feste Rhythmus in Wohn- und Geschäftshäusern, in Engelberg richten sich die Einsätze nach Saison, Ankunft und Abreise.',
   ],
   facts: [
     { label: 'Anfahrt', value: 'A8, nach Engelberg durchs Engelbergertal' },
@@ -602,7 +614,7 @@ const obwalden: KantonPage = {
     title: 'Saison, Zufahrt und Engelberg',
     paragraphs: [
       'Ins Sarneraatal fahren wir von Emmenbrücke über Luzern und die Autobahn A8. Nach Engelberg führt der Weg durch Nidwalden und das Engelbergertal.',
-      'In Engelberg richten sich die Einsätze nach Ankunft, Abreise und Saison. Regeln Sie Zufahrt, Parkplatz und Schlüsselübergabe vor dem ersten Einsatz, besonders wenn Sie selbst nicht vor Ort sind.',
+      'Regeln Sie in Engelberg Zufahrt, Parkplatz und Schlüsselübergabe vor dem ersten Einsatz, besonders wenn Sie selbst nicht vor Ort sind.',
       'Den Winterdienst übernehmen wir nicht, auch nicht in Engelberg. Vergeben Sie die Schneeräumung für Zufahrt und Plätze deshalb separat, am besten vor Saisonbeginn.',
     ],
   },
@@ -615,7 +627,7 @@ const obwalden: KantonPage = {
     {
       label: 'Öffentliche Ruhetage',
       items: ['Neujahr', 'Auffahrt', 'Fronleichnam', '1. August', 'Mariä Himmelfahrt', 'Bruderklausenfest (25. September)', 'Allerheiligen', 'Mariä Empfängnis', 'Karfreitag', 'Ostersonntag', 'Pfingstsonntag', 'Bettag', 'Weihnachten'],
-      text: 'Das Bruderklausenfest ist den Sonntagen im Sinn des Arbeitsgesetzes nicht gleichgestellt. Jede Einwohnergemeinde kann zudem einen Lokalfeiertag festlegen, der einem Sonntag gleichkommt.',
+      text: 'Das Bruderklausenfest ist den Sonntagen im Sinn des Arbeitsgesetzes nicht gleichgestellt. Als öffentlicher Ruhetag ist die Arbeit in Gewerbebetrieben aber auch an diesem Tag grundsätzlich untersagt (Art. 3), Ausnahmen regelt Art. 5. Jede Einwohnergemeinde kann zudem einen Lokalfeiertag festlegen, der einem Sonntag gleichkommt.',
       source: 'owRuhetage',
     },
     {
@@ -681,5 +693,5 @@ export const kantonUi = {
 /** Überleitung auf /einzugsgebiet zu den Kantonsseiten */
 export const kantoneUebersicht = {
   title: 'Ihr Kanton im Detail',
-  text: 'Jeder Kanton hat eine eigene Seite: Regionen und Orte, typische Objekte, Planung und die Kantonsdaten zu Ruhetagen, Kündigungsterminen und Zweitwohnungen.',
+  text: 'Jeder Kanton hat eine eigene Seite: Regionen und Orte, typische Objekte, Planung und Kantonsdaten mit Quelle, etwa zu Feiertagen, Kündigungsterminen oder Zweitwohnungen.',
 }
