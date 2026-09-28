@@ -54,9 +54,14 @@ export const pages = {
     description: `Nettoyage de bureaux et cabinets, adapté à vos horaires de travail. Devis gratuit sur place. Cantons de ${region}.`,
   },
   '/leistungen/sonderreinigungen': {
-    label: 'Nettoyages spéciaux',
-    title: 'Nettoyage en profondeur et fin de bail',
-    description: 'Nettoyage en profondeur et nettoyage de fin de bail avec garantie de remise, pour gérances, propriétaires et entreprises à Lucerne, Zoug et environs.',
+    label: 'Nettoyages en profondeur et spéciaux',
+    title: 'Nettoyage en profondeur, Lucerne et Zoug',
+    description: 'Nettoyage en profondeur de logements, de bureaux et de surfaces commerciales, ponctuel ou à intervalles espacés. Pour gérances, propriétaires et entreprises à Lucerne, Zoug et environs.',
+  },
+  '/leistungen/umzugsreinigung': {
+    label: 'Nettoyage de fin de bail',
+    title: 'Nettoyage de fin de bail, garantie de remise',
+    description: 'Nettoyage de déménagement et de fin de bail avant la remise du logement, avec garantie de remise. Pour gérances, propriétaires et entreprises à Lucerne, Zoug et environs.',
   },
   '/leistungen/baureinigung': {
     label: 'Nettoyage de chantier et de fin de chantier',

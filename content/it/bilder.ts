@@ -41,4 +41,6 @@ export const bilder: Record<ImageKey, string> = {
   'detail-premium-luxusimmobilien': 'Mani con guanti neri curano un lavabo in pietra naturale scura accanto a un rubinetto in ottone.',
   'detail-premium-privatjet': 'Mani con guanti chiari curano con un panno morbido il sedile in pelle di un jet privato.',
   'detail-premium-yacht': 'Mani con guanti lucidano il parapetto in acciaio inossidabile accanto a cuscini chiari a bordo di uno yacht su un lago.',
+  'hero-grundreinigung': 'Pulizia di fondo nell’atrio di un edificio per uffici: un addetto visto di spalle lucida il pavimento in pietra naturale chiara con una monospazzola.',
+  'detail-grundreinigung': 'Mani con guanti grigi strofinano le fughe tra lastre di pietra chiara durante una pulizia di fondo.',
 }

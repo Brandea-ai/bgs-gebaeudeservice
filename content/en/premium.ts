@@ -53,10 +53,34 @@ const luxusimmobilien: ServicePageContent = {
   },
   sections: [
     {
+      title: 'Materials treated with care',
+      paragraphs: [
+        'Natural stone such as marble and limestone is sensitive to acid, including mild household cleaners and vinegar. Parquet tolerates little water, and high-gloss surfaces scratch with the wrong cloths. Brass and taps lose their finish with harsh products.',
+        'That is why, during the walk-through, we clarify which materials have been used in your home and what care they need. If you have care instructions from the manufacturer or the interior designer, we follow them.',
+      ],
+    },
+    {
       title: 'Keys, alarm and discretion',
       paragraphs: [
         'We agree fixed rules with you for keys and the alarm system. On request, we sign a non-disclosure agreement.',
         'Your enquiry is handled personally by our managing director. Everyone who works in your home has been vetted by us.',
+      ],
+    },
+    {
+      title: 'Typical situations',
+      items: [
+        'Regular care of your residence, at fixed times and always with the same team',
+        'Second home: cleaning before you arrive and after you leave, inspection rounds in between',
+        'Before and after an event, including at weekends',
+        'Rooms with art and antiques, works of art only with your approval',
+        'For estate agents and property managers: at short notice before a sale, photo shoot or handover',
+      ],
+    },
+    {
+      title: 'While you are away',
+      paragraphs: [
+        'For second homes and longer trips, we check on things as often as agreed with you. What we look at and to whom we report anything unusual is agreed with you in advance.',
+        'Before you arrive, we clean the house so that you can arrive and have nothing left to do. After you leave, we put it back in order.',
       ],
     },
   ],
@@ -80,6 +104,11 @@ const luxusimmobilien: ServicePageContent = {
     {
       question: 'How do you handle works of art and antiques?',
       answer: 'We clean the rooms with care. We only clean the works of art themselves if you expressly approve it.',
+    },
+    {
+      question: 'How do you care for natural stone and parquet?',
+      answer:
+        'In a way that suits the material: never acidic products on natural stone such as marble, little moisture on parquet. Which products we use in your home is clarified with you during the walk-through.',
     },
     {
       question: 'Can you clean while we are away?',
@@ -125,9 +154,33 @@ const privatjet: ServicePageContent = {
   },
   sections: [
     {
+      title: 'Materials in the cabin',
+      paragraphs: [
+        'Leather, lacquered wood, high-gloss surfaces, carpet and fine textiles sit close together in a cabin. Each material needs its own product and its own cloth, so that nothing fades, dries out or gets scratched.',
+        'Which products are suitable for your cabin is clarified in advance with you and your aircraft operator.',
+      ],
+    },
+    {
       title: 'Planning around your flights',
       paragraphs: [
         'Where and when we clean the cabin is agreed with you and your aircraft operator, so that the work fits into your flight schedule.',
+        'The cleaning often takes place between two flights, after a longer trip or before a flight with guests. If the time window is tight, it helps to agree the dates early.',
+      ],
+    },
+    {
+      title: 'What must be settled before the job',
+      items: [
+        'The location of the aircraft and how access for our team is arranged',
+        'The time window between flights',
+        'Which areas of the cabin are included',
+        'Which products are approved for the materials',
+        'Who takes over the cabin after cleaning',
+      ],
+    },
+    {
+      title: 'Discretion on board',
+      paragraphs: [
+        'You decide how we handle personal belongings and documents on board. The same team always works for you, vetted by us. On request, we sign a non-disclosure agreement.',
       ],
     },
   ],
@@ -151,6 +204,10 @@ const privatjet: ServicePageContent = {
     {
       question: 'How do you treat leather and wood?',
       answer: 'We clean with care for the materials and clarify in advance which products are suitable for your cabin.',
+    },
+    {
+      question: 'Do you also clean the outside of the aircraft?',
+      answer: 'No. Our service covers cleaning the cabin.',
     },
     {
       question: 'Who works in our cabin?',
@@ -195,6 +252,37 @@ const yacht: ServicePageContent = {
     ],
     notIncluded: ['Work on the underwater hull, such as antifouling.', 'Technical maintenance of the engine and on-board systems.'],
   },
+  sections: [
+    {
+      title: 'Materials on board',
+      paragraphs: [
+        'Teak turns grey and rough if it is cleaned the wrong way: brushes that are too hard and high-pressure cleaning wash out the soft wood fibres. Gelcoat loses its shine through sun and water spots, stainless steel shows surface rust, and upholstery absorbs moisture.',
+        'That is why each material needs its own approach. Which products we use for your boat is clarified with you in advance.',
+      ],
+    },
+    {
+      title: 'On the lake, many things are different',
+      paragraphs: [
+        'On Lake Lucerne and Lake Zug there is no salt, but pollen, leaves, spiders and bird droppings bring a lot of dirt onto the boat, especially in spring and summer. In the closed interior, moisture and dust settle.',
+        'Because water runs straight off the deck into the lake, care is needed with cleaning products. On request, we clean with environmentally friendly products.',
+      ],
+    },
+    {
+      title: 'Typical occasions',
+      items: [
+        'Before the first outing of the season',
+        'Regularly during the season',
+        'Before and after guests on board',
+        'At the end of the season, before the boat is laid up for winter',
+      ],
+    },
+    {
+      title: 'Access to the mooring',
+      paragraphs: [
+        'We clarify access to the jetty or harbour with you in advance, as well as electricity and water at the mooring and who opens the boat for us. The same team always works for you.',
+      ],
+    },
+  ],
   steps: [
     anfrage,
     {
@@ -215,6 +303,15 @@ const yacht: ServicePageContent = {
     {
       question: 'Which materials do you clean?',
       answer: 'Teak, gelcoat and upholstery as well as the interior. We clarify which products we use for your boat during the inspection.',
+    },
+    {
+      question: 'How often should a boat on the lake be cleaned?',
+      answer:
+        'That depends on the mooring, use and season. Under trees and in the flowering season, a boat gets dirty faster. After the inspection, we suggest dates, as a one-off or regularly.',
+    },
+    {
+      question: 'Do you also work on the underwater hull or the engine?',
+      answer: 'No. Work on the underwater hull, such as antifouling, and technical maintenance of the engine and on-board systems are not included.',
     },
     { question: 'Can you clean with environmentally friendly products?', answer: answers.mittel },
     { question: 'Are you insured?', answer: answers.versicherung },

@@ -13,7 +13,8 @@ const serviceGroups: NavDictionary['serviceGroups'] = [
     links: [
       { path: '/leistungen/unterhaltsreinigung', label: 'Pulizia di manutenzione' },
       { path: '/leistungen/bueroreinigung', label: 'Pulizia di uffici e studi' },
-      { path: '/leistungen/sonderreinigungen', label: 'Pulizie speciali' },
+      { path: '/leistungen/sonderreinigungen', label: 'Pulizie a fondo e speciali' },
+      { path: '/leistungen/umzugsreinigung', label: 'Pulizia di fine locazione' },
       { path: '/leistungen/baureinigung', label: 'Pulizia di cantiere e di fine cantiere' },
       { path: '/leistungen/fenster-und-fassadenreinigung', label: 'Vetri e facciate' },
       { path: '/leistungen/industrie-und-hallenreinigung', label: 'Industria e capannoni' },
@@ -105,7 +106,8 @@ const contactForm: NavDictionary['contactForm'] = {
       options: [
         { value: 'Unterhaltsreinigung', label: 'Pulizia di manutenzione' },
         { value: 'Büroreinigung', label: 'Pulizia di uffici e studi' },
-        { value: 'Sonderreinigungen', label: 'Pulizie speciali (a fondo, di fine locazione)' },
+        { value: 'Sonderreinigungen', label: 'Pulizie a fondo e speciali' },
+        { value: 'Umzugsreinigung', label: 'Pulizia di fine locazione con garanzia di consegna' },
         { value: 'Baureinigung', label: 'Pulizia di cantiere e di fine cantiere' },
         { value: 'Fenster- und Fassadenreinigung', label: 'Pulizia di vetri e facciate' },
         { value: 'Industrie- und Hallenreinigung', label: 'Pulizia industriale, di capannoni e macchinari' },

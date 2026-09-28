@@ -7,8 +7,8 @@ import UeberUns from "@/seiten/ueber-uns";
 import Kontakt from "@/seiten/kontakt";
 import Ratgeber from "@/seiten/ratgeber";
 import AreaView from "./AreaView";
-import ServicesOverviewView from "./ServicesOverviewView";
-import PremiumOverviewView from "./PremiumOverviewView";
+import LeistungenUebersicht from "@/seiten/leistungen-uebersicht";
+import PremiumUebersicht from "@/seiten/premium-uebersicht";
 import Kanton from "@/seiten/kanton";
 import { getDict } from "../../../content";
 import { metaFor, type PagePath } from "../../../shared/seo";
@@ -30,8 +30,8 @@ const views: Partial<Record<PagePath, (lang: Locale) => React.ReactNode>> = {
   "/ueber-uns": lang => <UeberUns lang={lang} />,
   "/kontakt": lang => <Kontakt lang={lang} />,
   "/einzugsgebiet": lang => <AreaView lang={lang} />,
-  "/leistungen": lang => <ServicesOverviewView lang={lang} />,
-  "/premium": lang => <PremiumOverviewView lang={lang} />,
+  "/leistungen": lang => <LeistungenUebersicht lang={lang} />,
+  "/premium": lang => <PremiumUebersicht lang={lang} />,
   "/blog": lang => <Ratgeber lang={lang} />,
   // Kantonsseiten /einzugsgebiet/<kanton> (E80)
   ...Object.fromEntries(

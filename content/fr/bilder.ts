@@ -41,4 +41,6 @@ export const bilder: Record<ImageKey, string> = {
   'detail-premium-luxusimmobilien': 'Mains gantées de noir entretiennent un lavabo en pierre naturelle sombre à côté d’une robinetterie en laiton.',
   'detail-premium-privatjet': 'Mains gantées de clair entretiennent avec un chiffon doux le siège en cuir d’un jet privé.',
   'detail-premium-yacht': 'Mains gantées polissent la rambarde en acier inoxydable à côté de coussins clairs à bord d’un yacht sur un lac.',
+  'hero-grundreinigung': 'Nettoyage en profondeur dans le hall d’entrée d’un immeuble de bureaux : une personne vue de dos polit le sol en pierre naturelle claire avec une monobrosse.',
+  'detail-grundreinigung': 'Des mains gantées de gris frottent les joints entre des dalles de pierre claires lors d’un nettoyage en profondeur.',
 }

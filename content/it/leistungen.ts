@@ -34,12 +34,19 @@ const unterhaltsreinigung: ServicePageContent = {
     ],
     notIncluded: [
       'Uffici e studi: vedi [Pulizia di uffici e studi](/leistungen/bueroreinigung).',
-      'Pulizie a fondo o di fine locazione una tantum: vedi [Pulizie speciali](/leistungen/sonderreinigungen).',
+      'Pulizie a fondo una tantum: vedi [Pulizie a fondo e speciali](/leistungen/sonderreinigungen), pulizie finali prima della riconsegna alla pagina [Pulizia di fine locazione](/leistungen/umzugsreinigung).',
       'Finestre all’esterno e facciate: vedi [Pulizia di vetri e facciate](/leistungen/fenster-und-fassadenreinigung).',
       'Economie domestiche private. Per ville e residenze è a disposizione il nostro [settore Premium](/premium).',
     ],
   },
   sections: [
+    {
+      title: 'Immobili e situazioni tipiche',
+      paragraphs: [
+        'Una pulizia di manutenzione conviene ovunque molte persone utilizzino le stesse superfici. Nelle case plurifamiliari si tratta di vano scale, ascensore e lavanderia. Negli stabili abitativi e commerciali si aggiungono ingressi frequentati dal pubblico, nelle superfici commerciali ricezione, corridoi e servizi igienici.',
+        'Spesso la richiesta arriva quando la soluzione adottata finora non regge più: la pulizia da parte degli inquilini non funziona, l’impresa precedente cessa l’attività o un’amministrazione immobiliare assume un nuovo stabile.',
+      ],
+    },
     {
       title: 'Servizio di rifornimento',
       paragraphs: [
@@ -49,6 +56,38 @@ const unterhaltsreinigung: ServicePageContent = {
         'Carta igienica, asciugamani di carta e sapone',
         'Sacchi per i rifiuti e panni per la pulizia',
         'Altro materiale di consumo previo accordo',
+      ],
+    },
+    {
+      title: 'Pianificazione e cadenza',
+      paragraphs: [
+        'La frequenza delle pulizie dipende dall’utilizzo, non solo dalla superficie. Un ingresso molto frequentato dal pubblico richiede più cura di un corridoio in cantina percorso da poche persone. Conviene quindi una cadenza per ogni zona, anziché una sola per tutto l’edificio. La nostra proposta la discutiamo con Lei dopo il sopralluogo.',
+      ],
+      items: [
+        'Ingresso, ascensore e vano scale: più spesso, perché qui entra la maggior parte dello sporco dall’esterno',
+        'Servizi igienici e cucine: più spesso, per motivi di igiene',
+        'Cantine, solai e locali accessori: più di rado, secondo l’utilizzo',
+        'Vetri nella zona d’ingresso: secondo necessità, più spesso con la pioggia e in inverno',
+      ],
+    },
+    {
+      title: 'Come riconoscere una buona pulizia di manutenzione',
+      paragraphs: [
+        'Pulito significa più di un pavimento lavato. Durante un giro nello stabile questi punti Le mostrano rapidamente quanto accuratamente si pulisce:',
+      ],
+      items: [
+        'Corrimano, interruttori della luce e pulsanti dell’ascensore sono puliti, non solo i pavimenti',
+        'Negli angoli, sugli spigoli dei gradini e dietro le porte non resta sporco',
+        'I servizi igienici hanno un odore fresco, sapone e carta sono riforniti',
+        'Le porte a vetri all’ingresso sono senza aloni e impronte',
+        'L’entità concordata è fissata per iscritto, così entrambe le parti sanno che cosa vale',
+      ],
+    },
+    {
+      title: 'Collaborazione con amministrazione e proprietà',
+      paragraphs: [
+        'Prima dell’inizio chiariamo con Lei l’accesso allo stabile, ad esempio con chiave o badge, e dove possono stare attrezzi e prodotti per la pulizia. Un locale di pulizia chiudibile a chiave o un compartimento in cantina facilita il lavoro.',
+        'Per gli inquilini è utile un breve avviso che indichi in quali giorni si pulisce. Così in quei giorni scale e corridoi restano liberi da scarpe, biciclette e altri oggetti.',
       ],
     },
   ],
@@ -73,11 +112,16 @@ const unterhaltsreinigung: ServicePageContent = {
     {
       question: 'Qual è la differenza rispetto alla pulizia a fondo?',
       answer:
-        'La pulizia di manutenzione mantiene pulite le superfici con una cadenza fissa. Una pulizia a fondo è un intervento unico e approfondito, che rimuove anche lo sporco che la pulizia regolare non raggiunge. Fa parte delle nostre [pulizie speciali](/leistungen/sonderreinigungen).',
+        'La pulizia di manutenzione mantiene pulite le superfici con una cadenza fissa. Una pulizia a fondo è un intervento unico e approfondito, che rimuove anche lo sporco che la pulizia regolare non raggiunge. Maggiori informazioni alla pagina [Pulizie a fondo e speciali](/leistungen/sonderreinigungen).',
     },
     {
       question: 'Possiamo modificare la cadenza in seguito?',
       answer: 'Sì. Se l’utilizzo cambia, concordiamo con Lei un nuovo volume di lavoro o una nuova cadenza.',
+    },
+    {
+      question: 'Le inquiline e gli inquilini devono preparare qualcosa?',
+      answer:
+        'No. È utile che nei giorni di pulizia scale e corridoi siano liberi da scarpe, biciclette e altri oggetti. Di solito basta un breve avviso nel vano scale.',
     },
     { question: 'Pulite con prodotti ecologici?', answer: answers.mittel },
     { question: 'Quanto costa una pulizia di manutenzione?', answer: `${answers.kosten} Maggiori informazioni nella guida: [Da che cosa dipendono i costi di una pulizia di manutenzione](/blog/reinigungskosten-schweiz).` },
@@ -91,7 +135,7 @@ const unterhaltsreinigung: ServicePageContent = {
   related: [
     { path: '/leistungen/bueroreinigung', text: 'Se si tratta soprattutto di uffici o di uno studio.' },
     { path: '/leistungen/hauswartung', text: 'Se oltre alla pulizia servono anche giri di controllo, piccole riparazioni e smaltimento.' },
-    { path: '/leistungen/sonderreinigungen', text: 'Per una pulizia a fondo o una pulizia di fine locazione con garanzia di consegna.' },
+    { path: '/leistungen/sonderreinigungen', text: 'Per una pulizia a fondo, ad esempio prima dell’inizio o dopo un utilizzo intenso.' },
   ],
   cta: {
     title: 'Offerta per il Suo stabile',
@@ -126,15 +170,47 @@ const bueroreinigung: ServicePageContent = {
     ],
     notIncluded: [
       'Vani scale e locali comuni di interi stabili: vedi [Pulizia di manutenzione](/leistungen/unterhaltsreinigung).',
-      'Pulizie a fondo una tantum: vedi [Pulizie speciali](/leistungen/sonderreinigungen).',
+      'Pulizie a fondo una tantum: vedi [Pulizie a fondo e speciali](/leistungen/sonderreinigungen).',
       'Ricondizionamento di strumenti e dispositivi medici, che resta di competenza del team del Suo studio.',
     ],
   },
   sections: [
     {
+      title: 'Immobili e situazioni tipiche',
+      paragraphs: [
+        'Piccoli uffici con poche postazioni, amministrazioni su più piani, studi medici e di terapia con sala d’attesa: i locali sono diversi, l’esigenza è la stessa. Al mattino tutto deve essere pulito e pronto, senza che nessuno si accorga della pulizia.',
+        'Spesso la richiesta arriva con il trasloco in nuovi locali, quando il team cresce o quando la pulizia attuale non si adatta più agli orari di lavoro.',
+      ],
+    },
+    {
+      title: 'Che cosa succede durante un intervento',
+      paragraphs: [
+        'Si è dimostrata valida una sequenza fissa, dall’alto verso il basso e dal pulito allo sporco: svuotare rifiuti e carta straccia, pulire superfici libere e postazioni di lavoro, pulire angolo cucina e servizi igienici, rifornire il materiale di consumo e per ultimi i pavimenti. Così nessun pavimento già pulito si sporca di nuovo.',
+        'Se ne fanno parte anche schermi, tastiere, telefoni o piante lo chiariamo durante il sopralluogo e lo stabiliamo nell’offerta.',
+      ],
+    },
+    {
       title: 'Pulizia negli studi medici',
       paragraphs: [
         'Negli studi ci atteniamo al Suo piano d’igiene. Quali locali e superfici puliamo e di che cosa si occupa il team del Suo studio lo chiariamo durante il sopralluogo e lo stabiliamo nell’offerta.',
+        'Alla ricezione e in sala d’attesa maniglie, bancone, sedie e ripiani sono toccati da molte persone. Quali prodotti valgono per queste superfici è indicato nel Suo piano d’igiene. Sale di trattamento e apparecchi restano come li prescrive il team del Suo studio.',
+      ],
+    },
+    {
+      title: 'Orari e accesso',
+      paragraphs: [
+        'La maggior parte degli uffici viene pulita al di fuori dell’orario di lavoro, al mattino presto o la sera. Negli studi l’orario dipende dalle ore di consultazione. Gli orari d’intervento li stabiliamo con Lei.',
+        'Per l’accesso servono di solito una chiave o un badge e regole chiare per impianto d’allarme, luci e chiusura. Lo chiariamo prima del primo intervento.',
+      ],
+    },
+    {
+      title: 'Come riconoscere una buona pulizia di uffici',
+      items: [
+        'I cestini sono svuotati e dotati di sacchi nuovi',
+        'L’angolo cucina è senza aloni di caffè, il lavello pulito e asciutto',
+        'Porte e pareti in vetro sono senza impronte',
+        'I distributori di sapone e di carta nei servizi igienici sono riforniti',
+        'Documenti e oggetti personali restano come li ha lasciati',
       ],
     },
   ],
@@ -162,6 +238,11 @@ const bueroreinigung: ServicePageContent = {
         'Sì. Negli studi ci atteniamo al Suo piano d’igiene e chiariamo durante il sopralluogo di quali locali e superfici ci occupiamo.',
     },
     {
+      question: 'Dobbiamo riordinare le postazioni prima della pulizia?',
+      answer:
+        'Puliamo le superfici libere. Meno oggetti ci sono sulle scrivanie, più accuratamente si può pulire. Come desidera regolarsi con documenti, schermi e tastiere lo chiariamo durante il sopralluogo.',
+    },
+    {
       question: 'Le vostre collaboratrici e i vostri collaboratori parlano anche inglese?',
       answer: `${answers.sprachen} È un vantaggio pratico se nel Suo ufficio si parlano più lingue.`,
     },
@@ -184,21 +265,21 @@ const sonderreinigungen: ServicePageContent = {
   path: '/leistungen/sonderreinigungen',
   area: 'leistungen',
   eyebrow: 'Pulizie una tantum e speciali',
-  h1: 'Pulizie speciali: pulizia a fondo e pulizia di fine locazione',
+  h1: 'Pulizie a fondo e speciali per stabili e superfici commerciali',
   lead: [
-    'Alcune pulizie non si fanno ogni settimana: prima della riconsegna di un appartamento, quando lo sporco si è incrostato nel tempo o quando dopo lavori edili resta della polvere. Per questi casi ci sono le nostre pulizie speciali.',
-    'Le eseguiamo per amministrazioni immobiliari, proprietari e aziende, una tantum o a intervalli più lunghi.',
+    'Certe incrostazioni la pulizia regolare non le raggiunge più: calcare nei servizi igienici, grasso nelle cucine, sporco nelle fughe e negli angoli, vecchi strati sui pavimenti. Allora serve una pulizia a fondo, una tantum o a intervalli più lunghi.',
+    'Eseguiamo pulizie a fondo e speciali per amministrazioni immobiliari, proprietari e aziende. Per la pulizia finale alla riconsegna dell’appartamento c’è la [pulizia di fine locazione con garanzia di consegna](/leistungen/umzugsreinigung).',
   ],
   facts: [
     { label: 'Per', value: 'Amministrazioni immobiliari, proprietari, comunioni dei proprietari per piani e aziende' },
     { label: 'Tipo', value: 'Una tantum o a intervalli più lunghi' },
-    { label: 'Pulizia di fine locazione', value: 'Con garanzia di consegna' },
+    { label: 'Superfici', value: 'Superfici abitative, uffici e superfici commerciali' },
   ],
   scope: {
-    title: 'Le nostre pulizie speciali',
+    title: 'Le nostre pulizie a fondo e speciali',
     items: [
       'Pulizia a fondo di superfici abitative, uffici e superfici commerciali',
-      'Pulizia di fine locazione e pulizia finale dell’appartamento con garanzia di consegna',
+      '[Pulizia di fine locazione e pulizia finale dell’appartamento](/leistungen/umzugsreinigung) con garanzia di consegna',
       '[Pulizia di fine cantiere](/leistungen/baureinigung) dopo lavori di costruzione e di ristrutturazione',
       '[Pulizia di finestre e vetri](/leistungen/fenster-und-fassadenreinigung)',
       '[Pulizia di facciate](/leistungen/fenster-und-fassadenreinigung), anche ad alta pressione',
@@ -210,17 +291,45 @@ const sonderreinigungen: ServicePageContent = {
   },
   sections: [
     {
-      title: 'Pulizia a fondo',
+      title: 'Che cosa caratterizza una pulizia a fondo',
       paragraphs: [
-        'Una pulizia a fondo va oltre la pulizia regolare. Rimuove lo sporco incrostato nel tempo su pavimenti, nei servizi igienici e nelle cucine, su porte e superfici.',
-        'È utile ad esempio prima di una nuova locazione di uffici o superfici commerciali, dopo un utilizzo intenso o prima che inizi una [pulizia di manutenzione](/leistungen/unterhaltsreinigung).',
+        'Una pulizia a fondo va oltre la pulizia regolare. Rimuove lo sporco incrostato nel tempo: calcare e incrostazioni di urina nei servizi igienici, grasso nelle cucine, sporco nelle fughe, negli angoli e sui battiscopa, residui di vecchi prodotti di cura sui pavimenti.',
+        'Per i pavimenti il procedimento dipende dal rivestimento, ad esempio pietra naturale, piastrelle, linoleum o parquet. Quale metodo e quali prodotti sono adatti lo chiariamo durante il sopralluogo.',
       ],
     },
     {
-      title: 'Pulizia di fine locazione e pulizia finale con garanzia di consegna',
+      title: 'Occasioni tipiche',
       paragraphs: [
-        'Alla riconsegna di un appartamento o di una superficie commerciale tutto deve essere pulito, affinché la riconsegna avvenga senza contestazioni. Puliamo a fondo i locali prima della riconsegna, con garanzia di consegna: se in occasione della riconsegna l’amministrazione contesta qualcosa della nostra pulizia, ripuliamo gratuitamente. I dettagli sono indicati nell’offerta.',
-        'Offriamo la pulizia di fine locazione ad amministrazioni immobiliari, proprietari e aziende; per ville e residenze, nel [settore Premium](/premium), anche a privati.',
+        'Una pulizia a fondo conviene sempre quando una superficie ricomincia da capo o è stata utilizzata a lungo e intensamente:',
+      ],
+      items: [
+        'Prima di una nuova locazione di uffici o superfici commerciali',
+        'Dopo un utilizzo intenso o un lungo periodo di inutilizzo',
+        'Prima che inizi una [pulizia di manutenzione](/leistungen/unterhaltsreinigung)',
+        'Quando la pulizia regolare non rimuove più lo sporco incrostato',
+      ],
+    },
+    {
+      title: 'Pulizia di fine locazione e pulizia finale dell’appartamento',
+      paragraphs: [
+        'Per la pulizia finale alla riconsegna di un appartamento o di una superficie commerciale c’è una pagina dedicata con tutti i dettagli: [pulizia di fine locazione con garanzia di consegna](/leistungen/umzugsreinigung). La offriamo ad amministrazioni immobiliari, proprietari e aziende; per ville e residenze, nel [settore Premium](/premium), anche a privati.',
+      ],
+    },
+    {
+      title: 'Pianificazione e cadenza',
+      paragraphs: [
+        'Una pulizia a fondo richiede tempo e locali il più possibile liberi. In uffici e superfici commerciali la si può spesso collocare in un fine settimana, durante le vacanze aziendali o tra due locazioni. Negli stabili con inquilini serve un preavviso, perché ad esempio vano scale o lavanderia non sono utilizzabili per poco tempo.',
+        'Con quale frequenza una pulizia a fondo sia utile dipende da utilizzo e sollecitazione. Con una buona pulizia regolare diventa necessaria più di rado.',
+      ],
+    },
+    {
+      title: 'Come riconoscere una buona pulizia a fondo',
+      items: [
+        'Le fughe sono di nuovo chiare, non solo le piastrelle',
+        'Rubinetteria e piastrelle sono senza aloni di calcare',
+        'Il pavimento è senza aloni e senza punti appiccicosi',
+        'Battiscopa, porte e telai delle porte sono puliti anch’essi',
+        'Le superfici delicate sono intatte, perché i prodotti sono adatti al materiale',
       ],
     },
   ],
@@ -229,18 +338,18 @@ const sonderreinigungen: ServicePageContent = {
     steps.besichtigung,
     {
       title: 'Data',
-      text: 'Fissiamo l’intervento alla data più adatta alla Sua riconsegna o alla Sua attività.',
+      text: 'Fissiamo l’intervento alla data più adatta al Suo utilizzo o alla Sua attività.',
     },
     {
       title: 'Consegna',
-      text: 'Dopo l’intervento Le consegniamo i locali. Per la pulizia di fine locazione vale la garanzia di consegna prevista nell’offerta.',
+      text: 'Dopo l’intervento Le consegniamo i locali. Se in seguito si desidera una pulizia regolare, ne parliamo volentieri con Lei.',
     },
   ],
   faq: [
     {
-      question: 'Che cosa significa garanzia di consegna?',
+      question: 'Che cos’è una pulizia a fondo?',
       answer:
-        'Se in occasione della riconsegna l’amministrazione contesta qualcosa della nostra pulizia, ripuliamo gratuitamente. I dettagli sono indicati nell’offerta.',
+        'Un intervento unico e approfondito che rimuove anche lo sporco incrostato nel tempo, ad esempio calcare, grasso, sporco nelle fughe o vecchi strati di prodotti di cura sui pavimenti.',
     },
     {
       question: 'Quando conviene una pulizia a fondo?',
@@ -252,18 +361,166 @@ const sonderreinigungen: ServicePageContent = {
       answer:
         'La pulizia di manutenzione mantiene pulite le superfici con una cadenza fissa, la pulizia a fondo è un intervento unico e approfondito. Le due si possono combinare: prima una pulizia a fondo, poi la [pulizia di manutenzione](/leistungen/unterhaltsreinigung) regolare.',
     },
-    { question: 'Quanto costa una pulizia speciale?', answer: answers.kosten },
+    {
+      question: 'I locali devono essere vuoti per la pulizia a fondo?',
+      answer:
+        'Non del tutto, ma più le superfici sono libere, più accuratamente si può pulire. Che cosa resta al suo posto e chi lo sposta lo chiariamo durante il sopralluogo.',
+    },
+    {
+      question: 'Eseguite anche pulizie di fine locazione?',
+      answer:
+        'Sì, con garanzia di consegna, per amministrazioni immobiliari, proprietari e aziende. Tutti i dettagli alla pagina [Pulizia di fine locazione con garanzia di consegna](/leistungen/umzugsreinigung).',
+    },
+    { question: 'Quanto costa una pulizia a fondo?', answer: answers.kosten },
     { question: 'In quali regioni operate?', answer: answers.gebiet },
     { question: 'Siete assicurati?', answer: answers.versicherung },
   ],
   related: [
-    { path: '/leistungen/baureinigung', text: 'Per la pulizia durante e dopo lavori di costruzione e di ristrutturazione.' },
-    { path: '/leistungen/fenster-und-fassadenreinigung', text: 'Per superfici vetrate e facciate, anche ad alta pressione.' },
+    { path: '/leistungen/umzugsreinigung', text: 'Per la pulizia finale prima della riconsegna di un appartamento o di una superficie commerciale, con garanzia di consegna.' },
     { path: '/leistungen/unterhaltsreinigung', text: 'Se dopo la pulizia a fondo si desidera una pulizia regolare.' },
+    { path: '/leistungen/baureinigung', text: 'Per la pulizia durante e dopo lavori di costruzione e di ristrutturazione.' },
   ],
   cta: {
-    title: 'Offerta per la Sua pulizia speciale',
+    title: 'Offerta per la Sua pulizia a fondo',
     text: 'Ci descriva l’immobile, il motivo della pulizia e la data. Visitiamo i locali e Le allestiamo un’offerta, gratuita e senza impegno.',
+  },
+}
+
+const umzugsreinigung: ServicePageContent = {
+  path: '/leistungen/umzugsreinigung',
+  area: 'leistungen',
+  eyebrow: 'Pulizie una tantum e speciali',
+  h1: 'Pulizia di trasloco e di fine locazione con garanzia di consegna',
+  lead: [
+    'Alla riconsegna dell’appartamento l’amministrazione controlla ogni locale: cucina, bagno, finestre, lamelle, armadi e locali accessori. Affinché la riconsegna avvenga senza contestazioni, l’appartamento deve essere pulito a fondo, e questo entro una data fissa.',
+    'Eseguiamo la pulizia di trasloco e di fine locazione di appartamenti e superfici commerciali per amministrazioni immobiliari, proprietari e aziende, con garanzia di consegna: se in occasione della riconsegna l’amministrazione contesta qualcosa della nostra pulizia, ripuliamo gratuitamente.',
+  ],
+  facts: [
+    { label: 'Per', value: 'Amministrazioni immobiliari, proprietari, comunioni dei proprietari per piani e aziende' },
+    { label: 'Immobili', value: 'Appartamenti e superfici commerciali prima della riconsegna' },
+    { label: 'Garanzia', value: 'Garanzia di consegna, dettagli nell’offerta' },
+  ],
+  scope: {
+    title: 'Che cosa comprende la pulizia finale',
+    intro: 'L’entità esatta della pulizia dell’appartamento la stabiliamo nell’offerta dopo il sopralluogo. Di norma:',
+    items: [
+      'Cucina con forno, piano cottura, cappa aspirante, frigorifero e armadi, all’interno e all’esterno',
+      'Bagno e WC con rubinetteria, piastrelle, fughe e specchi, liberati dal calcare',
+      'Finestre all’interno e all’esterno, con telai, battute e davanzali',
+      'Lamelle e persiane previo accordo',
+      'Armadi a muro, porte, telai delle porte, interruttori e prese',
+      'Pavimenti e battiscopa in tutti i locali',
+      'Balcone o terrazzino, compartimento in cantina e in solaio',
+    ],
+    notIncluded: [
+      'Pulizie di fine locazione su incarico di inquiline e inquilini di singoli appartamenti. Per ville e residenze è a disposizione il nostro [settore Premium](/premium).',
+      'Trasporto del trasloco e sgombero di mobili.',
+      'Riparazioni, lavori di pittura ed eliminazione di danni.',
+      'Pulizia a fondo senza riconsegna: vedi [Pulizie a fondo e speciali](/leistungen/sonderreinigungen).',
+    ],
+  },
+  sections: [
+    {
+      title: 'La garanzia di consegna',
+      paragraphs: [
+        'Se in occasione della riconsegna l’amministrazione contesta qualcosa della nostra pulizia, ripuliamo gratuitamente. I dettagli sono indicati nell’offerta.',
+        'La garanzia si riferisce alla nostra pulizia. Danni, usura o riparazioni che vengono annotati alla riconsegna non riguardano la pulizia e quindi non ne fanno parte.',
+      ],
+    },
+    {
+      title: 'Quanto deve essere pulito un appartamento alla riconsegna?',
+      paragraphs: [
+        'Quanto a fondo si debba pulire lo stabilisce di solito il contratto di locazione. In Svizzera è consuetudine una pulizia approfondita dell’intero appartamento, compresi i locali accessori. Alla riconsegna l’amministrazione guarda quindi anche dove nella vita quotidiana si pulisce di rado: nel forno, nella cappa aspirante, sulle lamelle, nelle battute delle finestre e negli armadi.',
+        'Che cosa valga nel singolo caso è indicato nel contratto di locazione e nel verbale di riconsegna. Questa pagina offre una panoramica e non sostituisce una consulenza giuridica.',
+      ],
+    },
+    {
+      title: 'Pianificazione e data',
+      paragraphs: [
+        'La pulizia finale si colloca tra il trasloco e la riconsegna. È meglio che i locali siano allora vuoti, affinché si possano pulire anche armadi, pavimenti dietro i mobili e installazioni fisse. Pianifichi la pulizia in modo che tra pulizia e riconsegna passi il minor tempo possibile.',
+        'Prenoti per tempo, non appena è fissata la data di riconsegna. A fine mese e in corrispondenza delle date di trasloco usuali nel luogo molte date sono richieste.',
+      ],
+      items: [
+        'Mobili e oggetti personali sono stati sgomberati',
+        'Corrente e acqua sono ancora allacciate',
+        'Le chiavi di appartamento, cantina, solaio e bucalettere sono disponibili',
+      ],
+    },
+    {
+      title: 'Per chi eseguiamo la pulizia di fine locazione',
+      paragraphs: [
+        'Per amministrazioni immobiliari che rendono gli appartamenti pronti per l’uso tra due locazioni. Per proprietari e proprietari per piani che vendono, consegnano o rilocano un appartamento. E per aziende che lasciano uffici o superfici commerciali.',
+        'Non serviamo inquiline e inquilini di singoli appartamenti. Per ville e residenze eseguiamo la pulizia finale nel [settore Premium](/premium) anche per privati.',
+      ],
+    },
+    {
+      title: 'Come riconoscere una buona pulizia finale',
+      items: [
+        'Forno, teglie e cappa aspirante sono senza pellicola di grasso',
+        'Rubinetteria, vetro della doccia e piastrelle sono senza aloni di calcare',
+        'Finestre, telai e battute sono senza aloni e senza polvere',
+        'Gli armadi sono puliti e asciutti all’interno',
+        'Lungo i battiscopa non restano bordi di polvere',
+      ],
+    },
+  ],
+  steps: [
+    steps.anfrage,
+    {
+      title: 'Sopralluogo e offerta',
+      text: 'Visitiamo l’appartamento o la superficie, possibilmente prima del trasloco, e chiariamo con Lei entità del lavoro e data. In seguito riceve un’offerta scritta, gratuita e senza impegno.',
+    },
+    {
+      title: 'Pulizia finale',
+      text: 'Puliamo tra il trasloco e la riconsegna, alla data concordata.',
+    },
+    {
+      title: 'Riconsegna',
+      text: 'Alla riconsegna vale la garanzia di consegna prevista nell’offerta.',
+    },
+  ],
+  faq: [
+    {
+      question: 'Quanto costa una pulizia di fine locazione?',
+      answer:
+        'Dipende soprattutto dalla grandezza e dallo stato dell’appartamento, dal numero di finestre e lamelle, da locali accessori come cantina, solaio o balcone e dalla data. Per questo indichiamo i prezzi solo nell’offerta, dopo aver visto l’immobile. Sopralluogo e offerta sono gratuiti e senza impegno.',
+    },
+    {
+      question: 'Quanto deve essere pulito un appartamento alla riconsegna in Svizzera?',
+      answer:
+        'È consuetudine una pulizia approfondita dell’intero appartamento, compresi i locali accessori: cucina con elettrodomestici, bagno e WC, finestre all’interno e all’esterno con i telai, lamelle, armadi, pavimenti, cantina, solaio e balcone. Che cosa valga nel singolo caso lo stabiliscono il contratto di locazione e il verbale di riconsegna. Questa risposta non è una consulenza giuridica.',
+    },
+    {
+      question: 'Che cosa succede se l’amministrazione contesta qualcosa alla riconsegna?',
+      answer:
+        'Se in occasione della riconsegna l’amministrazione contesta qualcosa della nostra pulizia, ripuliamo gratuitamente. I dettagli sono indicati nell’offerta.',
+    },
+    {
+      question: 'Quando conviene prenotare la pulizia di fine locazione?',
+      answer:
+        'Non appena è fissata la data di riconsegna. A fine mese e in corrispondenza delle date di trasloco usuali nel luogo molte date sono richieste. La pulizia la collochiamo tra il trasloco e la riconsegna.',
+    },
+    {
+      question: 'I locali devono essere vuoti per la pulizia finale?',
+      answer:
+        'Idealmente sì. Nei locali vuoti si possono pulire anche armadi, installazioni fisse e pavimenti dietro i mobili, ed è proprio lì che l’amministrazione controlla alla riconsegna.',
+    },
+    {
+      question: 'Eseguite la pulizia di fine locazione anche per inquiline e inquilini?',
+      answer:
+        'No. Eseguiamo la pulizia di fine locazione per amministrazioni immobiliari, proprietari e aziende. Per ville e residenze è disponibile nel [settore Premium](/premium) anche per privati.',
+    },
+    { question: 'In quali regioni operate?', answer: answers.gebiet },
+    { question: 'Siete assicurati?', answer: answers.versicherung },
+  ],
+  related: [
+    { path: '/leistungen/sonderreinigungen', text: 'Per una pulizia a fondo senza riconsegna, ad esempio prima dell’inizio di una pulizia di manutenzione.' },
+    { path: '/leistungen/fenster-und-fassadenreinigung', text: 'Per superfici vetrate e facciate dell’intero stabile.' },
+    { path: '/leistungen/hauswartung', text: 'Se il servizio di custodia deve collaborare alle riconsegne degli appartamenti.' },
+  ],
+  cta: {
+    title: 'Offerta per la Sua pulizia di fine locazione',
+    text: 'Ci indichi l’immobile, la grandezza e la data di riconsegna. Visitiamo i locali e Le allestiamo un’offerta, gratuita e senza impegno.',
   },
 }
 
@@ -298,6 +555,50 @@ const baureinigung: ServicePageContent = {
       'Facciate: vedi [Pulizia di vetri e facciate](/leistungen/fenster-und-fassadenreinigung).',
     ],
   },
+  sections: [
+    {
+      title: 'Immobili e situazioni tipiche',
+      paragraphs: [
+        'Nuove costruzioni di stabili abitativi e commerciali, trasformazioni di singoli piani, appartamenti rinnovati prima della nuova locazione o negozi prima dell’apertura. Tutti hanno in comune una data fissa: consegna, insediamento o apertura.',
+        'Spesso la pulizia viene richiesta solo poco prima di questa data. È meglio inserirla presto nel cronoprogramma, affinché trovi posto dopo gli ultimi lavori degli artigiani e prima del collaudo.',
+      ],
+    },
+    {
+      title: 'Che cosa succede durante la pulizia di fine cantiere',
+      paragraphs: [
+        'La polvere di cantiere è fine e si deposita ovunque: sui pavimenti, nelle battute delle finestre, sui telai delle porte, negli armadi e nei cassetti. Per questo si pulisce dall’alto verso il basso e spesso in più di un passaggio.',
+        'A ciò si aggiungono residui come colla, etichette e pellicole protettive. Vengono rimossi con prodotti e attrezzi adatti alla superficie, affinché vetri, rubinetteria e pavimenti nuovi non si graffino.',
+      ],
+    },
+    {
+      title: 'Le tappe in sintesi',
+      items: [
+        'Pulizia grossolana: rimuovere sporco grossolano e polvere, affinché i lavori successivi inizino su una base pulita',
+        'Pulizia intermedia: prima delle finiture interne, ad esempio prima della posa dei pavimenti o del montaggio delle cucine',
+        'Pulizia di fine cantiere: approfondita e pronta per l’uso, dopo gli ultimi lavori degli artigiani e prima del collaudo',
+      ],
+      paragraphs: [
+        'Se dopo la pulizia di fine cantiere gli artigiani lavorano ancora nei locali, si forma nuova polvere. Pianifichi quindi la pulizia finale dopo gli ultimi lavori.',
+      ],
+    },
+    {
+      title: 'Collaborazione con la direzione lavori',
+      paragraphs: [
+        'Sul cantiere valgono le regole della direzione lavori. Prima del primo intervento chiariamo accesso, norme di sicurezza, corrente e acqua, uno spazio per gli attrezzi e la gestione dei rifiuti.',
+        'È utile un interlocutore sul cantiere che confermi date e accesso. Se il cronoprogramma si sposta, coordiniamo di nuovo gli interventi con Lei.',
+      ],
+    },
+    {
+      title: 'Come riconoscere una buona pulizia di fine cantiere',
+      items: [
+        'Nessuna pellicola di polvere su davanzali, telai delle porte e nei cassetti',
+        'Vetri senza residui di colla, aloni e graffi',
+        'Le pellicole protettive su finestre, porte e apparecchi sono rimosse',
+        'Rubinetteria e piastrelle sono senza residui',
+        'I pavimenti sono puliti, anche negli angoli e lungo i battiscopa',
+      ],
+    },
+  ],
   steps: [
     steps.anfrage,
     {
@@ -329,12 +630,17 @@ const baureinigung: ServicePageContent = {
       answer:
         'Sì, finestre, telai e vetri li puliamo nell’ambito della pulizia di fine cantiere. Per le facciate c’è la [pulizia di vetri e facciate](/leistungen/fenster-und-fassadenreinigung).',
     },
+    {
+      question: 'Che cosa serve sul cantiere per la pulizia?',
+      answer:
+        'Accesso ai locali, corrente e acqua e uno spazio per gli attrezzi. Dove li troviamo lo chiariamo durante il sopralluogo con Lei o con la direzione lavori.',
+    },
     { question: 'Quanto costa una pulizia di cantiere?', answer: answers.kosten },
     { question: 'In quali regioni operate?', answer: answers.gebiet },
     { question: 'Siete assicurati?', answer: answers.versicherung },
   ],
   related: [
-    { path: '/leistungen/sonderreinigungen', text: 'Per pulizie a fondo e pulizie di fine locazione con garanzia di consegna.' },
+    { path: '/leistungen/sonderreinigungen', text: 'Per una pulizia a fondo, quando le superfici devono tornare accuratamente pulite dopo un lungo utilizzo.' },
     { path: '/leistungen/fenster-und-fassadenreinigung', text: 'Per superfici vetrate e facciate dell’edificio ultimato.' },
     { path: '/leistungen/unterhaltsreinigung', text: 'Per la pulizia regolare dopo l’insediamento.' },
   ],
@@ -373,6 +679,53 @@ const fensterUndFassade: ServicePageContent = {
       'Rinnovo, tinteggiatura e riparazioni della facciata.',
     ],
   },
+  sections: [
+    {
+      title: 'Immobili e situazioni tipiche',
+      paragraphs: [
+        'Edifici per uffici con facciate in vetro, negozi con vetrine, stabili abitativi con molte finestre nel vano scale, edifici commerciali con facciate grigie o verdi. Ovunque il vetro determina la prima impressione, e in controluce lo sporco si nota subito.',
+        'Spesso la pulizia si rende necessaria in primavera dopo l’inverno, quando si aggiunge il polline, oppure prima di un evento, di una locazione o di una vendita.',
+      ],
+    },
+    {
+      title: 'Come si puliscono vetri e facciate',
+      paragraphs: [
+        'Il vetro viene pulito perlopiù con acqua, un detergente delicato e un tergivetro, poi si ripassano telai e battute. Per superfici vetrate grandi e alte esistono aste telescopiche con acqua pura trattata, che asciuga senza lasciare residui.',
+        'Per le facciate decide il materiale. Superfici lisce e resistenti sopportano spesso l’alta pressione, intonaco delicato, legno o vecchia pietra naturale richiedono un procedimento più delicato. Quale metodo sia adatto lo chiariamo durante il sopralluogo.',
+      ],
+    },
+    {
+      title: 'Pianificazione e cadenza',
+      paragraphs: [
+        'Con quale frequenza pulire i vetri dipende da posizione, utilizzo ed esigenze. Vetrine e ingressi li vedono tutti, le finestre di un magazzino quasi nessuno.',
+      ],
+      items: [
+        'Ingressi, vetrine e porte a vetri: più spesso, perché tutti li vedono e li toccano',
+        'Finestre di uffici e vani scale: a intervalli regolari, spesso secondo la stagione',
+        'Facciate: più di rado, quando diventano visibili sporco, alghe o un velo grigio',
+        'Con gelo, tempesta o pioggia forte all’esterno non si può lavorare bene, preveda quindi un certo margine',
+      ],
+    },
+    {
+      title: 'Che cosa chiariamo durante il sopralluogo',
+      items: [
+        'Quanto sono alte le superfici e come raggiungerle in sicurezza',
+        'Se le finestre si possono aprire o sono raggiungibili solo dall’esterno',
+        'Di quale materiale sono telai e facciata',
+        'Accesso, parcheggio e sbarramenti, ad esempio sul marciapiede davanti all’edificio',
+        'Se occorre informare le inquiline e gli inquilini, perché le finestre vengono pulite dall’interno',
+      ],
+    },
+    {
+      title: 'Come riconoscere una buona pulizia delle finestre',
+      items: [
+        'In controluce non si vedono aloni',
+        'Il vetro è pulito fino agli angoli, anche sul bordo verso il telaio',
+        'Telai, battute e davanzali sono puliti anch’essi, per quanto concordato',
+        'All’interno non restano gocce e macchie d’acqua su pavimenti e davanzali',
+      ],
+    },
+  ],
   steps: [
     steps.anfrage,
     {
@@ -398,6 +751,11 @@ const fensterUndFassade: ServicePageContent = {
       question: 'Come pulite finestre e facciate alte?',
       answer:
         'Dipende dall’edificio e dall’accesso. Lo chiariamo durante il sopralluogo e indichiamo nell’offerta come raggiungiamo le superfici.',
+    },
+    {
+      question: 'Le inquiline e gli inquilini devono essere a casa?',
+      answer:
+        'Per le finestre che si possono pulire solo dall’interno serve l’accesso all’appartamento o all’ufficio. Lo chiariamo durante il sopralluogo, affinché possa informare per tempo gli inquilini.',
     },
     { question: 'Quanto costa la pulizia?', answer: answers.kosten },
     { question: 'In quali regioni operate?', answer: answers.gebiet },
@@ -451,6 +809,33 @@ const industrieUndHallen: ServicePageContent = {
         'Le Sue norme di sicurezza e d’esercizio valgono anche per il nostro team. Le chiariamo con Lei prima del primo intervento.',
       ],
     },
+    {
+      title: 'Pavimenti dei capannoni e vie di circolazione',
+      paragraphs: [
+        'I pavimenti dei capannoni accumulano polvere, trucioli, abrasione degli pneumatici e pellicole d’olio o di grasso. Le grandi superfici vengono pulite perlopiù con lavasciuga, che in un solo passaggio strofinano e aspirano l’acqua sporca. Dopo il pavimento è presto di nuovo calpestabile e percorribile.',
+        'Quale procedimento e quale prodotto siano adatti dipende dal rivestimento, ad esempio calcestruzzo, rivestimento resinoso o parquet industriale, e dal tipo di sporco. Lo chiariamo durante la visita dell’azienda.',
+      ],
+    },
+    {
+      title: 'Immobili e situazioni tipiche',
+      paragraphs: [
+        'Aziende di produzione, officine, capannoni di stoccaggio e logistica, aziende artigianali con officina e ufficio sotto lo stesso tetto. Le occasioni sono ad esempio un audit o la visita di un cliente, un cambiamento nella produzione, le vacanze aziendali o il desiderio di orari di pulizia fissi invece di una pulizia fatta di passaggio.',
+      ],
+    },
+    {
+      title: 'Sicurezza in azienda',
+      paragraphs: [
+        'Nella produzione e nel magazzino valgono regole proprie: dispositivi di protezione, percorsi dei carrelli elevatori, zone transennate, gestione delle sostanze pericolose. Queste regole le chiariamo con Lei prima del primo intervento.',
+        'Per i macchinari si stabilisce chi li spegne e li mette in sicurezza e chi li rimette in servizio dopo la pulizia. Lo stabiliamo prima dell’intervento con il Suo servizio di manutenzione.',
+      ],
+    },
+    {
+      title: 'Pianificazione e cadenza',
+      paragraphs: [
+        'Non tutte le zone richiedono la stessa cadenza. Locali per il personale e servizi igienici necessitano di cure frequenti. Pavimenti dei capannoni, scaffalature e macchinari richiedono una pulizia approfondita a intervalli più lunghi.',
+        'Spesso è utile una combinazione: pulizia regolare durante l’attività e una pulizia a fondo durante le vacanze aziendali o i fermi programmati.',
+      ],
+    },
   ],
   steps: [
     steps.anfrage,
@@ -480,6 +865,11 @@ const industrieUndHallen: ServicePageContent = {
     {
       question: 'Quali regole valgono per il vostro team nella nostra azienda?',
       answer: 'Le Sue norme di sicurezza e d’esercizio. Le chiariamo con Lei prima del primo intervento.',
+    },
+    {
+      question: 'Come si pulisce il pavimento di un capannone?',
+      answer:
+        'Perlopiù con una lavasciuga, che strofina e aspira subito l’acqua sporca. Quale prodotto sia adatto dipende dal rivestimento e dallo sporco, ad esempio polvere, olio o abrasione. Lo chiariamo durante la visita dell’azienda.',
     },
     { question: 'Quanto costa una pulizia industriale?', answer: answers.kosten },
     { question: 'In quali regioni operate?', answer: answers.gebiet },
@@ -529,6 +919,48 @@ const hauswartung: ServicePageContent = {
       'Riparazioni più importanti e lavori artigianali.',
     ],
   },
+  sections: [
+    {
+      title: 'Immobili e situazioni tipiche',
+      paragraphs: [
+        'Case plurifamiliari e complessi residenziali, proprietà per piani, stabili abitativi e commerciali con negozi o uffici al pianterreno. Ovunque serve qualcuno che passi regolarmente, mantenga in ordine la lavanderia e si accorga quando qualcosa non va.',
+        'Spesso la richiesta arriva quando il custode precedente smette, quando un’amministrazione immobiliare assume un nuovo stabile o quando in una comunione dei proprietari per piani nessuno vuole più occuparsi dei compiti.',
+      ],
+    },
+    {
+      title: 'Che cosa succede durante il giro di controllo',
+      paragraphs: [
+        'Durante il giro di controllo verifichiamo che tutto sia in ordine, con la frequenza concordata con Lei. Ciò che possiamo sistemare noi, ad esempio sostituire una lampadina, lo facciamo. Tutto il resto lo segnaliamo al servizio che abbiamo stabilito con Lei.',
+      ],
+      items: [
+        'Illuminazione nel vano scale, in cantina e nelle aree esterne',
+        'Porte, serrature e impianto bucalettere',
+        'Lavanderia, locali di asciugatura e cantina',
+        'Locale caldaia e impiantistica, per verificare guasti visibili',
+        'Area rifiuti e aree esterne',
+      ],
+    },
+    {
+      title: 'Uno sguardo sull’impiantistica',
+      paragraphs: [
+        'Custodia non significa manutenzione degli impianti. Riscaldamento, ventilazione, ascensore e protezione antincendio li mantengono imprese specializzate. Il servizio di custodia controlla regolarmente, nota presto i guasti e li segnala, ad esempio un messaggio di errore sul riscaldamento, un rubinetto che gocciola in lavanderia o un ascensore che non si ferma correttamente.',
+      ],
+    },
+    {
+      title: 'Consegne e riconsegne degli appartamenti',
+      paragraphs: [
+        'Come collaboriamo alle consegne e riconsegne degli appartamenti lo stabiliamo con l’amministrazione, ad esempio se apriamo l’appartamento, consegniamo le chiavi o annotiamo le letture dei contatori. Riconsegna e verbale restano di competenza dell’amministrazione.',
+        'Se prima della riconsegna l’appartamento necessita di una pulizia finale, c’è la [pulizia di fine locazione con garanzia di consegna](/leistungen/umzugsreinigung).',
+      ],
+    },
+    {
+      title: 'Collaborazione con amministrazione e proprietà',
+      paragraphs: [
+        'Un buon servizio di custodia vive di accordi chiari: quali compiti, con quale frequenza, chi riceve le segnalazioni e quali piccoli lavori si possono eseguire senza chiedere. Lo stabiliamo per iscritto.',
+        'Anche gli inquilini dovrebbero sapere a chi rivolgersi. Chi è l’interlocutore per loro lo stabiliamo insieme a Lei.',
+      ],
+    },
+  ],
   steps: [
     steps.anfrage,
     {
@@ -562,6 +994,11 @@ const hauswartung: ServicePageContent = {
     {
       question: 'Possiamo scegliere singoli compiti?',
       answer: 'Sì. Componiamo il servizio di custodia con i compiti di cui il Suo stabile ha bisogno.',
+    },
+    {
+      question: 'Con quale frequenza passa il servizio di custodia?',
+      answer:
+        'Dipende da grandezza, età e utilizzo dello stabile. Con quale frequenza siamo sul posto lo stabiliamo per iscritto insieme agli altri compiti.',
     },
     { question: 'Siete assicurati?', answer: answers.versicherung },
     { question: 'Quanto costa il servizio di custodia?', answer: answers.kosten },
@@ -605,6 +1042,43 @@ const aussenUndGruen: ServicePageContent = {
     ],
     notIncluded: ['Non offriamo il servizio invernale.', 'Costruzione di giardini e nuove sistemazioni a verde.'],
   },
+  sections: [
+    {
+      title: 'Immobili e situazioni tipiche',
+      paragraphs: [
+        'Complessi residenziali con prato, siepi e parco giochi, stabili commerciali con parcheggio e zona d’ingresso, edifici artigianali con aiuole e superfici in ghiaia. Le aree esterne sono la prima cosa che vedono i visitatori e ciò che gli inquilini usano ogni giorno.',
+        'Spesso la richiesta arriva quando le aree esterne finora venivano curate di passaggio e ciò non basta più, oppure quando pulizia, custodia e aree esterne devono essere affidate insieme.',
+      ],
+    },
+    {
+      title: 'Manutenzione nel corso dell’anno',
+      paragraphs: [
+        'I lavori seguono la stagione. Di norma si svolgono così:',
+      ],
+      items: [
+        'Primavera: liberare vialetti e piazzali dallo sporco dell’inverno, curare le aiuole, primo taglio dell’erba',
+        'Estate: tagliare regolarmente l’erba, potare le siepi, rimuovere le erbacce da piazzali e fughe',
+        'Autunno: rimuovere il fogliame, potare gli arbusti, preparare le aiuole per l’inverno',
+        'Inverno: non offriamo il servizio invernale, sgombero della neve e spargimento di sale richiedono un’altra soluzione',
+      ],
+    },
+    {
+      title: 'Pianificazione e cadenza',
+      paragraphs: [
+        'La frequenza della manutenzione dipende da stagione e condizioni meteo. Nel periodo di crescita il prato richiede più attenzione che a fine autunno. Il piano di manutenzione lo stabiliamo per iscritto; interventi supplementari, ad esempio prima di un evento, li concorda con noi.',
+        'Nell’ambito del [servizio di custodia](/leistungen/hauswartung) la manutenzione delle aree esterne si può combinare con i giri di controllo: chi lavora all’esterno vede anche quando qualcosa non va nell’edificio.',
+      ],
+    },
+    {
+      title: 'Come riconoscere aree esterne curate',
+      items: [
+        'I bordi del prato sono rifilati con precisione',
+        'Vialetti e piazzali sono senza fogliame, rifiuti ed erbacce nelle fughe',
+        'Le siepi sono in forma, passaggi e visuali restano liberi',
+        'Le aiuole sono curate e senza erbacce',
+      ],
+    },
+  ],
   steps: [
     steps.anfrage,
     steps.besichtigung,
@@ -622,6 +1096,15 @@ const aussenUndGruen: ServicePageContent = {
     {
       question: 'Posso affidare la manutenzione delle aree esterne senza il servizio di custodia?',
       answer: 'Sì. La manutenzione delle aree esterne e verdi è disponibile singolarmente o nell’ambito del [servizio di custodia](/leistungen/hauswartung).',
+    },
+    {
+      question: 'Quando è meglio potare le siepi?',
+      answer:
+        'Perlopiù all’inizio dell’estate e, se necessario, di nuovo a fine estate. Durante il periodo di nidificazione degli uccelli occorre riguardo per i nidi. Il momento adatto per le Sue siepi lo fissiamo nel piano di manutenzione.',
+    },
+    {
+      question: 'Realizzate anche nuovi giardini?',
+      answer: 'No. La costruzione di giardini e le nuove sistemazioni a verde non fanno parte della nostra offerta. Curiamo aree esterne esistenti.',
     },
     { question: 'Quanto costa la manutenzione delle aree esterne?', answer: answers.kosten },
     { question: 'In quali regioni operate?', answer: answers.gebiet },
@@ -660,7 +1143,7 @@ const facilityServices: ServicePageContent = {
       '[Custodia di stabili](/leistungen/hauswartung)',
       '[Manutenzione delle aree esterne e verdi](/leistungen/aussen-und-gruenflaechenpflege)',
       '[Pulizia di vetri e facciate](/leistungen/fenster-und-fassadenreinigung)',
-      '[Pulizie speciali](/leistungen/sonderreinigungen), ad esempio pulizie a fondo',
+      '[Pulizie a fondo e speciali](/leistungen/sonderreinigungen)',
       '[Pulizia industriale e di capannoni](/leistungen/industrie-und-hallenreinigung)',
     ],
     notIncluded: [
@@ -669,6 +1152,37 @@ const facilityServices: ServicePageContent = {
       'L’intermediazione di imprese terze, ad esempio aziende artigianali.',
     ],
   },
+  sections: [
+    {
+      title: 'Situazioni tipiche',
+      paragraphs: [
+        'Un’amministrazione immobiliare gestisce più stabili e non vuole coordinare un’impresa diversa per ogni compito. Un’azienda ha uffici, un capannone e aree esterne e vuole un unico riferimento per tutto. Oppure una proprietà assume uno stabile e cerca una soluzione coerente fin dall’inizio.',
+      ],
+    },
+    {
+      title: 'Come da singoli servizi nasce un contratto',
+      paragraphs: [
+        'Durante la visita esaminiamo di che cosa ha bisogno il Suo immobile: pulizia interna, vetri, custodia, aree esterne. Ne nasce un contratto in cui ogni servizio figura con entità e cadenza.',
+        'Se in seguito si aggiunge o viene meno qualcosa, ne parla in un unico punto, con il Suo interlocutore presso di noi.',
+      ],
+    },
+    {
+      title: 'I vantaggi per Lei',
+      items: [
+        'Un solo interlocutore per pulizia, custodia e aree esterne',
+        'Un solo contratto invece di più, con una visione d’insieme su tutti i servizi',
+        'Meno coordinamento tra imprese, ad esempio su chi pulisce il vano scale dopo lavori nelle aree esterne',
+        'Uno sguardo sull’intero immobile: chi pulisce nell’edificio vede anche quando all’esterno qualcosa non va',
+      ],
+    },
+    {
+      title: 'Limiti e collaborazione',
+      paragraphs: [
+        'Per noi facility services significa: i servizi che eseguiamo noi stessi. Il facility management tecnico, ad esempio la manutenzione di riscaldamento, ventilazione o ascensori, non ne fa parte, così come l’intermediazione di aziende artigianali.',
+        'I guasti che notiamo durante il lavoro Glieli segnaliamo, affinché possa incaricare l’impresa specializzata adatta.',
+      ],
+    },
+  ],
   steps: [
     steps.anfrage,
     {
@@ -695,6 +1209,15 @@ const facilityServices: ServicePageContent = {
       answer:
         'Sì. Può iniziare con un servizio, ad esempio la [pulizia di manutenzione](/leistungen/unterhaltsreinigung), e aggiungerne altri in seguito.',
     },
+    {
+      question: 'Qual è la differenza rispetto al servizio di custodia?',
+      answer:
+        'Il [servizio di custodia](/leistungen/hauswartung) è un singolo servizio con giri di controllo, piccole riparazioni, impiantistica e smaltimento. I facility services lo combinano con pulizia e manutenzione delle aree esterne in un unico contratto.',
+    },
+    {
+      question: 'Chi è il nostro interlocutore?',
+      answer: 'Per tutti i servizi ha un solo interlocutore presso di noi. Per le modifiche si rivolge sempre alla stessa persona.',
+    },
     { question: 'Quanto costano i facility services?', answer: answers.kosten },
     { question: 'In quali regioni operate?', answer: answers.gebiet },
     { question: 'Siete assicurati?', answer: answers.versicherung },
@@ -714,6 +1237,7 @@ export const leistungen = {
   unterhaltsreinigung,
   bueroreinigung,
   sonderreinigungen,
+  umzugsreinigung,
   baureinigung,
   fensterUndFassade,
   industrieUndHallen,

@@ -16,7 +16,8 @@ export const serviceGroups: { title: string; links: NavLink[] }[] = [
     links: [
       { path: '/leistungen/unterhaltsreinigung', label: 'Unterhaltsreinigung' },
       { path: '/leistungen/bueroreinigung', label: 'Büro- und Praxisreinigung' },
-      { path: '/leistungen/sonderreinigungen', label: 'Sonderreinigungen' },
+      { path: '/leistungen/sonderreinigungen', label: 'Grund- und Sonderreinigung' },
+      { path: '/leistungen/umzugsreinigung', label: 'Umzugsreinigung' },
       { path: '/leistungen/baureinigung', label: 'Bau- und Bauendreinigung' },
       { path: '/leistungen/fenster-und-fassadenreinigung', label: 'Fenster und Fassaden' },
       { path: '/leistungen/industrie-und-hallenreinigung', label: 'Industrie und Hallen' },
@@ -117,7 +118,8 @@ export const contactForm = {
       options: [
         { value: 'Unterhaltsreinigung', label: 'Unterhaltsreinigung' },
         { value: 'Büroreinigung', label: 'Büro- und Praxisreinigung' },
-        { value: 'Sonderreinigungen', label: 'Sonderreinigungen (Grund-, Umzugsreinigung)' },
+        { value: 'Sonderreinigungen', label: 'Grund- und Sonderreinigung' },
+        { value: 'Umzugsreinigung', label: 'Umzugsreinigung mit Abnahmegarantie' },
         { value: 'Baureinigung', label: 'Bau- und Bauendreinigung' },
         { value: 'Fenster- und Fassadenreinigung', label: 'Fenster- und Fassadenreinigung' },
         { value: 'Industrie- und Hallenreinigung', label: 'Industrie-, Hallen- und Maschinenreinigung' },

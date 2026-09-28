@@ -54,9 +54,14 @@ export const pages: Dictionary['pages'] = {
     description: `Office and medical practice cleaning in ${region}, scheduled around your working hours. Free quote after a site visit.`,
   },
   '/leistungen/sonderreinigungen': {
-    label: 'Special cleaning',
-    title: 'Deep, move-out and special cleaning',
-    description: 'Deep cleaning, move-out and end-of-tenancy cleaning with a handover guarantee for property managers, owners and businesses in Lucerne, Zug and beyond.',
+    label: 'Deep and special cleaning',
+    title: 'Deep and special cleaning in Lucerne and Zug',
+    description: 'Deep cleaning of residential, office and commercial space, as a one-off or at longer intervals. For property managers, owners and businesses in Lucerne, Zug and beyond.',
+  },
+  '/leistungen/umzugsreinigung': {
+    label: 'End-of-tenancy cleaning',
+    title: 'End-of-tenancy cleaning with handover guarantee',
+    description: 'Move-out and end-of-tenancy cleaning before the handover of a flat, with a handover guarantee. For property managers, owners and businesses in Lucerne, Zug and beyond.',
   },
   '/leistungen/baureinigung': {
     label: 'Construction cleaning',

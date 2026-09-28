@@ -362,7 +362,8 @@ export const servicesOverview = {
       title: 'Einmalige und besondere Reinigung',
       text: 'Für Bau, Umzug, Glasflächen und Produktion.',
       items: [
-        { title: 'Sonderreinigungen', path: '/leistungen/sonderreinigungen', text: 'Grundreinigung sowie Umzugs- und Wohnungsendreinigung mit Abnahmegarantie.' },
+        { title: 'Grund- und Sonderreinigung', path: '/leistungen/sonderreinigungen', text: 'Grundreinigung von Wohn-, Büro- und Gewerbeflächen, einmalig oder in grösseren Abständen.' },
+        { title: 'Umzugsreinigung', path: '/leistungen/umzugsreinigung', text: 'Endreinigung vor der Übergabe einer Wohnung oder Geschäftsfläche, mit Abnahmegarantie.' },
         { title: 'Bau- und Bauendreinigung', path: '/leistungen/baureinigung', text: 'Reinigung während und nach Bau- und Umbauarbeiten.' },
         { title: 'Fenster- und Fassadenreinigung', path: '/leistungen/fenster-und-fassadenreinigung', text: 'Fenster, Glasflächen und Fassaden, auch mit Hochdruck.' },
         { title: 'Industrie- und Hallenreinigung', path: '/leistungen/industrie-und-hallenreinigung', text: 'Produktions- und Lagerhallen, Maschinen und Anlagen.' },
@@ -378,9 +379,52 @@ export const servicesOverview = {
       ],
     },
   ] satisfies { title: string; text: string; items: LinkCard[] }[],
+  // Wegweiser nach Situation (E80: mehr Information für die Entscheidung), nur bestätigte Leistungen
+  guide: {
+    title: 'Welche Leistung passt?',
+    intro: 'Häufige Situationen und die Leistung, die dazu passt. Nicht sicher? Wir klären es bei der Besichtigung.',
+    items: [
+      { situation: 'Das Treppenhaus und die Gemeinschaftsräume sollen regelmässig sauber sein.', path: '/leistungen/unterhaltsreinigung' },
+      { situation: 'Büro oder Praxis sollen gereinigt werden, ohne den Betrieb zu stören.', path: '/leistungen/bueroreinigung' },
+      { situation: 'Eine Wohnung oder Geschäftsfläche wird übergeben.', path: '/leistungen/umzugsreinigung' },
+      { situation: 'Böden, Fugen und Sanitärräume brauchen eine gründliche Reinigung.', path: '/leistungen/sonderreinigungen' },
+      { situation: 'Ein Neubau oder Umbau steht vor der Übergabe.', path: '/leistungen/baureinigung' },
+      { situation: 'Fenster, Schaufenster oder Fassade sind verschmutzt.', path: '/leistungen/fenster-und-fassadenreinigung' },
+      { situation: 'Halle, Lager oder Maschinen sollen gereinigt werden.', path: '/leistungen/industrie-und-hallenreinigung' },
+      { situation: 'Die Liegenschaft braucht jemanden, der regelmässig nach dem Rechten sieht.', path: '/leistungen/hauswartung' },
+      { situation: 'Rasen, Hecken, Wege und Plätze sollen gepflegt sein.', path: '/leistungen/aussen-und-gruenflaechenpflege' },
+      { situation: 'Reinigung, Hauswartung und Umgebung sollen aus einer Hand kommen.', path: '/leistungen/facility-services' },
+    ] satisfies { situation: string; path: PagePath }[] as { situation: string; path: PagePath }[],
+  },
+  // Was bei allen Leistungen gilt, nur belegte Angaben (E18, R3e, R5d)
+  principles: {
+    title: 'Bei jeder Leistung gleich',
+    items: [
+      { title: 'Besichtigung vor der Offerte', text: 'Wir sehen uns das Objekt an, bevor wir einen Preis nennen. Besichtigung und Offerte sind kostenlos und unverbindlich.' },
+      { title: 'Umfang schriftlich', text: 'Was wir wie oft übernehmen, halten wir in der Offerte fest.' },
+      { title: 'Persönliche Anfrage', text: `Ihre Anfrage bearbeitet der Geschäftsführer persönlich, Sie hören ${company.responseTime} von uns.` },
+      { title: 'Rhythmus nach Nutzung', text: 'Wie oft wir kommen, richtet sich nach der Nutzung Ihres Objekts. Ändert sie sich, passen wir Umfang und Rhythmus mit Ihnen an.' },
+      { title: 'Umweltfreundlich auf Wunsch', text: 'Auf Wunsch reinigen wir mit umweltfreundlichen Mitteln.' },
+      { title: 'Klare Grenzen', text: 'Jede Leistungsseite nennt auch, was nicht dazugehört, etwa Winterdienst oder die Wartung technischer Anlagen.' },
+    ] satisfies Card[] as Card[],
+  },
+  faq: [
+    { question: 'Was kosten Ihre Leistungen?', answer: answers.kosten },
+    {
+      question: 'Kann ich mehrere Leistungen verbinden?',
+      answer: 'Ja. Mit [Facility Services](/leistungen/facility-services) kommen Reinigung, Hauswartung und Umgebungspflege in einen Vertrag, mit einer Ansprechperson.',
+    },
+    {
+      question: 'Reinigen Sie auch Privathaushalte?',
+      answer: 'Privathaushalte nur im [Premium-Bereich](/premium), für Villen, Lofts und Residenzen.',
+    },
+    { question: 'Bieten Sie Winterdienst an?', answer: 'Nein. Winterdienst gehört nicht zu unserem Angebot.' },
+    { question: 'In welchen Regionen sind Sie tätig?', answer: answers.gebiet },
+  ] as { question: string; answer: string }[],
   premium: {
     title: 'Villen, Privatjets oder Yachten?',
     text: 'Für besondere Ansprüche gibt es unseren Premium-Bereich.',
+    detail: 'Villen und Residenzen, Kabinen von Privatjets, Yachten am Vierwaldstättersee und am Zugersee. Immer dasselbe Team, diskret und mit Kenntnis empfindlicher Materialien.',
     link: 'Zum Premium-Bereich',
   },
   cta: {
@@ -413,6 +457,15 @@ export const premiumOverview = {
     { title: 'Privatanlässe', text: 'Reinigung vor und nach dem Anlass, auch am Wochenende.' },
     { title: 'Makler und Verwaltungen', text: 'Kurzfristige Reinigung vor Verkauf, Fototermin und Übergabe.' },
   ] satisfies Card[],
+  // Diskretion aus bestätigten Zusagen (E41), ohne die zurückgestellten (E52)
+  discretion: {
+    title: 'Diskretion von der ersten Nachricht an',
+    paragraphs: [
+      'Ihre Anfrage bearbeitet der Geschäftsführer persönlich. Auf Wunsch unterzeichnen wir eine Geheimhaltungsvereinbarung.',
+      'Bei Ihnen arbeitet immer dasselbe Team, überprüft von uns. Es kennt Ihr Haus, Ihre Wünsche und die Regeln für Schlüssel und Alarmanlage, die wir mit Ihnen vereinbaren.',
+      'Kunstwerke reinigen wir nur nach Ihrer Freigabe. Zeiten richten sich nach Ihnen, auch abends, am Wochenende oder während Ihrer Abwesenheit.',
+    ],
+  },
   promisesTitle: 'Worauf Sie sich verlassen können',
   // Reihenfolge wie die Symbole in app/premium/page.tsx
   promises: [

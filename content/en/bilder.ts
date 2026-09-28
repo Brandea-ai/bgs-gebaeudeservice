@@ -41,4 +41,6 @@ export const bilder: Record<ImageKey, string> = {
   'detail-premium-luxusimmobilien': 'Hands in black gloves care for a washbasin made of dark natural stone next to a brass tap.',
   'detail-premium-privatjet': 'Hands in light-coloured gloves care for the leather seat in a private jet with a soft cloth.',
   'detail-premium-yacht': 'Hands in gloves polish the stainless steel railing next to light-coloured upholstery on board a yacht on a lake.',
+  'hero-grundreinigung': 'Deep cleaning in the entrance hall of an office building: a cleaner, seen from behind, polishes the light natural stone floor with a single-disc machine.',
+  'detail-grundreinigung': 'Hands in grey gloves scrub the joints between light stone tiles during a deep clean.',
 }
