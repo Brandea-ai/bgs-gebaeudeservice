@@ -66,7 +66,7 @@ export const pages: Dictionary['pages'] = {
   '/leistungen/baureinigung': {
     label: 'Construction cleaning',
     title: 'Construction cleaning, Lucerne and Zug',
-    description: 'Cleaning during and after building and renovation work, until handover. For building owners, architects and property managers in Lucerne, Zug and beyond.',
+    description: 'Construction and post-construction cleaning in stages up to acceptance, with checklists for tendering and handover. Free quote after a site visit.',
   },
   '/leistungen/fenster-und-fassadenreinigung': {
     label: 'Window and facade cleaning',

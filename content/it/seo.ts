@@ -66,7 +66,7 @@ export const pages = {
   '/leistungen/baureinigung': {
     label: 'Pulizia di cantiere e di fine cantiere',
     title: 'Pulizia di cantiere a Lucerna e Zugo',
-    description: 'Pulizia durante e dopo lavori edili e ristrutturazioni, fino alla consegna. Per committenti, architetti e amministrazioni immobiliari a Lucerna e Zugo.',
+    description: 'Pulizia di cantiere e di fine cantiere a tappe fino al collaudo, con liste di controllo per il bando e la consegna. Offerta gratuita dopo il sopralluogo.',
   },
   '/leistungen/fenster-und-fassadenreinigung': {
     label: 'Pulizia di vetri e facciate',

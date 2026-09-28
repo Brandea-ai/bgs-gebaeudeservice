@@ -65,8 +65,8 @@ export const pages = {
   },
   '/leistungen/baureinigung': {
     label: 'Bau- und Bauendreinigung',
-    title: 'Bau- und Bauendreinigung Luzern, Zug',
-    description: 'Reinigung während und nach Bau- und Umbauarbeiten, bis zur Übergabe. Für Bauherrschaften, Architekten und Verwaltungen in Luzern, Zug und Umgebung.',
+    title: 'Baureinigung und Bauendreinigung Luzern, Zug',
+    description: 'Baureinigung und Bauendreinigung in Etappen bis zur Abnahme, mit Checklisten für Ausschreibung und Übergabe. Kostenlose Offerte nach Besichtigung.',
   },
   '/leistungen/fenster-und-fassadenreinigung': {
     label: 'Fenster- und Fassadenreinigung',

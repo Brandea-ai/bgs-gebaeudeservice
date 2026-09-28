@@ -65,8 +65,8 @@ export const pages = {
   },
   '/leistungen/baureinigung': {
     label: 'Nettoyage de chantier et de fin de chantier',
-    title: 'Nettoyage de chantier, Lucerne et Zoug',
-    description: 'Nettoyage pendant et après les travaux de construction ou de transformation, jusqu’à la remise. Pour maîtres d’ouvrage, architectes et gérances.',
+    title: 'Nettoyage de fin de chantier à Lucerne et Zoug',
+    description: 'Nettoyage de fin de chantier par étapes jusqu’à la réception, avec listes de contrôle pour la soumission et la remise. Devis gratuit après une visite.',
   },
   '/leistungen/fenster-und-fassadenreinigung': {
     label: 'Nettoyage de vitres et de façades',
