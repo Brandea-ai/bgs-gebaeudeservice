@@ -3,6 +3,9 @@
 
 Aufruf im Repo: python3 Webseite-Analyse/werkzeuge/bilder_register.py
 Echte Fotos ersetzen die Dateien später unter demselben Namen, danach erneut ausführen.
+Reihenfolge nach jedem Bildtausch: Herkunft in bilder_herkunft.json nachführen (ki oder
+foto), dann bilder_kennzeichnen.py (IPTC, N9), dieses Skript, og_bilder.py.
+Die Kennzeichnung ändert die Bytes und damit die Version in der Adresse, deshalb vorher.
 """
 import hashlib
 import pathlib
