@@ -72,19 +72,14 @@ export const steps = {
     title: 'Site visit and quote',
     text: 'We look at the property on site and agree the scope and times with you. You then receive a written quote, free of charge and non-binding.',
   },
-  /**
-   * Premium: the first two steps of the premium overview's own process (K3),
-   * followed by premiumOverview.steps. One image per step, no videos.
-   */
+  /** Premium: discreet enquiry and walk-through, for the process on the premium overview (until E85 in premium.ts) */
   premiumAnfrage: {
     title: 'Discreet enquiry',
-    text: `Call or write to us yourself, or through your assistant, an estate agent or your property manager. Your enquiry is handled personally by our managing director, and you will hear from us ${responseTime}.`,
-    figure: 'frage-privatjet',
+    text: `Call us or write to us. Your enquiry is handled personally by our managing director, and you will hear from us ${responseTime}.`,
   },
   premiumRundgang: {
     title: 'Walk-through and quote',
-    text: 'At the house, the mooring or in the cabin we look at rooms, materials and access with you, for a private jet in coordination with your aircraft operator. You then receive the written quote.',
-    figure: 'frage-yacht',
+    text: 'We look at your home and clarify materials, times and access. You then receive a quote, free of charge and non-binding.',
   },
 } satisfies Record<string, Step>
 

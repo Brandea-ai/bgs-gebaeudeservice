@@ -21,14 +21,16 @@ import PremiumOrte from "./08-orte";
  */
 export default function PremiumUebersicht(props: PremiumProps) {
   const { lang } = props;
-  const { dict, ui, content } = premiumKontext(props);
+  const { ui, content } = premiumKontext(props);
+  // Kurze Beschriftungen, damit die Leiste in allen Sprachen einzeilig bleibt (Befund PU-7)
+  const { nav } = content;
   const navItems = [
-    { id: "bereiche", title: content.offersTitle },
-    { id: "diskretion", title: content.discretion.title },
-    { id: "zusagen", title: content.promisesTitle },
-    { id: "ablauf", title: content.stepsTitle },
-    { id: "fragen", title: ui.faq },
-    { id: "orte", title: dict.misc.map.areaLabel },
+    { id: "bereiche", title: nav.bereiche },
+    { id: "diskretion", title: nav.diskretion },
+    { id: "zusagen", title: nav.zusagen },
+    { id: "ablauf", title: nav.ablauf },
+    { id: "fragen", title: nav.fragen },
+    { id: "orte", title: nav.orte },
   ];
   return (
     <PageFrame lang={lang} path="/premium" mainClassName="bg-white" contact={content.cta}>

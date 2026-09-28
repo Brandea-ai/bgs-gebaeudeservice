@@ -413,26 +413,42 @@ const promises: Seiten['premiumOverview']['promises'] = [
 export const premiumOverview: Seiten['premiumOverview'] = {
   line: premiumLine,
   h1: 'Premium cleaning for exacting standards',
-  lead: 'Having a house, a yacht or the cabin of a private jet cleaned means handing over keys, schedules and private matters. That is why a dedicated team works for you, following rules you help to set.',
+  lead: 'Having a house, a yacht or the cabin of a private jet cleaned means handing over keys, schedules and private matters. That is why we work for you by rules you help to set.',
   nameMeaning: company.premiumBrand
     ? `The name ${company.premiumBrand} comes from the Latin ‘clavis’, meaning key. You entrust us with your home, and we treat it as if it were our own.`
     : null,
-  pathsTitle: 'Go straight to your area',
+  firstMessage: {
+    title: 'Enough for a first message',
+    items: [
+      'House, boat or cabin, with its location or mooring',
+      'The occasion or the frequency you have in mind',
+      'When you need us from',
+      'Delicate materials and works of art we should know about',
+    ],
+  },
+  nav: {
+    bereiche: 'Services',
+    diskretion: 'Discretion',
+    zusagen: 'How we work',
+    ablauf: 'Process',
+    fragen: 'Questions',
+    orte: 'Locations',
+  },
   offersTitle: 'House, cabin or boat',
   offers: [
     {
       title: 'Villas and residences',
       name: 'Villa and luxury property cleaning',
-      link: 'More on villa and luxury property cleaning',
+      link: 'More on villa cleaning',
       path: '/premium/luxusimmobilien',
       text: 'Villas, lofts, residences and second homes, on a regular basis or ahead of an occasion.',
-      detail: 'For homes with natural stone, parquet, high-gloss surfaces and art. We clean regularly, before a celebration or a sale, and while you are travelling.',
-      notIncluded: 'Not included: restoring works of art and antiques.',
+      detail: 'For homes with natural stone, parquet, high-gloss surfaces and art. We clean regularly or before a celebration or a sale.',
+      notIncluded: 'Not included: restoration work, for example on paintings or antique furniture.',
     },
     {
       title: 'Private jet cabins',
       name: 'Private jet cabin cleaning',
-      link: 'More on private jet cabin cleaning',
+      link: 'More on private jet cleaning',
       path: '/premium/privatjet',
       text: 'The cabin between two flights, planned with your aircraft operator.',
       detail: 'Leather, lacquered wood, high-gloss surfaces and fine textiles share a few square metres, and often there is only the time between two flights. You decide with your aircraft operator which products are permitted on board.',
@@ -441,36 +457,35 @@ export const premiumOverview: Seiten['premiumOverview'] = {
     {
       title: 'Yachts and motorboats',
       name: 'Yacht and boat cleaning',
-      link: 'More on yacht and boat cleaning',
+      link: 'More on yacht cleaning',
       path: '/premium/yacht',
       text: 'Interior and deck, on Lake Lucerne and Lake Zug.',
       detail: 'Fresh water, pollen and bird droppings affect a boat on a lake differently from salt at sea. We clean teak, gelcoat and upholstery at the mooring, each material with its own method.',
-      notIncluded: 'Not included: work on the underwater hull or the engine.',
+      notIncluded: 'Not included: work below the waterline or on the engine.',
     },
   ],
   moreTitle: 'Also for',
   more: [
     { title: 'Second homes and residences', text: 'Cleaned before you arrive, put back in order after you leave, with inspection rounds in between at the agreed frequency.' },
-    { title: 'Hotels', text: 'Special and deep cleaning before an opening and after a renovation, as described under [deep and special cleaning](/leistungen/sonderreinigungen).' },
-    { title: 'Offices and family offices', text: 'Confidential rooms, cleaned outside your working hours and always by the same team. More on [office and practice cleaning](/leistungen/bueroreinigung).' },
+    { title: 'Hotels', text: 'Special and deep cleaning before an opening and after a renovation. More on [deep and special cleaning](/leistungen/sonderreinigungen).' },
+    { title: 'Offices and family offices', text: 'Confidential rooms, cleaned outside your working hours. More on [office and practice cleaning](/leistungen/bueroreinigung).' },
     { title: 'Rooms with art and antiques', text: 'We clean the rooms with care, and paintings, sculptures and other works of art only with your express approval.' },
     { title: 'Private events', text: 'Ready before the event and back in order afterwards, even if it falls on a weekend.' },
     { title: 'Estate agents and property managers', text: 'Cleaning at short notice before a sale, photo shoot or handover.' },
   ],
   discretion: {
-    title: 'Discretion from the first message',
+    title: 'Discretion in writing',
     paragraphs: [
-      'Discretion does not start at your front door. Our managing director handles premium enquiries personally, and everyone who later works for you has been vetted by us.',
-      'Anything else that should remain confidential can be covered by a non-disclosure agreement at your request.',
+      'Whoever cleans for you learns more than any quote shows. What stays confidential, and for how long, can be set out in a non-disclosure agreement.',
     ],
   },
-  // What such an agreement typically covers, not the content of a template of our own.
-  // Law read on 28.09.2026 on fedlex.admin.ch (CO Art. 11, 160, 161, 163); English is an unofficial translation.
+  // What such an agreement typically covers, not the content of a template of our own; no contractual penalty (not confirmed).
+  // CO Art. 11 read on 28.09.2026 on fedlex.admin.ch; English is an unofficial translation.
   nda: {
     kind: 'checklist',
     id: 'geheimhaltung',
     title: 'What a non-disclosure agreement should cover',
-    intro: 'Use this list to draft your own agreement or to check a text you have been given.',
+    intro: 'The list shows what such an agreement typically covers and helps you check a draft.',
     groups: [
       {
         title: 'Who and what',
@@ -484,15 +499,14 @@ export const premiumOverview: Seiten['premiumOverview'] = {
         title: 'Duration and end',
         items: [
           'How long the obligation applies, including after the assignment ends',
-          'How keys and badges are returned at the end',
-          'Whether a contractual penalty applies in the event of a breach, and how much',
+          'How keys and badges are returned and codes changed',
+          'What happens to documents such as floor plans or alarm plans at the end: return or destruction',
         ],
       },
     ],
-    note: 'The Swiss Code of Obligations (CO) does not require any particular form for such an agreement (Art. 11 CO), but a signed version makes it easier to prove. An agreed contractual penalty is payable even if no damage has occurred (Art. 161 CO), and excessive amounts are reduced by the court (Art. 163 CO). Clarify the details of your case with your legal adviser.',
+    note: 'The Swiss Code of Obligations (CO) does not require any particular form for such an agreement (Art. 11 CO), but a signed version makes it easier to prove. Discuss the details of your case with your legal adviser.',
     sources: [
       { label: 'Swiss Code of Obligations, Art. 11: form of contracts', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/en#art_11' },
-      { label: 'Swiss Code of Obligations, Art. 160 to 163: contractual penalty', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/en#art_160' },
     ],
     printable: true,
     updated: '2026-09-28',
@@ -502,36 +516,38 @@ export const premiumOverview: Seiten['premiumOverview'] = {
   stepsTitle: 'How a premium enquiry works',
   steps: [
     {
+      title: 'Your enquiry',
+      text: 'After your call or message, we arrange a date for the walk-through with you.',
+    },
+    {
+      title: 'Walk-through and quote',
+      text: 'At the house, the mooring or in the cabin we look at rooms, materials and access with you, for a private jet in coordination with your aircraft operator. On this basis we prepare your written quote.',
+    },
+    {
       title: 'Rules before the first assignment',
-      text: 'Before we start, it is settled when we come, how keys and the alarm system are handled and which works of art or objects we touch only with your approval.',
-      figure: 'frage-luxusimmobilien',
+      text: 'Before we start, we agree with you when we will come, how keys and the alarm system are handled and which works of art or objects we touch only with your approval.',
     },
     {
       title: 'Your dedicated team',
-      text: 'The team that comes for the first assignment comes for every one after it. So you explain rules and wishes only once.',
-      figure: 'szene-luxusimmobilien',
+      text: 'The same team always comes to you, and it knows the rules you set before the first assignment.',
     },
   ],
   faq: [
     {
       question: 'How does my enquiry stay confidential?',
-      answer: 'It goes straight to our managing director, who handles premium enquiries personally. If you would like a non-disclosure agreement, it is best to mention it in your first message.',
+      answer: 'Our managing director deals with premium enquiries in person. If you would like a non-disclosure agreement, it is best to mention it in your first message.',
     },
     {
-      question: 'What should my first message include?',
-      answer: 'A few details are enough: house, boat or cabin, location or mooring, occasion or preferred frequency, and when you need us from. Notes on delicate materials or works of art help us prepare the walk-through.',
+      question: 'Can estate agents or property managers enquire on behalf of owners?',
+      answer: 'Yes. Tell us in your enquiry who will accompany the walk-through and who should receive the quote.',
     },
     {
-      question: 'Can estate agents, property managers or a family office enquire on behalf of owners?',
-      answer: 'Yes. An estate agent might engage us before a photo shoot or a sale, a property manager before a handover to new residents. A family office can take over the enquiry and coordination entirely.',
+      question: 'Do I have to commit to regular cleaning?',
+      answer: 'No. You can also book us for a single assignment, for example before a private event.',
     },
     {
       question: 'Do you also work when nobody is at home?',
-      answer: 'Yes. We also clean while you are travelling, in the evening or at weekends. How we get into the house and operate the alarm system is agreed with you beforehand.',
-    },
-    {
-      question: 'Do you also look after second homes?',
-      answer: 'Yes. When you arrive, the home has been cleaned, and after you leave we put it back in order. In between, we carry out inspection rounds at the agreed frequency and report anything we notice to the person you designate.',
+      answer: 'Yes, including while you are travelling. How we get into the house and operate the alarm system is agreed beforehand.',
     },
     {
       question: 'What does the price of premium cleaning depend on?',
@@ -539,7 +555,7 @@ export const premiumOverview: Seiten['premiumOverview'] = {
     },
     {
       question: 'Can we enquire in English, French or Italian?',
-      answer: 'Yes. Besides German, our employees speak English, French and Italian. Write to us in whichever language you prefer.',
+      answer: 'Yes. We can communicate with you in German, English, French or Italian. Write to us in whichever language you prefer.',
     },
   ],
   places: {
@@ -548,6 +564,6 @@ export const premiumOverview: Seiten['premiumOverview'] = {
   },
   cta: {
     title: 'Enquire discreetly',
-    text: 'Tell us the property, location and occasion. Your enquiry is handled personally by our managing director, under confidentiality if you wish. The walk-through and quote are free of charge and non-binding.',
+    text: 'A phone call or a few lines via the form are enough to get started.',
   },
 }

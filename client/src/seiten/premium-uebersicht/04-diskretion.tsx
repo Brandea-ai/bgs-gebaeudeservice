@@ -5,7 +5,8 @@ import PremiumTitel from "./titel";
 import { premiumKontext, type PremiumProps } from "./kontext";
 
 /**
- * Diskretion (E41, ohne E52): kurzer Text neben einem grossen, ruhigen Bild,
+ * Diskretion (E41, ohne E52): eine kurze Überleitung ohne Wiederholung der
+ * Zusagen (Befund PU-2) neben einem grossen, ruhigen Bild,
  * darunter der Kasten zur Geheimhaltungsvereinbarung (Audit 25, Baustein 5.2)
  * als druckbare Checkliste mit Quellen aus dem OR. Der Kasten nutzt den
  * Werkzeug-Baustein der Leistungsseiten, damit Druck und Quellen gleich wirken.

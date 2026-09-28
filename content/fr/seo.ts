@@ -19,9 +19,9 @@ export const pages = {
   // Titel und H1 mit dem Hauptbegriff (N8, keywords-mehrsprachig), Beschreibung mit Nutzen und Handlungsaufruf (T4)
   '/premium': {
     label: premiumLabel,
-    title: 'Nettoyage premium : villas, jets, yachts',
+    title: 'Nettoyage premium : villas, jets, yachts',
     description: company.premiumBrand
-      ? `${company.premiumBrand}, la ligne premium de ${company.brand} : nettoyage discret de villas, jets privés et yachts, avec une équipe fixe. Devis gratuit après une visite.`
+      ? `${company.premiumBrand}, la ligne premium de ${company.brand} : nettoyage discret de villas, jets privés et yachts, avec une équipe fixe. Devis gratuit après une visite.`
       : 'Nettoyage premium de villas, jets privés et yachts sur les lacs des Quatre-Cantons et de Zoug, discret et avec une équipe fixe. Devis gratuit après une visite.',
   },
   '/premium/luxusimmobilien': {
