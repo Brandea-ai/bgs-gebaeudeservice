@@ -17,6 +17,11 @@ export const ratgeberUebersicht = {
   updatedLabel: 'Mise à jour\u202f:',
   readMore: 'Lire le guide',
   publishedLabel: 'Publié le',
+  inArticle: 'Dans ce guide',
+  servicesTitle: 'Directement vers les prestations',
+  allServices: 'Toutes les prestations en bref',
+  allArticles: 'Tous les guides',
+  moreTitle: 'À lire aussi',
 }
 
 const reinigungsfirmaFinden: ArticleContent = {

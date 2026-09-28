@@ -24,6 +24,12 @@ export const ratgeberUebersicht = {
   updatedLabel: 'Stand:',
   readMore: 'Zum Ratgeber',
   publishedLabel: 'Veröffentlicht am',
+  // Gestaltung der Übersicht und der Artikelvorlage (E80), keine Aussagen über das Unternehmen
+  inArticle: 'Im Artikel',
+  servicesTitle: 'Direkt zu den Leistungen',
+  allServices: 'Alle Leistungen im Überblick',
+  allArticles: 'Alle Ratgeber',
+  moreTitle: 'Weiterlesen',
 }
 
 // Grundlage: P30 und die verwertbaren Teile aus P28 (Seitenberichte, Abschnitt 4)

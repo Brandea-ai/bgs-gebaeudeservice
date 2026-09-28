@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import ServicePage from "@/components/ServicePage";
 import ArticlePage from "@/components/ArticlePage";
 import LegalPage from "@/components/LegalPage";
-import HomeView from "./HomeView";
-import AboutView from "./AboutView";
-import ContactView from "./ContactView";
+import Startseite from "@/seiten/startseite";
+import UeberUns from "@/seiten/ueber-uns";
+import Kontakt from "@/seiten/kontakt";
+import Ratgeber from "@/seiten/ratgeber";
 import AreaView from "./AreaView";
 import ServicesOverviewView from "./ServicesOverviewView";
 import PremiumOverviewView from "./PremiumOverviewView";
-import BlogOverviewView from "./BlogOverviewView";
 import Kanton from "@/seiten/kanton";
 import { getDict } from "../../../content";
 import { metaFor, type PagePath } from "../../../shared/seo";
@@ -26,13 +26,13 @@ import { kantonKeys, kantonPath } from "../../../shared/cantons";
  * in app/(de), app/(en), app/(fr) und app/(it) nutzen nur diese Funktionen.
  */
 const views: Partial<Record<PagePath, (lang: Locale) => React.ReactNode>> = {
-  "/": lang => <HomeView lang={lang} />,
-  "/ueber-uns": lang => <AboutView lang={lang} />,
-  "/kontakt": lang => <ContactView lang={lang} />,
+  "/": lang => <Startseite lang={lang} />,
+  "/ueber-uns": lang => <UeberUns lang={lang} />,
+  "/kontakt": lang => <Kontakt lang={lang} />,
   "/einzugsgebiet": lang => <AreaView lang={lang} />,
   "/leistungen": lang => <ServicesOverviewView lang={lang} />,
   "/premium": lang => <PremiumOverviewView lang={lang} />,
-  "/blog": lang => <BlogOverviewView lang={lang} />,
+  "/blog": lang => <Ratgeber lang={lang} />,
   // Kantonsseiten /einzugsgebiet/<kanton> (E80)
   ...Object.fromEntries(
     kantonKeys.map(key => [
