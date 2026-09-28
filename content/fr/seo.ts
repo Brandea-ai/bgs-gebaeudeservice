@@ -66,7 +66,7 @@ export const pages = {
   '/leistungen/baureinigung': {
     label: 'Nettoyage de chantier et de fin de chantier',
     title: 'Nettoyage de fin de chantier à Lucerne et Zoug',
-    description: 'Nettoyage de fin de chantier par étapes jusqu’à la réception, avec listes de contrôle pour la soumission et la remise. Devis gratuit après une visite.',
+    description: 'Nettoyage de fin de chantier à Lucerne, Zoug et environs, par étapes jusqu’à la réception, avec listes de contrôle à imprimer. Devis gratuit après une visite.',
   },
   '/leistungen/fenster-und-fassadenreinigung': {
     label: 'Nettoyage de vitres et de façades',

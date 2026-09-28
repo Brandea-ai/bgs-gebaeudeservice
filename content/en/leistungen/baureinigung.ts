@@ -2,13 +2,15 @@ import type { ServicePageContent } from '../../types'
 
 // Translation of content/de/leistungen/baureinigung.ts (E85). Sources as in the German file,
 // linked to the English fedlex versions (not legally binding) or the German and French SIGAB texts.
+// Round 2 (review findings R1 to R6, BR-SO-1 to BR-SO-9): dispatch BBl 2022 2743, section 4.2
+// (no English version, linked in German), SIGAB named as on sigab.ch.
 export const baureinigung: ServicePageContent = {
   path: '/leistungen/baureinigung',
   area: 'leistungen',
   eyebrow: 'One-off and special cleaning',
   h1: 'Construction and post-construction cleaning for new builds and renovations',
   lead: [
-    'Once the interior fit-out is finished, fine dust covers every surface, protective film is still stuck to windows and appliances, and mortar and paint splashes sit on glass and tiles. By the acceptance inspection, all of this has to become a property that tenants, buyers or your team can move into on handover day.',
+    'Once the interior fit-out is finished, fine dust covers every surface, protective film is still stuck to windows and appliances, and mortar and paint splashes sit on glass and tiles. By the acceptance inspection, the building has to be ready for tenants, buyers or your team to move in on handover day.',
     'We clean in the stages your project needs: a rough clean after the shell, interim cleans before the fit-out and a thorough clean before handover. The jobs follow the site management’s schedule. That way the acceptance inspection starts on clean surfaces, where defects can actually be seen.',
   ],
   facts: [
@@ -28,7 +30,7 @@ export const baureinigung: ServicePageContent = {
       'Post-construction clean before the acceptance inspection, from top to bottom and in several passes where needed',
       'Removing construction dust and residue from windows, frames, window rebates and glass',
       'Removing protective film, labels, adhesive residue and mortar and paint splashes',
-      'Cleaning floors, sanitary rooms, kitchens and built-in cupboards inside and out, ready for occupancy',
+      'Cleaning floors, bathrooms and toilets, kitchens and built-in cupboards inside and out, ready for occupancy',
     ],
     notIncluded: [
       'The facade of the finished building is covered by our [window and facade cleaning](/leistungen/fenster-und-fassadenreinigung).',
@@ -40,20 +42,20 @@ export const baureinigung: ServicePageContent = {
       title: 'Dust, film and splashes: what the post-construction clean deals with',
       paragraphs: [
         'Construction dust is fine and settles everywhere: on floors, in window rebates, on door frames, in cupboards and drawers. That is why cleaning runs from top to bottom, often in more than one pass, so that no dust falls onto surfaces that are already clean.',
-        'Then there is protective film, labels, adhesive residue, mortar and paint splashes. Each surface needs its own product and tool, because glass, stainless steel, taps and new floors should be handed over without scratches. The table further down shows what matters with glass.',
+        'Film, adhesive and dried-on splashes stick harder than dust. Each surface needs its own product and tool, because glass, stainless steel, taps and new floors should be handed over without scratches. The table further down shows what matters with glass.',
       ],
     },
     {
       title: 'Rough cleaning in the shell, so the fit-out starts clean',
       paragraphs: [
-        'Once the shell is weathertight, the rough clean removes coarse dirt and dust from the floors of the building. Floor layers, plasterers and kitchen fitters then start on a clean base, and less dust travels into the later stages.',
-        'Before delicate work, an interim clean follows, for example before parquet is laid or the kitchen is fitted. Putting these jobs into the schedule early takes pressure off the end of the project: the post-construction clean does not start from scratch.',
+        'While the storeys are still empty, rubble and dust can be removed quickly and thoroughly. Floor layers, plasterers and kitchen fitters then start on a clean base, and with every work step less dust travels into the later stages.',
+        'Every interim clean takes work off the post-construction clean. This matters most when only a few days separate the last trades from handover: the final clean then does not start from scratch.',
       ],
     },
     {
       title: 'Renovation in an occupied or working building',
       paragraphs: [
-        'When pipe risers are replaced or a single floor is converted, the rest of the building stays in use. Every working day carries dust into the stairwell, the lift and up to the flat doors. An interim clean of these shared routes at a fixed rhythm keeps the burden low for residents and staff.',
+        'When pipe risers are replaced or a single floor is converted, the rest of the building stays in use. Every working day carries dust into the stairwell, the lift and up to the flat doors. An interim clean of these shared routes at a fixed rhythm keeps disruption for residents and staff to a minimum.',
         'The post-construction clean then follows stage by stage, as soon as the trades leave a flat or a section. Finished flats can be handed over before the whole renovation is complete.',
       ],
     },
@@ -63,25 +65,25 @@ export const baureinigung: ServicePageContent = {
       kind: 'table',
       id: 'bauablauf',
       title: 'Cleaning in the construction sequence',
-      intro: 'Which clean comes when, and who releases the area for it. To print for the site management or as a basis for the tender.',
-      columns: ['Stage', 'When in the build', 'What is cleaned', 'Who releases'],
+      intro: 'Which clean comes when and who signs the area off for it, as a template for site management and tender.',
+      columns: ['Stage', 'When in the build', 'What is cleaned', 'Signed off by'],
       rows: [
         [
           'Rough clean',
           'After the shell, before the interior fit-out begins',
-          'Removing coarse dirt and dust from the floors of the building, so that the next work starts on a clean base',
+          'Removing coarse dirt and dust from every storey',
           'Site management',
         ],
         [
           'Interim clean',
-          'Before delicate work, for example before floors are laid or kitchens installed',
+          'Before delicate work such as parquet, tiling or kitchen fitting',
           'Dust on floors, windows, installations and parts already fitted',
           'Site management',
         ],
         [
           'Post-construction clean',
-          'After the last trades have finished, before the acceptance inspection',
-          'Everything ready for occupancy: top to bottom, film and residue removed, often in more than one pass',
+          'At the end, once all trades have finished',
+          'Everything ready for occupancy, top to bottom, often in several passes',
           'Site management or building owner',
         ],
         [
@@ -91,7 +93,7 @@ export const baureinigung: ServicePageContent = {
           'Site management',
         ],
       ],
-      note: 'If trades are still working in the rooms after the post-construction clean, new dust is created. So place the final clean after the last work and keep a time slot free for follow-up cleans.',
+      note: 'If trades are still working in the rooms after the post-construction clean, new dust is created. So keep a time slot free for follow-up cleans.',
       printable: true,
       updated: '2026-09-28',
     },
@@ -104,42 +106,42 @@ export const baureinigung: ServicePageContent = {
         {
           title: 'Property and areas',
           items: [
-            'Type of property, number of storeys and floor area',
+            'Property type, storeys and floor area',
             'Number of flats, offices or units',
-            'Floor plans or drawings showing the rooms to be cleaned',
-            'Floor coverings, especially delicate ones such as natural stone, parquet or oiled floors',
-            'Basement, underground car park, plant rooms and stairwells: included or not',
+            'Plans showing the rooms to be cleaned',
+            'Natural stone, parquet or oiled floors',
+            'Basement and car park: included or not',
           ],
         },
         {
           title: 'Glass and windows',
           items: [
-            'Number and type of windows, glass doors and glass balustrades',
-            'Glass at height, such as skylights or glazing in the stairwell',
-            'Where toughened safety glass has been fitted',
-            'External blinds and roller shutters: included or not',
+            'Windows, glass doors and balustrades',
+            'Glass at height, such as skylights',
+            'Where toughened glass is fitted',
+            'Blinds and roller shutters: included or not',
           ],
         },
         {
           title: 'Dates',
           items: [
             'Required stages with dates',
-            'Handover date and date of the acceptance inspection',
-            'Time window between the last trades and the acceptance inspection',
+            'Handover and acceptance dates',
+            'Time window before acceptance',
             'Reserve for a follow-up clean',
           ],
         },
         {
           title: 'Construction site',
           items: [
-            'Vehicle access, site access and keys or badges',
-            'Electricity, water, lift or builders’ hoist and space for equipment',
-            'Site safety rules and a contact person on site',
-            'Skips for waste: who provides them and who disposes of the waste',
+            'Site access, keys or badges',
+            'Power, water, lift, room for equipment',
+            'Site safety rules and a contact person',
+            'Skips: who provides and who empties them',
           ],
         },
       ],
-      note: 'The Waste Ordinance (ADWO) requires construction waste to be separated on site: special waste separately, and glass, metals, timber and plastics kept apart where possible (Art. 17 ADWO). So set out in the tender who provides the skips and where film and packaging from the cleaning should go.',
+      note: 'The Waste Ordinance (ADWO) requires special waste to be disposed of separately and the remaining construction waste to be separated on site. Where this is not operationally possible, it must be separated in a suitable facility (Art. 17 ADWO). So also clarify where film and packaging from the cleaning should go.',
       sources: [
         { label: 'Waste Ordinance ADWO, Art. 17: separation of construction waste (English translation)', href: 'https://www.fedlex.admin.ch/eli/cc/2015/891/en#art_17' },
       ],
@@ -150,8 +152,8 @@ export const baureinigung: ServicePageContent = {
       kind: 'table',
       id: 'glas',
       title: 'New glass: what damages it and what the glass industry recommends',
-      intro: 'Windows are often fitted months before handover and catch everything the construction site throws at them. The recommendations come from SIGAB, the Swiss institute for glass in building.',
-      columns: ['Situation', 'Why it is delicate', 'Recommendation'],
+      intro: 'Windows are often fitted months before handover and catch everything the construction site throws at them. The recommendations come from SIGAB, the technical office of the Swiss flat glass association SFV-ASVP.',
+      columns: ['Situation', 'Why it is a problem', 'Recommendation'],
       rows: [
         [
           'Cement slurry, mortar or plaster on the pane',
@@ -165,18 +167,18 @@ export const baureinigung: ServicePageContent = {
         ],
         [
           'Paint and mortar splashes',
-          'If a blade or glass scraper is drawn over the whole pane, it rubs dirt particles into the glass. The result is a web of fine hairline scratches.',
+          'If a blade or glass scraper is drawn over the whole pane, it rubs dirt particles into the glass. The result is a web of fine hairline scratches. Polishing would then have to cover the whole visible area and costs more than new glass.',
           'Use blades only on single spots and with great care, never over the whole surface.',
         ],
         [
           'Labels and adhesive tape',
-          'Cleaners containing alkalis or acids can destroy the coating and the glass surface.',
-          'Remove adhesive as soon as possible, especially on coated glass and in summer, carefully with isopropanol or acetone.',
+          'Especially delicate on coated glass and in warm weather. Cleaners containing alkalis or acids can destroy the coating and the glass surface.',
+          'Remove adhesive as soon as possible, carefully with isopropanol or acetone.',
         ],
         [
           'Toughened safety glass',
-          'More sensitive to scratches than ordinary float glass, without being of lower quality. Toughened glass must not be worked after toughening, so scratches cannot be polished out.',
-          'Clean with particular care and state in the tender where toughened glass has been fitted.',
+          'More sensitive to scratches than ordinary float glass, without being of lower quality. Under the product standards, toughened glass must not be worked after toughening, so it cannot be polished either.',
+          'Clean with particular care.',
         ],
       ],
       note: 'According to many years of expert assessments by SIGAB, a large share of scratches is caused by improper post-construction cleaning, and they often only show when the sun is low. So look at the glazing together with the site management before the final clean and record any existing damage. Otherwise an expert report is often needed later to establish when a scratch appeared.',
@@ -193,48 +195,46 @@ export const baureinigung: ServicePageContent = {
       kind: 'checklist',
       id: 'uebergabe',
       title: 'Handover checklist for the post-construction clean',
-      intro: 'For the walk-through before the acceptance inspection, room by room. Check in daylight and look at glass at an angle against the light as well.',
+      intro: 'For the walk-through before acceptance. Look at glass in daylight, also at an angle.',
       groups: [
         {
           title: 'Glass, windows and doors',
           items: [
-            'Protective film removed from windows, doors and appliances',
-            'Labels and adhesive residue removed from glass, tiles and appliances',
-            'Glass free of streaks, splashes and scratches, also checked at an angle against the light',
-            'Window rebates, frames and door frames free of construction dust',
+            'Film, labels and adhesive removed',
+            'Glass free of streaks and scratches',
+            'Rebates and frames free of dust',
           ],
         },
         {
           title: 'Kitchen, bathroom and fittings',
           items: [
             'Taps and sanitary fittings free of mortar and paint residue',
-            'Cupboards and drawers free of dust inside',
-            'Built-in appliances clean inside and out, film removed',
+            'Cupboards and drawers clean inside',
             'Tiles and joints free of residue',
           ],
         },
         {
           title: 'Floors and surfaces',
           items: [
-            'Floors clean, including corners and along the skirting boards',
-            'No film of dust on window sills, doors and light switches',
-            'Stairs, railings and handrails free of dust',
+            'Floors clean right into the corners',
+            'No dust on window sills and doors',
+            'Stairs and handrails free of dust',
           ],
         },
         {
-          title: 'Before the acceptance inspection',
+          title: 'Before acceptance of the building',
           items: [
-            'Final clean completed, no trades left in the rooms',
-            'Damage that existed before the cleaning has been recorded',
-            'List of defects prepared with room and component',
-            'Deadline for notice of defects noted: 60 days for buildings',
+            'No trades left in the rooms',
+            'Pre-existing damage recorded',
+            'Defect list by room and component',
+            'Notice period clarified (see note)',
           ],
         },
       ],
-      note: 'The Code of Obligations provides that the building owner inspects the work after delivery and reports defects (Art. 367 CO). For buildings, the period for notice of defects has been 60 days since 1 January 2026, and a shorter period cannot be agreed. Defects that were not apparent at the acceptance inspection must be reported within 60 days of their discovery (Art. 370 CO). On clean surfaces, scratches, chips and stains are visible at the acceptance inspection itself. Clarify with your site management or legal adviser what your construction contract provides in detail.',
+      note: 'The Code of Obligations provides that the building owner inspects the building after delivery and notifies the contractors of defects (Art. 367 CO). For construction contracts for buildings concluded on or after 1 January 2026, the period is at least 60 days, and for defects that only become apparent later it runs from their discovery (Art. 370 CO). For older contracts the previous law still applies, so give notice immediately. Clarify with your site management or legal adviser what your contract provides.',
       sources: [
-        { label: 'Code of Obligations, Art. 367: inspection of the work and notice of defects (English translation)', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/en#art_367' },
-        { label: 'Code of Obligations, Art. 370: approval of the work (English translation)', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/en#art_370' },
+        { label: 'Code of Obligations, Art. 367 and 370: inspection, notice of defects and approval (English translation)', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/en#art_367' },
+        { label: 'Dispatch on construction defects, BBl 2022 2743, section 4.2: transitional law (in German)', href: 'https://www.fedlex.admin.ch/eli/fga/2022/2743/de' },
       ],
       printable: true,
       updated: '2026-09-28',
@@ -243,7 +243,7 @@ export const baureinigung: ServicePageContent = {
   steps: [
     {
       title: 'Stages in the schedule',
-      text: 'Rough, interim and final cleans are entered with dates in the site management’s schedule. If the build is delayed, the jobs move with it.',
+      text: 'Rough, interim and final cleans are entered with dates in the site management’s schedule. If the build is delayed, the jobs are rescheduled with the site management.',
       figure: 'start',
     },
     {
@@ -266,7 +266,7 @@ export const baureinigung: ServicePageContent = {
     {
       question: 'When does the post-construction clean belong in the schedule?',
       answer:
-        'As soon as you know the handover date. It comes after the last trades and before the acceptance inspection, and it needs its own time slot. How long depends on the floor area, the share of glass and the number of passes. Allow an extra reserve in case trades come back to remedy defects.',
+        'As soon as you know the handover date. It comes after the last trades and before the acceptance inspection, and it needs its own time slot. How long depends on the floor area, the share of glass and the number of passes.',
     },
     {
       question: 'How much does construction cleaning cost?',
@@ -281,12 +281,7 @@ export const baureinigung: ServicePageContent = {
     {
       question: 'Who removes protective film, labels and adhesive residue?',
       answer:
-        'That is part of the post-construction clean, using products that suit each surface. Adhesive on glass should come off as soon as possible, especially on coated glass and in summer. So when you enquire, tell us which glass surfaces have labels or adhesive tape on them.',
-    },
-    {
-      question: 'What happens if trades return after the post-construction clean?',
-      answer:
-        'Then new dust is created and the rooms concerned need a follow-up clean, for example when defects are remedied after the acceptance inspection. So place the final clean after the last work wherever possible and reserve a time slot for follow-up cleans.',
+        'That is part of the post-construction clean, using products that suit each surface. The table on new glass shows what to watch out for on glass. When you enquire, tell us which glass surfaces have labels or adhesive tape on them.',
     },
     {
       question: 'Construction cleaning or end-of-tenancy cleaning: which fits after a renovation?',
@@ -296,7 +291,7 @@ export const baureinigung: ServicePageContent = {
     {
       question: 'Are the windows part of the post-construction clean?',
       answer:
-        'Yes. Windows, frames, window rebates and glass are part of the post-construction clean. The facade itself is covered by our [window and facade cleaning](/leistungen/fenster-und-fassadenreinigung).',
+        'Yes, including frames, window rebates and glass. Regular care of glass and facade once the building is occupied is handled by our [window and facade cleaning](/leistungen/fenster-und-fassadenreinigung).',
     },
   ],
   related: [

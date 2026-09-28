@@ -66,7 +66,7 @@ export const pages = {
   '/leistungen/baureinigung': {
     label: 'Bau- und Bauendreinigung',
     title: 'Baureinigung und Bauendreinigung Luzern, Zug',
-    description: 'Baureinigung und Bauendreinigung in Etappen bis zur Abnahme, mit Checklisten für Ausschreibung und Übergabe. Kostenlose Offerte nach Besichtigung.',
+    description: 'Baureinigung und Bauendreinigung in Luzern, Zug und Umgebung, in Etappen bis zur Abnahme, mit Checklisten zum Ausdrucken. Kostenlose Offerte nach Besichtigung.',
   },
   '/leistungen/fenster-und-fassadenreinigung': {
     label: 'Fenster- und Fassadenreinigung',

@@ -2,13 +2,15 @@ import type { ServicePageContent } from '../../types'
 
 // Traduzione di content/de/leistungen/baureinigung.ts (E85). Fonti come nel file tedesco,
 // collegate alle versioni italiane di fedlex e ai testi del SIGAB (tedesco e francese).
+// Secondo giro (rilievi R1 a R6, BR-SO-1 a BR-SO-9): messaggio FF 2022 2743, n. 4.2 (diritto
+// transitorio), SIGAB descritto come su sigab.ch.
 export const baureinigung: ServicePageContent = {
   path: '/leistungen/baureinigung',
   area: 'leistungen',
   eyebrow: 'Pulizie una tantum e speciali',
   h1: 'Pulizia di cantiere e di fine cantiere per nuove costruzioni e ristrutturazioni',
   lead: [
-    'Finite le opere interne, una polvere fine copre ogni superficie, le pellicole protettive restano incollate a finestre e apparecchi, schizzi di malta e di pittura segnano vetri e piastrelle. Entro il collaudo tutto questo deve diventare un immobile in cui inquilini, acquirenti o il Suo team possano entrare il giorno della consegna.',
+    'Finite le opere interne, una polvere fine copre ogni superficie, le pellicole protettive restano incollate a finestre e apparecchi, schizzi di malta e di pittura segnano vetri e piastrelle. Entro il collaudo l’edificio deve essere pronto perché inquilini, acquirenti o il Suo team possano entrarvi il giorno della consegna.',
     'Puliamo nelle tappe di cui il Suo cantiere ha bisogno: una pulizia grossolana dopo il rustico, pulizie intermedie prima delle finiture interne e una pulizia accurata prima della consegna. Gli interventi seguono il cronoprogramma della direzione lavori. Così il collaudo inizia su superfici pulite, dove i difetti si vedono.',
   ],
   facts: [
@@ -40,14 +42,14 @@ export const baureinigung: ServicePageContent = {
       title: 'Polvere, pellicole e schizzi: che cosa risolve la pulizia di fine cantiere',
       paragraphs: [
         'La polvere di cantiere è fine e si deposita ovunque: sui pavimenti, nelle battute delle finestre, sui telai delle porte, negli armadi e nei cassetti. Per questo si pulisce dall’alto verso il basso, spesso in più di un passaggio, affinché la polvere non ricada su superfici già pulite.',
-        'A ciò si aggiungono pellicole protettive, etichette, residui di colla, schizzi di malta e di pittura. Ogni superficie richiede il suo prodotto e il suo attrezzo, perché vetri, acciaio inox, rubinetteria e pavimenti nuovi vanno consegnati senza graffi. La tabella più sotto mostra che cosa conta per il vetro.',
+        'Pellicole, colla e schizzi secchi aderiscono più tenacemente della polvere. Ogni superficie richiede il suo prodotto e il suo attrezzo, perché vetri, acciaio inox, rubinetteria e pavimenti nuovi vanno consegnati senza graffi. La tabella più sotto mostra che cosa conta per il vetro.',
       ],
     },
     {
       title: 'Pulizia grossolana nel rustico, perché le finiture partano pulite',
       paragraphs: [
-        'Appena il rustico è chiuso, la pulizia grossolana rimuove sporco grossolano e polvere dai piani. Posatori di pavimenti, gessatori e montatori di cucine iniziano così su una base pulita, e meno polvere passa alle tappe successive.',
-        'Prima dei lavori delicati segue una pulizia intermedia, ad esempio prima della posa del parquet o del montaggio della cucina. Inserire presto questi interventi nel cronoprogramma alleggerisce la fine del cantiere: la pulizia di fine cantiere non parte da zero.',
+        'Finché i piani sono vuoti, macerie e polvere si rimuovono in fretta e a fondo. Posatori di pavimenti, gessatori e montatori di cucine iniziano così su una base pulita, e a ogni intervento meno polvere passa alle tappe successive.',
+        'Ogni pulizia intermedia toglie lavoro alla pulizia di fine cantiere. Conta soprattutto quando tra l’ultimo artigiano e la consegna restano pochi giorni: la pulizia finale non parte allora da zero.',
       ],
     },
     {
@@ -63,25 +65,25 @@ export const baureinigung: ServicePageContent = {
       kind: 'table',
       id: 'bauablauf',
       title: 'La pulizia nello svolgimento del cantiere',
-      intro: 'Quale pulizia arriva quando e chi libera la zona. Da stampare per la direzione lavori o come base per il bando.',
-      columns: ['Tappa', 'Quando nel cantiere', 'Che cosa si pulisce', 'Chi libera'],
+      intro: 'Quale pulizia arriva quando e chi dà il via libera per la zona, come modello per direzione lavori e bando.',
+      columns: ['Tappa', 'Quando nel cantiere', 'Che cosa si pulisce', 'Chi dà il via libera'],
       rows: [
         [
           'Pulizia grossolana',
           'Dopo il rustico, prima dell’inizio delle finiture interne',
-          'Rimuovere sporco grossolano e polvere dai piani, affinché i lavori successivi inizino su una base pulita',
+          'Rimuovere sporco grossolano e polvere dai piani',
           'Direzione lavori',
         ],
         [
           'Pulizia intermedia',
-          'Prima dei lavori delicati, ad esempio prima della posa dei pavimenti o del montaggio delle cucine',
+          'Prima dei lavori delicati come parquet, piastrelle o montaggio della cucina',
           'Polvere su pavimenti, finestre, impianti ed elementi già montati',
           'Direzione lavori',
         ],
         [
           'Pulizia di fine cantiere',
-          'Dopo gli ultimi lavori degli artigiani, prima del collaudo',
-          'Tutto pronto per l’uso: dall’alto verso il basso, pellicole e residui rimossi, spesso in più di un passaggio',
+          'Alla fine, quando tutte le imprese hanno terminato',
+          'Tutto pronto per l’uso, dall’alto verso il basso, spesso in più passaggi',
           'Direzione lavori o committente',
         ],
         [
@@ -91,7 +93,7 @@ export const baureinigung: ServicePageContent = {
           'Direzione lavori',
         ],
       ],
-      note: 'Se dopo la pulizia di fine cantiere gli artigiani lavorano ancora nei locali, si forma nuova polvere. Collochi quindi la pulizia finale dopo gli ultimi lavori e tenga libera una finestra di tempo per le pulizie di ripasso.',
+      note: 'Se dopo la pulizia di fine cantiere gli artigiani lavorano ancora nei locali, si forma nuova polvere. Tenga quindi libera una finestra di tempo per le pulizie di ripasso.',
       printable: true,
       updated: '2026-09-28',
     },
@@ -104,20 +106,20 @@ export const baureinigung: ServicePageContent = {
         {
           title: 'Immobile e superfici',
           items: [
-            'Tipo di immobile, numero di piani e superficie utile',
+            'Tipo di immobile, piani e superficie',
             'Numero di appartamenti, uffici o unità',
             'Piante o piani con i locali da pulire',
-            'Pavimenti, soprattutto quelli delicati come pietra naturale, parquet o pavimenti oliati',
-            'Cantine, autorimessa sotterranea, locali tecnici e trombe delle scale: compresi o no',
+            'Pietra naturale, parquet o pavimenti oliati',
+            'Cantine e autorimessa: comprese o no',
           ],
         },
         {
           title: 'Vetri e finestre',
           items: [
-            'Numero e tipo di finestre, porte a vetri e parapetti in vetro',
-            'Vetri in altezza, ad esempio lucernari o vetrate della tromba delle scale',
-            'Dove è montato vetro di sicurezza temprato',
-            'Lamelle e tapparelle: da pulire o no',
+            'Finestre, porte e parapetti in vetro',
+            'Vetri in altezza, ad esempio lucernari',
+            'Dove è montato vetro temprato',
+            'Lamelle e tapparelle: comprese o no',
           ],
         },
         {
@@ -125,21 +127,21 @@ export const baureinigung: ServicePageContent = {
           items: [
             'Tappe desiderate con la data',
             'Data di consegna e data del collaudo',
-            'Finestra di tempo tra gli ultimi lavori degli artigiani e il collaudo',
+            'Finestra di tempo tra fine lavori e collaudo',
             'Riserva per una pulizia di ripasso',
           ],
         },
         {
           title: 'Cantiere',
           items: [
-            'Accesso per veicoli, accesso al cantiere e chiavi o badge',
-            'Corrente, acqua, ascensore o montacarichi e spazio per gli attrezzi',
-            'Regole di sicurezza e persona di contatto sul cantiere',
-            'Benne per i rifiuti: chi le fornisce e chi smaltisce',
+            'Accesso al cantiere, chiavi o badge',
+            'Corrente, acqua, ascensore e deposito',
+            'Regole di sicurezza e persona di contatto',
+            'Benne: chi le fornisce e chi smaltisce',
           ],
         },
       ],
-      note: 'L’ordinanza sui rifiuti (OPSR) chiede di separare i rifiuti edili sul cantiere: i rifiuti speciali a parte, vetro, metalli, legno e materie plastiche il più possibile in base alla tipologia (art. 17 OPSR). Precisi quindi nel bando chi fornisce le benne e dove finiscono pellicole e imballaggi della pulizia.',
+      note: 'L’ordinanza sui rifiuti (OPSR) chiede di smaltire separatamente i rifiuti speciali e di separare sul cantiere i restanti rifiuti edili. Se le condizioni di lavoro non lo permettono, la separazione deve avvenire in impianti idonei (art. 17 OPSR). Chiarisca quindi anche dove finiscono pellicole e imballaggi della pulizia.',
       sources: [
         { label: 'Ordinanza sui rifiuti OPSR, art. 17: separazione dei rifiuti edili', href: 'https://www.fedlex.admin.ch/eli/cc/2015/891/it#art_17' },
       ],
@@ -150,7 +152,7 @@ export const baureinigung: ServicePageContent = {
       kind: 'table',
       id: 'glas',
       title: 'Vetro nuovo: che cosa lo danneggia e che cosa raccomanda il settore del vetro',
-      intro: 'Le finestre vengono spesso montate mesi prima della consegna e subiscono tutto ciò che produce il cantiere. Le raccomandazioni sono dell’istituto svizzero per il vetro nell’edilizia SIGAB.',
+      intro: 'Le finestre vengono spesso montate mesi prima della consegna e subiscono tutto ciò che produce il cantiere. Le raccomandazioni sono del servizio tecnico SIGAB dell’associazione svizzera del vetro piano SFV-ASVP.',
       columns: ['Situazione', 'Perché è delicato', 'Raccomandazione'],
       rows: [
         [
@@ -165,18 +167,18 @@ export const baureinigung: ServicePageContent = {
         ],
         [
           'Schizzi di pittura e di malta',
-          'Se si passa una lama o un raschietto su tutto il vetro, le particelle di sporco vengono sfregate nel vetro. Ne nasce una rete di graffi sottili.',
+          'Se si passa una lama o un raschietto su tutto il vetro, le particelle di sporco vengono sfregate nel vetro. Ne nasce una rete di graffi sottili. La lucidatura dovrebbe allora coprire tutta la superficie visibile e costa più della sostituzione del vetro.',
           'Usare le lame solo in singoli punti e con grande attenzione, mai su tutta la superficie.',
         ],
         [
           'Etichette e nastro adesivo',
-          'I detergenti con soluzioni alcaline o acidi possono distruggere il rivestimento e la superficie del vetro.',
-          'Rimuovere la colla al più presto, soprattutto sui vetri rivestiti e d’estate, con cautela con isopropanolo o acetone.',
+          'Particolarmente delicato sui vetri rivestiti e con il caldo. I detergenti con soluzioni alcaline o acidi possono distruggere il rivestimento e la superficie del vetro.',
+          'Rimuovere la colla al più presto, con cautela, usando isopropanolo o acetone.',
         ],
         [
           'Vetro di sicurezza temprato',
-          'Più sensibile ai graffi del normale vetro float, senza essere di qualità inferiore. Il vetro precompresso non può più essere lavorato dopo la tempra, quindi i graffi non si possono lucidare via.',
-          'Pulire con particolare cura e indicare nel bando dove è montato vetro temprato.',
+          'Più sensibile ai graffi del normale vetro float, senza essere di qualità inferiore. Secondo le norme di prodotto il vetro precompresso non può più essere lavorato dopo la tempra, quindi nemmeno lucidato.',
+          'Pulire con particolare cura.',
         ],
       ],
       note: 'Secondo la lunga esperienza peritale del SIGAB, gran parte dei graffi nasce da una pulizia di fine cantiere non appropriata, e spesso si vede solo con il sole radente. Esamini quindi le vetrate con la direzione lavori prima della pulizia finale e documenti i danni esistenti. Altrimenti più tardi serve spesso una perizia per stabilire quando è nato un graffio.',
@@ -193,48 +195,46 @@ export const baureinigung: ServicePageContent = {
       kind: 'checklist',
       id: 'uebergabe',
       title: 'Lista di controllo per la consegna dopo la pulizia di fine cantiere',
-      intro: 'Per il sopralluogo prima del collaudo, locale per locale. Controlli con la luce del giorno e guardi il vetro anche di sbieco, controluce.',
+      intro: 'Per il sopralluogo prima del collaudo. Guardi il vetro alla luce del giorno, anche di sbieco.',
       groups: [
         {
           title: 'Vetri, finestre e porte',
           items: [
-            'Pellicole protettive rimosse da finestre, porte e apparecchi',
-            'Etichette e residui di colla rimossi da vetri, piastrelle e apparecchi',
-            'Vetri senza aloni, schizzi e graffi, controllati anche di sbieco controluce',
-            'Battute, telai delle finestre e telai delle porte senza polvere di cantiere',
+            'Pellicole, etichette e colla rimosse',
+            'Vetri senza aloni, schizzi e graffi',
+            'Battute e telai senza polvere di cantiere',
           ],
         },
         {
           title: 'Cucina, bagno e arredi fissi',
           items: [
             'Rubinetteria e apparecchi sanitari senza residui di malta e di pittura',
-            'Armadi e cassetti senza pellicola di polvere all’interno',
-            'Elettrodomestici a incasso puliti dentro e fuori, pellicole rimosse',
+            'Armadi e cassetti puliti all’interno',
             'Piastrelle e fughe senza residui',
           ],
         },
         {
           title: 'Pavimenti e superfici',
           items: [
-            'Pavimenti puliti, anche negli angoli e lungo i battiscopa',
-            'Nessuna pellicola di polvere su davanzali, porte e interruttori',
-            'Scale, ringhiere e corrimano senza polvere',
+            'Pavimenti puliti fin negli angoli',
+            'Davanzali e porte senza polvere',
+            'Scale e corrimano senza polvere',
           ],
         },
         {
-          title: 'Prima del collaudo',
+          title: 'Prima del collaudo dell’opera',
           items: [
-            'Pulizia finale conclusa, nessun artigiano più nei locali',
-            'I danni già presenti prima della pulizia sono documentati',
-            'Elenco dei difetti preparato per locale e per elemento',
-            'Termine per l’avviso dei difetti annotato: 60 giorni per gli edifici',
+            'Nessun artigiano più nei locali',
+            'Danni preesistenti documentati',
+            'Elenco dei difetti per locale ed elemento',
+            'Termine d’avviso chiarito (vedi nota)',
           ],
         },
       ],
-      note: 'Il CO prevede che il committente verifichi l’opera dopo la consegna e ne segnali i difetti (art. 367 CO). Per un’opera immobiliare il termine per segnalare i difetti è di 60 giorni dal 1° gennaio 2026, e non si può pattuire un termine più breve. I difetti non riconoscibili all’atto del ricevimento vanno segnalati entro 60 giorni dalla loro scoperta (art. 370 CO). Su superfici pulite graffi, scheggiature e macchie si vedono già al collaudo. Che cosa preveda nel dettaglio il Suo contratto d’appalto lo chiarisca con la direzione lavori o con la Sua consulenza legale.',
+      note: 'Il CO prevede che il committente verifichi la costruzione dopo la consegna e ne segnali i difetti agli appaltatori (art. 367 CO). Per i contratti d’appalto su opere immobiliari conclusi a partire dal 1° gennaio 2026 il termine è di almeno 60 giorni, e per i difetti che emergono solo più tardi decorre dalla loro scoperta (art. 370 CO). Per i contratti più vecchi vale ancora il diritto anteriore: l’avviso va dato immediatamente. Il caso concreto lo chiarisca con la direzione lavori o con la Sua consulenza legale.',
       sources: [
-        { label: 'Codice delle obbligazioni, art. 367: verificazione dell’opera e avviso dei difetti', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/it#art_367' },
-        { label: 'Codice delle obbligazioni, art. 370: approvazione dell’opera', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/it#art_370' },
+        { label: 'Codice delle obbligazioni, art. 367 e 370: verificazione, avviso dei difetti e approvazione', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/it#art_367' },
+        { label: 'Messaggio sui difetti di costruzione, FF 2022 2743, n. 4.2: diritto transitorio', href: 'https://www.fedlex.admin.ch/eli/fga/2022/2743/it' },
       ],
       printable: true,
       updated: '2026-09-28',
@@ -243,7 +243,7 @@ export const baureinigung: ServicePageContent = {
   steps: [
     {
       title: 'Tappe nel cronoprogramma',
-      text: 'Pulizia grossolana, intermedia e finale figurano con la data nel cronoprogramma della direzione lavori. Se il cantiere slitta, gli interventi slittano con lui.',
+      text: 'Pulizia grossolana, intermedia e finale figurano con la data nel cronoprogramma della direzione lavori. Se il cantiere slitta, gli interventi vengono ripianificati con la direzione lavori.',
       figure: 'start',
     },
     {
@@ -266,7 +266,7 @@ export const baureinigung: ServicePageContent = {
     {
       question: 'Quando va inserita nel cronoprogramma la pulizia di fine cantiere?',
       answer:
-        'Appena Le è nota la data di consegna. Arriva dopo gli ultimi lavori degli artigiani e prima del collaudo e ha bisogno di una sua finestra di tempo. La durata dipende da superficie, quota di vetro e numero di passaggi. Preveda in più una riserva nel caso in cui gli artigiani tornino per dei difetti.',
+        'Appena Le è nota la data di consegna. Arriva dopo gli ultimi lavori degli artigiani e prima del collaudo e ha bisogno di una sua finestra di tempo. La durata dipende da superficie, quota di vetro e numero di passaggi.',
     },
     {
       question: 'Quanto costa una pulizia di cantiere?',
@@ -281,12 +281,7 @@ export const baureinigung: ServicePageContent = {
     {
       question: 'Chi rimuove pellicole protettive, etichette e residui di colla?',
       answer:
-        'Fa parte della pulizia di fine cantiere, con prodotti adatti a ogni superficie. La colla sul vetro va tolta al più presto, soprattutto sui vetri rivestiti e d’estate. Ci indichi quindi già nella richiesta le superfici vetrate con etichette o nastro adesivo.',
-    },
-    {
-      question: 'Che cosa succede se gli artigiani tornano dopo la pulizia di fine cantiere?',
-      answer:
-        'Si forma nuova polvere e i locali interessati hanno bisogno di una pulizia di ripasso, ad esempio quando dopo il collaudo si eliminano dei difetti. Collochi quindi la pulizia finale, per quanto possibile, dopo gli ultimi lavori e riservi una finestra di tempo per le pulizie di ripasso.',
+        'Fa parte della pulizia di fine cantiere, con prodotti adatti a ogni superficie. La tabella sul vetro nuovo mostra a che cosa fare attenzione sul vetro. Ci indichi già nella richiesta le superfici vetrate con etichette o nastro adesivo.',
     },
     {
       question: 'Pulizia di cantiere o pulizia di fine locazione: che cosa serve dopo un rinnovo?',
@@ -296,7 +291,7 @@ export const baureinigung: ServicePageContent = {
     {
       question: 'Le finestre fanno parte della pulizia di fine cantiere?',
       answer:
-        'Sì. Finestre, telai, battute e vetri fanno parte della pulizia di fine cantiere. La facciata stessa rientra nella nostra [pulizia di vetri e facciate](/leistungen/fenster-und-fassadenreinigung).',
+        'Sì, compresi telai, battute e vetri. La cura regolare di vetri e facciata dell’edificio abitato rientra nella nostra [pulizia di vetri e facciate](/leistungen/fenster-und-fassadenreinigung).',
     },
   ],
   related: [
