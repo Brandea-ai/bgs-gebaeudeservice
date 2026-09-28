@@ -1,137 +1,266 @@
 import type { ServicePageContent } from '../../types'
-import { answers } from '../common'
 
-// Grundlage: E56 (Abnahmegarantie bestätigt, Wortlaut unverändert), E28 (nicht für Mieter), W01,
-// 24-SEO-KEYWORDS (eigene Seite, Nutzerfragen), E18 (keine Preise)
+// Grundlage: E56 (Abnahmegarantie bestätigt, Wortlaut unverändert), E28 und E81 (nicht für Mieter),
+// E18 (keine Preise, keine neuen Zusagen), 25-AUDIT/inhalt.md 3.4 (Bausteine 3.4.1 bis 3.4.3),
+// seo.md T1 Variante A, keywords-mehrsprachig.md. Werkzeuge nach E85.
+// Quellen am 28.09.2026 gelesen: OR Art. 255, 264, 266, 266a, 266c, 266d, 267, 267a auf Fedlex (Stand 1.1.2026),
+// ZPO Art. 200 und 201 auf Fedlex (Stand 1.7.2026), Zürcher Gerichte (Mängelrüge), zg.ch (FAQ Mietrecht),
+// ow.ch (Schlichtungsbehörde), gruezi.lu.ch, gerichte.lu.ch (Schlichtungsbehörde Miete und Pacht),
+// ag.ch und nw.ch (Schlichtungsbehörden), HEV Schweiz und Mieterverband (Lebensdauertabelle).
+// Ortsübliche Termine nennen nur die Seiten von Zug und Obwalden. Für Luzern, Aargau und Nidwalden nennt die
+// Tabelle keine Termine, sondern die Schlichtungsbehörde (Rechtsberatung nach Art. 201 Abs. 2 ZPO).
+// Prüferbefunde Runde 2 (U1 bis U9) eingearbeitet: keine eigene Geltungsregel für die Garantie (E18, E56).
 export const umzugsreinigung: ServicePageContent = {
   path: '/leistungen/umzugsreinigung',
   area: 'leistungen',
-  eyebrow: 'Einmalige und besondere Reinigung',
-  h1: 'Umzugs- und Endreinigung mit Abnahmegarantie',
+  eyebrow: 'Wohnungswechsel und Rückgabe',
+  h1: 'Umzugsreinigung und Endreinigung mit Abnahmegarantie',
   lead: [
-    'Bei der Wohnungsabgabe prüft die Verwaltung jeden Raum: Küche, Bad, Fenster, Storen, Schränke und Nebenräume. Damit die Abnahme ohne Beanstandung klappt, muss die Wohnung gründlich gereinigt sein, und das auf einen festen Termin.',
-    'Wir übernehmen die Umzugs- und Endreinigung von Wohnungen und Geschäftsflächen für Verwaltungen, Eigentümer und Unternehmen, mit Abnahmegarantie: Beanstandet die Verwaltung bei der Abnahme etwas an unserer Reinigung, reinigen wir kostenlos nach.',
+    'Bei der Rückgabe einer Wohnung prüft die Verwaltung Raum für Raum, vom Backofen bis zum Kellerabteil, und hält jeden Mangel im Protokoll fest. Zwischen Abnahmeprotokoll und Einzug der neuen Mieterschaft bleibt für die Reinigung meist wenig Zeit, und der Einzugstermin steht fest.',
+    'Wir übernehmen die Endreinigung von Wohnungen und Geschäftsflächen für Verwaltungen, Eigentümer und Unternehmen, mit Abnahmegarantie. Auf dieser Seite finden Sie dazu die Abnahme-Checkliste zum Ausdrucken, die Regeln zur Mängelrüge sowie die Kündigungstermine für Zug und Obwalden mit Hinweisen für Luzern, Aargau und Nidwalden.',
   ],
   facts: [
-    { label: 'Für', value: 'Verwaltungen, Eigentümer, Stockwerkeigentümerschaften und Unternehmen' },
-    { label: 'Objekte', value: 'Wohnungen und Geschäftsflächen vor der Übergabe' },
-    { label: 'Garantie', value: 'Abnahmegarantie, Einzelheiten in der Offerte' },
+    { label: 'Garantie', value: 'Nachreinigung bei Beanstandung unserer Reinigung, nicht für Schäden oder Abnutzung' },
+    { label: 'Zeitpunkt', value: 'Vor der Abnahme oder, für Verwaltungen, nach dem Abnahmeprotokoll' },
+    { label: 'Anfragen', value: 'Sobald die Kündigung eingegangen ist' },
+    { label: 'Nicht für', value: 'Mieterinnen und Mieter einzelner Wohnungen' },
   ],
   scope: {
     title: 'Was zur Endreinigung gehört',
-    intro: 'Den genauen Umfang der Wohnungsreinigung halten wir nach der Besichtigung in der Offerte fest. Typisch sind:',
+    intro: 'Typisch für die Endreinigung einer Wohnung sind:',
     items: [
-      'Küche mit Backofen, Kochfeld, Dampfabzug, Kühlschrank und Schränken, innen und aussen',
-      'Bad und WC mit Armaturen, Plättli, Fugen und Spiegeln, von Kalk befreit',
+      'Küche: Backofen samt Blechen, Kochfeld, Dampfabzug, Kühlschrank und Schränke, innen und aussen',
+      'Bad und WC: Armaturen, Plättli, Fugen und Spiegel, von Kalk befreit',
       'Fenster innen und aussen, mit Rahmen, Falzen und Fensterbänken',
-      'Storen und Fensterläden nach Absprache',
+      'Storen und Fensterläden, soweit vereinbart',
       'Einbauschränke, Türen, Zargen, Schalter und Steckdosen',
       'Böden und Sockelleisten in allen Räumen',
       'Balkon oder Sitzplatz, Keller- und Estrichabteil',
     ],
     notIncluded: [
-      'Umzugsreinigungen im Auftrag von Mieterinnen und Mietern einzelner Wohnungen. Für Villen und Residenzen gibt es unseren [Premium-Bereich](/premium).',
-      'Umzugstransport und Räumung von Möbeln.',
-      'Reparaturen, Malerarbeiten und das Beheben von Schäden.',
-      'Grundreinigung ohne Übergabe: siehe [Grund- und Sonderreinigung](/leistungen/sonderreinigungen).',
+      'Aufträge von Mieterinnen und Mietern einzelner Wohnungen. Villen und Residenzen betreuen wir im [Premium-Bereich](/premium).',
+      'Umzugstransport, Räumung und Entsorgung von Möbeln.',
+      'Reparaturen, Malerarbeiten und das Beheben von Schäden, auch wenn sie im Abnahmeprotokoll stehen.',
+      'Grundreinigung ohne Wohnungswechsel, etwa von Böden oder Plättli: siehe [Grund- und Sonderreinigung](/leistungen/sonderreinigungen).',
     ],
   },
   sections: [
     {
-      title: 'Die Abnahmegarantie',
+      title: 'Die Abnahmegarantie und ihre Grenze',
       paragraphs: [
         'Beanstandet die Verwaltung bei der Abnahme etwas an unserer Reinigung, reinigen wir kostenlos nach. Die Einzelheiten stehen in der Offerte.',
         'Die Garantie bezieht sich auf unsere Reinigung. Schäden, Abnutzung oder Reparaturen, die bei der Abnahme festgehalten werden, betreffen nicht die Reinigung und gehören deshalb nicht dazu.',
+        'Typische Beanstandungen an der Reinigung sind ein Fettfilm im Backofen oder Kalk an der Armatur. Ist dagegen die Oberfläche selbst beschädigt, ist das ein Schaden: etwa angegriffenes Chrom, ein Brandfleck im Parkett oder ein Kratzer im Kochfeld. Ihn behebt keine Nachreinigung, dafür braucht es Handwerker.',
       ],
     },
     {
-      title: 'Wie sauber muss eine Wohnung bei der Übergabe sein?',
+      title: 'Mieterwechsel, Verkauf, Rückgabe von Büroflächen',
       paragraphs: [
-        'Wie gründlich gereinigt werden muss, regelt meist der Mietvertrag. Üblich ist in der Schweiz eine gründliche Reinigung der ganzen Wohnung samt Nebenräumen. Bei der Abnahme sieht die Verwaltung deshalb auch dorthin, wo im Alltag selten jemand putzt: in den Backofen, in den Dampfabzug, auf die Storen, in die Fensterfalze und in die Schränke.',
-        'Was im Einzelfall gilt, steht im Mietvertrag und im Abnahmeprotokoll. Diese Seite gibt einen Überblick und ersetzt keine Rechtsberatung.',
+        'Verwaltungen machen Wohnungen zwischen zwei Mietverhältnissen bezugsbereit. Hat die bisherige Mieterschaft nicht oder ungenügend gereinigt, kommt zuerst das Abnahmeprotokoll und erst danach unsere Reinigung. So können Sie Ihre Ansprüche gegenüber der Mieterschaft belegen.',
+        'Eigentümerinnen, Eigentümer und Stockwerkeigentümer brauchen die Endreinigung vor der Übergabe an die Käuferschaft oder vor der ersten Vermietung.',
+        'Unternehmen geben Büro- und Geschäftsflächen am Ende des Mietvertrags zurück. Bei einem befristeten Vertrag steht dieses Datum von Anfang an fest. Wird ein unbefristeter Vertrag ordentlich gekündigt, beträgt die Frist für Geschäftsräume mindestens sechs Monate. In beiden Fällen bleibt Zeit, die Reinigung nach der Räumung und einem allfälligen Rückbau einzuplanen.',
       ],
     },
     {
-      title: 'Planung und Termin',
+      title: 'Was am Reinigungstag bereit sein muss',
       paragraphs: [
-        'Die Endreinigung liegt zwischen Auszug und Abnahme. Am besten sind die Räume dann leer, damit auch Schränke, Böden hinter Möbeln und Einbauten gereinigt werden können. Planen Sie die Reinigung so, dass zwischen Reinigung und Abnahme möglichst wenig Zeit liegt.',
-        'Buchen Sie früh, sobald der Abgabetermin feststeht. Um die Monatsenden und zu den ortsüblichen Umzugsterminen sind viele Termine gefragt.',
+        'Gründlich reinigen lässt sich nur eine leere Wohnung. Geben Unternehmen Räume zurück oder übergeben Eigentümer an die Käuferschaft, liegt die Reinigung am besten kurz vor der Übergabe. Dann findet die Vermieterschaft oder die Käuferschaft genau den Zustand vor, den wir hinterlassen haben.',
       ],
       items: [
-        'Möbel und persönliche Gegenstände sind ausgeräumt',
-        'Strom und Wasser sind noch angeschlossen',
+        'Möbel, Vorhänge und persönliche Gegenstände sind ausgeräumt, auch aus Keller und Estrich',
+        'Maler- und Reparaturarbeiten sind abgeschlossen',
+        'Strom und Wasser sind angeschlossen, das Licht brennt in allen Räumen',
         'Schlüssel für Wohnung, Keller, Estrich und Briefkasten sind verfügbar',
       ],
     },
+  ],
+  tools: [
     {
-      title: 'Für wen wir die Umzugsreinigung übernehmen',
+      kind: 'text',
+      id: 'abnahme-maengelruege',
+      title: 'Abnahme und Mängelrüge: erst festhalten, dann reinigen',
       paragraphs: [
-        'Für Verwaltungen, die Wohnungen zwischen zwei Mietverhältnissen bezugsbereit machen. Für Eigentümer und Stockwerkeigentümer, die eine Wohnung verkaufen, übergeben oder neu vermieten. Und für Unternehmen, die Büro- oder Geschäftsflächen abgeben.',
-        'Mieterinnen und Mieter einzelner Wohnungen bedienen wir nicht. Bei Villen und Residenzen übernehmen wir die Endreinigung im [Premium-Bereich](/premium) auch für Privatpersonen.',
+        'Das OR sieht vor, dass die Vermieterschaft bei der Rückgabe den Zustand der Wohnung prüft und Mängel, für welche die Mieterschaft einzustehen hat, sofort meldet (Art. 267a OR). Versäumt sie das, verliert sie diese Ansprüche. Ausgenommen sind Mängel, die bei üblicher Prüfung nicht erkennbar waren. Sie sind sofort nach der Entdeckung zu melden.',
+        'Zurückzugeben ist die Wohnung in dem Zustand, der sich aus dem vertragsgemässen Gebrauch ergibt (Art. 267 OR). Normale Abnutzung geht nicht zulasten der Mieterschaft. Für die Abgrenzung zwischen Schaden und Abnutzung haben HEV Schweiz und der Mieterinnen- und Mieterverband eine gemeinsame Lebensdauertabelle erarbeitet.',
+        'Wer vor dem Protokoll reinigen lässt, kann den Zustand bei der Rückgabe später kaum mehr belegen. Für die Praxis heisst das:',
+      ],
+      items: [
+        'Den Zustand im Protokoll festhalten, bevor eine Reinigung ihn verändert.',
+        'Jeden Mangel einzeln und genau beschreiben. «Küche schmutzig» genügt nicht, «Backofen und Dampfabzug mit Fettfilm» schon.',
+        'Verschmutzung, normale Abnutzung und Schäden getrennt aufführen.',
+        'Klar sagen, dass die Mieterschaft für die aufgeführten Mängel einstehen soll.',
+        'Das Protokoll der Mieterschaft gleich aushändigen. Wirkt sie bei der Rückgabe nicht mit, die Mängel sofort schriftlich melden, aus Beweisgründen eingeschrieben.',
+      ],
+      note: 'Dieser Überblick ersetzt keine Rechtsberatung. Klären Sie Fragen im Einzelfall mit Ihrem Verband oder der Schlichtungsbehörde für Miete und Pacht.',
+      sources: [
+        { label: 'Obligationenrecht, Art. 267 und 267a (Fedlex, Stand 1. Januar 2026)', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_267_a' },
+        { label: 'Zürcher Gerichte: Mängelrüge bei der Rückgabe', href: 'https://www.gerichte-zh.ch/de/themen/miete/kuendigung-rueckgabe/rueckgabe-und-ausweisung/maengelruege' },
+        { label: 'HEV Schweiz: Lebensdauertabelle', href: 'https://www.hev-schweiz.ch/vermieten/verwalten/lebensdauertabelle' },
+        { label: 'Mieterinnen- und Mieterverband: Lebensdauertabelle', href: 'https://www.mieterverband.ch/mietrecht/unterlagen-und-tools/lebensdauertabelle/' },
       ],
     },
     {
-      title: 'Woran Sie eine gute Endreinigung erkennen',
-      items: [
-        'Backofen, Bleche und Dampfabzug sind ohne Fettfilm',
-        'Armaturen, Duschglas und Plättli sind ohne Kalkränder',
-        'Fenster, Rahmen und Falze sind ohne Schlieren und Staub',
-        'Schränke sind innen sauber und trocken',
-        'Entlang der Sockelleisten bleiben keine Staubränder',
+      kind: 'checklist',
+      id: 'abnahme-checkliste',
+      title: 'Abnahme-Checkliste Raum für Raum',
+      intro: 'Zum Ausdrucken für die Rückgabe einer Wohnung. Die Liste zeigt, wo bei der Abnahme genau hingeschaut wird, und dient als Gerüst für Ihr Protokoll. Sie ist eine Prüfliste für die Abnahme, kein Verzeichnis unserer Leistungen.',
+      printable: true,
+      updated: '2026-09-28',
+      groups: [
+        {
+          title: 'Küche',
+          items: [
+            'Backofen mit Blechen und Gittern',
+            'Kochfeld und Dampfabzug mit Fettfilter',
+            'Kühlschrank mit Dichtungen und Gemüsefach',
+            'Geschirrspüler mit Sieb',
+            'Schränke innen, auch die oberen Fächer',
+            'Spüle und Armatur ohne Kalk',
+          ],
+        },
+        {
+          title: 'Bad und WC',
+          items: [
+            'Armaturen und Brause ohne Kalkränder',
+            'Duschglas, Wanne und Plättli',
+            'Fugen und Silikon',
+            'Spiegel und Spiegelschrank',
+            'Abläufe und Lüftungsgitter',
+            'WC-Schüssel und Spülkasten',
+          ],
+        },
+        {
+          title: 'Fenster und Storen',
+          items: [
+            'Glas innen und aussen',
+            'Rahmen, Falze und Dichtungen',
+            'Fensterbänke innen und aussen',
+            'Storen, Rollläden oder Fensterläden',
+          ],
+        },
+        {
+          title: 'Alle Räume',
+          items: [
+            'Böden und Sockelleisten',
+            'Einbauschränke innen',
+            'Türen, Zargen und Griffe',
+            'Lichtschalter und Steckdosen',
+            'Heizkörper',
+          ],
+        },
+        {
+          title: 'Nebenräume',
+          items: [
+            'Balkon oder Sitzplatz mit Geländer',
+            'Keller- und Estrichabteil',
+            'Briefkasten',
+          ],
+        },
+        {
+          title: 'Protokoll',
+          items: [
+            'Datum und Uhrzeit der Rückgabe, anwesende Personen',
+            'Schlüssel gezählt: Wohnung, Keller, Estrich, Briefkasten',
+            'Mängel einzeln beschrieben, Schaden und Abnutzung getrennt',
+            'Protokoll der Mieterschaft ausgehändigt oder sofort zugestellt',
+          ],
+        },
+      ],
+      note: 'Fotos mit Datum ergänzen das Protokoll, vor allem wenn die Mieterschaft bei der Rückgabe fehlt.',
+      sources: [
+        { label: 'Obligationenrecht, Art. 267a (Fedlex, Stand 1. Januar 2026)', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_267_a' },
+      ],
+    },
+    {
+      kind: 'table',
+      id: 'kuendigungstermine',
+      title: 'Kündigungstermine nach Kanton',
+      intro: 'Wird ein unbefristeter Mietvertrag ordentlich gekündigt, beträgt die Frist für Wohnungen mindestens drei Monate, für Geschäftsräume mindestens sechs, jeweils auf den Termin im Mietvertrag. Nennt der Vertrag keinen, gilt der ortsübliche Termin und ohne Ortsgebrauch das Ende einer dreimonatigen Mietdauer (Art. 266a, 266c und 266d OR). Befristete Verträge enden ohne Kündigung mit Ablauf der vereinbarten Dauer (Art. 266 OR).',
+      printable: true,
+      updated: '2026-09-28',
+      columns: ['Kanton', 'Ortsübliche Termine für Wohnungen', 'Für die Planung'],
+      rows: [
+        ['Luzern', 'Auf den Seiten des Kantons nicht genannt. Auskunft gibt die Schlichtungsbehörde Miete und Pacht Luzern.', 'Laut Kanton wird in der Regel auf ein Monatsende gekündigt, Termine und Fristen stehen meist im Mietvertrag.'],
+        ['Zug', 'Ende März, Ende Juni, Ende September', 'Abnahmen und Endreinigungen ballen sich an diesen drei Stichtagen.'],
+        ['Obwalden', 'Ende März, Ende Juni, Ende September', 'Für eine Abgabe Ende Juni muss die Kündigung spätestens Ende März zugehen. Ab dann steht der Abgabetermin fest.'],
+        ['Aargau und Nidwalden', 'Auf den Seiten der Kantone nicht genannt. Auskunft geben die Schlichtungsbehörden für Miete und Pacht, im Aargau die des Bezirks.', 'Den Kündigungstermin aus der Kündigung bei der Anfrage nennen.'],
+      ],
+      note: 'Die Mieterschaft kann die Wohnung auch vor dem Kündigungstermin zurückgeben. Von ihren Pflichten ist sie dann nur befreit, wenn sie eine zumutbare Nachmieterschaft vorschlägt (Art. 264 OR). So kann die Abgabe auf jedes Datum fallen. Fragen Sie die Reinigung an, sobald ein Abgabetermin feststeht.',
+      sources: [
+        { label: 'Obligationenrecht, Art. 264, 266, 266a, 266c und 266d (Fedlex, Stand 1. Januar 2026)', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_266_c' },
+        { label: 'Zivilprozessordnung, Art. 201 Abs. 2 (Fedlex, Stand 1. Juli 2026)', href: 'https://www.fedlex.admin.ch/eli/cc/2010/262/de#art_201' },
+        { label: 'Kanton Luzern: Wohnung mieten', href: 'https://gruezi.lu.ch/wohnen/wohnung_mieten' },
+        { label: 'Kanton Luzern: Schlichtungsbehörde Miete und Pacht', href: 'https://gerichte.lu.ch/organisation/schlichtungsbehoerden/miete_pacht' },
+        { label: 'Kanton Zug: Häufige Fragen Mietrecht', href: 'https://zg.ch/de/recht-justiz/zivilverfahren/schlichtung/faq-zum-mietrecht' },
+        { label: 'Kanton Obwalden: Schlichtungsbehörde', href: 'https://www.ow.ch/fachbereiche/2131' },
+        { label: 'Kanton Aargau: Schlichtungsbehörden für Miete und Pacht', href: 'https://www.ag.ch/de/ueber-uns/gerichte-kanton-aargau/organisation/schlichtungsbehoerden/schlichtungsbehoerden-fuer-miete-und-pacht' },
+        { label: 'Kanton Nidwalden: Schlichtungsbehörde', href: 'https://www.nw.ch/schlichtungsbehoerde/326' },
       ],
     },
   ],
   steps: [
     {
+      title: 'Termin festlegen',
+      text: 'Für Verwaltungen liegt die Reinigung zwischen Abnahmeprotokoll und Einzug der neuen Mieterschaft, für Eigentümer und Unternehmen zwischen Auszug und Übergabe. Die Schlüsselübergabe vereinbaren wir mit Ihnen.',
+    },
+    {
       title: 'Endreinigung',
-      text: 'Wir reinigen zwischen Auszug und Abnahme, zum vereinbarten Termin.',
+      text: 'Wir reinigen die leeren Räume im vereinbarten Umfang, von der Küche bis zu Keller und Estrich.',
     },
     {
       title: 'Abnahme',
-      text: 'Bei der Abnahme gilt die Abnahmegarantie gemäss Offerte.',
+      text: 'Die Verwaltung prüft die Räume. Beanstandungen an unserer Reinigung beheben wir im Rahmen der Abnahmegarantie.',
     },
   ],
   faq: [
     {
-      question: 'Wie viel kostet eine Umzugsreinigung?',
+      question: 'Wovon hängt der Preis einer Umzugsreinigung ab?',
       answer:
-        'Das hängt vor allem von Grösse und Zustand der Wohnung ab, von der Anzahl Fenster und Storen, von Nebenräumen wie Keller, Estrich oder Balkon und vom Termin. Preise nennen wir deshalb erst in der Offerte, nachdem wir das Objekt gesehen haben. Besichtigung und Offerte sind kostenlos und unverbindlich.',
+        'Vom Aufwand in genau dieser Wohnung: Zimmerzahl und Fläche, Zustand von Küche und Bad (Fett, Kalk, Nikotin), Anzahl und Art der Fenster, ob Lamellenstoren, Rollläden oder Fensterläden dazugehören und welche Nebenräume wie Keller, Estrich oder Balkon zu reinigen sind. Einen Pauschalpreis pro Zimmer nennen wir deshalb nicht.',
     },
     {
-      question: 'Wie sauber muss eine Wohnung bei der Übergabe in der Schweiz sein?',
+      question: 'Reinigen Sie vor oder nach der Abnahme?',
       answer:
-        'Üblich ist eine gründliche Reinigung der ganzen Wohnung samt Nebenräumen: Küche mit Geräten, Bad und WC, Fenster innen und aussen samt Rahmen, Storen, Schränke, Böden, Keller, Estrich und Balkon. Was im Einzelfall gilt, regeln Mietvertrag und Abnahmeprotokoll. Diese Antwort ist keine Rechtsberatung.',
+        'Beides ist möglich. Geben Unternehmen Räume zurück oder übergeben Eigentümer an die Käuferschaft, reinigen wir vorher. Hat die Mieterschaft die Wohnung ungenügend gereinigt zurückgegeben, reinigen wir für die Verwaltung, sobald die Mängel im Protokoll stehen.',
     },
     {
-      question: 'Was passiert, wenn die Verwaltung bei der Abnahme etwas beanstandet?',
+      question: 'Was muss die Verwaltung bei der Abnahme beachten?',
       answer:
-        'Beanstandet die Verwaltung bei der Abnahme etwas an unserer Reinigung, reinigen wir kostenlos nach. Die Einzelheiten stehen in der Offerte.',
+        'Mängel, für welche die Mieterschaft einsteht, sind bei der Rückgabe zu prüfen und sofort zu melden, sonst gehen die Ansprüche verloren (Art. 267a OR). Deshalb zuerst das Protokoll, dann die Reinigung. Worauf es beim Protokoll ankommt, steht unter [Abnahme und Mängelrüge](/leistungen/umzugsreinigung#abnahme-maengelruege).',
     },
     {
-      question: 'Wann buche ich die Umzugsreinigung am besten?',
+      question: 'Welchen Zustand darf die Verwaltung bei der Rückgabe verlangen?',
       answer:
-        'Sobald der Abgabetermin feststeht. Um die Monatsenden und zu den ortsüblichen Umzugsterminen sind viele Termine gefragt. Die Reinigung legen wir zwischen Auszug und Abnahme.',
+        'Die Wohnung ist in dem Zustand zurückzugeben, der sich aus dem vertragsgemässen Gebrauch ergibt (Art. 267 OR). Wie gründlich zu reinigen ist, regelt meist der Mietvertrag. Normale Abnutzung geht nicht zulasten der Mieterschaft. Diese Antwort ist keine Rechtsberatung.',
     },
     {
-      question: 'Müssen die Räume für die Endreinigung leer sein?',
+      question: 'Wann sollte ich die Umzugsreinigung anfragen?',
       answer:
-        'Am besten ja. In leeren Räumen lassen sich auch Schränke, Einbauten und Böden hinter Möbeln reinigen, und genau diese Stellen prüft die Verwaltung bei der Abnahme.',
+        'Sobald die Kündigung eingegangen ist. Bei einer ordentlichen Kündigung bleiben bis zum Mietende bei Wohnungen mindestens drei Monate, bei Geschäftsräumen mindestens sechs. Gibt die Mieterschaft früher zurück, etwa mit einer Nachmieterschaft, kann die Abgabe auch früher liegen. In Zug und Obwalden gelten ohne andere Abmachung Ende März, Juni und September, in Luzern stehen die Termine laut Kanton meist im Mietvertrag.',
+    },
+    {
+      question: 'Kann die Reinigung beginnen, solange noch Möbel in der Wohnung stehen?',
+      answer:
+        'Besser nicht. Hinter Möbeln, in Schränken und unter Einbauten schaut die Verwaltung bei der Abnahme genau hin, und dort lässt sich erst in leeren Räumen gründlich reinigen. Wir reinigen deshalb erst, wenn alle Räume geräumt sind, auch Keller und Estrich.',
+    },
+    {
+      question: 'Reinigen Sie auch Büro- und Geschäftsflächen vor der Rückgabe?',
+      answer:
+        'Ja. Für Unternehmen reinigen wir Büros und Geschäftsflächen vor der Abgabe an die Vermieterschaft. Stehen Rückbauten an, kommt die Reinigung nach den Handwerkern. Nach grösseren Umbauten passt die [Bau- und Bauendreinigung](/leistungen/baureinigung).',
     },
     {
       question: 'Übernehmen Sie die Umzugsreinigung auch für Mieterinnen und Mieter?',
       answer:
-        'Nein. Wir übernehmen die Umzugsreinigung für Verwaltungen, Eigentümer und Unternehmen. Bei Villen und Residenzen gibt es sie im [Premium-Bereich](/premium) auch für Privatpersonen.',
+        'Nein, Aufträge von Mieterinnen und Mietern einzelner Wohnungen nehmen wir nicht an. Unsere Auftraggeber sind Verwaltungen, Eigentümer und Unternehmen. Bei Villen und Residenzen gibt es die Endreinigung im [Premium-Bereich](/premium) auch für Privatpersonen.',
     },
-    { question: 'In welchen Regionen sind Sie tätig?', answer: answers.gebiet },
-    { question: 'Sind Sie versichert?', answer: answers.versicherung },
   ],
   related: [
-    { path: '/leistungen/sonderreinigungen', text: 'Für eine Grundreinigung ohne Übergabe, etwa vor dem Start einer Unterhaltsreinigung.' },
-    { path: '/leistungen/fenster-und-fassadenreinigung', text: 'Für Glasflächen und Fassaden der ganzen Liegenschaft.' },
-    { path: '/leistungen/hauswartung', text: 'Wenn die Hauswartung bei Wohnungsübergaben mitwirken soll.' },
+    { path: '/leistungen/baureinigung', text: 'Wenn die Wohnung vor der Neuvermietung renoviert wird: Nach Malern und Handwerkern folgt die Bauendreinigung.' },
+    { path: '/leistungen/sonderreinigungen', text: 'Wenn Böden, Plättli oder Fugen nach langer Mietdauer eine Grundreinigung brauchen, auch ohne Wechsel.' },
+    { path: '/leistungen/hauswartung', text: 'Wenn die Hauswartung bei Wohnungsübergaben mitwirken und das Haus auch zwischen den Wechseln betreuen soll.' },
   ],
   cta: {
-    title: 'Offerte für Ihre Umzugsreinigung',
-    text: 'Nennen Sie uns Objekt, Grösse und Abgabetermin. Wir sehen uns die Räume an und erstellen Ihnen eine Offerte, kostenlos und unverbindlich.',
+    title: 'Offerte zum Abgabetermin',
+    text: 'Nennen Sie uns Adresse, Zimmerzahl oder Fläche, den Abgabe- oder Einzugstermin und ob Storen oder Fensterläden dazugehören. Bei mehreren Wohnungswechseln schicken Sie uns am einfachsten eine Liste mit Adressen und Terminen. Die Offerte ist kostenlos und unverbindlich.',
   },
 }

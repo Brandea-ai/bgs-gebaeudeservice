@@ -60,8 +60,8 @@ export const pages = {
   },
   '/leistungen/umzugsreinigung': {
     label: 'Umzugsreinigung',
-    title: 'Umzugsreinigung mit Abnahmegarantie, Luzern',
-    description: 'Umzugs- und Endreinigung vor der Wohnungsabgabe, mit Abnahmegarantie. Für Verwaltungen, Eigentümer und Unternehmen in Luzern, Zug und Umgebung.',
+    title: 'Umzugsreinigung Luzern für Verwaltungen, Eigentümer',
+    description: 'Umzugsreinigung und Endreinigung mit Abnahmegarantie für Verwaltungen, Eigentümer und Unternehmen in Luzern und Zug. Kostenlose Offerte nach Besichtigung.',
   },
   '/leistungen/baureinigung': {
     label: 'Bau- und Bauendreinigung',
