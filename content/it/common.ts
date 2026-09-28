@@ -69,11 +69,13 @@ export const steps = {
   /** Premium: richiesta discreta e sopralluogo, per lo svolgimento della panoramica premium (fino a E85 in premium.ts) */
   premiumAnfrage: {
     title: 'Richiesta discreta',
-    text: `Ci telefoni o ci scriva. La Sua richiesta è trattata personalmente dal gerente; riceverà nostre notizie ${responseTime}.`,
+    text: `Ci telefoni o ci scriva, personalmente o tramite la Sua segreteria, un agente immobiliare o l’amministrazione. La Sua richiesta è trattata personalmente dal gerente; riceverà nostre notizie ${responseTime}.`,
+    figure: 'frage-privatjet',
   },
   premiumRundgang: {
     title: 'Visita e offerta',
-    text: 'Visitiamo la Sua casa e chiariamo materiali, orari e accesso. In seguito riceve un’offerta, gratuita e senza impegno.',
+    text: 'In casa, all’ormeggio o in cabina esaminiamo con Lei locali, materiali e accessi, per un jet privato d’intesa con il Suo operatore aereo. In seguito riceve l’offerta scritta.',
+    figure: 'frage-yacht',
   },
 } satisfies Record<string, Step>
 

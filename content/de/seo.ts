@@ -16,12 +16,13 @@ export const pages = {
     title: `${company.brand} | Reinigung und Hauswartung Luzern, Zug`,
     description: `Gebäudereinigung, Hauswartung, Facility Services und Premium-Reinigung für Unternehmen und Liegenschaften in ${region}.`,
   },
+  // Titel und H1 mit dem Hauptbegriff (N8, keywords-mehrsprachig), Beschreibung mit Nutzen und Handlungsaufruf (T4)
   '/premium': {
     label: premiumLabel,
-    title: 'Premium: Reinigung für hohe Ansprüche',
+    title: 'Premium-Reinigung: Villen, Jets, Yachten',
     description: company.premiumBrand
-      ? `${company.premiumBrand}, die Premium-Linie von ${company.brand}: diskrete Reinigung für Villen, Zweitwohnungen, Hotels, Family Offices, Privatjets und Yachten.`
-      : 'Diskrete Reinigung für Villen, Zweitwohnungen, Hotels, Family Offices, Privatjets und Yachten am Vierwaldstättersee, am Zugersee und in der Region.',
+      ? `${company.premiumBrand}, die Premium-Linie von ${company.brand}: diskrete Reinigung für Villen, Privatjets und Yachten, mit festem Team. Kostenlose Offerte nach Besichtigung.`
+      : 'Premium-Reinigung für Villen, Privatjets und Yachten am Vierwaldstättersee und Zugersee, diskret und mit festem Team. Kostenlose Offerte nach Besichtigung.',
   },
   '/premium/luxusimmobilien': {
     label: 'Luxusimmobilien',

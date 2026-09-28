@@ -1,10 +1,12 @@
 import { SealCheck } from "@phosphor-icons/react/dist/ssr";
 import { RevealGroup } from "@/components/Reveal";
+import RichText from "@/components/RichText";
 import PremiumTitel from "./titel";
-import { premiumKontext, type PremiumProps } from "./kontext";
+import { lightLink, premiumKontext, type PremiumProps } from "./kontext";
 
-/** Weitere Anlässe als ruhige Liste mit Champagner-Haarlinien auf Elfenbein (P09) */
+/** Weitere Anlässe als ruhige Liste mit Champagner-Haarlinien auf Elfenbein (P09), mit Links zur passenden Leistung */
 export default function PremiumAusserdem(props: PremiumProps) {
+  const { lang } = props;
   const { content } = premiumKontext(props);
   return (
     <section id="ausserdem" aria-labelledby="ausserdem-titel" className="section border-t border-brass/25 bg-ivory text-anthracite">
@@ -16,7 +18,9 @@ export default function PremiumAusserdem(props: PremiumProps) {
               <SealCheck weight="duotone" className="mt-1 size-7 text-brass-dark" aria-hidden="true" />
               <div className="min-w-0">
                 <h3 className="hyphens font-premium text-[1.625rem] font-bold leading-snug text-anthracite">{item.title}</h3>
-                <p className="mt-2 font-medium leading-relaxed text-ink-600">{item.text}</p>
+                <p className="mt-2 font-medium leading-relaxed text-ink-600">
+                  <RichText text={item.text} lang={lang} linkClassName={lightLink} />
+                </p>
               </div>
             </li>
           ))}

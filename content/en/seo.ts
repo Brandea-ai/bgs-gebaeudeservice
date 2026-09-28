@@ -16,12 +16,13 @@ export const pages: Dictionary['pages'] = {
     title: `${company.brand} | Cleaning and caretaking, Lucerne & Zug`,
     description: `Building cleaning, caretaking and facility services for businesses and properties in ${region}, plus premium cleaning.`,
   },
+  // Titel und H1 mit dem Hauptbegriff (N8, keywords-mehrsprachig), Beschreibung mit Nutzen und Handlungsaufruf (T4)
   '/premium': {
     label: premiumLabel,
-    title: 'Premium cleaning to exacting standards',
+    title: 'Premium cleaning: villas, jets, yachts',
     description: company.premiumBrand
-      ? `${company.premiumBrand}, the premium line by ${company.brand}: discreet cleaning for villas, second homes, hotels, family offices, private jets and yachts.`
-      : 'Discreet cleaning for villas, second homes, hotels, family offices, private jets and yachts on Lake Lucerne, Lake Zug and in the region.',
+      ? `${company.premiumBrand}, the premium line by ${company.brand}: discreet cleaning for villas, private jets and yachts with a dedicated team. Free quote after a site visit.`
+      : 'Premium cleaning for villas, private jets and yachts on Lake Lucerne and Lake Zug, discreet and with a dedicated team. Free quote after a site visit.',
   },
   '/premium/luxusimmobilien': {
     label: 'Luxury properties',

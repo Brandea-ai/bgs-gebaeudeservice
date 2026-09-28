@@ -1,6 +1,6 @@
 import { cantonList, company, listDe, premiumLabel, premiumLine } from '../../shared/company'
 import type { PagePath } from '../../shared/seo'
-import type { Step } from '../types'
+import type { Step, Tool } from '../types'
 import { answers, steps } from './common'
 
 /**
@@ -11,17 +11,8 @@ import { answers, steps } from './common'
  */
 
 type Card = { title: string; text: string }
-type PromiseKey =
-  | 'persoenlich'
-  | 'diskret'
-  | 'teams'
-  | 'personal'
-  | 'schluessel'
-  | 'zeiten'
-  | 'material'
-  | 'sprachen'
-  | 'versichert'
-  | 'offerte'
+/** Die sechs bestätigten Premium-Arbeitsweisen (E41), Reihenfolge wie auf /premium */
+type PromiseKey = 'diskret' | 'teams' | 'personal' | 'schluessel' | 'zeiten' | 'material'
 type LinkCard = Card & { path: PagePath }
 type AudienceKey = 'verwaltungen' | 'unternehmen' | 'privat' | 'premium'
 type PromiseItemKey = 'persoenlich' | 'offerte' | 'gebiet' | 'versichert' | 'sprachen' | 'umwelt'
@@ -433,59 +424,167 @@ export const servicesOverview = {
   },
 }
 
+/**
+ * Bereich der Premium-Linie (N7, N8): name steht im Markup (Service.name) und
+ * link als Ankertext mit Leistungsnamen; text ist der kurze Satz für den
+ * Einstieg und die Leistungsübersicht; detail und notIncluded stehen im Zickzack.
+ */
+type PremiumOffer = LinkCard & { name: string; link: string; detail: string; notIncluded: string }
+
+// Eigene Texte der Premium-Übersicht (Audit 25, Abschnitt 5, K3): eigene Fragen,
+// eigener Ablauf, Kasten zur Geheimhaltung. Nur bestätigte Arbeitsweisen (E40, E41),
+// ohne die zurückgestellten Zusagen (E52), keine Zeitpunkte für die Vereinbarung.
 export const premiumOverview = {
   line: premiumLine,
-  h1: 'Reinigung für besondere Ansprüche',
-  lead: 'Für Villen und Residenzen, Zweitwohnungen, Hotels mit besonderen Wünschen, Family Offices, Privatjets und Yachten. Immer dasselbe Team, diskret, mit Kenntnis empfindlicher Materialien und in Ihrer Sprache.',
+  h1: 'Premium-Reinigung für besondere Ansprüche',
+  lead: 'Wer ein Haus, eine Yacht oder die Kabine eines Privatjets reinigen lässt, gibt Schlüssel, Zeitpläne und Privates aus der Hand. Deshalb arbeitet bei Ihnen ein festes Team nach Regeln, die Sie mitbestimmen.',
   // Bedeutung des Namens nur mit dem neuen Namen (E38)
   nameMeaning: company.premiumBrand
     ? `Der Name ${company.premiumBrand} kommt vom lateinischen «clavis», dem Schlüssel. Sie vertrauen uns Ihr Haus an, wir gehen damit um, als wäre es unser eigenes.`
     : null,
-  // Nischen und Zusagen laut Runde 3 (NISCHEN, VORAUS, ORTE), keine Referenzen (R6f).
-  // Deckung für Kunst und Wertgegenstände sowie Zutritt zum Flugfeld erst mit Beleg (M59).
+  pathsTitle: 'Direkt zu Ihrem Bereich',
+  offersTitle: 'Haus, Kabine oder Boot',
+  // Abgrenzungen aus den Seiten selbst (E56: Jet ohne Aussenreinigung; Yacht ohne Unterwasserschiff und Motor)
   offers: [
-    { title: 'Luxusimmobilien', path: '/premium/luxusimmobilien', text: 'Villen, Lofts und Residenzen, regelmässig oder vor besonderen Anlässen, mit Pflege empfindlicher Materialien.' },
-    { title: 'Privatjet', path: '/premium/privatjet', text: 'Kabinenreinigung mit Rücksicht auf hochwertige Materialien, nach Absprache mit Ihnen.' },
-    { title: 'Yacht', path: '/premium/yacht', text: 'Reinigung von Booten und Yachten am Vierwaldstättersee und am Zugersee.' },
-  ] satisfies LinkCard[],
+    {
+      title: 'Villen und Residenzen',
+      name: 'Villen- und Luxusimmobilienreinigung',
+      link: 'Zur Villen- und Luxusimmobilienreinigung',
+      path: '/premium/luxusimmobilien',
+      text: 'Villen, Lofts, Residenzen und Zweitwohnungen, laufend oder vor einem Anlass.',
+      detail: 'Für Wohnsitze mit Naturstein, Parkett, Hochglanz und Kunst. Wir reinigen regelmässig, vor einem Fest oder einem Verkauf und während Sie verreist sind.',
+      notIncluded: 'Nicht dabei: die Restaurierung von Kunstwerken und Antiquitäten.',
+    },
+    {
+      title: 'Kabinen von Privatjets',
+      name: 'Privatjet-Reinigung',
+      link: 'Zur Privatjet-Reinigung',
+      path: '/premium/privatjet',
+      text: 'Die Kabine zwischen zwei Flügen, geplant mit Ihrem Flugbetrieb.',
+      detail: 'Leder, lackiertes Holz, Hochglanz und feine Textilien liegen auf wenigen Quadratmetern, und oft bleibt nur die Zeit zwischen zwei Flügen. Welche Mittel an Bord erlaubt sind, entscheiden Sie mit Ihrem Flugbetrieb.',
+      notIncluded: 'Nicht dabei: die Aussenreinigung des Flugzeugs.',
+    },
+    {
+      title: 'Yachten und Motorboote',
+      name: 'Yacht- und Bootsreinigung',
+      link: 'Zur Yacht- und Bootsreinigung',
+      path: '/premium/yacht',
+      text: 'Innenraum und Deck, am Vierwaldstättersee und am Zugersee.',
+      detail: 'Süsswasser, Blütenstaub und Vogelkot setzen einem Boot am See anders zu als Salz am Meer. Teak, Gelcoat und Polster reinigen wir am Liegeplatz, jedes Material mit eigenem Vorgehen.',
+      notIncluded: 'Nicht dabei: Arbeiten am Unterwasserschiff und am Motor.',
+    },
+  ] satisfies PremiumOffer[] as PremiumOffer[],
   moreTitle: 'Ausserdem für',
   more: [
-    { title: 'Zweitwohnungen und Residences', text: 'Reinigung vor Ihrer Ankunft und nach Ihrer Abreise, Kontrollgänge während Ihrer Abwesenheit.' },
-    { title: 'Hotels', text: 'Spezial- und Grundreinigungen, Einsätze vor Eröffnungen und nach Renovationen.' },
-    { title: 'Büros und Family Offices', text: 'Vertraulich, ausserhalb Ihrer Arbeitszeiten, mit festen Teams.' },
-    { title: 'Räume mit Kunst und Antiquitäten', text: 'Sorgfältige Reinigung der Räume, Kunstwerke nur nach Ihrer Freigabe.' },
-    { title: 'Privatanlässe', text: 'Reinigung vor und nach dem Anlass, auch am Wochenende.' },
+    { title: 'Zweitwohnungen und Residences', text: 'Gereinigt vor Ihrer Ankunft, in Ordnung gebracht nach Ihrer Abreise, dazwischen Kontrollgänge im vereinbarten Rhythmus.' },
+    { title: 'Hotels', text: 'Spezial- und Grundreinigungen vor einer Eröffnung und nach einer Renovation, wie unter [Grund- und Sonderreinigung](/leistungen/sonderreinigungen) beschrieben.' },
+    { title: 'Büros und Family Offices', text: 'Vertrauliche Räume, gereinigt ausserhalb Ihrer Arbeitszeiten und immer vom selben Team. Mehr zur [Büro- und Praxisreinigung](/leistungen/bueroreinigung).' },
+    { title: 'Räume mit Kunst und Antiquitäten', text: 'Die Räume reinigen wir sorgfältig, Bilder, Skulpturen und andere Kunstwerke nur nach Ihrer ausdrücklichen Freigabe.' },
+    { title: 'Privatanlässe', text: 'Vorbereitet vor dem Anlass und wieder in Ordnung danach, auch wenn er auf ein Wochenende fällt.' },
     { title: 'Makler und Verwaltungen', text: 'Kurzfristige Reinigung vor Verkauf, Fototermin und Übergabe.' },
   ] satisfies Card[],
-  // Diskretion aus bestätigten Zusagen (E41), ohne die zurückgestellten (E52)
   discretion: {
     title: 'Diskretion von der ersten Nachricht an',
     paragraphs: [
-      'Ihre Anfrage bearbeitet der Geschäftsführer persönlich. Auf Wunsch unterzeichnen wir eine Geheimhaltungsvereinbarung.',
-      'Bei Ihnen arbeitet immer dasselbe Team, überprüft von uns. Es kennt Ihr Haus, Ihre Wünsche und die Regeln für Schlüssel und Alarmanlage, die wir mit Ihnen vereinbaren.',
-      'Kunstwerke reinigen wir nur nach Ihrer Freigabe. Zeiten richten sich nach Ihnen, auch abends, am Wochenende oder während Ihrer Abwesenheit.',
+      'Diskretion beginnt nicht erst an Ihrer Haustür. Premium-Anfragen bearbeitet der Geschäftsführer selbst, und wer später bei Ihnen arbeitet, ist von uns überprüft.',
+      'Was darüber hinaus vertraulich bleiben soll, regelt auf Wunsch eine Geheimhaltungsvereinbarung.',
     ],
   },
-  promisesTitle: 'Worauf Sie sich verlassen können',
-  // Reihenfolge wie die Symbole in app/premium/page.tsx
+  // Baustein 5.2: was eine Vereinbarung typischerweise regelt, nicht der Inhalt einer eigenen Vorlage.
+  // Recht gelesen am 28.09.2026 auf fedlex.admin.ch (OR Art. 11, 160, 161, 163), keine Rechtsberatung.
+  nda: {
+    kind: 'checklist',
+    id: 'geheimhaltung',
+    title: 'Was eine Geheimhaltungsvereinbarung regeln sollte',
+    intro: 'Die Liste hilft Ihnen, einen eigenen Entwurf zu schreiben oder einen vorgelegten Text zu prüfen.',
+    groups: [
+      {
+        title: 'Wer und was',
+        items: [
+          'Wer gebunden ist: die Firma und alle Personen, die bei Ihnen arbeiten',
+          'Was vertraulich ist: Adresse, Abwesenheiten, Gäste, Räume, Einrichtung und Unterlagen',
+          'Keine Fotos im Haus, an Bord oder in der Kabine und keine Angaben in sozialen Medien',
+        ],
+      },
+      {
+        title: 'Dauer und Ende',
+        items: [
+          'Wie lange die Pflicht gilt, auch über das Ende des Auftrags hinaus',
+          'Wie Schlüssel und Badges am Ende zurückgegeben werden',
+          'Ob bei einem Verstoss eine Konventionalstrafe fällig wird und in welcher Höhe',
+        ],
+      },
+    ],
+    note: 'Das OR verlangt für eine solche Vereinbarung keine besondere Form (Art. 11 OR), eine unterzeichnete Fassung erleichtert aber den Nachweis. Eine vereinbarte Konventionalstrafe verfällt auch dann, wenn kein Schaden entstanden ist (Art. 161 OR), übermässig hohe Beträge setzt das Gericht herab (Art. 163 OR). Klären Sie die Einzelheiten Ihres Falls mit Ihrer Rechtsberatung.',
+    sources: [
+      { label: 'Obligationenrecht, Art. 11: Form der Verträge', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_11' },
+      { label: 'Obligationenrecht, Art. 160 bis 163: Konventionalstrafe', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_160' },
+    ],
+    printable: true,
+    updated: '2026-09-28',
+  } satisfies Tool as Tool,
+  // Die sechs bestätigten Arbeitsweisen (Runde 3, Abschnitt 6); teams, diskret und zeiten nutzt auch die Leistungsübersicht
+  promisesTitle: 'Was bei jedem Premium-Auftrag gilt',
   promises: [
-    { key: 'persoenlich', title: 'Persönlich', text: 'Ihre Anfrage bearbeitet der Geschäftsführer persönlich.' },
-    { key: 'diskret', title: 'Diskret', text: 'Auf Wunsch unterzeichnen wir eine Geheimhaltungsvereinbarung.' },
-    { key: 'teams', title: 'Feste Teams', text: 'Bei Ihnen arbeitet immer dasselbe Team.' },
-    { key: 'personal', title: 'Überprüftes Personal', text: 'Wer bei Ihnen arbeitet, ist von uns überprüft.' },
-    { key: 'schluessel', title: 'Schlüssel und Alarm', text: 'Nach festen Regeln, die wir mit Ihnen vereinbaren.' },
-    { key: 'zeiten', title: 'Zu Ihren Zeiten', text: 'Auch abends, am Wochenende und während Ihrer Abwesenheit.' },
+    { key: 'diskret', title: 'Diskret', text: 'Eine Geheimhaltungsvereinbarung unterzeichnen wir auf Ihren Wunsch.' },
+    { key: 'teams', title: 'Feste Teams', text: 'Ihr Haus, Ihr Boot oder Ihre Kabine betreut immer dasselbe Team.' },
+    { key: 'personal', title: 'Überprüftes Personal', text: 'Bei Ihnen arbeitet niemand, den wir nicht überprüft haben.' },
+    { key: 'schluessel', title: 'Schlüssel und Alarm', text: 'Übergabe, Aufbewahrung und Alarmanlage nach Regeln, die Sie mit uns vereinbaren.' },
+    { key: 'zeiten', title: 'Zu Ihren Zeiten', text: 'Einsätze auch abends, am Wochenende oder während Sie verreist sind.' },
     { key: 'material', title: 'Materialkenntnis', text: 'Naturstein, Parkett und Hochglanzflächen, bei Booten Teak, Gelcoat und Polster.' },
-    { key: 'sprachen', title: 'Vier Sprachen', text: `${listDe(company.languages)}.` },
-    { key: 'versichert', title: 'Versichert', text: 'Betriebshaftpflicht mit CHF 10 Mio. Deckung.' },
-    { key: 'offerte', title: 'Offerte vor Ort', text: 'Kostenlos und unverbindlich, nach einer Besichtigung.' },
   ] satisfies { key: PromiseKey; title: string; text: string }[] as { key: PromiseKey; title: string; text: string }[],
+  // Eigener Ablauf (K3): Anfrage und Rundgang aus common.ts (steps.premium…), danach diese Schritte.
+  // Jede Figur ist ein Bild, das sonst nicht auf /premium steht (Premium zeigt keine Videos).
+  stepsTitle: 'Wie eine Premium-Anfrage abläuft',
+  steps: [
+    {
+      title: 'Regeln vor dem ersten Einsatz',
+      text: 'Bevor wir anfangen, steht fest, wann wir kommen, wie Schlüssel und Alarmanlage gehandhabt werden und welche Kunstwerke oder Gegenstände wir nur mit Ihrer Freigabe berühren.',
+      figure: 'frage-luxusimmobilien',
+    },
+    {
+      title: 'Ihr festes Team',
+      text: 'Das Team, das zum ersten Einsatz kommt, kommt auch zu allen weiteren. So erklären Sie Regeln und Wünsche nur einmal.',
+      figure: 'szene-luxusimmobilien',
+    },
+  ] satisfies Step[] as Step[],
+  // Baustein 5.1, ergänzt um erste Nachricht und Kostenfaktoren; ohne Versicherung und Gebiet (Standardfragen)
+  faq: [
+    {
+      question: 'Wie bleibt meine Anfrage vertraulich?',
+      answer: 'Sie geht direkt an den Geschäftsführer, der Premium-Anfragen selbst bearbeitet. Wünschen Sie eine Geheimhaltungsvereinbarung, erwähnen Sie das am besten schon in Ihrer ersten Nachricht.',
+    },
+    {
+      question: 'Was sollte in meiner ersten Nachricht stehen?',
+      answer: 'Wenige Angaben genügen: Haus, Boot oder Kabine, Ort oder Liegeplatz, Anlass oder gewünschter Rhythmus und ab wann Sie uns brauchen. Hinweise auf empfindliche Materialien oder Kunstwerke helfen, den Rundgang vorzubereiten.',
+    },
+    {
+      question: 'Können Makler, Verwaltungen oder ein Family Office für Eigentümer anfragen?',
+      answer: 'Ja. Ein Makler beauftragt uns etwa vor einem Fototermin oder einem Verkauf, eine Verwaltung vor der Übergabe an neue Bewohner. Ein Family Office kann Anfrage und Abstimmung ganz übernehmen.',
+    },
+    {
+      question: 'Arbeiten Sie auch, wenn niemand zu Hause ist?',
+      answer: 'Ja. Wir reinigen auch, während Sie verreist sind, abends oder am Wochenende. Wie wir ins Haus kommen und die Alarmanlage bedienen, ist vorher mit Ihnen vereinbart.',
+    },
+    {
+      question: 'Betreuen Sie auch Zweitwohnungen?',
+      answer: 'Ja. Bei Ihrer Ankunft ist die Wohnung gereinigt, nach Ihrer Abreise bringen wir sie wieder in Ordnung. Dazwischen machen wir Kontrollgänge im vereinbarten Rhythmus und melden, was uns auffällt, der Person, die Sie bestimmen.',
+    },
+    {
+      question: 'Wovon hängt der Preis einer Premium-Reinigung ab?',
+      answer: 'Im Haus von Fläche, Materialien und Kunstwerken, beim Boot von Grösse, Deck und Liegeplatz, beim Jet von Kabine und Zeitfenster. Dazu kommen der Rhythmus und Einsätze am Abend oder am Wochenende. Deshalb nennt erst die Offerte nach dem Rundgang einen Preis.',
+    },
+    {
+      question: 'Können wir auch auf Englisch, Französisch oder Italienisch anfragen?',
+      answer: 'Ja. Neben Deutsch sprechen unsere Mitarbeitenden Englisch, Französisch und Italienisch. Schreiben Sie uns in der Sprache, die Ihnen am liebsten ist.',
+    },
+  ] as { question: string; answer: string }[],
   places: {
     title: 'Wo wir für Sie da sind',
     text: `Am Vierwaldstättersee von Luzern und Meggen bis Weggis, Vitznau, Hergiswil und Ennetbürgen, am Zuger- und Ägerisee von Zug und Walchwil bis Oberägeri, in Engelberg und in den ganzen Kantonen ${cantonList}.`,
   },
   cta: {
     title: 'Diskret anfragen',
-    text: 'Rufen Sie uns an oder schreiben Sie uns. Ihre Anfrage bearbeitet der Geschäftsführer persönlich, auf Wunsch unter Geheimhaltung.',
+    text: 'Nennen Sie uns Objekt, Ort und Anlass. Ihre Anfrage bearbeitet der Geschäftsführer persönlich, auf Wunsch unter Geheimhaltung. Rundgang und Offerte sind kostenlos und unverbindlich.',
   },
 }

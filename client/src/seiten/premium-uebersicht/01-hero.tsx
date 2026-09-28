@@ -1,21 +1,22 @@
+import Link from "next/link";
 import { ArrowRight, Phone } from "@phosphor-icons/react/dist/ssr";
 import IntroBand from "@/components/IntroBand";
 import PageHero from "@/components/PageHero";
+import { premiumPageIcons } from "@/components/PremiumIcons";
 import { Button } from "@/components/ui/button";
 import { company } from "../../../../shared/company";
-import { premiumKontext, promiseIcons, type PremiumProps } from "./kontext";
+import { localizePath } from "../../../../shared/i18n";
+import { premiumKontext, type PremiumProps } from "./kontext";
 
 /**
  * Kopf der Premium-Welt: Hintergrundbild in Anthrazit, Titel in Serifenschrift,
  * ein Satz, diskrete Anfrage und Telefon (P03, E84). Darunter im IntroBand in
- * Elfenbein die Einleitung und drei belegte Zusagen. Statisch, ohne Einblendung.
+ * Elfenbein die Einleitung und rechts die drei Wege zu Villen, Privatjet und
+ * Yacht als Links mit Bereichsnamen (N7). Statisch, ohne Einblendung.
  */
 export default function PremiumHero(props: PremiumProps) {
   const { lang } = props;
-  const { dict, ui, content, promise, eyebrow } = premiumKontext(props);
-  const highlights = (["persoenlich", "diskret", "teams"] as const)
-    .map(key => ({ key, item: promise(key) }))
-    .filter(entry => entry.item);
+  const { dict, ui, content, eyebrow } = premiumKontext(props);
   return (
     <>
       <PageHero
@@ -54,28 +55,39 @@ export default function PremiumHero(props: PremiumProps) {
         lang={lang}
         tone="premium"
         aside={
-          <ul className="divide-y divide-brass/30 border-y border-brass/30">
-            {highlights.map(({ key, item }) => {
-              const Glyph = promiseIcons[key];
-              return (
-                <li key={key} className="flex items-start gap-4 py-5">
-                  <Glyph
-                    weight="duotone"
-                    className="mt-0.5 size-7 shrink-0 text-brass-dark"
-                    aria-hidden="true"
-                  />
-                  <span className="min-w-0">
-                    <span className="block font-premium text-[1.5rem] font-medium leading-tight text-ink">
-                      {item!.title}
-                    </span>
-                    <span className="mt-1 block font-medium leading-snug text-ink">
-                      {item!.text}
-                    </span>
-                  </span>
-                </li>
-              );
-            })}
-          </ul>
+          <nav aria-labelledby="premium-wege">
+            <p id="premium-wege" className="t-eyebrow text-brass-dark">
+              {content.pathsTitle}
+            </p>
+            <ul className="mt-5 divide-y divide-brass/30 border-y border-brass/30">
+              {content.offers.map(offer => {
+                const Glyph = premiumPageIcons[offer.path];
+                return (
+                  <li key={offer.path}>
+                    <Link
+                      href={localizePath(offer.path, lang)}
+                      className="group flex min-h-11 items-start gap-4 py-5 text-anthracite"
+                    >
+                      {Glyph && (
+                        <Glyph className="mt-0.5 size-8 shrink-0 text-brass-dark" aria-hidden="true" />
+                      )}
+                      <span className="min-w-0 flex-1">
+                        <span className="block font-premium text-[1.5rem] font-semibold leading-tight underline decoration-brass-dark/0 underline-offset-[0.2em] transition-colors group-hover:decoration-brass-dark">
+                          {offer.title}
+                        </span>
+                        <span className="mt-1 block font-medium leading-snug text-ink">{offer.text}</span>
+                      </span>
+                      <ArrowRight
+                        weight="duotone"
+                        className="mt-1.5 size-5 shrink-0 text-brass-dark transition-transform group-hover:translate-x-1"
+                        aria-hidden="true"
+                      />
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
         }
       />
     </>

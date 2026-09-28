@@ -57,14 +57,19 @@ export const steps = {
     title: 'Besichtigung und Offerte',
     text: 'Wir sehen uns das Objekt vor Ort an und klären mit Ihnen Umfang und Zeiten. Danach erhalten Sie eine schriftliche Offerte, kostenlos und unverbindlich.',
   },
-  /** Premium: diskrete Anfrage und Rundgang, für den Ablauf der Premium-Übersicht (bis E85 in premium.ts) */
+  /**
+   * Premium: die ersten zwei Schritte des eigenen Ablaufs der Premium-Übersicht
+   * (K3), danach premiumOverview.steps. Figur je Schritt ein Bild, keine Videos.
+   */
   premiumAnfrage: {
     title: 'Diskrete Anfrage',
-    text: `Rufen Sie uns an oder schreiben Sie uns. Ihre Anfrage bearbeitet der Geschäftsführer persönlich, Sie hören ${company.responseTime} von uns.`,
+    text: `Rufen Sie an oder schreiben Sie uns, selbst oder über Ihre Assistenz, einen Makler oder die Verwaltung. Ihre Anfrage bearbeitet der Geschäftsführer persönlich, Sie hören ${company.responseTime} von uns.`,
+    figure: 'frage-privatjet',
   },
   premiumRundgang: {
     title: 'Rundgang und Offerte',
-    text: 'Wir sehen uns Ihr Haus an und klären Materialien, Zeiten und Zugang. Danach erhalten Sie eine Offerte, kostenlos und unverbindlich.',
+    text: 'Im Haus, am Liegeplatz oder in der Kabine sehen wir uns Räume, Materialien und Zugänge mit Ihnen an, beim Privatjet in Absprache mit Ihrem Flugbetrieb. Danach erhalten Sie die schriftliche Offerte.',
+    figure: 'frage-yacht',
   },
 } satisfies Record<string, Step>
 

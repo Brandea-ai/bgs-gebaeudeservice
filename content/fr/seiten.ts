@@ -402,56 +402,154 @@ export const servicesOverview = {
   },
 }
 
+// Mêmes clés et même ordre que la liste allemande (les six façons de travailler confirmées, E41)
 const promises: Seiten['premiumOverview']['promises'] = [
-  { key: 'persoenlich', title: 'Un suivi personnel', text: 'Notre directeur traite personnellement votre demande.' },
-  { key: 'diskret', title: 'Discrétion', text: 'Sur demande, nous signons un accord de confidentialité.' },
-  { key: 'teams', title: 'Des équipes fixes', text: 'Chez vous, c’est toujours la même équipe qui travaille.' },
-  { key: 'personal', title: 'Du personnel vérifié', text: 'Les personnes qui interviennent chez vous ont été vérifiées par nos soins.' },
-  { key: 'schluessel', title: 'Clés et alarme', text: 'Selon des règles fixes, convenues avec vous.' },
-  { key: 'zeiten', title: 'À vos horaires', text: 'Aussi le soir, le week-end et pendant votre absence.' },
+  { key: 'diskret', title: 'Discrétion', text: 'Nous signons un accord de confidentialité si vous le souhaitez.' },
+  { key: 'teams', title: 'Des équipes fixes', text: 'Votre maison, votre bateau ou votre cabine est toujours confié à la même équipe.' },
+  { key: 'personal', title: 'Du personnel vérifié', text: 'Personne ne travaille chez vous sans avoir été vérifié par nos soins.' },
+  { key: 'schluessel', title: 'Clés et alarme', text: 'Remise, conservation et système d’alarme selon des règles convenues avec vous.' },
+  { key: 'zeiten', title: 'À vos horaires', text: 'Des interventions aussi le soir, le week-end ou pendant vos voyages.' },
   { key: 'material', title: 'Connaissance des matériaux', text: 'Pierre naturelle, parquet et surfaces laquées brillantes, pour les bateaux teck, gelcoat et sellerie.' },
-  { key: 'sprachen', title: 'Quatre langues', text: 'Allemand, anglais, français et italien.' },
-  { key: 'versichert', title: 'Assurés', text: 'Responsabilité civile d’entreprise avec une couverture de CHF 10 millions.' },
-  { key: 'offerte', title: 'Devis sur place', text: 'Gratuit et sans engagement, après une visite.' },
 ]
 
-export const premiumOverview = {
+export const premiumOverview: Seiten['premiumOverview'] = {
   line: premiumLine,
-  h1: 'Des nettoyages pour des exigences particulières',
-  lead: 'Pour les villas et les résidences, les résidences secondaires, les hôtels aux souhaits particuliers, les family offices, les jets privés et les yachts. Toujours la même équipe, en toute discrétion, avec la connaissance des matériaux délicats et dans votre langue.',
+  h1: 'Nettoyage premium pour des exigences particulières',
+  lead: 'Faire nettoyer une maison, un yacht ou la cabine d’un jet privé, c’est confier ses clés, son agenda et sa vie privée. C’est pourquoi une équipe fixe travaille chez vous, selon des règles que vous contribuez à fixer.',
   nameMeaning: company.premiumBrand
     ? `Le nom ${company.premiumBrand} vient du latin « clavis », la clé. Vous nous confiez votre maison, nous en prenons soin comme si c’était la nôtre.`
     : null,
+  pathsTitle: 'Accès direct à votre domaine',
+  offersTitle: 'Maison, cabine ou bateau',
   offers: [
-    { title: 'Biens de prestige', path: '/premium/luxusimmobilien', text: 'Villas, lofts et résidences, régulièrement ou avant des événements particuliers, avec l’entretien des matériaux délicats.' },
-    { title: 'Jet privé', path: '/premium/privatjet', text: 'Nettoyage de cabine dans le respect des matériaux haut de gamme, en accord avec vous.' },
-    { title: 'Yacht', path: '/premium/yacht', text: 'Nettoyage de bateaux et de yachts sur le lac des Quatre-Cantons et le lac de Zoug.' },
-  ] satisfies LinkCard[],
+    {
+      title: 'Villas et résidences',
+      name: 'Nettoyage de villas et de biens de prestige',
+      link: 'Voir le nettoyage de villas et de biens de prestige',
+      path: '/premium/luxusimmobilien',
+      text: 'Villas, lofts, résidences et résidences secondaires, régulièrement ou avant un événement.',
+      detail: 'Pour les demeures avec pierre naturelle, parquet, surfaces brillantes et œuvres d’art. Nous nettoyons régulièrement, avant une fête ou une vente et pendant vos voyages.',
+      notIncluded: 'Non compris : la restauration d’œuvres d’art et d’antiquités.',
+    },
+    {
+      title: 'Cabines de jets privés',
+      name: 'Nettoyage de jets privés',
+      link: 'Voir le nettoyage de jets privés',
+      path: '/premium/privatjet',
+      text: 'La cabine entre deux vols, planifiée avec votre exploitant.',
+      detail: 'Cuir, bois laqué, surfaces brillantes et textiles fins se côtoient sur quelques mètres carrés, et souvent seul le temps entre deux vols est disponible. Vous décidez avec votre exploitant quels produits sont autorisés à bord.',
+      notIncluded: 'Non compris : le nettoyage extérieur de l’avion.',
+    },
+    {
+      title: 'Yachts et bateaux à moteur',
+      name: 'Nettoyage de yachts et de bateaux',
+      link: 'Voir le nettoyage de yachts et de bateaux',
+      path: '/premium/yacht',
+      text: 'Intérieur et pont, sur le lac des Quatre-Cantons et le lac de Zoug.',
+      detail: 'L’eau douce, le pollen et les fientes d’oiseaux agissent autrement sur un bateau de lac que le sel en mer. Nous nettoyons le teck, le gelcoat et la sellerie à la place d’amarrage, chaque matériau selon sa propre méthode.',
+      notIncluded: 'Non compris : les travaux sur la carène et le moteur.',
+    },
+  ],
   moreTitle: 'Également pour',
   more: [
-    { title: 'Résidences secondaires et résidences de standing', text: 'Nettoyage avant votre arrivée et après votre départ, rondes de contrôle pendant votre absence.' },
-    { title: 'Hôtels', text: 'Nettoyages spéciaux et en profondeur, interventions avant une ouverture et après des rénovations.' },
-    { title: 'Bureaux et family offices', text: 'En toute confidentialité, en dehors de vos heures de travail, avec des équipes fixes.' },
-    { title: 'Pièces abritant des œuvres d’art et des antiquités', text: 'Nettoyage soigneux des pièces, les œuvres d’art uniquement avec votre accord.' },
-    { title: 'Événements privés', text: 'Nettoyage avant et après l’événement, aussi le week-end.' },
+    { title: 'Résidences secondaires et résidences de standing', text: 'Nettoyées avant votre arrivée, remises en ordre après votre départ, avec des rondes de contrôle entre-temps au rythme convenu.' },
+    { title: 'Hôtels', text: 'Nettoyages spéciaux et en profondeur avant une ouverture et après une rénovation, comme décrit sous [nettoyages en profondeur et spéciaux](/leistungen/sonderreinigungen).' },
+    { title: 'Bureaux et family offices', text: 'Des pièces confidentielles, nettoyées en dehors de vos heures de travail et toujours par la même équipe. En savoir plus sur le [nettoyage de bureaux et de cabinets](/leistungen/bueroreinigung).' },
+    { title: 'Pièces abritant des œuvres d’art et des antiquités', text: 'Nous nettoyons les pièces avec soin, les tableaux, sculptures et autres œuvres d’art uniquement avec votre accord exprès.' },
+    { title: 'Événements privés', text: 'Tout est prêt avant l’événement et remis en ordre après, même s’il tombe un week-end.' },
     { title: 'Courtiers et gérances', text: 'Nettoyage à bref délai avant une vente, une séance photo ou une remise.' },
-  ] satisfies Card[],
+  ],
   discretion: {
     title: 'La discrétion dès le premier message',
     paragraphs: [
-      'Notre directeur traite personnellement votre demande. Sur demande, nous signons un accord de confidentialité.',
-      'Chez vous, c’est toujours la même équipe qui travaille, vérifiée par nos soins. Elle connaît votre maison, vos souhaits et les règles pour les clés et le système d’alarme que nous convenons avec vous.',
-      'Nous ne nettoyons les œuvres d’art qu’avec votre accord. Les horaires s’adaptent à vous, aussi le soir, le week-end ou pendant votre absence.',
+      'La discrétion ne commence pas à votre porte. Notre directeur traite lui-même les demandes premium, et toute personne qui travaillera ensuite chez vous a été vérifiée par nos soins.',
+      'Ce qui doit rester confidentiel au-delà peut être réglé, sur demande, par un accord de confidentialité.',
     ],
   },
-  promisesTitle: 'Ce sur quoi vous pouvez compter',
+  // Ce qu’un tel accord règle en général, pas le contenu d’un modèle propre.
+  // Droit lu le 28.09.2026 sur fedlex.admin.ch (CO art. 11, 160, 161, 163), sans conseil juridique.
+  nda: {
+    kind: 'checklist',
+    id: 'geheimhaltung',
+    title: 'Ce qu’un accord de confidentialité devrait régler',
+    intro: 'Cette liste vous aide à rédiger votre propre projet ou à vérifier un texte qui vous est soumis.',
+    groups: [
+      {
+        title: 'Qui et quoi',
+        items: [
+          'Qui est lié : l’entreprise et toutes les personnes qui travaillent chez vous',
+          'Ce qui est confidentiel : adresse, absences, invités, pièces, aménagement et documents',
+          'Aucune photo dans la maison, à bord ou dans la cabine, et aucune information sur les réseaux sociaux',
+        ],
+      },
+      {
+        title: 'Durée et fin',
+        items: [
+          'Combien de temps l’obligation s’applique, y compris après la fin du mandat',
+          'Comment les clés et les badges sont restitués à la fin',
+          'Si une peine conventionnelle s’applique en cas de violation, et pour quel montant',
+        ],
+      },
+    ],
+    note: 'Le CO n’exige aucune forme particulière pour un tel accord (art. 11 CO), mais une version signée facilite la preuve. Une peine conventionnelle convenue est encourue même en l’absence de dommage (art. 161 CO), et le juge réduit les montants excessifs (art. 163 CO). Clarifiez les détails de votre cas avec votre conseil juridique.',
+    sources: [
+      { label: 'Code des obligations, art. 11 : forme des contrats', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_11' },
+      { label: 'Code des obligations, art. 160 à 163 : peine conventionnelle', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_160' },
+    ],
+    printable: true,
+    updated: '2026-09-28',
+  },
+  promisesTitle: 'Ce qui vaut pour chaque mandat premium',
   promises,
+  stepsTitle: 'Le déroulement d’une demande premium',
+  steps: [
+    {
+      title: 'Des règles avant la première intervention',
+      text: 'Avant de commencer, il est établi quand nous venons, comment les clés et le système d’alarme sont gérés et quelles œuvres d’art ou quels objets nous ne touchons qu’avec votre accord.',
+      figure: 'frage-luxusimmobilien',
+    },
+    {
+      title: 'Votre équipe fixe',
+      text: 'L’équipe de la première intervention revient pour toutes les suivantes. Vous n’expliquez ainsi vos règles et vos souhaits qu’une seule fois.',
+      figure: 'szene-luxusimmobilien',
+    },
+  ],
+  faq: [
+    {
+      question: 'Comment ma demande reste-t-elle confidentielle ?',
+      answer: 'Elle parvient directement à notre directeur, qui traite lui-même les demandes premium. Si vous souhaitez un accord de confidentialité, mentionnez-le de préférence dès votre premier message.',
+    },
+    {
+      question: 'Que devrait contenir mon premier message ?',
+      answer: 'Quelques indications suffisent : maison, bateau ou cabine, lieu ou place d’amarrage, occasion ou rythme souhaité et à partir de quand vous avez besoin de nous. Des indications sur des matériaux délicats ou des œuvres d’art aident à préparer le tour des lieux.',
+    },
+    {
+      question: 'Un courtier, une gérance ou un family office peut-il faire la demande pour le propriétaire ?',
+      answer: 'Oui. Un courtier nous mandate par exemple avant une séance photo ou une vente, une gérance avant la remise à de nouveaux occupants. Un family office peut se charger entièrement de la demande et de la coordination.',
+    },
+    {
+      question: 'Travaillez-vous aussi quand personne n’est à la maison ?',
+      answer: 'Oui. Nous nettoyons aussi pendant vos voyages, le soir ou le week-end. La manière d’entrer dans la maison et d’utiliser le système d’alarme est convenue au préalable avec vous.',
+    },
+    {
+      question: 'Vous occupez-vous aussi de résidences secondaires ?',
+      answer: 'Oui. À votre arrivée, le logement est nettoyé, et après votre départ nous le remettons en ordre. Entre-temps, nous effectuons des rondes de contrôle au rythme convenu et signalons ce que nous remarquons à la personne que vous désignez.',
+    },
+    {
+      question: 'De quoi dépend le prix d’un nettoyage premium ?',
+      answer: 'Pour une maison, de la surface, des matériaux et des œuvres d’art ; pour un bateau, de sa taille, du pont et de la place d’amarrage ; pour un jet, de la cabine et du créneau horaire. S’y ajoutent le rythme et les interventions le soir ou le week-end. C’est pourquoi seul le devis établi après le tour des lieux indique un prix.',
+    },
+    {
+      question: 'Pouvons-nous faire la demande en anglais, en français ou en italien ?',
+      answer: 'Oui. Outre l’allemand, nos collaboratrices et collaborateurs parlent anglais, français et italien. Écrivez-nous dans la langue que vous préférez.',
+    },
+  ],
   places: {
     title: 'Où nous sommes à votre service',
     text: `Au bord du lac des Quatre-Cantons, de Lucerne et Meggen jusqu’à Weggis, Vitznau, Hergiswil et Ennetbürgen, au bord des lacs de Zoug et d’Ägeri, de Zoug et Walchwil jusqu’à Oberägeri, à Engelberg et dans l’ensemble des cantons de ${cantonList}.`,
   },
   cta: {
     title: 'Demandez en toute discrétion',
-    text: 'Appelez-nous ou écrivez-nous. Notre directeur traite personnellement votre demande, en toute confidentialité si vous le souhaitez.',
+    text: 'Indiquez-nous le bien, le lieu et l’occasion. Notre directeur traite personnellement votre demande, en toute confidentialité si vous le souhaitez. Le tour des lieux et le devis sont gratuits et sans engagement.',
   },
 }

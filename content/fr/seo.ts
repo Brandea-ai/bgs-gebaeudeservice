@@ -16,12 +16,13 @@ export const pages = {
     title: `${company.brand} | Nettoyage et conciergerie à Lucerne`,
     description: `Nettoyage, conciergerie et facility services pour entreprises et immeubles, et nettoyage premium. Cantons de ${region}.`,
   },
+  // Titel und H1 mit dem Hauptbegriff (N8, keywords-mehrsprachig), Beschreibung mit Nutzen und Handlungsaufruf (T4)
   '/premium': {
     label: premiumLabel,
-    title: 'Nettoyage premium : exigences élevées',
+    title: 'Nettoyage premium : villas, jets, yachts',
     description: company.premiumBrand
-      ? `${company.premiumBrand}, la ligne premium de ${company.brand} : nettoyage discret pour villas, résidences secondaires, hôtels, family offices, jets privés et yachts.`
-      : 'Nettoyage discret pour villas, résidences secondaires, hôtels, family offices, jets privés et yachts autour des lacs des Quatre-Cantons et de Zoug.',
+      ? `${company.premiumBrand}, la ligne premium de ${company.brand} : nettoyage discret de villas, jets privés et yachts, avec une équipe fixe. Devis gratuit après une visite.`
+      : 'Nettoyage premium de villas, jets privés et yachts sur les lacs des Quatre-Cantons et de Zoug, discret et avec une équipe fixe. Devis gratuit après une visite.',
   },
   '/premium/luxusimmobilien': {
     label: 'Biens de prestige',

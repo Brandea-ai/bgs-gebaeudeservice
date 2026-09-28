@@ -1,9 +1,12 @@
 import FaqBlock from "@/components/FaqBlock";
 import { premiumKontext, type PremiumProps } from "./kontext";
 
-/** Fragen aus den Unterseiten in der hellen Premium-Welt (E82), ohne «Wo sind Sie tätig?» */
+/**
+ * Eigene Fragen der Premium-Übersicht (K3, Baustein 5.1) in der hellen
+ * Premium-Welt. Bild aus der Bordküche eines Jets: steht sonst nicht auf der
+ * Seite (Diskretion zeigt den Waschtisch, der Ablauf die Rundgänge).
+ */
 export default function PremiumFragen(props: PremiumProps) {
-  const { dict, ui } = premiumKontext(props);
-  const faq = dict.premium.luxusimmobilien.faq.filter(item => item.answer !== dict.answers.gebiet).slice(0, 7);
-  return <FaqBlock title={ui.faq} items={faq} image="detail-premium-luxusimmobilien" lang={props.lang} tone="premium" />;
+  const { ui, content } = premiumKontext(props);
+  return <FaqBlock title={ui.faq} items={content.faq} image="szene-privatjet" lang={props.lang} tone="premium" />;
 }

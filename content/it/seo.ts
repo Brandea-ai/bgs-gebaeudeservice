@@ -16,12 +16,13 @@ export const pages = {
     title: `${company.brand} | Pulizie e custodia a Lucerna e Zugo`,
     description: `Pulizie, custodia di stabili e facility services per aziende e immobili nei Cantoni di ${region}, con linea premium.`,
   },
+  // Titel und H1 mit dem Hauptbegriff (N8, keywords-mehrsprachig), Beschreibung mit Nutzen und Handlungsaufruf (T4)
   '/premium': {
     label: premiumLabel,
-    title: 'Premium: pulizie per esigenze elevate',
+    title: 'Pulizie premium: ville, jet, yacht',
     description: company.premiumBrand
-      ? `${company.premiumBrand}, la linea premium di ${company.brand}: pulizie discrete per ville, abitazioni secondarie, alberghi, family office, jet privati e yacht.`
-      : 'Pulizie discrete per ville, abitazioni secondarie, alberghi, family office, jet privati e yacht sui laghi dei Quattro Cantoni e di Zugo e nella regione.',
+      ? `${company.premiumBrand}, la linea premium di ${company.brand}: pulizie discrete per ville, jet privati e yacht, con un team fisso. Offerta gratuita dopo il sopralluogo.`
+      : 'Pulizie premium per ville, jet privati e yacht sul lago dei Quattro Cantoni e di Zugo, discrete e con un team fisso. Offerta gratuita dopo il sopralluogo.',
   },
   '/premium/luxusimmobilien': {
     label: 'Immobili di pregio',

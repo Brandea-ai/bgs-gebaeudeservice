@@ -72,11 +72,13 @@ export const steps = {
   /** Premium : demande discrète et visite, pour le déroulement de la vue d’ensemble premium (jusqu’à E85 dans premium.ts) */
   premiumAnfrage: {
     title: 'Demande discrète',
-    text: `Appelez-nous ou écrivez-nous. Notre directeur traite personnellement votre demande, vous recevez une réponse ${responseTime}.`,
+    text: `Appelez-nous ou écrivez-nous, vous-même ou par l’intermédiaire de votre secrétariat, d’un courtier ou de la gérance. Notre directeur traite personnellement votre demande, vous recevez une réponse ${responseTime}.`,
+    figure: 'frage-privatjet',
   },
   premiumRundgang: {
     title: 'Tour des lieux et devis',
-    text: 'Nous visitons votre maison et clarifions les matériaux, les horaires et l’accès. Vous recevez ensuite un devis, gratuit et sans engagement.',
+    text: 'Dans la maison, à la place d’amarrage ou dans la cabine, nous examinons avec vous les pièces, les matériaux et les accès, pour un jet privé en accord avec votre exploitant. Vous recevez ensuite le devis écrit.',
+    figure: 'frage-yacht',
   },
 } satisfies Record<string, Step>
 
