@@ -85,8 +85,8 @@ export const pages = {
   },
   '/leistungen/aussen-und-gruenflaechenpflege': {
     label: 'Aussen- und Grünflächenpflege',
-    title: 'Aussen- und Grünflächenpflege',
-    description: `Pflege von Umgebung und Grünflächen Ihrer Liegenschaft, einzeln oder als Teil der Hauswartung. In ${region}.`,
+    title: 'Gartenpflege und Gartenunterhalt Luzern, Zug',
+    description: 'Gartenpflege für Liegenschaften in Luzern, Zug und Umgebung: Rasen, Hecken im Winter, Unkraut und Laub auf Wegen. Kostenlose Offerte nach Besichtigung.',
   },
   '/leistungen/facility-services': {
     label: 'Facility Services',

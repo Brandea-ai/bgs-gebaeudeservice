@@ -85,8 +85,8 @@ export const pages = {
   },
   '/leistungen/aussen-und-gruenflaechenpflege': {
     label: 'Entretien des extérieurs et des espaces verts',
-    title: 'Entretien des abords et espaces verts',
-    description: `Entretien des abords et des espaces verts de votre immeuble, seul ou avec la conciergerie. Cantons de ${region}.`,
+    title: 'Entretien des espaces verts à Lucerne et Zoug',
+    description: 'Entretien des espaces verts d’immeubles à Lucerne, Zoug et environs : gazon, haies en hiver, désherbage des chemins. Devis gratuit après une visite.',
   },
   '/leistungen/facility-services': {
     label: 'Facility services',

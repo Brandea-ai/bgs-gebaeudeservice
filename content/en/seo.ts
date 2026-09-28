@@ -85,8 +85,8 @@ export const pages: Dictionary['pages'] = {
   },
   '/leistungen/aussen-und-gruenflaechenpflege': {
     label: 'Grounds and green spaces',
-    title: 'Grounds and green space maintenance',
-    description: `Maintenance of the grounds and green spaces of your property, on its own or as part of caretaking. In ${region}.`,
+    title: 'Garden maintenance in Lucerne and Zug',
+    description: 'Garden maintenance for properties in Lucerne, Zug and beyond: lawns, hedges cut in winter, weeds and leaves cleared from paths. Free quote after a site visit.',
   },
   '/leistungen/facility-services': {
     label: 'Facility services',

@@ -85,8 +85,8 @@ export const pages = {
   },
   '/leistungen/aussen-und-gruenflaechenpflege': {
     label: 'Manutenzione delle aree esterne e verdi',
-    title: 'Manutenzione di aree esterne e verdi',
-    description: `Manutenzione delle aree esterne e verdi del Suo stabile, da sola o insieme alla custodia. Nei Cantoni di ${region}.`,
+    title: 'Manutenzione di giardini e aree verdi a Lucerna',
+    description: 'Manutenzione di giardini e aree verdi a Lucerna, Zugo e dintorni: prato, siepi in inverno, erbacce e foglie dai vialetti. Offerta gratuita dopo il sopralluogo.',
   },
   '/leistungen/facility-services': {
     label: 'Facility services',
