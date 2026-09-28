@@ -60,8 +60,8 @@ export const pages: Dictionary['pages'] = {
   },
   '/leistungen/umzugsreinigung': {
     label: 'End-of-tenancy cleaning',
-    title: 'End-of-tenancy cleaning, handover guarantee',
-    description: 'End-of-tenancy cleaning before the flat handover, with a handover guarantee. For property managers, owners and businesses in Lucerne, Zug and beyond.',
+    title: 'End-of-tenancy cleaning in Lucerne for landlords',
+    description: 'End-of-tenancy cleaning with a handover guarantee for landlords, property managers and businesses in Lucerne and Zug. Free quote after a site visit.',
   },
   '/leistungen/baureinigung': {
     label: 'Construction cleaning',

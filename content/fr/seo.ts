@@ -60,8 +60,8 @@ export const pages = {
   },
   '/leistungen/umzugsreinigung': {
     label: 'Nettoyage de fin de bail',
-    title: 'Nettoyage de fin de bail, garantie de remise',
-    description: 'Nettoyage de fin de bail avant la remise du logement, avec garantie de remise. Pour gérances, propriétaires et entreprises à Lucerne et Zoug.',
+    title: 'Nettoyage de fin de bail à Lucerne pour gérances',
+    description: 'Nettoyage de fin de bail avec garantie de remise pour gérances, propriétaires et entreprises à Lucerne et Zoug. Devis gratuit après une visite.',
   },
   '/leistungen/baureinigung': {
     label: 'Nettoyage de chantier et de fin de chantier',

@@ -1,135 +1,255 @@
 import type { ServicePageContent } from '../../types'
-import { answers } from '../common'
 
 export const umzugsreinigung: ServicePageContent = {
   path: '/leistungen/umzugsreinigung',
   area: 'leistungen',
-  eyebrow: 'Nettoyage ponctuel et spécial',
-  h1: 'Nettoyage de déménagement et de fin de bail avec garantie de remise',
+  eyebrow: 'Changement de locataire et remise',
+  h1: 'Nettoyage de fin de bail et de déménagement avec garantie de remise',
   lead: [
-    'Lors de la remise d’un logement, la gérance contrôle chaque pièce : cuisine, salle de bains, fenêtres, stores, armoires et locaux annexes. Pour que l’état des lieux se passe sans réclamation, le logement doit être nettoyé à fond, et cela pour une date fixe.',
-    'Nous réalisons le nettoyage de déménagement et de fin de bail d’appartements et de surfaces commerciales pour des gérances, des propriétaires et des entreprises, avec garantie de remise : si la gérance émet une réclamation sur notre nettoyage lors de l’état des lieux, nous repassons gratuitement.',
+    'Lors de la restitution d’un logement, la gérance le contrôle pièce par pièce, du four au compartiment de cave, et consigne chaque défaut dans le procès-verbal d’état des lieux. Entre le déménagement et l’état des lieux, il reste en général peu de temps pour le nettoyage, et la date est fixe.',
+    'Nous réalisons le nettoyage de fin de bail d’appartements et de surfaces commerciales pour des gérances, des propriétaires et des entreprises, avec garantie de remise. Vous trouverez aussi sur cette page la liste de contrôle à imprimer pour l’état des lieux, les règles sur l’avis des défauts et les termes de résiliation des cantons de Lucerne, Zoug, Argovie, Nidwald et Obwald.',
   ],
   facts: [
-    { label: 'Pour', value: 'Gérances, propriétaires, communautés de PPE et entreprises' },
-    { label: 'Biens', value: 'Appartements et surfaces commerciales avant la remise' },
-    { label: 'Garantie', value: 'Garantie de remise, détails dans le devis' },
+    { label: 'Garantie', value: 'Nouveau passage si notre nettoyage est contesté, pas pour les dégâts ni l’usure' },
+    { label: 'Moment', value: 'Entre le déménagement et l’état des lieux, ou juste après le procès-verbal' },
+    { label: 'Demande', value: 'Dès réception de la résiliation' },
+    { label: 'Pas pour', value: 'Locataires d’appartements individuels' },
   ],
   scope: {
     title: 'Ce que comprend le nettoyage final',
-    intro: 'Nous fixons l’étendue exacte du nettoyage du logement dans le devis, après la visite. Prestations typiques :',
+    intro: 'Travaux typiques du nettoyage final d’un appartement :',
     items: [
-      'Cuisine avec four, plaques de cuisson, hotte, réfrigérateur et armoires, à l’intérieur et à l’extérieur',
-      'Salle de bains et WC avec robinetterie, carrelage, joints et miroirs, détartrés',
+      'Cuisine : four avec ses tôles, plan de cuisson, hotte, réfrigérateur et armoires, à l’intérieur et à l’extérieur',
+      'Salle de bains et WC : robinetterie, carrelage, joints et miroirs, détartrés',
       'Fenêtres côtés intérieur et extérieur, avec cadres, feuillures et tablettes',
-      'Stores et volets selon entente',
+      'Stores et volets, si convenu',
       'Armoires encastrées, portes, encadrements, interrupteurs et prises',
       'Sols et plinthes dans toutes les pièces',
       'Balcon ou terrasse, compartiments de cave et de galetas',
     ],
     notIncluded: [
-      'Nettoyages de fin de bail mandatés par les locataires d’appartements individuels. Pour les villas et les résidences, nous proposons notre [offre Premium](/premium).',
-      'Transport de déménagement et débarras de meubles.',
-      'Réparations, travaux de peinture et remise en état de dégâts.',
-      'Nettoyage en profondeur sans remise : voir [Nettoyages en profondeur et spéciaux](/leistungen/sonderreinigungen).',
+      'Mandats de locataires d’appartements individuels. Nous nous occupons des villas et des résidences dans le cadre de notre [offre Premium](/premium).',
+      'Transport de déménagement, débarras et élimination de meubles.',
+      'Réparations, travaux de peinture et remise en état de dégâts, même s’ils figurent dans le procès-verbal d’état des lieux.',
+      'Nettoyage en profondeur sans changement d’occupant, par exemple des sols ou du carrelage : voir [Nettoyages en profondeur et spéciaux](/leistungen/sonderreinigungen).',
     ],
   },
   sections: [
     {
-      title: 'La garantie de remise',
+      title: 'La garantie de remise et ses limites',
       paragraphs: [
         'Si la gérance émet une réclamation sur notre nettoyage lors de l’état des lieux, nous repassons gratuitement. Les détails figurent dans le devis.',
         'La garantie porte sur notre nettoyage. Les dégâts, l’usure ou les réparations constatés lors de l’état des lieux ne concernent pas le nettoyage et n’en font donc pas partie.',
+        'Un film de graisse dans le four ou une trace de calcaire sur la robinetterie relève donc de la garantie. Une brûlure sur le parquet, une rayure sur le plan de cuisson ou un trou dans le mur n’en relèvent pas : il faut alors des artisans.',
       ],
     },
     {
-      title: 'Quel doit être l’état de propreté d’un logement lors de la remise ?',
+      title: 'Changement de locataire, vente, restitution de bureaux',
       paragraphs: [
-        'Le degré de propreté exigé est généralement réglé par le contrat de bail. En Suisse, l’usage est un nettoyage minutieux de tout le logement, locaux annexes compris. Lors de l’état des lieux, la gérance regarde donc aussi là où l’on nettoie rarement au quotidien : dans le four, dans la hotte, sur les stores, dans les feuillures des fenêtres et dans les armoires.',
-        'Ce qui s’applique dans chaque cas figure dans le contrat de bail et dans le procès-verbal d’état des lieux. Cette page donne un aperçu et ne remplace pas un conseil juridique.',
+        'Les gérances préparent des appartements entre deux baux. Si les locataires sortants n’ont pas nettoyé, ou mal, le procès-verbal d’état des lieux vient d’abord et notre nettoyage ensuite. Vous pouvez ainsi prouver vos prétentions envers les locataires.',
+        'Les propriétaires et les copropriétaires ont besoin du nettoyage final avant la remise à l’acheteur ou avant une première location.',
+        'Les entreprises restituent des bureaux et des surfaces commerciales à la fin du bail. Pour les locaux commerciaux, le délai de congé est d’au moins six mois, assez pour planifier le nettoyage après le débarras et un éventuel démontage des aménagements.',
       ],
     },
     {
-      title: 'Planification et date',
+      title: 'Ce qui doit être prêt le jour du nettoyage',
       paragraphs: [
-        'Le nettoyage final se situe entre le déménagement et l’état des lieux. Idéalement, les locaux sont alors vides, pour que les armoires, les sols derrière les meubles et les éléments encastrés puissent aussi être nettoyés. Planifiez le nettoyage de sorte qu’il s’écoule le moins de temps possible entre le nettoyage et l’état des lieux.',
-        'Réservez tôt, dès que la date de remise est connue. Autour des fins de mois et aux termes de déménagement usuels de la région, les dates sont très demandées.',
+        'Seul un logement vide peut être nettoyé à fond. Si le nettoyage a lieu peu avant l’état des lieux, la gérance voit exactement l’état dans lequel nous l’avons laissé.',
       ],
       items: [
-        'Les meubles et les objets personnels sont débarrassés',
-        'L’électricité et l’eau sont encore raccordées',
-        'Les clés du logement, de la cave, du galetas et de la boîte aux lettres sont disponibles',
+        'Les meubles, les rideaux et les objets personnels sont débarrassés, cave et galetas compris',
+        'Les travaux de peinture et de réparation sont terminés',
+        'L’électricité et l’eau sont raccordées, la lumière fonctionne dans toutes les pièces',
+        'Les clés du logement, de la cave, du galetas et de la boîte aux lettres sont à disposition',
       ],
     },
+  ],
+  tools: [
     {
-      title: 'Pour qui nous réalisons le nettoyage de fin de bail',
+      kind: 'text',
+      id: 'abnahme-maengelruege',
+      title: 'État des lieux et avis des défauts : constater d’abord, nettoyer ensuite',
       paragraphs: [
-        'Pour les gérances qui préparent des appartements entre deux baux. Pour les propriétaires et les copropriétaires qui vendent, remettent ou relouent un appartement. Et pour les entreprises qui restituent des surfaces de bureaux ou commerciales.',
-        'Nous ne servons pas les locataires d’appartements individuels. Pour les villas et les résidences, nous réalisons aussi le nettoyage final pour des particuliers dans le cadre de notre [offre Premium](/premium).',
+        'Le Code des obligations prévoit que, lors de la restitution, le bailleur vérifie l’état du logement et avise immédiatement le locataire des défauts dont celui-ci répond (art. 267a CO). S’il néglige de le faire, le locataire est déchargé de sa responsabilité. Font exception les défauts qui ne pouvaient pas être découverts à l’aide des vérifications usuelles. Ils doivent être signalés immédiatement après leur découverte.',
+        'Le logement doit être restitué dans l’état qui résulte d’un usage conforme au contrat (art. 267 CO). L’usure normale n’est pas à la charge du locataire. Pour distinguer dégâts et usure, l’association des propriétaires HEV Schweiz et l’association des locataires ont établi ensemble un tableau paritaire des durées de vie.',
+        'Si vous faites nettoyer avant le procès-verbal, vous aurez du mal à prouver plus tard l’état du logement lors de la restitution. En pratique :',
+      ],
+      items: [
+        'Consigner l’état dans le procès-verbal avant qu’un nettoyage ne le modifie.',
+        'Décrire chaque défaut séparément et précisément. « Cuisine sale » ne suffit pas, « four et hotte avec film de graisse » oui.',
+        'Distinguer les salissures, l’usure normale et les dégâts.',
+        'Indiquer clairement que le locataire est tenu pour responsable des défauts énumérés.',
+        'Remettre le procès-verbal au locataire sur-le-champ. S’il ne participe pas à la restitution, lui signaler les défauts sans délai par écrit, par lettre recommandée pour la preuve.',
+      ],
+      note: 'Cet aperçu ne remplace pas un conseil juridique. Clarifiez les cas particuliers avec votre association ou l’autorité de conciliation en matière de bail.',
+      sources: [
+        { label: 'Code des obligations, art. 267 et 267a (Fedlex, état le 1er janvier 2026)', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_267_a' },
+        { label: 'Tribunaux zurichois : avis des défauts à la restitution (en allemand)', href: 'https://www.gerichte-zh.ch/de/themen/miete/kuendigung-rueckgabe/rueckgabe-und-ausweisung/maengelruege' },
+        { label: 'HEV Schweiz : tableau des durées de vie (en allemand)', href: 'https://www.hev-schweiz.ch/vermieten/verwalten/lebensdauertabelle' },
+        { label: 'Association des locataires : tableau des durées de vie (en allemand)', href: 'https://www.mieterverband.ch/mietrecht/unterlagen-und-tools/lebensdauertabelle/' },
       ],
     },
     {
-      title: 'À quoi reconnaître un bon nettoyage final',
-      items: [
-        'Le four, les plaques et la hotte sont sans film de graisse',
-        'La robinetterie, les parois de douche et le carrelage sont sans traces de calcaire',
-        'Les fenêtres, les cadres et les feuillures sont sans traces ni poussière',
-        'Les armoires sont propres et sèches à l’intérieur',
-        'Aucune trace de poussière ne reste le long des plinthes',
+      kind: 'checklist',
+      id: 'abnahme-checkliste',
+      title: 'Liste de contrôle pour l’état des lieux, pièce par pièce',
+      intro: 'À imprimer pour la restitution d’un logement. La liste montre où l’état des lieux regarde de près et sert de trame pour votre procès-verbal. Ce que couvre notre nettoyage figure sous « Ce que comprend le nettoyage final ».',
+      printable: true,
+      updated: '2026-09-28',
+      groups: [
+        {
+          title: 'Cuisine',
+          items: [
+            'Four avec tôles et grilles',
+            'Plan de cuisson et hotte avec filtre à graisse',
+            'Réfrigérateur avec joints et bac à légumes',
+            'Lave-vaisselle avec filtre',
+            'Armoires à l’intérieur, étagères du haut comprises',
+            'Évier et robinetterie sans calcaire',
+          ],
+        },
+        {
+          title: 'Salle de bains et WC',
+          items: [
+            'Robinetterie et pomme de douche sans traces de calcaire',
+            'Paroi de douche, baignoire et carrelage',
+            'Joints et silicone',
+            'Miroir et armoire à glace',
+            'Écoulements et grilles d’aération',
+            'Cuvette et réservoir des WC',
+          ],
+        },
+        {
+          title: 'Fenêtres et stores',
+          items: [
+            'Vitres côtés intérieur et extérieur',
+            'Cadres, feuillures et joints',
+            'Tablettes intérieures et extérieures',
+            'Stores, volets roulants ou volets',
+          ],
+        },
+        {
+          title: 'Toutes les pièces',
+          items: [
+            'Sols et plinthes',
+            'Armoires encastrées à l’intérieur',
+            'Portes, encadrements et poignées',
+            'Interrupteurs et prises',
+            'Radiateurs',
+          ],
+        },
+        {
+          title: 'Locaux annexes',
+          items: [
+            'Balcon ou terrasse avec garde-corps',
+            'Compartiments de cave et de galetas',
+            'Boîte aux lettres',
+          ],
+        },
+        {
+          title: 'Procès-verbal',
+          items: [
+            'Date et heure de la restitution, personnes présentes',
+            'Clés comptées : logement, cave, galetas, boîte aux lettres',
+            'Défauts décrits un par un, dégâts et usure séparés',
+            'Procès-verbal remis au locataire ou envoyé sans délai',
+          ],
+        },
+      ],
+      note: 'Des photos datées complètent le procès-verbal, surtout si le locataire est absent lors de la restitution.',
+      sources: [
+        { label: 'Code des obligations, art. 267a (Fedlex, état le 1er janvier 2026)', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_267_a' },
+      ],
+    },
+    {
+      kind: 'table',
+      id: 'kuendigungstermine',
+      title: 'Termes de résiliation par canton',
+      intro: 'Un appartement se résilie avec un préavis d’au moins trois mois, un local commercial avec au moins six mois, chaque fois pour le terme prévu dans le bail. Si le bail n’en prévoit pas, le terme fixé par l’usage local s’applique et, à défaut d’un tel usage, la fin d’un trimestre de bail (art. 266a, 266c et 266d CO). Les états des lieux et les nettoyages finaux se concentrent autour de ces dates.',
+      printable: true,
+      updated: '2026-09-28',
+      columns: ['Canton', 'Termes pour les appartements si le bail n’en prévoit pas', 'Pour la planification'],
+      rows: [
+        ['Lucerne', 'En règle générale pour la fin d’un mois ; termes et délais figurent dans le bail', 'Les changements de locataire sont possibles presque à chaque fin de mois. Le bail indique le jour exact.'],
+        ['Zoug', 'Fin mars, fin juin, fin septembre', 'États des lieux et nettoyages finaux se concentrent sur ces trois dates.'],
+        ['Obwald', 'Fin mars, fin juin, fin septembre', 'La résiliation doit intervenir au cours du quatrième mois avant la fin du bail. Dès lors, la date de remise est fixée.'],
+        ['Argovie', 'Le bail est déterminant. L’autorité de conciliation en matière de bail du district indique si un usage local existe.', 'Reprendre dans la demande la date figurant dans le bail.'],
+        ['Nidwald', 'Le bail est déterminant. L’autorité de conciliation de Nidwald indique si un usage local existe.', 'Relever dans le bail la date de résiliation et le jour de remise, puis les indiquer dans la demande.'],
+      ],
+      note: 'Si le locataire part avant le terme et présente un nouveau locataire acceptable (art. 264 CO), la remise peut tomber à n’importe quelle date. Demandez donc le nettoyage dès qu’une date de remise est fixée.',
+      sources: [
+        { label: 'Code des obligations, art. 264, 266a, 266c et 266d (Fedlex, état le 1er janvier 2026)', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_266_c' },
+        { label: 'Canton de Lucerne : louer un logement (en allemand)', href: 'https://gruezi.lu.ch/wohnen/wohnung_mieten' },
+        { label: 'Canton de Zoug : questions fréquentes sur le droit du bail (en allemand)', href: 'https://zg.ch/de/recht-justiz/zivilverfahren/schlichtung/faq-zum-mietrecht' },
+        { label: 'Canton d’Obwald : autorité de conciliation (en allemand)', href: 'https://www.ow.ch/fachbereiche/2131' },
+        { label: 'Canton d’Argovie : autorités de conciliation en matière de bail (en allemand)', href: 'https://www.ag.ch/de/ueber-uns/gerichte-kanton-aargau/organisation/schlichtungsbehoerden/schlichtungsbehoerden-fuer-miete-und-pacht' },
+        { label: 'Canton de Nidwald : autorité de conciliation (en allemand)', href: 'https://www.nw.ch/schlichtungsbehoerde/326' },
       ],
     },
   ],
   steps: [
     {
+      title: 'Fixer la date',
+      text: 'Nous plaçons le nettoyage entre le déménagement et l’état des lieux, avec le moins de temps possible entre les deux, et convenons avec vous de la remise des clés.',
+    },
+    {
       title: 'Nettoyage final',
-      text: 'Nous nettoyons entre le déménagement et l’état des lieux, à la date convenue.',
+      text: 'Nous nettoyons les locaux vides selon l’étendue convenue, de la cuisine à la cave et au galetas.',
     },
     {
       title: 'État des lieux',
-      text: 'Lors de l’état des lieux, la garantie de remise s’applique selon le devis.',
+      text: 'La gérance contrôle le logement. Nous corrigeons les réclamations sur notre nettoyage dans le cadre de la garantie de remise.',
     },
   ],
   faq: [
     {
-      question: 'Combien coûte un nettoyage de fin de bail ?',
+      question: 'De quoi dépend le prix d’un nettoyage de fin de bail ?',
       answer:
-        'Cela dépend surtout de la taille et de l’état du logement, du nombre de fenêtres et de stores, des locaux annexes comme la cave, le galetas ou le balcon et de la date. C’est pourquoi nous n’indiquons un prix que dans le devis, après avoir vu le bien. La visite et le devis sont gratuits et sans engagement.',
+        'De l’effort dans ce logement précis : nombre de pièces et surface, état de la cuisine et de la salle de bains (graisse, calcaire, nicotine), nombre et type de fenêtres, présence de stores à lamelles, de volets roulants ou de volets, et locaux annexes à nettoyer comme la cave, le galetas ou le balcon. C’est pourquoi nous n’indiquons pas de forfait par pièce. Vous recevez le prix par écrit après que nous avons vu les locaux.',
     },
     {
-      question: 'Quel doit être l’état de propreté d’un logement lors de la remise en Suisse ?',
+      question: 'Nettoyez-vous avant ou après l’état des lieux ?',
       answer:
-        'L’usage est un nettoyage minutieux de tout le logement, locaux annexes compris : cuisine avec appareils, salle de bains et WC, fenêtres côtés intérieur et extérieur avec cadres, stores, armoires, sols, cave, galetas et balcon. Ce qui s’applique dans chaque cas est réglé par le contrat de bail et le procès-verbal d’état des lieux. Cette réponse n’est pas un conseil juridique.',
+        'Les deux sont possibles. Si vous restituez des locaux en tant que propriétaire ou entreprise, nous nettoyons avant l’état des lieux et la garantie de remise s’applique. Si les locataires ont rendu le logement mal nettoyé, nous nettoyons pour la gérance après l’état des lieux, dès que les défauts figurent dans le procès-verbal.',
     },
     {
-      question: 'Que se passe-t-il si la gérance émet une réclamation lors de l’état des lieux ?',
+      question: 'À quoi la gérance doit-elle veiller lors de l’état des lieux ?',
       answer:
-        'Si la gérance émet une réclamation sur notre nettoyage lors de l’état des lieux, nous repassons gratuitement. Les détails figurent dans le devis.',
+        'Les défauts dont le locataire répond doivent être vérifiés à la restitution et signalés immédiatement, sinon le locataire est déchargé de sa responsabilité (art. 267a CO). D’abord le procès-verbal, ensuite le nettoyage. Ce qui compte dans le procès-verbal figure sous [État des lieux et avis des défauts](/leistungen/umzugsreinigung#abnahme-maengelruege).',
     },
     {
-      question: 'Quand faut-il réserver le nettoyage de fin de bail ?',
+      question: 'Quel état la gérance peut-elle exiger lors de la restitution ?',
       answer:
-        'Dès que la date de remise est connue. Autour des fins de mois et aux termes de déménagement usuels de la région, les dates sont très demandées. Nous plaçons le nettoyage entre le déménagement et l’état des lieux.',
+        'Le logement doit être restitué dans l’état qui résulte d’un usage conforme au contrat (art. 267 CO). Le degré de nettoyage exigé est généralement réglé par le bail. L’usure normale n’est pas à la charge du locataire. Cette réponse n’est pas un conseil juridique.',
     },
     {
-      question: 'Les locaux doivent-ils être vides pour le nettoyage final ?',
+      question: 'Quand faut-il demander le nettoyage de fin de bail ?',
       answer:
-        'Idéalement oui. Dans des locaux vides, les armoires, les éléments encastrés et les sols derrière les meubles peuvent aussi être nettoyés, et ce sont précisément ces endroits que la gérance contrôle lors de l’état des lieux.',
+        'Dès réception de la résiliation. Il reste alors au moins trois mois jusqu’à la remise pour un appartement, au moins six pour un local commercial. À Zoug et à Obwald, sauf convention contraire, ce sont fin mars, fin juin et fin septembre ; à Lucerne, en règle générale chaque fin de mois.',
+    },
+    {
+      question: 'Le nettoyage peut-il commencer tant que des meubles sont encore dans le logement ?',
+      answer:
+        'Mieux vaut pas. Derrière les meubles, dans les armoires et sous les éléments encastrés, la gérance regarde de près lors de l’état des lieux, et ces endroits ne se nettoient à fond que dans des locaux vides. Prévoyez donc le déménagement avant le nettoyage, cave et galetas compris.',
+    },
+    {
+      question: 'Nettoyez-vous aussi des bureaux et des surfaces commerciales avant leur restitution ?',
+      answer:
+        'Oui. Pour les entreprises, nous nettoyons bureaux et surfaces commerciales avant leur remise au bailleur. Si des aménagements doivent être démontés, le nettoyage suit les artisans. Après des transformations importantes, le [nettoyage de fin de chantier](/leistungen/baureinigung) est la bonne prestation.',
     },
     {
       question: 'Réalisez-vous aussi le nettoyage de fin de bail pour les locataires ?',
       answer:
-        'Non. Nous réalisons le nettoyage de fin de bail pour les gérances, les propriétaires et les entreprises. Pour les villas et les résidences, il est aussi proposé aux particuliers dans le cadre de notre [offre Premium](/premium).',
+        'Non, nous n’acceptons pas de mandats de locataires d’appartements individuels. Nos clients sont des gérances, des propriétaires et des entreprises. Pour les villas et les résidences, le nettoyage final est aussi proposé aux particuliers dans le cadre de notre [offre Premium](/premium).',
     },
-    { question: 'Dans quelles régions intervenez-vous ?', answer: answers.gebiet },
-    { question: 'Êtes-vous assurés ?', answer: answers.versicherung },
   ],
   related: [
-    { path: '/leistungen/sonderreinigungen', text: 'Pour un nettoyage en profondeur sans remise, par exemple avant le début d’un nettoyage d’entretien.' },
-    { path: '/leistungen/fenster-und-fassadenreinigung', text: 'Pour les surfaces vitrées et les façades de tout l’immeuble.' },
-    { path: '/leistungen/hauswartung', text: 'Si la conciergerie doit participer aux états des lieux.' },
+    { path: '/leistungen/baureinigung', text: 'Si le logement est rénové avant la relocation : après les peintres et les artisans vient le nettoyage de fin de chantier.' },
+    { path: '/leistungen/sonderreinigungen', text: 'Si les sols, le carrelage ou les joints ont besoin d’un nettoyage en profondeur après un long bail, même sans changement de locataire.' },
+    { path: '/leistungen/hauswartung', text: 'Si la conciergerie doit participer aux remises de logements et s’occuper de l’immeuble entre deux changements.' },
   ],
   cta: {
-    title: 'Un devis pour votre nettoyage de fin de bail',
-    text: 'Indiquez-nous le bien, sa taille et la date de remise. Nous examinons les locaux et établissons votre devis, gratuit et sans engagement.',
+    title: 'Un devis pour votre date de remise',
+    text: 'Indiquez-nous l’adresse, le nombre de pièces ou la surface, la date de remise et si les stores ou les volets sont compris. Pour plusieurs changements de locataire, le plus simple est de nous envoyer une liste des adresses et des dates. Nous examinons les locaux, puis vous recevez le devis par écrit, gratuit et sans engagement.',
   },
 }

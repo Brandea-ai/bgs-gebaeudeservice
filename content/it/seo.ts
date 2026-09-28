@@ -60,8 +60,8 @@ export const pages = {
   },
   '/leistungen/umzugsreinigung': {
     label: 'Pulizia di fine locazione',
-    title: 'Pulizia di fine locazione con garanzia',
-    description: 'Pulizia di fine locazione prima della riconsegna dell’appartamento, con garanzia di consegna. Per amministrazioni, proprietari e aziende a Lucerna e Zugo.',
+    title: 'Pulizia di fine locazione a Lucerna per amministrazioni',
+    description: 'Pulizia di fine locazione con garanzia di consegna per amministrazioni, proprietari e aziende a Lucerna e Zugo. Offerta gratuita dopo il sopralluogo.',
   },
   '/leistungen/baureinigung': {
     label: 'Pulizia di cantiere e di fine cantiere',
