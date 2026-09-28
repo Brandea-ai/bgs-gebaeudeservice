@@ -31,7 +31,7 @@ export const pages: Dictionary['pages'] = {
   '/premium/privatjet': {
     label: 'Private jet',
     title: 'Private jet cleaning: cabin and galley',
-    description: 'Private jet cleaning for cabin, galley and lavatory, using the products approved for your aircraft. Lucerne, Zug and beyond. Free quote after a site visit.',
+    description: 'Private jet cleaning for cabin, galley and lavatory, using the products approved for your aircraft. Free quote after a site visit.',
   },
   '/premium/yacht': {
     label: 'Yacht',

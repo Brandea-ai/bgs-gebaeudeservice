@@ -34,12 +34,12 @@ export const privatjet: ServicePageContent = {
   h1: 'Private jet cleaning for cabin, galley and lavatory',
   lead: [
     'After a long-haul flight there are coffee rings on the burr walnut, crumbs in the seat tracks and fingerprints on the cabin windows. Sometimes only a few hours remain before the next departure.',
-    'We clean the cabin, galley and lavatory of your private jet between two flights, using the products approved for your aircraft. Below you will find what the materials on board can tolerate, what fits into which ground time and what needs to be settled before the first job.',
+    'We clean the cabin, galley and lavatory of your private jet between two flights, using the products approved for your aircraft. Below you will find what the materials on board can tolerate, what can be done in the time on the ground and what needs to be settled before the first job.',
   ],
   facts: [
     { label: 'Scope', value: 'Cabin, galley and lavatory' },
-    { label: 'Not included', value: 'Exterior, tanks and technical work' },
-    { label: 'Products', value: 'Only from your aircraft’s approved list' },
+    { label: 'Not included', value: 'Exterior, toilet tanks and technical work' },
+    { label: 'Products', value: 'Only those approved by your operator' },
     { label: 'Working hours', value: 'Between two flights, evenings and weekends too' },
     { label: 'Access', value: 'Arranged by your operator with the airfield' },
   ],
@@ -47,7 +47,7 @@ export const privatjet: ServicePageContent = {
     {
       title: 'The cabin between two flights',
       paragraphs: [
-        'The occasion determines what the cabin needs. After a full flight it is the upholstery, carpet and galley. After a stay at the maintenance organisation, dust and fingerprints cover panels, tables and windows. Before a flight with guests, every detail seen on boarding counts.',
+        'In a private jet, the occasion determines what aircraft interior cleaning involves. After a full flight it is the upholstery, carpet and galley. After a stay at the maintenance organisation, dust and fingerprints cover panels, tables and windows. Before a flight with guests, every detail seen on boarding counts.',
         'Your flight schedule sets the time window. The earlier the next departure is fixed, the more precisely we can plan what has to be finished beforehand. Which tasks fit into an hour and which need a night is shown in the ground time table further down.',
       ],
     },
@@ -55,7 +55,7 @@ export const privatjet: ServicePageContent = {
       title: 'Galley and lavatory',
       paragraphs: [
         'In the galley, drinks run into joints, drawer runners and compartments that only become visible once the inserts are out. In the lavatory, what matters is the toilet, basin, taps, mirror, door handles and the floor around the toilet.',
-        'In the WHO example schedule, the lavatory is fully on the list even for a stop of less than an hour. Food waste from flights across the border is subject to its own rules, as explained in the checklist below.',
+        'In the WHO example schedule, cleaning the lavatory is fully on the list even for a stop of less than an hour. Only refilling soap and toiletries is then done on request. Food waste from flights across the border is subject to its own rules, as explained in the checklist below.',
       ],
     },
   ],
@@ -90,7 +90,7 @@ export const privatjet: ServicePageContent = {
         ],
         [
           'Disinfection in galley and lavatory',
-          'Only products approved by the aircraft manufacturer, used exactly as directed.',
+          'Only approved products from the operator’s list, used exactly as directed.',
           'Many disinfectants are oxidisers. They can attack metals and reduce the fire resistance of upholstery.',
         ],
       ],
@@ -102,24 +102,24 @@ export const privatjet: ServicePageContent = {
     {
       kind: 'table',
       id: 'bodenzeit',
-      title: 'What fits into which ground time',
+      title: 'What each ground time allows',
       intro:
         'The World Health Organization divides cabin cleaning in its example schedule by the time on the ground. The schedule comes from airline operations. For a private jet, it shows what is worth doing during a short stop and what needs a night on the ground.',
       columns: ['Time on the ground', 'Standard in the WHO schedule', 'On request only in the WHO schedule'],
       rows: [
         [
           'Under 60 minutes',
-          'Waste from cabin, closets and galley, stow pillows and blankets. Lavatory in full: toilet bowl and seat, basin, taps, mirror, walls, door handles and floor.',
+          'Waste from cabin, closets and galley, stow pillows and blankets. Lavatory: toilet bowl and seat, basin, taps, mirror, walls, door handles and floor.',
           'Tables and armrests, galley sink and work surfaces, oven, refilling soap and toiletries. Carpet and floors only as required.',
         ],
         [
           'Over 60 minutes',
-          'In addition, empty seat pockets, clean the galley sink, taps, work surfaces and retractable tables, the cabin’s vinyl floors, and refill soap and toiletries.',
-          'Vacuuming fabric seats, wiping leather seats, vacuuming carpet, oven inside and out, tables and armrests.',
+          'In addition, empty seat pockets, clean the galley sink, taps, work surfaces and retractable tables, and refill soap and toiletries in the lavatory.',
+          'Vacuuming fabric seats, wiping leather seats, vacuuming carpet, oven inside and out, galley floor, tables and armrests.',
         ],
         [
           'Overnight',
-          'Everything in the rows above, plus cabin windows inside, removing seat cushions to vacuum beneath, carpet stains, seat tracks, ceiling, sidewalls, closets, doors, screens, the oven and galley ventilation grilles.',
+          'Everything in the rows above, including what is on request there. Plus cabin windows inside, the cabin’s vinyl floors, removing seat cushions to vacuum beneath, carpet stains, seat tracks, ceiling, sidewalls, closets, doors, screens and the galley ventilation grilles.',
           'None: at this level everything is standard.',
         ],
       ],
@@ -162,7 +162,7 @@ export const privatjet: ServicePageContent = {
         {
           title: 'Handover and discretion',
           items: [
-            'Who takes over the cabin and hears from us what could not be removed, such as a scratch in the lacquer',
+            'Who takes over the cabin after cleaning',
             'How we handle personal belongings and documents on board',
             'Whether you would like a non-disclosure agreement',
           ],
@@ -181,7 +181,8 @@ export const privatjet: ServicePageContent = {
       'Carpets and floors, under the seats too',
       'Tables, panels and cabinets in wood or high-gloss lacquer',
       'Cabin windows inside, mirrors and glass',
-      'Frequently touched spots: door handles, switches and seat controls',
+      'Door handles, switches and other frequently touched spots',
+      'Screens and seat controls',
       'Galley: work surfaces, sink, compartments and drawers',
       'Lavatory: toilet, basin, taps, mirror and floor',
     ],
@@ -202,15 +203,15 @@ export const privatjet: ServicePageContent = {
       text: 'We clean within the time window your flight schedule allows, evenings or weekends too.',
     },
     {
-      title: 'Handover to the crew',
-      text: 'The cabin is taken over by the person you have nominated. Anything we could not remove, they hear from us directly.',
+      title: 'Handing over the cabin',
+      text: 'The cabin is taken over by the person you have nominated, for example a crew member or someone from your operator.',
     },
   ],
   faq: [
     {
       question: 'What does cleaning a private jet cabin cost?',
       answer:
-        'There is no flat rate. The effort depends on the size of the cabin and the number of seats, the materials, the condition after the flight and the ground time. Add to that jobs in the evening or at weekends, waiting time for access to the aircraft and whether we come once or regularly. You receive the amount in writing after we have seen the cabin.',
+        'There is no flat rate. The effort depends on the size of the cabin and the number of seats, the materials, the condition after the flight and the ground time. Add to that jobs in the evening or at weekends and whether we come once or regularly. You receive the amount in writing after we have seen the cabin.',
     },
     {
       question: 'Which cleaning products do you use on board?',
@@ -220,7 +221,7 @@ export const privatjet: ServicePageContent = {
     {
       question: 'Do you also condition or impregnate leather and wood?',
       answer:
-        'We clean. Care products, polish and impregnation that leave a layer are applied only with your maintenance organisation’s approval. Under the US standard for large aeroplanes, applied finishes must also pass the flammability test.',
+        'We clean. Care products, polish and impregnation leave a layer on the material. Whether they are applied on board is decided by your maintenance organisation, and the table of cabin materials above explains why.',
     },
     {
       question: 'Do you also clean the outside of the aircraft?',
@@ -230,7 +231,7 @@ export const privatjet: ServicePageContent = {
     {
       question: 'How does your team get to the aircraft?',
       answer:
-        'You or your operator arrange access to the hangar or parking position with the airfield, for example with an escort. Allow some time for this, as it is part of the job.',
+        'You or your operator arrange access to the hangar or parking position with the airfield, for example with an escort. Allow some time for this within the time window.',
     },
     {
       question: 'What happens to food waste from the galley?',
@@ -240,7 +241,7 @@ export const privatjet: ServicePageContent = {
     {
       question: 'Can our operator or family office commission the cleaning?',
       answer:
-        'Yes. Enquiries come from owners, operators, family offices or assistants. What matters is one person who can approve products and access.',
+        'Yes. Enquiries can come from owners, operators, family offices or assistants. What matters is one person who can approve products and access.',
     },
     {
       question: 'How do you handle personal belongings on board?',
@@ -250,11 +251,11 @@ export const privatjet: ServicePageContent = {
   ],
   related: [
     { path: '/premium/luxusimmobilien', text: 'When a villa, residence or second home should be looked after alongside the jet.' },
-    { path: '/premium/yacht', text: 'When a boat on Lake Lucerne or Lake Zug joins in summer.' },
+    { path: '/premium/yacht', text: 'When you also have a boat on Lake Lucerne or Lake Zug in summer.' },
     { path: '/premium', text: 'When you would like your family office, office and events looked after discreetly as well.' },
   ],
   cta: {
     title: 'Enquire discreetly about cabin cleaning',
-    text: 'For the quote we need the aircraft type, the airfield where it is usually based, your usual time windows and, if available, the list of approved products. After a look at the cabin you receive the quote, free of charge and without obligation.',
+    text: 'For the quote we need the aircraft type, the airfield where it is usually based, your usual time windows and the list of products your operator has approved. After a look at the cabin you receive the quote, free of charge and without obligation.',
   },
 }

@@ -34,12 +34,12 @@ export const privatjet: ServicePageContent = {
   h1: 'Nettoyage de jet privé : cabine, office de bord et toilettes',
   lead: [
     'Après un long-courrier, des traces de café marquent la ronce de noyer, des miettes se logent dans les rails des sièges et les hublots portent des traces de doigts. Avant le prochain départ, il ne reste parfois que quelques heures.',
-    'Nous nettoyons la cabine, l’office de bord et les toilettes de votre jet privé entre deux vols, avec les produits approuvés pour votre appareil. Vous trouverez ci-dessous ce que supportent les matériaux à bord, ce qui tient dans quel temps d’escale et ce qui doit être fixé avant la première intervention.',
+    'Nous nettoyons la cabine, l’office de bord et les toilettes de votre jet privé entre deux vols, avec les produits approuvés pour votre appareil. Vous trouverez ci-dessous ce que supportent les matériaux à bord, ce que l’on peut faire selon le temps au sol et ce qui doit être fixé avant la première intervention.',
   ],
   facts: [
     { label: 'Étendue', value: 'Cabine, office de bord et toilettes' },
-    { label: 'Non compris', value: 'Extérieur, réservoirs et technique' },
-    { label: 'Produits', value: 'Uniquement ceux approuvés pour votre appareil' },
+    { label: 'Non compris', value: 'Extérieur, réservoirs des toilettes et technique' },
+    { label: 'Produits', value: 'Uniquement ceux approuvés par votre exploitant' },
     { label: 'Horaires', value: 'Entre deux vols, aussi le soir et le week-end' },
     { label: 'Accès', value: 'Réglé par votre exploitant avec l’aérodrome' },
   ],
@@ -47,15 +47,15 @@ export const privatjet: ServicePageContent = {
     {
       title: 'La cabine entre deux vols',
       paragraphs: [
-        'L’occasion détermine ce dont la cabine a besoin. Après un vol complet, ce sont les garnitures, la moquette et l’office. Après un passage à l’atelier d’entretien, poussière et traces de doigts couvrent habillages, tables et hublots. Avant un vol avec des invités, chaque détail visible à l’embarquement compte.',
-        'Votre programme de vols fixe le créneau. Plus le prochain départ est connu tôt, plus il est possible de planifier précisément ce qui doit être terminé avant. Le tableau des temps d’escale, plus bas, montre quels travaux tiennent en une heure et lesquels demandent une nuit.',
+        'Dans un jet privé, c’est l’occasion qui détermine ce que comprend le nettoyage d’avion en cabine. Après un vol complet, ce sont les garnitures, la moquette et l’office. Après un passage à l’atelier d’entretien, poussière et traces de doigts couvrent habillages, tables et hublots. Avant un vol avec des invités, chaque détail visible à l’embarquement compte.',
+        'Votre programme de vols fixe le créneau. Plus le prochain départ est connu tôt, plus il est possible de planifier précisément ce qui doit être terminé avant. Le tableau sur le temps au sol, plus bas, montre quels travaux tiennent en une heure et lesquels demandent une nuit.',
       ],
     },
     {
       title: 'Office de bord et toilettes',
       paragraphs: [
         'Dans l’office, les boissons s’infiltrent dans les joints, les glissières de tiroirs et les compartiments que l’on ne voit qu’une fois les inserts retirés. Aux toilettes comptent la cuvette, le lavabo, la robinetterie, le miroir, les poignées de porte et le sol autour de la cuvette.',
-        'Dans le plan type de l’OMS, les toilettes figurent entièrement sur la liste dès une escale de moins d’une heure. Les restes d’aliments de vols transfrontaliers suivent leurs propres règles, voir la liste de contrôle plus bas.',
+        'Dans le plan type de l’OMS, le nettoyage des toilettes figure entièrement sur la liste dès une escale de moins d’une heure. Seul le réassort en savon et articles de toilette se fait alors sur demande. Les restes d’aliments de vols transfrontaliers suivent leurs propres règles, voir la liste de contrôle plus bas.',
       ],
     },
   ],
@@ -90,7 +90,7 @@ export const privatjet: ServicePageContent = {
         ],
         [
           'Désinfection à l’office et aux toilettes',
-          'Uniquement des produits approuvés par le constructeur de l’appareil, selon le mode d’emploi exact.',
+          'Uniquement des produits de la liste approuvée par l’exploitant, selon le mode d’emploi exact.',
           'Beaucoup de désinfectants sont oxydants. Ils peuvent attaquer les métaux et réduire la résistance au feu des garnitures.',
         ],
       ],
@@ -102,24 +102,24 @@ export const privatjet: ServicePageContent = {
     {
       kind: 'table',
       id: 'bodenzeit',
-      title: 'Ce qui tient dans quel temps d’escale',
+      title: 'Que faire selon le temps au sol',
       intro:
         'Dans son plan type, l’Organisation mondiale de la santé répartit le nettoyage de la cabine selon le temps passé au sol. Le plan vient du transport de ligne. Pour un jet privé, il montre ce qui vaut la peine lors d’une courte escale et ce qui demande une nuit au sol.',
       columns: ['Temps au sol', 'Standard dans le plan de l’OMS', 'Sur demande seulement dans le plan de l’OMS'],
       rows: [
         [
           'Moins de 60 minutes',
-          'Déchets de la cabine, des placards et de l’office, ranger coussins et couvertures. Toilettes au complet : cuvette et abattant, lavabo, robinetterie, miroir, parois, poignées de porte et sol.',
+          'Déchets de la cabine, des placards et de l’office, ranger coussins et couvertures. Toilettes : cuvette et abattant, lavabo, robinetterie, miroir, parois, poignées de porte et sol.',
           'Tablettes et accoudoirs, évier et plans de travail de l’office, four, recharger savon et articles de toilette. Moquette et sols seulement si nécessaire.',
         ],
         [
           'Plus de 60 minutes',
-          'En plus, vider les pochettes des sièges, à l’office l’évier, la robinetterie, les plans de travail et les tablettes rabattables, les sols en vinyle de la cabine, recharger savon et articles de toilette.',
-          'Aspirer les sièges en tissu, essuyer les sièges en cuir, aspirer la moquette, four à l’intérieur et à l’extérieur, tablettes et accoudoirs.',
+          'En plus, vider les pochettes des sièges, nettoyer à l’office l’évier, la robinetterie, les plans de travail et les tablettes rabattables, recharger savon et articles de toilette.',
+          'Aspirer les sièges en tissu, essuyer les sièges en cuir, aspirer la moquette, four à l’intérieur et à l’extérieur, sol de l’office, tablettes et accoudoirs.',
         ],
         [
           'Pendant la nuit',
-          'Tout ce qui figure dans les lignes ci-dessus, plus les hublots à l’intérieur, retirer les coussins de sièges pour aspirer dessous, taches de moquette, rails de sièges, plafond, parois latérales, placards, portes, écrans, four et grilles de ventilation de l’office.',
+          'Tout ce qui figure dans les lignes ci-dessus, y compris ce qui n’y est que sur demande. En plus, les hublots à l’intérieur, les sols en vinyle de la cabine, retirer les coussins de sièges pour aspirer dessous, taches de moquette, rails de sièges, plafond, parois latérales, placards, portes, écrans et grilles de ventilation de l’office.',
           'Aucun : à ce niveau, tout est prévu.',
         ],
       ],
@@ -155,14 +155,14 @@ export const privatjet: ServicePageContent = {
         {
           title: 'Office et déchets',
           items: [
-            'Qui reprend les restes d’aliments : provenant d’appareils opérant au niveau international, ce sont des sous-produits animaux de catégorie 1 à incinérer',
+            'Qui reprend les restes d’aliments : ceux d’appareils opérant au niveau international sont des sous-produits animaux de catégorie 1, à incinérer',
             'Où vont les autres déchets',
           ],
         },
         {
           title: 'Remise et discrétion',
           items: [
-            'Qui reprend la cabine et apprend de nous ce qui n’a pas pu être enlevé, par exemple une rayure dans la laque',
+            'Qui reprend la cabine après le nettoyage',
             'Comment nous traitons les objets personnels et les documents à bord',
             'Si vous souhaitez un accord de confidentialité',
           ],
@@ -181,7 +181,8 @@ export const privatjet: ServicePageContent = {
       'Moquettes et sols, y compris sous les sièges',
       'Tables, habillages et meubles en bois ou en laque brillante',
       'Hublots côté intérieur, miroirs et vitrages',
-      'Points souvent touchés : poignées de porte, interrupteurs et commandes des sièges',
+      'Poignées de porte, interrupteurs et autres points souvent touchés',
+      'Écrans et commandes des sièges',
       'Office : plans de travail, évier, compartiments et tiroirs',
       'Toilettes : cuvette, lavabo, robinetterie, miroir et sol',
     ],
@@ -202,15 +203,15 @@ export const privatjet: ServicePageContent = {
       text: 'Nous nettoyons dans le créneau que laisse votre programme de vols, aussi le soir ou le week-end.',
     },
     {
-      title: 'Remise à l’équipage',
-      text: 'La cabine est reprise par la personne que vous avez désignée. Ce que nous n’avons pas pu enlever, elle l’apprend directement de nous.',
+      title: 'Remise de la cabine',
+      text: 'La cabine est reprise par la personne que vous avez désignée, par exemple un membre de l’équipage ou de votre exploitant.',
     },
   ],
   faq: [
     {
       question: 'Combien coûte le nettoyage de la cabine d’un jet privé ?',
       answer:
-        'Il n’y a pas de forfait. L’effort dépend de la taille de la cabine et du nombre de sièges, des matériaux, de l’état après le vol et du temps d’escale. S’y ajoutent les interventions le soir ou le week-end, le temps d’attente pour accéder à l’appareil et la question de savoir si nous venons une fois ou régulièrement. Vous recevez le montant par écrit, après que nous avons vu la cabine.',
+        'Il n’y a pas de forfait. L’effort dépend de la taille de la cabine et du nombre de sièges, des matériaux, de l’état après le vol et du temps d’escale. S’y ajoutent les interventions le soir ou le week-end et la question de savoir si nous venons une fois ou régulièrement. Vous recevez le montant par écrit, après que nous avons vu la cabine.',
     },
     {
       question: 'Quels produits de nettoyage utilisez-vous à bord ?',
@@ -220,7 +221,7 @@ export const privatjet: ServicePageContent = {
     {
       question: 'Entretenez-vous ou imprégnez-vous aussi le cuir et le bois ?',
       answer:
-        'Nous nettoyons. Les produits d’entretien, polish et imprégnations qui laissent une couche ne sont appliqués qu’avec l’approbation de votre atelier d’entretien. Selon la règle américaine pour les grands avions, les finitions appliquées doivent elles aussi passer l’essai de comportement au feu.',
+        'Nous nettoyons. Produits d’entretien, polish et imprégnations laissent une couche sur le matériau. C’est votre atelier d’entretien qui décide s’ils sont appliqués à bord, le tableau des matériaux de la cabine plus haut explique pourquoi.',
     },
     {
       question: 'Nettoyez-vous aussi l’extérieur de l’appareil ?',
@@ -230,7 +231,7 @@ export const privatjet: ServicePageContent = {
     {
       question: 'Comment votre équipe accède-t-elle à l’appareil ?',
       answer:
-        'Vous ou votre exploitant réglez l’accès au hangar ou à l’aire de stationnement avec l’aérodrome, par exemple avec un accompagnement. Prévoyez un peu de temps pour cela, il fait partie de l’intervention.',
+        'Vous ou votre exploitant réglez l’accès au hangar ou à l’aire de stationnement avec l’aérodrome, par exemple avec un accompagnement. Prévoyez un peu de temps pour cela dans le créneau.',
     },
     {
       question: 'Que deviennent les restes d’aliments de l’office ?',
@@ -240,7 +241,7 @@ export const privatjet: ServicePageContent = {
     {
       question: 'Notre exploitant ou notre family office peut-il commander le nettoyage ?',
       answer:
-        'Oui. Les demandes viennent de propriétaires, d’exploitants, de family offices ou d’assistantes et assistants. L’essentiel est une personne qui peut approuver produits et accès.',
+        'Oui. La demande peut venir de propriétaires, d’exploitants, de family offices ou d’assistantes et assistants. L’essentiel est une personne qui peut approuver produits et accès.',
     },
     {
       question: 'Comment traitez-vous les objets personnels à bord ?',
@@ -255,6 +256,6 @@ export const privatjet: ServicePageContent = {
   ],
   cta: {
     title: 'Demander le nettoyage de cabine en toute discrétion',
-    text: 'Pour le devis, il nous faut le type d’appareil, l’aérodrome où il est habituellement basé, vos créneaux habituels et, si vous l’avez, la liste des produits approuvés. Après un coup d’œil à la cabine, vous recevez le devis, gratuit et sans engagement.',
+    text: 'Pour le devis, il nous faut le type d’appareil, l’aérodrome où il est habituellement basé, vos créneaux habituels et la liste des produits approuvés par votre exploitant. Après un coup d’œil à la cabine, vous recevez le devis, gratuit et sans engagement.',
   },
 }

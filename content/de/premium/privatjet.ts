@@ -42,8 +42,8 @@ export const privatjet: ServicePageContent = {
   ],
   facts: [
     { label: 'Umfang', value: 'Kabine, Bordküche und Waschraum' },
-    { label: 'Nicht enthalten', value: 'Aussenreinigung, Tanks und Technik' },
-    { label: 'Mittel', value: 'Nur aus der Freigabeliste Ihres Flugzeugs' },
+    { label: 'Nicht enthalten', value: 'Aussenreinigung, Toilettentanks und Technik' },
+    { label: 'Mittel', value: 'Nur was Ihr Flugbetrieb freigegeben hat' },
     { label: 'Einsatzzeiten', value: 'Zwischen zwei Flügen, auch abends und am Wochenende' },
     { label: 'Zugang', value: 'Regelt Ihr Flugbetrieb mit dem Flugplatz' },
   ],
@@ -51,7 +51,7 @@ export const privatjet: ServicePageContent = {
     {
       title: 'Die Kabine zwischen zwei Flügen',
       paragraphs: [
-        'Der Anlass bestimmt, was die Kabine braucht. Nach einem vollen Flug sind es Polster, Teppich und Bordküche. Nach einem Aufenthalt im Wartungsbetrieb liegen Staub und Fingerabdrücke auf Verkleidungen, Tischen und Fenstern. Vor einem Flug mit Gästen zählt jedes Detail, das man beim Einsteigen sieht.',
+        'Im Privatjet bestimmt der Anlass, was die Flugzeugreinigung innen umfasst. Nach einem vollen Flug sind es Polster, Teppich und Bordküche. Nach einem Aufenthalt im Wartungsbetrieb liegen Staub und Fingerabdrücke auf Verkleidungen, Tischen und Fenstern. Vor einem Flug mit Gästen zählt jedes Detail, das man beim Einsteigen sieht.',
         'Das Zeitfenster gibt Ihr Flugplan vor. Je früher der nächste Abflug feststeht, desto genauer lässt sich planen, was vorher fertig sein muss. Welche Arbeiten in eine Stunde passen und welche eine Nacht brauchen, zeigt die Tabelle zur Bodenzeit weiter unten.',
       ],
     },
@@ -59,7 +59,7 @@ export const privatjet: ServicePageContent = {
       title: 'Bordküche und Waschraum',
       paragraphs: [
         'In der Bordküche laufen Getränke in Fugen, Schubladenführungen und Fächer, die man erst sieht, wenn die Einsätze draussen sind. Im Waschraum zählen WC, Becken, Armaturen, Spiegel, Türgriffe und der Boden rund um das WC.',
-        'Der Waschraum steht im Beispielplan der WHO schon bei einem Halt unter einer Stunde vollständig auf der Liste. Für Speisereste aus Flügen über die Grenze gelten eigene Regeln, mehr dazu in der Checkliste unten.',
+        'Im Beispielplan der WHO steht die Reinigung des Waschraums schon bei einem Halt unter einer Stunde ganz auf der Liste. Nur Seife und Pflegeartikel kommen dann erst auf Wunsch dazu. Für Speisereste aus Flügen über die Grenze gelten eigene Regeln, mehr dazu in der Checkliste unten.',
       ],
     },
   ],
@@ -94,8 +94,8 @@ export const privatjet: ServicePageContent = {
         ],
         [
           'Desinfektion in Bordküche und Waschraum',
-          'Nur vom Flugzeughersteller freigegebene Mittel, genau nach Gebrauchsanweisung.',
-          'Viele Desinfektionsmittel oxidieren. Sie können Metalle angreifen und den Brandschutz von Polstern schwächen.',
+          'Nur freigegebene Mittel aus der Liste des Flugbetriebs, genau nach Gebrauchsanweisung.',
+          'Viele Desinfektionsmittel wirken oxidierend. Sie können Metalle angreifen und den Brandschutz von Polstern schwächen.',
         ],
       ],
       note: 'Wo die Unterlagen von Hersteller oder Innenausbau etwas anderes sagen, gelten diese.',
@@ -113,17 +113,17 @@ export const privatjet: ServicePageContent = {
       rows: [
         [
           'Unter 60 Minuten',
-          'Abfall aus Kabine, Schränken und Bordküche, Kissen und Decken versorgen. Waschraum vollständig: WC und Sitz, Becken, Armaturen, Spiegel, Wände, Türgriffe und Boden.',
+          'Abfall aus Kabine, Schränken und Bordküche, Kissen und Decken versorgen. Waschraum: WC und Sitz, Becken, Armaturen, Spiegel, Wände, Türgriffe und Boden.',
           'Tische und Armlehnen, Spüle und Arbeitsflächen der Bordküche, Ofen, Seife und Pflegeartikel auffüllen. Teppich und Böden nur bei Bedarf.',
         ],
         [
           'Über 60 Minuten',
-          'Dazu Sitztaschen leeren, in der Bordküche Spüle, Armaturen, Arbeitsflächen und ausklappbare Tische, Kunststoffböden der Kabine, Seife und Pflegeartikel auffüllen.',
-          'Stoffsitze absaugen, Ledersitze abwischen, Teppich saugen, Ofen innen und aussen, Tische und Armlehnen.',
+          'Dazu Sitztaschen leeren, in der Bordküche Spüle, Armaturen, Arbeitsflächen und ausklappbare Tische reinigen, im Waschraum Seife und Pflegeartikel auffüllen.',
+          'Stoffsitze absaugen, Ledersitze abwischen, Teppich saugen, Ofen innen und aussen, Boden der Bordküche, Tische und Armlehnen.',
         ],
         [
           'Über Nacht',
-          'Alles aus den Zeilen darüber, dazu Kabinenfenster innen, Sitzkissen herausnehmen und darunter saugen, Teppichflecken, Sitzschienen, Decke, Seitenwände, Schränke, Türen, Bildschirme, Ofen und Lüftungsgitter der Bordküche.',
+          'Alles aus den Zeilen darüber, auch was dort nur auf Wunsch steht. Dazu Kabinenfenster innen, Kunststoffböden der Kabine, Sitzkissen herausnehmen und darunter saugen, Teppichflecken, Sitzschienen, Decke, Seitenwände, Schränke, Türen, Bildschirme und die Lüftungsgitter der Bordküche.',
           'Keine: In dieser Stufe ist alles vorgesehen.',
         ],
       ],
@@ -166,7 +166,7 @@ export const privatjet: ServicePageContent = {
         {
           title: 'Übergabe und Diskretion',
           items: [
-            'Wer die Kabine übernimmt und von uns erfährt, was sich nicht entfernen liess, etwa ein Kratzer im Lack',
+            'Wer die Kabine nach der Reinigung übernimmt',
             'Wie wir mit persönlichen Gegenständen und Unterlagen an Bord umgehen',
             'Ob Sie eine Geheimhaltungsvereinbarung wünschen',
           ],
@@ -185,7 +185,8 @@ export const privatjet: ServicePageContent = {
       'Teppiche und Böden, auch unter den Sitzen',
       'Tische, Verkleidungen und Schränke aus Holz oder Hochglanzlack',
       'Kabinenfenster innen, Spiegel und Glas',
-      'Oft berührte Stellen: Türgriffe, Schalter und Bedienteile am Sitz',
+      'Türgriffe, Schalter und andere oft berührte Stellen',
+      'Bildschirme und Bedienteile am Sitz',
       'Bordküche: Arbeitsflächen, Spüle, Fächer und Schubladen',
       'Waschraum: WC, Becken, Armaturen, Spiegel und Boden',
     ],
@@ -206,15 +207,15 @@ export const privatjet: ServicePageContent = {
       text: 'Wir reinigen in dem Zeitfenster, das Ihr Flugplan lässt, auch abends oder am Wochenende.',
     },
     {
-      title: 'Übergabe an die Crew',
-      text: 'Die Kabine übernimmt die Person, die Sie bestimmt haben. Was sich nicht entfernen liess, erfährt sie von uns direkt.',
+      title: 'Übergabe der Kabine',
+      text: 'Die Kabine übernimmt die Person, die Sie bestimmt haben, etwa jemand aus der Crew oder vom Flugbetrieb.',
     },
   ],
   faq: [
     {
       question: 'Was kostet die Reinigung einer Privatjet-Kabine?',
       answer:
-        'Einen Pauschalpreis gibt es nicht. Den Aufwand bestimmen die Grösse der Kabine und die Zahl der Sitze, die Materialien, der Zustand nach dem Flug und die Bodenzeit. Dazu kommen Einsätze abends oder am Wochenende, die Wartezeit beim Zutritt zum Flugzeug und die Frage, ob wir einmal oder regelmässig kommen. Den Betrag erhalten Sie schriftlich, nachdem wir die Kabine gesehen haben.',
+        'Einen Pauschalpreis gibt es nicht. Den Aufwand bestimmen die Grösse der Kabine und die Zahl der Sitze, die Materialien, der Zustand nach dem Flug und die Bodenzeit. Dazu kommen Einsätze abends oder am Wochenende und die Frage, ob wir einmal oder regelmässig kommen. Den Betrag erhalten Sie schriftlich, nachdem wir die Kabine gesehen haben.',
     },
     {
       question: 'Welche Reinigungsmittel verwenden Sie an Bord?',
@@ -224,7 +225,7 @@ export const privatjet: ServicePageContent = {
     {
       question: 'Pflegen oder imprägnieren Sie auch Leder und Holz?',
       answer:
-        'Wir reinigen. Pflegemittel, Politur und Imprägnierung, die eine Schicht hinterlassen, tragen wir nur mit Freigabe Ihres Wartungsbetriebs auf. Nach der US-Bauvorschrift für grosse Flugzeuge müssen auch aufgetragene Beschichtungen die Brandprüfung bestehen.',
+        'Wir reinigen. Pflegemittel, Politur und Imprägnierung hinterlassen eine Schicht auf dem Material. Ob sie an Bord aufgetragen werden, entscheidet Ihr Wartungsbetrieb, den Grund nennt die Tabelle der Kabinenmaterialien oben.',
     },
     {
       question: 'Reinigen Sie auch das Flugzeug von aussen?',
@@ -234,7 +235,7 @@ export const privatjet: ServicePageContent = {
     {
       question: 'Wie kommt Ihr Team zum Flugzeug?',
       answer:
-        'Den Zutritt zum Hangar oder Abstellplatz regeln Sie oder Ihr Flugbetrieb mit dem Flugplatz, zum Beispiel mit einer Begleitung. Planen Sie dafür etwas Zeit ein, sie gehört zum Einsatz.',
+        'Den Zutritt zum Hangar oder Abstellplatz regeln Sie oder Ihr Flugbetrieb mit dem Flugplatz, zum Beispiel mit einer Begleitung. Planen Sie dafür etwas Zeit im Zeitfenster ein.',
     },
     {
       question: 'Was geschieht mit Speiseresten aus der Bordküche?',
@@ -244,7 +245,7 @@ export const privatjet: ServicePageContent = {
     {
       question: 'Kann unser Flugbetrieb oder Family Office die Reinigung beauftragen?',
       answer:
-        'Ja. Anfragen stellen Eigentümer, Flugbetriebe, Family Offices oder Assistenzen. Wichtig ist eine Person, die Mittel und Zutritt freigeben kann.',
+        'Ja. Die Anfrage kann von Eigentümern, Flugbetrieben, Family Offices oder Assistenzen kommen. Wichtig ist eine Person, die Mittel und Zutritt freigeben kann.',
     },
     {
       question: 'Wie gehen Sie mit persönlichen Gegenständen an Bord um?',
@@ -259,6 +260,6 @@ export const privatjet: ServicePageContent = {
   ],
   cta: {
     title: 'Kabinenreinigung diskret anfragen',
-    text: 'Für die Offerte brauchen wir den Flugzeugtyp, den Flugplatz, an dem er meist steht, Ihre üblichen Zeitfenster und, falls vorhanden, die Liste der freigegebenen Mittel. Nach einem Blick in die Kabine erhalten Sie die Offerte, kostenlos und unverbindlich.',
+    text: 'Für die Offerte brauchen wir den Flugzeugtyp, den Flugplatz, an dem er meist steht, Ihre üblichen Zeitfenster und die Liste der Mittel, die Ihr Flugbetrieb freigegeben hat. Nach einem Blick in die Kabine erhalten Sie die Offerte, kostenlos und unverbindlich.',
   },
 }

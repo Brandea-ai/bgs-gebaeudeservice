@@ -34,12 +34,12 @@ export const privatjet: ServicePageContent = {
   h1: 'Pulizia di jet privati: cabina, cucina di bordo e toilette',
   lead: [
     'Dopo un volo a lungo raggio restano aloni di caffè sulla radica, briciole nei binari dei sedili e impronte sui finestrini della cabina. Prima della partenza successiva a volte restano solo poche ore.',
-    'Puliamo cabina, cucina di bordo e toilette del Suo jet privato tra due voli, con i prodotti approvati per il Suo aeromobile. Qui sotto trova che cosa sopportano i materiali a bordo, che cosa rientra in quale tempo di sosta e che cosa va definito prima del primo intervento.',
+    'Puliamo cabina, cucina di bordo e toilette del Suo jet privato tra due voli, con i prodotti approvati per il Suo aeromobile. Qui sotto trova che cosa sopportano i materiali a bordo, che cosa si può fare in base al tempo di sosta e che cosa va definito prima del primo intervento.',
   ],
   facts: [
     { label: 'Prestazioni', value: 'Cabina, cucina di bordo e toilette' },
-    { label: 'Non compreso', value: 'Esterno, serbatoi e parte tecnica' },
-    { label: 'Prodotti', value: 'Solo quelli approvati per il Suo aeromobile' },
+    { label: 'Non compreso', value: 'Esterno, serbatoi della toilette e parte tecnica' },
+    { label: 'Prodotti', value: 'Solo quelli approvati dal Suo operatore' },
     { label: 'Orari', value: 'Tra due voli, anche di sera e nel fine settimana' },
     { label: 'Accesso', value: 'Lo regola il Suo operatore con l’aerodromo' },
   ],
@@ -47,7 +47,7 @@ export const privatjet: ServicePageContent = {
     {
       title: 'La cabina tra due voli',
       paragraphs: [
-        'È l’occasione a stabilire di che cosa ha bisogno la cabina. Dopo un volo al completo sono le imbottiture, la moquette e la cucina di bordo. Dopo una sosta presso l’impresa di manutenzione, polvere e impronte coprono rivestimenti, tavoli e finestrini. Prima di un volo con ospiti conta ogni dettaglio che si vede salendo a bordo.',
+        'In un jet privato è l’occasione a stabilire che cosa comprende la pulizia interna dell’aereo. Dopo un volo al completo sono le imbottiture, la moquette e la cucina di bordo. Dopo una sosta presso l’impresa di manutenzione, polvere e impronte coprono rivestimenti, tavoli e finestrini. Prima di un volo con ospiti conta ogni dettaglio che si vede salendo a bordo.',
         'La finestra temporale la stabilisce il Suo piano di volo. Prima si conosce la partenza successiva, più precisamente si può pianificare che cosa deve essere pronto. Quali lavori rientrano in un’ora e quali richiedono una notte lo mostra la tabella dei tempi di sosta più sotto.',
       ],
     },
@@ -55,7 +55,7 @@ export const privatjet: ServicePageContent = {
       title: 'Cucina di bordo e toilette',
       paragraphs: [
         'Nella cucina di bordo le bevande penetrano in fughe, guide dei cassetti e vani che si vedono solo dopo aver tolto gli inserti. Nella toilette contano WC, lavabo, rubinetteria, specchio, maniglie e il pavimento attorno al WC.',
-        'Nel piano esemplificativo dell’OMS la toilette figura per intero già per una sosta inferiore a un’ora. Per i resti alimentari di voli transfrontalieri valgono regole proprie, vedi la lista di controllo più sotto.',
+        'Nel piano esemplificativo dell’OMS la pulizia della toilette figura per intero già per una sosta inferiore a un’ora. Solo il rifornimento di sapone e articoli da toilette avviene allora su richiesta. Per i resti alimentari di voli transfrontalieri valgono regole proprie, vedi la lista di controllo più sotto.',
       ],
     },
   ],
@@ -90,7 +90,7 @@ export const privatjet: ServicePageContent = {
         ],
         [
           'Disinfezione in cucina di bordo e toilette',
-          'Solo prodotti approvati dal costruttore dell’aeromobile, usati esattamente secondo le istruzioni.',
+          'Solo prodotti della lista approvata dall’operatore, usati esattamente secondo le istruzioni.',
           'Molti disinfettanti sono ossidanti. Possono intaccare i metalli e ridurre la resistenza al fuoco delle imbottiture.',
         ],
       ],
@@ -102,24 +102,24 @@ export const privatjet: ServicePageContent = {
     {
       kind: 'table',
       id: 'bodenzeit',
-      title: 'Che cosa rientra in quale tempo di sosta',
+      title: 'Che cosa fare in base al tempo di sosta',
       intro:
         'Nel suo piano esemplificativo l’Organizzazione mondiale della sanità suddivide la pulizia della cabina in base al tempo a terra. Il piano viene dal traffico di linea. Per un jet privato mostra che cosa conviene fare durante una sosta breve e che cosa richiede una notte a terra.',
       columns: ['Tempo a terra', 'Standard nel piano dell’OMS', 'Solo su richiesta nel piano dell’OMS'],
       rows: [
         [
           'Meno di 60 minuti',
-          'Rifiuti da cabina, armadi e cucina di bordo, riporre cuscini e coperte. Toilette per intero: WC e sedile, lavabo, rubinetteria, specchio, pareti, maniglie e pavimento.',
+          'Rifiuti da cabina, armadi e cucina di bordo, riporre cuscini e coperte. Pulizia della toilette: WC e sedile, lavabo, rubinetteria, specchio, pareti, maniglie e pavimento.',
           'Tavolini e braccioli, lavello e piani di lavoro della cucina di bordo, forno, rifornire sapone e articoli da toilette. Moquette e pavimenti solo se necessario.',
         ],
         [
           'Più di 60 minuti',
-          'In aggiunta svuotare le tasche dei sedili, in cucina di bordo lavello, rubinetteria, piani di lavoro e tavoli ribaltabili, i pavimenti in vinile della cabina, rifornire sapone e articoli da toilette.',
-          'Aspirare i sedili in tessuto, pulire i sedili in pelle, aspirare la moquette, forno dentro e fuori, tavolini e braccioli.',
+          'In aggiunta svuotare le tasche dei sedili, pulire in cucina di bordo lavello, rubinetteria, piani di lavoro e tavoli ribaltabili, rifornire sapone e articoli da toilette.',
+          'Aspirare i sedili in tessuto, pulire i sedili in pelle, aspirare la moquette, forno dentro e fuori, pavimento della cucina di bordo, tavolini e braccioli.',
         ],
         [
           'Durante la notte',
-          'Tutto quanto nelle righe sopra, in più finestrini lato interno, togliere i cuscini dei sedili e aspirare sotto, macchie sulla moquette, binari dei sedili, soffitto, pareti laterali, armadi, porte, schermi, forno e griglie di ventilazione della cucina di bordo.',
+          'Tutto quanto nelle righe sopra, anche ciò che lì è solo su richiesta. In più finestrini lato interno, pavimenti in vinile della cabina, togliere i cuscini dei sedili e aspirare sotto, macchie sulla moquette, binari dei sedili, soffitto, pareti laterali, armadi, porte, schermi e griglie di ventilazione della cucina di bordo.',
           'Nulla: a questo livello tutto è previsto.',
         ],
       ],
@@ -162,7 +162,7 @@ export const privatjet: ServicePageContent = {
         {
           title: 'Consegna e discrezione',
           items: [
-            'Chi prende in consegna la cabina e viene a sapere da noi ciò che non si è riusciti a togliere, ad esempio un graffio nella lacca',
+            'Chi prende in consegna la cabina dopo la pulizia',
             'Come trattiamo oggetti personali e documenti a bordo',
             'Se desidera un accordo di riservatezza',
           ],
@@ -181,7 +181,8 @@ export const privatjet: ServicePageContent = {
       'Moquette e pavimenti, anche sotto i sedili',
       'Tavoli, rivestimenti e mobili in legno o in lacca lucida',
       'Finestrini lato interno, specchi e vetri',
-      'Punti toccati spesso: maniglie, interruttori e comandi dei sedili',
+      'Maniglie, interruttori e altri punti toccati spesso',
+      'Schermi e comandi dei sedili',
       'Cucina di bordo: piani di lavoro, lavello, vani e cassetti',
       'Toilette: WC, lavabo, rubinetteria, specchio e pavimento',
     ],
@@ -202,15 +203,15 @@ export const privatjet: ServicePageContent = {
       text: 'Puliamo nella finestra temporale che il Suo piano di volo lascia libera, anche di sera o nel fine settimana.',
     },
     {
-      title: 'Consegna all’equipaggio',
-      text: 'La cabina viene presa in consegna dalla persona che ha designato. Ciò che non siamo riusciti a togliere, lo viene a sapere direttamente da noi.',
+      title: 'Consegna della cabina',
+      text: 'La cabina viene presa in consegna dalla persona che ha designato, ad esempio un membro dell’equipaggio o del Suo operatore.',
     },
   ],
   faq: [
     {
       question: 'Quanto costa la pulizia della cabina di un jet privato?',
       answer:
-        'Non esiste un prezzo forfettario. L’impegno dipende dalla grandezza della cabina e dal numero di sedili, dai materiali, dallo stato dopo il volo e dal tempo di sosta. Si aggiungono gli interventi di sera o nel fine settimana, il tempo di attesa per l’accesso all’aeromobile e se veniamo una volta o regolarmente. L’importo Le arriva per iscritto, dopo che abbiamo visto la cabina.',
+        'Non esiste un prezzo forfettario. L’impegno dipende dalla grandezza della cabina e dal numero di sedili, dai materiali, dallo stato dopo il volo e dal tempo di sosta. Si aggiungono gli interventi di sera o nel fine settimana e se veniamo una volta o regolarmente. L’importo Le arriva per iscritto, dopo che abbiamo visto la cabina.',
     },
     {
       question: 'Quali prodotti di pulizia usate a bordo?',
@@ -220,7 +221,7 @@ export const privatjet: ServicePageContent = {
     {
       question: 'Trattate o impregnate anche pelle e legno?',
       answer:
-        'Noi puliamo. Prodotti di cura, lucidanti e impregnanti che lasciano uno strato li applichiamo solo con l’approvazione della Sua impresa di manutenzione. Secondo la norma statunitense per i grandi velivoli, anche le finiture applicate devono superare la prova di comportamento al fuoco.',
+        'Noi puliamo. Prodotti di cura, lucidanti e impregnanti lasciano uno strato sul materiale. Se applicarli a bordo lo decide la Sua impresa di manutenzione, il perché è spiegato nella tabella dei materiali della cabina più sopra.',
     },
     {
       question: 'Pulite anche l’esterno dell’aeromobile?',
@@ -230,7 +231,7 @@ export const privatjet: ServicePageContent = {
     {
       question: 'Come arriva il vostro team all’aeromobile?',
       answer:
-        'L’accesso all’hangar o alla piazzola lo regola Lei o il Suo operatore con l’aerodromo, ad esempio con un accompagnamento. Preveda un po’ di tempo, fa parte dell’intervento.',
+        'L’accesso all’hangar o alla piazzola lo regola Lei o il Suo operatore con l’aerodromo, ad esempio con un accompagnamento. Preveda un po’ di tempo per questo nella finestra temporale.',
     },
     {
       question: 'Che cosa succede con i resti alimentari della cucina di bordo?',
@@ -240,7 +241,7 @@ export const privatjet: ServicePageContent = {
     {
       question: 'Il nostro operatore o il nostro family office può commissionare la pulizia?',
       answer:
-        'Sì. Le richieste arrivano da proprietari, operatori, family office o assistenti. Conta che ci sia una persona in grado di approvare prodotti e accesso.',
+        'Sì. La richiesta può arrivare da proprietari, operatori, family office o assistenti. Conta che ci sia una persona in grado di approvare prodotti e accesso.',
     },
     {
       question: 'Come trattate gli oggetti personali a bordo?',
@@ -255,6 +256,6 @@ export const privatjet: ServicePageContent = {
   ],
   cta: {
     title: 'Richiedere con discrezione la pulizia della cabina',
-    text: 'Per l’offerta ci servono il tipo di aeromobile, l’aerodromo in cui di solito è di base, le Sue finestre temporali abituali e, se disponibile, la lista dei prodotti approvati. Dopo uno sguardo alla cabina riceve l’offerta, gratuita e senza impegno.',
+    text: 'Per l’offerta ci servono il tipo di aeromobile, l’aerodromo in cui di solito è di base, le Sue finestre temporali abituali e la lista dei prodotti approvati dal Suo operatore. Dopo uno sguardo alla cabina riceve l’offerta, gratuita e senza impegno.',
   },
 }
