@@ -21,15 +21,37 @@ export const proof: Seiten['proof'] = [
   { value: 'CHF 10m', label: 'Business liability cover' },
 ]
 
-/** Steps up to the first assignment, same on home and contact page */
+/** Steps up to the first assignment, same on home and contact page (four steps, one video each) */
 const offerSteps: Step[] = [
   steps.anfrage,
   steps.besichtigung,
   {
+    title: 'Agreement',
+    text: 'You review the quote at your own pace. Once you accept, it is settled which services we provide, how often and at what times.',
+  },
+  {
     title: 'Start',
-    text: 'Once you accept, we schedule the first assignment and agree times and access with you.',
+    text: 'We schedule the first assignment and agree times and access with you, for example with a key or badge.',
   },
 ]
+
+/** Questions that read the same on home and contact page (E18) */
+const faq = {
+  schnell: {
+    question: 'How quickly will I receive a quote?',
+    answer: `We will get back to you ${responseTime} and arrange an appointment for the site visit. You then receive the quote in writing.`,
+  },
+  kosten: {
+    question: 'What does the cleaning cost?',
+    answer: `${answers.kosten} More in our guide: [What the cost of maintenance cleaning depends on](/blog/reinigungskosten-schweiz).`,
+  },
+  gebiet: { question: 'Which regions do you cover?', answer: answers.gebiet },
+  versichert: { question: 'Are you insured?', answer: answers.versicherung },
+  kurzfristig: {
+    question: 'Do you also take on assignments at short notice?',
+    answer: 'Give us a call. We will discuss with you what is possible at short notice.',
+  },
+}
 
 export const home: Seiten['home'] = {
   eyebrow: `Cleaning and caretaking from ${company.address.city}`,
@@ -38,37 +60,89 @@ export const home: Seiten['home'] = {
   proofTitle: 'At a glance',
   services: {
     title: 'Our services',
-    intro: 'Building cleaning and caretaking for businesses and properties, plus cleaning for exacting standards.',
-    groups: [
+    intro: 'Regular cleaning, one-off assignments and the care of entire properties. Choose by occasion, and we clarify the scope during the site visit.',
+    all: 'All services at a glance',
+    premium: {
+      title: premiumLabel,
+      text: 'Cleaning for exacting standards, discreet and in your language: villas, lofts and residences, private jets and yachts, as well as hotels and family offices.',
+      link: 'Premium services',
+    },
+  },
+  audiences: {
+    title: 'Who we work for',
+    intro: 'Four client groups with different needs. This is what you gain in concrete terms.',
+    items: [
       {
-        key: 'reinigung',
-        title: 'Cleaning',
-        text: 'For properties, offices, practices and businesses.',
-        items: ['Maintenance and office cleaning', 'Special and construction cleaning', 'Windows and facades', 'Industrial and warehouse'],
-        link: { path: '/leistungen', text: 'All services' },
-      },
-      {
-        key: 'hauswartung',
-        title: 'Caretaking and grounds',
-        text: 'For property managers, owners and businesses who want their property looked after.',
-        items: ['Caretaking', 'Grounds and green space maintenance', 'Facility services'],
+        key: 'verwaltungen',
+        title: 'Property managers and condominium owners',
+        text: 'You look after properties and need someone on site to keep an eye on things.',
+        points: [
+          'Stairwell, entrance and grounds kept on a fixed schedule',
+          'Inspection rounds in which we report defects to you',
+          'Move-out cleaning with a handover guarantee when tenants change',
+        ],
         link: { path: '/leistungen/hauswartung', text: 'Go to caretaking' },
       },
       {
+        key: 'unternehmen',
+        title: 'Businesses',
+        text: 'Offices, practices, commercial premises and production stay clean without the cleaning disrupting your work.',
+        points: [
+          'Cleaning times to suit your working and opening hours',
+          'Restocking service for consumables',
+          'Cleaning, caretaking and grounds in one contract on request',
+        ],
+        link: { path: '/leistungen/bueroreinigung', text: 'Go to office cleaning' },
+      },
+      {
+        key: 'privat',
+        title: 'Private owners',
+        text: 'For villas, lofts, residences and second homes. We do not take on ordinary private households.',
+        points: [
+          'The same team always works for you',
+          'Natural stone, parquet and high-gloss surfaces, cleaned to suit the material',
+          'Keys and alarm according to rules we agree with you',
+        ],
+        link: { path: '/premium/luxusimmobilien', text: 'Go to luxury properties' },
+      },
+      {
         key: 'premium',
-        title: premiumLabel,
-        text: 'Cleaning for exacting standards, discreet and in your language.',
-        items: ['Villas, lofts and luxury properties', 'Private jets', 'Yachts'],
+        title: 'Private jets, yachts and hotels',
+        text: 'For cabins, decks and rooms with high-quality materials that need particular care.',
+        points: [
+          'With a non-disclosure agreement on request',
+          'Including evenings, weekends and while you are away',
+          'In hotels, assignments before openings and after renovations',
+        ],
         link: { path: '/premium', text: 'Premium services' },
       },
     ],
   },
-  steps: { title: 'How to get your quote', items: offerSteps },
+  steps: {
+    title: 'How to get your quote',
+    intro: 'From the first call to the first assignment. The site visit and the quote are free of charge and non-binding.',
+    items: offerSteps,
+  },
   area: {
     title: 'Our service area',
-    text: `From our base in ${company.address.city}, we work in the cantons of ${cantons}. We offer all our services throughout the area.`,
+    text: `From our base in ${company.address.city}, we work in the cantons of ${cantons}. We offer all our services throughout the area, on the same terms everywhere.`,
     link: 'View service area',
   },
+  faq: [
+    faq.kosten,
+    faq.schnell,
+    {
+      question: 'Do I need maintenance cleaning or caretaking?',
+      answer:
+        'Maintenance cleaning covers cleaning on a fixed schedule. Caretaking goes further: inspection rounds, minor repairs, building services, waste disposal, flat handovers and grounds maintenance. If you only need cleaning, [maintenance cleaning](/leistungen/unterhaltsreinigung) is the right choice.',
+    },
+    {
+      question: 'Do you also clean private households?',
+      answer: 'Not ordinary private households. For villas, lofts, residences and second homes, see our [premium services](/premium).',
+    },
+    faq.kurzfristig,
+    { question: 'Do you clean with environmentally friendly products?', answer: answers.mittel },
+  ],
   cta: {
     title: 'A quote for your property',
     text: `Briefly describe your property and what you need. We will get back to you ${responseTime} and arrange a site visit.`,
@@ -77,18 +151,88 @@ export const home: Seiten['home'] = {
 
 export const about: Seiten['about'] = {
   h1: `Cleaning and caretaking from ${company.address.city}, since 2006`,
-  imageAlt: 'Our team at work',
   lead: `We have been working in cleaning and caretaking since 2006. Today, over 50 employees look after more than 120 clients in the cantons of ${cantons}, in ${languages}.`,
   promises: {
     title: 'What you can rely on',
     items: [
-      { title: 'Personal', text: 'Your enquiry is handled personally by our managing director.' },
-      { title: 'Quote after a site visit', text: 'We only quote a price once we have seen your property. The site visit and the quote are free of charge and non-binding.' },
-      { title: 'Throughout the area', text: `All services in the cantons of ${cantons}, on the same terms everywhere.` },
-      { title: 'Insured', text: answers.versicherung.replace('Yes. ', '') },
-      { title: 'Four languages', text: answers.sprachen },
-      { title: 'Environmentally friendly products', text: 'On request, we clean with environmentally friendly products.' },
-    ] satisfies Card[],
+      { key: 'persoenlich', title: 'Personal', text: 'Your enquiry is handled personally by our managing director.' },
+      { key: 'offerte', title: 'Quote after a site visit', text: 'We only quote a price once we have seen your property. The site visit and the quote are free of charge and non-binding.' },
+      { key: 'gebiet', title: 'Throughout the area', text: `All services in the cantons of ${cantons}, on the same terms everywhere.` },
+      { key: 'versichert', title: 'Insured', text: answers.versicherung.replace('Yes. ', '') },
+      { key: 'sprachen', title: 'Four languages', text: answers.sprachen },
+      { key: 'umwelt', title: 'Environmentally friendly products', text: 'On request, we clean with environmentally friendly products.' },
+    ],
+  },
+  work: {
+    title: 'How we work',
+    intro: 'Four principles that apply to every assignment, from office cleaning to caretaking.',
+    items: [
+      {
+        title: 'Look first, then quote',
+        paragraphs: [
+          'Floor coverings, glass surfaces, use and access determine the effort involved. That is why we first look at your property on site and clarify the scope, schedule and times with you.',
+          'Only then do we name a price, in writing in the quote, free of charge and non-binding.',
+        ],
+      },
+      {
+        title: 'Clearly agreed',
+        paragraphs: [
+          'Once you accept, it is settled which rooms and tasks are included, how often we come and at what times. We arrange access beforehand, for example with a key or badge.',
+          'We say openly what is not included and name the service that fits.',
+        ],
+      },
+      {
+        title: 'Short lines of communication',
+        paragraphs: [
+          `Your enquiry is handled personally by our managing director, and you will hear from us ${responseTime}.`,
+          'If you need several services, you can combine them as [facility services](/leistungen/facility-services) in one contract, with one contact person for everything.',
+        ],
+      },
+      {
+        title: 'Materials and products',
+        paragraphs: [
+          'With maintenance cleaning, we restock consumables such as paper and soap. On request, we clean with environmentally friendly products.',
+          'We clean natural stone, parquet and high-gloss surfaces to suit the material, with care for sensitive surfaces.',
+        ],
+      },
+    ],
+  },
+  history: {
+    title: 'In the region since 2006',
+    items: [
+      { label: '2006', title: 'The beginning', text: 'We have been working in cleaning and caretaking since 2006.' },
+      {
+        label: 'Today',
+        title: 'Over 50 employees, over 120 clients',
+        text: 'As of September 2026. We work for businesses, property managers, owners and private clients with exacting standards.',
+      },
+      {
+        label: 'Head office',
+        title: company.address.city,
+        text: `${company.legalName} is entered in the ${register}.`,
+      },
+    ],
+  },
+  languages: {
+    title: 'Four languages',
+    text: `Our employees speak ${languages}. This makes it easier to agree things with international teams, with tenants and with clients who prefer to speak their own language. This website is available in the same four languages.`,
+  },
+  region: {
+    title: 'Five cantons, the same terms',
+    text: `From ${company.address.city}, we work in the cantons of ${cantons}. We offer all our services throughout the area, and the same travel terms apply everywhere.`,
+    link: 'View service area',
+  },
+  values: {
+    title: 'Our values in everyday work',
+    intro: 'Values show in what you do. That is why this lists what we actually do.',
+    items: [
+      { key: 'ehrlich', title: 'Honest about prices', text: 'We only name prices in the written quote, after we have seen the property. A price without a site visit would often turn out to be wrong later.' },
+      { key: 'klar', title: 'Clear about scope', text: 'Every service page also states what is not included, with a link to the service that fits.' },
+      { key: 'nachbessern', title: 'We stand by our work', text: 'If the property manager finds fault with our move-out cleaning at the handover, we clean again free of charge. The details are set out in the quote.' },
+      { key: 'versichert', title: 'Responsibility', text: 'For damage during our work, we have business liability insurance with cover of CHF 10 million.' },
+      { key: 'diskret', title: 'Discreet', text: 'In our premium services, we sign a non-disclosure agreement on request. We handle keys and alarms according to fixed rules.' },
+      { key: 'umwelt', title: 'Care for the environment', text: 'On request, we clean with environmentally friendly products. Just let us know during the site visit.' },
+    ],
   },
   contact: {
     title: 'Your contact person',
@@ -96,6 +240,7 @@ export const about: Seiten['about'] = {
   },
   register: { title: 'Registration details', court: register, uid: 'UID' },
   statsLabel: 'In figures',
+  faq: [faq.kosten, faq.gebiet, faq.kurzfristig],
   cta: {
     title: 'Arrange a site visit',
     text: 'During the site visit, we look at your property and clarify the scope and times. You then receive a written quote.',
@@ -105,32 +250,37 @@ export const about: Seiten['about'] = {
 export const contact: Seiten['contact'] = {
   h1: 'Contact and quote',
   lead: `Call us or write to us. We will get back to you ${responseTime}.`,
-  formLink: 'Go to the contact form',
-  channelsLabel: 'Ways to contact us',
-  phone: { title: 'Phone', text: 'Landline and mobile', mobile: 'Mobile' },
-  email: { title: 'Email', text: 'Send us a message' },
-  address: { title: 'Address', text: 'Our head office' },
+  channels: {
+    title: 'How to reach us',
+    phone: { title: 'Phone', hint: 'For questions and to arrange an appointment for the site visit.', action: 'Call' },
+    mobile: { title: 'Mobile', hint: 'Our mobile number, in addition to the landline.', action: 'Call' },
+    email: { title: 'Email', hint: 'For enquiries with documents, such as floor plans, area lists or photos.', action: 'Write an email' },
+    form: { title: 'Form', value: 'Request a quote', hint: 'The key details in a few fields, and you choose the service from a list.', action: 'Go to the form' },
+    address: { title: 'Address', hint: 'Our head office. The site visit takes place at your property.', action: 'Go to the map' },
+  },
+  brief: {
+    title: 'What your enquiry should include',
+    intro: 'The more precise your details, the better we can prepare the site visit. If anything is missing, we clarify it in conversation.',
+    items: [
+      { key: 'objekt', title: 'Property', text: 'Type of property, for example office, practice, apartment building, hall or villa.' },
+      { key: 'ort', title: 'Location', text: 'Address or postcode of the property.' },
+      { key: 'groesse', title: 'Size', text: 'Approximate area, number of rooms, flats or floors.' },
+      { key: 'leistung', title: 'Service', text: 'What needs doing, for example maintenance cleaning, caretaking or a one-off cleaning.' },
+      { key: 'rhythmus', title: 'Schedule and times', text: 'How often and when, for example before work starts, in the evening or at the weekend.' },
+      { key: 'start', title: 'Start', text: 'From when you need the service, and for construction and move-out cleaning the handover date.' },
+      { key: 'zugang', title: 'Access and special features', text: 'Key or badge, sensitive floors and materials, large glass surfaces.' },
+    ],
+    note: 'You can send us floor plans, area lists or photos by email.',
+  },
   steps: { title: 'From enquiry to first assignment', items: offerSteps },
   map: {
     title: 'How to find us',
     text: `Based in ${company.address.city}. We work in the cantons of ${cantons}.`,
   },
-  faq: [
-    {
-      question: 'How quickly will I receive a quote?',
-      answer: `We will get back to you ${responseTime} and arrange an appointment for the site visit. You then receive the quote in writing.`,
-    },
-    {
-      question: 'What does the cleaning cost?',
-      answer: `${answers.kosten} More in our guide: [What the cost of maintenance cleaning depends on](/blog/reinigungskosten-schweiz).`,
-    },
-    { question: 'Which regions do you cover?', answer: answers.gebiet },
-    { question: 'Are you insured?', answer: answers.versicherung },
-    { question: 'Do you also take on assignments at short notice?', answer: 'Give us a call. We will discuss with you what is possible at short notice.' },
-  ],
+  faq: [faq.schnell, faq.kosten, faq.gebiet, faq.versichert, faq.kurzfristig],
   cta: {
-    title: 'Your quote in three steps',
-    text: `Describe your property and what you need in the form just below. We will get back to you ${responseTime} and arrange the site visit.`,
+    title: 'Describe your property to us',
+    text: `Your property and what you need, in the form just below, are enough. We will get back to you ${responseTime} and arrange the site visit.`,
   },
 }
 

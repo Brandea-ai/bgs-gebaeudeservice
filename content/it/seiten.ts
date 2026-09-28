@@ -21,15 +21,37 @@ export const proof = [
   { value: 'CHF 10 mio.', label: 'Responsabilità civile aziendale' },
 ]
 
-/** Svolgimento fino al primo intervento, uguale su pagina iniziale e contatto */
+/** Svolgimento fino al primo intervento, uguale su pagina iniziale e contatto (quattro passi, un video ciascuno) */
 const offerSteps: Step[] = [
   steps.anfrage,
   steps.besichtigung,
   {
+    title: 'Accordo',
+    text: 'Esamina l’offerta con calma. Con la Sua conferma è stabilito quali servizi svolgiamo, con quale frequenza e in quali orari.',
+  },
+  {
     title: 'Inizio',
-    text: 'Con la Sua conferma fissiamo il primo intervento e concordiamo con Lei orari e accesso.',
+    text: 'Fissiamo il primo intervento e concordiamo con Lei orari e accesso, ad esempio con chiave o badge.',
   },
 ]
+
+/** Domande uguali su pagina iniziale e contatto (E18) */
+const faq = {
+  schnell: {
+    question: 'In quanto tempo ricevo un’offerta?',
+    answer: `La contattiamo ${responseTime} e fissiamo un appuntamento per il sopralluogo. In seguito riceve l’offerta per iscritto.`,
+  },
+  kosten: {
+    question: 'Quanto costa la pulizia?',
+    answer: `${answers.kosten} Maggiori informazioni nella guida: [Da che cosa dipendono i costi di una pulizia di manutenzione](/blog/reinigungskosten-schweiz).`,
+  },
+  gebiet: { question: 'In quali regioni operate?', answer: answers.gebiet },
+  versichert: { question: 'Siete assicurati?', answer: answers.versicherung },
+  kurzfristig: {
+    question: 'Eseguite anche interventi con breve preavviso?',
+    answer: 'Ci telefoni. Chiariamo con Lei che cosa è possibile con breve preavviso.',
+  },
+}
 
 export const home = {
   eyebrow: `Pulizia e custodia di stabili da ${company.address.city}`,
@@ -38,37 +60,89 @@ export const home = {
   proofTitle: 'In sintesi',
   services: {
     title: 'I nostri servizi',
-    intro: 'Pulizia di edifici e custodia di stabili per aziende e immobili, oltre a pulizie per esigenze particolari.',
-    groups: [
-      {
-        key: 'reinigung',
-        title: 'Pulizia',
-        text: 'Per stabili, uffici, studi e superfici commerciali.',
-        items: ['Pulizia di manutenzione e di uffici', 'Pulizie speciali e di cantiere', 'Vetri e facciate', 'Industria e capannoni'],
-        link: { path: '/leistungen', text: 'Tutti i servizi' },
-      },
-      {
-        key: 'hauswartung',
-        title: 'Custodia e manutenzione',
-        text: 'Per amministrazioni immobiliari, proprietari e aziende che affidano la cura del proprio stabile.',
-        items: ['Custodia di stabili', 'Manutenzione delle aree esterne e verdi', 'Facility services'],
-        link: { path: '/leistungen/hauswartung', text: 'Alla custodia di stabili' },
-      },
-      {
-        key: 'premium',
-        title: premiumLabel,
-        text: 'Pulizie per esigenze particolari, discrete e nella Sua lingua.',
-        items: ['Ville, loft e immobili di pregio', 'Jet privati', 'Yacht'],
-        link: { path: '/premium', text: 'Al settore Premium' },
-      },
-    ] satisfies (Card & { key: string; items: string[]; link: { path: PagePath; text: string } })[],
+    intro: 'Pulizia regolare, interventi singoli e la cura di interi stabili. Scelga in base all’occasione, l’entità la chiariamo durante il sopralluogo.',
+    all: 'Tutti i servizi in sintesi',
+    premium: {
+      title: premiumLabel,
+      text: 'Pulizie per esigenze particolari, discrete e nella Sua lingua: ville, loft e residenze, jet privati e yacht, oltre ad alberghi e family office.',
+      link: 'Al settore Premium',
+    },
   },
-  steps: { title: 'Come ottenere la Sua offerta', items: offerSteps },
+  audiences: {
+    title: 'Per chi lavoriamo',
+    intro: 'Quattro gruppi di clienti con esigenze diverse. Ecco che cosa ne ricava in concreto.',
+    items: [
+      {
+        key: 'verwaltungen' as const,
+        title: 'Amministrazioni immobiliari e proprietà per piani',
+        text: 'Gestisce stabili e ha bisogno di qualcuno che sul posto tenga tutto sotto controllo.',
+        points: [
+          'Vano scale, ingresso e aree esterne curati con una cadenza fissa',
+          'Giri di controllo durante i quali Le segnaliamo i difetti',
+          'Pulizia di fine locazione con garanzia di consegna al cambio d’inquilino',
+        ],
+        link: { path: '/leistungen/hauswartung' as PagePath, text: 'Alla custodia di stabili' },
+      },
+      {
+        key: 'unternehmen' as const,
+        title: 'Aziende',
+        text: 'Uffici, studi, commerci e produzione restano puliti, senza che la pulizia disturbi la Sua attività.',
+        points: [
+          'Orari d’intervento adatti ai Suoi orari di lavoro e di apertura',
+          'Servizio di rifornimento del materiale di consumo',
+          'Su richiesta pulizia, custodia e aree esterne in un unico contratto',
+        ],
+        link: { path: '/leistungen/bueroreinigung' as PagePath, text: 'Alla pulizia di uffici' },
+      },
+      {
+        key: 'privat' as const,
+        title: 'Proprietari privati',
+        text: 'Per ville, loft, residenze e residenze secondarie. Non ci occupiamo di economie domestiche private ordinarie.',
+        points: [
+          'Da Lei lavora sempre lo stesso team',
+          'Pietra naturale, parquet e superfici lucide, puliti nel rispetto dei materiali',
+          'Chiavi e allarme secondo regole che concordiamo con Lei',
+        ],
+        link: { path: '/premium/luxusimmobilien' as PagePath, text: 'Agli immobili di pregio' },
+      },
+      {
+        key: 'premium' as const,
+        title: 'Jet privati, yacht e alberghi',
+        text: 'Per cabine, ponti e locali con materiali pregiati che richiedono una cura particolare.',
+        points: [
+          'Su richiesta con accordo di riservatezza',
+          'Anche la sera, nel fine settimana e durante la Sua assenza',
+          'Negli alberghi interventi prima di un’apertura e dopo una ristrutturazione',
+        ],
+        link: { path: '/premium' as PagePath, text: 'Al settore Premium' },
+      },
+    ],
+  },
+  steps: {
+    title: 'Come ottenere la Sua offerta',
+    intro: 'Dalla prima telefonata al primo intervento. Sopralluogo e offerta sono gratuiti e senza impegno.',
+    items: offerSteps,
+  },
   area: {
     title: 'La nostra zona d’intervento',
-    text: `Dalla nostra sede di ${company.address.city} operiamo nei Cantoni di ${cantonListIt}. Offriamo tutti i servizi nell’intera zona.`,
+    text: `Dalla nostra sede di ${company.address.city} operiamo nei Cantoni di ${cantonListIt}. Offriamo tutti i servizi nell’intera zona, ovunque alle stesse condizioni.`,
     link: 'Alla zona d’intervento',
   },
+  faq: [
+    faq.kosten,
+    faq.schnell,
+    {
+      question: 'Mi serve una pulizia di manutenzione o un servizio di custodia?',
+      answer:
+        'La pulizia di manutenzione si svolge con una cadenza fissa. Il servizio di custodia va oltre: giri di controllo, piccole riparazioni, impiantistica, smaltimento, consegne e riconsegne degli appartamenti e manutenzione delle aree esterne. Chi ha bisogno solo della pulizia trova la soluzione giusta nella [pulizia di manutenzione](/leistungen/unterhaltsreinigung).',
+    },
+    {
+      question: 'Pulite anche presso privati?',
+      answer: 'Non presso economie domestiche private ordinarie. Per ville, loft, residenze e residenze secondarie è a disposizione il nostro [settore Premium](/premium).',
+    },
+    faq.kurzfristig,
+    { question: 'Pulite con prodotti ecologici?', answer: answers.mittel },
+  ],
   cta: {
     title: 'Offerta per il Suo immobile',
     text: `Ci descriva brevemente l’immobile e la Sua richiesta. La contattiamo ${responseTime} e veniamo da Lei per il sopralluogo.`,
@@ -77,18 +151,88 @@ export const home = {
 
 export const about = {
   h1: `Pulizia e custodia di stabili da ${company.address.city}, dal 2006`,
-  imageAlt: 'Il nostro team al lavoro',
   lead: `Dal 2006 operiamo nella pulizia e nella custodia di stabili. Oggi oltre 50 collaboratrici e collaboratori seguono più di 120 clienti nei Cantoni di ${cantonListIt}, in ${languagesIt}.`,
   promises: {
     title: 'Su che cosa può contare',
     items: [
-      { title: 'Contatto personale', text: 'La Sua richiesta è trattata personalmente dal gerente.' },
-      { title: 'Offerta dopo il sopralluogo', text: 'Indichiamo un prezzo solo dopo aver visto il Suo immobile. Sopralluogo e offerta sono gratuiti e senza impegno.' },
-      { title: 'In tutta la zona', text: `Tutti i servizi nei Cantoni di ${cantonListIt}, ovunque alle stesse condizioni.` },
-      { title: 'Assicurazione', text: answers.versicherung.replace('Sì. ', '') },
-      { title: 'Quattro lingue', text: answers.sprachen },
-      { title: 'Prodotti ecologici', text: 'Su richiesta puliamo con prodotti ecologici.' },
-    ] satisfies Card[],
+      { key: 'persoenlich' as const, title: 'Contatto personale', text: 'La Sua richiesta è trattata personalmente dal gerente.' },
+      { key: 'offerte' as const, title: 'Offerta dopo il sopralluogo', text: 'Indichiamo un prezzo solo dopo aver visto il Suo immobile. Sopralluogo e offerta sono gratuiti e senza impegno.' },
+      { key: 'gebiet' as const, title: 'In tutta la zona', text: `Tutti i servizi nei Cantoni di ${cantonListIt}, ovunque alle stesse condizioni.` },
+      { key: 'versichert' as const, title: 'Assicurazione', text: answers.versicherung.replace('Sì. ', '') },
+      { key: 'sprachen' as const, title: 'Quattro lingue', text: answers.sprachen },
+      { key: 'umwelt' as const, title: 'Prodotti ecologici', text: 'Su richiesta puliamo con prodotti ecologici.' },
+    ],
+  },
+  work: {
+    title: 'Come lavoriamo',
+    intro: 'Quattro principi validi per ogni incarico, dalla pulizia di uffici alla custodia di stabili.',
+    items: [
+      {
+        title: 'Prima vedere, poi offrire',
+        paragraphs: [
+          'Pavimenti, superfici vetrate, utilizzo e accesso determinano l’impegno. Per questo visitiamo prima il Suo immobile sul posto e chiariamo con Lei entità, cadenza e orari.',
+          'Solo dopo indichiamo un prezzo, per iscritto nell’offerta, gratuita e senza impegno.',
+        ],
+      },
+      {
+        title: 'Accordi chiari',
+        paragraphs: [
+          'Con la Sua conferma è stabilito quali locali e compiti sono compresi, con quale frequenza veniamo e in quali orari. L’accesso lo regoliamo prima, ad esempio con chiave o badge.',
+          'Ciò che non è compreso lo diciamo apertamente e indichiamo il servizio adatto.',
+        ],
+      },
+      {
+        title: 'Vie brevi',
+        paragraphs: [
+          `La Sua richiesta è trattata personalmente dal gerente; riceverà nostre notizie ${responseTime}.`,
+          'Chi ha bisogno di più servizi può riunirli come [facility services](/leistungen/facility-services) in un unico contratto, con un solo interlocutore per tutto.',
+        ],
+      },
+      {
+        title: 'Materiale e prodotti',
+        paragraphs: [
+          'Nella pulizia di manutenzione riforniamo il materiale di consumo come carta e sapone. Su richiesta puliamo con prodotti ecologici.',
+          'Pietra naturale, parquet e superfici lucide li puliamo nel rispetto dei materiali, con riguardo per le superfici delicate.',
+        ],
+      },
+    ],
+  },
+  history: {
+    title: 'Nella regione dal 2006',
+    items: [
+      { label: '2006', title: 'L’inizio', text: 'Dal 2006 operiamo nella pulizia e nella custodia di stabili.' },
+      {
+        label: 'Oggi',
+        title: 'Oltre 50 collaboratori, oltre 120 clienti',
+        text: 'Stato a settembre 2026. Lavoriamo per aziende, amministrazioni immobiliari, proprietari e clienti privati con esigenze particolari.',
+      },
+      {
+        label: 'Sede',
+        title: company.address.city,
+        text: `La ${company.legalName} è iscritta nel ${registerIt}.`,
+      },
+    ],
+  },
+  languages: {
+    title: 'Quattro lingue',
+    text: `Le nostre collaboratrici e i nostri collaboratori parlano ${languagesIt}. Questo facilita gli accordi con team internazionali, con inquiline e inquilini e con clienti che preferiscono esprimersi nella propria lingua. Questo sito è disponibile nelle stesse quattro lingue.`,
+  },
+  region: {
+    title: 'Cinque Cantoni, stesse condizioni',
+    text: `Da ${company.address.city} operiamo nei Cantoni di ${cantonListIt}. Offriamo tutti i servizi nell’intera zona, e per la trasferta valgono ovunque le stesse condizioni.`,
+    link: 'Alla zona d’intervento',
+  },
+  values: {
+    title: 'I nostri valori nella pratica',
+    intro: 'I valori si vedono in ciò che si fa. Per questo qui trova che cosa facciamo in concreto.',
+    items: [
+      { key: 'ehrlich' as const, title: 'Onesti sul prezzo', text: 'Indichiamo i prezzi solo nell’offerta scritta, dopo aver visto l’immobile. Un prezzo senza sopralluogo spesso non sarebbe corretto in seguito.' },
+      { key: 'klar' as const, title: 'Chiari sull’entità', text: 'Ogni pagina di servizio indica anche ciò che non è compreso, con un rimando al servizio adatto.' },
+      { key: 'nachbessern' as const, title: 'Rispondiamo del nostro lavoro', text: 'Se alla consegna l’amministrazione contesta qualcosa nella nostra pulizia di fine locazione, puliamo di nuovo gratuitamente. I dettagli figurano nell’offerta.' },
+      { key: 'versichert' as const, title: 'Responsabilità', text: 'Per i danni durante il lavoro abbiamo un’assicurazione di responsabilità civile aziendale con una copertura di CHF 10 mio.' },
+      { key: 'diskret' as const, title: 'Discrezione', text: 'Nel settore Premium sottoscriviamo su richiesta un accordo di riservatezza. Chiavi e allarme li gestiamo secondo regole fisse.' },
+      { key: 'umwelt' as const, title: 'Rispetto per l’ambiente', text: 'Su richiesta puliamo con prodotti ecologici. Ce lo dica durante il sopralluogo.' },
+    ],
   },
   contact: {
     title: 'Il Suo interlocutore',
@@ -96,6 +240,7 @@ export const about = {
   },
   register: { title: 'Dati del registro', court: registerIt, uid: 'IDI' },
   statsLabel: 'In cifre',
+  faq: [faq.kosten, faq.gebiet, faq.kurzfristig],
   cta: {
     title: 'Fissare un sopralluogo',
     text: 'Durante il sopralluogo esaminiamo il Suo immobile e chiariamo l’entità del lavoro e gli orari. In seguito riceve un’offerta scritta.',
@@ -105,29 +250,37 @@ export const about = {
 export const contact = {
   h1: 'Contatto e offerta',
   lead: `Ci telefoni o ci scriva. La contattiamo ${responseTime}.`,
-  formLink: 'Al modulo di contatto',
-  channelsLabel: 'Canali di contatto',
-  phone: { title: 'Telefono', text: 'Rete fissa e cellulare', mobile: 'Cellulare' },
-  email: { title: 'E-mail', text: 'Ci scriva un messaggio' },
-  address: { title: 'Indirizzo', text: 'La nostra sede' },
+  channels: {
+    title: 'Come raggiungerci',
+    phone: { title: 'Telefono', hint: 'Per domande e per fissare un appuntamento per il sopralluogo.', action: 'Chiamare' },
+    mobile: { title: 'Cellulare', hint: 'Il nostro numero di cellulare, in aggiunta alla rete fissa.', action: 'Chiamare' },
+    email: { title: 'E-mail', hint: 'Per richieste con documenti, ad esempio piante, elenchi delle superfici o foto.', action: 'Scrivere un’e-mail' },
+    form: { title: 'Modulo', value: 'Richiedere un’offerta', hint: 'Le indicazioni principali in pochi campi, il servizio lo sceglie da un elenco.', action: 'Al modulo' },
+    address: { title: 'Indirizzo', hint: 'La nostra sede. Il sopralluogo si svolge da Lei, sul posto.', action: 'Alla cartina' },
+  },
+  brief: {
+    title: 'Che cosa dovrebbe contenere la Sua richiesta',
+    intro: 'Più precise sono le Sue indicazioni, meglio prepariamo il sopralluogo. Se manca qualcosa, lo chiariamo nel colloquio.',
+    items: [
+      { key: 'objekt' as const, title: 'Immobile', text: 'Tipo di immobile, ad esempio ufficio, studio, casa plurifamiliare, capannone o villa.' },
+      { key: 'ort' as const, title: 'Luogo', text: 'Indirizzo o numero postale dell’immobile.' },
+      { key: 'groesse' as const, title: 'Dimensioni', text: 'Superficie approssimativa, numero di locali, appartamenti o piani.' },
+      { key: 'leistung' as const, title: 'Servizio', text: 'Che cosa va fatto, ad esempio pulizia di manutenzione, custodia di stabili o una pulizia singola.' },
+      { key: 'rhythmus' as const, title: 'Cadenza e orari', text: 'Con quale frequenza e quando, ad esempio prima dell’inizio del lavoro, la sera o nel fine settimana.' },
+      { key: 'start' as const, title: 'Inizio', text: 'Da quando Le serve il servizio, per pulizie di cantiere e di fine locazione la data di consegna.' },
+      { key: 'zugang' as const, title: 'Accesso e particolarità', text: 'Chiave o badge, pavimenti e materiali delicati, grandi superfici vetrate.' },
+    ],
+    note: 'Piante, elenchi delle superfici o foto può inviarceli per e-mail.',
+  },
   steps: { title: 'Dalla richiesta al primo intervento', items: offerSteps },
   map: {
     title: 'Come raggiungerci',
     text: `Sede a ${company.address.city}. Operiamo nei Cantoni di ${cantonListIt}.`,
   },
-  faq: [
-    {
-      question: 'In quanto tempo ricevo un’offerta?',
-      answer: `La contattiamo ${responseTime} e fissiamo un appuntamento per il sopralluogo. In seguito riceve l’offerta per iscritto.`,
-    },
-    { question: 'Quanto costa la pulizia?', answer: `${answers.kosten} Maggiori informazioni nella guida: [Da che cosa dipendono i costi di una pulizia di manutenzione](/blog/reinigungskosten-schweiz).` },
-    { question: 'In quali regioni operate?', answer: answers.gebiet },
-    { question: 'Siete assicurati?', answer: answers.versicherung },
-    { question: 'Eseguite anche interventi con breve preavviso?', answer: 'Ci telefoni. Chiariamo con Lei che cosa è possibile con breve preavviso.' },
-  ],
+  faq: [faq.schnell, faq.kosten, faq.gebiet, faq.versichert, faq.kurzfristig],
   cta: {
-    title: 'La Sua offerta in tre passi',
-    text: `Ci descriva l’immobile e la Sua richiesta nel modulo qui sotto. La contattiamo ${responseTime} e fissiamo il sopralluogo.`,
+    title: 'Ci descriva il Suo immobile',
+    text: `Bastano l’immobile e la Sua richiesta nel modulo qui sotto. La contattiamo ${responseTime} e fissiamo il sopralluogo.`,
   },
 }
 

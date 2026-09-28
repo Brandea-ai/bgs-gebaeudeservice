@@ -23,6 +23,13 @@ type PromiseKey =
   | 'versichert'
   | 'offerte'
 type LinkCard = Card & { path: PagePath }
+type AudienceKey = 'verwaltungen' | 'unternehmen' | 'privat' | 'premium'
+type PromiseItemKey = 'persoenlich' | 'offerte' | 'gebiet' | 'versichert' | 'sprachen' | 'umwelt'
+type ValueKey = 'ehrlich' | 'klar' | 'nachbessern' | 'versichert' | 'diskret' | 'umwelt'
+type BriefKey = 'objekt' | 'ort' | 'groesse' | 'leistung' | 'rhythmus' | 'start' | 'zugang'
+// Schlüssel wählen Symbol und Bild in der Darstellung; die Übersetzungen tragen dieselben Schlüssel
+type Audience = Card & { key: AudienceKey; points: string[]; link: { path: PagePath; text: string } }
+type KeyedCard<K> = Card & { key: K }
 
 /** Belegte Kennzahlen (E18, Stand September 2026) */
 export const proof = [
@@ -32,55 +39,133 @@ export const proof = [
   { value: 'CHF 10 Mio.', label: 'Betriebshaftpflicht' },
 ]
 
-/** Ablauf bis zum ersten Einsatz, gleich auf Startseite und Kontakt */
+/**
+ * Ablauf bis zum ersten Einsatz, gleich auf Startseite und Kontakt. Vier Schritte
+ * wie auf den Leistungsseiten, damit jeder Schritt sein Video hat (E80).
+ */
 const offerSteps: Step[] = [
   steps.anfrage,
   steps.besichtigung,
   {
+    title: 'Vereinbarung',
+    text: 'Sie prüfen die Offerte in Ruhe. Mit Ihrer Zusage steht fest, welche Leistungen wir wie oft und zu welchen Zeiten erbringen.',
+  },
+  {
     title: 'Start',
-    text: 'Mit Ihrer Zusage legen wir den ersten Einsatz fest und stimmen Zeiten und Zugang mit Ihnen ab.',
+    text: 'Wir legen den ersten Einsatz fest und stimmen Zeiten und Zugang mit Ihnen ab, etwa mit Schlüssel oder Badge.',
   },
 ]
+
+/** Fragen, die auf Startseite und Kontakt gleich lauten (E18) */
+const faq = {
+  schnell: {
+    question: 'Wie schnell erhalte ich eine Offerte?',
+    answer: `Wir melden uns ${company.responseTime} und vereinbaren einen Termin für die Besichtigung. Danach erhalten Sie die Offerte schriftlich.`,
+  },
+  kosten: {
+    question: 'Was kostet die Reinigung?',
+    answer: `${answers.kosten} Mehr dazu im Ratgeber: [Wovon die Kosten einer Unterhaltsreinigung abhängen](/blog/reinigungskosten-schweiz).`,
+  },
+  gebiet: { question: 'In welchen Regionen sind Sie tätig?', answer: answers.gebiet },
+  versichert: { question: 'Sind Sie versichert?', answer: answers.versicherung },
+  kurzfristig: {
+    question: 'Übernehmen Sie auch kurzfristige Einsätze?',
+    answer: 'Rufen Sie uns an. Wir klären mit Ihnen, was kurzfristig möglich ist.',
+  },
+}
 
 export const home = {
   eyebrow: `Reinigung und Hauswartung aus ${company.address.city}`,
   h1: 'Gebäudereinigung und Hauswartung für Luzern, Zug und Umgebung',
   lead: 'Saubere und gepflegte Liegenschaften, Büros und Hallen, ohne dass Sie sich selbst darum kümmern müssen. Für Unternehmen, Verwaltungen und anspruchsvolle Privatkunden. Wir sehen uns Ihr Objekt an und erstellen eine schriftliche Offerte.',
   proofTitle: 'Auf einen Blick',
+  // Karten je Leistung mit Bild; Gruppen und Kartentexte kommen aus servicesOverview (eine Quelle)
   services: {
     title: 'Unsere Leistungen',
-    intro: 'Gebäudereinigung und Hauswartung für Unternehmen und Liegenschaften, dazu Reinigung für besondere Ansprüche.',
-    // Kernleistungen zuerst, Premium als zweiter Einstieg (M39, Zielbild v2 in 03, Abschnitt 2a)
-    groups: [
+    intro: 'Laufende Reinigung, einmalige Einsätze und die Betreuung ganzer Liegenschaften. Wählen Sie nach Anlass, den Umfang klären wir bei der Besichtigung.',
+    all: 'Alle Leistungen im Überblick',
+    premium: {
+      title: premiumLabel,
+      text: 'Reinigung für besondere Ansprüche, diskret und in Ihrer Sprache: Villen, Lofts und Residenzen, Privatjets und Yachten, dazu Hotels und Family Offices.',
+      link: 'Zum Premium-Bereich',
+    },
+  },
+  // Für wen (E28, E34): Nutzen nur aus bestätigten Leistungstexten, Privatkunden nur im Premium-Segment
+  audiences: {
+    title: 'Für wen wir arbeiten',
+    intro: 'Vier Kundengruppen mit verschiedenen Anliegen. Das haben Sie konkret davon.',
+    items: [
       {
-        key: 'reinigung',
-        title: 'Reinigung',
-        text: 'Für Liegenschaften, Büros, Praxen und Gewerbe.',
-        items: ['Unterhalts- und Büroreinigung', 'Sonder- und Baureinigung', 'Fenster und Fassaden', 'Industrie und Hallen'],
-        link: { path: '/leistungen', text: 'Alle Leistungen' },
-      },
-      {
-        key: 'hauswartung',
-        title: 'Hauswartung und Pflege',
-        text: 'Für Verwaltungen, Eigentümer und Unternehmen, die ihre Liegenschaft betreuen lassen.',
-        items: ['Hauswartung', 'Aussen- und Grünflächenpflege', 'Facility Services'],
+        key: 'verwaltungen',
+        title: 'Verwaltungen und Stockwerkeigentümer',
+        text: 'Sie betreuen Liegenschaften und brauchen jemanden, der vor Ort nach dem Rechten sieht.',
+        points: [
+          'Treppenhaus, Eingang und Umgebung in einem festen Rhythmus gepflegt',
+          'Kontrollgänge, bei denen wir Ihnen Mängel melden',
+          'Umzugsreinigung mit Abnahmegarantie beim Wohnungswechsel',
+        ],
         link: { path: '/leistungen/hauswartung', text: 'Zur Hauswartung' },
       },
       {
+        key: 'unternehmen',
+        title: 'Unternehmen',
+        text: 'Büros, Praxen, Gewerbe und Produktion bleiben sauber, ohne dass die Reinigung den Betrieb stört.',
+        points: [
+          'Einsatzzeiten passend zu Ihren Arbeits- und Öffnungszeiten',
+          'Nachfüllservice für Verbrauchsmaterial',
+          'Reinigung, Hauswartung und Umgebung auf Wunsch in einem Vertrag',
+        ],
+        link: { path: '/leistungen/bueroreinigung', text: 'Zur Büroreinigung' },
+      },
+      {
+        key: 'privat',
+        title: 'Private Eigentümer',
+        text: 'Für Villen, Lofts, Residenzen und Zweitwohnungen. Normale Privathaushalte übernehmen wir nicht.',
+        points: [
+          'Bei Ihnen arbeitet immer dasselbe Team',
+          'Naturstein, Parkett und Hochglanzflächen, materialgerecht gereinigt',
+          'Schlüssel und Alarm nach Regeln, die wir mit Ihnen vereinbaren',
+        ],
+        link: { path: '/premium/luxusimmobilien', text: 'Zu den Luxusimmobilien' },
+      },
+      {
         key: 'premium',
-        title: premiumLabel,
-        text: 'Reinigung für besondere Ansprüche, diskret und in Ihrer Sprache.',
-        items: ['Villen, Lofts und Luxusimmobilien', 'Privatjets', 'Yachten'],
+        title: 'Privatjets, Yachten und Hotels',
+        text: 'Für Kabinen, Decks und Räume mit hochwertigen Materialien, die besondere Sorgfalt brauchen.',
+        points: [
+          'Auf Wunsch mit Geheimhaltungsvereinbarung',
+          'Auch abends, am Wochenende und während Ihrer Abwesenheit',
+          'In Hotels Einsätze vor Eröffnungen und nach Renovationen',
+        ],
         link: { path: '/premium', text: 'Zum Premium-Bereich' },
       },
-    ] satisfies (Card & { key: string; items: string[]; link: { path: PagePath; text: string } })[],
+    ] satisfies Audience[] as Audience[],
   },
-  steps: { title: 'So kommen Sie zu Ihrer Offerte', items: offerSteps },
+  steps: {
+    title: 'So kommen Sie zu Ihrer Offerte',
+    intro: 'Vom ersten Anruf bis zum ersten Einsatz. Besichtigung und Offerte sind kostenlos und unverbindlich.',
+    items: offerSteps,
+  },
   area: {
     title: 'Unser Einzugsgebiet',
-    text: `Von unserem Sitz in ${company.address.city} aus arbeiten wir in den Kantonen ${cantonList}. Alle Leistungen bieten wir im ganzen Gebiet an.`,
+    text: `Von unserem Sitz in ${company.address.city} aus arbeiten wir in den Kantonen ${cantonList}. Alle Leistungen bieten wir im ganzen Gebiet an, überall zu denselben Bedingungen.`,
     link: 'Zum Einzugsgebiet',
   },
+  faq: [
+    faq.kosten,
+    faq.schnell,
+    {
+      question: 'Brauche ich eine Unterhaltsreinigung oder eine Hauswartung?',
+      answer:
+        'Die Unterhaltsreinigung reinigt in einem festen Rhythmus. Die Hauswartung geht weiter: Kontrollgänge, Kleinreparaturen, Haustechnik, Entsorgung, Wohnungsübergaben und Umgebungspflege. Wer nur Reinigung braucht, ist mit der [Unterhaltsreinigung](/leistungen/unterhaltsreinigung) richtig.',
+    },
+    {
+      question: 'Reinigen Sie auch Privathaushalte?',
+      answer: 'Normale Privathaushalte nicht. Für Villen, Lofts, Residenzen und Zweitwohnungen gibt es unseren [Premium-Bereich](/premium).',
+    },
+    faq.kurzfristig,
+    { question: 'Reinigen Sie mit umweltfreundlichen Mitteln?', answer: answers.mittel },
+  ],
   cta: {
     title: 'Offerte für Ihr Objekt',
     text: `Beschreiben Sie uns kurz Objekt und Anliegen. Wir melden uns ${company.responseTime} und kommen für die Besichtigung vorbei.`,
@@ -89,19 +174,92 @@ export const home = {
 
 export const about = {
   h1: `Reinigung und Hauswartung aus ${company.address.city}, seit 2006`,
-  imageAlt: 'Unser Team bei der Arbeit',
   lead: `Seit 2006 sind wir in der Reinigung und Hauswartung tätig. Heute betreuen über 50 Mitarbeitende mehr als 120 Kunden in den Kantonen ${cantonList}, auf ${listDe(company.languages)}.`,
-  // Ersetzt «Unsere Werte» (M47): nur Zusagen, die belegt oder bestätigt sind (E18)
+  // Zusagen mit Schlüssel für das Symbol (E18, M47). Die Startseite zeigt sie.
   promises: {
     title: 'Worauf Sie sich verlassen können',
     items: [
-      { title: 'Persönlich', text: 'Ihre Anfrage bearbeitet der Geschäftsführer persönlich.' },
-      { title: 'Offerte nach Besichtigung', text: 'Einen Preis nennen wir erst, wenn wir Ihr Objekt gesehen haben. Besichtigung und Offerte sind kostenlos und unverbindlich.' },
-      { title: 'Im ganzen Gebiet', text: `Alle Leistungen in den Kantonen ${cantonList}, überall zu denselben Bedingungen.` },
-      { title: 'Versichert', text: answers.versicherung.replace('Ja. ', '') },
-      { title: 'Vier Sprachen', text: answers.sprachen },
-      { title: 'Umweltfreundliche Mittel', text: 'Auf Wunsch reinigen wir mit umweltfreundlichen Mitteln.' },
-    ] satisfies Card[],
+      { key: 'persoenlich', title: 'Persönlich', text: 'Ihre Anfrage bearbeitet der Geschäftsführer persönlich.' },
+      { key: 'offerte', title: 'Offerte nach Besichtigung', text: 'Einen Preis nennen wir erst, wenn wir Ihr Objekt gesehen haben. Besichtigung und Offerte sind kostenlos und unverbindlich.' },
+      { key: 'gebiet', title: 'Im ganzen Gebiet', text: `Alle Leistungen in den Kantonen ${cantonList}, überall zu denselben Bedingungen.` },
+      { key: 'versichert', title: 'Versichert', text: answers.versicherung.replace('Ja. ', '') },
+      { key: 'sprachen', title: 'Vier Sprachen', text: answers.sprachen },
+      { key: 'umwelt', title: 'Umweltfreundliche Mittel', text: 'Auf Wunsch reinigen wir mit umweltfreundlichen Mitteln.' },
+    ] satisfies KeyedCard<PromiseItemKey>[] as KeyedCard<PromiseItemKey>[],
+  },
+  // Arbeitsweise (E80): nur, was auf den Leistungsseiten bestätigt steht (E18, E56)
+  work: {
+    title: 'So arbeiten wir',
+    intro: 'Vier Grundsätze, die bei jedem Auftrag gelten, von der Büroreinigung bis zur Hauswartung.',
+    items: [
+      {
+        title: 'Erst ansehen, dann offerieren',
+        paragraphs: [
+          'Bodenbeläge, Glasflächen, Nutzung und Zugang bestimmen den Aufwand. Darum sehen wir uns Ihr Objekt zuerst vor Ort an und klären mit Ihnen Umfang, Rhythmus und Zeiten.',
+          'Einen Preis nennen wir erst danach, schriftlich in der Offerte, kostenlos und unverbindlich.',
+        ],
+      },
+      {
+        title: 'Klar vereinbart',
+        paragraphs: [
+          'Mit Ihrer Zusage steht fest, welche Räume und Aufgaben dazugehören, wie oft wir kommen und zu welchen Zeiten. Den Zugang regeln wir vorher, etwa mit Schlüssel oder Badge.',
+          'Was nicht dazugehört, sagen wir offen und nennen die passende Leistung.',
+        ],
+      },
+      {
+        title: 'Kurze Wege',
+        paragraphs: [
+          `Ihre Anfrage bearbeitet der Geschäftsführer persönlich, Sie hören ${company.responseTime} von uns.`,
+          'Wer mehrere Leistungen braucht, bündelt sie als [Facility Services](/leistungen/facility-services) in einem Vertrag, mit einer Ansprechperson für alles.',
+        ],
+      },
+      {
+        title: 'Material und Mittel',
+        paragraphs: [
+          'Bei der Unterhaltsreinigung füllen wir Verbrauchsmaterial wie Papier und Seife nach. Auf Wunsch reinigen wir mit umweltfreundlichen Mitteln.',
+          'Naturstein, Parkett und Hochglanzflächen reinigen wir materialgerecht, mit Rücksicht auf empfindliche Oberflächen.',
+        ],
+      },
+    ] satisfies { title: string; paragraphs: string[] }[],
+  },
+  // Geschichte: nur belegte Eckdaten (E18, E58), keine erfundene Gründungsgeschichte
+  history: {
+    title: 'Seit 2006 in der Region',
+    items: [
+      { label: '2006', title: 'Der Anfang', text: 'Seit 2006 sind wir in der Reinigung und Hauswartung tätig.' },
+      {
+        label: 'Heute',
+        title: 'Über 50 Mitarbeitende, über 120 Kunden',
+        text: 'Stand September 2026. Wir arbeiten für Unternehmen, Verwaltungen, Eigentümer und Privatkunden mit besonderen Ansprüchen.',
+      },
+      {
+        label: 'Sitz',
+        title: company.address.city,
+        text: `Die ${company.legalName} ist im ${company.register} eingetragen.`,
+      },
+    ],
+  },
+  languages: {
+    title: 'Vier Sprachen',
+    text: `Unsere Mitarbeitenden sprechen ${listDe(company.languages)}. Das erleichtert Absprachen mit internationalen Teams, mit Mieterinnen und Mietern und mit Kundinnen und Kunden, die lieber in ihrer Sprache sprechen. Diese Website gibt es in denselben vier Sprachen.`,
+  },
+  region: {
+    title: 'Fünf Kantone, gleiche Bedingungen',
+    text: `Von ${company.address.city} aus arbeiten wir in den Kantonen ${cantonList}. Alle Leistungen bieten wir im ganzen Gebiet an, und für die Anfahrt gelten überall dieselben Bedingungen.`,
+    link: 'Zum Einzugsgebiet',
+  },
+  // Werte als Handlungen (E80): jede Zeile sagt, was wir tun, nicht was wir sind
+  values: {
+    title: 'Unsere Werte im Alltag',
+    intro: 'Werte zeigen sich in dem, was man tut. Darum steht hier, was wir konkret machen.',
+    items: [
+      { key: 'ehrlich', title: 'Ehrlich beim Preis', text: 'Preise nennen wir erst in der schriftlichen Offerte, nachdem wir das Objekt gesehen haben. Ein Preis ohne Besichtigung würde später oft nicht stimmen.' },
+      { key: 'klar', title: 'Klar im Umfang', text: 'Auf jeder Leistungsseite steht auch, was nicht dazugehört, mit einem Verweis auf die passende Leistung.' },
+      { key: 'nachbessern', title: 'Wir stehen dafür ein', text: 'Beanstandet die Verwaltung nach einer Umzugsreinigung etwas an unserer Arbeit, reinigen wir kostenlos nach. Die Einzelheiten stehen in der Offerte.' },
+      { key: 'versichert', title: 'Verantwortung', text: 'Für Schäden bei der Arbeit haben wir eine Betriebshaftpflichtversicherung mit einer Deckung von CHF 10 Mio.' },
+      { key: 'diskret', title: 'Diskret', text: 'Im Premium-Bereich unterzeichnen wir auf Wunsch eine Geheimhaltungsvereinbarung. Schlüssel und Alarm handhaben wir nach festen Regeln.' },
+      { key: 'umwelt', title: 'Rücksicht auf die Umwelt', text: 'Auf Wunsch reinigen wir mit umweltfreundlichen Mitteln. Sagen Sie es uns bei der Besichtigung.' },
+    ] satisfies KeyedCard<ValueKey>[] as KeyedCard<ValueKey>[],
   },
   contact: {
     title: 'Ihre Ansprechperson',
@@ -109,6 +267,7 @@ export const about = {
   },
   register: { title: 'Registerdaten', court: company.register as string, uid: 'UID' },
   statsLabel: 'In Zahlen',
+  faq: [faq.kosten, faq.gebiet, faq.kurzfristig],
   cta: {
     title: 'Besichtigung vereinbaren',
     text: 'Bei der Besichtigung sehen wir uns Ihr Objekt an und klären Umfang und Zeiten. Danach erhalten Sie eine schriftliche Offerte.',
@@ -118,29 +277,39 @@ export const about = {
 export const contact = {
   h1: 'Kontakt und Offerte',
   lead: `Rufen Sie uns an oder schreiben Sie uns. Wir melden uns ${company.responseTime}.`,
-  formLink: 'Zum Kontaktformular',
-  channelsLabel: 'Kontaktwege',
-  phone: { title: 'Telefon', text: 'Festnetz und Mobil', mobile: 'Mobil' },
-  email: { title: 'E-Mail', text: 'Schreiben Sie uns eine Nachricht' },
-  address: { title: 'Adresse', text: 'Unser Sitz' },
+  // Kontaktwege als Karten (E80): Hinweis, wofür sich der Weg eignet, und eine Aktion
+  channels: {
+    title: 'So erreichen Sie uns',
+    phone: { title: 'Telefon', hint: 'Für Fragen und um einen Termin für die Besichtigung zu vereinbaren.', action: 'Anrufen' },
+    mobile: { title: 'Mobil', hint: 'Unsere Mobilnummer, zusätzlich zum Festnetz.', action: 'Anrufen' },
+    email: { title: 'E-Mail', hint: 'Für Anfragen mit Unterlagen, etwa Grundrissen, Flächenlisten oder Fotos.', action: 'E-Mail schreiben' },
+    form: { title: 'Formular', value: 'Offerte anfragen', hint: 'Die wichtigsten Angaben in wenigen Feldern, die Leistung wählen Sie aus einer Liste.', action: 'Zum Formular' },
+    address: { title: 'Adresse', hint: 'Unser Sitz. Die Besichtigung findet bei Ihnen vor Ort statt.', action: 'Zur Karte' },
+  },
+  // Was die Anfrage enthalten sollte: dieselben Punkte, nach denen das Formular fragt
+  brief: {
+    title: 'Was Ihre Anfrage enthalten sollte',
+    intro: 'Je genauer Ihre Angaben, desto gezielter bereiten wir die Besichtigung vor. Fehlt etwas, klären wir es im Gespräch.',
+    items: [
+      { key: 'objekt', title: 'Objekt', text: 'Art des Objekts, zum Beispiel Büro, Praxis, Mehrfamilienhaus, Halle oder Villa.' },
+      { key: 'ort', title: 'Ort', text: 'Adresse oder Postleitzahl des Objekts.' },
+      { key: 'groesse', title: 'Grösse', text: 'Ungefähre Fläche, Anzahl Räume, Wohnungen oder Stockwerke.' },
+      { key: 'leistung', title: 'Leistung', text: 'Was gemacht werden soll, etwa Unterhaltsreinigung, Hauswartung oder eine einmalige Reinigung.' },
+      { key: 'rhythmus', title: 'Rhythmus und Zeiten', text: 'Wie oft und wann, zum Beispiel vor Arbeitsbeginn, abends oder am Wochenende.' },
+      { key: 'start', title: 'Start', text: 'Ab wann Sie die Leistung brauchen, bei Bau- und Umzugsreinigungen den Übergabetermin.' },
+      { key: 'zugang', title: 'Zugang und Besonderheiten', text: 'Schlüssel oder Badge, empfindliche Böden und Materialien, grosse Glasflächen.' },
+    ] satisfies KeyedCard<BriefKey>[] as KeyedCard<BriefKey>[],
+    note: 'Grundrisse, Flächenlisten oder Fotos können Sie uns per E-Mail schicken.',
+  },
   steps: { title: 'Von der Anfrage bis zum ersten Einsatz', items: offerSteps },
   map: {
     title: 'So finden Sie uns',
     text: `Sitz in ${company.address.city}. Wir arbeiten in den Kantonen ${cantonList}.`,
   },
-  faq: [
-    {
-      question: 'Wie schnell erhalte ich eine Offerte?',
-      answer: `Wir melden uns ${company.responseTime} und vereinbaren einen Termin für die Besichtigung. Danach erhalten Sie die Offerte schriftlich.`,
-    },
-    { question: 'Was kostet die Reinigung?', answer: `${answers.kosten} Mehr dazu im Ratgeber: [Wovon die Kosten einer Unterhaltsreinigung abhängen](/blog/reinigungskosten-schweiz).` },
-    { question: 'In welchen Regionen sind Sie tätig?', answer: answers.gebiet },
-    { question: 'Sind Sie versichert?', answer: answers.versicherung },
-    { question: 'Übernehmen Sie auch kurzfristige Einsätze?', answer: 'Rufen Sie uns an. Wir klären mit Ihnen, was kurzfristig möglich ist.' },
-  ],
+  faq: [faq.schnell, faq.kosten, faq.gebiet, faq.versichert, faq.kurzfristig],
   cta: {
-    title: 'Ihre Offerte in drei Schritten',
-    text: `Beschreiben Sie uns Objekt und Anliegen im Formular gleich unten. Wir melden uns ${company.responseTime} und vereinbaren die Besichtigung.`,
+    title: 'Beschreiben Sie uns Ihr Objekt',
+    text: `Objekt und Anliegen im Formular gleich unten genügen. Wir melden uns ${company.responseTime} und vereinbaren die Besichtigung.`,
   },
 }
 

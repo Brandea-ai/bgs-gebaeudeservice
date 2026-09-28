@@ -22,15 +22,37 @@ export const proof = [
   { value: 'CHF 10 millions', label: 'Responsabilité civile d’entreprise' },
 ]
 
-/** Déroulement jusqu’à la première intervention, identique sur l’accueil et le contact */
+/** Déroulement jusqu’à la première intervention, identique sur l’accueil et le contact (quatre étapes, une vidéo chacune) */
 const offerSteps: Step[] = [
   steps.anfrage,
   steps.besichtigung,
   {
+    title: 'Accord',
+    text: 'Vous examinez le devis en toute tranquillité. Avec votre accord, il est établi quelles prestations nous fournissons, à quelle fréquence et à quels horaires.',
+  },
+  {
     title: 'Début',
-    text: 'Avec votre accord, nous fixons la première intervention et convenons avec vous des horaires et de l’accès.',
+    text: 'Nous fixons la première intervention et convenons avec vous des horaires et de l’accès, par exemple avec une clé ou un badge.',
   },
 ]
+
+/** Questions identiques sur l’accueil et le contact (E18) */
+const faq = {
+  schnell: {
+    question: 'En combien de temps vais-je recevoir un devis ?',
+    answer: `Nous vous répondons ${responseTime} et convenons d’un rendez-vous pour la visite. Vous recevez ensuite le devis par écrit.`,
+  },
+  kosten: {
+    question: 'Combien coûte le nettoyage ?',
+    answer: `${answers.kosten} Plus d’informations dans notre guide : [Ce qui détermine le coût d’un nettoyage d’entretien](/blog/reinigungskosten-schweiz).`,
+  },
+  gebiet: { question: 'Dans quelles régions intervenez-vous ?', answer: answers.gebiet },
+  versichert: { question: 'Êtes-vous assurés ?', answer: answers.versicherung },
+  kurzfristig: {
+    question: 'Acceptez-vous aussi des interventions à bref délai ?',
+    answer: 'Appelez-nous. Nous voyons avec vous ce qui est possible à bref délai.',
+  },
+}
 
 export const home = {
   eyebrow: `Nettoyage et conciergerie depuis ${company.address.city}`,
@@ -39,37 +61,89 @@ export const home = {
   proofTitle: 'En bref',
   services: {
     title: 'Nos prestations',
-    intro: 'Nettoyage de bâtiments et conciergerie pour entreprises et immeubles, ainsi que des nettoyages pour des exigences particulières.',
-    groups: [
-      {
-        key: 'reinigung',
-        title: 'Nettoyage',
-        text: 'Pour immeubles, bureaux, cabinets et surfaces commerciales.',
-        items: ['Nettoyage d’entretien et de bureaux', 'Nettoyages spéciaux et de chantier', 'Vitres et façades', 'Industrie et halles'],
-        link: { path: '/leistungen', text: 'Toutes les prestations' },
-      },
-      {
-        key: 'hauswartung',
-        title: 'Conciergerie et entretien',
-        text: 'Pour les gérances, les propriétaires et les entreprises qui confient le suivi de leur immeuble.',
-        items: ['Conciergerie', 'Entretien des extérieurs et des espaces verts', 'Facility services'],
-        link: { path: '/leistungen/hauswartung', text: 'Vers la conciergerie' },
-      },
-      {
-        key: 'premium',
-        title: premiumLabel,
-        text: 'Des nettoyages pour des exigences particulières, en toute discrétion et dans votre langue.',
-        items: ['Villas, lofts et biens de prestige', 'Jets privés', 'Yachts'],
-        link: { path: '/premium', text: 'Vers l’offre Premium' },
-      },
-    ] satisfies (Card & { key: string; items: string[]; link: { path: PagePath; text: string } })[],
+    intro: 'Nettoyage régulier, interventions ponctuelles et suivi d’immeubles entiers. Choisissez selon votre besoin, nous précisons l’étendue lors de la visite.',
+    all: 'Toutes les prestations en bref',
+    premium: {
+      title: premiumLabel,
+      text: 'Des nettoyages pour des exigences particulières, en toute discrétion et dans votre langue : villas, lofts et résidences, jets privés et yachts, ainsi qu’hôtels et family offices.',
+      link: 'Vers l’offre Premium',
+    },
   },
-  steps: { title: 'Comment obtenir votre devis', items: offerSteps },
+  audiences: {
+    title: 'Pour qui nous travaillons',
+    intro: 'Quatre groupes de clients aux attentes différentes. Voici ce que vous y gagnez concrètement.',
+    items: [
+      {
+        key: 'verwaltungen' as const,
+        title: 'Gérances et propriétaires par étages',
+        text: 'Vous gérez des immeubles et avez besoin de quelqu’un sur place pour veiller à tout.',
+        points: [
+          'Cage d’escalier, entrée et abords entretenus selon une fréquence fixe',
+          'Rondes de contrôle au cours desquelles nous vous signalons les défauts',
+          'Nettoyage de fin de bail avec garantie de remise lors d’un changement de locataire',
+        ],
+        link: { path: '/leistungen/hauswartung' as PagePath, text: 'Vers la conciergerie' },
+      },
+      {
+        key: 'unternehmen' as const,
+        title: 'Entreprises',
+        text: 'Bureaux, cabinets, commerces et production restent propres, sans que le nettoyage perturbe votre activité.',
+        points: [
+          'Horaires d’intervention adaptés à vos heures de travail et d’ouverture',
+          'Service de réapprovisionnement des consommables',
+          'Sur demande, nettoyage, conciergerie et abords dans un seul contrat',
+        ],
+        link: { path: '/leistungen/bueroreinigung' as PagePath, text: 'Vers le nettoyage de bureaux' },
+      },
+      {
+        key: 'privat' as const,
+        title: 'Propriétaires privés',
+        text: 'Pour les villas, lofts, résidences et résidences secondaires. Nous ne prenons pas en charge les ménages privés ordinaires.',
+        points: [
+          'Chez vous, c’est toujours la même équipe qui travaille',
+          'Pierre naturelle, parquet et surfaces laquées brillantes, nettoyés dans le respect des matériaux',
+          'Clés et alarme selon des règles convenues avec vous',
+        ],
+        link: { path: '/premium/luxusimmobilien' as PagePath, text: 'Vers les biens de prestige' },
+      },
+      {
+        key: 'premium' as const,
+        title: 'Jets privés, yachts et hôtels',
+        text: 'Pour des cabines, des ponts et des pièces aux matériaux de grande qualité, qui demandent un soin particulier.',
+        points: [
+          'Sur demande, avec un accord de confidentialité',
+          'Aussi le soir, le week-end et pendant votre absence',
+          'Dans les hôtels, interventions avant une ouverture et après une rénovation',
+        ],
+        link: { path: '/premium' as PagePath, text: 'Vers l’offre Premium' },
+      },
+    ],
+  },
+  steps: {
+    title: 'Comment obtenir votre devis',
+    intro: 'Du premier appel à la première intervention. La visite et le devis sont gratuits et sans engagement.',
+    items: offerSteps,
+  },
   area: {
     title: 'Notre zone d’intervention',
-    text: `Depuis notre siège à ${company.address.city}, nous intervenons dans les cantons de ${cantonList}. Nous proposons toutes nos prestations dans toute la zone.`,
+    text: `Depuis notre siège à ${company.address.city}, nous intervenons dans les cantons de ${cantonList}. Nous proposons toutes nos prestations dans toute la zone, partout aux mêmes conditions.`,
     link: 'Vers la zone d’intervention',
   },
+  faq: [
+    faq.kosten,
+    faq.schnell,
+    {
+      question: 'Ai-je besoin d’un nettoyage d’entretien ou d’une conciergerie ?',
+      answer:
+        'Le nettoyage d’entretien se fait selon une fréquence fixe. La conciergerie va plus loin : rondes de contrôle, petites réparations, technique du bâtiment, élimination des déchets, états des lieux et entretien des abords. Si vous n’avez besoin que du nettoyage, le [nettoyage d’entretien](/leistungen/unterhaltsreinigung) vous convient.',
+    },
+    {
+      question: 'Nettoyez-vous aussi chez les particuliers ?',
+      answer: 'Pas les ménages privés ordinaires. Pour les villas, lofts, résidences et résidences secondaires, nous proposons notre [offre Premium](/premium).',
+    },
+    faq.kurzfristig,
+    { question: 'Nettoyez-vous avec des produits respectueux de l’environnement ?', answer: answers.mittel },
+  ],
   cta: {
     title: 'Un devis pour votre bien',
     text: `Décrivez-nous brièvement le bien et votre demande. Nous vous répondons ${responseTime} et passons pour la visite.`,
@@ -78,18 +152,88 @@ export const home = {
 
 export const about = {
   h1: `Nettoyage et conciergerie depuis ${company.address.city}, depuis 2006`,
-  imageAlt: 'Notre équipe au travail',
   lead: `Depuis 2006, nous sommes actifs dans le nettoyage et la conciergerie. Aujourd’hui, plus de 50 collaboratrices et collaborateurs s’occupent de plus de 120 clients dans les cantons de ${cantonList}, en ${languageList}.`,
   promises: {
     title: 'Ce sur quoi vous pouvez compter',
     items: [
-      { title: 'Un suivi personnel', text: 'Notre directeur traite personnellement votre demande.' },
-      { title: 'Un devis après visite', text: 'Nous n’indiquons un prix qu’après avoir vu votre bien. La visite et le devis sont gratuits et sans engagement.' },
-      { title: 'Dans toute la zone', text: `Toutes nos prestations dans les cantons de ${cantonList}, partout aux mêmes conditions.` },
-      { title: 'Assurés', text: answers.versicherung.replace('Oui. ', '') },
-      { title: 'Quatre langues', text: answers.sprachen },
-      { title: 'Produits respectueux de l’environnement', text: 'Sur demande, nous nettoyons avec des produits respectueux de l’environnement.' },
-    ] satisfies Card[],
+      { key: 'persoenlich' as const, title: 'Un suivi personnel', text: 'Notre directeur traite personnellement votre demande.' },
+      { key: 'offerte' as const, title: 'Un devis après visite', text: 'Nous n’indiquons un prix qu’après avoir vu votre bien. La visite et le devis sont gratuits et sans engagement.' },
+      { key: 'gebiet' as const, title: 'Dans toute la zone', text: `Toutes nos prestations dans les cantons de ${cantonList}, partout aux mêmes conditions.` },
+      { key: 'versichert' as const, title: 'Assurés', text: answers.versicherung.replace('Oui. ', '') },
+      { key: 'sprachen' as const, title: 'Quatre langues', text: answers.sprachen },
+      { key: 'umwelt' as const, title: 'Produits respectueux de l’environnement', text: 'Sur demande, nous nettoyons avec des produits respectueux de l’environnement.' },
+    ],
+  },
+  work: {
+    title: 'Notre façon de travailler',
+    intro: 'Quatre principes valables pour chaque mandat, du nettoyage de bureaux à la conciergerie.',
+    items: [
+      {
+        title: 'D’abord voir, ensuite chiffrer',
+        paragraphs: [
+          'Revêtements de sol, surfaces vitrées, utilisation et accès déterminent le travail nécessaire. C’est pourquoi nous examinons d’abord votre bien sur place et définissons avec vous l’étendue, la fréquence et les horaires.',
+          'Nous n’indiquons un prix qu’ensuite, par écrit dans le devis, gratuit et sans engagement.',
+        ],
+      },
+      {
+        title: 'Clairement convenu',
+        paragraphs: [
+          'Avec votre accord, il est établi quelles pièces et quelles tâches sont comprises, à quelle fréquence nous passons et à quels horaires. Nous réglons l’accès au préalable, par exemple avec une clé ou un badge.',
+          'Ce qui n’est pas compris, nous le disons ouvertement et indiquons la prestation qui convient.',
+        ],
+      },
+      {
+        title: 'Des échanges directs',
+        paragraphs: [
+          `Notre directeur traite personnellement votre demande, vous recevez une réponse ${responseTime}.`,
+          'Si vous avez besoin de plusieurs prestations, vous pouvez les regrouper en [facility services](/leistungen/facility-services) dans un seul contrat, avec un seul interlocuteur pour tout.',
+        ],
+      },
+      {
+        title: 'Matériel et produits',
+        paragraphs: [
+          'Dans le cadre du nettoyage d’entretien, nous réapprovisionnons les consommables comme le papier et le savon. Sur demande, nous nettoyons avec des produits respectueux de l’environnement.',
+          'Nous nettoyons la pierre naturelle, le parquet et les surfaces laquées brillantes dans le respect des matériaux, avec égard pour les surfaces délicates.',
+        ],
+      },
+    ],
+  },
+  history: {
+    title: 'Dans la région depuis 2006',
+    items: [
+      { label: '2006', title: 'Le début', text: 'Depuis 2006, nous sommes actifs dans le nettoyage et la conciergerie.' },
+      {
+        label: 'Aujourd’hui',
+        title: 'Plus de 50 collaborateurs, plus de 120 clients',
+        text: 'État septembre 2026. Nous travaillons pour des entreprises, des gérances, des propriétaires et une clientèle privée aux exigences particulières.',
+      },
+      {
+        label: 'Siège',
+        title: company.address.city,
+        text: `${company.legalName} est inscrite au ${register}.`,
+      },
+    ],
+  },
+  languages: {
+    title: 'Quatre langues',
+    text: `Nos collaboratrices et collaborateurs parlent ${languageList}. Cela facilite les échanges avec des équipes internationales, avec les locataires et avec les clients qui préfèrent s’exprimer dans leur langue. Ce site existe dans les mêmes quatre langues.`,
+  },
+  region: {
+    title: 'Cinq cantons, les mêmes conditions',
+    text: `Depuis ${company.address.city}, nous intervenons dans les cantons de ${cantonList}. Nous proposons toutes nos prestations dans toute la zone, et les mêmes conditions de déplacement s’appliquent partout.`,
+    link: 'Vers la zone d’intervention',
+  },
+  values: {
+    title: 'Nos valeurs au quotidien',
+    intro: 'Les valeurs se voient dans ce que l’on fait. Voici donc ce que nous faisons concrètement.',
+    items: [
+      { key: 'ehrlich' as const, title: 'Honnêtes sur le prix', text: 'Nous n’indiquons les prix que dans le devis écrit, après avoir vu le bien. Un prix sans visite serait souvent inexact par la suite.' },
+      { key: 'klar' as const, title: 'Clairs sur l’étendue', text: 'Chaque page de prestation indique aussi ce qui n’est pas compris, avec un renvoi vers la prestation qui convient.' },
+      { key: 'nachbessern' as const, title: 'Nous répondons de notre travail', text: 'Si la gérance conteste quelque chose à notre nettoyage de fin de bail lors de la remise, nous nettoyons à nouveau gratuitement. Les détails figurent dans le devis.' },
+      { key: 'versichert' as const, title: 'Responsabilité', text: 'Pour les dommages causés pendant le travail, nous avons une assurance responsabilité civile d’entreprise avec une couverture de CHF 10 millions.' },
+      { key: 'diskret' as const, title: 'Discrétion', text: 'Dans l’offre Premium, nous signons sur demande un accord de confidentialité. Nous gérons les clés et l’alarme selon des règles fixes.' },
+      { key: 'umwelt' as const, title: 'Respect de l’environnement', text: 'Sur demande, nous nettoyons avec des produits respectueux de l’environnement. Dites-le-nous lors de la visite.' },
+    ],
   },
   contact: {
     title: 'Votre interlocuteur',
@@ -98,6 +242,7 @@ export const about = {
   // Le type allemand reprend la valeur littérale de company.register, le texte français la remplace
   register: { title: 'Données du registre', court: register, uid: 'IDE' },
   statsLabel: 'En chiffres',
+  faq: [faq.kosten, faq.gebiet, faq.kurzfristig],
   cta: {
     title: 'Convenir d’une visite',
     text: 'Lors de la visite, nous examinons votre bien et clarifions l’étendue des prestations et les horaires. Vous recevez ensuite un devis écrit.',
@@ -107,29 +252,37 @@ export const about = {
 export const contact = {
   h1: 'Contact et devis',
   lead: `Appelez-nous ou écrivez-nous. Nous vous répondons ${responseTime}.`,
-  formLink: 'Vers le formulaire de contact',
-  channelsLabel: 'Moyens de contact',
-  phone: { title: 'Téléphone', text: 'Fixe et mobile', mobile: 'Mobile' },
-  email: { title: 'E-mail', text: 'Écrivez-nous un message' },
-  address: { title: 'Adresse', text: 'Notre siège' },
+  channels: {
+    title: 'Comment nous joindre',
+    phone: { title: 'Téléphone', hint: 'Pour vos questions et pour convenir d’un rendez-vous de visite.', action: 'Appeler' },
+    mobile: { title: 'Mobile', hint: 'Notre numéro mobile, en plus du fixe.', action: 'Appeler' },
+    email: { title: 'E-mail', hint: 'Pour les demandes avec documents, par exemple plans, listes de surfaces ou photos.', action: 'Écrire un e-mail' },
+    form: { title: 'Formulaire', value: 'Demander un devis', hint: 'Les informations essentielles en quelques champs, la prestation se choisit dans une liste.', action: 'Vers le formulaire' },
+    address: { title: 'Adresse', hint: 'Notre siège. La visite a lieu chez vous, sur place.', action: 'Vers la carte' },
+  },
+  brief: {
+    title: 'Ce que votre demande devrait contenir',
+    intro: 'Plus vos indications sont précises, mieux nous préparons la visite. S’il manque quelque chose, nous le clarifions ensemble.',
+    items: [
+      { key: 'objekt' as const, title: 'Bien', text: 'Type de bien, par exemple bureau, cabinet, immeuble locatif, halle ou villa.' },
+      { key: 'ort' as const, title: 'Lieu', text: 'Adresse ou numéro postal du bien.' },
+      { key: 'groesse' as const, title: 'Taille', text: 'Surface approximative, nombre de pièces, d’appartements ou d’étages.' },
+      { key: 'leistung' as const, title: 'Prestation', text: 'Ce qu’il faut faire, par exemple nettoyage d’entretien, conciergerie ou nettoyage ponctuel.' },
+      { key: 'rhythmus' as const, title: 'Fréquence et horaires', text: 'À quelle fréquence et quand, par exemple avant le début du travail, le soir ou le week-end.' },
+      { key: 'start' as const, title: 'Début', text: 'À partir de quand vous avez besoin de la prestation, pour un nettoyage de chantier ou de fin de bail la date de remise.' },
+      { key: 'zugang' as const, title: 'Accès et particularités', text: 'Clé ou badge, sols et matériaux délicats, grandes surfaces vitrées.' },
+    ],
+    note: 'Vous pouvez nous envoyer plans, listes de surfaces ou photos par e-mail.',
+  },
   steps: { title: 'De la demande à la première intervention', items: offerSteps },
   map: {
     title: 'Comment nous trouver',
     text: `Siège à ${company.address.city}. Nous intervenons dans les cantons de ${cantonList}.`,
   },
-  faq: [
-    {
-      question: 'En combien de temps vais-je recevoir un devis ?',
-      answer: `Nous vous répondons ${responseTime} et convenons d’un rendez-vous pour la visite. Vous recevez ensuite le devis par écrit.`,
-    },
-    { question: 'Combien coûte le nettoyage ?', answer: `${answers.kosten} Plus d’informations dans notre guide : [Ce qui détermine le coût d’un nettoyage d’entretien](/blog/reinigungskosten-schweiz).` },
-    { question: 'Dans quelles régions intervenez-vous ?', answer: answers.gebiet },
-    { question: 'Êtes-vous assurés ?', answer: answers.versicherung },
-    { question: 'Acceptez-vous aussi des interventions à bref délai ?', answer: 'Appelez-nous. Nous voyons avec vous ce qui est possible à bref délai.' },
-  ],
+  faq: [faq.schnell, faq.kosten, faq.gebiet, faq.versichert, faq.kurzfristig],
   cta: {
-    title: 'Votre devis en trois étapes',
-    text: `Décrivez-nous le bien et votre demande dans le formulaire ci-dessous. Nous vous répondons ${responseTime} et convenons de la visite.`,
+    title: 'Décrivez-nous votre bien',
+    text: `Le bien et votre demande dans le formulaire ci-dessous suffisent. Nous vous répondons ${responseTime} et convenons de la visite.`,
   },
 }
 
