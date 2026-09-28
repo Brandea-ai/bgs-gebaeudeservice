@@ -3,11 +3,11 @@ import PremiumTitel from "./titel";
 import { premiumKontext, type PremiumProps } from "./kontext";
 
 /**
- * Ablauf aus den Schritten der Luxusimmobilien-Seite wie auf den
- * Leistungsseiten: Titel oben, links die gepinnte Video-Bühne in Anthrazit mit
- * Champagner-Ring, rechts die Schritte (P04, Premium hell). Anfrage und
- * Rundgang stehen seit E85 in common.ts (die Premium-Seiten zeigen sie als
- * Zeile über dem Ablauf), hier bleibt der Ablauf vollständig.
+ * Ablauf aus den Schritten der Luxusimmobilien-Seite: Titel oben, darunter die
+ * vier Schritte ab lg nebeneinander auf einer Champagner-Linie (P04, Premium
+ * hell). Keine Bühne, weil Premium keine Videos mit Signalrot zeigt und eine
+ * leere Symbolbühne nichts erklärt (E85, F4). Anfrage und Rundgang stehen seit
+ * E85 in common.ts, hier bleibt der Ablauf vollständig.
  */
 export default function PremiumAblauf(props: PremiumProps) {
   const { lang } = props;
@@ -20,8 +20,7 @@ export default function PremiumAblauf(props: PremiumProps) {
           steps={[dict.steps.premiumAnfrage, dict.steps.premiumRundgang, ...dict.premium.luxusimmobilien.steps]}
           lang={lang}
           tone="premium"
-          variant="wide"
-          figureKeys={["anfrage", "besichtigung", "offerte", "start"]}
+          variant="row"
           idPrefix="ablauf-schritt"
         />
       </div>

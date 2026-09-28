@@ -39,10 +39,13 @@ export type Source = { label: string; href: string }
  * der Sprunganker im Inhaltsverzeichnis und muss auf der Seite eindeutig sein
  * (nicht umfang, ablauf, fragen, verwandt, abschnitt-<n>, kontakt-formular).
  * printable zeigt einen Knopf «Drucken», der nur dieses Werkzeug druckt.
+ * updated ist der Tag der letzten inhaltlichen Prüfung (JJJJ-MM-TT, etwa nach
+ * dem Lesen der Quellen). Nur mit diesem Eintrag druckt die Vorlage «Stand …»,
+ * nie das Datum des Builds (keine Scheinaktualität, wie ArticleContent.updated).
  */
 export type Tool =
-  | { kind: 'table'; id: string; title: string; intro?: Text; columns: string[]; rows: Text[][]; note?: Text; sources?: Source[]; printable?: boolean }
-  | { kind: 'checklist'; id: string; title: string; intro?: Text; groups: { title: string; items: Text[] }[]; note?: Text; sources?: Source[]; printable?: boolean }
+  | { kind: 'table'; id: string; title: string; intro?: Text; columns: string[]; rows: Text[][]; note?: Text; sources?: Source[]; printable?: boolean; updated?: string }
+  | { kind: 'checklist'; id: string; title: string; intro?: Text; groups: { title: string; items: Text[] }[]; note?: Text; sources?: Source[]; printable?: boolean; updated?: string }
   | { kind: 'timeline'; id: string; title: string; intro?: Text; entries: { label: string; text: Text }[]; note?: Text; sources?: Source[] }
   | { kind: 'text'; id: string; title: string; paragraphs: Text[]; items?: Text[]; note?: Text; sources?: Source[] }
 

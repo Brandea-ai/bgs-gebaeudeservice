@@ -24,15 +24,13 @@ const glyphs: Record<Tool["kind"], Icon> = {
   text: Lightbulb,
 };
 
-/** Stand der Seite: Tag des Builds (die Seiten sind statisch), sichtbar nur im Druck */
-const buildDay = new Date().toISOString().slice(0, 10);
-
 /**
  * Werkzeug-Baustein der Leistungsseiten (E85): Tabelle, Checkliste, Zeitplan
  * oder Wissenstext, mit Quellen darunter. Standard in Weiss und Graphit mit
  * Signalrot als Akzent, Premium in Elfenbein mit Serifentitel und Champagner.
  * printable zeigt «Drucken»; im Druck erscheinen nur dieses Werkzeug und
- * darüber Seitentitel, Firma und Stand.
+ * darüber Seitentitel, Firma und, falls im Inhalt gepflegt, der Stand der
+ * letzten Prüfung (tool.updated, nie das Build-Datum).
  */
 export default function Werkzeug({
   tool,
@@ -50,6 +48,7 @@ export default function Werkzeug({
   const link = premium ? premiumLightLink : undefined;
   const printable = (tool.kind === "table" || tool.kind === "checklist") && tool.printable;
   const intro = tool.kind === "text" ? undefined : tool.intro;
+  const updated = tool.kind === "table" || tool.kind === "checklist" ? tool.updated : undefined;
   return (
     <section
       id={tool.id}
@@ -64,7 +63,8 @@ export default function Werkzeug({
       <div className="tool-print-head" aria-hidden="true">
         <p className="tool-print-page">{pageTitle}</p>
         <p className="tool-print-meta">
-          {company.legalName} · {ui.tool.updated} {formatDate(buildDay, lang)}
+          {company.legalName}
+          {updated && ` · ${ui.tool.updated} ${formatDate(updated, lang)}`}
         </p>
       </div>
       <div className="flex flex-wrap items-start justify-between gap-x-6 gap-y-4">
@@ -96,8 +96,8 @@ export default function Werkzeug({
 
       {tool.kind === "table" && (
         <WerkzeugTabelle
-          id={tool.id}
           title={tool.title}
+          regionLabel={ui.tool.table}
           columns={tool.columns}
           rows={tool.rows}
           lang={lang}

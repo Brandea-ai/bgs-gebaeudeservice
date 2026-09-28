@@ -26,13 +26,18 @@ export const ui = {
     label: 'Vor jedem Auftrag',
     anfrage: 'Anfrage',
     anfragePremium: 'Diskrete Anfrage',
-    anfrageText: `Antwort ${company.responseTime}`,
+    /** Kanäle statt Antwortzeit: die 24 Stunden nennen Kontaktbereich und Fragen schon (F8) */
+    anfrageText: 'Per Telefon, E-Mail oder Formular',
     besichtigung: 'Besichtigung vor Ort',
     besichtigungText: 'Danach erhalten Sie die schriftliche Offerte',
+    /** Zweite Zeile: die seitentypischen Schritte (content.steps) */
+    service: 'Bei dieser Leistung',
   },
   /** Werkzeuge im Hauptinhalt (E85) */
   tool: {
     print: 'Drucken',
+    /** Anfang des Namens für den waagerecht scrollbaren Tabellenbereich, der Werkzeugtitel folgt */
+    table: 'Tabelle: ',
     sources: 'Quellen',
     external: 'externer Link, öffnet in neuem Fenster',
     updated: 'Stand',

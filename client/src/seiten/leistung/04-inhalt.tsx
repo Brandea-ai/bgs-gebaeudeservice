@@ -48,10 +48,11 @@ export default function LeistungInhalt(props: LeistungProps) {
             <p className={premium ? "font-premium text-[1.5rem] font-bold leading-tight" : "font-display text-lg font-semibold leading-snug"}>
               {content.cta.title}
             </p>
+            {/* Schmale Spalte ab lg (3 von 12): Beschriftung darf umbrechen, der Knopf wächst mit (P1) */}
             <Button
               asChild
               size="lg"
-              className={`arrow-link mt-5 w-full whitespace-nowrap ${premium ? "bg-anthracite text-white hover:bg-anthracite-700" : "btn-lift"}`}
+              className={`arrow-link mt-5 h-auto min-h-12 w-full py-3 text-center leading-snug text-balance has-[>svg]:px-4 ${premium ? "bg-anthracite text-white hover:bg-anthracite-700" : "btn-lift"}`}
             >
               <a href="#kontakt-formular" data-cta="aside">
                 {menu.cta.label}

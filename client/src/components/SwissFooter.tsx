@@ -18,6 +18,9 @@ import { company, newBrandActive } from "../../../shared/company";
 import { navDicts } from "../../../content/navigation";
 import { localizePath, type Locale } from "../../../shared/i18n";
 import type { PagePath } from "../../../shared/seo";
+import { detailImage, heroImage } from "../../../shared/hero-images";
+import type { ImageKey } from "../../../shared/images";
+import { faqImage, sceneImage } from "../../../shared/scene-images";
 import ImageSlot from "./ImageSlot";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { premiumLightLink } from "./premiumStyles";
@@ -46,6 +49,11 @@ const serviceForPath: Partial<Record<PagePath, string>> = {
 
 type FieldName = "name" | "email" | "message" | "acceptPrivacy";
 
+/** Bild im Kontaktbereich (E82). Steht es schon im Register der Seite, bleibt es hier weg (E85, P6). */
+const contactImage: ImageKey = "detail-facility-services";
+const imageOnPage = (path: PagePath) =>
+  [heroImage[path], detailImage[path], sceneImage[path], faqImage[path]].includes(contactImage);
+
 /**
  * Kontaktbereich und Footer (F2, F14). Das Formular steht auf jeder Seite und
  * ist das Ziel aller Offerte-Aktionen (#kontakt-formular, M04, M31).
@@ -69,7 +77,9 @@ export default function SwissFooter({
  * Kontaktbereich mit Formular, Ziel aller Offerte-Aktionen (#kontakt-formular).
  * heading: Titel und Einleitung der Seite (cta), sonst die allgemeinen Texte.
  * Auf Premium-Seiten (/premium…) in der hellen Premium-Welt: Elfenbein,
- * Serifentitel, Champagner statt Signalrot, ohne das Standardbild (E85).
+ * Serifentitel, Champagner statt Signalrot, ohne das Standardbild (E85). Die
+ * Antwortzeit nennen dort Einleitung und «So geht es weiter» (F8). Das Bild
+ * fehlt auch, wo es schon an anderer Stelle der Seite steht (P6).
  * Eigene Prüfung in der Seitensprache mit Hinweis am Feld (aria-invalid,
  * aria-describedby), Erfolg bleibt stehen und bekommt den Fokus.
  */
@@ -250,17 +260,11 @@ export function ContactSection({
               {title}
             </h2>
             <p className={`t-lead mt-5 max-w-[36ch] ${premium ? "text-anthracite" : "text-ink"}`}>{intro}</p>
-            {premium ? (
-              /* Premium ohne Standardbild: Antwortzeit als ruhiger Hinweis mit Kontur */
-              <p className="mt-8 flex items-center gap-3 rounded-[3px] border border-brass-dark/30 bg-white px-5 py-4 text-[0.9375rem] font-semibold text-anthracite">
-                <CheckCircle weight="duotone" className="size-6 shrink-0 text-brass-dark" aria-hidden="true" />
-                {chrome.answer}
-              </p>
-            ) : (
+            {!premium && !imageOnPage(path) && (
             /* Bild mit Antwortzeit (E82): die Besichtigung ist der erste echte Kontakt */
             <div className="relative mt-8 overflow-hidden rounded-[3px]">
               <ImageSlot
-                image="detail-facility-services"
+                image={contactImage}
                 lang={lang}
                 decorative
                 sizes="(min-width: 1024px) 34vw, 100vw"

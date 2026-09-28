@@ -6,19 +6,23 @@ import type { Locale } from "../../../../shared/i18n";
  * Tabelle eines Werkzeugs (E85): ab md eine echte Tabelle mit caption und
  * th scope in einem eigenen Container mit waagerechtem Scroll, darunter als
  * Karten mit Spaltenbeschriftung. Beim Drucken immer die Tabelle (globals.css).
- * Die erste Spalte ist die Zeilenbeschriftung.
+ * Die erste Spalte ist die Zeilenbeschriftung. Der Scrollbereich ist per
+ * Tastatur erreichbar und trägt einen eigenen Namen («Tabelle: Titel»), damit
+ * er sich vom Werkzeug-Abschnitt mit dem Titel unterscheidet (axe
+ * landmark-unique, P2).
  */
 export default function WerkzeugTabelle({
-  id,
   title,
+  regionLabel,
   columns,
   rows,
   lang,
   premium,
   link,
 }: {
-  id: string;
   title: string;
+  /** Anfang des Namens für den Scrollbereich, etwa «Tabelle: » (ui.tool.table) */
+  regionLabel: string;
   columns: string[];
   rows: Text[][];
   lang: Locale;
@@ -33,7 +37,7 @@ export default function WerkzeugTabelle({
       <div
         className="tool-table-wrap mt-7 hidden overflow-x-auto md:block"
         role="region"
-        aria-labelledby={`${id}-titel`}
+        aria-label={`${regionLabel}${title}`}
         tabIndex={0}
       >
         <table className="w-full min-w-[36rem] border-collapse text-left">
