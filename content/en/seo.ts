@@ -50,8 +50,8 @@ export const pages: Dictionary['pages'] = {
   },
   '/leistungen/bueroreinigung': {
     label: 'Office and practice cleaning',
-    title: 'Office and practice cleaning, Lucerne',
-    description: `Office and medical practice cleaning in ${region}, scheduled around your working hours. Free quote after a site visit.`,
+    title: 'Office cleaning in Lucerne and Zug',
+    description: 'Office cleaning for businesses and practices outside working hours, with a printable task schedule. Lucerne, Zug and beyond. Free quote after a site visit.',
   },
   '/leistungen/sonderreinigungen': {
     label: 'Deep and special cleaning',

@@ -51,7 +51,7 @@ export const pages = {
   '/leistungen/bueroreinigung': {
     label: 'Nettoyage de bureaux et de cabinets',
     title: 'Nettoyage de bureaux à Lucerne et Zoug',
-    description: `Nettoyage de bureaux et cabinets, adapté à vos horaires de travail. Devis gratuit sur place. Cantons de ${region}.`,
+    description: 'Nettoyage de bureaux et de cabinets hors des heures de travail, avec cahier des charges à imprimer. Lucerne, Zoug et environs. Devis gratuit après une visite.',
   },
   '/leistungen/sonderreinigungen': {
     label: 'Nettoyages en profondeur et spéciaux',
