@@ -46,7 +46,7 @@ export const pages: Dictionary['pages'] = {
   '/leistungen/unterhaltsreinigung': {
     label: 'Maintenance cleaning',
     title: 'Maintenance cleaning, Lucerne and Zug',
-    description: 'Maintenance cleaning and stairwell cleaning, with restocking and a sample specification. Lucerne, Zug and beyond. Free quote after a site visit.',
+    description: 'Maintenance cleaning and stairwell cleaning for properties, with restocking of supplies. In Lucerne, Zug and beyond. Free quote after a site visit.',
   },
   '/leistungen/bueroreinigung': {
     label: 'Office and practice cleaning',

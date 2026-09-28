@@ -8,8 +8,8 @@ export const unterhaltsreinigung: ServicePageContent = {
   eyebrow: 'Ongoing cleaning',
   h1: 'Maintenance cleaning and stairwell cleaning for properties',
   lead: [
-    'The stairwell, entrance, lift and laundry room are shared by everyone in a building, and complaints about dirt end up with the property manager. We clean these common areas several times a week, to a scope agreed in writing.',
-    'We also restock soap, paper and bin bags. Further down you will find a sample cleaning specification for comparing quotes, an overview of service charges and condominium costs, and a checklist for your walk-round.',
+    'Everyone in a building shares the stairwell, lift and laundry room, and complaints about dirt end up with the property manager. We clean these common areas several times a week, to a scope agreed in writing.',
+    'Further down you will find a sample cleaning specification for comparing quotes, an overview of service charges and condominium costs, and a record sheet for your walk-round.',
   ],
   facts: [
     { label: 'For', value: 'Apartment buildings, condominiums, mixed-use buildings, business premises' },
@@ -23,7 +23,7 @@ export const unterhaltsreinigung: ServicePageContent = {
       paragraphs: [
         'In many apartment buildings, the tenants clean the stairwell in turn according to a rota. That works as long as everyone takes part. Once tenants change, floors are left in different states or complaints pile up, regular cleaning by a company is usually the calmer solution.',
         'Other typical triggers: the previous company or caretaker stops, a property management firm takes over a building, or a shop with customers moves into the ground floor. That also changes how often the entrance and lift need cleaning.',
-        'Who bears the costs after the switch depends on the lease and the law. The overview of service charges and condominium costs on this page shows what applies.',
+        'Who bears the costs after the switch depends on the lease and the law.',
       ],
     },
     {
@@ -46,16 +46,16 @@ export const unterhaltsreinigung: ServicePageContent = {
       id: 'leistungsverzeichnis',
       title: 'Sample cleaning specification for stairwells and common areas',
       intro:
-        'A cleaning specification makes quotes comparable, because every company prices the same areas, tasks and frequencies. The sample applies to an apartment building with a lift and a shop on the ground floor and is not a quote. Delete what does not apply to you. Exterior windows, facades and deep cleaning belong in separate items.',
+        'A cleaning specification makes quotes comparable, because every company prices the same areas, tasks and frequencies. The sample applies to a mixed-use building with a lift and a commercial floor and is not a quote. List areas used by individual tenants as separate items so they can be charged separately.',
       columns: ['Area', 'Task', 'Frequency (example)'],
       rows: [
         ['Entrance and porch', 'Damp-mop the floor, vacuum the doormat, clean the glass door on both sides', 'Every visit'],
-        ['Stairs, landings and handrails', 'Sweep and damp-mop the stairs, including edges and corners; wipe handrails, banisters and light switches with a damp cloth', 'Every visit'],
+        ['Stairs, landings and handrails', 'Sweep and damp-mop steps, edges and corners; damp-wipe handrails, banisters and light switches', 'Every visit'],
         ['Lift', 'Clean the floor, walls, mirror, control panel and doors of the car', 'Every visit'],
         ['Letterboxes, flat doors and door frames', 'Wipe down, remove fingerprints', 'Weekly'],
         ['Laundry room and drying room', 'Clean the floor, wipe the sink and shelves', 'Weekly'],
         ['Cellar and attic corridors, bike room', 'Sweep, remove cobwebs', 'Monthly'],
-        ['Reception, corridors and toilets of the business premises', 'Clean floors, sanitary fittings and taps', 'Every visit'],
+        ['Shared corridors and toilets on the commercial floor', 'Clean floors, sanitary fittings and taps', 'Every visit'],
         ['Waste and consumables', 'Empty bins, restock soap, paper and bags', 'Every visit, where agreed'],
       ],
       printable: true,
@@ -66,7 +66,7 @@ export const unterhaltsreinigung: ServicePageContent = {
       id: 'nebenkosten',
       title: 'Who pays for the cleaning: tenancy law and condominiums',
       intro:
-        'Whether the cost of stairwell cleaning stays with the owners or is passed on is governed by the Code of Obligations, the Ordinance on the Lease of Residential and Commercial Premises (VMWG) and the Civil Code. The overview summarises the provisions for the most common cases.',
+        'Whether the cost of stairwell cleaning stays with the owners or is passed on is governed by the Code of Obligations, the Ordinance on the Lease and Usufructuary Lease of Residential and Commercial Premises (VMWG) and the Civil Code. The overview summarises the provisions for the most common cases.',
       columns: ['Case', 'What the law provides', 'What this means in practice'],
       rows: [
         [
@@ -86,8 +86,8 @@ export const unterhaltsreinigung: ServicePageContent = {
         ],
         [
           'Tenants cleaned until now, a company takes over',
-          'New service charges are a unilateral amendment to the lease. They apply from the next possible termination date and must be notified with reasons on the form approved by the canton, at least ten days before the notice period begins (Art. 269d paras. 1 and 3 CO).',
-          'Plan the start of the company and the date of the new service charges together. Until then, the owners bear the costs.',
+          'If the landlord introduces new service charges unilaterally, the rules for rent increases apply: notice with reasons on the form approved by the canton, at least ten days before the notice period begins, and at the earliest from the next termination date (Art. 269d paras. 1 and 3 CO). Tenants can challenge the change before the conciliation authority within 30 days (Art. 270b para. 2 CO).',
+          'Align the new company’s first visit with the date the new service charges take effect. Until the change is effective, the owners bear the costs.',
         ],
         [
           'Condominium ownership',
@@ -97,63 +97,41 @@ export const unterhaltsreinigung: ServicePageContent = {
       ],
       note: 'The overview simplifies the provisions and is not legal advice. Check individual cases against the lease and the condominium regulations, with a specialist if needed.',
       sources: [
-        { label: 'Swiss Code of Obligations (CO), Art. 257a, 257b and 269d, English translation', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/en#art_257_a' },
-        { label: 'Ordinance on the Lease of Residential and Commercial Premises (VMWG), Art. 4, in German', href: 'https://www.fedlex.admin.ch/eli/cc/1990/835_835_835/de#art_4' },
+        { label: 'Swiss Code of Obligations (CO), Art. 257a, 257b, 269d and 270b, English translation', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/en#art_257_a' },
+        { label: 'Ordinance on the Lease and Usufructuary Lease of Residential and Commercial Premises (VMWG), Art. 4, in German', href: 'https://www.fedlex.admin.ch/eli/cc/1990/835_835_835/de#art_4' },
         { label: 'Swiss Civil Code (CC), Art. 712h and 712m, English translation', href: 'https://www.fedlex.admin.ch/eli/cc/24/233_245_233/en#art_712_h' },
       ],
       printable: true,
       updated: '2026-09-28',
     },
     {
-      kind: 'checklist',
+      kind: 'table',
       id: 'rundgang',
-      title: 'Walk-round checklist to print',
+      title: 'Walk-round record after cleaning',
       intro:
-        'With this checklist you can see in a few minutes whether the cleaning delivers what was agreed. Walk through the building on the cleaning day or the day after. Any later and you are judging use rather than cleaning, in wet weather within a few hours.',
-      groups: [
-        {
-          title: 'Entrance and stairwell',
-          items: [
-            'Doormat vacuumed, no sand in the porch',
-            'Glass door free of streaks and fingerprints on both sides',
-            'Stair edges, corners and areas behind doors free of dust',
-            'Handrails and light switches clean, not just the floors',
-          ],
-        },
-        {
-          title: 'Lift and ancillary rooms',
-          items: [
-            'Lift car: floor, mirror and control panel clean',
-            'Laundry room: floor dry, sink free of residue',
-            'Cellar and attic corridors free of cobwebs',
-            'Letterboxes free of dust and fingerprints',
-          ],
-        },
-        {
-          title: 'Toilets and supplies',
-          items: [
-            'Toilet and washbasin clean, the room smells fresh',
-            'Soap, paper and bin bags restocked',
-            'Bins emptied',
-          ],
-        },
-        {
-          title: 'Documents',
-          items: [
-            'Current cleaning specification to hand',
-            'Cleaning days posted in the stairwell',
-            'Date, time and floor of anything noticed recorded',
-          ],
-        },
+        'Walk through the building on the cleaning day or the day after; any later and you are judging use rather than cleaning. If anything is wrong, send us the record with the date and a photo.',
+      columns: ['Item', 'OK', 'Remarks (floor, time)'],
+      rows: [
+        ['Doormat vacuumed, no sand in the porch', '☐', ''],
+        ['Glass door free of streaks and fingerprints', '☐', ''],
+        ['Edges, corners and areas behind doors dust-free', '☐', ''],
+        ['Handrails, banisters and light switches clean', '☐', ''],
+        ['Lift car: floor, mirror and control panel clean', '☐', ''],
+        ['Letterboxes, flat doors and frames clean', '☐', ''],
+        ['Laundry room: floor dry, sink clean', '☐', ''],
+        ['Cellar and attic corridors free of cobwebs', '☐', ''],
+        ['Toilet and washbasin clean, room smells fresh', '☐', ''],
+        ['Soap, paper and bags restocked, bins emptied', '☐', ''],
+        ['Cleaning days posted in the stairwell', '☐', ''],
+        ['Current cleaning specification to hand', '☐', ''],
       ],
-      note: 'If you notice anything, send us the checklist with the date and floor. A photo shows the point more precisely than any description.',
       printable: true,
       updated: '2026-09-28',
     },
   ],
   scope: {
     title: 'Scope of maintenance cleaning',
-    intro: 'The core is stairwell cleaning. Depending on the building, ancillary rooms and the common areas of a commercial floor are added:',
+    intro: 'Stairwell cleaning is at the heart of the service. Depending on the building, ancillary rooms and the common areas of a commercial floor are added:',
     items: [
       'Stairwell cleaning: stairs, landings, banisters and handrails',
       'Entrances with porch, doormat and glass door',
@@ -165,7 +143,7 @@ export const unterhaltsreinigung: ServicePageContent = {
       'Emptying bins, restocking soap and paper',
     ],
     notIncluded: [
-      'Cleaning inside the flats. Villas, residences and other private households are covered by our [premium services](/premium).',
+      'Cleaning inside the flats. We do not take on ordinary private households; villas, lofts and residences are looked after by our [premium services](/premium).',
       'Offices and practices with workstations: see [office and practice cleaning](/leistungen/bueroreinigung).',
       'Joints and stone floors that need a one-off deep clean: [deep and special cleaning](/leistungen/sonderreinigungen). Final cleaning before a flat handover: [end-of-tenancy cleaning](/leistungen/umzugsreinigung).',
       'Exterior windows and facades: [window and facade cleaning](/leistungen/fenster-und-fassadenreinigung).',
@@ -175,32 +153,32 @@ export const unterhaltsreinigung: ServicePageContent = {
   steps: [
     {
       title: 'Preparing the start',
-      text: 'Key or badge, a place for equipment and products, and a notice with the cleaning days: these three points are settled before the first visit.',
+      text: 'Before the first visit, we need access with a key or badge and a place in the building for equipment and products.',
     },
     {
-      title: 'Cleaning and restocking',
-      text: 'We clean on the agreed days according to the cleaning specification and restock soap, paper and bin bags as we go.',
+      title: 'Cleaning to the specification',
+      text: 'We clean on the agreed days according to the cleaning specification, each area at the frequency set there.',
     },
     {
       title: 'Adjusting to new use',
-      text: 'If a shop moves in or a floor stands empty, we agree a new scope and frequency with you, in writing as at the start.',
+      text: 'If a shop moves in or a floor stands empty, the scope and frequency can be agreed anew.',
     },
   ],
   faq: [
     {
       question: 'How often does a stairwell need cleaning?',
       answer:
-        'That depends on how many households use the stairwell and how much dirt comes in from outside. Our maintenance cleaning is intended for buildings that are cleaned several times a week. The entrance and lift usually need more attention than cellar and attic corridors. The sample cleaning specification on this page shows one possible split.',
+        'That depends on how many households use the stairwell and how much dirt comes in from outside. Our maintenance cleaning is intended for buildings that are cleaned several times a week. The entrance and lift usually need more attention than cellar and attic corridors.',
     },
     {
       question: 'How much does maintenance cleaning cost?',
       answer:
-        'The effort depends mainly on the number of floors and flights of stairs, whether there is a lift, the ancillary rooms, the frequency and how the building is used. An entrance with a shop on the ground floor takes more time than one used only by tenants. It also matters whether we supply the consumables or you do. We state the price after the site visit in the written quote. Cost factors and comparing quotes are explained in our [guide to cleaning costs](/blog/reinigungskosten-schweiz).',
+        'The work involved depends mainly on the number of floors and flights of stairs, whether there is a lift, the ancillary rooms, the frequency and how the building is used. An entrance with a shop on the ground floor takes more time than one used only by tenants. It also matters whether we supply the consumables or you do. We state the price after the site visit in the written quote. Cost factors and comparing quotes are explained in our [guide to cleaning costs](/blog/reinigungskosten-schweiz).',
     },
     {
       question: 'Can we pass the cleaning on through the service charges?',
       answer:
-        'The Code of Obligations provides that tenants only pay service charges if they have been specifically agreed (Art. 257a para. 2 CO). If the cleaning is in the lease, the actual costs are charged. If it is to be added, the same applies as for a rent increase: using the form approved by the canton and from the next possible termination date (Art. 269d CO). Check your individual case against your lease.',
+        'The Code of Obligations provides that tenants only pay service charges if they have been specifically agreed (Art. 257a para. 2 CO). If the cleaning is agreed as a service charge in the lease, it is billed at actual cost or charged as a flat rate based on average figures over three years (Art. 257b CO, Art. 4 VMWG). If the landlord introduces it unilaterally, the rules for rent increases apply, using the form approved by the canton (Art. 269d CO), and tenants can challenge the change within 30 days (Art. 270b CO). Check your individual case against your lease.',
     },
     {
       question: 'Does the building need a cleaning room?',
@@ -230,6 +208,6 @@ export const unterhaltsreinigung: ServicePageContent = {
   ],
   cta: {
     title: 'A quote for your stairwell and common areas',
-    text: 'For the quote we need the address, the number of floors and flats, whether there is a lift or businesses in the building, and the frequency you have in mind. If you already have a cleaning specification, please send it along. We visit the building and then send you the written quote, both free of charge and without obligation.',
+    text: 'Tell us the address, the number of floors and flats, any lift or businesses in the building and your preferred frequency. Feel free to send an existing cleaning specification. We visit the building and then send the quote, both free of charge and without obligation.',
   },
 }

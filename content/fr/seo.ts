@@ -46,7 +46,7 @@ export const pages = {
   '/leistungen/unterhaltsreinigung': {
     label: 'Nettoyage d’entretien',
     title: 'Nettoyage d’entretien, Lucerne et Zoug',
-    description: 'Nettoyage d’entretien d’immeubles et de cages d’escalier, avec modèle de cahier des charges. Lucerne, Zoug et environs. Devis gratuit après une visite.',
+    description: 'Nettoyage d’entretien et de cages d’escalier, avec réapprovisionnement en consommables. À Lucerne, Zoug et environs. Devis gratuit après une visite.',
   },
   '/leistungen/bueroreinigung': {
     label: 'Nettoyage de bureaux et de cabinets',
