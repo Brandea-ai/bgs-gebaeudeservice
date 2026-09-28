@@ -30,8 +30,8 @@ export const pages = {
   },
   '/premium/privatjet': {
     label: 'Privatjet',
-    title: 'Privatjet-Reinigung',
-    description: 'Kabinenreinigung für Privatjets mit Rücksicht auf hochwertige Materialien. Diskret, nach Absprache und mit festen Teams.',
+    title: 'Privatjet-Reinigung: Kabine und Bordküche',
+    description: 'Privatjet-Reinigung für Kabine, Bordküche und Waschraum, mit den für Ihr Flugzeug freigegebenen Mitteln. Kostenlose Offerte nach Besichtigung.',
   },
   '/premium/yacht': {
     label: 'Yacht',

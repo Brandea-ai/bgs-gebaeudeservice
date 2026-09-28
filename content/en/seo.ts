@@ -30,8 +30,8 @@ export const pages: Dictionary['pages'] = {
   },
   '/premium/privatjet': {
     label: 'Private jet',
-    title: 'Private jet cabin cleaning',
-    description: 'Cabin cleaning for private jets with care for high-quality materials. Discreet, by arrangement and with dedicated teams.',
+    title: 'Private jet cleaning: cabin and galley',
+    description: 'Private jet cleaning for cabin, galley and lavatory, using the products approved for your aircraft. Free quote after a site visit.',
   },
   '/premium/yacht': {
     label: 'Yacht',

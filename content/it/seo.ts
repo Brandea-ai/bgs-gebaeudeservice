@@ -30,8 +30,8 @@ export const pages = {
   },
   '/premium/privatjet': {
     label: 'Jet privato',
-    title: 'Pulizia di jet privati',
-    description: 'Pulizia della cabina di jet privati con riguardo per i materiali di pregio. Servizio discreto, previo accordo e con team fissi.',
+    title: 'Pulizia di jet privati: cabina e cucina di bordo',
+    description: 'Pulizia di jet privati per cabina, cucina di bordo e toilette, con i prodotti approvati per il Suo aeromobile. Offerta gratuita dopo il sopralluogo.',
   },
   '/premium/yacht': {
     label: 'Yacht',
