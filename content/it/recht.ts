@@ -76,7 +76,7 @@ export const datenschutz: LegalContent = {
     {
       title: 'Modulo di contatto ed e-mail',
       paragraphs: [
-        'Se ci scrive tramite il modulo, trattiamo i Suoi dati: nome, indirizzo e-mail e messaggio, facoltativamente anche numero di telefono, servizio desiderato, luogo dell’intervento e cadenza. Li utilizziamo per rispondere alla Sua richiesta e per allestirLe un’offerta.',
+        'Se ci scrive tramite il modulo, trattiamo i Suoi dati: nome, indirizzo e-mail, chi fa la richiesta (ad esempio amministrazione immobiliare, azienda o cliente privato) e messaggio, facoltativamente anche numero di telefono, servizio desiderato, dimensioni dell’immobile, luogo dell’intervento e cadenza. Li utilizziamo per rispondere alla Sua richiesta e per allestirLe un’offerta.',
         `Il modulo viene inviato alla nostra casella di posta tramite il servizio e-mail Resend, Inc., USA. Fino all’attivazione del nostro indirizzo si tratta di ${company.email}, la casella di posta di Brandea GbR in Germania, che gestisce questo sito web per nostro conto e ci inoltra le richieste.`,
         'A protezione dagli abusi, il server conserva brevemente il Suo indirizzo IP nella memoria di lavoro, per riconoscere un numero eccessivo di richieste in poco tempo. L’indirizzo non viene memorizzato in modo permanente.',
         'Conserviamo la Sua richiesta per il tempo necessario a evaderla e per eventuali domande di chiarimento. Se ne risulta un incarico, si applicano i termini legali di conservazione.',
@@ -85,7 +85,7 @@ export const datenschutz: LegalContent = {
     {
       title: 'Mappa',
       paragraphs: [
-        'Sulla pagina dei contatti mostriamo una mappa di Google Maps solo quando clicca su «Carica la mappa». Solo allora Google riceve il Suo indirizzo IP e dati tecnici sul Suo browser. Il fornitore è Google Ireland Limited; i dati possono essere trattati anche negli USA. Maggiori informazioni nelle norme sulla privacy di Google all’indirizzo policies.google.com/privacy.',
+        'Sulle pagine Contatto e Zona d’intervento mostriamo una mappa di Google Maps solo quando clicca su «Carica la mappa». Solo allora Google riceve il Suo indirizzo IP e dati tecnici sul Suo browser. Il fornitore è Google Ireland Limited; i dati possono essere trattati anche negli USA. Maggiori informazioni nelle norme sulla privacy di Google all’indirizzo policies.google.com/privacy.',
       ],
     },
     {
@@ -130,5 +130,5 @@ export const datenschutz: LegalContent = {
       paragraphs: ['Questo testo è una traduzione della versione tedesca. In caso di divergenze fa fede unicamente la versione tedesca.'],
     },
   ],
-  updated: '2026-09-27',
+  updated: '2026-09-28',
 }

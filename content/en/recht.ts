@@ -72,7 +72,7 @@ export const datenschutz: LegalContent = {
     {
       title: 'Contact form and email',
       paragraphs: [
-        'When you write to us using the form, we process your details: name, email address and message and, if you choose to provide them, phone number, service required, location of the property and frequency. We use them to answer your enquiry and to prepare a quote for you.',
+        'When you write to us using the form, we process your details: name, email address, who is making the enquiry (for example property management, company or private client) and your message, plus, if you choose to provide them, phone number, service required, size and location of the property and frequency. We use them to answer your enquiry and to prepare a quote for you.',
         `The form is sent to our mailbox via the email service Resend, Inc., USA. Until our own address has been set up, this is ${company.email}, the mailbox of Brandea GbR in Germany, which operates this website on our behalf and forwards enquiries to us.`,
         'To protect against misuse, the server briefly holds your IP address in memory in order to detect too many requests within a short time. It is not stored permanently.',
         'We keep your enquiry for as long as we need it to process it and for any follow-up questions. If a contract is concluded, the statutory retention periods apply.',
@@ -81,7 +81,7 @@ export const datenschutz: LegalContent = {
     {
       title: 'Map',
       paragraphs: [
-        'On the contact page, we only show a Google Maps map once you click ‘Load map’. Only then does Google receive your IP address and technical information about your browser. The provider is Google Ireland Limited; the data may also be processed in the USA. For more information, see the Google privacy policy at policies.google.com/privacy.',
+        'On the Contact and Service area pages, we only show a Google Maps map once you click ‘Load map’. Only then does Google receive your IP address and technical information about your browser. The provider is Google Ireland Limited; the data may also be processed in the USA. For more information, see the Google privacy policy at policies.google.com/privacy.',
       ],
     },
     {
@@ -126,5 +126,5 @@ export const datenschutz: LegalContent = {
       paragraphs: ['This English version is a translation provided for your convenience. In the event of any discrepancy between the English and the German version, the German version shall prevail.'],
     },
   ],
-  updated: '2026-09-27',
+  updated: '2026-09-28',
 }

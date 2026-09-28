@@ -128,7 +128,7 @@ export const pages = {
   '/kontakt': {
     label: 'Kontakt',
     title: 'Kontakt und Offerte',
-    description: `Rufen Sie uns an unter ${company.phone.display} oder schreiben Sie uns. Kostenlose Offerte vor Ort, Antwort ${company.responseTime}.`,
+    description: `Reinigungsofferte für Luzern, Zug und Umgebung: Antwort ${company.responseTime}, Besichtigung kostenlos. Rufen Sie an: ${company.phone.display}.`,
   },
   '/impressum': {
     label: 'Impressum',

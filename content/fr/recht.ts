@@ -73,7 +73,7 @@ export const datenschutz: LegalContent = {
     {
       title: 'Formulaire de contact et e-mail',
       paragraphs: [
-        'Lorsque vous nous écrivez au moyen du formulaire, nous traitons vos indications : nom, adresse e-mail et message, ainsi que, de manière facultative, numéro de téléphone, prestation souhaitée, lieu du bien et fréquence. Nous les utilisons pour répondre à votre demande et établir votre devis.',
+        'Lorsque vous nous écrivez au moyen du formulaire, nous traitons vos indications : nom, adresse e-mail, qui fait la demande (par exemple gérance, entreprise ou particulier) et message, ainsi que, de manière facultative, numéro de téléphone, prestation souhaitée, taille et lieu du bien et fréquence. Nous les utilisons pour répondre à votre demande et établir votre devis.',
         `Le formulaire est envoyé à notre boîte de réception au moyen du service d’e-mail Resend, Inc., États-Unis. Jusqu’à la mise en place de notre propre adresse, il s’agit de ${company.email}, la boîte de réception de Brandea GbR, en Allemagne. Brandea GbR exploite ce site web pour nous et nous transmet les demandes.`,
         'Pour prévenir les abus, le serveur conserve brièvement votre adresse IP en mémoire vive afin de détecter un nombre excessif de demandes en peu de temps. Elle n’est pas enregistrée durablement.',
         'Nous conservons votre demande aussi longtemps que nous en avons besoin pour la traiter et pour d’éventuelles questions complémentaires. Si un mandat est conclu, les délais légaux de conservation s’appliquent.',
@@ -82,7 +82,7 @@ export const datenschutz: LegalContent = {
     {
       title: 'Carte',
       paragraphs: [
-        'Sur la page de contact, nous n’affichons une carte Google Maps que lorsque vous cliquez sur « Charger la carte ». Ce n’est qu’à ce moment que Google reçoit votre adresse IP et des informations techniques sur votre navigateur. Le prestataire est Google Ireland Limited. Les données peuvent aussi être traitées aux États-Unis. Plus d’informations dans les règles de confidentialité de Google, à l’adresse policies.google.com/privacy.',
+        'Sur les pages Contact et Zone d’intervention, nous n’affichons une carte Google Maps que lorsque vous cliquez sur « Charger la carte ». Ce n’est qu’à ce moment que Google reçoit votre adresse IP et des informations techniques sur votre navigateur. Le prestataire est Google Ireland Limited. Les données peuvent aussi être traitées aux États-Unis. Plus d’informations dans les règles de confidentialité de Google, à l’adresse policies.google.com/privacy.',
       ],
     },
     {
@@ -127,5 +127,5 @@ export const datenschutz: LegalContent = {
       paragraphs: ['Ce texte est une traduction de la version allemande. En cas de divergence, seule la version allemande fait foi.'],
     },
   ],
-  updated: '2026-09-27',
+  updated: '2026-09-28',
 }

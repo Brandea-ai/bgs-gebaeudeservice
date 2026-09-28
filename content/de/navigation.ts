@@ -1,6 +1,7 @@
 import { cantonList, company, premiumLabel } from '../../shared/company'
 import type { PagePath } from '../../shared/seo'
 import type { KantonKey } from '../../shared/cantons'
+import type { ContactRole } from '../../shared/contact-form'
 
 /**
  * Texte von Menü, Footer, Kontaktformular und 404-Seite (M54, E61). Menü und
@@ -98,20 +99,57 @@ export const footer = {
   ] satisfies NavLink[],
 }
 
-/** Kontaktformular im Footer (M04, M07, M30). Die Werte gehen als Text in die E-Mail. */
+/**
+ * Kontaktformular (M04, M07, M30, Audit Inhalt Massnahme 3). Die Werte gehen als
+ * Text in die E-Mail. «Sie sind» und «Grösse» ordnen die Anfrage ein (E33, E34),
+ * die Werte der Auswahl stehen in shared/contact-form.ts.
+ */
 export const contactForm = {
   title: 'Offerte anfragen',
-  intro: `Beschreiben Sie uns Objekt und Anliegen. Wir melden uns ${company.responseTime} und vereinbaren die Besichtigung, kostenlos und unverbindlich.`,
+  intro: 'Beschreiben Sie uns Objekt und Anliegen. Mit diesen Angaben bereiten wir die Besichtigung vor.',
   choose: 'Bitte wählen...',
   fields: {
+    role: { label: 'Sie sind *' },
     name: { label: 'Name *', placeholder: 'Ihr vollständiger Name' },
     email: { label: 'E-Mail *', placeholder: 'name@firma.ch' },
     phone: { label: 'Telefon', placeholder: 'Ihre Telefonnummer' },
     service: { label: 'Gewünschte Leistung' },
+    size: { label: 'Grösse des Objekts', placeholder: 'z. B. 12 Wohnungen oder 800 m²' },
     location: { label: 'Ort oder PLZ des Objekts', placeholder: 'z. B. 6300 Zug' },
     frequency: { label: 'Gewünschter Rhythmus' },
-    message: { label: 'Objekt und Anliegen *', placeholder: 'Zum Beispiel: Art des Objekts, ungefähre Fläche oder Anzahl Wohnungen, gewünschter Rhythmus und Startzeitpunkt' },
+    message: {
+      label: 'Objekt und Anliegen *',
+      placeholder: 'Zum Beispiel: Treppenhaus und Waschküche in zwei Mehrfamilienhäusern, jede Woche, ab Januar',
+      hint: 'Pläne, Flächenlisten oder Fotos schicken Sie uns am besten per E-Mail an',
+    },
   },
+  /** Beschriftung je Wert aus CONTACT_ROLES, in dieser Reihenfolge */
+  roleOptions: {
+    Verwaltung: 'Verwaltung',
+    Stockwerkeigentümerschaft: 'Stockwerkeigentümerschaft',
+    Eigentümer: 'Eigentümerin oder Eigentümer',
+    Unternehmen: 'Unternehmen',
+    'Premium-Privatkunde': 'Privatkunde (Villa, Zweitwohnung, Yacht oder Jet)',
+  } satisfies Record<ContactRole, string>,
+  /** Premium-Seiten: eigene Beispiele statt Wohnungen und Büros (Audit visuell, Umbau 2) */
+  premiumPlaceholders: {
+    '/premium': {
+      size: 'z. B. Villa, 400 m² Wohnfläche',
+      message: 'Zum Beispiel: Zweitwohnung am See, Pflege während Ihrer Abwesenheit, erster Termin im Frühling',
+    },
+    '/premium/luxusimmobilien': {
+      size: 'z. B. Villa, 400 m² auf 3 Etagen',
+      message: 'Zum Beispiel: Villa am Zugersee, Parkett und Naturstein, jede Woche während Ihrer Abwesenheit',
+    },
+    '/premium/privatjet': {
+      size: 'z. B. Flugzeugtyp, Kabinenlänge',
+      message: 'Zum Beispiel: Kabine und Galley nach jedem Flug, Standort des Flugzeugs, gewünschte Zeiten',
+    },
+    '/premium/yacht': {
+      size: 'z. B. Motoryacht, 14 m Länge',
+      message: 'Zum Beispiel: Liegeplatz am Vierwaldstättersee, Reinigung vor Saisonbeginn und nach Anlässen an Bord',
+    },
+  } satisfies Partial<Record<PagePath, { size: string; message: string }>>,
   serviceOptions: [
     {
       group: 'Reinigung und Hauswartung',
@@ -154,11 +192,26 @@ export const contactForm = {
   submit: 'Anfrage senden',
   sending: 'Wird gesendet...',
   success: `Vielen Dank, Ihre Anfrage ist bei uns eingegangen. Wir melden uns ${company.responseTime} und vereinbaren mit Ihnen einen Termin für die Besichtigung. Wenn es eilt, erreichen Sie uns unter ${company.phone.display}.`,
-  nextTitle: "So geht es weiter",
-  nextSteps: ["Wir melden uns an Werktagen innerhalb von 24 Stunden.", "Wir besichtigen das Objekt vor Ort, kostenlos.", "Sie erhalten eine schriftliche Offerte."],
+  /**
+   * «So geht es weiter» unter Formular und Kontaktwegen. Die Antwortzeit fällt im
+   * Kontaktbereich nur einmal (Audit visuell, Umbau 3): hier, oder in der
+   * Einleitung der Seite, dann steht als erster Schritt nextStepPlain.
+   */
+  nextTitle: 'So geht es weiter',
+  nextSteps: [`Wir melden uns ${company.responseTime}.`, 'Wir besichtigen das Objekt vor Ort, kostenlos.', 'Sie erhalten eine schriftliche Offerte.'],
+  nextStepPlain: 'Wir melden uns und vereinbaren den Termin.',
+  /** Schmales Kontaktband auf Impressum und Datenschutz statt des Formulars (Audit visuell, /impressum) */
+  band: {
+    title: 'Fragen oder eine Offerte?',
+    text: 'Rufen Sie uns an, schreiben Sie uns oder nutzen Sie das Formular auf der Kontaktseite.',
+    action: 'Zum Formular',
+  },
+  /** Adresse in den Kontaktwegen führt zur Karte auf der Kontaktseite */
+  mapLink: 'Zur Karte',
   successTitle: 'Anfrage eingegangen',
   errors: {
     required: 'Bitte füllen Sie dieses Feld aus.',
+    role: 'Bitte wählen Sie aus, wer die Anfrage stellt.',
     email: 'Bitte geben Sie eine gültige E-Mail-Adresse ein.',
     consent: 'Bitte bestätigen Sie die Datenschutzerklärung, damit wir Ihre Anfrage bearbeiten dürfen.',
     summary: 'Bitte prüfen Sie die markierten Felder.',
@@ -194,7 +247,8 @@ export const nav = {
     megaText: 'Wir sehen uns Ihr Objekt an und erstellen eine schriftliche Offerte, kostenlos und unverbindlich.',
     premiumTeaser: 'Diskrete Reinigung und Pflege für Villen, Privatjets und Yachten.',
     heroLanguages: 'Beratung in Ihrer Sprache',
-    faqMore: 'Ihre Frage ist nicht dabei? Rufen Sie uns an oder schreiben Sie uns, wir antworten innerhalb von 24 Stunden an Werktagen.',
+    // Ohne Antwortzeit: die nennt der Kontaktbereich direkt darunter (Audit visuell, Umbau 3)
+    faqMore: 'Ihre Frage ist nicht dabei? Rufen Sie uns an oder schreiben Sie uns.',
     phone: 'Telefon',
     email: 'E-Mail',
     address: 'Adresse',

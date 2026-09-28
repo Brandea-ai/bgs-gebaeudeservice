@@ -127,7 +127,7 @@ export const pages = {
   '/kontakt': {
     label: 'Contatto',
     title: 'Contatto e offerta',
-    description: `Ci telefoni al numero ${company.phone.display} o ci scriva un messaggio. Offerta gratuita sul posto, risposta entro 24 ore nei giorni feriali.`,
+    description: `Offerta per le pulizie a Lucerna, Zugo e dintorni: risposta entro 24 ore nei giorni feriali, sopralluogo gratuito. Ci chiami al numero ${company.phone.display}.`,
   },
   '/impressum': {
     label: 'Note legali',

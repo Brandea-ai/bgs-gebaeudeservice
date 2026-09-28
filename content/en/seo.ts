@@ -128,7 +128,7 @@ export const pages: Dictionary['pages'] = {
   '/kontakt': {
     label: 'Contact',
     title: 'Contact and quote',
-    description: `Call us on ${company.phone.display} or write to us. Free quote after an on-site visit, and a reply ${responseTime}.`,
+    description: `Cleaning quote for your property in Lucerne, Zug and beyond: a reply ${responseTime}, free site visit. Call us on ${company.phone.display}.`,
   },
   '/impressum': {
     label: 'Legal notice',

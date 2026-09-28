@@ -5,15 +5,18 @@ import { pageJsonLd } from "../../../../shared/structured-data";
 import type { KontaktProps } from "./kontext";
 import KontaktHero from "./01-hero";
 import KontaktKanaele from "./02-kanaele";
-import KontaktAnfrage from "./03-anfrage";
+import KontaktFormular from "./03-formular";
 import KontaktAblauf from "./04-ablauf";
-import KontaktKarte from "./05-karte";
-import KontaktFragen from "./06-fragen";
+import KontaktBesichtigung from "./05-besichtigung";
+import KontaktKarte from "./06-karte";
+import KontaktFragen from "./07-fragen";
 
 /**
- * Kontakt (Factory-Strukturnorm, E80): nur Reihenfolge. Kopf, Kontaktwege,
- * was die Anfrage enthalten sollte, Ablauf danach, Karte, Einwände; das
- * Formular (unverändert) trägt PageFrame mit dem Abschluss der Seite.
+ * Kontakt (Factory-Strukturnorm, E80, Audit visuell /kontakt): nur Reihenfolge.
+ * Kopf, Kontaktwege, direkt darunter das Formular mit dem, was in die Anfrage
+ * gehört, dann was nach dem Absenden passiert, die Besichtigung vorbereiten
+ * (Baustein 9.1), Karte und Fragen. Das Formular steht nur einmal auf der
+ * Seite: ContactSection in PageFrame liefert auf /kontakt nichts.
  */
 export default function Kontakt(props: KontaktProps) {
   const { contact } = getDict(props.lang).seiten;
@@ -22,8 +25,9 @@ export default function Kontakt(props: KontaktProps) {
       <JsonLd data={pageJsonLd("/kontakt", "ContactPage", props.lang)} />
       <KontaktHero {...props} />
       <KontaktKanaele {...props} />
-      <KontaktAnfrage {...props} />
+      <KontaktFormular {...props} />
       <KontaktAblauf {...props} />
+      <KontaktBesichtigung {...props} />
       <KontaktKarte {...props} />
       <KontaktFragen {...props} />
     </PageFrame>

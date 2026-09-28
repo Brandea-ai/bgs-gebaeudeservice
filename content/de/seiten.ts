@@ -16,7 +16,7 @@ type PromiseKey = 'diskret' | 'teams' | 'personal' | 'schluessel' | 'zeiten' | '
 type LinkCard = Card & { path: PagePath }
 type AudienceKey = 'verwaltungen' | 'unternehmen' | 'privat' | 'premium'
 type PromiseItemKey = 'persoenlich' | 'offerte' | 'gebiet' | 'versichert' | 'sprachen' | 'umwelt'
-type BriefKey = 'objekt' | 'ort' | 'groesse' | 'leistung' | 'rhythmus' | 'start' | 'zugang'
+type BriefKey = 'rolle' | 'objekt' | 'ort' | 'groesse' | 'leistung' | 'rhythmus' | 'start' | 'zugang'
 // Schlüssel wählen Symbol und Bild in der Darstellung; die Übersetzungen tragen dieselben Schlüssel
 type Audience = Card & { key: AudienceKey; points: string[]; link: { path: PagePath; text: string } }
 type KeyedCard<K> = Card & { key: K }
@@ -390,42 +390,111 @@ export const about = {
   },
 }
 
+/**
+ * Kontakt (E80, Audit Inhalt 9, Audit visuell /kontakt): Kontaktwege, direkt
+ * darunter das Formular mit dem, was in die Anfrage gehört, danach der Ablauf
+ * nach dem Absenden, die Besichtigung vorbereiten (Baustein 9.1), Karte und
+ * Fragen. Eigene Sätze statt der Standardtexte von Startseite und Leistungen;
+ * die allgemeinen Fragen (Gebiet, Versicherung, Mittel, Sprachen) stehen hier
+ * und nicht mehr auf den Leistungsseiten (Spez. 26, Abschnitt 3).
+ */
 export const contact = {
   h1: 'Kontakt und Offerte',
-  lead: `Rufen Sie uns an oder schreiben Sie uns. Wir melden uns ${company.responseTime}.`,
-  // Kontaktwege als Karten (E80): Hinweis, wofür sich der Weg eignet, und eine Aktion
+  lead: `Per Telefon, E-Mail oder Formular. Eine Antwort erhalten Sie ${company.responseTime}.`,
+  // Kontaktwege (E80): Hinweis, wofür sich der Weg eignet, und eine Aktion; Festnetz und Mobil in einer Karte
   channels: {
     title: 'So erreichen Sie uns',
-    phone: { title: 'Telefon', hint: 'Für Fragen und um einen Termin für die Besichtigung zu vereinbaren.', action: 'Anrufen' },
-    mobile: { title: 'Mobil', hint: 'Unsere Mobilnummer, zusätzlich zum Festnetz.', action: 'Anrufen' },
-    email: { title: 'E-Mail', hint: 'Für Anfragen mit Unterlagen, etwa Grundrissen, Flächenlisten oder Fotos.', action: 'E-Mail schreiben' },
-    form: { title: 'Formular', value: 'Offerte anfragen', hint: 'Die wichtigsten Angaben in wenigen Feldern, die Leistung wählen Sie aus einer Liste.', action: 'Zum Formular' },
-    address: { title: 'Adresse', hint: 'Unser Sitz. Die Besichtigung findet bei Ihnen vor Ort statt.', action: 'Zur Karte' },
+    phone: { title: 'Telefon', mobile: 'Mobil', hint: 'Für Fragen und um den Termin für die Besichtigung zu vereinbaren.', action: 'Anrufen' },
+    email: { title: 'E-Mail', hint: 'Für Anfragen mit Unterlagen wie Grundrissen, Flächenlisten oder Fotos.', action: 'E-Mail schreiben' },
+    address: { title: 'Adresse', hint: 'Hier ist unser Sitz. Die Besichtigung findet bei Ihnen vor Ort statt.', action: 'Zur Karte' },
   },
-  // Was die Anfrage enthalten sollte: dieselben Punkte, nach denen das Formular fragt
+  // Randspalte neben dem Formular: dieselben Punkte, nach denen das Formular fragt
   brief: {
-    title: 'Was Ihre Anfrage enthalten sollte',
-    intro: 'Je genauer Ihre Angaben, desto gezielter bereiten wir die Besichtigung vor. Fehlt etwas, klären wir es im Gespräch.',
+    title: 'Was in die Anfrage gehört',
     items: [
-      { key: 'objekt', title: 'Objekt', text: 'Art des Objekts, zum Beispiel Büro, Praxis, Mehrfamilienhaus, Halle oder Villa.' },
-      { key: 'ort', title: 'Ort', text: 'Adresse oder Postleitzahl des Objekts.' },
-      { key: 'groesse', title: 'Grösse', text: 'Ungefähre Fläche, Anzahl Räume, Wohnungen oder Stockwerke.' },
-      { key: 'leistung', title: 'Leistung', text: 'Was gemacht werden soll, etwa Unterhaltsreinigung, Hauswartung oder eine einmalige Reinigung.' },
-      { key: 'rhythmus', title: 'Rhythmus und Zeiten', text: 'Wie oft und wann, zum Beispiel vor Arbeitsbeginn, abends oder am Wochenende.' },
-      { key: 'start', title: 'Start', text: 'Ab wann Sie die Leistung brauchen, bei Bau- und Umzugsreinigungen den Übergabetermin.' },
-      { key: 'zugang', title: 'Zugang und Besonderheiten', text: 'Schlüssel oder Badge, empfindliche Böden und Materialien, grosse Glasflächen.' },
+      { key: 'rolle', title: 'Wer anfragt', text: 'Verwaltung, Stockwerkeigentümerschaft, Eigentümer, Unternehmen oder Privatkunde mit Villa, Zweitwohnung, Yacht oder Jet.' },
+      { key: 'objekt', title: 'Objekt', text: 'Büro, Praxis, Mehrfamilienhaus, Halle oder Villa.' },
+      { key: 'ort', title: 'Ort', text: 'Adresse oder Postleitzahl.' },
+      { key: 'groesse', title: 'Grösse', text: 'Fläche in m², Anzahl Wohnungen, Stockwerke oder Liegenschaften.' },
+      { key: 'leistung', title: 'Leistung', text: 'etwa Unterhaltsreinigung, Hauswartung oder eine einmalige Reinigung.' },
+      { key: 'rhythmus', title: 'Rhythmus und Zeiten', text: 'wie oft und wann, etwa vor Arbeitsbeginn, abends oder am Samstag.' },
+      { key: 'start', title: 'Start', text: 'ab wann, bei Bau- und Umzugsreinigung der Übergabetermin.' },
+      { key: 'zugang', title: 'Zugang und Besonderheiten', text: 'Schlüssel oder Badge, empfindliche Böden, grosse Glasflächen.' },
     ] satisfies KeyedCard<BriefKey>[] as KeyedCard<BriefKey>[],
-    note: 'Grundrisse, Flächenlisten oder Fotos können Sie uns per E-Mail schicken.',
   },
-  steps: { title: 'Von der Anfrage bis zum ersten Einsatz', items: offerSteps },
+  // Ablauf direkt unter dem Formular: was nach dem Absenden passiert (Audit visuell, /kontakt)
+  steps: {
+    title: 'Was nach dem Absenden passiert',
+    items: [
+      {
+        title: 'Rückmeldung',
+        text: 'Der Geschäftsführer liest Ihre Anfrage selbst und schlägt Ihnen einen Termin für die Besichtigung vor.',
+      },
+      {
+        title: 'Besichtigung',
+        text: 'Wir gehen mit Ihnen oder Ihrer Ansprechperson durch alle Räume und Flächen, um die es geht. Dabei sehen wir Zustand, Materialien und Zugang.',
+      },
+      {
+        title: 'Offerte',
+        text: 'Die Offerte kommt schriftlich. Sie nennt Räume und Aufgaben, wie oft wir sie erledigen und zu welchen Zeiten.',
+      },
+      {
+        title: 'Start',
+        text: 'Sagen Sie zu, steht der erste Einsatztag fest. Zeiten und Zugang zum Objekt sind dann mit Ihnen abgestimmt.',
+      },
+    ] satisfies Step[] as Step[],
+  },
+  // Baustein 9.1 (Audit Inhalt): Beleg contact.brief und E56 (Offerte nach Besichtigung)
+  visit: {
+    title: 'Die Besichtigung vorbereiten',
+    intro: 'Was Sie für den Termin vor Ort bereithalten:',
+    items: [
+      'Zugang zu allen Räumen, die gereinigt oder betreut werden sollen, auch zu Keller, Estrich, Waschküche und Technikräumen',
+      'Pläne oder eine Flächenliste, falls vorhanden',
+      'Das bisherige Pflichtenheft oder Leistungsverzeichnis, wenn schon eine Firma bei Ihnen arbeitet',
+      'Die gewünschten Zeiten und den Starttermin',
+      'Eine Ansprechperson, die Fragen zu Nutzung und Zugang beantworten kann',
+    ],
+  },
   map: {
     title: 'So finden Sie uns',
-    text: `Sitz in ${company.address.city}. Wir arbeiten in den Kantonen ${cantonList}.`,
+    text: `Unser Sitz liegt in ${company.address.city}. Von hier aus fahren wir zu Ihrem Objekt, im ganzen Einzugsgebiet.`,
   },
-  faq: [faq.schnell, faq.kosten, faq.gebiet, faq.versichert, faq.kurzfristig],
+  faq: [
+    {
+      question: 'Wie entsteht die Offerte?',
+      answer: 'Zuerst vereinbaren wir mit Ihnen den Termin für die Besichtigung. Die Offerte schreiben wir danach, auf Grundlage dessen, was wir vor Ort gesehen haben.',
+    },
+    {
+      question: 'Was kostet mich die Besichtigung?',
+      answer: 'Nichts. Sie zahlen weder für die Besichtigung noch für die Offerte, und die Offerte verpflichtet Sie zu nichts.',
+    },
+    {
+      question: 'Kommen Sie auch zu Objekten ausserhalb von Luzern?',
+      answer: `Ja. Zu unserem Gebiet gehören fünf ganze Kantone: ${cantonList}. Alle Leistungen gibt es dort zu denselben Bedingungen. Orte und Karte finden Sie auf der Seite [Einzugsgebiet](/einzugsgebiet).`,
+    },
+    // Nur die belegte Deckungssumme (E18). Welche Schäden die Police deckt (etwa Bearbeitungsschäden), ist offen: Prüfbefund K-E18-1
+    {
+      question: 'Haben Sie eine Betriebshaftpflichtversicherung?',
+      answer: 'Ja, mit einer Deckungssumme von CHF 10 Mio.',
+    },
+    {
+      question: 'Arbeiten Sie mit umweltfreundlichen Mitteln?',
+      answer: 'Auf Wunsch ja. Vermerken Sie es am besten schon in Ihrer Anfrage unter «Objekt und Anliegen».',
+    },
+    {
+      question: 'In welcher Sprache kann ich anfragen?',
+      answer: 'Auf Deutsch, Englisch, Französisch oder Italienisch. Wir beraten Sie in Ihrer Sprache.',
+    },
+    {
+      question: 'Geht es auch kurzfristig?',
+      answer: 'Rufen Sie in diesem Fall an, statt zu schreiben. Am Telefon erfahren Sie am schnellsten, ob und wann ein Einsatz möglich ist.',
+    },
+  ],
+  // Formularbereich direkt unter den Kontaktwegen; «Reinigungsofferte» nach 25-AUDIT/keywords-mehrsprachig.md
   cta: {
-    title: 'Beschreiben Sie uns Ihr Objekt',
-    text: `Objekt und Anliegen im Formular gleich unten genügen. Wir melden uns ${company.responseTime} und vereinbaren die Besichtigung.`,
+    title: 'Reinigungsofferte anfragen',
+    text: 'Diese Angaben braucht die Offerte. Was Sie noch nicht wissen, lassen Sie offen.',
   },
 }
 

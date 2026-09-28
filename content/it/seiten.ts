@@ -323,40 +323,65 @@ export const about = {
   },
 }
 
+/** Kontakt (E80, Audit Inhalt 9, Audit visuell /kontakt), Übersetzung von content/de/seiten.ts */
 export const contact = {
   h1: 'Contatto e offerta',
-  lead: `Ci telefoni o ci scriva. La contattiamo ${responseTime}.`,
+  lead: `Per telefono, e-mail o modulo. Riceve una risposta ${responseTime}.`,
   channels: {
     title: 'Come raggiungerci',
-    phone: { title: 'Telefono', hint: 'Per domande e per fissare un appuntamento per il sopralluogo.', action: 'Chiamare' },
-    mobile: { title: 'Cellulare', hint: 'Il nostro numero di cellulare, in aggiunta alla rete fissa.', action: 'Chiamare' },
-    email: { title: 'E-mail', hint: 'Per richieste con documenti, ad esempio piante, elenchi delle superfici o foto.', action: 'Scrivere un’e-mail' },
-    form: { title: 'Modulo', value: 'Richiedere un’offerta', hint: 'Le indicazioni principali in pochi campi, il servizio lo sceglie da un elenco.', action: 'Al modulo' },
-    address: { title: 'Indirizzo', hint: 'La nostra sede. Il sopralluogo si svolge da Lei, sul posto.', action: 'Alla cartina' },
+    phone: { title: 'Telefono', mobile: 'Cellulare', hint: 'Per domande e per fissare l’appuntamento per il sopralluogo.', action: 'Chiamare' },
+    email: { title: 'E-mail', hint: 'Per richieste con documenti come piante, elenchi delle superfici o foto.', action: 'Scrivere un’e-mail' },
+    address: { title: 'Indirizzo', hint: 'Qui si trova la nostra sede. Il sopralluogo si svolge da Lei, sul posto.', action: 'Alla cartina' },
   },
   brief: {
-    title: 'Che cosa dovrebbe contenere la Sua richiesta',
-    intro: 'Più precise sono le Sue indicazioni, meglio prepariamo il sopralluogo. Se manca qualcosa, lo chiariamo nel colloquio.',
+    title: 'Che cosa mettere nella richiesta',
     items: [
-      { key: 'objekt' as const, title: 'Immobile', text: 'Tipo di immobile, ad esempio ufficio, studio, casa plurifamiliare, capannone o villa.' },
-      { key: 'ort' as const, title: 'Luogo', text: 'Indirizzo o numero postale dell’immobile.' },
-      { key: 'groesse' as const, title: 'Dimensioni', text: 'Superficie approssimativa, numero di locali, appartamenti o piani.' },
-      { key: 'leistung' as const, title: 'Servizio', text: 'Che cosa va fatto, ad esempio pulizia di manutenzione, custodia di stabili o una pulizia singola.' },
-      { key: 'rhythmus' as const, title: 'Cadenza e orari', text: 'Con quale frequenza e quando, ad esempio prima dell’inizio del lavoro, la sera o nel fine settimana.' },
-      { key: 'start' as const, title: 'Inizio', text: 'Da quando Le serve il servizio, per pulizie di cantiere e di fine locazione la data di consegna.' },
-      { key: 'zugang' as const, title: 'Accesso e particolarità', text: 'Chiave o badge, pavimenti e materiali delicati, grandi superfici vetrate.' },
+      { key: 'rolle' as const, title: 'Chi fa la richiesta', text: 'amministrazione immobiliare, comunione dei proprietari per piani, proprietario, azienda o cliente privato con villa, residenza secondaria, yacht o jet.' },
+      { key: 'objekt' as const, title: 'Immobile', text: 'ufficio, studio, casa plurifamiliare, capannone o villa.' },
+      { key: 'ort' as const, title: 'Luogo', text: 'indirizzo o NPA.' },
+      { key: 'groesse' as const, title: 'Dimensioni', text: 'superficie in m², numero di appartamenti, piani o stabili.' },
+      { key: 'leistung' as const, title: 'Servizio', text: 'ad esempio pulizia di manutenzione, custodia di stabili o una pulizia singola.' },
+      { key: 'rhythmus' as const, title: 'Cadenza e orari', text: 'con quale frequenza e quando, ad esempio prima dell’inizio del lavoro, la sera o il sabato.' },
+      { key: 'start' as const, title: 'Inizio', text: 'da quando, e per pulizie di cantiere e di fine locazione la data di consegna.' },
+      { key: 'zugang' as const, title: 'Accesso e particolarità', text: 'chiave o badge, pavimenti delicati, grandi superfici vetrate.' },
     ],
-    note: 'Piante, elenchi delle superfici o foto può inviarceli per e-mail.',
   },
-  steps: { title: 'Dalla richiesta al primo intervento', items: offerSteps },
+  steps: {
+    title: 'Che cosa succede dopo l’invio',
+    items: [
+      { title: 'Risposta', text: 'Il gerente legge personalmente la Sua richiesta e Le propone una data per il sopralluogo.' },
+      { title: 'Sopralluogo', text: 'Con Lei o con la Sua persona di contatto percorriamo tutti i locali e le superfici interessati. Così vediamo stato, materiali e accesso.' },
+      { title: 'Offerta', text: 'Le inviamo l’offerta per iscritto. Indica locali e compiti, con quale frequenza li svolgiamo e in quali orari.' },
+      { title: 'Inizio', text: 'Con la Sua conferma è fissato il primo giorno d’intervento. Orari e accesso all’immobile sono allora concordati con Lei.' },
+    ] satisfies Step[] as Step[],
+  },
+  visit: {
+    title: 'Preparare il sopralluogo',
+    intro: 'Che cosa tenere a disposizione per l’appuntamento sul posto:',
+    items: [
+      'L’accesso a tutti i locali da pulire o da curare, anche cantina, solaio, lavanderia e locali tecnici',
+      'Piante o un elenco delle superfici, se disponibili',
+      'Il capitolato d’oneri o l’elenco delle prestazioni attuale, se un’impresa lavora già da Lei',
+      'Gli orari desiderati e la data di inizio',
+      'Una persona di contatto che possa rispondere a domande su utilizzo e accesso',
+    ],
+  },
   map: {
-    title: 'Come raggiungerci',
-    text: `Sede a ${company.address.city}. Operiamo nei Cantoni di ${cantonListIt}.`,
+    title: 'Come trovarci',
+    text: `La nostra sede è a ${company.address.city}. Da qui raggiungiamo il Suo immobile in tutta la nostra zona d’intervento.`,
   },
-  faq: [faq.schnell, faq.kosten, faq.gebiet, faq.versichert, faq.kurzfristig],
+  faq: [
+    { question: 'Come viene allestita l’offerta?', answer: 'Prima fissiamo con Lei la data del sopralluogo. Poi redigiamo l’offerta sulla base di ciò che abbiamo visto sul posto.' },
+    { question: 'Quanto mi costa il sopralluogo?', answer: 'Niente. Non paga né il sopralluogo né l’offerta, e l’offerta non La impegna a nulla.' },
+    { question: 'Venite anche fuori da Lucerna?', answer: `Sì. La nostra zona comprende cinque Cantoni interi: ${cantonListIt}. Tutti i servizi vi sono offerti alle stesse condizioni. Località e cartina si trovano alla pagina [Zona d’intervento](/einzugsgebiet).` },
+    { question: 'Avete un’assicurazione di responsabilità civile aziendale?', answer: 'Sì, con una somma assicurata di CHF 10 milioni.' },
+    { question: 'Lavorate con prodotti ecologici?', answer: 'Su richiesta sì. Lo indichi preferibilmente già nella richiesta, alla voce «Immobile e richiesta».' },
+    { question: 'In quale lingua posso fare la richiesta?', answer: 'In tedesco, inglese, francese o italiano. La consigliamo nella Sua lingua.' },
+    { question: 'È possibile anche a breve termine?', answer: 'In questo caso ci telefoni invece di scrivere. Al telefono saprà prima se e quando possiamo intervenire.' },
+  ],
   cta: {
-    title: 'Ci descriva il Suo immobile',
-    text: `Bastano l’immobile e la Sua richiesta nel modulo qui sotto. La contattiamo ${responseTime} e fissiamo il sopralluogo.`,
+    title: 'Richiedere un’offerta per le pulizie',
+    text: 'Queste indicazioni ci servono per l’offerta. Lasci vuoto ciò che non sa ancora.',
   },
 }
 

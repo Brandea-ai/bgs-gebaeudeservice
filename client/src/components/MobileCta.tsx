@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { ArrowRight, Phone } from "@phosphor-icons/react/dist/ssr";
 import { company } from "../../../shared/company";
 import { navDicts } from "../../../content/navigation";
-import type { Locale } from "../../../shared/i18n";
+import { localizePath, type Locale } from "../../../shared/i18n";
 import type { PagePath } from "../../../shared/seo";
 
 /**
@@ -14,10 +14,16 @@ import type { PagePath } from "../../../shared/seo";
  * sind. Der Footer klebt nur ab 1024 px (globals.css), unter 768 px steht er
  * im Fluss; darum ist er hier wieder ein verlässliches Mass (T01).
  * Auf Premium-Seiten in Champagner und Anthrazit statt Signalrot (E85).
+ * Impressum und Datenschutz haben kein Formular, nur ein Kontaktband (Audit
+ * visuell, Umbau 3): dort führt «Offerte anfragen» zum Formular auf /kontakt.
  */
 export default function MobileCta({ lang = "de", path }: { lang?: Locale; path?: PagePath }) {
   const { chrome, menu } = navDicts[lang];
   const premium = path?.startsWith("/premium") ?? false;
+  const offerHref =
+    path === "/impressum" || path === "/datenschutz"
+      ? `${localizePath("/kontakt", lang)}#kontakt-formular`
+      : menu.cta.href;
   const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
@@ -52,7 +58,7 @@ export default function MobileCta({ lang = "de", path }: { lang?: Locale; path?:
       aria-hidden={hidden}
     >
       <a
-        href={menu.cta.href}
+        href={offerHref}
         className={`press arrow-link inline-flex h-12 items-center justify-center gap-2 rounded-[3px] px-5 text-[0.9375rem] font-semibold ${
           premium ? "bg-brass text-anthracite" : "btn-lift bg-signal text-white"
         }`}
