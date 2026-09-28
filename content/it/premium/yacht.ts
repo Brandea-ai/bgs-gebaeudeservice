@@ -21,10 +21,10 @@ const fonti = {
 export const yacht: ServicePageContent = {
   path: '/premium/yacht',
   area: 'premium',
-  h1: 'Pulizia barche e yacht all’ormeggio',
+  h1: 'Pulizia di barche e yacht all’ormeggio',
   lead: [
-    'Polline, escrementi di uccelli e umidità mettono alla prova ogni stagione un’imbarcazione sul lago. La puliamo là dove si trova, al pontile o in porto: all’interno e all’esterno, una volta prima di un evento o regolarmente per tutta la stagione.',
-    'Ciò che scorre giù dal ponte finisce nel lago. Per questo il regolamento del porto del Suo ormeggio e le istruzioni di manutenzione del Suo cantiere nautico sono tra i primi documenti che guardiamo.',
+    'Polline, escrementi di uccelli e umidità mettono alla prova ogni stagione un’imbarcazione sul lago. La puliamo là dove si trova, al pontile o in porto, all’interno e all’esterno.',
+    'Ciò che scorre giù dal ponte finisce nel lago. Prima del primo intervento tenga quindi a portata di mano il regolamento del porto del Suo ormeggio e le istruzioni di manutenzione del Suo cantiere nautico.',
   ],
   facts: [
     { label: 'Dove', value: 'All’ormeggio, sul lago dei Quattro Cantoni e sul lago di Zugo' },
@@ -36,8 +36,8 @@ export const yacht: ServicePageContent = {
     {
       title: 'Perché una barca si pulisce diversamente da una casa',
       paragraphs: [
-        'A bordo ci sono materiali che in casa si trovano di rado. Il teak ha fibre morbide che le spazzole dure e l’alta pressione strappano via: il ponte diventa ruvido e i comenti sporgono. Il gelcoat perde lucentezza per il sole e per detergenti non adatti, l’acciaio inossidabile arrugginisce se entrano in gioco lana d’acciaio o prodotti al cloro.',
-        'I detergenti per la casa sono quindi quasi sempre la scelta sbagliata a bordo. Lavoriamo con prodotti adatti a ciascun materiale e ci atteniamo alle istruzioni di manutenzione del Suo cantiere nautico, se esistono.',
+        'A bordo ci sono materiali che in casa si trovano di rado. Il teak ha fibre morbide che le spazzole dure e l’alta pressione strappano via: il ponte diventa ruvido e si consuma prima del tempo. Il gelcoat perde lucentezza per il sole e per detergenti non adatti, l’acciaio inossidabile arrugginisce se entrano in gioco lana d’acciaio o prodotti al cloro.',
+        'I detergenti per la casa sono quindi quasi sempre la scelta sbagliata a bordo. E ciò che aiuta un materiale può danneggiarne un altro: un detergente leggermente acido toglie la ruggine superficiale dalla battagliola, mentre sul gelcoat lì accanto gli acidi non vanno usati.',
       ],
     },
     {
@@ -79,7 +79,7 @@ export const yacht: ServicePageContent = {
         [
           'Cuscini e imbottiture in tessuto da esterni',
           'Spazzolare lo sporco non aderente, pulire con una soluzione di sapone delicato e una spazzola morbida, risciacquare tutti i residui di sapone e lasciare asciugare all’aria.',
-          'Candeggina vicino all’acqua, che sconsiglia anche il produttore del tessuto. Sporco lasciato sul posto: su di esso cresce la muffa.',
+          'Candeggina all’ormeggio: può danneggiare l’ambiente, perciò il produttore di tessuti Sunbrella la sconsiglia vicino all’acqua. Può inoltre scolorire i tessuti di altre marche. Sporco lasciato sul posto: su di esso cresce la muffa.',
         ],
       ],
       note: 'Se dopo una pulizia ad acqua un ponte in teak resta bagnato più a lungo in alcuni punti, o il legno lì cambia colore, un comento potrebbe non essere più stagno. È un lavoro per il cantiere nautico.',
@@ -141,7 +141,7 @@ export const yacht: ServicePageContent = {
         [
           'Regolamento del porto',
           'Ogni porto disciplina da sé il lavaggio al posto barca, con rigore diverso. Il Bootshafen Luzern vieta i prodotti dannosi per l’ambiente, il Bootshafen Hostatt a Kehrsiten vieta del tutto detergenti e pulitrici a vapore.',
-          'Il regolamento del porto del Suo ormeggio stabilisce quali prodotti sono ammessi al pontile. Fa parte dei documenti da preparare prima del primo intervento.',
+          'Il regolamento del porto del Suo ormeggio stabilisce quali prodotti sono ammessi al pontile. Se vieta del tutto i detergenti, come a Kehrsiten, per lavare al posto barca resta solo acqua pulita.',
         ],
         [
           'Obbligo di notifica e pulizia delle imbarcazioni',
@@ -180,11 +180,18 @@ export const yacht: ServicePageContent = {
           ],
         },
         {
-          title: 'Accesso e date',
+          title: 'Accesso',
           items: [
             'Chiave, badge o codice per cancello e pontile',
             'Chi apre la barca quando Lei non c’è',
-            'Uscite previste, ospiti a bordo e data del rimessaggio invernale',
+            'Impianto d’allarme a bordo, se presente',
+          ],
+        },
+        {
+          title: 'Date',
+          items: [
+            'Uscite previste e fine settimana con ospiti',
+            'Date dell’alaggio e del rimessaggio invernale',
             'Persona di contatto al lago: Lei stesso, il Suo skipper o il responsabile del porto',
           ],
         },
@@ -195,11 +202,11 @@ export const yacht: ServicePageContent = {
   ],
   scope: {
     title: 'Che cosa rientra nella pulizia della barca',
-    intro: 'All’ormeggio, una volta o regolarmente durante la stagione:',
+    intro: 'All’ormeggio:',
     items: [
-      'Ponte e superfici in teak, con la ferramenta in inox',
+      'Ponte e superfici in teak',
       'Gelcoat di ponte e sovrastrutture',
-      'Oblò e boccaporti, anche in vetro acrilico',
+      'Finestrature e vetri',
       'Imbottiture, cuscini e tessili',
       'Salone, cabine e cambusa',
       'Bagni',
@@ -217,19 +224,15 @@ export const yacht: ServicePageContent = {
       text: 'Come saliamo a bordo lo decide Lei: con una chiave, con un badge per il pontile o tramite una persona che apre la barca. Valgono regole fisse, anche durante la Sua assenza.',
     },
     {
-      title: 'Interventi secondo il piano stagionale',
-      text: 'Veniamo nelle date concordate, una volta prima di un evento o regolarmente dalla primavera all’autunno, anche la sera e nel fine settimana.',
-    },
-    {
       title: 'Un team fisso',
-      text: 'Della Sua barca si occupa un team fisso. Dopo il primo intervento conosce gavoni, allacciamenti e regolamento del porto.',
+      text: 'Della Sua barca si occupa un team fisso. Se cambiano il posto barca, il badge o la persona che apre la barca, ce lo comunichi prima del prossimo intervento.',
     },
   ],
   faq: [
     {
       question: 'Quanto costa la pulizia di una barca?',
       answer:
-        'L’impegno dipende soprattutto da lunghezza e allestimento della barca, cioè se si tratta di un motoscafo aperto o di uno yacht con salone, cabine e bagni. Contano inoltre la superficie in teak, lo stato, se puliamo l’interno, l’esterno o entrambi, la frequenza e quanto è facile raggiungere l’ormeggio con l’attrezzatura. Le indichiamo un prezzo non appena abbiamo visto la barca.',
+        'Il lavoro necessario dipende soprattutto da lunghezza e allestimento della barca, cioè se si tratta di un motoscafo aperto o di uno yacht con salone, cabine e bagni. Contano inoltre la superficie in teak, lo stato, se puliamo l’interno, l’esterno o entrambi, la frequenza e quanto è facile raggiungere l’ormeggio con l’attrezzatura. Le indichiamo un prezzo non appena abbiamo visto la barca.',
     },
     {
       question: 'Ogni quanto va pulita una barca all’ormeggio?',
@@ -244,17 +247,12 @@ export const yacht: ServicePageContent = {
     {
       question: 'Che cosa aiuta contro le macchie di muffa nel salone?',
       answer:
-        'Aria e asciutto. Lasciare asciugare del tutto cuscini e imbottiture dopo la pulizia, non lasciare lo sporco sul posto, perché la muffa ci cresce sopra, e in inverno non chiudere la barca ermeticamente nella plastica. Se le macchie ci sono già, puliamo le fodere secondo le istruzioni del produttore del tessuto.',
+        'Arieggiare e tenere all’asciutto. Lasciare asciugare del tutto cuscini e imbottiture dopo la pulizia, non lasciare lo sporco sul posto, perché la muffa ci cresce sopra, e in inverno non chiudere la barca ermeticamente nella plastica. Contro le macchie di muffa ostinate il produttore di tessuti Sunbrella raccomanda una soluzione con candeggina, ma la sconsiglia vicino all’acqua. Secondo Sunbrella, le fodere rimovibili si possono lavare anche in lavatrice a freddo.',
     },
     {
       question: 'Dobbiamo essere a bordo durante la pulizia?',
       answer:
-        'No. Non è necessario che Lei sia al pontile o a bordo, e veniamo anche la sera o nel fine settimana. Chi apre la barca e la richiude lo regoliamo con Lei una volta sola, poi vale per ogni intervento.',
-    },
-    {
-      question: 'Il nostro skipper o il responsabile del porto può fissare gli appuntamenti?',
-      answer:
-        'Sì. Ci indichi la persona che conosce la barca e può rispondere alle nostre domande al pontile. L’offerta va a Lei o a chi Lei designa.',
+        'No. Non è necessario che Lei sia al pontile o a bordo. Chi apre la barca e la richiude lo stabiliamo con Lei una volta sola, poi vale per ogni intervento.',
     },
     {
       question: 'Potete pulire la nostra barca per un cambio di lago?',

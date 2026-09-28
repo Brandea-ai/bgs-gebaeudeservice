@@ -23,8 +23,8 @@ export const yacht: ServicePageContent = {
   area: 'premium',
   h1: 'Boat cleaning and yacht cleaning at your mooring',
   lead: [
-    'Pollen, bird droppings and damp take their toll on a boat on the lake every season. We clean it where it lies, at the jetty or in the harbour: inside and out, once before an occasion or regularly throughout the season.',
-    'Whatever runs off the deck ends up in the lake. That is why the harbour rules for your mooring and your boatyard’s care instructions are among the first documents we look at.',
+    'Pollen, bird droppings and damp take their toll on a boat on the lake every season. We clean it where it lies, at the jetty or in the harbour, inside and out.',
+    'Whatever runs off the deck ends up in the lake. So before the first visit, please have the harbour rules for your mooring and your builder’s care instructions to hand.',
   ],
   facts: [
     { label: 'Where', value: 'At your mooring, on Lake Lucerne and Lake Zug' },
@@ -36,8 +36,8 @@ export const yacht: ServicePageContent = {
     {
       title: 'Why a boat is cleaned differently from a house',
       paragraphs: [
-        'A boat is built from materials you rarely find in a house. Teak has soft fibres that hard brushes and pressure washers pull out: the deck turns rough and the seams stand proud. Gelcoat loses its shine through sun and unsuitable cleaners, and stainless steel starts to rust when steel wool or chlorine-based products are used.',
-        'Household cleaners are therefore usually the wrong choice on board. We use products that suit each material and follow your boatyard’s care instructions where there are any.',
+        'A boat is built from materials you rarely find in a house. Teak has soft fibres that hard brushes and pressure washers pull out: the deck turns rough and wears out before its time. Gelcoat loses its shine through sun and unsuitable cleaners, and stainless steel starts to rust when steel wool or chlorine-based products are used.',
+        'Household cleaners are therefore usually the wrong choice on board. And what helps one material can harm the next: a mildly acidic cleaner removes surface rust from the rail, while acids can damage the gelcoat right beside it.',
       ],
     },
     {
@@ -53,7 +53,7 @@ export const yacht: ServicePageContent = {
       kind: 'table',
       id: 'materialien',
       title: 'Teak, gelcoat, stainless steel: what helps and what harms',
-      intro: 'These points come from care instructions issued by manufacturers and specialist bodies. If your boatyard has its own instructions for your boat, they take precedence.',
+      intro: 'These points come from care instructions issued by manufacturers and specialist bodies. If your boat’s builder has issued its own instructions, they take precedence.',
       columns: ['Material', 'How to clean it', 'What harms it'],
       rows: [
         [
@@ -79,7 +79,7 @@ export const yacht: ServicePageContent = {
         [
           'Cushions and upholstery in outdoor fabric',
           'Brush off loose dirt, clean with a mild soap solution and a soft brush, rinse out all soap residue and leave to air dry.',
-          'Bleach close to the water, which the fabric maker also advises against. Dirt that is left in place: mildew grows on it.',
+          'Bleach at the mooring: it can harm the environment, so the fabric maker Sunbrella advises against it when there is water nearby. It can also discolour fabrics from other makers. Dirt that is left in place: mildew grows on it.',
         ],
       ],
       note: 'If a teak deck stays wet for longer in certain places after wet cleaning, or the wood discolours there, a seam may be leaking. That is a job for the boatyard.',
@@ -141,11 +141,11 @@ export const yacht: ServicePageContent = {
         [
           'Harbour rules',
           'Each harbour regulates washing at the berth itself, and some are stricter than others. Bootshafen Luzern bans environmentally harmful products, while Bootshafen Hostatt in Kehrsiten bans cleaning agents and steam cleaners altogether.',
-          'The harbour rules for your mooring set out which products are allowed at the jetty. They belong with the documents we need before the first visit.',
+          'The harbour rules for your mooring set out which products are allowed at the jetty. Where they ban cleaning agents altogether, as in Kehrsiten, only clean water is left for washing at the berth.',
         ],
         [
           'Boat reporting and cleaning obligation',
-          'Before a registered boat moves to another body of water, such as a different lake, the move must be reported and the boat cleaned by an authorised cleaning station. Only with the release may it enter the new water. The reason is the quagga mussel, first found in Lake Lucerne in summer 2024.',
+          'Before a registered boat moves to another body of water, such as a different lake, the move must be reported and the boat cleaned by an authorised cleaning station. It may only be launched in the new body of water once it has been cleared. The reason is the quagga mussel, first found in Lake Lucerne in summer 2024.',
           'This applies in all cantons of Central Switzerland, and in Lucerne under its own ordinance since 1 April 2026. Letting the boat dry does not count as cleaning, and cleaning at the mooring does not replace it.',
         ],
       ],
@@ -162,8 +162,8 @@ export const yacht: ServicePageContent = {
         {
           title: 'Boat',
           items: [
-            'Boatyard, model and length',
-            'Care instructions from the boatyard or the deck manufacturer, if available',
+            'Builder, model and length',
+            'Care instructions from the builder or the deck manufacturer, if available',
             'Materials on board: teak, gelcoat, stainless steel, acrylic, leather or outdoor fabric',
             'Known damage, such as open seams in the teak or cracks in the gelcoat',
             'Lockers and areas we should not open',
@@ -180,11 +180,18 @@ export const yacht: ServicePageContent = {
           ],
         },
         {
-          title: 'Access and dates',
+          title: 'Access',
           items: [
             'Key, badge or code for the gate and jetty',
             'Who opens the boat when you are not there',
-            'Planned outings, guests on board and the date for winter storage',
+            'Alarm system on board, if there is one',
+          ],
+        },
+        {
+          title: 'Dates',
+          items: [
+            'Planned outings and weekends with guests',
+            'Dates for lifting out and for winter storage',
             'Contact person at the lake: you, your skipper or the harbour master',
           ],
         },
@@ -195,11 +202,11 @@ export const yacht: ServicePageContent = {
   ],
   scope: {
     title: 'Scope of the boat cleaning',
-    intro: 'At your mooring, once or regularly throughout the season:',
+    intro: 'At your mooring:',
     items: [
-      'Deck and teak surfaces, including the stainless steel fittings',
+      'Deck and teak surfaces',
       'Gelcoat on deck and superstructure',
-      'Windows and hatches, including acrylic',
+      'Windows and glass',
       'Upholstery, cushions and textiles',
       'Saloon, cabins and galley',
       'Heads and showers',
@@ -217,19 +224,15 @@ export const yacht: ServicePageContent = {
       text: 'You decide how we get on board: with a key, with a badge for the jetty or through a person who opens the boat. Fixed rules apply to this, including while you are away.',
     },
     {
-      title: 'Visits on a season plan',
-      text: 'We come on the agreed dates, once before an occasion or regularly from spring to autumn, including evenings and weekends.',
-    },
-    {
       title: 'A permanent team',
-      text: 'Your boat is looked after by a permanent team. After the first visit it knows the lockers, the connections and the harbour rules.',
+      text: 'Your boat is looked after by a permanent team. If the berth, the badge or the person who opens the boat changes, let us know before the next visit.',
     },
   ],
   faq: [
     {
       question: 'What does cleaning a boat cost?',
       answer:
-        'The effort depends above all on the length and layout of the boat, that is, whether it is an open motorboat or a yacht with a saloon, cabins and heads. Other factors are the area of teak, the condition, whether we clean inside, outside or both, how often we come and how easily equipment can be brought to the mooring. We give you a price once we have seen the boat.',
+        'The work involved depends above all on the length and layout of the boat, that is, whether it is an open motorboat or a yacht with a saloon, cabins and heads. Other factors are the area of teak, the condition, whether we clean inside, outside or both, how often we come and how easily equipment can be brought to the mooring. We give you a price once we have seen the boat.',
     },
     {
       question: 'How often does a boat at its mooring need cleaning?',
@@ -244,22 +247,17 @@ export const yacht: ServicePageContent = {
     {
       question: 'What helps against mildew spots in the saloon?',
       answer:
-        'Air and dryness. Let cushions and upholstery dry completely after cleaning, do not leave dirt in place, because mildew grows on it, and do not wrap the boat airtight in plastic sheeting over winter. If the spots are already there, we clean the covers according to the fabric maker’s instructions.',
+        'Air and dryness. Let cushions and upholstery dry completely after cleaning, do not leave dirt in place, because mildew grows on it, and do not wrap the boat airtight in plastic sheeting over winter. For stubborn mildew stains the fabric maker Sunbrella recommends a solution with bleach, but advises against it when there is water nearby. According to Sunbrella, removable covers can also go in the washing machine on a cold wash.',
     },
     {
       question: 'Do we need to be on board while you clean?',
       answer:
-        'No. You need not be at the jetty or on board, and we also come in the evening or at weekends. Who opens the boat and locks it again is settled with you once, and then applies to every visit.',
-    },
-    {
-      question: 'Can our skipper or the harbour master arrange the dates?',
-      answer:
-        'Yes. Give us the name of the person who knows the boat and can answer questions at the jetty. The quote goes to you or to whoever you designate.',
+        'No. You need not be at the jetty or on board. Who opens the boat and locks it again is agreed with you once and then applies to every visit.',
     },
     {
       question: 'Can you clean our boat for a move to another lake?',
       answer:
-        'No. Before a boat moves to a different lake, the cantons of Central Switzerland require cleaning by an authorised cleaning station, usually a boatyard. You report the move online to Umwelt Zentralschweiz and receive the release for the new lake after the cleaning. Our cleaning at the mooring does not replace it.',
+        'No. Before a boat moves to a different lake, the cantons of Central Switzerland require cleaning by an authorised cleaning station, usually a boatyard. You report the move online to Umwelt Zentralschweiz and receive clearance for the new lake after the cleaning. Our cleaning at the mooring does not replace it.',
     },
   ],
   related: [
@@ -269,6 +267,6 @@ export const yacht: ServicePageContent = {
   ],
   cta: {
     title: 'Request a quote for your boat',
-    text: 'Tell us the boatyard, model and length, the harbour or jetty and whether we should clean inside, outside or both, together with your preferred dates in the season. Once we have seen the boat at its mooring, we will send you the quote, free of charge and without obligation.',
+    text: 'Tell us the make, model and length, the harbour or jetty and whether we should clean inside, outside or both, together with your preferred dates in the season. Once we have seen the boat at its mooring, we will send you the quote, free of charge and without obligation.',
   },
 }

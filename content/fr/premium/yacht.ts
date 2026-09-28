@@ -23,8 +23,8 @@ export const yacht: ServicePageContent = {
   area: 'premium',
   h1: 'Nettoyage de bateau et de yacht à la place d’amarrage',
   lead: [
-    'Le pollen, les fientes d’oiseaux et l’humidité usent un bateau sur le lac à chaque saison. Nous le nettoyons là où il se trouve, au ponton ou au port : à l’intérieur et à l’extérieur, une seule fois avant un événement ou régulièrement pendant toute la saison.',
-    'Ce qui s’écoule du pont finit dans le lac. C’est pourquoi le règlement du port de votre place d’amarrage et les instructions d’entretien de votre chantier naval font partie des premiers documents que nous consultons.',
+    'Le pollen, les fientes d’oiseaux et l’humidité usent un bateau sur le lac à chaque saison. Nous le nettoyons là où il se trouve, au ponton ou au port, à l’intérieur et à l’extérieur.',
+    'Ce qui s’écoule du pont finit dans le lac. Avant la première intervention, préparez donc le règlement du port de votre place d’amarrage et les instructions d’entretien de votre chantier naval.',
   ],
   facts: [
     { label: 'Lieu', value: 'À votre place d’amarrage, sur les lacs des Quatre-Cantons et de Zoug' },
@@ -36,8 +36,8 @@ export const yacht: ServicePageContent = {
     {
       title: 'Pourquoi un bateau ne se nettoie pas comme une maison',
       paragraphs: [
-        'Un bateau est fait de matériaux qu’on ne trouve guère dans une maison. Le teck a des fibres tendres que les brosses dures et la haute pression arrachent : le pont devient rugueux et les joints ressortent. Le gelcoat perd son brillant sous l’effet du soleil et de nettoyants inadaptés, et l’inox commence à rouiller au contact de laine d’acier ou de produits chlorés.',
-        'Les nettoyants ménagers sont donc rarement le bon choix à bord. Nous travaillons avec des produits adaptés à chaque matériau et suivons les instructions d’entretien de votre chantier naval lorsqu’il y en a.',
+        'Un bateau est fait de matériaux qu’on ne trouve guère dans une maison. Le teck a des fibres tendres que les brosses dures et la haute pression arrachent : le pont devient rugueux et s’use prématurément. Le gelcoat perd son brillant sous l’effet du soleil et de nettoyants inadaptés, et l’inox commence à rouiller au contact de laine d’acier ou de produits chlorés.',
+        'Les nettoyants ménagers sont donc rarement le bon choix à bord. Et ce qui aide un matériau peut en abîmer un autre : un nettoyant légèrement acide enlève la rouille superficielle du balcon, alors que les acides peuvent endommager le gelcoat juste à côté.',
       ],
     },
     {
@@ -79,7 +79,7 @@ export const yacht: ServicePageContent = {
         [
           'Coussins et sellerie en tissu d’extérieur',
           'Brosser la saleté non adhérente, nettoyer avec une solution savonneuse douce et une brosse souple, rincer tous les résidus de savon et laisser sécher à l’air.',
-          'L’eau de Javel à proximité de l’eau, que le fabricant du tissu déconseille aussi. La saleté qui reste : la moisissure s’y développe.',
+          'L’eau de Javel à la place d’amarrage : elle peut nuire à l’environnement, c’est pourquoi le fabricant de tissus Sunbrella la déconseille à proximité de l’eau. Elle peut en outre décolorer les tissus d’autres marques. La saleté qui reste : la moisissure s’y développe.',
         ],
       ],
       note: 'Si un pont en teck reste mouillé plus longtemps à certains endroits après un nettoyage à l’eau, ou si le bois s’y décolore, un joint peut fuir. C’est l’affaire du chantier naval.',
@@ -141,7 +141,7 @@ export const yacht: ServicePageContent = {
         [
           'Règlement du port',
           'Chaque port règle lui-même le lavage à la place d’amarrage, plus ou moins strictement. Le Bootshafen Luzern interdit les produits nocifs pour l’environnement, le Bootshafen Hostatt à Kehrsiten interdit totalement les produits de nettoyage et les nettoyeurs à vapeur.',
-          'Le règlement du port de votre place d’amarrage détermine quels produits sont admis au ponton. Il fait partie des documents à réunir avant la première intervention.',
+          'Le règlement du port de votre place d’amarrage détermine quels produits sont admis au ponton. S’il interdit totalement les produits de nettoyage, comme à Kehrsiten, il ne reste que l’eau claire pour laver le bateau à sa place.',
         ],
         [
           'Obligation d’annonce et de nettoyage des bateaux',
@@ -180,11 +180,18 @@ export const yacht: ServicePageContent = {
           ],
         },
         {
-          title: 'Accès et dates',
+          title: 'Accès',
           items: [
             'Clé, badge ou code pour le portail et le ponton',
             'Qui ouvre le bateau quand vous n’êtes pas là',
-            'Sorties prévues, invités à bord et date de l’hivernage',
+            'Alarme à bord, s’il y en a une',
+          ],
+        },
+        {
+          title: 'Dates',
+          items: [
+            'Sorties prévues et week-ends avec des invités',
+            'Dates de la sortie de l’eau et de l’hivernage',
             'Personne de contact au lac : vous-même, votre skipper ou le responsable du port',
           ],
         },
@@ -195,11 +202,11 @@ export const yacht: ServicePageContent = {
   ],
   scope: {
     title: 'Étendue du nettoyage du bateau',
-    intro: 'À la place d’amarrage, une seule fois ou régulièrement pendant la saison :',
+    intro: 'À la place d’amarrage :',
     items: [
-      'Pont et surfaces en teck, avec les ferrures en inox',
+      'Pont et surfaces en teck',
       'Gelcoat du pont et des superstructures',
-      'Hublots et capots, y compris en verre acrylique',
+      'Hublots et vitrages',
       'Sellerie, coussins et textiles',
       'Carré, cabines et cuisine',
       'Salles d’eau',
@@ -217,19 +224,15 @@ export const yacht: ServicePageContent = {
       text: 'C’est vous qui décidez comment nous montons à bord : avec une clé, avec un badge pour le ponton ou par une personne qui ouvre le bateau. Des règles fixes s’appliquent, y compris pendant votre absence.',
     },
     {
-      title: 'Interventions selon le plan de saison',
-      text: 'Nous venons aux dates convenues, une seule fois avant un événement ou régulièrement du printemps à l’automne, y compris le soir et le week-end.',
-    },
-    {
       title: 'Une équipe fixe',
-      text: 'Une équipe fixe s’occupe de votre bateau. Après la première intervention, elle connaît les coffres, les raccordements et le règlement du port.',
+      text: 'Une équipe fixe s’occupe de votre bateau. Si la place d’amarrage, le badge ou la personne qui ouvre le bateau change, prévenez-nous avant la prochaine intervention.',
     },
   ],
   faq: [
     {
       question: 'Combien coûte le nettoyage d’un bateau ?',
       answer:
-        'L’effort dépend surtout de la longueur et de l’aménagement du bateau, c’est-à-dire s’il s’agit d’un bateau à moteur ouvert ou d’un yacht avec carré, cabines et salles d’eau. S’y ajoutent la surface de teck, l’état, le fait que nous nettoyions l’intérieur, l’extérieur ou les deux, la fréquence et la facilité d’accès à la place d’amarrage avec le matériel. Nous vous indiquons un prix dès que nous avons vu le bateau.',
+        'Le travail à prévoir dépend surtout de la longueur et de l’aménagement du bateau, c’est-à-dire s’il s’agit d’un bateau à moteur ouvert ou d’un yacht avec carré, cabines et salles d’eau. S’y ajoutent la surface de teck, l’état, le fait que nous nettoyions l’intérieur, l’extérieur ou les deux, la fréquence et la facilité d’accès à la place d’amarrage avec le matériel. Nous vous indiquons un prix dès que nous avons vu le bateau.',
     },
     {
       question: 'À quelle fréquence un bateau amarré doit-il être nettoyé ?',
@@ -244,17 +247,12 @@ export const yacht: ServicePageContent = {
     {
       question: 'Que faire contre les taches de moisissure dans le carré ?',
       answer:
-        'De l’air et du sec. Laisser sécher complètement coussins et sellerie après le nettoyage, ne pas laisser la saleté en place, car la moisissure s’y développe, et ne pas emballer le bateau de façon étanche dans du plastique pour l’hiver. Si les taches sont déjà là, nous nettoyons les housses selon les instructions du fabricant du tissu.',
+        'Aérer et garder au sec. Laisser sécher complètement coussins et sellerie après le nettoyage, ne pas laisser la saleté en place, car la moisissure s’y développe, et ne pas emballer le bateau de façon étanche dans du plastique pour l’hiver. Contre les taches de moisissure tenaces, le fabricant de tissus Sunbrella recommande une solution à l’eau de Javel, mais la déconseille à proximité de l’eau. Selon Sunbrella, les housses amovibles peuvent aussi passer en machine à l’eau froide.',
     },
     {
       question: 'Devons-nous être à bord pendant le nettoyage ?',
       answer:
-        'Non. Vous n’avez besoin d’être ni au ponton ni à bord, et nous venons aussi le soir ou le week-end. Qui ouvre le bateau et le referme est réglé une fois avec vous, puis vaut pour chaque intervention.',
-    },
-    {
-      question: 'Notre skipper ou le responsable du port peut-il fixer les rendez-vous ?',
-      answer:
-        'Oui. Indiquez-nous la personne qui connaît le bateau et peut répondre à nos questions au ponton. Le devis vous est adressé, ou à la personne que vous désignez.',
+        'Non. Vous n’avez besoin d’être ni au ponton ni à bord. Nous convenons une fois avec vous de qui ouvre et referme le bateau ; cette règle vaut ensuite pour chaque intervention.',
     },
     {
       question: 'Pouvez-vous nettoyer notre bateau pour un changement de lac ?',

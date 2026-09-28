@@ -29,8 +29,8 @@ export const yacht: ServicePageContent = {
   area: 'premium',
   h1: 'Bootsreinigung und Yachtreinigung am Liegeplatz',
   lead: [
-    'Blütenstaub, Vogelkot und Feuchtigkeit setzen einem Boot am See jede Saison zu. Wir reinigen es dort, wo es liegt, am Steg oder im Hafen: innen und aussen, einmalig vor einem Anlass oder regelmässig über die Saison.',
-    'Was vom Deck läuft, landet im See. Deshalb gehören die Hafenordnung Ihres Liegeplatzes und die Pflegeanleitung Ihrer Werft zu den ersten Unterlagen, die wir uns ansehen.',
+    'Blütenstaub, Vogelkot und Feuchtigkeit setzen einem Boot am See jede Saison zu. Wir reinigen es dort, wo es liegt, am Steg oder im Hafen, innen und aussen.',
+    'Was vom Deck läuft, landet im See. Legen Sie deshalb vor dem ersten Einsatz die Hafenordnung Ihres Liegeplatzes und die Pflegeanleitung Ihrer Werft bereit.',
   ],
   facts: [
     { label: 'Einsatzort', value: 'Am Liegeplatz, am Vierwaldstättersee und am Zugersee' },
@@ -42,8 +42,8 @@ export const yacht: ServicePageContent = {
     {
       title: 'Warum ein Boot anders gereinigt wird als ein Haus',
       paragraphs: [
-        'An Bord stecken Materialien, die im Haus kaum vorkommen. Teak hat weiche Fasern, die harte Bürsten und Hochdruck herauslösen: Das Deck wird rau, die Fugen stehen vor. Gelcoat verliert durch Sonne und ungeeignete Reiniger den Glanz, Edelstahl rostet an, wenn Stahlwolle oder chlorhaltige Mittel im Spiel sind.',
-        'Haushaltsreiniger sind an Bord deshalb meist die falsche Wahl. Wir arbeiten mit Mitteln, die zum jeweiligen Material passen, und halten uns an die Pflegeanleitung Ihrer Werft, wenn es eine gibt.',
+        'An Bord stecken Materialien, die im Haus kaum vorkommen. Teak hat weiche Fasern, die harte Bürsten und Hochdruck herauslösen: Das Deck wird rau und nutzt sich vor der Zeit ab. Gelcoat verliert durch Sonne und ungeeignete Reiniger den Glanz, Edelstahl rostet an, wenn Stahlwolle oder chlorhaltige Mittel im Spiel sind.',
+        'Haushaltsreiniger sind an Bord deshalb meist die falsche Wahl. Und was einem Material hilft, kann dem nächsten schaden: Ein schwach saurer Reiniger löst Flugrost an der Reling, am Gelcoat gleich daneben sind Säuren fehl am Platz.',
       ],
     },
     {
@@ -85,7 +85,7 @@ export const yacht: ServicePageContent = {
         [
           'Polster und Kissen aus Outdoorstoff',
           'Losen Schmutz abbürsten, mit milder Seifenlösung und weicher Bürste reinigen, alle Seifenreste ausspülen und an der Luft trocknen lassen.',
-          'Bleichmittel in der Nähe des Wassers, davon rät auch der Stoffhersteller ab. Schmutz, der liegen bleibt: Auf ihm wächst Schimmel.',
+          'Bleichmittel am Liegeplatz: Es kann der Umwelt schaden, deshalb rät der Stoffhersteller Sunbrella davon ab, wenn Wasser in der Nähe ist. Stoffe anderer Hersteller kann es zudem verfärben. Schmutz, der liegen bleibt: Auf ihm wächst Schimmel.',
         ],
       ],
       note: 'Bleibt ein Teakdeck nach dem Nassreinigen an einzelnen Stellen länger nass oder verfärbt sich das Holz dort, kann eine Fuge undicht sein. Das gehört in die Werft.',
@@ -147,7 +147,7 @@ export const yacht: ServicePageContent = {
         [
           'Hafenordnung',
           'Die Häfen regeln das Waschen am Platz selbst und verschieden streng. Der Bootshafen Luzern verbietet umweltschädigende Mittel, der Bootshafen Hostatt in Kehrsiten Reinigungsmittel und Abdampfgeräte ganz.',
-          'Die Hafenordnung Ihres Liegeplatzes legt fest, welche Mittel am Steg erlaubt sind. Sie gehört zu den Unterlagen vor dem ersten Einsatz.',
+          'Die Hafenordnung Ihres Liegeplatzes legt fest, welche Mittel am Steg erlaubt sind. Verbietet sie Reinigungsmittel ganz, wie in Kehrsiten, bleibt zum Waschen am Platz nur klares Wasser.',
         ],
         [
           'Schiffsmelde- und Reinigungspflicht',
@@ -186,11 +186,18 @@ export const yacht: ServicePageContent = {
           ],
         },
         {
-          title: 'Zugang und Termine',
+          title: 'Zugang',
           items: [
             'Schlüssel, Badge oder Code für Tor und Steg',
             'Wer das Boot öffnet, wenn Sie nicht da sind',
-            'Geplante Ausfahrten, Gäste an Bord und der Termin fürs Winterlager',
+            'Alarmanlage an Bord, falls vorhanden',
+          ],
+        },
+        {
+          title: 'Termine',
+          items: [
+            'Geplante Ausfahrten und Wochenenden mit Gästen',
+            'Termin fürs Auswassern und fürs Winterlager',
             'Ansprechperson am See: Sie selbst, Ihr Skipper oder der Hafenmeister',
           ],
         },
@@ -201,11 +208,11 @@ export const yacht: ServicePageContent = {
   ],
   scope: {
     title: 'Umfang der Bootsreinigung',
-    intro: 'Am Liegeplatz, einmalig oder regelmässig über die Saison:',
+    intro: 'Am Liegeplatz:',
     items: [
-      'Deck und Teakflächen, mit den Beschlägen aus Edelstahl',
+      'Deck und Teakflächen',
       'Gelcoat an Deck und Aufbauten',
-      'Fenster und Luken, auch aus Acrylglas',
+      'Fenster und Glas',
       'Polster, Kissen und Textilien',
       'Salon, Kabinen und Pantry',
       'Nasszellen',
@@ -223,12 +230,8 @@ export const yacht: ServicePageContent = {
       text: 'Wie wir an Bord kommen, bestimmen Sie: mit Schlüssel, mit Badge für den Steg oder über eine Person, die das Boot öffnet. Dafür gelten feste Regeln, auch während Ihrer Abwesenheit.',
     },
     {
-      title: 'Einsätze nach Saisonplan',
-      text: 'Wir kommen zu den vereinbarten Terminen, einmalig vor einem Anlass oder regelmässig von Frühling bis Herbst, auch abends und am Wochenende.',
-    },
-    {
       title: 'Ein festes Team',
-      text: 'Ihr Boot betreut ein festes Team. Es kennt nach dem ersten Einsatz Stauräume, Anschlüsse und die Hafenordnung.',
+      text: 'Ihr Boot betreut ein festes Team. Ändern sich Liegeplatz, Badge oder die Person, die öffnet, melden Sie es uns vor dem nächsten Einsatz.',
     },
   ],
   faq: [
@@ -250,17 +253,12 @@ export const yacht: ServicePageContent = {
     {
       question: 'Was hilft gegen Stockflecken im Salon?',
       answer:
-        'Luft und Trockenheit. Polster und Kissen nach der Reinigung ganz trocknen lassen, Schmutz nicht liegen lassen, denn Schimmel wächst auf ihm, und das Boot im Winter nicht luftdicht in Plastikfolie einpacken. Sind die Flecken schon da, reinigen wir die Bezüge nach der Anleitung des Stoffherstellers.',
+        'Luft und Trockenheit. Polster und Kissen nach der Reinigung ganz trocknen lassen, Schmutz nicht liegen lassen, denn Schimmel wächst auf ihm, und das Boot im Winter nicht luftdicht in Plastikfolie einpacken. Gegen hartnäckige Stockflecken empfiehlt der Stoffhersteller Sunbrella eine Lösung mit Bleichmittel, rät aber davon ab, wenn Wasser in der Nähe ist. Abnehmbare Bezüge dürfen laut Sunbrella auch kalt in die Waschmaschine.',
     },
     {
       question: 'Müssen wir an Bord sein, während Sie reinigen?',
       answer:
-        'Nein. Sie müssen weder am Steg noch an Bord sein, wir kommen auch abends oder am Wochenende. Wer das Boot öffnet und wieder abschliesst, regeln wir mit Ihnen einmal fest, danach gilt es für jeden Einsatz.',
-    },
-    {
-      question: 'Kann unser Skipper oder der Hafenmeister die Termine vereinbaren?',
-      answer:
-        'Ja. Nennen Sie uns die Person, die das Boot kennt und am Steg Auskunft geben kann. Die Offerte geht an Sie oder an die Stelle, die Sie bestimmen.',
+        'Nein. Sie müssen weder am Steg noch an Bord sein. Wer das Boot öffnet und wieder abschliesst, regeln wir mit Ihnen einmal fest, danach gilt es für jeden Einsatz.',
     },
     {
       question: 'Können Sie unser Boot für einen Seewechsel reinigen?',

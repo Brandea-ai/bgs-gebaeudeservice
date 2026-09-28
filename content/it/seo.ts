@@ -35,8 +35,8 @@ export const pages = {
   },
   '/premium/yacht': {
     label: 'Yacht',
-    title: 'Pulizia barche e yacht a Lucerna e Zugo',
-    description: 'Pulizia barche e yacht all’ormeggio: teak, gelcoat, imbottiture e salone, sui laghi dei Quattro Cantoni e di Zugo. Offerta gratuita dopo il sopralluogo.',
+    title: 'Pulizia di barche e yacht a Lucerna e Zugo',
+    description: 'Pulizia di barche e yacht all’ormeggio: teak, gelcoat, imbottiture e salone, sui laghi dei Quattro Cantoni e di Zugo. Offerta gratuita dopo il sopralluogo.',
   },
   '/leistungen': {
     label: 'Servizi',
