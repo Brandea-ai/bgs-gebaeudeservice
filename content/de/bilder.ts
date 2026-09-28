@@ -41,4 +41,6 @@ export const bilder: Record<ImageKey, string> = {
   'detail-premium-luxusimmobilien': 'Hände in schwarzen Handschuhen pflegen einen Waschtisch aus dunklem Naturstein neben einer Messingarmatur.',
   'detail-premium-privatjet': 'Hände in hellen Handschuhen pflegen mit einem weichen Tuch den Ledersitz in einem Privatjet.',
   'detail-premium-yacht': 'Hände in Handschuhen polieren die Edelstahlreling neben hellen Polstern an Bord einer Yacht auf einem See.',
+  'hero-grundreinigung': 'Grundreinigung in der Eingangshalle eines Bürogebäudes: Eine Reinigungskraft poliert von hinten gesehen den hellen Natursteinboden mit einer Einscheibenmaschine.',
+  'detail-grundreinigung': 'Hände in grauen Handschuhen schrubben bei einer Grundreinigung die Fugen zwischen hellen Steinplatten.',
 }

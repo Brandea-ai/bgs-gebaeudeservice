@@ -181,7 +181,8 @@ export const servicesOverview: Seiten['servicesOverview'] = {
       title: 'One-off and special cleaning',
       text: 'For construction, moves, glass surfaces and production.',
       items: [
-        { title: 'Special cleaning', path: '/leistungen/sonderreinigungen', text: 'Deep cleaning and move-out cleaning with a handover guarantee.' },
+        { title: 'Deep and special cleaning', path: '/leistungen/sonderreinigungen', text: 'Deep cleaning of residential, office and commercial premises, as a one-off or at longer intervals.' },
+        { title: 'End-of-tenancy cleaning', path: '/leistungen/umzugsreinigung', text: 'Final clean before a flat or business premises are handed over, with a handover guarantee.' },
         { title: 'Construction and post-construction cleaning', path: '/leistungen/baureinigung', text: 'Cleaning during and after construction and renovation work.' },
         { title: 'Window and facade cleaning', path: '/leistungen/fenster-und-fassadenreinigung', text: 'Windows, glass surfaces and facades, including high-pressure cleaning.' },
         { title: 'Industrial and warehouse cleaning', path: '/leistungen/industrie-und-hallenreinigung', text: 'Production halls, warehouses, machinery and equipment.' },
@@ -197,9 +198,50 @@ export const servicesOverview: Seiten['servicesOverview'] = {
       ],
     },
   ] satisfies { title: string; text: string; items: LinkCard[] }[],
+  guide: {
+    title: 'Which service is right for you?',
+    intro: 'Common situations and the service that fits them. Not sure? We clarify it during the site visit.',
+    items: [
+      { situation: 'The stairwell and common areas should be cleaned regularly.', path: '/leistungen/unterhaltsreinigung' },
+      { situation: 'An office or practice should be cleaned without disrupting work.', path: '/leistungen/bueroreinigung' },
+      { situation: 'A flat or business premises are being handed over.', path: '/leistungen/umzugsreinigung' },
+      { situation: 'Floors, joints and sanitary facilities need a thorough clean.', path: '/leistungen/sonderreinigungen' },
+      { situation: 'A new build or conversion is about to be handed over.', path: '/leistungen/baureinigung' },
+      { situation: 'Windows, shop windows or the facade are dirty.', path: '/leistungen/fenster-und-fassadenreinigung' },
+      { situation: 'A hall, warehouse or machinery needs cleaning.', path: '/leistungen/industrie-und-hallenreinigung' },
+      { situation: 'The property needs someone to check on things regularly.', path: '/leistungen/hauswartung' },
+      { situation: 'Lawns, hedges, paths and paved areas should be well kept.', path: '/leistungen/aussen-und-gruenflaechenpflege' },
+      { situation: 'Cleaning, caretaking and grounds should come from a single provider.', path: '/leistungen/facility-services' },
+    ] satisfies { situation: string; path: PagePath }[] as { situation: string; path: PagePath }[],
+  },
+  principles: {
+    title: 'The same for every service',
+    items: [
+      { title: 'Site visit before the quote', text: 'We look at the property before we name a price. The site visit and quote are free of charge and non-binding.' },
+      { title: 'Scope in writing', text: 'What we take on and how often is set out in the quote.' },
+      { title: 'Personal enquiry', text: `Your enquiry is handled personally by our managing director, and you will hear from us ${responseTime}.` },
+      { title: 'Frequency based on use', text: 'How often we come depends on how your property is used. If that changes, we adjust the scope and frequency with you.' },
+      { title: 'Environmentally friendly on request', text: 'On request, we clean with environmentally friendly products.' },
+      { title: 'Clear limits', text: 'Each service page also states what is not included, such as winter maintenance or the servicing of technical installations.' },
+    ] satisfies Card[] as Card[],
+  },
+  faq: [
+    { question: 'What do your services cost?', answer: answers.kosten },
+    {
+      question: 'Can I combine several services?',
+      answer: 'Yes. With [facility services](/leistungen/facility-services), cleaning, caretaking and grounds maintenance come under one contract, with one contact person.',
+    },
+    {
+      question: 'Do you also clean private households?',
+      answer: 'Private households only through our [premium services](/premium), for villas, lofts and residences.',
+    },
+    { question: 'Do you offer winter maintenance?', answer: 'No. Winter maintenance is not part of what we offer.' },
+    { question: 'Which regions do you cover?', answer: answers.gebiet },
+  ] as { question: string; answer: string }[],
   premium: {
     title: 'Villas, private jets or yachts?',
     text: 'For exacting standards, we offer our premium services.',
+    detail: 'Villas and residences, private jet cabins, yachts on Lake Lucerne and Lake Zug. Always the same team, discreet and familiar with delicate materials.',
     link: 'Premium services',
   },
   cta: {
@@ -242,6 +284,14 @@ export const premiumOverview: Seiten['premiumOverview'] = {
     { title: 'Private events', text: 'Cleaning before and after the event, including at weekends.' },
     { title: 'Estate agents and property managers', text: 'Cleaning at short notice before a sale, photo shoot or handover.' },
   ] satisfies Card[],
+  discretion: {
+    title: 'Discretion from the first message',
+    paragraphs: [
+      'Your enquiry is handled personally by our managing director. On request, we sign a non-disclosure agreement.',
+      'The same team always works for you, vetted by us. It knows your home, your wishes and the rules for keys and the alarm system that we agree with you.',
+      'We only clean works of art with your approval. Times are set around you, including evenings, weekends or while you are away.',
+    ],
+  },
   promisesTitle: 'What you can rely on',
   // Same keys and order as the German list (symbols in app/premium/page.tsx). The
   // types; the assertion bridges that without changing content/de.

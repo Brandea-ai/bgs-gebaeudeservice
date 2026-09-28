@@ -53,10 +53,34 @@ const luxusimmobilien: ServicePageContent = {
   },
   sections: [
     {
+      title: 'Materiali trattati con cura',
+      paragraphs: [
+        'La pietra naturale come marmo e calcare è sensibile agli acidi, anche a detergenti domestici delicati e all’aceto. Il parquet sopporta poca acqua, le superfici lucide si graffiano con panni sbagliati. Ottone e rubinetteria perdono la loro superficie con prodotti aggressivi.',
+        'Per questo durante la visita chiariamo quali materiali sono presenti nella Sua casa e di quale cura hanno bisogno. Se dispone di indicazioni di cura del fabbricante o dell’architettura d’interni, ci atteniamo a esse.',
+      ],
+    },
+    {
       title: 'Chiavi, allarme e discrezione',
       paragraphs: [
         'Per chiavi e impianto d’allarme concordiamo con Lei regole fisse. Su richiesta sottoscriviamo un accordo di riservatezza.',
         'La Sua richiesta è trattata personalmente dal gerente. Chi lavora da Lei è stato verificato da noi.',
+      ],
+    },
+    {
+      title: 'Situazioni tipiche',
+      items: [
+        'Cura regolare della Sua residenza, a orari fissi e sempre con lo stesso team',
+        'Abitazione secondaria: pulizia prima del Suo arrivo e dopo la Sua partenza, giri di controllo nel frattempo',
+        'Prima e dopo un evento, anche nel fine settimana',
+        'Locali con opere d’arte e oggetti d’antiquariato, opere d’arte solo con la Sua autorizzazione',
+        'Per agenti immobiliari e amministrazioni: con breve preavviso prima di una vendita, di un servizio fotografico o di una consegna',
+      ],
+    },
+    {
+      title: 'Durante la Sua assenza',
+      paragraphs: [
+        'Per abitazioni secondarie e viaggi prolungati controlliamo che tutto sia in ordine, con la frequenza concordata con Lei. Che cosa controlliamo e a chi segnaliamo eventuali anomalie lo stabiliamo con Lei in anticipo.',
+        'Prima del Suo arrivo puliamo la casa, affinché possa arrivare senza dover fare più nulla. Dopo la Sua partenza la rimettiamo in ordine.',
       ],
     },
   ],
@@ -80,6 +104,11 @@ const luxusimmobilien: ServicePageContent = {
     {
       question: 'Come trattate opere d’arte e oggetti d’antiquariato?',
       answer: 'Puliamo i locali con cura. Le opere d’arte in sé le puliamo solo se Lei lo autorizza espressamente.',
+    },
+    {
+      question: 'Come curate pietra naturale e parquet?',
+      answer:
+        'Nel rispetto del materiale: la pietra naturale come il marmo mai con prodotti acidi, il parquet con poca umidità. Quali prodotti usiamo nella Sua casa lo chiariamo con Lei durante la visita.',
     },
     {
       question: 'Potete pulire durante la nostra assenza?',
@@ -125,9 +154,33 @@ const privatjet: ServicePageContent = {
   },
   sections: [
     {
+      title: 'Materiali nella cabina',
+      paragraphs: [
+        'Pelle, legno laccato, superfici lucide, moquette e tessuti pregiati si trovano vicinissimi in una cabina. Ogni materiale richiede un prodotto e un panno propri, affinché nulla si scolorisca, si secchi o si graffi.',
+        'Quali prodotti sono adatti alla Sua cabina lo chiariamo in anticipo con Lei e con il Suo operatore aereo.',
+      ],
+    },
+    {
       title: 'Pianificazione in funzione dei Suoi voli',
       paragraphs: [
         'Dove e quando puliamo la cabina lo concordiamo con Lei e con il Suo operatore aereo. Così l’intervento si inserisce nel Suo piano di volo.',
+        'Spesso la pulizia avviene tra due voli, dopo un viaggio lungo o prima di un volo con ospiti. Se la finestra temporale è stretta, è utile concordare le date per tempo.',
+      ],
+    },
+    {
+      title: 'Che cosa deve essere definito prima dell’intervento',
+      items: [
+        'Il luogo in cui si trova l’aeromobile e come è regolato l’accesso per il nostro team',
+        'La finestra temporale tra i voli',
+        'Quali zone della cabina sono comprese',
+        'Quali prodotti sono autorizzati per i materiali',
+        'Chi prende in consegna la cabina dopo la pulizia',
+      ],
+    },
+    {
+      title: 'Discrezione a bordo',
+      paragraphs: [
+        'Come trattiamo oggetti personali e documenti a bordo lo stabilisce Lei. Da Lei lavora sempre lo stesso team, verificato da noi. Su richiesta sottoscriviamo un accordo di riservatezza.',
       ],
     },
   ],
@@ -151,6 +204,10 @@ const privatjet: ServicePageContent = {
     {
       question: 'Come trattate pelle e legno?',
       answer: 'Puliamo con riguardo per i materiali e chiariamo in anticipo quali prodotti sono adatti alla Sua cabina.',
+    },
+    {
+      question: 'Pulite anche l’esterno dell’aeromobile?',
+      answer: 'No. La nostra offerta comprende la pulizia della cabina.',
     },
     {
       question: 'Chi lavora nella nostra cabina?',
@@ -196,6 +253,37 @@ const yacht: ServicePageContent = {
     ],
     notIncluded: ['Lavori sull’opera viva, ad esempio l’antivegetativa.', 'Manutenzione tecnica del motore e degli impianti di bordo.'],
   },
+  sections: [
+    {
+      title: 'Materiali a bordo',
+      paragraphs: [
+        'Il teak diventa grigio e ruvido se viene pulito in modo sbagliato: spazzole troppo dure e alta pressione staccano le fibre morbide del legno. Il gelcoat perde lucentezza a causa del sole e delle macchie d’acqua, l’acciaio inossidabile mostra ruggine superficiale, le imbottiture assorbono umidità.',
+        'Per questo ogni materiale richiede un procedimento proprio. Quali prodotti usiamo per la Sua imbarcazione lo chiariamo con Lei in anticipo.',
+      ],
+    },
+    {
+      title: 'Sul lago molto è diverso',
+      paragraphs: [
+        'Sul lago dei Quattro Cantoni e sul lago di Zugo manca il sale, ma polline, foglie, ragni ed escrementi di uccelli portano molto sporco a bordo, soprattutto in primavera e in estate. Negli interni chiusi si depositano umidità e polvere.',
+        'Poiché l’acqua che scorre dal ponte finisce direttamente nel lago, occorre cura nella scelta dei prodotti. Su richiesta puliamo con prodotti ecologici.',
+      ],
+    },
+    {
+      title: 'Occasioni tipiche',
+      items: [
+        'Prima della prima uscita della stagione',
+        'Regolarmente durante la stagione',
+        'Prima e dopo avere ospiti a bordo',
+        'A fine stagione, prima del rimessaggio invernale',
+      ],
+    },
+    {
+      title: 'Accesso all’ormeggio',
+      paragraphs: [
+        'L’accesso al pontile o al porto lo chiariamo con Lei in anticipo, così come corrente e acqua all’ormeggio e chi ci apre l’imbarcazione. Da Lei lavora sempre lo stesso team.',
+      ],
+    },
+  ],
   steps: [
     anfrage,
     {
@@ -216,6 +304,15 @@ const yacht: ServicePageContent = {
     {
       question: 'Quali materiali pulite?',
       answer: 'Teak, gelcoat e imbottiture, nonché gli interni. Quali prodotti usiamo per la Sua imbarcazione lo chiariamo durante il sopralluogo.',
+    },
+    {
+      question: 'Con quale frequenza si dovrebbe pulire un’imbarcazione sul lago?',
+      answer:
+        'Dipende da ormeggio, utilizzo e stagione. Sotto gli alberi e durante la fioritura un’imbarcazione si sporca più in fretta. Dopo il sopralluogo Le proponiamo delle date, una tantum o regolarmente.',
+    },
+    {
+      question: 'Lavorate anche sull’opera viva o sul motore?',
+      answer: 'No. I lavori sull’opera viva, ad esempio l’antivegetativa, e la manutenzione tecnica del motore e degli impianti di bordo non ne fanno parte.',
     },
     { question: 'Potete pulire con prodotti ecologici?', answer: answers.mittel },
     { question: 'Siete assicurati?', answer: answers.versicherung },

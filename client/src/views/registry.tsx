@@ -6,8 +6,8 @@ import HomeView from "./HomeView";
 import AboutView from "./AboutView";
 import ContactView from "./ContactView";
 import AreaView from "./AreaView";
-import ServicesOverviewView from "./ServicesOverviewView";
-import PremiumOverviewView from "./PremiumOverviewView";
+import LeistungenUebersicht from "@/seiten/leistungen-uebersicht";
+import PremiumUebersicht from "@/seiten/premium-uebersicht";
 import BlogOverviewView from "./BlogOverviewView";
 import { getDict } from "../../../content";
 import { metaFor, type PagePath } from "../../../shared/seo";
@@ -28,8 +28,8 @@ const views: Partial<Record<PagePath, (lang: Locale) => React.ReactNode>> = {
   "/ueber-uns": lang => <AboutView lang={lang} />,
   "/kontakt": lang => <ContactView lang={lang} />,
   "/einzugsgebiet": lang => <AreaView lang={lang} />,
-  "/leistungen": lang => <ServicesOverviewView lang={lang} />,
-  "/premium": lang => <PremiumOverviewView lang={lang} />,
+  "/leistungen": lang => <LeistungenUebersicht lang={lang} />,
+  "/premium": lang => <PremiumUebersicht lang={lang} />,
   "/blog": lang => <BlogOverviewView lang={lang} />,
   "/impressum": lang => (
     <LegalPage

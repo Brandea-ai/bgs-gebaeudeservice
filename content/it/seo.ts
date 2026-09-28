@@ -53,9 +53,14 @@ export const pages = {
     description: `Pulizia di uffici e studi in funzione dei Suoi orari di lavoro. Offerta gratuita sul posto nei Cantoni di ${region}.`,
   },
   '/leistungen/sonderreinigungen': {
-    label: 'Pulizie speciali',
-    title: 'Pulizie speciali e di fine locazione',
-    description: 'Pulizia a fondo, di fine locazione e finale con garanzia di consegna per amministrazioni immobiliari, proprietari e aziende a Lucerna, Zugo e dintorni.',
+    label: 'Pulizie a fondo e speciali',
+    title: 'Pulizie a fondo e speciali, Lucerna e Zugo',
+    description: 'Pulizia a fondo di abitazioni, uffici e superfici commerciali, una tantum o a intervalli più lunghi. Per amministrazioni immobiliari, proprietari e aziende a Lucerna, Zugo e dintorni.',
+  },
+  '/leistungen/umzugsreinigung': {
+    label: 'Pulizia di fine locazione',
+    title: 'Pulizia di fine locazione, garanzia di consegna',
+    description: 'Pulizia di trasloco e di fine locazione prima della riconsegna dell’appartamento, con garanzia di consegna. Per amministrazioni immobiliari, proprietari e aziende a Lucerna, Zugo e dintorni.',
   },
   '/leistungen/baureinigung': {
     label: 'Pulizia di cantiere e di fine cantiere',

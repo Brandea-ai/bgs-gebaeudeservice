@@ -37,12 +37,19 @@ const unterhaltsreinigung: ServicePageContent = {
     ],
     notIncluded: [
       'Büros und Praxen: siehe [Büro- und Praxisreinigung](/leistungen/bueroreinigung).',
-      'Einmalige Grund- oder Umzugsreinigungen: siehe [Sonderreinigungen](/leistungen/sonderreinigungen).',
+      'Einmalige Grundreinigungen: siehe [Grund- und Sonderreinigung](/leistungen/sonderreinigungen), Endreinigungen vor der Übergabe unter [Umzugsreinigung](/leistungen/umzugsreinigung).',
       'Fenster aussen und Fassaden: siehe [Fenster- und Fassadenreinigung](/leistungen/fenster-und-fassadenreinigung).',
       'Privathaushalte. Für Villen und Residenzen gibt es unseren [Premium-Bereich](/premium).',
     ],
   },
   sections: [
+    {
+      title: 'Typische Objekte und Situationen',
+      paragraphs: [
+        'Eine Unterhaltsreinigung lohnt sich überall dort, wo viele Menschen dieselben Flächen nutzen. Im Mehrfamilienhaus sind das Treppenhaus, Lift und Waschküche. Im Wohn- und Geschäftshaus kommen Eingänge mit Publikumsverkehr dazu, in Gewerbeflächen Empfang, Gänge und Sanitärräume.',
+        'Häufig kommt die Anfrage, wenn die bisherige Lösung nicht mehr trägt: Die Reinigung durch die Mieterschaft klappt nicht, die bisherige Firma hört auf, oder eine Verwaltung übernimmt eine neue Liegenschaft.',
+      ],
+    },
     {
       title: 'Nachfüllservice',
       paragraphs: [
@@ -52,6 +59,38 @@ const unterhaltsreinigung: ServicePageContent = {
         'Toilettenpapier, Papierhandtücher und Seife',
         'Abfallsäcke und Reinigungstücher',
         'Weiteres Verbrauchsmaterial nach Absprache',
+      ],
+    },
+    {
+      title: 'Planung und Rhythmus',
+      paragraphs: [
+        'Wie oft gereinigt wird, hängt von der Nutzung ab, nicht nur von der Fläche. Ein Eingang mit viel Publikumsverkehr braucht mehr Pflege als ein Kellergang, den nur wenige betreten. Sinnvoll ist deshalb ein Rhythmus je Bereich statt eines einzigen für das ganze Haus. Unseren Vorschlag besprechen wir nach der Besichtigung mit Ihnen.',
+      ],
+      items: [
+        'Eingang, Lift und Treppenhaus: häufiger, weil hier der meiste Schmutz von aussen hereinkommt',
+        'Sanitärräume und Küchen: häufiger, aus hygienischen Gründen',
+        'Keller, Estrich und Nebenräume: seltener, je nach Nutzung',
+        'Glas im Eingangsbereich: nach Bedarf, bei Regenwetter und im Winter öfter',
+      ],
+    },
+    {
+      title: 'Woran Sie eine gute Unterhaltsreinigung erkennen',
+      paragraphs: [
+        'Sauber heisst mehr als ein gewischter Boden. Diese Punkte zeigen Ihnen bei einem Rundgang schnell, wie gründlich gereinigt wird:',
+      ],
+      items: [
+        'Handläufe, Lichtschalter und Liftknöpfe sind sauber, nicht nur die Böden',
+        'In Ecken, auf Treppenkanten und hinter Türen bleibt kein Schmutz liegen',
+        'Sanitärräume riechen frisch, Seife und Papier sind aufgefüllt',
+        'Glastüren im Eingang sind ohne Schlieren und Fingerabdrücke',
+        'Der vereinbarte Umfang ist schriftlich festgehalten, damit beide Seiten wissen, was gilt',
+      ],
+    },
+    {
+      title: 'Zusammenarbeit mit Verwaltung und Eigentümerschaft',
+      paragraphs: [
+        'Vor dem Start klären wir mit Ihnen den Zugang zur Liegenschaft, etwa mit Schlüssel oder Badge, und wo Geräte und Reinigungsmittel stehen dürfen. Ein abschliessbarer Putzraum oder ein Kellerabteil erleichtert die Arbeit.',
+        'Für die Mieterschaft hilft ein kurzer Aushang, an welchen Tagen gereinigt wird. Dann bleiben Treppen und Gänge an diesen Tagen frei von Schuhen, Velos und anderen Gegenständen.',
       ],
     },
   ],
@@ -76,11 +115,16 @@ const unterhaltsreinigung: ServicePageContent = {
     {
       question: 'Was ist der Unterschied zur Grundreinigung?',
       answer:
-        'Die Unterhaltsreinigung hält Flächen in einem festen Rhythmus sauber. Eine Grundreinigung ist ein einmaliger, gründlicher Einsatz, der auch Verschmutzungen entfernt, die die laufende Reinigung nicht erreicht. Sie gehört zu unseren [Sonderreinigungen](/leistungen/sonderreinigungen).',
+        'Die Unterhaltsreinigung hält Flächen in einem festen Rhythmus sauber. Eine Grundreinigung ist ein einmaliger, gründlicher Einsatz, der auch Verschmutzungen entfernt, die die laufende Reinigung nicht erreicht. Mehr dazu unter [Grund- und Sonderreinigung](/leistungen/sonderreinigungen).',
     },
     {
       question: 'Können wir den Rhythmus später ändern?',
       answer: 'Ja. Wenn sich die Nutzung ändert, besprechen wir mit Ihnen einen neuen Umfang oder Rhythmus.',
+    },
+    {
+      question: 'Müssen die Mieterinnen und Mieter etwas vorbereiten?',
+      answer:
+        'Nein. Hilfreich ist, wenn Treppen und Gänge an den Reinigungstagen frei von Schuhen, Velos und anderen Gegenständen sind. Ein kurzer Aushang im Treppenhaus reicht dafür meist.',
     },
     { question: 'Reinigen Sie mit umweltfreundlichen Mitteln?', answer: answers.mittel },
     { question: 'Was kostet eine Unterhaltsreinigung?', answer: `${answers.kosten} Mehr dazu im Ratgeber: [Wovon die Kosten einer Unterhaltsreinigung abhängen](/blog/reinigungskosten-schweiz).` },
@@ -94,7 +138,7 @@ const unterhaltsreinigung: ServicePageContent = {
   related: [
     { path: '/leistungen/bueroreinigung', text: 'Wenn es vor allem um Büros oder eine Praxis geht.' },
     { path: '/leistungen/hauswartung', text: 'Wenn neben der Reinigung auch Kontrollgänge, Kleinreparaturen und Entsorgung dazukommen.' },
-    { path: '/leistungen/sonderreinigungen', text: 'Für eine Grundreinigung oder eine Umzugsreinigung mit Abnahmegarantie.' },
+    { path: '/leistungen/sonderreinigungen', text: 'Für eine Grundreinigung, etwa vor dem Start oder nach einer intensiven Nutzung.' },
   ],
   cta: {
     title: 'Offerte für Ihre Liegenschaft',
@@ -130,15 +174,47 @@ const bueroreinigung: ServicePageContent = {
     ],
     notIncluded: [
       'Treppenhäuser und Gemeinschaftsräume ganzer Liegenschaften: siehe [Unterhaltsreinigung](/leistungen/unterhaltsreinigung).',
-      'Einmalige Grundreinigungen: siehe [Sonderreinigungen](/leistungen/sonderreinigungen).',
+      'Einmalige Grundreinigungen: siehe [Grund- und Sonderreinigung](/leistungen/sonderreinigungen).',
       'Aufbereitung von Instrumenten und Medizinprodukten, sie bleibt bei Ihrem Praxisteam.',
     ],
   },
   sections: [
     {
+      title: 'Typische Objekte und Situationen',
+      paragraphs: [
+        'Kleine Büros mit wenigen Arbeitsplätzen, Verwaltungen über mehrere Etagen, Arzt- und Therapiepraxen mit Wartezimmer: Die Räume sind verschieden, der Anspruch ist derselbe. Morgens soll alles sauber und bereit sein, ohne dass jemand die Reinigung bemerkt.',
+        'Häufig kommt die Anfrage beim Umzug in neue Räume, wenn das Team wächst oder wenn die bisherige Reinigung nicht mehr zu den Arbeitszeiten passt.',
+      ],
+    },
+    {
+      title: 'Was bei einem Einsatz passiert',
+      paragraphs: [
+        'Bewährt ist eine feste Reihenfolge, von oben nach unten und von sauber nach schmutzig: Abfall und Altpapier leeren, freie Oberflächen und Arbeitsplätze abwischen, Teeküche und Sanitärräume reinigen, Verbrauchsmaterial nachfüllen und zum Schluss die Böden. So wird kein gereinigter Boden wieder verschmutzt.',
+        'Ob auch Bildschirme, Tastaturen, Telefone oder Pflanzen dazugehören, klären wir bei der Besichtigung und halten es in der Offerte fest.',
+      ],
+    },
+    {
       title: 'Reinigung in Praxen',
       paragraphs: [
         'In Praxen richten wir uns nach Ihrem Hygieneplan. Welche Räume und Flächen wir reinigen und was Ihr Praxisteam selbst übernimmt, klären wir bei der Besichtigung und halten es in der Offerte fest.',
+        'Im Empfang und im Wartezimmer werden Türgriffe, Theke, Stühle und Ablagen von vielen Menschen berührt. Welche Mittel für diese Flächen gelten, steht in Ihrem Hygieneplan. Behandlungsräume und Geräte bleiben so, wie Ihr Praxisteam es vorgibt.',
+      ],
+    },
+    {
+      title: 'Zeiten und Zugang',
+      paragraphs: [
+        'Die meisten Büros werden ausserhalb der Arbeitszeit gereinigt, früh am Morgen oder am Abend. In Praxen richtet sich die Zeit nach der Sprechstunde. Die Einsatzzeiten legen wir mit Ihnen fest.',
+        'Für den Zugang braucht es meist einen Schlüssel oder Badge und klare Regeln für Alarmanlage, Licht und Abschliessen. Das klären wir vor dem ersten Einsatz.',
+      ],
+    },
+    {
+      title: 'Woran Sie eine gute Büroreinigung erkennen',
+      items: [
+        'Papierkörbe sind geleert und mit neuen Säcken versehen',
+        'Die Teeküche ist ohne Kaffeeränder, die Spüle sauber und trocken',
+        'Glastüren und Glaswände sind ohne Fingerabdrücke',
+        'Seifen- und Papierspender in den Sanitärräumen sind aufgefüllt',
+        'Unterlagen und persönliche Dinge liegen so, wie Sie sie verlassen haben',
       ],
     },
   ],
@@ -166,6 +242,11 @@ const bueroreinigung: ServicePageContent = {
         'Ja. In Praxen richten wir uns nach Ihrem Hygieneplan und klären bei der Besichtigung, welche Räume und Flächen wir übernehmen.',
     },
     {
+      question: 'Müssen wir die Arbeitsplätze vor der Reinigung aufräumen?',
+      answer:
+        'Wir reinigen freie Oberflächen. Je weniger auf den Tischen liegt, desto gründlicher lässt sich reinigen. Wie Sie es mit Unterlagen, Bildschirmen und Tastaturen halten möchten, klären wir bei der Besichtigung.',
+    },
+    {
       question: 'Sprechen Ihre Mitarbeitenden auch Englisch?',
       answer: `${answers.sprachen} Das ist praktisch, wenn in Ihrem Büro mehrere Sprachen gesprochen werden.`,
     },
@@ -184,26 +265,27 @@ const bueroreinigung: ServicePageContent = {
   },
 }
 
-// Grundlage: R3b (fünf Sonderreinigungen), W01 und E28 (Umzugsreinigung nicht für Mieter), K07
+// Grundlage: R3b (fünf Sonderreinigungen), W01 und E28 (Umzugsreinigung nicht für Mieter), K07,
+// 24-SEO-KEYWORDS (geschärft auf Grund- und Sonderreinigung, Endreinigung auf eigener Seite)
 const sonderreinigungen: ServicePageContent = {
   path: '/leistungen/sonderreinigungen',
   area: 'leistungen',
   eyebrow: 'Einmalige und besondere Reinigung',
-  h1: 'Sonderreinigungen: Grundreinigung und Umzugsreinigung',
+  h1: 'Grund- und Sonderreinigung für Liegenschaften und Gewerbe',
   lead: [
-    'Manche Reinigungen fallen nicht jede Woche an: vor der Übergabe einer Wohnung, wenn sich Schmutz über längere Zeit festgesetzt hat oder wenn nach Bauarbeiten Staub zurückbleibt. Dafür gibt es unsere Sonderreinigungen.',
-    'Wir übernehmen sie für Verwaltungen, Eigentümer und Unternehmen, einmalig oder in grösseren Abständen.',
+    'Manche Verschmutzungen erreicht die laufende Reinigung nicht mehr: Kalk in Sanitärräumen, Fett in Küchen, Schmutz in Fugen und Ecken, alte Schichten auf Böden. Dann braucht es eine Grundreinigung, einmalig oder in grösseren Abständen.',
+    'Wir übernehmen Grund- und Sonderreinigungen für Verwaltungen, Eigentümer und Unternehmen. Für die Endreinigung bei der Wohnungsabgabe gibt es die [Umzugsreinigung mit Abnahmegarantie](/leistungen/umzugsreinigung).',
   ],
   facts: [
     { label: 'Für', value: 'Verwaltungen, Eigentümer, Stockwerkeigentümerschaften und Unternehmen' },
     { label: 'Art', value: 'Einmalig oder in grösseren Abständen' },
-    { label: 'Umzugsreinigung', value: 'Mit Abnahmegarantie' },
+    { label: 'Flächen', value: 'Wohn-, Büro- und Gewerbeflächen' },
   ],
   scope: {
-    title: 'Unsere Sonderreinigungen',
+    title: 'Unsere Grund- und Sonderreinigungen',
     items: [
       'Grundreinigung von Wohn-, Büro- und Gewerbeflächen',
-      'Umzugs- und Wohnungsendreinigung mit Abnahmegarantie',
+      '[Umzugs- und Wohnungsendreinigung](/leistungen/umzugsreinigung) mit Abnahmegarantie',
       '[Bauendreinigung](/leistungen/baureinigung) nach Bau- und Umbauarbeiten',
       '[Fenster- und Glasreinigung](/leistungen/fenster-und-fassadenreinigung)',
       '[Fassadenreinigung](/leistungen/fenster-und-fassadenreinigung), auch mit Hochdruck',
@@ -215,17 +297,45 @@ const sonderreinigungen: ServicePageContent = {
   },
   sections: [
     {
-      title: 'Grundreinigung',
+      title: 'Was eine Grundreinigung ausmacht',
       paragraphs: [
-        'Eine Grundreinigung geht tiefer als die laufende Reinigung. Sie entfernt Verschmutzungen, die sich über längere Zeit festgesetzt haben, auf Böden, in Sanitärräumen und Küchen, an Türen und Oberflächen.',
-        'Sinnvoll ist sie etwa vor der Neuvermietung von Büro- oder Gewerbeflächen, nach einer intensiven Nutzung oder bevor eine [Unterhaltsreinigung](/leistungen/unterhaltsreinigung) beginnt.',
+        'Eine Grundreinigung geht tiefer als die laufende Reinigung. Sie entfernt Verschmutzungen, die sich über längere Zeit festgesetzt haben: Kalk und Urinstein in Sanitärräumen, Fett in Küchen, Schmutz in Fugen, Ecken und auf Sockelleisten, Rückstände alter Pflegemittel auf Böden.',
+        'Bei Böden hängt das Vorgehen vom Belag ab, etwa Naturstein, Plättli, Linoleum oder Parkett. Welche Methode und welche Mittel passen, klären wir bei der Besichtigung.',
       ],
     },
     {
-      title: 'Umzugs- und Wohnungsendreinigung mit Abnahmegarantie',
+      title: 'Typische Anlässe',
       paragraphs: [
-        'Bei der Übergabe einer Wohnung oder Geschäftsfläche muss alles sauber sein, damit die Abnahme ohne Beanstandung klappt. Wir reinigen die Räume vor der Übergabe gründlich, mit Abnahmegarantie: Beanstandet die Verwaltung bei der Abnahme etwas an unserer Reinigung, reinigen wir kostenlos nach. Die Einzelheiten stehen in der Offerte.',
-        'Die Umzugsreinigung bieten wir Verwaltungen, Eigentümern und Unternehmen an, bei Villen und Residenzen im [Premium-Bereich](/premium) auch Privatpersonen.',
+        'Eine Grundreinigung lohnt sich immer dann, wenn eine Fläche neu beginnt oder lange stark genutzt wurde:',
+      ],
+      items: [
+        'Vor der Neuvermietung von Büro- oder Gewerbeflächen',
+        'Nach einer intensiven Nutzung oder einem längeren Leerstand',
+        'Bevor eine [Unterhaltsreinigung](/leistungen/unterhaltsreinigung) beginnt',
+        'Wenn die laufende Reinigung festsitzende Verschmutzungen nicht mehr entfernt',
+      ],
+    },
+    {
+      title: 'Umzugs- und Wohnungsendreinigung',
+      paragraphs: [
+        'Für die Endreinigung bei der Übergabe einer Wohnung oder Geschäftsfläche gibt es eine eigene Seite mit allen Einzelheiten: [Umzugsreinigung mit Abnahmegarantie](/leistungen/umzugsreinigung). Wir bieten sie Verwaltungen, Eigentümern und Unternehmen an, bei Villen und Residenzen im [Premium-Bereich](/premium) auch Privatpersonen.',
+      ],
+    },
+    {
+      title: 'Planung und Rhythmus',
+      paragraphs: [
+        'Eine Grundreinigung braucht Zeit und möglichst freie Räume. In Büros und Gewerbeflächen lässt sie sich oft auf ein Wochenende, auf Betriebsferien oder auf die Zeit zwischen zwei Mietverhältnissen legen. In Liegenschaften mit Mieterschaft braucht es eine Ankündigung, weil etwa Treppenhaus oder Waschküche für kurze Zeit nicht nutzbar sind.',
+        'Wie oft eine Grundreinigung sinnvoll ist, hängt von Nutzung und Belastung ab. Mit einer guten laufenden Reinigung wird sie seltener nötig.',
+      ],
+    },
+    {
+      title: 'Woran Sie eine gute Grundreinigung erkennen',
+      items: [
+        'Die Fugen sind wieder hell, nicht nur die Platten',
+        'Armaturen und Plättli sind ohne Kalkränder',
+        'Der Boden ist ohne Schlieren und klebrige Stellen',
+        'Sockelleisten, Türen und Zargen sind mitgereinigt',
+        'Empfindliche Oberflächen sind unbeschädigt, weil die Mittel zum Material passen',
       ],
     },
   ],
@@ -234,18 +344,18 @@ const sonderreinigungen: ServicePageContent = {
     steps.besichtigung,
     {
       title: 'Termin',
-      text: 'Wir legen den Einsatz auf den Termin, der zu Ihrer Übergabe oder zu Ihrem Betrieb passt.',
+      text: 'Wir legen den Einsatz auf den Termin, der zu Ihrer Nutzung oder zu Ihrem Betrieb passt.',
     },
     {
       title: 'Übergabe',
-      text: 'Nach dem Einsatz übergeben wir die Räume. Bei der Umzugsreinigung gilt die Abnahmegarantie gemäss Offerte.',
+      text: 'Nach dem Einsatz übergeben wir die Räume. Soll danach regelmässig gereinigt werden, besprechen wir das gerne mit Ihnen.',
     },
   ],
   faq: [
     {
-      question: 'Was bedeutet Abnahmegarantie?',
+      question: 'Was ist eine Grundreinigung?',
       answer:
-        'Beanstandet die Verwaltung bei der Abnahme etwas an unserer Reinigung, reinigen wir kostenlos nach. Die Einzelheiten stehen in der Offerte.',
+        'Ein einmaliger, gründlicher Einsatz, der auch Verschmutzungen entfernt, die sich über längere Zeit festgesetzt haben, etwa Kalk, Fett, Schmutz in Fugen oder alte Pflegeschichten auf Böden.',
     },
     {
       question: 'Wann lohnt sich eine Grundreinigung?',
@@ -257,18 +367,168 @@ const sonderreinigungen: ServicePageContent = {
       answer:
         'Die Unterhaltsreinigung hält Flächen in einem festen Rhythmus sauber, die Grundreinigung ist ein einmaliger, gründlicher Einsatz. Beides lässt sich verbinden: zuerst eine Grundreinigung, danach die laufende [Unterhaltsreinigung](/leistungen/unterhaltsreinigung).',
     },
-    { question: 'Was kostet eine Sonderreinigung?', answer: answers.kosten },
+    {
+      question: 'Müssen die Räume für die Grundreinigung leer sein?',
+      answer:
+        'Nicht ganz, aber je freier die Flächen sind, desto gründlicher lässt sich reinigen. Was stehen bleibt und wer es verschiebt, klären wir bei der Besichtigung.',
+    },
+    {
+      question: 'Übernehmen Sie auch Umzugsreinigungen?',
+      answer:
+        'Ja, mit Abnahmegarantie, für Verwaltungen, Eigentümer und Unternehmen. Alles Weitere steht unter [Umzugsreinigung mit Abnahmegarantie](/leistungen/umzugsreinigung).',
+    },
+    { question: 'Was kostet eine Grundreinigung?', answer: answers.kosten },
     { question: 'In welchen Regionen sind Sie tätig?', answer: answers.gebiet },
     { question: 'Sind Sie versichert?', answer: answers.versicherung },
   ],
   related: [
-    { path: '/leistungen/baureinigung', text: 'Für die Reinigung während und nach Bau- und Umbauarbeiten.' },
-    { path: '/leistungen/fenster-und-fassadenreinigung', text: 'Für Glasflächen und Fassaden, auch mit Hochdruck.' },
+    { path: '/leistungen/umzugsreinigung', text: 'Für die Endreinigung vor der Übergabe einer Wohnung oder Geschäftsfläche, mit Abnahmegarantie.' },
     { path: '/leistungen/unterhaltsreinigung', text: 'Wenn nach der Grundreinigung regelmässig gereinigt werden soll.' },
+    { path: '/leistungen/baureinigung', text: 'Für die Reinigung während und nach Bau- und Umbauarbeiten.' },
   ],
   cta: {
-    title: 'Offerte für Ihre Sonderreinigung',
+    title: 'Offerte für Ihre Grundreinigung',
     text: 'Beschreiben Sie uns Objekt, Anlass und Termin. Wir sehen uns die Räume an und erstellen Ihnen eine Offerte, kostenlos und unverbindlich.',
+  },
+}
+
+// Grundlage: E56 (Abnahmegarantie bestätigt, Wortlaut unverändert), E28 (nicht für Mieter), W01,
+// 24-SEO-KEYWORDS (eigene Seite, Nutzerfragen), E18 (keine Preise)
+const umzugsreinigung: ServicePageContent = {
+  path: '/leistungen/umzugsreinigung',
+  area: 'leistungen',
+  eyebrow: 'Einmalige und besondere Reinigung',
+  h1: 'Umzugs- und Endreinigung mit Abnahmegarantie',
+  lead: [
+    'Bei der Wohnungsabgabe prüft die Verwaltung jeden Raum: Küche, Bad, Fenster, Storen, Schränke und Nebenräume. Damit die Abnahme ohne Beanstandung klappt, muss die Wohnung gründlich gereinigt sein, und das auf einen festen Termin.',
+    'Wir übernehmen die Umzugs- und Endreinigung von Wohnungen und Geschäftsflächen für Verwaltungen, Eigentümer und Unternehmen, mit Abnahmegarantie: Beanstandet die Verwaltung bei der Abnahme etwas an unserer Reinigung, reinigen wir kostenlos nach.',
+  ],
+  facts: [
+    { label: 'Für', value: 'Verwaltungen, Eigentümer, Stockwerkeigentümerschaften und Unternehmen' },
+    { label: 'Objekte', value: 'Wohnungen und Geschäftsflächen vor der Übergabe' },
+    { label: 'Garantie', value: 'Abnahmegarantie, Einzelheiten in der Offerte' },
+  ],
+  scope: {
+    title: 'Was zur Endreinigung gehört',
+    intro: 'Den genauen Umfang der Wohnungsreinigung halten wir nach der Besichtigung in der Offerte fest. Typisch sind:',
+    items: [
+      'Küche mit Backofen, Kochfeld, Dampfabzug, Kühlschrank und Schränken, innen und aussen',
+      'Bad und WC mit Armaturen, Plättli, Fugen und Spiegeln, von Kalk befreit',
+      'Fenster innen und aussen, mit Rahmen, Falzen und Fensterbänken',
+      'Storen und Fensterläden nach Absprache',
+      'Einbauschränke, Türen, Zargen, Schalter und Steckdosen',
+      'Böden und Sockelleisten in allen Räumen',
+      'Balkon oder Sitzplatz, Keller- und Estrichabteil',
+    ],
+    notIncluded: [
+      'Umzugsreinigungen im Auftrag von Mieterinnen und Mietern einzelner Wohnungen. Für Villen und Residenzen gibt es unseren [Premium-Bereich](/premium).',
+      'Umzugstransport und Räumung von Möbeln.',
+      'Reparaturen, Malerarbeiten und das Beheben von Schäden.',
+      'Grundreinigung ohne Übergabe: siehe [Grund- und Sonderreinigung](/leistungen/sonderreinigungen).',
+    ],
+  },
+  sections: [
+    {
+      title: 'Die Abnahmegarantie',
+      paragraphs: [
+        'Beanstandet die Verwaltung bei der Abnahme etwas an unserer Reinigung, reinigen wir kostenlos nach. Die Einzelheiten stehen in der Offerte.',
+        'Die Garantie bezieht sich auf unsere Reinigung. Schäden, Abnutzung oder Reparaturen, die bei der Abnahme festgehalten werden, betreffen nicht die Reinigung und gehören deshalb nicht dazu.',
+      ],
+    },
+    {
+      title: 'Wie sauber muss eine Wohnung bei der Übergabe sein?',
+      paragraphs: [
+        'Wie gründlich gereinigt werden muss, regelt meist der Mietvertrag. Üblich ist in der Schweiz eine gründliche Reinigung der ganzen Wohnung samt Nebenräumen. Bei der Abnahme sieht die Verwaltung deshalb auch dorthin, wo im Alltag selten jemand putzt: in den Backofen, in den Dampfabzug, auf die Storen, in die Fensterfalze und in die Schränke.',
+        'Was im Einzelfall gilt, steht im Mietvertrag und im Abnahmeprotokoll. Diese Seite gibt einen Überblick und ersetzt keine Rechtsberatung.',
+      ],
+    },
+    {
+      title: 'Planung und Termin',
+      paragraphs: [
+        'Die Endreinigung liegt zwischen Auszug und Abnahme. Am besten sind die Räume dann leer, damit auch Schränke, Böden hinter Möbeln und Einbauten gereinigt werden können. Planen Sie die Reinigung so, dass zwischen Reinigung und Abnahme möglichst wenig Zeit liegt.',
+        'Buchen Sie früh, sobald der Abgabetermin feststeht. Um die Monatsenden und zu den ortsüblichen Umzugsterminen sind viele Termine gefragt.',
+      ],
+      items: [
+        'Möbel und persönliche Gegenstände sind ausgeräumt',
+        'Strom und Wasser sind noch angeschlossen',
+        'Schlüssel für Wohnung, Keller, Estrich und Briefkasten sind verfügbar',
+      ],
+    },
+    {
+      title: 'Für wen wir die Umzugsreinigung übernehmen',
+      paragraphs: [
+        'Für Verwaltungen, die Wohnungen zwischen zwei Mietverhältnissen bezugsbereit machen. Für Eigentümer und Stockwerkeigentümer, die eine Wohnung verkaufen, übergeben oder neu vermieten. Und für Unternehmen, die Büro- oder Geschäftsflächen abgeben.',
+        'Mieterinnen und Mieter einzelner Wohnungen bedienen wir nicht. Bei Villen und Residenzen übernehmen wir die Endreinigung im [Premium-Bereich](/premium) auch für Privatpersonen.',
+      ],
+    },
+    {
+      title: 'Woran Sie eine gute Endreinigung erkennen',
+      items: [
+        'Backofen, Bleche und Dampfabzug sind ohne Fettfilm',
+        'Armaturen, Duschglas und Plättli sind ohne Kalkränder',
+        'Fenster, Rahmen und Falze sind ohne Schlieren und Staub',
+        'Schränke sind innen sauber und trocken',
+        'Entlang der Sockelleisten bleiben keine Staubränder',
+      ],
+    },
+  ],
+  steps: [
+    steps.anfrage,
+    {
+      title: 'Besichtigung und Offerte',
+      text: 'Wir sehen uns die Wohnung oder Fläche an, möglichst vor dem Auszug, und klären mit Ihnen Umfang und Termin. Danach erhalten Sie eine schriftliche Offerte, kostenlos und unverbindlich.',
+    },
+    {
+      title: 'Endreinigung',
+      text: 'Wir reinigen zwischen Auszug und Abnahme, zum vereinbarten Termin.',
+    },
+    {
+      title: 'Abnahme',
+      text: 'Bei der Abnahme gilt die Abnahmegarantie gemäss Offerte.',
+    },
+  ],
+  faq: [
+    {
+      question: 'Wie viel kostet eine Umzugsreinigung?',
+      answer:
+        'Das hängt vor allem von Grösse und Zustand der Wohnung ab, von der Anzahl Fenster und Storen, von Nebenräumen wie Keller, Estrich oder Balkon und vom Termin. Preise nennen wir deshalb erst in der Offerte, nachdem wir das Objekt gesehen haben. Besichtigung und Offerte sind kostenlos und unverbindlich.',
+    },
+    {
+      question: 'Wie sauber muss eine Wohnung bei der Übergabe in der Schweiz sein?',
+      answer:
+        'Üblich ist eine gründliche Reinigung der ganzen Wohnung samt Nebenräumen: Küche mit Geräten, Bad und WC, Fenster innen und aussen samt Rahmen, Storen, Schränke, Böden, Keller, Estrich und Balkon. Was im Einzelfall gilt, regeln Mietvertrag und Abnahmeprotokoll. Diese Antwort ist keine Rechtsberatung.',
+    },
+    {
+      question: 'Was passiert, wenn die Verwaltung bei der Abnahme etwas beanstandet?',
+      answer:
+        'Beanstandet die Verwaltung bei der Abnahme etwas an unserer Reinigung, reinigen wir kostenlos nach. Die Einzelheiten stehen in der Offerte.',
+    },
+    {
+      question: 'Wann buche ich die Umzugsreinigung am besten?',
+      answer:
+        'Sobald der Abgabetermin feststeht. Um die Monatsenden und zu den ortsüblichen Umzugsterminen sind viele Termine gefragt. Die Reinigung legen wir zwischen Auszug und Abnahme.',
+    },
+    {
+      question: 'Müssen die Räume für die Endreinigung leer sein?',
+      answer:
+        'Am besten ja. In leeren Räumen lassen sich auch Schränke, Einbauten und Böden hinter Möbeln reinigen, und genau diese Stellen prüft die Verwaltung bei der Abnahme.',
+    },
+    {
+      question: 'Übernehmen Sie die Umzugsreinigung auch für Mieterinnen und Mieter?',
+      answer:
+        'Nein. Wir übernehmen die Umzugsreinigung für Verwaltungen, Eigentümer und Unternehmen. Bei Villen und Residenzen gibt es sie im [Premium-Bereich](/premium) auch für Privatpersonen.',
+    },
+    { question: 'In welchen Regionen sind Sie tätig?', answer: answers.gebiet },
+    { question: 'Sind Sie versichert?', answer: answers.versicherung },
+  ],
+  related: [
+    { path: '/leistungen/sonderreinigungen', text: 'Für eine Grundreinigung ohne Übergabe, etwa vor dem Start einer Unterhaltsreinigung.' },
+    { path: '/leistungen/fenster-und-fassadenreinigung', text: 'Für Glasflächen und Fassaden der ganzen Liegenschaft.' },
+    { path: '/leistungen/hauswartung', text: 'Wenn die Hauswartung bei Wohnungsübergaben mitwirken soll.' },
+  ],
+  cta: {
+    title: 'Offerte für Ihre Umzugsreinigung',
+    text: 'Nennen Sie uns Objekt, Grösse und Abgabetermin. Wir sehen uns die Räume an und erstellen Ihnen eine Offerte, kostenlos und unverbindlich.',
   },
 }
 
@@ -304,6 +564,50 @@ const baureinigung: ServicePageContent = {
       'Fassaden: siehe [Fenster- und Fassadenreinigung](/leistungen/fenster-und-fassadenreinigung).',
     ],
   },
+  sections: [
+    {
+      title: 'Typische Objekte und Situationen',
+      paragraphs: [
+        'Neubauten von Wohn- und Geschäftshäusern, Umbauten einzelner Etagen, renovierte Wohnungen vor der Wiedervermietung oder Ladenlokale vor der Eröffnung. Gemeinsam ist allen ein fester Termin: Übergabe, Bezug oder Eröffnung.',
+        'Oft wird die Reinigung erst kurz vor diesem Termin angefragt. Besser ist es, sie früh in den Terminplan aufzunehmen, damit sie nach den letzten Handwerksarbeiten und vor der Abnahme Platz hat.',
+      ],
+    },
+    {
+      title: 'Was bei der Bauendreinigung passiert',
+      paragraphs: [
+        'Baustaub ist fein und setzt sich überall ab: auf Böden, in Fensterfalzen, auf Türrahmen, in Schränken und Schubladen. Deshalb wird von oben nach unten gereinigt und oft in mehr als einem Durchgang.',
+        'Dazu kommen Rückstände wie Klebereste, Etiketten und Schutzfolien. Sie werden mit Mitteln und Werkzeugen entfernt, die zur Oberfläche passen, damit Glas, Armaturen und neue Böden nicht zerkratzen.',
+      ],
+    },
+    {
+      title: 'Die Etappen im Überblick',
+      items: [
+        'Grobreinigung: groben Schmutz und Staub entfernen, damit die nächsten Arbeiten auf sauberem Grund beginnen',
+        'Zwischenreinigung: vor dem Innenausbau, etwa bevor Böden verlegt oder Küchen montiert werden',
+        'Bauendreinigung: gründlich und bezugsbereit, nach den letzten Handwerksarbeiten und vor der Abnahme',
+      ],
+      paragraphs: [
+        'Arbeiten nach der Bauendreinigung noch Handwerker in den Räumen, entsteht neuer Staub. Planen Sie die Endreinigung deshalb nach den letzten Arbeiten ein.',
+      ],
+    },
+    {
+      title: 'Zusammenarbeit mit der Bauleitung',
+      paragraphs: [
+        'Auf der Baustelle gelten die Regeln der Bauleitung. Vor dem ersten Einsatz klären wir Zutritt, Sicherheitsregeln, Strom und Wasser, einen Platz für Geräte und den Umgang mit Abfall.',
+        'Hilfreich ist eine Ansprechperson auf der Baustelle, die Termine und Zugang bestätigt. Verschiebt sich der Terminplan, stimmen wir die Einsätze neu mit Ihnen ab.',
+      ],
+    },
+    {
+      title: 'Woran Sie eine gute Bauendreinigung erkennen',
+      items: [
+        'Kein Staubfilm auf Fensterbänken, Türrahmen und in Schubladen',
+        'Glas ohne Kleberreste, Schlieren und Kratzer',
+        'Schutzfolien an Fenstern, Türen und Geräten sind entfernt',
+        'Armaturen und Plättli sind ohne Rückstände',
+        'Böden sind sauber, auch in Ecken und entlang der Sockelleisten',
+      ],
+    },
+  ],
   steps: [
     steps.anfrage,
     {
@@ -335,12 +639,17 @@ const baureinigung: ServicePageContent = {
       answer:
         'Ja, Fenster, Rahmen und Glas reinigen wir bei der Bauendreinigung mit. Für Fassaden gibt es die [Fenster- und Fassadenreinigung](/leistungen/fenster-und-fassadenreinigung).',
     },
+    {
+      question: 'Was braucht es auf der Baustelle für die Reinigung?',
+      answer:
+        'Zugang zu den Räumen, Strom und Wasser sowie einen Platz für Geräte. Wo wir das vorfinden, klären wir bei der Besichtigung mit Ihnen oder der Bauleitung.',
+    },
     { question: 'Was kostet eine Baureinigung?', answer: answers.kosten },
     { question: 'In welchen Regionen sind Sie tätig?', answer: answers.gebiet },
     { question: 'Sind Sie versichert?', answer: answers.versicherung },
   ],
   related: [
-    { path: '/leistungen/sonderreinigungen', text: 'Für Grundreinigungen und Umzugsreinigungen mit Abnahmegarantie.' },
+    { path: '/leistungen/sonderreinigungen', text: 'Für eine Grundreinigung, wenn Flächen nach längerer Nutzung wieder gründlich sauber werden sollen.' },
     { path: '/leistungen/fenster-und-fassadenreinigung', text: 'Für Glasflächen und Fassaden am fertigen Bau.' },
     { path: '/leistungen/unterhaltsreinigung', text: 'Für die laufende Reinigung nach dem Bezug.' },
   ],
@@ -380,6 +689,53 @@ const fensterUndFassade: ServicePageContent = {
       'Renovation, Anstrich und Reparaturen an der Fassade.',
     ],
   },
+  sections: [
+    {
+      title: 'Typische Objekte und Situationen',
+      paragraphs: [
+        'Bürogebäude mit Glasfassaden, Ladenlokale mit Schaufenstern, Wohnliegenschaften mit vielen Fenstern im Treppenhaus, Gewerbebauten mit grauer oder grüner Fassade. Überall dort prägt Glas den ersten Eindruck, und Schmutz fällt im Gegenlicht sofort auf.',
+        'Häufig steht die Reinigung im Frühling nach dem Winter an, wenn Blütenstaub dazukommt, oder vor einem Anlass, einer Vermietung oder einem Verkauf.',
+      ],
+    },
+    {
+      title: 'Wie Glas und Fassade gereinigt werden',
+      paragraphs: [
+        'Glas wird meist mit Wasser, einem milden Reinigungsmittel und einem Abzieher gereinigt, danach werden Rahmen und Falze nachgewischt. Für grosse und hohe Glasflächen gibt es Teleskopstangen mit aufbereitetem Reinwasser, das ohne Rückstände trocknet.',
+        'Bei Fassaden entscheidet das Material. Glatte, feste Oberflächen vertragen oft Hochdruck, empfindlicher Putz, Holz oder alter Naturstein brauchen ein schonenderes Vorgehen. Welche Methode passt, klären wir bei der Besichtigung am Objekt.',
+      ],
+    },
+    {
+      title: 'Planung und Rhythmus',
+      paragraphs: [
+        'Wie oft Glas gereinigt werden sollte, hängt von Lage, Nutzung und Anspruch ab. Schaufenster und Eingänge sieht jeder, die Fenster eines Lagers kaum jemand.',
+      ],
+      items: [
+        'Eingänge, Schaufenster und Glastüren: häufiger, weil sie jeder sieht und berührt',
+        'Fenster in Büros und Treppenhäusern: in regelmässigen Abständen, oft nach Jahreszeit',
+        'Fassaden: seltener, wenn Verschmutzung, Algen oder ein Grauschleier sichtbar werden',
+        'Bei Frost, Sturm oder starkem Regen lässt sich aussen nicht sauber arbeiten, planen Sie deshalb etwas Spielraum ein',
+      ],
+    },
+    {
+      title: 'Was wir bei der Besichtigung klären',
+      items: [
+        'Wie hoch die Flächen sind und wie man sie sicher erreicht',
+        'Ob sich die Fenster öffnen lassen oder nur von aussen erreichbar sind',
+        'Aus welchem Material Rahmen und Fassade sind',
+        'Zugang, Parkplatz und Absperrungen, etwa auf dem Trottoir vor dem Gebäude',
+        'Ob Mieterinnen und Mieter informiert werden müssen, weil Fenster von innen gereinigt werden',
+      ],
+    },
+    {
+      title: 'Woran Sie eine gute Fensterreinigung erkennen',
+      items: [
+        'Im Gegenlicht sind keine Schlieren zu sehen',
+        'Das Glas ist bis in die Ecken sauber, auch am Rand zum Rahmen',
+        'Rahmen, Falze und Fensterbänke sind mitgereinigt, soweit vereinbart',
+        'Innen bleiben keine Tropfen und Wasserflecken auf Böden und Fensterbänken',
+      ],
+    },
+  ],
   steps: [
     steps.anfrage,
     {
@@ -405,6 +761,11 @@ const fensterUndFassade: ServicePageContent = {
       question: 'Wie reinigen Sie hohe Fenster und Fassaden?',
       answer:
         'Das hängt vom Gebäude und vom Zugang ab. Wir klären es bei der Besichtigung und halten in der Offerte fest, wie wir die Flächen erreichen.',
+    },
+    {
+      question: 'Müssen die Mieterinnen und Mieter zu Hause sein?',
+      answer:
+        'Für Fenster, die sich nur von innen reinigen lassen, braucht es Zugang zur Wohnung oder zum Büro. Das klären wir bei der Besichtigung, damit Sie die Mieterschaft rechtzeitig informieren können.',
     },
     { question: 'Was kostet die Reinigung?', answer: answers.kosten },
     { question: 'In welchen Regionen sind Sie tätig?', answer: answers.gebiet },
@@ -459,6 +820,33 @@ const industrieUndHallen: ServicePageContent = {
         'Ihre Sicherheits- und Betriebsregeln gelten auch für unser Team. Wir klären sie vor dem ersten Einsatz mit Ihnen.',
       ],
     },
+    {
+      title: 'Hallenböden und Verkehrswege',
+      paragraphs: [
+        'Hallenböden tragen Staub, Späne, Reifenabrieb und Öl- oder Fettfilme. Grosse Flächen werden meist mit Scheuersaugmaschinen gereinigt, die in einem Durchgang schrubben und das Schmutzwasser aufnehmen. Der Boden ist danach schnell wieder begehbar und befahrbar.',
+        'Welches Vorgehen und welches Mittel passen, hängt vom Belag ab, etwa Beton, Beschichtung oder Industrieparkett, und von der Art der Verschmutzung. Das klären wir beim Rundgang.',
+      ],
+    },
+    {
+      title: 'Typische Objekte und Situationen',
+      paragraphs: [
+        'Produktionsbetriebe, Werkstätten, Lager- und Logistikhallen, Gewerbebetriebe mit Werkstatt und Büro unter einem Dach. Anlässe sind etwa ein Audit oder ein Kundenbesuch, eine Umstellung der Produktion, Betriebsferien oder der Wunsch nach festen Reinigungszeiten statt Reinigung nebenbei.',
+      ],
+    },
+    {
+      title: 'Sicherheit im Betrieb',
+      paragraphs: [
+        'In Produktion und Lager gelten eigene Regeln: Schutzausrüstung, Fahrwege von Staplern, abgesperrte Bereiche, Umgang mit Gefahrstoffen. Diese Regeln klären wir vor dem ersten Einsatz mit Ihnen.',
+        'Bei Maschinen gehört dazu, wer sie abschaltet und sichert und wer sie nach der Reinigung wieder freigibt. Das legen wir vor dem Einsatz mit Ihrer Instandhaltung fest.',
+      ],
+    },
+    {
+      title: 'Planung und Rhythmus',
+      paragraphs: [
+        'Nicht jeder Bereich braucht denselben Rhythmus. Sozial- und Sanitärräume brauchen häufige Pflege. Hallenböden, Regale und Maschinen brauchen eine gründliche Reinigung in grösseren Abständen.',
+        'Oft ist eine Kombination sinnvoll: regelmässige Reinigung im laufenden Betrieb und eine Grundreinigung in den Betriebsferien oder bei geplanten Stillständen.',
+      ],
+    },
   ],
   steps: [
     steps.anfrage,
@@ -488,6 +876,11 @@ const industrieUndHallen: ServicePageContent = {
     {
       question: 'Welche Regeln gelten für Ihr Team in unserem Betrieb?',
       answer: 'Ihre Sicherheits- und Betriebsregeln. Wir klären sie vor dem ersten Einsatz mit Ihnen.',
+    },
+    {
+      question: 'Wie wird ein Hallenboden gereinigt?',
+      answer:
+        'Meist mit einer Scheuersaugmaschine, die schrubbt und das Schmutzwasser gleich aufnimmt. Welches Mittel passt, hängt vom Belag und von der Verschmutzung ab, etwa Staub, Öl oder Abrieb. Das klären wir beim Rundgang.',
     },
     { question: 'Was kostet eine Industriereinigung?', answer: answers.kosten },
     { question: 'In welchen Regionen sind Sie tätig?', answer: answers.gebiet },
@@ -538,6 +931,48 @@ const hauswartung: ServicePageContent = {
       'Grössere Reparaturen und Handwerksarbeiten.',
     ],
   },
+  sections: [
+    {
+      title: 'Typische Objekte und Situationen',
+      paragraphs: [
+        'Mehrfamilienhäuser und Wohnanlagen, Stockwerkeigentum, Wohn- und Geschäftshäuser mit Läden oder Büros im Erdgeschoss. Überall dort braucht es jemanden, der regelmässig vorbeikommt, die Waschküche in Ordnung hält und sieht, wenn etwas nicht stimmt.',
+        'Häufig kommt die Anfrage, wenn der bisherige Hauswart aufhört, wenn eine Verwaltung eine Liegenschaft neu übernimmt oder wenn in einer Stockwerkeigentümerschaft niemand die Aufgaben mehr übernehmen will.',
+      ],
+    },
+    {
+      title: 'Was beim Kontrollgang passiert',
+      paragraphs: [
+        'Beim Kontrollgang sehen wir nach dem Rechten, so oft wie mit Ihnen vereinbart. Was wir selbst beheben können, etwa ein Leuchtmittel ersetzen, erledigen wir. Alles andere melden wir der Stelle, die wir mit Ihnen festgelegt haben.',
+      ],
+      items: [
+        'Beleuchtung im Treppenhaus, im Keller und in der Umgebung',
+        'Türen, Schlösser und Briefkastenanlage',
+        'Waschküche, Trockenräume und Keller',
+        'Heizraum und Haustechnik auf sichtbare Störungen',
+        'Abfallplatz und Umgebung',
+      ],
+    },
+    {
+      title: 'Haustechnik im Blick',
+      paragraphs: [
+        'Hauswartung heisst nicht Wartung der Anlagen. Heizung, Lüftung, Lift und Brandschutz warten Fachfirmen. Die Hauswartung sieht regelmässig hin, bemerkt Störungen früh und meldet sie, etwa eine Fehlermeldung an der Heizung, einen tropfenden Hahn in der Waschküche oder einen Lift, der nicht richtig hält.',
+      ],
+    },
+    {
+      title: 'Wohnungsübergaben',
+      paragraphs: [
+        'Wie wir bei Wohnungsübergaben mitwirken, legen wir mit der Verwaltung fest, etwa ob wir die Wohnung öffnen, Schlüssel übergeben oder Zählerstände notieren. Abnahme und Protokoll bleiben bei der Verwaltung.',
+        'Braucht die Wohnung vor der Übergabe eine Endreinigung, gibt es dafür die [Umzugsreinigung mit Abnahmegarantie](/leistungen/umzugsreinigung).',
+      ],
+    },
+    {
+      title: 'Zusammenarbeit mit Verwaltung und Eigentümerschaft',
+      paragraphs: [
+        'Eine gute Hauswartung lebt von klaren Absprachen: welche Aufgaben, wie oft, wer Meldungen empfängt und welche kleinen Arbeiten ohne Rückfrage erledigt werden dürfen. Das halten wir schriftlich fest.',
+        'Auch die Mieterschaft sollte wissen, an wen sie sich wendet. Wer dafür Ansprechperson ist, legen wir gemeinsam mit Ihnen fest.',
+      ],
+    },
+  ],
   steps: [
     steps.anfrage,
     {
@@ -571,6 +1006,11 @@ const hauswartung: ServicePageContent = {
     {
       question: 'Können wir einzelne Aufgaben wählen?',
       answer: 'Ja. Wir stellen die Hauswartung aus den Aufgaben zusammen, die Ihre Liegenschaft braucht.',
+    },
+    {
+      question: 'Wie oft kommt die Hauswartung vorbei?',
+      answer:
+        'Das hängt von Grösse, Alter und Nutzung der Liegenschaft ab. Wie oft wir vor Ort sind, halten wir mit den übrigen Aufgaben schriftlich fest.',
     },
     { question: 'Sind Sie versichert?', answer: answers.versicherung },
     { question: 'Was kostet die Hauswartung?', answer: answers.kosten },
@@ -615,6 +1055,43 @@ const aussenUndGruen: ServicePageContent = {
     ],
     notIncluded: ['Winterdienst bieten wir nicht an.', 'Gartenbau und Neuanlagen.'],
   },
+  sections: [
+    {
+      title: 'Typische Objekte und Situationen',
+      paragraphs: [
+        'Wohnanlagen mit Rasen, Hecken und Spielplatz, Geschäftsliegenschaften mit Parkplatz und Eingangsbereich, Gewerbebauten mit Rabatten und Kiesflächen. Die Umgebung ist das Erste, was Besuch sieht, und das, was die Mieterschaft jeden Tag nutzt.',
+        'Häufig kommt die Anfrage, wenn die Umgebung bisher nebenbei gepflegt wurde und das nicht mehr reicht, oder wenn Reinigung, Hauswartung und Umgebung zusammen vergeben werden sollen.',
+      ],
+    },
+    {
+      title: 'Pflege im Jahreslauf',
+      paragraphs: [
+        'Die Arbeiten folgen der Jahreszeit. Typisch ist dieser Ablauf:',
+      ],
+      items: [
+        'Frühling: Wege und Plätze vom Winterschmutz befreien, Beete pflegen, erster Rasenschnitt',
+        'Sommer: Rasen regelmässig mähen, Hecken schneiden, Unkraut auf Plätzen und in Fugen entfernen',
+        'Herbst: Laub entfernen, Sträucher zurückschneiden, Beete für den Winter vorbereiten',
+        'Winter: Winterdienst bieten wir nicht an, Schneeräumung und Salzen braucht eine andere Lösung',
+      ],
+    },
+    {
+      title: 'Planung und Rhythmus',
+      paragraphs: [
+        'Wie oft gepflegt wird, richtet sich nach Jahreszeit und Wetter. In der Wachstumszeit braucht der Rasen mehr Aufmerksamkeit als im Spätherbst. Den Pflegeplan halten wir fest, zusätzliche Einsätze, etwa vor einem Anlass, sprechen Sie mit uns ab.',
+        'Als Teil der [Hauswartung](/leistungen/hauswartung) lassen sich Umgebungspflege und Kontrollgänge verbinden: Wer draussen arbeitet, sieht auch, wenn am Haus etwas nicht stimmt.',
+      ],
+    },
+    {
+      title: 'Woran Sie eine gepflegte Umgebung erkennen',
+      items: [
+        'Die Rasenkanten sind sauber geschnitten',
+        'Wege und Plätze sind ohne Laub, Abfall und Unkraut in den Fugen',
+        'Hecken sind in Form, Durchgänge und Sichtfelder bleiben frei',
+        'Beete sind gepflegt und ohne Unkraut',
+      ],
+    },
+  ],
   steps: [
     steps.anfrage,
     steps.besichtigung,
@@ -632,6 +1109,15 @@ const aussenUndGruen: ServicePageContent = {
     {
       question: 'Kann ich die Umgebungspflege ohne Hauswartung vergeben?',
       answer: 'Ja. Die Aussen- und Grünflächenpflege gibt es einzeln oder als Teil der [Hauswartung](/leistungen/hauswartung).',
+    },
+    {
+      question: 'Wann werden Hecken am besten geschnitten?',
+      answer:
+        'Meist im Frühsommer und bei Bedarf nochmals im Spätsommer. Während der Brutzeit der Vögel ist Rücksicht auf Nester nötig. Den passenden Zeitpunkt für Ihre Hecken halten wir im Pflegeplan fest.',
+    },
+    {
+      question: 'Legen Sie auch neue Gärten an?',
+      answer: 'Nein. Gartenbau und Neuanlagen gehören nicht zu unserem Angebot. Wir pflegen bestehende Umgebungen.',
     },
     { question: 'Was kostet die Umgebungspflege?', answer: answers.kosten },
     { question: 'In welchen Regionen sind Sie tätig?', answer: answers.gebiet },
@@ -671,7 +1157,7 @@ const facilityServices: ServicePageContent = {
       '[Hauswartung](/leistungen/hauswartung)',
       '[Aussen- und Grünflächenpflege](/leistungen/aussen-und-gruenflaechenpflege)',
       '[Fenster- und Fassadenreinigung](/leistungen/fenster-und-fassadenreinigung)',
-      '[Sonderreinigungen](/leistungen/sonderreinigungen), etwa Grundreinigungen',
+      '[Grund- und Sonderreinigungen](/leistungen/sonderreinigungen)',
       '[Industrie- und Hallenreinigung](/leistungen/industrie-und-hallenreinigung)',
     ],
     notIncluded: [
@@ -680,6 +1166,37 @@ const facilityServices: ServicePageContent = {
       'Die Vermittlung von Drittfirmen, etwa Handwerksbetrieben.',
     ],
   },
+  sections: [
+    {
+      title: 'Typische Situationen',
+      paragraphs: [
+        'Eine Verwaltung betreut mehrere Liegenschaften und will nicht für jede Aufgabe eine eigene Firma koordinieren. Ein Unternehmen hat Büros, eine Halle und eine Umgebung und will eine Stelle für alles. Oder eine Eigentümerschaft übernimmt eine Liegenschaft und sucht eine Lösung, die von Anfang an zusammenpasst.',
+      ],
+    },
+    {
+      title: 'Wie aus einzelnen Leistungen ein Vertrag wird',
+      paragraphs: [
+        'Beim Rundgang sehen wir uns an, was Ihr Objekt braucht: Reinigung innen, Glas, Hauswartung, Umgebung. Daraus entsteht ein Vertrag, in dem jede Leistung mit Umfang und Rhythmus steht.',
+        'Kommt später etwas dazu oder fällt etwas weg, besprechen Sie es an einer Stelle, mit Ihrer Ansprechperson bei uns.',
+      ],
+    },
+    {
+      title: 'Was Sie davon haben',
+      items: [
+        'Eine Ansprechperson für Reinigung, Hauswartung und Umgebung',
+        'Ein Vertrag statt mehrerer, mit einem Überblick über alle Leistungen',
+        'Weniger Abstimmung zwischen Firmen, etwa wer das Treppenhaus nach Arbeiten in der Umgebung reinigt',
+        'Ein Blick auf das ganze Objekt: Wer im Haus reinigt, sieht auch, wenn draussen etwas nicht stimmt',
+      ],
+    },
+    {
+      title: 'Grenzen und Zusammenarbeit',
+      paragraphs: [
+        'Facility Services heisst bei uns: die Leistungen, die wir selbst erbringen. Technisches Facility Management, etwa die Wartung von Heizung, Lüftung oder Liften, gehört nicht dazu, ebenso wenig die Vermittlung von Handwerksbetrieben.',
+        'Störungen, die wir bei der Arbeit bemerken, melden wir Ihnen, damit Sie die passende Fachfirma beauftragen können.',
+      ],
+    },
+  ],
   steps: [
     steps.anfrage,
     {
@@ -706,6 +1223,15 @@ const facilityServices: ServicePageContent = {
       answer:
         'Ja. Sie können mit einer Leistung beginnen, etwa der [Unterhaltsreinigung](/leistungen/unterhaltsreinigung), und später weitere dazunehmen.',
     },
+    {
+      question: 'Was ist der Unterschied zur Hauswartung?',
+      answer:
+        'Die [Hauswartung](/leistungen/hauswartung) ist eine einzelne Leistung mit Kontrollgängen, Kleinreparaturen, Haustechnik und Entsorgung. Facility Services verbinden sie mit Reinigung und Umgebungspflege in einem Vertrag.',
+    },
+    {
+      question: 'Wer ist unsere Ansprechperson?',
+      answer: 'Für alle Leistungen haben Sie eine Ansprechperson bei uns. Änderungen besprechen Sie an einer Stelle.',
+    },
     { question: 'Was kosten Facility Services?', answer: answers.kosten },
     { question: 'In welchen Regionen sind Sie tätig?', answer: answers.gebiet },
     { question: 'Sind Sie versichert?', answer: answers.versicherung },
@@ -725,6 +1251,7 @@ export const leistungen = {
   unterhaltsreinigung,
   bueroreinigung,
   sonderreinigungen,
+  umzugsreinigung,
   baureinigung,
   fensterUndFassade,
   industrieUndHallen,

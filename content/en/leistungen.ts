@@ -2,7 +2,7 @@ import type { ServicePageContent } from '../types'
 import { answers, languages, steps } from './common'
 
 /**
- * English texts of the nine service pages under /leistungen (M29, M60).
+ * English texts of the service pages under /leistungen (M29, M60).
  * Faithful translation of content/de/leistungen.ts. General descriptions of a
  * service («typically») are not a commitment, the binding scope is in the quote.
  */
@@ -34,12 +34,19 @@ const unterhaltsreinigung: ServicePageContent = {
     ],
     notIncluded: [
       'Offices and practices: see [office and practice cleaning](/leistungen/bueroreinigung).',
-      'One-off deep cleaning or move-out cleaning: see [special cleaning](/leistungen/sonderreinigungen).',
+      'One-off deep cleaning: see [deep and special cleaning](/leistungen/sonderreinigungen), final cleaning before a handover under [end-of-tenancy cleaning](/leistungen/umzugsreinigung).',
       'Exterior windows and facades: see [window and facade cleaning](/leistungen/fenster-und-fassadenreinigung).',
       'Private households. For villas and residences, see our [premium services](/premium).',
     ],
   },
   sections: [
+    {
+      title: 'Typical properties and situations',
+      paragraphs: [
+        'Maintenance cleaning pays off wherever many people use the same areas. In an apartment building, that means the stairwell, lift and laundry room. Mixed-use buildings add entrances with public footfall, business premises add reception, corridors and sanitary facilities.',
+        'Enquiries often come when the previous arrangement no longer works: cleaning by the tenants does not work out, the previous company stops, or a property management firm takes over a new property.',
+      ],
+    },
     {
       title: 'Restocking service',
       paragraphs: [
@@ -49,6 +56,38 @@ const unterhaltsreinigung: ServicePageContent = {
         'Toilet paper, paper towels and soap',
         'Bin bags and cleaning cloths',
         'Other consumables by arrangement',
+      ],
+    },
+    {
+      title: 'Planning and frequency',
+      paragraphs: [
+        'How often cleaning takes place depends on use, not just on floor area. An entrance with heavy public footfall needs more care than a cellar corridor that few people enter. It therefore makes sense to set a frequency per area rather than a single one for the whole building. We discuss our proposal with you after the site visit.',
+      ],
+      items: [
+        'Entrance, lift and stairwell: more often, because most dirt comes in from outside here',
+        'Sanitary facilities and kitchens: more often, for reasons of hygiene',
+        'Cellars, attics and ancillary rooms: less often, depending on use',
+        'Glass in the entrance area: as needed, more often in wet weather and in winter',
+      ],
+    },
+    {
+      title: 'How to recognise good maintenance cleaning',
+      paragraphs: [
+        'Clean means more than a mopped floor. During a walk round, these points quickly show you how thoroughly the cleaning is done:',
+      ],
+      items: [
+        'Handrails, light switches and lift buttons are clean, not just the floors',
+        'No dirt is left in corners, on stair edges or behind doors',
+        'Sanitary facilities smell fresh, soap and paper are restocked',
+        'Glass doors at the entrance are free of streaks and fingerprints',
+        'The agreed scope is set out in writing, so both sides know what applies',
+      ],
+    },
+    {
+      title: 'Working with property management and owners',
+      paragraphs: [
+        'Before we start, we clarify with you how we access the property, for example with a key or badge, and where equipment and cleaning products may be kept. A lockable cleaning room or cellar compartment makes the work easier.',
+        'For tenants, a short notice saying on which days cleaning takes place helps. Stairs and corridors then stay clear of shoes, bicycles and other items on those days.',
       ],
     },
   ],
@@ -73,11 +112,16 @@ const unterhaltsreinigung: ServicePageContent = {
     {
       question: 'How does it differ from deep cleaning?',
       answer:
-        'Maintenance cleaning keeps areas clean on a fixed schedule. Deep cleaning is a one-off, thorough job that also removes dirt that ongoing cleaning does not reach. It is one of our [special cleaning services](/leistungen/sonderreinigungen).',
+        'Maintenance cleaning keeps areas clean on a fixed schedule. Deep cleaning is a one-off, thorough job that also removes dirt that ongoing cleaning does not reach. More under [deep and special cleaning](/leistungen/sonderreinigungen).',
     },
     {
       question: 'Can we change the frequency later?',
       answer: 'Yes. If the use of the premises changes, we discuss a new scope or frequency with you.',
+    },
+    {
+      question: 'Do the tenants have to prepare anything?',
+      answer:
+        'No. It helps if stairs and corridors are clear of shoes, bicycles and other items on cleaning days. A short notice in the stairwell is usually enough.',
     },
     { question: 'Do you clean with environmentally friendly products?', answer: answers.mittel },
     {
@@ -94,7 +138,7 @@ const unterhaltsreinigung: ServicePageContent = {
   related: [
     { path: '/leistungen/bueroreinigung', text: 'If it is mainly about offices or a practice.' },
     { path: '/leistungen/hauswartung', text: 'If inspection rounds, minor repairs and waste disposal are needed as well as cleaning.' },
-    { path: '/leistungen/sonderreinigungen', text: 'For deep cleaning or move-out cleaning with a handover guarantee.' },
+    { path: '/leistungen/sonderreinigungen', text: 'For deep cleaning, for example before the start or after intensive use.' },
   ],
   cta: {
     title: 'A quote for your property',
@@ -129,15 +173,47 @@ const bueroreinigung: ServicePageContent = {
     ],
     notIncluded: [
       'Stairwells and common areas of entire buildings: see [maintenance cleaning](/leistungen/unterhaltsreinigung).',
-      'One-off deep cleaning: see [special cleaning](/leistungen/sonderreinigungen).',
+      'One-off deep cleaning: see [deep and special cleaning](/leistungen/sonderreinigungen).',
       'Reprocessing of instruments and medical devices, which remains the responsibility of your practice team.',
     ],
   },
   sections: [
     {
+      title: 'Typical properties and situations',
+      paragraphs: [
+        'Small offices with a few workstations, administrative premises over several floors, medical and therapy practices with a waiting room: the rooms differ, the expectation is the same. In the morning everything should be clean and ready, without anyone noticing the cleaning.',
+        'Enquiries often come when moving into new premises, when the team grows or when the previous cleaning no longer fits the working hours.',
+      ],
+    },
+    {
+      title: 'What happens during a cleaning visit',
+      paragraphs: [
+        'A fixed sequence has proven itself, from top to bottom and from clean to dirty: emptying bins and waste paper, wiping clear surfaces and workstations, cleaning the kitchenette and sanitary facilities, restocking consumables and finally the floors. That way, no floor that has already been cleaned gets dirty again.',
+        'Whether screens, keyboards, telephones or plants are included is clarified during the site visit and set out in the quote.',
+      ],
+    },
+    {
       title: 'Cleaning in practices',
       paragraphs: [
         'In practices, we follow your hygiene plan. Which rooms and surfaces we clean and what your practice team takes care of itself is clarified during the site visit and set out in the quote.',
+        'At reception and in the waiting room, door handles, the counter, chairs and shelves are touched by many people. Which products apply to these surfaces is set out in your hygiene plan. Treatment rooms and equipment stay as your practice team specifies.',
+      ],
+    },
+    {
+      title: 'Times and access',
+      paragraphs: [
+        'Most offices are cleaned outside working hours, early in the morning or in the evening. In practices, the time depends on consulting hours. We agree the cleaning times with you.',
+        'Access usually requires a key or badge and clear rules for the alarm system, lights and locking up. We clarify this before the first visit.',
+      ],
+    },
+    {
+      title: 'How to recognise good office cleaning',
+      items: [
+        'Bins are emptied and fitted with new bags',
+        'The kitchenette is free of coffee rings, the sink clean and dry',
+        'Glass doors and glass walls are free of fingerprints',
+        'Soap and paper dispensers in the sanitary facilities are refilled',
+        'Documents and personal belongings are exactly where you left them',
       ],
     },
   ],
@@ -165,6 +241,11 @@ const bueroreinigung: ServicePageContent = {
         'Yes. In practices, we follow your hygiene plan and clarify during the site visit which rooms and surfaces we take on.',
     },
     {
+      question: 'Do we have to tidy the workstations before cleaning?',
+      answer:
+        'We clean clear surfaces. The less there is on the desks, the more thoroughly they can be cleaned. How you would like us to handle documents, screens and keyboards is clarified during the site visit.',
+    },
+    {
       question: 'Do your staff also speak English?',
       answer: `${answers.sprachen} This is practical if several languages are spoken in your office.`,
     },
@@ -190,21 +271,21 @@ const sonderreinigungen: ServicePageContent = {
   path: '/leistungen/sonderreinigungen',
   area: 'leistungen',
   eyebrow: 'One-off and special cleaning',
-  h1: 'Special cleaning: deep cleaning and move-out cleaning',
+  h1: 'Deep and special cleaning for properties and businesses',
   lead: [
-    'Some cleaning is not needed every week: before a flat is handed over, when dirt has built up over a long period, or when dust remains after construction work. That is what our special cleaning services are for.',
-    'We carry them out for property managers, owners and businesses, as a one-off or at longer intervals.',
+    'Some dirt can no longer be reached by ongoing cleaning: limescale in sanitary facilities, grease in kitchens, dirt in joints and corners, old layers on floors. That is when a deep clean is needed, as a one-off or at longer intervals.',
+    'We carry out deep and special cleaning for property managers, owners and businesses. For the final clean when a flat is handed back, there is our [end-of-tenancy cleaning with a handover guarantee](/leistungen/umzugsreinigung).',
   ],
   facts: [
     { label: 'For', value: 'Property managers, owners, communities of condominium owners and businesses' },
     { label: 'Type', value: 'One-off or at longer intervals' },
-    { label: 'Move-out cleaning', value: 'With a handover guarantee' },
+    { label: 'Areas', value: 'Residential, office and commercial premises' },
   ],
   scope: {
-    title: 'Our special cleaning services',
+    title: 'Our deep and special cleaning services',
     items: [
       'Deep cleaning of residential, office and commercial premises',
-      'Move-out and end-of-tenancy cleaning with a handover guarantee',
+      '[Move-out and end-of-tenancy cleaning](/leistungen/umzugsreinigung) with a handover guarantee',
       '[Post-construction cleaning](/leistungen/baureinigung) after new builds and renovations',
       '[Window and glass cleaning](/leistungen/fenster-und-fassadenreinigung)',
       '[Facade cleaning](/leistungen/fenster-und-fassadenreinigung), including high-pressure cleaning',
@@ -216,17 +297,45 @@ const sonderreinigungen: ServicePageContent = {
   },
   sections: [
     {
-      title: 'Deep cleaning',
+      title: 'What makes a deep clean',
       paragraphs: [
-        'Deep cleaning goes further than ongoing cleaning. It removes dirt that has built up over a long period on floors, in sanitary facilities and kitchens, and on doors and surfaces.',
-        'It is useful, for example, before office or commercial premises are re-let, after intensive use, or before [maintenance cleaning](/leistungen/unterhaltsreinigung) begins.',
+        'Deep cleaning goes further than ongoing cleaning. It removes dirt that has built up over a long period: limescale and urine scale in sanitary facilities, grease in kitchens, dirt in joints, corners and on skirting boards, residue of old care products on floors.',
+        'For floors, the approach depends on the surface, such as natural stone, tiles, linoleum or parquet. Which method and which products are suitable is clarified during the site visit.',
       ],
     },
     {
-      title: 'Move-out and end-of-tenancy cleaning with a handover guarantee',
+      title: 'Typical occasions',
       paragraphs: [
-        'When a flat or business premises are handed over, everything must be clean so that the handover goes through without complaints. We clean the rooms thoroughly before the handover, with a handover guarantee: if the property management raises a complaint about our cleaning at the handover, we clean again free of charge. The details are set out in the quote.',
-        'We offer move-out cleaning to property managers, owners and businesses, and also to private individuals for villas and residences through our [premium services](/premium).',
+        'A deep clean is worthwhile whenever an area makes a fresh start or has been heavily used for a long time:',
+      ],
+      items: [
+        'Before office or commercial premises are re-let',
+        'After intensive use or a longer period of vacancy',
+        'Before [maintenance cleaning](/leistungen/unterhaltsreinigung) begins',
+        'When ongoing cleaning no longer removes stubborn dirt',
+      ],
+    },
+    {
+      title: 'Move-out and end-of-tenancy cleaning',
+      paragraphs: [
+        'For the final clean when a flat or business premises are handed over, there is a separate page with all the details: [end-of-tenancy cleaning with a handover guarantee](/leistungen/umzugsreinigung). We offer it to property managers, owners and businesses, and also to private individuals for villas and residences through our [premium services](/premium).',
+      ],
+    },
+    {
+      title: 'Planning and frequency',
+      paragraphs: [
+        'A deep clean takes time and, ideally, empty rooms. In offices and business premises, it can often be scheduled for a weekend, the company holidays or the period between two tenancies. In buildings with tenants, advance notice is needed, because the stairwell or laundry room, for example, cannot be used for a short time.',
+        'How often a deep clean makes sense depends on use and wear. With good ongoing cleaning, it is needed less often.',
+      ],
+    },
+    {
+      title: 'How to recognise a good deep clean',
+      items: [
+        'The joints are light again, not just the tiles',
+        'Taps and tiles are free of limescale marks',
+        'The floor is free of streaks and sticky patches',
+        'Skirting boards, doors and door frames have been cleaned too',
+        'Delicate surfaces are undamaged, because the products suit the material',
       ],
     },
   ],
@@ -235,18 +344,18 @@ const sonderreinigungen: ServicePageContent = {
     steps.besichtigung,
     {
       title: 'Date',
-      text: 'We schedule the job for a date that suits your handover or your operations.',
+      text: 'We schedule the job for a date that suits your use of the premises or your operations.',
     },
     {
       title: 'Handover',
-      text: 'After the job, we hand over the rooms. For move-out cleaning, the handover guarantee applies as set out in the quote.',
+      text: 'After the job, we hand over the rooms. If regular cleaning is to follow, we are happy to discuss it with you.',
     },
   ],
   faq: [
     {
-      question: 'What does the handover guarantee mean?',
+      question: 'What is deep cleaning?',
       answer:
-        'If the property management raises a complaint about our cleaning at the handover, we clean again free of charge. The details are set out in the quote.',
+        'A one-off, thorough job that also removes dirt that has built up over a long period, such as limescale, grease, dirt in joints or old layers of care products on floors.',
     },
     {
       question: 'When is deep cleaning worthwhile?',
@@ -258,18 +367,166 @@ const sonderreinigungen: ServicePageContent = {
       answer:
         'Maintenance cleaning keeps areas clean on a fixed schedule, while deep cleaning is a one-off, thorough job. The two can be combined: first a deep clean, then ongoing [maintenance cleaning](/leistungen/unterhaltsreinigung).',
     },
-    { question: 'How much does special cleaning cost?', answer: answers.kosten },
+    {
+      question: 'Do the rooms have to be empty for a deep clean?',
+      answer:
+        'Not entirely, but the clearer the areas are, the more thoroughly they can be cleaned. What stays in place and who moves it is clarified during the site visit.',
+    },
+    {
+      question: 'Do you also do end-of-tenancy cleaning?',
+      answer:
+        'Yes, with a handover guarantee, for property managers, owners and businesses. Everything else is set out under [end-of-tenancy cleaning with a handover guarantee](/leistungen/umzugsreinigung).',
+    },
+    { question: 'How much does deep cleaning cost?', answer: answers.kosten },
     { question: 'Which regions do you cover?', answer: answers.gebiet },
     { question: 'Are you insured?', answer: answers.versicherung },
   ],
   related: [
-    { path: '/leistungen/baureinigung', text: 'For cleaning during and after construction and renovation work.' },
-    { path: '/leistungen/fenster-und-fassadenreinigung', text: 'For glass surfaces and facades, including high-pressure cleaning.' },
+    { path: '/leistungen/umzugsreinigung', text: 'For the final clean before a flat or business premises are handed over, with a handover guarantee.' },
     { path: '/leistungen/unterhaltsreinigung', text: 'If regular cleaning is to follow the deep clean.' },
+    { path: '/leistungen/baureinigung', text: 'For cleaning during and after construction and renovation work.' },
   ],
   cta: {
-    title: 'A quote for your special cleaning',
+    title: 'A quote for your deep clean',
     text: 'Tell us about the property, the occasion and the date. We will look at the rooms and prepare a quote for you, free of charge and non-binding.',
+  },
+}
+
+const umzugsreinigung: ServicePageContent = {
+  path: '/leistungen/umzugsreinigung',
+  area: 'leistungen',
+  eyebrow: 'One-off and special cleaning',
+  h1: 'Move-out and end-of-tenancy cleaning with a handover guarantee',
+  lead: [
+    'When a flat is handed back, the property management checks every room: kitchen, bathroom, windows, blinds, cupboards and ancillary rooms. For the handover to go through without complaints, the flat must be cleaned thoroughly, and by a fixed date.',
+    'We carry out move-out and end-of-tenancy cleaning of flats and business premises for property managers, owners and businesses, with a handover guarantee: if the property management raises a complaint about our cleaning at the handover, we clean again free of charge.',
+  ],
+  facts: [
+    { label: 'For', value: 'Property managers, owners, communities of condominium owners and businesses' },
+    { label: 'Properties', value: 'Flats and business premises before handover' },
+    { label: 'Guarantee', value: 'Handover guarantee, details in the quote' },
+  ],
+  scope: {
+    title: 'What the final clean includes',
+    intro: 'After the site visit, we set out the exact scope of the flat cleaning in the quote. Typically this includes:',
+    items: [
+      'Kitchen with oven, hob, extractor hood, fridge and cupboards, inside and out',
+      'Bathroom and WC with taps, tiles, joints and mirrors, descaled',
+      'Windows inside and out, including frames, rebates and window sills',
+      'Blinds and shutters by arrangement',
+      'Built-in cupboards, doors, door frames, switches and sockets',
+      'Floors and skirting boards in all rooms',
+      'Balcony or patio, cellar and attic compartment',
+    ],
+    notIncluded: [
+      'Move-out cleaning commissioned by tenants of individual flats. For villas and residences, see our [premium services](/premium).',
+      'Removals and clearing out furniture.',
+      'Repairs, painting and fixing damage.',
+      'Deep cleaning without a handover: see [deep and special cleaning](/leistungen/sonderreinigungen).',
+    ],
+  },
+  sections: [
+    {
+      title: 'The handover guarantee',
+      paragraphs: [
+        'If the property management raises a complaint about our cleaning at the handover, we clean again free of charge. The details are set out in the quote.',
+        'The guarantee relates to our cleaning. Damage, wear and tear or repairs recorded at the handover do not concern the cleaning and are therefore not covered.',
+      ],
+    },
+    {
+      title: 'How clean does a flat have to be at the handover?',
+      paragraphs: [
+        'How thoroughly a flat has to be cleaned is usually governed by the tenancy agreement. In Switzerland, a thorough clean of the whole flat including ancillary rooms is customary. At the handover, the property management therefore also looks where hardly anyone cleans in everyday life: inside the oven, in the extractor hood, at the blinds, in the window rebates and in the cupboards.',
+        'What applies in an individual case is set out in the tenancy agreement and the handover report. This page gives an overview and is no substitute for legal advice.',
+      ],
+    },
+    {
+      title: 'Planning and date',
+      paragraphs: [
+        'The final clean takes place between moving out and the handover. Ideally the rooms are empty by then, so that cupboards, floors behind furniture and fitted units can be cleaned too. Plan the cleaning so that as little time as possible passes between the cleaning and the handover.',
+        'Book early, as soon as the handover date is fixed. Around the end of the month and on the customary local moving dates, many slots are in demand.',
+      ],
+      items: [
+        'Furniture and personal belongings have been cleared out',
+        'Electricity and water are still connected',
+        'Keys for the flat, cellar, attic and letterbox are available',
+      ],
+    },
+    {
+      title: 'Who we do end-of-tenancy cleaning for',
+      paragraphs: [
+        'For property managers who get flats ready for occupancy between two tenancies. For owners and condominium owners who sell, hand over or re-let a flat. And for businesses handing back office or business premises.',
+        'We do not serve tenants of individual flats. For villas and residences, we also do the final clean for private individuals through our [premium services](/premium).',
+      ],
+    },
+    {
+      title: 'How to recognise a good final clean',
+      items: [
+        'Oven, baking trays and extractor hood are free of grease film',
+        'Taps, shower glass and tiles are free of limescale marks',
+        'Windows, frames and rebates are free of streaks and dust',
+        'Cupboards are clean and dry inside',
+        'No dust lines remain along the skirting boards',
+      ],
+    },
+  ],
+  steps: [
+    steps.anfrage,
+    {
+      title: 'Site visit and quote',
+      text: 'We look at the flat or premises, if possible before moving out, and clarify the scope and date with you. You then receive a written quote, free of charge and non-binding.',
+    },
+    {
+      title: 'Final clean',
+      text: 'We clean between moving out and the handover, on the agreed date.',
+    },
+    {
+      title: 'Handover',
+      text: 'At the handover, the handover guarantee applies as set out in the quote.',
+    },
+  ],
+  faq: [
+    {
+      question: 'How much does end-of-tenancy cleaning cost?',
+      answer:
+        'That depends mainly on the size and condition of the flat, the number of windows and blinds, ancillary rooms such as a cellar, attic or balcony, and the date. We therefore only give prices in the quote, after we have seen the property. The site visit and quote are free of charge and non-binding.',
+    },
+    {
+      question: 'How clean does a flat have to be at the handover in Switzerland?',
+      answer:
+        'A thorough clean of the whole flat including ancillary rooms is customary: kitchen and appliances, bathroom and WC, windows inside and out including frames, blinds, cupboards, floors, cellar, attic and balcony. What applies in an individual case is governed by the tenancy agreement and the handover report. This answer is not legal advice.',
+    },
+    {
+      question: 'What happens if the property management raises a complaint at the handover?',
+      answer:
+        'If the property management raises a complaint about our cleaning at the handover, we clean again free of charge. The details are set out in the quote.',
+    },
+    {
+      question: 'When is the best time to book end-of-tenancy cleaning?',
+      answer:
+        'As soon as the handover date is fixed. Around the end of the month and on the customary local moving dates, many slots are in demand. We schedule the cleaning between moving out and the handover.',
+    },
+    {
+      question: 'Do the rooms have to be empty for the final clean?',
+      answer:
+        'Ideally, yes. In empty rooms, cupboards, fitted units and floors behind furniture can be cleaned too, and these are exactly the places the property management checks at the handover.',
+    },
+    {
+      question: 'Do you also do end-of-tenancy cleaning for tenants?',
+      answer:
+        'No. We carry out end-of-tenancy cleaning for property managers, owners and businesses. For villas and residences, it is also available to private individuals through our [premium services](/premium).',
+    },
+    { question: 'Which regions do you cover?', answer: answers.gebiet },
+    { question: 'Are you insured?', answer: answers.versicherung },
+  ],
+  related: [
+    { path: '/leistungen/sonderreinigungen', text: 'For deep cleaning without a handover, for example before maintenance cleaning starts.' },
+    { path: '/leistungen/fenster-und-fassadenreinigung', text: 'For glass surfaces and facades of the whole property.' },
+    { path: '/leistungen/hauswartung', text: 'If the caretaker is to assist with flat handovers.' },
+  ],
+  cta: {
+    title: 'A quote for your end-of-tenancy cleaning',
+    text: 'Tell us about the property, its size and the handover date. We will look at the rooms and prepare a quote for you, free of charge and non-binding.',
   },
 }
 
@@ -304,6 +561,50 @@ const baureinigung: ServicePageContent = {
       'Facades: see [window and facade cleaning](/leistungen/fenster-und-fassadenreinigung).',
     ],
   },
+  sections: [
+    {
+      title: 'Typical properties and situations',
+      paragraphs: [
+        'New residential and commercial buildings, conversions of individual floors, renovated flats before re-letting or shops before opening. They all have one thing in common: a fixed date for handover, move-in or opening.',
+        'Cleaning is often requested only shortly before that date. It is better to include it in the schedule early, so that there is room for it after the last trades have finished and before the acceptance inspection.',
+      ],
+    },
+    {
+      title: 'What happens during post-construction cleaning',
+      paragraphs: [
+        'Construction dust is fine and settles everywhere: on floors, in window rebates, on door frames, in cupboards and drawers. That is why cleaning is done from top to bottom and often in more than one pass.',
+        'On top of that come residues such as adhesive, labels and protective film. They are removed with products and tools that suit the surface, so that glass, taps and new floors are not scratched.',
+      ],
+    },
+    {
+      title: 'The stages at a glance',
+      items: [
+        'Rough cleaning: removing coarse dirt and dust so that the next work can start on a clean base',
+        'Interim cleaning: before the interior fit-out, for example before floors are laid or kitchens installed',
+        'Post-construction cleaning: thorough and ready for occupancy, after the last trades have finished and before the acceptance inspection',
+      ],
+      paragraphs: [
+        'If tradespeople are still working in the rooms after the post-construction cleaning, new dust is created. So schedule the final clean after the last work.',
+      ],
+    },
+    {
+      title: 'Working with the site management',
+      paragraphs: [
+        'On the construction site, the site management\'s rules apply. Before the first job, we clarify access, safety rules, electricity and water, a place for equipment and how waste is handled.',
+        'A contact person on site who confirms dates and access is helpful. If the schedule shifts, we coordinate the jobs with you again.',
+      ],
+    },
+    {
+      title: 'How to recognise good post-construction cleaning',
+      items: [
+        'No film of dust on window sills, door frames or in drawers',
+        'Glass free of adhesive residue, streaks and scratches',
+        'Protective film has been removed from windows, doors and appliances',
+        'Taps and tiles are free of residue',
+        'Floors are clean, including in corners and along the skirting boards',
+      ],
+    },
+  ],
   steps: [
     steps.anfrage,
     {
@@ -335,12 +636,17 @@ const baureinigung: ServicePageContent = {
       answer:
         'Yes, we clean windows, frames and glass as part of the post-construction cleaning. For facades, there is our [window and facade cleaning](/leistungen/fenster-und-fassadenreinigung).',
     },
+    {
+      question: 'What is needed on the construction site for the cleaning?',
+      answer:
+        'Access to the rooms, electricity and water, and a place for equipment. Where we will find these is clarified during the site visit with you or the site management.',
+    },
     { question: 'How much does construction cleaning cost?', answer: answers.kosten },
     { question: 'Which regions do you cover?', answer: answers.gebiet },
     { question: 'Are you insured?', answer: answers.versicherung },
   ],
   related: [
-    { path: '/leistungen/sonderreinigungen', text: 'For deep cleaning and move-out cleaning with a handover guarantee.' },
+    { path: '/leistungen/sonderreinigungen', text: 'For deep cleaning, when areas are to be thoroughly clean again after a long period of use.' },
     { path: '/leistungen/fenster-und-fassadenreinigung', text: 'For glass surfaces and facades on the finished building.' },
     { path: '/leistungen/unterhaltsreinigung', text: 'For ongoing cleaning after move-in.' },
   ],
@@ -379,6 +685,53 @@ const fensterUndFassade: ServicePageContent = {
       'Renovation, painting and repairs to the facade.',
     ],
   },
+  sections: [
+    {
+      title: 'Typical properties and situations',
+      paragraphs: [
+        'Office buildings with glass facades, shops with display windows, residential properties with many windows in the stairwell, commercial buildings with a grey or green facade. In all these places, glass shapes the first impression, and dirt is immediately visible against the light.',
+        'Cleaning is often due in spring after the winter, when pollen is added, or before an event, a letting or a sale.',
+      ],
+    },
+    {
+      title: 'How glass and facades are cleaned',
+      paragraphs: [
+        'Glass is usually cleaned with water, a mild cleaning product and a squeegee, after which frames and rebates are wiped down. For large and high glass surfaces, there are telescopic poles with treated pure water that dries without residue.',
+        'For facades, the material is decisive. Smooth, hard surfaces often tolerate high-pressure cleaning, while delicate render, wood or old natural stone need a gentler approach. Which method is suitable is clarified during the site visit.',
+      ],
+    },
+    {
+      title: 'Planning and frequency',
+      paragraphs: [
+        'How often glass should be cleaned depends on location, use and expectations. Everyone sees shop windows and entrances, hardly anyone sees the windows of a warehouse.',
+      ],
+      items: [
+        'Entrances, shop windows and glass doors: more often, because everyone sees and touches them',
+        'Windows in offices and stairwells: at regular intervals, often according to the season',
+        'Facades: less often, when dirt, algae or a grey film become visible',
+        'In frost, storms or heavy rain, exterior work cannot be done properly, so allow some leeway',
+      ],
+    },
+    {
+      title: 'What we clarify during the site visit',
+      items: [
+        'How high the surfaces are and how they can be reached safely',
+        'Whether the windows can be opened or can only be reached from outside',
+        'What the frames and facade are made of',
+        'Access, parking and barriers, for example on the pavement in front of the building',
+        'Whether tenants need to be informed because windows are cleaned from inside',
+      ],
+    },
+    {
+      title: 'How to recognise good window cleaning',
+      items: [
+        'No streaks are visible against the light',
+        'The glass is clean right into the corners, including at the edge of the frame',
+        'Frames, rebates and window sills have been cleaned too, as far as agreed',
+        'Inside, no drips or water marks are left on floors and window sills',
+      ],
+    },
+  ],
   steps: [
     steps.anfrage,
     {
@@ -404,6 +757,11 @@ const fensterUndFassade: ServicePageContent = {
       question: 'How do you clean high windows and facades?',
       answer:
         'That depends on the building and the access. We clarify it during the site visit and set out in the quote how we will reach the surfaces.',
+    },
+    {
+      question: 'Do the tenants have to be at home?',
+      answer:
+        'For windows that can only be cleaned from inside, access to the flat or office is needed. We clarify this during the site visit, so that you can inform the tenants in good time.',
     },
     { question: 'What does the cleaning cost?', answer: answers.kosten },
     { question: 'Which regions do you cover?', answer: answers.gebiet },
@@ -457,6 +815,33 @@ const industrieUndHallen: ServicePageContent = {
         'Your safety and operating rules also apply to our team. We clarify them with you before the first job.',
       ],
     },
+    {
+      title: 'Hall floors and traffic routes',
+      paragraphs: [
+        'Hall floors carry dust, shavings, tyre abrasion and films of oil or grease. Large areas are usually cleaned with scrubber dryers, which scrub and pick up the dirty water in a single pass. The floor can then quickly be walked and driven on again.',
+        'Which approach and which product are suitable depends on the surface, such as concrete, coating or industrial parquet, and on the type of dirt. We clarify this during the walk-through.',
+      ],
+    },
+    {
+      title: 'Typical properties and situations',
+      paragraphs: [
+        'Production plants, workshops, warehouses and logistics halls, commercial businesses with a workshop and office under one roof. Occasions include an audit or a customer visit, a change in production, company holidays or the wish for fixed cleaning times instead of cleaning on the side.',
+      ],
+    },
+    {
+      title: 'Safety on the premises',
+      paragraphs: [
+        'Production and storage have their own rules: protective equipment, forklift routes, cordoned-off areas, handling of hazardous substances. We clarify these rules with you before the first job.',
+        'For machinery, this includes who switches it off and secures it and who releases it again after cleaning. We agree this with your maintenance team before the job.',
+      ],
+    },
+    {
+      title: 'Planning and frequency',
+      paragraphs: [
+        'Not every area needs the same frequency. Staff rooms and sanitary facilities need frequent care. Hall floors, racking and machinery need thorough cleaning at longer intervals.',
+        'A combination often makes sense: regular cleaning during operations and a deep clean during company holidays or planned shutdowns.',
+      ],
+    },
   ],
   steps: [
     steps.anfrage,
@@ -486,6 +871,11 @@ const industrieUndHallen: ServicePageContent = {
     {
       question: 'Which rules apply to your team on our premises?',
       answer: 'Your safety and operating rules. We clarify them with you before the first job.',
+    },
+    {
+      question: 'How is a hall floor cleaned?',
+      answer:
+        'Usually with a scrubber dryer, which scrubs and picks up the dirty water straight away. Which product is suitable depends on the surface and the type of dirt, such as dust, oil or abrasion. We clarify this during the walk-through.',
     },
     { question: 'How much does industrial cleaning cost?', answer: answers.kosten },
     { question: 'Which regions do you cover?', answer: answers.gebiet },
@@ -535,6 +925,48 @@ const hauswartung: ServicePageContent = {
       'Major repairs and work by tradespeople.',
     ],
   },
+  sections: [
+    {
+      title: 'Typical properties and situations',
+      paragraphs: [
+        'Apartment buildings and residential complexes, condominiums, mixed-use buildings with shops or offices on the ground floor. Wherever that is, someone is needed who comes by regularly, keeps the laundry room in order and notices when something is wrong.',
+        'Enquiries often come when the previous caretaker stops, when a property management firm takes over a property or when nobody in a community of condominium owners wants to take on the tasks any more.',
+      ],
+    },
+    {
+      title: 'What happens during an inspection round',
+      paragraphs: [
+        'During the inspection round, we check on things as often as agreed with you. What we can fix ourselves, such as replacing a light bulb, we take care of. Everything else we report to the contact we have agreed with you.',
+      ],
+      items: [
+        'Lighting in the stairwell, the cellar and the grounds',
+        'Doors, locks and letterboxes',
+        'Laundry room, drying rooms and cellar',
+        'Boiler room and building services for visible faults',
+        'Waste collection point and grounds',
+      ],
+    },
+    {
+      title: 'Keeping an eye on building services',
+      paragraphs: [
+        'Caretaking does not mean servicing the installations. Heating, ventilation, lifts and fire protection are serviced by specialist firms. The caretaker looks regularly, notices faults early and reports them, such as an error message on the heating, a dripping tap in the laundry room or a lift that does not stop properly.',
+      ],
+    },
+    {
+      title: 'Flat handovers',
+      paragraphs: [
+        'How we assist with flat handovers is agreed with the property management, for example whether we open the flat, hand over keys or note meter readings. The acceptance inspection and the report remain with the property management.',
+        'If the flat needs a final clean before the handover, there is our [end-of-tenancy cleaning with a handover guarantee](/leistungen/umzugsreinigung).',
+      ],
+    },
+    {
+      title: 'Working with property management and owners',
+      paragraphs: [
+        'Good caretaking depends on clear agreements: which tasks, how often, who receives reports and which small jobs may be done without asking first. We set this out in writing.',
+        'Tenants should also know whom to contact. We agree with you who that contact person is.',
+      ],
+    },
+  ],
   steps: [
     steps.anfrage,
     {
@@ -568,6 +1000,11 @@ const hauswartung: ServicePageContent = {
     {
       question: 'Can we choose individual tasks?',
       answer: 'Yes. We put together the caretaking from the tasks your property needs.',
+    },
+    {
+      question: 'How often does the caretaker come by?',
+      answer:
+        'That depends on the size, age and use of the property. We set out in writing how often we are on site, together with the other tasks.',
     },
     { question: 'Are you insured?', answer: answers.versicherung },
     { question: 'How much does caretaking cost?', answer: answers.kosten },
@@ -611,6 +1048,43 @@ const aussenUndGruen: ServicePageContent = {
     ],
     notIncluded: ['We do not offer winter maintenance.', 'Landscaping and new planting schemes.'],
   },
+  sections: [
+    {
+      title: 'Typical properties and situations',
+      paragraphs: [
+        'Residential complexes with lawns, hedges and a playground, commercial properties with a car park and entrance area, business buildings with flower beds and gravel areas. The grounds are the first thing visitors see, and what tenants use every day.',
+        'Enquiries often come when the grounds have so far been looked after on the side and that is no longer enough, or when cleaning, caretaking and grounds maintenance are to be contracted out together.',
+      ],
+    },
+    {
+      title: 'Care through the seasons',
+      paragraphs: [
+        'The work follows the seasons. A typical year looks like this:',
+      ],
+      items: [
+        'Spring: clearing paths and paved areas of winter dirt, tending flower beds, first lawn mowing',
+        'Summer: mowing lawns regularly, cutting hedges, removing weeds from paved areas and joints',
+        'Autumn: clearing leaves, cutting back shrubs, preparing flower beds for winter',
+        'Winter: we do not offer winter maintenance, snow clearing and gritting need a different solution',
+      ],
+    },
+    {
+      title: 'Planning and frequency',
+      paragraphs: [
+        'How often the grounds are maintained depends on the season and the weather. In the growing season, the lawn needs more attention than in late autumn. We record the maintenance plan, and you can arrange additional visits with us, for example before an event.',
+        'As part of [caretaking](/leistungen/hauswartung), grounds maintenance and inspection rounds can be combined: whoever works outside also notices when something is wrong with the building.',
+      ],
+    },
+    {
+      title: 'How to recognise well-kept grounds',
+      items: [
+        'Lawn edges are neatly trimmed',
+        'Paths and paved areas are free of leaves, litter and weeds in the joints',
+        'Hedges are in shape, passages and sight lines stay clear',
+        'Flower beds are well kept and free of weeds',
+      ],
+    },
+  ],
   steps: [
     steps.anfrage,
     steps.besichtigung,
@@ -628,6 +1102,15 @@ const aussenUndGruen: ServicePageContent = {
     {
       question: 'Can I contract out grounds maintenance without caretaking?',
       answer: 'Yes. Grounds and green space maintenance is available on its own or as part of [caretaking](/leistungen/hauswartung).',
+    },
+    {
+      question: 'When is the best time to cut hedges?',
+      answer:
+        'Usually in early summer and, if needed, again in late summer. During the bird breeding season, care must be taken with nests. We record the right time for your hedges in the maintenance plan.',
+    },
+    {
+      question: 'Do you also create new gardens?',
+      answer: 'No. Landscaping and new planting schemes are not part of what we offer. We maintain existing grounds.',
     },
     { question: 'How much does grounds maintenance cost?', answer: answers.kosten },
     { question: 'Which regions do you cover?', answer: answers.gebiet },
@@ -666,7 +1149,7 @@ const facilityServices: ServicePageContent = {
       '[Caretaking](/leistungen/hauswartung)',
       '[Grounds and green space maintenance](/leistungen/aussen-und-gruenflaechenpflege)',
       '[Window and facade cleaning](/leistungen/fenster-und-fassadenreinigung)',
-      '[Special cleaning](/leistungen/sonderreinigungen), such as deep cleaning',
+      '[Deep and special cleaning](/leistungen/sonderreinigungen)',
       '[Industrial and warehouse cleaning](/leistungen/industrie-und-hallenreinigung)',
     ],
     notIncluded: [
@@ -675,6 +1158,37 @@ const facilityServices: ServicePageContent = {
       'Referrals to third-party firms, such as tradespeople.',
     ],
   },
+  sections: [
+    {
+      title: 'Typical situations',
+      paragraphs: [
+        'A property management firm looks after several properties and does not want to coordinate a separate company for every task. A business has offices, a hall and grounds and wants one point of contact for everything. Or an owner takes over a property and is looking for a solution that fits together from the start.',
+      ],
+    },
+    {
+      title: 'How individual services become one contract',
+      paragraphs: [
+        'During the walk-through, we look at what your property needs: interior cleaning, glass, caretaking, grounds. This results in a contract that sets out each service with its scope and frequency.',
+        'If something is added later or dropped, you discuss it in one place, with your contact person at our company.',
+      ],
+    },
+    {
+      title: 'What you gain',
+      items: [
+        'One contact person for cleaning, caretaking and grounds',
+        'One contract instead of several, with an overview of all services',
+        'Less coordination between companies, for example about who cleans the stairwell after work on the grounds',
+        'A view of the whole property: whoever cleans inside also notices when something is wrong outside',
+      ],
+    },
+    {
+      title: 'Limits and cooperation',
+      paragraphs: [
+        'For us, facility services means the services we provide ourselves. Technical facility management, such as maintenance of heating, ventilation or lifts, is not included, nor are referrals to tradespeople.',
+        'We report faults we notice during our work to you, so that you can commission the right specialist firm.',
+      ],
+    },
+  ],
   steps: [
     steps.anfrage,
     {
@@ -701,6 +1215,15 @@ const facilityServices: ServicePageContent = {
       answer:
         'Yes. You can start with one service, such as [maintenance cleaning](/leistungen/unterhaltsreinigung), and add others later.',
     },
+    {
+      question: 'How does it differ from caretaking?',
+      answer:
+        '[Caretaking](/leistungen/hauswartung) is a single service with inspection rounds, minor repairs, building services and waste disposal. Facility services combine it with cleaning and grounds maintenance in one contract.',
+    },
+    {
+      question: 'Who is our contact person?',
+      answer: 'You have one contact person with us for all services. You discuss any changes in one place.',
+    },
     { question: 'How much do facility services cost?', answer: answers.kosten },
     { question: 'Which regions do you cover?', answer: answers.gebiet },
     { question: 'Are you insured?', answer: answers.versicherung },
@@ -720,6 +1243,7 @@ export const leistungen = {
   unterhaltsreinigung,
   bueroreinigung,
   sonderreinigungen,
+  umzugsreinigung,
   baureinigung,
   fensterUndFassade,
   industrieUndHallen,

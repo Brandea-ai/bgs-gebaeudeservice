@@ -13,7 +13,8 @@ export const nav: NavDictionary = {
       links: [
         { path: '/leistungen/unterhaltsreinigung', label: 'Maintenance cleaning' },
         { path: '/leistungen/bueroreinigung', label: 'Office and practice cleaning' },
-        { path: '/leistungen/sonderreinigungen', label: 'Special cleaning' },
+        { path: '/leistungen/sonderreinigungen', label: 'Deep and special cleaning' },
+        { path: '/leistungen/umzugsreinigung', label: 'End-of-tenancy cleaning' },
         { path: '/leistungen/baureinigung', label: 'Construction cleaning' },
         { path: '/leistungen/fenster-und-fassadenreinigung', label: 'Windows and facades' },
         { path: '/leistungen/industrie-und-hallenreinigung', label: 'Industrial and warehouse' },
@@ -86,7 +87,8 @@ export const nav: NavDictionary = {
         options: [
           { value: 'Unterhaltsreinigung', label: 'Maintenance cleaning' },
           { value: 'Büroreinigung', label: 'Office and practice cleaning' },
-          { value: 'Sonderreinigungen', label: 'Special cleaning (deep cleaning, move-out cleaning)' },
+          { value: 'Sonderreinigungen', label: 'Deep and special cleaning' },
+          { value: 'Umzugsreinigung', label: 'End-of-tenancy cleaning with handover guarantee' },
           { value: 'Baureinigung', label: 'Construction and post-construction cleaning' },
           { value: 'Fenster- und Fassadenreinigung', label: 'Window and facade cleaning' },
           { value: 'Industrie- und Hallenreinigung', label: 'Industrial, warehouse and machine cleaning' },

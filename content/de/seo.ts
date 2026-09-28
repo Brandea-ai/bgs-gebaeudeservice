@@ -53,9 +53,14 @@ export const pages = {
     description: `Reinigung von Büros und Praxen, abgestimmt auf Ihre Arbeitszeiten. Kostenlose Offerte vor Ort in ${region}.`,
   },
   '/leistungen/sonderreinigungen': {
-    label: 'Sonderreinigungen',
-    title: 'Grund- und Umzugsreinigung Luzern, Zug',
-    description: 'Grundreinigung sowie Umzugs- und Wohnungsendreinigung mit Abnahmegarantie für Verwaltungen, Eigentümer und Unternehmen in Luzern, Zug und Umgebung.',
+    label: 'Grund- und Sonderreinigung',
+    title: 'Grund- und Sonderreinigung Luzern, Zug',
+    description: 'Grundreinigung von Wohn-, Büro- und Gewerbeflächen, einmalig oder in grösseren Abständen. Für Verwaltungen, Eigentümer und Unternehmen in Luzern, Zug und Umgebung.',
+  },
+  '/leistungen/umzugsreinigung': {
+    label: 'Umzugsreinigung',
+    title: 'Umzugsreinigung mit Abnahmegarantie Luzern, Zug',
+    description: 'Umzugs- und Endreinigung vor der Wohnungsabgabe, mit Abnahmegarantie. Für Verwaltungen, Eigentümer und Unternehmen in Luzern, Zug und Umgebung.',
   },
   '/leistungen/baureinigung': {
     label: 'Bau- und Bauendreinigung',

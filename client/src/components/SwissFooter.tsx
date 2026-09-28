@@ -26,6 +26,7 @@ const serviceForPath: Partial<Record<PagePath, string>> = {
   "/leistungen/unterhaltsreinigung": "Unterhaltsreinigung",
   "/leistungen/bueroreinigung": "Büroreinigung",
   "/leistungen/sonderreinigungen": "Sonderreinigungen",
+  "/leistungen/umzugsreinigung": "Umzugsreinigung",
   "/leistungen/baureinigung": "Baureinigung",
   "/leistungen/fenster-und-fassadenreinigung": "Fenster- und Fassadenreinigung",
   "/leistungen/industrie-und-hallenreinigung": "Industrie- und Hallenreinigung",

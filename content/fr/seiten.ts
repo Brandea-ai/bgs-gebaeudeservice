@@ -180,7 +180,8 @@ export const servicesOverview = {
       title: 'Nettoyage ponctuel et spécial',
       text: 'Pour la construction, le déménagement, les surfaces vitrées et la production.',
       items: [
-        { title: 'Nettoyages spéciaux', path: '/leistungen/sonderreinigungen', text: 'Nettoyage en profondeur ainsi que nettoyage de déménagement et de fin de bail avec garantie de remise.' },
+        { title: 'Nettoyages en profondeur et spéciaux', path: '/leistungen/sonderreinigungen', text: 'Nettoyage en profondeur de logements, de bureaux et de surfaces commerciales, ponctuel ou à intervalles plus espacés.' },
+        { title: 'Nettoyage de fin de bail', path: '/leistungen/umzugsreinigung', text: 'Nettoyage final avant la remise d’un appartement ou d’une surface commerciale, avec garantie de remise.' },
         { title: 'Nettoyage de chantier et de fin de chantier', path: '/leistungen/baureinigung', text: 'Nettoyage pendant et après des travaux de construction ou de transformation.' },
         { title: 'Nettoyage de vitres et de façades', path: '/leistungen/fenster-und-fassadenreinigung', text: 'Fenêtres, surfaces vitrées et façades, aussi à haute pression.' },
         { title: 'Nettoyage industriel et de halles', path: '/leistungen/industrie-und-hallenreinigung', text: 'Halles de production et entrepôts, machines et installations.' },
@@ -196,9 +197,50 @@ export const servicesOverview = {
       ],
     },
   ] satisfies { title: string; text: string; items: LinkCard[] }[],
+  guide: {
+    title: 'Quelle prestation vous convient ?',
+    intro: 'Des situations fréquentes et la prestation qui y répond. Vous hésitez ? Nous clarifions cela lors de la visite.',
+    items: [
+      { situation: 'La cage d’escalier et les locaux communs doivent être propres en permanence.', path: '/leistungen/unterhaltsreinigung' },
+      { situation: 'Le bureau ou le cabinet doit être nettoyé sans perturber l’activité.', path: '/leistungen/bueroreinigung' },
+      { situation: 'Un appartement ou une surface commerciale va être remis.', path: '/leistungen/umzugsreinigung' },
+      { situation: 'Les sols, les joints et les sanitaires ont besoin d’un nettoyage minutieux.', path: '/leistungen/sonderreinigungen' },
+      { situation: 'Une construction neuve ou une transformation arrive à la remise.', path: '/leistungen/baureinigung' },
+      { situation: 'Les fenêtres, les vitrines ou la façade sont sales.', path: '/leistungen/fenster-und-fassadenreinigung' },
+      { situation: 'Une halle, un entrepôt ou des machines doivent être nettoyés.', path: '/leistungen/industrie-und-hallenreinigung' },
+      { situation: 'L’immeuble a besoin de quelqu’un qui vérifie régulièrement que tout est en ordre.', path: '/leistungen/hauswartung' },
+      { situation: 'Le gazon, les haies, les chemins et les places doivent être entretenus.', path: '/leistungen/aussen-und-gruenflaechenpflege' },
+      { situation: 'Le nettoyage, la conciergerie et les abords doivent venir d’un seul prestataire.', path: '/leistungen/facility-services' },
+    ] satisfies { situation: string; path: PagePath }[] as { situation: string; path: PagePath }[],
+  },
+  principles: {
+    title: 'Identique pour chaque prestation',
+    items: [
+      { title: 'Visite avant le devis', text: 'Nous examinons le bien avant d’indiquer un prix. La visite et le devis sont gratuits et sans engagement.' },
+      { title: 'Étendue par écrit', text: 'Ce que nous prenons en charge et à quelle fréquence, nous le fixons dans le devis.' },
+      { title: 'Demande personnelle', text: `Notre directeur traite personnellement votre demande, vous recevez une réponse ${responseTime}.` },
+      { title: 'Fréquence selon l’utilisation', text: 'La fréquence de nos passages dépend de l’utilisation de votre bien. Si elle change, nous adaptons avec vous l’étendue et la fréquence.' },
+      { title: 'Écologique sur demande', text: 'Sur demande, nous nettoyons avec des produits respectueux de l’environnement.' },
+      { title: 'Des limites claires', text: 'Chaque page de prestation indique aussi ce qui n’est pas compris, par exemple le service hivernal ou l’entretien des installations techniques.' },
+    ] satisfies Card[] as Card[],
+  },
+  faq: [
+    { question: 'Combien coûtent vos prestations ?', answer: answers.kosten },
+    {
+      question: 'Puis-je combiner plusieurs prestations ?',
+      answer: 'Oui. Avec les [facility services](/leistungen/facility-services), le nettoyage, la conciergerie et l’entretien des abords figurent dans un seul contrat, avec un seul interlocuteur.',
+    },
+    {
+      question: 'Nettoyez-vous aussi chez les particuliers ?',
+      answer: 'Les ménages privés uniquement dans le cadre de notre [offre Premium](/premium), pour les villas, les lofts et les résidences.',
+    },
+    { question: 'Proposez-vous un service hivernal ?', answer: 'Non. Le service hivernal ne fait pas partie de notre offre.' },
+    { question: 'Dans quelles régions intervenez-vous ?', answer: answers.gebiet },
+  ] as { question: string; answer: string }[],
   premium: {
     title: 'Villas, jets privés ou yachts ?',
     text: 'Pour des exigences particulières, nous proposons notre offre Premium.',
+    detail: 'Villas et résidences, cabines de jets privés, yachts sur le lac des Quatre-Cantons et le lac de Zoug. Toujours la même équipe, en toute discrétion et avec la connaissance des matériaux délicats.',
     link: 'Vers l’offre Premium',
   },
   cta: {
@@ -241,6 +283,14 @@ export const premiumOverview = {
     { title: 'Événements privés', text: 'Nettoyage avant et après l’événement, aussi le week-end.' },
     { title: 'Courtiers et gérances', text: 'Nettoyage à bref délai avant une vente, une séance photo ou une remise.' },
   ] satisfies Card[],
+  discretion: {
+    title: 'La discrétion dès le premier message',
+    paragraphs: [
+      'Notre directeur traite personnellement votre demande. Sur demande, nous signons un accord de confidentialité.',
+      'Chez vous, c’est toujours la même équipe qui travaille, vérifiée par nos soins. Elle connaît votre maison, vos souhaits et les règles pour les clés et le système d’alarme que nous convenons avec vous.',
+      'Nous ne nettoyons les œuvres d’art qu’avec votre accord. Les horaires s’adaptent à vous, aussi le soir, le week-end ou pendant votre absence.',
+    ],
+  },
   promisesTitle: 'Ce sur quoi vous pouvez compter',
   promises,
   places: {

@@ -14,7 +14,8 @@ export const nav: NavDictionary = {
       links: [
         { path: '/leistungen/unterhaltsreinigung', label: 'Nettoyage d’entretien' },
         { path: '/leistungen/bueroreinigung', label: 'Nettoyage de bureaux et de cabinets' },
-        { path: '/leistungen/sonderreinigungen', label: 'Nettoyages spéciaux' },
+        { path: '/leistungen/sonderreinigungen', label: 'Nettoyages en profondeur et spéciaux' },
+        { path: '/leistungen/umzugsreinigung', label: 'Nettoyage de fin de bail' },
         { path: '/leistungen/baureinigung', label: 'Nettoyage de chantier et de fin de chantier' },
         { path: '/leistungen/fenster-und-fassadenreinigung', label: 'Vitres et façades' },
         { path: '/leistungen/industrie-und-hallenreinigung', label: 'Industrie et halles' },
@@ -87,7 +88,8 @@ export const nav: NavDictionary = {
         options: [
           { value: 'Unterhaltsreinigung', label: 'Nettoyage d’entretien' },
           { value: 'Büroreinigung', label: 'Nettoyage de bureaux et de cabinets' },
-          { value: 'Sonderreinigungen', label: 'Nettoyages spéciaux (en profondeur, de fin de bail)' },
+          { value: 'Sonderreinigungen', label: 'Nettoyages en profondeur et spéciaux' },
+          { value: 'Umzugsreinigung', label: 'Nettoyage de fin de bail avec garantie de remise' },
           { value: 'Baureinigung', label: 'Nettoyage de chantier et de fin de chantier' },
           { value: 'Fenster- und Fassadenreinigung', label: 'Nettoyage de vitres et de façades' },
           { value: 'Industrie- und Hallenreinigung', label: 'Nettoyage industriel, de halles et de machines' },

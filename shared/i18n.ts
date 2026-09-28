@@ -48,6 +48,11 @@ const slugs = {
     fr: 'prestations/nettoyages-speciaux',
     it: 'servizi/pulizie-speciali',
   },
+  '/leistungen/umzugsreinigung': {
+    en: 'services/end-of-tenancy-cleaning',
+    fr: 'prestations/nettoyage-de-fin-de-bail',
+    it: 'servizi/pulizia-di-fine-locazione',
+  },
   '/leistungen/baureinigung': {
     en: 'services/construction-cleaning',
     fr: 'prestations/nettoyage-de-chantier',

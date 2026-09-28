@@ -162,7 +162,7 @@ export const area = {
   },
 }
 
-export const servicesOverview = {
+export const servicesOverview: Seiten['servicesOverview'] = {
   h1: 'Pulizia e custodia per stabili, uffici e attività commerciali',
   lead: `Pulizia regolare, interventi una tantum o cura di interi stabili: scelga in base alla Sua situazione. Per aziende, amministrazioni immobiliari e proprietari nei Cantoni di ${cantonListIt}. Non sa che cosa serve? Lo chiariamo durante il sopralluogo.`,
   groups: [
@@ -178,7 +178,8 @@ export const servicesOverview = {
       title: 'Pulizie una tantum e speciali',
       text: 'Per cantieri, traslochi, superfici vetrate e produzione.',
       items: [
-        { title: 'Pulizie speciali', path: '/leistungen/sonderreinigungen', text: 'Pulizia a fondo, pulizia di fine locazione e pulizia finale con garanzia di consegna.' },
+        { title: 'Pulizie a fondo e speciali', path: '/leistungen/sonderreinigungen', text: 'Pulizia a fondo di superfici abitative, uffici e superfici commerciali, una tantum o a intervalli più lunghi.' },
+        { title: 'Pulizia di fine locazione', path: '/leistungen/umzugsreinigung', text: 'Pulizia finale prima della riconsegna di un appartamento o di una superficie commerciale, con garanzia di consegna.' },
         { title: 'Pulizia di cantiere e di fine cantiere', path: '/leistungen/baureinigung', text: 'Pulizia durante e dopo lavori di costruzione e di ristrutturazione.' },
         { title: 'Pulizia di vetri e facciate', path: '/leistungen/fenster-und-fassadenreinigung', text: 'Finestre, superfici vetrate e facciate, anche ad alta pressione.' },
         { title: 'Pulizia industriale e di capannoni', path: '/leistungen/industrie-und-hallenreinigung', text: 'Capannoni di produzione e di stoccaggio, macchinari e impianti.' },
@@ -194,9 +195,50 @@ export const servicesOverview = {
       ],
     },
   ] satisfies { title: string; text: string; items: LinkCard[] }[],
+  guide: {
+    title: 'Quale servizio fa al caso Suo?',
+    intro: 'Situazioni frequenti e il servizio adatto. Non ne è sicuro? Lo chiariamo durante il sopralluogo.',
+    items: [
+      { situation: 'Il vano scale e i locali comuni devono essere puliti regolarmente.', path: '/leistungen/unterhaltsreinigung' },
+      { situation: 'Ufficio o studio vanno puliti senza disturbare l’attività.', path: '/leistungen/bueroreinigung' },
+      { situation: 'Un appartamento o una superficie commerciale viene riconsegnato.', path: '/leistungen/umzugsreinigung' },
+      { situation: 'Pavimenti, fughe e servizi igienici richiedono una pulizia approfondita.', path: '/leistungen/sonderreinigungen' },
+      { situation: 'Una nuova costruzione o una trasformazione sta per essere consegnata.', path: '/leistungen/baureinigung' },
+      { situation: 'Finestre, vetrine o facciata sono sporche.', path: '/leistungen/fenster-und-fassadenreinigung' },
+      { situation: 'Capannone, magazzino o macchinari devono essere puliti.', path: '/leistungen/industrie-und-hallenreinigung' },
+      { situation: 'Lo stabile ha bisogno di qualcuno che controlli regolarmente che tutto sia in ordine.', path: '/leistungen/hauswartung' },
+      { situation: 'Prato, siepi, vialetti e piazzali devono essere curati.', path: '/leistungen/aussen-und-gruenflaechenpflege' },
+      { situation: 'Pulizia, custodia e aree esterne devono essere affidate a un unico fornitore.', path: '/leistungen/facility-services' },
+    ],
+  },
+  principles: {
+    title: 'Uguale per ogni servizio',
+    items: [
+      { title: 'Sopralluogo prima dell’offerta', text: 'Visitiamo l’immobile prima di indicare un prezzo. Sopralluogo e offerta sono gratuiti e senza impegno.' },
+      { title: 'Entità per iscritto', text: 'Che cosa svolgiamo e con quale frequenza lo stabiliamo nell’offerta.' },
+      { title: 'Richiesta personale', text: `La Sua richiesta è trattata personalmente dal gerente; riceverà nostre notizie ${responseTime}.` },
+      { title: 'Cadenza secondo l’utilizzo', text: 'La frequenza dei nostri interventi dipende dall’utilizzo del Suo immobile. Se cambia, adeguiamo con Lei entità e cadenza.' },
+      { title: 'Ecologico su richiesta', text: 'Su richiesta puliamo con prodotti ecologici.' },
+      { title: 'Limiti chiari', text: 'Ogni pagina dei servizi indica anche che cosa non è compreso, ad esempio il servizio invernale o la manutenzione degli impianti tecnici.' },
+    ],
+  },
+  faq: [
+    { question: 'Quanto costano i vostri servizi?', answer: answers.kosten },
+    {
+      question: 'Posso combinare più servizi?',
+      answer: 'Sì. Con i [facility services](/leistungen/facility-services) pulizia, custodia e manutenzione delle aree esterne rientrano in un unico contratto, con un solo interlocutore.',
+    },
+    {
+      question: 'Pulite anche economie domestiche private?',
+      answer: 'Economie domestiche private solo nel [settore Premium](/premium), per ville, loft e residenze.',
+    },
+    { question: 'Offrite il servizio invernale?', answer: 'No. Il servizio invernale non fa parte della nostra offerta.' },
+    { question: 'In quali regioni operate?', answer: answers.gebiet },
+  ],
   premium: {
     title: 'Ville, jet privati o yacht?',
     text: 'Per esigenze particolari è a disposizione il nostro settore Premium.',
+    detail: 'Ville e residenze, cabine di jet privati, yacht sul lago dei Quattro Cantoni e sul lago di Zugo. Sempre lo stesso team, discreto e con conoscenza dei materiali delicati.',
     link: 'Al settore Premium',
   },
   cta: {
@@ -219,7 +261,7 @@ const promises: Seiten['premiumOverview']['promises'] = [
   { key: 'offerte', title: 'Offerta sul posto', text: 'Gratuita e senza impegno, dopo un sopralluogo.' },
 ]
 
-export const premiumOverview = {
+export const premiumOverview: Seiten['premiumOverview'] = {
   line: premiumLine,
   h1: 'Pulizie per esigenze particolari',
   lead: 'Per ville e residenze, abitazioni secondarie, alberghi con esigenze particolari, family office, jet privati e yacht. Sempre lo stesso team, con discrezione, con la conoscenza dei materiali delicati e nella Sua lingua.',
@@ -241,6 +283,14 @@ export const premiumOverview = {
     { title: 'Eventi privati', text: 'Pulizia prima e dopo l’evento, anche nel fine settimana.' },
     { title: 'Agenti immobiliari e amministrazioni', text: 'Pulizia con breve preavviso prima di vendita, servizio fotografico e consegna.' },
   ] satisfies Card[],
+  discretion: {
+    title: 'Discrezione fin dal primo messaggio',
+    paragraphs: [
+      'La Sua richiesta è trattata personalmente dal gerente. Su richiesta sottoscriviamo un accordo di riservatezza.',
+      'Da Lei lavora sempre lo stesso team, verificato da noi. Conosce la Sua casa, i Suoi desideri e le regole per chiavi e impianto d’allarme che concordiamo con Lei.',
+      'Le opere d’arte le puliamo solo con la Sua autorizzazione. Gli orari si adeguano a Lei, anche la sera, nel fine settimana o durante la Sua assenza.',
+    ],
+  },
   promisesTitle: 'Su che cosa può contare',
   promises,
   places: {

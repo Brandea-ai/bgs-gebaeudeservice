@@ -8,7 +8,7 @@ import { alternatesFor, localizePath, ogLocale, type Locale } from './i18n'
 export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://bgs-gebaeudeservice.vercel.app'
 
 // Stand der Inhalte für die Sitemap (M17). Bei inhaltlichen Änderungen nachführen.
-export const contentUpdated = '2026-09-26'
+export const contentUpdated = '2026-09-28'
 
 export { pages }
 export type PagePath = keyof typeof pages

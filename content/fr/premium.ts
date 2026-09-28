@@ -53,10 +53,34 @@ const luxusimmobilien: ServicePageContent = {
   },
   sections: [
     {
+      title: 'Des matériaux traités avec soin',
+      paragraphs: [
+        'La pierre naturelle comme le marbre et le calcaire réagit mal à l’acide, même aux produits ménagers doux et au vinaigre. Le parquet supporte peu d’eau, les surfaces laquées brillantes se rayent avec de mauvais chiffons. Le laiton et la robinetterie perdent leur surface avec des produits agressifs.',
+        'C’est pourquoi nous clarifions lors du tour des lieux quels matériaux se trouvent dans votre maison et quel entretien ils demandent. Si vous disposez de consignes d’entretien du fabricant ou de l’architecte d’intérieur, nous nous y conformons.',
+      ],
+    },
+    {
       title: 'Clés, alarme et discrétion',
       paragraphs: [
         'Pour les clés et le système d’alarme, nous convenons avec vous de règles fixes. Sur demande, nous signons un accord de confidentialité.',
         'Notre directeur traite personnellement votre demande. Les personnes qui interviennent chez vous ont été vérifiées par nos soins.',
+      ],
+    },
+    {
+      title: 'Situations typiques',
+      items: [
+        'Entretien régulier de votre résidence, à heures fixes et toujours avec la même équipe',
+        'Résidence secondaire : nettoyage avant votre arrivée et après votre départ, rondes de contrôle entre-temps',
+        'Avant et après un événement, aussi le week-end',
+        'Pièces abritant des œuvres d’art et des antiquités, les œuvres uniquement avec votre accord',
+        'Pour les agents immobiliers et les gérances : à court terme avant une vente, une séance photo ou une remise',
+      ],
+    },
+    {
+      title: 'Pendant votre absence',
+      paragraphs: [
+        'Pour les résidences secondaires et les longs voyages, nous vérifions que tout est en ordre, aussi souvent que convenu avec vous. Ce que nous contrôlons et à qui nous signalons ce qui sort de l’ordinaire, nous le fixons au préalable avec vous.',
+        'Avant votre arrivée, nous nettoyons la maison, pour que vous arriviez sans avoir plus rien à faire. Après votre départ, nous la remettons en ordre.',
       ],
     },
   ],
@@ -80,6 +104,11 @@ const luxusimmobilien: ServicePageContent = {
     {
       question: 'Comment traitez-vous les œuvres d’art et les antiquités ?',
       answer: 'Nous nettoyons les pièces avec soin. Les œuvres d’art elles-mêmes, nous ne les nettoyons qu’avec votre accord explicite.',
+    },
+    {
+      question: 'Comment entretenez-vous la pierre naturelle et le parquet ?',
+      answer:
+        'Dans le respect du matériau : jamais de produits acides sur la pierre naturelle comme le marbre, peu d’humidité sur le parquet. Nous clarifions avec vous lors du tour des lieux quels produits nous utilisons dans votre maison.',
     },
     {
       question: 'Pouvez-vous nettoyer pendant notre absence ?',
@@ -125,9 +154,33 @@ const privatjet: ServicePageContent = {
   },
   sections: [
     {
+      title: 'Les matériaux de la cabine',
+      paragraphs: [
+        'Cuir, bois laqué, surfaces brillantes, moquette et textiles fins se côtoient dans une cabine. Chaque matériau demande son propre produit et son propre chiffon, pour que rien ne se décolore, ne se dessèche ou ne se raye.',
+        'Nous clarifions au préalable avec vous et votre exploitant quels produits conviennent à votre cabine.',
+      ],
+    },
+    {
       title: 'Une planification autour de vos vols',
       paragraphs: [
         'Nous coordonnons avec vous et votre exploitant le lieu et le moment du nettoyage de la cabine. Ainsi, l’intervention s’intègre dans votre programme de vols.',
+        'Souvent, le nettoyage a lieu entre deux vols, après un long voyage ou avant un vol avec des invités. Si le créneau est serré, il est utile de convenir des dates tôt.',
+      ],
+    },
+    {
+      title: 'Ce qui doit être fixé avant l’intervention',
+      items: [
+        'L’emplacement de l’appareil et la manière dont l’accès est réglé pour notre équipe',
+        'Le créneau entre les vols',
+        'Les zones de la cabine comprises',
+        'Les produits autorisés pour les matériaux',
+        'Qui reprend la cabine après le nettoyage',
+      ],
+    },
+    {
+      title: 'Discrétion à bord',
+      paragraphs: [
+        'C’est vous qui fixez la manière dont nous traitons les objets personnels et les documents à bord. Chez vous, c’est toujours la même équipe qui travaille, vérifiée par nos soins. Sur demande, nous signons un accord de confidentialité.',
       ],
     },
   ],
@@ -151,6 +204,10 @@ const privatjet: ServicePageContent = {
     {
       question: 'Comment traitez-vous le cuir et le bois ?',
       answer: 'Nous nettoyons dans le respect des matériaux et clarifions au préalable quels produits conviennent à votre cabine.',
+    },
+    {
+      question: 'Nettoyez-vous aussi l’extérieur de l’appareil ?',
+      answer: 'Non. Notre offre comprend le nettoyage de la cabine.',
     },
     {
       question: 'Qui travaille dans notre cabine ?',
@@ -196,6 +253,37 @@ const yacht: ServicePageContent = {
     ],
     notIncluded: ['Travaux sur la carène, par exemple l’antifouling.', 'Entretien technique du moteur et de l’équipement de bord.'],
   },
+  sections: [
+    {
+      title: 'Les matériaux à bord',
+      paragraphs: [
+        'Le teck devient gris et rugueux lorsqu’il est mal nettoyé : des brosses trop dures et la haute pression arrachent les fibres tendres du bois. Le gelcoat perd son brillant sous l’effet du soleil et des taches d’eau, l’inox présente des traces de rouille superficielle, les coussins absorbent l’humidité.',
+        'C’est pourquoi chaque matériau demande sa propre méthode. Nous clarifions au préalable avec vous quels produits nous utilisons pour votre bateau.',
+      ],
+    },
+    {
+      title: 'Sur un lac, beaucoup de choses sont différentes',
+      paragraphs: [
+        'Sur le lac des Quatre-Cantons et le lac de Zoug, il n’y a pas de sel, mais le pollen, les feuilles, les araignées et les fientes d’oiseaux apportent beaucoup de saleté à bord, surtout au printemps et en été. Dans l’espace intérieur fermé, l’humidité et la poussière s’installent.',
+        'Comme l’eau du pont s’écoule directement dans le lac, le choix des produits de nettoyage demande du soin. Sur demande, nous nettoyons avec des produits respectueux de l’environnement.',
+      ],
+    },
+    {
+      title: 'Occasions typiques',
+      items: [
+        'Avant la première sortie de la saison',
+        'Régulièrement pendant la saison',
+        'Avant et après la venue d’invités à bord',
+        'À la fin de la saison, avant l’hivernage du bateau',
+      ],
+    },
+    {
+      title: 'Accès à la place d’amarrage',
+      paragraphs: [
+        'Nous clarifions au préalable avec vous l’accès au ponton ou au port, ainsi que l’électricité et l’eau à la place d’amarrage et qui nous ouvre le bateau. Chez vous, c’est toujours la même équipe qui travaille.',
+      ],
+    },
+  ],
   steps: [
     anfrage,
     {
@@ -216,6 +304,15 @@ const yacht: ServicePageContent = {
     {
       question: 'Quels matériaux nettoyez-vous ?',
       answer: 'Le teck, le gelcoat et la sellerie ainsi que l’intérieur. Nous clarifions lors de la visite les produits que nous utilisons pour votre bateau.',
+    },
+    {
+      question: 'À quelle fréquence faut-il nettoyer un bateau sur un lac ?',
+      answer:
+        'Cela dépend de la place d’amarrage, de l’utilisation et de la saison. Sous les arbres et pendant la floraison, un bateau se salit plus vite. Après la visite, nous vous proposons des dates, ponctuelles ou régulières.',
+    },
+    {
+      question: 'Travaillez-vous aussi sur la carène ou le moteur ?',
+      answer: 'Non. Les travaux sur la carène, par exemple l’antifouling, et l’entretien technique du moteur et de l’équipement de bord n’en font pas partie.',
     },
     { question: 'Pouvez-vous nettoyer avec des produits respectueux de l’environnement ?', answer: answers.mittel },
     { question: 'Êtes-vous assurés ?', answer: answers.versicherung },
