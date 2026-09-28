@@ -21,8 +21,10 @@ const look: Record<AudienceKey, { icon: Icon; image: ImageKey }> = {
  * Wahlbaustein statt eines zweiten Kartenrasters. Links die Gruppen als Reiter,
  * rechts Bild, Anliegen, drei konkrete Punkte und der Weg zu einem Werkzeug der
  * passenden Seite (Pflichtenheft, Leistungsverzeichnis, Materialkunde; inhalt.md 04).
- * Premium in Anthrazit mit Champagner und Serifenschrift, nie Signalrot. Mobil
- * drei kurze Reiter über dem Feld, ohne Bild (Umbau 7).
+ * Premium in Anthrazit mit Champagner und Serifenschrift, nie Signalrot. Titel
+ * und Einleitung stehen ab lg über den Reitern in der linken Spalte, damit sie
+ * neben dem höheren Feld keine Leerfläche lässt. Mobil drei kurze Reiter über
+ * dem Feld, ohne Bild (Umbau 7).
  */
 export default function StartFuerWen(props: StartseiteProps) {
   const { lang } = props;
@@ -41,9 +43,10 @@ export default function StartFuerWen(props: StartseiteProps) {
         />
         <span className="lg:hidden">{item.short}</span>
         <span className="min-w-0 flex-1 font-display text-[1.25rem] font-bold leading-snug max-lg:hidden">{item.title}</span>
+        {/* Premium nie Signalrot (23-REBRANDING-BRIEF): Pfeil wie das Symbol in Champagner */}
         <ArrowRight
           weight="duotone"
-          className="size-5 shrink-0 text-signal opacity-0 transition-opacity group-aria-selected:opacity-100 max-lg:hidden"
+          className={`size-5 shrink-0 opacity-0 transition-opacity group-aria-selected:opacity-100 max-lg:hidden ${item.key === "premium" ? "text-brass-dark" : "text-signal"}`}
           aria-hidden="true"
         />
       </>
@@ -100,8 +103,13 @@ export default function StartFuerWen(props: StartseiteProps) {
   return (
     <section id="fuer-wen" aria-labelledby="fuer-wen-titel" className="section bg-white max-sm:py-12">
       <div className="container">
-        <SectionHead id="fuer-wen-titel" title={audiences.title} intro={audiences.intro} />
-        <FuerWenWahl label={audiences.title} ids={ids} tabs={tabs} panels={panels} />
+        <FuerWenWahl
+          head={<SectionHead id="fuer-wen-titel" title={audiences.title} intro={audiences.intro} />}
+          label={audiences.title}
+          ids={ids}
+          tabs={tabs}
+          panels={panels}
+        />
       </div>
     </section>
   );

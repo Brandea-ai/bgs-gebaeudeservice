@@ -60,7 +60,7 @@ export const home: Seiten['home'] = {
   profile: {
     title: 'En bref',
     brand: company.premiumBrand
-      ? `${company.brand} est la marque de ${company.legalName}, dont le siège est à ${company.address.city} (LU).`
+      ? `${company.brand} est la marque de ${company.legalName}, dont le siège est à ${company.seat} (LU).`
       : null,
     text: `Depuis 2006, nous sommes actifs dans le nettoyage et la conciergerie. Aujourd’hui, plus de 50 collaboratrices et collaborateurs s’occupent de plus de 120 clients dans les cantons de ${cantonList}, en ${languageList}.`,
     facts: [
@@ -149,7 +149,7 @@ export const home: Seiten['home'] = {
       items: [
         'Service hivernal et déneigement',
         'Un service de piquet joignable jour et nuit pour les urgences',
-        'Les nettoyages de fin de bail commandés par les locataires eux-mêmes',
+        'Les nettoyages de fin de bail commandés par les locataires d’appartements individuels',
         'Les ménages privés ordinaires. Nous nous occupons des villas, résidences et résidences secondaires dans notre [offre Premium](/premium).',
         'L’entretien du chauffage, de la ventilation, des ascenseurs et de la protection incendie, les grosses réparations, l’aménagement paysager et les nouvelles plantations',
       ],
@@ -157,14 +157,14 @@ export const home: Seiten['home'] = {
   },
   area: {
     title: 'Notre zone d’intervention',
-    text: `Depuis ${company.address.city}, nous intervenons dans cinq cantons entiers, avec chaque prestation. Pour chaque canton, vous trouvez des localités, des objets typiques et des conseils de planification.`,
+    text: `Depuis ${company.address.city}, nous intervenons dans l’ensemble de cinq cantons, pour toutes nos prestations. Pour chaque canton, vous trouvez des localités, des objets typiques et des conseils de planification.`,
     link: 'Vers la zone d’intervention',
   },
   faq: [
     {
       question: 'Combien coûte une entreprise de nettoyage à l’heure ?',
       answer:
-        'Sans connaître le bien, il est impossible de répondre sérieusement. Ce qui compte, c’est l’effort : la taille des surfaces, les types de sols, l’intensité d’utilisation, la fréquence et les horaires du nettoyage, et qui fournit les consommables. Le guide [Coûts du nettoyage en Suisse](/blog/reinigungskosten-schweiz) explique l’effet de ces facteurs.',
+        'Sans connaître le bien, il est impossible de répondre sérieusement. Ce qui compte, c’est le volume de travail : la taille des surfaces, les types de sols, l’intensité d’utilisation, la fréquence et les horaires du nettoyage, et qui fournit les consommables. Le guide [Coûts du nettoyage en Suisse](/blog/reinigungskosten-schweiz) explique l’effet de ces facteurs.',
     },
     {
       question: 'Ai-je besoin d’un nettoyage d’entretien ou d’une conciergerie ?',
@@ -172,9 +172,9 @@ export const home: Seiten['home'] = {
         'S’il s’agit uniquement de nettoyer, le [nettoyage d’entretien](/leistungen/unterhaltsreinigung) suffit : cage d’escalier, sols et locaux communs selon une fréquence fixe. La [conciergerie](/leistungen/hauswartung) s’occupe en plus de l’immeuble lui-même, avec des rondes de contrôle, de petites réparations, l’élimination des déchets et la participation aux états des lieux.',
     },
     {
-      question: 'À quelle fréquence faut-il nettoyer une cage d’escalier ?',
+      question: 'Quelle prestation convient à mon bien ?',
       answer:
-        'Cela dépend du nombre de ménages qui utilisent l’immeuble et de la saleté qui entre de l’extérieur. Dans les immeubles locatifs, nous nettoyons généralement plusieurs fois par semaine. Un [descriptif type avec les fréquences](/leistungen/unterhaltsreinigung#leistungsverzeichnis) figure sur la page du nettoyage d’entretien.',
+        'Le [guide de notre aperçu des prestations](/leistungen#wegweiser) vous l’indique : il associe dix situations typiques à la prestation adaptée. Sur la même page, un tableau compare les quatre prestations que l’on confond le plus souvent. Si aucune situation ne correspond exactement, décrivez votre bien dans le formulaire ci-dessous.',
     },
     {
       question: 'Puis-je vous confier une intervention unique ?',
@@ -182,18 +182,18 @@ export const home: Seiten['home'] = {
         'Oui, par exemple un [nettoyage en profondeur](/leistungen/sonderreinigungen), un [nettoyage de fin de bail](/leistungen/umzugsreinigung) avant une remise, un [nettoyage de chantier](/leistungen/baureinigung) après une construction ou une transformation, ou un [nettoyage de vitres et de façades](/leistungen/fenster-und-fassadenreinigung). Un contrat de nettoyage régulier n’est pas nécessaire pour cela.',
     },
     {
-      question: 'Faut-il un nettoyage en profondeur avant le nettoyage d’entretien ?',
+      question: 'Dois-je commander plusieurs prestations ensemble ?',
       answer:
-        'Pas toujours. Si les sols, les joints ou les sanitaires sont très encrassés, ou si d’anciennes couches d’entretien recouvrent le sol, un [nettoyage en profondeur](/leistungen/sonderreinigungen) avant la première intervention régulière en vaut la peine. Le nettoyage courant maintient alors un état propre au lieu de devoir d’abord le créer.',
+        'Non. Vous pouvez commander chaque prestation séparément, par exemple uniquement le nettoyage des vitres ou uniquement l’entretien des extérieurs. Si vous en avez besoin de plusieurs pour le même immeuble, elles peuvent être regroupées en [facility services](/leistungen/facility-services) : un seul contrat au lieu de plusieurs.',
     },
     {
-      question: 'Comment changer d’entreprise de nettoyage sans interruption ?',
+      question: 'À quoi faut-il veiller en choisissant une entreprise de nettoyage ?',
       answer:
-        'Demandez le nouveau devis avant de résilier le contrat actuel et respectez son délai de résiliation. Fixez la première intervention de la nouvelle entreprise au lendemain de la dernière intervention de l’ancienne. Prévoyez aussi la remise des clés, des badges et des consommables.',
+        'Avant tout, à des devis réellement comparables. Ce n’est possible que si chaque prestataire a vu le bien et se base sur les mêmes locaux, la même fréquence et les mêmes horaires. Les autres questions à poser, de l’assurance jusqu’au contrat, figurent dans le guide [Comment trouver la bonne entreprise de nettoyage ?](/blog/richtige-reinigungsfirma-finden).',
     },
   ],
   cta: {
-    title: 'Un devis pour votre immeuble ou votre entreprise',
+    title: 'Un devis pour votre bien',
     text: 'Décrivez brièvement le bien, le lieu et votre besoin. Nous convenons ensuite avec vous de la date de la visite.',
   },
 }
@@ -467,8 +467,8 @@ export const servicesOverview = {
           '[Nettoyage d’entretien](/leistungen/unterhaltsreinigung)',
           'Nettoyage selon une fréquence fixe, avec réapprovisionnement',
           'Généralement plusieurs fois par semaine',
-          'La cage d’escalier, le bureau ou la surface commerciale doivent rester propres en permanence',
-          'Nettoyage en profondeur, fenêtres à l’extérieur et façades',
+          'La cage d’escalier, les parties communes ou la surface commerciale doivent rester propres en permanence',
+          'Bureaux et cabinets, nettoyage en profondeur, fenêtres à l’extérieur et façades',
         ],
         [
           '[Nettoyages en profondeur et spéciaux](/leistungen/sonderreinigungen)',
@@ -507,11 +507,11 @@ export const servicesOverview = {
         },
         {
           label: 'Avril à juin',
-          text: 'Nettoyer fenêtres et vitrages après l’hiver et le pollen. Débarrasser chemins et places de la saleté de l’hiver, tondre le gazon pour la première fois.',
+          text: 'Nettoyer fenêtres et vitrages après l’hiver et le pollen. Débarrasser chemins et places de la saleté de l’hiver, tondre le gazon pour la première fois. Ce qui suit au jardin jusqu’à l’automne figure dans le [calendrier d’entretien des extérieurs](/leistungen/aussen-und-gruenflaechenpflege#pflegekalender).',
         },
         {
           label: 'Juillet et août',
-          text: 'Nettoyage en profondeur pendant les vacances d’entreprise, halles et machines lors des arrêts planifiés. Enlever les mauvaises herbes dans les joints et sur les places à la main ou avec des appareils, car les herbicides sont interdits sur et le long des chemins et des places. Détails dans le [calendrier d’entretien des extérieurs](/leistungen/aussen-und-gruenflaechenpflege#pflegekalender).',
+          text: 'Nettoyage en profondeur pendant les vacances d’entreprise, halles et machines lors des arrêts planifiés. Enlever les mauvaises herbes dans les joints et sur les places à la main ou avec des appareils, car les herbicides sont interdits sur et le long des chemins et des places. La page [Entretien des extérieurs et des espaces verts](/leistungen/aussen-und-gruenflaechenpflege#spritzmittelverbot) montre où les produits de traitement sont interdits et ce qui agit à la place.',
         },
         {
           label: 'Septembre à novembre',
@@ -577,9 +577,9 @@ export const servicesOverview = {
         'Oui, les cabinets font partie du [nettoyage de bureaux et de cabinets](/leistungen/bueroreinigung). Les horaires d’intervention suivent vos heures de consultation. Le retraitement des instruments et des dispositifs médicaux reste l’affaire de votre équipe.',
     },
     {
-      question: 'Puis-je commander un nettoyage de fin de bail en tant que locataire ?',
+      question: 'Quand faut-il un nettoyage en profondeur, et quand un nettoyage de fin de bail ?',
       answer:
-        'Non. Nous proposons le [nettoyage de fin de bail](/leistungen/umzugsreinigung) aux gérances, aux propriétaires et aux entreprises, par exemple entre deux baux ou avant une vente. Si vous remettez une villa ou une résidence, vous trouverez le nettoyage adapté dans notre [offre Premium](/premium).',
+        'C’est l’occasion qui décide. Le [nettoyage de fin de bail](/leistungen/umzugsreinigung) prépare un appartement ou une surface commerciale à l’état des lieux lors de sa remise, avec garantie de remise. Le [nettoyage en profondeur](/leistungen/sonderreinigungen) ramène sols, joints et sanitaires à un état que le nettoyage courant peut de nouveau maintenir, y compris dans des locaux qui restent utilisés.',
     },
   ] as { question: string; answer: string }[],
   premium: {

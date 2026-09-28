@@ -59,7 +59,7 @@ export const home: Seiten['home'] = {
   profile: {
     title: 'At a glance',
     brand: company.premiumBrand
-      ? `${company.brand} is the brand of ${company.legalName}, based in ${company.address.city} (canton of Lucerne).`
+      ? `${company.brand} is the brand of ${company.legalName}, with its registered office in ${company.seat} (canton of Lucerne).`
       : null,
     text: `We have been working in cleaning and caretaking since 2006. Today, over 50 employees look after more than 120 clients in the cantons of ${cantons}, in ${languages}.`,
     facts: [
@@ -148,7 +148,7 @@ export const home: Seiten['home'] = {
       items: [
         'Winter maintenance and snow clearing',
         'An on-call service reachable day and night for emergencies',
-        'Final cleaning commissioned by individual tenants themselves',
+        'End-of-tenancy cleaning commissioned by tenants of individual flats',
         'Ordinary private households. We look after villas, residences and second homes in our [premium services](/premium).',
         'Servicing of heating, ventilation, lifts and fire protection, major repairs, landscaping and new planting',
       ],
@@ -156,14 +156,14 @@ export const home: Seiten['home'] = {
   },
   area: {
     title: 'Our service area',
-    text: `From ${company.address.city}, we work in five entire cantons, with every service. For each canton you will find places, typical properties and notes for planning.`,
+    text: `From ${company.address.city}, we work throughout five cantons, offering every service in all of them. For each canton you will find places, typical properties and notes for planning.`,
     link: 'View service area',
   },
   faq: [
     {
       question: 'How much does a cleaning company cost per hour?',
       answer:
-        'Without knowing the property, there is no serious answer. What matters is the effort: how large the areas are, which floors they have, how heavily they are used, how often and at what times they are cleaned, and who supplies the consumables. Our guide [Cleaning costs in Switzerland](/blog/reinigungskosten-schweiz) explains how these factors play out.',
+        'Without knowing the property, there is no reliable answer. What matters is the amount of work: how large the areas are, which floors they have, how heavily they are used, how often and at what times they are cleaned, and who supplies the consumables. Our guide [Cleaning costs in Switzerland](/blog/reinigungskosten-schweiz) explains how these factors play out.',
     },
     {
       question: 'Do I need maintenance cleaning or caretaking?',
@@ -171,9 +171,9 @@ export const home: Seiten['home'] = {
         'If it is only about cleaning, [maintenance cleaning](/leistungen/unterhaltsreinigung) is enough: stairwell, floors and common areas on a fixed schedule. [Caretaking](/leistungen/hauswartung) also looks after the property itself, with inspection rounds, minor repairs, waste disposal and help with flat handovers.',
     },
     {
-      question: 'How often should a stairwell be cleaned?',
+      question: 'Which service suits my property?',
       answer:
-        'That depends on how many households use the building and how much dirt comes in from outside. In apartment buildings, we usually clean several times a week. A [sample cleaning schedule with frequencies](/leistungen/unterhaltsreinigung#leistungsverzeichnis) is on the maintenance cleaning page.',
+        'The [guide on our services overview](/leistungen#wegweiser) shows you: it matches ten typical situations to the right service. On the same page, a table compares the four services that are most often confused. If none of the situations fits exactly, describe your property in the form below.',
     },
     {
       question: 'Can I book you for a single assignment?',
@@ -181,18 +181,18 @@ export const home: Seiten['home'] = {
         'Yes, for example [deep cleaning](/leistungen/sonderreinigungen), [end-of-tenancy cleaning](/leistungen/umzugsreinigung) before a handover, [construction cleaning](/leistungen/baureinigung) after new builds and conversions, or [window and facade cleaning](/leistungen/fenster-und-fassadenreinigung). You do not need a contract for ongoing cleaning for that.',
     },
     {
-      question: 'Does deep cleaning have to come before maintenance cleaning?',
+      question: 'Do I have to book several services together?',
       answer:
-        'Not always. If floors, joints or sanitary facilities are heavily soiled, or old layers of floor care have built up, [deep cleaning](/leistungen/sonderreinigungen) before the first regular assignment is worthwhile. Ongoing cleaning then maintains a clean condition instead of having to create it first.',
+        'No. You can book any service on its own, for example just window cleaning or just grounds maintenance. If you need several for the same property, they can be combined as [facility services](/leistungen/facility-services): one contract instead of several.',
     },
     {
-      question: 'How do I change cleaning company without a gap?',
+      question: 'What should I look for when choosing a cleaning company?',
       answer:
-        'Obtain the new quote before you terminate the current contract, and observe its notice period. Schedule the new company’s first assignment for the day after the previous company’s last one. Also plan the handover of keys, badges and consumables.',
+        'Above all, quotes that can genuinely be compared. That only works if every provider has seen the property and works from the same rooms, the same schedule and the same cleaning times. Which other questions to ask, from insurance to the contract, is covered in our guide [How do I find the right cleaning company?](/blog/richtige-reinigungsfirma-finden).',
     },
   ],
   cta: {
-    title: 'A quote for your property or business',
+    title: 'A quote for your property',
     text: 'Briefly describe the property, its location and what you need. We then arrange the date of the site visit with you.',
   },
 }
@@ -465,8 +465,8 @@ export const servicesOverview: Seiten['servicesOverview'] = {
           '[Maintenance cleaning](/leistungen/unterhaltsreinigung)',
           'Cleaning on a fixed schedule, with restocking service',
           'Usually several times a week',
-          'Stairwell, office or business premises should stay clean at all times',
-          'Deep cleaning, exterior windows and facades',
+          'Stairwell, common areas or business premises should stay clean at all times',
+          'Offices and practices, deep cleaning, exterior windows and facades',
         ],
         [
           '[Deep and special cleaning](/leistungen/sonderreinigungen)',
@@ -505,11 +505,11 @@ export const servicesOverview: Seiten['servicesOverview'] = {
         },
         {
           label: 'April to June',
-          text: 'Clean windows and glass after the winter and the pollen season. Clear winter dirt from paths and paved areas, and mow the lawn for the first time.',
+          text: 'Clean windows and glass after the winter and the pollen season. Clear winter dirt from paths and paved areas, and mow the lawn for the first time. What follows in the garden until autumn is set out in the [grounds maintenance calendar](/leistungen/aussen-und-gruenflaechenpflege#pflegekalender).',
         },
         {
           label: 'July and August',
-          text: 'Deep cleaning during company holidays, halls and machinery during planned shutdowns. Remove weeds from joints and paved areas by hand or with equipment, because herbicides are banned on and next to paths and paved areas. Details in the [grounds maintenance calendar](/leistungen/aussen-und-gruenflaechenpflege#pflegekalender).',
+          text: 'Deep cleaning during company holidays, halls and machinery during planned shutdowns. Remove weeds from joints and paved areas by hand or with equipment, because herbicides are banned on and next to paths and paved areas. Where spray products are banned and what works instead is explained under [grounds and green spaces](/leistungen/aussen-und-gruenflaechenpflege#spritzmittelverbot).',
         },
         {
           label: 'September to November',
@@ -575,9 +575,9 @@ export const servicesOverview: Seiten['servicesOverview'] = {
         'Yes, practices are part of [office and practice cleaning](/leistungen/bueroreinigung). Cleaning times are based on your consulting hours. Instruments and medical devices continue to be reprocessed by your practice team.',
     },
     {
-      question: 'Can I order end-of-tenancy cleaning as a tenant?',
+      question: 'When do I need deep cleaning, and when end-of-tenancy cleaning?',
       answer:
-        'No. We offer [end-of-tenancy cleaning](/leistungen/umzugsreinigung) to property managers, owners and businesses, for example between two tenancies or before a sale. If you are handing over a villa or residence, you will find the right cleaning in our [premium services](/premium).',
+        'The occasion decides. [End-of-tenancy cleaning](/leistungen/umzugsreinigung) prepares a flat or business premises for the handover inspection and comes with a handover guarantee. [Deep cleaning](/leistungen/sonderreinigungen) brings floors, joints and washrooms back to a condition that routine cleaning can maintain again, including in rooms that stay in use.',
     },
   ] as { question: string; answer: string }[],
   premium: {

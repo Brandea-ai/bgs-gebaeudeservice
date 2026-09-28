@@ -95,11 +95,12 @@ type HomeFactKey = 'register' | 'persoenlich' | 'umwelt'
 export const home = {
   h1: 'Gebäudereinigung und Hauswartung für Luzern, Zug und Umgebung',
   // Zitierfähiger Profilsatz unter den Kennzahlen (T5). Der erste Satz nur mit NEW_BRAND:
-  // premiumBrand ist nur dann gesetzt (wie alternateName in T7). Der zweite wörtlich wie Über uns.
+  // premiumBrand ist nur dann gesetzt (wie alternateName in T7). Sitz ist die Gemeinde Emmen (UID-Register,
+  // Impressum), Emmenbrücke nur die Postadresse. Der zweite Satz wörtlich wie Über uns.
   profile: {
     title: 'Auf einen Blick',
     brand: company.premiumBrand
-      ? `${company.brand} ist die Marke der ${company.legalName} mit Sitz in ${company.address.city} ${company.address.region}.`
+      ? `${company.brand} ist die Marke der ${company.legalName} mit Sitz in ${company.seat} ${company.address.region}.`
       : null,
     text: `Seit 2006 sind wir in der Reinigung und Hauswartung tätig. Heute betreuen über 50 Mitarbeitende mehr als 120 Kunden in den Kantonen ${cantonList}, auf ${listDe(company.languages)}.`,
     // Vertrauensleiste und Zusagen in einem Baustein (Umbau 8), nur Belegtes (E18)
@@ -193,7 +194,7 @@ export const home = {
       items: [
         'Winterdienst und Schneeräumung',
         'Einen Pikettdienst, der Tag und Nacht für Notfälle erreichbar ist',
-        'Endreinigungen, die Mieterinnen oder Mieter selbst in Auftrag geben',
+        'Umzugsreinigungen im Auftrag von Mieterinnen und Mietern einzelner Wohnungen',
         'Normale Privathaushalte. Villen, Residenzen und Zweitwohnungen betreuen wir im [Premium-Bereich](/premium).',
         'Wartung von Heizung, Lüftung, Lift und Brandschutz, grössere Reparaturen, Gartenbau und Neuanlagen',
       ],
@@ -204,7 +205,9 @@ export const home = {
     text: `Von ${company.address.city} aus arbeiten wir in fünf ganzen Kantonen, mit jeder Leistung. Je Kanton finden Sie Orte, typische Objekte und Hinweise für die Planung.`,
     link: 'Zum Einzugsgebiet',
   },
-  // Eigene Fragen der Startseite (inhalt.md 08): keine Standardfragen, die Kostenfrage mit Faktoren
+  // Eigene Fragen der Startseite (inhalt.md 08): keine Standardfragen, die Kostenfrage mit Faktoren.
+  // Nur Fragen über das ganze Angebot; Einzelthemen wie Treppenhaus-Rhythmus oder Firmenwechsel
+  // beantworten die Leistungsseiten selbst (Prüfbefund S1).
   faq: [
     {
       question: 'Was kostet eine Reinigungsfirma pro Stunde?',
@@ -217,9 +220,9 @@ export const home = {
         'Geht es nur ums Reinigen, reicht die [Unterhaltsreinigung](/leistungen/unterhaltsreinigung): Treppenhaus, Böden und Gemeinschaftsräume in einem festen Rhythmus. Die [Hauswartung](/leistungen/hauswartung) kümmert sich zusätzlich um die Liegenschaft selbst, mit Kontrollgängen, kleinen Reparaturen, Entsorgung und bei Wohnungsübergaben.',
     },
     {
-      question: 'Wie oft sollte ein Treppenhaus gereinigt werden?',
+      question: 'Welche Leistung passt zu meinem Objekt?',
       answer:
-        'Das hängt davon ab, wie viele Parteien das Haus nutzen und wie viel Schmutz von draussen hereinkommt. In Mehrfamilienhäusern reinigen wir meist mehrmals pro Woche. Ein [Muster-Leistungsverzeichnis mit Häufigkeiten](/leistungen/unterhaltsreinigung#leistungsverzeichnis) finden Sie bei der Unterhaltsreinigung.',
+        'Das zeigt der [Wegweiser in der Leistungsübersicht](/leistungen#wegweiser): Er ordnet zehn typische Situationen der passenden Leistung zu. Auf derselben Seite vergleicht eine Tabelle die vier Leistungen, die am häufigsten verwechselt werden. Trifft keine Situation genau zu, beschreiben Sie Ihr Objekt im Formular unten.',
     },
     {
       question: 'Kann ich Sie auch für einen einzelnen Einsatz beauftragen?',
@@ -227,19 +230,19 @@ export const home = {
         'Ja, etwa die [Grundreinigung](/leistungen/sonderreinigungen), die [Umzugsreinigung](/leistungen/umzugsreinigung) vor einer Übergabe, die [Baureinigung](/leistungen/baureinigung) nach Neu- und Umbauten oder die [Fenster- und Fassadenreinigung](/leistungen/fenster-und-fassadenreinigung). Einen Vertrag für die laufende Reinigung brauchen Sie dafür nicht.',
     },
     {
-      question: 'Muss vor der Unterhaltsreinigung eine Grundreinigung sein?',
+      question: 'Muss ich mehrere Leistungen zusammen beauftragen?',
       answer:
-        'Nicht immer. Sind Böden, Fugen oder Sanitärräume stark verschmutzt oder liegen alte Pflegeschichten auf dem Boden, lohnt sich vor dem ersten regulären Einsatz eine [Grundreinigung](/leistungen/sonderreinigungen). Die laufende Reinigung erhält dann einen sauberen Zustand, statt ihn erst herstellen zu müssen.',
+        'Nein. Sie können jede Leistung auch allein beauftragen, etwa nur die Fensterreinigung oder nur die Pflege der Umgebung. Brauchen Sie für dieselbe Liegenschaft mehrere, lassen sie sich als [Facility Services](/leistungen/facility-services) bündeln: ein Vertrag statt mehrerer.',
     },
     {
-      question: 'Wie wechsle ich die Reinigungsfirma ohne Unterbruch?',
+      question: 'Worauf sollte ich bei der Wahl einer Reinigungsfirma achten?',
       answer:
-        'Holen Sie die neue Offerte ein, bevor Sie den bisherigen Vertrag kündigen, und beachten Sie dessen Kündigungsfrist. Legen Sie den ersten Einsatz der neuen Firma auf den Tag nach dem letzten Einsatz der bisherigen. Planen Sie auch die Übergabe von Schlüsseln, Badges und Verbrauchsmaterial ein.',
+        'Vor allem auf Offerten, die sich wirklich vergleichen lassen. Das gelingt nur, wenn jeder Anbieter das Objekt gesehen hat und mit denselben Räumen, demselben Rhythmus und denselben Einsatzzeiten rechnet. Welche Fragen Sie ausserdem stellen sollten, von der Versicherung bis zum Vertrag, zeigt der Ratgeber [Wie finde ich die richtige Reinigungsfirma?](/blog/richtige-reinigungsfirma-finden).',
     },
   ] as { question: string; answer: string }[],
   // Abschluss mit Formular (PageFrame), auch auf Ratgeber und Rechtstexten; die Antwortzeit nennt der Kontaktbereich
   cta: {
-    title: 'Offerte für Ihre Liegenschaft oder Ihren Betrieb',
+    title: 'Offerte für Ihr Objekt',
     text: 'Beschreiben Sie kurz Objekt, Ort und Anliegen. Den Termin für die Besichtigung vereinbaren wir danach mit Ihnen.',
   },
 }
@@ -530,8 +533,8 @@ export const servicesOverview = {
           '[Unterhaltsreinigung](/leistungen/unterhaltsreinigung)',
           'Reinigung in einem festen Rhythmus, mit Nachfüllservice',
           'Meist mehrmals pro Woche',
-          'Treppenhaus, Büro oder Gewerbefläche sollen laufend sauber sein',
-          'Grundreinigung, Fenster aussen und Fassaden',
+          'Treppenhaus, Allgemeinflächen oder Gewerbefläche sollen laufend sauber sein',
+          'Büros und Praxen, Grundreinigung, Fenster aussen und Fassaden',
         ],
         [
           '[Grund- und Sonderreinigung](/leistungen/sonderreinigungen)',
@@ -570,11 +573,11 @@ export const servicesOverview = {
         },
         {
           label: 'April bis Juni',
-          text: 'Fenster und Glas nach dem Winter und dem Blütenstaub reinigen. Wege und Plätze vom Winterschmutz befreien, den Rasen zum ersten Mal mähen.',
+          text: 'Fenster und Glas nach dem Winter und dem Blütenstaub reinigen. Wege und Plätze vom Winterschmutz befreien, den Rasen zum ersten Mal mähen. Was danach bis zum Herbst im Garten anfällt, zeigt der [Pflegekalender der Gartenpflege](/leistungen/aussen-und-gruenflaechenpflege#pflegekalender).',
         },
         {
           label: 'Juli und August',
-          text: 'Grundreinigung während der Betriebsferien, Hallen und Maschinen bei geplanten Stillständen. Unkraut in Fugen und auf Plätzen von Hand oder mit Geräten entfernen, denn auf und an Wegen und Plätzen sind Herbizide verboten. Einzelheiten im [Pflegekalender der Gartenpflege](/leistungen/aussen-und-gruenflaechenpflege#pflegekalender).',
+          text: 'Grundreinigung während der Betriebsferien, Hallen und Maschinen bei geplanten Stillständen. Unkraut in Fugen und auf Plätzen von Hand oder mit Geräten entfernen, denn auf und an Wegen und Plätzen sind Herbizide verboten. Wo Spritzmittel verboten sind und was stattdessen wirkt, zeigt die Seite [Aussen- und Grünflächenpflege](/leistungen/aussen-und-gruenflaechenpflege#spritzmittelverbot).',
         },
         {
           label: 'September bis November',
@@ -614,7 +617,8 @@ export const servicesOverview = {
       },
     ] satisfies Card[] as Card[],
   },
-  // Eigene Fragen der Übersicht (inhalt.md 08): Unterschiede und Grenzen zwischen den Leistungen
+  // Eigene Fragen der Übersicht (inhalt.md 08): Unterschiede und Grenzen zwischen den Leistungen.
+  // Die Mieterfrage beantwortet die Umzugsreinigung selbst (Prüfbefund S1).
   faq: [
     {
       question: 'Wovon hängen die Kosten der einzelnen Leistungen ab?',
@@ -642,9 +646,9 @@ export const servicesOverview = {
         'Ja, Praxen gehören zur [Büro- und Praxisreinigung](/leistungen/bueroreinigung). Die Einsatzzeiten richten sich nach Ihren Sprechstunden. Instrumente und Medizinprodukte bereitet weiterhin Ihr Praxisteam auf.',
     },
     {
-      question: 'Kann ich als Mieterin oder Mieter eine Umzugsreinigung bestellen?',
+      question: 'Wann brauche ich eine Grundreinigung, wann eine Umzugsreinigung?',
       answer:
-        'Nein. Die [Umzugsreinigung](/leistungen/umzugsreinigung) bieten wir Verwaltungen, Eigentümern und Unternehmen an, etwa zwischen zwei Mietverhältnissen oder vor einem Verkauf. Wer eine Villa oder Residenz abgibt, findet die passende Reinigung im [Premium-Bereich](/premium).',
+        'Das entscheidet der Anlass. Die [Umzugsreinigung](/leistungen/umzugsreinigung) bereitet eine Wohnung oder Geschäftsfläche auf die Abnahme vor, wenn sie übergeben wird, und kommt mit Abnahmegarantie. Die [Grundreinigung](/leistungen/sonderreinigungen) bringt Böden, Fugen und Sanitärräume in einen Zustand zurück, den die laufende Reinigung wieder halten kann, auch in Räumen, die weiter genutzt werden.',
     },
   ] as { question: string; answer: string }[],
   premium: {

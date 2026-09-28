@@ -14,8 +14,11 @@ import UebersichtFragen from "./07-fragen";
 /**
  * Leistungsübersicht /leistungen (Factory-Strukturnorm, E80, E85): nur
  * Reihenfolge. Wegweiser, drei Kapitel mit klebendem Bild, Vergleich und
- * Jahresplan, Premium, Fragen. Abschnittsleiste mit Scrollspy ab lg, auf dem
- * Handy trägt der Kopf die Sprungliste.
+ * Jahresplan, Premium, Fragen. Die Abschnittsleiste mit Scrollspy steht auf
+ * jeder Breite (visuell.md, /leistungen): ab lg klebend, mobil als wischbare
+ * Reihe, die auch Vergleich, Jahresplan und Fragen erreicht (Prüfbefund S2).
+ * Mobil klebend bräuchte .subnav--sticky ausserhalb der lg-Klammer in
+ * globals.css (Hoheit Integrator).
  */
 export default function LeistungenUebersicht(props: UebersichtProps) {
   const { lang } = props;
@@ -33,7 +36,7 @@ export default function LeistungenUebersicht(props: UebersichtProps) {
       <JsonLd data={itemListJsonLd("/leistungen", servicePaths, lang)} />
       <UebersichtHero {...props} />
       <UebersichtVertrauen {...props} />
-      <SectionNav label={ui.onThisPage} items={navItems} className="max-lg:hidden" />
+      <SectionNav label={ui.onThisPage} items={navItems} />
       <UebersichtWegweiser {...props} />
       <UebersichtLeistungen {...props} />
       <UebersichtWerkzeuge {...props} />

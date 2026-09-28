@@ -11,11 +11,14 @@ import { useRef, useState, type KeyboardEvent, type ReactNode } from "react";
  * Beim Wechsel blendet das Feld kurz ein, nur ohne Wunsch nach weniger Bewegung.
  */
 export default function FuerWenWahl({
+  head,
   label,
   ids,
   tabs,
   panels,
 }: {
+  /** Titel und Einleitung: mobil über allem, ab lg links über den Reitern */
+  head: ReactNode;
   label: string;
   ids: string[];
   tabs: ReactNode[];
@@ -43,31 +46,34 @@ export default function FuerWenWahl({
   };
 
   return (
-    <div className="mt-10 grid gap-6 lg:mt-14 lg:grid-cols-12 lg:gap-12">
-      <div
-        role="tablist"
-        aria-label={label}
-        className="grid grid-cols-3 gap-2 lg:col-span-4 lg:grid-cols-1 lg:content-start lg:gap-0 lg:border-t lg:border-line"
-      >
-        {tabs.map((tab, index) => (
-          <button
-            key={ids[index]}
-            ref={element => {
-              buttons.current[index] = element;
-            }}
-            type="button"
-            role="tab"
-            id={`${ids[index]}-reiter`}
-            aria-selected={active === index}
-            aria-controls={`${ids[index]}-feld`}
-            tabIndex={active === index ? 0 : -1}
-            onClick={() => setActive(index)}
-            onKeyDown={event => onKeyDown(event, index)}
-            className="group flex min-h-12 min-w-0 items-center justify-center gap-3 rounded-[3px] border border-line bg-white px-1 py-3 text-center text-[0.875rem] font-semibold sm:px-2 sm:text-base lg:text-left text-ink-600 transition-colors hover:text-ink aria-selected:border-ink aria-selected:bg-ink aria-selected:text-white lg:justify-start lg:rounded-none lg:border-0 lg:border-b lg:bg-transparent lg:px-0 lg:py-5 lg:text-left lg:aria-selected:border-line lg:aria-selected:bg-transparent lg:aria-selected:text-ink"
-          >
-            {tab}
-          </button>
-        ))}
+    <div className="grid gap-6 lg:grid-cols-12 lg:gap-12">
+      <div className="min-w-0 lg:col-span-4">
+        {head}
+        <div
+          role="tablist"
+          aria-label={label}
+          className="mt-10 grid grid-cols-3 gap-1.5 sm:gap-2 lg:mt-10 lg:grid-cols-1 lg:content-start lg:gap-0 lg:border-t lg:border-line"
+        >
+          {tabs.map((tab, index) => (
+            <button
+              key={ids[index]}
+              ref={element => {
+                buttons.current[index] = element;
+              }}
+              type="button"
+              role="tab"
+              id={`${ids[index]}-reiter`}
+              aria-selected={active === index}
+              aria-controls={`${ids[index]}-feld`}
+              tabIndex={active === index ? 0 : -1}
+              onClick={() => setActive(index)}
+              onKeyDown={event => onKeyDown(event, index)}
+              className="group flex min-h-12 min-w-0 items-center justify-center gap-3 rounded-[3px] border border-line bg-white px-0.5 py-3 text-center text-[clamp(0.75rem,3.5vw,0.875rem)] font-semibold sm:px-2 sm:text-base lg:text-left text-ink-600 transition-colors hover:text-ink aria-selected:border-ink aria-selected:bg-ink aria-selected:text-white lg:justify-start lg:rounded-none lg:border-0 lg:border-b lg:bg-transparent lg:px-0 lg:py-5 lg:text-left lg:aria-selected:border-line lg:aria-selected:bg-transparent lg:aria-selected:text-ink"
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
       </div>
       <div className="min-w-0 lg:col-span-8">
         {panels.map((panel, index) => (

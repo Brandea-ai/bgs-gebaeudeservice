@@ -43,8 +43,9 @@ export default function StartHero(props: StartseiteProps) {
           </Button>
         )}
       </div>
-      {/* Sprachwahl im Hero (E80): die Seite gibt es in vier Sprachen, beraten wird in allen vier (E18) */}
-      <div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-3">
+      {/* Sprachwahl im Hero (E80): die Seite gibt es in vier Sprachen, beraten wird in allen vier (E18).
+          Unter md Abstand nach unten, damit die feste Mobil-Leiste (rund 78 px) die Knöpfe nicht verdeckt */}
+      <div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-3 max-md:mb-10">
         <span className="text-sm font-medium text-white/90">{nav.chrome.heroLanguages}</span>
         <LanguageSwitcher lang={lang} path="/" label={nav.chrome.heroLanguages} tone="dark" as="div" />
       </div>

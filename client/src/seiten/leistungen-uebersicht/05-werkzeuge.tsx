@@ -12,12 +12,14 @@ const icons: Icon[] = [ListChecks, Prohibit];
  * Umbau 7): nebeneinander vergleichen statt vier Karten untereinander. Der
  * Baustein selbst (leistung/werkzeug.tsx) bleibt unverändert, die Klassen
  * greifen auf seine Listen (tool-table-cards, ol). Im Druck gilt die Tabelle.
+ * Jede Karte ist nur so hoch wie ihr Inhalt (self-start), damit kurze Karten
+ * keine Leerfläche mitschleppen (Prüfbefund S9).
  */
 const rail: Partial<Record<string, string>> = {
   table:
-    "max-md:[&_.tool-table-cards]:flex max-md:[&_.tool-table-cards]:snap-x max-md:[&_.tool-table-cards]:snap-mandatory max-md:[&_.tool-table-cards]:overflow-x-auto max-md:[&_.tool-table-cards]:pb-2 max-md:[&_.tool-table-cards]:[scrollbar-width:none] max-md:[&_.tool-table-cards>li]:shrink-0 max-md:[&_.tool-table-cards>li]:basis-[88%] max-md:[&_.tool-table-cards>li]:snap-start",
+    "max-md:[&_.tool-table-cards]:flex max-md:[&_.tool-table-cards]:snap-x max-md:[&_.tool-table-cards]:snap-mandatory max-md:[&_.tool-table-cards]:overflow-x-auto max-md:[&_.tool-table-cards]:pb-2 max-md:[&_.tool-table-cards]:[scrollbar-width:none] max-md:[&_.tool-table-cards>li]:shrink-0 max-md:[&_.tool-table-cards>li]:basis-[88%] max-md:[&_.tool-table-cards>li]:snap-start max-md:[&_.tool-table-cards>li]:self-start",
   timeline:
-    "max-md:[&_ol]:flex max-md:[&_ol]:snap-x max-md:[&_ol]:snap-mandatory max-md:[&_ol]:gap-3 max-md:[&_ol]:overflow-x-auto max-md:[&_ol]:border-t-0 max-md:[&_ol]:pb-2 max-md:[&_ol]:[scrollbar-width:none] max-md:[&_ol>li]:shrink-0 max-md:[&_ol>li]:basis-[88%] max-md:[&_ol>li]:snap-start max-md:[&_ol>li]:content-start max-md:[&_ol>li]:rounded-[3px] max-md:[&_ol>li]:border max-md:[&_ol>li]:bg-stone max-md:[&_ol>li]:p-4",
+    "max-md:[&_ol]:flex max-md:[&_ol]:snap-x max-md:[&_ol]:snap-mandatory max-md:[&_ol]:gap-3 max-md:[&_ol]:overflow-x-auto max-md:[&_ol]:border-t-0 max-md:[&_ol]:pb-2 max-md:[&_ol]:[scrollbar-width:none] max-md:[&_ol>li]:shrink-0 max-md:[&_ol>li]:basis-[88%] max-md:[&_ol>li]:snap-start max-md:[&_ol>li]:self-start max-md:[&_ol>li]:content-start max-md:[&_ol>li]:rounded-[3px] max-md:[&_ol>li]:border max-md:[&_ol>li]:bg-stone max-md:[&_ol>li]:p-4",
 };
 
 /**

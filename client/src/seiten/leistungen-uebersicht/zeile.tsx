@@ -11,9 +11,12 @@ import type { PagePath } from "../../../../shared/seo";
 /**
  * Eine Leistung als Textzeile im Kapitel (visuell.md Umbau 5 und 7): ab lg nur
  * Text mit Haarlinie, das Bild steht klebend daneben (kapitel-buehne.tsx).
- * Darunter ein 88 px grosses Vorschaubild links neben Name und Nutzen; die
- * Zeile «Für» und die drei typischen Arbeiten erst ab sm, sie stehen
- * vollständig auf der Leistungsseite. Die id ist das Ziel des Scrollspys.
+ * Darunter ein 88 px grosses Vorschaubild links neben Name und Nutzen. Der Name
+ * ist der Link; die drei typischen Arbeiten und der Textlink erst ab sm, sie
+ * stehen vollständig auf der Leistungsseite. Keine Eckdaten der Leistungsseite:
+ * deren facts sind seitentypisch und haben keine feste Reihenfolge (Prüfbefund
+ * S4), wofür die Leistung gedacht ist, sagt der eigene Text. Die id ist das
+ * Ziel des Scrollspys.
  */
 export default function LeistungZeile({
   id,
@@ -36,14 +39,13 @@ export default function LeistungZeile({
 }) {
   const Glyph = iconFor(path);
   const titleId = `${id}-titel`;
-  const audience = content?.facts[0];
   const typical = content?.scope.items.slice(0, 3) ?? [];
   const href = localizePath(path, lang);
   return (
     <article
       id={id}
       aria-labelledby={titleId}
-      className="grid grid-cols-[5.5rem_minmax(0,1fr)] gap-x-4 border-t border-line py-7 sm:py-9 lg:block lg:py-12"
+      className="grid grid-cols-[5.5rem_minmax(0,1fr)] gap-x-4 border-t border-line py-5 sm:py-9 lg:block lg:py-12"
     >
       <Link href={href} tabIndex={-1} aria-hidden="true" className="group block self-start overflow-hidden rounded-[3px] lg:hidden">
         <ImageSlot image={image} lang={lang} hover decorative sizes="88px" className="aspect-square w-full" />
@@ -54,15 +56,12 @@ export default function LeistungZeile({
           className="flex items-start gap-3 font-display text-[clamp(1.25rem,1.05rem+0.9vw,2rem)] font-bold leading-[1.15] tracking-[-0.02em] text-ink"
         >
           <Glyph weight="duotone" className="mt-[0.1em] size-7 shrink-0 text-signal max-sm:hidden lg:size-8" aria-hidden="true" />
-          <span className="min-w-0 lg:text-balance">{label}</span>
+          <Link href={href} className="arrow-link min-w-0 transition-colors hover:text-signal lg:text-balance">
+            {label}
+            <ArrowRight weight="duotone" className="ml-1.5 inline size-5 align-[-0.1em] text-signal sm:hidden" aria-hidden="true" />
+          </Link>
         </h3>
         <p className="mt-2 max-w-[56ch] text-[0.9375rem] font-medium leading-relaxed text-ink-600 sm:mt-4 sm:text-[1.0625rem]">{text}</p>
-        {audience && (
-          <p className="mt-4 text-[0.9375rem] leading-relaxed text-ink-600 max-sm:hidden">
-            <span className="font-semibold text-ink">{audience.label}: </span>
-            {audience.value}
-          </p>
-        )}
         {typical.length > 0 && (
           <ul className="mt-4 space-y-2 max-sm:hidden">
             {typical.map(item => (
@@ -77,7 +76,7 @@ export default function LeistungZeile({
         )}
         <Link
           href={href}
-          className="arrow-link mt-3 inline-flex min-h-11 items-center gap-2 font-semibold text-ink transition-colors hover:text-signal sm:mt-5"
+          className="arrow-link mt-5 inline-flex min-h-11 items-center gap-2 font-semibold text-ink transition-colors hover:text-signal max-sm:hidden"
         >
           {toService}
           <span className="sr-only">: {label}</span>

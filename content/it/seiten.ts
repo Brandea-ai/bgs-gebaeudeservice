@@ -59,7 +59,7 @@ export const home: Seiten['home'] = {
   profile: {
     title: 'In sintesi',
     brand: company.premiumBrand
-      ? `${company.brand} è il marchio della ${company.legalName} con sede a ${company.address.city} (LU).`
+      ? `${company.brand} è il marchio della ${company.legalName} con sede a ${company.seat} (LU).`
       : null,
     text: `Dal 2006 operiamo nella pulizia e nella custodia di stabili. Oggi oltre 50 collaboratrici e collaboratori seguono più di 120 clienti nei Cantoni di ${cantonListIt}, in ${languagesIt}.`,
     facts: [
@@ -78,7 +78,7 @@ export const home: Seiten['home'] = {
       '/leistungen/bueroreinigung': 'Postazioni di lavoro, sale riunioni, angoli cottura e ambulatori, puliti in orari adatti alla Sua attività.',
       '/leistungen/hauswartung': 'Giri di controllo, piccole riparazioni, smaltimento dei rifiuti e partecipazione alle consegne degli appartamenti.',
       '/leistungen/aussen-und-gruenflaechenpflege': 'Aree esterne curate tutto l’anno, dal primo taglio dell’erba alle foglie d’autunno.',
-      '/leistungen/facility-services': 'Più servizi nostri riuniti, con un solo contratto e un solo interlocutore.',
+      '/leistungen/facility-services': 'Diversi dei nostri servizi riuniti, con un solo contratto e un solo interlocutore.',
     },
     premium: {
       title: premiumLabel,
@@ -92,7 +92,7 @@ export const home: Seiten['home'] = {
     items: [
       {
         key: 'verwaltungen',
-        short: 'Gerenze',
+        short: 'Amministrazioni',
         title: 'Amministrazioni e comunioni di proprietari per piani',
         text: 'Gestisce stabili abitativi o commerciali per proprietari o per una comunione. Sul posto serve qualcuno che passi regolarmente e segnali ciò che nota.',
         points: [
@@ -148,7 +148,7 @@ export const home: Seiten['home'] = {
       items: [
         'Servizio invernale e sgombero della neve',
         'Un servizio di picchetto raggiungibile giorno e notte per le emergenze',
-        'Pulizie di fine locazione commissionate dagli inquilini stessi',
+        'Pulizie di fine locazione commissionate da inquilini di singoli appartamenti',
         'Economie domestiche ordinarie. Ville, residenze e residenze secondarie le seguiamo nel [settore Premium](/premium).',
         'Manutenzione di riscaldamento, ventilazione, ascensori e protezione antincendio, grandi riparazioni, costruzione di giardini e nuove piantagioni',
       ],
@@ -156,14 +156,14 @@ export const home: Seiten['home'] = {
   },
   area: {
     title: 'La nostra zona d’intervento',
-    text: `Da ${company.address.city} lavoriamo in cinque Cantoni interi, con ogni servizio. Per ogni Cantone trova località, oggetti tipici e indicazioni per la pianificazione.`,
+    text: `Da ${company.address.city} lavoriamo in tutto il territorio di cinque Cantoni, con tutti i servizi. Per ogni Cantone trova località, oggetti tipici e indicazioni per la pianificazione.`,
     link: 'Alla zona d’intervento',
   },
   faq: [
     {
       question: 'Quanto costa un’impresa di pulizie all’ora?',
       answer:
-        'Senza conoscere l’oggetto non è possibile rispondere seriamente. Conta l’impegno: quanto sono grandi le superfici, quali pavimenti ci sono, quanto sono utilizzate, con quale frequenza e in quali orari si pulisce e chi fornisce il materiale di consumo. Come incidono questi fattori lo spiega la guida [Costi di pulizia in Svizzera](/blog/reinigungskosten-schweiz).',
+        'Senza conoscere l’oggetto non è possibile rispondere seriamente. Conta il lavoro richiesto: quanto sono grandi le superfici, quali pavimenti ci sono, quanto sono utilizzate, con quale frequenza e in quali orari si pulisce e chi fornisce il materiale di consumo. Come incidono questi fattori lo spiega la guida [Costi di pulizia in Svizzera](/blog/reinigungskosten-schweiz).',
     },
     {
       question: 'Mi serve una pulizia di manutenzione o una custodia di stabili?',
@@ -171,9 +171,9 @@ export const home: Seiten['home'] = {
         'Se si tratta solo di pulire, basta la [pulizia di manutenzione](/leistungen/unterhaltsreinigung): vano scale, pavimenti e locali comuni con una cadenza fissa. La [custodia di stabili](/leistungen/hauswartung) si occupa inoltre dello stabile stesso, con giri di controllo, piccole riparazioni, smaltimento e la partecipazione alle consegne degli appartamenti.',
     },
     {
-      question: 'Con quale frequenza va pulito un vano scale?',
+      question: 'Quale servizio è adatto al mio immobile?',
       answer:
-        'Dipende da quante economie domestiche usano lo stabile e da quanta sporcizia entra dall’esterno. Nelle case plurifamiliari puliamo di solito più volte alla settimana. Un [capitolato modello con le frequenze](/leistungen/unterhaltsreinigung#leistungsverzeichnis) si trova alla pagina della pulizia di manutenzione.',
+        'Lo mostra la [guida nella panoramica dei servizi](/leistungen#wegweiser): abbina dieci situazioni tipiche al servizio adatto. Sulla stessa pagina una tabella confronta i quattro servizi che si confondono più spesso. Se nessuna situazione corrisponde esattamente, descriva il Suo immobile nel modulo qui sotto.',
     },
     {
       question: 'Posso affidarvi anche un singolo intervento?',
@@ -181,18 +181,18 @@ export const home: Seiten['home'] = {
         'Sì, per esempio una [pulizia a fondo](/leistungen/sonderreinigungen), una [pulizia di fine locazione](/leistungen/umzugsreinigung) prima di una riconsegna, una [pulizia di cantiere](/leistungen/baureinigung) dopo costruzioni e ristrutturazioni o una [pulizia di vetri e facciate](/leistungen/fenster-und-fassadenreinigung). Per questo non serve un contratto di pulizia regolare.',
     },
     {
-      question: 'Serve una pulizia a fondo prima della pulizia di manutenzione?',
+      question: 'Devo affidarvi più servizi insieme?',
       answer:
-        'Non sempre. Se pavimenti, fughe o locali sanitari sono molto sporchi o se sul pavimento ci sono vecchi strati di prodotti di cura, prima del primo intervento regolare conviene una [pulizia a fondo](/leistungen/sonderreinigungen). La pulizia corrente mantiene poi uno stato pulito, invece di doverlo prima creare.',
+        'No. Può affidarci ogni servizio anche da solo, per esempio solo la pulizia delle finestre o solo la cura delle aree esterne. Se per lo stesso stabile gliene servono diversi, si possono riunire nei [facility services](/leistungen/facility-services): un solo contratto invece di diversi.',
     },
     {
-      question: 'Come cambio impresa di pulizie senza interruzioni?',
+      question: 'A che cosa badare nella scelta di un’impresa di pulizie?',
       answer:
-        'Chieda la nuova offerta prima di disdire il contratto attuale e rispetti il suo termine di disdetta. Fissi il primo intervento della nuova impresa al giorno dopo l’ultimo intervento della precedente. Pianifichi anche la consegna di chiavi, badge e materiale di consumo.',
+        'Soprattutto a offerte davvero confrontabili. È possibile solo se ogni offerente ha visto l’immobile e calcola con gli stessi locali, la stessa cadenza e gli stessi orari. Quali altre domande porre, dall’assicurazione fino al contratto, lo spiega la guida [Come trovare l’impresa di pulizie giusta?](/blog/richtige-reinigungsfirma-finden).',
     },
   ],
   cta: {
-    title: 'Un’offerta per il Suo stabile o la Sua azienda',
+    title: 'Un’offerta per il Suo immobile',
     text: 'Descriva brevemente oggetto, luogo ed esigenze. Concordiamo poi con Lei la data del sopralluogo.',
   },
 }
@@ -465,8 +465,8 @@ export const servicesOverview: Seiten['servicesOverview'] = {
           '[Pulizia di manutenzione](/leistungen/unterhaltsreinigung)',
           'Pulizia con una cadenza fissa, con servizio di rifornimento',
           'Di solito più volte alla settimana',
-          'Vano scale, ufficio o superficie commerciale devono restare sempre puliti',
-          'Pulizia a fondo, finestre all’esterno e facciate',
+          'Vano scale, parti comuni o superficie commerciale devono restare sempre puliti',
+          'Uffici e studi, pulizia a fondo, finestre all’esterno e facciate',
         ],
         [
           '[Pulizie a fondo e speciali](/leistungen/sonderreinigungen)',
@@ -484,7 +484,7 @@ export const servicesOverview: Seiten['servicesOverview'] = {
         ],
         [
           '[Facility services](/leistungen/facility-services)',
-          'Più servizi nostri in un unico contratto',
+          'Diversi dei nostri servizi in un unico contratto',
           'Secondo il servizio',
           'Più imprese devono essere sostituite da una sola',
           'Facility management tecnico, servizio invernale, intermediazione di artigiani',
@@ -505,11 +505,11 @@ export const servicesOverview: Seiten['servicesOverview'] = {
         },
         {
           label: 'Da aprile a giugno',
-          text: 'Pulire finestre e vetri dopo l’inverno e il polline. Liberare vialetti e piazzali dallo sporco dell’inverno, tagliare il prato per la prima volta.',
+          text: 'Pulire finestre e vetri dopo l’inverno e il polline. Liberare vialetti e piazzali dallo sporco dell’inverno, tagliare il prato per la prima volta. Che cosa segue in giardino fino all’autunno lo indica il [calendario di manutenzione delle aree esterne](/leistungen/aussen-und-gruenflaechenpflege#pflegekalender).',
         },
         {
           label: 'Luglio e agosto',
-          text: 'Pulizia a fondo durante le ferie aziendali, capannoni e macchinari durante i fermi programmati. Togliere le erbacce nelle fughe e sui piazzali a mano o con apparecchi, perché su e lungo vialetti e piazzali gli erbicidi sono vietati. Dettagli nel [calendario di manutenzione delle aree esterne](/leistungen/aussen-und-gruenflaechenpflege#pflegekalender).',
+          text: 'Pulizia a fondo durante le ferie aziendali, capannoni e macchinari durante i fermi programmati. Togliere le erbacce nelle fughe e sui piazzali a mano o con apparecchi, perché su e lungo vialetti e piazzali gli erbicidi sono vietati. Dove i prodotti sono vietati e che cosa funziona al loro posto lo spiega la pagina [Manutenzione delle aree esterne e verdi](/leistungen/aussen-und-gruenflaechenpflege#spritzmittelverbot).',
         },
         {
           label: 'Da settembre a novembre',
@@ -575,9 +575,9 @@ export const servicesOverview: Seiten['servicesOverview'] = {
         'Sì, gli studi rientrano nella [pulizia di uffici e studi](/leistungen/bueroreinigung). Gli orari d’intervento seguono i Suoi orari di consultazione. Strumenti e dispositivi medici continuano a essere ricondizionati dal Suo team.',
     },
     {
-      question: 'Posso ordinare una pulizia di fine locazione come inquilino?',
+      question: 'Quando serve una pulizia a fondo e quando una pulizia di fine locazione?',
       answer:
-        'No. Offriamo la [pulizia di fine locazione](/leistungen/umzugsreinigung) ad amministrazioni, proprietari e aziende, per esempio tra due locazioni o prima di una vendita. Se riconsegna una villa o una residenza, trova la pulizia adatta nel nostro [settore Premium](/premium).',
+        'Decide l’occasione. La [pulizia di fine locazione](/leistungen/umzugsreinigung) prepara un appartamento o una superficie commerciale al collaudo quando viene riconsegnato, con garanzia di consegna. La [pulizia a fondo](/leistungen/sonderreinigungen) riporta pavimenti, fughe e locali sanitari a uno stato che la pulizia corrente può di nuovo mantenere, anche in locali che restano in uso.',
     },
   ] as { question: string; answer: string }[],
   premium: {

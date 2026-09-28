@@ -13,7 +13,7 @@ const region = cantons
 export const pages: Dictionary['pages'] = {
   '/': {
     label: 'Home',
-    title: `${company.brand} | Cleaning services and caretaking in Lucerne, Zug`,
+    title: `${company.brand} | Cleaning services & caretaking in Lucerne and Zug`,
     description: 'Cleaning services, caretaking and facility services for property managers and businesses in Lucerne, Zug and beyond. Free quote after a site visit.',
   },
   '/premium': {

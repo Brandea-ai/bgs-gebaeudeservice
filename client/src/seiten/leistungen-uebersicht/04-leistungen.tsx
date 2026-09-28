@@ -24,7 +24,7 @@ export default function UebersichtLeistungen(props: UebersichtProps) {
             key={group.title}
             id={id}
             aria-labelledby={`${id}-titel`}
-            className={`section border-t border-line ${index % 2 === 0 ? "bg-stone" : "bg-white"}`}
+            className={`section border-t border-line max-sm:py-12 ${index % 2 === 0 ? "bg-stone" : "bg-white"}`}
           >
             <div className="container">
               <SectionHead id={`${id}-titel`} title={group.title} intro={group.text} className="max-w-3xl" />

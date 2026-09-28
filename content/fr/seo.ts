@@ -14,7 +14,7 @@ export const pages = {
   '/': {
     label: 'Accueil',
     title: `${company.brand} | Entreprise de nettoyage et conciergerie à Lucerne`,
-    description: 'Entreprise de nettoyage pour gérances et entreprises : nettoyage et conciergerie d’immeubles à Lucerne, Zoug et environs. Devis gratuit après une visite.',
+    description: 'Entreprise de nettoyage pour gérances et entreprises : nettoyage et conciergerie d’immeubles à Lucerne, Zoug et environs. Devis gratuit après une visite.',
   },
   '/premium': {
     label: premiumLabel,
@@ -41,7 +41,7 @@ export const pages = {
   '/leistungen': {
     label: 'Prestations',
     title: 'Services de nettoyage et de conciergerie',
-    description: 'Services de nettoyage et de conciergerie : dix prestations, un comparatif et un calendrier annuel. À Lucerne, Zoug et environs. Devis gratuit après une visite.',
+    description: 'Services de nettoyage et de conciergerie : dix prestations, un comparatif et un calendrier annuel. À Lucerne, Zoug et environs. Devis gratuit après une visite.',
   },
   '/leistungen/unterhaltsreinigung': {
     label: 'Nettoyage d’entretien',
