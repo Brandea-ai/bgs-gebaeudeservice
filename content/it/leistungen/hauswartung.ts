@@ -1,7 +1,8 @@
 import type { ServicePageContent } from '../../types'
 
 // Stesse chiavi di content/de/leistungen/hauswartung.ts (E85). Termini giuridici dalla versione
-// italiana del CO e del CC su fedlex, dall'UPI e dalla direttiva AICAA 16-15it, letti il 28.09.2026.
+// italiana del CO e del CC su fedlex (CO art. 58, 256, 257a, 257b, 259; CC art. 647a, 647b, 712g,
+// 712h, 712m, 712s), dall'UPI e dalla direttiva AICAA 16-15it, letti il 28.09.2026.
 // Le fonti disponibili solo in tedesco sono indicate nell'etichetta.
 export const hauswartung: ServicePageContent = {
   path: '/leistungen/hauswartung',
@@ -9,7 +10,7 @@ export const hauswartung: ServicePageContent = {
   eyebrow: 'Cura degli stabili',
   h1: 'Custodia di stabili abitativi e per uffici',
   lead: [
-    'Assumiamo la custodia dello stabile in base a un capitolato scritto: quali compiti, con quale frequenza, fino a quale importo senza chiedere e chi riceve le nostre segnalazioni.',
+    'Assumiamo la custodia dello stabile in base a un capitolato scritto: quali compiti, con quale frequenza, fino a quale importo senza previa autorizzazione e chi riceve le nostre segnalazioni.',
     'Così amministrazione, proprietà e inquilini sanno che cosa aspettarsi, e nessuno deve indovinare chi si occupa della macchia di umidità in cantina. Il capitolato e la lista per il giro di controllo si trovano più in basso, pronti da stampare. Con il capitolato si possono anche confrontare più offerte riga per riga.',
   ],
   facts: [
@@ -47,22 +48,22 @@ export const hauswartung: ServicePageContent = {
       ],
     },
     {
-      title: 'Giro di controllo: vedere, sistemare, segnalare',
+      title: 'Che cosa succede durante il giro di controllo',
       paragraphs: [
         'Durante il giro di controllo il custode percorre le parti comuni, dall’ingresso fino all’area rifiuti passando per cantina e lavanderia. Le piccole cose, come una lampadina bruciata, le sistema da sé. Tutto il resto va all’interlocutore indicato nel capitolato.',
-        'Per la proprietà c’è anche un aspetto giuridico: il proprietario di un edificio è tenuto a risarcire i danni cagionati da difetto di manutenzione (art. 58 CO). Giri di controllo regolari aiutano a notare un bordo di gradino staccato o una scala di cantina buia prima che qualcuno cada.',
+        'Giri di controllo regolari aiutano a notare un bordo di gradino staccato o una scala di cantina buia prima che qualcuno cada. Quali punti controllare e perché per la proprietà è anche una questione di responsabilità lo mostra la lista più in basso.',
       ],
     },
     {
       title: 'Impiantistica: osservare, non manutenere',
       paragraphs: [
-        'Riscaldamento, ventilazione, ascensore e protezione antincendio li mantengono imprese specializzate. Il custode li osserva a ogni giro e segnala ciò che salta all’occhio: un messaggio di errore sul display del riscaldamento, un rubinetto che gocciola in lavanderia, un ascensore che non si ferma a livello del piano. L’amministrazione può così chiamare l’impresa finché il guasto è ancora piccolo.',
+        'A ogni giro il custode osserva riscaldamento, ventilazione, ascensore e protezione antincendio e segnala ciò che salta all’occhio: un messaggio di errore sul display del riscaldamento, un rubinetto che gocciola in lavanderia, un ascensore che non si ferma a livello del piano. L’amministrazione può così chiamare l’impresa specializzata finché il guasto è ancora piccolo.',
       ],
     },
     {
       title: 'Consegne e riconsegne degli appartamenti',
       paragraphs: [
-        'Al cambio di inquilino il custode può aprire l’appartamento, consegnare le chiavi e annotare le letture dei contatori. Collaudo e verbale restano all’amministrazione. Poiché l’associazione degli inquilini (Mieterverband) non conta questi interventi tra le spese accessorie, conviene registrarli separatamente da pulizia e giri di controllo.',
+        'Al cambio di inquilino il custode può aprire l’appartamento, consegnare le chiavi e annotare le letture dei contatori. Collaudo e verbale restano all’amministrazione. Registri questi interventi separatamente dalla pulizia; il perché lo spiega più in alto la tabella su piccola manutenzione e spese accessorie.',
         'Se prima della riconsegna l’appartamento necessita di una pulizia finale, se ne occupa la [pulizia di fine locazione con garanzia di consegna](/leistungen/umzugsreinigung).',
       ],
     },
@@ -71,26 +72,28 @@ export const hauswartung: ServicePageContent = {
     {
       kind: 'table',
       id: 'pflichtenheft',
-      title: 'Capitolato per la custodia da compilare',
+      title: 'Modello di capitolato per la custodia',
       intro:
-        'Indichi per ogni area con quale frequenza e chi è responsabile. Un accordo a voce diventa così un incarico che amministrazione, proprietà e custode leggono allo stesso modo.',
+        'Indichi per ogni area con quale frequenza e chi è responsabile. Un accordo a voce diventa così un incarico che tutte le parti leggono allo stesso modo.',
       columns: ['Area', 'Compiti', 'Frequenza', 'Responsabile o segnalazione a'],
       rows: [
-        ['Giro di controllo', 'Controllare illuminazione, porte, bucalettere, lavanderia, cantina, locale caldaia e area rifiuti per difetti visibili, annotare quanto rilevato', '__________', '__________'],
-        ['Vano scale, ingresso e lavanderia', 'Pulire pavimenti, ringhiere e corrimano, mantenere puliti lavanderia e locali di asciugatura; segnalare oggetti lasciati sulla via di fuga e guasti alle macchine', '__________', '__________'],
-        ['Piccole riparazioni', 'Ad esempio sostituire lampadine, oliare le serrature; senza chiedere fino a CHF ______ per caso', 'secondo necessità', '__________'],
-        ['Impiantistica', 'Osservare riscaldamento, ventilazione, ascensore e dispositivi antincendio; la manutenzione spetta all’impresa specializzata', 'a ogni giro', '__________'],
-        ['Smaltimento', 'Organizzare rifiuti e materiali riciclabili, tenere pulito il punto di raccolta', '__________', '__________'],
-        ['Aree esterne', 'Prati, siepi, aiuole, vialetti e piazzali', 'secondo il piano di cura', '__________'],
+        ['Stabile', 'Indirizzo, appartamenti, vani scale: ____________________', 'Inizio il __________', 'Persona di contatto ______________'],
+        ['Giro di controllo', 'Controllare illuminazione, porte, bucalettere, lavanderia, cantina, locale caldaia e area rifiuti per difetti visibili, annotare quanto rilevato', '__________', '______________'],
+        ['Vano scale, ingresso e lavanderia', 'Pulire pavimenti, ringhiere e corrimano, mantenere puliti lavanderia e locali di asciugatura; segnalare oggetti lasciati sulla via di fuga e guasti alle macchine', '__________', '______________'],
+        ['Piccole riparazioni', 'Ad esempio sostituire lampadine, oliare le serrature; senza previa autorizzazione fino a CHF ______ per caso', 'secondo necessità', '______________'],
+        ['Impiantistica', 'Osservare riscaldamento, ventilazione, ascensore e dispositivi antincendio; la manutenzione spetta all’impresa specializzata', 'a ogni giro', '______________'],
+        ['Smaltimento', 'Organizzare rifiuti e materiali riciclabili, tenere pulito il punto di raccolta', '__________', '______________'],
+        ['Aree esterne', 'Prati, siepi, aiuole, vialetti e piazzali', 'secondo il piano di cura', '______________'],
         ['Consegne degli appartamenti', 'Aprire l’appartamento, consegnare le chiavi, annotare i contatori; collaudo e verbale li fa l’amministrazione', 'secondo necessità', 'Amministrazione'],
-        ['Chiavi e materiale', 'Quali chiavi, badge e codici, dove sono custoditi, chi firma la consegna; chi fornisce prodotti di pulizia, lampadine e attrezzature e dove sono depositati', 'da fissare una volta', '__________'],
+        ['Chiavi e materiale', 'Quali chiavi, badge e codici, dove sono custoditi, chi firma la consegna; chi fornisce materiale e attrezzature e dove sono depositati', 'da fissare una volta', '______________'],
         ['Imprese specializzate', 'Riscaldamento, ascensore, antincendio e riparazioni più importanti: chi incarica, chi paga', 'da fissare una volta', 'Amministrazione'],
-        ['Inquilini', 'A chi si rivolgono gli inquilini, avviso all’ingresso', 'da fissare una volta', '__________'],
-        ['Espressamente escluso', 'Ad esempio servizio invernale, servizio di picchetto e d’emergenza', 'non applicabile', 'non applicabile'],
+        ['Inquilini', 'A chi si rivolgono gli inquilini e come lo vengono a sapere, ad esempio con un avviso all’ingresso', 'da fissare una volta', '______________'],
+        ['Espressamente escluso', '____________________', 'non applicabile', 'non applicabile'],
       ],
       note:
         'Da noi questo elenco diventa, dopo la visita dello stabile, il capitolato del Suo immobile. Nella proprietà per piani l’assemblea dei comproprietari approva ogni anno preventivo, resoconto e ripartizione delle spese (art. 712m CC). Un capitolato le mostra per che cosa paga.',
       sources: [
+        { label: 'Art. 712g CC, competenza per gli atti d’amministrazione nella proprietà per piani', href: 'https://www.fedlex.admin.ch/eli/cc/24/233_245_233/it#art_712_g' },
         { label: 'Art. 712m CC, competenze dell’assemblea dei comproprietari', href: 'https://www.fedlex.admin.ch/eli/cc/24/233_245_233/it#art_712_m' },
       ],
       printable: true,
@@ -99,9 +102,9 @@ export const hauswartung: ServicePageContent = {
     {
       kind: 'checklist',
       id: 'kontrollgang',
-      title: 'Giro di controllo: lista da spuntare',
+      title: 'Lista per il giro di controllo',
       intro:
-        'Il proprietario di un edificio è tenuto a risarcire i danni cagionati da difetto di manutenzione (art. 58 CO). L’UPI raccomanda perciò ai proprietari di effettuare ispezioni a intervalli regolari, di documentarle e di eseguire i lavori di manutenzione necessari. Questa lista copre le parti comuni di una casa plurifamiliare.',
+        'Il proprietario di un edificio è tenuto a risarcire i danni cagionati da difetto di manutenzione (art. 58 CO). L’UPI raccomanda perciò ai proprietari di effettuare ispezioni a intervalli regolari, di documentarle e di eseguire i lavori di manutenzione necessari.',
       groups: [
         {
           title: 'Ingresso e vano scale',
@@ -119,7 +122,8 @@ export const hauswartung: ServicePageContent = {
             'Lavatrici e asciugatrici senza messaggi di errore, scarichi liberi',
             'Nessuna macchia d’acqua, umidità o rubinetto che gocciola',
             'Riscaldamento senza messaggi di guasto, locale caldaia in ordine e chiuso a chiave',
-            'L’ascensore si ferma a livello, estintori al loro posto e piombati',
+            'L’ascensore si ferma a livello, se presente',
+            'Estintori al loro posto e piombati, se presenti',
           ],
         },
         {
@@ -134,10 +138,10 @@ export const hauswartung: ServicePageContent = {
         {
           title: 'Annotare',
           items: [
-            'Data e nome',
-            'Rilievo con luogo, con foto se utile',
-            'Segnalato a chi e quando',
-            'Risolto il, da chi',
+            'Data e nome: ____________________',
+            'Rilievo e luogo: ____________________',
+            'Segnalato a, il: ____________________',
+            'Risolto il, da: ____________________',
           ],
         },
       ],
@@ -162,11 +166,12 @@ export const hauswartung: ServicePageContent = {
         ['Sostituire una lampadina nel proprio appartamento, sturare il sifone del lavabo', 'Inquilino', 'Inquilino, come piccola manutenzione secondo gli usi locali (art. 259 CO)'],
         ['Pulire vano scale, lavanderia e aree esterne', 'Custode', 'Tramite le spese accessorie se il contratto di locazione indica la custodia come voce, altrimenti compreso nella pigione'],
         ['Sostituire le lampadine di vano scale e cantina, oliare le serrature', 'Custode', 'Come la pulizia, finché non servono conoscenze specialistiche'],
+        ['Giro di controllo per individuare difetti, segnalazione dei guasti all’amministrazione', 'Custode', 'Proprietà: l’associazione degli inquilini non conta tra le spese accessorie i giri di controllo per riparazioni né le segnalazioni all’amministrazione'],
         ['Aprire un appartamento per la riconsegna o una visita', 'Custode, su incarico dell’amministrazione', 'Proprietà: l’associazione degli inquilini non conta questi lavori tra le spese accessorie'],
         ['Riparazione che richiede un professionista, ad esempio sturare la condotta principale', 'Impresa specializzata, incaricata dall’amministrazione', 'Proprietà, che deve mantenere la cosa locata in stato idoneo all’uso (art. 256 CO)'],
       ],
       note:
-        'La legge non dice dove finisce la piccola manutenzione. Una regola pratica diffusa indica circa CHF 150 per caso; oggi i tribunali guardano soprattutto se serve un professionista. L’associazione degli inquilini consiglia agli inquilini di chiedere il dettaglio delle attività del custode e delle ore impiegate. Un capitolato che separa esercizio e riparazioni rende verificabile il Suo conteggio. Questa nota non sostituisce una consulenza legale.',
+        'La legge non dice dove finisce la piccola manutenzione. Come limite di spesa diffuso, l’HEV Schweiz indica da CHF 150 a 250 per caso, l’associazione degli inquilini CHF 150 per il materiale. Secondo l’associazione degli inquilini, i tribunali guardano sempre più se il lavoro richiede conoscenze specialistiche. Essa consiglia inoltre agli inquilini di chiedere il dettaglio delle attività del custode e delle ore impiegate. Un capitolato che separa esercizio e riparazioni rende verificabile il Suo conteggio. Questa nota non sostituisce una consulenza legale.',
       sources: [
         { label: 'Art. 256, 257a, 257b e 259 CO', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/it#art_256' },
         { label: 'Associazione degli inquilini (Mieterverband): piccola manutenzione (in tedesco)', href: 'https://www.mieterverband.ch/mietrecht/waehrend-der-miete/kleiner-unterhalt/' },
@@ -185,7 +190,7 @@ export const hauswartung: ServicePageContent = {
     },
     {
       title: 'Inizio nello stabile',
-      text: 'Alla data d’inizio il custode riceve le chiavi e gli accessi previsti dal capitolato. Un avviso all’ingresso indica agli inquilini a chi rivolgersi d’ora in poi.',
+      text: 'Alla data d’inizio il custode riceve le chiavi e gli accessi previsti dal capitolato. Comunichi agli inquilini a chi rivolgersi d’ora in poi, ad esempio con un avviso all’ingresso.',
       figure: 'start',
     },
     {
@@ -208,12 +213,12 @@ export const hauswartung: ServicePageContent = {
     {
       question: 'Da che cosa dipende il costo della custodia?',
       answer:
-        'Soprattutto dal numero di appartamenti e vani scale, dalla frequenza di giri di controllo e pulizia, dalla superficie delle aree esterne, dal numero di cambi d’inquilino all’anno e da chi fornisce il materiale. Calcoliamo l’importo dopo aver visto lo stabile. Per il conteggio delle spese accessorie conviene esporre pulizia e controlli separatamente da consegne degli appartamenti e riparazioni.',
+        'Soprattutto dal numero di appartamenti e vani scale, dalla frequenza di giri di controllo e pulizia, dalla superficie delle aree esterne, dal numero di cambi d’inquilino all’anno e da chi fornisce il materiale. Calcoliamo l’importo dopo aver visto lo stabile. Per il conteggio delle spese accessorie conviene esporre pulizia e piccoli interventi di manutenzione separatamente da giri di controllo, consegne degli appartamenti e riparazioni. Il perché lo spiega la tabella più in alto.',
     },
     {
       question: 'Per il vano scale non basta una pulizia di manutenzione?',
       answer:
-        'Se serve solo pulire, sì: allora è adatta la [pulizia di manutenzione](/leistungen/unterhaltsreinigung). La custodia serve non appena qualcuno deve notare i difetti, sistemare le piccole cose e trasmettere i guasti.',
+        'Se serve solo pulire, sì: allora è adatta la [pulizia di manutenzione](/leistungen/unterhaltsreinigung). La custodia serve non appena qualcuno deve anche notare i difetti, sistemare le piccole cose e trasmettere i guasti.',
     },
     {
       question: 'Con quale frequenza dovrebbe passare il custode?',
@@ -223,17 +228,17 @@ export const hauswartung: ServicePageContent = {
     {
       question: 'Che cosa devono sistemare gli inquilini da sé?',
       answer:
-        'I piccoli lavori di pulitura o di riparazione nel proprio appartamento che si possono fare senza un professionista, come sostituire una lampadina o sturare il sifone del lavabo (art. 259 CO). Ciò che richiede un professionista spetta al locatore. La tabella più in alto mostra il ruolo del custode.',
+        'I difetti nel proprio appartamento che si possono eliminare senza un professionista con piccoli lavori di pulitura o di riparazione, secondo gli usi locali (art. 259 CO). L’HEV Schweiz e l’associazione degli inquilini vi includono anche la sostituzione di piccole parti come teglie o flessibili della doccia, anche se hanno raggiunto la fine della loro durata di vita. Va fatto al più tardi alla riconsegna dell’appartamento. La tabella più in alto mostra il ruolo del custode.',
     },
     {
       question: 'Come documentare i giri di controllo?',
       answer:
-        'In modo da poter mostrare in seguito che cosa è stato controllato e segnalato, e quando: data, rilievo con luogo, segnalato a chi, risolto il. L’UPI raccomanda ai proprietari di documentare le ispezioni. La lista più in alto contiene questi campi, pronta da stampare.',
+        'In modo da poter mostrare in seguito che cosa è stato controllato, segnalato e risolto, e quando. La lista più in alto ha campi da compilare a questo scopo. Una foto del rilievo mostra in seguito com’era prima, e la fattura della riparazione che il difetto è stato eliminato.',
     },
     {
       question: 'Chi decide sulla custodia nella proprietà per piani?',
       answer:
-        'L’assemblea dei comproprietari decide in tutti gli affari amministrativi che non competono all’amministratore e approva ogni anno preventivo e resoconto (art. 712m CC). L’amministratore esegue le decisioni (art. 712s CC). I comproprietari sostengono le spese proporzionalmente al valore delle loro quote (art. 712h CC). Quale maggioranza serve per assegnare l’incarico lo indica il Suo regolamento.',
+        'L’assemblea dei comproprietari decide in tutti gli affari amministrativi che non competono all’amministratore (art. 712m CC); l’amministratore esegue le decisioni (art. 712s CC). Per la competenza e le maggioranze necessarie, l’art. 712g CC rinvia alle norme sulla comproprietà (art. 647a e 647b CC). Un ordinamento diverso vale solo se è stabilito nell’atto costitutivo o deciso all’unanimità. Chiarisca caso per caso che cosa vale per la Sua comunione. I comproprietari sostengono le spese di regola proporzionalmente al valore delle loro quote (art. 712h CC).',
     },
   ],
   related: [

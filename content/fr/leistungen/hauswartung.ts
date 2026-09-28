@@ -1,7 +1,8 @@
 import type { ServicePageContent } from '../../types'
 
 // Mêmes clés que content/de/leistungen/hauswartung.ts (E85). Termes juridiques repris de la version
-// française du CO et du CC sur fedlex, du BPA et de la directive AEAI 16-15fr, lus le 28.09.2026.
+// française du CO et du CC sur fedlex (CO art. 58, 256, 257a, 257b, 259 ; CC art. 647a, 647b, 712g,
+// 712h, 712m, 712s), du BPA et de la directive AEAI 16-15fr, lus le 28.09.2026.
 // Les sources disponibles seulement en allemand sont signalées dans le libellé.
 export const hauswartung: ServicePageContent = {
   path: '/leistungen/hauswartung',
@@ -9,8 +10,8 @@ export const hauswartung: ServicePageContent = {
   eyebrow: 'Suivi d’immeubles',
   h1: 'Conciergerie d’immeubles d’habitation et de bureaux',
   lead: [
-    'Nous assurons la conciergerie selon un cahier des charges écrit : quelles tâches, à quelle fréquence, jusqu’à quel montant sans demander et qui reçoit nos signalements.',
-    'Ainsi, la gérance, les propriétaires et les locataires savent à quoi s’attendre, et personne ne doit deviner qui s’occupe de la tache d’humidité à la cave. Le cahier des charges et la liste de contrôle de la ronde se trouvent plus bas, prêts à imprimer. Le cahier des charges permet aussi de comparer plusieurs devis ligne par ligne.',
+    'Nous assurons la conciergerie selon un cahier des charges écrit : quelles tâches, à quelle fréquence, jusqu’à quel montant sans accord préalable et qui reçoit nos signalements.',
+    'Ainsi, la gérance, les propriétaires et les locataires savent à quoi s’attendre, et personne n’a à deviner qui s’occupe de la tache d’humidité à la cave. Le cahier des charges et la liste de contrôle de la ronde se trouvent plus bas, prêts à imprimer. Le cahier des charges permet aussi de comparer plusieurs devis ligne par ligne.',
   ],
   facts: [
     { label: 'Biens', value: 'Immeubles locatifs, PPE, immeubles d’habitation et commerciaux' },
@@ -20,14 +21,14 @@ export const hauswartung: ServicePageContent = {
   ],
   scope: {
     title: 'Ce que la conciergerie prend en charge',
-    intro: 'Le cahier des charges de votre immeuble se compose à partir de ces tâches. Vous choisissez ce que vous confiez, aussi à l’unité.',
+    intro: 'Le cahier des charges de votre immeuble se compose à partir de ces tâches. Vous choisissez ce que vous confiez, même tâche par tâche.',
     items: [
       'Rondes de contrôle à la fréquence convenue : vérifier que tout est en ordre et signaler les défauts',
       'Nettoyer la cage d’escalier et l’entrée et les maintenir en ordre',
       'Maintenir propres la buanderie et les séchoirs',
       'Petites réparations, par exemple remplacer des ampoules',
       'Surveiller la technique du bâtiment et signaler les pannes',
-      'Participer aux états des lieux',
+      'Participer aux remises d’appartements',
       'Organiser l’élimination des déchets et des matériaux recyclables',
       'Entretien des abords, voir [Entretien des extérieurs et des espaces verts](/leistungen/aussen-und-gruenflaechenpflege)',
     ],
@@ -47,22 +48,22 @@ export const hauswartung: ServicePageContent = {
       ],
     },
     {
-      title: 'Ronde de contrôle : voir, réparer, signaler',
+      title: 'Ce qui se passe lors de la ronde de contrôle',
       paragraphs: [
         'Lors de la ronde, la conciergerie parcourt les parties communes, de l’entrée à l’emplacement des déchets en passant par la cave et la buanderie. Les petites choses, comme une ampoule grillée, elle les règle elle-même. Tout le reste est transmis à l’interlocuteur inscrit dans le cahier des charges.',
-        'Pour les propriétaires, il y a aussi un aspect juridique : le propriétaire d’un bâtiment répond du dommage causé par le défaut d’entretien (art. 58 CO). Des rondes régulières aident à remarquer un nez de marche décollé ou un escalier de cave mal éclairé avant que quelqu’un ne tombe.',
+        'Des rondes régulières aident à remarquer un nez de marche décollé ou un escalier de cave mal éclairé avant que quelqu’un ne tombe. La liste de contrôle plus bas indique les points à vérifier et pourquoi c’est aussi une question de responsabilité pour les propriétaires.',
       ],
     },
     {
       title: 'Technique du bâtiment : observer, pas entretenir',
       paragraphs: [
-        'Le chauffage, la ventilation, l’ascenseur et la protection incendie sont entretenus par des entreprises spécialisées. La conciergerie les observe à chaque ronde et signale ce qui attire l’attention : un message d’erreur sur l’écran du chauffage, un robinet qui goutte à la buanderie, un ascenseur qui ne s’arrête pas à niveau. La gérance peut ainsi faire venir l’entreprise tant que la panne reste petite.',
+        'À chaque ronde, la conciergerie observe le chauffage, la ventilation, l’ascenseur et la protection incendie et signale ce qui attire l’attention : un message d’erreur sur l’écran du chauffage, un robinet qui goutte à la buanderie, un ascenseur qui ne s’arrête pas à niveau. La gérance peut ainsi faire venir l’entreprise spécialisée tant que la panne reste petite.',
       ],
     },
     {
-      title: 'États des lieux',
+      title: 'Remises d’appartements',
       paragraphs: [
-        'Lors d’un changement de locataire, la conciergerie peut ouvrir l’appartement, remettre les clés et relever les compteurs. L’état des lieux et le procès-verbal restent du ressort de la gérance. Comme l’association des locataires (Mieterverband) ne compte pas ces interventions dans les frais accessoires, il vaut la peine de les saisir séparément du nettoyage et des rondes.',
+        'Lors d’un changement de locataire, la conciergerie peut ouvrir l’appartement, remettre les clés et relever les compteurs. L’état des lieux et le procès-verbal restent du ressort de la gérance. Saisissez ces interventions séparément du nettoyage ; le tableau sur les menus travaux et les frais accessoires, plus haut, explique pourquoi.',
         'Si l’appartement a besoin d’un nettoyage final avant la remise, le [nettoyage de fin de bail avec garantie de remise](/leistungen/umzugsreinigung) s’en charge.',
       ],
     },
@@ -71,26 +72,28 @@ export const hauswartung: ServicePageContent = {
     {
       kind: 'table',
       id: 'pflichtenheft',
-      title: 'Cahier des charges de la conciergerie à remplir',
+      title: 'Modèle de cahier des charges de conciergerie',
       intro:
-        'Inscrivez pour chaque zone la fréquence et le responsable. Un arrangement oral devient ainsi un mandat que la gérance, les propriétaires et la conciergerie comprennent de la même façon.',
+        'Inscrivez pour chaque zone la fréquence et le responsable. Un arrangement oral devient ainsi un mandat que toutes les parties comprennent de la même façon.',
       columns: ['Zone', 'Tâches', 'Fréquence', 'Responsable ou signalement à'],
       rows: [
-        ['Ronde de contrôle', 'Contrôler l’éclairage, les portes, les boîtes aux lettres, la buanderie, la cave, la chaufferie et l’emplacement des déchets pour les défauts visibles, noter les constats', '__________', '__________'],
-        ['Cage d’escalier, entrée et buanderie', 'Nettoyer sols, rampes et mains courantes, maintenir propres buanderie et séchoirs ; signaler les objets laissés sur la voie d’évacuation et les pannes des machines', '__________', '__________'],
-        ['Petites réparations', 'Par exemple remplacer des ampoules, huiler les serrures ; sans demander jusqu’à CHF ______ par cas', 'selon les besoins', '__________'],
-        ['Technique du bâtiment', 'Observer chauffage, ventilation, ascenseur et équipements de protection incendie ; l’entretien revient à l’entreprise spécialisée', 'à chaque ronde', '__________'],
-        ['Déchets', 'Organiser déchets et matériaux recyclables, tenir propre le point de collecte', '__________', '__________'],
-        ['Abords', 'Pelouses, haies, massifs, chemins et places', 'selon le plan d’entretien', '__________'],
-        ['États des lieux', 'Ouvrir l’appartement, remettre les clés, relever les compteurs ; la gérance fait l’état des lieux et le procès-verbal', 'selon les besoins', 'Gérance'],
-        ['Clés et matériel', 'Quelles clés, badges et codes, où ils sont conservés, qui signe la remise ; qui fournit produits de nettoyage, ampoules et appareils et où ils sont entreposés', 'à fixer une fois', '__________'],
+        ['Immeuble', 'Adresse, appartements, cages d’escalier : ____________________', 'Début le __________', 'Interlocuteur ______________'],
+        ['Ronde de contrôle', 'Contrôler l’éclairage, les portes, les boîtes aux lettres, la buanderie, la cave, la chaufferie et l’emplacement des déchets pour les défauts visibles, noter les constats', '__________', '______________'],
+        ['Cage d’escalier, entrée et buanderie', 'Nettoyer sols, rampes et mains courantes, maintenir propres buanderie et séchoirs ; signaler les objets laissés sur la voie d’évacuation et les pannes des machines', '__________', '______________'],
+        ['Petites réparations', 'Par exemple remplacer des ampoules, huiler les serrures ; sans accord préalable jusqu’à CHF ______ par cas', 'selon les besoins', '______________'],
+        ['Technique du bâtiment', 'Observer chauffage, ventilation, ascenseur et équipements de protection incendie ; l’entretien revient à l’entreprise spécialisée', 'à chaque ronde', '______________'],
+        ['Déchets', 'Organiser déchets et matériaux recyclables, tenir propre le point de collecte', '__________', '______________'],
+        ['Abords', 'Pelouses, haies, massifs, chemins et places', 'selon le plan d’entretien', '______________'],
+        ['Remises d’appartements', 'Ouvrir l’appartement, remettre les clés, relever les compteurs ; la gérance fait l’état des lieux et le procès-verbal', 'selon les besoins', 'Gérance'],
+        ['Clés et matériel', 'Quelles clés, badges et codes, où ils sont conservés, qui signe la remise ; qui fournit le matériel et les appareils et où ils sont entreposés', 'à fixer une fois', '______________'],
         ['Entreprises spécialisées', 'Chauffage, ascenseur, protection incendie et réparations importantes : qui mandate, qui paie', 'à fixer une fois', 'Gérance'],
-        ['Locataires', 'À qui s’adressent les locataires, affichage à l’entrée', 'à fixer une fois', '__________'],
-        ['Expressément non compris', 'Par exemple service hivernal, service de piquet et d’urgence', 'sans objet', 'sans objet'],
+        ['Locataires', 'À qui s’adressent les locataires et comment ils l’apprennent, par exemple par un avis à l’entrée', 'à fixer une fois', '______________'],
+        ['Expressément non compris', '____________________', 'sans objet', 'sans objet'],
       ],
       note:
         'Chez nous, cette liste devient le cahier des charges de votre immeuble après le tour des lieux. En PPE, l’assemblée des copropriétaires approuve chaque année le budget, les comptes et la répartition des frais (art. 712m CC). Un cahier des charges lui montre ce qu’elle paie.',
       sources: [
+        { label: 'Art. 712g CC, compétence pour les actes d’administration en PPE', href: 'https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_712_g' },
         { label: 'Art. 712m CC, attributions de l’assemblée des copropriétaires', href: 'https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_712_m' },
       ],
       printable: true,
@@ -99,9 +102,9 @@ export const hauswartung: ServicePageContent = {
     {
       kind: 'checklist',
       id: 'kontrollgang',
-      title: 'Ronde de contrôle : liste à cocher',
+      title: 'Liste de contrôle pour la ronde',
       intro:
-        'Le propriétaire d’un bâtiment répond du dommage causé par le défaut d’entretien (art. 58 CO). Le BPA recommande donc aux propriétaires de contrôler régulièrement leurs ouvrages, de documenter ces contrôles et d’effectuer les travaux d’entretien nécessaires. Cette liste couvre les parties communes d’un immeuble locatif.',
+        'Le propriétaire d’un bâtiment répond du dommage causé par le défaut d’entretien (art. 58 CO). Le BPA recommande donc aux propriétaires de contrôler régulièrement leurs ouvrages, de documenter ces contrôles et d’effectuer les travaux d’entretien nécessaires.',
       groups: [
         {
           title: 'Entrée et cage d’escalier',
@@ -119,7 +122,8 @@ export const hauswartung: ServicePageContent = {
             'Lave-linge et séchoirs sans message d’erreur, écoulements libres',
             'Pas de taches d’eau, d’humidité ni de robinets qui gouttent',
             'Chauffage sans message de panne, chaufferie rangée et fermée à clé',
-            'L’ascenseur s’arrête à niveau, extincteurs en place et plombés',
+            'L’ascenseur s’arrête à niveau, s’il y en a un',
+            'Extincteurs en place et plombés, s’il y en a',
           ],
         },
         {
@@ -134,10 +138,10 @@ export const hauswartung: ServicePageContent = {
         {
           title: 'Consigner',
           items: [
-            'Date et nom',
-            'Constat avec lieu, avec photo si utile',
-            'Signalé à qui et quand',
-            'Réglé le, par qui',
+            'Date et nom : ____________________',
+            'Constat et lieu : ____________________',
+            'Signalé à, le : ____________________',
+            'Réglé le, par : ____________________',
           ],
         },
       ],
@@ -162,11 +166,12 @@ export const hauswartung: ServicePageContent = {
         ['Remplacer une ampoule dans son propre appartement, déboucher le siphon du lavabo', 'Locataire', 'Locataire, au titre des menus travaux d’entretien selon l’usage local (art. 259 CO)'],
         ['Nettoyer cage d’escalier, buanderie et abords', 'Conciergerie', 'Par les frais accessoires si le bail mentionne la conciergerie comme poste, sinon compris dans le loyer'],
         ['Remplacer les ampoules de la cage d’escalier et de la cave, huiler les serrures', 'Conciergerie', 'Comme le nettoyage, tant qu’aucune connaissance spécialisée n’est nécessaire'],
-        ['Ouvrir un appartement pour un état des lieux ou une visite', 'Conciergerie, sur mandat de la gérance', 'Propriétaire : l’association des locataires ne compte pas ces travaux dans les frais accessoires'],
+        ['Ronde de contrôle des défauts, signalement des pannes à la gérance', 'Conciergerie', 'Propriétaire : l’association des locataires ne compte ni les rondes de contrôle pour réparations ni les signalements à la gérance dans les frais accessoires'],
+        ['Ouvrir un appartement pour une remise ou une visite', 'Conciergerie, sur mandat de la gérance', 'Propriétaire : l’association des locataires ne compte pas ces travaux dans les frais accessoires'],
         ['Réparation qui demande un professionnel, par exemple déboucher la conduite principale', 'Entreprise spécialisée, mandatée par la gérance', 'Propriétaire, qui doit entretenir la chose louée dans un état approprié à l’usage (art. 256 CO)'],
       ],
       note:
-        'La loi ne dit pas où s’arrêtent les menus travaux. Une règle empirique répandue fixe environ CHF 150 par cas ; les tribunaux se demandent aujourd’hui surtout s’il faut un professionnel. L’association des locataires conseille aux locataires de demander le détail des activités de la conciergerie et des heures consacrées. Un cahier des charges qui sépare exploitation et réparations rend votre décompte vérifiable. Cette remarque ne remplace pas un conseil juridique.',
+        'La loi ne dit pas où s’arrêtent les menus travaux. Comme plafond répandu, le HEV Schweiz cite CHF 150 à 250 par cas, l’association des locataires CHF 150 pour le matériel. Selon l’association des locataires, les tribunaux se demandent de plus en plus si le travail exige des connaissances spécialisées. Elle conseille aussi aux locataires de demander le détail des activités de la conciergerie et des heures consacrées. Un cahier des charges qui sépare exploitation et réparations rend votre décompte vérifiable. Cette remarque ne remplace pas un conseil juridique.',
       sources: [
         { label: 'Art. 256, 257a, 257b et 259 CO', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_256' },
         { label: 'Association des locataires (Mieterverband) : menus travaux d’entretien (en allemand)', href: 'https://www.mieterverband.ch/mietrecht/waehrend-der-miete/kleiner-unterhalt/' },
@@ -185,7 +190,7 @@ export const hauswartung: ServicePageContent = {
     },
     {
       title: 'Démarrage dans l’immeuble',
-      text: 'À la date de début, la conciergerie reçoit les clés et accès prévus dans le cahier des charges. Un avis à l’entrée indique aux locataires à qui s’adresser désormais.',
+      text: 'À la date de début, la conciergerie reçoit les clés et accès prévus dans le cahier des charges. Indiquez aux locataires à qui s’adresser désormais, par exemple par un avis à l’entrée.',
       figure: 'start',
     },
     {
@@ -203,17 +208,17 @@ export const hauswartung: ServicePageContent = {
     {
       question: 'Que comprend la conciergerie d’immeubles ?',
       answer:
-        'Pour l’essentiel, trois choses : tenir propres les parties communes, contrôler régulièrement et régler les petites choses, signaler les pannes au bon endroit. Selon l’immeuble s’y ajoutent les déchets, les abords et les états des lieux. Ce que vous confiez figure dans le cahier des charges.',
+        'Pour l’essentiel, trois choses : tenir propres les parties communes, contrôler régulièrement et régler les petites choses, signaler les pannes au bon endroit. Selon l’immeuble s’y ajoutent les déchets, les abords et les remises d’appartements. Ce que vous confiez figure dans le cahier des charges.',
     },
     {
       question: 'De quoi dépend le coût d’une conciergerie ?',
       answer:
-        'Surtout du nombre d’appartements et de cages d’escalier, de la fréquence des rondes et du nettoyage, de la surface des abords, du nombre de changements de locataires par an et de qui fournit le matériel. Nous calculons le montant après avoir vu l’immeuble. Pour le décompte des frais accessoires, il vaut la peine de présenter le nettoyage et les contrôles séparément des états des lieux et des réparations.',
+        'Surtout du nombre d’appartements et de cages d’escalier, de la fréquence des rondes et du nettoyage, de la surface des abords, du nombre de changements de locataires par an et de qui fournit le matériel. Nous calculons le montant après avoir vu l’immeuble. Pour le décompte des frais accessoires, mieux vaut présenter le nettoyage et les menus entretiens séparément des rondes de contrôle, des remises d’appartements et des réparations. Le tableau plus haut explique pourquoi.',
     },
     {
       question: 'Un nettoyage d’entretien ne suffit-il pas pour la cage d’escalier ?',
       answer:
-        'S’il s’agit seulement de nettoyer, oui : le [nettoyage d’entretien](/leistungen/unterhaltsreinigung) convient alors. La conciergerie devient nécessaire dès que quelqu’un doit repérer les défauts, régler les petites choses et transmettre les pannes.',
+        'S’il s’agit seulement de nettoyer, oui : le [nettoyage d’entretien](/leistungen/unterhaltsreinigung) convient alors. Une entreprise de conciergerie devient nécessaire dès que quelqu’un doit aussi repérer les défauts, régler les petites choses et transmettre les pannes.',
     },
     {
       question: 'À quelle fréquence la conciergerie devrait-elle passer ?',
@@ -223,17 +228,17 @@ export const hauswartung: ServicePageContent = {
     {
       question: 'Que doivent réparer les locataires eux-mêmes ?',
       answer:
-        'Les menus travaux de nettoyage ou de réparation dans leur propre appartement, faisables sans professionnel, comme remplacer une ampoule ou déboucher le siphon du lavabo (art. 259 CO). Ce qui demande un professionnel incombe au bailleur. Le tableau plus haut montre la place de la conciergerie.',
+        'Les défauts de leur propre appartement qui peuvent être éliminés sans professionnel par de menus travaux de nettoyage ou de réparation, selon l’usage local (art. 259 CO). Le HEV Schweiz et l’association des locataires y comptent aussi le remplacement de petites pièces comme les plaques à gâteau ou les flexibles de douche, même en fin de durée de vie. Cela doit être fait au plus tard à la restitution de l’appartement. Le tableau plus haut montre la place de la conciergerie.',
     },
     {
       question: 'Comment documenter les rondes de contrôle ?',
       answer:
-        'De façon à pouvoir montrer plus tard ce qui a été contrôlé et signalé, et quand : date, constat avec lieu, signalé à qui, réglé le. Le BPA recommande aux propriétaires de documenter leurs contrôles. La liste plus haut contient ces champs, prête à imprimer.',
+        'De façon à pouvoir montrer plus tard ce qui a été contrôlé, signalé et réglé, et quand. La liste plus haut contient des champs à remplir à cet effet. Une photo du constat montre plus tard l’état d’avant, et la facture de la réparation que le défaut a été éliminé.',
     },
     {
       question: 'Qui décide de la conciergerie dans une PPE ?',
       answer:
-        'L’assemblée des copropriétaires règle les affaires administratives qui ne sont pas de la compétence de l’administrateur et approuve chaque année le budget et les comptes (art. 712m CC). L’administrateur exécute ses décisions (art. 712s CC). Les copropriétaires supportent les frais proportionnellement à la valeur de leurs parts (art. 712h CC). La majorité nécessaire pour attribuer le mandat figure dans votre règlement.',
+        'L’assemblée des copropriétaires règle les affaires administratives qui ne sont pas de la compétence de l’administrateur (art. 712m CC) ; l’administrateur exécute ses décisions (art. 712s CC). Pour la compétence et les majorités nécessaires, l’art. 712g CC renvoie aux règles de la copropriété (art. 647a et 647b CC). Des dispositions différentes ne valent que si elles figurent dans l’acte constitutif ou ont été adoptées à l’unanimité. Clarifiez au cas par cas ce qui vaut pour votre communauté. Les copropriétaires supportent en principe les frais proportionnellement à la valeur de leurs parts (art. 712h CC).',
     },
   ],
   related: [
