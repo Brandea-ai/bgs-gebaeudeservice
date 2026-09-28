@@ -15,11 +15,11 @@ export const bueroreinigung: ServicePageContent = {
   eyebrow: 'Laufende Reinigung',
   h1: 'Büroreinigung und Praxisreinigung',
   lead: [
-    'Ein Büro soll jeden Morgen bereit sein: Papierkörbe leer, Teeküche sauber, Seife und Papier aufgefüllt. Wir reinigen Büros, Verwaltungen und Praxen im festen Rhythmus, bevor Ihr Team kommt oder nachdem es gegangen ist.',
+    'Ein Büro soll jeden Morgen bereit sein: Papierkörbe leer, Teeküche sauber, Seife und Papier aufgefüllt. Wir reinigen Büros, Verwaltungen und Praxen im festen Rhythmus, in der Regel bevor Ihr Team kommt oder nachdem es gegangen ist.',
     'Was bei jedem Einsatz gereinigt wird und was nur wöchentlich, steht im Leistungsverzeichnis. Welche Räume das Team betreten darf, regeln Sie vor dem Start. Für beides finden Sie auf dieser Seite Vorlagen zum Ausdrucken, dazu die Zeitfenster, die das Arbeitsgesetz für Reinigungseinsätze vorgibt.',
   ],
   facts: [
-    { label: 'Einsatzzeiten', value: 'Früh am Morgen oder am Abend, ausserhalb Ihrer Arbeits- und Sprechzeiten' },
+    { label: 'Einsatzzeiten', value: 'Meist früh am Morgen oder am Abend, passend zu Ihren Arbeits- und Sprechzeiten' },
     { label: 'Rhythmus', value: 'Täglich, mehrmals pro Woche oder wöchentlich' },
     { label: 'Sprachen im Team', value: listDe(company.languages) },
     { label: 'Nicht enthalten', value: 'Fenster, Treppenhaus der Liegenschaft, Instrumente in Praxen' },
@@ -39,7 +39,7 @@ export const bueroreinigung: ServicePageContent = {
     ],
     notIncluded: [
       'Treppenhaus, Lift und Eingang der ganzen Liegenschaft: siehe [Unterhaltsreinigung](/leistungen/unterhaltsreinigung).',
-      'Grundreinigung von Teppichen und Böden, etwa vor dem Einzug: siehe [Grund- und Sonderreinigung](/leistungen/sonderreinigungen).',
+      'Grundreinigung der Böden und Sanitärräume, etwa vor dem Einzug: siehe [Grund- und Sonderreinigung](/leistungen/sonderreinigungen).',
       'Fenster innen und aussen: siehe [Fenster- und Fassadenreinigung](/leistungen/fenster-und-fassadenreinigung).',
       'Aufbereitung von Instrumenten und Medizinprodukten, sie bleibt bei Ihrem Praxisteam.',
     ],
@@ -48,8 +48,8 @@ export const bueroreinigung: ServicePageContent = {
     {
       title: 'Ein Einsatz von oben nach unten',
       paragraphs: [
-        'Zuerst kommt der Abfall: Papierkörbe leeren, Altpapier zur Sammelstelle bringen, neue Säcke einsetzen. Dann werden freie Tischflächen, Ablagen und Türgriffe abgewischt, danach Teeküche und Sanitärräume. Die Böden kommen zum Schluss, damit kein frisch gereinigter Boden wieder Staub oder Tropfen abbekommt.',
-        'Für WC und Lavabo gehören eigene Tücher und Handschuhe, die nie an einen Schreibtisch oder an die Kaffeemaschine kommen. Viele Reinigungsbetriebe trennen sie deshalb mit Farben. Darauf können Sie bei den ersten Einsätzen selbst achten.',
+        'Zuerst kommt der Abfall: Papierkörbe leeren, Altpapier zur Sammelstelle bringen, neue Säcke einsetzen. Danach sind Theke und Türgriffe an der Reihe, an den vereinbarten Tagen auch die freien Tischflächen, dann Teeküche und Sanitärräume. Die Böden kommen zum Schluss, damit kein frisch gereinigter Boden wieder Staub oder Tropfen abbekommt.',
+        'Für WC und Lavabo braucht es eigene Tücher und Handschuhe, die nie an einen Schreibtisch oder an die Kaffeemaschine kommen. Eine Farbe je Bereich macht die Trennung sichtbar.',
       ],
     },
     {
@@ -103,7 +103,7 @@ export const bueroreinigung: ServicePageContent = {
       entries: [
         {
           label: '6 bis 8 Uhr',
-          text: 'Tagesarbeit. Teeküche und WC sind frisch, wenn die Ersten kommen. Beginnt Ihr Team um halb acht, ist das Fenster für grosse Flächen knapp.',
+          text: 'Tagesarbeit. Teeküche und WC sind sauber, wenn die Ersten kommen. Beginnt Ihr Team um halb acht, ist das Fenster für grosse Flächen knapp.',
         },
         {
           label: 'Während der Arbeitszeit',
@@ -126,7 +126,7 @@ export const bueroreinigung: ServicePageContent = {
           text: 'Verboten von Samstag 23 Uhr bis Sonntag 23 Uhr, ebenso am Bundesfeiertag und an kantonalen Feiertagen, die dem Sonntag gleichgestellt sind. Ausnahmen gelten wie in der Nacht, vorübergehende Sonntagsarbeit kostet 50 Prozent Lohnzuschlag. Der Samstag tagsüber ist gewöhnliche Tagesarbeit.',
         },
       ],
-      note: 'Mit Zustimmung seiner Mitarbeitenden kann ein Betrieb das Fenster verschieben, frühestens ab 5 Uhr und spätestens bis 24 Uhr (Art. 10 ArG). Für ein gewöhnliches Büro heisst das: Planen Sie die Reinigung von Montag bis Samstag zwischen 6 und 23 Uhr und nicht an Feiertagen, dann braucht es keine Bewilligung.',
+      note: 'Mit Zustimmung der Arbeitnehmervertretung oder, wo es keine gibt, der Mehrheit seiner betroffenen Mitarbeitenden kann der Reinigungsbetrieb Beginn und Ende seiner Tages- und Abendarbeit zwischen 5 und 24 Uhr anders festlegen. Auch dann umfasst sie höchstens 17 Stunden (Art. 10 Abs. 2 ArG). Für ein gewöhnliches Büro heisst das: Planen Sie die Reinigung von Montag bis Samstag zwischen 6 und 23 Uhr und nicht an Feiertagen, dann braucht es keine Bewilligung.',
       sources: [
         { label: 'Arbeitsgesetz (ArG), Art. 10 und 16 bis 20a', href: 'https://www.fedlex.admin.ch/eli/cc/1966/57_57_57/de#art_10' },
         { label: 'Verordnung 2 zum Arbeitsgesetz (ArGV 2), Art. 51 Reinigungsbetriebe', href: 'https://www.fedlex.admin.ch/eli/cc/2000/244/de#art_51' },
@@ -192,12 +192,13 @@ export const bueroreinigung: ServicePageContent = {
         'Ein tiefer Stundensatz sagt wenig, wenn weniger Stunden gerechnet sind. Legen Sie die Offerten nebeneinander und gehen Sie bei jeder dieselben Punkte durch. Die allgemeinen Kostenfaktoren erklärt der Ratgeber [Was kostet eine Unterhaltsreinigung?](/blog/reinigungskosten-schweiz).',
       groups: [
         {
-          title: 'Umfang',
+          title: 'Umfang und Arbeitsweise',
           items: [
             'Liegt ein Leistungsverzeichnis bei, das jeden Raum und jede Häufigkeit nennt?',
             'Sind Teeküchen und Sanitärräume bei jedem Einsatz dabei oder nur wöchentlich?',
             'Wie viele Stunden pro Einsatz und wie viele Einsätze pro Monat sind gerechnet?',
             'Welche Zeitfenster sind vorgesehen, und liegen sie zwischen 6 und 23 Uhr?',
+            'Sind Tücher für WC und Arbeitsflächen getrennt, zum Beispiel nach Farben?',
           ],
         },
         {
@@ -205,7 +206,7 @@ export const bueroreinigung: ServicePageContent = {
           items: [
             'Welcher Betrag ergibt sich pro Monat, mit oder ohne Mehrwertsteuer?',
             'Ist das Verbrauchsmaterial enthalten, und wer bestellt es nach?',
-            'Sind Zuschläge für Einsätze in der Nacht, am Sonntag oder an Feiertagen ausgewiesen?',
+            'Sind Zuschläge für Nacht-, Sonntags- und Feiertagseinsätze ausgewiesen?',
             'Wer vertritt das Team bei Ferien oder Krankheit?',
             'Wie lange läuft der Vertrag, und mit welcher Frist ist er kündbar?',
           ],
@@ -216,21 +217,20 @@ export const bueroreinigung: ServicePageContent = {
       updated: '2026-09-28',
     },
   ],
+  // Ablauf ohne figure (Prüfung B6): Grundriss und Briefumschlag doppelten die Vorlagenzeile
+  // «Anfrage, Besichtigung», die Schritte stehen deshalb ruhig nebeneinander.
   steps: [
     {
       title: 'Räume und Zutritt festlegen',
-      text: 'Vor dem ersten Einsatz gehen Sie mit uns die Räume durch: was das Team reinigt, was nur in Ihrer Anwesenheit, wer Schlüssel oder Badge erhält und wie die Alarmanlage bedient wird.',
-      figure: 'besichtigung',
+      text: 'Vor dem ersten Einsatz legen Sie mit uns fest, was das Team reinigt, was nur in Ihrer Anwesenheit, wer Schlüssel oder Badge erhält und wie die Alarmanlage bedient wird.',
     },
     {
       title: 'Fester Einsatzplan',
       text: 'Tage und Zeitfenster stehen fest, zum Beispiel Montag, Mittwoch und Freitag ab 18 Uhr. Was bei jedem Einsatz drankommt und was wöchentlich, regelt das Leistungsverzeichnis.',
-      figure: 'start',
     },
     {
       title: 'Änderungen melden',
       text: 'Ziehen Sie um, wächst das Team oder ändern sich die Sprechzeiten, passen wir Umfang und Rhythmus an. Melden Sie es per Telefon oder E-Mail.',
-      figure: 'anfrage',
     },
   ],
   faq: [

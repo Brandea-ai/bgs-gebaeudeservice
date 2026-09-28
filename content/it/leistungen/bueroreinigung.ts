@@ -7,11 +7,11 @@ export const bueroreinigung: ServicePageContent = {
   eyebrow: 'Pulizia regolare',
   h1: 'Pulizia di uffici e studi medici',
   lead: [
-    'Un ufficio deve essere pronto ogni mattina: cestini vuoti, angolo cucina pulito, sapone e carta riforniti. Puliamo uffici, amministrazioni e studi con una cadenza fissa, prima che arrivi il Suo team o dopo che è uscito.',
+    'Un ufficio deve essere pronto ogni mattina: cestini vuoti, angolo cucina pulito, sapone e carta riforniti. Puliamo uffici, amministrazioni e studi con una cadenza fissa, di solito prima che arrivi il Suo team o dopo che è uscito.',
     'Che cosa si pulisce a ogni intervento e che cosa solo una volta alla settimana è fissato in un elenco delle prestazioni. In quali locali può entrare il team lo decide Lei prima dell’inizio. Su questa pagina trova modelli da stampare per entrambe le cose, insieme alle fasce orarie che la legge sul lavoro prevede per gli interventi di pulizia.',
   ],
   facts: [
-    { label: 'Orari', value: 'Al mattino presto o la sera, fuori dai Suoi orari di lavoro e di consultazione' },
+    { label: 'Orari', value: 'Di solito al mattino presto o la sera, in base ai Suoi orari di lavoro e di consultazione' },
     { label: 'Cadenza', value: 'Ogni giorno, più volte alla settimana o una volta alla settimana' },
     { label: 'Lingue del team', value: 'Tedesco, inglese, francese e italiano' },
     { label: 'Non compreso', value: 'Finestre, vano scale dello stabile, strumenti degli studi medici' },
@@ -31,7 +31,7 @@ export const bueroreinigung: ServicePageContent = {
     ],
     notIncluded: [
       'Vano scale, ascensore e ingresso dell’intero stabile: vedi [Pulizia di manutenzione](/leistungen/unterhaltsreinigung).',
-      'Pulizia a fondo di moquette e pavimenti, per esempio prima di un trasloco: vedi [Pulizie a fondo e speciali](/leistungen/sonderreinigungen).',
+      'Pulizia a fondo di pavimenti e servizi igienici, per esempio prima di entrare in nuovi locali: vedi [Pulizie a fondo e speciali](/leistungen/sonderreinigungen).',
       'Finestre all’interno e all’esterno: vedi [Pulizia di vetri e facciate](/leistungen/fenster-und-fassadenreinigung).',
       'Il ricondizionamento di strumenti e dispositivi medici, che resta di competenza del team del Suo studio.',
     ],
@@ -40,8 +40,8 @@ export const bueroreinigung: ServicePageContent = {
     {
       title: 'Un intervento dall’alto verso il basso',
       paragraphs: [
-        'Si comincia dai rifiuti: svuotare i cestini, portare la carta straccia al punto di raccolta, mettere sacchi nuovi. Poi si puliscono le superfici libere delle scrivanie, i ripiani e le maniglie, quindi l’angolo cucina e i servizi igienici. I pavimenti vengono per ultimi, così nessun pavimento appena pulito riceve di nuovo polvere o gocce.',
-        'WC e lavabi richiedono panni e guanti propri, che non toccano mai una scrivania o la macchina del caffè. Molte imprese di pulizia li distinguono perciò con i colori. Può verificarlo Lei stesso durante i primi interventi.',
+        'Si comincia dai rifiuti: svuotare i cestini, portare la carta straccia al punto di raccolta, mettere sacchi nuovi. Poi tocca al bancone e alle maniglie, nei giorni concordati anche alle superfici libere delle scrivanie, quindi all’angolo cucina e ai servizi igienici. I pavimenti vengono per ultimi, così nessun pavimento appena pulito riceve di nuovo polvere o gocce.',
+        'WC e lavabi richiedono panni e guanti propri, che non toccano mai una scrivania o la macchina del caffè. Un colore per ogni zona rende visibile la separazione.',
       ],
     },
     {
@@ -95,7 +95,7 @@ export const bueroreinigung: ServicePageContent = {
       entries: [
         {
           label: 'Dalle 6 alle 8',
-          text: 'Lavoro diurno. Angolo cucina e WC sono freschi quando arrivano i primi. Se il Suo team inizia alle 7.30, la fascia è stretta per superfici grandi.',
+          text: 'Lavoro diurno. Angolo cucina e WC sono puliti quando arrivano i primi. Se il Suo team inizia alle 7.30, la fascia è stretta per superfici grandi.',
         },
         {
           label: 'Durante l’orario di lavoro',
@@ -118,7 +118,7 @@ export const bueroreinigung: ServicePageContent = {
           text: 'Vietato dal sabato alle 23 alla domenica alle 23, come pure il giorno della festa nazionale e nei giorni festivi cantonali parificati alla domenica. Le deroghe seguono le stesse regole della notte, e il lavoro domenicale temporaneo dà diritto a un supplemento salariale del 50 per cento. Il sabato di giorno è normale lavoro diurno.',
         },
       ],
-      note: 'Con il consenso del personale un’azienda può spostare la fascia, al più presto dalle 5 e al più tardi fino alle 24 (art. 10 LL). Per un ufficio normale significa: pianifichi la pulizia dal lunedì al sabato tra le 6 e le 23 e non nei giorni festivi, così non serve alcuna autorizzazione.',
+      note: 'Con il consenso della rappresentanza dei lavoratori o, in sua assenza, della maggioranza del personale interessato, l’impresa di pulizia può fissare diversamente inizio e fine del suo lavoro diurno e serale tra le 5 e le 24. Anche in questo caso deve restare compreso in uno spazio di 17 ore (art. 10 cpv. 2 LL). Per un ufficio normale significa: pianifichi la pulizia dal lunedì al sabato tra le 6 e le 23 e non nei giorni festivi, così non serve alcuna autorizzazione.',
       sources: [
         { label: 'Legge sul lavoro (LL), art. 10 e da 16 a 20a', href: 'https://www.fedlex.admin.ch/eli/cc/1966/57_57_57/it#art_10' },
         { label: 'Ordinanza 2 concernente la legge sul lavoro (OLL 2), art. 51 Aziende di pulizia', href: 'https://www.fedlex.admin.ch/eli/cc/2000/244/it#art_51' },
@@ -135,7 +135,7 @@ export const bueroreinigung: ServicePageContent = {
           title: 'Locali',
           items: [
             'Locali che il team pulisce da solo',
-            'Locali puliti solo in presenza di una persona dei Suoi, per esempio ufficio del personale, archivio o sala server',
+            'Locali puliti solo in presenza di qualcuno del Suo personale, per esempio ufficio del personale, archivio o sala server',
             'Locali in cui non si entra affatto',
             'Armadi, cassetti e vaschette con documenti: non aprire, non spostare',
           ],
@@ -153,7 +153,7 @@ export const bueroreinigung: ServicePageContent = {
           title: 'Chiavi, badge e allarme',
           items: [
             'Chi riceve chiavi, badge o codici, e per quali porte',
-            'Come si inserisce e disinserisce l’allarme e chi chiama il team in caso di falso allarme',
+            'Come si inserisce e disinserisce l’allarme e a chi telefona il team in caso di falso allarme',
             'Chi controlla alla fine luci, finestre e porte',
             'Che cosa vale se si perde una chiave o un badge',
           ],
@@ -184,12 +184,13 @@ export const bueroreinigung: ServicePageContent = {
         'Una tariffa oraria bassa dice poco se sono calcolate meno ore. Metta le offerte una accanto all’altra e verifichi per ciascuna gli stessi punti. La guida [Pulizia di manutenzione: quanto costa?](/blog/reinigungskosten-schweiz) spiega i fattori di costo generali.',
       groups: [
         {
-          title: 'Prestazioni',
+          title: 'Prestazioni e metodo',
           items: [
             'C’è un elenco delle prestazioni che indica ogni locale e ogni frequenza?',
-            'Angoli cucina e servizi igienici sono compresi a ogni intervento o solo una volta alla settimana?',
+            'Angoli cucina e servizi igienici: a ogni intervento o solo una volta alla settimana?',
             'Quante ore per intervento e quanti interventi al mese sono calcolati?',
             'Quali fasce orarie sono previste, e sono comprese tra le 6 e le 23?',
+            'I panni per i WC sono separati dagli altri, per esempio con colori diversi?',
           ],
         },
         {
@@ -211,18 +212,15 @@ export const bueroreinigung: ServicePageContent = {
   steps: [
     {
       title: 'Stabilire locali e accesso',
-      text: 'Prima del primo intervento percorre con noi i locali: che cosa pulisce il team, che cosa solo in Sua presenza, chi riceve chiavi o badge e come si usa l’impianto d’allarme.',
-      figure: 'besichtigung',
+      text: 'Prima del primo intervento stabilisce con noi che cosa pulisce il team, che cosa solo in Sua presenza, chi riceve chiavi o badge e come si usa l’impianto d’allarme.',
     },
     {
       title: 'Piano d’intervento fisso',
       text: 'Giorni e fasce orarie sono fissati, per esempio lunedì, mercoledì e venerdì dalle 18. L’elenco delle prestazioni stabilisce che cosa si fa a ogni intervento e che cosa ogni settimana.',
-      figure: 'start',
     },
     {
       title: 'Segnalare i cambiamenti',
       text: 'Se trasloca, se il team cresce o se cambiano gli orari di consultazione, adeguiamo prestazioni e cadenza. Ce lo comunichi per telefono o per e-mail.',
-      figure: 'anfrage',
     },
   ],
   faq: [
@@ -234,7 +232,7 @@ export const bueroreinigung: ServicePageContent = {
     {
       question: 'Con quale frequenza va pulito un ufficio?',
       answer:
-        'Il ritmo lo danno i locali con l’acqua. Angoli cucina e servizi igienici richiedono cura a ogni intervento, quindi in un ufficio con molte persone ogni giorno o più volte alla settimana. Postazioni di lavoro e sale riunioni spesso bastano con una pulizia settimanale. Una ricezione con clientela richiede più di un back office.',
+        'A dettare il ritmo sono angoli cucina e servizi igienici. Richiedono cura a ogni intervento, quindi in un ufficio con molte persone ogni giorno o più volte alla settimana. Per postazioni di lavoro e sale riunioni spesso basta una pulizia settimanale. Una ricezione con clientela richiede più di un back office.',
     },
     {
       question: 'Come entra il team di pulizia nell’edificio quando non c’è più nessuno?',

@@ -7,11 +7,11 @@ export const bueroreinigung: ServicePageContent = {
   eyebrow: 'Nettoyage régulier',
   h1: 'Nettoyage de bureaux et de cabinets',
   lead: [
-    'Un bureau doit être prêt chaque matin : corbeilles vides, kitchenette propre, savon et papier réapprovisionnés. Nous nettoyons bureaux, administrations et cabinets selon un rythme fixe, avant l’arrivée de votre équipe ou après son départ.',
+    'Un bureau doit être prêt chaque matin : corbeilles vides, kitchenette propre, savon et papier réapprovisionnés. Nous nettoyons bureaux, administrations et cabinets selon un rythme fixe, le plus souvent avant l’arrivée de votre équipe ou après son départ.',
     'Ce qui est nettoyé à chaque passage et ce qui ne l’est qu’une fois par semaine figure dans un cahier des charges. Les locaux où l’équipe peut entrer, vous les fixez avant le début. Vous trouverez sur cette page des modèles à imprimer pour les deux, ainsi que les plages horaires que la loi sur le travail impose aux interventions de nettoyage.',
   ],
   facts: [
-    { label: 'Horaires', value: 'Tôt le matin ou le soir, en dehors de vos heures de travail et de consultation' },
+    { label: 'Horaires', value: 'En général tôt le matin ou le soir, selon vos heures de travail et de consultation' },
     { label: 'Fréquence', value: 'Chaque jour, plusieurs fois par semaine ou une fois par semaine' },
     { label: 'Langues de l’équipe', value: 'Allemand, anglais, français et italien' },
     { label: 'Non compris', value: 'Fenêtres, cage d’escalier de l’immeuble, instruments des cabinets' },
@@ -31,7 +31,7 @@ export const bueroreinigung: ServicePageContent = {
     ],
     notIncluded: [
       'Cage d’escalier, ascenseur et entrée de l’immeuble entier : voir [Nettoyage d’entretien](/leistungen/unterhaltsreinigung).',
-      'Nettoyage en profondeur des moquettes et des sols, par exemple avant un emménagement : voir [Nettoyages en profondeur et spéciaux](/leistungen/sonderreinigungen).',
+      'Nettoyage en profondeur des sols et des sanitaires, par exemple avant un emménagement : voir [Nettoyages en profondeur et spéciaux](/leistungen/sonderreinigungen).',
       'Fenêtres à l’intérieur et à l’extérieur : voir [Nettoyage de vitres et de façades](/leistungen/fenster-und-fassadenreinigung).',
       'Le retraitement des instruments et des dispositifs médicaux, qui reste du ressort de l’équipe de votre cabinet.',
     ],
@@ -40,8 +40,8 @@ export const bueroreinigung: ServicePageContent = {
     {
       title: 'Un passage de haut en bas',
       paragraphs: [
-        'Les déchets passent en premier : vider les corbeilles, porter le vieux papier au point de collecte, poser des sacs neufs. Viennent ensuite les surfaces de bureau dégagées, les étagères et les poignées de porte, puis la kitchenette et les sanitaires. Les sols se font à la fin, pour qu’aucun sol fraîchement nettoyé ne reçoive à nouveau poussière ou gouttes.',
-        'WC et lavabos demandent leurs propres chiffons et gants, qui ne touchent jamais un bureau ni la machine à café. Beaucoup d’entreprises de nettoyage les distinguent donc par des couleurs. Vous pouvez le vérifier vous-même lors des premiers passages.',
+        'Les déchets passent en premier : vider les corbeilles, porter le vieux papier au point de collecte, poser des sacs neufs. Viennent ensuite le comptoir et les poignées de porte, les jours convenus aussi les surfaces de bureau dégagées, puis la kitchenette et les sanitaires. Les sols se font à la fin, pour qu’aucun sol fraîchement nettoyé ne reçoive à nouveau poussière ou gouttes.',
+        'WC et lavabos demandent leurs propres chiffons et gants, qui ne touchent jamais un bureau ni la machine à café. Une couleur par zone rend la séparation visible.',
       ],
     },
     {
@@ -72,15 +72,15 @@ export const bueroreinigung: ServicePageContent = {
       id: 'leistungsverzeichnis',
       title: 'Cahier des charges bureau : quoi nettoyer à quelle fréquence',
       intro:
-        'Exemple pour un bureau avec réception, kitchenette et deux WC. Biffez ce qui ne vous concerne pas et ajoutez vos propres locaux. Avec la même liste, vous pouvez comparer les devis de différents prestataires.',
+        'Exemple pour un bureau avec réception, kitchenette et deux WC. Biffez ce qui ne vous concerne pas et ajoutez vos locaux. La même liste permet de comparer les devis.',
       columns: ['Zone', 'À chaque passage', 'Chaque semaine', 'Sur demande'],
       rows: [
-        ['Postes de travail', 'Vider les corbeilles, sacs neufs', 'Essuyer à l’humide les surfaces dégagées', 'Écrans, claviers, téléphones, chaises'],
+        ['Postes de travail', 'Vider les corbeilles, sacs neufs', 'Surfaces dégagées, à l’humide', 'Écrans, claviers, téléphones, chaises'],
         ['Kitchenette', 'Évier, plans de travail, machine à café à l’extérieur, sol', 'Façades des armoires et des appareils', 'Intérieur du réfrigérateur'],
         ['Sanitaires', 'WC, lavabo, miroir, sol, savon et papier', 'Carrelage mural près des lavabos, portes', 'Détartrer la robinetterie, cloisons'],
-        ['Réception et salle d’attente', 'Comptoir, poignées, porte vitrée d’entrée', 'Chaises, tablettes, parois vitrées', 'Dépoussiérer plantes et décoration'],
+        ['Réception et salle d’attente', 'Comptoir, poignées, porte vitrée d’entrée', 'Chaises, tablettes, parois vitrées', 'Plantes et décoration'],
         ['Sols', 'Couloirs, réception, kitchenette, sanitaires', 'Bureaux individuels et salles de séance', 'Plinthes et angles'],
-        ['Portes et interrupteurs', 'Poignées de la kitchenette et des WC', 'Poignées et interrupteurs partout', 'Battants, encadrements, radiateurs'],
+        ['Portes et interrupteurs', 'Poignées de la kitchenette et des WC', 'Toutes poignées et interrupteurs', 'Portes, cadres, radiateurs'],
       ],
       note: 'Les fréquences sont un exemple. Une kitchenette pour trente personnes demande plus qu’une kitchenette pour cinq. Votre propre cahier des charges fait partie du devis.',
       printable: true,
@@ -118,7 +118,7 @@ export const bueroreinigung: ServicePageContent = {
           text: 'Interdit du samedi 23 h au dimanche 23 h, ainsi que le jour de la fête nationale et les jours fériés cantonaux assimilés au dimanche. Les dérogations suivent les mêmes règles que la nuit, et le travail dominical temporaire donne droit à une majoration de salaire de 50 %. Le samedi en journée est du travail de jour ordinaire.',
         },
       ],
-      note: 'Avec l’accord de son personnel, une entreprise peut déplacer la plage, au plus tôt dès 5 h et au plus tard jusqu’à 24 h (art. 10 LTr). Pour un bureau ordinaire, cela signifie : planifiez le nettoyage du lundi au samedi entre 6 h et 23 h, hors jours fériés, et aucune autorisation n’est nécessaire.',
+      note: 'Avec l’accord des représentants des travailleurs ou, à défaut, de la majorité du personnel concerné, l’entreprise de nettoyage peut fixer autrement le début et la fin de son travail de jour et du soir, entre 5 h et 24 h. Même dans ce cas, il doit tenir dans un espace de 17 heures (art. 10, al. 2, LTr). Pour un bureau ordinaire, cela signifie : planifiez le nettoyage du lundi au samedi entre 6 h et 23 h, hors jours fériés, et aucune autorisation n’est nécessaire.',
       sources: [
         { label: 'Loi sur le travail (LTr), art. 10 et 16 à 20a', href: 'https://www.fedlex.admin.ch/eli/cc/1966/57_57_57/fr#art_10' },
         { label: 'Ordonnance 2 relative à la loi sur le travail (OLT 2), art. 51 Entreprises de nettoyage', href: 'https://www.fedlex.admin.ch/eli/cc/2000/244/fr#art_51' },
@@ -153,7 +153,7 @@ export const bueroreinigung: ServicePageContent = {
           title: 'Clés, badges et alarme',
           items: [
             'Qui reçoit clés, badges ou codes, et pour quelles portes',
-            'Comment l’alarme est enclenchée et déclenchée, et qui l’équipe appelle en cas de fausse alarme',
+            'Comment l’alarme est activée et désactivée, et qui l’équipe appelle en cas de fausse alarme',
             'Qui contrôle à la fin lumières, fenêtres et portes',
             'Ce qui s’applique en cas de perte d’une clé ou d’un badge',
           ],
@@ -184,19 +184,20 @@ export const bueroreinigung: ServicePageContent = {
         'Un tarif horaire bas dit peu si moins d’heures sont comptées. Placez les devis côte à côte et passez les mêmes points pour chacun. Notre guide [Que coûte un nettoyage d’entretien ?](/blog/reinigungskosten-schweiz) explique les facteurs de coût généraux.',
       groups: [
         {
-          title: 'Étendue',
+          title: 'Étendue et méthode',
           items: [
             'Un cahier des charges nomme-t-il chaque local et chaque fréquence ?',
-            'Kitchenettes et sanitaires sont-ils compris à chaque passage ou seulement chaque semaine ?',
+            'Kitchenettes et sanitaires : à chaque passage ou une fois par semaine ?',
             'Combien d’heures par passage et combien de passages par mois sont comptés ?',
             'Quelles plages horaires sont prévues, et se situent-elles entre 6 h et 23 h ?',
+            'Les chiffons des WC sont-ils séparés des autres, par exemple par couleur ?',
           ],
         },
         {
           title: 'Prix et contrat',
           items: [
             'Quel est le montant mensuel, avec ou sans TVA ?',
-            'Les consommables sont-ils compris, et qui les recommande ?',
+            'Les consommables sont-ils compris, et qui se charge de les commander ?',
             'Les majorations pour la nuit, le dimanche ou les jours fériés sont-elles indiquées ?',
             'Qui remplace l’équipe pendant les vacances ou en cas de maladie ?',
             'Quelle est la durée du contrat, et avec quel délai peut-il être résilié ?',
@@ -211,18 +212,15 @@ export const bueroreinigung: ServicePageContent = {
   steps: [
     {
       title: 'Fixer locaux et accès',
-      text: 'Avant le premier passage, vous parcourez les locaux avec nous : ce que l’équipe nettoie, ce qui ne se fait qu’en votre présence, qui reçoit clés ou badges et comment se manipule l’alarme.',
-      figure: 'besichtigung',
+      text: 'Avant le premier passage, vous fixez avec nous ce que l’équipe nettoie, ce qui ne se fait qu’en votre présence, qui reçoit clés ou badges et comment se manipule l’alarme.',
     },
     {
       title: 'Plan d’intervention fixe',
       text: 'Jours et plages horaires sont fixés, par exemple lundi, mercredi et vendredi dès 18 h. Le cahier des charges règle ce qui se fait à chaque passage et ce qui se fait chaque semaine.',
-      figure: 'start',
     },
     {
       title: 'Signaler les changements',
       text: 'Si vous déménagez, si votre équipe s’agrandit ou si les heures de consultation changent, nous adaptons l’étendue et le rythme. Prévenez-nous par téléphone ou par e-mail.',
-      figure: 'anfrage',
     },
   ],
   faq: [
@@ -234,7 +232,7 @@ export const bueroreinigung: ServicePageContent = {
     {
       question: 'À quelle fréquence faut-il nettoyer un bureau ?',
       answer:
-        'Ce sont les locaux avec de l’eau qui donnent le rythme. Kitchenettes et sanitaires demandent de l’entretien à chaque passage, donc chaque jour ou plusieurs fois par semaine dans un bureau où travaillent beaucoup de personnes. Postes de travail et salles de séance se contentent souvent d’un nettoyage hebdomadaire. Une réception avec clientèle demande plus qu’un back-office.',
+        'Ce sont les locaux avec un point d’eau qui donnent le rythme. Kitchenettes et sanitaires demandent de l’entretien à chaque passage, donc chaque jour ou plusieurs fois par semaine dans un bureau où travaillent beaucoup de personnes. Postes de travail et salles de séance se contentent souvent d’un nettoyage hebdomadaire. Une réception avec clientèle demande plus qu’un back-office.',
     },
     {
       question: 'Comment l’équipe de nettoyage entre-t-elle dans le bâtiment quand plus personne n’est là ?',

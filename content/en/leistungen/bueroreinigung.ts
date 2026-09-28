@@ -9,11 +9,11 @@ export const bueroreinigung: ServicePageContent = {
   eyebrow: 'Ongoing cleaning',
   h1: 'Office cleaning for businesses and medical practices',
   lead: [
-    'An office should be ready every morning: bins empty, kitchenette clean, soap and paper topped up. We clean offices, administrative premises and practices on a fixed schedule, before your team arrives or after it has left.',
+    'An office should be ready every morning: bins empty, kitchenette clean, soap and paper topped up. We clean offices, administrative premises and practices on a fixed schedule, usually before your team arrives or after it has left.',
     'What is cleaned on every visit and what only weekly is set out in a task schedule. Which rooms the team may enter is something you decide before the start. You will find printable templates for both on this page, together with the time windows that the Employment Act sets for cleaning work.',
   ],
   facts: [
-    { label: 'Cleaning times', value: 'Early morning or evening, outside your working and consulting hours' },
+    { label: 'Cleaning times', value: 'Usually early morning or evening, to suit your working and consulting hours' },
     { label: 'Frequency', value: 'Daily, several times a week or weekly' },
     { label: 'Languages in the team', value: languages },
     { label: 'Not included', value: 'Windows, stairwells of the building, instruments in practices' },
@@ -27,13 +27,13 @@ export const bueroreinigung: ServicePageContent = {
       'Floors in offices, corridors and meeting rooms, vacuumed or damp-mopped depending on the surface',
       'Reception, entrance area and glass doors',
       'Kitchenettes and staff rooms',
-      'Toilets with WC, washbasin and mirror',
+      'Toilets, including washbasins and mirrors',
       'Refilling soap, paper and bin bags',
       'In practices: reception, waiting room and the approved surfaces in treatment rooms',
     ],
     notIncluded: [
       'Stairwell, lift and entrance of the whole building: see [maintenance cleaning](/leistungen/unterhaltsreinigung).',
-      'Deep cleaning of carpets and floors, for example before moving in: see [deep and special cleaning](/leistungen/sonderreinigungen).',
+      'Deep cleaning of floors and toilets, for example before moving in: see [deep and special cleaning](/leistungen/sonderreinigungen).',
       'Windows inside and out: see [window and facade cleaning](/leistungen/fenster-und-fassadenreinigung).',
       'Reprocessing of instruments and medical devices, which remains with your practice team.',
     ],
@@ -42,8 +42,8 @@ export const bueroreinigung: ServicePageContent = {
     {
       title: 'A cleaning visit from top to bottom',
       paragraphs: [
-        'Waste comes first: emptying bins, taking waste paper to the collection point, fitting new bags. Then clear desk surfaces, shelves and door handles are wiped, followed by the kitchenette and the toilets. The floors come last, so that no freshly cleaned floor catches dust or drips again.',
-        'Toilets and washbasins need their own cloths and gloves, which never touch a desk or the coffee machine. Many cleaning companies therefore separate them by colour. You can check this yourself during the first visits.',
+        'Waste comes first: emptying bins, taking waste paper to the collection point, fitting new bags. Then come the counter and door handles, on the agreed days also clear desk surfaces, followed by the kitchenette and the toilets. The floors come last, so that no freshly cleaned floor catches dust or drips again.',
+        'Toilets and washbasins need their own cloths and gloves, which never touch a desk or the coffee machine. One colour per area makes the separation visible.',
       ],
     },
     {
@@ -81,7 +81,7 @@ export const bueroreinigung: ServicePageContent = {
         ['Kitchenette', 'Sink, worktops, coffee machine outside, floor', 'Fronts of cupboards and appliances', 'Inside of the fridge'],
         ['Toilets', 'WC, washbasin, mirror, floor, refill soap and paper', 'Wall tiles in the splash zone, doors', 'Descale taps, partitions'],
         ['Reception and waiting area', 'Counter, door handles, entrance glass door', 'Chairs, shelves, glass walls', 'Dust plants and decorations'],
-        ['Floors', 'Corridors, reception, kitchenette, toilets', 'Single offices and meeting rooms', 'Skirting boards and corners'],
+        ['Floors', 'Corridors, reception, kitchenette, toilets', 'Individual offices and meeting rooms', 'Skirting boards and corners'],
         ['Doors and switches', 'Door handles in kitchenette and toilets', 'Door handles and light switches everywhere', 'Door leaves, frames, radiators'],
       ],
       note: 'The frequencies are an example. A kitchenette for thirty people needs more than one for five. Your own schedule becomes part of the quote.',
@@ -97,7 +97,7 @@ export const bueroreinigung: ServicePageContent = {
       entries: [
         {
           label: '6 am to 8 am',
-          text: 'Day work. The kitchenette and toilets are fresh when the first people arrive. If your team starts at half past seven, the window is tight for large areas.',
+          text: 'Day work. The kitchenette and toilets are clean when the first people arrive. If your team starts at half past seven, the window is tight for large areas.',
         },
         {
           label: 'During working hours',
@@ -120,7 +120,7 @@ export const bueroreinigung: ServicePageContent = {
           text: 'Prohibited from 11 pm on Saturday to 11 pm on Sunday, as well as on the national holiday and on cantonal public holidays treated as Sundays. Exceptions apply as at night, and temporary Sunday work carries a wage supplement of 50 percent. Saturday during the day is ordinary day work.',
         },
       ],
-      note: 'With the consent of its employees, a business can shift the window, starting no earlier than 5 am and ending no later than midnight (Art. 10 ArG). For an ordinary office, this means: schedule cleaning from Monday to Saturday between 6 am and 11 pm and not on public holidays, and no permit is needed.',
+      note: 'With the consent of the employee representatives or, where there are none, the majority of the employees concerned, the cleaning company can set the start and end of its day and evening work differently between 5 am and midnight. Even then, it spans no more than 17 hours (Art. 10 para. 2 ArG). For an ordinary office, this means: schedule cleaning from Monday to Saturday between 6 am and 11 pm and not on public holidays, and no permit is needed.',
       sources: [
         { label: 'Employment Act (ArG), Art. 10 and 16 to 20a (German text)', href: 'https://www.fedlex.admin.ch/eli/cc/1966/57_57_57/de#art_10' },
         { label: 'Ordinance 2 to the Employment Act (ArGV 2), Art. 51 cleaning companies (German text)', href: 'https://www.fedlex.admin.ch/eli/cc/2000/244/de#art_51' },
@@ -161,7 +161,7 @@ export const bueroreinigung: ServicePageContent = {
           ],
         },
         {
-          title: 'In addition in practices and law firms',
+          title: 'Additional points for practices and law firms',
           items: [
             'Patient files, appointment book and findings are not left open at reception',
             'Treatment rooms: which surfaces the team cleans and which your practice team cleans',
@@ -186,12 +186,13 @@ export const bueroreinigung: ServicePageContent = {
         'A low hourly rate says little if fewer hours are calculated. Put the quotes side by side and go through the same points for each. Our guide [What does maintenance cleaning cost?](/blog/reinigungskosten-schweiz) explains the general cost factors.',
       groups: [
         {
-          title: 'Scope',
+          title: 'Scope and method',
           items: [
             'Is there a task schedule that lists every room and every frequency?',
             'Are kitchenettes and toilets included on every visit or only weekly?',
             'How many hours per visit and how many visits per month are calculated?',
             'Which time windows are planned, and do they fall between 6 am and 11 pm?',
+            'Are cloths for toilets and work surfaces kept separate, for example by colour?',
           ],
         },
         {
@@ -213,35 +214,32 @@ export const bueroreinigung: ServicePageContent = {
   steps: [
     {
       title: 'Agree rooms and access',
-      text: 'Before the first visit, you go through the rooms with us: what the team cleans, what only when you are present, who receives keys or badges and how the alarm system is operated.',
-      figure: 'besichtigung',
+      text: 'Before the first visit, you agree with us what the team cleans, what only when you are present, who receives keys or badges and how the alarm system is operated.',
     },
     {
       title: 'Fixed cleaning schedule',
       text: 'Days and time windows are fixed, for example Monday, Wednesday and Friday from 6 pm. The task schedule sets out what is done on every visit and what weekly.',
-      figure: 'start',
     },
     {
       title: 'Report changes',
       text: 'If you move, your team grows or consulting hours change, we adjust the scope and frequency. Let us know by phone or email.',
-      figure: 'anfrage',
     },
   ],
   faq: [
     {
       question: 'How much does office cleaning cost?',
       answer:
-        'We quote a price after the site visit, because two offices of the same size can mean very different amounts of work. Twelve single offices, each with its own bin, take longer than an open-plan area of the same size. The deciding factors are the number of workstations, kitchenettes and toilets, the floor coverings and glass surfaces, the frequency, the cleaning time, in practices the requirements of the hygiene plan, and whether consumables are included. The checklist above shows how to compare quotes.',
+        'We quote a price after the site visit, because two offices of the same size can mean very different amounts of work. Twelve individual offices, each with its own bin, take longer than an open-plan area of the same size. The deciding factors are the number of workstations, kitchenettes and toilets, the floor coverings and glass surfaces, the frequency, the cleaning time, in practices the requirements of the hygiene plan, and whether consumables are included. The checklist above shows how to compare quotes.',
     },
     {
       question: 'How often should an office be cleaned?',
       answer:
-        'The rooms with water set the pace. Kitchenettes and toilets need attention on every visit, so in an office with many people that means daily or several times a week. Workstations and meeting rooms often manage with weekly cleaning. A reception with customers needs more than a back office.',
+        'Rooms with running water set the pace. Kitchenettes and toilets need attention on every visit, so in an office with many people that means daily or several times a week. Workstations and meeting rooms often manage with weekly cleaning. A reception with customers needs more than a back office.',
     },
     {
       question: 'How does the cleaning team get into the building when nobody is there?',
       answer:
-        'With a key, badge or code that you hand over to the team. Before the first visit, it is agreed with you who receives what and how the alarm system, lights and locking up are handled. The «Confidential rooms» checklist above contains all the points to fill in.',
+        'With a key, badge or code that you hand over to the team. Before the first visit, it is agreed with you who receives what and how the alarm system, lights and locking up are handled. The ‘Confidential rooms’ checklist above contains all the points to fill in.',
     },
     {
       question: 'Do we have to tidy the workstations, and what happens to confidential documents?',
