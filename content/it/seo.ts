@@ -25,8 +25,8 @@ export const pages = {
   },
   '/premium/luxusimmobilien': {
     label: 'Immobili di pregio',
-    title: 'Pulizia di ville e immobili di pregio',
-    description: 'Pulizia e cura discrete di ville, loft e residenze sul lago dei Quattro Cantoni, sul lago di Zugo e nella regione. Team fissi, offerta sul posto.',
+    title: 'Pulizia di ville e cura di immobili di pregio',
+    description: 'Pulizia di ville a Lucerna, Zugo e dintorni: pietra naturale, parquet e lacca ben curati, anche in Sua assenza. Offerta gratuita dopo il sopralluogo.',
   },
   '/premium/privatjet': {
     label: 'Jet privato',

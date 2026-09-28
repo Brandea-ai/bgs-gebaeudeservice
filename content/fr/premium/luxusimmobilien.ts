@@ -1,104 +1,241 @@
-import type { ServicePageContent } from '../../types'
-import { answers } from '../common'
-import { team, cta } from './gemeinsam'
+import type { ServicePageContent, Source } from '../../types'
+
+// Mêmes clés et sources que content/de/premium/luxusimmobilien.ts (E85, sources lues le 28.09.2026).
+
+const nvs: Source = {
+  label: 'Association suisse de la pierre naturelle NVS : fiche sur le nettoyage des revêtements en pierre naturelle (janvier 2018, en allemand)',
+  href: 'https://nvs.ch/fileadmin/user_upload/nvs/1_Dienstleistungen/Technische_Merkblaetter/15_MB_Reinigung_von_Naturstein_Belaegen.pdf',
+}
 
 export const luxusimmobilien: ServicePageContent = {
   path: '/premium/luxusimmobilien',
   area: 'premium',
-  h1: 'Nettoyage et entretien de villas et de résidences',
+  h1: 'Nettoyage de villas avec une équipe fixe qui connaît les matériaux',
   lead: [
-    'Dans une maison faite de pierre naturelle, de parquet et de surfaces laquées brillantes, chaque détail compte, tout comme la confiance envers les personnes qui y travaillent. Nous nettoyons villas, lofts et résidences régulièrement ou avant des événements particuliers, dans le respect des matériaux délicats.',
-    'Chez vous, c’est toujours la même équipe qui travaille, aux heures qui vous conviennent : aussi le soir, le week-end ou pendant votre absence.',
+    'Un lavabo en marbre, à côté un robinet en laiton, dans le séjour un parquet en chêne huilé : dans une villa, presque chaque surface demande un autre produit.',
+    'Nous nettoyons villas, lofts et résidences à Lucerne, Zoug et environs avec une équipe fixe qui connaît vos matériaux et vos règles. Elle vient régulièrement, autour de vos réceptions ou pendant vos voyages.',
   ],
   facts: [
-    { label: 'Pour', value: 'Villas, lofts, résidences et résidences secondaires' },
-    { label: 'Fréquence', value: 'Régulièrement ou avant des événements particuliers' },
-    { label: 'Équipe', value: 'Toujours la même équipe' },
-    { label: 'Discrétion', value: 'Sur demande, avec un accord de confidentialité' },
+    { label: 'Pour', value: 'Propriétaires, leurs gérances et leurs courtiers' },
+    { label: 'Horaires', value: 'En semaine, le soir, le week-end ou pendant vos voyages' },
+    { label: 'Équipe', value: 'Attribuée de façon fixe et vérifiée par nos soins' },
+    { label: 'À imprimer', value: 'Tableau des matériaux et liste pour le premier tour' },
   ],
   scope: {
-    title: 'Ce qui est compris',
-    intro: 'Nous fixons l’étendue après avoir fait le tour de votre maison. Prestations typiques :',
+    title: 'Ce que comprend l’entretien de votre maison',
+    intro: 'Vous choisissez les pièces et les surfaces lors du premier tour de la maison. Le plus souvent, ce sont celles-ci :',
     items: [
-      'Pièces de séjour, chambres à coucher et chambres d’amis',
-      'Cuisines et salles de bains',
-      'Pierre naturelle, parquet et surfaces laquées brillantes, nettoyés selon leur matériau',
-      'Surfaces vitrées et miroirs',
-      'Nettoyage avant votre arrivée et après votre départ',
-      'Rondes de contrôle pendant votre absence',
-      'Nettoyage avant et après des événements, aussi le week-end',
-      'Pièces abritant des œuvres d’art et des antiquités, les œuvres uniquement avec votre accord',
-      'Pour les courtiers et les gérances : à bref délai avant une vente, une séance photo ou une remise',
+      'Séjours, chambres à coucher et chambres d’amis',
+      'Cuisines et salles de bains, avec des produits adaptés à la pierre, à la laque et à la robinetterie',
+      'Sols en pierre naturelle et en parquet, selon la notice d’entretien de chaque revêtement',
+      'Surfaces laquées brillantes, verre et miroirs',
+      'Rondes de contrôle en votre absence, ménage avant votre retour et après votre départ',
+      'Interventions avant et après des réceptions ou des fêtes de famille, aussi le week-end',
+      'Séjours et salons où sont exposées des œuvres d’art ou des antiquités',
+      'Interventions à bref délai avant une vente, une séance photo ou une remise, aussi sur mandat d’un courtier ou d’une gérance',
     ],
-    notIncluded: ['Restauration d’œuvres d’art et d’antiquités.'],
+    notIncluded: [
+      'Restauration d’œuvres d’art et d’antiquités.',
+      'Le nettoyage des œuvres d’art elles-mêmes, tant que vous ne l’avez pas expressément autorisé.',
+    ],
   },
   sections: [
     {
-      title: 'Des matériaux traités avec soin',
+      title: 'Ce qui aide le robinet abîme le marbre',
       paragraphs: [
-        'La pierre naturelle comme le marbre et le calcaire réagit mal à l’acide, même aux produits ménagers doux et au vinaigre. Le parquet supporte peu d’eau, les surfaces laquées brillantes se rayent avec de mauvais chiffons. Le laiton et la robinetterie perdent leur surface avec des produits agressifs.',
-        'C’est pourquoi nous clarifions lors du tour des lieux quels matériaux se trouvent dans votre maison et quel entretien ils demandent. Si vous disposez de consignes d’entretien du fabricant ou de l’architecte d’intérieur, nous nous y conformons.',
+        'La salle de bains montre pourquoi connaître les matériaux va au-delà de la prudence. Un grand fabricant de robinetterie recommande l’acide citrique contre le calcaire sur le robinet. Sur le lavabo en marbre juste à côté, ce même acide attaque le poli, et l’éponge de cuisine à tampon vert peut le rayer.',
+        'C’est pourquoi nous n’utilisons jamais un seul produit pour tout. Lors du premier tour, nous passons en revue, pièce par pièce, la pierre, le bois et les finitions de votre maison. Le tableau plus bas résume ce qui convient à chaque matériau et ce qui l’abîme.',
       ],
     },
     {
-      title: 'Clés, alarme et discrétion',
+      title: 'Résidence secondaire et voyages : prête à votre arrivée',
       paragraphs: [
-        'Pour les clés et le système d’alarme, nous convenons avec vous de règles fixes. Sur demande, nous signons un accord de confidentialité.',
-        'Notre directeur traite personnellement votre demande. Les personnes qui interviennent chez vous ont été vérifiées par nos soins.',
+        'Une maison au bord du lac des Quatre-Cantons ou du lac de Zoug reste souvent vide pendant des semaines. Avant votre arrivée, nous nettoyons pour que vous n’ayez plus rien à faire en arrivant. Après votre départ, nous remettons la maison en ordre.',
+        'Entre-temps, nous passons aussi souvent que vous le souhaitez. Vous décidez de ce que nous surveillons, par exemple si les fenêtres et les portes sont fermées ou si de l’eau fuit quelque part. Ce que nous remarquons est transmis à la personne que vous désignez : vous-même, votre gérance ou une personne de confiance.',
       ],
     },
     {
-      title: 'Situations typiques',
+      title: 'Avant la vente, les photos et la remise des clés',
+      paragraphs: [
+        'Courtiers et gérances peuvent nous mandater au nom des propriétaires, aussi à bref délai. Pour les photos, seul compte ce que voit l’appareil : verre, miroirs, sols polis et façades de cuisine montrent chaque trace sous une lumière rasante.',
+        'Indiquez-nous la date de la séance photo ou de la première visite, les pièces qui seront montrées et comment nous entrons dans la maison. Une fois la maison vidée, le nettoyage final avant la remise aux nouveaux propriétaires relève de notre [nettoyage de déménagement](/leistungen/umzugsreinigung).',
+      ],
+    },
+  ],
+  tools: [
+    {
+      kind: 'table',
+      id: 'materialkunde',
+      title: 'Quel entretien pour quel matériau',
+      intro:
+        'Les règles de base des associations professionnelles et des fabricants pour les surfaces les plus fréquentes dans les villas. À imprimer pour toutes les personnes qui nettoient chez vous.',
+      columns: ['Matériau', 'Pour qu’il reste beau', 'Ce qui l’abîme'],
+      rows: [
+        [
+          'Marbre, calcaire, travertin',
+          'D’abord enlever le sable et la poussière à sec. Ensuite un nettoyant neutre ou un savon pour pierre, rincer à l’eau claire et sécher les surfaces polies, sinon des traces d’eau restent visibles.',
+          'Tout acide, y compris le vinaigre, le citron et les détartrants : il ternit la surface. Les produits à récurer et les éponges à tampon vert ou bleu peuvent rayer le poli.',
+        ],
+        [
+          'Granit, gneiss, quartzite',
+          'Résistants aux acides. Selon l’association suisse de la pierre naturelle, toutes les méthodes de nettoyage courantes sont possibles.',
+          'Confondre les pierres : si l’on ne sait pas quelle pierre a été posée, un essai à un endroit caché montre si elle est sensible aux acides.',
+        ],
+        [
+          'Parquet vitrifié ou huilé',
+          'Aspirer et essuyer de temps en temps avec un chiffon humide. Microfibres seulement si le fabricant les autorise. Le parquet huilé demande un entretien régulier selon son système de traitement.',
+          'Nettoyage à grande eau, autolaveuses et appareils à vapeur',
+        ],
+        [
+          'Façades laquées, mates à brillantes',
+          'Un nettoyant ménager doux dissous dans de l’eau chaude, avec des chiffons doux en cuir ou des lavettes éponges. Ensuite, essuyer avec un chiffon doux qui ne peluche pas, toujours sans appuyer. Sur la laque brillante, une peau de chamois et de l’eau chaude suffisent le plus souvent.',
+          'Microfibres, chiffons durcis et produits agressifs : ils peuvent laisser des rayures durables.',
+        ],
+        [
+          'Robinetterie',
+          'Mettre le produit sur un chiffon doux en coton, ne pas le vaporiser directement. Un fabricant recommande l’acide citrique contre le calcaire.',
+          'Vinaigre, acides acétique, formique, phosphorique et chlorhydrique, eau de Javel, éponges à récurer, brosses et microfibres',
+        ],
+      ],
+      note:
+        'Les notices d’entretien de vos fabricants priment toujours. Si elles diffèrent de ce tableau, nous les suivons.',
+      sources: [
+        nvs,
+        { label: 'Natural Stone Institute : Care & Cleaning of Natural Stone (en anglais)', href: 'https://www.naturalstoneinstitute.org/consumers/care/' },
+        { label: 'Association suisse du parquet ISP : notions de base et notices d’entretien (en allemand)', href: 'https://www.parkett-verband.ch/de/Parkett/Parkett-ABC-und-Pflegeanleitungen' },
+        { label: 'Kurt Keller AG : conseils d’entretien des façades, surfaces et armoires (en allemand)', href: 'https://www.kkag.ch/de/reinigung-und-pflege/pflegehinweise-fur-fronten-oberflachen-und-schranke/' },
+        { label: 'hansgrohe : détartrer et nettoyer la robinetterie (en allemand)', href: 'https://www.hansgrohe.de/bad/ratgeber/pflege-wartung/armaturen-entkalken' },
+      ],
+      printable: true,
+      updated: '2026-09-28',
+    },
+    {
+      kind: 'text',
+      id: 'gemaelde-und-kunst',
+      title: 'Tableaux et œuvres d’art : là où le nettoyage s’arrête',
+      paragraphs: [
+        'Les œuvres d’art elles-mêmes, nous ne les nettoyons qu’avec votre accord explicite. La raison figure dans les recommandations des instituts de conservation : même un mauvais dépoussiérage peut abîmer durablement un tableau.',
+      ],
       items: [
-        'Entretien régulier de votre résidence, à heures fixes et toujours avec la même équipe',
-        'Résidence secondaire : nettoyage avant votre arrivée et après votre départ, rondes de contrôle entre-temps',
-        'Avant et après un événement, aussi le week-end',
-        'Pièces abritant des œuvres d’art et des antiquités, les œuvres uniquement avec votre accord',
-        'Pour les agents immobiliers et les gérances : à court terme avant une vente, une séance photo ou une remise',
+        'Chiffons à poussière, secs ou humides, poils durs et plumeaux n’ont rien à faire sur un tableau. Les fils s’accrochent à la peinture en relief, poils et plumes rayent, l’humidité peut détacher la peinture.',
+        'Une peinture qui se soulève ou s’écaille n’est pas touchée. Une surface peinte mate peut garder des zones brillantes durables après un simple passage au pinceau.',
+        'Nettoyer la surface d’un tableau et réparer des dommages est l’affaire d’une restauratrice ou d’un restaurateur.',
+        'Pour l’emplacement, les spécialistes conseillent : pas au-dessus de la cheminée, jamais en plein soleil et avec une humidité relative aussi constante que possible, entre 40 et 60 pour cent.',
+      ],
+      note:
+        'Vous trouverez des spécialistes en Suisse dans l’annuaire de l’Association suisse de conservation et restauration SCR.',
+      sources: [
+        { label: 'Smithsonian Museum Conservation Institute : Caring for Your Paintings (en anglais)', href: 'https://mci.si.edu/caring-your-paintings' },
+        { label: 'Institut canadien de conservation : Basic care, Paintings (en anglais)', href: 'https://www.canada.ca/en/conservation-institute/services/care-objects/fine-art/basic-care-paintings.html' },
+        { label: 'Association suisse de conservation et restauration SCR', href: 'https://restaurierung.swiss/fr' },
       ],
     },
     {
-      title: 'Pendant votre absence',
-      paragraphs: [
-        'Pour les résidences secondaires et les longs voyages, nous vérifions que tout est en ordre, aussi souvent que convenu avec vous. Ce que nous contrôlons et à qui nous signalons ce qui sort de l’ordinaire, nous le fixons au préalable avec vous.',
-        'Avant votre arrivée, nous nettoyons la maison, pour que vous arriviez sans avoir plus rien à faire. Après votre départ, nous la remettons en ordre.',
+      kind: 'checklist',
+      id: 'erster-rundgang',
+      title: 'Avant la première intervention : la liste pour le tour de la maison',
+      intro:
+        'Nous passons ces points en revue avec vous lors du premier tour. Imprimée, la liste vous aide à vous préparer, vous, votre gérance ou votre courtier.',
+      groups: [
+        {
+          title: 'Pièces et matériaux',
+          items: [
+            'Quelles pièces sont nettoyées et dans lesquelles personne n’entre',
+            'Quelles pierres, quels bois et quelles finitions ont été posés, dans la mesure où on le sait',
+            'Notices d’entretien du fabricant, de la menuiserie ou de l’architecte d’intérieur',
+            'Produits que vous préférez ou excluez',
+          ],
+        },
+        {
+          title: 'Art et objets de valeur',
+          items: [
+            'Si vous autorisez le nettoyage de certaines œuvres d’art ou antiquités',
+            'Vitrines, collections et armoires qui restent fermées',
+            'Où se trouvent les objets fragiles, pour que personne ne les heurte pendant le nettoyage',
+            'Consignes d’entretien d’une galerie ou d’un restaurateur, s’il y en a',
+          ],
+        },
+        {
+          title: 'Clés, alarme et accès',
+          items: [
+            'Comment les clés sont remises et conservées',
+            'Qui active et désactive l’alarme, et comment',
+            'Qui est dans la maison à l’arrivée de l’équipe',
+            'Si vous souhaitez un accord de confidentialité',
+          ],
+        },
+        {
+          title: 'Horaires et signalements',
+          items: [
+            'Horaires fixes, aussi le soir ou le week-end',
+            'Vos dates de voyage, pour que la maison soit prête avant votre arrivée',
+            'À quelle fréquence quelqu’un passe pendant votre absence',
+            'Qui est informé de ce que nous remarquons, et par quel moyen',
+          ],
+        },
       ],
+      printable: true,
+      updated: '2026-09-28',
     },
   ],
   steps: [
     {
-      title: 'Règles fixes',
-      text: 'Nous convenons des horaires, de la remise des clés et de l’utilisation du système d’alarme, sur demande avec un accord de confidentialité.',
+      title: 'Règles pour les clés et l’alarme',
+      text: 'Après votre accord sur le devis, nous convenons de la remise et de la conservation des clés, de l’utilisation de l’alarme et, si vous le souhaitez, d’un accord de confidentialité.',
     },
-    team,
+    {
+      title: 'Première intervention',
+      text: 'L’équipe qui viendra désormais chez vous travaille dès le premier jour selon les consignes d’entretien réunies lors du tour de la maison.',
+    },
+    {
+      title: 'Entretien courant',
+      text: 'L’équipe vient aux heures convenues et, pendant votre absence, aussi pour des rondes de contrôle. Si vos projets changent, par exemple avant une réception ou un voyage, nous adaptons les interventions.',
+    },
   ],
   faq: [
     {
-      question: 'Est-ce toujours la même équipe qui travaille chez nous ?',
-      answer: 'Oui. Chez vous, c’est toujours la même équipe qui travaille, une équipe qui connaît votre maison et vos souhaits.',
-    },
-    {
-      question: 'Comment traitez-vous les œuvres d’art et les antiquités ?',
-      answer: 'Nous nettoyons les pièces avec soin. Les œuvres d’art elles-mêmes, nous ne les nettoyons qu’avec votre accord explicite.',
-    },
-    {
-      question: 'Comment entretenez-vous la pierre naturelle et le parquet ?',
+      question: 'De quoi dépend le prix de l’entretien d’une villa ?',
       answer:
-        'Dans le respect du matériau : jamais de produits acides sur la pierre naturelle comme le marbre, peu d’humidité sur le parquet. Nous clarifions avec vous lors du tour des lieux quels produits nous utilisons dans votre maison.',
+        'Il n’y a pas de forfait, car les maisons diffèrent beaucoup. Le temps nécessaire dépend surtout de la surface habitable et du nombre de pièces, de la part de surfaces délicates comme la pierre naturelle, la laque brillante et le parquet huilé, et du rythme : chaque semaine, chaque mois ou seulement avant des réceptions. S’y ajoutent des prestations comme les rondes de contrôle pendant votre absence. Nous vous donnons le prix après le tour de la maison, pour votre maison précisément.',
     },
     {
-      question: 'Pouvez-vous nettoyer pendant notre absence ?',
-      answer: 'Oui, aussi pendant votre absence, le soir ou le week-end. Pour les clés et l’alarme, nous convenons de règles fixes.',
+      question: 'De quoi avez-vous besoin avant la première intervention ?',
+      answer:
+        'L’accès à la maison, les règles pour l’alarme, les notices d’entretien existantes pour les sols, la pierre et la cuisine, et une personne informée de ce que nous remarquons. La liste à imprimer figure plus haut, sous « Avant la première intervention ».',
     },
-    { question: 'Êtes-vous assurés ?', answer: answers.versicherung },
-    { question: 'Dans quelles langues pouvons-nous communiquer ?', answer: answers.sprachen },
-    { question: 'Combien coûte le nettoyage ?', answer: answers.kosten },
-    { question: 'Où intervenez-vous ?', answer: answers.gebiet },
+    {
+      question: 'Qui vient chez nous ?',
+      answer:
+        'Une équipe fixe attribuée à votre maison, qui connaît les règles convenues avec vous pour les clés et l’alarme. Toutes les personnes de l’équipe ont été vérifiées par nos soins.',
+    },
+    {
+      question: 'Pouvons-nous imposer les produits d’entretien ?',
+      answer:
+        'Oui. Si le fabricant de vos sols, de votre cuisine ou de votre robinetterie recommande certains produits, nous travaillons avec eux. Sur la liste pour le premier tour, vous pouvez aussi noter les produits que vous préférez ou excluez.',
+    },
+    {
+      question: 'Nettoyez-vous aussi avant et après une réception ?',
+      answer:
+        'Oui, en plus de l’entretien courant, et aussi le week-end. Indiquez-nous la date, le nombre approximatif d’invités et les pièces utilisées.',
+    },
+    {
+      question: 'Comment savoir quelle pierre a été posée dans notre maison ?',
+      answer:
+        'Le plus sûr est de consulter les documents de construction ou le fournisseur de la pierre qui, selon l’association suisse de la pierre naturelle, peut aussi indiquer la bonne méthode de nettoyage. À défaut, un essai à un endroit caché montre si la pierre est sensible aux acides. Comme l’essai rend la surface rugueuse à cet endroit, il revient à un ou une spécialiste.',
+    },
+    {
+      question: 'Pourquoi le sol en pierre est-il plus clair sous le tapis que dans le passage ?',
+      answer:
+        'Cela fait partie de la patine d’usage décrite par l’association suisse de la pierre naturelle : les pores les plus fins se remplissent de poussière et certaines particules de couleur de la pierre pâlissent. Sous les meubles et les tapis, moins de poussière et de lumière atteignent la pierre, elle y reste donc plus claire, tandis que les zones très fréquentées foncent. Même un nettoyage en profondeur n’enlève en général pas entièrement cette patine. Si l’on nettoie intensément une partie du sol seulement, de nouvelles différences de teinte peuvent même apparaître.',
+    },
   ],
   related: [
-    { path: '/premium/yacht', text: 'Pour les yachts et les bateaux à moteur sur le lac des Quatre-Cantons et le lac de Zoug.' },
-    { path: '/premium/privatjet', text: 'Pour la cabine de votre jet privé.' },
-    { path: '/premium', text: 'Toutes les offres et tous les engagements de notre ligne premium.' },
+    { path: '/premium/yacht', text: 'Si un bateau fait partie de la maison au bord du lac : teck, gelcoat et sellerie à la place d’amarrage.' },
+    { path: '/leistungen/umzugsreinigung', text: 'Lors d’un départ ou d’une vente : le nettoyage final avant la remise, pour les villas aussi pour les particuliers.' },
+    { path: '/premium', text: 'Toutes les prestations premium, de la résidence secondaire au family office, sur une seule page.' },
   ],
-  cta,
+  cta: {
+    title: 'Convenir d’un tour de votre maison',
+    text: 'Pour le devis, il nous faut le lieu, la surface habitable approximative et le nombre de pièces, les matériaux particuliers que vous connaissez, et s’il s’agit d’un entretien courant, d’une résidence secondaire ou d’un seul événement. Nous faisons le tour avec vous, votre gérance ou votre courtier, sous confidentialité si vous le souhaitez. Le tour de la maison et le devis ne vous coûtent rien et ne vous engagent à rien.',
+  },
 }

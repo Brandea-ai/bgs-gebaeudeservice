@@ -25,8 +25,8 @@ export const pages = {
   },
   '/premium/luxusimmobilien': {
     label: 'Luxusimmobilien',
-    title: 'Villen- und Luxusimmobilienreinigung',
-    description: 'Diskrete Reinigung und Pflege von Villen, Lofts und Residenzen am Vierwaldstättersee, am Zugersee und in der Region. Feste Teams, Offerte vor Ort.',
+    title: 'Villenreinigung und Pflege von Luxusimmobilien',
+    description: 'Villenreinigung in Luzern, Zug und Umgebung: Naturstein, Parkett und Lack richtig gepflegt, auch in Ihrer Abwesenheit. Kostenlose Offerte nach Besichtigung.',
   },
   '/premium/privatjet': {
     label: 'Privatjet',
