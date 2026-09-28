@@ -46,12 +46,12 @@ export default function NotFoundView({ lang }: { lang: Locale }) {
               <li key={link.path} className="border-b border-white/15">
                 <a
                   href={localizePath(link.path, lang)}
-                  className="arrow-link flex items-center justify-between gap-4 py-5 font-display text-xl font-bold text-white transition-colors hover:text-brass"
+                  className="arrow-link flex items-center justify-between gap-4 py-5 font-display text-xl font-bold text-white underline-offset-4 hover:underline"
                 >
                   <span className="min-w-0">{link.label}</span>
                   <ArrowRight
                     weight="duotone"
-                    className="size-5 shrink-0 text-brass"
+                    className="size-5 shrink-0 text-white"
                     aria-hidden="true"
                   />
                 </a>

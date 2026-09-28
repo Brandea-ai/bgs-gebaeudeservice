@@ -41,6 +41,22 @@ export const ui = {
   factOfferValue: 'Free and non-binding, after an on-site visit',
   factAnswer: 'Response',
   factAnswerValue: responseTime.charAt(0).toUpperCase() + responseTime.slice(1),
+  stepsBefore: {
+    label: 'Before every assignment',
+    anfrage: 'Enquiry',
+    anfragePremium: 'Discreet enquiry',
+    anfrageText: 'By phone, email or form',
+    besichtigung: 'On-site visit',
+    besichtigungText: 'You then receive our written quote',
+    service: 'For this service',
+  },
+  tool: {
+    print: 'Print',
+    table: 'Table: ',
+    sources: 'Sources',
+    external: 'external link, opens in a new window',
+    updated: 'As of',
+  },
 }
 
 /**
@@ -55,6 +71,15 @@ export const steps = {
   besichtigung: {
     title: 'Site visit and quote',
     text: 'We look at the property on site and agree the scope and times with you. You then receive a written quote, free of charge and non-binding.',
+  },
+  /** Premium: discreet enquiry and walk-through, for the process on the premium overview (until E85 in premium.ts) */
+  premiumAnfrage: {
+    title: 'Discreet enquiry',
+    text: `Call us or write to us. Your enquiry is handled personally by our managing director, and you will hear from us ${responseTime}.`,
+  },
+  premiumRundgang: {
+    title: 'Walk-through and quote',
+    text: 'We look at your home and clarify materials, times and access. You then receive a quote, free of charge and non-binding.',
   },
 } satisfies Record<string, Step>
 

@@ -32,7 +32,7 @@ export default function ArtikelInhalt(props: ArtikelProps) {
             </Button>
             <a
               href={company.phone.href}
-              className="mt-3 flex min-h-11 items-center justify-center gap-2 py-2 text-sm font-semibold tabular-nums text-white transition-colors hover:text-brass"
+              className="mt-3 flex min-h-11 items-center justify-center gap-2 py-2 text-sm font-semibold tabular-nums text-white underline-offset-4 hover:underline"
             >
               <Phone weight="duotone" className="size-4" aria-hidden="true" />
               {company.phone.display}

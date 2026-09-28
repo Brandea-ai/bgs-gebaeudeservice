@@ -1,12 +1,15 @@
 import RichText from "@/components/RichText";
 import Zigzag from "@/components/Zigzag";
 import { premiumLightLink } from "@/components/premiumStyles";
-import { detailImage, heroImage } from "../../../../shared/hero-images";
+import { detailImage } from "../../../../shared/hero-images";
+import { sceneImage } from "../../../../shared/scene-images";
 import { leistungKontext, type LeistungProps } from "./kontext";
 
 /**
  * Einsatz im Zickzack (E80): die ersten Abschnitte der Seite mit Bild, im
  * Wechsel links und rechts. Weitere Abschnitte folgen im Inhalt darunter.
+ * Zeile 1 zeigt das Detailbild, Zeile 2 das eigene Motiv aus scene-images.ts;
+ * ohne Eintrag steht Zeile 2 ohne Bild (E85: kein Hero-Bild ein zweites Mal).
  * Premium in der hellen Welt auf Weiss, Punkte in Champagner.
  */
 export default function LeistungEinsatz(props: LeistungProps) {
@@ -15,7 +18,7 @@ export default function LeistungEinsatz(props: LeistungProps) {
   const detail = detailImage[content.path];
   const sections = (content.sections ?? []).slice(0, 2);
   if (!detail || sections.length === 0) return null;
-  const pictures = [detail, heroImage[content.path]];
+  const pictures = [detail, sceneImage[content.path]];
   return (
     <section
       aria-label={sections[0].title}

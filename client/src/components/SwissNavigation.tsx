@@ -32,7 +32,9 @@ type MegaMenu = "leistungen" | "einzugsgebiet";
  * Anthrazit und Champagner (Karte mit klickbarem Kopf) und einer Bildkarte
  * unter «Hauswartung und Pflege» (MegaCards.tsx), daneben das Einzugsgebiet
  * mit den Kantonsseiten (AreaMenu.tsx). Immer nur ein Mega-Menü offen. Escape schliesst, das
- * Mobilmenü macht den Inhalt dahinter inert.
+ * Mobilmenü macht den Inhalt dahinter inert. Auf Premium-Seiten (/premium…)
+ * tragen Knopf, Unterstrich, Punkt und Telefon Champagner statt Signalrot, wie
+ * die Mobil-Leiste (Brief 23, E85; F5, P5). Das Logo bleibt die Dachmarke.
  */
 export default function SwissNavigation({
   lang = "de",
@@ -43,6 +45,8 @@ export default function SwissNavigation({
 }) {
   // Ohne path (404) ist kein Menüpunkt aktiv, der Sprachumschalter führt zur Startseite
   const current = path ?? "/";
+  const premiumPage = path?.startsWith("/premium") ?? false;
+  const ctaTone = premiumPage ? "bg-brass text-anthracite hover:bg-brass-light" : "btn-lift";
   const active = (target: string) =>
     path !== undefined && (path === target || path.startsWith(`${target}/`));
   const { menu, areaMenu, serviceGroups, languageSwitch, chrome } = navDicts[lang];
@@ -134,7 +138,7 @@ export default function SwissNavigation({
   const isServices = active("/leistungen") || active("/premium");
   const isArea = active("/einzugsgebiet");
   const navLink = (on: boolean) =>
-    `relative inline-flex min-h-11 items-center px-1 py-2 text-[0.9375rem] font-medium transition-colors after:absolute after:inset-x-1 after:bottom-1.5 after:h-px after:origin-left after:bg-signal after:transition-transform after:duration-300 ${
+    `relative inline-flex min-h-11 items-center px-1 py-2 text-[0.9375rem] font-medium transition-colors after:absolute after:inset-x-1 after:bottom-1.5 after:h-px after:origin-left ${premiumPage ? "after:bg-brass-dark" : "after:bg-signal"} after:transition-transform after:duration-300 ${
       on
         ? "text-ink after:scale-x-100"
         : "text-ink/90 hover:text-ink after:scale-x-0 hover:after:scale-x-100"
@@ -178,7 +182,7 @@ export default function SwissNavigation({
           <div className="container flex h-[var(--util-h)] items-center justify-between gap-6">
             <p className="flex items-center gap-2">
               <span
-                className="inline-block h-1.5 w-1.5 rounded-full bg-signal"
+                className={`inline-block h-1.5 w-1.5 rounded-full ${premiumPage ? "bg-brass" : "bg-signal"}`}
                 aria-hidden="true"
               />
               {chrome.answer}
@@ -422,12 +426,12 @@ export default function SwissNavigation({
                 />
                 <a
                   href={company.phone.href}
-                  className="hidden items-center gap-2 px-3 py-2 text-[0.9375rem] font-medium tabular-nums text-ink transition-colors hover:text-signal 2xl:inline-flex"
+                  className={`hidden items-center gap-2 px-3 py-2 text-[0.9375rem] font-medium tabular-nums text-ink transition-colors 2xl:inline-flex ${premiumPage ? "hover:text-brass-dark" : "hover:text-signal"}`}
                 >
-                  <Phone weight="duotone" className="size-5 text-signal" aria-hidden="true" />
+                  <Phone weight="duotone" className={`size-5 ${premiumPage ? "text-brass-dark" : "text-signal"}`} aria-hidden="true" />
                   {company.phone.display}
                 </a>
-                <Button asChild className="arrow-link btn-lift hidden sm:inline-flex">
+                <Button asChild className={`arrow-link hidden sm:inline-flex ${ctaTone}`}>
                   <a href={menu.cta.href} data-cta="kopf">
                     {menu.cta.label}
                     <ArrowRight weight="duotone" aria-hidden="true" />
@@ -466,7 +470,7 @@ export default function SwissNavigation({
                       className="md:hidden"
                     />
                     <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-1">
-                      <Button asChild size="lg" className="arrow-link btn-lift w-full">
+                      <Button asChild size="lg" className={`arrow-link w-full ${ctaTone}`}>
                         <a
                           href={menu.cta.href}
                           onClick={() => setIsOpen(false)}

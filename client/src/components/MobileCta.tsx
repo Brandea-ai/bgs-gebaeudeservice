@@ -5,6 +5,7 @@ import { ArrowRight, Phone } from "@phosphor-icons/react/dist/ssr";
 import { company } from "../../../shared/company";
 import { navDicts } from "../../../content/navigation";
 import type { Locale } from "../../../shared/i18n";
+import type { PagePath } from "../../../shared/seo";
 
 /**
  * Schwebende Leiste aus Milchglas am unteren Rand auf dem Handy (F7, M31, E80):
@@ -12,9 +13,11 @@ import type { Locale } from "../../../shared/i18n";
  * wieder hinein (CSS über data-nav, gesetzt in SwissNavigation). Verschwindet, sobald Formular oder Footer im Bild
  * sind. Der Footer klebt nur ab 1024 px (globals.css), unter 768 px steht er
  * im Fluss; darum ist er hier wieder ein verlässliches Mass (T01).
+ * Auf Premium-Seiten in Champagner und Anthrazit statt Signalrot (E85).
  */
-export default function MobileCta({ lang = "de" }: { lang?: Locale }) {
+export default function MobileCta({ lang = "de", path }: { lang?: Locale; path?: PagePath }) {
   const { chrome, menu } = navDicts[lang];
+  const premium = path?.startsWith("/premium") ?? false;
   const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
@@ -50,7 +53,9 @@ export default function MobileCta({ lang = "de" }: { lang?: Locale }) {
     >
       <a
         href={menu.cta.href}
-        className="press arrow-link btn-lift inline-flex h-12 items-center justify-center gap-2 rounded-[3px] bg-signal px-5 text-[0.9375rem] font-semibold text-white"
+        className={`press arrow-link inline-flex h-12 items-center justify-center gap-2 rounded-[3px] px-5 text-[0.9375rem] font-semibold ${
+          premium ? "bg-brass text-anthracite" : "btn-lift bg-signal text-white"
+        }`}
         tabIndex={hidden ? -1 : undefined}
         data-cta="mobil"
       >
@@ -63,7 +68,7 @@ export default function MobileCta({ lang = "de" }: { lang?: Locale }) {
         aria-label={`${chrome.phone}: ${company.phone.display}`}
         tabIndex={hidden ? -1 : undefined}
       >
-        <Phone weight="duotone" className="size-5 text-signal" aria-hidden="true" />
+        <Phone weight="duotone" className={`size-5 ${premium ? "text-brass-dark" : "text-signal"}`} aria-hidden="true" />
       </a>
     </nav>
   );

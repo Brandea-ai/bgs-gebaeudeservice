@@ -36,7 +36,7 @@ export default function PageFrame({
       <div className="stack-footer">
         <SiteFooter lang={lang} path={path ?? "/"} />
       </div>
-      <MobileCta lang={lang} />
+      <MobileCta lang={lang} path={path} />
     </div>
   );
 }

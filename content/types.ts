@@ -1,3 +1,4 @@
+import type { ImageKey } from '../shared/images'
 import type { PagePath } from '../shared/seo'
 
 /**
@@ -16,7 +17,37 @@ import type { PagePath } from '../shared/seo'
 /** Fliesstext. Interne Links im Format [Linktext](/pfad), nur Seiten aus shared/seo.ts. */
 export type Text = string
 
-export type Step = { title: string; text: Text }
+/** Remotion-Video der Ablauf-Bühne ohne Schrift (public/video/ablauf/<schluessel>.webm) */
+export type FigureKey = 'anfrage' | 'besichtigung' | 'offerte' | 'start'
+
+export type Step = {
+  title: string
+  text: Text
+  /**
+   * Bühne dieses Schritts im Ablauf (E85): ein Video (FigureKey) oder ein Bild aus
+   * dem Register (ImageKey, shared/images.ts). Ohne Angabe wählt die Vorlage.
+   * Premium zeigt keine Videos (sie enthalten Signalrot), nur Bilder.
+   */
+  figure?: FigureKey | ImageKey
+}
+
+/** Externe Quelle, tatsächlich gelesen (WebFetch), etwa fedlex.admin.ch, vogelwarte.ch, bafu.admin.ch */
+export type Source = { label: string; href: string }
+
+/**
+ * Werkzeug-Baustein (E85): der Mehrwert der Seite, 2 bis 4 je Seite. Die id ist
+ * der Sprunganker im Inhaltsverzeichnis und muss auf der Seite eindeutig sein
+ * (nicht umfang, ablauf, fragen, verwandt, abschnitt-<n>, kontakt-formular).
+ * printable zeigt einen Knopf «Drucken», der nur dieses Werkzeug druckt.
+ * updated ist der Tag der letzten inhaltlichen Prüfung (JJJJ-MM-TT, etwa nach
+ * dem Lesen der Quellen). Nur mit diesem Eintrag druckt die Vorlage «Stand …»,
+ * nie das Datum des Builds (keine Scheinaktualität, wie ArticleContent.updated).
+ */
+export type Tool =
+  | { kind: 'table'; id: string; title: string; intro?: Text; columns: string[]; rows: Text[][]; note?: Text; sources?: Source[]; printable?: boolean; updated?: string }
+  | { kind: 'checklist'; id: string; title: string; intro?: Text; groups: { title: string; items: Text[] }[]; note?: Text; sources?: Source[]; printable?: boolean; updated?: string }
+  | { kind: 'timeline'; id: string; title: string; intro?: Text; entries: { label: string; text: Text }[]; note?: Text; sources?: Source[] }
+  | { kind: 'text'; id: string; title: string; paragraphs: Text[]; items?: Text[]; note?: Text; sources?: Source[] }
 
 export type ServicePageContent = {
   /** Deutsche Adresse, zugleich Schlüssel für Titel, Beschreibung und Namen in shared/seo.ts */
@@ -28,7 +59,7 @@ export type ServicePageContent = {
   h1: string
   /** Einstieg aus Sicht der Kundschaft: Anlass und Lösung in ein bis zwei Absätzen */
   lead: Text[]
-  /** «Auf einen Blick». Gebiet, Offerte und Rückmeldung ergänzt die Vorlage, ausser die Seite nennt sie selbst. */
+  /** «Auf einen Blick»: 3 bis 5 seitentypische Eckdaten, etwa Nicht enthalten, Garantie, Einsatzzeiten, Vorlauf. Die Vorlage ergänzt nichts (E85). */
   facts: { label: string; value: string }[]
   scope: {
     title: string
@@ -37,8 +68,11 @@ export type ServicePageContent = {
     /** Was nicht dazugehört, mit Verweis auf die passende Leistung */
     notIncluded?: Text[]
   }
-  /** Weitere Abschnitte, etwa Nachfüllservice oder Maschinen */
+  /** Weitere Abschnitte, etwa Nachfüllservice oder Maschinen. Die ersten zwei stehen im Zickzack. */
   sections?: { title: string; paragraphs?: Text[]; items?: Text[] }[]
+  /** Werkzeuge im Hauptinhalt vor «Umfang», in dieser Reihenfolge (E85) */
+  tools?: Tool[]
+  /** Nur die seitentypischen Schritte. «Anfrage» und «Besichtigung und Offerte» zeigt die Vorlage als Zeile davor (E85). */
   steps: Step[]
   faq: { question: string; answer: Text }[]
   /** Verwandte Leistungen mit einem Satz, wann sie passen */

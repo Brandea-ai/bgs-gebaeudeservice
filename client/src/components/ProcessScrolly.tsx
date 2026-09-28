@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   CalendarCheck,
   Envelope,
@@ -8,10 +9,11 @@ import type { Icon } from "@phosphor-icons/react";
 import ProcessSection from "./ProcessSection";
 import RichText from "./RichText";
 import { premiumLightLink } from "./premiumStyles";
-import type { Step } from "../../../content/types";
+import { images, type ImageKey } from "../../../shared/images";
+import type { FigureKey, Step } from "../../../content/types";
 import type { Locale } from "../../../shared/i18n";
 
-export type FigureKey = "anfrage" | "besichtigung" | "offerte" | "start";
+export type { FigureKey };
 
 const glyphs: Record<FigureKey, Icon> = {
   anfrage: Envelope,
@@ -20,65 +22,124 @@ const glyphs: Record<FigureKey, Icon> = {
   start: CalendarCheck,
 };
 
+type Figure = { image: ImageKey } | { video: FigureKey };
+
+const isImage = (key: FigureKey | ImageKey): key is ImageKey => key in images;
+
 /**
- * Ablauf-Bühne (E80): je Schritt ein kurzes Remotion-Video ohne Schrift
- * (sprachneutral), gestapelt; sichtbar ist das Video des aktiven Schritts
- * (CSS über data-active), abgespielt wird nur dieses (ProcessSection). Ohne
- * JavaScript oder mit reduced motion steht das Standbild des ersten Schritts.
- * lux: Bühne der Premium-Welt in Anthrazit mit Champagner-Ring und warmem Schatten.
+ * Figur je Schritt nur aus ausdrücklicher Angabe: step.figure, sonst
+ * figureKeys an derselben Stelle. Nie nach Position raten (F2).
  */
-function Stage({ keys, lux = false }: { keys: FigureKey[]; lux?: boolean }) {
+function explicitKeys(steps: Step[], figureKeys: FigureKey[] = []) {
+  return steps.map((step, i) => step.figure ?? figureKeys[i]);
+}
+
+/**
+ * Bühne nur, wenn jeder Schritt eine zeigbare Figur hat. Premium zeigt nur
+ * Bilder, weil die Videos Signalrot enthalten (E85, F4): ohne eigene Bilder
+ * keine leere Symbolbühne, sondern die ruhige Liste.
+ */
+export function hasStage(steps: Step[], premium: boolean, figureKeys: FigureKey[] = []) {
+  const keys = explicitKeys(steps, figureKeys);
+  return keys.length > 0 && keys.every(key => key !== undefined && (!premium || isImage(key)));
+}
+
+/**
+ * Bühne (E80, E85): je Schritt ein Remotion-Video ohne Schrift oder ein Bild
+ * aus dem Register, gestapelt; sichtbar ist die Figur des aktiven Schritts
+ * (CSS über data-active), abgespielt wird nur dessen Video (ProcessSection),
+ * und nur, wenn die Bühne überhaupt zu sehen ist. Ohne JavaScript oder mit
+ * reduced motion steht die erste Figur mit ihrem Standbild.
+ */
+function Stage({ figures, lux }: { figures: Figure[]; lux: boolean }) {
   return (
     <div
-      className={`relative aspect-[4/3] overflow-hidden rounded-[3px] ${
+      className={`process-stage relative aspect-[4/3] overflow-hidden rounded-[3px] ${
         lux
-          ? "bg-anthracite shadow-[0_1px_0_rgba(125,98,49,0.12),0_36px_70px_-38px_rgba(90,68,30,0.55)] ring-1 ring-brass/45"
+          ? "bg-ivory shadow-[0_1px_0_rgba(125,98,49,0.12),0_36px_70px_-38px_rgba(90,68,30,0.5)] ring-1 ring-brass-dark/30"
           : "bg-stone shadow-[0_1px_0_rgba(14,17,22,0.04),0_28px_60px_-36px_rgba(14,17,22,0.45)] ring-1 ring-ink/10"
       }`}
     >
-      {keys.map((key, i) => (
-        <video
-          key={key}
-          data-step-video={i + 1}
-          className={`pv pv-${i + 1} absolute inset-0 h-full w-full object-cover`}
-          muted
-          loop
-          playsInline
-          preload={i === 0 ? "metadata" : "none"}
-          poster={`/video/ablauf/${key}-poster.jpg`}
-          aria-hidden="true"
-          tabIndex={-1}
-        >
-          <source src={`/video/ablauf/${key}.webm`} type="video/webm" />
-          <source src={`/video/ablauf/${key}.mp4`} type="video/mp4" />
-        </video>
-      ))}
+      {figures.map((figure, i) => {
+        const cls = `pv pv-${i + 1} absolute inset-0 h-full w-full`;
+        if ("image" in figure) {
+          return (
+            <div key={i} className={cls}>
+              <Image
+                src={images[figure.image].src}
+                alt=""
+                fill
+                sizes="(min-width: 1024px) 55vw, 1px"
+                className="object-cover"
+              />
+            </div>
+          );
+        }
+        // Standbild als träges Bild unter dem Video statt poster: bei ausgeblendeter Bühne (Handy) lädt nichts
+        return (
+          <div key={i} className={cls}>
+            <Image
+              src={`/video/ablauf/${figure.video}-poster.jpg`}
+              alt=""
+              fill
+              sizes="(min-width: 1024px) 55vw, 1px"
+              className="object-cover"
+            />
+            <video
+              data-step-video={i + 1}
+              className="absolute inset-0 h-full w-full object-cover"
+              muted
+              loop
+              playsInline
+              preload="none"
+              aria-hidden="true"
+              tabIndex={-1}
+            >
+              <source src={`/video/ablauf/${figure.video}.webm`} type="video/webm" />
+              <source src={`/video/ablauf/${figure.video}.mp4`} type="video/mp4" />
+            </video>
+          </div>
+        );
+      })}
     </div>
   );
 }
 
 /**
- * Prozess-Sektion (F14): Der Ablauf bis zur Offerte als stehende Figur links
- * und durchlaufende Schritte rechts (wide, narrow), auf dem Handy und in der
- * vertikalen Variante als Liste mit kleiner Marke je Schritt. Ohne JavaScript,
- * ohne Browserunterstützung und mit reduced motion: alles sofort sichtbar.
- * Ersetzt das Kartenraster Steps.tsx.
+ * Prozess-Sektion (F14, E85) nach dem Muster era-residence Dossier 06.
+ *
+ * Mit Bühne (jeder Schritt hat eine zeigbare Figur, siehe hasStage):
+ * - ab drei Schritten ab lg eine klebende Szene, links die Bühne, rechts alle
+ *   Schritte ohne Mindesthöhe. Die Szene ist so hoch wie ihr Inhalt und klebt
+ *   mittig im freien Bildschirm; ein Scrollweg darunter (process-track) lässt
+ *   sie stehen, der Fortschritt setzt nur data-active (F3). Höhe und Lage
+ *   hängen nicht an der ein- und ausfahrenden Kopfzeile (F1).
+ * - bis zwei Schritte ein ruhiges Raster, Bühne neben der Liste, ohne Scrollweg.
+ *
+ * Ohne Bühne die Liste: variant "row" ab lg als Zeile nebeneinander (der
+ * Aufruf wählt sie nur, wenn die Spalten breit genug sind), sonst senkrecht.
+ * Schrittsymbole nur, wenn jeder Schritt ein Video als Figur hat; sonst
+ * ruhige Punkte auf der Linie (F2). Auf dem Handy,
+ * mit reduced motion und wenn die Szene nicht in den Bildschirm passt: ruhige
+ * Liste bzw. statisches Raster.
  */
 export default function ProcessScrolly({
   steps,
   lang = "de",
   tone = "light",
   variant = "wide",
-  figureKeys,
+  figureKeys = [],
   labelledBy,
   idPrefix = "schritt",
 }: {
   steps: Step[];
   lang?: Locale;
-  /** premium: helle Premium-Welt, Champagner statt Signalrot */
+  /** premium: helle Premium-Welt, Champagner statt Signalrot, keine Videos */
   tone?: "light" | "dark" | "premium";
-  variant?: "wide" | "narrow" | "vertical";
-  figureKeys: FigureKey[];
+  /** wide/narrow: mit Bühne, falls jeder Schritt eine Figur hat; row: Zeile ab lg; vertical: Liste */
+  variant?: "wide" | "narrow" | "row" | "vertical";
+  /** Video je Stelle für Abläufe, deren Schritte keine eigene figure tragen (Startseite, Kontakt) */
+  figureKeys?: FigureKey[];
   /** id der Überschrift über der Sektion */
   labelledBy?: string;
   idPrefix?: string;
@@ -88,51 +149,43 @@ export default function ProcessScrolly({
   // Akzent: Signalrot, auf Anthrazit Champagner, in der hellen Premium-Welt Champagner für Hell
   const accent = dark ? "text-brass" : lux ? "text-brass-dark" : "text-signal";
   const toneClass = dark ? "process--dark" : lux ? "process--premium" : "";
-  const keys = steps.map((_, i) => figureKeys[i] ?? "start");
+  const keys = explicitKeys(steps, figureKeys);
   const n = steps.length;
-  const pinned = variant !== "vertical";
-  const cols =
-    variant === "wide"
-      ? "lg:grid-cols-12"
-      : variant === "narrow"
-        ? "lg:grid-cols-12"
-        : "";
-  const figureCol = "lg:col-span-5";
-  const stepsCol =
-    variant === "wide" ? "lg:col-span-6 lg:col-start-7" : "lg:col-span-7";
+  const staged = (variant === "wide" || variant === "narrow") && hasStage(steps, lux, figureKeys);
+  // Symbol je Schritt nur aus einem Video-Schlüssel; sonst Punkte ohne Symbol
+  const marks = keys.every(key => key !== undefined && !isImage(key))
+    ? keys.map(key => glyphs[key as FigureKey])
+    : null;
+  // Zeile nebeneinander nur ohne Bühne; wie viele Spalten passen, entscheidet der Aufruf
+  const row = !staged && variant === "row";
 
   const list = (
-    <ol
-      className="relative"
-      style={{ "--step-h": n <= 3 ? "44vh" : "38vh" } as React.CSSProperties}
-    >
-      <span
-        className={`process-line ${dark ? "bg-white/20" : lux ? "bg-brass/40" : "bg-ink/15"}`}
-        aria-hidden="true"
-      >
+    <ol className="relative">
+      {n > 1 && (
         <span
-          className={`process-line-fill block h-full w-full ${dark ? "bg-brass" : lux ? "bg-brass-dark" : "bg-signal"}`}
-        />
-      </span>
+          className={`process-line ${dark ? "bg-white/20" : lux ? "bg-brass/40" : "bg-ink/15"}`}
+          aria-hidden="true"
+        >
+          <span
+            className={`process-line-fill block h-full w-full ${dark ? "bg-brass" : lux ? "bg-brass-dark" : "bg-signal"}`}
+          />
+        </span>
+      )}
       {steps.map((step, i) => {
-        const Glyph = glyphs[keys[i]];
+        const Glyph = marks?.[i];
         return (
           <li
             key={step.title}
             id={`${idPrefix}-${i + 1}`}
             data-step={i + 1}
-            className={`process-step pb-10 last:pb-0 ${pinned ? "lg:pb-0" : ""}`}
+            className="process-step pb-10 last:pb-0"
           >
-            <span
-              className={`process-num ${accent}`}
-              aria-hidden="true"
-            >
-              <Glyph weight="duotone" className="size-6" />
-            </span>
-            <span
-              className={`process-dot ${accent}`}
-              aria-hidden="true"
-            />
+            {Glyph && (
+              <span className={`process-num ${accent}`} aria-hidden="true">
+                <Glyph weight="duotone" className="size-6" />
+              </span>
+            )}
+            <span className={`process-dot ${accent}`} aria-hidden="true" />
             <h3
               className={
                 lux
@@ -143,7 +196,7 @@ export default function ProcessScrolly({
               {step.title}
             </h3>
             <p
-              className={`mt-3 max-w-[46ch] font-medium leading-relaxed ${dark ? "text-white/90" : "text-ink-600"}`}
+              className={`hyphens mt-3 max-w-[46ch] font-medium leading-relaxed ${dark ? "text-white/90" : "text-ink-600"}`}
             >
               <RichText
                 text={step.text}
@@ -162,32 +215,40 @@ export default function ProcessScrolly({
       })}
     </ol>
   );
+  const plain = marks ? "" : "process--plain";
 
-  if (!pinned) {
+  if (!staged) {
     return (
       <ProcessSection
         n={n}
         labelledBy={labelledBy}
-        className={toneClass}
+        className={`${toneClass} ${plain} ${row ? "process--row" : ""}`}
       >
         {list}
       </ProcessSection>
     );
   }
 
+  const figures: Figure[] = keys.map(key => {
+    const k = key as FigureKey | ImageKey;
+    return isImage(k) ? { image: k } : { video: k };
+  });
+  const scene = n >= 3;
+  const figureCol = variant === "wide" ? "lg:col-span-7" : "lg:col-span-6";
+  const stepsCol = variant === "wide" ? "lg:col-span-5 lg:col-start-8" : "lg:col-span-6 lg:col-start-7";
   return (
     <ProcessSection
       n={n}
       labelledBy={labelledBy}
-      className={`grid gap-10 ${cols} lg:gap-12 ${toneClass}`}
+      className={`process--area ${scene ? "process--scene" : ""} ${toneClass} ${plain}`}
     >
-      <figure
-        className={`process-figure hidden ${figureCol} lg:block`}
-        aria-hidden="true"
-      >
-        <Stage keys={keys} lux={lux} />
-      </figure>
-      <div className={stepsCol}>{list}</div>
+      <div className="process-screen grid gap-10 lg:grid-cols-12 lg:items-center lg:gap-12">
+        <figure className={`process-figure hidden ${figureCol} lg:block`} aria-hidden="true">
+          <Stage figures={figures} lux={lux} />
+        </figure>
+        <div className={`process-list min-w-0 ${stepsCol}`}>{list}</div>
+      </div>
+      {scene && <div className="process-track" aria-hidden="true" />}
     </ProcessSection>
   );
 }

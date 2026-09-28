@@ -49,11 +49,11 @@ export default function KontaktKanaele(props: KontaktProps) {
                     : "border border-line bg-white text-ink shadow-[0_18px_40px_-32px_rgba(14,17,22,0.35)]"
                 }`}
               >
-                <Glyph weight="duotone" className={`size-9 ${main ? "text-brass" : "text-signal"}`} aria-hidden="true" />
+                <Glyph weight="duotone" className={`size-9 ${main ? "text-white" : "text-signal"}`} aria-hidden="true" />
                 <span className={`t-eyebrow mt-6 ${main ? "text-white/90" : "text-ink-600"}`}>{title}</span>
                 <span
                   className={`mt-2 break-words font-display text-[1.375rem] font-bold leading-snug tabular-nums transition-colors md:text-[1.5rem] ${
-                    main ? "text-white group-hover:text-brass" : "text-ink group-hover:text-signal"
+                    main ? "text-white underline-offset-4 group-hover:underline" : "text-ink group-hover:text-signal"
                   }`}
                 >
                   {value}
@@ -61,7 +61,7 @@ export default function KontaktKanaele(props: KontaktProps) {
                 <span className={`mt-3 block max-w-[46ch] font-medium leading-relaxed ${main ? "text-white/90" : "text-ink-600"}`}>
                   {hint}
                 </span>
-                <span className={`mt-auto inline-flex items-center gap-2 pt-6 font-semibold ${main ? "text-brass" : "text-signal"}`}>
+                <span className={`mt-auto inline-flex items-center gap-2 pt-6 font-semibold ${main ? "text-white" : "text-signal"}`}>
                   {action}
                   <ArrowRight weight="duotone" className="size-4 shrink-0" aria-hidden="true" />
                 </span>
