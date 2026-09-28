@@ -33,3 +33,27 @@
 1. Eigene Seite Umzugsreinigung mit Abnahmegarantie in vier Sprachen, Titel «Umzugsreinigung mit Abnahmegarantie in Luzern und Zug», FAQ aus den Nutzerfragen, Kosten ehrlich über Einflussfaktoren ohne Preise (E18).
 2. Sonderreinigungen auf Grund- und Sonderreinigung schärfen, Verweis auf die neue Seite.
 3. Google-Unternehmensprofil für BGS prüfen oder anlegen und Bewertungen sammeln (Local Pack). Nur Brandea und der Kunde.
+
+## Vollanalyse (28.09.2026, 08:40 bis 08:44 UTC)
+
+Nachgeholt nach dem Pflichtprogramm des SEO-Skills (8 Punkte). Summe aller Abrufe dieses Tages rund 0,29 USD, jeder Abruf einzeln und begrenzt.
+
+| Punkt | Ergebnis |
+|---|---|
+| 1 Standort | Schweiz 2756 (Landesebene), Stadt Luzern 1003056, Emmen 1003045, Zug 1003235, Baar 1003230, Stans 1003092, Sarnen 9048012 (Google-Ads-Standortliste, kostenlos) |
+| 2 Keyword-Landkarte | Volumen siehe oben. Schwierigkeit (Labs, Schweiz): fast alle 0 bis 18, reinigungsfirma 33, reinigungsfirma obwalden 41. Labs hat für die Schweiz dünne Daten, 0 kann «wenig gemessen» heissen. Absicht: kommerziell bei reinigungsfirma + Ort (85 bis 87 %), putzfirma, büroreinigung, unterhaltsreinigung, treppenhausreinigung; informativ bei hauswartung (90 %), grundreinigung, baureinigung, gartenpflege, facility management |
+| 2 Long-Tail | reinigungsfirma aarau 140, baden 110, sursee 90, zofingen 70, lenzburg, brugg, wettingen je 50, baar 40, triengen 40, ruswil 30; «reinigungsfirma in der nähe» 590 (Local Pack). Hauswartung: viele Job- und Firmennamen-Suchen; für Verwaltungen «pflichtenheft hauswartung» (4 Varianten je rund 70), «hauswartung aufgaben» 40 |
+| 3 Domain-Performance | Nicht anwendbar: Neue Seite auf `vercel.app` mit `noindex`, keine Rankings. Gemessen wurden Wettbewerber und die alte Kundendomain |
+| 4 SERP «reinigungsfirma luzern» | Keine starke eigene Zielseite in den Top 10, dafür Verzeichnisse (local.ch, search.ch, ofri, goregio) und unpassende Unterseiten. Local Pack: Jorky (32 Bewertungen), Ever Clean (6), BiAg (31). Nutzerfragen fast nur zu Kosten |
+| 5 OnPage | Unsere `/einzugsgebiet/luzern`: Score 95,24, 667 Wörter, 8 H2; H1 ohne Hauptbegriff, Titel 70 Zeichen (zu lang). Jorky-Startseite: 377 Wörter, H1 «Ihre Anfrage». mrclean.ch Büroreinigung Luzern (organisch 1): 2'509 Wörter, Abschnitte zu Einflussfaktoren, Offerte prüfen, Schlüsselübergabe, Haftung. «has_micromarkup false» bei uns ist ein Fehlalarm: JSON-LD (LocalBusiness, BreadcrumbList, Service) ist vorhanden |
+| 6 Autorität | bgs-service.ch (alte Kundenseite): Rank 87, 43 verweisende Domains seit 2019. biagclean.ch: 115, 78. jorky-reinigung.ch: 13, 39, Spam-Score 51 |
+| 7 Local | 85 Einträge in 15 km um Luzern, Spitze M.R.S Facility Services 79 Bewertungen, Zauberbesen 38. **BGS-Profil vorhanden, aber:** Adresse Rothenburgstrasse 41 statt Tannhof 10, Kategorie «House cleaning service» (Privathaushalte, widerspricht E28), keine Website, 2 Bewertungen, 2 Fotos |
+
+## Massnahmen aus der Vollanalyse
+
+**Website (umgesetzt durch den Agenten, Nachweis folgt):** Kantons-H1 mit «Reinigungsfirma», kürzere Titel, Triengen und Ruswil, Kosten-FAQ ohne Preise mit Link zum Ratgeber, Hauswartung mit Pflichtenheft, Büroreinigung mit Aufwand, Offertanfrage, Schlüssel und Haftung.
+
+**Nur Brandea und Kundin:**
+1. Google-Unternehmensprofil korrigieren: Adresse Tannhof 10, 6020 Emmenbrücke (wie Handelsregister und Website), Hauptkategorie Gebäudereinigung, weitere Kategorie Hauswartung, Website verknüpfen, Fotos, Bewertungen bei bestehenden Kunden erbitten.
+2. Launch auf `bgs-service.ch` oder mit 301 von allen alten Adressen auf die neuen (Zuordnung in 03, Abschnitt 2b), damit Rank 87 und 43 verweisende Domains wirken (B08).
+3. Frage E28: Mieter für Umzugs- und Endreinigung öffnen? Das grösste Suchvolumen liegt dort.
