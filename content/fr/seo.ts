@@ -35,8 +35,8 @@ export const pages = {
   },
   '/premium/yacht': {
     label: 'Yacht',
-    title: 'Nettoyage de yachts et de bateaux',
-    description: 'Nettoyage de yachts et bateaux à moteur sur les lacs des Quatre-Cantons et de Zoug : intérieur, sellerie, teck et gelcoat. Discret et selon entente.',
+    title: 'Nettoyage de bateau et de yacht à Lucerne et Zoug',
+    description: 'Nettoyage de bateau et de yacht au ponton, sur les lacs des Quatre-Cantons et de Zoug : teck, gelcoat, sellerie et carré. Devis gratuit après une visite.',
   },
   '/leistungen': {
     label: 'Prestations',

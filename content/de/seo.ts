@@ -35,8 +35,8 @@ export const pages = {
   },
   '/premium/yacht': {
     label: 'Yacht',
-    title: 'Yacht- und Bootsreinigung',
-    description: 'Reinigung von Yachten und Motorbooten am Vierwaldstättersee und am Zugersee: Innenraum, Polster, Teak und Gelcoat. Diskret und nach Absprache.',
+    title: 'Bootsreinigung und Yachtreinigung Luzern, Zug',
+    description: 'Bootsreinigung und Yachtreinigung am Liegeplatz: Teak, Gelcoat, Polster und Salon, am Vierwaldstättersee und Zugersee. Kostenlose Offerte nach Besichtigung.',
   },
   '/leistungen': {
     label: 'Leistungen',
