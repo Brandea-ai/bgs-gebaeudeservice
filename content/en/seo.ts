@@ -86,7 +86,7 @@ export const pages: Dictionary['pages'] = {
   '/leistungen/aussen-und-gruenflaechenpflege': {
     label: 'Grounds and green spaces',
     title: 'Garden maintenance in Lucerne and Zug',
-    description: 'Garden maintenance for properties in Lucerne, Zug and beyond: lawns, hedges cut in winter, weeds removed without chemicals. Free quote after a site visit.',
+    description: 'Garden maintenance for properties in Lucerne, Zug and beyond: lawns, hedges cut in winter, weeds and leaves cleared from paths. Free quote after a site visit.',
   },
   '/leistungen/facility-services': {
     label: 'Facility services',

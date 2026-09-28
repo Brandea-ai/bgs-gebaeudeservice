@@ -86,7 +86,7 @@ export const pages = {
   '/leistungen/aussen-und-gruenflaechenpflege': {
     label: 'Entretien des extérieurs et des espaces verts',
     title: 'Entretien des espaces verts à Lucerne et Zoug',
-    description: 'Entretien des espaces verts d’immeubles à Lucerne, Zoug et environs : gazon, haies en hiver, désherbage sans chimie. Devis gratuit après une visite.',
+    description: 'Entretien des espaces verts d’immeubles à Lucerne, Zoug et environs : gazon, haies en hiver, désherbage des chemins. Devis gratuit après une visite.',
   },
   '/leistungen/facility-services': {
     label: 'Facility services',

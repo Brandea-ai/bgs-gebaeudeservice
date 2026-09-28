@@ -6,12 +6,12 @@ export const aussenUndGruen: ServicePageContent = {
   eyebrow: 'Suivi d’immeubles',
   h1: 'Entretien des espaces verts et des extérieurs pour immeubles',
   lead: [
-    'Gazon, haies et places demandent beaucoup de travail en mai et presque rien en janvier. Nous entretenons les extérieurs de votre immeuble selon un plan d’entretien qui suit ce cycle annuel : les haies en hiver, les mauvaises herbes sans produits chimiques, les feuilles ramassées avant qu’elles ne rendent les chemins glissants.',
+    'Gazon, haies et places demandent beaucoup de travail en mai et presque rien en janvier. Nous entretenons les extérieurs de votre immeuble selon un plan d’entretien qui suit ce cycle annuel : les haies en hiver, les mauvaises herbes des joints avant qu’elles montent en graines, les feuilles ramassées avant qu’elles ne rendent les chemins glissants.',
     'Nous assurons l’entretien des espaces verts pour les gérances, les communautés de PPE et les entreprises, comme prestation à part entière ou avec la [conciergerie](/leistungen/hauswartung).',
   ],
   facts: [
     { label: 'Taille des haies', value: 'De novembre à mars, hors période de nidification' },
-    { label: 'Mauvaises herbes', value: 'Retirées mécaniquement, sans herbicide' },
+    { label: 'Mauvaises herbes sur les chemins', value: 'Retirées mécaniquement, les herbicides y étant interdits' },
     { label: 'Fréquence', value: 'Selon le plan d’entretien, plus soutenue au début de l’été' },
     { label: 'Intervention', value: 'Seule ou avec la conciergerie' },
     { label: 'Pas dans notre offre', value: 'Service hivernal, aménagement paysager, nouvelles plantations' },
@@ -38,7 +38,7 @@ export const aussenUndGruen: ServicePageContent = {
   },
   sections: [
     {
-      title: 'Quand les extérieurs ne s’entretiennent plus à côté',
+      title: 'Quand plus personne ne s’occupe des extérieurs',
       paragraphs: [
         'Le concierge part à la retraite, les copropriétaires ne tondent plus eux-mêmes, ou un nouveau lotissement est habité et personne n’est responsable du gazon et des haies. Il faut alors quelqu’un qui garde un œil sur les extérieurs toute l’année.',
         'Nous entretenons des ensembles résidentiels avec place de jeux, des immeubles commerciaux avec parking et des sites artisanaux avec surfaces en gravier. La base est un plan d’entretien qui indique pour chaque surface les travaux et leur rythme. On peut ainsi dire aux locataires quand la tonte et la taille auront lieu.',
@@ -52,9 +52,9 @@ export const aussenUndGruen: ServicePageContent = {
       ],
     },
     {
-      title: 'Espaces verts et ronde de contrôle en un seul passage',
+      title: 'Combiner espaces verts et ronde de contrôle',
       paragraphs: [
-        'Si l’entretien des extérieurs est combiné avec la [conciergerie](/leistungen/hauswartung), il n’y a pas de déplacement séparé. Qui tond et balaie dehors remarque aussi la dalle descellée, l’éclairage extérieur défectueux ou la grille d’évacuation bouchée.',
+        'Si l’entretien des extérieurs va de pair avec la [conciergerie](/leistungen/hauswartung), travaux de jardin et ronde de contrôle peuvent se combiner. Qui tond et balaie dehors remarque aussi la dalle descellée, l’éclairage extérieur défectueux ou la grille d’évacuation bouchée.',
       ],
     },
   ],
@@ -87,7 +87,7 @@ export const aussenUndGruen: ServicePageContent = {
         [
           'Septembre et octobre',
           'Ratisser régulièrement les feuilles, dernière tonte avant l’hiver',
-          'Laisser les arbustes à baies, ils nourrissent les oiseaux en hiver',
+          'Laisser les arbustes indigènes à baies, ils nourrissent les oiseaux en hiver. Pour le laurier-cerise, en revanche, couper les baies avant la maturité des graines',
           'Retirer les feuilles des chemins et des places, sous les arbustes elles peuvent rester',
         ],
         [
@@ -108,7 +108,7 @@ export const aussenUndGruen: ServicePageContent = {
     },
     {
       kind: 'table',
-      id: 'unkraut-ohne-gift',
+      id: 'spritzmittelverbot',
       title: 'Mauvaises herbes et mousse : où les produits sont interdits',
       intro: 'Sur les surfaces aménagées, il manque la couche d’humus qui pourrait retenir les substances actives, et la pluie les emporte vers les grilles et les cours d’eau. L’ordonnance sur la réduction des risques liés aux produits chimiques (ORRChim) y interdit donc les herbicides et, depuis décembre 2020, aussi les produits contre les algues et la mousse. Cela vaut pour les entreprises comme pour les particuliers.',
       columns: ['Surface', 'Ce qui s’applique', 'Ce qui fonctionne à la place'],
@@ -134,11 +134,12 @@ export const aussenUndGruen: ServicePageContent = {
           'Désherber, faucher, couvrir le sol de paillis',
         ],
       ],
-      note: 'La tolérance réduit les coûts, écrit l’OFEV : sur les surfaces peu fréquentées, chaque joint n’a pas besoin d’être sans verdure. Là où les mauvaises herbes reviennent chaque année au même endroit, seule une réfection des joints aide durablement.',
+      note: 'La tolérance réduit les coûts, écrit l’OFEV : il n’est pas nécessaire partout d’éliminer les mauvaises herbes sur toute la surface. Une fois les joints et les fissures regarnis et le revêtement assaini, elles ne peuvent plus y pousser.',
       sources: [
         { label: 'ORRChim (RS 814.81), annexe 2.4 ch. 4bis et annexe 2.5 ch. 1.1', href: 'https://www.fedlex.admin.ch/eli/cc/2005/478/fr' },
         { label: 'OFEV : interdiction des herbicides et biocides sur et le long des routes, chemins, places, terrasses et toits, 2021 (en allemand)', href: 'https://www.bafu.admin.ch/dam/de/sd-web/Cp1cASoaj-UD/merkblatt_verwendungsverbotefuerunkrautvertilgungsmittelaufundan.pdf' },
         { label: 'OFEV : produits phytosanitaires dans les communes', href: 'https://www.bafu.admin.ch/fr/produits-phytosanitaires-dans-les-communes' },
+        { label: 'OFEV : 10 mesures préventives et alternatives aux herbicides, 2019 (en allemand)', href: 'https://www.bafu.admin.ch/dam/de/sd-web/9yHQQ2lBw2VU/merkblatt_10_vorbeugendemassnahmenundalternativenzumherbizideins.pdf' },
       ],
       printable: true,
       updated: '2026-09-28',
@@ -148,7 +149,7 @@ export const aussenUndGruen: ServicePageContent = {
       id: 'invasive-pflanzen',
       title: 'Plantes envahissantes au jardin : les règles depuis 2024',
       intro: 'Depuis le 1er septembre 2024, l’ordonnance sur la dissémination dans l’environnement (ODE) encadre plus strictement les plantes de jardin envahissantes. Les plantes de l’annexe 2.2 ne peuvent plus être remises à des tiers. Pour l’annexe 2.1, toute utilisation est interdite, seule la lutte reste autorisée.',
-      columns: ['Plante', 'Ce que dit l’ODE', 'Entretien et élimination'],
+      columns: ['Plante', 'Ce qui s’applique', 'Entretien et élimination'],
       rows: [
         [
           'Laurier-cerise',
@@ -172,11 +173,11 @@ export const aussenUndGruen: ServicePageContent = {
         ],
         [
           'Ambroisie à feuilles d’armoise',
-          'Annexe 2.1, avec obligation d’annonce : signaler les découvertes au service cantonal',
+          'Annexe 2.1. Lutte obligatoire selon la législation agricole. L’aide pratique des cantons de Suisse centrale demande en outre de signaler les découvertes au service cantonal',
           'Arracher avec des gants, et pendant la floraison avec un masque anti-poussière, toute la plante aux ordures ménagères',
         ],
       ],
-      note: 'Il n’existe pas d’obligation générale d’éliminer les plantes envahissantes sur son propre terrain. Les propriétaires doivent toutefois empêcher leur propagation. Graines et racines n’ont donc jamais leur place dans le compost du jardin.',
+      note: 'Le droit de l’environnement n’oblige pas à éliminer les plantes envahissantes de son propre terrain. L’ambroisie fait exception : la législation agricole oblige à la combattre. Le devoir de diligence vaut pour toutes, les propriétaires doivent donc empêcher leur propagation. C’est pourquoi graines et racines n’ont jamais leur place dans le compost du jardin.',
       sources: [
         { label: 'Ordonnance sur la dissémination dans l’environnement ODE (RS 814.911), art. 15 et annexes 2.1 et 2.2', href: 'https://www.fedlex.admin.ch/eli/cc/2008/614/fr' },
         { label: 'OFEV : modification de la réglementation sur les plantes exotiques envahissantes', href: 'https://www.bafu.admin.ch/fr/modification-de-la-reglementation-sur-les-plantes-exotiques-envahissantes' },
@@ -249,7 +250,7 @@ export const aussenUndGruen: ServicePageContent = {
     {
       question: 'De quoi dépend le coût de l’entretien des espaces verts ?',
       answer:
-        'Surtout de la taille des surfaces et de la part de travail manuel. Une machine tond vite un gazon dégagé, alors que joints, surfaces en gravier et talus prennent du temps. S’y ajoutent la longueur et la hauteur des haies, le nombre de passages pendant la période de croissance et l’évacuation des déchets verts. Si l’entretien du jardin est combiné avec la conciergerie, vous économisez des déplacements.',
+        'Surtout de la taille des surfaces et de la part de travail manuel. Une machine tond vite un gazon dégagé, alors que joints, surfaces en gravier et talus prennent du temps. S’y ajoutent la longueur et la hauteur des haies, le nombre de passages pendant la période de croissance et l’évacuation des déchets verts.',
     },
     {
       question: 'Pouvez-vous pulvériser un désherbant sur la place devant l’immeuble ?',
@@ -264,7 +265,7 @@ export const aussenUndGruen: ServicePageContent = {
     {
       question: 'La commune exige une taille, mais c’est la période de nidification. Que faire ?',
       answer:
-        'L’espace au-dessus du trottoir et de la route doit rester libre, dans le canton de Lucerne par exemple selon les §§ 86 et 87 de la loi sur les routes. En été, nous ne coupons que ce qui dépasse dans cet espace, et seulement après avoir vérifié la présence de nids. La grande taille suit en hiver et est assez généreuse le long des chemins pour qu’il reste peu à reprendre l’année suivante.',
+        'Les propriétaires fonciers doivent tailler à temps les plantes qui bordent les routes, dans le canton de Lucerne selon le § 86, al. 7, de la loi sur les routes. Le profil d’espace libre, soit l’espace au-dessus du trottoir et de la route, doit rester dégagé (§ 91). En été, nous ne coupons que ce qui dépasse dans cet espace, et seulement après avoir vérifié la présence de nids. La grande taille suit en hiver et est assez généreuse le long des chemins pour qu’il reste peu à reprendre l’année suivante.',
     },
     {
       question: 'Où vont l’herbe coupée, les feuilles et les branches ?',
@@ -288,7 +289,7 @@ export const aussenUndGruen: ServicePageContent = {
     { path: '/leistungen/unterhaltsreinigung', text: 'Si l’entrée et la cage d’escalier doivent rester aussi propres que la place devant l’immeuble, au même rythme.' },
   ],
   cta: {
-    title: 'Plan d’entretien et devis pour vos extérieurs',
-    text: 'Indiquez-nous le lieu, le type d’immeuble et les surfaces approximatives : mètres carrés de gazon, mètres de haie, chemins et places. Un plan des extérieurs aide aussi. Après la visite, vous recevez le plan d’entretien et le devis, gratuits et sans engagement.',
+    title: 'Demander l’entretien des espaces verts de votre immeuble',
+    text: 'Indiquez-nous le lieu, le type d’immeuble et les surfaces approximatives : mètres carrés de gazon, mètres de haie, chemins et places. Un plan des extérieurs aide aussi. Après une visite des extérieurs, vous recevez notre devis pour l’entretien des espaces verts, gratuit et sans engagement. Le plan d’entretien s’établit avec vous une fois le mandat attribué.',
   },
 }

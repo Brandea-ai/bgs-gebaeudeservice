@@ -5,18 +5,19 @@ import type { ServicePageContent } from '../../types'
 // Quellen am 28.09.2026 gelesen: Vogelwarte (Gehölzschnitt), ChemRRV Anhänge 2.4 und 2.5,
 // BAFU-Faktenblätter 2019 und 2021, FrSV Anhänge 2.1 und 2.2, BAFU zur FrSV-Änderung,
 // Praxishilfe Neophyten der Zentralschweizer Kantone (2025), Stadt Luzern (Rückschnitt).
+// Runde 2 (Prüferbefunde): BAFU-FAQ zur Ambrosie, StrG LU (SRL 755) §§ 86, 91 und StrV LU § 12 gelesen.
 export const aussenUndGruen: ServicePageContent = {
   path: '/leistungen/aussen-und-gruenflaechenpflege',
   area: 'leistungen',
   eyebrow: 'Betreuung von Liegenschaften',
   h1: 'Gartenpflege und Grünflächenpflege für Liegenschaften',
   lead: [
-    'Rasen, Hecken und Plätze machen im Mai viel Arbeit und im Januar fast keine. Wir pflegen die Umgebung Ihrer Liegenschaft nach einem Pflegeplan, der diesem Jahreslauf folgt: Hecken im Winter, Unkraut ohne Gift, Laub weg, bevor es die Wege rutschig macht.',
+    'Rasen, Hecken und Plätze machen im Mai viel Arbeit und im Januar fast keine. Wir pflegen die Umgebung Ihrer Liegenschaft nach einem Pflegeplan, der diesem Jahreslauf folgt: Hecken im Winter, Unkraut in den Fugen vor dem Absamen, Laub weg, bevor es die Wege rutschig macht.',
     'Die Gartenpflege übernehmen wir für Verwaltungen, Stockwerkeigentümerschaften und Unternehmen, als eigene Leistung oder zusammen mit der [Hauswartung](/leistungen/hauswartung).',
   ],
   facts: [
     { label: 'Heckenschnitt', value: 'November bis März, ausserhalb der Brutzeit' },
-    { label: 'Unkraut', value: 'Mechanisch, ohne Spritzmittel' },
+    { label: 'Unkraut auf Wegen', value: 'Mechanisch, denn Spritzmittel sind dort verboten' },
     { label: 'Rhythmus', value: 'Nach Pflegeplan, am dichtesten im Frühsommer' },
     { label: 'Einsatz', value: 'Einzeln oder mit der Hauswartung' },
     { label: 'Nicht im Angebot', value: 'Winterdienst, Gartenbau, Neuanlagen' },
@@ -57,9 +58,9 @@ export const aussenUndGruen: ServicePageContent = {
       ],
     },
     {
-      title: 'Gartenpflege und Kontrollgang in einem Einsatz',
+      title: 'Gartenpflege und Kontrollgang verbinden',
       paragraphs: [
-        'Läuft die Umgebungspflege zusammen mit der [Hauswartung](/leistungen/hauswartung), entfällt eine eigene Anfahrt. Wer draussen mäht und wischt, sieht auch die gelockerte Platte, die defekte Aussenleuchte oder den verstopften Schacht.',
+        'Läuft die Umgebungspflege zusammen mit der [Hauswartung](/leistungen/hauswartung), lassen sich Gartenarbeit und Kontrollgang verbinden. Wer draussen mäht und wischt, sieht auch die gelockerte Platte, die defekte Aussenleuchte oder den verstopften Schacht.',
       ],
     },
   ],
@@ -92,7 +93,7 @@ export const aussenUndGruen: ServicePageContent = {
         [
           'September und Oktober',
           'Laub regelmässig abrechen, letzter Schnitt vor dem Winter',
-          'Sträucher mit Beeren stehen lassen, sie sind Winterfutter für Vögel',
+          'Einheimische Sträucher mit Beeren stehen lassen, sie sind Winterfutter für Vögel. Beim Kirschlorbeer dagegen die Beeren vor der Samenreife abschneiden',
           'Laub von Wegen und Plätzen entfernen, unter Sträuchern darf es liegen bleiben',
         ],
         [
@@ -113,7 +114,7 @@ export const aussenUndGruen: ServicePageContent = {
     },
     {
       kind: 'table',
-      id: 'unkraut-ohne-gift',
+      id: 'spritzmittelverbot',
       title: 'Unkraut und Moos: wo Spritzmittel verboten sind',
       intro: 'Auf befestigten Flächen fehlt die Humusschicht, die Wirkstoffe binden könnte, der Regen spült sie in Schächte und Gewässer. Deshalb verbietet die Chemikalien-Risikoreduktions-Verordnung (ChemRRV) dort Unkrautvertilgungsmittel, seit Dezember 2020 auch Mittel gegen Algen und Moos. Das gilt für Firmen wie für Private.',
       columns: ['Fläche', 'Was gilt', 'Was stattdessen wirkt'],
@@ -139,11 +140,12 @@ export const aussenUndGruen: ServicePageContent = {
           'Jäten, mähen, den Boden mit Mulch abdecken',
         ],
       ],
-      note: 'Toleranz senkt die Kosten, schreibt das BAFU: Auf wenig begangenen Flächen muss nicht jede Fuge grünfrei sein. Wo Unkraut jedes Jahr am selben Ort wiederkommt, hilft auf Dauer nur, die Fugen neu zu füllen.',
+      note: 'Toleranz senkt die Kosten, schreibt das BAFU: Unkraut flächendeckend zu entfernen, ist nicht überall nötig. Werden Fugen und Ritzen neu gefüllt und der Belag saniert, kann es dort nicht mehr wachsen.',
       sources: [
         { label: 'ChemRRV (SR 814.81), Anhang 2.4 Ziff. 4bis und Anhang 2.5 Ziff. 1.1', href: 'https://www.fedlex.admin.ch/eli/cc/2005/478/de' },
         { label: 'BAFU: Verwendungsverbote für Herbizide und Biozide auf und an Strassen, Wegen, Plätzen, Terrassen und Dächern (2021)', href: 'https://www.bafu.admin.ch/dam/de/sd-web/Cp1cASoaj-UD/merkblatt_verwendungsverbotefuerunkrautvertilgungsmittelaufundan.pdf' },
         { label: 'BAFU: Pflanzenschutz in der Gemeinde', href: 'https://www.bafu.admin.ch/de/pflanzenschutz-in-der-gemeinde' },
+        { label: 'BAFU: 10 vorbeugende Massnahmen und Alternativen zum Herbizideinsatz (2019)', href: 'https://www.bafu.admin.ch/dam/de/sd-web/9yHQQ2lBw2VU/merkblatt_10_vorbeugendemassnahmenundalternativenzumherbizideins.pdf' },
       ],
       printable: true,
       updated: '2026-09-28',
@@ -153,7 +155,7 @@ export const aussenUndGruen: ServicePageContent = {
       id: 'invasive-pflanzen',
       title: 'Invasive Pflanzen im Garten: was seit 2024 gilt',
       intro: 'Seit dem 1. September 2024 regelt die Freisetzungsverordnung (FrSV) invasive Gartenpflanzen strenger. Pflanzen aus Anhang 2.2 dürfen nicht mehr weitergegeben werden. Für Anhang 2.1 gilt ein Umgangsverbot, erlaubt ist nur noch die Bekämpfung.',
-      columns: ['Pflanze', 'Was die FrSV sagt', 'Pflege und Entsorgung'],
+      columns: ['Pflanze', 'Was gilt', 'Pflege und Entsorgung'],
       rows: [
         [
           'Kirschlorbeer',
@@ -177,11 +179,11 @@ export const aussenUndGruen: ServicePageContent = {
         ],
         [
           'Aufrechte Ambrosie',
-          'Anhang 2.1, dazu Meldepflicht: Funde der kantonalen Fachstelle melden',
+          'Anhang 2.1. Nach Landwirtschaftsrecht bekämpfungspflichtig. Die Praxishilfe der Zentralschweizer Kantone verlangt zudem, Funde der kantonalen Fachstelle zu melden',
           'Mit Handschuhen und in der Blütezeit mit Staubmaske ausreissen, die ganze Pflanze in den Kehricht',
         ],
       ],
-      note: 'Eine allgemeine Pflicht, invasive Pflanzen auf dem eigenen Grundstück zu entfernen, besteht nicht. Die Eigentümerschaft muss aber verhindern, dass sie sich ausbreiten. Samen und Wurzeln gehören deshalb nie in den Gartenkompost.',
+      note: 'Das Umweltrecht verlangt nicht, invasive Pflanzen auf dem eigenen Grundstück zu entfernen. Anders bei der Aufrechten Ambrosie: Sie muss nach Landwirtschaftsrecht bekämpft werden. Für alle gilt die Sorgfaltspflicht, die Eigentümerschaft muss also verhindern, dass sich die Pflanzen ausbreiten. Samen und Wurzeln gehören deshalb nie in den Gartenkompost.',
       sources: [
         { label: 'Freisetzungsverordnung FrSV (SR 814.911), Art. 15 und Anhänge 2.1 und 2.2', href: 'https://www.fedlex.admin.ch/eli/cc/2008/614/de' },
         { label: 'BAFU: Änderung im Umgang mit invasiven gebietsfremden Pflanzen', href: 'https://www.bafu.admin.ch/de/anderung-im-umgang-mit-invasiven-gebietsfremden-pflanzen' },
@@ -254,7 +256,7 @@ export const aussenUndGruen: ServicePageContent = {
     {
       question: 'Wovon hängen die Kosten der Gartenpflege ab?',
       answer:
-        'Vor allem von der Fläche und davon, wie viel Handarbeit sie braucht. Offenen Rasen mäht eine Maschine schnell, Fugen, Kiesflächen und Böschungen brauchen Zeit. Dazu kommen Länge und Höhe der Hecken, die Zahl der Einsätze in der Wachstumszeit und der Weg des Schnittguts. Läuft der Gartenunterhalt mit der Hauswartung zusammen, sparen Sie Anfahrten.',
+        'Vor allem von der Fläche und davon, wie viel Handarbeit sie braucht. Offenen Rasen mäht eine Maschine schnell, Fugen, Kiesflächen und Böschungen brauchen Zeit. Dazu kommen Länge und Höhe der Hecken, die Zahl der Einsätze in der Wachstumszeit und der Weg des Schnittguts.',
     },
     {
       question: 'Dürfen Sie auf dem Vorplatz Unkraut spritzen?',
@@ -269,7 +271,7 @@ export const aussenUndGruen: ServicePageContent = {
     {
       question: 'Die Gemeinde verlangt einen Rückschnitt, aber es ist Brutzeit. Was nun?',
       answer:
-        'Der Raum über Trottoir und Strasse muss frei bleiben, im Kanton Luzern etwa nach §§ 86 und 87 des Strassengesetzes. Im Sommer schneiden wir nur, was in diesen Raum ragt, und erst nach einem Blick nach Nestern. Der grosse Rückschnitt folgt im Winter und fällt an Wegen so grosszügig aus, dass im Jahr darauf wenig nachzuschneiden bleibt.',
+        'Grundeigentümer müssen Pflanzen an Strassen rechtzeitig zurückschneiden, im Kanton Luzern nach § 86 Abs. 7 des Strassengesetzes. Frei bleiben muss das Lichtraumprofil, der Raum über Trottoir und Strasse (§ 91). Im Sommer schneiden wir nur, was in diesen Raum ragt, und erst nach einem Blick nach Nestern. Der grosse Rückschnitt folgt im Winter und fällt an Wegen so grosszügig aus, dass im Jahr darauf wenig nachzuschneiden bleibt.',
     },
     {
       question: 'Wohin kommen Rasenschnitt, Laub und Äste?',
@@ -293,7 +295,7 @@ export const aussenUndGruen: ServicePageContent = {
     { path: '/leistungen/unterhaltsreinigung', text: 'Wenn Eingang und Treppenhaus im selben Rhythmus sauber bleiben sollen wie der Vorplatz.' },
   ],
   cta: {
-    title: 'Pflegeplan und Offerte für Ihre Umgebung',
-    text: 'Schreiben Sie uns Ort, Art der Liegenschaft und die ungefähren Flächen: Quadratmeter Rasen, Laufmeter Hecke, Wege und Plätze. Ein Umgebungsplan hilft zusätzlich. Nach dem Rundgang erhalten Sie Pflegeplan und Offerte, kostenlos und unverbindlich.',
+    title: 'Gartenpflege für Ihre Liegenschaft anfragen',
+    text: 'Schreiben Sie uns Ort, Art der Liegenschaft und die ungefähren Flächen: Quadratmeter Rasen, Laufmeter Hecke, Wege und Plätze. Ein Umgebungsplan hilft zusätzlich. Nach einem Rundgang durch die Umgebung erhalten Sie unsere Offerte für die Gartenpflege, kostenlos und unverbindlich. Der Pflegeplan entsteht nach der Vergabe, zusammen mit Ihnen.',
   },
 }

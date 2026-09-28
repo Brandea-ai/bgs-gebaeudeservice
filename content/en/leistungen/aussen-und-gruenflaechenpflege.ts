@@ -6,12 +6,12 @@ export const aussenUndGruen: ServicePageContent = {
   eyebrow: 'Property care',
   h1: 'Garden maintenance and grounds care for properties',
   lead: [
-    'Lawns, hedges and paved areas take a lot of work in May and almost none in January. We look after the grounds of your property to a maintenance plan that follows this yearly cycle: hedges in winter, weeds without poison, leaves cleared before they make the paths slippery.',
+    'Lawns, hedges and paved areas take a lot of work in May and almost none in January. We look after the grounds of your property to a maintenance plan that follows this yearly cycle: hedges in winter, weeds in the joints before they set seed, leaves cleared before they make the paths slippery.',
     'We provide garden maintenance for property managers, condominium owners and businesses, as a service of its own or together with [caretaking](/leistungen/hauswartung).',
   ],
   facts: [
     { label: 'Hedge cutting', value: 'November to March, outside the breeding season' },
-    { label: 'Weeds', value: 'Removed mechanically, no sprays' },
+    { label: 'Weeds on paths', value: 'Removed mechanically, as sprays are banned there' },
     { label: 'Frequency', value: 'To a maintenance plan, most often in early summer' },
     { label: 'Service', value: 'On its own or with caretaking' },
     { label: 'Not offered', value: 'Winter maintenance, landscaping, new planting' },
@@ -52,9 +52,9 @@ export const aussenUndGruen: ServicePageContent = {
       ],
     },
     {
-      title: 'Garden maintenance and inspection round in one visit',
+      title: 'Combining garden maintenance and inspection rounds',
       paragraphs: [
-        'If grounds maintenance runs together with [caretaking](/leistungen/hauswartung), there is no separate trip. Whoever mows and sweeps outside also notices the loose paving slab, the broken outdoor light or the blocked drain.',
+        'If grounds maintenance runs together with [caretaking](/leistungen/hauswartung), garden work and inspection rounds can be combined. Whoever mows and sweeps outside also notices the loose paving slab, the broken outdoor light or the blocked drain.',
       ],
     },
   ],
@@ -87,7 +87,7 @@ export const aussenUndGruen: ServicePageContent = {
         [
           'September and October',
           'Rake leaves regularly, last mowing before winter',
-          'Leave shrubs with berries standing, they are winter food for birds',
+          'Leave native shrubs with berries standing, they are winter food for birds. With cherry laurel, however, cut off the berries before the seeds ripen',
           'Clear leaves from paths and paved areas, they may stay under shrubs',
         ],
         [
@@ -108,13 +108,13 @@ export const aussenUndGruen: ServicePageContent = {
     },
     {
       kind: 'table',
-      id: 'unkraut-ohne-gift',
+      id: 'spritzmittelverbot',
       title: 'Weeds and moss: where sprays are prohibited',
       intro: 'Sealed and paved surfaces have no humus layer to bind active substances, so rain washes them into drains and watercourses. The Chemical Risk Reduction Ordinance (ORRChem) therefore prohibits weedkillers there, and since December 2020 also products against algae and moss. This applies to companies and private individuals alike.',
       columns: ['Area', 'What applies', 'What works instead'],
       rows: [
         [
-          'Paths, driveways, squares and car parks, including kerbs, pavements, drains and gutters',
+          'Paths, driveways, forecourts and car parks, including kerbs, pavements, drains and gutters',
           'Prohibited, including on gravel, marl, paving and grass pavers and in a 50 cm strip alongside',
           'Sweep regularly so that no fine material collects in the joints, scrape out joints, pull weeds before they set seed',
         ],
@@ -134,11 +134,12 @@ export const aussenUndGruen: ServicePageContent = {
           'Weed, mow, cover the soil with mulch',
         ],
       ],
-      note: 'Tolerance lowers costs, the FOEN writes: on areas with little foot traffic, not every joint has to be free of green. Where weeds come back in the same place every year, the only lasting remedy is to refill the joints.',
+      note: 'Tolerance lowers costs, the FOEN writes: removing weeds from every square metre is not necessary everywhere. Once joints and cracks are refilled and the surface is repaired, weeds can no longer grow there.',
       sources: [
         { label: 'ORRChem (SR 814.81), Annex 2.4 No 4bis and Annex 2.5 No 1.1', href: 'https://www.fedlex.admin.ch/eli/cc/2005/478/en' },
-        { label: 'FOEN: bans on herbicides and biocides on and along roads, paths, squares, terraces and roofs, 2021 (German)', href: 'https://www.bafu.admin.ch/dam/de/sd-web/Cp1cASoaj-UD/merkblatt_verwendungsverbotefuerunkrautvertilgungsmittelaufundan.pdf' },
+        { label: 'FOEN: bans on herbicides and biocides on and along roads, paths, paved areas, terraces and roofs, 2021 (German)', href: 'https://www.bafu.admin.ch/dam/de/sd-web/Cp1cASoaj-UD/merkblatt_verwendungsverbotefuerunkrautvertilgungsmittelaufundan.pdf' },
         { label: 'FOEN: plant protection in the municipality (German)', href: 'https://www.bafu.admin.ch/de/pflanzenschutz-in-der-gemeinde' },
+        { label: 'FOEN: 10 preventive measures and alternatives to herbicides, 2019 (German)', href: 'https://www.bafu.admin.ch/dam/de/sd-web/9yHQQ2lBw2VU/merkblatt_10_vorbeugendemassnahmenundalternativenzumherbizideins.pdf' },
       ],
       printable: true,
       updated: '2026-09-28',
@@ -148,7 +149,7 @@ export const aussenUndGruen: ServicePageContent = {
       id: 'invasive-pflanzen',
       title: 'Invasive plants in the garden: the rules since 2024',
       intro: 'Since 1 September 2024, the Release Ordinance (RO) has regulated invasive garden plants more strictly. Plants in Annex 2.2 may no longer be passed on to others. For Annex 2.1 there is a ban on handling them, only control measures are still allowed.',
-      columns: ['Plant', 'What the RO says', 'Care and disposal'],
+      columns: ['Plant', 'What applies', 'Care and disposal'],
       rows: [
         [
           'Cherry laurel',
@@ -156,7 +157,7 @@ export const aussenUndGruen: ServicePageContent = {
           'Cut off the berries before the seeds ripen. Compost cuttings without fruit, put fruit and roots in the household waste',
         ],
         [
-          'Butterfly bush and Chinese windmill palm («Ticino palm»)',
+          'Butterfly bush and Chinese windmill palm (‘Ticino palm’)',
           'Annex 2.2: same rules as for cherry laurel',
           'Cut off the flower heads before seeds or fruit ripen and put them in the household waste',
         ],
@@ -172,11 +173,11 @@ export const aussenUndGruen: ServicePageContent = {
         ],
         [
           'Common ragweed (Ambrosia)',
-          'Annex 2.1, plus a duty to report: notify the cantonal specialist office of any finds',
+          'Annex 2.1. Control is compulsory under agricultural legislation. The Central Swiss cantons’ practical guide also asks for finds to be reported to the cantonal specialist office',
           'Pull out wearing gloves, and a dust mask while in flower, put the whole plant in the household waste',
         ],
       ],
-      note: 'There is no general obligation to remove invasive plants from your own land. Owners must, however, prevent them from spreading. Seeds and roots therefore never belong in the garden compost.',
+      note: 'Environmental law does not require invasive plants to be removed from your own land. Common ragweed is different: it must be controlled under agricultural legislation. The duty of care applies to all of them, so owners must prevent the plants from spreading. Seeds and roots therefore never belong in the garden compost.',
       sources: [
         { label: 'Release Ordinance RO (SR 814.911), Art. 15 and Annexes 2.1 and 2.2', href: 'https://www.fedlex.admin.ch/eli/cc/2008/614/en' },
         { label: 'FOEN: changes to regulation on invasive alien plants', href: 'https://www.bafu.admin.ch/en/changes-to-regulation-on-invasive-alien-plants' },
@@ -249,12 +250,12 @@ export const aussenUndGruen: ServicePageContent = {
     {
       question: 'What determines the cost of garden maintenance?',
       answer:
-        'Mainly the size of the areas and how much manual work they need. A machine mows open lawns quickly, while joints, gravel areas and embankments take time. The length and height of the hedges, the number of visits in the growing season and how the cuttings are disposed of also play a part. If garden upkeep runs together with caretaking, you save on travel.',
+        'Mainly the size of the areas and how much manual work they need. A machine mows open lawns quickly, while joints, gravel areas and embankments take time. The length and height of the hedges, the number of visits in the growing season and how the cuttings are disposed of also play a part.',
     },
     {
       question: 'Can you spray weeds on the forecourt?',
       answer:
-        'No, nobody is allowed to. Weedkillers are prohibited on paths, squares and car parks and in a 50 cm strip alongside them, and on roofs and terraces as well. That is why we remove weeds mechanically: sweeping, scraping out joints, weeding.',
+        'No, nobody is allowed to. Weedkillers are prohibited on paths, forecourts and car parks and in a 50 cm strip alongside them, and on roofs and terraces as well. That is why we remove weeds mechanically: sweeping, scraping out joints, weeding.',
     },
     {
       question: 'Does our cherry laurel hedge have to go?',
@@ -264,7 +265,7 @@ export const aussenUndGruen: ServicePageContent = {
     {
       question: 'The municipality wants the hedge cut back, but it is breeding season. What now?',
       answer:
-        'The space above the pavement and road must stay clear, in the canton of Lucerne for example under §§ 86 and 87 of the Roads Act. In summer we only cut what protrudes into this space, and only after checking for nests. The main cut follows in winter and is generous enough along paths that little needs trimming the following year.',
+        'Landowners must cut back plants along roads in good time, in the canton of Lucerne under § 86(7) of the Roads Act. The clearance profile, the space above the pavement and road, must stay free (§ 91). In summer we only cut what protrudes into this space, and only after checking for nests. The main cut follows in winter and is generous enough along paths that little needs trimming the following year.',
     },
     {
       question: 'Where do grass cuttings, leaves and branches go?',
@@ -288,7 +289,7 @@ export const aussenUndGruen: ServicePageContent = {
     { path: '/leistungen/unterhaltsreinigung', text: 'If the entrance and stairwell should stay as clean as the forecourt, at the same frequency.' },
   ],
   cta: {
-    title: 'Maintenance plan and quote for your grounds',
-    text: 'Tell us the location, the type of property and the approximate areas: square metres of lawn, metres of hedge, paths and paved areas. A site plan also helps. After the site visit you receive a maintenance plan and quote, free of charge and non-binding.',
+    title: 'Request garden maintenance for your property',
+    text: 'Tell us the location, the type of property and the approximate areas: square metres of lawn, metres of hedge, paths and paved areas. A site plan also helps. After a site visit you receive our quote for the garden maintenance, free of charge and non-binding. Once the contract is awarded, we draw up the maintenance plan together with you.',
   },
 }

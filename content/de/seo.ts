@@ -86,7 +86,7 @@ export const pages = {
   '/leistungen/aussen-und-gruenflaechenpflege': {
     label: 'Aussen- und Grünflächenpflege',
     title: 'Gartenpflege und Gartenunterhalt Luzern, Zug',
-    description: 'Gartenpflege für Liegenschaften in Luzern, Zug und Umgebung: Rasen, Hecken im Winter, Unkraut ohne Gift. Kostenlose Offerte nach Besichtigung.',
+    description: 'Gartenpflege für Liegenschaften in Luzern, Zug und Umgebung: Rasen, Hecken im Winter, Unkraut und Laub auf Wegen. Kostenlose Offerte nach Besichtigung.',
   },
   '/leistungen/facility-services': {
     label: 'Facility Services',

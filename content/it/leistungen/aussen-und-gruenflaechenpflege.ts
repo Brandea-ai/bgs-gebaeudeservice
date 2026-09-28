@@ -6,12 +6,12 @@ export const aussenUndGruen: ServicePageContent = {
   eyebrow: 'Cura degli stabili',
   h1: 'Manutenzione di giardini e aree verdi per stabili',
   lead: [
-    'Prato, siepi e piazzali richiedono molto lavoro a maggio e quasi nessuno a gennaio. Curiamo le aree esterne del Suo stabile secondo un piano di manutenzione che segue questo ciclo annuale: siepi in inverno, erbacce senza prodotti chimici, foglie rimosse prima che rendano scivolosi i vialetti.',
+    'Prato, siepi e piazzali richiedono molto lavoro a maggio e quasi nessuno a gennaio. Curiamo le aree esterne del Suo stabile secondo un piano di manutenzione che segue questo ciclo annuale: siepi in inverno, erbacce nelle fughe prima che vadano a seme, foglie rimosse prima che rendano scivolosi i vialetti.',
     'Ci occupiamo della manutenzione del giardino per amministrazioni immobiliari, comunioni dei proprietari per piani e aziende, come servizio a sé o insieme al [servizio di custodia](/leistungen/hauswartung).',
   ],
   facts: [
     { label: 'Taglio delle siepi', value: 'Da novembre a marzo, fuori dal periodo di nidificazione' },
-    { label: 'Erbacce', value: 'Rimosse meccanicamente, senza diserbanti' },
+    { label: 'Erbacce sui vialetti', value: 'Rimosse meccanicamente, perché lì i diserbanti sono vietati' },
     { label: 'Frequenza', value: 'Secondo il piano di manutenzione, più fitta a inizio estate' },
     { label: 'Intervento', value: 'Da solo o con il servizio di custodia' },
     { label: 'Non offriamo', value: 'Servizio invernale, sistemazione di giardini, nuovi impianti' },
@@ -38,7 +38,7 @@ export const aussenUndGruen: ServicePageContent = {
   },
   sections: [
     {
-      title: 'Quando le aree esterne non si curano più a margine',
+      title: 'Quando nessuno si occupa più delle aree esterne',
       paragraphs: [
         'Il custode va in pensione, i proprietari per piani non tagliano più l’erba da soli, oppure un nuovo complesso è abitato e nessuno è responsabile di prato e siepi. A quel punto serve qualcuno che segua le aree esterne tutto l’anno.',
         'Curiamo complessi residenziali con parco giochi, stabili commerciali con parcheggio e aree artigianali con superfici in ghiaia. La base è un piano di manutenzione che indica per ogni superficie i lavori e il loro ritmo. Così si può comunicare agli inquilini quando si taglia l’erba e quando si potano le siepi.',
@@ -52,9 +52,9 @@ export const aussenUndGruen: ServicePageContent = {
       ],
     },
     {
-      title: 'Giardino e giro di controllo in un solo intervento',
+      title: 'Combinare giardino e giro di controllo',
       paragraphs: [
-        'Se la manutenzione delle aree esterne è abbinata al [servizio di custodia](/leistungen/hauswartung), non serve una trasferta separata. Chi taglia l’erba e spazza all’esterno nota anche la lastra smossa, la luce esterna guasta o il pozzetto intasato.',
+        'Se la manutenzione delle aree esterne è abbinata al [servizio di custodia](/leistungen/hauswartung), lavori in giardino e giro di controllo si possono combinare. Chi taglia l’erba e spazza all’esterno nota anche la lastra smossa, la luce esterna guasta o il pozzetto intasato.',
       ],
     },
   ],
@@ -87,7 +87,7 @@ export const aussenUndGruen: ServicePageContent = {
         [
           'Settembre e ottobre',
           'Rastrellare regolarmente le foglie, ultimo taglio prima dell’inverno',
-          'Lasciare gli arbusti con bacche, sono cibo invernale per gli uccelli',
+          'Lasciare gli arbusti indigeni con bacche, sono cibo invernale per gli uccelli. Per il lauroceraso invece tagliare le bacche prima che i semi maturino',
           'Rimuovere le foglie da vialetti e piazzali, sotto gli arbusti possono restare',
         ],
         [
@@ -108,7 +108,7 @@ export const aussenUndGruen: ServicePageContent = {
     },
     {
       kind: 'table',
-      id: 'unkraut-ohne-gift',
+      id: 'spritzmittelverbot',
       title: 'Erbacce e muschio: dove i prodotti sono vietati',
       intro: 'Sulle superfici pavimentate manca lo strato di humus che potrebbe trattenere le sostanze attive, e la pioggia le porta nei pozzetti e nei corsi d’acqua. Per questo l’ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici (ORRPChim) vi vieta gli erbicidi e, da dicembre 2020, anche i prodotti contro alghe e muschio. Vale per le aziende come per i privati.',
       columns: ['Superficie', 'Che cosa vale', 'Che cosa funziona invece'],
@@ -134,11 +134,12 @@ export const aussenUndGruen: ServicePageContent = {
           'Diserbare, falciare, coprire il terreno con pacciame',
         ],
       ],
-      note: 'La tolleranza riduce i costi, scrive l’UFAM: sulle superfici poco frequentate non ogni fuga deve essere senza verde. Dove le erbacce ricompaiono ogni anno nello stesso punto, a lungo termine aiuta solo rifare le fughe.',
+      note: 'La tolleranza riduce i costi, scrive l’UFAM: eliminare le erbacce su tutta la superficie non è necessario ovunque. Se fughe e fessure vengono riempite di nuovo e la pavimentazione risanata, lì le erbacce non possono più crescere.',
       sources: [
         { label: 'ORRPChim (RS 814.81), allegato 2.4 n. 4bis e allegato 2.5 n. 1.1', href: 'https://www.fedlex.admin.ch/eli/cc/2005/478/it' },
         { label: 'UFAM: divieti per erbicidi e biocidi su e lungo strade, sentieri, piazzali, terrazze e tetti, 2021 (in tedesco)', href: 'https://www.bafu.admin.ch/dam/de/sd-web/Cp1cASoaj-UD/merkblatt_verwendungsverbotefuerunkrautvertilgungsmittelaufundan.pdf' },
         { label: 'UFAM: protezione dei vegetali nel Comune (in tedesco)', href: 'https://www.bafu.admin.ch/de/pflanzenschutz-in-der-gemeinde' },
+        { label: 'UFAM: 10 misure preventive e alternative agli erbicidi, 2019 (in tedesco)', href: 'https://www.bafu.admin.ch/dam/de/sd-web/9yHQQ2lBw2VU/merkblatt_10_vorbeugendemassnahmenundalternativenzumherbizideins.pdf' },
       ],
       printable: true,
       updated: '2026-09-28',
@@ -148,7 +149,7 @@ export const aussenUndGruen: ServicePageContent = {
       id: 'invasive-pflanzen',
       title: 'Piante invasive in giardino: le regole dal 2024',
       intro: 'Dal 1° settembre 2024 l’ordinanza sull’emissione deliberata nell’ambiente (OEDA) disciplina in modo più severo le piante da giardino invasive. Le piante dell’allegato 2.2 non possono più essere cedute a terzi. Per l’allegato 2.1 vige un divieto di utilizzo, è consentita solo la lotta.',
-      columns: ['Pianta', 'Che cosa dice l’OEDA', 'Cura e smaltimento'],
+      columns: ['Pianta', 'Che cosa vale', 'Cura e smaltimento'],
       rows: [
         [
           'Lauroceraso',
@@ -172,11 +173,11 @@ export const aussenUndGruen: ServicePageContent = {
         ],
         [
           'Ambrosia con foglie di artemisia',
-          'Allegato 2.1, con obbligo di notifica: segnalare i ritrovamenti al servizio cantonale',
+          'Allegato 2.1. Lotta obbligatoria secondo il diritto agricolo. La guida pratica dei Cantoni della Svizzera centrale chiede inoltre di segnalare i ritrovamenti al servizio cantonale',
           'Estirpare con guanti, durante la fioritura anche con mascherina antipolvere, tutta la pianta nei rifiuti domestici',
         ],
       ],
-      note: 'Non esiste un obbligo generale di eliminare le piante invasive dal proprio terreno. I proprietari devono però impedire che si diffondano. Semi e radici non vanno quindi mai nel compost del giardino.',
+      note: 'Il diritto ambientale non obbliga a eliminare le piante invasive dal proprio terreno. Diverso il caso dell’ambrosia: il diritto agricolo impone di combatterla. Per tutte vale l’obbligo di diligenza, i proprietari devono quindi impedire che si diffondano. Per questo semi e radici non vanno mai nel compost del giardino.',
       sources: [
         { label: 'Ordinanza sull’emissione deliberata nell’ambiente OEDA (RS 814.911), art. 15 e allegati 2.1 e 2.2', href: 'https://www.fedlex.admin.ch/eli/cc/2008/614/it' },
         { label: 'UFAM: modifica dell’ordinanza sull’emissione deliberata nell’ambiente', href: 'https://www.bafu.admin.ch/it/modifica-dellordinanza-sullemissione-deliberata-nellambiente' },
@@ -249,7 +250,7 @@ export const aussenUndGruen: ServicePageContent = {
     {
       question: 'Da che cosa dipendono i costi della manutenzione del giardino?',
       answer:
-        'Soprattutto dalla superficie e da quanto lavoro manuale richiede. Un prato aperto si taglia in fretta a macchina, mentre fughe, superfici in ghiaia e scarpate richiedono tempo. Si aggiungono lunghezza e altezza delle siepi, il numero di interventi nel periodo di crescita e lo smaltimento degli scarti verdi. Se la cura del giardino è abbinata al servizio di custodia, si risparmiano trasferte.',
+        'Soprattutto dalla superficie e da quanto lavoro manuale richiede. Un prato aperto si taglia in fretta a macchina, mentre fughe, superfici in ghiaia e scarpate richiedono tempo. Si aggiungono lunghezza e altezza delle siepi, il numero di interventi nel periodo di crescita e lo smaltimento degli scarti verdi.',
     },
     {
       question: 'Potete spruzzare un diserbante sul piazzale davanti allo stabile?',
@@ -264,7 +265,7 @@ export const aussenUndGruen: ServicePageContent = {
     {
       question: 'Il Comune chiede un taglio, ma è il periodo di nidificazione. Che fare?',
       answer:
-        'Lo spazio sopra marciapiede e strada deve restare libero, nel Cantone di Lucerna ad esempio secondo i §§ 86 e 87 della legge sulle strade. D’estate tagliamo solo ciò che sporge in questo spazio, e solo dopo aver controllato che non ci siano nidi. La potatura principale segue in inverno ed è abbastanza generosa lungo i vialetti da lasciare poco da ritagliare l’anno seguente.',
+        'I proprietari fondiari devono potare per tempo le piante lungo le strade, nel Cantone di Lucerna secondo il § 86 cpv. 7 della legge sulle strade. Il profilo di spazio libero, cioè lo spazio sopra marciapiede e strada, deve restare sgombro (§ 91). D’estate tagliamo solo ciò che sporge in questo spazio, e solo dopo aver controllato che non ci siano nidi. La potatura principale segue in inverno ed è abbastanza generosa lungo i vialetti da lasciare poco da ritagliare l’anno seguente.',
     },
     {
       question: 'Dove finiscono erba tagliata, foglie e rami?',
@@ -288,7 +289,7 @@ export const aussenUndGruen: ServicePageContent = {
     { path: '/leistungen/unterhaltsreinigung', text: 'Se ingresso e vano scale devono restare puliti come il piazzale, allo stesso ritmo.' },
   ],
   cta: {
-    title: 'Piano di manutenzione e offerta per le Sue aree esterne',
-    text: 'Ci indichi il luogo, il tipo di stabile e le superfici approssimative: metri quadrati di prato, metri di siepe, vialetti e piazzali. Una planimetria delle aree esterne è utile. Dopo il sopralluogo riceve il piano di manutenzione e l’offerta, gratuiti e senza impegno.',
+    title: 'Richiedere la manutenzione del giardino del Suo stabile',
+    text: 'Ci indichi il luogo, il tipo di stabile e le superfici approssimative: metri quadrati di prato, metri di siepe, vialetti e piazzali. Una planimetria delle aree esterne è utile. Dopo un sopralluogo delle aree esterne riceve la nostra offerta per la manutenzione del giardino, gratuita e senza impegno. Il piano di manutenzione nasce insieme a Lei dopo l’affidamento dell’incarico.',
   },
 }
