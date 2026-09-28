@@ -789,9 +789,9 @@
   }
   /* Dichteres Glas für Menüs über Inhalt: Text dahinter darf nicht durchscheinen */
   .glass-strong {
-    background: rgba(250, 250, 248, 0.94);
-    -webkit-backdrop-filter: saturate(180%) blur(28px);
-    backdrop-filter: saturate(180%) blur(28px);
+    background: rgba(250, 250, 248, 0.975);
+    -webkit-backdrop-filter: saturate(160%) blur(40px);
+    backdrop-filter: saturate(160%) blur(40px);
     border: 1px solid rgba(255, 255, 255, 0.7);
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.8),
@@ -939,5 +939,15 @@ html[data-nav="hidden"] #mobil-cta:not(:focus-within) {
   }
   section.on-dark .absolute {
     display: none !important;
+  }
+}
+
+/* Grosse Titel ab Tablet ohne automatische Silbentrennung («Hauswar-tung»), schmal bleibt sie erlaubt */
+@media (min-width: 768px) {
+  h1,
+  .t-h1,
+  .t-display {
+    hyphens: manual;
+    -webkit-hyphens: manual;
   }
 }
