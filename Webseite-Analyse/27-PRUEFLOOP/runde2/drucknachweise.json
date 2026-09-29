@@ -1,0 +1,3890 @@
+[
+  {
+    "route": "/leistungen",
+    "id": "vergleich",
+    "title": "Reinigung, Grundreinigung, Hauswartung oder alles zusammen?",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/leistungen__vergleich.pdf",
+    "pages": 1,
+    "chars": 2239,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/leistungen/unterhaltsreinigung",
+    "id": "leistungsverzeichnis",
+    "title": "Muster-Leistungsverzeichnis für Treppenhaus und Allgemeinflächen",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/leistungen__unterhaltsreinigung__leistungsverzeichnis.pdf",
+    "pages": 1,
+    "chars": 1878,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/leistungen/unterhaltsreinigung",
+    "id": "nebenkosten",
+    "title": "Wer die Reinigung bezahlt: Mietrecht und Stockwerkeigentum",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/leistungen__unterhaltsreinigung__nebenkosten.pdf",
+    "pages": 1,
+    "chars": 4381,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/leistungen/unterhaltsreinigung",
+    "id": "rundgang",
+    "locale": "de",
+    "commit": "31b5ce0",
+    "reason": "tool content or print options changed",
+    "screenTextPresent": true,
+    "clickedPrint": true,
+    "file": "/private/tmp/claude-501/-Users-brandea/114fc6cf-e5c5-4e1f-9667-d47c99605956/scratchpad/welle3/audit-inhalt/r2-print/leistungen__unterhaltsreinigung__rundgang.pdf",
+    "pages": 1,
+    "chars": 1217,
+    "a4": true,
+    "textChecks": 16,
+    "printHeader": true,
+    "companyHeadPresent": true,
+    "formHead": true,
+    "cleaned": true,
+    "pass": true,
+    "layoutExtractorMissing": [],
+    "missingText": [],
+    "textCheckMethod": "pdftotext -raw, Unicode NFKC, punctuation-independent leaf-string matching. -layout interleaves adjacent columns.",
+    "pdfSize": [
+      594.96,
+      841.92
+    ],
+    "outsidePage": [],
+    "fontRange": [
+      8.5,
+      16.0
+    ],
+    "basis": "Neu auf31b5ce0 erzeugt, aktuelle Inhalte und Button/Druck/Cleanup geprüft"
+  },
+  {
+    "route": "/leistungen/bueroreinigung",
+    "id": "leistungsverzeichnis",
+    "title": "Leistungsverzeichnis Büro: was wie oft gereinigt wird",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/leistungen__bueroreinigung__leistungsverzeichnis.pdf",
+    "pages": 1,
+    "chars": 1887,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/leistungen/bueroreinigung",
+    "id": "vertrauliche-raeume",
+    "title": "Vertrauliche Räume: vor dem ersten Einsatz regeln",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/leistungen__bueroreinigung__vertrauliche-raeume.pdf",
+    "pages": 1,
+    "chars": 2774,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/leistungen/bueroreinigung",
+    "id": "offerten-vergleichen",
+    "title": "Offerten vergleichen, Punkt für Punkt",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/leistungen__bueroreinigung__offerten-vergleichen.pdf",
+    "pages": 1,
+    "chars": 1590,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/leistungen/sonderreinigungen",
+    "id": "bodenbelaege",
+    "title": "Welcher Boden welche Reinigung verträgt",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/leistungen__sonderreinigungen__bodenbelaege.pdf",
+    "pages": 1,
+    "chars": 4047,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/leistungen/sonderreinigungen",
+    "id": "schaden-oder-schmutz",
+    "title": "Verschmutzt oder beschädigt?",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/leistungen__sonderreinigungen__schaden-oder-schmutz.pdf",
+    "pages": 1,
+    "chars": 2785,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/leistungen/sonderreinigungen",
+    "id": "checkliste-grundreinigung",
+    "locale": "de",
+    "commit": "31b5ce0",
+    "reason": "tool content or print options changed",
+    "screenTextPresent": true,
+    "clickedPrint": true,
+    "file": "/private/tmp/claude-501/-Users-brandea/114fc6cf-e5c5-4e1f-9667-d47c99605956/scratchpad/welle3/audit-inhalt/r2-print/leistungen__sonderreinigungen__checkliste-grundreinigung.pdf",
+    "pages": 1,
+    "chars": 2154,
+    "a4": true,
+    "textChecks": 18,
+    "printHeader": true,
+    "companyHeadPresent": true,
+    "cleaned": true,
+    "pass": true,
+    "layoutExtractorMissing": [
+      {
+        "path": ".groups.0.items.0",
+        "text": "Beläge je Raum notieren, Pflegeanleitungen aus der Bauübergabe heraussuchen"
+      },
+      {
+        "path": ".groups.0.items.5",
+        "text": "Am Vortag die Böden frei räumen. Grosse Möbel verschieben oder bewusst stehen lassen: Die Fläche darunter bleibt dann ungereinigt"
+      },
+      {
+        "path": ".groups.1.items.0",
+        "text": "Fugen sind frei von lösbaren Schmutzresten. Bleibende Verfärbungen lassen sich durch eine Reinigung nicht immer entfernen"
+      },
+      {
+        "path": ".groups.1.items.5",
+        "text": "Keine neuen matten Stellen auf Stein, Silikon und Fugen sind unbeschädigt"
+      }
+    ],
+    "missingText": [],
+    "textCheckMethod": "pdftotext -raw, Unicode NFKC, punctuation-independent leaf-string matching. -layout interleaves adjacent columns.",
+    "pdfSize": [
+      594.96,
+      841.92
+    ],
+    "outsidePage": [],
+    "fontRange": [
+      8.5,
+      16.0
+    ],
+    "basis": "Neu auf31b5ce0 erzeugt, aktuelle Inhalte und Button/Druck/Cleanup geprüft"
+  },
+  {
+    "route": "/leistungen/sonderreinigungen",
+    "id": "aushang",
+    "locale": "de",
+    "commit": "31b5ce0",
+    "reason": "tool content or print options changed",
+    "screenTextPresent": true,
+    "clickedPrint": true,
+    "file": "/private/tmp/claude-501/-Users-brandea/114fc6cf-e5c5-4e1f-9667-d47c99605956/scratchpad/welle3/audit-inhalt/r2-print/leistungen__sonderreinigungen__aushang.pdf",
+    "pages": 1,
+    "chars": 932,
+    "a4": true,
+    "textChecks": 7,
+    "printHeader": false,
+    "companyHeadPresent": false,
+    "cleaned": true,
+    "pass": true,
+    "layoutExtractorMissing": [],
+    "missingText": [],
+    "textCheckMethod": "pdftotext -raw, Unicode NFKC, punctuation-independent leaf-string matching. -layout interleaves adjacent columns.",
+    "pdfSize": [
+      594.96,
+      841.92
+    ],
+    "outsidePage": [],
+    "fontRange": [
+      8.5,
+      16.0
+    ],
+    "basis": "Neu auf31b5ce0 erzeugt, aktuelle Inhalte und Button/Druck/Cleanup geprüft"
+  },
+  {
+    "route": "/leistungen/umzugsreinigung",
+    "id": "abnahme-checkliste",
+    "title": "Abnahme-Checkliste Raum für Raum",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/leistungen__umzugsreinigung__abnahme-checkliste.pdf",
+    "pages": 1,
+    "chars": 2758,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/leistungen/umzugsreinigung",
+    "id": "kuendigungstermine",
+    "locale": "de",
+    "commit": "31b5ce0",
+    "reason": "tool content or print options changed",
+    "screenTextPresent": true,
+    "clickedPrint": true,
+    "file": "/private/tmp/claude-501/-Users-brandea/114fc6cf-e5c5-4e1f-9667-d47c99605956/scratchpad/welle3/audit-inhalt/r2-print/leistungen__umzugsreinigung__kuendigungstermine.pdf",
+    "pages": 1,
+    "chars": 2711,
+    "a4": true,
+    "textChecks": 22,
+    "printHeader": true,
+    "companyHeadPresent": true,
+    "cleaned": true,
+    "pass": true,
+    "layoutExtractorMissing": [
+      {
+        "path": ".rows.0.1",
+        "text": "Auf den Seiten des Kantons nicht genannt. Auskunft gibt die Schlichtungsbehörde Miete und Pacht Luzern."
+      },
+      {
+        "path": ".rows.0.2",
+        "text": "Laut Kanton wird in der Regel auf ein Monatsende gekündigt, Termine und Fristen stehen meist im Mietvertrag."
+      },
+      {
+        "path": ".rows.3.0",
+        "text": "Aargau und Nidwalden"
+      },
+      {
+        "path": ".rows.3.1",
+        "text": "Auf den Seiten der Kantone nicht genannt. Auskunft geben die Schlichtungsbehörden für Miete und Pacht, im Aargau die des Bezirks."
+      },
+      {
+        "path": ".rows.3.2",
+        "text": "Den Kündigungstermin aus der Kündigung bei der Anfrage nennen."
+      }
+    ],
+    "missingText": [],
+    "textCheckMethod": "pdftotext -raw, Unicode NFKC, punctuation-independent leaf-string matching. -layout interleaves adjacent columns.",
+    "pdfSize": [
+      594.96,
+      841.92
+    ],
+    "outsidePage": [],
+    "fontRange": [
+      8.5,
+      16.0
+    ],
+    "basis": "Neu auf31b5ce0 erzeugt, aktuelle Inhalte und Button/Druck/Cleanup geprüft"
+  },
+  {
+    "route": "/leistungen/baureinigung",
+    "id": "bauablauf",
+    "title": "Die Reinigung im Bauablauf",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/leistungen__baureinigung__bauablauf.pdf",
+    "pages": 1,
+    "chars": 1539,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/leistungen/baureinigung",
+    "id": "ausschreibung",
+    "title": "Bauendreinigung ausschreiben: diese Angaben machen Offerten vergleichbar",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/leistungen__baureinigung__ausschreibung.pdf",
+    "pages": 1,
+    "chars": 1832,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/leistungen/baureinigung",
+    "id": "uebergabe",
+    "title": "Übergabe-Checkliste Bauendreinigung",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/leistungen__baureinigung__uebergabe.pdf",
+    "pages": 1,
+    "chars": 1998,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/leistungen/fenster-und-fassadenreinigung",
+    "id": "checkliste-fenster",
+    "title": "Checkliste von der Anfrage bis zur Abnahme",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/leistungen__fenster-und-fassadenreinigung__checkliste-fenster.pdf",
+    "pages": 1,
+    "chars": 2571,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/leistungen/fenster-und-fassadenreinigung",
+    "id": "aushang-mieterschaft",
+    "locale": "de",
+    "commit": "31b5ce0",
+    "reason": "tool content or print options changed",
+    "screenTextPresent": true,
+    "clickedPrint": true,
+    "file": "/private/tmp/claude-501/-Users-brandea/114fc6cf-e5c5-4e1f-9667-d47c99605956/scratchpad/welle3/audit-inhalt/r2-print/leistungen__fenster-und-fassadenreinigung__aushang-mieterschaft.pdf",
+    "pages": 1,
+    "chars": 936,
+    "a4": true,
+    "textChecks": 11,
+    "printHeader": false,
+    "companyHeadPresent": false,
+    "cleaned": true,
+    "pass": true,
+    "layoutExtractorMissing": [],
+    "missingText": [],
+    "textCheckMethod": "pdftotext -raw, Unicode NFKC, punctuation-independent leaf-string matching. -layout interleaves adjacent columns.",
+    "pdfSize": [
+      594.96,
+      841.92
+    ],
+    "outsidePage": [],
+    "fontRange": [
+      10.0,
+      16.0
+    ],
+    "basis": "Neu auf31b5ce0 erzeugt, aktuelle Inhalte und Button/Druck/Cleanup geprüft"
+  },
+  {
+    "route": "/leistungen/fenster-und-fassadenreinigung",
+    "id": "abwasser-fassade",
+    "title": "Fassadenreinigung: wohin das Abwasser darf",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/leistungen__fenster-und-fassadenreinigung__abwasser-fassade.pdf",
+    "pages": 1,
+    "chars": 2966,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/leistungen/industrie-und-hallenreinigung",
+    "id": "sicherheits-uebergabe",
+    "title": "Sicherheits-Übergabe vor dem Einsatz",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/leistungen__industrie-und-hallenreinigung__sicherheits-uebergabe.pdf",
+    "pages": 1,
+    "chars": 3255,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/leistungen/industrie-und-hallenreinigung",
+    "id": "zonenplan",
+    "title": "Reinigungsplan nach Zonen (Beispiel)",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/leistungen__industrie-und-hallenreinigung__zonenplan.pdf",
+    "pages": 1,
+    "chars": 2100,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/leistungen/industrie-und-hallenreinigung",
+    "id": "vor-dem-audit",
+    "title": "Vor einem Audit oder Kundenbesuch",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/leistungen__industrie-und-hallenreinigung__vor-dem-audit.pdf",
+    "pages": 1,
+    "chars": 1863,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/leistungen/hauswartung",
+    "id": "pflichtenheft",
+    "title": "Pflichtenheft Hauswartung als Vorlage",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/leistungen__hauswartung__pflichtenheft.pdf",
+    "pages": 1,
+    "chars": 3791,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/leistungen/hauswartung",
+    "id": "kontrollgang",
+    "title": "Checkliste für den Kontrollgang",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/leistungen__hauswartung__kontrollgang.pdf",
+    "pages": 1,
+    "chars": 2614,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/leistungen/aussen-und-gruenflaechenpflege",
+    "id": "pflegekalender",
+    "title": "Pflegekalender für Rasen, Hecken und Plätze",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/leistungen__aussen-und-gruenflaechenpflege__pflegekalender.pdf",
+    "pages": 1,
+    "chars": 2796,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/leistungen/aussen-und-gruenflaechenpflege",
+    "id": "spritzmittelverbot",
+    "title": "Unkraut und Moos: wo Spritzmittel verboten sind",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/leistungen__aussen-und-gruenflaechenpflege__spritzmittelverbot.pdf",
+    "pages": 1,
+    "chars": 2375,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/leistungen/aussen-und-gruenflaechenpflege",
+    "id": "pflegeplan",
+    "title": "Pflegeplan: das gehört hinein",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/leistungen__aussen-und-gruenflaechenpflege__pflegeplan.pdf",
+    "pages": 1,
+    "chars": 1661,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/leistungen/facility-services",
+    "id": "schnittstellen",
+    "title": "Schnittstellen, die ein Vertrag regeln sollte",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/leistungen__facility-services__schnittstellen.pdf",
+    "pages": 1,
+    "chars": 1772,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/leistungen/facility-services",
+    "id": "zustaendigkeiten",
+    "title": "Wer macht was im gemeinsamen Vertrag",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/leistungen__facility-services__zustaendigkeiten.pdf",
+    "pages": 1,
+    "chars": 1987,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/leistungen/facility-services",
+    "id": "wechsel",
+    "locale": "de",
+    "commit": "31b5ce0",
+    "reason": "tool content or print options changed",
+    "screenTextPresent": true,
+    "clickedPrint": true,
+    "file": "/private/tmp/claude-501/-Users-brandea/114fc6cf-e5c5-4e1f-9667-d47c99605956/scratchpad/welle3/audit-inhalt/r2-print/leistungen__facility-services__wechsel.pdf",
+    "pages": 1,
+    "chars": 3958,
+    "a4": true,
+    "textChecks": 28,
+    "printHeader": true,
+    "companyHeadPresent": true,
+    "cleaned": true,
+    "pass": true,
+    "layoutExtractorMissing": [
+      {
+        "path": ".groups.0.items.0",
+        "text": "Alle Verträge für Reinigung, Hauswartung, Umgebung und Glas zusammentragen"
+      },
+      {
+        "path": ".groups.0.items.1",
+        "text": "Je Vertrag Kündigungsfrist, Endtermin und Verlängerungsklausel notieren"
+      },
+      {
+        "path": ".groups.0.items.2",
+        "text": "Angestellter Hauswart: Nach Ablauf der Probezeit beträgt die Kündigungsfrist im ersten Dienstjahr einen Monat, im zweiten bis neunten zwei, danach drei Monate, jeweils auf Ende eines Monats. Andere Fristen gelten nur mit schriftlicher Abrede, Normal- oder Gesamtarbeitsvertrag (Art. 335c OR). Sperrfristen, etwa bei Krankheit oder Unfall, können die Frist verlängern (Art. 336c OR)"
+      },
+      {
+        "path": ".groups.1.items.0",
+        "text": "Von jedem Anbieter die Kosten je Liegenschaft und je Leistung verlangen"
+      },
+      {
+        "path": ".groups.1.items.1",
+        "text": "Vermietete Objekte: Nebenkosten trägt die Mieterschaft nur, wenn es im Mietvertrag besonders vereinbart ist, und nur in der Höhe der tatsächlichen Aufwendungen (Art. 257a und 257b OR)"
+      },
+      {
+        "path": ".groups.1.items.2",
+        "text": "Stockwerkeigentum: Kosten für Teile, die einzelnen Einheiten nicht oder kaum dienen, etwa eine Einstellhalle, getrennt ausweisen lassen. Nach dem ZGB ist das bei der Verteilung zu berücksichtigen (Art. 712h Abs. 3 ZGB)"
+      },
+      {
+        "path": ".groups.2.items.0",
+        "text": "Stockwerkeigentum: klären, ob die Verwaltung den Vertrag abschliessen darf. Sie handelt nach Gesetz, Reglement und Beschlüssen der Versammlung, die übrigen Verwaltungsfragen entscheidet die Versammlung (Art. 712s Abs. 1 und 712m Abs. 1 Ziff. 1 ZGB). Den Verwaltervertrag ebenfalls prüfen"
+      },
+      {
+        "path": ".groups.2.items.1",
+        "text": "Schlüssel, Badges und Codes der bisherigen Firmen zurücknehmen und auflisten"
+      },
+      {
+        "path": ".groups.2.items.2",
+        "text": "Den bisherigen Firmen den letzten Einsatz und die Rückgabe bestätigen"
+      },
+      {
+        "path": ".groups.3.items.0",
+        "text": "Meldeweg festlegen: wer Meldungen empfängt und bis zu welchem Betrag ohne Rückfrage repariert wird"
+      },
+      {
+        "path": ".groups.3.items.1",
+        "text": "Mieterschaft oder Mitarbeitende informieren, wer ab welchem Datum zuständig ist"
+      },
+      {
+        "path": ".groups.3.items.2",
+        "text": "Aushang im Eingang und Kontaktangaben für Meldungen erneuern"
+      },
+      {
+        "path": ".groups.3.items.3",
+        "text": "Unternehmen: vor dem ersten Einsatz Gefahren und Schutzmassnahmen im Betrieb mit dem neuen Dienstleister besprechen (Art. 6 und 9 VUV)"
+      }
+    ],
+    "missingText": [],
+    "textCheckMethod": "pdftotext -raw, Unicode NFKC, punctuation-independent leaf-string matching. -layout interleaves adjacent columns.",
+    "pdfSize": [
+      594.96,
+      841.92
+    ],
+    "outsidePage": [],
+    "fontRange": [
+      8.5,
+      16.0
+    ],
+    "basis": "Neu auf31b5ce0 erzeugt, aktuelle Inhalte und Button/Druck/Cleanup geprüft"
+  },
+  {
+    "route": "/premium",
+    "id": "geheimhaltung",
+    "title": "Was eine Geheimhaltungsvereinbarung regeln sollte",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/premium__geheimhaltung.pdf",
+    "pages": 1,
+    "chars": 1326,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/premium/luxusimmobilien",
+    "id": "materialkunde",
+    "title": "Welche Pflege welches Material braucht",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/premium__luxusimmobilien__materialkunde.pdf",
+    "pages": 1,
+    "chars": 3169,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/premium/luxusimmobilien",
+    "id": "erster-rundgang",
+    "title": "Vor dem ersten Einsatz: die Liste für den Rundgang",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/premium__luxusimmobilien__erster-rundgang.pdf",
+    "pages": 1,
+    "chars": 2016,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/premium/privatjet",
+    "id": "kabinenmaterialien",
+    "title": "Kabinenmaterialien und was ihnen schadet",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/premium__privatjet__kabinenmaterialien.pdf",
+    "pages": 1,
+    "chars": 3344,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/premium/privatjet",
+    "id": "erster-einsatz",
+    "title": "Checkliste für den ersten Einsatz an Bord",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/premium__privatjet__erster-einsatz.pdf",
+    "pages": 1,
+    "chars": 2120,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/premium/yacht",
+    "id": "materialien",
+    "title": "Teak, Gelcoat, Edelstahl: was hilft und was schadet",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/premium__yacht__materialien.pdf",
+    "pages": 1,
+    "chars": 3725,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/premium/yacht",
+    "id": "regeln-am-see",
+    "locale": "de",
+    "commit": "31b5ce0",
+    "reason": "tool content or print options changed",
+    "screenTextPresent": true,
+    "clickedPrint": true,
+    "file": "/private/tmp/claude-501/-Users-brandea/114fc6cf-e5c5-4e1f-9667-d47c99605956/scratchpad/welle3/audit-inhalt/r2-print/premium__yacht__regeln-am-see.pdf",
+    "pages": 1,
+    "chars": 4430,
+    "a4": true,
+    "textChecks": 26,
+    "printHeader": true,
+    "companyHeadPresent": true,
+    "cleaned": true,
+    "pass": true,
+    "layoutExtractorMissing": [
+      {
+        "path": ".rows.0.1",
+        "text": "Verboten ist, Stoffe, die Wasser verunreinigen können, mittelbar oder unmittelbar in ein Gewässer einzubringen."
+      },
+      {
+        "path": ".rows.0.2",
+        "text": "Wassergefährdende Mittel und damit belastetes Waschwasser dürfen nicht in den See gelangen. Auffangen und fachgerecht an Land entsorgen."
+      },
+      {
+        "path": ".rows.1.0",
+        "text": "Binnenschifffahrtsverordnung, Art. 10"
+      },
+      {
+        "path": ".rows.1.1",
+        "text": "Die Schifffahrt kennt dasselbe Verbot. Gelangen wassergefährdende Stoffe wie Öl oder Treibstoff ins Wasser und kann der Schiffsführer die Gefahr nicht selbst beseitigen, benachrichtigt er unverzüglich die Polizei."
+      },
+      {
+        "path": ".rows.1.2",
+        "text": "Ölfilm in der Bilge oder Treibstoffspuren am Rumpf nicht einfach wegspülen, sondern der Eignerin oder dem Eigner melden."
+      },
+      {
+        "path": ".rows.2.0",
+        "text": "Binnenschifffahrtsverordnung, Art. 108"
+      },
+      {
+        "path": ".rows.2.1",
+        "text": "Schiffe mit Wohn-, Koch- oder Sanitäreinrichtungen müssen Behälter für Fäkalien, Abwasser und Abfälle haben, die sich an Land entleeren lassen."
+      },
+      {
+        "path": ".rows.2.2",
+        "text": "Putzwasser aus Nasszelle und Pantry gehört in diese Behälter oder an Land, nicht über Bord."
+      },
+      {
+        "path": ".rows.3.1",
+        "text": "Die Häfen regeln das Waschen am Platz selbst und verschieden streng. Der Bootshafen Luzern verbietet umweltschädigende Mittel, der Bootshafen Hostatt in Kehrsiten Reinigungsmittel und Abdampfgeräte ganz."
+      },
+      {
+        "path": ".rows.3.2",
+        "text": "Die Hafenordnung Ihres Liegeplatzes legt fest, welche Mittel am Steg erlaubt sind. Verbietet sie Reinigungsmittel ganz, wie in Kehrsiten, bleibt zum Waschen am Platz nur klares Wasser."
+      },
+      {
+        "path": ".rows.4.1",
+        "text": "Wechselt ein immatrikuliertes Schiff das Gewässer, etwa in einen anderen See, muss der Wechsel vorher gemeldet und das Schiff von einer autorisierten Reinigungsstelle gereinigt werden. Erst mit der Freigabe darf es ins neue Gewässer. Anlass ist die Quaggamuschel, die im Sommer 2024 erstmals im Vierwaldstättersee entdeckt wurde."
+      },
+      {
+        "path": ".rows.4.2",
+        "text": "Das gilt in allen Zentralschweizer Kantonen, in Luzern seit dem 1. April 2026 mit eigener Verordnung. Trocknen lassen zählt nicht als Reinigung, und die Pflege am Liegeplatz ersetzt diese Reinigung nicht."
+      }
+    ],
+    "missingText": [],
+    "textCheckMethod": "pdftotext -raw, Unicode NFKC, punctuation-independent leaf-string matching. -layout interleaves adjacent columns.",
+    "pdfSize": [
+      594.96,
+      841.92
+    ],
+    "outsidePage": [],
+    "fontRange": [
+      8.5,
+      16.0
+    ],
+    "basis": "Neu auf31b5ce0 erzeugt, aktuelle Inhalte und Button/Druck/Cleanup geprüft"
+  },
+  {
+    "route": "/premium/yacht",
+    "id": "erster-einsatz",
+    "title": "Vor dem ersten Einsatz am Liegeplatz",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/premium__yacht__erster-einsatz.pdf",
+    "pages": 1,
+    "chars": 1693,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/einzugsgebiet",
+    "id": "vergleich",
+    "title": "Die fünf Kantone im Vergleich",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/einzugsgebiet__vergleich.pdf",
+    "pages": 1,
+    "chars": 2453,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "structurallyGeneratedCantonTool": true,
+    "pass": true,
+    "note": "Kantonsdaten/Einzugsgebietskasten, Daten und H1 unverändert. Luzerner geänderter H1 separat neu gedruckt."
+  },
+  {
+    "route": "/einzugsgebiet/luzern",
+    "id": "kantonsdaten-kasten",
+    "locale": "de",
+    "commit": "31b5ce0",
+    "reason": "Luzern print page heading changed from Emmenbrücke to Emmen",
+    "screenTextPresent": true,
+    "clickedPrint": true,
+    "file": "/private/tmp/claude-501/-Users-brandea/114fc6cf-e5c5-4e1f-9667-d47c99605956/scratchpad/welle3/audit-inhalt/r2-print/einzugsgebiet__luzern__kantonsdaten-kasten.pdf",
+    "pages": 1,
+    "chars": 3024,
+    "a4": true,
+    "printHeadingCorrect": true,
+    "cleaned": true,
+    "pass": true,
+    "pdfSize": [
+      594.96,
+      841.92
+    ],
+    "outsidePage": [],
+    "fontRange": [
+      8.5,
+      16.0
+    ],
+    "basis": "Neu auf31b5ce0 erzeugt, aktuelle Inhalte und Button/Druck/Cleanup geprüft"
+  },
+  {
+    "route": "/einzugsgebiet/zug",
+    "id": "kantonsdaten-kasten",
+    "title": "Kantonsdaten für die Planung",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/einzugsgebiet__zug__kantonsdaten-kasten.pdf",
+    "pages": 1,
+    "chars": 1295,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "structurallyGeneratedCantonTool": true,
+    "pass": true,
+    "note": "Kantonsdaten/Einzugsgebietskasten, Daten und H1 unverändert. Luzerner geänderter H1 separat neu gedruckt."
+  },
+  {
+    "route": "/einzugsgebiet/aargau",
+    "id": "kantonsdaten-kasten",
+    "title": "Kantonsdaten für die Planung",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/einzugsgebiet__aargau__kantonsdaten-kasten.pdf",
+    "pages": 1,
+    "chars": 1413,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "structurallyGeneratedCantonTool": true,
+    "pass": true,
+    "note": "Kantonsdaten/Einzugsgebietskasten, Daten und H1 unverändert. Luzerner geänderter H1 separat neu gedruckt."
+  },
+  {
+    "route": "/einzugsgebiet/nidwalden",
+    "id": "kantonsdaten-kasten",
+    "title": "Kantonsdaten für die Planung",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/einzugsgebiet__nidwalden__kantonsdaten-kasten.pdf",
+    "pages": 1,
+    "chars": 1364,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "structurallyGeneratedCantonTool": true,
+    "pass": true,
+    "note": "Kantonsdaten/Einzugsgebietskasten, Daten und H1 unverändert. Luzerner geänderter H1 separat neu gedruckt."
+  },
+  {
+    "route": "/einzugsgebiet/obwalden",
+    "id": "kantonsdaten-kasten",
+    "title": "Kantonsdaten für die Planung",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/einzugsgebiet__obwalden__kantonsdaten-kasten.pdf",
+    "pages": 1,
+    "chars": 1545,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "structurallyGeneratedCantonTool": true,
+    "pass": true,
+    "note": "Kantonsdaten/Einzugsgebietskasten, Daten und H1 unverändert. Luzerner geänderter H1 separat neu gedruckt."
+  },
+  {
+    "route": "/blog/richtige-reinigungsfirma-finden",
+    "id": "vergleichsraster",
+    "title": "Vergleichsraster für Offerten",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/blog__richtige-reinigungsfirma-finden__vergleichsraster.pdf",
+    "pages": 1,
+    "chars": 1837,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/blog/reinigungskosten-schweiz",
+    "id": "rechenweg",
+    "locale": "de",
+    "commit": "31b5ce0",
+    "reason": "tool content or print options changed",
+    "screenTextPresent": true,
+    "clickedPrint": true,
+    "file": "/private/tmp/claude-501/-Users-brandea/114fc6cf-e5c5-4e1f-9667-d47c99605956/scratchpad/welle3/audit-inhalt/r2-print/blog__reinigungskosten-schweiz__rechenweg.pdf",
+    "pages": 1,
+    "chars": 1348,
+    "a4": true,
+    "textChecks": 29,
+    "printHeader": true,
+    "companyHeadPresent": true,
+    "cleaned": true,
+    "pass": true,
+    "layoutExtractorMissing": [],
+    "missingText": [],
+    "textCheckMethod": "pdftotext -raw, Unicode NFKC, punctuation-independent leaf-string matching. -layout interleaves adjacent columns.",
+    "pdfSize": [
+      594.96,
+      841.92
+    ],
+    "outsidePage": [],
+    "fontRange": [
+      8.5,
+      16.0
+    ],
+    "basis": "Neu auf31b5ce0 erzeugt, aktuelle Inhalte und Button/Druck/Cleanup geprüft"
+  },
+  {
+    "route": "/blog/wohnungsabgabe-protokoll",
+    "id": "protokoll-eintraege",
+    "title": "Protokolleinträge: zu ungenau und genau genug",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/blog__wohnungsabgabe-protokoll__protokoll-eintraege.pdf",
+    "pages": 1,
+    "chars": 2343,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/blog/bodenbelaege-reinigen",
+    "id": "mittel-nach-ph",
+    "title": "Welches Mittel wohin: sauer, neutral, alkalisch",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/blog__bodenbelaege-reinigen__mittel-nach-ph.pdf",
+    "pages": 1,
+    "chars": 3075,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/ueber-uns",
+    "id": "firmenangaben",
+    "title": "Firmenangaben zum Nachprüfen",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/ueber-uns__firmenangaben.pdf",
+    "pages": 1,
+    "chars": 1765,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/en/services",
+    "id": "vergleich",
+    "title": "Cleaning, deep cleaning, caretaking or everything together?",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__services__vergleich.pdf",
+    "pages": 1,
+    "chars": 1973,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/en/services/maintenance-cleaning",
+    "id": "leistungsverzeichnis",
+    "title": "Sample cleaning specification for stairwells and common areas",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__services__maintenance-cleaning__leistungsverzeichnis.pdf",
+    "pages": 1,
+    "chars": 1903,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/en/services/maintenance-cleaning",
+    "id": "nebenkosten",
+    "title": "Who pays for the cleaning: tenancy law and condominiums",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__services__maintenance-cleaning__nebenkosten.pdf",
+    "pages": 1,
+    "chars": 3979,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/en/services/maintenance-cleaning",
+    "id": "rundgang",
+    "locale": "en",
+    "commit": "31b5ce0",
+    "reason": "tool content or print options changed",
+    "screenTextPresent": true,
+    "clickedPrint": true,
+    "file": "/private/tmp/claude-501/-Users-brandea/114fc6cf-e5c5-4e1f-9667-d47c99605956/scratchpad/welle3/audit-inhalt/r2-print/en__services__maintenance-cleaning__rundgang.pdf",
+    "pages": 1,
+    "chars": 1218,
+    "a4": true,
+    "textChecks": 15,
+    "printHeader": true,
+    "companyHeadPresent": true,
+    "formHead": true,
+    "cleaned": true,
+    "pass": true,
+    "layoutExtractorMissing": [],
+    "missingText": [],
+    "textCheckMethod": "pdftotext -raw, Unicode NFKC, punctuation-independent leaf-string matching. -layout interleaves adjacent columns.",
+    "pdfSize": [
+      594.96,
+      841.92
+    ],
+    "outsidePage": [],
+    "fontRange": [
+      8.5,
+      16.0
+    ],
+    "basis": "Neu auf31b5ce0 erzeugt, aktuelle Inhalte und Button/Druck/Cleanup geprüft"
+  },
+  {
+    "route": "/en/services/office-cleaning",
+    "id": "leistungsverzeichnis",
+    "title": "Office task schedule: what is cleaned how often",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__services__office-cleaning__leistungsverzeichnis.pdf",
+    "pages": 1,
+    "chars": 1826,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/en/services/office-cleaning",
+    "id": "vertrauliche-raeume",
+    "title": "Confidential rooms: agree before the first visit",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__services__office-cleaning__vertrauliche-raeume.pdf",
+    "pages": 1,
+    "chars": 2718,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/en/services/office-cleaning",
+    "id": "offerten-vergleichen",
+    "title": "Comparing quotes point by point",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__services__office-cleaning__offerten-vergleichen.pdf",
+    "pages": 1,
+    "chars": 1603,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/en/services/special-cleaning",
+    "id": "bodenbelaege",
+    "title": "Which floor can take which cleaning",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__services__special-cleaning__bodenbelaege.pdf",
+    "pages": 1,
+    "chars": 4219,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/en/services/special-cleaning",
+    "id": "schaden-oder-schmutz",
+    "title": "Dirty or damaged?",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__services__special-cleaning__schaden-oder-schmutz.pdf",
+    "pages": 1,
+    "chars": 2683,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/en/services/special-cleaning",
+    "id": "checkliste-grundreinigung",
+    "locale": "en",
+    "commit": "31b5ce0",
+    "reason": "tool content or print options changed",
+    "screenTextPresent": true,
+    "clickedPrint": true,
+    "file": "/private/tmp/claude-501/-Users-brandea/114fc6cf-e5c5-4e1f-9667-d47c99605956/scratchpad/welle3/audit-inhalt/r2-print/en__services__special-cleaning__checkliste-grundreinigung.pdf",
+    "pages": 1,
+    "chars": 1921,
+    "a4": true,
+    "textChecks": 18,
+    "printHeader": true,
+    "companyHeadPresent": true,
+    "cleaned": true,
+    "pass": true,
+    "layoutExtractorMissing": [
+      {
+        "path": ".groups.0.items.0",
+        "text": "Note the floor type in each room, find the care instructions from the building handover"
+      },
+      {
+        "path": ".groups.0.items.1",
+        "text": "Record known damage with photos: etched spots, loose grout, worn parquet"
+      },
+      {
+        "path": ".groups.0.items.2",
+        "text": "Inform tenants or staff in good time, for example with the notice below"
+      },
+      {
+        "path": ".groups.0.items.3",
+        "text": "Have underfloor heating in the rooms concerned switched off completely"
+      },
+      {
+        "path": ".groups.0.items.4",
+        "text": "Arrange access for the day, keep water, a sink and sockets accessible"
+      },
+      {
+        "path": ".groups.0.items.5",
+        "text": "Clear the floors the day before. Move large furniture or deliberately leave it in place: the area underneath then stays uncleaned"
+      },
+      {
+        "path": ".groups.1.items.0",
+        "text": "Grout is free from removable dirt. Cleaning cannot always remove permanent discolouration"
+      },
+      {
+        "path": ".groups.1.items.1",
+        "text": "No limescale edges on taps, shower screens and wall tiles"
+      },
+      {
+        "path": ".groups.1.items.2",
+        "text": "No haze under raking light: shine a torch flat across the floor"
+      },
+      {
+        "path": ".groups.1.items.3",
+        "text": "No sticky patches and no white rims of product residue in corners"
+      },
+      {
+        "path": ".groups.1.items.4",
+        "text": "Skirting boards, doors and door frames have been cleaned too"
+      },
+      {
+        "path": ".groups.1.items.5",
+        "text": "No new dull spots on stone, silicone and grout undamaged"
+      }
+    ],
+    "missingText": [],
+    "textCheckMethod": "pdftotext -raw, Unicode NFKC, punctuation-independent leaf-string matching. -layout interleaves adjacent columns.",
+    "pdfSize": [
+      594.96,
+      841.92
+    ],
+    "outsidePage": [],
+    "fontRange": [
+      8.5,
+      16.0
+    ],
+    "basis": "Neu auf31b5ce0 erzeugt, aktuelle Inhalte und Button/Druck/Cleanup geprüft"
+  },
+  {
+    "route": "/en/services/special-cleaning",
+    "id": "aushang",
+    "locale": "en",
+    "commit": "31b5ce0",
+    "reason": "tool content or print options changed",
+    "screenTextPresent": true,
+    "clickedPrint": true,
+    "file": "/private/tmp/claude-501/-Users-brandea/114fc6cf-e5c5-4e1f-9667-d47c99605956/scratchpad/welle3/audit-inhalt/r2-print/en__services__special-cleaning__aushang.pdf",
+    "pages": 1,
+    "chars": 897,
+    "a4": true,
+    "textChecks": 7,
+    "printHeader": false,
+    "companyHeadPresent": false,
+    "cleaned": true,
+    "pass": true,
+    "layoutExtractorMissing": [],
+    "missingText": [],
+    "textCheckMethod": "pdftotext -raw, Unicode NFKC, punctuation-independent leaf-string matching. -layout interleaves adjacent columns.",
+    "pdfSize": [
+      594.96,
+      841.92
+    ],
+    "outsidePage": [],
+    "fontRange": [
+      8.5,
+      16.0
+    ],
+    "basis": "Neu auf31b5ce0 erzeugt, aktuelle Inhalte und Button/Druck/Cleanup geprüft"
+  },
+  {
+    "route": "/en/services/end-of-tenancy-cleaning",
+    "id": "abnahme-checkliste",
+    "title": "Handover checklist room by room",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__services__end-of-tenancy-cleaning__abnahme-checkliste.pdf",
+    "pages": 1,
+    "chars": 2473,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/en/services/end-of-tenancy-cleaning",
+    "id": "kuendigungstermine",
+    "locale": "en",
+    "commit": "31b5ce0",
+    "reason": "tool content or print options changed",
+    "screenTextPresent": true,
+    "clickedPrint": true,
+    "file": "/private/tmp/claude-501/-Users-brandea/114fc6cf-e5c5-4e1f-9667-d47c99605956/scratchpad/welle3/audit-inhalt/r2-print/en__services__end-of-tenancy-cleaning__kuendigungstermine.pdf",
+    "pages": 1,
+    "chars": 2923,
+    "a4": true,
+    "textChecks": 22,
+    "printHeader": true,
+    "companyHeadPresent": true,
+    "cleaned": true,
+    "pass": true,
+    "layoutExtractorMissing": [
+      {
+        "path": ".rows.0.1",
+        "text": "Not stated on the canton’s website. The Lucerne conciliation authority for tenancy matters can advise."
+      },
+      {
+        "path": ".rows.0.2",
+        "text": "According to the canton, notice is usually given for the end of a month, and dates and notice periods are mostly set out in the lease."
+      },
+      {
+        "path": ".rows.3.0",
+        "text": "Aargau and Nidwalden"
+      },
+      {
+        "path": ".rows.3.1",
+        "text": "Not stated on the cantons’ websites. The conciliation authorities for tenancy matters can advise, in Aargau the one for the district."
+      },
+      {
+        "path": ".rows.3.2",
+        "text": "State the termination date given in the notice in your enquiry."
+      }
+    ],
+    "missingText": [],
+    "textCheckMethod": "pdftotext -raw, Unicode NFKC, punctuation-independent leaf-string matching. -layout interleaves adjacent columns.",
+    "pdfSize": [
+      594.96,
+      841.92
+    ],
+    "outsidePage": [],
+    "fontRange": [
+      8.5,
+      16.0
+    ],
+    "basis": "Neu auf31b5ce0 erzeugt, aktuelle Inhalte und Button/Druck/Cleanup geprüft"
+  },
+  {
+    "route": "/en/services/construction-cleaning",
+    "id": "bauablauf",
+    "title": "Cleaning in the construction sequence",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__services__construction-cleaning__bauablauf.pdf",
+    "pages": 1,
+    "chars": 1552,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/en/services/construction-cleaning",
+    "id": "ausschreibung",
+    "title": "Tendering a post-construction clean: the details that make quotes comparable",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__services__construction-cleaning__ausschreibung.pdf",
+    "pages": 1,
+    "chars": 1891,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/en/services/construction-cleaning",
+    "id": "uebergabe",
+    "title": "Handover checklist for the post-construction clean",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__services__construction-cleaning__uebergabe.pdf",
+    "pages": 1,
+    "chars": 2176,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/en/services/window-and-facade-cleaning",
+    "id": "checkliste-fenster",
+    "title": "Checklist from enquiry to sign-off",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__services__window-and-facade-cleaning__checkliste-fenster.pdf",
+    "pages": 1,
+    "chars": 2382,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/en/services/window-and-facade-cleaning",
+    "id": "aushang-mieterschaft",
+    "locale": "en",
+    "commit": "31b5ce0",
+    "reason": "tool content or print options changed",
+    "screenTextPresent": true,
+    "clickedPrint": true,
+    "file": "/private/tmp/claude-501/-Users-brandea/114fc6cf-e5c5-4e1f-9667-d47c99605956/scratchpad/welle3/audit-inhalt/r2-print/en__services__window-and-facade-cleaning__aushang-mieterschaft.pdf",
+    "pages": 1,
+    "chars": 880,
+    "a4": true,
+    "textChecks": 11,
+    "printHeader": false,
+    "companyHeadPresent": false,
+    "cleaned": true,
+    "pass": true,
+    "layoutExtractorMissing": [
+      {
+        "path": ".rows.4.0",
+        "text": "If you cannot make it"
+      }
+    ],
+    "missingText": [],
+    "textCheckMethod": "pdftotext -raw, Unicode NFKC, punctuation-independent leaf-string matching. -layout interleaves adjacent columns.",
+    "pdfSize": [
+      594.96,
+      841.92
+    ],
+    "outsidePage": [],
+    "fontRange": [
+      10.0,
+      16.0
+    ],
+    "basis": "Neu auf31b5ce0 erzeugt, aktuelle Inhalte und Button/Druck/Cleanup geprüft"
+  },
+  {
+    "route": "/en/services/window-and-facade-cleaning",
+    "id": "abwasser-fassade",
+    "title": "Facade cleaning: where the wastewater may go",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__services__window-and-facade-cleaning__abwasser-fassade.pdf",
+    "pages": 1,
+    "chars": 2736,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/en/services/industrial-cleaning",
+    "id": "sicherheits-uebergabe",
+    "title": "Safety handover before the first job",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__services__industrial-cleaning__sicherheits-uebergabe.pdf",
+    "pages": 1,
+    "chars": 3209,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/en/services/industrial-cleaning",
+    "id": "zonenplan",
+    "title": "Cleaning plan by zone (example)",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__services__industrial-cleaning__zonenplan.pdf",
+    "pages": 1,
+    "chars": 1928,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/en/services/industrial-cleaning",
+    "id": "vor-dem-audit",
+    "title": "Before an audit or customer visit",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__services__industrial-cleaning__vor-dem-audit.pdf",
+    "pages": 1,
+    "chars": 1915,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/en/services/caretaking",
+    "id": "pflichtenheft",
+    "title": "Caretaking specification template",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__services__caretaking__pflichtenheft.pdf",
+    "pages": 1,
+    "chars": 3555,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/en/services/caretaking",
+    "id": "kontrollgang",
+    "title": "Checklist for the inspection round",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__services__caretaking__kontrollgang.pdf",
+    "pages": 1,
+    "chars": 2666,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/en/services/grounds-maintenance",
+    "id": "pflegekalender",
+    "title": "Maintenance calendar for lawns, hedges and paved areas",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__services__grounds-maintenance__pflegekalender.pdf",
+    "pages": 1,
+    "chars": 3126,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/en/services/grounds-maintenance",
+    "id": "spritzmittelverbot",
+    "title": "Weeds and moss: where sprays are prohibited",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__services__grounds-maintenance__spritzmittelverbot.pdf",
+    "pages": 1,
+    "chars": 2358,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/en/services/grounds-maintenance",
+    "id": "pflegeplan",
+    "title": "Maintenance plan: what goes into it",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__services__grounds-maintenance__pflegeplan.pdf",
+    "pages": 1,
+    "chars": 1777,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/en/services/facility-services",
+    "id": "schnittstellen",
+    "title": "Interfaces a contract should cover",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__services__facility-services__schnittstellen.pdf",
+    "pages": 1,
+    "chars": 1768,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/en/services/facility-services",
+    "id": "zustaendigkeiten",
+    "title": "Who does what under a combined contract",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__services__facility-services__zustaendigkeiten.pdf",
+    "pages": 1,
+    "chars": 1985,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/en/services/facility-services",
+    "id": "wechsel",
+    "locale": "en",
+    "commit": "31b5ce0",
+    "reason": "tool content or print options changed",
+    "screenTextPresent": true,
+    "clickedPrint": true,
+    "file": "/private/tmp/claude-501/-Users-brandea/114fc6cf-e5c5-4e1f-9667-d47c99605956/scratchpad/welle3/audit-inhalt/r2-print/en__services__facility-services__wechsel.pdf",
+    "pages": 1,
+    "chars": 3998,
+    "a4": true,
+    "textChecks": 28,
+    "printHeader": true,
+    "companyHeadPresent": true,
+    "cleaned": true,
+    "pass": true,
+    "layoutExtractorMissing": [
+      {
+        "path": ".groups.0.items.0",
+        "text": "Gather all contracts for cleaning, caretaking, grounds and glass"
+      },
+      {
+        "path": ".groups.0.items.1",
+        "text": "For each contract, note the notice period, the next possible end date and whether it renews automatically"
+      },
+      {
+        "path": ".groups.0.items.2",
+        "text": "Employed caretaker: after the probationary period, notice is one month in the first year of service, two months in the second to ninth, three months thereafter, each to the end of a month. Other periods apply only under a written agreement or a standard or collective employment contract (Art. 335c CO). Protected periods, for example during illness or accident, can extend the notice period (Art. 336c CO)"
+      },
+      {
+        "path": ".groups.1.items.0",
+        "text": "Ask every provider for costs per property and per service, so they can be allocated correctly later"
+      },
+      {
+        "path": ".groups.1.items.1",
+        "text": "Let properties: tenants pay service charges only where the lease specifically provides for them, and only in the amount of the actual outlays (Art. 257a and 257b CO)"
+      },
+      {
+        "path": ".groups.1.items.2",
+        "text": "Condominiums: have costs for parts that are of little or no benefit to certain units, such as an underground car park, shown separately. Under the Civil Code, this must be taken into account when costs are allocated (Art. 712h para. 3 CC)"
+      },
+      {
+        "path": ".groups.2.items.0",
+        "text": "Condominiums: check whether the administrator may sign the contract. The administrator acts in accordance with the law, the rules and the resolutions of the assembly, which decides all other administrative matters (Art. 712s para. 1 and 712m para. 1 no. 1 CC). Check the administration agreement as well"
+      },
+      {
+        "path": ".groups.2.items.1",
+        "text": "Collect and list keys, badges and codes from the previous companies"
+      },
+      {
+        "path": ".groups.2.items.2",
+        "text": "Confirm the last visit and the return of items to the previous companies"
+      },
+      {
+        "path": ".groups.3.items.0",
+        "text": "Agree the reporting route: who receives reports and up to what amount repairs may be done without asking"
+      },
+      {
+        "path": ".groups.3.items.1",
+        "text": "Tell tenants or staff who is responsible from which date"
+      },
+      {
+        "path": ".groups.3.items.2",
+        "text": "Update the notice in the entrance and the contact details for reports"
+      },
+      {
+        "path": ".groups.3.items.3",
+        "text": "Businesses: before the first visit, go through the hazards on site and the safety measures with the new provider (Art. 6 and 9 OPA)"
+      }
+    ],
+    "missingText": [],
+    "textCheckMethod": "pdftotext -raw, Unicode NFKC, punctuation-independent leaf-string matching. -layout interleaves adjacent columns.",
+    "pdfSize": [
+      594.96,
+      841.92
+    ],
+    "outsidePage": [],
+    "fontRange": [
+      8.5,
+      16.0
+    ],
+    "basis": "Neu auf31b5ce0 erzeugt, aktuelle Inhalte und Button/Druck/Cleanup geprüft"
+  },
+  {
+    "route": "/en/premium",
+    "id": "geheimhaltung",
+    "title": "What a non-disclosure agreement should cover",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__premium__geheimhaltung.pdf",
+    "pages": 1,
+    "chars": 1287,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/en/premium/luxury-properties",
+    "id": "materialkunde",
+    "title": "What care each material needs",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__premium__luxury-properties__materialkunde.pdf",
+    "pages": 1,
+    "chars": 3075,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/en/premium/luxury-properties",
+    "id": "erster-rundgang",
+    "title": "Before the first visit: the walk-through list",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__premium__luxury-properties__erster-rundgang.pdf",
+    "pages": 1,
+    "chars": 1816,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/en/premium/private-jet",
+    "id": "kabinenmaterialien",
+    "title": "Cabin materials and what damages them",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__premium__private-jet__kabinenmaterialien.pdf",
+    "pages": 1,
+    "chars": 3023,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/en/premium/private-jet",
+    "id": "erster-einsatz",
+    "title": "Checklist for the first job on board",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__premium__private-jet__erster-einsatz.pdf",
+    "pages": 1,
+    "chars": 2123,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/en/premium/yacht",
+    "id": "materialien",
+    "title": "Teak, gelcoat, stainless steel: what helps and what harms",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__premium__yacht__materialien.pdf",
+    "pages": 1,
+    "chars": 3857,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/en/premium/yacht",
+    "id": "regeln-am-see",
+    "locale": "en",
+    "commit": "31b5ce0",
+    "reason": "tool content or print options changed",
+    "screenTextPresent": true,
+    "clickedPrint": true,
+    "file": "/private/tmp/claude-501/-Users-brandea/114fc6cf-e5c5-4e1f-9667-d47c99605956/scratchpad/welle3/audit-inhalt/r2-print/en__premium__yacht__regeln-am-see.pdf",
+    "pages": 1,
+    "chars": 3776,
+    "a4": true,
+    "textChecks": 26,
+    "printHeader": true,
+    "companyHeadPresent": true,
+    "cleaned": true,
+    "pass": true,
+    "layoutExtractorMissing": [
+      {
+        "path": ".rows.0.0",
+        "text": "Waters Protection Act, Art. 6"
+      },
+      {
+        "path": ".rows.0.1",
+        "text": "It is prohibited to introduce into a body of water, directly or indirectly, any substances which may pollute it."
+      },
+      {
+        "path": ".rows.0.2",
+        "text": "Products that can pollute water and wash water containing them must not enter the lake. Collect it and dispose of it properly on land."
+      },
+      {
+        "path": ".rows.1.0",
+        "text": "Inland Navigation Ordinance, Art. 10"
+      },
+      {
+        "path": ".rows.1.1",
+        "text": "Navigation is subject to the same ban. If substances that endanger water, such as oil or fuel, get into the water and the skipper cannot remove the danger himself, he must notify the police without delay."
+      },
+      {
+        "path": ".rows.1.2",
+        "text": "Do not simply rinse away an oil film in the bilge or fuel traces on the hull; report them to the owner."
+      },
+      {
+        "path": ".rows.2.0",
+        "text": "Inland Navigation Ordinance, Art. 108"
+      },
+      {
+        "path": ".rows.2.1",
+        "text": "Boats with living, cooking or sanitary facilities must have tanks for sewage, waste water and rubbish that can be emptied ashore."
+      },
+      {
+        "path": ".rows.2.2",
+        "text": "Cleaning water from the heads and the galley belongs in these tanks or ashore, not overboard."
+      },
+      {
+        "path": ".rows.3.1",
+        "text": "Each harbour regulates washing at the berth itself, and some are stricter than others. Bootshafen Luzern bans environmentally harmful products, while Bootshafen Hostatt in Kehrsiten bans cleaning agents and steam cleaners altogether."
+      },
+      {
+        "path": ".rows.3.2",
+        "text": "The harbour rules for your mooring set out which products are allowed at the jetty. Where they ban cleaning agents altogether, as in Kehrsiten, only clean water is left for washing at the berth."
+      },
+      {
+        "path": ".rows.4.1",
+        "text": "Before a registered boat moves to another body of water, such as a different lake, the move must be reported and the boat cleaned by an authorised cleaning station. It may only be launched in the new body of water once it has been cleared. The reason is the quagga mussel, first found in Lake Lucerne in summer 2024."
+      },
+      {
+        "path": ".rows.4.2",
+        "text": "This applies in all cantons of Central Switzerland, and in Lucerne under its own ordinance since 1 April 2026. Letting the boat dry does not count as cleaning, and cleaning at the mooring does not replace it."
+      }
+    ],
+    "missingText": [],
+    "textCheckMethod": "pdftotext -raw, Unicode NFKC, punctuation-independent leaf-string matching. -layout interleaves adjacent columns.",
+    "pdfSize": [
+      594.96,
+      841.92
+    ],
+    "outsidePage": [],
+    "fontRange": [
+      8.5,
+      16.0
+    ],
+    "basis": "Neu auf31b5ce0 erzeugt, aktuelle Inhalte und Button/Druck/Cleanup geprüft"
+  },
+  {
+    "route": "/en/premium/yacht",
+    "id": "erster-einsatz",
+    "title": "Before the first visit to your mooring",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__premium__yacht__erster-einsatz.pdf",
+    "pages": 1,
+    "chars": 1533,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/en/service-area",
+    "id": "vergleich",
+    "title": "The five cantons compared",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__service-area__vergleich.pdf",
+    "pages": 1,
+    "chars": 2684,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "structurallyGeneratedCantonTool": true,
+    "pass": true,
+    "note": "Kantonsdaten/Einzugsgebietskasten, Daten und H1 unverändert. Luzerner geänderter H1 separat neu gedruckt."
+  },
+  {
+    "route": "/en/service-area/lucerne",
+    "id": "kantonsdaten-kasten",
+    "locale": "en",
+    "commit": "31b5ce0",
+    "reason": "Luzern print page heading changed from Emmenbrücke to Emmen",
+    "screenTextPresent": true,
+    "clickedPrint": true,
+    "file": "/private/tmp/claude-501/-Users-brandea/114fc6cf-e5c5-4e1f-9667-d47c99605956/scratchpad/welle3/audit-inhalt/r2-print/en__service-area__lucerne__kantonsdaten-kasten.pdf",
+    "pages": 1,
+    "chars": 3144,
+    "a4": true,
+    "printHeadingCorrect": true,
+    "cleaned": true,
+    "pass": true,
+    "pdfSize": [
+      594.96,
+      841.92
+    ],
+    "outsidePage": [],
+    "fontRange": [
+      8.5,
+      16.0
+    ],
+    "basis": "Neu auf31b5ce0 erzeugt, aktuelle Inhalte und Button/Druck/Cleanup geprüft"
+  },
+  {
+    "route": "/en/service-area/zug",
+    "id": "kantonsdaten-kasten",
+    "title": "Cantonal facts for planning",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__service-area__zug__kantonsdaten-kasten.pdf",
+    "pages": 1,
+    "chars": 1359,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "structurallyGeneratedCantonTool": true,
+    "pass": true,
+    "note": "Kantonsdaten/Einzugsgebietskasten, Daten und H1 unverändert. Luzerner geänderter H1 separat neu gedruckt."
+  },
+  {
+    "route": "/en/service-area/aargau",
+    "id": "kantonsdaten-kasten",
+    "title": "Cantonal facts for planning",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__service-area__aargau__kantonsdaten-kasten.pdf",
+    "pages": 1,
+    "chars": 1503,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "structurallyGeneratedCantonTool": true,
+    "pass": true,
+    "note": "Kantonsdaten/Einzugsgebietskasten, Daten und H1 unverändert. Luzerner geänderter H1 separat neu gedruckt."
+  },
+  {
+    "route": "/en/service-area/nidwalden",
+    "id": "kantonsdaten-kasten",
+    "title": "Cantonal facts for planning",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__service-area__nidwalden__kantonsdaten-kasten.pdf",
+    "pages": 1,
+    "chars": 1469,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "structurallyGeneratedCantonTool": true,
+    "pass": true,
+    "note": "Kantonsdaten/Einzugsgebietskasten, Daten und H1 unverändert. Luzerner geänderter H1 separat neu gedruckt."
+  },
+  {
+    "route": "/en/service-area/obwalden",
+    "id": "kantonsdaten-kasten",
+    "title": "Cantonal facts for planning",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__service-area__obwalden__kantonsdaten-kasten.pdf",
+    "pages": 1,
+    "chars": 1610,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "structurallyGeneratedCantonTool": true,
+    "pass": true,
+    "note": "Kantonsdaten/Einzugsgebietskasten, Daten und H1 unverändert. Luzerner geänderter H1 separat neu gedruckt."
+  },
+  {
+    "route": "/en/guide/choosing-a-cleaning-company",
+    "id": "vergleichsraster",
+    "title": "Comparison grid for quotes",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__guide__choosing-a-cleaning-company__vergleichsraster.pdf",
+    "pages": 1,
+    "chars": 1759,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/en/guide/cost-of-maintenance-cleaning",
+    "id": "rechenweg",
+    "locale": "en",
+    "commit": "31b5ce0",
+    "reason": "tool content or print options changed",
+    "screenTextPresent": true,
+    "clickedPrint": true,
+    "file": "/private/tmp/claude-501/-Users-brandea/114fc6cf-e5c5-4e1f-9667-d47c99605956/scratchpad/welle3/audit-inhalt/r2-print/en__guide__cost-of-maintenance-cleaning__rechenweg.pdf",
+    "pages": 1,
+    "chars": 1502,
+    "a4": true,
+    "textChecks": 27,
+    "printHeader": true,
+    "companyHeadPresent": true,
+    "cleaned": true,
+    "pass": true,
+    "layoutExtractorMissing": [
+      {
+        "path": ".rows.0.1",
+        "text": "Floor area, types of room, floor coverings, use"
+      },
+      {
+        "path": ".rows.4.0",
+        "text": "+ materials and products"
+      }
+    ],
+    "missingText": [],
+    "textCheckMethod": "pdftotext -raw, Unicode NFKC, punctuation-independent leaf-string matching. -layout interleaves adjacent columns.",
+    "pdfSize": [
+      594.96,
+      841.92
+    ],
+    "outsidePage": [],
+    "fontRange": [
+      8.5,
+      16.0
+    ],
+    "basis": "Neu auf31b5ce0 erzeugt, aktuelle Inhalte und Button/Druck/Cleanup geprüft"
+  },
+  {
+    "route": "/en/guide/flat-handover-report",
+    "id": "protokoll-eintraege",
+    "title": "Report entries: too vague and precise enough",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__guide__flat-handover-report__protokoll-eintraege.pdf",
+    "pages": 1,
+    "chars": 2139,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/en/guide/cleaning-floor-coverings",
+    "id": "mittel-nach-ph",
+    "title": "Which product where: acidic, neutral, alkaline",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__guide__cleaning-floor-coverings__mittel-nach-ph.pdf",
+    "pages": 1,
+    "chars": 2988,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/en/about-us",
+    "id": "firmenangaben",
+    "title": "Company details you can check",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/en__about-us__firmenangaben.pdf",
+    "pages": 1,
+    "chars": 1754,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/fr/prestations",
+    "id": "vergleich",
+    "title": "Nettoyage, nettoyage en profondeur, conciergerie ou tout ensemble ?",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__prestations__vergleich.pdf",
+    "pages": 1,
+    "chars": 2437,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/fr/prestations/nettoyage-d-entretien",
+    "id": "leistungsverzeichnis",
+    "title": "Cahier des charges type pour les parties communes",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__prestations__nettoyage-d-entretien__leistungsverzeichnis.pdf",
+    "pages": 1,
+    "chars": 1868,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/fr/prestations/nettoyage-d-entretien",
+    "id": "nebenkosten",
+    "title": "Qui paie le nettoyage : droit du bail et PPE",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__prestations__nettoyage-d-entretien__nebenkosten.pdf",
+    "pages": 1,
+    "chars": 4345,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/fr/prestations/nettoyage-d-entretien",
+    "id": "rundgang",
+    "locale": "fr",
+    "commit": "31b5ce0",
+    "reason": "tool content or print options changed",
+    "screenTextPresent": true,
+    "clickedPrint": true,
+    "file": "/private/tmp/claude-501/-Users-brandea/114fc6cf-e5c5-4e1f-9667-d47c99605956/scratchpad/welle3/audit-inhalt/r2-print/fr__prestations__nettoyage-d-entretien__rundgang.pdf",
+    "pages": 1,
+    "chars": 1232,
+    "a4": true,
+    "textChecks": 15,
+    "printHeader": true,
+    "companyHeadPresent": true,
+    "formHead": true,
+    "cleaned": true,
+    "pass": true,
+    "layoutExtractorMissing": [],
+    "missingText": [],
+    "textCheckMethod": "pdftotext -raw, Unicode NFKC, punctuation-independent leaf-string matching. -layout interleaves adjacent columns.",
+    "pdfSize": [
+      594.96,
+      841.92
+    ],
+    "outsidePage": [],
+    "fontRange": [
+      8.5,
+      16.0
+    ],
+    "basis": "Neu auf31b5ce0 erzeugt, aktuelle Inhalte und Button/Druck/Cleanup geprüft"
+  },
+  {
+    "route": "/fr/prestations/nettoyage-de-bureaux",
+    "id": "leistungsverzeichnis",
+    "title": "Cahier des charges bureau : quoi nettoyer à quelle fréquence",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__prestations__nettoyage-de-bureaux__leistungsverzeichnis.pdf",
+    "pages": 1,
+    "chars": 1790,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/fr/prestations/nettoyage-de-bureaux",
+    "id": "vertrauliche-raeume",
+    "title": "Locaux confidentiels : à régler avant le premier passage",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__prestations__nettoyage-de-bureaux__vertrauliche-raeume.pdf",
+    "pages": 1,
+    "chars": 3186,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/fr/prestations/nettoyage-de-bureaux",
+    "id": "offerten-vergleichen",
+    "title": "Comparer les devis point par point",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__prestations__nettoyage-de-bureaux__offerten-vergleichen.pdf",
+    "pages": 1,
+    "chars": 1678,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/fr/prestations/nettoyages-speciaux",
+    "id": "bodenbelaege",
+    "title": "Quel sol supporte quel nettoyage",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__prestations__nettoyages-speciaux__bodenbelaege.pdf",
+    "pages": 1,
+    "chars": 4899,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/fr/prestations/nettoyages-speciaux",
+    "id": "schaden-oder-schmutz",
+    "title": "Sale ou endommagé ?",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__prestations__nettoyages-speciaux__schaden-oder-schmutz.pdf",
+    "pages": 1,
+    "chars": 3264,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/fr/prestations/nettoyages-speciaux",
+    "id": "checkliste-grundreinigung",
+    "locale": "fr",
+    "commit": "31b5ce0",
+    "reason": "tool content or print options changed",
+    "screenTextPresent": true,
+    "clickedPrint": true,
+    "file": "/private/tmp/claude-501/-Users-brandea/114fc6cf-e5c5-4e1f-9667-d47c99605956/scratchpad/welle3/audit-inhalt/r2-print/fr__prestations__nettoyages-speciaux__checkliste-grundreinigung.pdf",
+    "pages": 1,
+    "chars": 2349,
+    "a4": true,
+    "textChecks": 18,
+    "printHeader": true,
+    "companyHeadPresent": true,
+    "cleaned": true,
+    "pass": true,
+    "layoutExtractorMissing": [
+      {
+        "path": ".groups.0.items.0",
+        "text": "Noter le revêtement de chaque pièce, retrouver les instructions d’entretien remises à la fin du chantier"
+      },
+      {
+        "path": ".groups.0.items.1",
+        "text": "Relever les dommages connus avec des photos : endroits attaqués par un acide, joints qui se détachent, parquet usé"
+      },
+      {
+        "path": ".groups.0.items.2",
+        "text": "Informer à temps les locataires ou le personnel, par exemple avec l’avis ci-dessous"
+      },
+      {
+        "path": ".groups.0.items.3",
+        "text": "Faire couper entièrement le chauffage au sol dans les pièces concernées"
+      },
+      {
+        "path": ".groups.0.items.4",
+        "text": "Régler l’accès pour le jour de l’intervention, garder l’eau, un évier et des prises accessibles"
+      },
+      {
+        "path": ".groups.0.items.5",
+        "text": "La veille, dégager les sols. Déplacer les grands meubles ou les laisser sciemment en place : la surface en dessous n’est alors pas nettoyée"
+      },
+      {
+        "path": ".groups.1.items.0",
+        "text": "Les joints sont exempts de saleté détachable. Un nettoyage ne peut pas toujours éliminer une décoloration permanente"
+      },
+      {
+        "path": ".groups.1.items.1",
+        "text": "Aucune trace de calcaire sur la robinetterie, les parois de douche et le carrelage mural"
+      },
+      {
+        "path": ".groups.1.items.2",
+        "text": "Aucun voile en lumière rasante : éclairer le sol à plat avec une lampe de poche"
+      },
+      {
+        "path": ".groups.1.items.3",
+        "text": "Aucune zone collante et aucun bord blanc de restes de produit dans les coins"
+      },
+      {
+        "path": ".groups.1.items.4",
+        "text": "Les plinthes, les portes et les cadres de porte ont aussi été nettoyés"
+      },
+      {
+        "path": ".groups.1.items.5",
+        "text": "Aucune nouvelle tache mate sur la pierre, silicone et joints intacts"
+      }
+    ],
+    "missingText": [],
+    "textCheckMethod": "pdftotext -raw, Unicode NFKC, punctuation-independent leaf-string matching. -layout interleaves adjacent columns.",
+    "pdfSize": [
+      594.96,
+      841.92
+    ],
+    "outsidePage": [],
+    "fontRange": [
+      8.5,
+      16.0
+    ],
+    "basis": "Neu auf31b5ce0 erzeugt, aktuelle Inhalte und Button/Druck/Cleanup geprüft"
+  },
+  {
+    "route": "/fr/prestations/nettoyages-speciaux",
+    "id": "aushang",
+    "locale": "fr",
+    "commit": "31b5ce0",
+    "reason": "tool content or print options changed",
+    "screenTextPresent": true,
+    "clickedPrint": true,
+    "file": "/private/tmp/claude-501/-Users-brandea/114fc6cf-e5c5-4e1f-9667-d47c99605956/scratchpad/welle3/audit-inhalt/r2-print/fr__prestations__nettoyages-speciaux__aushang.pdf",
+    "pages": 1,
+    "chars": 1002,
+    "a4": true,
+    "textChecks": 7,
+    "printHeader": false,
+    "companyHeadPresent": false,
+    "cleaned": true,
+    "pass": true,
+    "layoutExtractorMissing": [],
+    "missingText": [],
+    "textCheckMethod": "pdftotext -raw, Unicode NFKC, punctuation-independent leaf-string matching. -layout interleaves adjacent columns.",
+    "pdfSize": [
+      594.96,
+      841.92
+    ],
+    "outsidePage": [],
+    "fontRange": [
+      8.5,
+      16.0
+    ],
+    "basis": "Neu auf31b5ce0 erzeugt, aktuelle Inhalte und Button/Druck/Cleanup geprüft"
+  },
+  {
+    "route": "/fr/prestations/nettoyage-de-fin-de-bail",
+    "id": "abnahme-checkliste",
+    "title": "Liste de contrôle pour l’état des lieux, pièce par pièce",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__prestations__nettoyage-de-fin-de-bail__abnahme-checkliste.pdf",
+    "pages": 1,
+    "chars": 3244,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/fr/prestations/nettoyage-de-fin-de-bail",
+    "id": "kuendigungstermine",
+    "locale": "fr",
+    "commit": "31b5ce0",
+    "reason": "tool content or print options changed",
+    "screenTextPresent": true,
+    "clickedPrint": true,
+    "file": "/private/tmp/claude-501/-Users-brandea/114fc6cf-e5c5-4e1f-9667-d47c99605956/scratchpad/welle3/audit-inhalt/r2-print/fr__prestations__nettoyage-de-fin-de-bail__kuendigungstermine.pdf",
+    "pages": 1,
+    "chars": 3060,
+    "a4": true,
+    "textChecks": 22,
+    "printHeader": true,
+    "companyHeadPresent": true,
+    "cleaned": true,
+    "pass": true,
+    "layoutExtractorMissing": [
+      {
+        "path": ".rows.0.1",
+        "text": "Non mentionnés sur le site du canton. L’autorité de conciliation en matière de bail du canton de Lucerne renseigne."
+      },
+      {
+        "path": ".rows.0.2",
+        "text": "Selon le canton, on résilie en règle générale pour la fin d’un mois, et les termes et délais figurent le plus souvent dans le bail."
+      },
+      {
+        "path": ".rows.3.0",
+        "text": "Argovie et Nidwald"
+      },
+      {
+        "path": ".rows.3.1",
+        "text": "Non mentionnés sur les sites des cantons. Les autorités de conciliation en matière de bail renseignent, en Argovie celle du district."
+      },
+      {
+        "path": ".rows.3.2",
+        "text": "Indiquer dans la demande le terme figurant dans la résiliation."
+      }
+    ],
+    "missingText": [],
+    "textCheckMethod": "pdftotext -raw, Unicode NFKC, punctuation-independent leaf-string matching. -layout interleaves adjacent columns.",
+    "pdfSize": [
+      594.96,
+      841.92
+    ],
+    "outsidePage": [],
+    "fontRange": [
+      8.5,
+      16.0
+    ],
+    "basis": "Neu auf31b5ce0 erzeugt, aktuelle Inhalte und Button/Druck/Cleanup geprüft"
+  },
+  {
+    "route": "/fr/prestations/nettoyage-de-chantier",
+    "id": "bauablauf",
+    "title": "Le nettoyage dans le déroulement du chantier",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__prestations__nettoyage-de-chantier__bauablauf.pdf",
+    "pages": 1,
+    "chars": 1920,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/fr/prestations/nettoyage-de-chantier",
+    "id": "ausschreibung",
+    "title": "Soumission du nettoyage de fin de chantier : les indications qui rendent les devis comparables",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__prestations__nettoyage-de-chantier__ausschreibung.pdf",
+    "pages": 1,
+    "chars": 1943,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/fr/prestations/nettoyage-de-chantier",
+    "id": "uebergabe",
+    "title": "Check-list de remise après le nettoyage de fin de chantier",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__prestations__nettoyage-de-chantier__uebergabe.pdf",
+    "pages": 1,
+    "chars": 2331,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/fr/prestations/nettoyage-de-vitres-et-facades",
+    "id": "checkliste-fenster",
+    "title": "Check-list de la demande à la réception",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__prestations__nettoyage-de-vitres-et-facades__checkliste-fenster.pdf",
+    "pages": 1,
+    "chars": 2799,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/fr/prestations/nettoyage-de-vitres-et-facades",
+    "id": "aushang-mieterschaft",
+    "locale": "fr",
+    "commit": "31b5ce0",
+    "reason": "tool content or print options changed",
+    "screenTextPresent": true,
+    "clickedPrint": true,
+    "file": "/private/tmp/claude-501/-Users-brandea/114fc6cf-e5c5-4e1f-9667-d47c99605956/scratchpad/welle3/audit-inhalt/r2-print/fr__prestations__nettoyage-de-vitres-et-facades__aushang-mieterschaft.pdf",
+    "pages": 1,
+    "chars": 915,
+    "a4": true,
+    "textChecks": 12,
+    "printHeader": false,
+    "companyHeadPresent": false,
+    "cleaned": true,
+    "pass": true,
+    "layoutExtractorMissing": [],
+    "missingText": [],
+    "textCheckMethod": "pdftotext -raw, Unicode NFKC, punctuation-independent leaf-string matching. -layout interleaves adjacent columns.",
+    "pdfSize": [
+      594.96,
+      841.92
+    ],
+    "outsidePage": [],
+    "fontRange": [
+      10.0,
+      16.0
+    ],
+    "basis": "Neu auf31b5ce0 erzeugt, aktuelle Inhalte und Button/Druck/Cleanup geprüft"
+  },
+  {
+    "route": "/fr/prestations/nettoyage-de-vitres-et-facades",
+    "id": "abwasser-fassade",
+    "title": "Nettoyage de façades : où les eaux usées peuvent aller",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__prestations__nettoyage-de-vitres-et-facades__abwasser-fassade.pdf",
+    "pages": 1,
+    "chars": 3225,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/fr/prestations/nettoyage-industriel",
+    "id": "sicherheits-uebergabe",
+    "title": "Passation des consignes de sécurité",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__prestations__nettoyage-industriel__sicherheits-uebergabe.pdf",
+    "pages": 1,
+    "chars": 3766,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/fr/prestations/nettoyage-industriel",
+    "id": "zonenplan",
+    "title": "Plan de nettoyage par zone (exemple)",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__prestations__nettoyage-industriel__zonenplan.pdf",
+    "pages": 1,
+    "chars": 1960,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/fr/prestations/nettoyage-industriel",
+    "id": "vor-dem-audit",
+    "title": "Avant un audit ou une visite de client",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__prestations__nettoyage-industriel__vor-dem-audit.pdf",
+    "pages": 1,
+    "chars": 1790,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/fr/prestations/conciergerie",
+    "id": "pflichtenheft",
+    "title": "Modèle de cahier des charges de conciergerie",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__prestations__conciergerie__pflichtenheft.pdf",
+    "pages": 1,
+    "chars": 3795,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/fr/prestations/conciergerie",
+    "id": "kontrollgang",
+    "title": "Liste de contrôle pour la ronde",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__prestations__conciergerie__kontrollgang.pdf",
+    "pages": 1,
+    "chars": 2765,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/fr/prestations/entretien-des-espaces-verts",
+    "id": "pflegekalender",
+    "title": "Calendrier d’entretien du gazon, des haies et des places",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__prestations__entretien-des-espaces-verts__pflegekalender.pdf",
+    "pages": 1,
+    "chars": 3262,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/fr/prestations/entretien-des-espaces-verts",
+    "id": "spritzmittelverbot",
+    "title": "Mauvaises herbes et mousse : où les produits sont interdits",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__prestations__entretien-des-espaces-verts__spritzmittelverbot.pdf",
+    "pages": 1,
+    "chars": 2602,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/fr/prestations/entretien-des-espaces-verts",
+    "id": "pflegeplan",
+    "title": "Plan d’entretien : ce qu’il doit contenir",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__prestations__entretien-des-espaces-verts__pflegeplan.pdf",
+    "pages": 1,
+    "chars": 1900,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/fr/prestations/facility-services",
+    "id": "schnittstellen",
+    "title": "Les interfaces qu’un contrat devrait régler",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__prestations__facility-services__schnittstellen.pdf",
+    "pages": 1,
+    "chars": 1886,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/fr/prestations/facility-services",
+    "id": "zustaendigkeiten",
+    "title": "Qui fait quoi dans un contrat commun",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__prestations__facility-services__zustaendigkeiten.pdf",
+    "pages": 1,
+    "chars": 2191,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/fr/prestations/facility-services",
+    "id": "wechsel",
+    "locale": "fr",
+    "commit": "31b5ce0",
+    "reason": "tool content or print options changed",
+    "screenTextPresent": true,
+    "clickedPrint": true,
+    "file": "/private/tmp/claude-501/-Users-brandea/114fc6cf-e5c5-4e1f-9667-d47c99605956/scratchpad/welle3/audit-inhalt/r2-print/fr__prestations__facility-services__wechsel.pdf",
+    "pages": 1,
+    "chars": 4237,
+    "a4": true,
+    "textChecks": 28,
+    "printHeader": true,
+    "companyHeadPresent": true,
+    "cleaned": true,
+    "pass": true,
+    "layoutExtractorMissing": [
+      {
+        "path": ".groups.0.items.0",
+        "text": "Rassembler les contrats de nettoyage, de conciergerie, d’abords et de vitres"
+      },
+      {
+        "path": ".groups.0.items.2",
+        "text": "Concierge employé : après le temps d’essai, délai de congé d’un mois pendant la première année de service, de deux mois de la deuxième à la neuvième, de trois mois ensuite, chaque fois pour la fin d’un mois. D’autres délais ne valent que par accord écrit, contrat-type ou convention collective (art. 335c CO). Les périodes de protection, par exemple en cas de maladie ou d’accident, peuvent prolonger le délai (art. 336c CO)"
+      },
+      {
+        "path": ".groups.1.items.0",
+        "text": "Demander à chaque prestataire les coûts par immeuble et par prestation, pour pouvoir les imputer correctement ensuite"
+      },
+      {
+        "path": ".groups.1.items.1",
+        "text": "Biens loués : les frais accessoires ne sont à la charge des locataires que si le bail le prévoit spécialement, et seulement à hauteur des dépenses effectives (art. 257a et 257b CO)"
+      },
+      {
+        "path": ".groups.1.items.2",
+        "text": "Propriété par étages : faire indiquer séparément les coûts des parties qui ne servent que très peu ou pas du tout à certaines unités, par exemple un parking souterrain. Selon le CC, il en est tenu compte dans la répartition des frais (art. 712h al. 3 CC)"
+      },
+      {
+        "path": ".groups.2.items.0",
+        "text": "Propriété par étages : vérifier si l’administrateur peut conclure le contrat. Il agit selon la loi, le règlement et les décisions de l’assemblée, qui règle les autres affaires administratives (art. 712s al. 1 et 712m al. 1 ch. 1 CC). Vérifier aussi le contrat d’administration"
+      },
+      {
+        "path": ".groups.2.items.1",
+        "text": "Récupérer et lister clés, badges et codes des entreprises précédentes"
+      },
+      {
+        "path": ".groups.2.items.2",
+        "text": "Confirmer aux entreprises précédentes la dernière intervention et la restitution"
+      },
+      {
+        "path": ".groups.3.items.0",
+        "text": "Fixer qui reçoit les signalements et jusqu’à quel montant on répare sans demander"
+      },
+      {
+        "path": ".groups.3.items.1",
+        "text": "Informer locataires ou collaborateurs de qui est responsable à partir de quelle date"
+      },
+      {
+        "path": ".groups.3.items.2",
+        "text": "Mettre à jour l’affichage dans l’entrée et les coordonnées pour les signalements"
+      },
+      {
+        "path": ".groups.3.items.3",
+        "text": "Entreprises : avant la première intervention, passer en revue avec le nouveau prestataire les risques sur place et les mesures de sécurité (art. 6 et 9 OPA)"
+      }
+    ],
+    "missingText": [],
+    "textCheckMethod": "pdftotext -raw, Unicode NFKC, punctuation-independent leaf-string matching. -layout interleaves adjacent columns.",
+    "pdfSize": [
+      594.96,
+      841.92
+    ],
+    "outsidePage": [],
+    "fontRange": [
+      8.5,
+      16.0
+    ],
+    "basis": "Neu auf31b5ce0 erzeugt, aktuelle Inhalte und Button/Druck/Cleanup geprüft"
+  },
+  {
+    "route": "/fr/premium",
+    "id": "geheimhaltung",
+    "title": "Ce qu’un accord de confidentialité devrait régler",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__premium__geheimhaltung.pdf",
+    "pages": 1,
+    "chars": 1368,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/fr/premium/biens-de-prestige",
+    "id": "materialkunde",
+    "title": "Quel entretien pour quel matériau",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__premium__biens-de-prestige__materialkunde.pdf",
+    "pages": 1,
+    "chars": 3698,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/fr/premium/biens-de-prestige",
+    "id": "erster-rundgang",
+    "title": "Avant la première intervention : la liste pour le tour de la maison",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__premium__biens-de-prestige__erster-rundgang.pdf",
+    "pages": 1,
+    "chars": 1992,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/fr/premium/jet-prive",
+    "id": "kabinenmaterialien",
+    "title": "Les matériaux de la cabine et ce qui les abîme",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__premium__jet-prive__kabinenmaterialien.pdf",
+    "pages": 1,
+    "chars": 3395,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/fr/premium/jet-prive",
+    "id": "erster-einsatz",
+    "title": "Liste de contrôle pour la première intervention à bord",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__premium__jet-prive__erster-einsatz.pdf",
+    "pages": 1,
+    "chars": 2096,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/fr/premium/yacht",
+    "id": "materialien",
+    "title": "Teck, gelcoat, inox : ce qui aide et ce qui abîme",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__premium__yacht__materialien.pdf",
+    "pages": 1,
+    "chars": 4119,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/fr/premium/yacht",
+    "id": "regeln-am-see",
+    "locale": "fr",
+    "commit": "31b5ce0",
+    "reason": "tool content or print options changed",
+    "screenTextPresent": true,
+    "clickedPrint": true,
+    "file": "/private/tmp/claude-501/-Users-brandea/114fc6cf-e5c5-4e1f-9667-d47c99605956/scratchpad/welle3/audit-inhalt/r2-print/fr__premium__yacht__regeln-am-see.pdf",
+    "pages": 1,
+    "chars": 4493,
+    "a4": true,
+    "textChecks": 26,
+    "printHeader": true,
+    "companyHeadPresent": true,
+    "cleaned": true,
+    "pass": true,
+    "layoutExtractorMissing": [
+      {
+        "path": ".rows.0.0",
+        "text": "Loi sur la protection des eaux, art. 6"
+      },
+      {
+        "path": ".rows.0.1",
+        "text": "Il est interdit d’introduire directement ou indirectement dans une eau des substances de nature à la polluer."
+      },
+      {
+        "path": ".rows.0.2",
+        "text": "Les produits susceptibles de polluer l’eau et l’eau de lavage qui en contient ne doivent pas atteindre le lac. Les recueillir et les éliminer correctement à terre."
+      },
+      {
+        "path": ".rows.1.0",
+        "text": "Ordonnance sur la navigation intérieure, art. 10"
+      },
+      {
+        "path": ".rows.1.1",
+        "text": "La navigation connaît la même interdiction. Si des substances dangereuses pour l’eau, comme de l’huile ou du carburant, tombent à l’eau et que le conducteur ne peut pas écarter lui-même le danger, il doit aviser la police sans délai."
+      },
+      {
+        "path": ".rows.1.2",
+        "text": "Ne pas simplement rincer un film d’huile dans la cale ou des traces de carburant sur la coque, mais les signaler au propriétaire."
+      },
+      {
+        "path": ".rows.2.0",
+        "text": "Ordonnance sur la navigation intérieure, art. 108"
+      },
+      {
+        "path": ".rows.2.1",
+        "text": "Les bateaux pourvus de locaux de séjour, d’une cuisine ou d’installations sanitaires doivent être munis de récipients pour les matières fécales, les eaux usées et les déchets, pouvant être vidés à terre."
+      },
+      {
+        "path": ".rows.2.2",
+        "text": "L’eau de nettoyage des salles d’eau et de la cuisine va dans ces réservoirs ou à terre, pas par-dessus bord."
+      },
+      {
+        "path": ".rows.3.1",
+        "text": "Chaque port règle lui-même le lavage à la place d’amarrage, plus ou moins strictement. Le Bootshafen Luzern interdit les produits nocifs pour l’environnement, le Bootshafen Hostatt à Kehrsiten interdit totalement les produits de nettoyage et les nettoyeurs à vapeur."
+      },
+      {
+        "path": ".rows.3.2",
+        "text": "Le règlement du port de votre place d’amarrage détermine quels produits sont admis au ponton. S’il interdit totalement les produits de nettoyage, comme à Kehrsiten, il ne reste que l’eau claire pour laver le bateau à sa place."
+      },
+      {
+        "path": ".rows.4.1",
+        "text": "Avant qu’un bateau immatriculé change d’eaux, par exemple pour un autre lac, le changement doit être annoncé et le bateau nettoyé par une station de nettoyage autorisée. Il ne peut être mis à l’eau dans les nouvelles eaux qu’avec l’autorisation. La raison est la moule quagga, découverte pour la première fois dans le lac des Quatre-Cantons en été 2024."
+      },
+      {
+        "path": ".rows.4.2",
+        "text": "Cette règle vaut dans tous les cantons de Suisse centrale, à Lucerne avec une ordonnance propre depuis le 1er avril 2026. Laisser sécher le bateau ne compte pas comme nettoyage, et l’entretien à la place d’amarrage ne le remplace pas."
+      }
+    ],
+    "missingText": [],
+    "textCheckMethod": "pdftotext -raw, Unicode NFKC, punctuation-independent leaf-string matching. -layout interleaves adjacent columns.",
+    "pdfSize": [
+      594.96,
+      841.92
+    ],
+    "outsidePage": [],
+    "fontRange": [
+      8.5,
+      16.0
+    ],
+    "basis": "Neu auf31b5ce0 erzeugt, aktuelle Inhalte und Button/Druck/Cleanup geprüft"
+  },
+  {
+    "route": "/fr/premium/yacht",
+    "id": "erster-einsatz",
+    "title": "Avant la première intervention à la place d’amarrage",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__premium__yacht__erster-einsatz.pdf",
+    "pages": 1,
+    "chars": 1614,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/fr/zone-d-intervention",
+    "id": "vergleich",
+    "title": "Les cinq cantons en comparaison",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__zone-d-intervention__vergleich.pdf",
+    "pages": 1,
+    "chars": 2653,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "structurallyGeneratedCantonTool": true,
+    "pass": true,
+    "note": "Kantonsdaten/Einzugsgebietskasten, Daten und H1 unverändert. Luzerner geänderter H1 separat neu gedruckt."
+  },
+  {
+    "route": "/fr/zone-d-intervention/lucerne",
+    "id": "kantonsdaten-kasten",
+    "locale": "fr",
+    "commit": "31b5ce0",
+    "reason": "Luzern print page heading changed from Emmenbrücke to Emmen",
+    "screenTextPresent": true,
+    "clickedPrint": true,
+    "file": "/private/tmp/claude-501/-Users-brandea/114fc6cf-e5c5-4e1f-9667-d47c99605956/scratchpad/welle3/audit-inhalt/r2-print/fr__zone-d-intervention__lucerne__kantonsdaten-kasten.pdf",
+    "pages": 1,
+    "chars": 3348,
+    "a4": true,
+    "printHeadingCorrect": true,
+    "cleaned": true,
+    "pass": true,
+    "pdfSize": [
+      594.96,
+      841.92
+    ],
+    "outsidePage": [],
+    "fontRange": [
+      8.5,
+      16.0
+    ],
+    "basis": "Neu auf31b5ce0 erzeugt, aktuelle Inhalte und Button/Druck/Cleanup geprüft"
+  },
+  {
+    "route": "/fr/zone-d-intervention/zoug",
+    "id": "kantonsdaten-kasten",
+    "title": "Données cantonales pour la planification",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__zone-d-intervention__zoug__kantonsdaten-kasten.pdf",
+    "pages": 1,
+    "chars": 1476,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "structurallyGeneratedCantonTool": true,
+    "pass": true,
+    "note": "Kantonsdaten/Einzugsgebietskasten, Daten und H1 unverändert. Luzerner geänderter H1 separat neu gedruckt."
+  },
+  {
+    "route": "/fr/zone-d-intervention/argovie",
+    "id": "kantonsdaten-kasten",
+    "title": "Données cantonales pour la planification",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__zone-d-intervention__argovie__kantonsdaten-kasten.pdf",
+    "pages": 1,
+    "chars": 1554,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "structurallyGeneratedCantonTool": true,
+    "pass": true,
+    "note": "Kantonsdaten/Einzugsgebietskasten, Daten und H1 unverändert. Luzerner geänderter H1 separat neu gedruckt."
+  },
+  {
+    "route": "/fr/zone-d-intervention/nidwald",
+    "id": "kantonsdaten-kasten",
+    "title": "Données cantonales pour la planification",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__zone-d-intervention__nidwald__kantonsdaten-kasten.pdf",
+    "pages": 1,
+    "chars": 1582,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "structurallyGeneratedCantonTool": true,
+    "pass": true,
+    "note": "Kantonsdaten/Einzugsgebietskasten, Daten und H1 unverändert. Luzerner geänderter H1 separat neu gedruckt."
+  },
+  {
+    "route": "/fr/zone-d-intervention/obwald",
+    "id": "kantonsdaten-kasten",
+    "title": "Données cantonales pour la planification",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__zone-d-intervention__obwald__kantonsdaten-kasten.pdf",
+    "pages": 1,
+    "chars": 1726,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "structurallyGeneratedCantonTool": true,
+    "pass": true,
+    "note": "Kantonsdaten/Einzugsgebietskasten, Daten und H1 unverändert. Luzerner geänderter H1 separat neu gedruckt."
+  },
+  {
+    "route": "/fr/guide/choisir-une-entreprise-de-nettoyage",
+    "id": "vergleichsraster",
+    "title": "Grille de comparaison des devis",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__guide__choisir-une-entreprise-de-nettoyage__vergleichsraster.pdf",
+    "pages": 1,
+    "chars": 1812,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/fr/guide/cout-du-nettoyage-d-entretien",
+    "id": "rechenweg",
+    "locale": "fr",
+    "commit": "31b5ce0",
+    "reason": "tool content or print options changed",
+    "screenTextPresent": true,
+    "clickedPrint": true,
+    "file": "/private/tmp/claude-501/-Users-brandea/114fc6cf-e5c5-4e1f-9667-d47c99605956/scratchpad/welle3/audit-inhalt/r2-print/fr__guide__cout-du-nettoyage-d-entretien__rechenweg.pdf",
+    "pages": 1,
+    "chars": 1547,
+    "a4": true,
+    "textChecks": 27,
+    "printHeader": true,
+    "companyHeadPresent": true,
+    "cleaned": true,
+    "pass": true,
+    "layoutExtractorMissing": [
+      {
+        "path": ".rows.0.0",
+        "text": "Heures par passage"
+      },
+      {
+        "path": ".rows.0.1",
+        "text": "Surface, types de locaux, revêtements, utilisation"
+      },
+      {
+        "path": ".rows.1.0",
+        "text": "× passages par mois"
+      },
+      {
+        "path": ".rows.1.1",
+        "text": "Fréquence, par exemple deux fois par semaine"
+      },
+      {
+        "path": ".rows.3.1",
+        "text": "Salaires, charges sociales, conduite, déplacement"
+      },
+      {
+        "path": ".rows.4.0",
+        "text": "+ matériel et produits"
+      }
+    ],
+    "missingText": [],
+    "textCheckMethod": "pdftotext -raw, Unicode NFKC, punctuation-independent leaf-string matching. -layout interleaves adjacent columns.",
+    "pdfSize": [
+      594.96,
+      841.92
+    ],
+    "outsidePage": [],
+    "fontRange": [
+      8.5,
+      16.0
+    ],
+    "basis": "Neu auf31b5ce0 erzeugt, aktuelle Inhalte und Button/Druck/Cleanup geprüft"
+  },
+  {
+    "route": "/fr/guide/etat-des-lieux-de-sortie",
+    "id": "protokoll-eintraege",
+    "title": "Inscriptions au procès-verbal : trop vagues et assez précises",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__guide__etat-des-lieux-de-sortie__protokoll-eintraege.pdf",
+    "pages": 1,
+    "chars": 2582,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/fr/guide/nettoyer-les-revetements-de-sol",
+    "id": "mittel-nach-ph",
+    "title": "Quel produit où : acide, neutre, alcalin",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__guide__nettoyer-les-revetements-de-sol__mittel-nach-ph.pdf",
+    "pages": 1,
+    "chars": 3595,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/fr/a-propos",
+    "id": "firmenangaben",
+    "title": "Données de l’entreprise à vérifier",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/fr__a-propos__firmenangaben.pdf",
+    "pages": 1,
+    "chars": 2022,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/it/servizi",
+    "id": "vergleich",
+    "title": "Pulizia, pulizia a fondo, custodia o tutto insieme?",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__servizi__vergleich.pdf",
+    "pages": 1,
+    "chars": 1976,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/it/servizi/pulizia-di-manutenzione",
+    "id": "leistungsverzeichnis",
+    "title": "Modello di elenco delle prestazioni per vano scale e parti comuni",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__servizi__pulizia-di-manutenzione__leistungsverzeichnis.pdf",
+    "pages": 1,
+    "chars": 2016,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/it/servizi/pulizia-di-manutenzione",
+    "id": "nebenkosten",
+    "title": "Chi paga la pulizia: diritto di locazione e proprietà per piani",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__servizi__pulizia-di-manutenzione__nebenkosten.pdf",
+    "pages": 1,
+    "chars": 4269,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/it/servizi/pulizia-di-manutenzione",
+    "id": "rundgang",
+    "locale": "it",
+    "commit": "31b5ce0",
+    "reason": "tool content or print options changed",
+    "screenTextPresent": true,
+    "clickedPrint": true,
+    "file": "/private/tmp/claude-501/-Users-brandea/114fc6cf-e5c5-4e1f-9667-d47c99605956/scratchpad/welle3/audit-inhalt/r2-print/it__servizi__pulizia-di-manutenzione__rundgang.pdf",
+    "pages": 1,
+    "chars": 1304,
+    "a4": true,
+    "textChecks": 16,
+    "printHeader": true,
+    "companyHeadPresent": true,
+    "formHead": true,
+    "cleaned": true,
+    "pass": true,
+    "layoutExtractorMissing": [],
+    "missingText": [],
+    "textCheckMethod": "pdftotext -raw, Unicode NFKC, punctuation-independent leaf-string matching. -layout interleaves adjacent columns.",
+    "pdfSize": [
+      594.96,
+      841.92
+    ],
+    "outsidePage": [],
+    "fontRange": [
+      8.5,
+      16.0
+    ],
+    "basis": "Neu auf31b5ce0 erzeugt, aktuelle Inhalte und Button/Druck/Cleanup geprüft"
+  },
+  {
+    "route": "/it/servizi/pulizia-di-uffici",
+    "id": "leistungsverzeichnis",
+    "title": "Elenco delle prestazioni per l’ufficio: che cosa si pulisce e quanto spesso",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__servizi__pulizia-di-uffici__leistungsverzeichnis.pdf",
+    "pages": 1,
+    "chars": 1860,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/it/servizi/pulizia-di-uffici",
+    "id": "vertrauliche-raeume",
+    "title": "Locali riservati: da regolare prima del primo intervento",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__servizi__pulizia-di-uffici__vertrauliche-raeume.pdf",
+    "pages": 1,
+    "chars": 3079,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/it/servizi/pulizia-di-uffici",
+    "id": "offerten-vergleichen",
+    "title": "Confrontare le offerte punto per punto",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__servizi__pulizia-di-uffici__offerten-vergleichen.pdf",
+    "pages": 1,
+    "chars": 1659,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/it/servizi/pulizie-speciali",
+    "id": "bodenbelaege",
+    "title": "Quale pavimento sopporta quale pulizia",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__servizi__pulizie-speciali__bodenbelaege.pdf",
+    "pages": 1,
+    "chars": 4863,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/it/servizi/pulizie-speciali",
+    "id": "schaden-oder-schmutz",
+    "title": "Sporco o danneggiato?",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__servizi__pulizie-speciali__schaden-oder-schmutz.pdf",
+    "pages": 1,
+    "chars": 2926,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/it/servizi/pulizie-speciali",
+    "id": "checkliste-grundreinigung",
+    "locale": "it",
+    "commit": "31b5ce0",
+    "reason": "tool content or print options changed",
+    "screenTextPresent": true,
+    "clickedPrint": true,
+    "file": "/private/tmp/claude-501/-Users-brandea/114fc6cf-e5c5-4e1f-9667-d47c99605956/scratchpad/welle3/audit-inhalt/r2-print/it__servizi__pulizie-speciali__checkliste-grundreinigung.pdf",
+    "pages": 1,
+    "chars": 2351,
+    "a4": true,
+    "textChecks": 18,
+    "printHeader": true,
+    "companyHeadPresent": true,
+    "cleaned": true,
+    "pass": true,
+    "layoutExtractorMissing": [
+      {
+        "path": ".groups.0.items.0",
+        "text": "Annotare il pavimento di ogni locale, cercare le istruzioni di cura ricevute alla consegna dell’edificio"
+      },
+      {
+        "path": ".groups.0.items.1",
+        "text": "Documentare con fotografie i danni noti: punti intaccati da acidi, fughe che si staccano, parquet consumato"
+      },
+      {
+        "path": ".groups.0.items.2",
+        "text": "Informare per tempo inquilini o personale, per esempio con l’avviso qui sotto"
+      },
+      {
+        "path": ".groups.0.items.3",
+        "text": "Far spegnere del tutto il riscaldamento a pavimento nei locali interessati"
+      },
+      {
+        "path": ".groups.0.items.4",
+        "text": "Regolare l’accesso per il giorno dell’intervento, lasciare accessibili acqua, uno scarico e prese elettriche"
+      },
+      {
+        "path": ".groups.1.items.0",
+        "text": "Le fughe sono prive di sporco rimovibile. Una pulizia non può sempre eliminare le alterazioni permanenti del colore"
+      },
+      {
+        "path": ".groups.1.items.1",
+        "text": "Nessun bordo di calcare su rubinetteria, pareti della doccia e piastrelle murali"
+      },
+      {
+        "path": ".groups.1.items.2",
+        "text": "Nessun velo in luce radente: illuminare il pavimento di piatto con una torcia"
+      },
+      {
+        "path": ".groups.1.items.3",
+        "text": "Nessuna zona appiccicosa e nessun bordo bianco di residui di prodotto negli angoli"
+      },
+      {
+        "path": ".groups.1.items.4",
+        "text": "Anche zoccolini, porte e telai delle porte sono stati puliti"
+      }
+    ],
+    "missingText": [],
+    "textCheckMethod": "pdftotext -raw, Unicode NFKC, punctuation-independent leaf-string matching. -layout interleaves adjacent columns.",
+    "pdfSize": [
+      594.96,
+      841.92
+    ],
+    "outsidePage": [],
+    "fontRange": [
+      8.5,
+      16.0
+    ],
+    "basis": "Neu auf31b5ce0 erzeugt, aktuelle Inhalte und Button/Druck/Cleanup geprüft"
+  },
+  {
+    "route": "/it/servizi/pulizie-speciali",
+    "id": "aushang",
+    "locale": "it",
+    "commit": "31b5ce0",
+    "reason": "tool content or print options changed",
+    "screenTextPresent": true,
+    "clickedPrint": true,
+    "file": "/private/tmp/claude-501/-Users-brandea/114fc6cf-e5c5-4e1f-9667-d47c99605956/scratchpad/welle3/audit-inhalt/r2-print/it__servizi__pulizie-speciali__aushang.pdf",
+    "pages": 1,
+    "chars": 947,
+    "a4": true,
+    "textChecks": 7,
+    "printHeader": false,
+    "companyHeadPresent": false,
+    "cleaned": true,
+    "pass": true,
+    "layoutExtractorMissing": [],
+    "missingText": [],
+    "textCheckMethod": "pdftotext -raw, Unicode NFKC, punctuation-independent leaf-string matching. -layout interleaves adjacent columns.",
+    "pdfSize": [
+      594.96,
+      841.92
+    ],
+    "outsidePage": [],
+    "fontRange": [
+      8.5,
+      16.0
+    ],
+    "basis": "Neu auf31b5ce0 erzeugt, aktuelle Inhalte und Button/Druck/Cleanup geprüft"
+  },
+  {
+    "route": "/it/servizi/pulizia-di-fine-locazione",
+    "id": "abnahme-checkliste",
+    "title": "Lista di controllo per la riconsegna, locale per locale",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__servizi__pulizia-di-fine-locazione__abnahme-checkliste.pdf",
+    "pages": 1,
+    "chars": 2802,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/it/servizi/pulizia-di-fine-locazione",
+    "id": "kuendigungstermine",
+    "locale": "it",
+    "commit": "31b5ce0",
+    "reason": "tool content or print options changed",
+    "screenTextPresent": true,
+    "clickedPrint": true,
+    "file": "/private/tmp/claude-501/-Users-brandea/114fc6cf-e5c5-4e1f-9667-d47c99605956/scratchpad/welle3/audit-inhalt/r2-print/it__servizi__pulizia-di-fine-locazione__kuendigungstermine.pdf",
+    "pages": 1,
+    "chars": 3054,
+    "a4": true,
+    "textChecks": 22,
+    "printHeader": true,
+    "companyHeadPresent": true,
+    "cleaned": true,
+    "pass": true,
+    "layoutExtractorMissing": [
+      {
+        "path": ".rows.0.1",
+        "text": "Non indicate sul sito del Cantone. Fornisce consulenza l’autorità di conciliazione in materia di locazione del Cantone di Lucerna."
+      },
+      {
+        "path": ".rows.0.2",
+        "text": "Secondo il Cantone si disdice di regola per la fine di un mese, e scadenze e termini sono per lo più indicati nel contratto."
+      },
+      {
+        "path": ".rows.3.0",
+        "text": "Argovia e Nidvaldo"
+      },
+      {
+        "path": ".rows.3.1",
+        "text": "Non indicate sui siti dei Cantoni. Forniscono consulenza le autorità di conciliazione in materia di locazione, in Argovia quella del distretto."
+      },
+      {
+        "path": ".rows.3.2",
+        "text": "Indicare nella richiesta la scadenza riportata nella disdetta."
+      }
+    ],
+    "missingText": [],
+    "textCheckMethod": "pdftotext -raw, Unicode NFKC, punctuation-independent leaf-string matching. -layout interleaves adjacent columns.",
+    "pdfSize": [
+      594.96,
+      841.92
+    ],
+    "outsidePage": [],
+    "fontRange": [
+      8.5,
+      16.0
+    ],
+    "basis": "Neu auf31b5ce0 erzeugt, aktuelle Inhalte und Button/Druck/Cleanup geprüft"
+  },
+  {
+    "route": "/it/servizi/pulizia-di-cantiere",
+    "id": "bauablauf",
+    "title": "La pulizia nello svolgimento del cantiere",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__servizi__pulizia-di-cantiere__bauablauf.pdf",
+    "pages": 1,
+    "chars": 1611,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/it/servizi/pulizia-di-cantiere",
+    "id": "ausschreibung",
+    "title": "Mettere a concorso la pulizia di fine cantiere: i dati che rendono confrontabili le offerte",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__servizi__pulizia-di-cantiere__ausschreibung.pdf",
+    "pages": 1,
+    "chars": 1965,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/it/servizi/pulizia-di-cantiere",
+    "id": "uebergabe",
+    "title": "Lista di controllo per la consegna dopo la pulizia di fine cantiere",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__servizi__pulizia-di-cantiere__uebergabe.pdf",
+    "pages": 1,
+    "chars": 2236,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/it/servizi/pulizia-di-vetri-e-facciate",
+    "id": "checkliste-fenster",
+    "title": "Checklist dalla richiesta alla verifica finale",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__servizi__pulizia-di-vetri-e-facciate__checkliste-fenster.pdf",
+    "pages": 1,
+    "chars": 2413,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/it/servizi/pulizia-di-vetri-e-facciate",
+    "id": "aushang-mieterschaft",
+    "locale": "it",
+    "commit": "31b5ce0",
+    "reason": "tool content or print options changed",
+    "screenTextPresent": true,
+    "clickedPrint": true,
+    "file": "/private/tmp/claude-501/-Users-brandea/114fc6cf-e5c5-4e1f-9667-d47c99605956/scratchpad/welle3/audit-inhalt/r2-print/it__servizi__pulizia-di-vetri-e-facciate__aushang-mieterschaft.pdf",
+    "pages": 1,
+    "chars": 903,
+    "a4": true,
+    "textChecks": 11,
+    "printHeader": false,
+    "companyHeadPresent": false,
+    "cleaned": true,
+    "pass": true,
+    "layoutExtractorMissing": [],
+    "missingText": [],
+    "textCheckMethod": "pdftotext -raw, Unicode NFKC, punctuation-independent leaf-string matching. -layout interleaves adjacent columns.",
+    "pdfSize": [
+      594.96,
+      841.92
+    ],
+    "outsidePage": [],
+    "fontRange": [
+      10.0,
+      16.0
+    ],
+    "basis": "Neu auf31b5ce0 erzeugt, aktuelle Inhalte und Button/Druck/Cleanup geprüft"
+  },
+  {
+    "route": "/it/servizi/pulizia-di-vetri-e-facciate",
+    "id": "abwasser-fassade",
+    "title": "Pulizia di facciate: dove possono finire le acque di scarico",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__servizi__pulizia-di-vetri-e-facciate__abwasser-fassade.pdf",
+    "pages": 1,
+    "chars": 3254,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/it/servizi/pulizia-industriale",
+    "id": "sicherheits-uebergabe",
+    "title": "Passaggio di consegne sulla sicurezza",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__servizi__pulizia-industriale__sicherheits-uebergabe.pdf",
+    "pages": 1,
+    "chars": 3419,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/it/servizi/pulizia-industriale",
+    "id": "zonenplan",
+    "title": "Piano di pulizia per zone (esempio)",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__servizi__pulizia-industriale__zonenplan.pdf",
+    "pages": 1,
+    "chars": 2146,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/it/servizi/pulizia-industriale",
+    "id": "vor-dem-audit",
+    "title": "Prima di un audit o di una visita cliente",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__servizi__pulizia-industriale__vor-dem-audit.pdf",
+    "pages": 1,
+    "chars": 1948,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/it/servizi/custodia-di-stabili",
+    "id": "pflichtenheft",
+    "title": "Modello di capitolato per la custodia",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__servizi__custodia-di-stabili__pflichtenheft.pdf",
+    "pages": 1,
+    "chars": 3916,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/it/servizi/custodia-di-stabili",
+    "id": "kontrollgang",
+    "title": "Lista per il giro di controllo",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__servizi__custodia-di-stabili__kontrollgang.pdf",
+    "pages": 1,
+    "chars": 2759,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/it/servizi/manutenzione-del-verde",
+    "id": "pflegekalender",
+    "title": "Calendario di manutenzione per prato, siepi e piazzali",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__servizi__manutenzione-del-verde__pflegekalender.pdf",
+    "pages": 1,
+    "chars": 3002,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/it/servizi/manutenzione-del-verde",
+    "id": "spritzmittelverbot",
+    "title": "Erbacce e muschio: dove i prodotti sono vietati",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__servizi__manutenzione-del-verde__spritzmittelverbot.pdf",
+    "pages": 1,
+    "chars": 2513,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/it/servizi/manutenzione-del-verde",
+    "id": "pflegeplan",
+    "title": "Piano di manutenzione: che cosa deve contenere",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__servizi__manutenzione-del-verde__pflegeplan.pdf",
+    "pages": 1,
+    "chars": 1833,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/it/servizi/facility-services",
+    "id": "schnittstellen",
+    "title": "I punti di contatto che un contratto dovrebbe regolare",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__servizi__facility-services__schnittstellen.pdf",
+    "pages": 1,
+    "chars": 1839,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/it/servizi/facility-services",
+    "id": "zustaendigkeiten",
+    "title": "Chi fa che cosa in un contratto comune",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__servizi__facility-services__zustaendigkeiten.pdf",
+    "pages": 1,
+    "chars": 2260,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/it/servizi/facility-services",
+    "id": "wechsel",
+    "locale": "it",
+    "commit": "31b5ce0",
+    "reason": "tool content or print options changed",
+    "screenTextPresent": true,
+    "clickedPrint": true,
+    "file": "/private/tmp/claude-501/-Users-brandea/114fc6cf-e5c5-4e1f-9667-d47c99605956/scratchpad/welle3/audit-inhalt/r2-print/it__servizi__facility-services__wechsel.pdf",
+    "pages": 1,
+    "chars": 4180,
+    "a4": true,
+    "textChecks": 28,
+    "printHeader": true,
+    "companyHeadPresent": true,
+    "cleaned": true,
+    "pass": true,
+    "layoutExtractorMissing": [
+      {
+        "path": ".groups.0.items.0",
+        "text": "Raccogliere tutti i contratti per pulizia, custodia, aree esterne e vetri"
+      },
+      {
+        "path": ".groups.0.items.1",
+        "text": "Annotare per ogni contratto il termine di disdetta, la prossima scadenza possibile e se si rinnova tacitamente"
+      },
+      {
+        "path": ".groups.0.items.2",
+        "text": "Custode dipendente: dopo il tempo di prova, preavviso di un mese nel primo anno di servizio, di due mesi dal secondo al nono, poi di tre mesi, sempre per la fine di un mese. Altri termini valgono solo per accordo scritto, contratto normale o collettivo (art. 335c CO). I periodi di protezione, per esempio in caso di malattia o infortunio, possono prolungare il termine (art. 336c CO)"
+      },
+      {
+        "path": ".groups.1.items.0",
+        "text": "Chiedere a ogni fornitore i costi per stabile e per prestazione, per poterli attribuire correttamente in seguito"
+      },
+      {
+        "path": ".groups.1.items.1",
+        "text": "Stabili locati: le spese accessorie sono a carico degli inquilini solo se il contratto di locazione lo prevede specialmente, e solo per i costi effettivi (art. 257a e 257b CO)"
+      },
+      {
+        "path": ".groups.1.items.2",
+        "text": "Proprietà per piani: far indicare separatamente i costi delle parti che non servono o servono minimamente a talune unità, per esempio un’autorimessa sotterranea. Secondo il CC se ne deve tenere conto nella ripartizione delle spese (art. 712h cpv. 3 CC)"
+      },
+      {
+        "path": ".groups.2.items.0",
+        "text": "Proprietà per piani: verificare se l’amministratore può concludere il contratto. Agisce secondo la legge, il regolamento e le decisioni dell’assemblea, che decide gli altri affari amministrativi (art. 712s cpv. 1 e 712m cpv. 1 n. 1 CC). Verificare anche il contratto di amministrazione"
+      },
+      {
+        "path": ".groups.2.items.1",
+        "text": "Ritirare ed elencare chiavi, badge e codici delle imprese precedenti"
+      },
+      {
+        "path": ".groups.2.items.2",
+        "text": "Confermare alle imprese precedenti l’ultimo intervento e la restituzione"
+      },
+      {
+        "path": ".groups.3.items.0",
+        "text": "Fissare la via delle segnalazioni: chi le riceve e fino a quale importo si ripara senza chiedere"
+      },
+      {
+        "path": ".groups.3.items.1",
+        "text": "Informare inquilini o collaboratori su chi è responsabile da quale data"
+      },
+      {
+        "path": ".groups.3.items.2",
+        "text": "Aggiornare l’avviso all’ingresso e i recapiti per le segnalazioni"
+      },
+      {
+        "path": ".groups.3.items.3",
+        "text": "Aziende: prima del primo intervento, esaminare con il nuovo fornitore i pericoli in azienda e le misure di sicurezza (art. 6 e 9 OPI)"
+      }
+    ],
+    "missingText": [],
+    "textCheckMethod": "pdftotext -raw, Unicode NFKC, punctuation-independent leaf-string matching. -layout interleaves adjacent columns.",
+    "pdfSize": [
+      594.96,
+      841.92
+    ],
+    "outsidePage": [],
+    "fontRange": [
+      8.5,
+      16.0
+    ],
+    "basis": "Neu auf31b5ce0 erzeugt, aktuelle Inhalte und Button/Druck/Cleanup geprüft"
+  },
+  {
+    "route": "/it/premium",
+    "id": "geheimhaltung",
+    "title": "Che cosa dovrebbe regolare un accordo di riservatezza",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__premium__geheimhaltung.pdf",
+    "pages": 1,
+    "chars": 1391,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/it/premium/immobili-di-pregio",
+    "id": "materialkunde",
+    "title": "Quale cura richiede ogni materiale",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__premium__immobili-di-pregio__materialkunde.pdf",
+    "pages": 1,
+    "chars": 3504,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/it/premium/immobili-di-pregio",
+    "id": "erster-rundgang",
+    "title": "Prima del primo intervento: la lista per il giro della casa",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__premium__immobili-di-pregio__erster-rundgang.pdf",
+    "pages": 1,
+    "chars": 1972,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/it/premium/jet-privato",
+    "id": "kabinenmaterialien",
+    "title": "Materiali della cabina e che cosa li danneggia",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__premium__jet-privato__kabinenmaterialien.pdf",
+    "pages": 1,
+    "chars": 3326,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/it/premium/jet-privato",
+    "id": "erster-einsatz",
+    "title": "Lista di controllo per il primo intervento a bordo",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__premium__jet-privato__erster-einsatz.pdf",
+    "pages": 1,
+    "chars": 2115,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/it/premium/yacht",
+    "id": "materialien",
+    "title": "Teak, gelcoat, inox: che cosa aiuta e che cosa danneggia",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__premium__yacht__materialien.pdf",
+    "pages": 1,
+    "chars": 4044,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/it/premium/yacht",
+    "id": "regeln-am-see",
+    "locale": "it",
+    "commit": "31b5ce0",
+    "reason": "tool content or print options changed",
+    "screenTextPresent": true,
+    "clickedPrint": true,
+    "file": "/private/tmp/claude-501/-Users-brandea/114fc6cf-e5c5-4e1f-9667-d47c99605956/scratchpad/welle3/audit-inhalt/r2-print/it__premium__yacht__regeln-am-see.pdf",
+    "pages": 1,
+    "chars": 4164,
+    "a4": true,
+    "textChecks": 26,
+    "printHeader": true,
+    "companyHeadPresent": true,
+    "cleaned": true,
+    "pass": true,
+    "layoutExtractorMissing": [
+      {
+        "path": ".rows.0.0",
+        "text": "Legge sulla protezione delle acque, art. 6"
+      },
+      {
+        "path": ".rows.0.1",
+        "text": "È vietato introdurre direttamente o indirettamente nelle acque sostanze che possono inquinarle."
+      },
+      {
+        "path": ".rows.0.2",
+        "text": "I prodotti che possono inquinare l’acqua e l’acqua di lavaggio che li contiene non devono raggiungere il lago. Raccoglierli e smaltirli correttamente a terra."
+      },
+      {
+        "path": ".rows.1.0",
+        "text": "Ordinanza sulla navigazione interna, art. 10"
+      },
+      {
+        "path": ".rows.1.1",
+        "text": "La navigazione conosce lo stesso divieto. Se sostanze pericolose per le acque, come olio o carburante, finiscono in acqua e il conduttore non è in grado di evitare da sé il pericolo, deve avvertire senza indugio la polizia."
+      },
+      {
+        "path": ".rows.1.2",
+        "text": "Non sciacquare semplicemente via una pellicola d’olio nella sentina o tracce di carburante sullo scafo, ma segnalarle al proprietario."
+      },
+      {
+        "path": ".rows.2.0",
+        "text": "Ordinanza sulla navigazione interna, art. 108"
+      },
+      {
+        "path": ".rows.2.1",
+        "text": "I natanti con locali di soggiorno, cucina o impianti sanitari devono essere dotati di recipienti per sostanze fecali, acque di scarico e rifiuti, da vuotare a terra."
+      },
+      {
+        "path": ".rows.2.2",
+        "text": "L’acqua di pulizia di bagni e cambusa va in questi recipienti o a terra, non fuori bordo."
+      },
+      {
+        "path": ".rows.3.1",
+        "text": "Ogni porto disciplina da sé il lavaggio al posto barca, con rigore diverso. Il Bootshafen Luzern vieta i prodotti dannosi per l’ambiente, il Bootshafen Hostatt a Kehrsiten vieta del tutto detergenti e pulitrici a vapore."
+      },
+      {
+        "path": ".rows.3.2",
+        "text": "Il regolamento del porto del Suo ormeggio stabilisce quali prodotti sono ammessi al pontile. Se vieta del tutto i detergenti, come a Kehrsiten, per lavare al posto barca resta solo acqua pulita."
+      },
+      {
+        "path": ".rows.4.1",
+        "text": "Prima che un’imbarcazione immatricolata cambi acque, per esempio passando a un altro lago, il cambio va notificato e la barca pulita da un centro di pulizia autorizzato. Solo con il nulla osta può entrare nelle nuove acque. Il motivo è la cozza quagga, scoperta per la prima volta nel lago dei Quattro Cantoni nell’estate 2024."
+      },
+      {
+        "path": ".rows.4.2",
+        "text": "L’obbligo vale in tutti i Cantoni della Svizzera centrale, a Lucerna con un’ordinanza propria dal 1° aprile 2026. Lasciare asciugare la barca non vale come pulizia, e la cura all’ormeggio non la sostituisce."
+      }
+    ],
+    "missingText": [],
+    "textCheckMethod": "pdftotext -raw, Unicode NFKC, punctuation-independent leaf-string matching. -layout interleaves adjacent columns.",
+    "pdfSize": [
+      594.96,
+      841.92
+    ],
+    "outsidePage": [],
+    "fontRange": [
+      8.5,
+      16.0
+    ],
+    "basis": "Neu auf31b5ce0 erzeugt, aktuelle Inhalte und Button/Druck/Cleanup geprüft"
+  },
+  {
+    "route": "/it/premium/yacht",
+    "id": "erster-einsatz",
+    "title": "Prima del primo intervento all’ormeggio",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__premium__yacht__erster-einsatz.pdf",
+    "pages": 1,
+    "chars": 1595,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/it/zona-d-intervento",
+    "id": "vergleich",
+    "title": "I cinque Cantoni a confronto",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__zona-d-intervento__vergleich.pdf",
+    "pages": 1,
+    "chars": 2841,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "structurallyGeneratedCantonTool": true,
+    "pass": true,
+    "note": "Kantonsdaten/Einzugsgebietskasten, Daten und H1 unverändert. Luzerner geänderter H1 separat neu gedruckt."
+  },
+  {
+    "route": "/it/zona-d-intervento/lucerna",
+    "id": "kantonsdaten-kasten",
+    "locale": "it",
+    "commit": "31b5ce0",
+    "reason": "Luzern print page heading changed from Emmenbrücke to Emmen",
+    "screenTextPresent": true,
+    "clickedPrint": true,
+    "file": "/private/tmp/claude-501/-Users-brandea/114fc6cf-e5c5-4e1f-9667-d47c99605956/scratchpad/welle3/audit-inhalt/r2-print/it__zona-d-intervento__lucerna__kantonsdaten-kasten.pdf",
+    "pages": 1,
+    "chars": 3217,
+    "a4": true,
+    "printHeadingCorrect": true,
+    "cleaned": true,
+    "pass": true,
+    "pdfSize": [
+      594.96,
+      841.92
+    ],
+    "outsidePage": [],
+    "fontRange": [
+      8.5,
+      16.0
+    ],
+    "basis": "Neu auf31b5ce0 erzeugt, aktuelle Inhalte und Button/Druck/Cleanup geprüft"
+  },
+  {
+    "route": "/it/zona-d-intervento/zugo",
+    "id": "kantonsdaten-kasten",
+    "title": "Dati cantonali per la pianificazione",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__zona-d-intervento__zugo__kantonsdaten-kasten.pdf",
+    "pages": 1,
+    "chars": 1432,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "structurallyGeneratedCantonTool": true,
+    "pass": true,
+    "note": "Kantonsdaten/Einzugsgebietskasten, Daten und H1 unverändert. Luzerner geänderter H1 separat neu gedruckt."
+  },
+  {
+    "route": "/it/zona-d-intervento/argovia",
+    "id": "kantonsdaten-kasten",
+    "title": "Dati cantonali per la pianificazione",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__zona-d-intervento__argovia__kantonsdaten-kasten.pdf",
+    "pages": 1,
+    "chars": 1531,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "structurallyGeneratedCantonTool": true,
+    "pass": true,
+    "note": "Kantonsdaten/Einzugsgebietskasten, Daten und H1 unverändert. Luzerner geänderter H1 separat neu gedruckt."
+  },
+  {
+    "route": "/it/zona-d-intervento/nidvaldo",
+    "id": "kantonsdaten-kasten",
+    "title": "Dati cantonali per la pianificazione",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__zona-d-intervento__nidvaldo__kantonsdaten-kasten.pdf",
+    "pages": 1,
+    "chars": 1532,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "structurallyGeneratedCantonTool": true,
+    "pass": true,
+    "note": "Kantonsdaten/Einzugsgebietskasten, Daten und H1 unverändert. Luzerner geänderter H1 separat neu gedruckt."
+  },
+  {
+    "route": "/it/zona-d-intervento/obvaldo",
+    "id": "kantonsdaten-kasten",
+    "title": "Dati cantonali per la pianificazione",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__zona-d-intervento__obvaldo__kantonsdaten-kasten.pdf",
+    "pages": 1,
+    "chars": 1738,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "structurallyGeneratedCantonTool": true,
+    "pass": true,
+    "note": "Kantonsdaten/Einzugsgebietskasten, Daten und H1 unverändert. Luzerner geänderter H1 separat neu gedruckt."
+  },
+  {
+    "route": "/it/guida/scegliere-un-impresa-di-pulizie",
+    "id": "vergleichsraster",
+    "title": "Griglia di confronto delle offerte",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__guida__scegliere-un-impresa-di-pulizie__vergleichsraster.pdf",
+    "pages": 1,
+    "chars": 1861,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/it/guida/costi-della-pulizia-di-manutenzione",
+    "id": "rechenweg",
+    "locale": "it",
+    "commit": "31b5ce0",
+    "reason": "tool content or print options changed",
+    "screenTextPresent": true,
+    "clickedPrint": true,
+    "file": "/private/tmp/claude-501/-Users-brandea/114fc6cf-e5c5-4e1f-9667-d47c99605956/scratchpad/welle3/audit-inhalt/r2-print/it__guida__costi-della-pulizia-di-manutenzione__rechenweg.pdf",
+    "pages": 1,
+    "chars": 1553,
+    "a4": true,
+    "textChecks": 27,
+    "printHeader": true,
+    "companyHeadPresent": true,
+    "cleaned": true,
+    "pass": true,
+    "layoutExtractorMissing": [
+      {
+        "path": ".rows.1.1",
+        "text": "Cadenza, ad esempio due volte alla settimana"
+      },
+      {
+        "path": ".rows.4.0",
+        "text": "+ materiale e prodotti"
+      },
+      {
+        "path": ".rows.6.1",
+        "text": "Aliquota normale dell’8,1 per cento (art. 25 LIVA)"
+      }
+    ],
+    "missingText": [],
+    "textCheckMethod": "pdftotext -raw, Unicode NFKC, punctuation-independent leaf-string matching. -layout interleaves adjacent columns.",
+    "pdfSize": [
+      594.96,
+      841.92
+    ],
+    "outsidePage": [],
+    "fontRange": [
+      8.5,
+      16.0
+    ],
+    "basis": "Neu auf31b5ce0 erzeugt, aktuelle Inhalte und Button/Druck/Cleanup geprüft"
+  },
+  {
+    "route": "/it/guida/riconsegna-dell-appartamento-verbale",
+    "id": "protokoll-eintraege",
+    "title": "Annotazioni nel verbale: troppo vaghe e abbastanza precise",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__guida__riconsegna-dell-appartamento-verbale__protokoll-eintraege.pdf",
+    "pages": 1,
+    "chars": 2433,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/it/guida/pulire-i-pavimenti",
+    "id": "mittel-nach-ph",
+    "title": "Quale prodotto dove: acido, neutro, alcalino",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__guida__pulire-i-pavimenti__mittel-nach-ph.pdf",
+    "pages": 1,
+    "chars": 3163,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  },
+  {
+    "route": "/it/chi-siamo",
+    "id": "firmenangaben",
+    "title": "Dati aziendali da verificare",
+    "file": "/Users/brandea/Projects/Onlinen/bgs-gebaeudeservice/uebergabe-2026-09-29/welle3/vorlage/print-final/it__chi-siamo__firmenangaben.pdf",
+    "pages": 1,
+    "chars": 1801,
+    "basis": "Unveränderter Werkzeuginhalt aus Vorlagenserie, Druck-CSS gegenüber31b5ce0 unverändert; erneuter PDF-Rohtextabgleich",
+    "currentCommit": "31b5ce0",
+    "unchangedTool": true,
+    "missingText": [],
+    "pass": true
+  }
+]
