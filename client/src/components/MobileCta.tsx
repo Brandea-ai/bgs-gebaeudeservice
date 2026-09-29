@@ -9,7 +9,8 @@ import type { PagePath } from "../../../shared/seo";
 
 /**
  * Schwebende Leiste aus Milchglas am unteren Rand auf dem Handy (F7, M31, E80):
- * Offerte und Telefon bleiben beim Lesen erreichbar. Verschwindet, sobald Formular oder Footer im Bild
+ * Beim Herunterscrollen ausgeblendet, beim Hochscrollen wieder sichtbar.
+ * Verschwindet auch, sobald Formular oder Footer im Bild
  * sind. Der Footer klebt nur ab 1024 px (globals.css), unter 768 px steht er
  * im Fluss; darum ist er hier wieder ein verlässliches Mass (T01).
  * Auf Premium-Seiten in Champagner und Anthrazit statt Signalrot (E85).
