@@ -35,7 +35,7 @@ export default function UebersichtWerkzeuge(props: UebersichtProps) {
   const swipe = dict.seiten.home.services.swipe;
   return (
     <div className="border-t border-line bg-white">
-      <div className="container section space-y-10 lg:space-y-14">
+      <div className="container section max-sm:py-8 space-y-6 sm:space-y-10 lg:space-y-14">
         {tools.map(tool => (
           <div key={tool.id} className={rail[tool.kind] ?? ""}>
             {rail[tool.kind] && (

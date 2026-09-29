@@ -494,7 +494,10 @@ export const servicesOverview: Seiten['servicesOverview'] = {
       ],
     },
   ] satisfies { title: string; text: string; items: LinkCard[] }[],
+  carousel: { previous: 'Previous service', next: 'Next service' },
   guide: {
+    show: 'Find the right service',
+    hide: 'Hide situations',
     title: 'Which service is right for you?',
     intro: 'Ten common situations and the service that fits them.',
     items: [

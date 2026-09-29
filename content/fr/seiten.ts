@@ -496,7 +496,10 @@ export const servicesOverview = {
       ],
     },
   ] satisfies { title: string; text: string; items: LinkCard[] }[],
+  carousel: { previous: 'Prestation précédente', next: 'Prestation suivante' },
   guide: {
+    show: 'Trouver la bonne prestation',
+    hide: 'Masquer les situations',
     title: 'Quelle prestation vous convient ?',
     intro: 'Dix situations fréquentes et la prestation qui y répond.',
     items: [

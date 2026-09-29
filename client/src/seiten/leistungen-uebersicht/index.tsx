@@ -15,10 +15,8 @@ import UebersichtFragen from "./07-fragen";
  * Leistungsübersicht /leistungen (Factory-Strukturnorm, E80, E85): nur
  * Reihenfolge. Wegweiser, drei Kapitel mit klebendem Bild, Vergleich und
  * Jahresplan, Premium, Fragen. Die Abschnittsleiste mit Scrollspy steht auf
- * jeder Breite (visuell.md, /leistungen): ab lg klebend, mobil als wischbare
- * Reihe, die auch Vergleich, Jahresplan und Fragen erreicht (Prüfbefund S2).
- * Mobil klebend bräuchte .subnav--sticky ausserhalb der lg-Klammer in
- * globals.css (Hoheit Integrator).
+ * jeder Breite und bleibt unter der Kopfzeile erreichbar. Lange Gruppen
+ * werden mobil zur Blätterreihe, der Situations-Wegweiser öffnet bei Bedarf.
  */
 export default function LeistungenUebersicht(props: UebersichtProps) {
   const { lang } = props;

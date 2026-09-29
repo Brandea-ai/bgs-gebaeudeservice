@@ -1,8 +1,15 @@
 import ImageSlot from "@/components/ImageSlot";
 import SectionHead from "@/components/SectionHead";
 import KapitelBuehne from "./kapitel-buehne";
+import Leistungsreihe from "./leistungsreihe";
 import LeistungZeile from "./zeile";
-import { groupId, rowId, rowImage, uebersichtKontext, type UebersichtProps } from "./kontext";
+import {
+  groupId,
+  rowId,
+  rowImage,
+  uebersichtKontext,
+  type UebersichtProps,
+} from "./kontext";
 
 /**
  * Leistungen als drei Kapitel (visuell.md Umbau 5): je Gruppe Titel und Satz,
@@ -13,22 +20,40 @@ import { groupId, rowId, rowImage, uebersichtKontext, type UebersichtProps } fro
  */
 export default function UebersichtLeistungen(props: UebersichtProps) {
   const { lang } = props;
-  const { ui, servicesOverview, serviceFor } = uebersichtKontext(props);
+  const { dict, ui, servicesOverview, serviceFor } = uebersichtKontext(props);
   return (
     <>
       {servicesOverview.groups.map((group, index) => {
         const id = groupId(index);
         const ids = group.items.map(item => rowId(item.path));
+        const rows = group.items.map(item => (
+          <LeistungZeile
+            key={item.path}
+            id={rowId(item.path)}
+            path={item.path}
+            label={item.title}
+            text={item.text}
+            image={rowImage[item.path]}
+            content={serviceFor(item.path)}
+            lang={lang}
+            toService={ui.toService}
+          />
+        ));
         return (
           <section
             key={group.title}
             id={id}
             aria-labelledby={`${id}-titel`}
-            className={`section border-t border-line max-sm:py-12 ${index % 2 === 0 ? "bg-stone" : "bg-white"}`}
+            className={`section border-t border-line max-sm:py-8 ${index % 2 === 0 ? "bg-stone" : "bg-white"}`}
           >
             <div className="container">
-              <SectionHead id={`${id}-titel`} title={group.title} intro={group.text} className="max-w-3xl" />
-              <div className="mt-8 lg:mt-14 lg:grid lg:grid-cols-12 lg:gap-x-14">
+              <SectionHead
+                id={`${id}-titel`}
+                title={group.title}
+                intro={group.text}
+                className="max-w-3xl"
+              />
+              <div className="mt-6 sm:mt-8 lg:mt-14 lg:grid lg:grid-cols-12 lg:gap-x-14">
                 <div className="hidden lg:sticky lg:top-[calc(var(--header-offset)+var(--subnav-h,0px)+2rem)] lg:col-span-5 lg:block lg:self-start">
                   <KapitelBuehne
                     ids={ids}
@@ -46,19 +71,19 @@ export default function UebersichtLeistungen(props: UebersichtProps) {
                   />
                 </div>
                 <div className="min-w-0 border-b border-line lg:col-span-7">
-                  {group.items.map(item => (
-                    <LeistungZeile
-                      key={item.path}
-                      id={rowId(item.path)}
-                      path={item.path}
-                      label={item.title}
-                      text={item.text}
-                      image={rowImage[item.path]}
-                      content={serviceFor(item.path)}
-                      lang={lang}
-                      toService={ui.toService}
-                    />
-                  ))}
+                  {group.items.length > 3 ? (
+                    <Leistungsreihe
+                      id={`${id}-leistungen`}
+                      count={group.items.length}
+                      swipe={dict.seiten.home.services.swipe}
+                      previous={servicesOverview.carousel.previous}
+                      next={servicesOverview.carousel.next}
+                    >
+                      {rows}
+                    </Leistungsreihe>
+                  ) : (
+                    rows
+                  )}
                 </div>
               </div>
             </div>

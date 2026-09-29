@@ -11,8 +11,8 @@ import type { PagePath } from "../../../../shared/seo";
 /**
  * Eine Leistung als Textzeile im Kapitel (visuell.md Umbau 5 und 7): ab lg nur
  * Text mit Haarlinie, das Bild steht klebend daneben (kapitel-buehne.tsx).
- * Darunter ein 88 px grosses Vorschaubild links neben Name und Nutzen. Der Name
- * ist der Link; die drei typischen Arbeiten und der Textlink erst ab sm, sie
+ * Mobil steht das 88 px grosse Vorschaubild neben dem Namen, die Beschreibung
+ * nutzt darunter die volle Breite. Der Name ist der Link; die drei typischen Arbeiten und der Textlink erst ab sm, sie
  * stehen vollständig auf der Leistungsseite. Keine Eckdaten der Leistungsseite:
  * deren facts sind seitentypisch und haben keine feste Reihenfolge (Prüfbefund
  * S4), wofür die Leistung gedacht ist, sagt der eigene Text. Die id ist das
@@ -45,15 +45,15 @@ export default function LeistungZeile({
     <article
       id={id}
       aria-labelledby={titleId}
-      className="grid grid-cols-[5.5rem_minmax(0,1fr)] gap-x-4 border-t border-line py-5 sm:py-9 lg:block lg:py-12"
+      className="grid grid-cols-[5.5rem_minmax(0,1fr)] gap-x-4 border-t border-line py-4 sm:py-9 lg:block lg:py-12"
     >
       <Link href={href} tabIndex={-1} aria-hidden="true" className="group block self-start overflow-hidden rounded-[3px] lg:hidden">
         <ImageSlot image={image} lang={lang} hover decorative sizes="88px" className="aspect-square w-full" />
       </Link>
-      <div className="min-w-0">
+      <div className="min-w-0 max-sm:contents">
         <h3
           id={titleId}
-          className="flex items-start gap-3 font-display text-[clamp(1.25rem,1.05rem+0.9vw,2rem)] font-bold leading-[1.15] tracking-[-0.02em] text-ink"
+          className="flex items-start gap-3 max-sm:col-start-2 max-sm:self-center font-display text-[clamp(1.25rem,1.05rem+0.9vw,2rem)] font-bold leading-[1.15] tracking-[-0.02em] text-ink"
         >
           <Glyph weight="duotone" className="mt-[0.1em] size-7 shrink-0 text-signal max-sm:hidden lg:size-8" aria-hidden="true" />
           <Link href={href} className="arrow-link min-w-0 transition-colors hover:text-signal lg:text-balance">
@@ -61,7 +61,7 @@ export default function LeistungZeile({
             <ArrowRight weight="duotone" className="ml-1.5 inline size-5 align-[-0.1em] text-signal sm:hidden" aria-hidden="true" />
           </Link>
         </h3>
-        <p className="mt-2 max-w-[56ch] text-[0.9375rem] font-medium leading-relaxed text-ink-600 sm:mt-4 sm:text-[1.0625rem]">{text}</p>
+        <p className="mt-2 max-sm:col-span-2 max-sm:mt-3 max-w-[56ch] text-[0.9375rem] font-medium leading-relaxed text-ink-600 sm:mt-4 sm:text-[1.0625rem]">{text}</p>
         {typical.length > 0 && (
           <ul className="mt-4 space-y-2 max-sm:hidden">
             {typical.map(item => (

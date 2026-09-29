@@ -9,7 +9,7 @@ import type { UebersichtProps } from "./kontext";
 export default function UebersichtVertrauen({ lang }: UebersichtProps) {
   return (
     <div className="border-b border-line bg-white">
-      <div className="container py-6">
+      <div className="container py-6 max-sm:py-4">
         <TrustStrip lang={lang} compact only={["seit", "versichert", "offerte"]} />
       </div>
     </div>

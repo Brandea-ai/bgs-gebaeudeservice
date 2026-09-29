@@ -619,7 +619,10 @@ export const servicesOverview = {
     },
   ] satisfies { title: string; text: string; items: LinkCard[] }[],
   // Wegweiser nach Situation (E80: mehr Information für die Entscheidung), nur bestätigte Leistungen
+  carousel: { previous: 'Vorherige Leistung', next: 'Nächste Leistung' },
   guide: {
+    show: 'Passende Leistung finden',
+    hide: 'Situationen zuklappen',
     title: 'Welche Leistung passt?',
     intro: 'Zehn häufige Situationen und die Leistung, die dazu passt.',
     items: [
