@@ -70,7 +70,7 @@ export const nav: NavDictionary = {
   areaMenu,
   footer: {
     newBrandLine: `A brand of ${company.legalName}`,
-    about: `Cleaning and caretaking for businesses and discerning private clients. Based in ${company.address.city}, working in the cantons of ${cantons}.`,
+    about: `Cleaning and caretaking for businesses and discerning private clients. Based in ${company.seat} LU, working in the cantons of ${cantons}.`,
     companyLinks: [
       { path: '/ueber-uns', label: 'About us' },
       { path: '/kontakt', label: 'Contact' },
@@ -87,6 +87,7 @@ export const nav: NavDictionary = {
   contactForm: {
     title: 'Request a quote',
     intro: 'Describe your property and what you need. We use these details to prepare the site visit.',
+    premiumIntro: 'Tell us about the property, its location and the work you need. These details help us understand your request.',
     choose: 'Please select...',
     fields: {
       role: { label: 'You are *' },
@@ -126,6 +127,22 @@ export const nav: NavDictionary = {
       '/premium/yacht': {
         size: 'e.g. motor yacht, 14 m long',
         message: 'For example: mooring on Lake Lucerne, cleaning before the season starts and after events on board',
+      },
+    },
+    oneOffTitle: 'Date for the work',
+    oneOffHint: 'Please include your preferred cleaning date or handover date in your request.',
+    oneOffPlaceholders: {
+      'Sonderreinigungen': {
+        size: 'e.g. 180 m² of natural stone flooring',
+        message: 'For example: limescale on natural stone in the entrance area, around 180 m², cleaning before reopening on 15 October',
+      },
+      'Umzugsreinigung': {
+        size: 'e.g. 4 flats of 80 m² each',
+        message: 'For example: final cleaning of four flats for a property manager, handover on 30 November, cleaning during the previous week',
+      },
+      'Baureinigung': {
+        size: 'e.g. 600 m² on 2 floors',
+        message: 'For example: final cleaning of offices after fit-out, work completed on 10 October, handover on 16 October',
       },
     },
     serviceOptions: [
@@ -169,10 +186,11 @@ export const nav: NavDictionary = {
     required: '* Required fields',
     submit: 'Send request',
     sending: 'Sending...',
-    success: `Thank you, we have received your request. We will get back to you ${responseTime} and arrange a date for the site visit with you. If it is urgent, you can reach us on ${company.phone.display}.`,
+    success: `Thank you, your request has been submitted. We will get back to you. If it is urgent, you can reach us on ${company.phone.display}.`,
     nextTitle: "What happens next",
     nextSteps: [`We will get back to you ${responseTime}.`, 'We visit the property on site, free of charge.', 'You receive a written quote.'],
     nextStepPlain: 'We get back to you and arrange the appointment.',
+    premiumVisitStep: 'We discuss care requirements, location and access with you.',
     band: {
       title: 'Questions or a quote?',
       text: 'Call us, write to us or use the form on the contact page.',
@@ -202,8 +220,8 @@ export const nav: NavDictionary = {
   languageSwitchFooter: 'Language in the footer',
   chrome: {
     skip: 'Skip to content',
-    answer: `Reply ${responseTime}`,
-    seat: `Based in ${company.address.city}`,
+    answer: 'Advice in four languages',
+    seat: `Based in ${company.seat} LU`,
     megaTitle: 'On-site quote',
     megaText: 'We visit your property and prepare a written quote, free of charge and without obligation.',
     premiumTeaser: 'Discreet cleaning and care for villas, private jets and yachts.',

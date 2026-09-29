@@ -320,7 +320,7 @@ export const contact = {
     title: 'Come raggiungerci',
     phone: { title: 'Telefono', mobile: 'Cellulare', hint: 'Per domande e per fissare l’appuntamento per il sopralluogo.', action: 'Chiamare' },
     email: { title: 'E-mail', hint: 'Per richieste con documenti come piante, elenchi delle superfici o foto.', action: 'Scrivere un’e-mail' },
-    address: { title: 'Indirizzo', hint: 'Qui si trova la nostra sede. Il sopralluogo si svolge da Lei, sul posto.', action: 'Alla cartina' },
+    address: { title: 'Indirizzo', hint: 'Questo è il nostro indirizzo aziendale. Il sopralluogo si svolge da Lei, sul posto.', action: 'Alla cartina' },
   },
   brief: {
     title: 'Che cosa mettere nella richiesta',
@@ -330,15 +330,15 @@ export const contact = {
       { key: 'ort' as const, title: 'Luogo', text: 'indirizzo o NPA.' },
       { key: 'groesse' as const, title: 'Dimensioni', text: 'superficie in m², numero di appartamenti, piani o stabili.' },
       { key: 'leistung' as const, title: 'Servizio', text: 'ad esempio pulizia di manutenzione, custodia di stabili o una pulizia singola.' },
-      { key: 'rhythmus' as const, title: 'Cadenza e orari', text: 'con quale frequenza e quando, ad esempio prima dell’inizio del lavoro, la sera o il sabato.' },
-      { key: 'start' as const, title: 'Inizio', text: 'da quando, e per pulizie di cantiere e di fine locazione la data di consegna.' },
+      { key: 'rhythmus' as const, title: 'Frequenza o occasione', text: 'un intervento singolo o una pulizia regolare, con gli orari desiderati.' },
+      { key: 'start' as const, title: 'Data desiderata', text: 'data della pulizia o inizio della cura regolare, e per cantiere e fine locazione anche la data di consegna.' },
       { key: 'zugang' as const, title: 'Accesso e particolarità', text: 'chiave o badge, pavimenti delicati, grandi superfici vetrate.' },
     ],
   },
   steps: {
     title: 'Che cosa succede dopo l’invio',
     items: [
-      { title: 'Risposta', text: 'Il gerente legge personalmente la Sua richiesta e Le propone una data per il sopralluogo.' },
+      { title: 'Risposta', text: 'La ricontattiamo per precisare i dettagli e concordare una data per il sopralluogo.' },
       { title: 'Sopralluogo', text: 'Con Lei o con la Sua persona di contatto percorriamo tutti i locali e le superfici interessati. Così vediamo stato, materiali e accesso.' },
       { title: 'Offerta', text: 'Le inviamo l’offerta per iscritto. Indica locali e compiti, con quale frequenza li svolgiamo e in quali orari.' },
       { title: 'Inizio', text: 'Con la Sua conferma è fissato il primo giorno d’intervento. Orari e accesso all’immobile sono allora concordati con Lei.' },
@@ -351,13 +351,13 @@ export const contact = {
       'L’accesso a tutti i locali da pulire o da curare, anche cantina, solaio, lavanderia e locali tecnici',
       'Piante o un elenco delle superfici, se disponibili',
       'Il capitolato d’oneri o l’elenco delle prestazioni attuale, se un’impresa lavora già da Lei',
-      'Gli orari desiderati e la data di inizio',
+      'Gli orari desiderati e la data della pulizia o della consegna',
       'Una persona di contatto che possa rispondere a domande su utilizzo e accesso',
     ],
   },
   map: {
     title: 'Come trovarci',
-    text: `La nostra sede è a ${company.address.city}. Da qui raggiungiamo il Suo immobile in tutta la nostra zona d’intervento.`,
+    text: `Il nostro indirizzo aziendale si trova a ${company.address.city}, nel Comune di ${company.seat}. Da qui raggiungiamo il Suo immobile in tutta la nostra zona d’intervento.`,
   },
   faq: [
     { question: 'Come viene allestita l’offerta?', answer: 'Prima fissiamo con Lei la data del sopralluogo. Poi redigiamo l’offerta sulla base di ciò che abbiamo visto sul posto.' },

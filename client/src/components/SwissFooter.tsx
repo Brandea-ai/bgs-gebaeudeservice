@@ -3,6 +3,7 @@
 import Link from "next/link";
 import {
   ArrowRight,
+  CaretDown,
   CheckCircle,
   Clock,
   DeviceMobile,
@@ -86,9 +87,13 @@ export function ContactSection({
   const premium = path.startsWith("/premium");
   const accent = premium ? "text-brass-dark" : "text-signal";
   const title = heading?.title ?? form.title;
-  const intro = heading?.text ?? form.intro;
+  const intro = heading?.text ?? (premium ? form.premiumIntro : form.intro);
   // Nennt die Einleitung die Antwortzeit schon, sagt der erste Schritt sie nicht noch einmal
-  const steps = /\b24\b/.test(intro) ? [form.nextStepPlain, ...form.nextSteps.slice(1)] : form.nextSteps;
+  const steps = [
+    /\b24\b/.test(intro) ? form.nextStepPlain : form.nextSteps[0],
+    premium ? form.premiumVisitStep : form.nextSteps[1],
+    form.nextSteps[2],
+  ];
 
   return (
     <div className="border-t border-line">
@@ -126,9 +131,11 @@ export function ContactSection({
             <ContactForm lang={lang} path={path} />
           </div>
 
-          {/* Randspalte klebt, solange das Formular daneben läuft: kein Loch unter der Karte */}
-          <div className="min-w-0 lg:sticky lg:top-[calc(var(--header-offset)+2rem)] lg:col-span-5 lg:col-start-1 lg:row-start-2 lg:self-start xl:col-span-4">
-            {aside ?? <ContactChannels lang={lang} premium={premium} />}
+          {/* Nur innerhalb der Formularzeile kleben: der Rand endet vor «So geht es weiter». */}
+          <div className="min-w-0 lg:col-span-5 lg:col-start-1 lg:row-start-2 xl:col-span-4">
+            <div className="lg:sticky lg:top-[calc(var(--header-offset)+2rem)]">
+              {aside ?? <ContactChannels lang={lang} premium={premium} />}
+            </div>
           </div>
 
           {!inline && (
@@ -284,7 +291,11 @@ export function SiteFooter({
   const href = (target: PagePath) => localizePath(target, lang);
   const currentYear = new Date().getFullYear();
   const footLink =
-    "inline-flex min-h-8 items-center py-1 text-[0.9375rem] text-white/90 transition-colors hover:text-white";
+    "inline-flex min-h-11 items-center py-2 text-[0.9375rem] text-white/90 transition-colors hover:text-white sm:min-h-8 sm:py-1";
+  const linkGroups = [
+    ...serviceGroups,
+    { title: texts.areaTitle, links: [...texts.companyLinks, texts.areaLink] },
+  ];
   return (
     <footer className="on-dark bg-ink text-white">
       <div className="container pb-12 pt-16 lg:pt-20">
@@ -304,7 +315,7 @@ export function SiteFooter({
             <div className="mt-6 text-[0.9875rem]">
               <a
                 href={company.phone.href}
-                className="inline-flex min-h-11 items-center font-medium tabular-nums transition-colors hover:text-brass"
+                className="inline-flex min-h-11 items-center font-medium tabular-nums transition-colors hover:text-white"
               >
                 {company.phone.display}
               </a>
@@ -322,11 +333,10 @@ export function SiteFooter({
             </div>
           </div>
 
-          <div className="grid gap-10 sm:grid-cols-2 lg:col-span-8 lg:grid-cols-4">
-            {serviceGroups.map(group => (
-              <div key={group.title}>
-                <h3 className="t-eyebrow mb-4 text-white/90">{group.title}</h3>
-                <ul>
+          <div className="grid gap-0 sm:grid-cols-2 sm:gap-10 lg:col-span-8 lg:grid-cols-4">
+            {linkGroups.map(group => {
+              const links = (
+                <ul className="pb-5 sm:pb-0">
                   {group.links.map(link => (
                     <li key={link.path}>
                       <Link href={href(link.path)} prefetch={false} className={footLink}>
@@ -335,29 +345,23 @@ export function SiteFooter({
                     </li>
                   ))}
                 </ul>
-              </div>
-            ))}
-            <div>
-              <h3 className="t-eyebrow mb-4 text-white/90">{texts.areaTitle}</h3>
-              <ul>
-                {texts.companyLinks.map(link => (
-                  <li key={link.path}>
-                    <Link href={href(link.path)} prefetch={false} className={footLink}>
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-                <li>
-                  <Link
-                    href={href(texts.areaLink.path)}
-                    prefetch={false}
-                    className={footLink}
-                  >
-                    {texts.areaLink.label}
-                  </Link>
-                </li>
-              </ul>
-            </div>
+              );
+              return (
+                <div key={group.title}>
+                  <div className="hidden sm:block">
+                    <h3 className="t-eyebrow mb-4 min-h-[2lh] text-white/90">{group.title}</h3>
+                    {links}
+                  </div>
+                  <details className="group border-t border-white/20 sm:hidden">
+                    <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-3 [&::-webkit-details-marker]:hidden">
+                      <h3 className="t-eyebrow text-white/90">{group.title}</h3>
+                      <CaretDown weight="duotone" className="size-5 shrink-0 transition-transform group-open:rotate-180" aria-hidden="true" />
+                    </summary>
+                    {links}
+                  </details>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -382,7 +386,7 @@ export function SiteFooter({
                 <Link
                   href={href(link.path)}
                   prefetch={false}
-                  className="inline-flex min-h-8 items-center py-1.5 transition-colors hover:text-white"
+                  className="inline-flex min-h-11 items-center py-1.5 transition-colors hover:text-white"
                 >
                   {link.label}
                 </Link>

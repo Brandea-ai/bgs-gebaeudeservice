@@ -15,14 +15,43 @@ const FALLBACK_CONTACT = `Bitte rufen Sie uns an (${company.phone.display}) oder
 // Firewall-Regel, bremst aber Serienanfragen aus einer Quelle.
 const RATE_WINDOW_MS = 10 * 60 * 1000
 const RATE_MAX_REQUESTS = 5
+const RATE_MAX_CLIENTS = 10_000
 const recentRequests = new Map<string, number[]>()
+let cleanupTimer: ReturnType<typeof setTimeout> | undefined
+
+function removeExpiredClients(now: number) {
+  for (const [key, timestamps] of recentRequests) {
+    if (now - timestamps[timestamps.length - 1] >= RATE_WINDOW_MS) recentRequests.delete(key)
+  }
+}
+
+// Ein Timer für die ganze Map, auch ohne Folgeanfrage derselben IP. Nach einer
+// eingefrorenen Serverless-Instanz räumt zusätzlich der nächste Request auf.
+function scheduleCleanup() {
+  if (cleanupTimer || recentRequests.size === 0) return
+  let expiresAt = Infinity
+  for (const timestamps of recentRequests.values()) {
+    expiresAt = Math.min(expiresAt, timestamps[timestamps.length - 1] + RATE_WINDOW_MS)
+  }
+  cleanupTimer = setTimeout(() => {
+    cleanupTimer = undefined
+    removeExpiredClients(Date.now())
+    scheduleCleanup()
+  }, Math.max(1, expiresAt - Date.now()))
+  cleanupTimer.unref()
+}
 
 function isRateLimited(key: string): boolean {
   const now = Date.now()
+  removeExpiredClients(now)
   const timestamps = (recentRequests.get(key) || []).filter((t) => now - t < RATE_WINDOW_MS)
+  // Abgelehnte Anfragen verlängern weder die Aufbewahrung noch das Array.
+  if (timestamps.length >= RATE_MAX_REQUESTS) return true
+  if (!recentRequests.has(key) && recentRequests.size >= RATE_MAX_CLIENTS) return true
   timestamps.push(now)
   recentRequests.set(key, timestamps)
-  return timestamps.length > RATE_MAX_REQUESTS
+  scheduleCleanup()
+  return false
 }
 
 function fail(status: number, message: string) {

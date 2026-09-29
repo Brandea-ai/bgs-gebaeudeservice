@@ -53,9 +53,6 @@ export default function ContactForm({
 }) {
   const { contactForm: form, chrome } = navDicts[lang];
   const premium = path.startsWith("/premium");
-  const premiumExamples = premium
-    ? form.premiumPlaceholders[path as keyof typeof form.premiumPlaceholders] ?? form.premiumPlaceholders["/premium"]
-    : null;
   const emptyForm = {
     role: "",
     name: "",
@@ -70,6 +67,14 @@ export default function ContactForm({
     website: "",
   };
   const [formData, setFormData] = useState(emptyForm);
+  // Beispiele und Rhythmus folgen auch einer geänderten Leistungsauswahl.
+  const examplePath = Object.entries(serviceForPath).find(([, service]) => service === formData.service)?.[0]
+    ?? (formData.service ? "" : path);
+  const premiumExamples = examplePath.startsWith("/premium")
+    ? form.premiumPlaceholders[examplePath as keyof typeof form.premiumPlaceholders] ?? form.premiumPlaceholders["/premium"]
+    : null;
+  const oneOffExamples = form.oneOffPlaceholders[formData.service as keyof typeof form.oneOffPlaceholders];
+  const requestExamples = oneOffExamples ?? premiumExamples;
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
@@ -134,6 +139,9 @@ export default function ContactForm({
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     const next = { ...formData, [e.target.name]: e.target.value };
+    if (e.target.name === "service" && (oneOffExamples || e.target.value in form.oneOffPlaceholders)) {
+      next.frequency = "";
+    }
     setFormData(next);
     // Ein gemeldeter Fehler verschwindet, sobald die Eingabe stimmt
     if (e.target.name in errors) {
@@ -251,7 +259,7 @@ export default function ContactForm({
             maxLength={CONTACT_LIMITS.size}
             autoComplete="off"
             className={fieldClass}
-            placeholder={premiumExamples?.size ?? form.fields.size.placeholder}
+            placeholder={requestExamples?.size ?? form.fields.size.placeholder}
           />
         </div>
         {/* Ort des Objekts und Rhythmus helfen bei der Einschätzung der Anfrage (M30, E33) */}
@@ -271,7 +279,12 @@ export default function ContactForm({
             placeholder={form.fields.location.placeholder}
           />
         </div>
-        <div>
+        {oneOffExamples ? (
+          <div>
+            <p className={labelClass}>{form.oneOffTitle}</p>
+            <p className="text-sm font-medium leading-relaxed text-mute">{form.oneOffHint}</p>
+          </div>
+        ) : <div>
           <label htmlFor="frequency" className={labelClass}>
             {form.fields.frequency.label}
           </label>
@@ -290,7 +303,7 @@ export default function ContactForm({
               </option>
             ))}
           </select>
-        </div>
+        </div>}
         <div className="md:col-span-2 lg:max-xl:col-span-1">
           <label htmlFor="message" className={labelClass}>
             {form.fields.message.label}
@@ -304,7 +317,7 @@ export default function ContactForm({
             maxLength={CONTACT_LIMITS.message}
             rows={5}
             className={`${fieldClass} min-h-[8rem] resize-y`}
-            placeholder={premiumExamples?.message ?? form.fields.message.placeholder}
+            placeholder={requestExamples?.message ?? form.fields.message.placeholder}
             aria-invalid={errors.message ? true : undefined}
             aria-describedby={errors.message ? `${hintId("message")} ${messageHintId}` : messageHintId}
           />
