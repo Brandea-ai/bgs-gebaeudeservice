@@ -1,0 +1,144 @@
+[
+  {
+    "id": "TECH-01",
+    "schwere": "mittel",
+    "seite": "/api/contact",
+    "datei": "server/email.ts",
+    "problem": "Erfolg ohne Anbieter-ID",
+    "beleg": "Mock-API HTTP200 {} und null führen zu success; contact-results.json",
+    "fix": "Nur nichtleere ID akzeptieren",
+    "gegenpruefung": [
+      "audit_technik: realer Produktionsbuild gegen Mock",
+      "root: Code error-only Guard bestätigt"
+    ],
+    "status": "Fix bei Kontakteinheit in Prüfung"
+  },
+  {
+    "id": "TECH-02",
+    "schwere": "mittel",
+    "seite": "/premium und Übersetzungen",
+    "datei": "client/src/seiten/premium-uebersicht/06-ablauf.tsx",
+    "problem": "Verschachtelte gleichnamige region Landmarks",
+    "beleg": "axe landmark-unique 4 Seiten × 2 Breiten",
+    "fix": "Äusserer Wrapper div; innere gelabelte Prozessregion bleibt",
+    "gegenpruefung": [
+      "audit_technik: vollständiger axe Lauf",
+      "root: gleicher aria-labelledby an beiden Elementen bestätigt"
+    ],
+    "status": "umgesetzt, Build ausstehend"
+  },
+  {
+    "id": "IH-10",
+    "schwere": "niedrig",
+    "seite": "/leistungen/industrie-und-hallenreinigung",
+    "datei": "public/bilder/detail-industrie-hallen.jpg",
+    "problem": "Hero und Detail mit nahezu gleichem Motiv",
+    "beleg": "Root visueller Vergleich beider Originalbilder",
+    "fix": "Eigenes Detailmotiv Maschinengehäuse aussen reinigen",
+    "gegenpruefung": [
+      "root: kein Dateiduplikat, aber Motivwiederholung bestätigt"
+    ],
+    "status": "Bild ersetzt, IPTC grün, Alttexte bei Inhalte"
+  },
+  {
+    "id": "FACT-YACHT-01",
+    "schwere": "mittel",
+    "seite": "/premium/yacht",
+    "datei": "content/*/premium/yacht.ts",
+    "problem": "Kleine Reinigungsmittelmenge als scheinbar hinreichende Regel nach Eintragsverbot",
+    "beleg": "GSchG Art6, S038.browser.txt 252-260 gegen regeln-am-see",
+    "fix": "Eintrag ausschliessen, Waschwasser auffangen/fachgerecht entsorgen",
+    "gegenpruefung": [
+      "audit_inhalt: Primärquelle",
+      "inhalt: unabhängig aktuelle Primärquelle",
+      "root: Gesetzestext und Code abgeglichen"
+    ],
+    "status": "Inhaltseinheit umgesetzt, Prüfung läuft"
+  },
+  {
+    "id": "FACT-FACILITY-01",
+    "schwere": "mittel",
+    "seite": "/leistungen/facility-services",
+    "datei": "content/*/leistungen/facility-services.ts",
+    "problem": "Fristen Art335c ohne Einschränkung nach Probezeit",
+    "beleg": "OR Art335b/335c, S001.browser.txt 4650-4669",
+    "fix": "Nach Ablauf der Probezeit ergänzen",
+    "gegenpruefung": [
+      "audit_inhalt: Primärquelle",
+      "inhalt: Primärquelle",
+      "root: Gesetz und Code abgeglichen"
+    ],
+    "status": "Inhaltseinheit umgesetzt, Prüfung läuft"
+  },
+  {
+    "id": "UX-FOOTER-01",
+    "schwere": "hoch",
+    "seite": "Leistungsseiten Desktop",
+    "datei": "client/src/components/SwissFooter.tsx",
+    "problem": "Sticky Kontaktkanäle überlagern Folgeschritte",
+    "beleg": "audit-ux/1440_leistungen_unterhaltsreinigung-footer.jpg",
+    "fix": "Sticky innerhalb auf Formularzeile begrenzter Grid-Zelle",
+    "gegenpruefung": [
+      "audit_ux: echter Scroll Screenshot",
+      "root: Screenshot und Grid-Code",
+      "kontakt: Screenshot und Code bestätigt"
+    ],
+    "status": "Kontakteinheit umgesetzt, Prüfung läuft"
+  },
+  {
+    "id": "TECH-03",
+    "schwere": "mittel",
+    "seite": "Build-Abhängigkeiten",
+    "datei": "package.json, package-lock.json",
+    "problem": "Next installiert altes PostCSS mit bekannten Advisories",
+    "beleg": "npm audit --omit=dev meldete zwei Einträge; kein öffentlicher CSS-Eingabepfad nachgewiesen",
+    "fix": "Next nutzt vorhandenes PostCSS8.5.28 per Override",
+    "gegenpruefung": [
+      "audit_technik: Erreichbarkeit eingegrenzt, kein belegter Runtime-High",
+      "root: npm ci, Lockvergleich ohne weitere Versionsänderung und Audit0"
+    ],
+    "status": "umgesetzt, Build erfolgreich, Browserprüfungen laufen"
+  },
+  {
+    "id": "TECH-04",
+    "schwere": "mittel",
+    "seite": "/api/contact",
+    "datei": "app/api/contact/route.ts",
+    "problem": "Alte IP-Einträge ohne globale Bereinigung, Array wächst trotz Rate-Limit",
+    "beleg": "rate-limit-retention.json,100 Requests erzeugen100 Zeitstempel, inaktive IP nach24h noch gespeichert",
+    "fix": "TTL-Bereinigung, begrenzte Clients, kein Wachstum abgelehnter Requests",
+    "gegenpruefung": [
+      "kontakt: entdeckt",
+      "audit_technik: isolierte Reproduktion",
+      "root: neuer Code gegen Speichergrenzen gelesen"
+    ],
+    "status": "Kontakteinheit in Prüfung"
+  },
+  {
+    "id": "TECH-05",
+    "schwere": "niedrig",
+    "seite": "alle",
+    "datei": "client/src/components/RootShell.tsx",
+    "problem": "Ungenutzter kursiver Premium-Font wird global vorgeladen",
+    "beleg": "39.304 Bytes, rg keine italic Verwendung ausser not-italic",
+    "fix": "Nur normalen Cormorant-Schnitt laden",
+    "gegenpruefung": [
+      "audit_technik: Netzwerk und Code",
+      "root: globale Verwendung geprüft"
+    ],
+    "status": "Vorlageneinheit in Umsetzung"
+  },
+  {
+    "id": "TECH-06",
+    "schwere": "niedrig",
+    "seite": "Formular-Benachrichtigung",
+    "datei": "server/email.ts",
+    "problem": "Gedankenstrich und Seitenstrich-Kästen entgegen Hausregeln",
+    "beleg": "Lokale Mock-Mail HTML und Template",
+    "fix": "Punkt, Kontur rundum,3px Radius",
+    "gegenpruefung": [
+      "root und audit_technik unabhängig Template gelesen"
+    ],
+    "status": "Kontakteinheit in Umsetzung"
+  }
+]
