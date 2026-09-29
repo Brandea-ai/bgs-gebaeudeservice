@@ -10,7 +10,7 @@ import { images } from './images'
 export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://bgs-gebaeudeservice.vercel.app'
 
 // Stand der Inhalte für die Sitemap (M17). Bei inhaltlichen Änderungen nachführen.
-export const contentUpdated = '2026-09-28'
+export const contentUpdated = '2026-09-29'
 
 export { pages }
 export type PagePath = keyof typeof pages

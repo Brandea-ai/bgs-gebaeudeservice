@@ -1,0 +1,1562 @@
+[
+  {
+    "id": "O001",
+    "owner": "leistung-unterhaltsreinigung",
+    "original": "Druck-CSS der Vorlage (ausserhalb meiner Dateien): Ohne @page-Regel und mit Bildschirmschrift brauchen Leistungsverzeichnis und Rundgang bei realistischen 10 mm Rand 2 Seiten, ohne Rand je 1 Seite. Vorschlag: @page { margin: 12mm } und in html.print-tool eine kleinere Grundschrift (etwa 10.5pt) mit engeren Tabellenzeilen.",
+    "status": "aktuell",
+    "evidence": "app/globals.css:1118, werkzeug-tabelle.tsx",
+    "disposition": "Druck-CSS ohne @page und kompakte Druckschrift. Alte Seitenzahlen nicht als neue Messung übernommen; erneute A4-Prüfung erforderlich.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140261+00:00"
+  },
+  {
+    "id": "O002",
+    "owner": "leistung-unterhaltsreinigung",
+    "original": "Formular-Tabellen in der Vorlage: Mobil zeigt jede Karte des Rundgangs leere Felder «In Ordnung» und «Bemerkung (Stockwerk, Uhrzeit)», zwölfmal. Die Seite wird bei 390 px dadurch rund 1'100 px länger (22'647 auf 23'781 px). Vorschlag für werkzeug-tabelle.tsx: eine Variante für Formulare, mobil als kompakte Liste mit Kästchen, im Druck als Tabelle mit Schreibspalte. Dazu optional ein Druck-Kopf mit Feldern für Liegenschaft, Datum und Name. Bis dahin nennt die Einleitung, dass Datum und Foto mitgeschickt werden sollen.",
+    "status": "aktuell",
+    "evidence": "client/src/seiten/leistung/werkzeug-tabelle.tsx",
+    "disposition": "Jede Tabellenzelle wird als beschriftete Karte ausgegeben, auch leere Formularfelder. Eigene kompakte Formularansicht fehlt.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140399+00:00"
+  },
+  {
+    "id": "O003",
+    "owner": "leistung-unterhaltsreinigung",
+    "original": "EN-Beschreibung: «Lucerne, Zug and beyond» folgt der Schlussformel T4 und den übrigen EN-Beschreibungen. Wünscht das Lektorat (E50/E72) «and the surrounding area», sollte das für alle EN-Beschreibungen zugleich geändert werden.",
+    "status": "Vorschlag",
+    "evidence": "content/en/seo.ts",
+    "disposition": "and beyond ist idiomatisch und absichtlich gewählt. surrounding area wäre ein globaler Stilentscheid, kein Fehler.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140401+00:00"
+  },
+  {
+    "id": "O004",
+    "owner": "leistung-unterhaltsreinigung",
+    "original": "Einziger verbleibender doppelter Satz: die Kostenfrage «Was kostet eine Unterhaltsreinigung?» (auch H1 von /blog/reinigungskosten-schweiz). Sie bleibt als echte Suchfrage.",
+    "status": "erledigt",
+    "evidence": "content/de/leistungen/unterhaltsreinigung.ts, ratgeber.ts",
+    "disposition": "Die echte Kostenfrage darf in FAQ und Kostenratgeber vorkommen. Kein zu behebender Doppeltextfehler.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140402+00:00"
+  },
+  {
+    "id": "O005",
+    "owner": "leistung-unterhaltsreinigung",
+    "original": "Ablauf weiter ohne Bühne: Kein Remotion-Video passt zu «Reinigen nach Leistungsverzeichnis». Mit einer Figur «reinigung» (Umbau 6 in visuell.md) liesse sich step.figure setzen.",
+    "status": "Vorschlag",
+    "evidence": "content/*/leistungen/unterhaltsreinigung.ts, ProcessScrolly.tsx",
+    "disposition": "Ein eigener Reinigungsfilm ist optionaler Ausbau. Textschritte funktionieren ohne neues Motiv.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140404+00:00"
+  },
+  {
+    "id": "O006",
+    "owner": "leistung-unterhaltsreinigung",
+    "original": "Übersetzungen EN, FR und IT, einschliesslich der neuen Rechtszeile zu Art. 270b, sind Entwürfe des Agenten. Sie brauchen das Lektorat nach E50 und E72.",
+    "status": "Kundenfrage",
+    "evidence": "E50/E72, content/*/leistungen/unterhaltsreinigung.ts",
+    "disposition": "Muttersprachliche Freigabe bleibt vor Indexierung offen; Rechtszeile gegen OR 269d/270b aktuell geprüft.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140405+00:00"
+  },
+  {
+    "id": "O007",
+    "owner": "leistung-bueroreinigung",
+    "original": "Druck «Vertrauliche Räume» ergibt in allen vier Sprachen weiterhin 2 A4-Seiten. Ursache ist .tool-group mit break-inside: avoid in der Vorlage (globals.css), das liegt ausserhalb meiner Dateien. Vorschlag wie im ersten Durchgang: @page mit Rand und etwas kleinere Abstände im Druck.",
+    "status": "aktuell",
+    "evidence": "app/globals.css:1118",
+    "disposition": "Druckgruppen werden ungeteilt gehalten. Aktuelle A4-Seitenzahl muss Vorlagenprüfung nachweisen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140406+00:00"
+  },
+  {
+    "id": "O008",
+    "owner": "leistung-bueroreinigung",
+    "original": "Der Druck von Leistungsverzeichnis und «Offerten vergleichen» passt jetzt knapp auf eine Seite. Neue Punkte oder ein grösserer Druckabstand in der Vorlage kippen das wieder. Nach Vorlagenänderungen neu prüfen, Skript: scratchpad/welle2/bueroreinigung/druck-buero.cjs.",
+    "status": "aktuell",
+    "evidence": "app/globals.css, Werkzeuge bueroreinigung",
+    "disposition": "Erneuter Drucknachweis nach Vorlagenänderung erforderlich, ursprüngliches knappes Ergebnis ist kein aktueller Pass.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140407+00:00"
+  },
+  {
+    "id": "O009",
+    "owner": "leistung-bueroreinigung",
+    "original": "Ablauf ohne Bühne (B6): Soll die Büroseite wieder eine Bühne erhalten, braucht es ein eigenes Motiv für «Räume und Zutritt» (Schlüssel oder Badge). frage-bueroreinigung steht bereits im Fragen-Bereich. Entscheid beim Integrator oder Bilder-Agenten.",
+    "status": "Vorschlag",
+    "evidence": "content/*/leistungen/bueroreinigung.ts",
+    "disposition": "Neues Bild für Zutritt ist ein Gestaltungsvorschlag, kein belegter Inhaltsfehler.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140408+00:00"
+  },
+  {
+    "id": "O010",
+    "owner": "leistung-bueroreinigung",
+    "original": "Die Mobilseite ist unverändert lang (28,6 Bildschirme), vor allem wegen der Tabellenkarten und der Checkliste «Vertrauliche Räume». Kürzen lässt sie sich nur in der Vorlage.",
+    "status": "aktuell",
+    "evidence": "werkzeug-tabelle.tsx, WerkzeugCheckliste",
+    "disposition": "Mobile Karten und vollständig offene Werkzeuge bestehen noch. Alte 28,6 Bildschirme nicht frisch reproduziert.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140410+00:00"
+  },
+  {
+    "id": "O011",
+    "owner": "leistung-bueroreinigung",
+    "original": "Die Übersetzungen EN, FR und IT brauchen weiterhin das Lektorat nach E72, vor allem die neu formulierten Sätze zu Art. 10 Abs. 2 ArG/LTr/LL.",
+    "status": "Kundenfrage",
+    "evidence": "E72, bueroreinigung tools.einsatzzeiten",
+    "disposition": "Muttersprachliche Freigabe offen; Art.10 Abs.2 amtlich DE/FR/IT abgeglichen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140411+00:00"
+  },
+  {
+    "id": "O012",
+    "owner": "leistung-bueroreinigung",
+    "original": "doppelungen.py nach dem Zusammenführen von Welle 2 neu laufen lassen.",
+    "status": "aktuell",
+    "evidence": "../tools/doppelungen.py",
+    "disposition": "Integrationsmessung aller vier Sprachen bleibt Pflicht der Schlussprüfung.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140412+00:00"
+  },
+  {
+    "id": "O013",
+    "owner": "leistung-sonderreinigungen",
+    "original": "Fachliches Gegenlesen durch den Kunden (E56): Material- und Schadentabelle, dazu neu die Gewährleistungsfrage (Ceruniq) und das Abnahmekriterium «ursprüngliche Farbe der Fugen». Prüfen, ob dieses Kriterium nicht mehr erwarten lässt, als eine Grundreinigung bei tief verschmutzten Fugen schafft. EN, FR und IT weiter ins Lektorat nach E72.",
+    "status": "aktuell",
+    "evidence": "sonderreinigungen tools.checkliste-grundreinigung",
+    "disposition": "Ursprüngliche Fugenfarbe ist ein zu absoluter Abnahmemassstab. Fachdurchsicht neuer Materialtexte bleibt separat Kundenfrage.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140413+00:00"
+  },
+  {
+    "id": "O014",
+    "owner": "leistung-sonderreinigungen",
+    "original": "Begriff: Die Erklärung der «Sonderreinigung» stützt sich auf die «Spezialreinigung» im NVS-Merkblatt, also ein anderes Wort. Im Bestand stand «Sonderreinigungen» als Sammelbegriff. Beim Lektorat bestätigen lassen.",
+    "status": "Vorschlag",
+    "evidence": "sonderreinigungen, NVS S009",
+    "disposition": "Sonderreinigung als konkrete Spezialarbeit ist verständlich. NVS beschreibt Spezialreinigung, ohne die Website-Terminologie verbindlich vorzugeben.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140414+00:00"
+  },
+  {
+    "id": "O015",
+    "owner": "leistung-sonderreinigungen",
+    "original": "S8: Der EN-Titel bleibt nach keywords-mehrsprachig.md «Deep cleaning and special cleaning in Lucerne» (ohne Zug). Soll Zug in den Titel, wäre «Deep cleaning and special cleaning, Lucerne and Zug» mit 51 Zeichen möglich. Das entscheidet der SEO-Integrator.",
+    "status": "Vorschlag",
+    "evidence": "content/en/seo.ts",
+    "disposition": "Titel ohne Zug ist zulässig, Ortsgebiet steht in Beschreibung. Längere Alternative konkurriert mit 70-Zeichen-Grenze.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140415+00:00"
+  },
+  {
+    "id": "O016",
+    "owner": "leistung-sonderreinigungen",
+    "original": "Aus dem ersten Durchgang weiter offen und ausserhalb meiner Dateien: Adressen EN/FR/IT ohne Hauptbegriff (shared/i18n.ts, optionale 308 auf /leistungen/grundreinigung nach T2), Links der Kantonsseiten auf die Umzugsreinigung umstellen (T3/H2, kantone.ts), Link auf einen künftigen Ratgeber zu Bodenarten, admin@brandea.de in shared/company.ts vor dem Launch prüfen.",
+    "status": "Kundenfrage",
+    "evidence": "shared/i18n.ts, kantone.ts, shared/company.ts",
+    "disposition": "Kantonslinks und Bodenratgeber vorhanden. Neue Slugs/308 optional. Kunden-E-Mail bleibt Launch-Gate.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140416+00:00"
+  },
+  {
+    "id": "O017",
+    "owner": "leistung-sonderreinigungen",
+    "original": "Vorlage (client/src/seiten/leistung): Die beiden druckbaren Tabellen drucken weiter auf je 2 Seiten. Der Werkzeugtyp «text» (Aushang) ist nicht druckbar. Mobil bleibt die Seite mit 4 Werkzeugen lang (visuell.md, Umbau 7).",
+    "status": "aktuell",
+    "evidence": "werkzeug.tsx, app/globals.css",
+    "disposition": "Textwerkzeuge noch nicht druckbar, Tabellen mobil ausführlich. Druck- und Mobilverhalten an Vorlage korrigieren.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140417+00:00"
+  },
+  {
+    "id": "O018",
+    "owner": "leistung-umzugsreinigung",
+    "original": "Frage an Brandea (E18, E56, E70): Gilt die Abnahmegarantie auch, wenn wir im Auftrag der Verwaltung nach dem Abnahmeprotokoll reinigen und die Verwaltung unsere Reinigung danach prüft? Die Seite nennt nur den bestätigten Wortlaut und legt keine eigene Regel fest. Eine Antwort, zusammen mit F5 (Rapport mit Fotos), würde Garantie, FAQ und Ablauf deutlich stärken.",
+    "status": "Kundenfrage",
+    "evidence": "umzugsreinigung, E56 ABNAHME",
+    "disposition": "Bestehender Garantiewortlaut bestätigt. Reichweite bei Auftrag nach Verwaltungsprotokoll nicht zusätzlich bestätigt.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140419+00:00"
+  },
+  {
+    "id": "O019",
+    "owner": "leistung-umzugsreinigung",
+    "original": "Fundament (B-U8): Checkliste und Tabelle drucken auf je 2 A4-Seiten (DE, EN, FR, IT). Bei der Checkliste stehen «Nebenräume», «Protokoll», der Hinweis und die Quelle auf Seite 2, bei der Tabelle nur die Quellenliste. Vorschlag: im Druck-CSS (app/globals.css ab etwa Zeile 1118) break-inside: avoid für Hinweis und Quellen, engere Zeilen in der Checkliste oder drei Spalten im Druck.",
+    "status": "aktuell",
+    "evidence": "app/globals.css",
+    "disposition": "A4-Druck nach Kompaktierung neu nachweisen. Alte zweite Seite keine frische Messung.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140420+00:00"
+  },
+  {
+    "id": "O020",
+    "owner": "leistung-umzugsreinigung",
+    "original": "Kontakt-Agent (B-U9): Bei Einmal-Leistungen wie Umzugs- und Baureinigung passen die Felder «Gewünschter Rhythmus» und «Startzeitpunkt» (Platzhalter im Freitextfeld) nicht. Vorschlag: Rhythmus ausblenden oder durch «Abgabetermin» ersetzen.",
+    "status": "aktuell",
+    "evidence": "ContactForm.tsx, content/*/navigation.ts",
+    "disposition": "Allgemeines Rhythmus-/Startfeld noch für Einmalleistungen. Dienstabhängige Formulierung vorgesehen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140421+00:00"
+  },
+  {
+    "id": "O021",
+    "owner": "leistung-umzugsreinigung",
+    "original": "Kantone-Agent: Die Luzerner Kantonsseite soll zur Umzugsseite passen. Die Umzugsseite sagt jetzt, dass die Seiten des Kantons keine ortsüblichen Termine nennen und die Schlichtungsbehörde Miete und Pacht Auskunft gibt. Keine Portalzahlen übernehmen, OGer LU 1987 (Dierikon: jedes Monatsende ausser Dezember) zeigt, dass das je nach Gemeinde verschieden ist. Die Verlinkung der Kantonsseiten auf /leistungen/umzugsreinigung#kuendigungstermine bleibt als Vorschlag offen.",
+    "status": "erledigt",
+    "evidence": "content/de/kantone.ts luzern.daten, umzugsreinigung.tools",
+    "disposition": "Luzern nennt keinen erfundenen Ortsgebrauch, sondern Mietvertrag und OR. Werkzeuganker optionaler Zusatz.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140422+00:00"
+  },
+  {
+    "id": "O022",
+    "owner": "leistung-umzugsreinigung",
+    "original": "Integrator: Die EN-Überschrift des Werkzeugs heisst jetzt «Termination dates by canton», die IT-Überschrift «Scadenze di disdetta per Cantone». Die Anker-ID kuendigungstermine ist unverändert.",
+    "status": "erledigt",
+    "evidence": "content/en/leistungen/umzugsreinigung.ts, content/it/leistungen/umzugsreinigung.ts",
+    "disposition": "Termination dates / Scadenze di disdetta vorhanden, id kuendigungstermine unverändert.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140423+00:00"
+  },
+  {
+    "id": "O023",
+    "owner": "leistung-umzugsreinigung",
+    "original": "Aus Runde 1 weiter offen: Ablauf ohne Bühne (kein passendes Video), Hinweiskasten für den Garantiesatz (Vorlage 03-einsatz.tsx), Hero-Satz in hero.ts, H2 «Umzugs- und Wohnungsendreinigung» auf der Grundreinigungsseite, Lektorat EN/FR/IT (E50, E72).",
+    "status": "aktuell",
+    "evidence": "hero.ts, leistung/03-einsatz.tsx",
+    "disposition": "Hero enthält noch absolute Verwaltungs-Nachreinigung. Bühnenmotiv und eigener Garantiekasten nur Gestaltungsvorschläge; Lektorat bleibt Gate.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140424+00:00"
+  },
+  {
+    "id": "O024",
+    "owner": "leistung-baureinigung",
+    "original": "Integrator, Druck-CSS (betrifft alle Seiten mit druckbaren Checklisten): Der Knopf «Drucken» ruft window.print() auf. Mit Chromes Standardrand bleiben rund 718 px Breite, das ist schmaler als die md-Grenze von 768 px. Die Gruppen stehen dann in einer Spalte, «Ausschreibung» und «Übergabe» laufen in allen vier Sprachen auf zwei Seiten über. Getesteter Vorschlag für globals.css in runde2/druck_vorschlag.cjs: @page { size: A4; margin: 10mm }, im Druck grid-template-columns: repeat(2, minmax(0,1fr)), li mit padding 0.4rem, Werkzeug mit font-size 0.875rem, break-inside: avoid für Hinweis und Quellen. Ergebnis: 12 von 12 Druckansichten auf einer Seite.",
+    "status": "aktuell",
+    "evidence": "app/globals.css:1118",
+    "disposition": "Druckgruppen und Schrift zu prüfen. Konkreter Vorschlag muss durch frische PDFs belegt werden.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140425+00:00"
+  },
+  {
+    "id": "O025",
+    "owner": "leistung-baureinigung",
+    "original": "Wird der CSS-Vorschlag umgesetzt, ist wieder Platz für Punkte, die ich für den Druck aus den Checklisten gekürzt habe: Technikräume und Treppenhäuser, Glas im Treppenhaus, Lichtschalter, Geländer, Bauaufzug. Diese Punkte kann ich auf Wunsch wieder aufnehmen.",
+    "status": "Vorschlag",
+    "evidence": "baureinigung.tools",
+    "disposition": "Zusätzliche Checklistenpunkte sind mögliche Vertiefung, nicht bisher fehlender expliziter Pflichtumfang.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140426+00:00"
+  },
+  {
+    "id": "O026",
+    "owner": "leistung-baureinigung",
+    "original": "doppelungen.py zählt nur Doppelungen mit anderen Seiten. Für innerseitige Wiederholungen liegt runde2/innerseitig.py bereit, gleiche Satzmethode. Es könnte für alle Seiten in die Prüfung aufgenommen werden.",
+    "status": "erledigt",
+    "evidence": "../tools/doppelungen.py",
+    "disposition": "Werkzeug prüft inzwischen innerseitige Wiederholungen; aktuelle Integrationsauswertung dennoch nötig.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140428+00:00"
+  },
+  {
+    "id": "O027",
+    "owner": "leistung-baureinigung",
+    "original": "Offene Kundenfrage F5 (Übergabe- oder Rapportblatt mit Fotos) ist weiter nicht beantwortet, ebenso die Frage nach Fristen für Beanstandungen an der Reinigung selbst.",
+    "status": "Kundenfrage",
+    "evidence": "F5, content/*/leistungen/baureinigung.ts",
+    "disposition": "Rapport mit Fotos und Fristen der eigenen Reinigungsbeanstandung nicht bestätigt.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140429+00:00"
+  },
+  {
+    "id": "O028",
+    "owner": "leistung-baureinigung",
+    "original": "Lektorat E50/E72 für die neuen Formulierungen: FR «Soumission du nettoyage de fin de chantier» (Titel), «dépôt» und IT «deposito» für den Geräteplatz, EN «room for equipment». Weiter offen: «nettoyage de reprise», «pulizia di ripasso» und die FR-H1.",
+    "status": "Kundenfrage",
+    "evidence": "E50/E72, baureinigung",
+    "disposition": "Terminologische Stilabnahme FR/IT/EN bleibt muttersprachlich offen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140430+00:00"
+  },
+  {
+    "id": "O029",
+    "owner": "leistung-baureinigung",
+    "original": "Für den Verband SFV-ASVP habe ich auf sfv-asvp.ch keinen offiziellen englischen oder italienischen Namen gefunden. In EN und IT steht deshalb eine Beschreibung in Kleinschreibung mit dem Kürzel SFV-ASVP. Die Botschaft gibt es nicht auf Englisch, EN verlinkt die deutsche Fassung mit dem Hinweis «(in German)».",
+    "status": "erledigt",
+    "evidence": "baureinigung.sources",
+    "disposition": "Offizielle Bezeichnung wird nicht erfunden. Deutsche Botschaft in EN gekennzeichnet, amtliche FR/IT vorhanden.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140431+00:00"
+  },
+  {
+    "id": "O030",
+    "owner": "leistung-baureinigung",
+    "original": "Weiter offen aus Runde 1: facts[0] als «Für»-Zeile auf allen Leistungsseiten (Übersicht liest facts[0]) und die lange Scrollstrecke unter der Ablauf-Bühne bei 1440 px (Vorlage).",
+    "status": "Vorschlag",
+    "evidence": "Service facts, ProcessScrolly.tsx",
+    "disposition": "Für-Zeile überall ist kein verpflichtendes Inhaltsmodell; facts sind ausdrücklich seitentypisch. Scrollstrecke separat UX prüfen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140432+00:00"
+  },
+  {
+    "id": "O031",
+    "owner": "leistung-fenster-und-fassadenreinigung",
+    "original": "Für den Integrator (P2): Die Druckansicht setzt immer Seitentitel und Firma darüber. Für Vorlagen zum Aushängen sollte sich dieser Kopf abschalten lassen (werkzeug.tsx und drucken.tsx, nicht meine Dateien). Bis dahin ist der Aushang eine Vorlage für das Briefpapier und nicht druckbar.",
+    "status": "aktuell",
+    "evidence": "werkzeug.tsx, drucken.tsx",
+    "disposition": "Druckkopf noch nicht abschaltbar, Text-Aushang nicht druckbar.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140433+00:00"
+  },
+  {
+    "id": "O032",
+    "owner": "leistung-fenster-und-fassadenreinigung",
+    "original": "Für den Kontakt-Agenten (P7): Der Leerraum unter dem Formular bei 1440 px kommt aus ContactSection (SwissFooter.tsx). Die linke Spalte mit Text, Bild, 3 Karten und «So geht es weiter» ist höher als das Formular. Nach dem Kürzen des Abschlusstexts: DE 680 px (vorher 810), EN 673, FR 680 (vorher 778), IT 630.",
+    "status": "aktuell",
+    "evidence": "SwissFooter.tsx",
+    "disposition": "Spaltenhöhe bleibt strukturelles UX-Thema. Alte Pixelwerte nicht als aktuelle Messung ausgegeben.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140434+00:00"
+  },
+  {
+    "id": "O033",
+    "owner": "leistung-fenster-und-fassadenreinigung",
+    "original": "Die Links zu Art. 259 und 257a OR stehen jetzt direkt in der Frage «Wer ist für die Fenster in Mietwohnungen zuständig?». Die Fragen haben kein Feld für Quellen, und die Aussage steht nur noch dort. Soll die Vorlage Quellen bei Fragen einheitlich anzeigen, wäre das eine Entscheidung für den Integrator.",
+    "status": "Vorschlag",
+    "evidence": "fenster FAQ, RichText.tsx",
+    "disposition": "Direkte Quellenlinks funktionieren in RichText. Einheitliches FAQ-Quellenfeld wäre optionaler Ausbau.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140435+00:00"
+  },
+  {
+    "id": "O034",
+    "owner": "leistung-fenster-und-fassadenreinigung",
+    "original": "Aus dem ersten Durchgang weiter offen: F4 (eigenes Vorgehen beim Abwasser) bleibt unbeantwortet. Die VSA-Vollzugshilfe ist noch nicht erschienen. Das Schreiben von Umwelt Zentralschweiz ist nur auf azimv.ch zu finden. Suva 44033 gibt es nicht auf Englisch. Das Lektorat von EN, FR und IT durch Muttersprachler steht noch aus (E72).",
+    "status": "Kundenfrage",
+    "evidence": "F4, E72",
+    "disposition": "Eigenes Abwasservorgehen und Muttersprachler-Abnahme offen. Behördenbrief als Scan visuell geprüft, kein Quelleninhalt erfunden.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140436+00:00"
+  },
+  {
+    "id": "O035",
+    "owner": "leistung-fenster-und-fassadenreinigung",
+    "original": "Zug: Keine Seite von stadtzug.ch nennt Hubarbeitsbühnen (Suche am 28.09.2026). Deshalb steht dort jetzt der Verweis auf das Baudepartement. Taucht eine Zuger Quelle für Arbeitsbühnen auf, lässt sich der Satz schärfen.",
+    "status": "erledigt",
+    "evidence": "fenster tools.zugang-hoehe, Stadt Zug S037",
+    "disposition": "Verweis auf zuständige Stelle statt unbelegter konkreter Zuger Bühnenpflicht ist korrekt.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140437+00:00"
+  },
+  {
+    "id": "O036",
+    "owner": "leistung-industrie-und-hallenreinigung",
+    "original": "IH-10 (Bilder-Agent bzw. Integrator): Für detail-industrie-hallen in shared/hero-images.ts ein anderes Motiv wählen. Hero und Zickzack-Zeile 1 zeigen beide die Scheuersaugmaschine im Regalgang (nebeneinander: runde2/hero-detail.png).",
+    "status": "aktuell",
+    "evidence": "shared/hero-images.ts, detail-industrie-hallen",
+    "disposition": "Bildmotiv-Dopplung noch als Bildaufgabe vorhanden; konkrete Sichtprüfung gehört Bilder/UX.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140439+00:00"
+  },
+  {
+    "id": "O037",
+    "owner": "leistung-industrie-und-hallenreinigung",
+    "original": "Druck-CSS (Integrator, app/globals.css): Werkzeug-Tabellen drucken mit 17 px Schrift und 24 px Zellenabstand. Mit dem Standardrand von Chrome (etwa 10 mm) bleibt der Zonenplan in DE, FR und IT zweiseitig, mit 1 bis 2 Zeilen auf Seite 2. Ausserdem hält .tool-group mit break-inside: avoid ganze Gruppen zusammen. Seite 1 bleibt dadurch halb leer, und die FR-Sicherheits-Übergabe braucht mit 10 mm Rand 3 Seiten, Seite 3 nur mit Quellen. Vorschlag: Tabellen im Druck etwa 11 pt mit 6 bis 10 px Zellenabstand. Gruppen dürfen umbrechen, zusammenhalten nur li und Gruppentitel (break-after: avoid). Das betrifft alle Seiten mit Werkzeugen.",
+    "status": "aktuell",
+    "evidence": "app/globals.css",
+    "disposition": "Einheitlicher Druckfehler, nicht je Seite separat neue Ursache.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140440+00:00"
+  },
+  {
+    "id": "O038",
+    "owner": "leistung-industrie-und-hallenreinigung",
+    "original": "Sprungziele (Vorlage): Ein Next-Link auf einen Anker derselben Seite und ein Direktaufruf mit #anker landen den Werkzeug-Abschnitt bei top 24 px. Die feste Kopfzeile reicht bis 78 px und verdeckt den Titel. Das Seitenverzeichnis landet korrekt bei 100 px (scroll-padding-top). Deshalb habe ich in den Anlässen keinen Sprunglink gesetzt. Das betrifft jeden künftigen Link auf #werkzeug-id.",
+    "status": "aktuell",
+    "evidence": "werkzeug.tsx, globals.css",
+    "disposition": "Werkzeugsektion ohne eigene scroll-margin. Direktanker und feste Kopfzeile in Browser prüfen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140441+00:00"
+  },
+  {
+    "id": "O039",
+    "owner": "leistung-industrie-und-hallenreinigung",
+    "original": "IH-09 bei 1280 px: Die Lage des Knopfs «Drucken» hängt von der Titellänge ab. Bei 1280 px ist IT gemischt (Zonenplan daneben, Sicherheit und Audit darunter), DE und FR stehen alle darunter, EN alle daneben. Eine feste Lage lässt sich nur in werkzeug.tsx bestimmen.",
+    "status": "aktuell",
+    "evidence": "werkzeug.tsx flex-wrap",
+    "disposition": "Druckknopf umbrechend abhängig von Titelbreite; niedriger Layoutbefund.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140442+00:00"
+  },
+  {
+    "id": "O040",
+    "owner": "leistung-industrie-und-hallenreinigung",
+    "original": "Weiter offen aus Durchgang 1: Kantone K5 (aargau.objekte[1] mit alten Maschinen-Sätzen), die VUV hat keinen amtlichen englischen Text (EN verlinkt die deutsche Fassung), Symbol der Stecknadel im Schritt «Plan nach Zonen» (ProcessScrolly.tsx), Nachführen von 06/08/FORTSCHRITT durch den Integrator.",
+    "status": "aktuell",
+    "evidence": "kantone.ts aargau.objekte[1], ProcessScrolly.tsx, Doku",
+    "disposition": "Maschinen-Satz muss Freigabe/Sicherheitszustand sauber zeigen. VUV-EN-Verweis korrekt gekennzeichnet; Doku offen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140443+00:00"
+  },
+  {
+    "id": "O041",
+    "owner": "leistung-industrie-und-hallenreinigung",
+    "original": "Lektorat durch Muttersprachler (E72) für die neuen Begriffe: EN swarf, tyre marks, factory and warehouse cleaning; FR passation des consignes de sécurité, traces de pneus, nettoyage d’usine, périodes creuses; IT tracce di pneumatici, pulizia macchinari, visita cliente.",
+    "status": "Kundenfrage",
+    "evidence": "E72, industrie-und-hallenreinigung",
+    "disposition": "Muttersprachliche Fachterminologie bleibt Abnahme.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140444+00:00"
+  },
+  {
+    "id": "O042",
+    "owner": "leistung-industrie-und-hallenreinigung",
+    "original": "doppelungen.py ist gegen die unveränderten Nachbarseiten gemessen. Nach dem Zusammenführen der parallelen Seiten neu messen.",
+    "status": "aktuell",
+    "evidence": "../tools/doppelungen.py",
+    "disposition": "Nach Integration messen, frühere Nachbarfassungen nicht als finale Werte behandeln.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140445+00:00"
+  },
+  {
+    "id": "O043",
+    "owner": "leistung-hauswartung",
+    "original": "Druck, Fundament: Beim Drucken mit den Standardrändern des Browsers (etwa 10 mm) ist die Druckbreite rund 718 px, also unter md (768 px). Die Checkliste steht dann einspaltig und braucht 2 Seiten (93 %, 76 %). Für eine Seite bräuchte app/globals.css im Druck zwei Spalten für .tool-group und eine eigene @page-Regel mit Rand, dazu kleinere Schrift. Das Pflichtenheft braucht mit Rand 3 Seiten wie vorher, ohne Rand 2.",
+    "status": "aktuell",
+    "evidence": "app/globals.css, hauswartung tools",
+    "disposition": "Druckvorlage betrifft auch Pflichtenheft; frischer Nachweis erforderlich.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140446+00:00"
+  },
+  {
+    "id": "O044",
+    "owner": "leistung-hauswartung",
+    "original": "EN «Hauswartung» (keywords-mehrsprachig.md) widerspricht der Wortliste in pruefen_i18n.cjs. Umgesetzt ist «(Hauswart)», das die Prüfung nicht meldet und laut Keyword-Datei dasselbe Gruppenvolumen hat. Soll es wörtlich «Hauswartung» sein, braucht die Prüfung eine Ausnahme. Entscheid beim Integrator.",
+    "status": "Vorschlag",
+    "evidence": "content/en/leistungen/hauswartung.ts",
+    "disposition": "caretaking mit Hauswart als erklärendem Schweizer Begriff ist vertretbar. Keyword-Ausnahme optional.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140447+00:00"
+  },
+  {
+    "id": "O045",
+    "owner": "leistung-hauswartung",
+    "original": "Fachliche Durchsicht vor dem Launch durch Brandea oder den Kunden: Die FAQ zum Stockwerkeigentum gibt Art. 712g Abs. 1 und 2 ZGB vereinfacht wieder. Die Lehre zur Beschlussmehrheit der Versammlung (Vereinsrecht über Art. 712m Abs. 2) ist nicht ausgeführt, der Text verweist auf den Einzelfall. Die Einordnung von Kontrollgängen und Übergaben als nicht nebenkostenfähig ist ausdrücklich die Sicht des Mieterverbands.",
+    "status": "Kundenfrage",
+    "evidence": "hauswartung FAQ, S003/S052/S053",
+    "disposition": "Gesetzeszusammenfassung und ausdrücklich zugeordnete Mieterverband-Sicht sachlich geprüft. Fachliche Kundenabnahme separat offen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140448+00:00"
+  },
+  {
+    "id": "O046",
+    "owner": "leistung-hauswartung",
+    "original": "Mobile Länge jetzt rund 25'900 px bei 390 px (vorher 25'100). Grund sind die neue Pflichtenheft-Zeile, die neue Zeile in «wer bezahlt» und die getrennten Checklistenpunkte. Kürzen lässt sich das nur in der Vorlage mit klappbaren Tabellenkarten (visuell.md, Umbau 7).",
+    "status": "aktuell",
+    "evidence": "Werkzeugvorlage",
+    "disposition": "Mobile Länge braucht frische Messung und kompaktere Darstellung; Inhalt nicht pauschal kürzen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140449+00:00"
+  },
+  {
+    "id": "O047",
+    "owner": "leistung-hauswartung",
+    "original": "FR: Der Werkzeugtitel «Modèle de cahier des charges de conciergerie» schiebt den Knopf «Imprimer» bei 1440 px unter den Titel. Das ist das normale Umbruchverhalten der Vorlage und rein kosmetisch.",
+    "status": "Vorschlag",
+    "evidence": "werkzeug.tsx",
+    "disposition": "Regulärer Titelumbruch allein kein Funktionsfehler. Konsistente Knopflage sinnvoll, siehe O039.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140450+00:00"
+  },
+  {
+    "id": "O048",
+    "owner": "leistung-hauswartung",
+    "original": "doppelungen.py kennt nur deutsche Vertröstungsmuster (BELEG-1). Für EN, FR und IT müsste der Werkzeug-Eigentümer Muster je Sprache ergänzen. Meine Hilfsmessung liegt unter welle2/hauswartung/r2/intern.py.",
+    "status": "erledigt",
+    "evidence": "../tools/doppelungen.py:25",
+    "disposition": "Sprachspezifische Vertröstungsmuster DE/EN/FR/IT sind inzwischen vorhanden.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140451+00:00"
+  },
+  {
+    "id": "O049",
+    "owner": "leistung-hauswartung",
+    "original": "Nach dem Zusammenführen doppelungen.py neu messen, besonders gegen Unterhaltsreinigung (Nebenkosten, Art. 257a OR) und Aussen- und Grünflächenpflege.",
+    "status": "aktuell",
+    "evidence": "../tools/doppelungen.py",
+    "disposition": "Neue Gesamtauswertung erforderlich, gleiche Normbezüge sind nicht automatisch schädliche Doppelung.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140452+00:00"
+  },
+  {
+    "id": "O050",
+    "owner": "leistung-hauswartung",
+    "original": "Offen wie im ersten Durchgang: F7 (Schlüsselprotokoll) unbeantwortet. Der Hero-Kurzsatz in content/*/hero.ts (nicht meine Datei) nennt weder Zielgruppe noch Ort, Vorschlag aus inhalt.md.",
+    "status": "Kundenfrage",
+    "evidence": "F7, content/*/hero.ts",
+    "disposition": "B2B-Schlüsselprotokoll bleibt Kundenfrage. Hero ohne Zielgruppe/Ort ist separate Textkorrektur des Inhalt-Agents.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140453+00:00"
+  },
+  {
+    "id": "O051",
+    "owner": "leistung-aussen-und-gruenflaechenpflege",
+    "original": "GA-05 an den Integrator (app/globals.css, Vorlage): Im Druck braucht die Überschrift «Quellen» der Werkzeuge break-after: avoid und der Quellenblock break-inside: avoid; dazu engere Zellabstände in @media print. Dann passt der Pflegekalender voraussichtlich auf eine A4-Seite, und beim Spritzmittel-Werkzeug steht die Überschrift «Quellen» nicht mehr allein. Heute: pflegekalender und spritzmittelverbot je 2 Seiten, pflegeplan 1 Seite, in allen 4 Sprachen.",
+    "status": "aktuell",
+    "evidence": "app/globals.css",
+    "disposition": "Quellen/Hinweise im Druck zusammenhalten, ohne ganze überlange Gruppen zu sperren.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140454+00:00"
+  },
+  {
+    "id": "O052",
+    "owner": "leistung-aussen-und-gruenflaechenpflege",
+    "original": "Die Werkzeug-id heisst jetzt spritzmittelverbot statt unkraut-ohne-gift, der Anker lautet also #spritzmittelverbot. Ausserhalb meiner Dateien gibt es keine Verweise (git grep), Druck- und Prüfskripte der Prüfer mit der alten id müssen angepasst werden.",
+    "status": "erledigt",
+    "evidence": "aussen-und-gruenflaechenpflege.ts, Jahresplan",
+    "disposition": "Aktuelle ID spritzmittelverbot ist vorhanden und aktiv verlinkt. Historische Prüferskripte sind keine Produktlinks.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140455+00:00"
+  },
+  {
+    "id": "O053",
+    "owner": "leistung-aussen-und-gruenflaechenpflege",
+    "original": "Ob BGS grundsätzlich ohne Spritzmittel arbeitet, auch auf Rasen und Beeten, ist nicht belegt (E18). Das wäre eine neue Rückfrage an den Kunden. Erst mit Beleg darf die Seite eine allgemeine Zusage machen.",
+    "status": "Kundenfrage",
+    "evidence": "E18, aussen-und-gruenflaechenpflege",
+    "disposition": "Allgemeiner Spritzmittelverzicht von BGS nicht bestätigt; Website beschränkt sich auf Rechtslage.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140457+00:00"
+  },
+  {
+    "id": "O054",
+    "owner": "leistung-aussen-und-gruenflaechenpflege",
+    "original": "Der Hero-Kurzsatz in content/*/hero.ts nennt weder Ort noch Zielgruppe. Unverändert offen aus dem ersten Bericht, nicht meine Datei.",
+    "status": "aktuell",
+    "evidence": "content/*/hero.ts",
+    "disposition": "Garten-Hero ohne Ort/Zielgruppe noch offen im Basissnapshot.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140460+00:00"
+  },
+  {
+    "id": "O055",
+    "owner": "leistung-aussen-und-gruenflaechenpflege",
+    "original": "Der Hero-Knopf «Kostenlose Offerte anfragen» (ui.offerCta) steht neben dem Abschluss. Unverändert offen, Entscheid beim Integrator.",
+    "status": "Vorschlag",
+    "evidence": "Hero CTA und Abschluss",
+    "disposition": "Wiederkehrende Offertenaktion ist sinnvoller Weg zum Formular, kein belegter Fehler.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140461+00:00"
+  },
+  {
+    "id": "O056",
+    "owner": "leistung-aussen-und-gruenflaechenpflege",
+    "original": "Das Label in seo.ts bleibt «Aussen- und Grünflächenpflege» (Menü, Brotkrumen). Eine Umbenennung wäre ein seitenübergreifender Entscheid.",
+    "status": "erledigt",
+    "evidence": "content/*/seo.ts",
+    "disposition": "Aussen- und Grünflächenpflege bleibt passendes Navigationslabel. Keine Umbenennung erforderlich.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140462+00:00"
+  },
+  {
+    "id": "O057",
+    "owner": "leistung-aussen-und-gruenflaechenpflege",
+    "original": "Die italienische BAFU-Seite «Prodotti fitosanitari nei Comuni» nennt fälschlich eine Striscia von 3 m statt 50 cm. Hinweis für den Kantons-Agenten, unverändert aus dem ersten Bericht.",
+    "status": "erledigt",
+    "evidence": "content/it/leistungen/aussen-und-gruenflaechenpflege.ts",
+    "disposition": "Website nutzt korrekte 50 cm und verlinkt deutsche BAFU-Quelle. Fehler einer nicht benutzten IT-BAFU-Fassung nicht übernehmen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140463+00:00"
+  },
+  {
+    "id": "O058",
+    "owner": "leistung-facility-services",
+    "original": "Druck mit echtem Browser-Rand: Bei 10 mm Seitenrand wird der druckbare Bereich schmaler als md, und die Werkzeuge fallen auf das schmale Layout zurück. Dann druckt die Zuständigkeitstabelle auf 2 Seiten (Seite 2: Schluss des Hinweises und die Quelle) und die Checkliste auf 3 Seiten (Seite 3: zwei Quellen). Ursache ist die Vorlage: kein @page-Rand, das Layout hängt am md-Breakpoint, Tabellenzellen mit py-4 und die URL hinter jedem Link. Das ist Sache des Integrators. Ohne Rand, wie in der Messung des Prüfers, passt alles.",
+    "status": "aktuell",
+    "evidence": "app/globals.css",
+    "disposition": "Gleiche Druckursache wie O001/O137; alte Zählungen nicht als neue Messung verwenden.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140465+00:00"
+  },
+  {
+    "id": "O059",
+    "owner": "leistung-facility-services",
+    "original": "Mobil ist die Seite weiter lang (21'903 px bei 390 px). Kompaktere Tabellenkarten oder eine aufklappbare Ansicht wären ebenfalls eine Aufgabe der Vorlage.",
+    "status": "aktuell",
+    "evidence": "Werkzeugvorlage",
+    "disposition": "Mobilkompaktierung prüfen, alte 21903 px sind Ausgangsbeobachtung.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140466+00:00"
+  },
+  {
+    "id": "O060",
+    "owner": "leistung-facility-services",
+    "original": "E18 bitte bestätigen lassen: Die Umzugsreinigung mit Abnahmegarantie steht neu in der Liste der kombinierbaren Leistungen. Das Leuchtmittel ersetzt die Hauswartung, das steht so im Bestand von hauswartung.ts. Die Frage zu mehreren Liegenschaften sagt, dass sich Leistungen, Rhythmus und Einsatzzeiten je Liegenschaft festlegen lassen.",
+    "status": "Kundenfrage",
+    "evidence": "facility-services, R3c/E56",
+    "disposition": "Leuchtmittel ist vom Bestand getragen. Ausweitung mehrere Liegenschaften/ein Vertrag bleibt gesonderter Umfangspunkt.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140467+00:00"
+  },
+  {
+    "id": "O061",
+    "owner": "leistung-facility-services",
+    "original": "Die VUV gibt es auf fedlex nicht auf Englisch. EN verlinkt deshalb den deutschen Text, das Quellenlabel sagt «German text».",
+    "status": "erledigt",
+    "evidence": "content/en/leistungen/facility-services.ts",
+    "disposition": "German text beim VUV-Link vorhanden. Keine amtliche englische Übersetzung erfunden.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140468+00:00"
+  },
+  {
+    "id": "O062",
+    "owner": "leistung-facility-services",
+    "original": "Die Übersetzungen EN, FR und IT muss noch ein Muttersprachler lektorieren (E50, E72). FR folgt dem Bestand: «conciergerie», schmale geschützte Leerzeichen vor «:» und in «», geschütztes Leerzeichen nach art./al./ch.",
+    "status": "Kundenfrage",
+    "evidence": "E50/E72",
+    "disposition": "Muttersprachliche Abnahme FR/EN/IT offen; technische Vollständigkeit ersetzt sie nicht.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140469+00:00"
+  },
+  {
+    "id": "O063",
+    "owner": "leistung-facility-services",
+    "original": "Nach dem Zusammenführen aller Zweige der Welle 2 doppelungen.py noch einmal laufen lassen. Die Hauswartungsseite nutzt voraussichtlich auch Art. 58 OR.",
+    "status": "aktuell",
+    "evidence": "../tools/doppelungen.py",
+    "disposition": "Neue gemeinsame Messung erforderlich.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140470+00:00"
+  },
+  {
+    "id": "O064",
+    "owner": "premium-luxusimmobilien",
+    "original": "L2 für Integrator oder Bilder-Agent (bilder.ts, scene-images.ts): Der Alt-Text von szene-luxusimmobilien nennt in allen vier Sprachen ein Mikrofasertuch auf matten Küchenfronten. Das widerspricht der Tabelle und der Quelle Kurt Keller AG. Minimal: Alt-Text auf «mit einem weichen Tuch» ändern, das Tuch ist im Bild nicht als Mikrofaser erkennbar. Besser: neues Motiv mit Leder- oder Baumwolltuch.",
+    "status": "aktuell",
+    "evidence": "content/*/bilder.ts:67",
+    "disposition": "Alle vier Alt-Texte nennen Mikrofasertuch, Tabelle/Hersteller für Fronten raten davon ab. Weiches Tuch sachgerecht.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140471+00:00"
+  },
+  {
+    "id": "O065",
+    "owner": "premium-luxusimmobilien",
+    "original": "L7 für Integrator (client/src/seiten/leistung/07-verwandt.tsx Z. 31/49): Karten ohne premiumPageIcons-Eintrag (hier /leistungen/umzugsreinigung) brauchen ein Leistungssymbol aus serviceIcons.ts (duotone, text-brass-dark, size-9) oder einen gleich hohen Platzhalter, damit die Titel bei 1440 px auf einer Linie stehen.",
+    "status": "aktuell",
+    "evidence": "leistung/07-verwandt.tsx",
+    "disposition": "Premium-Karte zur Standardleistung ohne passendes Icon. Vorlage zuständig.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140472+00:00"
+  },
+  {
+    "id": "O066",
+    "owner": "premium-luxusimmobilien",
+    "original": "hero.ts (Fundament), passend zu LUX-F1: Der Hero-Satz «immer beim selben vertrauten Team» steht noch im Hero. Vorschlag: «Naturstein, Parkett und Hochglanz in guten Händen, auch während Ihrer Abwesenheit», bis F2 (Vertretung) beantwortet ist.",
+    "status": "aktuell",
+    "evidence": "content/*/hero.ts",
+    "disposition": "Immer dasselbe Team ist stärker als E41 feste Teams. Auf feste Zuteilung begrenzen, F2 bleibt offen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140473+00:00"
+  },
+  {
+    "id": "O067",
+    "owner": "premium-luxusimmobilien",
+    "original": "Kartentitel der Umzugsreinigung in «Passt auch dazu» kommt aus deren seo.ts-Label (EN/FR/IT «end-of-tenancy», «fin de bail», «fine locazione»). Meine Anker sind jetzt neutral, das Label gehört dem Umzugsreinigungs-Agenten (E28 Variante A).",
+    "status": "erledigt",
+    "evidence": "seo.ts Umzugsreinigung labels",
+    "disposition": "Übersetzte Begriffe sind korrekt; Zielgruppe wird im Inhalt eindeutig auf Auftraggeberseite benannt.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140474+00:00"
+  },
+  {
+    "id": "O068",
+    "owner": "premium-luxusimmobilien",
+    "original": "Polster: Laut E41 gehört Materialkenntnis bei Polstern zu den belegten Zusagen. Eine Tabellenzeile dazu bräuchte eine Primärquelle für Polster und Teppiche, etwa Reinigungscodes eines Herstellers. GINETEX deckt nur Wäsche und Vorhänge ab.",
+    "status": "Vorschlag",
+    "evidence": "luxusimmobilien.tools",
+    "disposition": "Keine ungesicherte Polsterzeile eingefügt. Künftige Erweiterung bräuchte Herstellerquelle.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140475+00:00"
+  },
+  {
+    "id": "O069",
+    "owner": "premium-luxusimmobilien",
+    "original": "Kunde soll gegenlesen (E41): neu ist nur «Auf der Liste für den ersten Rundgang können Sie auch Mittel notieren, die Sie bevorzugen oder ausschliessen». Aus dem ersten Durchgang bleiben «passen wir die Einsätze an», «Makler und Verwaltungen können uns … beauftragen, auch kurzfristig».",
+    "status": "Kundenfrage",
+    "evidence": "E41/E56, luxusimmobilien",
+    "disposition": "Neue Details fachlich gegenlesen; keine öffentliche Preis- oder Terminverfügbarkeit als garantiert behaupten.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140476+00:00"
+  },
+  {
+    "id": "O070",
+    "owner": "premium-luxusimmobilien",
+    "original": "Lektorat EN, FR und IT durch Muttersprachler nach E50 und E72, besonders die neuen Sätze zur Gebrauchspatina und zu den Lackfronten.",
+    "status": "Kundenfrage",
+    "evidence": "E50/E72",
+    "disposition": "Neue Materialwörter und Tonalität durch Muttersprachler abzunehmen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140477+00:00"
+  },
+  {
+    "id": "O071",
+    "owner": "premium-luxusimmobilien",
+    "original": "Druckansicht der Materialtabelle bleibt auch mit fünf Zeilen bei zwei A4-Seiten. Eine Seite bräuchte eine kompaktere Druckschrift in globals.css (Fundament).",
+    "status": "aktuell",
+    "evidence": "app/globals.css",
+    "disposition": "Materialtabelle nach Vorlagenänderung in A4 neu prüfen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140478+00:00"
+  },
+  {
+    "id": "O072",
+    "owner": "premium-privatjet",
+    "original": "Kundenfrage (zu F5, für den Fragebogen an Brandea): Soll BGS der übernehmenden Person melden, was sich nicht entfernen liess (mündlich oder als Notiz)? Bis zur Antwort steht das nirgends auf der Seite.",
+    "status": "Kundenfrage",
+    "evidence": "F5, privatjet",
+    "disposition": "Meldung nicht entfernbarer Verschmutzung nicht als BGS-Prozess zugesagt.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140480+00:00"
+  },
+  {
+    "id": "O073",
+    "owner": "premium-privatjet",
+    "original": "Kundenfrage: Bietet BGS an Bord Pflege, Politur oder Imprägnierung an, wenn der Wartungsbetrieb das freigibt? Die Seite sagt heute nur «Wir reinigen» und nennt den Wartungsbetrieb als Entscheider.",
+    "status": "Kundenfrage",
+    "evidence": "privatjet FAQ",
+    "disposition": "Pflege/Politur/Imprägnierung ist nicht mit Reinigung gleichzusetzen. Leistungserweiterung offen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140481+00:00"
+  },
+  {
+    "id": "O074",
+    "owner": "premium-privatjet",
+    "original": "E18 bleibt vor dem Launch vom Kunden zu bestätigen: Die Liste «Nicht enthalten» (Toilettentanks und Frischwasser, Ausbau von Sitzen, Teppichen und Verkleidungen, Reparaturen) leite ich aus «nur Kabine» (E56 JET) ab.",
+    "status": "Kundenfrage",
+    "evidence": "E56 JET, privatjet.scope.notIncluded",
+    "disposition": "Ausschlüsse konservativ aus nur Kabine abgeleitet. Fachliche Bestätigung einholen, kein aktueller Beleg für falsche Zusage.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140482+00:00"
+  },
+  {
+    "id": "O075",
+    "owner": "premium-privatjet",
+    "original": "Die Kostenfrage nennt weiterhin «Einsätze abends oder am Wochenende» als Faktor. Die Prüfer haben das nicht beanstandet. Ob abends oder am Wochenende mehr verrechnet wird, ist nicht belegt. Der Integrator sollte entscheiden, ob der Satz bleibt.",
+    "status": "Vorschlag",
+    "evidence": "privatjet.faq Kosten",
+    "disposition": "Zeit als Aufwandfaktor ist nicht zwingend Zuschlagszusage. Zur Vermeidung dieser Lesart ist Kürzung eine sinnvolle Präzisierung.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140483+00:00"
+  },
+  {
+    "id": "O076",
+    "owner": "premium-privatjet",
+    "original": "E56 LEKTORAT: Die Materialkunde (FAA, WHO, Townsend, Duncan) vor dem Launch vom Kunden fachlich gegenlesen lassen.",
+    "status": "Kundenfrage",
+    "evidence": "E56 LEKTORAT",
+    "disposition": "Materialkunde sachlich quellengeprüft; BGS-Fachabnahme nicht ersetzen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140484+00:00"
+  },
+  {
+    "id": "O077",
+    "owner": "premium-privatjet",
+    "original": "Vorlage, nicht mein Bereich: RichText setzt Anker-Links [Text](#id) nicht um, deshalb verweisen die Fragen nur mit «Tabelle … oben».",
+    "status": "aktuell",
+    "evidence": "RichText.tsx LINK-RegExp",
+    "disposition": "Reine Hash-Links werden nicht erkannt, Pfad-plus-Hash funktioniert. Vorlage ergänzen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140485+00:00"
+  },
+  {
+    "id": "O078",
+    "owner": "premium-privatjet",
+    "original": "Der Druckkopf der Werkzeuge nennt «BGS - Gebäudeservice GmbH», der Seitentitel aber «Clavea von Mantena». Das kommt aus der Vorlage und betrifft alle druckbaren Werkzeuge.",
+    "status": "erledigt",
+    "evidence": "werkzeug.tsx company.legalName, E37",
+    "disposition": "GmbH als Aussteller und Marke im Seitentitel sind korrekt; rechtliche Firma darf neben Marke erscheinen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140486+00:00"
+  },
+  {
+    "id": "O079",
+    "owner": "premium-privatjet",
+    "original": "Die Doppelungen sind gegen den alten Stand der anderen Seiten gemessen. Nach dem Zusammenführen mit Luxusimmobilien und Yacht erneut mit doppelungen.py messen.",
+    "status": "aktuell",
+    "evidence": "../tools/doppelungen.py",
+    "disposition": "Nach Integration aller Premiumtexte neu messen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140487+00:00"
+  },
+  {
+    "id": "O080",
+    "owner": "premium-yacht",
+    "original": "Rückfrage an den Kunden (E70-Fragebogen), falls gewünscht: Gehören Beschläge aus Edelstahl und Fenster aus Acrylglas ausdrücklich zum Leistungsumfang? E41 nennt nur Teak, Gelcoat und Polster. Bis dahin steht der Umfang wie im Bestand.",
+    "status": "Vorschlag",
+    "evidence": "E40/13 Nischen6, yacht.scope",
+    "disposition": "Stainless/Edelstahl wird bereits im bestätigten Nischenbrief erwähnt. Expliziter Leistungsumfang bleibt wie Bestand, keine neue Pflichtfrage für unveränderten Text.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140490+00:00"
+  },
+  {
+    "id": "O081",
+    "owner": "premium-yacht",
+    "original": "Rückfrage an den Kunden, falls gewünscht: Dürfen Skipper oder Hafenmeister Termine vereinbaren, und geht die Offerte auf Wunsch an Dritte? Die Frage ist bis zur Bestätigung gestrichen.",
+    "status": "Kundenfrage",
+    "evidence": "yacht FAQ/Checkliste",
+    "disposition": "Berechtigung Dritter zur Beauftragung/Offertempfänger nicht behauptet. Nur bei gewünschter Erweiterung nötig.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140491+00:00"
+  },
+  {
+    "id": "O082",
+    "owner": "premium-yacht",
+    "original": "Neuer Checklistenpunkt «Alarmanlage an Bord, falls vorhanden»: Er fragt nur Angaben beim Kunden ab und stützt sich auf E41 (Regeln für Schlüssel und Alarm). Bitte beim Gegenlesen mitprüfen.",
+    "status": "erledigt",
+    "evidence": "E41 Regeln Schlüssel/Alarm, yacht.checklist",
+    "disposition": "Alarmanlage falls vorhanden ist eine Kundenangabe, keine neue Sicherheitszusage.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140492+00:00"
+  },
+  {
+    "id": "O083",
+    "owner": "premium-yacht",
+    "original": "Fragenbereich bei 1440 px: Mit 6 zugeklappten Fragen endet die rechte Spalte rund 230 px vor dem Bild und den Knöpfen links. Das kommt aus der Vorlage (06-fragen.tsx) und gilt für alle Seiten mit wenigen Fragen. Eine siebte Frage hätte nur Inhalte aus Tabelle und Kalender wiederholt.",
+    "status": "Vorschlag",
+    "evidence": "06-fragen.tsx",
+    "disposition": "Unterschiedliche Spaltenhöhe ist ein Gestaltungsbefund niedriger Priorität, keine fehlende siebte Frage erfinden.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140493+00:00"
+  },
+  {
+    "id": "O084",
+    "owner": "premium-yacht",
+    "original": "Die Vorlage werkzeug-checkliste.tsx lässt bei einer ungeraden Gruppenzahl eine leere Zelle. Mein Vorschlag an den Integrator für alle Seiten: Die letzte ungerade Gruppe läuft über beide Spalten.",
+    "status": "aktuell",
+    "evidence": "werkzeug-checkliste.tsx",
+    "disposition": "Letzte ungerade Gruppe kann ganze Zeile nutzen; niedrige Layoutkorrektur.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140494+00:00"
+  },
+  {
+    "id": "O085",
+    "owner": "premium-yacht",
+    "original": "Nicht meine Datei: content/it/hero.ts '/premium/yacht' schreibt «La sua barca» klein. Die Höflichkeitsform verlangt «Sua».",
+    "status": "aktuell",
+    "evidence": "content/it/hero.ts",
+    "disposition": "La sua barca verletzt projektweite Höflichkeitskonvention. Weitere sua-Stellen ebenfalls vereinheitlichen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140495+00:00"
+  },
+  {
+    "id": "O086",
+    "owner": "premium-yacht",
+    "original": "Weiter offen aus dem ersten Durchgang: Platzhalter im Kontaktformular auf Premium-Seiten («Anzahl Wohnungen», SwissFooter), französischer Titel mit Arbeitsmarke genau 70 Zeichen, Quelle Kehrsiten auf jimcontent.com, fachliches Gegenlesen der Herstellerhinweise durch den Kunden (E56) und muttersprachliche Abnahme en/fr/it (E50, E72), doppelungen.py nach dem Zusammenführen mit Privatjet und Luxusimmobilien erneut laufen lassen.",
+    "status": "Kundenfrage",
+    "evidence": "Premium-Kontakt, E50/E72",
+    "disposition": "Wohnungsplatzhalter ist aktueller UI-Fix; Titel70 gültig, Hafen-PDF aktuell lesbar. Fach-/Muttersprachlerabnahme bleibt offen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140496+00:00"
+  },
+  {
+    "id": "O087",
+    "owner": "kantone",
+    "original": "Neue Dateien client/src/components/MapLabels.tsx und map-labels.ts gehören zu CantonMap (Kollisionsregel), stehen aber nicht wörtlich in der Dateihoheit. Integrator bitte bestätigen, ebenso den Ordner client/src/seiten/einzugsgebiet/ aus Runde 1.",
+    "status": "erledigt",
+    "evidence": "CantonMap, MapLabels, seiten/einzugsgebiet",
+    "disposition": "Dateien integriert und zugeordnet. Historischer Eigentumsabgleich erledigt.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140497+00:00"
+  },
+  {
+    "id": "O088",
+    "owner": "kantone",
+    "original": "N6 bleibt eine Abweichung von der Dateihoheit: client/src/seiten/leistung/gebiet.tsx und 2 Zeilen in leistung/07-verwandt.tsx (Fundament). Kein agent/*-Zweig ändert diese Dateien, git merge-tree ist mit allen 18 Zweigen konfliktfrei.",
+    "status": "erledigt",
+    "evidence": "leistung/gebiet.tsx, 07-verwandt.tsx",
+    "disposition": "Welle2 integriert. Kein offener Mergekonflikt im Hauptstand.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140498+00:00"
+  },
+  {
+    "id": "O089",
+    "owner": "kantone",
+    "original": "Offene Kundenfrage (K-F5, als F-Frage vormerken): Lassen sich mehrere Standorte eines Unternehmens in einem Vertrag mit einer Ansprechperson bündeln? Bis zur Antwort nennen die Zug-Texte nur die Bündelung der Leistungen eines Objekts.",
+    "status": "Kundenfrage",
+    "evidence": "K-F5, Zug-FAQ, facility-services",
+    "disposition": "Standortübergreifender Vertrag bleibt offen, Zug nennt bewusst nur Bündelung je Objekt.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140499+00:00"
+  },
+  {
+    "id": "O090",
+    "owner": "kantone",
+    "original": "Karte: Bei sehr schmalen Karten (rund 350 bis 365 px: Startseite mobil, /einzugsgebiet bei 1024 px) steht Sarnen nur als Punkt, weil jeder Platz für den Namen ein Kürzel oder den Namen Stans verdecken würde. Auf /premium steht Weggis jetzt unter dem Punkt, Zug links mit versetztem Kürzel ZG. Die Startseiten-Agentin kann ihre pins-Liste prüfen.",
+    "status": "Vorschlag",
+    "evidence": "CantonMap/MapLabels",
+    "disposition": "Unterdrücktes Sarnen-Label auf enger Karte ist bewusste Kollisionsvermeidung; Quelle bleibt zugänglich.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140500+00:00"
+  },
+  {
+    "id": "O091",
+    "owner": "kantone",
+    "original": "content/<sprache>/hero.ts (Fundament): Die Heldenzeilen von Zug und Aargau nennen den Kanton weiterhin nicht. Die Zug-Heldenzeile nennt als einzige Stelle neben der Planungs-Checkliste noch die Sprachen.",
+    "status": "aktuell",
+    "evidence": "content/*/hero.ts",
+    "disposition": "Zug und Aargau sollten Kanton nennen. Kein falscher Ort, niedrige Klarheitskorrektur.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140501+00:00"
+  },
+  {
+    "id": "O092",
+    "owner": "kantone",
+    "original": "K4 (recht.ts, Agent Kontakt): Die Datenschutzerklärung muss die Karte nach Klick auch auf /einzugsgebiet nennen.",
+    "status": "erledigt",
+    "evidence": "content/*/recht.ts, einzugsgebiet/05-sitz.tsx",
+    "disposition": "Datenschutz nennt Kontakt und Einzugsgebiet, ConsentMap ist auf Einzugsgebiet vorhanden.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140502+00:00"
+  },
+  {
+    "id": "O093",
+    "owner": "kantone",
+    "original": "Übersetzungen EN, FR und IT sind nach E72 noch muttersprachlich abzunehmen, besonders die Feiertagsnamen, «Nicolas de Flüe / Nicholas of Flüe / Nicolao della Flüe», «customary days off», «giorni semifestivi», «jours assimilés à des jours fériés».",
+    "status": "Kundenfrage",
+    "evidence": "E72, kantone.ts",
+    "disposition": "Feiertagsnamen fachlich plausibel, muttersprachliche Stilabnahme bleibt offen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140503+00:00"
+  },
+  {
+    "id": "O094",
+    "owner": "kantone",
+    "original": "Die Quelle zum Arbeitsgesetz verlinkt in EN die deutsche Fassung, weil Fedlex für SR 822.11 keine englische Fassung führt (per SPARQL geprüft). Das OR ist in EN auf Englisch verlinkt.",
+    "status": "erledigt",
+    "evidence": "content/en/kantone.ts quellen.arg",
+    "disposition": "Deutscher ArG-Text gekennzeichnet, OR auf Englisch vorhanden.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140505+00:00"
+  },
+  {
+    "id": "O095",
+    "owner": "kantone",
+    "original": "Für ortsübliche Kündigungstermine in Luzern, im Aargau und in Nidwalden gibt es weiterhin keine Primärquelle. Deshalb steht dort nur Art. 266c OR. Die Aussage aus Audit-Baustein 7.1.1, Luzern kenne keine ortsüblichen Termine, bleibt unbelegt und wird nicht verwendet.",
+    "status": "erledigt",
+    "evidence": "kantone.ts LU/AG/NW",
+    "disposition": "Keine unbelegte lokale Kündigungsterminliste. Gesetz und zuständige Stelle korrekt genannt.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140506+00:00"
+  },
+  {
+    "id": "O096",
+    "owner": "kantone",
+    "original": "ow.ch lehnte WebFetch ab (ECONNREFUSED). Die Seite habe ich per curl geladen und die Kündigungstermine daraus zitiert. Die Kopie liegt unter scratchpad/welle2/kantone/runde2/ow2131.html.",
+    "status": "erledigt",
+    "evidence": "S027.txt",
+    "disposition": "ow.ch jetzt live lesbar, Ende März/Juni/September und Mindestfristen bestätigt.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140507+00:00"
+  },
+  {
+    "id": "O097",
+    "owner": "kantone",
+    "original": "Die Prüfkette lief nur mit NEW_BRAND=true. Der Arbeitsmarken-Modus ist nicht separat gebaut. Die Änderungen enthalten keine Markennamen.",
+    "status": "aktuell",
+    "evidence": "Schlussprüfkette beide Modi",
+    "disposition": "Historischer Welle2-Modus durch Integration-alt geprüft; Welle3 benötigt neuen Nachweis beider Modi.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140508+00:00"
+  },
+  {
+    "id": "O098",
+    "owner": "startseite",
+    "original": "S2 offenes Ziel: /leistungen mobil 15 080 px (17,9 Bildschirme, EN 17,6, FR 18,3, IT 17,6), das Ziel «halbieren» wäre rund 10 800 px. Ausserhalb meiner Dateien liegen rund 5 600 px: Fragenblock 1 359, Kontaktbereich 2 663, Footer 1 600. Nächste Hebel für den Integrator: .subnav--sticky in globals.css aus der lg-Klammer lösen (mobil klebende Abschnittsleiste), FaqBlock mobil ohne Bild vor den Fragen (visuell.md Umbau 1), Bildband im Kontaktbereich nur auf /kontakt (Umbau 3), Footer-Akkordeon unter 640 px.",
+    "status": "aktuell",
+    "evidence": "leistungen Übersicht/Shared Components",
+    "disposition": "Mobile Kompaktierung notwendig. Alte 15080px werden nur als Ausgangswert geführt.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140509+00:00"
+  },
+  {
+    "id": "O099",
+    "owner": "startseite",
+    "original": "S-F03 an den Integrator: Die Vorlage T5 in 25-AUDIT/seo.md nennt «mit Sitz in Emmenbrücke LU». Laut UID-Register und Impressum ist der Sitz aber Emmen. In meinen Blöcken steht jetzt company.seat. Wer T5 oder die description aus T7 anderswo übernimmt, sollte das ebenfalls tun.",
+    "status": "erledigt",
+    "evidence": "seiten.home.profile, company.seat",
+    "disposition": "Startseite nutzt Emmen. Historische Auditvorlage keine live falsche Anschrift; Navigation separat O113.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140510+00:00"
+  },
+  {
+    "id": "O100",
+    "owner": "startseite",
+    "original": "Anker auf Werkzeuge anderer Zweige nach der Zusammenführung prüfen. Die ids habe ich am aktuellen Stand der Zweige nachgesehen, heute stimmen sie. Die Gartenpflege hat in ihrer Runde 2 unkraut-ohne-gift in spritzmittelverbot umbenannt; wird die id wieder geändert, bricht mein Link aus dem Jahresplan. Die Anker: /leistungen/aussen-und-gruenflaechenpflege#pflegekalender und #spritzmittelverbot, /leistungen/hauswartung#pflichtenheft, /leistungen/bueroreinigung#leistungsverzeichnis, /premium/luxusimmobilien#materialkunde, /leistungen/umzugsreinigung#kuendigungstermine.",
+    "status": "erledigt",
+    "evidence": "content tools.ids, Jahresplan/Ratgeberlinks",
+    "disposition": "Alle genannten Ziel-IDs im Basissnapshot vorhanden; finale Browserankerprüfung nach Vorlage bleibt nötig.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140511+00:00"
+  },
+  {
+    "id": "O101",
+    "owner": "startseite",
+    "original": "S9 Restpunkt: Die Karten der Jahresplan-Schiene sind jetzt so hoch wie ihr Inhalt. Die Schiene selbst bleibt so hoch wie die längste Karte (472 px, «Rund um Kündigungstermine»). Unter kürzeren Karten steht deshalb Weissraum ausserhalb der Karte. Eine senkrechte Liste würde die Seite mobil um etwa 1 000 px verlängern, darum habe ich sie nicht gewählt.",
+    "status": "Vorschlag",
+    "evidence": "startseite/schiene.tsx",
+    "disposition": "Höhe der Schiene folgt grösster Karte; alternative Darstellung wäre UX-Abwägung, kein fehlender Inhalt.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140512+00:00"
+  },
+  {
+    "id": "O102",
+    "owner": "startseite",
+    "original": "Die kleinere Schrift der IT-Reiter liegt an der Untergrenze der Hausregel: bei 360 px 12,6 px, ab etwa 400 px 14 px (Reiter «Amministrazioni»). Bei E72 soll das Lektorat prüfen, ob «Gerenze» (in der Deutschschweiz und im Tessin übliches Wort für Liegenschaftsverwaltung) auf der ganzen Website besser passt.",
+    "status": "Kundenfrage",
+    "evidence": "E72, IT Zielgruppenreiter",
+    "disposition": "Amministrazioni ist verständlich; Gerenze optionaler Stilentscheid, Schriftgrösse separat UX.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140513+00:00"
+  },
+  {
+    "id": "O103",
+    "owner": "startseite",
+    "original": "Offen aus dem ersten Durchgang: «24 Stunden» steht dreimal in geteilten Bausteinen (FaqBlock, Kontaktbereich). Ungenutzte Typen AudienceKey und Audience sowie veraltete Kommentare zu offerSteps und faq in seiten.ts. proof-Beschriftung «Mitarbeitende» wirkt auch auf Über uns. TrustStrip ist unter 480 px einspaltig. 06, 08 und FORTSCHRITT nachführen. Die Übersetzungen sind nicht muttersprachlich abgenommen (E50, E72).",
+    "status": "aktuell",
+    "evidence": "Shared Kontakt/FAQ, Doku",
+    "disposition": "Antwortzeitwiederholung und Doku von aktuellen Shared-Fixes abhängig. Tote Typen sind Wartung, keine Geschäftsblockade.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140515+00:00"
+  },
+  {
+    "id": "O104",
+    "owner": "startseite",
+    "original": "Die Doppelungswerte der eigenen Arbeitskopie (Startseite DE 9,2 %) enthalten Treffer auf alte Nachbarfassungen, die die Agenten schon ersetzt haben. Massgeblich ist die Messung nach der Integration, im Zusammenbau DE 7,9 %. Übrig ist ein bewusster Treffer: Die Grenze zu Mietern einzelner Wohnungen steht wörtlich wie in Umzugs- und Sonderreinigung, weil S-F02 genau diesen Wortlaut verlangt.",
+    "status": "aktuell",
+    "evidence": "../tools/doppelungen.py",
+    "disposition": "Integrationswerte neu ermitteln; bewusster Ausschluss der Mieter darf wiederkehren.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140516+00:00"
+  },
+  {
+    "id": "O105",
+    "owner": "premium-uebersicht",
+    "original": "Wirkung auf /leistungen, an den Integrator und den Agenten «Startseite und Übersicht» (PU-1): client/src/seiten/leistungen-uebersicht/06-premium.tsx liest premiumOverview.offers[].text und die Zusagen teams, diskret und zeiten. Seit c2fee97 stehen dort neue Texte, etwa «laufend oder vor einem Anlass», «zwischen zwei Flügen», «Innenraum und Deck» und «betreut immer dasselbe Team». In diesem Durchgang haben sich auf /leistungen zusätzlich die französische Zusage teams und offers[2].text in FR und IT geändert. Die Karten zeigen weiter den allgemeinen Link ui.toService. Für N7 sollte dort offer.link stehen.",
+    "status": "aktuell",
+    "evidence": "leistungen-uebersicht/06-premium.tsx",
+    "disposition": "Allgemeiner ui.toService-Link statt individueller offer.link-Texte noch vorhanden.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140517+00:00"
+  },
+  {
+    "id": "O106",
+    "owner": "premium-uebersicht",
+    "original": "Die steps.premiumAnfrage und steps.premiumRundgang in content/*/common.ts nutzt nach PU-1 niemand mehr. Der Integrator kann sie entfernen, ich habe common.ts nicht angefasst.",
+    "status": "erledigt",
+    "evidence": "content/*/common.ts",
+    "disposition": "premiumAnfrage und premiumRundgang sind bereits entfernt.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140519+00:00"
+  },
+  {
+    "id": "O107",
+    "owner": "premium-uebersicht",
+    "original": "/kontakt (Datei von Kontakt und Formular, seiten.ts:257): «geht direkt an den Geschäftsführer» widerspricht der Datenschutzerklärung, solange die eigene Adresse nicht aktiv ist (E15, E31, M58). Das ist dieselbe Unstimmigkeit wie PU-FR-01.",
+    "status": "erledigt",
+    "evidence": "seiten.contact.lead",
+    "disposition": "Direkt an Geschäftsführer steht im Hauptstand nicht mehr. Persönliches Lesen ist R5d und Weiterleitung nicht logisch ausgeschlossen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140520+00:00"
+  },
+  {
+    "id": "O108",
+    "owner": "premium-uebersicht",
+    "original": "Hero-Zeile /premium in content/*/hero.ts (Fundament): Sie sagt «Immer dasselbe Team» und ist damit die dritte Stelle zum festen Team. Im IT ist «sua» dort klein geschrieben.",
+    "status": "aktuell",
+    "evidence": "hero.ts, premiumOverview",
+    "disposition": "Immer dasselbe Team und italienisches sua aktualisieren; E41 erlaubt feste Teams, nicht unbedingte Vertretungsgarantie.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140521+00:00"
+  },
+  {
+    "id": "O109",
+    "owner": "premium-uebersicht",
+    "original": "Globaler Kontaktbereich (Kontakt und Formular): Auf /premium stehen weiter «Wir besichtigen das Objekt vor Ort, kostenlos» und der Platzhalter «Anzahl Wohnungen».",
+    "status": "aktuell",
+    "evidence": "nav.contactForm, SwissFooter",
+    "disposition": "Premium zeigt allgemeine Objektbesichtigung und Wohnungsgrösse; kontextspezifisch formulieren.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140523+00:00"
+  },
+  {
+    "id": "O110",
+    "owner": "premium-uebersicht",
+    "original": "Vor der Veröffentlichung (E18, E72): Die neue Frage «Muss ich einen laufenden Auftrag vergeben? Nein …» stützt sich auf den Bestand («regelmässig oder vor besonderen Anlässen», Privatanlässe, Makler kurzfristig). Beim Gegenlesen der Premium-Seiten sollte der Kunde das bestätigen. Die Übersetzungen EN, FR und IT brauchen noch das Lektorat nach E72.",
+    "status": "Kundenfrage",
+    "evidence": "E40/E41, premiumOverview.faq",
+    "disposition": "Einzeleinsatz aus bestätigten Anlässen plausibel; neue Formulierungen Fach-/Sprachabnahme.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140524+00:00"
+  },
+  {
+    "id": "O111",
+    "owner": "ueber-uns",
+    "original": "Frage an Brandea (UU-01, beide Prüfer; wegen E18 und E70 als Punkt im Fragebogen): Worauf bezieht sich «seit 2006»? Möglich sind die Erfahrung des Inhabers, ein Vorgängerbetrieb (etwa eine Einzelfirma) oder etwas anderes. Keine Erklärung erfinden. Hintergrund: Zefix nennt für die GmbH eine frühere Firma ohne Bezug zur Reinigung, der jüngste SHAB-Eintrag ist vom 20.11.2012, die MWST-Pflicht besteht laut UID-Register ab 01.01.2013. Nach der Antwort Zefix und den HR-Auszug Luzern wieder in der Tabelle verlinken (Kommentar über check in content/*/seiten.ts). Der Profilsatz T5 für die Startseite (seo.md) nennt Firma und «seit 2006» im selben Absatz. Das betrifft den Startseiten-Agenten genauso.",
+    "status": "erledigt",
+    "evidence": "11 R6a:65, E58",
+    "disposition": "Frühere Einzelfirma seit 2006 ausdrücklich beantwortet, Kennzahlen schriftlich bestätigt. Keine erneute pauschale Frage nötig.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140526+00:00"
+  },
+  {
+    "id": "O112",
+    "owner": "ueber-uns",
+    "original": "An den Integrator oder den Besitzer von hero.ts (UU-04, Prüfer 2): Den Kurzsatz für /ueber-uns ohne Kennzahlen schreiben, denn die Zahlen stehen mit Stichtag im Steckbrief. Vorschlag DE «Reinigung und Hauswartung für Verwaltungen, Eigentümer und Unternehmen, von Emmenbrücke aus.», EN «Cleaning and caretaking for property managers, owners and businesses, based in Emmenbrücke.», FR «Nettoyage et conciergerie pour gérances, propriétaires et entreprises, depuis Emmenbrücke.», IT «Pulizia e custodia di stabili per amministrazioni, proprietari e aziende, da Emmenbrücke.»",
+    "status": "aktuell",
+    "evidence": "content/*/hero.ts ueber-uns",
+    "disposition": "Kennzahlen stehen mehrfach, kurzer zweckbezogener Hero sinnvoll.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140527+00:00"
+  },
+  {
+    "id": "O113",
+    "owner": "ueber-uns",
+    "original": "An den Integrator oder den Kontakt-Agenten (UU-05, Prüfer 2): In navigation.ts chrome.seat und den Footer-Satz «Sitz in Emmenbrücke» auf «Sitz in Emmen LU» umstellen oder die Adresse nennen. Rechtlich ist der Sitz Emmen, so steht es in Zefix (legalSeat) und im UID-Register (Gemeinde). Die Tabelle auf Über uns erklärt den Unterschied bereits.",
+    "status": "aktuell",
+    "evidence": "content/*/navigation.ts chrome.seat/footer",
+    "disposition": "Rechtssitz Emmen statt Postort Emmenbrücke, company.seat ist bereits korrekt.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140528+00:00"
+  },
+  {
+    "id": "O114",
+    "owner": "ueber-uns",
+    "original": "Zu UU-07 (Prüfer 1): «Ihre Anfrage bearbeitet der Geschäftsführer persönlich» trifft erst ganz zu, wenn Formular und angezeigte E-Mail von admin@brandea.de auf die Kundenadresse umgestellt sind (E15, E31, M58).",
+    "status": "erledigt",
+    "evidence": "R5d, datenschutz Kontaktabschnitt",
+    "disposition": "Persönliche Bearbeitung und technische Weiterleitung über Brandea können zugleich stimmen. Neutralisierung zulässig, aber kein bewiesener falscher Fakt.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140529+00:00"
+  },
+  {
+    "id": "O115",
+    "owner": "ueber-uns",
+    "original": "Wie im ersten Durchgang: about.promises in den Block home verschieben (startseite/06-zusagen.tsx gehört dem Startseiten-Agenten). Dann sinkt seite:about auf 3,8 % (DE), 4,6 % (EN), 4,6 % (FR) und 6,3 % (IT).",
+    "status": "erledigt",
+    "evidence": "ueber-uns/index.tsx, Startseite Sektionen",
+    "disposition": "about.promises ist im aktuellen Renderer ungenutzt. Sichtbare Doppelung damit widerlegt; toten Inhalt optional bereinigen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140530+00:00"
+  },
+  {
+    "id": "O116",
+    "owner": "ueber-uns",
+    "original": "Gemeinsame Komponente FigureGrid (IntroBand.tsx): Bei 360 px (Zelle 119 px breit) und bei 1024 bis 1279 px (Zelle 127 px) sind die Werte in 26 bis 32 px zu breit für eine Zeile, etwa «Seit 2006» oder «CHF 10 Mio.». Die Grösse sollte sich nach der Zellbreite richten. Das betrifft auch die Kennzahlen der Startseite.",
+    "status": "aktuell",
+    "evidence": "IntroBand.tsx FigureGrid",
+    "disposition": "Breitenabhängige Typografie separat bei 360/1024/1279 prüfen. Alte Pixelwerte kein aktueller Beweis.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140531+00:00"
+  },
+  {
+    "id": "O117",
+    "owner": "ueber-uns",
+    "original": "An den Premium-Agenten (optional, UU-05, Prüfer 1): /premium/privatjet hat keinen Block «Nicht Teil dieser Leistung». Der Hinweis auf Über uns verweist deshalb jetzt nur noch auf die Seiten unter /leistungen.",
+    "status": "erledigt",
+    "evidence": "premium/privatjet.ts scope.notIncluded",
+    "disposition": "Ausschlussliste ist im Hauptstand vorhanden; altes Fehlen widerlegt.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140532+00:00"
+  },
+  {
+    "id": "O118",
+    "owner": "ueber-uns",
+    "original": "Unverändert aus dem ersten Durchgang: local.ch und search.ch erst in «Nachprüfen» aufnehmen, wenn der Kunde Winterdienst und «24/7» dort entfernt hat. Die Importzeilen in content/{de,en,fr,it}/seiten.ts sind geändert, bei parallelen Änderungen an diesen Dateien sind kleine Merge-Konflikte möglich. Der offene Punkt zum HR-Auszug (Antwort 403) entfällt, weil der Link vorerst nicht mehr auf der Seite steht.",
+    "status": "Kundenfrage",
+    "evidence": "Verzeichnisse/Launch-Check",
+    "disposition": "Externe falsche Winterdienst-/24h-Angaben durch Kunden korrigieren; Nachprüfen verlinkt sie nicht.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140534+00:00"
+  },
+  {
+    "id": "O119",
+    "owner": "kontakt",
+    "original": "Rechtstext für Brandea (E22, E62, E70): Der Datenschutz-Abschnitt «Kontaktformular und E-Mail» nennt jetzt in 4 Sprachen auch «wer anfragt» und «Grösse». Zusammen mit dem Kartensatz (K4, Kontakt und Einzugsgebiet) vorlegen. Die EN-, FR- und IT-Fassungen sind Übersetzungen, massgebend bleibt Deutsch.",
+    "status": "erledigt",
+    "evidence": "content/*/recht.ts",
+    "disposition": "Wer anfragt, Grösse und beide Karten genannt. Faktische Anpassung vorhanden, kein aktuelles fehlendes Feld.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140536+00:00"
+  },
+  {
+    "id": "O120",
+    "owner": "kontakt",
+    "original": "Offene Kundenfrage zur Versicherung (K-E18-1): Deckt die Betriebshaftpflicht von BGS Schäden an bearbeiteten Sachen, also den Zusatz B17 «Obhuts- und Bearbeitungsschäden» der SVV-Musterbedingungen? Bis zum Beleg sagt /kontakt nur «Betriebshaftpflicht mit CHF 10 Mio.».",
+    "status": "Kundenfrage",
+    "evidence": "K-E18-1",
+    "disposition": "Deckung Obhuts-/Bearbeitungsschäden benötigt Police. Aktuelle Copy nennt nur bestätigte Deckungssumme.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140537+00:00"
+  },
+  {
+    "id": "O121",
+    "owner": "kontakt",
+    "original": "Gleiche Aussage auf einer anderen Seite (nicht meine Dateien): Über uns, content/de/seiten.ts Zeile 259, sagt «Für Schäden bei der Arbeit haben wir eine Betriebshaftpflichtversicherung …». Diese Aussage ist nach K-E18-1 nicht belegt, Block about gehört dem Über-uns-Agenten. EN, FR und IT dort sinngemäss prüfen.",
+    "status": "erledigt",
+    "evidence": "seiten.about.profile/work",
+    "disposition": "Beanstandeter Satz Schäden bei der Arbeit ist im aktuellen Hauptstand bereits entfernt, in vier Sprachen geprüft.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140538+00:00"
+  },
+  {
+    "id": "O122",
+    "owner": "kontakt",
+    "original": "ContactForm.tsx ist zwischen 1024 und 1279 px einspaltig. Das gilt für den Kontaktbereich jeder Seite, weil die Beispiele im Feld «Grösse» bei zwei Spalten nur 173 px Platz hatten. Die Karte reicht weiter bis zum Ende der Randspalte, auf /kontakt bleibt 0 px leer.",
+    "status": "Vorschlag",
+    "evidence": "ContactForm.tsx",
+    "disposition": "Einspaltigkeit1024 bis 1279 ist bewusste Abhilfe gegen zu schmale Felder. Kein Funktionsmangel ohne frischen Sichtbeleg.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140540+00:00"
+  },
+  {
+    "id": "O123",
+    "owner": "kontakt",
+    "original": "Neue Datei client/src/seiten/kontakt/anfrage-liste.tsx (Client-Komponente, einklappbare Liste). SwissFooter.tsx ordnet das Formular nur auf /kontakt (inline) unter 1024 px hinter die Randspalte, auf den anderen Seiten bleibt die Reihenfolge.",
+    "status": "erledigt",
+    "evidence": "kontakt/anfrage-liste.tsx, SwissFooter",
+    "disposition": "Komponente vorhanden; Kontaktseite eigene mobile Reihenfolge. Historischer Integrationshinweis erledigt.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140541+00:00"
+  },
+  {
+    "id": "O124",
+    "owner": "kontakt",
+    "original": "Weiter offen aus dem ersten Durchgang: K4-Kartensatz setzt ConsentMap auf /einzugsgebiet voraus. chrome.answer mit «24 Stunden» steht in der Kopfleiste ab 1280 px. Die Rolle steht in der E-Mail am Anfang der Nachricht (server/email.ts unverändert). Gate G3: sichtbare E-Mail ist admin@brandea.de. Beim Zusammenführen sind Textkonflikte neben home, about und area in seiten.ts und neben chrome.trust in navigation.ts möglich.",
+    "status": "Kundenfrage",
+    "evidence": "shared/company.ts, recht.ts, server/email.ts",
+    "disposition": "E-Mail admin bleibt Launch-Gate. K4 bereits erledigt, Rollenübernahme Bestandteil bestehender Formularprüfung.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140542+00:00"
+  },
+  {
+    "id": "O125",
+    "owner": "ratgeber",
+    "original": "Für den Integrator (R2): Die Artikel verlinken auf die Anker /leistungen/hauswartung#pflichtenheft und /leistungen/sonderreinigungen#bodenbelaege. Beide Anker gibt es erst mit agent/leistung-hauswartung (3b8b52b) und agent/leistung-sonderreinigungen (8ea9f2d). Im Basisstand führt der Link auf den Seitenanfang, der Linkprüfer ist grün. Beim Zusammenführen die Werkzeug-IDs beibehalten.",
+    "status": "erledigt",
+    "evidence": "hauswartung#pflichtenheft, sonderreinigungen#bodenbelaege",
+    "disposition": "Beide Werkzeug-IDs vorhanden, Ratgeber-Links stimmen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140543+00:00"
+  },
+  {
+    "id": "O126",
+    "owner": "ratgeber",
+    "original": "Für den Integrator (R1): Die Adressen der drei neuen Artikel lauten jetzt /blog/hauswartung-aufgaben, /blog/wohnungsabgabe-protokoll und /blog/bodenbelaege-reinigen, dazu die übersetzten Slugs in shared/i18n.ts. Kein anderer Zweig verlinkt die alten Adressen. Wo sie in Berichten, im Merge-Baum oder in 08-PRUEFNACHWEISE stehen, bitte ersetzen.",
+    "status": "erledigt",
+    "evidence": "content/*/seo.ts, shared/i18n.ts",
+    "disposition": "Drei neue Artikel-Adressen integriert; finale Route-Prüfung anderer Linse.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140544+00:00"
+  },
+  {
+    "id": "O127",
+    "owner": "ratgeber",
+    "original": "Für den Integrator (R13): In app/globals.css (Fundament, Zeile 817) hängt der Druck jede Link-Adresse als Text an. Vorschlag: html.print-tool [data-print-target] .tool-sources a::after { content: none } und kleinere Schrift für .tool-sources. Dann passen auch die pH-Tabelle und die Protokoll-Tabelle auf eine Seite, heute brauchen beide zwei.",
+    "status": "aktuell",
+    "evidence": "app/globals.css @media print",
+    "disposition": "URLs als Drucknachsatz entfernen und Quellen kompakt halten; Vorlagenaufgabe.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140545+00:00"
+  },
+  {
+    "id": "O128",
+    "owner": "ratgeber",
+    "original": "Für Brandea (R1): Der Themenplan in inhalt.md 10.1 (Suchfragen «pflichtenheft hauswartung», «wohnungsabgabe reinigung», «grundreinigung» für die Artikel) widerspricht der Zuordnung in 24-SEO-KEYWORDS.md. Ich bin 24 gefolgt: Die Hauptbegriffe bleiben auf den Leistungsseiten, die Artikel zielen auf die informativen Fragen. Bitte bestätigen oder anders entscheiden.",
+    "status": "Vorschlag",
+    "evidence": "24-SEO-KEYWORDS, ratgeber",
+    "disposition": "Informative Ratgeberfragen und Leistungs-Hauptbegriffe sind konsistente gewählte Zuordnung. Kein zwingendes neues Human-Gate.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140546+00:00"
+  },
+  {
+    "id": "O129",
+    "owner": "ratgeber",
+    "original": "Für den Integrator: Der Hero-Kurzsatz von /blog in content/*/hero.ts (Fundament) nennt die neuen Themen weiter nicht. Vorschlag wie im ersten Bericht.",
+    "status": "aktuell",
+    "evidence": "content/*/hero.ts blog",
+    "disposition": "Hero nennt neue Artikelthemen noch nicht.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140547+00:00"
+  },
+  {
+    "id": "O130",
+    "owner": "ratgeber",
+    "original": "Für den Integrator: Die Artikelvorlage importiert weiter Werkzeug aus client/src/seiten/leistung/werkzeug.tsx, und 03-leistungen.tsx liest seiten.servicesOverview.groups. Bei einer Umstellung dieser Stellen die Ratgeber-Seiten mitprüfen.",
+    "status": "erledigt",
+    "evidence": "artikel Werkzeugimport, servicesOverview.groups",
+    "disposition": "Importverwendung gültig und berücksichtigt. Kein inhaltlicher Fehler, Regression bei Vorlage prüfen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140548+00:00"
+  },
+  {
+    "id": "O131",
+    "owner": "ratgeber",
+    "original": "Für Brandea: F1, F2, F3 und F6 bleiben offen. F3 betrifft den GAV: Der Artikel sagt nichts darüber, ob BGS dem GAV untersteht. Die Mindestlöhne stehen ohne Beträge (inhalt.md 11.2.1).",
+    "status": "Kundenfrage",
+    "evidence": "F1/F2/F3/F6",
+    "disposition": "Qualität, Vertretung, GAV/PK und Geschäftsführer-Namensfreigabe bleiben echte Geschäftsfragen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140549+00:00"
+  },
+  {
+    "id": "O132",
+    "owner": "ratgeber",
+    "original": "Quelle für die Mindestlöhne kleiner Betriebe: ZPK und der GAV-Service der Unia (gav-service.ch/gav/185006). Die SECO-Seite zur eAVE war nicht erreichbar (404), der Bundesratsbeschluss ist nicht gelesen. Vor dem Launch am Beschlusstext prüfen, falls ein Bundesbeleg gewünscht ist.",
+    "status": "Vorschlag",
+    "evidence": "S105/S106/S108 ZPK/Unia",
+    "disposition": "GAV-Parteien/Paritätische Kommission sind Primärquellen. Bundesbeleg optional, keine unbekannte BGS-Unterstellung behauptet.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140550+00:00"
+  },
+  {
+    "id": "O133",
+    "owner": "ratgeber",
+    "original": "Fachliches Gegenlesen durch den Kunden (E56) empfohlen: pH-Tabelle, Pflichtenheft-Beispiel und die Einordnung der Nebenkosten nach dem Mieterverband.",
+    "status": "Kundenfrage",
+    "evidence": "E56, neue Material-/Nebenkostentexte",
+    "disposition": "Fachliches Gegenlesen bleibt Kundenabnahme, Quellenprüfung in dieser Runde getrennt belegt.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140552+00:00"
+  },
+  {
+    "id": "O134",
+    "owner": "ratgeber",
+    "original": "Übersetzungen EN, FR und IT bleiben Entwürfe zur Prüfung durch Muttersprachler (E50, E72).",
+    "status": "Kundenfrage",
+    "evidence": "E50/E72",
+    "disposition": "Muttersprachliche Freigabe vor Indexierung offen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140553+00:00"
+  },
+  {
+    "id": "O135",
+    "owner": "ratgeber",
+    "original": "Ausserhalb meiner Dateien nicht nachgeführt: 06-MASSNAHMEN-BACKLOG.md, 08-PRUEFNACHWEISE.md, FORTSCHRITT.md. Den Arbeitsmarken-Modus (NEW_BRAND=false) habe ich nicht eigens gebaut. Die Titel sind höchstens 48 Zeichen lang, mit der Arbeitsmarke also höchstens 69.",
+    "status": "aktuell",
+    "evidence": "06/08/FORTSCHRITT, Schlussprüfkette",
+    "disposition": "Doku und zwei Modi für Welle3 müssen frisch nachgeführt/geprüft werden.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140554+00:00"
+  },
+  {
+    "id": "O136",
+    "owner": "integrator",
+    "original": "Integrator (von mir): Die 6 gekürzten Titel sind eine Integrationslösung. SEO und Lektorat (E50, E72) können eine andere Kurzform wählen, sofern sie mit « | BGS Gebäudeservice» höchstens 70 Zeichen bleibt. In 25-AUDIT/keywords-mehrsprachig.md und seo.md (T1) stehen noch die langen Fassungen. Doku 06, 08 und FORTSCHRITT sind nicht nachgeführt (Wunsch von Industrie, Ratgeber und Startseite).",
+    "status": "aktuell",
+    "evidence": "seo.ts Titel und Doku",
+    "disposition": "Integrationskurztitel erfüllen Strategie, redaktionelle Alternative optional. Welle3-Dokumentation offen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140555+00:00"
+  },
+  {
+    "id": "O137",
+    "owner": "integrator",
+    "original": "Sammelpunkt Druck-CSS in app/globals.css (Vorlage), gemeldet von Unterhalt, Büro, Sonder, Umzug, Bau, Industrie, Hauswartung, Aussen (GA-05), Facility, Luxus und Ratgeber (R13). Mit Chromes Standardrand ist die Druckbreite etwa 718 px, also unter md. Viele Werkzeuge drucken dann auf 2 bis 3 Seiten. Vorschlag: @page { size: A4; margin: 10mm }, im Druck zwei Spalten für .tool-group, kleinere Schrift (etwa 0.875rem bzw. 10.5 bis 11 pt), engere Zellen und li. Dazu break-inside: avoid für Hinweis und Quellen, break-after: avoid für die Überschrift «Quellen» und .tool-sources a::after { content: none }. Getesteter Vorschlag des Bau-Agenten: welle2/baureinigung/runde2/druck_vorschlag.cjs (12 von 12 Druckansichten auf 1 Seite). Danach kann der Bau-Agent gekürzte Checklistenpunkte zurückholen.",
+    "status": "aktuell",
+    "evidence": "app/globals.css",
+    "disposition": "Sammelursache Druck. Einzelpunkte O001/O007/O019/O024/O037/O043/O051/O058/O071/O127.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140556+00:00"
+  },
+  {
+    "id": "O138",
+    "owner": "integrator",
+    "original": "leistung-unterhaltsreinigung: Formular-Variante für werkzeug-tabelle.tsx (mobil kompakte Liste mit Kästchen, Druckkopf mit Liegenschaft, Datum und Name). Ablauf ohne Bühne, eine Figur «reinigung» fehlt. EN «and beyond» nur global ändern. Die Kostenfrage bleibt als Doppelung bewusst stehen. Lektorat EN/FR/IT inkl. Art. 270b.",
+    "status": "aktuell",
+    "evidence": "Unterhalt: O001 bis O006",
+    "disposition": "Druck/Formularansicht aktuell; Figur und EN-Stil Vorschläge, Kostenfrage bewusst, Lektorat Kundenfrage.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140557+00:00"
+  },
+  {
+    "id": "O139",
+    "owner": "integrator",
+    "original": "leistung-bueroreinigung: Druck «Vertrauliche Räume» 2 Seiten (break-inside der .tool-group). Ein neues Motiv für «Räume und Zutritt» fehlt für die Bühne (Entscheid Integrator oder Bilder). Mobil 28,6 Bildschirme, kürzen nur in der Vorlage möglich. Lektorat Art. 10 Abs. 2 ArG. Druck nach Vorlagenänderung neu prüfen (druck-buero.cjs).",
+    "status": "aktuell",
+    "evidence": "Büro: O007 bis O012",
+    "disposition": "Druck/Mobil aktuell, Bühnenmotiv Vorschlag, Art10 aktuell belegt, Lektorat bleibt.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140558+00:00"
+  },
+  {
+    "id": "O140",
+    "owner": "integrator",
+    "original": "leistung-sonderreinigungen: Fachlesen durch den Kunden (E56): Material- und Schadentabelle, Ceruniq-Gewährleistung, Kriterium «ursprüngliche Farbe der Fugen». Begriff Sonder- oder Spezialreinigung bestätigen. S8: EN-Titel mit Zug (SEO). Offen: Adressen EN/FR/IT ohne Hauptbegriff, optionale 308 auf /leistungen/grundreinigung, Kantonslinks auf Umzugsreinigung (T3/H2), admin@brandea.de in shared/company.ts vor dem Launch. Werkzeugtyp text (Aushang) nicht druckbar.",
+    "status": "aktuell",
+    "evidence": "Sonder: O013 bis O017",
+    "disposition": "Fugenmassstab aktuell, Materialfachlesen Kundenfrage, Slugs Vorschlag, Links bereits korrigiert, E-Mail Gate.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140560+00:00"
+  },
+  {
+    "id": "O141",
+    "owner": "integrator",
+    "original": "leistung-umzugsreinigung: Frage an Brandea: Gilt die Abnahmegarantie bei Abnahme durch die Verwaltung (mit F5)? Kontakt-Agent B-U9: «Rhythmus» und «Startzeitpunkt» passen nicht zu Einmal-Leistungen. Kantone-Agent: Luzern-Seite abstimmen, Link auf #kuendigungstermine. Hinweiskasten für den Garantiesatz (03-einsatz.tsx) und Hero-Satz (hero.ts). H2 «Umzugs- und Wohnungsendreinigung» auf der Grundreinigungsseite. Lektorat. Info: EN- und IT-Titel des Werkzeugs geändert, id unverändert.",
+    "status": "aktuell",
+    "evidence": "Umzug: O018 bis O023",
+    "disposition": "Einmalformular und Hero aktuell, Garantie nach Verwaltungsauftrag Kundenfrage, Link/H2 optional, IDs vorhanden.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140561+00:00"
+  },
+  {
+    "id": "O142",
+    "owner": "integrator",
+    "original": "leistung-baureinigung: Druck-CSS (siehe Sammelpunkt). innerseitig.py für innerseitige Wiederholungen in die Prüfung aufnehmen. F5 und Fristen für Beanstandungen offen. Lektorat (FR-Titel, dépôt/deposito, nettoyage de reprise, FR-H1). SFV-ASVP ohne offiziellen EN/IT-Namen. facts[0] als «Für»-Zeile. Scrollstrecke unter der Bühne bei 1440 px (Vorlage).",
+    "status": "aktuell",
+    "evidence": "Bau: O024 bis O030",
+    "disposition": "Druck aktuell, innerseitige Prüfung vorhanden, Fristen/F5 und Muttersprachler offen, weitere Punkte Vorschläge.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140562+00:00"
+  },
+  {
+    "id": "O143",
+    "owner": "integrator",
+    "original": "leistung-fenster-und-fassadenreinigung: Druckkopf für Aushänge abschaltbar machen (werkzeug.tsx, drucken.tsx). Leerraum unter dem Formular bei 1440 px (ContactSection, Kontakt-Agent). Quellen bei Fragen einheitlich anzeigen? (Entscheid Integrator). F4 offen, VSA-Vollzugshilfe nicht erschienen, Suva 44033 nicht auf Englisch, keine Zuger Quelle zu Hubarbeitsbühnen. Lektorat.",
+    "status": "aktuell",
+    "evidence": "Fenster: O031 bis O035",
+    "disposition": "Textdruck/Kopf aktuell, F4 Kundenfrage, Quellenbrief visuell gelesen, Zug-Verweis korrekt.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140564+00:00"
+  },
+  {
+    "id": "O144",
+    "owner": "integrator",
+    "original": "leistung-industrie-und-hallenreinigung: IH-10: detail-industrie-hallen in shared/hero-images.ts neu wählen, heute Hero und Zickzack mit gleichem Motiv. Druck-CSS. Sprungziele #werkzeug-id werden von der festen Kopfzeile verdeckt (scroll-margin in der Vorlage fehlt). Knopf «Drucken» hängt von der Titellänge ab (werkzeug.tsx). K5: aargau.objekte[1] mit alten Maschinen-Sätzen (Kantone). Stecknadel-Symbol in ProcessScrolly. VUV ohne EN. Lektorat.",
+    "status": "aktuell",
+    "evidence": "Industrie: O036 bis O042",
+    "disposition": "Bild, Anker, Knopf, Maschinenwortlaut/Doku aktuell. VUV-EN korrekt, Lektorat offen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140565+00:00"
+  },
+  {
+    "id": "O145",
+    "owner": "integrator",
+    "original": "leistung-hauswartung: Druck-CSS (Checkliste 2 Seiten, Pflichtenheft 3). EN «Hauswartung» widerspricht der Wortliste in pruefen_i18n.cjs, heute «(Hauswart)». Entscheid, ob es eine Ausnahme gibt. Fachdurchsicht Art. 712g ZGB und Mieterverband-Sicht vor dem Launch. Mobil etwa 25'900 px, klappbare Karten nötig. doppelungen.py kennt nur deutsche Vertröstungsmuster. F7 offen. Hero-Kurzsatz ohne Zielgruppe und Ort.",
+    "status": "aktuell",
+    "evidence": "Hauswartung: O043 bis O050",
+    "disposition": "Druck/Mobil/Hero aktuell, Hauswart-Keyword Vorschlag, Sprachmuster inzwischen vorhanden, F7 offen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140568+00:00"
+  },
+  {
+    "id": "O146",
+    "owner": "integrator",
+    "original": "leistung-aussen-und-gruenflaechenpflege: GA-05 Druck (Quellen zusammenhalten, engere Zellen). Die id heisst jetzt spritzmittelverbot, das ist im Repo geprüft, Prüferskripte ausserhalb anpassen. Kundenfrage: arbeitet BGS generell ohne Spritzmittel (E18)? Hero-Kurzsatz (hero.ts). Hero-Knopf ui.offerCta neben dem Abschluss (Entscheid). Label in seo.ts bleibt. IT-BAFU-Seite nennt fälschlich 3 m (Hinweis an Kantone).",
+    "status": "aktuell",
+    "evidence": "Aussen: O051 bis O057",
+    "disposition": "Druck/Hero aktuell, ID und50 cm korrekt, Spritzmittelverzicht Kundenfrage, CTA/Label kein Fehler.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140570+00:00"
+  },
+  {
+    "id": "O147",
+    "owner": "integrator",
+    "original": "leistung-facility-services: Druck mit Rand: Tabelle 2 Seiten, Checkliste 3 Seiten (Vorlage). Mobil 21'903 px. E18 bestätigen: Umzugsreinigung in der Kombiliste, Leuchtmittel, mehrere Liegenschaften. VUV EN verlinkt den deutschen Text. Lektorat. Art. 58 OR auch auf Hauswartung, laut Messung aber unkritisch (Facility 1,5 %).",
+    "status": "aktuell",
+    "evidence": "Facility: O058 bis O063",
+    "disposition": "Druck/Mobil aktuell, zusätzlicher Rechtsbefund Probezeit. Kombination über Standorte und Lektorat offen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140571+00:00"
+  },
+  {
+    "id": "O148",
+    "owner": "integrator",
+    "original": "premium-luxusimmobilien: L2: Alt-Text szene-luxusimmobilien in bilder.ts nennt ein Mikrofasertuch, das widerspricht der Tabelle. Minimal «mit einem weichen Tuch» in 4 Sprachen, besser ein neues Motiv (Integrator oder Bilder). L7: Karten ohne premiumPageIcons in 07-verwandt.tsx brauchen ein Symbol oder einen Platzhalter. Hero-Satz «immer beim selben vertrauten Team» ersetzen, bis F2 beantwortet ist. Die Kartentitel der Umzugsreinigung kommen aus deren Label. Polster-Primärquelle fehlt. Kunde soll gegenlesen (E41). Druck Materialtabelle 2 Seiten.",
+    "status": "aktuell",
+    "evidence": "Luxus: O064 bis O071",
+    "disposition": "Alt-Text/Icon/Hero/Druck aktuell, Polsterquelle nur bei Erweiterung, Fach-/Sprachabnahme offen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140572+00:00"
+  },
+  {
+    "id": "O149",
+    "owner": "integrator",
+    "original": "premium-privatjet: Kundenfragen: Meldung nicht entfernbarer Verschmutzung (F5), Pflege und Politur an Bord, Liste «Nicht enthalten» (E18). Kostenfaktor «abends oder am Wochenende» nicht belegt, Entscheid Integrator. Materialkunde fachlich gegenlesen (E56). RichText kann keine Anker-Links [Text](#id). Druckkopf nennt die GmbH, der Seitentitel Clavea (Vorlage).",
+    "status": "aktuell",
+    "evidence": "Jet: O072 bis O079",
+    "disposition": "Hash-Linkfähigkeit aktuell, Meldung/Pflege/Ausschlüsse Fachfragen, Abendkostenformulierung Vorschlag. Druckkopf rechtlich korrekt.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140574+00:00"
+  },
+  {
+    "id": "O150",
+    "owner": "integrator",
+    "original": "premium-yacht: Kundenfragen: Edelstahl und Acrylglas im Umfang? Termine durch Skipper oder Hafenmeister? Punkt «Alarmanlage an Bord» gegenlesen. Fragen-Spalte endet bei 1440 px 230 px früher (06-fragen.tsx). werkzeug-checkliste.tsx: letzte ungerade Gruppe über beide Spalten. IT-Hero «La sua barca» auf «Sua» ändern (hero.ts). Platzhalter «Anzahl Wohnungen» im Premium-Formular. FR-Titel mit Arbeitsmarke genau 70 Zeichen (grün). Quelle Kehrsiten auf jimcontent.com. E56, E50, E72.",
+    "status": "aktuell",
+    "evidence": "Yacht: O080 bis O086",
+    "disposition": "Untere Gruppe/Höflichkeit/Kontakt aktuell. Neuer Gewässerschutzbefund. Hafenquelle verifiziert; Fremdbeauftragung optional offen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140575+00:00"
+  },
+  {
+    "id": "O151",
+    "owner": "integrator",
+    "original": "kantone: MapLabels.tsx, map-labels.ts und seiten/einzugsgebiet sind bestätigt: nur von CantonMap bzw. AreaView genutzt. N6 bestätigt: gebiet.tsx und 07-verwandt.tsx hat kein anderer Zweig geändert, kein Konflikt. Offen: K-F5 (mehrere Standorte in einem Vertrag). Sarnen auf schmalen Karten nur als Punkt (pins der Startseite prüfen). Heldenzeilen Zug und Aargau ohne Kanton (hero.ts). K4: Datenschutz muss die Karte auf /einzugsgebiet nennen (recht.ts, Kontakt). Lektorat der Feiertagsnamen. ArG EN nur deutsch. Ortsübliche Termine LU, AG, NW ohne Primärquelle. ow.ch per curl geladen. Arbeitsmarken-Modus jetzt durch integration-alt geprüft (grün).",
+    "status": "aktuell",
+    "evidence": "Kantone: O087 bis O097",
+    "disposition": "Dateihoheit integriert, Hero aktuell, K4 erledigt, lokale Fristen korrekt ohne erfundene Werte, Standortvertrag/Lektorat offen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140577+00:00"
+  },
+  {
+    "id": "O152",
+    "owner": "integrator",
+    "original": "startseite: S2: /leistungen mobil 15'080 px. Hebel: .subnav--sticky mobil, FaqBlock mobil ohne Bild, Bildband nur auf /kontakt, Footer-Akkordeon unter 640 px. S-F03: T5 nennt Sitz Emmenbrücke, rechtlich Emmen (company.seat). Anker nach der Integration geprüft: alle vorhanden. Schiene im Jahresplan hat Weissraum unter kürzeren Karten. IT-Reiter 12,6 px bei 360 px, «Gerenze» im Lektorat. Aus Runde 1: «24 Stunden» dreimal, ungenutzte Typen AudienceKey und Audience, alte Kommentare in seiten.ts, proof-Beschriftung, TrustStrip einspaltig unter 480 px, Lektorat.",
+    "status": "aktuell",
+    "evidence": "Start: O098 bis O104",
+    "disposition": "Mobil/Kontaktwiederholung und Doku aktuell. Sitz im Inhalt korrekt, Anker vorhanden, Schienenhöhe Vorschlag, Lektorat offen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140578+00:00"
+  },
+  {
+    "id": "O153",
+    "owner": "integrator",
+    "original": "premium-uebersicht: PU-1: leistungen-uebersicht/06-premium.tsx sollte offer.link statt ui.toService nutzen (Startseiten-Agent). /kontakt: «geht direkt an den Geschäftsführer» widerspricht dem Datenschutz, bis die Adresse umgestellt ist (E15, E31, M58). Hero /premium «Immer dasselbe Team», IT «sua» klein. Kontaktbereich auf /premium mit «kostenlos besichtigen» und «Anzahl Wohnungen». Neue Frage «laufender Auftrag» vom Kunden bestätigen lassen. Lektorat. Info: steps.premiumAnfrage und premiumRundgang sind entfernt (b6d3abb).",
+    "status": "aktuell",
+    "evidence": "Premium: O105 bis O110",
+    "disposition": "Linktext/Hero/Formular aktuell; direkt-GF-Behauptung bereits weg, alte Common-Schritte entfernt, Freigaben offen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140579+00:00"
+  },
+  {
+    "id": "O154",
+    "owner": "integrator",
+    "original": "ueber-uns: UU-01 an Brandea: Worauf bezieht sich «seit 2006»? Nichts erfinden, danach Zefix und HR-Auszug wieder verlinken. Das betrifft auch T5 der Startseite. UU-04: Kurzsatz /ueber-uns in hero.ts ohne Kennzahlen, Vorschläge in 4 Sprachen liegen vor. UU-05: chrome.seat und Footer auf «Sitz in Emmen LU» (navigation.ts, Kontakt oder Integrator). UU-07: «bearbeitet der Geschäftsführer persönlich» gilt erst nach der Adressumstellung. about.promises in den Block home verschieben. Das senkt auch «kostenlos und unverbindlich» auf Über uns von 2 auf 1 (heute über dem Ziel) und die Doppelung «Geschäftsführer persönlich». FigureGrid-Werte zu breit bei 360 und 1024 bis 1279 px. local.ch und search.ch erst nach der Korrektur durch den Kunden.",
+    "status": "aktuell",
+    "evidence": "Überuns: O111 bis O118",
+    "disposition": "2006 beantwortet, promises nicht gerendert. Hero/Sitz/FigureGrid aktuell, Registerkorrekturen externes Gate.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140581+00:00"
+  },
+  {
+    "id": "O155",
+    "owner": "integrator",
+    "original": "kontakt: Rechtstext für Brandea: Datenschutz «Kontaktformular und E-Mail» mit «wer anfragt» und «Grösse», zusammen mit dem Kartensatz K4 vorlegen. K-E18-1: Deckt die Haftpflicht Obhuts- und Bearbeitungsschäden (B17)? Der Satz auf Über uns (content/de/seiten.ts, Block about, «Betriebshaftpflichtversicherung … Schäden bei der Arbeit») ist bis dahin unbelegt, EN/FR/IT sinngemäss. ContactForm zwischen 1024 und 1279 px einspaltig. Neue Datei kontakt/anfrage-liste.tsx. chrome.answer «24 Stunden» ab 1280 px. Gate G3: sichtbare E-Mail admin@brandea.de. Die vorhergesagten Konflikte in seiten.ts sind aufgetreten und korrekt gelöst.",
+    "status": "Kundenfrage",
+    "evidence": "Kontakt: O119 bis O124",
+    "disposition": "Datenschutz und About-Haftpflichtsatz bereits erledigt; Versicherungsumfang/E-Mail Gate offen, Einspaltigkeit bewusster UX-Entscheid.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140582+00:00"
+  },
+  {
+    "id": "O156",
+    "owner": "integrator",
+    "original": "ratgeber: R1: neue Adressen /blog/hauswartung-aufgaben, /blog/wohnungsabgabe-protokoll, /blog/bodenbelaege-reinigen. Alte Slugs kommen im Repo nicht mehr vor, in Berichten ausserhalb des Repos ggf. ersetzen. R2: Anker pflichtenheft und bodenbelaege sind vorhanden. R13: Druck ohne URL hinter Links (Sammelpunkt Druck). Themenplan inhalt.md 10.1 widerspricht 24-SEO-KEYWORDS, Brandea soll bestätigen. Hero /blog ohne neue Themen. Artikelvorlage importiert werkzeug.tsx und liest servicesOverview.groups. F1, F2, F3 (GAV) und F6 offen. Mindestlöhne ohne SECO- oder Bundesbeleg. Fachlesen pH-Tabelle (E56). Lektorat. Arbeitsmarken-Modus jetzt durch integration-alt geprüft (grün).",
+    "status": "aktuell",
+    "evidence": "Ratgeber: O125 bis O135",
+    "disposition": "Adressen/Anker korrekt, Druck/Hero/Doku aktuell; Themenzuordnung und zusätzlicher Bundesbeleg optional, F1 bis F3/F6/Fach-/Sprachabnahme offen.",
+    "baseline": "fc6a788",
+    "checkedAt": "2026-09-29T07:30:32.140583+00:00"
+  }
+]

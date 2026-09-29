@@ -1,0 +1,174 @@
+[
+  {
+    "linse": "de-A",
+    "umfang": "13 Leistungs-/Premiumseiten",
+    "seiten": 13,
+    "strings": 2202,
+    "gedankenstriche": 0,
+    "de_eszett": 0,
+    "methoden": [
+      "Schlüssel-/Strukturabgleich",
+      "Zahlen und Zeitangaben gegen DE und Primärtext",
+      "Terminologie, Zielgruppe, Zusagen, interne Linktexte, Höflichkeitsform risikobasiert manuell"
+    ],
+    "befunde": [
+      "INH-R1-01",
+      "INH-R1-02",
+      "INH-R1-04",
+      "INH-R1-07",
+      "INH-R1-08"
+    ],
+    "sprachliche_zusatzbefunde": [],
+    "grenze": "Kein Ersatz für muttersprachliche Freigabe E72; A/B in dieser Runde getrennt geprüft, nicht von grüner Typprüfung abgeleitet."
+  },
+  {
+    "linse": "de-B",
+    "umfang": "19 übrige Seiten plus geteilte Oberflächentexte",
+    "seiten": 19,
+    "strings": 2244,
+    "gedankenstriche": 0,
+    "de_eszett": 0,
+    "methoden": [
+      "Schlüssel-/Strukturabgleich",
+      "Zahlen und Zeitangaben gegen DE und Primärtext",
+      "Terminologie, Zielgruppe, Zusagen, interne Linktexte, Höflichkeitsform risikobasiert manuell"
+    ],
+    "befunde": [
+      "INH-R1-03",
+      "INH-R1-04",
+      "INH-R1-09"
+    ],
+    "sprachliche_zusatzbefunde": [],
+    "grenze": "Kein Ersatz für muttersprachliche Freigabe E72; A/B in dieser Runde getrennt geprüft, nicht von grüner Typprüfung abgeleitet."
+  },
+  {
+    "linse": "en-A",
+    "umfang": "13 Leistungs-/Premiumseiten",
+    "seiten": 13,
+    "strings": 2202,
+    "gedankenstriche": 0,
+    "de_eszett": null,
+    "methoden": [
+      "Schlüssel-/Strukturabgleich",
+      "Zahlen und Zeitangaben gegen DE und Primärtext",
+      "Terminologie, Zielgruppe, Zusagen, interne Linktexte, Höflichkeitsform risikobasiert manuell"
+    ],
+    "befunde": [
+      "INH-R1-01",
+      "INH-R1-02",
+      "INH-R1-04",
+      "INH-R1-07",
+      "INH-R1-08"
+    ],
+    "sprachliche_zusatzbefunde": [],
+    "grenze": "Kein Ersatz für muttersprachliche Freigabe E72; A/B in dieser Runde getrennt geprüft, nicht von grüner Typprüfung abgeleitet."
+  },
+  {
+    "linse": "en-B",
+    "umfang": "19 übrige Seiten plus geteilte Oberflächentexte",
+    "seiten": 19,
+    "strings": 2248,
+    "gedankenstriche": 0,
+    "de_eszett": null,
+    "methoden": [
+      "Schlüssel-/Strukturabgleich",
+      "Zahlen und Zeitangaben gegen DE und Primärtext",
+      "Terminologie, Zielgruppe, Zusagen, interne Linktexte, Höflichkeitsform risikobasiert manuell"
+    ],
+    "befunde": [
+      "INH-R1-03",
+      "INH-R1-04",
+      "INH-R1-09"
+    ],
+    "sprachliche_zusatzbefunde": [],
+    "grenze": "Kein Ersatz für muttersprachliche Freigabe E72; A/B in dieser Runde getrennt geprüft, nicht von grüner Typprüfung abgeleitet."
+  },
+  {
+    "linse": "fr-A",
+    "umfang": "13 Leistungs-/Premiumseiten",
+    "seiten": 13,
+    "strings": 2202,
+    "gedankenstriche": 0,
+    "de_eszett": null,
+    "methoden": [
+      "Schlüssel-/Strukturabgleich",
+      "Zahlen und Zeitangaben gegen DE und Primärtext",
+      "Terminologie, Zielgruppe, Zusagen, interne Linktexte, Höflichkeitsform risikobasiert manuell"
+    ],
+    "befunde": [
+      "INH-R1-01",
+      "INH-R1-02",
+      "INH-R1-04",
+      "INH-R1-07",
+      "INH-R1-08"
+    ],
+    "sprachliche_zusatzbefunde": [],
+    "grenze": "Kein Ersatz für muttersprachliche Freigabe E72; A/B in dieser Runde getrennt geprüft, nicht von grüner Typprüfung abgeleitet."
+  },
+  {
+    "linse": "fr-B",
+    "umfang": "19 übrige Seiten plus geteilte Oberflächentexte",
+    "seiten": 19,
+    "strings": 2248,
+    "gedankenstriche": 0,
+    "de_eszett": null,
+    "methoden": [
+      "Schlüssel-/Strukturabgleich",
+      "Zahlen und Zeitangaben gegen DE und Primärtext",
+      "Terminologie, Zielgruppe, Zusagen, interne Linktexte, Höflichkeitsform risikobasiert manuell"
+    ],
+    "befunde": [
+      "INH-R1-03",
+      "INH-R1-04",
+      "INH-R1-09"
+    ],
+    "sprachliche_zusatzbefunde": [],
+    "grenze": "Kein Ersatz für muttersprachliche Freigabe E72; A/B in dieser Runde getrennt geprüft, nicht von grüner Typprüfung abgeleitet."
+  },
+  {
+    "linse": "it-A",
+    "umfang": "13 Leistungs-/Premiumseiten",
+    "seiten": 13,
+    "strings": 2202,
+    "gedankenstriche": 0,
+    "de_eszett": null,
+    "methoden": [
+      "Schlüssel-/Strukturabgleich",
+      "Zahlen und Zeitangaben gegen DE und Primärtext",
+      "Terminologie, Zielgruppe, Zusagen, interne Linktexte, Höflichkeitsform risikobasiert manuell"
+    ],
+    "befunde": [
+      "INH-R1-01",
+      "INH-R1-02",
+      "INH-R1-04",
+      "INH-R1-07",
+      "INH-R1-08"
+    ],
+    "sprachliche_zusatzbefunde": [
+      "INH-R1-06"
+    ],
+    "grenze": "Kein Ersatz für muttersprachliche Freigabe E72; A/B in dieser Runde getrennt geprüft, nicht von grüner Typprüfung abgeleitet."
+  },
+  {
+    "linse": "it-B",
+    "umfang": "19 übrige Seiten plus geteilte Oberflächentexte",
+    "seiten": 19,
+    "strings": 2248,
+    "gedankenstriche": 0,
+    "de_eszett": null,
+    "methoden": [
+      "Schlüssel-/Strukturabgleich",
+      "Zahlen und Zeitangaben gegen DE und Primärtext",
+      "Terminologie, Zielgruppe, Zusagen, interne Linktexte, Höflichkeitsform risikobasiert manuell"
+    ],
+    "befunde": [
+      "INH-R1-03",
+      "INH-R1-04",
+      "INH-R1-09"
+    ],
+    "sprachliche_zusatzbefunde": [
+      "INH-R1-06"
+    ],
+    "grenze": "Kein Ersatz für muttersprachliche Freigabe E72; A/B in dieser Runde getrennt geprüft, nicht von grüner Typprüfung abgeleitet."
+  }
+]
