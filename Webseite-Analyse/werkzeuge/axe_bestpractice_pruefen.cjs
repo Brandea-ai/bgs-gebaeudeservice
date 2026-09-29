@@ -26,6 +26,8 @@ const errors=[];
     while(queue.length){
       const task=queue.shift();
       await page.setViewportSize({width:task.width,height:task.height});
+      // Lokaler Next15-Optimierer: keine kalten Resize-Transforms durch goto abbrechen.
+      await page.waitForLoadState('networkidle');
       const pageErrors=[];
       const listener=e=>pageErrors.push(String(e));
       page.on('pageerror',listener);
@@ -44,6 +46,7 @@ const errors=[];
       page.off('pageerror',listener);
       if(results.length%32===0) console.log('checked',results.length,'remaining',queue.length);
     }
+    await page.waitForLoadState('networkidle');
     await context.close();
   }
   await Promise.all([worker(),worker(),worker()]);
