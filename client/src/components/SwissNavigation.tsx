@@ -15,7 +15,6 @@ import { company, newBrandActive } from "../../../shared/company";
 import { navDicts } from "../../../content/navigation";
 import { activeLocales, languageNames, localizePath, type Locale } from "../../../shared/i18n";
 import type { PagePath } from "../../../shared/seo";
-import LanguageSwitcher from "./LanguageSwitcher";
 import { iconFor } from "./serviceIcons";
 import { AreaMegaPanel, AreaMobileGroup } from "./AreaMenu";
 import { FeatureMegaCard, PremiumMegaCard } from "./MegaCards";
@@ -407,20 +406,13 @@ export default function SwissNavigation({
               </div>
 
               <div className="flex items-center gap-2 sm:gap-3">
-                <a
-                  href={company.phone.href}
-                  className={`hidden items-center gap-2 px-3 py-2 text-[0.9375rem] font-medium tabular-nums text-ink transition-colors 2xl:inline-flex ${premiumPage ? "hover:text-brass-dark" : "hover:text-signal"}`}
-                >
-                  <Phone weight="duotone" className={`size-5 ${premiumPage ? "text-brass-dark" : "text-signal"}`} aria-hidden="true" />
-                  {company.phone.display}
-                </a>
                 {activeLocales.length > 1 && (
                   <select
                     data-nav-language
                     aria-label={languageSwitch}
                     value={lang}
                     onChange={event => window.location.assign(localizePath(current, event.target.value as Locale))}
-                    className="h-11 w-20 shrink-0 rounded-[3px] border border-line bg-transparent px-2 font-mono text-xs font-semibold text-ink md:hidden"
+                    className="h-11 w-20 shrink-0 cursor-pointer rounded-[3px] border border-line bg-transparent px-2 font-mono text-xs font-semibold text-ink"
                   >
                     {activeLocales.map(locale => (
                       <option key={locale} value={locale} aria-label={languageNames[locale]}>
@@ -429,22 +421,24 @@ export default function SwissNavigation({
                     ))}
                   </select>
                 )}
-                {/* Sprachen bleiben neben dem Telefon in der schwebenden Menüleiste. */}
-                <LanguageSwitcher
-                  lang={lang}
-                  path={current}
-                  label={languageSwitch}
-                  compact
-                  as="div"
-                  flags
-                  className="hidden shrink-0 md:block"
-                />
-                <Button asChild className={`arrow-link hidden sm:inline-flex ${ctaTone}`}>
-                  <a href={menu.cta.href} data-cta="kopf">
-                    {menu.cta.label}
-                    <ArrowRight weight="duotone" aria-hidden="true" />
-                  </a>
-                </Button>
+                <div data-nav-contact className="hidden shrink-0 items-center gap-2 sm:flex">
+                  <Button asChild variant="outline" className="w-11 px-0 2xl:w-auto 2xl:px-4">
+                    <a
+                      href={company.phone.href}
+                      aria-label={`${chrome.phone}: ${company.phone.display}`}
+                      className="tabular-nums"
+                    >
+                      <Phone weight="duotone" className={`size-5 ${premiumPage ? "text-brass-dark" : "text-signal"}`} aria-hidden="true" />
+                      <span className="hidden 2xl:inline">{company.phone.display}</span>
+                    </a>
+                  </Button>
+                  <Button asChild className={`arrow-link ${ctaTone}`}>
+                    <a href={menu.cta.href} data-cta="kopf">
+                      {menu.cta.label}
+                      <ArrowRight weight="duotone" aria-hidden="true" />
+                    </a>
+                  </Button>
+                </div>
                 <button
                   ref={toggle}
                   type="button"
@@ -470,14 +464,12 @@ export default function SwissNavigation({
               >
                 <div className="grid gap-7 p-5 md:grid-cols-2 md:gap-10 md:p-8">
                   <div className="space-y-6">
-                    <LanguageSwitcher
-                      lang={lang}
-                      path={current}
-                      label={languageSwitch}
-                      as="div"
-                      className="md:hidden"
-                    />
-                    <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-1">
+                    <div className="grid grid-cols-[auto_1fr] gap-2">
+                      <Button asChild size="lg" variant="outline" className="w-12 px-0">
+                        <a href={company.phone.href} aria-label={`${chrome.phone}: ${company.phone.display}`}>
+                          <Phone weight="duotone" aria-hidden="true" />
+                        </a>
+                      </Button>
                       <Button asChild size="lg" className={`arrow-link w-full ${ctaTone}`}>
                         <a
                           href={menu.cta.href}
@@ -486,12 +478,6 @@ export default function SwissNavigation({
                         >
                           {menu.cta.label}
                           <ArrowRight weight="duotone" aria-hidden="true" />
-                        </a>
-                      </Button>
-                      <Button asChild size="lg" variant="outline" className="w-full">
-                        <a href={company.phone.href} className="tabular-nums">
-                          <Phone weight="duotone" aria-hidden="true" />
-                          {company.phone.display}
                         </a>
                       </Button>
                     </div>

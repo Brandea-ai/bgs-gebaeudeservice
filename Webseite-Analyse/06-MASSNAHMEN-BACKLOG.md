@@ -297,3 +297,8 @@ Zuerst Produktions-/Datenrisiken und funktionskritische Probleme. Danach Positio
 ---
 
 **Quellen zu dieser Datei:** siehe 09-QUELLEN.md (S32 und die Quellen der verlinkten Befunde).
+
+
+### Nachtrag 29.09.2026: Sprachdropdown und Kontaktbuttons
+
+Gezielte Kopfzeilen-Nacharbeit umgesetzt: Sprachauswahl als Dropdown, Kontaktbuttons zusammenhängend. Kein neuer Auftrag zur übrigen Welle 3. Nachweis: `27-PRUEFLOOP/navigation-dropdown-2026-09-29.md`.

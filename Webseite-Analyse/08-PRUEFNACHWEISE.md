@@ -145,3 +145,8 @@ Ohne geeignetes Werkzeug oder Zugang: genaue Ersatzprüfung benennen und Status 
 ---
 
 **Quellen zu dieser Datei:** siehe 09-QUELLEN.md (S18).
+
+
+### Nachtrag 29.09.2026: Sprachdropdown und Kontaktbuttons
+
+Kopfzeilen-Nacharbeit geprüft: Produktionsbuild beider Markenmodi, je 128 Seiten, 20 responsive Ansichten und vier Sprachwechsel. Axe für die geänderte Kopfzeile ohne Verstöße. Belege und genaue Abgrenzung: `27-PRUEFLOOP/navigation-dropdown-2026-09-29.md`.

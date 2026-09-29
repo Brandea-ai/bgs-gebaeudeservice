@@ -175,3 +175,8 @@ Die ersten beiden Runden haben echte Fehler aufgedeckt und korrigiert: Druckumbr
 **Separate Launch-Punkte laut Übergabe und E72/E76:** eigene Domain und Canonicals, Weiterleitungen der bisherigen Domain, Kunden-E-Mail, Google-Unternehmensprofile, Markenprüfung/Markenschalter und muttersprachliche Abnahme vor Indexierung. Diese Sitzung schaltet weder `NEW_BRAND` noch `SITE_INDEXABLE` in Produktion ein. Die bestehende Produktion bleibt Arbeitsmarke mit vier Sprachen und noindex.
 
 Offene ergänzende Kundenauskünfte werden gesammelt; es werden keine neuen Zusagen daraus erfunden. Erfahrung seit 2006 ist durch die frühere Einzelfirma und E58 bereits belegt und wird nicht erneut als ungeklärte Behauptung behandelt. Chat bleibt bis zur separaten Modell-/Zugangsentscheidung deaktiviert.
+
+
+### Nachtrag 29.09.2026: Sprachdropdown und Kontaktbuttons
+
+Die Kopfzeile wurde auf ausdrücklichen Nutzerwunsch geändert: Sprachdropdown in allen Bildschirmgrößen, Telefon und Offerte als benachbarte Buttons. Einzelheiten und Prüfungen: `27-PRUEFLOOP/navigation-dropdown-2026-09-29.md`. Die übrige Arbeit bleibt pausiert.
