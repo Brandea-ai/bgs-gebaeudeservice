@@ -52,7 +52,7 @@ export default function Leistungsreihe({
 
   return (
     <>
-      <div className="print:hidden mb-3 flex min-h-11 items-center justify-between gap-3 sm:hidden">
+      <div className="[html:not(.js)_&]:hidden print:hidden mb-3 flex min-h-11 items-center justify-between gap-3 sm:hidden">
         <span className="inline-flex items-center gap-2 text-sm font-semibold text-ink-600">
           <HandSwipeRight
             weight="duotone"
@@ -97,7 +97,7 @@ export default function Leistungsreihe({
         id={id}
         ref={rail}
         onScroll={update}
-        className="relative max-sm:flex max-sm:snap-x max-sm:snap-mandatory max-sm:gap-4 max-sm:overflow-x-auto max-sm:pb-3 max-sm:[scrollbar-width:thin] max-sm:[&>article]:basis-[88%] max-sm:[&>article]:shrink-0 max-sm:[&>article]:snap-start max-sm:[&>article]:rounded-[3px] max-sm:[&>article]:border max-sm:[&>article]:border-line max-sm:[&>article]:px-4"
+        className="relative [html:not(.js)_&]:block [html:not(.js)_&]:overflow-visible [html:not(.js)_&]:snap-none max-sm:flex max-sm:snap-x max-sm:snap-mandatory max-sm:gap-4 max-sm:overflow-x-auto max-sm:pb-3 max-sm:[scrollbar-width:thin] max-sm:[&>article]:basis-[88%] max-sm:[&>article]:shrink-0 max-sm:[&>article]:snap-start max-sm:[&>article]:rounded-[3px] max-sm:[&>article]:border max-sm:[&>article]:border-line max-sm:[&>article]:px-4"
       >
         {children}
       </div>
