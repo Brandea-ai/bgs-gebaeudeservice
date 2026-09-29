@@ -1,8 +1,8 @@
 # Fortschritt, offene Punkte und nächste Aufgabe
 
-**Prüfziel:** BGS Gebäudeservice (`Brandea-ai/bgs-gebaeudeservice`, geprüfter Stand `main` @ `d7e1122`)
+**Prüfziel:** BGS Gebäudeservice (`Brandea-ai/bgs-gebaeudeservice`, Arbeitsstand Welle 3, Code `36dc888`; Produktion vor diesem Abschluss `fc6a788`)
 **Referenz:** FIMI-Gebäudereinigung (`Brandea-ai/FIMI-Gebaeudereinigung` @ `1143a9f`), nur lesend, nur Inspiration
-**Letzte Aktualisierung:** 27.09.2026
+**Letzte Aktualisierung:** 29.09.2026
 
 ## Goldener Stand
 
@@ -158,35 +158,20 @@ Die neuen Texte in `content/de/` beruhen auf Eigenangaben und Entscheidungen (E1
 - **Ratgeber:** Kostenfaktoren (Fläche, Rhythmus, Nutzung, Einsatzzeiten, Zusatzleistungen) nach P29 bestätigen. Absatz zu Zertifikaten fachlich prüfen (P30). Veröffentlichungsdatum zum Launch eintragen.
 - **Startseite, Über uns, Kontakt:** Dritter Schritt «Start: Mit Ihrer Zusage legen wir den ersten Einsatz fest und stimmen Zeiten und Zugang mit Ihnen ab.» Über uns: «Einen Preis nennen wir erst, wenn wir Ihr Objekt gesehen haben.» Kontakt: Frage «Übernehmen Sie auch kurzfristige Einsätze?» statt «Notfallreinigungen».
 
+## Zwischenstand auf ausdrücklichen Nutzerwunsch, 29.09.2026
+
+Der vorhandene Stand wird ohne weitere Entwicklungs- oder vollständige Prüfrunde committet und nach main gepusht. Die Arbeit bleibt danach pausiert, um das Kontingent zu schonen. Dies ist ein Zwischenstand, keine abgeschlossene Produktionsreife-Abnahme. Arbeitsmarke BGS, vier Sprachen und noindex bleiben erhalten.
+
+Offen: abschliessender Readback der neuen BGS-Icons und des No-JS-Fallbacks; möglicher falscher initialer Karussellzähler bei Direktankern; abschliessende Dokumentation, Report und HTML-Umbauplan. Die bisherigen R3-Prüfungen sind dokumentiert. Keine echten E-Mails versendet.
+
 ## Nächste Aufgabe
 
-**Stand 27.09.2026 (E72, E73):** Alle vier Sprachen sind live (`LANGUAGES=true`), Lektorat EN, FR, IT durch Claude im Auftrag von Brandea (N087, Details in `22-LEKTORAT/`). Die technischen Restpunkte aus dem Lektorat sind behoben (N088). `NEW_BRAND` bleibt aus. **Entschieden in Runde 10:** Premium-Linie heisst Clavea, ohne Beurteilung durch eine Fachperson (E74). Hinweis «deutsche Fassung massgebend» ist in den Rechtstexten EN, FR, IT (E75, N089).
+**Aktueller Auftrag, 29.09.2026:** Audit-Umbau Welle 1 und 2 ist im aktuellen Bestand enthalten. Welle 3 wurde in getrennten Arbeitskopien umgesetzt und integriert. Der letzte unabhängige Durchgang läuft auf Code `36dc888`, unter Node 22.23.3. Produktionsupdate erst nach vollständiger Abnahme beider Markenmodi.
 
-**Agent am 29.09.2026 (E76):** Swissreg nachprüfen, ohne neuen Treffer `NEW_BRAND=true` in Production setzen, deployen, live prüfen. Mit Treffer Brandea fragen.
+Die ersten beiden Runden haben echte Fehler aufgedeckt und korrigiert: Druckumbrüche, mobile Orientierung, Kontaktüberlagerung, unvollständige Anbieterbestätigung, wachsende Ratenbegrenzung, doppelte Premium-Landmarken, Sitz/Alttexte und einzelne fachliche Präzisierungen. Runde 2 führte ausserdem zur passenden Zuordnung der Industriemotive und zur weiteren Kürzung der mobilen Leistungsübersicht. Ihre vier Sprachfassungen liegen im Einheiten-Prüfstand zwischen 10.345 und 10.624 px bei 390 × 844, unter dem Ziel 10.745 px.
 
-**Offen bei Brandea (nicht blockierend):**
-1. Freigabe der Übersetzungen durch Muttersprachler vor `SITE_INDEXABLE` (E72), je Sprache 12 bis 17 Stilpunkte.
-2. Fotos nach 21, bis dahin nichts zu tun.
+**Noch im laufenden Abschluss:** R3-Readback, Produktionsdeployment und Live-Prüfung, Abschlussbericht, aktualisierter HTML-Umbauplan, Bereinigung der eigenen Arbeitskopien. Die Nachweise werden unter `27-PRUEFLOOP/` und im dauerhaften lokalen Welle 3-Archiv gesammelt.
 
-**Frontend (M61, E77, E78, E79, N090 bis N092):** Alle Seiten neu gestaltet, zweiter Durchgang mit Bewegung und Bildflächen, dritter Durchgang nach dem Premium-Brief (Audit, Fundament v3, Umbau je Seite, Gegenprüfung je Seite): Phosphor-Icons ohne Platten, Prozess-Sektion, Scrollspy-Leisten, Stapel-Tafeln, statische erste Bildschirme, Mobil-Leiste sichtbar, Formular mit Prüfung in der Seitensprache, 404 in der Sprache der Adresse, Titel gekürzt (T13); Stapel-Footer wieder entfernt (verdeckter Fokus). Live seit 27.09.2026 nach E70. Offen: Abnahme der Gestaltung durch Brandea, echte Fotos, Logo, Fragebogen Runde 12 (Löschung toter Dateien, Rechtstext-Auszeichnung R08–R10, Messung, Kantonsseiten).
+**Separate Launch-Punkte laut Übergabe und E72/E76:** eigene Domain und Canonicals, Weiterleitungen der bisherigen Domain, Kunden-E-Mail, Google-Unternehmensprofile, Markenprüfung/Markenschalter und muttersprachliche Abnahme vor Indexierung. Diese Sitzung schaltet weder `NEW_BRAND` noch `SITE_INDEXABLE` in Produktion ein. Die bestehende Produktion bleibt Arbeitsmarke mit vier Sprachen und noindex.
 
-**Agent als Nächstes:** Chat (M03), sobald Brandea Modell und Zugang festlegt. Nach Runde 12: tote Dateien löschen, Rechtstexte auszeichnen, Messung einrichten.
-
-**Stand 26.09.2026 (E70, E71):** Seitendurchgang und Mehrsprachigkeit fertig und live, weitere Sprachen in der Produktion noch aus. **Offen bei Brandea:** Übersetzungen EN, FR, IT prüfen (Preview-Adressen unter `/en`, `/fr`, `/it`), dann in Vercel `LANGUAGES=true`. Markenrecherche (E38), dann `NEW_BRAND=true`. Fotos nach 21. **Frontend (M61, E77, E78, N090, N091):** Alle Seiten neu gestaltet, zweiter Durchgang mit Bewegung, Bildflächen, Vertrauensleiste und Stapel-Effekt, bis 4K, live seit 27.09.2026. Offen: Abnahme der Gestaltung durch Brandea, echte Fotos, Logo, Entscheid zu eigenen Kantonsseiten (Runde 11).
-
-**Agent als Nächstes:** Chat (M03), sobald Brandea Modell und Zugang festlegt. Bis dahin Pflege: ungenutzte Dateien und alte KI-Bilder aufräumen (M34), sobald echte Fotos da sind.
-
-**Stand 26.09.2026:** Welle 1, Teil 2 und der Marken-Schalter sind auf `claude/funny-einstein-5acss7` umgesetzt und getestet (N074 bis N077). Durchsicht über den Draft-PR Brandea-ai/bgs-gebaeudeservice#7 (Entwurf, **nicht mergen**). In Produktion ist nichts davon, dort steht weiter der alte Stand (N076).
-
-1. **Produktion: erledigt am 26.09.2026 (N078).** Ursprünglicher Plan zur Dokumentation: Die alte Seite mit «Swiss Reinigungsfirma», «500+» und `index, follow` ist öffentlich. Dank `NEW_BRAND` kann der aktuelle Stand ohne neuen Namen live:
-   - In Vercel für Production **kein** `NEW_BRAND` setzen (oder `false`), `SITE_INDEXABLE` erst zum Launch.
-   - Dann den Arbeits-Branch nach `main` bringen. Das macht Brandea selbst, oder Brandea erlaubt es dem Agenten ausdrücklich in der Sitzung (E27, E39, 14 Abschnitt 3).
-   - Danach die Live-Seite kontrollieren: Arbeitsmarke, `noindex`, keine Kundenstimmen.
-   - Nach der Markenrecherche `NEW_BRAND=true` in Production setzen und neu deployen.
-2. **Brandea und Kunde:** Texte gegenlesen (Liste oben), Entscheid P31, Domains `mantena.ch` und `clavea.ch` (E48), Markenrecherche mit der Frage CLAVIS (E38, E47), Logo-Dateien (15, Abschnitt 5).
-3. **Erledigt am 26.09.2026 (N079), ausser Rechtstexten und Footer.** Ursprünglicher Plan: **restliche Seiten in die Inhaltsschicht**, damit alle deutschen Texte in `content/de/` liegen:
-   - Startseite (M39), Über uns (M47, der Abschnitt «Unsere Werte» enthält Floskeln und «ß»), Kontakt (M49), Einzugsgebiet, Übersichten `/leistungen` und `/premium`
-   - Kantonslisten auf `cantonList` umstellen (M54)
-4. **Mehrsprachigkeit (M60)** mit übersetzten Adressen (E51). Entwürfe vom Agenten, Prüfung durch Brandea (E50).
-5. **Welle 2:** Zielgrössen und Skip-Link (M27), JavaScript-Last senken, etwa den abgeschalteten Chat gar nicht erst laden (M25, N074), Einblendungen (M23).
-6. **Chat (M03)** nach der Modellwahl, mit neuem Prompt ohne alten Namen.
+Offene ergänzende Kundenauskünfte werden gesammelt; es werden keine neuen Zusagen daraus erfunden. Erfahrung seit 2006 ist durch die frühere Einzelfirma und E58 bereits belegt und wird nicht erneut als ungeklärte Behauptung behandelt. Chat bleibt bis zur separaten Modell-/Zugangsentscheidung deaktiviert.

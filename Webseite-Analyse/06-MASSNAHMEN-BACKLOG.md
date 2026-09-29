@@ -1,5 +1,18 @@
 # Maßnahmen-Backlog
 
+
+## Aktueller Abgleich Welle 3, 29.09.2026
+
+Der historische Massnahmenstand unten bleibt als Verlauf erhalten. Für den aktuellen Audit-Umbau gelten E85, Spezifikation 26 und `27-PRUEFLOOP/`. Technische und redaktionelle Korrekturen sind auf Code `36dc888` integriert. Letzte unabhängige Runde und Live-Readback laufen noch. Normale Produktionsupdates mit Arbeitsmarke/noindex sind nach E70 und dem aktuellen Auftrag autorisiert; separate Launch-Schalter bleiben wie beschlossen.
+
+- M04/M07: Anbieter-ID als Erfolgsvoraussetzung, begrenzte und bereinigte Ratenbegrenzung, lokale Mock-Regression.
+- M22/M27/M61: mobile Sprungnavigation/Werkzeugklappen, Footer-Akkordeons, Kontakt ohne Überlagerung, Druckvorlagen, no-JS-Abstände bis 4K.
+- M29/M39/M53/M54/M60: präzisierte Inhalte in vier Sprachen, Sitz Emmen von Postadresse Emmenbrücke getrennt, Quellen und Bildbeschreibungen gegengeprüft.
+- M05/M17/M25: PostCSS-Override, Node 22 festgehalten, datierter Sitemap-Abgleich, ungenutzter kursiver Font entfernt.
+- O001 bis O156: Einzelabgleich in `27-PRUEFLOOP/runde2/offene-punkte.json`, finale Fortschreibung folgt nach R3. Kundenfragen sind keine automatisch erfüllten Launch-Gates.
+
+## Historischer Massnahmenstand
+
 **Status: Phase 5 durchgeführt am 24.09.2026, angepasst nach den Rückfragen Runde 1 (11).** Alle 37 globalen Befunde (01) und alle 88 seitenspezifischen Befunde (`Seiten/`) sind in 55 Maßnahmen überführt, dazu kommen M56–M59 aus Runde 1 und M60 aus Runde 3. **Die Umsetzung ist seit 24.09.2026 freigegeben (E11)** und läuft auf dem Arbeits-Branch in den Wellen unten. Produktions-Deployments brauchen weiter eine ausdrückliche Zustimmung. Geänderte Maßnahmen sind mit „Runde 1“ markiert. Dort gilt der Runde-1-Text vor dem ursprünglichen Text derselben Zelle.
 
 ## Umsetzungsstand auf dem Arbeits-Branch (Stand 26.09.2026)
