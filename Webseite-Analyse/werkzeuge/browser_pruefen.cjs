@@ -17,11 +17,19 @@ const BASE = (process.argv[2] || 'http://localhost:3000').replace(/\/$/, '');
   });
   const p = await ctx.newPage();
   const errs = [];
-  p.on('console', (m) => { if (m.type() === 'error' && !/favicon|apple-touch|manifest/.test(m.text())) errs.push(m.text().slice(0, 160)); });
+  const assets = new Set();
+  p.on('console', (m) => { if (m.type() === 'error') errs.push(m.text().slice(0, 160)); });
   p.on('pageerror', (e) => errs.push(String(e).slice(0, 160)));
   let viol = [];
   for (const path of paths) {
     await p.goto(BASE + path, { waitUntil: 'networkidle' });
+    const links = await p.locator('link[rel="icon"], link[rel="apple-touch-icon"], link[rel="manifest"]').evaluateAll(nodes => nodes.map(node => node.href));
+    for (const href of links) {
+      if (assets.has(href)) continue;
+      assets.add(href);
+      const response = await p.request.get(href);
+      if (!response.ok()) errs.push(`Kopfdatei HTTP ${response.status()}: ${href}`);
+    }
     viol = viol.concat((await p.evaluate(() => window.__csp)).map((v) => path + ': ' + v));
   }
   await p.goto(BASE + '/kontakt', { waitUntil: 'networkidle' });
@@ -35,7 +43,7 @@ const BASE = (process.argv[2] || 'http://localhost:3000').replace(/\/$/, '');
   // Die Menübilder vor dem Schliessen ausladen (lokaler Next15-Bug96538).
   await p.waitForLoadState('networkidle');
   await b.close();
-  console.log('Seiten:', paths.length, '| CSP-Verstösse:', viol.length, '| Konsolenfehler:', errs.length, '| Karte:', karte, '| Menü:', menu);
+  console.log('Seiten:', paths.length, '| CSP-Verstösse:', viol.length, '| Konsolenfehler:', errs.length, '| Karte:', karte, '| Menü:', menu, '| Kopfdateien:', assets.size);
   for (const x of viol.concat(errs)) console.log('  ', x);
   process.exit(viol.length || errs.length || !menu ? 1 : 0);
 })();
