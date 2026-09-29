@@ -16,6 +16,7 @@ import { formatDate } from "../artikel/datum";
 import DruckKnopf from "./drucken";
 import WerkzeugCheckliste from "./werkzeug-checkliste";
 import WerkzeugTabelle from "./werkzeug-tabelle";
+import WerkzeugInhalt from "./werkzeug-inhalt";
 
 const glyphs: Record<Tool["kind"], Icon> = {
   table: Table,
@@ -46,9 +47,9 @@ export default function Werkzeug({
   const { ui } = getDict(lang);
   const Glyph = glyphs[tool.kind];
   const link = premium ? premiumLightLink : undefined;
-  const printable = (tool.kind === "table" || tool.kind === "checklist") && tool.printable;
+  const printable = tool.printable;
   const intro = tool.kind === "text" ? undefined : tool.intro;
-  const updated = tool.kind === "table" || tool.kind === "checklist" ? tool.updated : undefined;
+  const updated = tool.updated;
   return (
     <section
       id={tool.id}
@@ -60,14 +61,16 @@ export default function Werkzeug({
           : "border-line bg-white text-ink shadow-[0_18px_40px_-32px_rgba(14,17,22,0.3)]"
       }`}
     >
-      <div className="tool-print-head" aria-hidden="true">
-        <p className="tool-print-page">{pageTitle}</p>
-        <p className="tool-print-meta">
-          {company.legalName}
-          {updated && ` · ${ui.tool.updated} ${formatDate(updated, lang)}`}
-        </p>
-      </div>
-      <div className="flex flex-wrap items-start justify-between gap-x-6 gap-y-4">
+      {tool.printHeader !== false && (
+        <div className="tool-print-head" aria-hidden="true">
+          <p className="tool-print-page">{pageTitle}</p>
+          <p className="tool-print-meta">
+            {company.legalName}
+            {updated && ` · ${ui.tool.updated} ${formatDate(updated, lang)}`}
+          </p>
+        </div>
+      )}
+      <div className="tool-heading grid items-start gap-4 md:grid-cols-[minmax(0,1fr)_auto] md:gap-6">
         <div className="flex min-w-0 items-start gap-4">
           <Glyph
             weight="duotone"
@@ -85,70 +88,131 @@ export default function Werkzeug({
             {tool.title}
           </h2>
         </div>
-        {printable && <DruckKnopf targetId={tool.id} label={ui.tool.print} title={tool.title} premium={premium} />}
+        {printable && (
+          <DruckKnopf
+            targetId={tool.id}
+            label={ui.tool.print}
+            title={tool.title}
+            premium={premium}
+          />
+        )}
       </div>
 
-      {intro && (
-        <p className="mt-5 max-w-[62ch] text-[1.0625rem] font-medium leading-relaxed text-ink-600">
-          <RichText text={intro} lang={lang} linkClassName={link} />
-        </p>
-      )}
+      <WerkzeugInhalt
+        id={tool.id}
+        title={tool.title}
+        showLabel={ui.tool.show}
+        hideLabel={ui.tool.hide}
+        premium={premium}
+      >
+        {intro && (
+          <p className="mt-5 max-w-[62ch] text-[1.0625rem] font-medium leading-relaxed text-ink-600">
+            <RichText text={intro} lang={lang} linkClassName={link} />
+          </p>
+        )}
 
-      {tool.kind === "table" && (
-        <WerkzeugTabelle
-          title={tool.title}
-          regionLabel={ui.tool.table}
-          columns={tool.columns}
-          rows={tool.rows}
-          lang={lang}
-          premium={premium}
-          link={link}
-        />
-      )}
-      {tool.kind === "checklist" && (
-        <WerkzeugCheckliste id={tool.id} groups={tool.groups} lang={lang} premium={premium} link={link} />
-      )}
-      {tool.kind === "timeline" && (
-        <ol className={`mt-7 border-t ${premium ? "border-brass-dark/20" : "border-line"}`}>
-          {tool.entries.map(entry => (
-            <li
-              key={entry.label}
-              className={`grid gap-1 border-b py-4 sm:grid-cols-[minmax(0,11rem)_minmax(0,1fr)] sm:gap-8 ${premium ? "border-brass-dark/20" : "border-line"}`}
-            >
-              <span className={`font-display font-bold leading-snug ${premium ? "text-anthracite" : "text-ink"}`}>
-                {entry.label}
-              </span>
-              <span className="min-w-0 font-medium leading-relaxed text-ink-600">
-                <RichText text={entry.text} lang={lang} linkClassName={link} />
-              </span>
-            </li>
-          ))}
-        </ol>
-      )}
-      {tool.kind === "text" && (
-        <div className="mt-5 space-y-4">
-          {tool.paragraphs.map(paragraph => (
-            <p key={paragraph} className="max-w-[62ch] text-[1.0625rem] font-medium leading-relaxed text-ink-600">
-              <RichText text={paragraph} lang={lang} linkClassName={link} />
-            </p>
-          ))}
-          {tool.items && <Punkte items={tool.items} lang={lang} premium={premium} link={link} />}
-        </div>
-      )}
+        {tool.kind === "table" && (
+          <WerkzeugTabelle
+            title={tool.title}
+            regionLabel={ui.tool.table}
+            columns={tool.columns}
+            rows={tool.rows}
+            lang={lang}
+            premium={premium}
+            link={link}
+            form={tool.form}
+            formLabels={ui.tool.form}
+          />
+        )}
+        {tool.kind === "checklist" && (
+          <WerkzeugCheckliste
+            id={tool.id}
+            groups={tool.groups}
+            lang={lang}
+            premium={premium}
+            link={link}
+          />
+        )}
+        {tool.kind === "timeline" && (
+          <ol
+            className={`mt-7 border-t ${premium ? "border-brass-dark/20" : "border-line"}`}
+          >
+            {tool.entries.map(entry => (
+              <li
+                key={entry.label}
+                className={`grid gap-1 border-b py-4 sm:grid-cols-[minmax(0,11rem)_minmax(0,1fr)] sm:gap-8 ${premium ? "border-brass-dark/20" : "border-line"}`}
+              >
+                <span
+                  className={`font-display font-bold leading-snug ${premium ? "text-anthracite" : "text-ink"}`}
+                >
+                  {entry.label}
+                </span>
+                <span className="min-w-0 font-medium leading-relaxed text-ink-600">
+                  <RichText
+                    text={entry.text}
+                    lang={lang}
+                    linkClassName={link}
+                  />
+                </span>
+              </li>
+            ))}
+          </ol>
+        )}
+        {tool.kind === "text" && (
+          <div className="mt-5 space-y-4">
+            {tool.paragraphs.map(paragraph => (
+              <p
+                key={paragraph}
+                className="max-w-[62ch] text-[1.0625rem] font-medium leading-relaxed text-ink-600"
+              >
+                <RichText text={paragraph} lang={lang} linkClassName={link} />
+              </p>
+            ))}
+            {tool.items && (
+              <Punkte
+                items={tool.items}
+                lang={lang}
+                premium={premium}
+                link={link}
+              />
+            )}
+          </div>
+        )}
 
-      {tool.note && <Hinweis text={tool.note} lang={lang} premium={premium} link={link} />}
-      {tool.sources && tool.sources.length > 0 && (
-        <Quellen sources={tool.sources} label={ui.tool.sources} external={ui.tool.external} premium={premium} />
-      )}
+        {tool.note && (
+          <Hinweis text={tool.note} lang={lang} premium={premium} link={link} />
+        )}
+        {tool.sources && tool.sources.length > 0 && (
+          <Quellen
+            sources={tool.sources}
+            label={ui.tool.sources}
+            external={ui.tool.external}
+            premium={premium}
+          />
+        )}
+      </WerkzeugInhalt>
     </section>
   );
 }
 
-function Punkte({ items, lang, premium, link }: { items: Text[]; lang: Locale; premium: boolean; link?: string }) {
+function Punkte({
+  items,
+  lang,
+  premium,
+  link,
+}: {
+  items: Text[];
+  lang: Locale;
+  premium: boolean;
+  link?: string;
+}) {
   return (
     <ul className="space-y-2 pt-1">
       {items.map(item => (
-        <li key={item} className="flex gap-3 font-medium leading-relaxed text-ink-600">
+        <li
+          key={item}
+          className="flex gap-3 font-medium leading-relaxed text-ink-600"
+        >
           <span
             className={`mt-[0.6em] h-1.5 w-1.5 shrink-0 rounded-full ${premium ? "bg-brass-dark" : "bg-signal"}`}
             aria-hidden="true"
@@ -163,11 +227,23 @@ function Punkte({ items, lang, premium, link }: { items: Text[]; lang: Locale; p
 }
 
 /** Hinweis unter dem Werkzeug: dünne Kontur rundum, kein Seitenstrich */
-function Hinweis({ text, lang, premium, link }: { text: Text; lang: Locale; premium: boolean; link?: string }) {
+function Hinweis({
+  text,
+  lang,
+  premium,
+  link,
+}: {
+  text: Text;
+  lang: Locale;
+  premium: boolean;
+  link?: string;
+}) {
   return (
     <p
-      className={`mt-6 rounded-[3px] border px-5 py-4 text-[0.9375rem] font-medium leading-relaxed ${
-        premium ? "border-brass-dark/25 bg-ivory text-anthracite" : "border-line bg-stone text-ink"
+      className={`tool-note mt-6 rounded-[3px] border px-5 py-4 text-[0.9375rem] font-medium leading-relaxed ${
+        premium
+          ? "border-brass-dark/25 bg-ivory text-anthracite"
+          : "border-line bg-stone text-ink"
       }`}
     >
       <RichText text={text} lang={lang} linkClassName={link} />
@@ -188,7 +264,9 @@ function Quellen({
   premium: boolean;
 }) {
   return (
-    <div className={`tool-sources mt-6 border-t pt-4 ${premium ? "border-brass-dark/20" : "border-line"}`}>
+    <div
+      className={`tool-sources mt-6 border-t pt-4 ${premium ? "border-brass-dark/20" : "border-line"}`}
+    >
       <p className="text-[0.8125rem] font-semibold text-ink-600">{label}</p>
       <ul className="mt-1.5 flex flex-col gap-0.5">
         {sources.map(source => (
@@ -201,13 +279,19 @@ function Quellen({
             >
               <span
                 className={`underline underline-offset-2 transition-colors ${
-                  premium ? "decoration-brass-dark/50 group-hover:decoration-anthracite" : "decoration-ink/30 group-hover:decoration-signal"
+                  premium
+                    ? "decoration-brass-dark/50 group-hover:decoration-anthracite"
+                    : "decoration-ink/30 group-hover:decoration-signal"
                 }`}
               >
                 {source.label}
               </span>
-              <span className="text-ink-600">({hostOf(source.href)})</span>
-              <ArrowSquareOut weight="duotone" className="size-3.5 shrink-0 self-center" aria-hidden="true" />
+              <span className="text-ink-600"> ({hostOf(source.href)})</span>
+              <ArrowSquareOut
+                weight="duotone"
+                className="size-3.5 shrink-0 self-center"
+                aria-hidden="true"
+              />
               <span className="sr-only">, {external}</span>
             </a>
           </li>

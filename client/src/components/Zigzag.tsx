@@ -8,6 +8,8 @@ import { getDict } from "../../../content";
 import { localizeHref, type Locale } from "../../../shared/i18n";
 
 export type ZigzagItem = {
+  /** Sprungziel auf der Überschrift, damit der Titel beim Navigieren sichtbar bleibt. */
+  id?: string;
   /** Ohne Bild steht die Zeile als ruhiger Textblock: Titel links, Text rechts (E85) */
   image?: ImageKey;
   eyebrow?: string;
@@ -88,6 +90,7 @@ export default function Zigzag({
                 <p className={`t-eyebrow mb-4 ${accent}`}>{item.eyebrow}</p>
               )}
               <Heading
+                id={item.id}
                 className={
                   lux
                     ? "font-premium text-[clamp(1.875rem,1.25rem+1.7vw,3rem)] font-semibold leading-[1.08] text-anthracite"
@@ -151,6 +154,7 @@ function TextRow({
         {item.icon && <item.icon weight="duotone" className={`mb-5 size-11 ${accent}`} aria-hidden="true" />}
         {item.eyebrow && <p className={`t-eyebrow mb-4 ${accent}`}>{item.eyebrow}</p>}
         <Heading
+          id={item.id}
           className={
             lux
               ? "font-premium text-[clamp(1.875rem,1.25rem+1.7vw,3rem)] font-semibold leading-[1.08] text-anthracite"

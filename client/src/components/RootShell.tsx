@@ -31,7 +31,7 @@ const premium = Cormorant_Garamond({
   subsets: ["latin"],
   // 700 für kleine Serifentitel in der hellen Premium-Welt (kräftig statt dünn)
   weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
+  style: "normal",
   variable: "--font-premium",
   display: "swap",
 });

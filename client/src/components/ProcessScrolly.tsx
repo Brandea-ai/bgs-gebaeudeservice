@@ -3,7 +3,7 @@ import {
   CalendarCheck,
   Envelope,
   FileText,
-  MapPin,
+  ClipboardText,
 } from "@phosphor-icons/react/dist/ssr";
 import type { Icon } from "@phosphor-icons/react";
 import ProcessSection from "./ProcessSection";
@@ -17,7 +17,7 @@ export type { FigureKey };
 
 const glyphs: Record<FigureKey, Icon> = {
   anfrage: Envelope,
-  besichtigung: MapPin,
+  besichtigung: ClipboardText,
   offerte: FileText,
   start: CalendarCheck,
 };
@@ -39,9 +39,16 @@ function explicitKeys(steps: Step[], figureKeys: FigureKey[] = []) {
  * Bilder, weil die Videos Signalrot enthalten (E85, F4): ohne eigene Bilder
  * keine leere Symbolbühne, sondern die ruhige Liste.
  */
-export function hasStage(steps: Step[], premium: boolean, figureKeys: FigureKey[] = []) {
+export function hasStage(
+  steps: Step[],
+  premium: boolean,
+  figureKeys: FigureKey[] = []
+) {
   const keys = explicitKeys(steps, figureKeys);
-  return keys.length > 0 && keys.every(key => key !== undefined && (!premium || isImage(key)));
+  return (
+    keys.length > 0 &&
+    keys.every(key => key !== undefined && (!premium || isImage(key)))
+  );
 }
 
 /**
@@ -95,8 +102,14 @@ function Stage({ figures, lux }: { figures: Figure[]; lux: boolean }) {
               aria-hidden="true"
               tabIndex={-1}
             >
-              <source src={`/video/ablauf/${figure.video}.webm`} type="video/webm" />
-              <source src={`/video/ablauf/${figure.video}.mp4`} type="video/mp4" />
+              <source
+                src={`/video/ablauf/${figure.video}.webm`}
+                type="video/webm"
+              />
+              <source
+                src={`/video/ablauf/${figure.video}.mp4`}
+                type="video/mp4"
+              />
             </video>
           </div>
         );
@@ -151,7 +164,9 @@ export default function ProcessScrolly({
   const toneClass = dark ? "process--dark" : lux ? "process--premium" : "";
   const keys = explicitKeys(steps, figureKeys);
   const n = steps.length;
-  const staged = (variant === "wide" || variant === "narrow") && hasStage(steps, lux, figureKeys);
+  const staged =
+    (variant === "wide" || variant === "narrow") &&
+    hasStage(steps, lux, figureKeys);
   // Symbol je Schritt nur aus einem Video-Schlüssel; sonst Punkte ohne Symbol
   const marks = keys.every(key => key !== undefined && !isImage(key))
     ? keys.map(key => glyphs[key as FigureKey])
@@ -235,7 +250,10 @@ export default function ProcessScrolly({
   });
   const scene = n >= 3;
   const figureCol = variant === "wide" ? "lg:col-span-7" : "lg:col-span-6";
-  const stepsCol = variant === "wide" ? "lg:col-span-5 lg:col-start-8" : "lg:col-span-6 lg:col-start-7";
+  const stepsCol =
+    variant === "wide"
+      ? "lg:col-span-5 lg:col-start-8"
+      : "lg:col-span-6 lg:col-start-7";
   return (
     <ProcessSection
       n={n}
@@ -243,7 +261,10 @@ export default function ProcessScrolly({
       className={`process--area ${scene ? "process--scene" : ""} ${toneClass} ${plain}`}
     >
       <div className="process-screen grid gap-10 lg:grid-cols-12 lg:items-center lg:gap-12">
-        <figure className={`process-figure hidden ${figureCol} lg:block`} aria-hidden="true">
+        <figure
+          className={`process-figure hidden ${figureCol} lg:block`}
+          aria-hidden="true"
+        >
           <Stage figures={figures} lux={lux} />
         </figure>
         <div className={`process-list min-w-0 ${stepsCol}`}>{list}</div>

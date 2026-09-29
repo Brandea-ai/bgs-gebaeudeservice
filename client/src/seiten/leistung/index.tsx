@@ -9,14 +9,20 @@ import LeistungInhalt from "./04-inhalt";
 import LeistungAblauf from "./05-ablauf";
 import LeistungFragen from "./06-fragen";
 import LeistungVerwandt from "./07-verwandt";
+import LeistungNavigation from "./navigation";
 
 /** Vorlage der Leistungs- und Premiumseiten (Factory-Strukturnorm, E80): nur Reihenfolge */
 export default function Leistung(props: LeistungProps) {
   return (
-    <PageFrame lang={props.lang} path={props.content.path} contact={props.content.cta}>
+    <PageFrame
+      lang={props.lang}
+      path={props.content.path}
+      contact={props.content.cta}
+    >
       <JsonLd data={serviceJsonLd(props.content.path, props.lang)} />
       <LeistungHero {...props} />
       <LeistungVertrauen {...props} />
+      <LeistungNavigation {...props} />
       <LeistungEinsatz {...props} />
       <LeistungInhalt {...props} />
       <LeistungAblauf {...props} />

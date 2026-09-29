@@ -4,8 +4,8 @@ import { useEffect, useRef } from "react";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
 
 /**
- * Abschnittsleiste mit Scrollspy (F14): Auf dem Handy eine statische, seitlich
- * scrollbare Reihe unter dem Kopf; ab lg klebt sie unter der Kopfzeile. Sie
+ * Abschnittsleiste mit Scrollspy (F14): Auch auf dem Handy klebt die seitlich
+ * scrollbare Reihe unter der Kopfzeile. Sie
  * meldet ihre Höhe als --subnav-h, damit Sprungziele nicht darunter landen.
  * Ohne JavaScript normale Sprunglinks.
  */
@@ -24,6 +24,7 @@ export default function SectionNav({
   className?: string;
 }) {
   const active = useScrollSpy(items.map(item => item.id));
+  const itemKey = items.map(item => item.id).join("|");
   const ref = useRef<HTMLElement>(null);
   const dark = tone === "dark";
   const lux = tone === "premium";
@@ -33,23 +34,31 @@ export default function SectionNav({
     const el = ref.current;
     if (!el) return;
     const root = document.documentElement;
-    const media = window.matchMedia("(min-width: 1024px)");
     const apply = () => {
-      root.style.setProperty(
-        "--subnav-h",
-        media.matches ? `${el.offsetHeight}px` : "0px"
-      );
+      root.style.setProperty("--subnav-h", `${el.offsetHeight}px`);
     };
     apply();
+    // Bei Direktlinks war der erste Browsersprung oft vor der Höhenmessung.
+    // Nach dem ersten Layout stehen auch mobile Werkzeugklappen korrekt.
+    const initialHash = window.location.hash;
+    const frame = requestAnimationFrame(() => {
+      if (!initialHash || initialHash !== window.location.hash) return;
+      try {
+        document
+          .getElementById(decodeURIComponent(initialHash.slice(1)))
+          ?.scrollIntoView({ block: "start", behavior: "instant" });
+      } catch {
+        // Ein ungültig codierter Anker verändert die Seite nicht.
+      }
+    });
     const observer = new ResizeObserver(apply);
     observer.observe(el);
-    media.addEventListener("change", apply);
     return () => {
       observer.disconnect();
-      media.removeEventListener("change", apply);
+      cancelAnimationFrame(frame);
       root.style.removeProperty("--subnav-h");
     };
-  }, [sticky]);
+  }, [sticky, itemKey]);
 
   // Aktiven Eintrag auf dem Handy ins Bild rücken, ohne die Seite zu bewegen
   useEffect(() => {
@@ -58,11 +67,16 @@ export default function SectionNav({
       `a[href="#${active}"]`
     );
     if (!link) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const list = link.closest("ol");
     if (list && list.scrollWidth > list.clientWidth) {
-      const target = link.offsetLeft - list.clientWidth / 2 + link.offsetWidth / 2;
-      list.scrollTo({ left: target, behavior: "smooth" });
+      const target =
+        link.offsetLeft - list.clientWidth / 2 + link.offsetWidth / 2;
+      list.scrollTo({
+        left: target,
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? "instant"
+          : "smooth",
+      });
     }
   }, [active]);
 

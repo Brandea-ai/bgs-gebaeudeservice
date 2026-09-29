@@ -52,6 +52,9 @@ export const ui = {
   },
   tool: {
     print: 'Print',
+    show: 'Open tool',
+    hide: 'Close tool',
+    form: { property: 'Property', date: 'Date', name: 'Name' },
     table: 'Table: ',
     sources: 'Sources',
     external: 'external link, opens in a new window',

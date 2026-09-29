@@ -18,7 +18,7 @@ import type { Locale } from "../../../shared/i18n";
  * P3, F6). Ab lg setzt das Raster Titel und Kontaktteil in die linke Spalte
  * (Zeile 1 und 2) und die Fragen über beide Zeilen rechts, ohne order.
  *
- * Mit image die Variante mit Bild, aber erst ab sechs Fragen: darunter bliebe
+ * Mit image die Variante mit Bild, aber erst ab sieben Fragen: darunter bliebe
  * neben der hohen Bildspalte eine Leerfläche (Audit visuell, Umbau 1; F7).
  * Ohne Bild eine schmalere linke Spalte und eine breitere Liste.
  */
@@ -39,9 +39,11 @@ export default function FaqBlock({
 }) {
   const { chrome, menu } = navDicts[lang];
   const premium = tone === "premium";
-  const shownImage = items.length >= 6 ? image : undefined;
+  const shownImage = items.length >= 7 ? image : undefined;
   const aside = shownImage ? "lg:col-span-5" : "lg:col-span-4";
-  const list = shownImage ? "lg:col-span-7 lg:col-start-6" : "lg:col-span-8 lg:col-start-5";
+  const list = shownImage
+    ? "lg:col-span-7 lg:col-start-6"
+    : "lg:col-span-8 lg:col-start-5";
   return (
     <section
       id={id}
@@ -57,30 +59,50 @@ export default function FaqBlock({
         </h2>
         <div className={`min-w-0 ${list} lg:row-span-2 lg:row-start-1`}>
           <FaqHover>
-            <Faq items={items} lang={lang} tone={premium ? "premium" : "light"} />
+            <Faq
+              items={items}
+              lang={lang}
+              tone={premium ? "premium" : "light"}
+            />
           </FaqHover>
         </div>
-        <div className={`${aside} lg:sticky lg:col-start-1 lg:row-start-2 lg:top-[calc(var(--header-offset)+2rem)] lg:self-start`}>
+        <div
+          className={`${aside} lg:sticky lg:col-start-1 lg:row-start-2 lg:top-[calc(var(--header-offset)+2rem)] lg:self-start`}
+        >
           {shownImage && (
             <ImageSlot
               image={shownImage}
               lang={lang}
               sizes="(min-width: 1024px) 38vw, 100vw"
-              className="aspect-[4/3] w-full rounded-[3px]"
+              className="hidden aspect-[16/9] w-full rounded-[3px] lg:block"
             />
           )}
-          <p className={`text-[1.0625rem] font-semibold leading-relaxed ${premium ? "text-anthracite" : "text-ink"} ${shownImage ? "mt-8" : ""}`}>
+          <p
+            className={`text-[1.0625rem] font-semibold leading-relaxed ${premium ? "text-anthracite" : "text-ink"} ${shownImage ? "lg:mt-8" : ""}`}
+          >
             {chrome.faqMore}
           </p>
-          <div className={`mt-5 grid gap-3 ${shownImage ? "sm:grid-cols-2" : "sm:grid-cols-2 lg:grid-cols-1"}`}>
+          <div
+            className={`mt-5 grid gap-3 ${shownImage ? "sm:grid-cols-2" : "sm:grid-cols-2 lg:grid-cols-1"}`}
+          >
             <a
               href={company.phone.href}
               className={`group flex min-h-14 items-center gap-3 rounded-[3px] border-2 bg-white px-4 py-3 transition-colors ${premium ? "border-brass-dark/30 text-anthracite hover:border-anthracite hover:bg-anthracite" : "border-ink/15 hover:border-ink hover:bg-ink"} hover:text-white`}
             >
-              <Phone weight="duotone" className={`size-6 shrink-0 ${premium ? "text-brass-dark" : "text-signal"} group-hover:text-white`} aria-hidden="true" />
-              <span className="font-bold tabular-nums">{company.phone.display}</span>
+              <Phone
+                weight="duotone"
+                className={`size-6 shrink-0 ${premium ? "text-brass-dark" : "text-signal"} group-hover:text-white`}
+                aria-hidden="true"
+              />
+              <span className="font-bold tabular-nums">
+                {company.phone.display}
+              </span>
             </a>
-            <Button asChild size="lg" className={`arrow-link h-14 ${premium ? "bg-anthracite text-white hover:bg-anthracite-700" : "btn-lift"}`}>
+            <Button
+              asChild
+              size="lg"
+              className={`arrow-link h-14 ${premium ? "bg-anthracite text-white hover:bg-anthracite-700" : "btn-lift"}`}
+            >
               <a href="#kontakt-formular" data-cta="faq">
                 {menu.cta.label}
                 <ArrowRight weight="duotone" aria-hidden="true" />
