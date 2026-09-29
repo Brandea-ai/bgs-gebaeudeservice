@@ -44,7 +44,7 @@ export const yacht: ServicePageContent = {
       title: 'Sul lago molte cose sono diverse',
       paragraphs: [
         'Sul lago dei Quattro Cantoni e sul lago di Zugo manca il sale che al mare attacca le ferramenta. In compenso la riva porta a bordo altro: in primavera il polline giallo delle conifere, poi foglie, ragnatele ed escrementi di uccelli, soprattutto agli ormeggi sotto gli alberi. Nel salone chiuso l’umidità ristagna e su cuscini e imbottiture compaiono macchie di muffa.',
-        'E tutt’intorno c’è l’acqua. Quali prodotti sono ammessi al pontile lo stabiliscono la legge e il regolamento del porto; la panoramica più in basso elenca le regole con le fonti. Su richiesta usiamo prodotti ecologici, e anche quelli vanno sul ponte solo con parsimonia.',
+        'E tutt’intorno c’è l’acqua. Quali prodotti sono ammessi al pontile lo stabiliscono la legge e il regolamento del porto; la panoramica più in basso elenca le regole con le fonti. Su richiesta usiamo prodotti ecologici. Nemmeno questi devono inquinare le acque.',
       ],
     },
   ],
@@ -126,7 +126,7 @@ export const yacht: ServicePageContent = {
         [
           'Legge sulla protezione delle acque, art. 6',
           'È vietato introdurre direttamente o indirettamente nelle acque sostanze che possono inquinarle.',
-          'Ogni prodotto usato sul ponte può finire nel lago con l’acqua di risciacquo. Quindi il meno possibile, e solo ciò che è adatto al materiale.',
+          'I prodotti che possono inquinare l’acqua e l’acqua di lavaggio che li contiene non devono raggiungere il lago. Raccoglierli e smaltirli correttamente a terra.',
         ],
         [
           'Ordinanza sulla navigazione interna, art. 10',
@@ -151,7 +151,7 @@ export const yacht: ServicePageContent = {
       ],
       sources: [fonti.gschg, fonti.bsv, fonti.hafenLuzern, fonti.hafenKehrsiten, fonti.smrv, fonti.smrp, fonti.zug],
       printable: true,
-      updated: '2026-09-28',
+      updated: '2026-09-29',
     },
     {
       kind: 'checklist',

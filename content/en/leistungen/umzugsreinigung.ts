@@ -167,7 +167,7 @@ export const umzugsreinigung: ServicePageContent = {
       title: 'Termination dates by canton',
       intro: 'If a lease of indefinite duration is terminated with ordinary notice, the notice period is at least three months for flats and at least six months for business premises, in each case for the termination date stated in the lease. If the lease states none, the date fixed by local custom applies, and without such custom the end of a three-month period of the lease (Art. 266a, 266c and 266d CO). A lease of limited duration ends without notice when the agreed term expires (Art. 266 CO).',
       printable: true,
-      updated: '2026-09-28',
+      updated: '2026-09-29',
       columns: ['Canton', 'Customary local dates for flats', 'For planning'],
       rows: [
         ['Lucerne', 'Not stated on the canton’s website. The Lucerne conciliation authority for tenancy matters can advise.', 'According to the canton, notice is usually given for the end of a month, and dates and notice periods are mostly set out in the lease.'],
@@ -175,7 +175,7 @@ export const umzugsreinigung: ServicePageContent = {
         ['Obwalden', 'End of March, end of June, end of September', 'For a handover at the end of June, notice must be received by the end of March at the latest. From then on, the handover date is fixed.'],
         ['Aargau and Nidwalden', 'Not stated on the cantons’ websites. The conciliation authorities for tenancy matters can advise, in Aargau the one for the district.', 'State the termination date given in the notice in your enquiry.'],
       ],
-      note: 'Tenants can also return the flat before the termination date. They are only released from their obligations if they propose a new tenant who is acceptable to the landlord (Art. 264 CO). The handover can therefore fall on any date. Ask for the cleaning as soon as a handover date is fixed.',
+      note: 'Tenants can also return the flat before the termination date. They are only released from their obligations if they propose a solvent new tenant whom the landlord cannot reasonably refuse and who is willing to take over the lease on the same terms (Art. 264 CO). The handover can therefore fall on any date. Ask for the cleaning as soon as a handover date is fixed.',
       sources: [
         { label: 'Code of Obligations, Art. 264, 266, 266a, 266c and 266d (Fedlex, as at 1 January 2026)', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/en#art_266_c' },
         { label: 'Civil Procedure Code, Art. 201 para. 2 (Fedlex, as at 1 July 2026)', href: 'https://www.fedlex.admin.ch/eli/cc/2010/262/en#art_201' },

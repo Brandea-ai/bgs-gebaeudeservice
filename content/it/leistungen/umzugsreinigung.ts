@@ -167,7 +167,7 @@ export const umzugsreinigung: ServicePageContent = {
       title: 'Scadenze di disdetta per Cantone',
       intro: 'Se una locazione a tempo indeterminato viene disdetta in via ordinaria, il termine di preavviso è di almeno tre mesi per gli appartamenti e di almeno sei mesi per i locali commerciali, ogni volta per la scadenza prevista dal contratto. Se il contratto non ne prevede, vale la scadenza determinata dall’uso locale e, in mancanza di tale uso, la fine di un trimestre di locazione (art. 266a, 266c e 266d CO). Una locazione a tempo determinato cessa senza disdetta alla scadenza pattuita (art. 266 CO).',
       printable: true,
-      updated: '2026-09-28',
+      updated: '2026-09-29',
       columns: ['Cantone', 'Scadenze d’uso locale per gli appartamenti', 'Per la pianificazione'],
       rows: [
         ['Lucerna', 'Non indicate sul sito del Cantone. Fornisce consulenza l’autorità di conciliazione in materia di locazione del Cantone di Lucerna.', 'Secondo il Cantone si disdice di regola per la fine di un mese, e scadenze e termini sono per lo più indicati nel contratto.'],
@@ -175,7 +175,7 @@ export const umzugsreinigung: ServicePageContent = {
         ['Obvaldo', 'Fine marzo, fine giugno, fine settembre', 'Per una riconsegna a fine giugno la disdetta deve pervenire al più tardi entro fine marzo. Da quel momento la data di riconsegna è fissata.'],
         ['Argovia e Nidvaldo', 'Non indicate sui siti dei Cantoni. Forniscono consulenza le autorità di conciliazione in materia di locazione, in Argovia quella del distretto.', 'Indicare nella richiesta la scadenza riportata nella disdetta.'],
       ],
-      note: 'Il conduttore può anche restituire l’appartamento prima della scadenza. È liberato dai suoi obblighi solo se propone un nuovo conduttore che il locatore non possa ragionevolmente rifiutare (art. 264 CO). La riconsegna può quindi cadere in qualsiasi data. Richieda la pulizia appena è fissata una data di riconsegna.',
+      note: 'Il conduttore può anche restituire l’appartamento prima della scadenza. È liberato dai suoi obblighi solo se propone un nuovo conduttore solvibile che il locatore non possa ragionevolmente rifiutare e che sia disposto a riprendere il contratto alle medesime condizioni (art. 264 CO). La riconsegna può quindi cadere in qualsiasi data. Richieda la pulizia appena è fissata una data di riconsegna.',
       sources: [
         { label: 'Codice delle obbligazioni, art. 264, 266, 266a, 266c e 266d (Fedlex, stato 1° gennaio 2026)', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/it#art_266_c' },
         { label: 'Codice di procedura civile, art. 201 cpv. 2 (Fedlex, stato 1° luglio 2026)', href: 'https://www.fedlex.admin.ch/eli/cc/2010/262/it#art_201' },

@@ -64,7 +64,7 @@ export const home: Seiten['home'] = {
     text: `Dal 2006 operiamo nella pulizia e nella custodia di stabili. Oggi oltre 50 collaboratrici e collaboratori seguono più di 120 clienti nei Cantoni di ${cantonListIt}, in ${languagesIt}.`,
     facts: [
       { key: 'register', label: 'Registro di commercio', value: `Cantone di Lucerna, IDI ${company.uid}` },
-      { key: 'persoenlich', label: 'La Sua richiesta', value: 'Trattata personalmente dal gerente' },
+      { key: 'persoenlich', label: 'La Sua richiesta', value: 'Una risposta con i passi successivi' },
       { key: 'umwelt', label: 'Detergenti', value: 'Ecologici su richiesta' },
     ],
   },
@@ -203,17 +203,6 @@ const legalNameText = company.legalName.replace(' - ', '\u00a0-\u2060\u00a0')
 export const about = {
   h1: 'Chi siamo: pulizia e custodia di stabili dal 2006',
   lead: `Puliamo e curiamo stabili abitativi, uffici, studi e capannoni nei Cantoni di ${cantonListIt}.`,
-  promises: {
-    title: 'Su che cosa può contare',
-    items: [
-      { key: 'persoenlich' as const, title: 'Contatto personale', text: 'La Sua richiesta è trattata personalmente dal gerente.' },
-      { key: 'offerte' as const, title: 'Offerta dopo il sopralluogo', text: 'Indichiamo un prezzo solo dopo aver visto il Suo immobile. Sopralluogo e offerta sono gratuiti e senza impegno.' },
-      { key: 'gebiet' as const, title: 'In tutta la zona', text: `Tutti i servizi nei Cantoni di ${cantonListIt}, ovunque alle stesse condizioni.` },
-      { key: 'versichert' as const, title: 'Assicurazione', text: answers.versicherung.replace('Sì. ', '') },
-      { key: 'sprachen' as const, title: 'Quattro lingue', text: answers.sprachen },
-      { key: 'umwelt' as const, title: 'Prodotti ecologici', text: 'Su richiesta puliamo con prodotti ecologici.' },
-    ],
-  },
   profile: {
     title: 'Profilo aziendale',
     items: [
@@ -269,7 +258,7 @@ export const about = {
       {
         title: 'Contatti diretti',
         paragraphs: [
-          'La Sua richiesta è trattata personalmente dal gerente.',
+          'Rispondiamo alla Sua richiesta sul Suo immobile e sui passi successivi.',
           'Se riunisce più servizi come [facility services](/leistungen/facility-services), presso di noi ha un solo interlocutore per tutti.',
         ],
       },
@@ -665,7 +654,7 @@ export const servicesOverview: Seiten['servicesOverview'] = {
 // Stesse chiavi e stesso ordine della lista tedesca (i sei modi di lavorare confermati, E41)
 const promises: Seiten['premiumOverview']['promises'] = [
   { key: 'diskret', title: 'Discrezione', text: 'Su Sua richiesta firmiamo un accordo di riservatezza.' },
-  { key: 'teams', title: 'Team fissi', text: 'Della Sua casa, barca o cabina si occupa sempre lo stesso team.' },
+  { key: 'teams', title: 'Team fissi', text: 'Un team fisso si occupa della Sua casa, barca o cabina.' },
   { key: 'personal', title: 'Personale verificato', text: 'Da Lei non lavora nessuno che non abbiamo verificato.' },
   { key: 'schluessel', title: 'Chiavi e allarme', text: 'Consegna, custodia e impianto d’allarme secondo regole che concorda con noi.' },
   { key: 'zeiten', title: 'Nei Suoi orari', text: 'Interventi anche la sera, nel fine settimana o mentre Lei è in viaggio.' },
@@ -792,13 +781,13 @@ export const premiumOverview: Seiten['premiumOverview'] = {
     },
     {
       title: 'Il Suo team fisso',
-      text: 'Da Lei viene sempre lo stesso team, che conosce le regole stabilite prima del primo intervento.',
+      text: 'Il Suo team fisso conosce le regole stabilite prima del primo intervento.',
     },
   ],
   faq: [
     {
       question: 'Come rimane riservata la mia richiesta?',
-      answer: 'Delle richieste premium si occupa personalmente il gerente. Se desidera un accordo di riservatezza, lo indichi possibilmente già nel Suo primo messaggio.',
+      answer: 'Se desidera un accordo di riservatezza, lo indichi possibilmente già nel Suo primo messaggio. Descriva inizialmente soltanto il bene e il servizio desiderato.',
     },
     {
       question: 'Un agente immobiliare o un’amministrazione può fare la richiesta per il proprietario?',

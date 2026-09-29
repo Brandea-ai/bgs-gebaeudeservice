@@ -195,7 +195,7 @@ export const sonderreinigungen: ServicePageContent = {
         {
           title: 'Lors de la réception',
           items: [
-            'Les joints ont retrouvé leur couleur d’origine : comparez avec un endroit protégé, par exemple sous un meuble',
+            'Les joints sont exempts de saleté détachable. Un nettoyage ne peut pas toujours éliminer une décoloration permanente',
             'Aucune trace de calcaire sur la robinetterie, les parois de douche et le carrelage mural',
             'Aucun voile en lumière rasante : éclairer le sol à plat avec une lampe de poche',
             'Aucune zone collante et aucun bord blanc de restes de produit dans les coins',
@@ -211,6 +211,9 @@ export const sonderreinigungen: ServicePageContent = {
     {
       kind: 'text',
       id: 'aushang',
+      printable: true,
+      printHeader: false,
+      updated: '2026-09-29',
       title: 'Modèle : avis aux locataires',
       paragraphs: [
         'Titre : Nettoyage en profondeur de la cage d’escalier',

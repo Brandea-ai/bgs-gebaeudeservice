@@ -211,7 +211,7 @@ export const privatjet: ServicePageContent = {
     {
       question: 'What does cleaning a private jet cabin cost?',
       answer:
-        'There is no flat rate. The effort depends on the size of the cabin and the number of seats, the materials, the condition after the flight and the ground time. Add to that jobs in the evening or at weekends and whether we come once or regularly. You receive the amount in writing after we have seen the cabin.',
+        'There is no flat rate. The effort depends on the size of the cabin and the number of seats, the materials, the condition after the flight and the ground time. The frequency of visits also affects the workload. You receive the amount in writing after we have seen the cabin.',
     },
     {
       question: 'Which cleaning products do you use on board?',

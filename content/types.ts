@@ -14,7 +14,7 @@ import type { PagePath } from '../shared/seo'
  * - Schweizer Rechtschreibung («ss»), Schweizer Begriffe («Offerte», «Hauswartung»).
  */
 
-/** Fliesstext. Interne Links im Format [Linktext](/pfad), nur Seiten aus shared/seo.ts. */
+/** Fliesstext. Interne Links im Format [Linktext](/pfad) oder [Linktext](#anker). */
 export type Text = string
 
 /** Remotion-Video der Ablauf-Bühne ohne Schrift (public/video/ablauf/<schluessel>.webm) */
@@ -43,11 +43,19 @@ export type Source = { label: string; href: string }
  * dem Lesen der Quellen). Nur mit diesem Eintrag druckt die Vorlage «Stand …»,
  * nie das Datum des Builds (keine Scheinaktualität, wie ArticleContent.updated).
  */
-export type Tool =
-  | { kind: 'table'; id: string; title: string; intro?: Text; columns: string[]; rows: Text[][]; note?: Text; sources?: Source[]; printable?: boolean; updated?: string }
-  | { kind: 'checklist'; id: string; title: string; intro?: Text; groups: { title: string; items: Text[] }[]; note?: Text; sources?: Source[]; printable?: boolean; updated?: string }
+export type ToolPrintOptions = {
+  printable?: boolean
+  updated?: string
+  /** Aushänge können auf eigenem Briefpapier ohne Seiten- und Firmenkopf gedruckt werden. */
+  printHeader?: boolean
+}
+
+export type Tool = ToolPrintOptions & (
+  | { kind: 'table'; id: string; title: string; intro?: Text; columns: string[]; rows: Text[][]; note?: Text; sources?: Source[]; /** Protokoll: mobil kompakte Prüfpunkte, im Druck zusätzlich Liegenschaft, Datum und Name. */ form?: boolean }
+  | { kind: 'checklist'; id: string; title: string; intro?: Text; groups: { title: string; items: Text[] }[]; note?: Text; sources?: Source[] }
   | { kind: 'timeline'; id: string; title: string; intro?: Text; entries: { label: string; text: Text }[]; note?: Text; sources?: Source[] }
   | { kind: 'text'; id: string; title: string; paragraphs: Text[]; items?: Text[]; note?: Text; sources?: Source[] }
+)
 
 export type ServicePageContent = {
   /** Deutsche Adresse, zugleich Schlüssel für Titel, Beschreibung und Namen in shared/seo.ts */

@@ -114,7 +114,7 @@ export const facilityServices: ServicePageContent = {
           items: [
             'Alle Verträge für Reinigung, Hauswartung, Umgebung und Glas zusammentragen',
             'Je Vertrag Kündigungsfrist, Endtermin und Verlängerungsklausel notieren',
-            'Angestellter Hauswart: Kündigungsfrist im ersten Dienstjahr ein Monat, im zweiten bis neunten zwei, danach drei Monate, jeweils auf Ende eines Monats. Andere Fristen gelten nur mit schriftlicher Abrede, Normal- oder Gesamtarbeitsvertrag (Art. 335c OR). Sperrfristen, etwa bei Krankheit oder Unfall, können die Frist verlängern (Art. 336c OR)',
+            'Angestellter Hauswart: Nach Ablauf der Probezeit beträgt die Kündigungsfrist im ersten Dienstjahr einen Monat, im zweiten bis neunten zwei, danach drei Monate, jeweils auf Ende eines Monats. Andere Fristen gelten nur mit schriftlicher Abrede, Normal- oder Gesamtarbeitsvertrag (Art. 335c OR). Sperrfristen, etwa bei Krankheit oder Unfall, können die Frist verlängern (Art. 336c OR)',
           ],
         },
         {
@@ -155,7 +155,7 @@ export const facilityServices: ServicePageContent = {
         { label: 'Verordnung über die Unfallverhütung (VUV), Art. 9 (Zusammenwirken mehrerer Betriebe)', href: `${vuv}#art_9` },
       ],
       printable: true,
-      updated: '2026-09-28',
+      updated: '2026-09-29',
     },
   ],
   steps: [

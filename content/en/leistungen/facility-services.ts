@@ -112,7 +112,7 @@ export const facilityServices: ServicePageContent = {
           items: [
             'Gather all contracts for cleaning, caretaking, grounds and glass',
             'For each contract, note the notice period, the next possible end date and whether it renews automatically',
-            'Employed caretaker: notice is one month in the first year of service, two months in the second to ninth, three months thereafter, each to the end of a month. Other periods apply only under a written agreement or a standard or collective employment contract (Art. 335c CO). Protected periods, for example during illness or accident, can extend the notice period (Art. 336c CO)',
+            'Employed caretaker: after the probationary period, notice is one month in the first year of service, two months in the second to ninth, three months thereafter, each to the end of a month. Other periods apply only under a written agreement or a standard or collective employment contract (Art. 335c CO). Protected periods, for example during illness or accident, can extend the notice period (Art. 336c CO)',
           ],
         },
         {
@@ -153,7 +153,7 @@ export const facilityServices: ServicePageContent = {
         { label: 'Accident Prevention Ordinance (OPA), Art. 9 (cooperation of several companies), German text', href: `${vuv}#art_9` },
       ],
       printable: true,
-      updated: '2026-09-28',
+      updated: '2026-09-29',
     },
   ],
   steps: [

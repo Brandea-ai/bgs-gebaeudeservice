@@ -78,15 +78,15 @@ const luzern: KantonPage = {
   seo: {
     title: 'Impresa di pulizie nel Cantone di Lucerna',
     description:
-      'Impresa di pulizie a Lucerna con sede a Emmenbrücke: custodia di stabili, pulizia di manutenzione e di uffici fino all’Entlebuch. Offerta gratuita.',
+      'Impresa di pulizie a Lucerna con sede a Emmen: custodia di stabili, pulizia di manutenzione e di uffici fino all’Entlebuch. Offerta gratuita.',
   },
-  h1: 'Impresa di pulizie a Lucerna, con sede a Emmenbrücke',
+  h1: 'Impresa di pulizie a Lucerna, con sede a Emmen',
   lead: [
-    'La nostra sede si trova a Emmenbrücke, nel Comune di Emmen, al confine con la città di Lucerna. Kriens, Horw ed Ebikon sono vicinissimi, Sursee e Hochdorf solo poco più lontani.',
+    'Il nostro ufficio si trova a Emmenbrücke, nel Comune di Emmen, al confine con la città di Lucerna. Kriens, Horw ed Ebikon sono vicinissimi, Sursee e Hochdorf solo poco più lontani.',
     'Per le amministrazioni immobiliari e le comunioni di proprietari per piani significa tragitti brevi, soprattutto per gli stabili curati ogni settimana.',
   ],
   facts: [
-    { label: 'La nostra sede', value: `${company.address.city}, Comune di Emmen` },
+    { label: 'Il nostro indirizzo', value: `${company.address.city}, Comune di Emmen` },
     { label: 'Priorità', value: 'Condomini, proprietà per piani, uffici e studi' },
     { label: 'Giorni di riposo', value: 'Dieci in tutto il Cantone, San Giuseppe secondo il Comune' },
     { label: 'Abitazioni secondarie', value: 'Flühli, Vitznau e Weggis oltre il 20 %' },
@@ -322,7 +322,7 @@ const aargau: KantonPage = {
     },
     {
       title: 'Macchine e impianti',
-      text: 'Pulizia di macchine nel lavoro a turni, durante le pause, tra un turno e l’altro o nei fermi pianificati. Il coordinamento con la Sua manutenzione è spiegato alla voce [pulizia industriale e di capannoni](/leistungen/industrie-und-hallenreinigung).',
+      text: 'Puliamo macchine e impianti durante fermi autorizzati, solo dopo che sono stati spenti e protetti contro il riavvio. Il coordinamento con la Sua manutenzione è spiegato alla voce [pulizia industriale e di capannoni](/leistungen/industrie-und-hallenreinigung).',
     },
     {
       title: 'Nuove costruzioni e trasformazioni',

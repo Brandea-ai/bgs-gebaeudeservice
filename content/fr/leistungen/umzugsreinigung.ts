@@ -167,7 +167,7 @@ export const umzugsreinigung: ServicePageContent = {
       title: 'Termes de résiliation par canton',
       intro: 'Si un bail de durée indéterminée est résilié de manière ordinaire, le délai de congé est d’au moins trois mois pour un appartement et d’au moins six mois pour un local commercial, chaque fois pour le terme prévu dans le bail. Si le bail n’en prévoit pas, le terme fixé par l’usage local s’applique et, à défaut d’un tel usage, la fin d’un trimestre de bail (art. 266a, 266c et 266d CO). Un bail de durée déterminée prend fin sans congé à l’expiration de la durée convenue (art. 266 CO).',
       printable: true,
-      updated: '2026-09-28',
+      updated: '2026-09-29',
       columns: ['Canton', 'Termes d’usage local pour les appartements', 'Pour la planification'],
       rows: [
         ['Lucerne', 'Non mentionnés sur le site du canton. L’autorité de conciliation en matière de bail du canton de Lucerne renseigne.', 'Selon le canton, on résilie en règle générale pour la fin d’un mois, et les termes et délais figurent le plus souvent dans le bail.'],
@@ -175,7 +175,7 @@ export const umzugsreinigung: ServicePageContent = {
         ['Obwald', 'Fin mars, fin juin, fin septembre', 'Pour une remise fin juin, la résiliation doit parvenir au plus tard fin mars. Dès lors, la date de remise est fixée.'],
         ['Argovie et Nidwald', 'Non mentionnés sur les sites des cantons. Les autorités de conciliation en matière de bail renseignent, en Argovie celle du district.', 'Indiquer dans la demande le terme figurant dans la résiliation.'],
       ],
-      note: 'Le locataire peut aussi restituer le logement avant le terme. Il n’est libéré de ses obligations que s’il présente un nouveau locataire que le bailleur ne puisse raisonnablement refuser (art. 264 CO). La remise peut donc tomber à n’importe quelle date. Demandez le nettoyage dès qu’une date de remise est fixée.',
+      note: 'Le locataire peut aussi restituer le logement avant le terme. Il n’est libéré de ses obligations que s’il présente un nouveau locataire solvable que le bailleur ne puisse raisonnablement refuser et qui soit disposé à reprendre le bail aux mêmes conditions (art. 264 CO). La remise peut donc tomber à n’importe quelle date. Demandez le nettoyage dès qu’une date de remise est fixée.',
       sources: [
         { label: 'Code des obligations, art. 264, 266, 266a, 266c et 266d (Fedlex, état le 1er janvier 2026)', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_266_c' },
         { label: 'Code de procédure civile, art. 201, al. 2 (Fedlex, état le 1er juillet 2026)', href: 'https://www.fedlex.admin.ch/eli/cc/2010/262/fr#art_201' },

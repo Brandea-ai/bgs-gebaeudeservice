@@ -136,22 +136,22 @@ export type QuelleKey = keyof typeof quelle
 /** Quellen per Schlüssel angeben, etwa q('are', 'agFeiertage') */
 export const q = (...keys: QuelleKey[]) => keys
 
-// Sitz Emmenbrücke (company.ts), Orte aus seiten.ts (area), Ruhetage SRL 855, Stadt Luzern, ARE, Vogelwarte
+// Sitz Emmen, Standort Emmenbrücke (company.ts), Orte aus seiten.ts (area), Ruhetage SRL 855, Stadt Luzern, ARE, Vogelwarte
 const luzern: KantonPage = {
   name: 'Luzern',
   kuerzel: 'LU',
   seo: {
     title: 'Reinigungsfirma Luzern und Hauswartung',
     description:
-      'Reinigungsfirma Luzern mit Sitz in Emmenbrücke: Hauswartung, Unterhalts- und Büroreinigung bis ins Entlebuch. Kostenlose Offerte nach Besichtigung.',
+      'Reinigungsfirma Luzern mit Sitz in Emmen: Hauswartung, Unterhalts- und Büroreinigung bis ins Entlebuch. Kostenlose Offerte nach Besichtigung.',
   },
-  h1: 'Reinigungsfirma Luzern mit Sitz in Emmenbrücke',
+  h1: 'Reinigungsfirma Luzern mit Sitz in Emmen',
   lead: [
-    'Unser Sitz liegt in Emmenbrücke, in der Gemeinde Emmen an der Stadtgrenze von Luzern. Kriens, Horw und Ebikon liegen gleich nebenan, Sursee und Hochdorf nur wenig weiter.',
+    'Unser Standort liegt in Emmenbrücke, in der Gemeinde Emmen an der Stadtgrenze von Luzern. Kriens, Horw und Ebikon liegen gleich nebenan, Sursee und Hochdorf nur wenig weiter.',
     'Für Verwaltungen und Stockwerkeigentümerschaften heisst das kurze Wege, gerade bei Liegenschaften, die jede Woche betreut werden.',
   ],
   facts: [
-    { label: 'Unser Sitz', value: `${company.address.city}, Gemeinde Emmen` },
+    { label: 'Unser Standort', value: `${company.address.city}, Gemeinde Emmen` },
     { label: 'Schwerpunkt', value: 'Mehrfamilienhäuser, Stockwerkeigentum, Büros und Praxen' },
     { label: 'Öffentliche Ruhetage', value: 'Zehn im ganzen Kanton, der Josefstag je nach Gemeinde' },
     { label: 'Viele Zweitwohnungen', value: 'Flühli, Vitznau und Weggis' },
@@ -389,7 +389,7 @@ const aargau: KantonPage = {
     },
     {
       title: 'Maschinen und Anlagen',
-      text: 'Reinigung von Maschinen im Schichtbetrieb, in Pausen, zwischen Schichten oder bei geplanten Stillständen. Wie das mit Ihrer Instandhaltung zusammenspielt, steht unter [Industrie- und Hallenreinigung](/leistungen/industrie-und-hallenreinigung).',
+      text: 'Maschinen und Anlagen reinigen wir im freigegebenen Stillstand, erst wenn sie abgeschaltet und gegen Wiedereinschalten gesichert sind. Wie das mit Ihrer Instandhaltung zusammenspielt, steht unter [Industrie- und Hallenreinigung](/leistungen/industrie-und-hallenreinigung).',
     },
     {
       title: 'Neu- und Umbauten',

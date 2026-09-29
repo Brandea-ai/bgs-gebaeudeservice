@@ -112,7 +112,7 @@ export const facilityServices: ServicePageContent = {
           items: [
             'Raccogliere tutti i contratti per pulizia, custodia, aree esterne e vetri',
             'Annotare per ogni contratto il termine di disdetta, la prossima scadenza possibile e se si rinnova tacitamente',
-            'Custode dipendente: preavviso di un mese nel primo anno di servizio, di due mesi dal secondo al nono, poi di tre mesi, sempre per la fine di un mese. Altri termini valgono solo per accordo scritto, contratto normale o collettivo (art. 335c CO). I periodi di protezione, per esempio in caso di malattia o infortunio, possono prolungare il termine (art. 336c CO)',
+            'Custode dipendente: dopo il tempo di prova, preavviso di un mese nel primo anno di servizio, di due mesi dal secondo al nono, poi di tre mesi, sempre per la fine di un mese. Altri termini valgono solo per accordo scritto, contratto normale o collettivo (art. 335c CO). I periodi di protezione, per esempio in caso di malattia o infortunio, possono prolungare il termine (art. 336c CO)',
           ],
         },
         {
@@ -153,7 +153,7 @@ export const facilityServices: ServicePageContent = {
         { label: 'Ordinanza sulla prevenzione degli infortuni (OPI), art. 9 (cooperazione di più aziende)', href: `${opi}#art_9` },
       ],
       printable: true,
-      updated: '2026-09-28',
+      updated: '2026-09-29',
     },
   ],
   steps: [

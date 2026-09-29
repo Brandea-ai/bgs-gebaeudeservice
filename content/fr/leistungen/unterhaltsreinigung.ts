@@ -107,6 +107,7 @@ export const unterhaltsreinigung: ServicePageContent = {
     {
       kind: 'table',
       id: 'rundgang',
+      form: true,
       title: 'Protocole de tournée après le nettoyage',
       intro:
         'Passez dans l’immeuble le jour du nettoyage ou le lendemain ; plus tard, vous jugez plutôt l’usage. Si quelque chose ne va pas, envoyez-nous le protocole avec la date et une photo.',
