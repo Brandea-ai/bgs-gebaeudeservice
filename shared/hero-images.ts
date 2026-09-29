@@ -45,7 +45,7 @@ export const detailImage: Partial<Record<PagePath, ImageKey>> = {
   '/leistungen/umzugsreinigung': 'detail-umzugsreinigung',
   '/leistungen/baureinigung': 'detail-baureinigung',
   '/leistungen/fenster-und-fassadenreinigung': 'detail-fenster-fassaden',
-  '/leistungen/industrie-und-hallenreinigung': 'detail-industrie-hallen',
+  '/leistungen/industrie-und-hallenreinigung': 'szene-industrie-und-hallenreinigung',
   '/leistungen/hauswartung': 'detail-hauswartung',
   '/leistungen/aussen-und-gruenflaechenpflege': 'detail-aussen-gruenflaechen',
   '/leistungen/facility-services': 'detail-facility-services',

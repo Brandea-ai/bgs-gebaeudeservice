@@ -14,7 +14,7 @@ export const sceneImage: Partial<Record<PagePath, ImageKey>> = {
   '/leistungen/umzugsreinigung': 'szene-umzugsreinigung',
   '/leistungen/baureinigung': 'szene-baureinigung',
   '/leistungen/fenster-und-fassadenreinigung': 'szene-fenster-und-fassadenreinigung',
-  '/leistungen/industrie-und-hallenreinigung': 'szene-industrie-und-hallenreinigung',
+  '/leistungen/industrie-und-hallenreinigung': 'detail-industrie-hallen',
   '/leistungen/hauswartung': 'szene-hauswartung',
   '/leistungen/aussen-und-gruenflaechenpflege': 'szene-aussen-und-gruenflaechenpflege',
   '/leistungen/facility-services': 'szene-facility-services',
