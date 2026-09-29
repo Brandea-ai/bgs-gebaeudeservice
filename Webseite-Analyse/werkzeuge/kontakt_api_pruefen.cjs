@@ -95,7 +95,7 @@ function waitForOwnServer(server) {
   const sent = requests.at(-1).body;
   tests.push({ name: 'html-escaped', pass: !sent.html.includes('<script>') && sent.html.includes('&lt;script&gt;') && !sent.html.includes('<em>Test</em>') && sent.reply_to === 'audit@example.invalid', replyTo: sent.reply_to });
   const radii = [...sent.html.matchAll(/border-radius:\s*([^;]+)/g)].flatMap(match => match[1].match(/\d+/g)).map(Number);
-  tests.push({ name: 'mail-style-rules', pass: !/[–—]/u.test(sent.html) && !sent.html.includes('border-left') && radii.length > 0 && radii.every(value => value === 0 || value === 3) });
+  tests.push({ name: 'mail-style-rules', pass: !/[\u2013\u2014]/u.test(sent.html) && !sent.html.includes('border-left') && radii.length > 0 && radii.every(value => value === 0 || value === 3) });
   fs.writeFileSync(path.join(OUT, 'contact-email-preview.html'), sent.html);
   await run('provider-error', valid, 503, 1, { mode: 'provider-error' });
   await run('provider-missing-id', valid, 503, 1, { mode: 'missing-id' });

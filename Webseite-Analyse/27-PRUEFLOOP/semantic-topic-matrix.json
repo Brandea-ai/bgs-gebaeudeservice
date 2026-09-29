@@ -1,0 +1,130 @@
+[
+  {
+    "thema": "Unterhalt/Nebenkosten",
+    "de_quellen": "S001,S002,S003",
+    "primaertext": "Art257a/b,269d,270b; VMWG4; ZGB712h/m",
+    "aussagen": "Besondere Vereinbarung, tatsächlicher Aufwand, Belegrecht, jährliche Abrechnung/Pauschale3Jahre, Formular/30Tage, Kostenverteilung",
+    "urteil": "geprüft, kein bestätigter Befund",
+    "sprachabgleich": "Gleiches Inhaltsmodell DE/EN/FR/IT, Zahlen/Querverweise abgeglichen. Eigenständige Sprachstile siehe Linsenmatrix."
+  },
+  {
+    "thema": "Büro/Zeiten/Vertraulichkeit",
+    "de_quellen": "S004,S005,S006,S007,S008",
+    "primaertext": "ArG10,16bis20a; ArGV2/51; DSG5/8, DSV3, StGB321",
+    "aussagen": "Tages-/Abend-/Nacht-/Sonntagsfenster und Ausnahme für Reinigungsbetriebe; Zugang/Patientendaten",
+    "urteil": "geprüft, keine zusätzliche BGS-GAV-Zusage",
+    "sprachabgleich": "Gleiches Inhaltsmodell DE/EN/FR/IT, Zahlen/Querverweise abgeglichen. Eigenständige Sprachstile siehe Linsenmatrix."
+  },
+  {
+    "thema": "Grundreinigung/Material/pH",
+    "de_quellen": "S009,S010,S011,S012,S013,S014,S015,S016,S101,S102,S103,S104",
+    "primaertext": "NVS; Ceruniq; Forbo; ISP; BAG; BFU",
+    "aussagen": "Säureempfindlichkeit/Fugen, pH<9 Linoleum, trockene/nebelfeuchte Parkettpflege, Schimmel, Sicherheitsmischung,6 Schritte/4 bis 6 m",
+    "urteil": "Fachinhalte abgeglichen; Fugenmassstab INH-R1-07",
+    "sprachabgleich": "Gleiches Inhaltsmodell DE/EN/FR/IT, Zahlen/Querverweise abgeglichen. Eigenständige Sprachstile siehe Linsenmatrix."
+  },
+  {
+    "thema": "Wohnungsabgabe/Termine",
+    "de_quellen": "S017,S018,S019,S020,S021,S022,S023,S024,S025,S026,S027,S028,S029,S097,S098,S099",
+    "primaertext": "OR257h/264/266c/266d/267/267a, Behörden und Verbandsquellen",
+    "aussagen": "Sofortige Mängelrüge/verborgene Mängel, Restwert, Fristen und belegte Termine Zug/Obwalden",
+    "urteil": "geprüft; Art. 264 präzisieren INH-R1-08",
+    "sprachabgleich": "Gleiches Inhaltsmodell DE/EN/FR/IT, Zahlen/Querverweise abgeglichen. Eigenständige Sprachstile siehe Linsenmatrix."
+  },
+  {
+    "thema": "Bau/Glas/Abnahme",
+    "de_quellen": "S030,S031,S032,S033,S034",
+    "primaertext": "VVEA17, SIGAB Fachtexte, OR367/370, Botschaft Übergangsrecht",
+    "aussagen": "Abfalltrennung, Glasbeschädigung/Reinigung,60Tage ab neuen Werkverträgen2026 und Übergangsrecht",
+    "urteil": "geprüft; eigene Reinigungsmängelfrist bleibt Kundenfrage",
+    "sprachabgleich": "Gleiches Inhaltsmodell DE/EN/FR/IT, Zahlen/Querverweise abgeglichen. Eigenständige Sprachstile siehe Linsenmatrix."
+  },
+  {
+    "thema": "Fenster/Fassade",
+    "de_quellen": "S035,S036,S037,S038,S039,S040",
+    "primaertext": "Suva 44033 Original-PDF; Luzern/Zug; GSchG3/6; BS/BL-Merkblatt; Brief26.03.2025",
+    "aussagen": "Technische Zugänge/Schutz, öffentliche Fläche, Abwasserweg, Anwendungsregion",
+    "urteil": "geprüft; Briefscan visuell gelesen. Eigenes BGS-Abwasserverfahren F4 offen",
+    "sprachabgleich": "Gleiches Inhaltsmodell DE/EN/FR/IT, Zahlen/Querverweise abgeglichen. Eigenständige Sprachstile siehe Linsenmatrix."
+  },
+  {
+    "thema": "Industrie/Arbeitssicherheit",
+    "de_quellen": "S041,S042,S043,S044",
+    "primaertext": "VUV6/9/19/43; Suva Instandhaltung und unerwarteter Anlauf",
+    "aussagen": "Zusammenarbeit mehrerer Arbeitgeber, nicht gefährdender Maschinenzustand, Verkehrswege/Absperren",
+    "urteil": "geprüft; Aargau-Text soll Abgrenzung ebenfalls deutlich machen",
+    "sprachabgleich": "Gleiches Inhaltsmodell DE/EN/FR/IT, Zahlen/Querverweise abgeglichen. Eigenständige Sprachstile siehe Linsenmatrix."
+  },
+  {
+    "thema": "Hauswartung/Haftung/Kosten",
+    "de_quellen": "S045,S046,S047,S048,S049,S050,S051,S052,S053,S054",
+    "primaertext": "ZGB712g/m; OR58/256/257a/b/259; BFU/VKF; MV/HEV",
+    "aussagen": "Kontrollgänge dokumentieren, Fluchtwege, Kostengrenzen als Verbandsposition, kein universeller150CHF-Gesetzesbetrag",
+    "urteil": "geprüft; fachliche Kundenabnahme bleibt offen",
+    "sprachabgleich": "Gleiches Inhaltsmodell DE/EN/FR/IT, Zahlen/Querverweise abgeglichen. Eigenständige Sprachstile siehe Linsenmatrix."
+  },
+  {
+    "thema": "Aussenpflege/Pflanzen",
+    "de_quellen": "S055,S056,S057,S058,S059,S060,S061,S062,S063",
+    "primaertext": "Vogelwarte, BAFU, Luzern, ChemRRV, FrSV, LAWA",
+    "aussagen": "Heckenschnitt Winter,2.5m/4.5m,50 cm/3m Verbote und2024 invasive Pflanzen",
+    "urteil": "geprüft; keine allgemeine spritzmittelfreie BGS-Zusage",
+    "sprachabgleich": "Gleiches Inhaltsmodell DE/EN/FR/IT, Zahlen/Querverweise abgeglichen. Eigenständige Sprachstile siehe Linsenmatrix."
+  },
+  {
+    "thema": "Facility/Vertragswechsel",
+    "de_quellen": "S064,S065,S066,S067",
+    "primaertext": "OR335c/336c, ZGB712s, VUV6",
+    "aussagen": "Fristen nach Probezeit, Sperrfristen, Verwaltungszuständigkeiten",
+    "urteil": "INH-R1-02 bestätigt; übrige Aussagen abgeglichen",
+    "sprachabgleich": "Gleiches Inhaltsmodell DE/EN/FR/IT, Zahlen/Querverweise abgeglichen. Eigenständige Sprachstile siehe Linsenmatrix."
+  },
+  {
+    "thema": "Premium/Luxus/Kunst",
+    "de_quellen": "S068,S069,S070,S071,S072,S073",
+    "primaertext": "NVS/NSI/ISP/Kurt Keller/Hansgrohe/Smithsonian/CCI/SKR",
+    "aussagen": "Materialanleitungen haben Vorrang, Lack/Mikrofaser, Bilderstaub/Restaurator,40bis60% Klima",
+    "urteil": "geprüft; Alt-Text INH-R1-05, kein Versicherungsumfang für Kunst behauptet",
+    "sprachabgleich": "Gleiches Inhaltsmodell DE/EN/FR/IT, Zahlen/Querverweise abgeglichen. Eigenständige Sprachstile siehe Linsenmatrix."
+  },
+  {
+    "thema": "Premium/Jet",
+    "de_quellen": "S074,S075,S076,S077,S078,S079",
+    "primaertext": "WHO Kap3/Anhang F, FAA3-25, Townsend, Duncan,14CFR25.853, VTNP",
+    "aussagen": "Freigabemittel/Materialschäden, WHO-Aufgaben nach A/B/C, Brandbeschichtungen, Speisereste Kat1",
+    "urteil": "geprüft; WHO-Zeitspalten einzeln verglichen, keine eigene garantierte Reinigungsdauer daraus gemacht",
+    "sprachabgleich": "Gleiches Inhaltsmodell DE/EN/FR/IT, Zahlen/Querverweise abgeglichen. Eigenständige Sprachstile siehe Linsenmatrix."
+  },
+  {
+    "thema": "Premium/Yacht",
+    "de_quellen": "S080,S081,S082,S083,S084,S085,S086,S087,S088,S089,S090,S091,S092",
+    "primaertext": "Sika/Hallberg/Axopar/ISER/Röhm/Sunbrella/Meteo; GSchG/BSV/Häfen/SMRV",
+    "aussagen": "Teak-Richtung ist durch beide Hersteller belegt, Gelcoat/Stahl/Acryl, Pollen, Hafenregeln, Seewechselpflicht2026",
+    "urteil": "INH-R1-01 bestätigt; sonst kein neuer bestätigter Quellenwiderspruch",
+    "sprachabgleich": "Gleiches Inhaltsmodell DE/EN/FR/IT, Zahlen/Querverweise abgeglichen. Eigenständige Sprachstile siehe Linsenmatrix."
+  },
+  {
+    "thema": "Ratgeber/Recht/Steuern/GAV",
+    "de_quellen": "S093,S094,S095,S096,S100,S105,S106,S107,S108,S109",
+    "primaertext": "OR259/257b/647a/267/256a, ZPK und Unia GAV, ArG17b, MWSTG25",
+    "aussagen": "GAV ab 6 und Teilbindung kleiner Betriebe bis 2029,25% temporäre Nacht,8.1% Normalsatz; Rechenbeispiel26h",
+    "urteil": "geprüft; INH-R1-09 Beispiel Werktage präzisieren",
+    "sprachabgleich": "Gleiches Inhaltsmodell DE/EN/FR/IT, Zahlen/Querverweise abgeglichen. Eigenständige Sprachstile siehe Linsenmatrix."
+  },
+  {
+    "thema": "Firmenregister/Recht",
+    "de_quellen": "S110,S111,S112,S113",
+    "primaertext": "UID, OR954a/11, MWSTG26",
+    "aussagen": "Firmennummer/Sitz/UID/MWST, Firma unverändert in Korrespondenz, Vertrag als Offerte/Annahme",
+    "urteil": "geprüft; INH-R1-03 rechtlicher Sitz, R6a/E58 erläutern Erfahrung 2006",
+    "sprachabgleich": "Gleiches Inhaltsmodell DE/EN/FR/IT, Zahlen/Querverweise abgeglichen. Eigenständige Sprachstile siehe Linsenmatrix."
+  },
+  {
+    "thema": "Kantone/Planung/Daten",
+    "de_quellen": "S114,S115,S116,S117,S118,S119,S120,S121,S122",
+    "primaertext": "ARE API Datenlayer, kantonale Gesetze/Blätter, Luzern Meldung, ArG20a",
+    "aussagen": "6 genaue Prozentwerte stimmen; zehn LU-Ruhetage,9Zug + 4freiwillig,AG6Gruppen,Josef/Bruderklausen differenziert",
+    "urteil": "geprüft; ARE six live API records, Feiertagsmatrix gegen Originalquellen",
+    "sprachabgleich": "Gleiches Inhaltsmodell DE/EN/FR/IT, Zahlen/Querverweise abgeglichen. Eigenständige Sprachstile siehe Linsenmatrix."
+  }
+]
