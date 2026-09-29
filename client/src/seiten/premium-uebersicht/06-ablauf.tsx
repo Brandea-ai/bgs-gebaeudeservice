@@ -13,7 +13,7 @@ export default function PremiumAblauf(props: PremiumProps) {
   const { lang } = props;
   const { content } = premiumKontext(props);
   return (
-    <section id="ablauf" aria-labelledby="ablauf-titel" className="section border-t border-brass/25 bg-white text-anthracite">
+    <div id="ablauf" className="section border-t border-brass/25 bg-white text-anthracite">
       <div className="container">
         <PremiumTitel id="ablauf-titel" title={content.stepsTitle} className="mb-12 lg:mb-16" />
         <ProcessScrolly
@@ -25,6 +25,6 @@ export default function PremiumAblauf(props: PremiumProps) {
           idPrefix="ablauf-schritt"
         />
       </div>
-    </section>
+    </div>
   );
 }
