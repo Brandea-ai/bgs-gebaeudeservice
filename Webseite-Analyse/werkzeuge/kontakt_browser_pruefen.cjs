@@ -115,6 +115,7 @@ async function test(name, fn) {
     return { mobileFooterHeight: height };
    });
    await test(`${lang}: no runtime errors`, () => assert.deepEqual(pageErrors, []));
+   await page.waitForLoadState('networkidle');
    await page.close();
   }
   await test('sticky contact channels remain inside their row', async () => {
@@ -122,6 +123,8 @@ async function test(name, fn) {
    const measurements = [];
    for (const width of [1024, 1100, 1279, 1440, 1920]) {
     await page.setViewportSize({ width, height: 900 });
+    // Next15 next start: kalte Bildtransforms vor Navigation abschliessen (upstream96538).
+    await page.waitForLoadState('networkidle');
     for (const route of ['/leistungen/unterhaltsreinigung', '/premium/yacht', '/kontakt']) {
      await page.goto(BASE + route, { waitUntil: 'networkidle' });
      const measured = await page.evaluate(async () => {
@@ -141,10 +144,12 @@ async function test(name, fn) {
       }
       return { minGap };
      });
+     await page.waitForLoadState('networkidle');
      assert.ok(measured.minGap >= 24, `${width} ${route}: ${measured.minGap}px`);
      measurements.push({ width, route, ...measured });
     }
    }
+   await page.waitForLoadState('networkidle');
    await page.close();
    return measurements;
   });
@@ -164,6 +169,7 @@ async function test(name, fn) {
     await page.waitForFunction(() => document.querySelector('iframe')?.contentWindow != null);
     assert.equal(googleRequests, previous + 1);
    }
+   await page.waitForLoadState('networkidle');
    await page.close();
    return { interceptedGoogleRequests: googleRequests };
   });
