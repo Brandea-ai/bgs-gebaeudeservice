@@ -18,16 +18,15 @@ const errors=[];
   const paths=[...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>new URL(m[1]).pathname);
   if(!paths.length || new Set(paths).size!==paths.length) throw new Error('Sitemap leer oder mit doppelten Seiten');
   const expectedRuns=paths.length*2;
-  const queue=paths.flatMap(path=>[{path,width:1440,height:900},{path,width:390,height:844}]);
+  const desktopQueue=paths.map(path=>({path,width:1440,height:900}));
+  const mobileQueue=paths.map(path=>({path,width:390,height:844}));
   const browser=await chromium.launch();
-  async function worker(){
-    const context=await browser.newContext();
+  async function worker(queue,viewport){
+    // Feste Viewports: Resize vor Navigation kann kalte next/image-Requests abbrechen.
+    const context=await browser.newContext({viewport});
     const page=await context.newPage();
     while(queue.length){
       const task=queue.shift();
-      await page.setViewportSize({width:task.width,height:task.height});
-      // Lokaler Next15-Optimierer: keine kalten Resize-Transforms durch goto abbrechen.
-      await page.waitForLoadState('networkidle');
       const pageErrors=[];
       const listener=e=>pageErrors.push(String(e));
       page.on('pageerror',listener);
@@ -41,15 +40,15 @@ const errors=[];
           const simplify=v=>({id:v.id,impact:v.impact,help:v.help,helpUrl:v.helpUrl,nodes:v.nodes.map(n=>({html:n.html,target:n.target,failureSummary:n.failureSummary}))});
           return {violations:r.violations.map(simplify),incomplete:r.incomplete.map(simplify),overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth,height:document.documentElement.scrollHeight};
         });
+        await page.waitForLoadState('networkidle');
         results.push({...task,...result,pageErrors});
       }catch(error){errors.push({...task,error:String(error)});}
       page.off('pageerror',listener);
       if(results.length%32===0) console.log('checked',results.length,'remaining',queue.length);
     }
-    await page.waitForLoadState('networkidle');
     await context.close();
   }
-  await Promise.all([worker(),worker(),worker()]);
+  await Promise.all([worker(desktopQueue,{width:1440,height:900}),worker(mobileQueue,{width:390,height:844})]);
   await browser.close();
   fs.writeFileSync(path.join(OUT,'axe-results.json'),JSON.stringify({base:BASE,timestamp:new Date().toISOString(),results,errors},null,2));
   const violations=results.filter(x=>x.violations.length);
