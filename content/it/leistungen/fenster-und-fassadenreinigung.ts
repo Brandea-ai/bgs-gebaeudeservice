@@ -110,6 +110,9 @@ export const fensterUndFassade: ServicePageContent = {
     {
       kind: 'table',
       id: 'aushang-mieterschaft',
+      printable: true,
+      printHeader: false,
+      updated: '2026-09-29',
       title: 'Avviso agli inquilini: modello da adattare',
       intro: 'Le finestre che si puliscono solo dall’interno richiedono l’accesso ad appartamenti o uffici. Riporti il testo sulla Sua carta intestata, sostituisca i dati tra parentesi quadre e affigga l’avviso all’ingresso.',
       columns: ['Parte', 'Testo dell’avviso'],

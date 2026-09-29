@@ -213,6 +213,9 @@ export const sonderreinigungen: ServicePageContent = {
     {
       kind: 'text',
       id: 'aushang',
+      printable: true,
+      printHeader: false,
+      updated: '2026-09-29',
       title: 'Vorlage: Aushang für die Mieterschaft',
       paragraphs: [
         'Titel: Grundreinigung im Treppenhaus',

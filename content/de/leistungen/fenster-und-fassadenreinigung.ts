@@ -115,6 +115,9 @@ export const fensterUndFassade: ServicePageContent = {
     {
       kind: 'table',
       id: 'aushang-mieterschaft',
+      printable: true,
+      printHeader: false,
+      updated: '2026-09-29',
       title: 'Aushang für die Mieterschaft: Vorlage zum Anpassen',
       intro: 'Fenster, die sich nur von innen reinigen lassen, brauchen Zutritt zu Wohnungen oder Büros. Übernehmen Sie den Text in Ihr Briefpapier, ersetzen Sie die Angaben in eckigen Klammern und hängen Sie ihn im Eingang aus.',
       columns: ['Baustein', 'Text für den Aushang'],
