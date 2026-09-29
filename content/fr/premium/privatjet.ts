@@ -211,7 +211,7 @@ export const privatjet: ServicePageContent = {
     {
       question: 'Combien coûte le nettoyage de la cabine d’un jet privé ?',
       answer:
-        'Il n’y a pas de forfait. L’effort dépend de la taille de la cabine et du nombre de sièges, des matériaux, de l’état après le vol et du temps d’escale. S’y ajoutent les interventions le soir ou le week-end et la question de savoir si nous venons une fois ou régulièrement. Vous recevez le montant par écrit, après que nous avons vu la cabine.',
+        'Il n’y a pas de forfait. L’effort dépend de la taille de la cabine et du nombre de sièges, des matériaux, de l’état après le vol et du temps d’escale. La fréquence des interventions influence aussi la charge de travail. Vous recevez le montant par écrit, après que nous avons vu la cabine.',
     },
     {
       question: 'Quels produits de nettoyage utilisez-vous à bord ?',

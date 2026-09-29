@@ -64,7 +64,7 @@ export const home: Seiten['home'] = {
     text: `We have been working in cleaning and caretaking since 2006. Today, over 50 employees look after more than 120 clients in the cantons of ${cantons}, in ${languages}.`,
     facts: [
       { key: 'register', label: 'Commercial register', value: `Canton of Lucerne, UID ${company.uid}` },
-      { key: 'persoenlich', label: 'Your enquiry', value: 'Handled personally by our managing director' },
+      { key: 'persoenlich', label: 'Your enquiry', value: 'A reply with the next steps' },
       { key: 'umwelt', label: 'Cleaning products', value: 'Environmentally friendly on request' },
     ],
   },
@@ -203,17 +203,6 @@ const legalNameText = company.legalName.replace(' - ', '\u00a0-\u2060\u00a0')
 export const about: Seiten['about'] = {
   h1: 'About us: cleaning and caretaking since 2006',
   lead: `We clean and look after residential buildings, offices, practices and halls in the cantons of ${cantons}.`,
-  promises: {
-    title: 'What you can rely on',
-    items: [
-      { key: 'persoenlich', title: 'Personal', text: 'Your enquiry is handled personally by our managing director.' },
-      { key: 'offerte', title: 'Quote after a site visit', text: 'We only quote a price once we have seen your property. The site visit and the quote are free of charge and non-binding.' },
-      { key: 'gebiet', title: 'Throughout the area', text: `All services in the cantons of ${cantons}, on the same terms everywhere.` },
-      { key: 'versichert', title: 'Insured', text: answers.versicherung.replace('Yes. ', '') },
-      { key: 'sprachen', title: 'Four languages', text: answers.sprachen },
-      { key: 'umwelt', title: 'Environmentally friendly products', text: 'On request, we clean with environmentally friendly products.' },
-    ],
-  },
   profile: {
     title: 'Company profile',
     items: [
@@ -268,7 +257,7 @@ export const about: Seiten['about'] = {
       {
         title: 'Direct contact',
         paragraphs: [
-          'Your enquiry is handled personally by our managing director.',
+          'We reply to your enquiry about your property and the next steps.',
           'If you combine several services as [facility services](/leistungen/facility-services), you have one contact person with us for all of them.',
         ],
       },
@@ -664,7 +653,7 @@ export const servicesOverview: Seiten['servicesOverview'] = {
 // Same keys and order as the German list (the six confirmed ways of working, E41)
 const promises: Seiten['premiumOverview']['promises'] = [
   { key: 'diskret', title: 'Discreet', text: 'We sign a non-disclosure agreement at your request.' },
-  { key: 'teams', title: 'Dedicated teams', text: 'Your house, boat or cabin is always looked after by the same team.' },
+  { key: 'teams', title: 'Dedicated teams', text: 'A dedicated team looks after your house, boat or cabin.' },
   { key: 'personal', title: 'Vetted staff', text: 'No one works for you whom we have not vetted.' },
   { key: 'schluessel', title: 'Keys and alarm', text: 'Handover, safekeeping and the alarm system follow rules you agree with us.' },
   { key: 'zeiten', title: 'At your convenience', text: 'Assignments also in the evening, at weekends or while you are travelling.' },
@@ -790,13 +779,13 @@ export const premiumOverview: Seiten['premiumOverview'] = {
     },
     {
       title: 'Your dedicated team',
-      text: 'The same team always comes to you, and it knows the rules you set before the first assignment.',
+      text: 'Your dedicated team knows the rules you set before the first assignment.',
     },
   ],
   faq: [
     {
       question: 'How does my enquiry stay confidential?',
-      answer: 'Our managing director deals with premium enquiries in person. If you would like a non-disclosure agreement, it is best to mention it in your first message.',
+      answer: 'If you would like a non-disclosure agreement, it is best to mention it in your first message. Start by describing only the property and the service you need.',
     },
     {
       question: 'Can estate agents or property managers enquire on behalf of owners?',

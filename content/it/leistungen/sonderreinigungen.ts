@@ -195,7 +195,7 @@ export const sonderreinigungen: ServicePageContent = {
         {
           title: 'Al collaudo',
           items: [
-            'Le fughe hanno di nuovo il loro colore originale: le confronti con un punto protetto, per esempio sotto un mobile',
+            'Le fughe sono prive di sporco rimovibile. Una pulizia non può sempre eliminare le alterazioni permanenti del colore',
             'Nessun bordo di calcare su rubinetteria, pareti della doccia e piastrelle murali',
             'Nessun velo in luce radente: illuminare il pavimento di piatto con una torcia',
             'Nessuna zona appiccicosa e nessun bordo bianco di residui di prodotto negli angoli',

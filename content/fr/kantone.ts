@@ -78,15 +78,15 @@ const luzern: KantonPage = {
   seo: {
     title: 'Entreprise de nettoyage à Lucerne',
     description:
-      'Entreprise de nettoyage à Lucerne, siège à Emmenbrücke : conciergerie, nettoyage d’entretien et de bureaux jusqu’à l’Entlebuch. Devis gratuit après une visite.',
+      'Entreprise de nettoyage à Lucerne, siège à Emmen : conciergerie, nettoyage d’entretien et de bureaux jusqu’à l’Entlebuch. Devis gratuit après une visite.',
   },
-  h1: 'Entreprise de nettoyage à Lucerne, siège à Emmenbrücke',
+  h1: 'Entreprise de nettoyage à Lucerne, siège à Emmen',
   lead: [
-    'Notre siège se trouve à Emmenbrücke, dans la commune d’Emmen, à la limite de la ville de Lucerne. Kriens, Horw et Ebikon sont juste à côté, Sursee et Hochdorf à peine plus loin.',
+    'Nos bureaux se trouvent à Emmenbrücke, dans la commune d’Emmen, à la limite de la ville de Lucerne. Kriens, Horw et Ebikon sont juste à côté, Sursee et Hochdorf à peine plus loin.',
     'Pour les gérances et les communautés de PPE, cela signifie des trajets courts, en particulier pour les immeubles entretenus chaque semaine.',
   ],
   facts: [
-    { label: 'Notre siège', value: `${company.address.city}, commune d’Emmen` },
+    { label: 'Notre adresse', value: `${company.address.city}, commune d’Emmen` },
     { label: 'Priorité', value: 'Immeubles locatifs, PPE, bureaux et cabinets' },
     { label: 'Jours de repos', value: 'Dix dans tout le canton, la Saint-Joseph selon la commune' },
     { label: 'Résidences secondaires', value: 'Flühli, Vitznau et Weggis au-delà de 20 %' },
@@ -322,7 +322,7 @@ const aargau: KantonPage = {
     },
     {
       title: 'Machines et installations',
-      text: 'Nettoyage de machines en travail posté, pendant les pauses, entre deux équipes ou lors d’arrêts planifiés. La coordination avec votre maintenance est expliquée sous [nettoyage industriel et de halles](/leistungen/industrie-und-hallenreinigung).',
+      text: 'Nous nettoyons les machines et installations lors d’arrêts autorisés, uniquement après leur mise hors tension et leur protection contre un redémarrage. La coordination avec votre maintenance est expliquée sous [nettoyage industriel et de halles](/leistungen/industrie-und-hallenreinigung).',
     },
     {
       title: 'Constructions neuves et transformations',

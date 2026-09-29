@@ -177,7 +177,7 @@ export const umzugsreinigung: ServicePageContent = {
       title: 'Kündigungstermine nach Kanton',
       intro: 'Wird ein unbefristeter Mietvertrag ordentlich gekündigt, beträgt die Frist für Wohnungen mindestens drei Monate, für Geschäftsräume mindestens sechs, jeweils auf den Termin im Mietvertrag. Nennt der Vertrag keinen, gilt der ortsübliche Termin und ohne Ortsgebrauch das Ende einer dreimonatigen Mietdauer (Art. 266a, 266c und 266d OR). Befristete Verträge enden ohne Kündigung mit Ablauf der vereinbarten Dauer (Art. 266 OR).',
       printable: true,
-      updated: '2026-09-28',
+      updated: '2026-09-29',
       columns: ['Kanton', 'Ortsübliche Termine für Wohnungen', 'Für die Planung'],
       rows: [
         ['Luzern', 'Auf den Seiten des Kantons nicht genannt. Auskunft gibt die Schlichtungsbehörde Miete und Pacht Luzern.', 'Laut Kanton wird in der Regel auf ein Monatsende gekündigt, Termine und Fristen stehen meist im Mietvertrag.'],
@@ -185,7 +185,7 @@ export const umzugsreinigung: ServicePageContent = {
         ['Obwalden', 'Ende März, Ende Juni, Ende September', 'Für eine Abgabe Ende Juni muss die Kündigung spätestens Ende März zugehen. Ab dann steht der Abgabetermin fest.'],
         ['Aargau und Nidwalden', 'Auf den Seiten der Kantone nicht genannt. Auskunft geben die Schlichtungsbehörden für Miete und Pacht, im Aargau die des Bezirks.', 'Den Kündigungstermin aus der Kündigung bei der Anfrage nennen.'],
       ],
-      note: 'Die Mieterschaft kann die Wohnung auch vor dem Kündigungstermin zurückgeben. Von ihren Pflichten ist sie dann nur befreit, wenn sie eine zumutbare Nachmieterschaft vorschlägt (Art. 264 OR). So kann die Abgabe auf jedes Datum fallen. Fragen Sie die Reinigung an, sobald ein Abgabetermin feststeht.',
+      note: 'Die Mieterschaft kann die Wohnung auch vor dem Kündigungstermin zurückgeben. Von ihren Pflichten ist sie dann nur befreit, wenn sie eine zumutbare, zahlungsfähige Nachmieterschaft vorschlägt, die den Vertrag zu gleichen Bedingungen übernehmen will (Art. 264 OR). So kann die Abgabe auf jedes Datum fallen. Fragen Sie die Reinigung an, sobald ein Abgabetermin feststeht.',
       sources: [
         { label: 'Obligationenrecht, Art. 264, 266, 266a, 266c und 266d (Fedlex, Stand 1. Januar 2026)', href: 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_266_c' },
         { label: 'Zivilprozessordnung, Art. 201 Abs. 2 (Fedlex, Stand 1. Juli 2026)', href: 'https://www.fedlex.admin.ch/eli/cc/2010/262/de#art_201' },

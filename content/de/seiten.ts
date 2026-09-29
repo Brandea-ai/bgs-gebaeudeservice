@@ -14,11 +14,8 @@ type Card = { title: string; text: string }
 /** Die sechs bestätigten Premium-Arbeitsweisen (E41), Reihenfolge wie auf /premium */
 type PromiseKey = 'diskret' | 'teams' | 'personal' | 'schluessel' | 'zeiten' | 'material'
 type LinkCard = Card & { path: PagePath }
-type AudienceKey = 'verwaltungen' | 'unternehmen' | 'privat' | 'premium'
-type PromiseItemKey = 'persoenlich' | 'offerte' | 'gebiet' | 'versichert' | 'sprachen' | 'umwelt'
 type BriefKey = 'rolle' | 'objekt' | 'ort' | 'groesse' | 'leistung' | 'rhythmus' | 'start' | 'zugang'
 // Schlüssel wählen Symbol und Bild in der Darstellung; die Übersetzungen tragen dieselben Schlüssel
-type Audience = Card & { key: AudienceKey; points: string[]; link: { path: PagePath; text: string } }
 type KeyedCard<K> = Card & { key: K }
 /** Werkzeug-Tabelle (E85), hier für die Firmenangaben zum Nachprüfen */
 type TableTool = Extract<Tool, { kind: 'table' }>
@@ -98,7 +95,7 @@ export const home = {
     // Vertrauensleiste und Zusagen in einem Baustein (Umbau 8), nur Belegtes (E18)
     facts: [
       { key: 'register', label: 'Handelsregister', value: `Kanton Luzern, UID ${company.uid}` },
-      { key: 'persoenlich', label: 'Ihre Anfrage', value: 'Bearbeitet der Geschäftsführer persönlich' },
+      { key: 'persoenlich', label: 'Ihre Anfrage', value: 'Rückmeldung mit den nächsten Schritten' },
       { key: 'umwelt', label: 'Reinigungsmittel', value: 'Auf Wunsch umweltfreundlich' },
     ] satisfies { key: HomeFactKey; label: string; value: string }[] as { key: HomeFactKey; label: string; value: string }[],
   },
@@ -258,19 +255,6 @@ export const about = {
   h1: 'Über uns: Reinigung und Hauswartung seit 2006',
   // Gebiet mit den fünf Kantonen (E30). Marke und eingetragene Firma nennt erst «Firmenangaben zum Nachprüfen» (check.intro)
   lead: `Wir reinigen und betreuen Liegenschaften, Büros, Praxen und Hallen in den Kantonen ${cantonList}.`,
-  // Zusagen mit Schlüssel für das Symbol (E18, M47). Nur die Startseite zeigt sie (06-zusagen.tsx).
-  promises: {
-    title: 'Worauf Sie sich verlassen können',
-    items: [
-      { key: 'persoenlich', title: 'Persönlich', text: 'Ihre Anfrage bearbeitet der Geschäftsführer persönlich.' },
-      { key: 'offerte', title: 'Offerte nach Besichtigung', text: 'Einen Preis nennen wir erst, wenn wir Ihr Objekt gesehen haben. Besichtigung und Offerte sind kostenlos und unverbindlich.' },
-      { key: 'gebiet', title: 'Im ganzen Gebiet', text: `Alle Leistungen in den Kantonen ${cantonList}, überall zu denselben Bedingungen.` },
-      { key: 'versichert', title: 'Versichert', text: answers.versicherung.replace('Ja. ', '') },
-      { key: 'sprachen', title: 'Vier Sprachen', text: answers.sprachen },
-      { key: 'umwelt', title: 'Umweltfreundliche Mittel', text: 'Auf Wunsch reinigen wir mit umweltfreundlichen Mitteln.' },
-    ] satisfies KeyedCard<PromiseItemKey>[] as KeyedCard<PromiseItemKey>[],
-  },
-  // Steckbrief statt Kennzahlen-Kacheln und Zeitleiste (Audit visuell: «2006» sechsmal)
   profile: {
     title: 'Steckbrief',
     items: [
@@ -331,9 +315,7 @@ export const about = {
       {
         title: 'Kurze Wege',
         paragraphs: [
-          // Bestandsformulierung (R5d); ganz zutreffend erst nach der Umstellung der Adresse (E15, E31, M58).
-          // Die Antwortzeit nennt der Kontaktbereich unten schon zweimal.
-          'Ihre Anfrage bearbeitet der Geschäftsführer persönlich.',
+          'Auf Ihre Anfrage erhalten Sie eine Rückmeldung zu Ihrem Objekt und den nächsten Schritten.',
           'Beziehen Sie mehrere Leistungen als [Facility Services](/leistungen/facility-services), haben Sie dafür eine Ansprechperson bei uns.',
         ],
       },
@@ -810,7 +792,7 @@ type PremiumOffer = LinkCard & { name: string; link: string; detail: string; not
 // eigener Ablauf, Kasten zur Geheimhaltung. Nur bestätigte Arbeitsweisen (E40, E41),
 // ohne die zurückgestellten Zusagen (E52), keine Zeitpunkte für die Vereinbarung.
 // Jede Arbeitsweise hat eine Heimat auf der Seite und steht sonst höchstens noch
-// einmal (Befund PU-2): Geschäftsführer in Frage 1, Geheimhaltung auf Wunsch in
+// einmal (Befund PU-2): Geheimhaltung auf Wunsch in
 // der Zusage und in Frage 1, festes Team in Zusage und letztem Ablaufschritt.
 export const premiumOverview = {
   line: premiumLine,
@@ -923,7 +905,7 @@ export const premiumOverview = {
   promisesTitle: 'Was bei jedem Premium-Auftrag gilt',
   promises: [
     { key: 'diskret', title: 'Diskret', text: 'Eine Geheimhaltungsvereinbarung unterzeichnen wir auf Ihren Wunsch.' },
-    { key: 'teams', title: 'Feste Teams', text: 'Ihr Haus, Ihr Boot oder Ihre Kabine betreut immer dasselbe Team.' },
+    { key: 'teams', title: 'Feste Teams', text: 'Ein fest zugeteiltes Team betreut Ihr Haus, Ihr Boot oder Ihre Kabine.' },
     { key: 'personal', title: 'Überprüftes Personal', text: 'Bei Ihnen arbeitet niemand, den wir nicht überprüft haben.' },
     { key: 'schluessel', title: 'Schlüssel und Alarm', text: 'Übergabe, Aufbewahrung und Alarmanlage nach Regeln, die Sie mit uns vereinbaren.' },
     { key: 'zeiten', title: 'Zu Ihren Zeiten', text: 'Einsätze auch abends, am Wochenende oder während Sie verreist sind.' },
@@ -947,7 +929,7 @@ export const premiumOverview = {
     },
     {
       title: 'Ihr festes Team',
-      text: 'Zu Ihnen kommt immer dasselbe Team, und es kennt die Regeln, die Sie vor dem ersten Einsatz festgelegt haben.',
+      text: 'Ihr festes Team kennt die Regeln, die Sie vor dem ersten Einsatz festgelegt haben.',
     },
   ] satisfies Step[] as Step[],
   // Baustein 5.1 mit Kostenfaktoren; ohne Versicherung und Gebiet (Standardfragen). Zweitwohnungen
@@ -955,7 +937,7 @@ export const premiumOverview = {
   faq: [
     {
       question: 'Wie bleibt meine Anfrage vertraulich?',
-      answer: 'Um Premium-Anfragen kümmert sich der Geschäftsführer selbst. Wünschen Sie eine Geheimhaltungsvereinbarung, erwähnen Sie das am besten schon in Ihrer ersten Nachricht.',
+      answer: 'Wünschen Sie eine Geheimhaltungsvereinbarung, erwähnen Sie das am besten schon in Ihrer ersten Nachricht. Beschreiben Sie zunächst nur, um welches Objekt und welche Leistung es geht.',
     },
     {
       question: 'Können Makler oder Verwaltungen für Eigentümer anfragen?',
@@ -982,7 +964,7 @@ export const premiumOverview = {
     title: 'Wo wir für Sie da sind',
     text: `Am Vierwaldstättersee von Luzern und Meggen bis Weggis, Vitznau, Hergiswil und Ennetbürgen, am Zuger- und Ägerisee von Zug und Walchwil bis Oberägeri, in Engelberg und in den ganzen Kantonen ${cantonList}.`,
   },
-  // Ohne Geschäftsführer und ohne «kostenlos»: stehen in Frage 1 und in «So geht es weiter» (Befund PU-2)
+  // Die Kostenfreiheit nennt bereits «So geht es weiter» (Befund PU-2).
   cta: {
     title: 'Diskret anfragen',
     text: 'Ein Anruf oder ein paar Zeilen über das Formular genügen für den Anfang.',

@@ -211,7 +211,7 @@ export const privatjet: ServicePageContent = {
     {
       question: 'Quanto costa la pulizia della cabina di un jet privato?',
       answer:
-        'Non esiste un prezzo forfettario. L’impegno dipende dalla grandezza della cabina e dal numero di sedili, dai materiali, dallo stato dopo il volo e dal tempo di sosta. Si aggiungono gli interventi di sera o nel fine settimana e se veniamo una volta o regolarmente. L’importo Le arriva per iscritto, dopo che abbiamo visto la cabina.',
+        'Non esiste un prezzo forfettario. L’impegno dipende dalla grandezza della cabina e dal numero di sedili, dai materiali, dallo stato dopo il volo e dal tempo di sosta. Anche la frequenza degli interventi influisce sull’impegno. L’importo Le arriva per iscritto, dopo che abbiamo visto la cabina.',
     },
     {
       question: 'Quali prodotti di pulizia usate a bordo?',

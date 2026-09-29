@@ -195,7 +195,7 @@ export const sonderreinigungen: ServicePageContent = {
         {
           title: 'At the final check',
           items: [
-            'The grout has its original colour again: compare it with a protected spot, for example under a piece of furniture',
+            'Grout is free from removable dirt. Cleaning cannot always remove permanent discolouration',
             'No limescale edges on taps, shower screens and wall tiles',
             'No haze under raking light: shine a torch flat across the floor',
             'No sticky patches and no white rims of product residue in corners',

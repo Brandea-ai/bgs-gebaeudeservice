@@ -44,7 +44,7 @@ export const yacht: ServicePageContent = {
       title: 'On the lake, many things are different',
       paragraphs: [
         'Lake Lucerne and Lake Zug have none of the salt that attacks fittings at sea. Instead, the shore brings other things on board: yellow pollen from conifers in spring, plus leaves, cobwebs and bird droppings, above all at moorings under trees. In the closed saloon the damp lingers, and cushions and upholstery develop mildew spots.',
-        'And there is water all around. Which products are allowed at the jetty is set by law and by the harbour rules; the overview further down lists the rules with their sources. We use environmentally friendly products on request, and even those belong on deck only sparingly.',
+        'And there is water all around. Which products are allowed at the jetty is set by law and by the harbour rules; the overview further down lists the rules with their sources. We use environmentally friendly products on request. These must not pollute the water either.',
       ],
     },
   ],
@@ -126,7 +126,7 @@ export const yacht: ServicePageContent = {
         [
           'Waters Protection Act, Art. 6',
           'It is prohibited to introduce into a body of water, directly or indirectly, any substances which may pollute it.',
-          'Any product used on deck can run into the lake with the rinsing water. So use as little as possible, and only what suits the material.',
+          'Products that can pollute water and wash water containing them must not enter the lake. Collect it and dispose of it properly on land.',
         ],
         [
           'Inland Navigation Ordinance, Art. 10',
@@ -151,7 +151,7 @@ export const yacht: ServicePageContent = {
       ],
       sources: [sources.gschg, sources.bsv, sources.hafenLuzern, sources.hafenKehrsiten, sources.smrv, sources.smrp, sources.zug],
       printable: true,
-      updated: '2026-09-28',
+      updated: '2026-09-29',
     },
     {
       kind: 'checklist',

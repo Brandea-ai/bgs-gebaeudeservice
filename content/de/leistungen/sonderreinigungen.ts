@@ -197,7 +197,7 @@ export const sonderreinigungen: ServicePageContent = {
         {
           title: 'Bei der Abnahme',
           items: [
-            'Die Fugen haben wieder ihre ursprüngliche Farbe: Vergleichen Sie mit einer geschützten Stelle, etwa unter einem Möbel',
+            'Fugen sind frei von lösbaren Schmutzresten. Bleibende Verfärbungen lassen sich durch eine Reinigung nicht immer entfernen',
             'Kein Kalkrand an Armaturen, Duschtrennwänden und Wandplatten',
             'Kein Schleier im Streiflicht: mit einer Taschenlampe flach über den Boden leuchten',
             'Keine klebrigen Stellen und keine weissen Ränder von Mittelresten in Ecken',

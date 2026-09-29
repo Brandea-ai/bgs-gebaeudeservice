@@ -65,7 +65,7 @@ export const home: Seiten['home'] = {
     text: `Depuis 2006, nous sommes actifs dans le nettoyage et la conciergerie. Aujourd’hui, plus de 50 collaboratrices et collaborateurs s’occupent de plus de 120 clients dans les cantons de ${cantonList}, en ${languageList}.`,
     facts: [
       { key: 'register', label: 'Registre du commerce', value: `Canton de Lucerne, IDE ${company.uid}` },
-      { key: 'persoenlich', label: 'Votre demande', value: 'Traitée personnellement par notre directeur' },
+      { key: 'persoenlich', label: 'Votre demande', value: 'Une réponse avec les prochaines étapes' },
       { key: 'umwelt', label: 'Produits de nettoyage', value: 'Respectueux de l’environnement sur demande' },
     ],
   },
@@ -204,17 +204,6 @@ const legalNameText = company.legalName.replace(' - ', '\u00a0-\u2060\u00a0')
 export const about = {
   h1: 'À propos : nettoyage et conciergerie d’immeubles depuis 2006',
   lead: `Nous nettoyons et entretenons des immeubles, des bureaux, des cabinets et des halles dans les cantons de ${cantonList}.`,
-  promises: {
-    title: 'Ce sur quoi vous pouvez compter',
-    items: [
-      { key: 'persoenlich' as const, title: 'Un suivi personnel', text: 'Notre directeur traite personnellement votre demande.' },
-      { key: 'offerte' as const, title: 'Un devis après visite', text: 'Nous n’indiquons un prix qu’après avoir vu votre bien. La visite et le devis sont gratuits et sans engagement.' },
-      { key: 'gebiet' as const, title: 'Dans toute la zone', text: `Toutes nos prestations dans les cantons de ${cantonList}, partout aux mêmes conditions.` },
-      { key: 'versichert' as const, title: 'Assurés', text: answers.versicherung.replace('Oui. ', '') },
-      { key: 'sprachen' as const, title: 'Quatre langues', text: answers.sprachen },
-      { key: 'umwelt' as const, title: 'Produits respectueux de l’environnement', text: 'Sur demande, nous nettoyons avec des produits respectueux de l’environnement.' },
-    ],
-  },
   profile: {
     title: 'Profil de l’entreprise',
     items: [
@@ -270,7 +259,7 @@ export const about = {
       {
         title: 'Des échanges directs',
         paragraphs: [
-          'Notre directeur traite personnellement votre demande.',
+          'Nous répondons à votre demande concernant votre bien et les prochaines étapes.',
           'Si vous regroupez plusieurs prestations sous forme de [facility services](/leistungen/facility-services), vous avez chez nous un seul interlocuteur pour l’ensemble.',
         ],
       },
@@ -666,7 +655,7 @@ export const servicesOverview = {
 // Mêmes clés et même ordre que la liste allemande (les six façons de travailler confirmées, E41)
 const promises: Seiten['premiumOverview']['promises'] = [
   { key: 'diskret', title: 'Discrétion', text: 'Nous signons un accord de confidentialité si vous le souhaitez.' },
-  { key: 'teams', title: 'Des équipes fixes', text: 'La même équipe s’occupe toujours de votre maison, de votre bateau ou de votre cabine.' },
+  { key: 'teams', title: 'Des équipes fixes', text: 'Une équipe fixe s’occupe de votre maison, de votre bateau ou de votre cabine.' },
   { key: 'personal', title: 'Du personnel vérifié', text: 'Personne ne travaille chez vous sans avoir été vérifié par nos soins.' },
   { key: 'schluessel', title: 'Clés et alarme', text: 'Remise, conservation et système d’alarme selon des règles convenues avec vous.' },
   { key: 'zeiten', title: 'À vos horaires', text: 'Des interventions aussi le soir, le week-end ou pendant vos voyages.' },
@@ -792,13 +781,13 @@ export const premiumOverview: Seiten['premiumOverview'] = {
     },
     {
       title: 'Votre équipe fixe',
-      text: 'La même équipe vient toujours chez vous, et elle connaît les règles fixées avant la première intervention.',
+      text: 'Votre équipe fixe connaît les règles fixées avant la première intervention.',
     },
   ],
   faq: [
     {
       question: 'Comment ma demande reste-t-elle confidentielle ?',
-      answer: 'Notre directeur s’occupe lui-même des demandes premium. Si vous souhaitez un accord de confidentialité, mentionnez-le de préférence dès votre premier message.',
+      answer: 'Si vous souhaitez un accord de confidentialité, mentionnez-le de préférence dès votre premier message. Décrivez d’abord uniquement le bien et la prestation souhaitée.',
     },
     {
       question: 'Un courtier ou une gérance peut-il faire la demande pour le propriétaire ?',

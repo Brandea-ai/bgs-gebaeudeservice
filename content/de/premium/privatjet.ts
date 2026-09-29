@@ -215,7 +215,7 @@ export const privatjet: ServicePageContent = {
     {
       question: 'Was kostet die Reinigung einer Privatjet-Kabine?',
       answer:
-        'Einen Pauschalpreis gibt es nicht. Den Aufwand bestimmen die Grösse der Kabine und die Zahl der Sitze, die Materialien, der Zustand nach dem Flug und die Bodenzeit. Dazu kommen Einsätze abends oder am Wochenende und die Frage, ob wir einmal oder regelmässig kommen. Den Betrag erhalten Sie schriftlich, nachdem wir die Kabine gesehen haben.',
+        'Einen Pauschalpreis gibt es nicht. Den Aufwand bestimmen die Grösse der Kabine und die Zahl der Sitze, die Materialien, der Zustand nach dem Flug und die Bodenzeit. Auch die Häufigkeit der Einsätze beeinflusst den Aufwand. Den Betrag erhalten Sie schriftlich, nachdem wir die Kabine gesehen haben.',
     },
     {
       question: 'Welche Reinigungsmittel verwenden Sie an Bord?',

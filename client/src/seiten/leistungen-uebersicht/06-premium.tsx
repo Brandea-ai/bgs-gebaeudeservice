@@ -77,7 +77,7 @@ export default function UebersichtPremium(props: UebersichtProps) {
                   </span>
                   <span className="mt-3 block font-medium leading-relaxed text-white/90">{offer.text}</span>
                   <span className="mt-auto inline-flex items-center gap-2 pt-6 font-semibold text-brass">
-                    {ui.toService}
+                    {offer.link}
                     <ArrowRight weight="duotone" className="size-4 shrink-0" aria-hidden="true" />
                   </span>
                 </span>

@@ -112,7 +112,7 @@ export const facilityServices: ServicePageContent = {
           items: [
             'Rassembler les contrats de nettoyage, de conciergerie, d’abords et de vitres',
             'Noter pour chaque contrat le délai, la prochaine échéance et une éventuelle reconduction tacite',
-            'Concierge employé : délai de congé d’un mois pendant la première année de service, de deux mois de la deuxième à la neuvième, de trois mois ensuite, chaque fois pour la fin d’un mois. D’autres délais ne valent que par accord écrit, contrat-type ou convention collective (art. 335c CO). Les périodes de protection, par exemple en cas de maladie ou d’accident, peuvent prolonger le délai (art. 336c CO)',
+            'Concierge employé : après le temps d’essai, délai de congé d’un mois pendant la première année de service, de deux mois de la deuxième à la neuvième, de trois mois ensuite, chaque fois pour la fin d’un mois. D’autres délais ne valent que par accord écrit, contrat-type ou convention collective (art. 335c CO). Les périodes de protection, par exemple en cas de maladie ou d’accident, peuvent prolonger le délai (art. 336c CO)',
           ],
         },
         {
@@ -153,7 +153,7 @@ export const facilityServices: ServicePageContent = {
         { label: 'Ordonnance sur la prévention des accidents (OPA), art. 9 (coopération de plusieurs entreprises)', href: `${opa}#art_9` },
       ],
       printable: true,
-      updated: '2026-09-28',
+      updated: '2026-09-29',
     },
   ],
   steps: [

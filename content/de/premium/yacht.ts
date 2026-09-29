@@ -50,7 +50,7 @@ export const yacht: ServicePageContent = {
       title: 'Am See ist vieles anders',
       paragraphs: [
         'Auf dem Vierwaldstättersee und dem Zugersee fehlt das Salz, das am Meer die Beschläge angreift. Dafür bringt das Ufer anderes an Bord: im Frühling den gelben Blütenstaub der Nadelbäume, dazu Laub, Spinnweben und Vogelkot, vor allem an Liegeplätzen unter Bäumen. Im geschlossenen Salon hält sich die Feuchtigkeit, Polster und Kissen bekommen Stockflecken.',
-        'Dazu kommt das Wasser rundum. Welche Mittel am Steg erlaubt sind, regeln Gesetz und Hafenordnung, die Übersicht weiter unten nennt die Regeln mit Quelle. Umweltfreundliche Mittel setzen wir auf Wunsch ein, und auch sie gehören nur sparsam aufs Deck.',
+        'Dazu kommt das Wasser rundum. Welche Mittel am Steg erlaubt sind, regeln Gesetz und Hafenordnung, die Übersicht weiter unten nennt die Regeln mit Quelle. Umweltfreundliche Mittel setzen wir auf Wunsch ein. Auch sie dürfen das Gewässer nicht verunreinigen.',
       ],
     },
   ],
@@ -132,7 +132,7 @@ export const yacht: ServicePageContent = {
         [
           'Gewässerschutzgesetz, Art. 6',
           'Verboten ist, Stoffe, die Wasser verunreinigen können, mittelbar oder unmittelbar in ein Gewässer einzubringen.',
-          'Jedes Mittel an Deck kann mit dem Spülwasser in den See laufen. Deshalb so wenig wie möglich davon, und nur, was zum Material passt.',
+          'Wassergefährdende Mittel und damit belastetes Waschwasser dürfen nicht in den See gelangen. Auffangen und fachgerecht an Land entsorgen.',
         ],
         [
           'Binnenschifffahrtsverordnung, Art. 10',
@@ -157,7 +157,7 @@ export const yacht: ServicePageContent = {
       ],
       sources: [quellen.gschg, quellen.bsv, quellen.hafenLuzern, quellen.hafenKehrsiten, quellen.smrv, quellen.smrp, quellen.zug],
       printable: true,
-      updated: '2026-09-28',
+      updated: '2026-09-29',
     },
     {
       kind: 'checklist',

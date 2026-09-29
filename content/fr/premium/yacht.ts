@@ -44,7 +44,7 @@ export const yacht: ServicePageContent = {
       title: 'Sur un lac, beaucoup de choses sont différentes',
       paragraphs: [
         'Sur les lacs des Quatre-Cantons et de Zoug, il n’y a pas le sel qui attaque les ferrures en mer. En revanche, la rive apporte autre chose à bord : au printemps, le pollen jaune des conifères, puis les feuilles, les toiles d’araignée et les fientes d’oiseaux, surtout aux places d’amarrage sous les arbres. Dans le carré fermé, l’humidité persiste et les coussins se couvrent de taches de moisissure.',
-        'Et l’eau est partout autour. Les produits autorisés au ponton sont fixés par la loi et par le règlement du port ; l’aperçu plus bas cite les règles avec leurs sources. Sur demande, nous utilisons des produits respectueux de l’environnement, et eux aussi ne vont sur le pont qu’avec parcimonie.',
+        'Et l’eau est partout autour. Les produits autorisés au ponton sont fixés par la loi et par le règlement du port ; l’aperçu plus bas cite les règles avec leurs sources. Sur demande, nous utilisons des produits respectueux de l’environnement. Eux non plus ne doivent pas polluer l’eau.',
       ],
     },
   ],
@@ -126,7 +126,7 @@ export const yacht: ServicePageContent = {
         [
           'Loi sur la protection des eaux, art. 6',
           'Il est interdit d’introduire directement ou indirectement dans une eau des substances de nature à la polluer.',
-          'Tout produit utilisé sur le pont peut s’écouler dans le lac avec l’eau de rinçage. Donc le moins possible, et seulement ce qui convient au matériau.',
+          'Les produits susceptibles de polluer l’eau et l’eau de lavage qui en contient ne doivent pas atteindre le lac. Les recueillir et les éliminer correctement à terre.',
         ],
         [
           'Ordonnance sur la navigation intérieure, art. 10',
@@ -151,7 +151,7 @@ export const yacht: ServicePageContent = {
       ],
       sources: [sources.gschg, sources.bsv, sources.hafenLuzern, sources.hafenKehrsiten, sources.smrv, sources.smrp, sources.zug],
       printable: true,
-      updated: '2026-09-28',
+      updated: '2026-09-29',
     },
     {
       kind: 'checklist',

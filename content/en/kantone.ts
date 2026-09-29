@@ -78,15 +78,15 @@ const luzern: KantonPage = {
   seo: {
     title: 'Cleaning company in Lucerne with caretaking',
     description:
-      'Cleaning company in Lucerne based in Emmenbrücke: caretaking, maintenance and office cleaning from the city to the Entlebuch. Free quote after a site visit.',
+      'Cleaning company in Lucerne based in Emmen: caretaking, maintenance and office cleaning from the city to the Entlebuch. Free quote after a site visit.',
   },
-  h1: 'Cleaning company in Lucerne, based in Emmenbrücke',
+  h1: 'Cleaning company in Lucerne, based in Emmen',
   lead: [
-    'Our head office is in Emmenbrücke, in the municipality of Emmen on the city boundary of Lucerne. Kriens, Horw and Ebikon are right next door, Sursee and Hochdorf only a little further.',
+    'Our office is in Emmenbrücke, in the municipality of Emmen on the city boundary of Lucerne. Kriens, Horw and Ebikon are right next door, Sursee and Hochdorf only a little further.',
     'For property managers and communities of condominium owners, that means short distances, especially for buildings that are looked after every week.',
   ],
   facts: [
-    { label: 'Our head office', value: `${company.address.city}, municipality of Emmen` },
+    { label: 'Our location', value: `${company.address.city}, municipality of Emmen` },
     { label: 'Focus', value: 'Apartment buildings, condominiums, offices and practices' },
     { label: 'Public rest days', value: 'Ten across the canton, St Joseph’s Day depending on the municipality' },
     { label: 'Many second homes', value: 'Flühli, Vitznau and Weggis' },
@@ -322,7 +322,7 @@ const aargau: KantonPage = {
     },
     {
       title: 'Machines and equipment',
-      text: 'Cleaning of machines in shift operations, during breaks, between shifts or during planned shutdowns. How this fits in with your maintenance team is explained under [industrial and warehouse cleaning](/leistungen/industrie-und-hallenreinigung).',
+      text: 'We clean machines and equipment during approved shutdowns, only after they have been switched off and secured against restarting. How this fits in with your maintenance team is explained under [industrial and warehouse cleaning](/leistungen/industrie-und-hallenreinigung).',
     },
     {
       title: 'New builds and conversions',
