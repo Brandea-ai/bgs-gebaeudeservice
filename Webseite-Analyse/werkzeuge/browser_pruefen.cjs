@@ -32,6 +32,8 @@ const BASE = (process.argv[2] || 'http://localhost:3000').replace(/\/$/, '');
   await p.goto(BASE + '/', { waitUntil: 'networkidle' });
   await p.getByRole('button', { name: 'Leistungen', exact: true }).click();
   const menu = await p.locator('#leistungen-menu').isVisible();
+  // Die Menübilder vor dem Schliessen ausladen (lokaler Next15-Bug96538).
+  await p.waitForLoadState('networkidle');
   await b.close();
   console.log('Seiten:', paths.length, '| CSP-Verstösse:', viol.length, '| Konsolenfehler:', errs.length, '| Karte:', karte, '| Menü:', menu);
   for (const x of viol.concat(errs)) console.log('  ', x);
