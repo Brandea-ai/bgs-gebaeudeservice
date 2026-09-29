@@ -19,6 +19,8 @@ export default function WerkzeugTabelle({
   lang,
   premium,
   link,
+  form = false,
+  formLabels,
 }: {
   title: string;
   /** Anfang des Namens für den Scrollbereich, etwa «Tabelle: » (ui.tool.table) */
@@ -28,20 +30,55 @@ export default function WerkzeugTabelle({
   lang: Locale;
   premium: boolean;
   link?: string;
+  form?: boolean;
+  formLabels: { property: string; date: string; name: string };
 }) {
-  const head = premium ? "border-anthracite text-anthracite" : "border-ink text-ink";
+  const head = premium
+    ? "border-anthracite text-anthracite"
+    : "border-ink text-ink";
   const line = premium ? "border-brass-dark/20" : "border-line";
   const rowHead = premium ? "text-anthracite" : "text-ink";
   return (
     <>
+      {form && (
+        <dl className="tool-form-head">
+          {[formLabels.property, formLabels.date, formLabels.name].map(
+            label => (
+              <div key={label}>
+                <dt>{label}</dt>
+                <dd aria-hidden="true">&nbsp;</dd>
+              </div>
+            )
+          )}
+        </dl>
+      )}
       <div
         className="tool-table-wrap mt-7 hidden overflow-x-auto md:block"
         role="region"
         aria-label={`${regionLabel}${title}`}
         tabIndex={0}
       >
-        <table className="w-full min-w-[36rem] border-collapse text-left">
+        <table
+          className={`w-full min-w-[36rem] border-collapse text-left ${form ? "tool-form-table" : ""}`}
+        >
           <caption className="sr-only">{title}</caption>
+          {form && (
+            <colgroup>
+              {columns.map((column, c) => (
+                <col
+                  key={column}
+                  style={{
+                    width:
+                      c === 0
+                        ? "50%"
+                        : c === columns.length - 1
+                          ? "35%"
+                          : undefined,
+                  }}
+                />
+              ))}
+            </colgroup>
+          )}
           <thead>
             <tr>
               {columns.map(column => (
@@ -68,7 +105,10 @@ export default function WerkzeugTabelle({
                       <RichText text={cell} lang={lang} linkClassName={link} />
                     </th>
                   ) : (
-                    <td key={c} className="py-4 pr-6 align-top font-medium leading-relaxed text-ink-600 last:pr-0">
+                    <td
+                      key={c}
+                      className="py-4 pr-6 align-top font-medium leading-relaxed text-ink-600 last:pr-0"
+                    >
                       <RichText text={cell} lang={lang} linkClassName={link} />
                     </td>
                   )
@@ -79,29 +119,79 @@ export default function WerkzeugTabelle({
         </table>
       </div>
 
-      <ul className="tool-table-cards mt-6 grid gap-3 md:hidden">
-        {rows.map((row, r) => (
-          <li
-            key={`${r}-${row[0]}`}
-            className={`rounded-[3px] border p-4 ${premium ? "border-brass-dark/20 bg-ivory" : "border-line bg-stone"}`}
-          >
-            <p className={`text-[0.8125rem] font-semibold ${premium ? "text-ink-600" : "text-mute"}`}>{columns[0]}</p>
-            <p className={`mt-0.5 font-display text-[1.0625rem] font-bold leading-snug ${rowHead}`}>
-              <RichText text={row[0]} lang={lang} linkClassName={link} />
-            </p>
-            <dl className={`mt-3 grid gap-3 border-t pt-3 ${line}`}>
-              {row.slice(1).map((cell, c) => (
-                <div key={c}>
-                  <dt className={`text-[0.8125rem] font-semibold ${premium ? "text-ink-600" : "text-mute"}`}>{columns[c + 1]}</dt>
-                  <dd className="mt-0.5 font-medium leading-relaxed text-ink-600">
-                    <RichText text={cell} lang={lang} linkClassName={link} />
-                  </dd>
+      {form ? (
+        <div className="tool-table-cards mt-6 md:hidden">
+          <p className="mb-3 text-sm font-semibold text-ink-600">
+            {columns.slice(1).join(" · ")}
+          </p>
+          <ul className={`border-t ${line}`}>
+            {rows.map((row, r) => (
+              <li
+                key={`${r}-${row[0]}`}
+                className={`flex items-start gap-3 border-b py-3 ${line}`}
+              >
+                <span
+                  className={`tool-box mt-1 size-[1.125rem] shrink-0 rounded-[3px] border-2 ${premium ? "border-brass-dark/60" : "border-ink/45"}`}
+                  aria-hidden="true"
+                />
+                <div className="min-w-0 font-medium leading-relaxed text-ink-600">
+                  <RichText text={row[0]} lang={lang} linkClassName={link} />
+                  {row.slice(1).map(
+                    (cell, c) =>
+                      cell.trim() &&
+                      cell !== "☐" && (
+                        <p key={c} className="mt-1 text-sm">
+                          <span className="font-semibold">
+                            {columns[c + 1]}:{" "}
+                          </span>
+                          <RichText
+                            text={cell}
+                            lang={lang}
+                            linkClassName={link}
+                          />
+                        </p>
+                      )
+                  )}
                 </div>
-              ))}
-            </dl>
-          </li>
-        ))}
-      </ul>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : (
+        <ul className="tool-table-cards mt-6 grid gap-3 md:hidden">
+          {rows.map((row, r) => (
+            <li
+              key={`${r}-${row[0]}`}
+              className={`rounded-[3px] border p-4 ${premium ? "border-brass-dark/20 bg-ivory" : "border-line bg-stone"}`}
+            >
+              <p
+                className={`text-[0.8125rem] font-semibold ${premium ? "text-ink-600" : "text-mute"}`}
+              >
+                {columns[0]}
+              </p>
+              <p
+                className={`mt-0.5 font-display text-[1.0625rem] font-bold leading-snug ${rowHead}`}
+              >
+                <RichText text={row[0]} lang={lang} linkClassName={link} />
+              </p>
+              <dl className={`mt-3 grid gap-3 border-t pt-3 ${line}`}>
+                {row.slice(1).map((cell, c) => (
+                  <div key={c}>
+                    <dt
+                      className={`text-[0.8125rem] font-semibold ${premium ? "text-ink-600" : "text-mute"}`}
+                    >
+                      {columns[c + 1]}
+                    </dt>
+                    <dd className="mt-0.5 font-medium leading-relaxed text-ink-600">
+                      <RichText text={cell} lang={lang} linkClassName={link} />
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </li>
+          ))}
+        </ul>
+      )}
     </>
   );
 }

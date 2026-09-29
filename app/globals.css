@@ -67,7 +67,7 @@
 
   html {
     /* Sprungziele landen unter Kopfzeile und Abschnittsleiste (WCAG 2.4.11) */
-    scroll-padding-top: calc(var(--header-offset) + var(--subnav-h, 0px) + 1.5rem);
+    scroll-padding-top: calc(var(--header-room) + var(--subnav-h, 0px) + 1.5rem);
     -webkit-text-size-adjust: 100%;
   }
 
@@ -303,19 +303,17 @@
     transform: translateY(1px);
   }
 
-  /* Abschnittsleiste (SectionNav): Mobil statisch und seitlich scrollbar, ab lg klebend unter der Kopfzeile */
+  /* Abschnittsleiste (SectionNav): auf allen Breiten unter der Kopfzeile erreichbar */
   .subnav {
     scrollbar-width: none;
   }
   .subnav::-webkit-scrollbar {
     display: none;
   }
-  @media (min-width: 1024px) {
-    .subnav--sticky {
-      position: sticky;
-      top: var(--header-offset);
-      z-index: 30;
-    }
+  .subnav--sticky {
+    position: sticky;
+    top: var(--header-offset);
+    z-index: 30;
   }
 
   /* Bildfläche: Zoom nur, wenn die Karte ein Link ist, und nur mit Maus */
@@ -434,7 +432,7 @@
     }
     .process--scene:not([data-fit='0']) .process-track {
       display: block;
-      height: calc(var(--n) * 22svh);
+      height: calc((var(--n) - 1) * 12svh);
     }
     /* Bühne nie höher als der freie Bildschirm, Seitenverhältnis bleibt */
     .process--area .process-stage {
@@ -1112,23 +1110,143 @@ html[data-nav="hidden"] #mobil-cta:not(:focus-within) {
  * Werkzeug, darüber Seitentitel, Firma und Stand; Kopfzeile, Footer,
  * Formular und alle übrigen Abschnitte fallen weg.
  */
-.tool-print-head {
+.figure-cell {
+  container-type: inline-size;
+}
+.figure-value {
+  font-size: clamp(1.125rem, 13cqi, 2rem);
+  overflow-wrap: normal;
+}
+.tool {
+  /* Zusätzlicher Abstand zum festen Leseanfang aus scroll-padding-top. */
+  scroll-margin-top: 1rem;
+}
+.tool-print-head,
+.tool-form-head {
   display: none;
 }
+@page {
+  size: A4;
+  margin: 10mm;
+}
 @media print {
+  html {
+    font-size: 16px;
+  }
+  .tool {
+    font-size: 10.5pt;
+    line-height: 1.3;
+    color: #000 !important;
+  }
+  .tool :is(p, li, th, td, span) {
+    font-size: inherit;
+    line-height: 1.25;
+    color: #000 !important;
+  }
+  .tool h2 {
+    font-size: 16pt !important;
+    line-height: 1.15 !important;
+    color: #000 !important;
+  }
+  .tool h3 {
+    font-size: 11pt !important;
+    line-height: 1.2 !important;
+    break-after: avoid;
+  }
+  .tool-heading {
+    display: block;
+  }
+  .tool-heading svg,
+  .tool-sources svg {
+    display: none;
+  }
+  .tool-content {
+    display: block !important;
+  }
+  .tool-content > * {
+    margin-top: 4mm !important;
+  }
+  .tool-content > p {
+    max-width: none;
+  }
   .tool-table-wrap {
     display: block !important;
     overflow: visible !important;
   }
   .tool-table-wrap table {
     min-width: 0 !important;
+    font-size: 10pt;
+  }
+  .tool-table-wrap :is(th, td) {
+    padding: 1.2mm 3mm 1.2mm 0;
+  }
+  .tool-table-wrap thead {
+    display: table-header-group;
+  }
+  .tool-form-table tbody :is(th, td) {
+    padding-block: 2.5mm;
+  }
+  .tool-form-head {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 6mm;
+    margin-top: 5mm;
+    font-size: 9pt;
+  }
+  .tool-form-head dd {
+    height: 7mm;
+    border-bottom: 1px solid #555;
+  }
+  .tool-groups {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4mm 6mm;
+  }
+  .tool-group-wide {
+    grid-column: 1 / -1;
+  }
+  .tool-group ul {
+    margin-top: 2mm;
+  }
+  .tool-group li {
+    gap: 2.5mm;
+    padding-block: 1.5mm;
+  }
+  .tool-group {
+    break-inside: auto;
+  }
+  .tool-box {
+    width: 3.5mm;
+    height: 3.5mm;
+    border-width: 1px;
+  }
+  .tool-note {
+    padding: 3mm !important;
+    font-size: 9.5pt !important;
+    break-inside: avoid;
+  }
+  .tool-sources {
+    margin-top: 2.5mm !important;
+    padding-top: 2.5mm;
+    font-size: 8.5pt;
+    break-inside: avoid;
+  }
+  .tool-sources > p {
+    break-after: avoid;
+  }
+  .tool-sources a {
+    display: inline;
+    min-height: 0;
+    font-size: inherit;
+  }
+  .tool a::after {
+    content: none !important;
   }
   .tool-table-cards {
     display: none !important;
   }
   .tool tr,
-  .tool li,
-  .tool-group {
+  .tool li {
     break-inside: avoid;
   }
   html.print-tool body *:not(:has([data-print-target])):not([data-print-target]):not([data-print-target] *) {
@@ -1158,17 +1276,17 @@ html[data-nav="hidden"] #mobil-cta:not(:focus-within) {
   }
   html.print-tool [data-print-target] .tool-print-head {
     display: block;
-    margin-bottom: 1.25rem;
-    padding-bottom: 0.75rem;
+    margin-bottom: 3mm;
+    padding-bottom: 3mm;
     border-bottom: 1px solid #0e1116;
   }
-  .tool-print-page {
+  .tool .tool-print-page {
     font-weight: 700;
-    font-size: 1.125rem;
+    font-size: 11pt;
   }
-  .tool-print-meta {
+  .tool .tool-print-meta {
     margin-top: 0.25rem;
-    font-size: 0.8125rem;
+    font-size: 8.5pt;
     font-weight: 500;
   }
   html.print-tool [data-print-target] .tool-box {

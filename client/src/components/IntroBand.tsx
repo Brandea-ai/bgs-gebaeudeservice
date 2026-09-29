@@ -117,12 +117,12 @@ export function FigureGrid({
       {items.map(item => (
         <div
           key={item.label}
-          className="flex min-w-0 flex-col gap-1.5 bg-white p-5 sm:p-6"
+          className="figure-cell flex min-w-0 flex-col gap-1.5 bg-white p-4 sm:p-5"
         >
           <dt className="order-2 text-sm font-semibold leading-snug text-mute">
             {item.label}
           </dt>
-          <dd className="t-figure order-1 text-[1.625rem] text-ink sm:text-[2rem]">
+          <dd className="figure-value t-figure order-1 text-ink">
             {item.value}
           </dd>
         </div>

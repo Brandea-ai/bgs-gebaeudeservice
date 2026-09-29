@@ -39,13 +39,17 @@ export default function DruckKnopf({
       type="button"
       onClick={print}
       aria-label={`${label}: ${title}`}
-      className={`no-print press inline-flex min-h-11 shrink-0 items-center gap-2 rounded-[3px] border px-4 text-[0.9375rem] font-semibold transition-colors ${
+      className={`no-print press inline-flex min-h-11 shrink-0 items-center justify-self-start gap-2 rounded-[3px] border px-4 text-[0.9375rem] font-semibold transition-colors md:justify-self-end ${
         premium
           ? "border-brass-dark/35 bg-white text-anthracite hover:border-anthracite"
           : "border-ink/20 bg-white text-ink hover:border-ink"
       }`}
     >
-      <Printer weight="duotone" className={`size-5 ${premium ? "text-brass-dark" : "text-signal"}`} aria-hidden="true" />
+      <Printer
+        weight="duotone"
+        className={`size-5 ${premium ? "text-brass-dark" : "text-signal"}`}
+        aria-hidden="true"
+      />
       {label}
     </button>
   );

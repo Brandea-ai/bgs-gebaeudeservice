@@ -3,8 +3,9 @@ import type { ReactNode } from "react";
 import { localizeHref, type Locale } from "../../../shared/i18n";
 
 // [Linktext](/pfad) für interne Seiten (content/types.ts); dazu https:// und
-// mailto: für Rechtstexte (R08), die dann als normale Links ausgegeben werden.
-const LINK = /\[([^\]]+)\]\((\/[^)\s]*|https?:\/\/[^)\s]+|mailto:[^)\s]+)\)/g;
+// mailto: für Rechtstexte (R08) und #anker innerhalb der aktuellen Seite.
+const LINK =
+  /\[([^\]]+)\]\((\/[^)\s]*|https?:\/\/[^)\s]+|mailto:[^)\s]+|#[^)\s]+)\)/g;
 
 const linkStyle = "link-inline";
 
@@ -26,7 +27,11 @@ export default function RichText({
     const target = match[2];
     if (target.startsWith("/")) {
       parts.push(
-        <Link key={start} href={localizeHref(target, lang)} className={linkClassName}>
+        <Link
+          key={start}
+          href={localizeHref(target, lang)}
+          className={linkClassName}
+        >
           {match[1]}
         </Link>
       );

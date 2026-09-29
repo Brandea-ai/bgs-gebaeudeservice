@@ -30,10 +30,11 @@ export default function LeistungEinsatz(props: LeistungProps) {
           tone={premium ? "premium" : "light"}
           headingLevel="h2"
           items={sections.map((section, index) => ({
+            id: sectionId(index),
             image: pictures[index],
             title: section.title,
             body: (
-              <div id={sectionId(index)} className="space-y-4">
+              <div className="space-y-4">
                 {section.paragraphs?.map(paragraph => (
                   <p key={paragraph}>
                     <RichText text={paragraph} lang={lang} linkClassName={premium ? premiumLightLink : undefined} />

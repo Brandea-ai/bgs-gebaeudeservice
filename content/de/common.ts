@@ -36,6 +36,9 @@ export const ui = {
   /** Werkzeuge im Hauptinhalt (E85) */
   tool: {
     print: 'Drucken',
+    show: 'Werkzeug öffnen',
+    hide: 'Werkzeug schliessen',
+    form: { property: 'Liegenschaft', date: 'Datum', name: 'Name' },
     /** Anfang des Namens für den waagerecht scrollbaren Tabellenbereich, der Werkzeugtitel folgt */
     table: 'Tabelle: ',
     sources: 'Quellen',

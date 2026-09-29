@@ -46,6 +46,9 @@ export const ui = {
   },
   tool: {
     print: 'Stampa',
+    show: 'Aprire lo strumento',
+    hide: 'Chiudere lo strumento',
+    form: { property: 'Immobile', date: 'Data', name: 'Nome' },
     table: 'Tabella: ',
     sources: 'Fonti',
     external: 'link esterno, si apre in una nuova finestra',
