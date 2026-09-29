@@ -13,7 +13,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { company, newBrandActive } from "../../../shared/company";
 import { navDicts } from "../../../content/navigation";
-import { localizePath, type Locale } from "../../../shared/i18n";
+import { activeLocales, languageNames, localizePath, type Locale } from "../../../shared/i18n";
 import type { PagePath } from "../../../shared/seo";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { iconFor } from "./serviceIcons";
@@ -34,7 +34,7 @@ type MegaMenu = "leistungen" | "einzugsgebiet";
  * mit den Kantonsseiten (AreaMenu.tsx). Immer nur ein Mega-Menü offen. Escape schliesst, das
  * Mobilmenü macht den Inhalt dahinter inert. Auf Premium-Seiten (/premium…)
  * tragen Knopf, Unterstrich, Punkt und Telefon Champagner statt Signalrot, wie
- * die Mobil-Leiste (Brief 23, E85; F5, P5). Das Logo bleibt die Dachmarke.
+ * die Mobil-Leiste (Brief 23, E85; F5, P5). Auf Premium-Seiten erscheint Clavea.
  */
 export default function SwissNavigation({
   lang = "de",
@@ -201,13 +201,6 @@ export default function SwissNavigation({
                 {company.email}
               </a>
               <span className="text-white/90">{chrome.seat}</span>
-              <LanguageSwitcher
-                lang={lang}
-                path={current}
-                label={languageSwitch}
-                tone="dark"
-                compact
-              />
             </div>
           </div>
         </div>
@@ -232,22 +225,22 @@ export default function SwissNavigation({
               }
             }}
           >
-            <div className="flex h-[var(--header-h)] items-center justify-between gap-6 pl-5 pr-2.5 lg:pl-6">
+            <div className="flex h-[var(--header-h)] items-center justify-between gap-4 pl-5 pr-2.5 lg:pl-6">
               <Link
-                href={href("/")}
+                href={href(premiumPage && newBrandActive ? "/premium" : "/")}
                 prefetch={false}
-                className="flex min-h-11 items-center"
+                className="flex min-h-11 min-w-0 items-center"
                 onClick={() => setIsOpen(false)}
               >
-                {/* Logo der Dachmarke (E49, E80), mit der Arbeitsmarke weiter als Schriftzug */}
+                {/* Dachmarke oder Premium-Linie passend zur aktuellen Seite. */}
                 {newBrandActive ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
-                    src="/marke/mantena-logo.svg"
-                    alt={company.brand}
-                    width={177}
-                    height={36}
-                    className="h-7 w-auto sm:h-8"
+                    src={premiumPage ? "/marke/clavea-wortmarke.svg" : "/marke/mantena-logo.svg"}
+                    alt={premiumPage ? company.premiumBrand ?? company.brand : company.brand}
+                    width={premiumPage ? 204 : 177}
+                    height={premiumPage ? 32 : 36}
+                    className={premiumPage ? "h-6 w-auto max-w-full object-contain sm:h-7" : "h-7 w-auto max-w-full object-contain sm:h-8"}
                   />
                 ) : (
                   <span className="font-display text-[1.3125rem] font-semibold tracking-[-0.025em] text-ink">
@@ -256,7 +249,7 @@ export default function SwissNavigation({
                 )}
               </Link>
 
-              <div className="hidden items-center gap-7 self-stretch xl:flex">
+              <div className="hidden items-center gap-5 self-stretch xl:flex">
                 <Link
                   href={href(menu.home.path)}
                   prefetch={false}
@@ -414,16 +407,6 @@ export default function SwissNavigation({
               </div>
 
               <div className="flex items-center gap-2 sm:gap-3">
-                {/* Sprachen auf Tablets in der Leiste, auf dem Handy als erste Zeile im Menü */}
-                <LanguageSwitcher
-                  lang={lang}
-                  path={current}
-                  label={languageSwitch}
-                  compact
-                  as="div"
-                  flags={false}
-                  className="hidden md:block xl:hidden"
-                />
                 <a
                   href={company.phone.href}
                   className={`hidden items-center gap-2 px-3 py-2 text-[0.9375rem] font-medium tabular-nums text-ink transition-colors 2xl:inline-flex ${premiumPage ? "hover:text-brass-dark" : "hover:text-signal"}`}
@@ -431,6 +414,31 @@ export default function SwissNavigation({
                   <Phone weight="duotone" className={`size-5 ${premiumPage ? "text-brass-dark" : "text-signal"}`} aria-hidden="true" />
                   {company.phone.display}
                 </a>
+                {activeLocales.length > 1 && (
+                  <select
+                    data-nav-language
+                    aria-label={languageSwitch}
+                    value={lang}
+                    onChange={event => window.location.assign(localizePath(current, event.target.value as Locale))}
+                    className="h-11 w-16 shrink-0 rounded-[3px] border border-line bg-transparent px-2 font-mono text-xs font-semibold text-ink md:hidden"
+                  >
+                    {activeLocales.map(locale => (
+                      <option key={locale} value={locale} aria-label={languageNames[locale]}>
+                        {locale.toUpperCase()}
+                      </option>
+                    ))}
+                  </select>
+                )}
+                {/* Sprachen bleiben neben dem Telefon in der schwebenden Menüleiste. */}
+                <LanguageSwitcher
+                  lang={lang}
+                  path={current}
+                  label={languageSwitch}
+                  compact
+                  as="div"
+                  flags={false}
+                  className="hidden shrink-0 md:block"
+                />
                 <Button asChild className={`arrow-link hidden sm:inline-flex ${ctaTone}`}>
                   <a href={menu.cta.href} data-cta="kopf">
                     {menu.cta.label}
