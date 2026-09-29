@@ -330,7 +330,7 @@ export const contact: Seiten['contact'] = {
     title: 'How to reach us',
     phone: { title: 'Phone', mobile: 'Mobile', hint: 'For questions and to arrange the appointment for the site visit.', action: 'Call' },
     email: { title: 'Email', hint: 'For enquiries with documents such as floor plans, area lists or photos.', action: 'Write an email' },
-    address: { title: 'Address', hint: 'This is our head office. The site visit takes place at your property.', action: 'Go to the map' },
+    address: { title: 'Address', hint: 'This is our business address. The site visit takes place at your property.', action: 'Go to the map' },
   },
   brief: {
     title: 'What to include in your enquiry',
@@ -340,15 +340,15 @@ export const contact: Seiten['contact'] = {
       { key: 'ort' as const, title: 'Location', text: 'address or postcode.' },
       { key: 'groesse' as const, title: 'Size', text: 'area in m², number of flats, floors or properties.' },
       { key: 'leistung' as const, title: 'Service', text: 'for example maintenance cleaning, caretaking or a one-off cleaning.' },
-      { key: 'rhythmus' as const, title: 'Frequency and times', text: 'how often and when, for example before work starts, in the evening or on Saturdays.' },
-      { key: 'start' as const, title: 'Start', text: 'from when, and for construction and move-out cleaning the handover date.' },
+      { key: 'rhythmus' as const, title: 'Frequency or occasion', text: 'a one-off job or regular cleaning, with your preferred times.' },
+      { key: 'start' as const, title: 'Preferred date', text: 'cleaning date or start of ongoing care, plus the handover date for construction and end-of-tenancy cleaning.' },
       { key: 'zugang' as const, title: 'Access and special features', text: 'key or badge, sensitive floors, large glass surfaces.' },
     ],
   },
   steps: {
     title: 'What happens after you send your enquiry',
     items: [
-      { title: 'Reply', text: 'Our managing director reads your enquiry personally and proposes a date for the site visit.' },
+      { title: 'Reply', text: 'We get back to you to discuss the details and arrange a date for the site visit.' },
       { title: 'Site visit', text: 'We walk through all the rooms and areas concerned with you or your contact person. That way we see the condition of each area, the materials and how to get in.' },
       { title: 'Quote', text: 'We send you the quote in writing. It lists the rooms and tasks, how often we carry them out and at what times.' },
       { title: 'Start', text: 'Once you accept, we set the date of the first job. By then, times and access to the property have been agreed with you.' },
@@ -361,13 +361,13 @@ export const contact: Seiten['contact'] = {
       'Access to all rooms that are to be cleaned or looked after, including cellar, attic, laundry room and plant rooms',
       'Plans or a list of areas, if available',
       'The current specification or service schedule, if a company already works for you',
-      'The times you want and the start date',
+      'Your preferred times and the cleaning or handover date',
       'A contact person who can answer questions about use and access',
     ],
   },
   map: {
     title: 'How to find us',
-    text: `Our head office is in ${company.address.city}. From here we travel to your property anywhere in our service area.`,
+    text: `Our business address is in ${company.address.city}, in the municipality of ${company.seat}. From here we travel to your property anywhere in our service area.`,
   },
   faq: [
     { question: 'How is the quote prepared?', answer: 'First we arrange the date for the site visit with you. We then write the quote based on what we have seen on site.' },

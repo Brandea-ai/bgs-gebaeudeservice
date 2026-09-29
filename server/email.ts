@@ -53,12 +53,12 @@ export function buildContactEmail(data: EmailData) {
   <style>
     body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
     .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-    .header { background: linear-gradient(135deg, #c44a2c 0%, #a83820 100%); color: white; padding: 30px; border-radius: 10px 10px 0 0; }
-    .content { background: #f9f9f9; padding: 30px; border-radius: 0 0 10px 10px; }
+    .header { background: linear-gradient(135deg, #c44a2c 0%, #a83820 100%); color: white; padding: 30px; border-radius: 3px 3px 0 0; }
+    .content { background: #f9f9f9; padding: 30px; border-radius: 0 0 3px 3px; }
     .field { margin-bottom: 20px; }
     .label { font-weight: bold; color: #c44a2c; margin-bottom: 5px; }
-    .value { background: white; padding: 10px; border-radius: 5px; border-left: 3px solid #c44a2c; }
-    .message-box { background: white; padding: 20px; border-radius: 5px; border: 1px solid #ddd; margin-top: 10px; white-space: pre-wrap; }
+    .value { background: white; padding: 10px; border-radius: 3px; border: 1px solid #ddd; }
+    .message-box { background: white; padding: 20px; border-radius: 3px; border: 1px solid #ddd; margin-top: 10px; white-space: pre-wrap; }
     .footer { text-align: center; margin-top: 20px; color: #666; font-size: 12px; }
   </style>
 </head>
@@ -66,7 +66,7 @@ export function buildContactEmail(data: EmailData) {
   <div class="container">
     <div class="header">
       <h1 style="margin: 0;">Neue Kontaktanfrage</h1>
-      <p style="margin: 10px 0 0 0; opacity: 0.9;">${escapeHtml(company.brand)} – Kontaktformular der Website</p>
+      <p style="margin: 10px 0 0 0; opacity: 0.9;">${escapeHtml(company.brand)}. Kontaktformular der Website</p>
     </div>
     <div class="content">
       <div class="field">
@@ -160,7 +160,14 @@ export async function sendContactEmail(data: EmailData): Promise<boolean> {
       return false;
     }
 
-    console.log('Kontaktformular: versendet, ID', emailResponse?.id);
+    // Ein erfolgreicher HTTP-Status allein belegt keine angenommene E-Mail.
+    // Ohne Anbieter-ID bleibt die Anfrage im Formular als nicht gesendet stehen.
+    if (typeof emailResponse?.id !== 'string' || !emailResponse.id.trim()) {
+      console.error('Kontaktformular: Resend hat keine Versand-ID bestätigt');
+      return false;
+    }
+
+    console.log('Kontaktformular: vom Anbieter angenommen, ID', emailResponse.id);
     return true;
   } catch (error) {
     console.error('Kontaktformular: Versand fehlgeschlagen:', error instanceof Error ? error.message : error);

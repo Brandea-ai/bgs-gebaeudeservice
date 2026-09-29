@@ -406,7 +406,7 @@ export const contact = {
     title: 'So erreichen Sie uns',
     phone: { title: 'Telefon', mobile: 'Mobil', hint: 'Für Fragen und um den Termin für die Besichtigung zu vereinbaren.', action: 'Anrufen' },
     email: { title: 'E-Mail', hint: 'Für Anfragen mit Unterlagen wie Grundrissen, Flächenlisten oder Fotos.', action: 'E-Mail schreiben' },
-    address: { title: 'Adresse', hint: 'Hier ist unser Sitz. Die Besichtigung findet bei Ihnen vor Ort statt.', action: 'Zur Karte' },
+    address: { title: 'Adresse', hint: 'Hier ist unsere Geschäftsadresse. Die Besichtigung findet bei Ihnen vor Ort statt.', action: 'Zur Karte' },
   },
   // Randspalte neben dem Formular: dieselben Punkte, nach denen das Formular fragt
   brief: {
@@ -417,8 +417,8 @@ export const contact = {
       { key: 'ort', title: 'Ort', text: 'Adresse oder Postleitzahl.' },
       { key: 'groesse', title: 'Grösse', text: 'Fläche in m², Anzahl Wohnungen, Stockwerke oder Liegenschaften.' },
       { key: 'leistung', title: 'Leistung', text: 'etwa Unterhaltsreinigung, Hauswartung oder eine einmalige Reinigung.' },
-      { key: 'rhythmus', title: 'Rhythmus und Zeiten', text: 'wie oft und wann, etwa vor Arbeitsbeginn, abends oder am Samstag.' },
-      { key: 'start', title: 'Start', text: 'ab wann, bei Bau- und Umzugsreinigung der Übergabetermin.' },
+      { key: 'rhythmus', title: 'Häufigkeit oder Anlass', text: 'einmaliger Einsatz oder regelmässige Reinigung, mit den gewünschten Zeiten.' },
+      { key: 'start', title: 'Gewünschter Termin', text: 'Reinigungstermin oder Beginn der Betreuung, bei Bau- und Umzugsreinigung auch der Übergabetermin.' },
       { key: 'zugang', title: 'Zugang und Besonderheiten', text: 'Schlüssel oder Badge, empfindliche Böden, grosse Glasflächen.' },
     ] satisfies KeyedCard<BriefKey>[] as KeyedCard<BriefKey>[],
   },
@@ -428,7 +428,7 @@ export const contact = {
     items: [
       {
         title: 'Rückmeldung',
-        text: 'Der Geschäftsführer liest Ihre Anfrage selbst und schlägt Ihnen einen Termin für die Besichtigung vor.',
+        text: 'Wir melden uns bei Ihnen und stimmen die Details sowie einen Termin für die Besichtigung ab.',
       },
       {
         title: 'Besichtigung',
@@ -452,13 +452,13 @@ export const contact = {
       'Zugang zu allen Räumen, die gereinigt oder betreut werden sollen, auch zu Keller, Estrich, Waschküche und Technikräumen',
       'Pläne oder eine Flächenliste, falls vorhanden',
       'Das bisherige Pflichtenheft oder Leistungsverzeichnis, wenn schon eine Firma bei Ihnen arbeitet',
-      'Die gewünschten Zeiten und den Starttermin',
+      'Die gewünschten Zeiten und den Reinigungs- oder Übergabetermin',
       'Eine Ansprechperson, die Fragen zu Nutzung und Zugang beantworten kann',
     ],
   },
   map: {
     title: 'So finden Sie uns',
-    text: `Unser Sitz liegt in ${company.address.city}. Von hier aus fahren wir zu Ihrem Objekt, im ganzen Einzugsgebiet.`,
+    text: `Unsere Geschäftsadresse liegt in ${company.address.city}, Gemeinde ${company.seat}. Von hier aus fahren wir zu Ihrem Objekt, im ganzen Einzugsgebiet.`,
   },
   faq: [
     {

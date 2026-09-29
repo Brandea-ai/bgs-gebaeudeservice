@@ -84,7 +84,7 @@ export const menu = {
 
 export const footer = {
   newBrandLine: `Eine Marke der ${company.legalName}`,
-  about: `Reinigung und Hauswartung für Unternehmen und anspruchsvolle Privatkunden. Sitz in ${company.address.city}, tätig in den Kantonen ${cantonList}.`,
+  about: `Reinigung und Hauswartung für Unternehmen und anspruchsvolle Privatkunden. Sitz in ${company.seat} LU, tätig in den Kantonen ${cantonList}.`,
   companyLinks: [
     { path: '/ueber-uns', label: 'Über uns' },
     { path: '/kontakt', label: 'Kontakt' },
@@ -107,6 +107,7 @@ export const footer = {
 export const contactForm = {
   title: 'Offerte anfragen',
   intro: 'Beschreiben Sie uns Objekt und Anliegen. Mit diesen Angaben bereiten wir die Besichtigung vor.',
+  premiumIntro: 'Nennen Sie uns Objekt, Standort und den gewünschten Einsatz. Mit diesen Angaben können wir Ihre Anfrage einordnen.',
   choose: 'Bitte wählen...',
   fields: {
     role: { label: 'Sie sind *' },
@@ -150,6 +151,22 @@ export const contactForm = {
       message: 'Zum Beispiel: Liegeplatz am Vierwaldstättersee, Reinigung vor Saisonbeginn und nach Anlässen an Bord',
     },
   } satisfies Partial<Record<PagePath, { size: string; message: string }>>,
+  oneOffTitle: 'Termin für den Einsatz',
+  oneOffHint: 'Bitte nennen Sie im Anliegen den gewünschten Reinigungs- oder Übergabetermin.',
+  oneOffPlaceholders: {
+    'Sonderreinigungen': {
+      size: 'z. B. 180 m² Natursteinboden',
+      message: 'Zum Beispiel: Kalkrückstände auf Naturstein im Eingangsbereich, rund 180 m², Reinigung vor der Wiedereröffnung am 15. Oktober',
+    },
+    'Umzugsreinigung': {
+      size: 'z. B. 4 Wohnungen mit je 80 m²',
+      message: 'Zum Beispiel: Endreinigung von vier Wohnungen für die Verwaltung, Übergabe am 30. November, Reinigung in der Woche davor',
+    },
+    'Baureinigung': {
+      size: 'z. B. 600 m² auf 2 Etagen',
+      message: 'Zum Beispiel: Bauendreinigung von Büroflächen nach dem Innenausbau, Fertigstellung am 10. Oktober, Übergabe am 16. Oktober',
+    },
+  } satisfies Record<string, { size: string; message: string }>,
   serviceOptions: [
     {
       group: 'Reinigung und Hauswartung',
@@ -191,7 +208,7 @@ export const contactForm = {
   required: '* Pflichtfelder',
   submit: 'Anfrage senden',
   sending: 'Wird gesendet...',
-  success: `Vielen Dank, Ihre Anfrage ist bei uns eingegangen. Wir melden uns ${company.responseTime} und vereinbaren mit Ihnen einen Termin für die Besichtigung. Wenn es eilt, erreichen Sie uns unter ${company.phone.display}.`,
+  success: `Vielen Dank, Ihre Anfrage wurde übermittelt. Wir melden uns bei Ihnen. Wenn es eilt, erreichen Sie uns unter ${company.phone.display}.`,
   /**
    * «So geht es weiter» unter Formular und Kontaktwegen. Die Antwortzeit fällt im
    * Kontaktbereich nur einmal (Audit visuell, Umbau 3): hier, oder in der
@@ -200,6 +217,7 @@ export const contactForm = {
   nextTitle: 'So geht es weiter',
   nextSteps: [`Wir melden uns ${company.responseTime}.`, 'Wir besichtigen das Objekt vor Ort, kostenlos.', 'Sie erhalten eine schriftliche Offerte.'],
   nextStepPlain: 'Wir melden uns und vereinbaren den Termin.',
+  premiumVisitStep: 'Wir stimmen Pflegebedarf, Standort und Zugang mit Ihnen ab.',
   /** Schmales Kontaktband auf Impressum und Datenschutz statt des Formulars (Audit visuell, /impressum) */
   band: {
     title: 'Fragen oder eine Offerte?',
@@ -241,8 +259,8 @@ export const nav = {
   languageSwitchFooter: 'Sprache im Fussbereich',
   chrome: {
     skip: 'Zum Inhalt springen',
-    answer: `Antwort ${company.responseTime}`,
-    seat: `Sitz in ${company.address.city}`,
+    answer: 'Beratung in vier Sprachen',
+    seat: `Sitz in ${company.seat} LU`,
     megaTitle: 'Offerte vor Ort',
     megaText: 'Wir sehen uns Ihr Objekt an und erstellen eine schriftliche Offerte, kostenlos und unverbindlich.',
     premiumTeaser: 'Diskrete Reinigung und Pflege für Villen, Privatjets und Yachten.',

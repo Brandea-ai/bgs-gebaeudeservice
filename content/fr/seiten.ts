@@ -332,7 +332,7 @@ export const contact = {
     title: 'Comment nous joindre',
     phone: { title: 'Téléphone', mobile: 'Mobile', hint: 'Pour vos questions et pour convenir du rendez-vous de visite.', action: 'Appeler' },
     email: { title: 'E-mail', hint: 'Pour les demandes avec documents, comme plans, listes de surfaces ou photos.', action: 'Écrire un e-mail' },
-    address: { title: 'Adresse', hint: 'C’est notre siège. La visite a lieu chez vous, sur place.', action: 'Vers la carte' },
+    address: { title: 'Adresse', hint: 'C’est notre adresse professionnelle. La visite a lieu chez vous, sur place.', action: 'Vers la carte' },
   },
   brief: {
     title: 'Ce qu’il faut indiquer dans la demande',
@@ -342,15 +342,15 @@ export const contact = {
       { key: 'ort' as const, title: 'Lieu', text: 'adresse ou NPA.' },
       { key: 'groesse' as const, title: 'Taille', text: 'surface en m², nombre d’appartements, d’étages ou d’immeubles.' },
       { key: 'leistung' as const, title: 'Prestation', text: 'par exemple nettoyage d’entretien, conciergerie ou nettoyage ponctuel.' },
-      { key: 'rhythmus' as const, title: 'Fréquence et horaires', text: 'à quelle fréquence et quand, par exemple avant le début du travail, le soir ou le samedi.' },
-      { key: 'start' as const, title: 'Début', text: 'à partir de quand, et pour un nettoyage de chantier ou de fin de bail la date de remise.' },
+      { key: 'rhythmus' as const, title: 'Fréquence ou occasion', text: 'une intervention ponctuelle ou un nettoyage régulier, avec les horaires souhaités.' },
+      { key: 'start' as const, title: 'Date souhaitée', text: 'date du nettoyage ou début de l’entretien régulier, ainsi que la date de remise pour un chantier ou une fin de bail.' },
       { key: 'zugang' as const, title: 'Accès et particularités', text: 'clé ou badge, sols délicats, grandes surfaces vitrées.' },
     ],
   },
   steps: {
     title: 'Ce qui se passe après l’envoi',
     items: [
-      { title: 'Réponse', text: 'Notre directeur lit lui-même votre demande et vous propose une date pour la visite.' },
+      { title: 'Réponse', text: 'Nous vous recontactons pour préciser les détails et convenir d’une date de visite.' },
       { title: 'Visite', text: 'Avec vous ou votre personne de contact, nous parcourons toutes les pièces et surfaces concernées. Nous voyons ainsi leur état, les matériaux et l’accès.' },
       { title: 'Devis', text: 'Nous vous envoyons le devis par écrit. Il indique les pièces et les tâches, à quelle fréquence nous les effectuons et à quels horaires.' },
       { title: 'Début', text: 'Dès votre accord, la date de la première intervention est fixée. Les horaires et l’accès au bien sont alors convenus avec vous.' },
@@ -363,13 +363,13 @@ export const contact = {
       'L’accès à toutes les pièces à nettoyer ou à entretenir, y compris cave, galetas, buanderie et locaux techniques',
       'Des plans ou une liste des surfaces, s’il y en a',
       'Le cahier des charges ou le descriptif des prestations actuel, si une entreprise travaille déjà chez vous',
-      'Les horaires souhaités et la date de début',
+      'Les horaires souhaités et la date de nettoyage ou de remise',
       'Une personne de contact qui peut répondre aux questions sur l’utilisation et l’accès',
     ],
   },
   map: {
     title: 'Comment nous trouver',
-    text: `Notre siège se trouve à ${company.address.city}. De là, nous nous rendons à votre bien, dans toute notre zone d’intervention.`,
+    text: `Notre adresse professionnelle se trouve à ${company.address.city}, dans la commune d’${company.seat}. De là, nous nous rendons à votre bien, dans toute notre zone d’intervention.`,
   },
   faq: [
     { question: 'Comment le devis est-il établi ?', answer: 'Nous convenons d’abord avec vous de la date de la visite. Nous rédigeons ensuite le devis sur la base de ce que nous avons vu sur place.' },

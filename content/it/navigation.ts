@@ -71,7 +71,7 @@ const menu: NavDictionary['menu'] = {
 
 const footer: NavDictionary['footer'] = {
   newBrandLine: `Un marchio della ${company.legalName}`,
-  about: `Pulizia e custodia di stabili per aziende e clienti privati esigenti. Sede a ${company.address.city}, attivi nei Cantoni di ${cantonListIt}.`,
+  about: `Pulizia e custodia di stabili per aziende e clienti privati esigenti. Sede a ${company.seat} LU, attivi nei Cantoni di ${cantonListIt}.`,
   companyLinks: [
     { path: '/ueber-uns', label: 'Chi siamo' },
     { path: '/kontakt', label: 'Contatto' },
@@ -90,6 +90,7 @@ const footer: NavDictionary['footer'] = {
 const contactForm: NavDictionary['contactForm'] = {
   title: 'Richiedere un’offerta',
   intro: 'Ci descriva l’immobile e la Sua richiesta. Con queste indicazioni prepariamo il sopralluogo.',
+  premiumIntro: 'Ci indichi il bene, il luogo e l’intervento desiderato. Queste informazioni ci aiutano a comprendere la Sua richiesta.',
   choose: 'Selezioni...',
   fields: {
     role: { label: 'Lei è *' },
@@ -129,6 +130,22 @@ const contactForm: NavDictionary['contactForm'] = {
     '/premium/yacht': {
       size: 'ad es. yacht a motore di 14 m',
       message: 'Ad esempio: ormeggio sul lago dei Quattro Cantoni, pulizia prima dell’inizio della stagione e dopo eventi a bordo',
+    },
+  },
+  oneOffTitle: 'Data dell’intervento',
+  oneOffHint: 'Indichi nella richiesta la data desiderata per la pulizia o quella della consegna.',
+  oneOffPlaceholders: {
+    'Sonderreinigungen': {
+      size: 'ad es. 180 m² di pavimento in pietra naturale',
+      message: 'Ad esempio: residui di calcare sulla pietra naturale nell’ingresso, circa 180 m², pulizia prima della riapertura il 15 ottobre',
+    },
+    'Umzugsreinigung': {
+      size: 'ad es. 4 appartamenti di 80 m² ciascuno',
+      message: 'Ad esempio: pulizia finale di quattro appartamenti per un’amministrazione, consegna il 30 novembre, pulizia nella settimana precedente',
+    },
+    'Baureinigung': {
+      size: 'ad es. 600 m² su 2 piani',
+      message: 'Ad esempio: pulizia finale di uffici dopo i lavori interni, lavori terminati il 10 ottobre, consegna il 16 ottobre',
     },
   },
   serviceOptions: [
@@ -172,10 +189,11 @@ const contactForm: NavDictionary['contactForm'] = {
   required: '* Campi obbligatori',
   submit: 'Invia richiesta',
   sending: 'Invio in corso...',
-  success: `Grazie, la Sua richiesta ci è pervenuta. La contattiamo ${responseTime} e fissiamo con Lei una data per il sopralluogo. Se ha urgenza, ci raggiunge al numero ${company.phone.display}.`,
+  success: `Grazie, la Sua richiesta è stata trasmessa. La ricontatteremo. Se ha urgenza, ci raggiunge al numero ${company.phone.display}.`,
   nextTitle: "Come procediamo",
   nextSteps: [`La contattiamo ${responseTime}.`, 'Visitiamo l’immobile sul posto, gratuitamente.', 'Riceve un’offerta scritta.'],
   nextStepPlain: 'La contattiamo e fissiamo l’appuntamento.',
+  premiumVisitStep: 'Concordiamo con Lei le esigenze di cura, il luogo e l’accesso.',
   band: {
     title: 'Domande o un’offerta?',
     text: 'Ci telefoni, ci scriva o usi il modulo nella pagina dei contatti.',
@@ -214,8 +232,8 @@ export const nav: NavDictionary = {
   languageSwitchFooter: 'Lingua nel piè di pagina',
   chrome: {
     skip: 'Vai al contenuto',
-    answer: `Risposta ${responseTime}`,
-    seat: `Sede a ${company.address.city}`,
+    answer: 'Consulenza in quattro lingue',
+    seat: `Sede a ${company.seat} LU`,
     megaTitle: 'Offerta sul posto',
     megaText: 'Visitiamo il vostro immobile e allestiamo un’offerta scritta, gratuita e senza impegno.',
     premiumTeaser: 'Pulizia e cura discrete per ville, jet privati e yacht.',

@@ -71,7 +71,7 @@ export const nav: NavDictionary = {
   areaMenu,
   footer: {
     newBrandLine: `Une marque de ${company.legalName}`,
-    about: `Nettoyage et conciergerie pour les entreprises et une clientèle privée exigeante. Siège à ${company.address.city}, actifs dans les cantons de ${cantonList}.`,
+    about: `Nettoyage et conciergerie pour les entreprises et une clientèle privée exigeante. Siège à ${company.seat} LU, actifs dans les cantons de ${cantonList}.`,
     companyLinks: [
       { path: '/ueber-uns', label: 'À propos' },
       { path: '/kontakt', label: 'Contact' },
@@ -88,6 +88,7 @@ export const nav: NavDictionary = {
   contactForm: {
     title: 'Demander un devis',
     intro: 'Décrivez-nous le bien et votre demande. Ces indications nous permettent de préparer la visite.',
+    premiumIntro: 'Indiquez-nous le bien, son emplacement et l’intervention souhaitée. Ces indications nous permettent de comprendre votre demande.',
     choose: 'Veuillez choisir…',
     fields: {
       role: { label: 'Vous êtes *' },
@@ -127,6 +128,22 @@ export const nav: NavDictionary = {
       '/premium/yacht': {
         size: 'p. ex. yacht à moteur de 14 m',
         message: 'Par exemple : place d’amarrage sur le lac des Quatre-Cantons, nettoyage avant le début de la saison et après des événements à bord',
+      },
+    },
+    oneOffTitle: 'Date de l’intervention',
+    oneOffHint: 'Veuillez indiquer dans votre demande la date de nettoyage souhaitée ou celle de la remise.',
+    oneOffPlaceholders: {
+      'Sonderreinigungen': {
+        size: 'p. ex. 180 m² de sol en pierre naturelle',
+        message: 'Par exemple\u202f: traces de calcaire sur la pierre naturelle de l’entrée, environ 180 m², nettoyage avant la réouverture le 15 octobre',
+      },
+      'Umzugsreinigung': {
+        size: 'p. ex. 4 appartements de 80 m² chacun',
+        message: 'Par exemple\u202f: nettoyage final de quatre appartements pour une gérance, remise le 30 novembre, nettoyage la semaine précédente',
+      },
+      'Baureinigung': {
+        size: 'p. ex. 600 m² sur 2 niveaux',
+        message: 'Par exemple\u202f: nettoyage de fin de chantier de bureaux après l’aménagement, travaux terminés le 10 octobre, remise le 16 octobre',
       },
     },
     serviceOptions: [
@@ -170,10 +187,11 @@ export const nav: NavDictionary = {
     required: '* Champs obligatoires',
     submit: 'Envoyer la demande',
     sending: 'Envoi en cours…',
-    success: `Merci, nous avons bien reçu votre demande. Nous vous répondons ${responseTime} et convenons avec vous d’une date pour la visite. En cas d’urgence, vous nous joignez au ${company.phone.display}.`,
+    success: `Merci, votre demande a été transmise. Nous vous répondrons. En cas d’urgence, vous nous joignez au ${company.phone.display}.`,
     nextTitle: "La suite",
     nextSteps: [`Nous vous répondons ${responseTime}.`, 'Nous visitons le bien sur place, gratuitement.', 'Vous recevez un devis écrit.'],
     nextStepPlain: 'Nous vous répondons et convenons du rendez-vous.',
+    premiumVisitStep: 'Nous précisons avec vous les besoins d’entretien, le lieu et l’accès.',
     band: {
       title: 'Des questions ou un devis ?',
       text: 'Appelez-nous, écrivez-nous ou utilisez le formulaire de la page de contact.',
@@ -203,8 +221,8 @@ export const nav: NavDictionary = {
   languageSwitchFooter: 'Langue en pied de page',
   chrome: {
     skip: 'Aller au contenu',
-    answer: `Réponse ${responseTime}`,
-    seat: `Siège à ${company.address.city}`,
+    answer: 'Conseil en quatre langues',
+    seat: `Siège à ${company.seat} LU`,
     megaTitle: 'Devis sur place',
     megaText: 'Nous visitons votre bien et établissons un devis écrit, gratuit et sans engagement.',
     premiumTeaser: 'Nettoyage et entretien discrets pour villas, jets privés et yachts.',
