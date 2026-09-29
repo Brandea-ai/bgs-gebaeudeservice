@@ -1045,7 +1045,8 @@ html[data-nav-top="0"] .util-row {
 html[data-nav="hidden"] {
   --header-offset: 0px;
 }
-html[data-nav="hidden"] .site-header:not(:focus-within) {
+/* Tastaturfokus bleibt sichtbar; ein vorheriger Mausklick hält die Leiste nicht fest. */
+html[data-nav="hidden"] .site-header:not(:has(:focus-visible)) {
   transform: translateY(calc(-100% - 1rem));
 }
 /* Mobil-Leiste unten verschwindet beim Runterscrollen ebenso */

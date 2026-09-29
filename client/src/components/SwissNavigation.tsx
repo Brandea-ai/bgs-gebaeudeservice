@@ -420,11 +420,11 @@ export default function SwissNavigation({
                     aria-label={languageSwitch}
                     value={lang}
                     onChange={event => window.location.assign(localizePath(current, event.target.value as Locale))}
-                    className="h-11 w-16 shrink-0 rounded-[3px] border border-line bg-transparent px-2 font-mono text-xs font-semibold text-ink md:hidden"
+                    className="h-11 w-20 shrink-0 rounded-[3px] border border-line bg-transparent px-2 font-mono text-xs font-semibold text-ink md:hidden"
                   >
                     {activeLocales.map(locale => (
                       <option key={locale} value={locale} aria-label={languageNames[locale]}>
-                        {locale.toUpperCase()}
+                        {({ de: "🇩🇪", en: "🇬🇧", fr: "🇫🇷", it: "🇮🇹" } as const)[locale]} {locale.toUpperCase()}
                       </option>
                     ))}
                   </select>
@@ -436,7 +436,7 @@ export default function SwissNavigation({
                   label={languageSwitch}
                   compact
                   as="div"
-                  flags={false}
+                  flags
                   className="hidden shrink-0 md:block"
                 />
                 <Button asChild className={`arrow-link hidden sm:inline-flex ${ctaTone}`}>
