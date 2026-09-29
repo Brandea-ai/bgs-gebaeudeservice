@@ -29,7 +29,7 @@ export default function LeistungNavigation(props: LeistungProps) {
       label={ui.onThisPage}
       items={leistungVerzeichnis(props)}
       tone={premium ? "premium" : "light"}
-      className="lg:hidden"
+      className="service-subnav lg:hidden"
     />
   );
 }

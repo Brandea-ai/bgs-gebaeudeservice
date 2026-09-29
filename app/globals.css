@@ -1005,6 +1005,20 @@
   }
 }
 
+/* Vor Hydration und ohne JavaScript bleiben Infozeile und Abschnittsleiste sichtbar. */
+html:not([data-nav]) {
+  --header-offset: calc(var(--header-room) + var(--util-h));
+  scroll-padding-top: calc(var(--header-room) + var(--util-h) + var(--subnav-h, 0px) + 1.5rem);
+}
+html:not([data-nav]):has(.subnav--sticky:not(.service-subnav)) {
+  --subnav-h: calc(3.25rem + 1px);
+}
+@media (max-width: 1023px) {
+  html:not([data-nav]):has(.service-subnav) {
+    --subnav-h: calc(3.25rem + 1px);
+  }
+}
+
 /* Kopfzeile schwebt fest oben; beim Runterscrollen raus, beim Hochscrollen wieder rein */
 .site-header {
   position: fixed;
