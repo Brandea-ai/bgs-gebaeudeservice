@@ -89,6 +89,7 @@ export const nav: NavDictionary = {
     title: 'Demander un devis',
     intro: 'Décrivez-nous le bien et votre demande. Ces indications nous permettent de préparer la visite.',
     premiumIntro: 'Indiquez-nous le bien, son emplacement et l’intervention souhaitée. Ces indications nous permettent de comprendre votre demande.',
+    additionalDetails: 'Informations complémentaires (facultatif)',
     choose: 'Veuillez choisir…',
     fields: {
       role: { label: 'Vous êtes *' },

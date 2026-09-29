@@ -108,6 +108,7 @@ export const contactForm = {
   title: 'Offerte anfragen',
   intro: 'Beschreiben Sie uns Objekt und Anliegen. Mit diesen Angaben bereiten wir die Besichtigung vor.',
   premiumIntro: 'Nennen Sie uns Objekt, Standort und den gewünschten Einsatz. Mit diesen Angaben können wir Ihre Anfrage einordnen.',
+  additionalDetails: 'Weitere Angaben (optional)',
   choose: 'Bitte wählen...',
   fields: {
     role: { label: 'Sie sind *' },

@@ -1,7 +1,7 @@
 "use client";
 
-import { ArrowRight, CheckCircle, CircleNotch } from "@phosphor-icons/react/dist/ssr";
-import { useRef, useState } from "react";
+import { ArrowRight, CaretDown, CheckCircle, CircleNotch } from "@phosphor-icons/react/dist/ssr";
+import { useEffect, useRef, useState } from "react";
 import { company } from "../../../shared/company";
 import { CONTACT_LIMITS, CONTACT_ROLES, EMAIL_REGEX, isContactRole } from "../../../shared/contact-form";
 import { navDicts } from "../../../content/navigation";
@@ -31,15 +31,13 @@ const serviceForPath: Partial<Record<PagePath, string>> = {
 };
 
 /** Pflichtfelder in der sichtbaren Reihenfolge: der erste Fehler bekommt den Fokus */
-type FieldName = "role" | "message" | "name" | "email" | "acceptPrivacy";
+type FieldName = "role" | "name" | "email" | "message" | "acceptPrivacy";
 
 /**
  * Anfrageformular des Kontaktbereichs (M04, M07, M30, Audit Inhalt Massnahme 3).
- * Zuerst das Objekt (Sie sind, Leistung, Grösse, Ort, Rhythmus, Anliegen),
- * dann die Kontaktdaten. «Sie sind» ist eine Optionsgruppe: fünf sichtbare
- * Möglichkeiten, mit Tab und Pfeiltasten bedienbar, und sie zeigt gleich, für
- * wen das Angebot gedacht ist (E28, E34). Auf Premium-Seiten eigene
- * Beispiele in Grösse und Anliegen statt Wohnungen und Büros.
+ * Pflichtangaben zuerst, weitere Objektdetails und Telefon auf Mobil bei Bedarf.
+ * Die Rolle ist mobil ein platzsparendes Auswahlfeld, am Desktop eine
+ * Optionsgruppe. Auf Premium-Seiten passen die Beispiele zum Objekt.
  * Eigene Prüfung in der Seitensprache mit Hinweis am Feld (aria-invalid,
  * aria-describedby); der erste Fehler bekommt den Fokus, der Erfolg bleibt
  * stehen und bekommt den Fokus.
@@ -67,6 +65,15 @@ export default function ContactForm({
     website: "",
   };
   const [formData, setFormData] = useState(emptyForm);
+  const [isMobile, setIsMobile] = useState(false);
+  const [optionalOpen, setOptionalOpen] = useState(false);
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 767px)");
+    const sync = () => setIsMobile(media.matches);
+    sync();
+    media.addEventListener("change", sync);
+    return () => media.removeEventListener("change", sync);
+  }, []);
   // Beispiele und Rhythmus folgen auch einer geänderten Leistungsauswahl.
   const examplePath = Object.entries(serviceForPath).find(([, service]) => service === formData.service)?.[0]
     ?? (formData.service ? "" : path);
@@ -87,10 +94,10 @@ export default function ContactForm({
   const check = (data: typeof formData): Partial<Record<FieldName, string>> => {
     const found: Partial<Record<FieldName, string>> = {};
     if (!isContactRole(data.role)) found.role = form.errors.role;
-    if (!data.message.trim()) found.message = form.errors.required;
     if (!data.name.trim()) found.name = form.errors.required;
     if (!data.email.trim()) found.email = form.errors.required;
     else if (!EMAIL_REGEX.test(data.email.trim())) found.email = form.errors.email;
+    if (!data.message.trim()) found.message = form.errors.required;
     if (!data.acceptPrivacy) found.acceptPrivacy = form.errors.consent;
     return found;
   };
@@ -104,7 +111,7 @@ export default function ContactForm({
     setErrors(found);
     if (Object.keys(found).length) {
       const first = (Object.keys(found) as FieldName[])[0];
-      formRef.current?.querySelector<HTMLElement>(`[name="${first}"]`)?.focus();
+      requestAnimationFrame(() => formRef.current?.querySelector<HTMLElement>(`[name="${first}"]`)?.focus());
       return;
     }
     setIsSubmitting(true);
@@ -168,6 +175,7 @@ export default function ContactForm({
   if (submitStatus === "success") {
     return (
       <div
+        id="anfrage"
         ref={statusRef}
         tabIndex={-1}
         role="status"
@@ -190,19 +198,25 @@ export default function ContactForm({
   return (
     // lg:h-full: Ist die Randspalte daneben länger, reicht die Karte bis zu ihrem Ende (gleich hohe Spalten, kein Loch)
     <form
+      id="anfrage"
+      tabIndex={-1}
+      aria-label={form.title}
       ref={formRef}
       onSubmit={handleSubmit}
       noValidate
-      className={`relative rounded-[3px] border bg-white p-6 sm:p-10 lg:h-full xl:p-12 ${
+      className={`relative rounded-[3px] border bg-white p-4 focus:outline-none sm:p-10 lg:h-full xl:p-12 ${
         premium ? "border-brass-dark/25" : "border-line"
       }`}
     >
-      {/* Von 1024 bis 1279 px steht die Karte in der schmalen Spalte neben der Randspalte: eine Spalte, sonst passen die Beispiele nicht ins Feld */}
-      <div className="grid gap-x-6 gap-y-6 md:grid-cols-2 lg:max-xl:grid-cols-1">
-        {/* Sie sind: Pflicht, ordnet die Anfrage ein (E33, E34) */}
+      <div className="grid gap-x-6 gap-y-4 md:grid-cols-2 md:gap-y-6 lg:max-xl:grid-cols-1">
         <fieldset className="min-w-0 md:col-span-2 lg:max-xl:col-span-1">
-          <legend className={labelClass}>{form.fields.role.label}</legend>
-          <div className="flex flex-wrap gap-2.5">
+          <legend id="role-label" className={labelClass}>{form.fields.role.label}</legend>
+          {isMobile ? (
+            <select id="role" name="role" aria-labelledby="role-label" value={formData.role} onChange={handleChange} required className={`${fieldClass} field-select`} {...invalid("role")}>
+              <option value="">{form.choose}</option>
+              {CONTACT_ROLES.map(value => <option key={value} value={value}>{form.roleOptions[value]}</option>)}
+            </select>
+          ) : <div className="flex flex-wrap gap-2.5">
             {CONTACT_ROLES.map(value => (
               <label key={value} className={chip}>
                 <input
@@ -218,10 +232,88 @@ export default function ContactForm({
                 {form.roleOptions[value]}
               </label>
             ))}
-          </div>
+          </div>}
           {hint("role")}
         </fieldset>
+        <div>
+          <label htmlFor="name" className={labelClass}>
+            {form.fields.name.label}
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            maxLength={CONTACT_LIMITS.name}
+            autoComplete="name"
+            className={fieldClass}
+            placeholder={form.fields.name.placeholder}
+            {...invalid("name")}
+          />
+          {hint("name")}
+        </div>
+        <div>
+          <label htmlFor="email" className={labelClass}>
+            {form.fields.email.label}
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            maxLength={CONTACT_LIMITS.email}
+            autoComplete="email"
+            inputMode="email"
+            autoCapitalize="none"
+            spellCheck={false}
+            className={fieldClass}
+            placeholder={form.fields.email.placeholder}
+            {...invalid("email")}
+          />
+          {hint("email")}
+        </div>
+        <div className="md:col-span-2 lg:max-xl:col-span-1">
+          <label htmlFor="message" className={labelClass}>
+            {form.fields.message.label}
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+            maxLength={CONTACT_LIMITS.message}
+            rows={isMobile ? 3 : 5}
+            className={`${fieldClass} min-h-[6rem] resize-y md:min-h-[8rem]`}
+            placeholder={requestExamples?.message ?? form.fields.message.placeholder}
+            aria-invalid={errors.message ? true : undefined}
+            aria-describedby={errors.message ? `${hintId("message")} ${messageHintId}` : messageHintId}
+          />
+          {hint("message")}
+          {/* Unterlagen gehen per E-Mail, das Formular nimmt keine Dateien an (Audit Inhalt 9) */}
+          <p id={messageHintId} className="mt-2 text-sm leading-relaxed text-mute">
+            {form.fields.message.hint}{" "}
+            <a href={`mailto:${company.email}`} className={`[overflow-wrap:anywhere] ${premium ? premiumLightLink : "link-inline"}`}>
+              {company.email}
+            </a>
+          </p>
+        </div>
+      </div>
 
+      <details
+        open={!isMobile || optionalOpen}
+        onToggle={event => { if (isMobile) setOptionalOpen(event.currentTarget.open); }}
+        className="group mt-5 border-t border-line pt-4 md:mt-6 md:pt-6"
+      >
+        <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-3 text-sm font-semibold text-ink md:hidden [&::-webkit-details-marker]:hidden">
+          {form.additionalDetails}
+          <CaretDown weight="bold" className="size-5 shrink-0 transition-transform group-open:rotate-180" aria-hidden="true" />
+        </summary>
+        <div className="grid gap-x-6 gap-y-4 pt-3 md:grid-cols-2 md:gap-y-6 md:pt-0 lg:max-xl:grid-cols-1">
         <div>
           <label htmlFor="service" className={labelClass}>
             {form.fields.service.label}
@@ -304,73 +396,6 @@ export default function ContactForm({
             ))}
           </select>
         </div>}
-        <div className="md:col-span-2 lg:max-xl:col-span-1">
-          <label htmlFor="message" className={labelClass}>
-            {form.fields.message.label}
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-            maxLength={CONTACT_LIMITS.message}
-            rows={5}
-            className={`${fieldClass} min-h-[8rem] resize-y`}
-            placeholder={requestExamples?.message ?? form.fields.message.placeholder}
-            aria-invalid={errors.message ? true : undefined}
-            aria-describedby={errors.message ? `${hintId("message")} ${messageHintId}` : messageHintId}
-          />
-          {hint("message")}
-          {/* Unterlagen gehen per E-Mail, das Formular nimmt keine Dateien an (Audit Inhalt 9) */}
-          <p id={messageHintId} className="mt-2 text-sm leading-relaxed text-mute">
-            {form.fields.message.hint}{" "}
-            <a href={`mailto:${company.email}`} className={`[overflow-wrap:anywhere] ${premium ? premiumLightLink : "link-inline"}`}>
-              {company.email}
-            </a>
-          </p>
-        </div>
-      </div>
-
-      <div className="mt-6 grid gap-x-6 gap-y-6 border-t border-line pt-6 md:grid-cols-2 lg:max-xl:grid-cols-1 xl:grid-cols-3">
-        <div>
-          <label htmlFor="name" className={labelClass}>
-            {form.fields.name.label}
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            maxLength={CONTACT_LIMITS.name}
-            autoComplete="name"
-            className={fieldClass}
-            placeholder={form.fields.name.placeholder}
-            {...invalid("name")}
-          />
-          {hint("name")}
-        </div>
-        <div>
-          <label htmlFor="email" className={labelClass}>
-            {form.fields.email.label}
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            maxLength={CONTACT_LIMITS.email}
-            autoComplete="email"
-            className={fieldClass}
-            placeholder={form.fields.email.placeholder}
-            {...invalid("email")}
-          />
-          {hint("email")}
-        </div>
         <div>
           <label htmlFor="phone" className={labelClass}>
             {form.fields.phone.label}
@@ -387,7 +412,8 @@ export default function ContactForm({
             placeholder={form.fields.phone.placeholder}
           />
         </div>
-      </div>
+        </div>
+      </details>
 
       {/* Honeypot gegen Spam, für Menschen unsichtbar (M07) */}
       <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
@@ -403,7 +429,7 @@ export default function ContactForm({
         />
       </div>
 
-      <div className="mt-8">
+      <div className="mt-5 sm:mt-8">
         <label className="flex cursor-pointer items-start gap-3">
           <input
             type="checkbox"
@@ -438,7 +464,7 @@ export default function ContactForm({
         {hint("acceptPrivacy")}
       </div>
 
-      <div className="mt-8 flex flex-col-reverse gap-4 border-t border-line pt-8 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mt-5 flex flex-col-reverse gap-3 border-t border-line pt-5 sm:mt-8 sm:gap-4 sm:pt-8 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sm text-mute">{form.required}</p>
         <button
           type="submit"

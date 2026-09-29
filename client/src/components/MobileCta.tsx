@@ -9,8 +9,7 @@ import type { PagePath } from "../../../shared/seo";
 
 /**
  * Schwebende Leiste aus Milchglas am unteren Rand auf dem Handy (F7, M31, E80):
- * Offerte und Telefon. Beim Runterscrollen fährt sie hinaus, beim Hochscrollen
- * wieder hinein (CSS über data-nav, gesetzt in SwissNavigation). Verschwindet, sobald Formular oder Footer im Bild
+ * Offerte und Telefon bleiben beim Lesen erreichbar. Verschwindet, sobald Formular oder Footer im Bild
  * sind. Der Footer klebt nur ab 1024 px (globals.css), unter 768 px steht er
  * im Fluss; darum ist er hier wieder ein verlässliches Mass (T01).
  * Auf Premium-Seiten in Champagner und Anthrazit statt Signalrot (E85).
@@ -18,18 +17,18 @@ import type { PagePath } from "../../../shared/seo";
  * visuell, Umbau 3): dort führt «Offerte anfragen» zum Formular auf /kontakt.
  */
 export default function MobileCta({ lang = "de", path }: { lang?: Locale; path?: PagePath }) {
-  const { chrome, menu } = navDicts[lang];
+  const { chrome } = navDicts[lang];
   const premium = path?.startsWith("/premium") ?? false;
   const offerHref =
     path === "/impressum" || path === "/datenschutz"
-      ? `${localizePath("/kontakt", lang)}#kontakt-formular`
-      : menu.cta.href;
+      ? `${localizePath("/kontakt", lang)}#anfrage`
+      : "#anfrage";
   const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
     // Der Footer klebt nur ab 1024 px; hier (unter 768 px) steht er im Fluss und taugt als Mass
     const targets = [
-      document.getElementById("kontakt-formular"),
+      document.getElementById("anfrage"),
       document.querySelector("footer"),
     ].filter((el): el is HTMLElement => Boolean(el));
     if (!targets.length || !("IntersectionObserver" in window)) return;
@@ -59,6 +58,15 @@ export default function MobileCta({ lang = "de", path }: { lang?: Locale; path?:
     >
       <a
         href={offerHref}
+        onClick={event => {
+          if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+          const form = document.getElementById("anfrage");
+          if (!form || !offerHref.startsWith("#")) return;
+          event.preventDefault();
+          if (window.location.hash !== offerHref) window.history.pushState(null, "", offerHref);
+          form.scrollIntoView({ block: "start", behavior: "instant" });
+          form.focus({ preventScroll: true });
+        }}
         className={`press arrow-link inline-flex h-12 items-center justify-center gap-2 rounded-[3px] px-5 text-[0.9375rem] font-semibold ${
           premium ? "bg-brass text-anthracite" : "btn-lift bg-signal text-white"
         }`}

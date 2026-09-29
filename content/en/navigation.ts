@@ -88,6 +88,7 @@ export const nav: NavDictionary = {
     title: 'Request a quote',
     intro: 'Describe your property and what you need. We use these details to prepare the site visit.',
     premiumIntro: 'Tell us about the property, its location and the work you need. These details help us understand your request.',
+    additionalDetails: 'Additional details (optional)',
     choose: 'Please select...',
     fields: {
       role: { label: 'You are *' },

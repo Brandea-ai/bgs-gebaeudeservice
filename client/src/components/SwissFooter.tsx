@@ -122,11 +122,9 @@ export function ContactSection({
             <p className={`t-lead mt-5 max-w-[40ch] ${premium ? "text-anthracite" : "text-ink"}`}>{intro}</p>
           </div>
 
-          {/* Auf /kontakt (inline) steht die Randspalte unter 1024 px vor dem Formular: sie hilft beim Ausfüllen (Prüfbefund K6) */}
+          {/* Mobil folgt das Formular direkt auf die Einleitung. */}
           <div
-            className={`min-w-0 lg:col-span-7 lg:col-start-6 lg:row-span-2 lg:row-start-1 xl:col-span-8 xl:col-start-5 ${
-              inline ? "max-lg:order-last" : ""
-            }`}
+            className="min-w-0 lg:col-span-7 lg:col-start-6 lg:row-span-2 lg:row-start-1 xl:col-span-8 xl:col-start-5"
           >
             <ContactForm lang={lang} path={path} />
           </div>

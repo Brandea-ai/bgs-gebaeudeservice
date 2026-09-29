@@ -1049,12 +1049,9 @@ html[data-nav="hidden"] {
 html[data-nav="hidden"] .site-header:not(:has(:focus-visible)) {
   transform: translateY(calc(-100% - 1rem));
 }
-/* Mobil-Leiste unten verschwindet beim Runterscrollen ebenso */
+/* Die mobile Kontaktaktion bleibt bis zum Formular erreichbar. */
 #mobil-cta {
   transition: transform var(--dur-state) var(--ease-out);
-}
-html[data-nav="hidden"] #mobil-cta:not(:focus-within) {
-  transform: translateY(calc(100% + 1.5rem));
 }
 /* Klebende Spalten folgen der Kopfzeile weich */
 [class*="sticky"],

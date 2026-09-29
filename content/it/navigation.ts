@@ -91,6 +91,7 @@ const contactForm: NavDictionary['contactForm'] = {
   title: 'Richiedere un’offerta',
   intro: 'Ci descriva l’immobile e la Sua richiesta. Con queste indicazioni prepariamo il sopralluogo.',
   premiumIntro: 'Ci indichi il bene, il luogo e l’intervento desiderato. Queste informazioni ci aiutano a comprendere la Sua richiesta.',
+  additionalDetails: 'Altri dettagli (facoltativi)',
   choose: 'Selezioni...',
   fields: {
     role: { label: 'Lei è *' },
