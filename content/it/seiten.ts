@@ -495,7 +495,10 @@ export const servicesOverview: Seiten['servicesOverview'] = {
       ],
     },
   ] satisfies { title: string; text: string; items: LinkCard[] }[],
+  carousel: { previous: 'Servizio precedente', next: 'Servizio successivo' },
   guide: {
+    show: 'Trovare il servizio adatto',
+    hide: 'Nascondere le situazioni',
     title: 'Quale servizio fa al caso Suo?',
     intro: 'Dieci situazioni frequenti e il servizio adatto.',
     items: [

@@ -39,7 +39,7 @@ export default function UebersichtHero(props: UebersichtProps) {
         </div>
       </PageHero>
       {/* Unter lg ist die Sprungliste ausgeblendet: ohne Zeilenabstand zum leeren Rasterfeld */}
-      <div className="max-lg:[&_.container]:gap-y-0">
+      <div className="max-lg:[&_.container]:gap-y-0 max-sm:[&_.container]:py-8">
         <IntroBand
           title={ui.atAGlance}
           paragraphs={[servicesOverview.lead]}

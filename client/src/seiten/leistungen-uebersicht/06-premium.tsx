@@ -27,7 +27,7 @@ export default function UebersichtPremium(props: UebersichtProps) {
   const { premiumOverview } = dict.seiten;
   const promise = (key: string) => premiumOverview.promises.find(item => item.key === key);
   return (
-    <section id="premium" aria-labelledby="premium-titel" className="on-dark section relative overflow-hidden bg-anthracite text-white">
+    <section id="premium" aria-labelledby="premium-titel" className="on-dark section max-sm:py-8 relative overflow-hidden bg-anthracite text-white">
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(70%_50%_at_90%_0%,rgba(200,169,110,0.16),transparent_60%)]"
         aria-hidden="true"
@@ -48,7 +48,7 @@ export default function UebersichtPremium(props: UebersichtProps) {
         </div>
 
         {/* Mobil eine wischbare Schiene mit CSS-Scroll-Snap (visuell.md Umbau 7), die nächste Karte ragt herein */}
-        <p className="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-white/90 md:hidden" aria-hidden="true">
+        <p className="mt-6 sm:mt-10 inline-flex items-center gap-2 text-sm font-semibold text-white/90 md:hidden" aria-hidden="true">
           <HandSwipeRight weight="duotone" className="size-5 text-brass" />
           {dict.seiten.home.services.swipe}
         </p>
@@ -69,7 +69,7 @@ export default function UebersichtPremium(props: UebersichtProps) {
                   hover
                   decorative
                   sizes="(min-width: 768px) 33vw, 100vw"
-                  className="aspect-[4/3] w-full"
+                  className="aspect-[16/9] sm:aspect-[4/3] w-full"
                 />
                 <span className="flex flex-1 flex-col p-6">
                   <span className="font-premium text-[1.75rem] leading-tight text-white transition-colors group-hover:text-brass-light">
@@ -86,7 +86,7 @@ export default function UebersichtPremium(props: UebersichtProps) {
           ))}
         </RevealGroup>
 
-        <div className="mt-14 grid gap-10 border-t border-white/15 pt-10 lg:grid-cols-12 lg:items-center">
+        <div className="mt-8 sm:mt-14 grid gap-10 border-t border-white/15 pt-6 sm:pt-10 lg:grid-cols-12 lg:items-center">
           {/* Die drei Zusagen stehen auf /premium; mobil nur der Weg dorthin (Umbau 7) */}
           <ul className="grid gap-6 max-sm:hidden sm:grid-cols-3 lg:col-span-9">
             {preview.map(({ key, icon: Glyph }) => {
