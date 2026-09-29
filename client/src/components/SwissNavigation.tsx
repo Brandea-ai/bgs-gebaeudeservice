@@ -3,9 +3,11 @@
 import { Fragment, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import {
   ArrowRight,
   CaretDown,
+  Check,
   List,
   Phone,
   X,
@@ -13,8 +15,9 @@ import {
 import { Button } from "@/components/ui/button";
 import { company, newBrandActive } from "../../../shared/company";
 import { navDicts } from "../../../content/navigation";
-import { activeLocales, languageNames, localizePath, type Locale } from "../../../shared/i18n";
+import { activeLocales, hreflang, languageNames, localizePath, type Locale } from "../../../shared/i18n";
 import type { PagePath } from "../../../shared/seo";
+import Flag from "./Flag";
 import { iconFor } from "./serviceIcons";
 import { AreaMegaPanel, AreaMobileGroup } from "./AreaMenu";
 import { FeatureMegaCard, PremiumMegaCard } from "./MegaCards";
@@ -52,6 +55,7 @@ export default function SwissNavigation({
   const [cleaning, care, premium] = serviceGroups;
   const href = (target: PagePath) => localizePath(target, lang);
   const [isOpen, setIsOpen] = useState(false);
+  const [languageOpen, setLanguageOpen] = useState(false);
   // Offenes Mega-Menü: Leistungen oder Einzugsgebiet, nie beide
   const [openMenu, setOpenMenu] = useState<MegaMenu | null>(null);
   const megaOpen = openMenu === "leistungen";
@@ -99,10 +103,10 @@ export default function SwissNavigation({
   // Offene Menüs halten die Kopfzeile sichtbar
   useEffect(() => {
     const root = document.documentElement;
-    const locked = isOpen || openMenu !== null;
+    const locked = isOpen || openMenu !== null || languageOpen;
     root.dataset.navLock = locked ? "1" : "0";
     if (locked) root.dataset.nav = "shown";
-  }, [isOpen, openMenu]);
+  }, [isOpen, openMenu, languageOpen]);
 
   // Offenes Mobilmenü sperrt das Scrollen und macht den Inhalt dahinter inert
   useEffect(() => {
@@ -123,6 +127,7 @@ export default function SwissNavigation({
   useEffect(() => {
     setIsOpen(false);
     setOpenMenu(null);
+    setLanguageOpen(false);
   }, [pathname]);
 
   // Ein Zeitgeber für beide Menüs: Der Wechsel von einem zum anderen öffnet das neue
@@ -407,19 +412,48 @@ export default function SwissNavigation({
 
               <div className="flex items-center gap-2 sm:gap-3">
                 {activeLocales.length > 1 && (
-                  <select
-                    data-nav-language
-                    aria-label={languageSwitch}
-                    value={lang}
-                    onChange={event => window.location.assign(localizePath(current, event.target.value as Locale))}
-                    className="h-11 w-20 shrink-0 cursor-pointer rounded-[3px] border border-line bg-transparent px-2 font-mono text-xs font-semibold text-ink"
-                  >
-                    {activeLocales.map(locale => (
-                      <option key={locale} value={locale} aria-label={languageNames[locale]}>
-                        {({ de: "🇩🇪", en: "🇬🇧", fr: "🇫🇷", it: "🇮🇹" } as const)[locale]} {locale.toUpperCase()}
-                      </option>
-                    ))}
-                  </select>
+                  <DropdownMenu.Root open={languageOpen} onOpenChange={setLanguageOpen} modal={false}>
+                    <DropdownMenu.Trigger asChild>
+                      <button
+                        type="button"
+                        data-nav-language={lang}
+                        aria-label={`${languageSwitch}: ${languageNames[lang]}`}
+                        className="inline-flex h-11 shrink-0 items-center justify-center gap-2 rounded-[3px] border border-line bg-transparent px-2.5 font-mono text-sm font-semibold text-ink transition-colors hover:border-ink"
+                      >
+                        <Flag lang={lang} className="h-4 w-6" />
+                        <span aria-hidden="true">{lang.toUpperCase()}</span>
+                        <CaretDown className="size-3.5" aria-hidden="true" />
+                      </button>
+                    </DropdownMenu.Trigger>
+                    <DropdownMenu.Portal>
+                      <DropdownMenu.Content
+                        data-nav-language-menu
+                        align="end"
+                        sideOffset={8}
+                        collisionPadding={12}
+                        aria-label={languageSwitch}
+                        onEscapeKeyDown={event => event.stopPropagation()}
+                        className="z-[70] w-52 rounded-[3px] border border-line bg-white p-1.5 text-ink shadow-xl"
+                      >
+                        {activeLocales.map(locale => (
+                          <DropdownMenu.Item key={locale} asChild textValue={languageNames[locale]}>
+                            <a
+                              href={localizePath(current, locale)}
+                              hrefLang={hreflang[locale]}
+                              lang={hreflang[locale]}
+                              data-nav-language-option={locale}
+                              aria-current={locale === lang ? "true" : undefined}
+                              className="flex min-h-12 cursor-pointer items-center gap-3 rounded-[3px] px-3 py-2 text-base font-medium outline-none data-[highlighted]:bg-ink/[0.07]"
+                            >
+                              <Flag lang={locale} className="h-[18px] w-[27px]" />
+                              <span className="flex-1">{languageNames[locale]}</span>
+                              {locale === lang && <Check weight="bold" className="size-4" aria-hidden="true" />}
+                            </a>
+                          </DropdownMenu.Item>
+                        ))}
+                      </DropdownMenu.Content>
+                    </DropdownMenu.Portal>
+                  </DropdownMenu.Root>
                 )}
                 <div data-nav-contact className="hidden shrink-0 items-center gap-2 sm:flex">
                   <Button asChild variant="outline" className="w-11 px-0 2xl:w-auto 2xl:px-4">

@@ -180,3 +180,8 @@ Offene ergänzende Kundenauskünfte werden gesammelt; es werden keine neuen Zusa
 ### Nachtrag 29.09.2026: Sprachdropdown und Kontaktbuttons
 
 Die Kopfzeile wurde auf ausdrücklichen Nutzerwunsch geändert: Sprachdropdown in allen Bildschirmgrößen, Telefon und Offerte als benachbarte Buttons. Einzelheiten und Prüfungen: `27-PRUEFLOOP/navigation-dropdown-2026-09-29.md`. Die übrige Arbeit bleibt pausiert.
+
+
+### Nachtrag: Größeres Sprachmenü
+
+Nach Nutzer-Sichtprüfung das zu kleine native Dropdown durch eine 208 px breite Auswahl mit Sprachnamen, größeren Flaggen und 48 px hohen Zeilen ersetzt. Gezielte Tastatur-, Mobil- und Sprachwechselprüfung bestanden. Details: `27-PRUEFLOOP/navigation-dropdown-2026-09-29.md`.

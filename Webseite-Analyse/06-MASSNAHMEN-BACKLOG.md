@@ -302,3 +302,8 @@ Zuerst Produktions-/Datenrisiken und funktionskritische Probleme. Danach Positio
 ### Nachtrag 29.09.2026: Sprachdropdown und Kontaktbuttons
 
 Gezielte Kopfzeilen-Nacharbeit umgesetzt: Sprachauswahl als Dropdown, Kontaktbuttons zusammenhängend. Kein neuer Auftrag zur übrigen Welle 3. Nachweis: `27-PRUEFLOOP/navigation-dropdown-2026-09-29.md`.
+
+
+### Nachtrag: Größeres Sprachmenü
+
+Nach Nutzer-Sichtprüfung das zu kleine native Dropdown durch eine 208 px breite Auswahl mit Sprachnamen, größeren Flaggen und 48 px hohen Zeilen ersetzt. Gezielte Tastatur-, Mobil- und Sprachwechselprüfung bestanden. Details: `27-PRUEFLOOP/navigation-dropdown-2026-09-29.md`.

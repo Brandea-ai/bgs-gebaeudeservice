@@ -9,3 +9,11 @@ Nachweise: TypeScript und Produktionsbuild in beiden Markenmodi; Seitenprüfung 
 Dies ist eine Prüfung der Kopfzeilenänderung, keine vollständige Abschlussabnahme der übrigen Website.
 
 Browserprüfung in beiden Markenmodi: jeweils 128 Seiten, 0 CSP-Verstöße, 0 Konsolenfehler, Karte und Leistungsmenü funktionsfähig. Zusätzliche Axe-Prüfung der BGS-Kopfzeile ebenfalls ohne Verstöße.
+
+## Größeres Sprachmenü nach Sichtprüfung durch Armend
+
+Die native Systemauswahl war auf dem Mac zu klein. Sie ist durch ein Radix-Menü im Seitendesign ersetzt: 208 px Menübreite, 16 px Schrift, 48 px hohe Zeilen, 27 × 18 px SVG-Flaggen und ausgeschriebene Sprachnamen. Der Auslöser bleibt 44 px hoch. Telefon und Offerte bleiben benachbart. Das offene Sprachmenü hält die Kopfzeile sichtbar.
+
+Gezielte Prüfung: 20 Kombinationen aus vier Sprachen und fünf Breiten (320 bis 1600 px), Menü bleibt im Viewport, vier Sprachwechsel auf derselben Unterseite, Pfeiltasten, Escape samt Fokusrückgabe und Außenklick. Axe der offenen Auswahl auf Desktop und Mobil ohne Verstöße, keine Konsolenfehler. Belege: `../uebergabe-2026-09-29/navigation-dropdown-large/`.
+
+Zweiter Markenmodus: Build sowie beide Seitenskripte ebenfalls bestanden (128 Seiten, 0 CSP-/Konsolenfehler); fünf zusätzliche Größenfälle, vier Sprachwechsel und Axe der offenen Auswahl bestanden. Der lokale Bildlade-Timeout bei parallelem Prüflauf trat nach isoliertem Neustart nicht erneut auf.
