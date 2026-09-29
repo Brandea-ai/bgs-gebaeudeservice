@@ -211,6 +211,9 @@ export const sonderreinigungen: ServicePageContent = {
     {
       kind: 'text',
       id: 'aushang',
+      printable: true,
+      printHeader: false,
+      updated: '2026-09-29',
       title: 'Template: notice for tenants',
       paragraphs: [
         'Heading: Deep cleaning of the stairwell',

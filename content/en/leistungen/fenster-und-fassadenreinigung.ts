@@ -110,6 +110,9 @@ export const fensterUndFassade: ServicePageContent = {
     {
       kind: 'table',
       id: 'aushang-mieterschaft',
+      printable: true,
+      printHeader: false,
+      updated: '2026-09-29',
       title: 'Notice for tenants: template to adapt',
       intro: 'Windows that can only be cleaned from inside require access to flats or offices. Copy the text onto your letterhead, replace the details in square brackets and put the notice up in the entrance.',
       columns: ['Section', 'Text for the notice'],

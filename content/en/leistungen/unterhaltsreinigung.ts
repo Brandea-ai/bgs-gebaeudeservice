@@ -107,6 +107,7 @@ export const unterhaltsreinigung: ServicePageContent = {
     {
       kind: 'table',
       id: 'rundgang',
+      form: true,
       title: 'Walk-round record after cleaning',
       intro:
         'Walk through the building on the cleaning day or the day after; any later and you are judging use rather than cleaning. If anything is wrong, send us the record with the date and a photo.',

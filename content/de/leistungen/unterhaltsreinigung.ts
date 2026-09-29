@@ -110,6 +110,7 @@ export const unterhaltsreinigung: ServicePageContent = {
     {
       kind: 'table',
       id: 'rundgang',
+      form: true,
       title: 'Rundgang-Protokoll nach der Reinigung',
       intro:
         'Gehen Sie am Reinigungstag oder am Tag danach durch das Haus, später beurteilen Sie eher die Nutzung. Fällt Ihnen etwas auf, schicken Sie uns das Protokoll mit Datum und Foto.',

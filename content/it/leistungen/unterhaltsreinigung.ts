@@ -107,6 +107,7 @@ export const unterhaltsreinigung: ServicePageContent = {
     {
       kind: 'table',
       id: 'rundgang',
+      form: true,
       title: 'Protocollo del giro di controllo dopo la pulizia',
       intro:
         'Percorra lo stabile il giorno della pulizia o il giorno dopo; più tardi giudica piuttosto l’uso che la pulizia. Se qualcosa non va, ci mandi il protocollo con la data e una foto.',

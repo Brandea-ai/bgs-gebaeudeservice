@@ -110,6 +110,9 @@ export const fensterUndFassade: ServicePageContent = {
     {
       kind: 'table',
       id: 'aushang-mieterschaft',
+      printable: true,
+      printHeader: false,
+      updated: '2026-09-29',
       title: 'Avis aux locataires : modèle à adapter',
       intro: 'Les fenêtres qui ne se nettoient que de l’intérieur exigent l’accès aux logements ou aux bureaux. Reprenez le texte sur votre papier à en-tête, remplacez les indications entre crochets et affichez l’avis dans l’entrée.',
       columns: ['Élément', 'Texte de l’avis'],

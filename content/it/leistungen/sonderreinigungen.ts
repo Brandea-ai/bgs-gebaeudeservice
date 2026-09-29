@@ -211,6 +211,9 @@ export const sonderreinigungen: ServicePageContent = {
     {
       kind: 'text',
       id: 'aushang',
+      printable: true,
+      printHeader: false,
+      updated: '2026-09-29',
       title: 'Modello: avviso agli inquilini',
       paragraphs: [
         'Titolo: Pulizia a fondo del vano scale',

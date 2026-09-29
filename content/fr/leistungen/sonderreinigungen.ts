@@ -211,6 +211,9 @@ export const sonderreinigungen: ServicePageContent = {
     {
       kind: 'text',
       id: 'aushang',
+      printable: true,
+      printHeader: false,
+      updated: '2026-09-29',
       title: 'Modèle : avis aux locataires',
       paragraphs: [
         'Titre : Nettoyage en profondeur de la cage d’escalier',
